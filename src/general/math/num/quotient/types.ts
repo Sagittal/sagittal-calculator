@@ -1,9 +1,6 @@
 import { Decimal } from "../decimal"
 import { Monzo } from "../monzo"
-import {
-    NumTypeParameterEffects,
-    NumTypeParameters,
-} from "../types"
+import { NumTypeParameterEffects, NumTypeParameters } from "../types"
 
 type NumTypeParameterTranslationForQuotientsToTheirQuotientPartsExceptRationality<T extends NumTypeParameters = {}> =
     (T extends { rough: number } ? { rough: T["rough"] } : {})

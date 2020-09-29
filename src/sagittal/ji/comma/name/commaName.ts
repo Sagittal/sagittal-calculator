@@ -79,7 +79,7 @@ const computeCommaName = (
     } else {
         const commaNameQuotient: CommaNameQuotient = computeRoughRationalQuotient(
             computeRationalQuotientFromRatio(superComma),
-            FIVE_ROUGHNESS
+            FIVE_ROUGHNESS,
         ) as CommaNameQuotient
 
         if (directed) {

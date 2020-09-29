@@ -8,11 +8,11 @@ import { divideNums, divideRatios, isRatio, NumOrDecimal, NumTypeParameters, Rat
 const computeInterval: {
     <T extends NumTypeParameters>(
         fromPitch: RatioOrRationalDecimal<T>,
-        toPitch: RatioOrRationalDecimal<T>
+        toPitch: RatioOrRationalDecimal<T>,
     ): RatioOrRationalDecimal<T>,
     <T extends NumTypeParameters>(
         fromPitch: NumOrDecimal<T>,
-        toPitch: NumOrDecimal<T>
+        toPitch: NumOrDecimal<T>,
     ): NumOrDecimal<T>,
 } = <T extends NumTypeParameters>(fromPitch: NumOrDecimal<T>, toPitch: NumOrDecimal<T>): any => {
     if (isRatio(fromPitch) && isRatio(toPitch)) {

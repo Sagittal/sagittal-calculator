@@ -25,9 +25,9 @@ describe("isSmoothRationalQuotient", (): void => {
 describe("computeRationalQuotientSmoothness", (): void => {
     it("works", (): void => {
         const rationalQuotient = [ 11, 5 ] as RationalQuotient
-        
+
         const actual = computeRationalQuotientSmoothness(rationalQuotient)
-        
+
         const expected = 11 as Smoothness
         expect(actual).toBe(expected)
     })

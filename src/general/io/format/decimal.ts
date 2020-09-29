@@ -2,12 +2,12 @@ import { Decimal, IntegerDecimal, NumTypeParameters, RationalDecimal, round } fr
 import { IO_PRECISION } from "../constants"
 import { Formatted } from "./types"
 
-const alignFormattedDecimal: { 
+const alignFormattedDecimal: {
     <T extends NumTypeParameters>(formattedDecimal: Formatted<IntegerDecimal<T>>): Formatted<IntegerDecimal<T>>
     <T extends NumTypeParameters>(formattedDecimal: Formatted<RationalDecimal<T>>): Formatted<RationalDecimal<T>>
     <T extends NumTypeParameters>(formattedDecimal: Formatted<Decimal<T>>): Formatted<Decimal<T>>
 } = <T extends NumTypeParameters>(
-    formattedDecimal: Formatted<Decimal<T>>
+    formattedDecimal: Formatted<Decimal<T>>,
 ): Formatted<Decimal<T>> => {
     while (formattedDecimal.length < 7) {
         formattedDecimal = " " + formattedDecimal as Formatted<Decimal<T>>
@@ -24,8 +24,8 @@ const formatDecimal = <T extends NumTypeParameters>(
         .toFixed(3)
         .replace(/\.(\d\d\d)0*$/, ".$1") as Formatted<Decimal<T>>
 
-    return align ? 
-        alignFormattedDecimal(roundedDecimal) : 
+    return align ?
+        alignFormattedDecimal(roundedDecimal) :
         roundedDecimal
 }
 

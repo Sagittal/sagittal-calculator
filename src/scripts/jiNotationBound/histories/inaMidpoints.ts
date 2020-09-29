@@ -1,11 +1,4 @@
-import {
-    Cents,
-    computeCentsFromPitch,
-    computeNumberFromCents,
-    Maybe,
-    Name,
-    numIsHigher,
-} from "../../../general"
+import { Cents, computeCentsFromPitch, computeNumberFromCents, Maybe, Name, numIsHigher } from "../../../general"
 import {
     APOTOME,
     InaMidpoint,

@@ -2,7 +2,7 @@ import { Direction, NumTypeParameterEffects, NumTypeParameters } from "../../../
 import { IntegerMonzo, RationalMonzo } from "../monzo"
 import { IntegerQuotient, RationalQuotient } from "../quotient"
 
-type RationalDecimal<T extends NumTypeParameters = {}> = 
+type RationalDecimal<T extends NumTypeParameters = {}> =
     number & NumTypeParameterEffects<T & { rational: true }>
 
 type IntegerDecimal<T extends NumTypeParameters = {}> =

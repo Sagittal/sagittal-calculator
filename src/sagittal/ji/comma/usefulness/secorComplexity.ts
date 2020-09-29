@@ -1,6 +1,7 @@
 import {
     abs,
-    computeCopfr, computeNumFromMonzo,
+    computeCopfr,
+    computeNumFromMonzo,
     computeQuotientFromMonzo,
     computeRationalMonzoFromRatio,
     computeRoughRationalMonzo,

@@ -12,9 +12,9 @@ describe("computeCopfr", (): void => {
 
     it("works for a direct rational decimal", (): void => {
         const rationalDecimal = 385 as RationalDecimal
-        
+
         const actual = computeCopfr(rationalDecimal)
-        
+
         const expected = 3 as Copfr
         expect(actual).toBe(expected)
     })

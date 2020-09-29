@@ -30,9 +30,9 @@ describe("isSmoothRationalMonzo", (): void => {
 describe("computeRationalMonzoSmoothness", (): void => {
     it("works", (): void => {
         const rationalMonzo = [ 1, 0, -1, 0, 1 ] as RationalMonzo
-        
+
         const actual = computeRationalMonzoSmoothness(rationalMonzo)
-        
+
         const expected = 11 as Smoothness
         expect(actual).toBe(expected)
     })

@@ -1,4 +1,14 @@
-import { Exponent, Extrema, IntegerDecimal, IntegerDenominator, IntegerNumerator, Max, Min, negative, Prime } from "../../../../../general"
+import {
+    Exponent,
+    Extrema,
+    IntegerDecimal,
+    IntegerDenominator,
+    IntegerNumerator,
+    Max,
+    Min,
+    negative,
+    Prime,
+} from "../../../../../general"
 import { N2D3P9 } from "../types"
 import {
     computeMaxDenominatorPrimeExponentGivenMaxN2D3P9,

@@ -17,7 +17,7 @@ import {
 } from "../../../../general"
 
 const computeRationalMonzoInZone = (
-    twoFreeRationalMonzo: RationalMonzo<{ rough: 3 }>, zone: Zone
+    twoFreeRationalMonzo: RationalMonzo<{ rough: 3 }>, zone: Zone,
 ): Maybe<RationalMonzo> => {
     const [lowerBound, upperBound] = zone
 
@@ -25,11 +25,11 @@ const computeRationalMonzoInZone = (
 
     if (!equalMonzos(rationalMonzoInZone, [] as unknown[] as RationalMonzo)) {
         while (numIsHigher(computeNumFromMonzo(rationalMonzoInZone), upperBound)) {
-            rationalMonzoInZone[ TWO_PRIME_INDEX ] = 
+            rationalMonzoInZone[ TWO_PRIME_INDEX ] =
                 rationalMonzoInZone[ TWO_PRIME_INDEX ] - 1 as IntegerDecimal & Exponent<Prime>
         }
         while (numIsLower(computeNumFromMonzo(rationalMonzoInZone), lowerBound)) {
-            rationalMonzoInZone[ TWO_PRIME_INDEX ] = 
+            rationalMonzoInZone[ TWO_PRIME_INDEX ] =
                 rationalMonzoInZone[ TWO_PRIME_INDEX ] + 1 as IntegerDecimal & Exponent<Prime>
         }
     }

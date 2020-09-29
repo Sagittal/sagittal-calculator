@@ -1,5 +1,4 @@
 import { Io } from "../../../../../src/general/io"
-import { Formatted } from "../../../../../src/general/io/format"
 import { parseCents } from "../../../../../src/general/io/parse"
 import { Cents } from "../../../../../src/general/music"
 

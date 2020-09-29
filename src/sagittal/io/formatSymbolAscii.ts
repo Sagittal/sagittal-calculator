@@ -3,7 +3,7 @@ import { SymbolLongAscii } from "./types"
 
 const formatSymbolAscii = (symbolAscii: SymbolLongAscii): Formatted<SymbolLongAscii> => {
     if (symbolAscii === "(|//|)") return " (|//|) " as Formatted<SymbolLongAscii>
-    
+
     const shaftIndex = symbolAscii.indexOf("|")
 
     let spacesToPrepend = 5 - shaftIndex

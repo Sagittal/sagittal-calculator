@@ -9,13 +9,13 @@ const isSubMonzo = <T extends NumTypeParameters>(
     candidateSubMonzo: Monzo<T>,
 ): candidateSubMonzo is Monzo<T & { direction: Direction.SUB }> => {
     if (
-        candidateSubMonzo.length && 
+        candidateSubMonzo.length &&
         candidateSubMonzo.every((primeExponent: Exponent<Prime>): boolean => primeExponent >= 0)
     ) {
         return false
     }
     if (
-        candidateSubMonzo.length && 
+        candidateSubMonzo.length &&
         candidateSubMonzo.every((primeExponent: Exponent<Prime>): boolean => primeExponent <= 0)
     ) {
         return true

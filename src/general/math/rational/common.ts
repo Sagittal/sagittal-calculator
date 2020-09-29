@@ -6,8 +6,8 @@ import { IntegerDecimal } from "./num"
 import { CommonFunction } from "./types"
 
 const computeLowestCommonMultipleOfTwoNumbers = (
-    firstValue: IntegerDecimal, 
-    secondValue: IntegerDecimal
+    firstValue: IntegerDecimal,
+    secondValue: IntegerDecimal,
 ): IntegerDecimal =>
     abs(divide(
         firstValue * secondValue as IntegerDecimal,
@@ -15,8 +15,8 @@ const computeLowestCommonMultipleOfTwoNumbers = (
     )) as IntegerDecimal
 
 const computeGreatestCommonDivisorOfTwoNumbers = (
-    firstValue: IntegerDecimal, 
-    secondValue: IntegerDecimal
+    firstValue: IntegerDecimal,
+    secondValue: IntegerDecimal,
 ): IntegerDecimal => {
     let output: IntegerDecimal = firstValue
     let remainder: IntegerDecimal = secondValue

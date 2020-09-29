@@ -1,4 +1,11 @@
-import { computeLowestTermsRationalQuotient, Io, isUndefined, Maybe, parseQuotient, RationalQuotient } from "../../../../general"
+import {
+    computeLowestTermsRationalQuotient,
+    Io,
+    isUndefined,
+    Maybe,
+    parseQuotient,
+    RationalQuotient,
+} from "../../../../general"
 import { SIZE_CATEGORIES } from "./sizeCategories"
 import { CommaNameQuotient, ParsedCommaName, SizeCategoryName } from "./types"
 

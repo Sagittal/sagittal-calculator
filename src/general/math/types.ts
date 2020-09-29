@@ -22,7 +22,7 @@ type Min<T extends unknown = number> = T & { _MinBrand: boolean }
 type X = number & { _XBrand: boolean }
 type Y = number & { _YBrand: boolean }
 type Coordinate = X | Y
-type Coordinates = [ X, Y ]
+type Coordinates = [X, Y]
 type Radians = number & { _RadiansBrand: boolean }
 type Degrees = number & { _DegreesBrand: boolean }
 

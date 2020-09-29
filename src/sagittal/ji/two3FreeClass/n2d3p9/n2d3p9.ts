@@ -1,6 +1,7 @@
 import {
     abs,
-    computeGpf, computeNumFromMonzo,
+    computeGpf,
+    computeNumFromMonzo,
     computeRationalMonzoFromRatio,
     computeTrimmedArray,
     Direction,

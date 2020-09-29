@@ -1,4 +1,3 @@
-import { sqrt } from "../../../../../src/general/math"
 import { computeNumSqrt, divideNums } from "../../../../../src/general/math/num"
 import { Decimal } from "../../../../../src/general/math/num/decimal"
 import { Monzo } from "../../../../../src/general/math/num/monzo"

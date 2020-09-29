@@ -5,9 +5,9 @@ import { computeRationalQuotientFromQuotient } from "../../../../../../../src/ge
 describe("computeRationalQuotientFromQuotient", (): void => {
     it("converts a quotient whose parts are not integers into one whose parts are integers", (): void => {
         const quotient = [ 5.5, 3.5 ] as Quotient
-        
+
         const actual = computeRationalQuotientFromQuotient(quotient)
-        
+
         const expected = [ 11, 7 ] as RationalQuotient
         expect(actual).toEqual(expected)
     })

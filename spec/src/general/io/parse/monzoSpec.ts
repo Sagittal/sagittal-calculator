@@ -1,4 +1,4 @@
-import { Formatted, Io, parseMonzo } from "../../../../../src/general/io"
+import { Io, parseMonzo } from "../../../../../src/general/io"
 import { Monzo } from "../../../../../src/general/math"
 
 describe("parseMonzo", (): void => {

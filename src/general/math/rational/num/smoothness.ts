@@ -9,7 +9,7 @@ import {
     computeRationalQuotientSmoothness,
     isSmoothRationalQuotient,
 } from "./quotient"
-import { Ratio, RatioOrRationalDecimal } from "./types"
+import { RatioOrRationalDecimal } from "./types"
 
 const isSmoothRatio = <S extends Primes, T extends NumTypeParameters>(
     ratioOrRationalDecimal: RatioOrRationalDecimal<T>,

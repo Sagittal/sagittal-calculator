@@ -1,6 +1,7 @@
 import {
     abs,
-    Comma, computeNumFromMonzo,
+    Comma,
+    computeNumFromMonzo,
     computePlusOrMinusRange,
     Exponent,
     IntegerDecimal,
@@ -55,7 +56,7 @@ const computeCommasFrom23FreeRationalMonzo = (
 
     computePlusOrMinusRange(maxAte).forEach((threeExponent: IntegerDecimal & Exponent<3 & Prime>): void => {
         const twoFreeRationalMonzo = compute2FreeRationalMonzo(two3FreeRationalMonzo, threeExponent)
-        const rationalMonzoInZone: Maybe<RationalMonzo> = 
+        const rationalMonzoInZone: Maybe<RationalMonzo> =
             computeRationalMonzoInZone(twoFreeRationalMonzo, [lowerBound, upperBound])
 
         if (rationalMonzoInZone) {

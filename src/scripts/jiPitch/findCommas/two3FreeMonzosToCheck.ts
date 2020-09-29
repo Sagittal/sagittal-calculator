@@ -1,6 +1,7 @@
 import {
     computeCopfr,
-    computeExtensionBase, computeNumFromMonzo,
+    computeExtensionBase,
+    computeNumFromMonzo,
     computeSopfr,
     computeTrimmedArray,
     Copfr,

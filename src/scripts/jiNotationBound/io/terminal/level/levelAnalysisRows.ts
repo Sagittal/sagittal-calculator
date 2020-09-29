@@ -19,7 +19,7 @@ const computeJiNotationLevelAnalysisRows = (jiNotationLevel: JiNotationLevel): A
                 formatIntegerDecimal(bestHistoryRankCount as Count<IntegerDecimal & Rank<BoundType>>, { align: true })
 
             const bestCumulativeHistoryRankCount = jiNotationLevelsBestCumulativeHistoryRanks[ jiNotationLevel ][ rank ]
-            let formattedBestCumulativeHistoryRankCount = 
+            let formattedBestCumulativeHistoryRankCount =
                 formatIntegerDecimal(bestCumulativeHistoryRankCount, { align: true })
 
             const jiNotationLevelRankRow = [

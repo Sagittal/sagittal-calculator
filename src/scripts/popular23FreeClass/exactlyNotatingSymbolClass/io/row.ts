@@ -1,14 +1,4 @@
-import {
-    format23FreeClass,
-    formatDecimal,
-    Formatted,
-    Id,
-    ioSettings,
-    isUndefined,
-    Ranked,
-    Row,
-    SPACE,
-} from "../../../../general"
+import { formatDecimal, Formatted, Id, ioSettings, isUndefined, Ranked, Row, SPACE } from "../../../../general"
 import { formatSymbolClass, SymbolClass, SymbolGlyph } from "../../../../sagittal"
 import { Popular23FreeClass } from "../../types"
 import { ExactlyNotatingSymbolClassProperties } from "../types"

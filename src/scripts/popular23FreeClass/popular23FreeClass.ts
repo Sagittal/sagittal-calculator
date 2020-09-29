@@ -1,5 +1,5 @@
-import { COMMA_POPULARITIES, equalNums, isUndefined, Popularity, Two3FreeClass, Votes } from "../../general"
-import { N2D3P9, Two3FreeClassAnalysis } from "../../sagittal"
+import { COMMA_POPULARITIES, equalNums, isUndefined, Popularity, Votes } from "../../general"
+import { Two3FreeClassAnalysis } from "../../sagittal"
 import { computeBestNotatingCommaProperties } from "./bestNotatingComma"
 import { computeExactlyNotatingSymbolClassProperties } from "./exactlyNotatingSymbolClass"
 import { popular23FreeClassesScriptGroupSettings } from "./globals"
