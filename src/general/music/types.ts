@@ -1,4 +1,4 @@
-import { Num } from "../math"
+import { Decimal, Monzo, Num, NumTypeParameters, Quotient } from "../math"
 import { Extrema } from "../types"
 
 type Cents = number & { _CentsBrand: boolean }
@@ -12,7 +12,15 @@ type Cents = number & { _CentsBrand: boolean }
 
 type Zone<T = void> = Extrema<Num> & (T extends void ? {} : { _ZoneOfBrand: T })
 
+type PitchAnalysis<T extends NumTypeParameters = {}> = Num<T> & {
+    cents: Cents,
+    decimal: Decimal<T>,
+    quotient?: Quotient<T>,
+    monzo?: Monzo<T>,
+}
+
 export {
     Cents,
     Zone,
+    PitchAnalysis,
 }

@@ -1,4 +1,5 @@
-import { Decimal, Name } from "../../../../../src/general"
+import { Cents, Decimal, Monzo, Name, Quotient } from "../../../../../src/general"
+import { analyzePitch } from "../../../../../src/general/music/analyzePitch"
 import { CommaMean, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 import { computeJiNotationLevelCommaMeans } from "../../../../../src/scripts/jiNotationBound/histories/levelCommaMeans"
 
@@ -6,54 +7,90 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
     it(
         "can return the comma means for the Medium JI notation level, both the positions and the bounded commas' symbols",
         (): void => {
-            expect(computeJiNotationLevelCommaMeans(JiNotationLevel.MEDIUM)).toBeCloseToObject([
+            expect(computeJiNotationLevelCommaMeans(JiNotationLevel.MEDIUM).map(analyzePitch)).toBeCloseToObject([
                 {
                     name: "(|//|) |(" as Name<CommaMean>,
-                    decimal: 1.001664301900464 as Decimal,  // 2.878901¢
+                    monzo: [5, -3, 0.5, -0.5] as Monzo,
+                    decimal: 1.001664 as Decimal,
+                    cents: 2.878901 as Cents,
+                    quotient: [71.554175, 71.435285] as Quotient,
                 },
                 {
                     name: "|( )|(" as Name<CommaMean>,
-                    decimal: 1.004470875913052 as Decimal,  // 7.722881¢
+                    monzo: [8.5, -5, 0.5, 0, -0.5] as Monzo,
+                    decimal: 1.004470 as Decimal,
+                    cents: 7.722881 as Cents,
+                    quotient: [809.543081, 805.939824] as Quotient,
                 },
                 {
                     name: ")|( ~|(" as Name<CommaMean>,
-                    decimal: 1.0070772291411147 as Decimal, // 12.209187¢
+                    monzo: [-2.5, 0.5, 0, 0.5, -0.5, 0, 0.5] as Monzo,
+                    decimal: 1.007077 as Decimal,
+                    cents: 12.209187 as Cents,
+                    quotient: [18.894443, 18.761663] as Quotient,
                 },
                 {
                     name: "~|( /|" as Name<CommaMean>,
-                    decimal: 1.010520525965919 as Decimal,  // 18.118351¢
+                    monzo: [-8, 4.5, -0.5, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.010520 as Decimal,
+                    cents: 18.118351 as Cents,
+                    quotient: [578.455702, 572.433402] as Quotient,
                 },
                 {
                     name: "/| |)" as Name<CommaMean>,
-                    decimal: 1.01418510567422 as Decimal,   // 24.385190¢
+                    monzo: [1, 1, -0.5, -0.5] as Monzo,
+                    decimal: 1.014185 as Decimal,
+                    cents: 24.385190 as Cents,
+                    quotient: [6, 5.916079] as Quotient,
                 },
                 {
                     name: "|) (|" as Name<CommaMean>,
-                    decimal: 1.0176007879499522 as Decimal, // 30.206031¢
+                    monzo: [-3, 3, 0, 0, -0.5] as Monzo,
+                    decimal: 1.017600 as Decimal,
+                    cents: 30.206031 as Cents,
+                    quotient: [27, 26.532998] as Quotient,
                 },
                 {
                     name: "(| (|(" as Name<CommaMean>,
-                    decimal: 1.0210279739298342 as Decimal, // 36.026872¢
+                    monzo: [-7, 5, 0.5, 0.5, -1] as Monzo,
+                    decimal: 1.021027 as Decimal,
+                    cents: 36.026872 as Cents,
+                    quotient: [1437.607387, 1408] as Quotient,
                 },
                 {
                     name: "(|( //|" as Name<CommaMean>,
-                    decimal: 1.023941041116049 as Decimal,  // 40.959176¢
+                    monzo: [-5, 5, -0.5, 0, -0.5] as Monzo,
+                    decimal: 1.023941 as Decimal,
+                    cents: 40.959176 as Cents,
+                    quotient: [243, 237.318351] as Quotient,
                 },
                 {
                     name: "//| /|)" as Name<CommaMean>,
-                    decimal: 1.0268624194951477 as Decimal, // 45.891480¢
+                    monzo: [-3, 5, -1.5, -0.5] as Monzo,
+                    decimal: 1.026862 as Decimal,
+                    cents: 45.891480 as Cents,
+                    quotient: [243, 236.643191] as Quotient,
                 },
                 {
                     name: "/|) /|\\" as Name<CommaMean>,
-                    decimal: 1.0299098434883927 as Decimal, // 51.021662¢
+                    monzo: [-1.5, 1.5, -0.5, -0.5, 0.5] as Monzo,
+                    decimal: 1.029909 as Decimal,
+                    cents: 51.021662 as Cents,
+                    quotient: [17.233687, 16.733200] as Quotient,
                 },
                 {
                     name: "/|\\ (|)" as Name<CommaMean>,
-                    decimal: 1.0333784852366534 as Decimal, // 56.842503¢
+                    monzo: [-5.5, 3.5] as Monzo,
+                    decimal: 1.033378 as Decimal,
+                    cents: 56.842503 as Cents,
+                    quotient: [46.765371, 45.254833] as Quotient,
                 },
                 {
                     name: "(|) (|\\" as Name<CommaMean>,
-                    decimal: 1.0368588090517024 as Decimal, // 62.663343¢
+                    monzo: [-9.5, 5.5, 0.5, 0.5, -0.5] as Monzo,
+                    decimal: 1.036858 as Decimal,
+                    cents: 62.663343 as Cents,
+                    quotient: [2490.009036, 2401.492869] as Quotient,
                 },
             ])
         },
@@ -62,130 +99,223 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
     it(
         "can return the comma means for the High JI notation level, both the positions and the bounded commas' symbols",
         (): void => {
-            expect(computeJiNotationLevelCommaMeans(JiNotationLevel.HIGH)).toBeCloseToObject([
+            expect(computeJiNotationLevelCommaMeans(JiNotationLevel.HIGH).map(analyzePitch)).toBeCloseToObject([
                 {
                     name: "(|//|) )|" as Name<CommaMean>,
-                    decimal: 1.0009760861279353 as Decimal, // 1.689009¢
+                    monzo: [-4.5, 1.5, 0, 0, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.000976 as Decimal,
+                    cents: 1.689009 as Cents,
+                    quotient: [22.649503, 22.627417] as Quotient,
                 },
                 {
                     name: ")| |(" as Name<CommaMean>,
-                    decimal: 1.0026420125303974 as Decimal, // 4.567910¢
+                    monzo: [0.5, -1.5, 0.5, -0.5, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.002642 as Decimal,
+                    cents: 4.567910 as Cents,
+                    quotient: [13.784049, 13.747727] as Quotient,
                 },
                 {
                     name: "|( ~|" as Name<CommaMean>,
-                    decimal: 1.0041928905068678 as Decimal, // 7.243699¢
+                    monzo: [1.5, 0.5, 0.5, -0.5, 0, 0, -0.5] as Monzo,
+                    decimal: 1.004192 as Decimal,
+                    cents: 7.243699 as Cents,
+                    quotient: [10.954451, 10.908712] as Quotient,
                 },
                 {
                     name: "~| )|(" as Name<CommaMean>,
-                    decimal: 1.0053333711589283 as Decimal, // 9.208778¢
+                    monzo: [0, 1.5, 0, 0.5, -0.5, 0, -0.5] as Monzo,
+                    decimal: 1.005333 as Decimal,
+                    cents: 9.208778 as Cents,
+                    quotient: [13.747727, 13.674794] as Quotient,
                 },
                 {
                     name: ")|( )~|" as Name<CommaMean>,
-                    decimal: 1.0063021026187071 as Decimal, // 10.876179¢
+                    monzo: [5.5, -1, 0, 0.5, -1, -0.5] as Monzo,
+                    decimal: 1.006302 as Decimal,
+                    cents: 10.876179 as Cents,
+                    quotient: [119.733036, 118.983192] as Quotient,
                 },
                 {
                     name: ")~| ~|(" as Name<CommaMean>,
-                    decimal: 1.0077686656998388 as Decimal, // 13.397405¢
+                    monzo: [-4, 3.5, 0, 0, -0.5, -0.5, 0.5] as Monzo,
+                    decimal: 1.007768 as Decimal,
+                    cents: 13.397405 as Cents,
+                    quotient: [192.818568, 191.332172] as Quotient,
                 },
                 {
                     name: "~|( |~" as Name<CommaMean>,
-                    decimal: 1.0090734198593614 as Decimal, // 15.637377¢
+                    monzo: [-3.5, -0.5, 0, 0, 0, 0, 0.5, 0, 0.5] as Monzo,
+                    decimal: 1.009073 as Decimal,
+                    cents: 15.637377 as Cents,
+                    quotient: [19.77372, 19.595918] as Quotient,
                 },
                 {
                     name: "|~ ~~|" as Name<CommaMean>,
-                    decimal: 1.0099030933705948 as Decimal, // 17.060236¢
+                    monzo: [2, -2, 0, -1, 0.5, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.009903 as Decimal,
+                    cents: 17.060236 as Cents,
+                    quotient: [63.623895, 63] as Quotient,
                 },
                 {
                     name: "~~| )|~" as Name<CommaMean>,
-                    decimal: 1.0109354520533513 as Decimal, // 18.829061¢
+                    monzo: [-5.5, 5.5, 0, -1, 0.5, 0, 0, -0.5] as Monzo,
+                    decimal: 1.010935 as Decimal,
+                    cents: 18.829061 as Cents,
+                    quotient: [1395.928723, 1380.828737] as Quotient,
                 },
                 {
                     name: ")|~ /|" as Name<CommaMean>,
-                    decimal: 1.012083590358699 as Decimal,  // 20.794140¢
+                    monzo: [-7, 6.5, -0.5, 0, 0, 0, 0, -0.5] as Monzo,
+                    decimal: 1.012083 as Decimal,
+                    cents: 20.794140 as Cents,
+                    quotient: [1262.665039, 1247.589676] as Quotient,
                 },
                 {
                     name: "/| )/|" as Name<CommaMean>,
-                    decimal: 1.0134882872045345 as Decimal, // 23.195298¢
+                    monzo: [-8.5, 5.5, -1, 0, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.013488 as Decimal,
+                    cents: 23.195298 as Cents,
+                    quotient: [1834.609768, 1810.19336] as Quotient,
                 },
                 {
                     name: ")/| |)" as Name<CommaMean>,
-                    decimal: 1.0151750376870272 as Decimal, // 26.074200¢
+                    monzo: [-3.5, 2.5, -0.5, -0.5, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.015175 as Decimal,
+                    cents: 26.074200 as Cents,
+                    quotient: [67.94851, 66.932802] as Quotient,
                 },
                 {
                     name: "|) )|)" as Name<CommaMean>,
-                    decimal: 1.0168645954315534 as Decimal, // 28.953101¢
+                    monzo: [1.5, -0.5, 0, -1, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.016864 as Decimal,
+                    cents: 28.953101 as Cents,
+                    quotient: [12.328828, 12.124356] as Quotient,
                 },
                 {
                     name: ")|) |\\" as Name<CommaMean>,
-                    decimal: 1.0181877769873044 as Decimal, // 31.204382¢
+                    monzo: [-2, -1, 0.5, -0.5, 0.5, 0, 0, 0.5] as Monzo,
+                    decimal: 1.018187 as Decimal,
+                    cents: 31.204382 as Cents,
+                    quotient: [32.32646, 31.749016] as Quotient,
                 },
                 {
                     name: "|\\ (|" as Name<CommaMean>,
-                    decimal: 1.0189249274664447 as Decimal, // 32.457312¢
+                    monzo: [-6.5, 2.5, 0.5, 0.5] as Monzo,
+                    decimal: 1.018924 as Decimal,
+                    cents: 32.457312 as Cents,
+                    quotient: [92.222557, 90.509668] as Quotient,
                 },
                 {
                     name: "(| ~|)" as Name<CommaMean>,
-                    decimal: 1.0200821395684856 as Decimal, // 34.422391¢
+                    monzo: [-8, 3.5, 0, 1.5, -0.5] as Monzo,
+                    decimal: 1.020082 as Decimal,
+                    cents: 34.422391 as Cents,
+                    quotient: [866.106806, 849.055946] as Quotient,
                 },
                 {
                     name: "~|) /|~" as Name<CommaMean>,
-                    decimal: 1.021527541732732 as Decimal,  // 36.873721¢
+                    monzo: [-1.5, -1.5, -0.5, 1, 0, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.021527 as Decimal,
+                    cents: 36.873721 as Cents,
+                    quotient: [33.570821, 32.863353] as Quotient,
                 },
                 {
                     name: "/|~ (|(" as Name<CommaMean>,
-                    decimal: 1.0224747162910903 as Decimal, // 38.478202¢
+                    monzo: [-0.5, 0, 0, 0, -0.5, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.022474 as Decimal,
+                    cents: 38.478202 as Cents,
+                    quotient: [4.795832, 4.690416] as Quotient,
                 },
                 {
                     name: "(|( ~|\\" as Name<CommaMean>,
-                    decimal: 1.0230518172912486 as Decimal, // 39.455062¢
+                    monzo: [-8, 4, 0.5, 0, -0.5, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.023051 as Decimal,
+                    cents: 39.455062 as Cents,
+                    quotient: [868.628229, 849.055946] as Quotient,
                 },
                 {
                     name: "~|\\ //|" as Name<CommaMean>,
-                    decimal: 1.0242659708481365 as Decimal, // 41.508465¢
+                    monzo: [-11, 7, -1, 0, 0, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.024265 as Decimal,
+                    cents: 41.508465 as Cents,
+                    quotient: [10488.483541, 10240] as Quotient,
                 },
                 {
                     name: "//| )//|" as Name<CommaMean>,
-                    decimal: 1.0261578825892241 as Decimal, // 44.703261¢
+                    monzo: [-1.5, 2, -1.5, 0, 0, 0.5] as Monzo,
+                    decimal: 1.026157 as Decimal,
+                    cents: 44.703261 as Cents,
+                    quotient: [32.449961, 31.622777] as Quotient,
                 },
                 {
                     name: ")//| /|)" as Name<CommaMean>,
-                    decimal: 1.0278657191033935 as Decimal, // 47.582162¢
+                    monzo: [3.5, -1, -1, -0.5, 0, 0.5] as Monzo,
+                    decimal: 1.027865 as Decimal,
+                    cents: 47.582162 as Cents,
+                    quotient: [40.792156, 39.68627] as Quotient,
                 },
                 {
                     name: "/|) (|~" as Name<CommaMean>,
-                    decimal: 1.0289055430608551 as Decimal, // 49.332652¢
+                    monzo: [3, 0, -0.5, -0.5, 0.5, 0, 0, -0.5] as Monzo,
+                    decimal: 1.028905 as Decimal,
+                    cents: 49.332652 as Cents,
+                    quotient: [26.532998, 25.787594] as Quotient,
                 },
                 {
                     name: "(|~ /|\\" as Name<CommaMean>,
-                    decimal: 1.0302443927398632 as Decimal, // 51.583933¢
+                    monzo: [-0.5, -0.5, 0, 0, 1, 0, 0, -0.5] as Monzo,
+                    decimal: 1.030244 as Decimal,
+                    cents: 51.583933 as Cents,
+                    quotient: [11, 10.677078] as Quotient,
                 },
                 {
                     name: "/|\\ (/|" as Name<CommaMean>,
-                    decimal: 1.0316239243982173 as Decimal, // 53.900563¢
+                    monzo: [3.5, -1.5, 0, -1, 0.5] as Monzo,
+                    decimal: 1.031623 as Decimal,
+                    cents: 53.900563 as Cents,
+                    quotient: [37.523326, 36.373067] as Quotient,
                 },
                 {
                     name: "(/| )/|\\" as Name<CommaMean>,
-                    decimal: 1.0325804604631443 as Decimal, // 55.505043¢
+                    monzo: [4.5, 0, 0.5, -2] as Monzo,
+                    decimal: 1.032580 as Decimal,
+                    cents: 55.505043 as Cents,
+                    quotient: [50.596443, 49] as Quotient,
                 },
                 {
                     name: ")/|\\ |\\)" as Name<CommaMean>,
-                    decimal: 1.0339617404975123 as Decimal, // 57.819363¢
+                    monzo: [-13, 7.5, 0.5] as Monzo,
+                    decimal: 1.033961 as Decimal,
+                    cents: 57.819363 as Cents,
+                    quotient: [8470.214578, 8192] as Quotient,
                 },
                 {
                     name: "|\\) (|)" as Name<CommaMean>,
-                    decimal: 1.0351360301894192 as Decimal, // 59.784442¢
+                    monzo: [-14.5, 8.5, 0, 1, -0.5] as Monzo,
+                    decimal: 1.035136 as Decimal,
+                    cents: 59.784442 as Cents,
+                    quotient: [79547.897439, 76847.771809] as Quotient,
                 },
                 {
                     name: "(|) |\\\\" as Name<CommaMean>,
-                    decimal: 1.0365221119137287 as Decimal, // 62.101072¢
+                    monzo: [-10.5, 7.5, 0, 0, -1, 0, 0, 0.5] as Monzo,
+                    decimal: 1.036522 as Decimal,
+                    cents: 62.101072 as Cents,
+                    quotient: [16511.48791, 15929.701567] as Quotient,
                 },
                 {
                     name: "|\\\\ (|\\" as Name<CommaMean>,
-                    decimal: 1.0378708725518453 as Decimal, // 64.352353¢
+                    monzo: [-14, 7, 0.5, 0.5, -0.5, 0, 0, 0.5] as Monzo,
+                    decimal: 1.037870 as Decimal,
+                    cents: 64.352353 as Cents,
+                    quotient: [56397.467895, 54339.580565] as Quotient,
                 },
                 {
                     name: "(|\\ )|\\\\" as Name<CommaMean>,
-                    decimal: 1.0389208180631835 as Decimal, // 66.102843¢
+                    monzo: [-14.5, 8, 1, 0.5, 0, -0.5] as Monzo,
+                    decimal: 1.038920 as Decimal,
+                    cents: 66.102843 as Cents,
+                    quotient: [86793.871759, 83542.335711] as Quotient,
                 },
             ])
         },
@@ -195,222 +325,384 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
         // tslint:disable-next-line max-line-length
         "can return the comma means for the Ultra JI notation level, both the positions and the bounded commas' symbols",
         (): void => {
-            expect(computeJiNotationLevelCommaMeans(JiNotationLevel.ULTRA)).toBeCloseToObject([
+            expect(computeJiNotationLevelCommaMeans(JiNotationLevel.ULTRA).map(analyzePitch)).toBeCloseToObject([
                 {
                     name: "(|//|) .)|" as Name<CommaMean>,
-                    decimal: 1.0004114379931337 as Decimal, // 0.712148¢
+                    monzo: [3, -2.5, -0.5, 0, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.000411 as Decimal,
+                    cents: 0.712148 as Cents,
+                    quotient: [34.871192, 34.85685] as Quotient,
                 },
                 {
                     name: ".)| '|" as Name<CommaMean>,
-                    decimal: 1.0009760861279355 as Decimal, // 1.689009¢
+                    monzo: [-4.5, 1.5, 0, 0, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.000976 as Decimal,
+                    cents: 1.689009 as Cents,
+                    quotient: [22.649503, 22.627417] as Quotient,
                 },
                 {
                     name: "'| )|" as Name<CommaMean>,
-                    decimal: 1.0015410529591293 as Decimal, // 2.665869¢
+                    monzo: [-12, 5.5, 0.5, 0, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.001541 as Decimal,
+                    cents: 2.665869 as Cents,
+                    quotient: [4102.312153, 4096] as Quotient,
                 },
                 {
                     name: ")| |(" as Name<CommaMean>,
-                    decimal: 1.0026420125303974 as Decimal, // 4.567910¢
+                    monzo: [0.5, -1.5, 0.5, -0.5, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.002642 as Decimal,
+                    cents: 4.567910 as Cents,
+                    quotient: [13.784049, 13.747727] as Quotient,
                 },
                 {
                     name: "|( .~|" as Name<CommaMean>,
-                    decimal: 1.003626427780671 as Decimal,  // 6.266838¢
+                    monzo: [9, -3.5, 0, -0.5, 0, 0, -0.5] as Monzo,
+                    decimal: 1.003626 as Decimal,
+                    cents: 6.266838 as Cents,
+                    quotient: [512, 510.149978] as Quotient,
                 },
                 {
                     name: ".~| '|(" as Name<CommaMean>,
-                    decimal: 1.0041928905068676 as Decimal, // 7.243699¢
+                    monzo: [1.5, 0.5, 0.5, -0.5, 0, 0, -0.5] as Monzo,
+                    decimal: 1.004192 as Decimal,
+                    cents: 7.243699 as Cents,
+                    quotient: [10.954451, 10.908712] as Quotient,
                 },
                 {
                     name: "'|( ~|" as Name<CommaMean>,
-                    decimal: 1.004759672953641 as Decimal,  // 8.220559¢
+                    monzo: [-6, 4.5, 1, -0.5, 0, 0, -0.5] as Monzo,
+                    decimal: 1.004759 as Decimal,
+                    cents: 8.220559 as Cents,
+                    quotient: [701.480577, 698.157575] as Quotient,
                 },
                 {
                     name: "~| )|(" as Name<CommaMean>,
-                    decimal: 1.0053333711589283 as Decimal, // 9.208778¢
+                    monzo: [0, 1.5, 0, 0.5, -0.5, 0, -0.5] as Monzo,
+                    decimal: 1.005333 as Decimal,
+                    cents: 9.208778 as Cents,
+                    quotient: [13.747727, 13.674794] as Quotient,
                 },
                 {
                     name: ")|( ')|(" as Name<CommaMean>,
-                    decimal: 1.0061792555081206 as Decimal, // 10.664821¢
+                    monzo: [-0.5, 0, 0.5, 1, -1] as Monzo,
+                    decimal: 1.006179 as Decimal,
+                    cents: 10.664821 as Cents,
+                    quotient: [15.652476, 15.556349] as Quotient,
                 },
                 {
                     name: "')|( )~|" as Name<CommaMean>,
-                    decimal: 1.0068700755383595 as Decimal, // 11.853039¢
+                    monzo: [-2, 3, 0.5, 0.5, -1, -0.5] as Monzo,
+                    decimal: 1.006870 as Decimal,
+                    cents: 11.853039 as Cents,
+                    quotient: [159.734154, 158.644256] as Quotient,
                 },
                 {
                     name: ")~| .~|(" as Name<CommaMean>,
-                    decimal: 1.0072001858876987 as Decimal, // 12.420545¢
+                    monzo: [3.5, -0.5, -0.5, 0, -0.5, -0.5, 0.5] as Monzo,
+                    decimal: 1.007200 as Decimal,
+                    cents: 12.420545 as Cents,
+                    quotient: [46.647615, 46.314145] as Quotient,
                 },
                 {
                     name: ".~|( ~|(" as Name<CommaMean>,
-                    decimal: 1.007976004178671 as Decimal,  // 13.753553¢
+                    monzo: [-4.5, 1, -0.5, 0, 0, 0, 1] as Monzo,
+                    decimal: 1.007976 as Decimal,
+                    cents: 13.753553 as Cents,
+                    quotient: [51, 50.596443] as Quotient,
                 },
                 {
                     name: "~|( |~" as Name<CommaMean>,
-                    decimal: 1.0090734198593614 as Decimal, // 15.637377¢
+                    monzo: [-3.5, -0.5, 0, 0, 0, 0, 0.5, 0, 0.5] as Monzo,
+                    decimal: 1.009073 as Decimal,
+                    cents: 15.637377 as Cents,
+                    quotient: [19.77372, 19.595918] as Quotient,
                 },
                 {
                     name: "|~ ~~|" as Name<CommaMean>,
-                    decimal: 1.0099030933705948 as Decimal, // 17.060236¢
+                    monzo: [2, -2, 0, -1, 0.5, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.009903 as Decimal,
+                    cents: 17.060236 as Cents,
+                    quotient: [63.623895, 63] as Quotient,
                 },
                 {
                     name: "~~| ./|" as Name<CommaMean>,
-                    decimal: 1.0107808884892648 as Decimal, // 18.564349¢
+                    monzo: [5, -1, -1, -1, 0.5] as Monzo,
+                    decimal: 1.010780 as Decimal,
+                    cents: 18.564349 as Cents,
+                    quotient: [106.131993, 105] as Quotient,
                 },
                 {
                     name: "./| )|~" as Name<CommaMean>,
-                    decimal: 1.0115126765082294 as Decimal, // 19.817280¢
+                    monzo: [0.5, 2.5, -1, 0, 0, 0, 0, -0.5] as Monzo,
+                    decimal: 1.011512 as Decimal,
+                    cents: 19.817280 as Cents,
+                    quotient: [22.045408, 21.794495] as Quotient,
                 },
                 {
                     name: ")|~ /|" as Name<CommaMean>,
-                    decimal: 1.012083590358699 as Decimal,  // 20.794140¢
+                    monzo: [-7, 6.5, -0.5, 0, 0, 0, 0, -0.5] as Monzo,
+                    decimal: 1.012083 as Decimal,
+                    cents: 20.794140 as Cents,
+                    quotient: [1262.665039, 1247.589676] as Quotient,
                 },
                 {
                     name: "/| .)/|" as Name<CommaMean>,
-                    decimal: 1.0129165809680478 as Decimal, // 22.218438¢
+                    monzo: [-1, 1.5, -1.5, 0, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.012916 as Decimal,
+                    cents: 22.218438 as Cents,
+                    quotient: [22.649503, 22.36068] as Quotient,
                 },
                 {
                     name: ".)/| '/|" as Name<CommaMean>,
-                    decimal: 1.0134882872045345 as Decimal, // 23.195298¢
+                    monzo: [-8.5, 5.5, -1, 0, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.013488 as Decimal,
+                    cents: 23.195298 as Cents,
+                    quotient: [1834.609768, 1810.19336] as Quotient,
                 },
                 {
                     name: "'/| )/|" as Name<CommaMean>,
-                    decimal: 1.0140603161211186 as Decimal, // 24.172159¢
+                    monzo: [-16, 9.5, -0.5, 0, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.014060 as Decimal,
+                    cents: 24.172159 as Cents,
+                    quotient: [148603.391189, 146542.950973] as Quotient,
                 },
                 {
                     name: ")/| .|)" as Name<CommaMean>,
-                    decimal: 1.0146023799587647 as Decimal, // 25.097339¢
+                    monzo: [4, -1.5, -1, -0.5, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.014602 as Decimal,
+                    cents: 25.097339 as Cents,
+                    quotient: [69.742383, 68.738635] as Quotient,
                 },
                 {
                     name: ".|) |)" as Name<CommaMean>,
-                    decimal: 1.0152999644169847 as Decimal, // 26.287231¢
+                    monzo: [13.5, -6, -0.5, -1] as Monzo,
+                    decimal: 1.015299 as Decimal,
+                    cents: 26.287231 as Cents,
+                    quotient: [11585.237503, 11410.654889] as Quotient,
                 },
                 {
                     name: "|) '|)" as Name<CommaMean>,
-                    decimal: 1.0164463907684076 as Decimal, // 28.240952¢
+                    monzo: [-1.5, 2, 0.5, -1] as Monzo,
+                    decimal: 1.016446 as Decimal,
+                    cents: 28.240952 as Cents,
+                    quotient: [20.124612, 19.79899] as Quotient,
                 },
                 {
                     name: "'|) )|)" as Name<CommaMean>,
-                    decimal: 1.0174385299902267 as Decimal, // 29.929961¢
+                    monzo: [-6, 3.5, 0.5, -1, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.017438 as Decimal,
+                    cents: 29.929961 as Cents,
+                    quotient: [455.812461, 448] as Quotient,
                 },
                 {
                     name: ")|) .(|" as Name<CommaMean>,
-                    decimal: 1.0180194675759577 as Decimal, // 30.918180¢
+                    monzo: [0, 0.5, -0.5, 0, -0.5, 0, 0, 0.5] as Monzo,
+                    decimal: 1.018019 as Decimal,
+                    cents: 30.918180 as Cents,
+                    quotient: [7.549834, 7.416198] as Quotient,
                 },
                 {
                     name: ".(| |\\" as Name<CommaMean>,
-                    decimal: 1.0183501544346312 as Decimal, // 31.480451¢
+                    monzo: [1, -1.5, 0, 0.5] as Monzo,
+                    decimal: 1.018350 as Decimal,
+                    cents: 31.480451 as Cents,
+                    quotient: [5.291503, 5.196152] as Quotient,
                 },
                 {
                     name: "|\\ (|" as Name<CommaMean>,
-                    decimal: 1.0189249274664447 as Decimal, // 32.457312¢
+                    monzo: [-6.5, 2.5, 0.5, 0.5] as Monzo,
+                    decimal: 1.018924 as Decimal,
+                    cents: 32.457312 as Cents,
+                    quotient: [92.222557, 90.509668] as Quotient,
                 },
                 {
                     name: "(| '(|" as Name<CommaMean>,
-                    decimal: 1.019869688844622 as Decimal,  // 34.061792¢
+                    monzo: [-5.5, 4, 1, -0.5, -0.5] as Monzo,
+                    decimal: 1.019869 as Decimal,
+                    cents: 34.061792 as Cents,
+                    quotient: [405, 397.109557] as Quotient,
                 },
                 {
                     name: "'(| ~|)" as Name<CommaMean>,
-                    decimal: 1.0206207261596576 as Decimal, // 35.336213¢
+                    monzo: [-1.5, -0.5, 1] as Monzo,
+                    decimal: 1.020620 as Decimal,
+                    cents: 35.336213 as Cents,
+                    quotient: [5, 4.898979] as Quotient,
                 },
                 {
                     name: "~|) .(|(" as Name<CommaMean>,
-                    decimal: 1.021203480717427 as Decimal,  // 36.324432¢
+                    monzo: [4.5, -3.5, 0, 1, -0.5] as Monzo,
+                    decimal: 1.021203 as Decimal,
+                    cents: 36.324432 as Cents,
+                    quotient: [158.391919, 155.103191] as Quotient,
                 },
                 {
                     name: ".(|( '~|)" as Name<CommaMean>,
-                    decimal: 1.0217798642119988 as Decimal, // 37.301292¢
+                    monzo: [-3, 0.5, 0.5, 1, -0.5] as Monzo,
+                    decimal: 1.021779 as Decimal,
+                    cents: 37.301292 as Cents,
+                    quotient: [27.110883, 26.532998] as Quotient,
                 },
                 {
                     name: "'~|) /|~" as Name<CommaMean>,
-                    decimal: 1.0221041081324975 as Decimal, // 37.850582¢
+                    monzo: [-9, 2.5, 0, 1, 0, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.022104 as Decimal,
+                    cents: 37.850582 as Cents,
+                    quotient: [523.317303, 512] as Quotient,
                 },
                 {
                     name: "/|~ (|(" as Name<CommaMean>,
-                    decimal: 1.0224747162910903 as Decimal, // 38.478202¢
+                    monzo: [-0.5, 0, 0, 0, -0.5, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.022474 as Decimal,
+                    cents: 38.478202 as Cents,
+                    quotient: [4.795832, 4.690416] as Quotient,
                 },
                 {
                     name: "(|( ~|\\" as Name<CommaMean>,
-                    decimal: 1.0230518172912486 as Decimal, // 39.455062¢
+                    monzo: [-8, 4, 0.5, 0, -0.5, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.023051 as Decimal,
+                    cents: 39.455062 as Cents,
+                    quotient: [868.628229, 849.055946] as Quotient,
                 },
                 {
                     name: "~|\\ .//|" as Name<CommaMean>,
-                    decimal: 1.0236881849469592 as Decimal, // 40.531605¢
+                    monzo: [-3.5, 3, -1.5, 0, 0, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.023688 as Decimal,
+                    cents: 40.531605 as Cents,
+                    quotient: [129.487451, 126.491106] as Quotient,
                 },
                 {
                     name: ".//| //|" as Name<CommaMean>,
-                    decimal: 1.024577961894555 as Decimal,  // 42.035718¢
+                    monzo: [-0.5, 4, -2.5] as Monzo,
+                    decimal: 1.024577 as Decimal,
+                    cents: 42.035718 as Cents,
+                    quotient: [81, 79.056942] as Quotient,
                 },
                 {
                     name: "//| '//|" as Name<CommaMean>,
-                    decimal: 1.0257358558871925 as Decimal, // 43.991112¢
+                    monzo: [-4.5, 4.5, -1, 0, 0, 0.5, 0, -0.5] as Monzo,
+                    decimal: 1.025735 as Decimal,
+                    cents: 43.991112 as Cents,
+                    quotient: [505.844838, 493.15312] as Quotient,
                 },
                 {
                     name: "'//| )//|" as Name<CommaMean>,
-                    decimal: 1.0267380547824267 as Decimal, // 45.681795¢
+                    monzo: [2, -1.5, -0.5, 0, 0, 1, 0, -0.5] as Monzo,
+                    decimal: 1.026738 as Decimal,
+                    cents: 45.681795 as Cents,
+                    quotient: [52, 50.645829] as Quotient,
                 },
                 {
                     name: ")//| /|)" as Name<CommaMean>,
-                    decimal: 1.0278657191033935 as Decimal, // 47.582162¢
+                    monzo: [3.5, -1, -1, -0.5, 0, 0.5] as Monzo,
+                    decimal: 1.027865 as Decimal,
+                    cents: 47.582162 as Cents,
+                    quotient: [40.792156, 39.68627] as Quotient,
                 },
                 {
                     name: "/|) (|~" as Name<CommaMean>,
-                    decimal: 1.0289055430608551 as Decimal, // 49.332652¢
+                    monzo: [3, 0, -0.5, -0.5, 0.5, 0, 0, -0.5] as Monzo,
+                    decimal: 1.028905 as Decimal,
+                    cents: 49.332652 as Cents,
+                    quotient: [26.532998, 25.787594] as Quotient,
                 },
                 {
                     name: "(|~ '/|)" as Name<CommaMean>,
-                    decimal: 1.0294862737219739 as Decimal, // 50.309513¢
+                    monzo: [-4.5, 4, 0, -0.5, 0.5, 0, 0, -0.5] as Monzo,
+                    decimal: 1.029486 as Decimal,
+                    cents: 50.309513 as Cents,
+                    quotient: [268.646608, 260.952103] as Quotient,
                 },
                 {
                     name: "'/|) ./|\\" as Name<CommaMean>,
-                    decimal: 1.0299098434883927 as Decimal, // 51.021662¢
+                    monzo: [-1.5, 1.5, -0.5, -0.5, 0.5] as Monzo,
+                    decimal: 1.029909 as Decimal,
+                    cents: 51.021662 as Cents,
+                    quotient: [17.233688, 16.733201] as Quotient,
                 },
                 {
                     name: "./|\\ /|\\" as Name<CommaMean>,
-                    decimal: 1.0306682744252496 as Decimal, // 52.296082¢
+                    monzo: [2.5, -3, -0.5, 0, 1] as Monzo,
+                    decimal: 1.030668 as Decimal,
+                    cents: 52.296082 as Cents,
+                    quotient: [62.225397, 60.373835] as Quotient,
                 },
                 {
                     name: "/|\\ (/|" as Name<CommaMean>,
-                    decimal: 1.0316239243982173 as Decimal, // 53.900563¢
+                    monzo: [3.5, -1.5, 0, -1, 0.5] as Monzo,
+                    decimal: 1.031623 as Decimal,
+                    cents: 53.900563 as Cents,
+                    quotient: [37.523326, 36.373067] as Quotient,
                 },
                 {
                     name: "(/| '/|\\" as Name<CommaMean>,
-                    decimal: 1.0322061893570194 as Decimal, // 54.877423¢
+                    monzo: [-4, 2.5, 0.5, -1, 0.5] as Monzo,
+                    decimal: 1.032206 as Decimal,
+                    cents: 54.877423 as Cents,
+                    quotient: [115.607093, 112] as Quotient,
                 },
                 {
                     name: "'/|\\ )/|\\" as Name<CommaMean>,
-                    decimal: 1.0327887829554296 as Decimal, // 55.854284¢
+                    monzo: [-11.5, 6.5, 1, -1, 0.5] as Monzo,
+                    decimal: 1.032788 as Decimal,
+                    cents: 55.854284 as Cents,
+                    quotient: [20938.930847, 20274.16563] as Quotient,
                 },
                 {
                     name: ")/|\\ .(|)" as Name<CommaMean>,
-                    decimal: 1.0337531814094754 as Decimal, // 57.470123¢
+                    monzo: [3, 1, 0, -1, -0.5] as Monzo,
+                    decimal: 1.033753 as Decimal,
+                    cents: 57.470123 as Cents,
+                    quotient: [24, 23.216374] as Quotient,
                 },
                 {
                     name: ".(|) |\\)" as Name<CommaMean>,
-                    decimal: 1.0345521125146488 as Decimal, // 58.807582¢
+                    monzo: [-7, 4.5, -0.5, 1, -0.5] as Monzo,
+                    decimal: 1.034552 as Decimal,
+                    cents: 58.807582 as Cents,
+                    quotient: [982.072808, 949.273406] as Quotient,
                 },
                 {
                     name: "|\\) (|)" as Name<CommaMean>,
-                    decimal: 1.0351360301894192 as Decimal, // 59.784442¢
+                    monzo: [-14.5, 8.5, 0, 1, -0.5] as Monzo,
+                    decimal: 1.035136 as Decimal,
+                    cents: 59.784442 as Cents,
+                    quotient: [79547.897439, 76847.771809] as Quotient,
                 },
                 {
                     name: "(|) '(|)" as Name<CommaMean>,
-                    decimal: 1.0360958227277313 as Decimal, // 61.388923¢
+                    monzo: [-13.5, 10, 0.5, 0, -1] as Monzo,
+                    decimal: 1.036095 as Decimal,
+                    cents: 61.388923 as Cents,
+                    quotient: [132037.578003, 127437.612533] as Quotient,
                 },
                 {
                     name: "'(|) .(|\\" as Name<CommaMean>,
-                    decimal: 1.0368588090517024 as Decimal, // 62.663343¢
+                    monzo: [-9.5, 5.5, 0.5, 0.5, -0.5] as Monzo,
+                    decimal: 1.036858 as Decimal,
+                    cents: 62.663343 as Cents,
+                    quotient: [2490.009036, 2401.492869] as Quotient,
                 },
                 {
                     name: ".(|\\ |\\\\" as Name<CommaMean>,
-                    decimal: 1.0372854121592616 as Decimal, // 63.375492¢
+                    monzo: [-6.5, 3, 0, 0.5, -0.5, 0, 0, 0.5] as Monzo,
+                    decimal: 1.037285 as Decimal,
+                    cents: 63.375492 as Cents,
+                    quotient: [311.37919, 300.186609] as Quotient,
                 },
                 {
                     name: "|\\\\ (|\\" as Name<CommaMean>,
-                    decimal: 1.0378708725518453 as Decimal, // 64.352353¢
+                    monzo: [-14, 7, 0.5, 0.5, -0.5, 0, 0, 0.5] as Monzo,
+                    decimal: 1.037870 as Decimal,
+                    cents: 64.352353 as Cents,
+                    quotient: [56397.467895, 54339.580565] as Quotient,
                 },
                 {
                     name: "(|\\ )|\\\\" as Name<CommaMean>,
-                    decimal: 1.0389208180631835 as Decimal, // 66.102843¢
+                    monzo: [-14.5, 8, 1, 0.5, 0, -0.5] as Monzo,
+                    decimal: 1.038920 as Decimal,
+                    cents: 66.102843 as Cents,
+                    quotient: [86793.871759, 83542.335711] as Quotient,
                 },
             ])
         },
@@ -419,598 +711,1043 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
     it(
         "can return the comma means for the Extreme JI notation level, both the positions and the bounded commas' symbols",
         (): void => {
-            expect(computeJiNotationLevelCommaMeans(JiNotationLevel.EXTREME)).toBeCloseToObject([
+
+            expect(computeJiNotationLevelCommaMeans(JiNotationLevel.EXTREME).map(analyzePitch)).toBeCloseToObject([
                 {
                     name: "(|//|) `|" as Name<CommaMean>,
-                    decimal: 1.0001220926687902 as Decimal, // 0.211358¢
+                    monzo: [6, -1, -0.5, -0.5, 0, -0.5] as Monzo,
+                    decimal: 1.000122 as Decimal,
+                    cents: 0.211358 as Cents,
+                    quotient: [64, 63.992187] as Quotient,
                 },
                 {
                     name: "`| ``|" as Name<CommaMean>,
-                    decimal: 1.000362593355847 as Decimal,  // 0.627620¢
+                    monzo: [8.5, -2.5, 0, -1, -0.5] as Monzo,
+                    decimal: 1.000362 as Decimal,
+                    cents: 0.627620 as Cents,
+                    quotient: [362.038672, 361.907447] as Quotient,
                 },
                 {
                     name: "``| .)|" as Name<CommaMean>,
-                    decimal: 1.0006520082594448 as Decimal, // 1.128411¢
+                    monzo: [5.5, -4, 0, -0.5, -0.5, 0.5, 0, 0.5] as Monzo,
+                    decimal: 1.000652 as Decimal,
+                    cents: 1.128411 as Cents,
+                    quotient: [711.235545, 710.772115] as Quotient,
                 },
                 {
                     name: ".)| '|" as Name<CommaMean>,
-                    decimal: 1.0009760861279355 as Decimal, // 1.689009¢
+                    monzo: [-4.5, 1.5, 0, 0, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.000976 as Decimal,
+                    cents: 1.689009 as Cents,
+                    quotient: [22.649503, 22.627417] as Quotient,
                 },
                 {
                     name: "'| `'|" as Name<CommaMean>,
-                    decimal: 1.0012513809203998 as Decimal, // 2.165078¢
+                    monzo: [-9, 7, 0.5, -0.5, 0, -0.5] as Monzo,
+                    decimal: 1.001251 as Decimal,
+                    cents: 2.165078 as Cents,
+                    quotient: [4890.280667, 4884.168711] as Quotient,
                 },
                 {
                     name: "`'| ,)|" as Name<CommaMean>,
-                    decimal: 1.001548851427391 as Decimal,  // 2.679349¢
+                    monzo: [-5.5, 8, -2, -1, 0, -0.5, 0, 0.5] as Monzo,
+                    decimal: 1.001548 as Decimal,
+                    cents: 2.679349 as Cents,
+                    quotient: [28598.735969, 28554.509276] as Quotient,
                 },
                 {
                     name: ",)| )|" as Name<CommaMean>,
-                    decimal: 1.0018386095273133 as Decimal, // 3.180140¢
+                    monzo: [-8.5, 6.5, -2, -0.5, 0, 0, 0, 1] as Monzo,
+                    decimal: 1.001838 as Decimal,
+                    cents: 3.180140 as Cents,
+                    quotient: [23990.635736, 23946.607275] as Quotient,
                 },
                 {
                     name: ")| `)|" as Name<CommaMean>,
-                    decimal: 1.0021129133950835 as Decimal, // 3.654088¢
+                    monzo: [-6, 2.5, -0.5, 1, -0.5, 0, 0, 0.5] as Monzo,
+                    decimal: 1.002112 as Decimal,
+                    cents: 3.654088 as Cents,
+                    quotient: [475.639569, 474.636703] as Quotient,
                 },
                 {
                     name: "`)| ``)|" as Name<CommaMean>,
-                    decimal: 1.00243843327159 as Decimal,   // 4.216360¢
+                    monzo: [-5, 0.5, 0, 1.5] as Monzo,
+                    decimal: 1.002438 as Decimal,
+                    cents: 4.216360 as Cents,
+                    quotient: [32.07803, 32] as Quotient,
                 },
                 {
                     name: "``)| ,,|(" as Name<CommaMean>,
-                    decimal: 1.0027265772851153 as Decimal, // 4.713919¢
+                    monzo: [-1, -2, 0.5, 0.5, 1, -0.5] as Monzo,
+                    decimal: 1.002726 as Decimal,
+                    cents: 4.713919 as Cents,
+                    quotient: [65.076878, 64.899923] as Quotient,
                 },
                 {
                     name: ",,|( ,|(" as Name<CommaMean>,
-                    decimal: 1.0030003067719448 as Decimal, // 5.186456¢
+                    monzo: [-3, 1.5, 0, 0, 0, -0.5, 0, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.003000 as Decimal,
+                    cents: 5.186456 as Cents,
+                    quotient: [28.930952, 28.84441] as Quotient,
                 },
                 {
                     name: ",|( |(" as Name<CommaMean>,
-                    decimal: 1.0032414995869672 as Decimal, // 5.602718¢
+                    monzo: [-0.5, 0, 0.5, -0.5, -0.5, 0, 0, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.003241 as Decimal,
+                    cents: 5.602718 as Cents,
+                    quotient: [12.4499, 12.409674] as Quotient,
                 },
                 {
                     name: "|( `|(" as Name<CommaMean>,
-                    decimal: 1.003540379302116 as Decimal,  // 6.118400¢
+                    monzo: [7.5, -6.5, 0, 1] as Monzo,
+                    decimal: 1.003540 as Decimal,
+                    cents: 6.118400 as Cents,
+                    quotient: [1267.135352, 1262.665039] as Quotient,
                 },
                 {
                     name: "`|( .~|" as Name<CommaMean>,
-                    decimal: 1.0038354948442407 as Decimal, // 6.627437¢
+                    monzo: [6.5, -4, -1, 1.5, 0, 0, -0.5] as Monzo,
+                    decimal: 1.003835 as Decimal,
+                    cents: 6.627437 as Cents,
+                    quotient: [1676.262509, 1669.857778] as Quotient,
                 },
                 {
                     name: ".~| ,'|(" as Name<CommaMean>,
-                    decimal: 1.0040781190463515 as Decimal, // 7.045821¢
+                    monzo: [2, 4, -1.5, -1, 0, 0, -0.5] as Monzo,
+                    decimal: 1.004078 as Decimal,
+                    cents: 7.045821 as Cents,
+                    quotient: [324, 322.684056] as Quotient,
                 },
                 {
                     name: ",'|( '|(" as Name<CommaMean>,
-                    decimal: 1.0043494832354019 as Decimal, // 7.513645¢
+                    monzo: [-4.5, 5.5, 0, -1.5] as Monzo,
+                    decimal: 1.004349 as Decimal,
+                    cents: 7.513645 as Cents,
+                    quotient: [420.888346, 419.065627] as Quotient,
                 },
                 {
                     name: "'|( ,~|" as Name<CommaMean>,
-                    decimal: 1.0046735273134129 as Decimal, // 8.072121¢
+                    monzo: [-7.5, 1.5, 1, 1] as Monzo,
+                    decimal: 1.004673 as Decimal,
+                    cents: 8.072121 as Cents,
+                    quotient: [181.865335, 181.019336] as Quotient,
                 },
                 {
                     name: ",~| ~|" as Name<CommaMean>,
-                    decimal: 1.0049689760853675 as Decimal, // 8.581158¢
+                    monzo: [-8.5, 4, 0, 1.5, 0, 0, -0.5] as Monzo,
+                    decimal: 1.004968 as Decimal,
+                    cents: 8.581158 as Cents,
+                    quotient: [1500.140993, 1492.723685] as Quotient,
                 },
                 {
                     name: "~| ,)|(" as Name<CommaMean>,
-                    decimal: 1.0051864089520404 as Decimal, // 8.955683¢
+                    monzo: [-12, 4.5, 0, 0, 2, 0, -0.5] as Monzo,
+                    decimal: 1.005186 as Decimal,
+                    cents: 8.955683 as Cents,
+                    quotient: [16975.829965, 16888.240643] as Quotient,
                 },
                 {
                     name: ",)|( )|(" as Name<CommaMean>,
-                    decimal: 1.0054646693886806 as Decimal, // 9.434865¢
+                    monzo: [-5, -1, 0, 0.5, 1.5] as Monzo,
+                    decimal: 1.005464 as Decimal,
+                    cents: 9.434865 as Cents,
+                    quotient: [96.524608, 96] as Quotient,
                 },
                 {
                     name: ")|( `)|(" as Name<CommaMean>,
-                    decimal: 1.0057779303058083 as Decimal, // 9.974162¢
+                    monzo: [5, -5.5, 1, 0.5] as Monzo,
+                    decimal: 1.005777 as Decimal,
+                    cents: 9.974162 as Cents,
+                    quotient: [423.32021, 420.888346] as Quotient,
                 },
                 {
                     name: "`)|( ``)|(" as Name<CommaMean>,
-                    decimal: 1.006103668289781 as Decimal,  // 10.534760¢
+                    monzo: [-5, 0, 1, 1, 0.5, -0.5] as Monzo,
+                    decimal: 1.006103 as Decimal,
+                    cents: 10.534760 as Cents,
+                    quotient: [116.081868, 115.377641] as Quotient,
                 },
                 {
                     name: "``)|( ,')|(" as Name<CommaMean>,
-                    decimal: 1.0063534432530417 as Decimal, // 10.964502¢
+                    monzo: [4, 1, -1, -0.5, 0, -0.5] as Monzo,
+                    decimal: 1.006353 as Decimal,
+                    cents: 10.964502 as Cents,
+                    quotient: [48, 47.69696] as Quotient,
                 },
                 {
                     name: ",')|( ')|(" as Name<CommaMean>,
-                    decimal: 1.006595442401244 as Decimal,  // 11.380764¢
+                    monzo: [6.5, -0.5, -0.5, -1, -0.5] as Monzo,
+                    decimal: 1.006595 as Decimal,
+                    cents: 11.380764 as Cents,
+                    quotient: [90.509668, 89.916628] as Quotient,
                 },
                 {
                     name: "')|( )~|" as Name<CommaMean>,
-                    decimal: 1.0068700755383595 as Decimal, // 11.853039¢
+                    monzo: [-2, 3, 0.5, 0.5, -1, -0.5] as Monzo,
+                    decimal: 1.006870 as Decimal,
+                    cents: 11.853039 as Cents,
+                    quotient: [159.734154, 158.644256] as Quotient,
                 },
                 {
                     name: ")~| .~|(" as Name<CommaMean>,
-                    decimal: 1.0072001858876987 as Decimal, // 12.420545¢
+                    monzo: [3.5, -0.5, -0.5, 0, -0.5, -0.5, 0.5] as Monzo,
+                    decimal: 1.007200 as Decimal,
+                    cents: 12.420545 as Cents,
+                    quotient: [46.647615, 46.314145] as Quotient,
                 },
                 {
                     name: ".~|( `.~|(" as Name<CommaMean>,
-                    decimal: 1.0075505355472798 as Decimal, // 13.022641¢
+                    monzo: [6, -4, -0.5, 0, 0.5, 0, 0.5, 0, -0.5] as Monzo,
+                    decimal: 1.007550 as Decimal,
+                    cents: 13.022641 as Cents,
+                    quotient: [875.186837, 868.628229] as Quotient,
                 },
                 {
                     name: "`.~|( ,,~|(" as Name<CommaMean>,
-                    decimal: 1.007846830373725 as Decimal,  // 13.531678¢
+                    monzo: [5, -1.5, -1.5, 0.5, 0.5, 0, 0, 0, -0.5] as Monzo,
+                    decimal: 1.007846 as Decimal,
+                    cents: 13.531678 as Cents,
+                    quotient: [280.79886, 278.612634] as Quotient,
                 },
                 {
                     name: ",,~|( ,~|(" as Name<CommaMean>,
-                    decimal: 1.008115219752334 as Decimal,  // 13.992644¢
+                    monzo: [0.5, -1.5, -1, 1.5] as Monzo,
+                    decimal: 1.008115 as Decimal,
+                    cents: 13.992644 as Cents,
+                    quotient: [26.191602, 25.980762] as Quotient,
                 },
                 {
                     name: ",~|( ~|(" as Name<CommaMean>,
-                    decimal: 1.0083876750164096 as Decimal, // 14.460468¢
+                    monzo: [-6, 0, 0.5, 1, 0, 0, 0.5] as Monzo,
+                    decimal: 1.008387 as Decimal,
+                    cents: 14.460468 as Cents,
+                    quotient: [64.536811, 64] as Quotient,
                 },
                 {
                     name: "~|( `~|(" as Name<CommaMean>,
-                    decimal: 1.0086816227489368 as Decimal, // 14.965054¢
+                    monzo: [-5, 0.5, 0, -0.5, 0.5, 0.5, 0.5] as Monzo,
+                    decimal: 1.008681 as Decimal,
+                    cents: 14.965054 as Cents,
+                    quotient: [85.399063, 84.664042] as Quotient,
                 },
                 {
                     name: "`~|( ,,|~" as Name<CommaMean>,
-                    decimal: 1.0089782501991804 as Decimal, // 15.474090¢
+                    monzo: [-6, 3, -1, 0, 0.5, 0.5] as Monzo,
+                    decimal: 1.008978 as Decimal,
+                    cents: 15.474090 as Cents,
+                    quotient: [322.87304, 320] as Quotient,
                 },
                 {
                     name: ",,|~ ,|~" as Name<CommaMean>,
-                    decimal: 1.0092535334465123 as Decimal, // 15.946365¢
+                    monzo: [-14.5, 6.5, 0, 1.5] as Monzo,
+                    decimal: 1.009253 as Decimal,
+                    cents: 15.946365 as Cents,
+                    quotient: [23384.883771, 23170.475006] as Quotient,
                 },
                 {
                     name: ",|~ |~" as Name<CommaMean>,
-                    decimal: 1.009485538896294 as Decimal,  // 16.344292¢
+                    monzo: [-5, -1.5, 1, 1, 0, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.009485 as Decimal,
+                    cents: 16.344292 as Cents,
+                    quotient: [167.854103, 166.276878] as Quotient,
                 },
                 {
                     name: "|~ `|~" as Name<CommaMean>,
-                    decimal: 1.0097320555114089 as Decimal, // 16.767008¢
+                    monzo: [7, -3.5, 0, 0, 0, -1, 0, 0, 0.5] as Monzo,
+                    decimal: 1.009732 as Decimal,
+                    cents: 16.767008 as Cents,
+                    quotient: [613.866435, 607.949833] as Quotient,
                 },
                 {
                     name: "`|~ ~~|" as Name<CommaMean>,
-                    decimal: 1.010032992797895 as Decimal,  // 17.282903¢
+                    monzo: [4, 0.5, 0, -1, 0.5, -1] as Monzo,
+                    decimal: 1.010032 as Decimal,
+                    cents: 17.282903 as Cents,
+                    quotient: [91.913002, 91] as Quotient,
                 },
                 {
                     name: "~~| `~~|" as Name<CommaMean>,
-                    decimal: 1.0103313674747298 as Decimal, // 17.794253¢
+                    monzo: [-4.5, 4, 0, -1, 1, 0, 0, 0, 0, 0, -0.5] as Monzo,
+                    decimal: 1.010331 as Decimal,
+                    cents: 17.794253 as Cents,
+                    quotient: [891, 881.888882] as Quotient,
                 },
                 {
                     name: "`~~| ``~~|" as Name<CommaMean>,
-                    decimal: 1.0106110521630236 as Decimal, // 18.273435¢
+                    monzo: [2.5, -1.5, 0, -0.5, 0.5, 0, 0.5, 0, 0, 0, -0.5] as Monzo,
+                    decimal: 1.010611 as Decimal,
+                    cents: 18.273435 as Cents,
+                    quotient: [77.356318, 76.544105] as Quotient,
                 },
                 {
                     name: "``~~| ,./|" as Name<CommaMean>,
-                    decimal: 1.0109372695868597 as Decimal, // 18.832173¢
+                    monzo: [6, -5.5, -0.5, 0, 0, 0.5, 0.5] as Monzo,
+                    decimal: 1.010937 as Decimal,
+                    cents: 18.832173 as Cents,
+                    quotient: [951.4284, 941.134953] as Quotient,
                 },
                 {
                     name: ",./| ./|" as Name<CommaMean>,
-                    decimal: 1.01123456036511 as Decimal,   // 19.341210¢
+                    monzo: [5, -3, -1.5, 0.5, 0, 0.5] as Monzo,
+                    decimal: 1.011234 as Decimal,
+                    cents: 19.341210 as Cents,
+                    quotient: [305.260544, 301.869177] as Quotient,
                 },
                 {
                     name: "./| )|~" as Name<CommaMean>,
-                    decimal: 1.0115126765082294 as Decimal, // 19.817280¢
+                    monzo: [0.5, 2.5, -1, 0, 0, 0, 0, -0.5] as Monzo,
+                    decimal: 1.011512 as Decimal,
+                    cents: 19.817280 as Cents,
+                    quotient: [22.045408, 21.794495] as Quotient,
                 },
                 {
                     name: ")|~ ,,/|" as Name<CommaMean>,
-                    decimal: 1.0117625252650368 as Decimal, // 20.244851¢
+                    monzo: [-1, 4.5, 0, 0, -0.5, 0, 0, -0.5, -0.5] as Monzo,
+                    decimal: 1.011762 as Decimal,
+                    cents: 20.244851 as Cents,
+                    quotient: [140.296115, 138.665064] as Quotient,
                 },
                 {
                     name: ",,/| ,/|" as Name<CommaMean>,
-                    decimal: 1.0120552382829548 as Decimal, // 20.745641¢
+                    monzo: [-4, 3, 0, 0.5, -0.5, 0.5, 0, 0, -0.5] as Monzo,
+                    decimal: 1.012055 as Decimal,
+                    cents: 20.745641 as Cents,
+                    quotient: [257.563584, 254.49558] as Quotient,
                 },
                 {
                     name: ",/| /|" as Name<CommaMean>,
-                    decimal: 1.0123763962639598 as Decimal, // 21.294931¢
+                    monzo: [-10, 5, -0.5, 0.5, 0, 0.5] as Monzo,
+                    decimal: 1.012376 as Decimal,
+                    cents: 21.294931 as Cents,
+                    quotient: [2318.072259, 2289.733609] as Quotient,
                 },
                 {
                     name: "/| `/|" as Name<CommaMean>,
-                    decimal: 1.012615734126228 as Decimal,  // 21.704167¢
+                    monzo: [-4.5, 0.5, 1, 0.5] as Monzo,
+                    decimal: 1.012615 as Decimal,
+                    cents: 21.704167 as Cents,
+                    quotient: [22.912878, 22.627417] as Quotient,
                 },
                 {
                     name: "`/| ``/|" as Name<CommaMean>,
-                    decimal: 1.0128551285708234 as Decimal, // 22.113403¢
+                    monzo: [1, -4, 2.5, 0.5, 0, -0.5] as Monzo,
+                    decimal: 1.012855 as Decimal,
+                    cents: 22.113403 as Cents,
+                    quotient: [295.803989, 292.049653] as Quotient,
                 },
                 {
                     name: "``/| .)/|" as Name<CommaMean>,
-                    decimal: 1.013156046536427 as Decimal,  // 22.627674¢
+                    monzo: [4.5, -3, 0, 0, 0, -0.5, 0, 0.5] as Monzo,
+                    decimal: 1.013156 as Decimal,
+                    cents: 22.627674 as Cents,
+                    quotient: [98.630624, 97.349884] as Quotient,
                 },
                 {
                     name: ".)/| '/|" as Name<CommaMean>,
-                    decimal: 1.0134882872045345 as Decimal, // 23.195298¢
+                    monzo: [-8.5, 5.5, -1, 0, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.013488 as Decimal,
+                    cents: 23.195298 as Cents,
+                    quotient: [1834.609768, 1810.19336] as Quotient,
                 },
                 {
                     name: "'/| `'/|" as Name<CommaMean>,
-                    decimal: 1.0137591295779698 as Decimal, // 23.657888¢
+                    monzo: [-19.5, 8.5, 2, 0.5] as Monzo,
+                    decimal: 1.013759 as Decimal,
+                    cents: 23.657888 as Cents,
+                    quotient: [751656.978365, 741455.200189] as Quotient,
                 },
                 {
                     name: "`'/| ,,)/|" as Name<CommaMean>,
-                    decimal: 1.0139333869076101 as Decimal, // 23.955448¢
+                    monzo: [-8, 0, 1.5, 1, 0.5] as Monzo,
+                    decimal: 1.013933 as Decimal,
+                    cents: 23.955448 as Cents,
+                    quotient: [259.566947, 256] as Quotient,
                 },
                 {
                     name: ",,)/| ,)/|" as Name<CommaMean>,
-                    decimal: 1.0140571807407932 as Decimal, // 24.166806¢
+                    monzo: [-2, -1, 1, 0.5, 0.5, -0.5] as Monzo,
+                    decimal: 1.014057 as Decimal,
+                    cents: 24.166806 as Cents,
+                    quotient: [43.874822, 43.266615] as Quotient,
                 },
                 {
                     name: ",)/| )/|" as Name<CommaMean>,
-                    decimal: 1.014300052082138 as Decimal,  // 24.581395¢
+                    monzo: [-10.5, 5, 1, 0, 0, -0.5, 0, 0.5] as Monzo,
+                    decimal: 1.014300 as Decimal,
+                    cents: 24.581395 as Cents,
+                    quotient: [5296.062216, 5221.395982] as Quotient,
                 },
                 {
                     name: ")/| ,.|)" as Name<CommaMean>,
-                    decimal: 1.0144785195688801 as Decimal, // 24.885981¢
+                    monzo: [-2, -0.5, -0.5, 0, 0, 0.5, 0, 0.5] as Monzo,
+                    decimal: 1.014478 as Decimal,
+                    cents: 24.885981 as Cents,
+                    quotient: [15.716234, 15.491933] as Quotient,
                 },
                 {
                     name: ",.|) .|)" as Name<CommaMean>,
-                    decimal: 1.0146033605858051 as Decimal, // 25.099012¢
+                    monzo: [15, -9, -0.5, -0.5, 0, 0.5] as Monzo,
+                    decimal: 1.014603 as Decimal,
+                    cents: 25.099012 as Cents,
+                    quotient: [118146.704194, 116446.198371] as Quotient,
                 },
                 {
                     name: ".|) `.|)" as Name<CommaMean>,
-                    decimal: 1.0149319568328004 as Decimal, // 25.659611¢
+                    monzo: [5, -3.5, -0.5, 0, 0.5] as Monzo,
+                    decimal: 1.014931 as Decimal,
+                    cents: 25.659611 as Cents,
+                    quotient: [106.131993, 104.57055] as Quotient,
                 },
                 {
                     name: "`.|) ,,|)" as Name<CommaMean>,
-                    decimal: 1.0152606595011793 as Decimal, // 26.220209¢
+                    monzo: [-5, 2, -0.5, 0.5, 1, -0.5] as Monzo,
+                    decimal: 1.015260 as Decimal,
+                    cents: 26.220209 as Cents,
+                    quotient: [261.92938, 257.992248] as Quotient,
                 },
                 {
                     name: ",,|) ,|)" as Name<CommaMean>,
-                    decimal: 1.015504800579495 as Decimal,  // 26.636471¢
+                    monzo: [-2.5, 0.5, 0, 0, 0.5] as Monzo,
+                    decimal: 1.015504 as Decimal,
+                    cents: 26.636471 as Cents,
+                    quotient: [5.744563, 5.656854] as Quotient,
                 },
                 {
                     name: ",|) |)" as Name<CommaMean>,
-                    decimal: 1.01574900036674 as Decimal,   // 27.052733¢
+                    monzo: [0, -1, 0.5, -0.5, 0, 0.5] as Monzo,
+                    decimal: 1.015749 as Decimal,
+                    cents: 27.052733 as Cents,
+                    quotient: [8.062258, 7.937254] as Quotient,
                 },
                 {
                     name: "|) `|)" as Name<CommaMean>,
-                    decimal: 1.0159891355528685 as Decimal, // 27.461969¢
+                    monzo: [5.5, -5.5, 2, -0.5] as Monzo,
+                    decimal: 1.015989 as Decimal,
+                    cents: 27.461969 as Cents,
+                    quotient: [1131.37085, 1113.565894] as Quotient,
                 },
                 {
                     name: "`|) ``|)" as Name<CommaMean>,
-                    decimal: 1.0163181806062358 as Decimal, // 28.022568¢
+                    monzo: [-4.5, 0, 2, 0, 0.5, -0.5] as Monzo,
+                    decimal: 1.016318 as Decimal,
+                    cents: 28.022568 as Cents,
+                    quotient: [82.91562, 81.584312] as Quotient,
                 },
                 {
                     name: "``|) ,'|)" as Name<CommaMean>,
-                    decimal: 1.016651458221751 as Decimal,  // 28.590192¢
+                    monzo: [-17.5, 8.5, 1, 0, 0.5] as Monzo,
+                    decimal: 1.016651 as Decimal,
+                    cents: 28.590192 as Cents,
+                    quotient: [188450.37762, 185363.800047] as Quotient,
                 },
                 {
                     name: ",'|) '|)" as Name<CommaMean>,
-                    decimal: 1.0168959337472812 as Decimal, // 29.006454¢
+                    monzo: [-15, 7, 1.5, -0.5, 0, 0.5] as Monzo,
+                    decimal: 1.016895 as Decimal,
+                    cents: 29.006454 as Cents,
+                    quotient: [88160.788478, 86695.978961] as Quotient,
                 },
                 {
                     name: "'|) `'|)" as Name<CommaMean>,
-                    decimal: 1.0171363400821487 as Decimal, // 29.415690¢
+                    monzo: [-9.5, 2.5, 3, -0.5] as Monzo,
+                    decimal: 1.017136 as Decimal,
+                    cents: 29.415690 as Cents,
+                    quotient: [1948.557159, 1915.728582] as Quotient,
                 },
                 {
                     name: "`'|) ,)|)" as Name<CommaMean>,
-                    decimal: 1.0174179085550146 as Decimal, // 29.894872¢
+                    monzo: [-2.5, -3, 3, 0, -0.5, 0, 0.5] as Monzo,
+                    decimal: 1.017417 as Decimal,
+                    cents: 29.894872 as Cents,
+                    quotient: [515.388203, 506.564902] as Quotient,
                 },
                 {
                     name: ",)|) )|)" as Name<CommaMean>,
-                    decimal: 1.0177201821167263 as Decimal, // 30.409143¢
+                    monzo: [1, -2, 0.5, -0.5, -0.5, 0, 0.5, 0.5] as Monzo,
+                    decimal: 1.017720 as Decimal,
+                    cents: 30.409143 as Cents,
+                    quotient: [80.374125, 78.974679] as Quotient,
                 },
                 {
                     name: ")|) .(|" as Name<CommaMean>,
-                    decimal: 1.0180194675759577 as Decimal, // 30.918180¢
+                    monzo: [0, 0.5, -0.5, 0, -0.5, 0, 0, 0.5] as Monzo,
+                    decimal: 1.018019 as Decimal,
+                    cents: 30.918180 as Cents,
+                    quotient: [7.549834, 7.416198] as Quotient,
                 },
                 {
                     name: ".(| |\\" as Name<CommaMean>,
-                    decimal: 1.0183501544346312 as Decimal, // 31.480451¢
+                    monzo: [1, -1.5, 0, 0.5] as Monzo,
+                    decimal: 1.018350 as Decimal,
+                    cents: 31.480451 as Cents,
+                    quotient: [5.291503, 5.196152] as Quotient,
                 },
                 {
                     name: "|\\ `|\\" as Name<CommaMean>,
-                    decimal: 1.0186428721626566 as Decimal, // 31.978011¢
+                    monzo: [5, -4, 0.5, -0.5, 1, -0.5] as Monzo,
+                    decimal: 1.018642 as Decimal,
+                    cents: 31.978011 as Cents,
+                    quotient: [787.095928, 772.690753] as Quotient,
                 },
                 {
                     name: "`|\\ ,(|" as Name<CommaMean>,
-                    decimal: 1.018894482113922 as Decimal,  // 32.405582¢
+                    monzo: [3.5, -2, 1.5, -0.5, 0.5, -0.5, 0, 0, -0.5] as Monzo,
+                    decimal: 1.018894 as Decimal,
+                    cents: 32.405582 as Cents,
+                    quotient: [419.523539, 411.743852] as Quotient,
                 },
                 {
                     name: ",(| (|" as Name<CommaMean>,
-                    decimal: 1.0191766070867996 as Decimal, // 32.884883¢
+                    monzo: [-8, 4.5, 1.5, 0.5, -0.5, 0, 0, 0, -0.5] as Monzo,
+                    decimal: 1.019176 as Decimal,
+                    cents: 32.884883 as Cents,
+                    quotient: [4150.01506, 4071.929272] as Quotient,
                 },
                 {
                     name: "(| `(|" as Name<CommaMean>,
-                    decimal: 1.0194696614949148 as Decimal, // 33.382611¢
+                    monzo: [-5, 3.5, 0, 0.5, -0.5, 0.5, -0.5] as Monzo,
+                    decimal: 1.019469 as Decimal,
+                    cents: 33.382611 as Cents,
+                    quotient: [446.113214, 437.593419] as Quotient,
                 },
                 {
                     name: "`(| ``(|" as Name<CommaMean>,
-                    decimal: 1.019803902718557 as Decimal,  // 33.950117¢
+                    monzo: [0.5, 0, -1, 0, 0, 0.5] as Monzo,
+                    decimal: 1.019803 as Decimal,
+                    cents: 33.950117 as Cents,
+                    quotient: [5.09902, 5] as Quotient,
                 },
                 {
                     name: "``(| ,'(|" as Name<CommaMean>,
-                    decimal: 1.0201214502594054 as Decimal, // 34.489106¢
+                    monzo: [0.5, 1.5, -1, 0.5, 0, -0.5, 0.5, -0.5] as Monzo,
+                    decimal: 1.020121 as Decimal,
+                    cents: 34.489106 as Cents,
+                    quotient: [80.162335, 78.581168] as Quotient,
                 },
                 {
                     name: ",'(| '(|" as Name<CommaMean>,
-                    decimal: 1.0203255357771537 as Decimal, // 34.835422¢
+                    monzo: [1.5, 1, 1, -0.5, 0, -0.5, 0, -0.5] as Monzo,
+                    decimal: 1.020325 as Decimal,
+                    cents: 34.835422 as Cents,
+                    quotient: [42.426407, 41.581246] as Quotient,
                 },
                 {
                     name: "'(| ,~|)" as Name<CommaMean>,
-                    decimal: 1.0204921440204184 as Decimal, // 35.118091¢
+                    monzo: [2, -2.5, 1, -1, 0, 0, 0, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.020492 as Decimal,
+                    cents: 35.118091 as Cents,
+                    quotient: [111.355287, 109.119201] as Quotient,
                 },
                 {
                     name: ",~|) ~|)" as Name<CommaMean>,
-                    decimal: 1.0207047244089384 as Decimal, // 35.478690¢
+                    monzo: [-0.5, -3, 0, 1, 0, 0, 0, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.020704 as Decimal,
+                    cents: 35.478690 as Cents,
+                    quotient: [38.974351, 38.183766] as Quotient,
                 },
                 {
                     name: "~|) `~|)" as Name<CommaMean>,
-                    decimal: 1.0209925209541146 as Decimal, // 35.966757¢
+                    monzo: [-10, 4, -0.5, 1, 0, 0, 0.5] as Monzo,
+                    decimal: 1.020992 as Decimal,
+                    cents: 35.966757 as Cents,
+                    quotient: [2337.80089, 2289.733609] as Quotient,
                 },
                 {
                     name: "`~|) ,.(|(" as Name<CommaMean>,
-                    decimal: 1.0212968142734182 as Decimal, // 36.482652¢
+                    monzo: [-13, 8, -0.5, 0, 0.5, 0, 0.5, 0, -0.5] as Monzo,
+                    decimal: 1.021296 as Decimal,
+                    cents: 36.482652 as Cents,
+                    quotient: [89720.325607, 87849.412975] as Quotient,
                 },
                 {
                     name: ",.(|( .(|(" as Name<CommaMean>,
-                    decimal: 1.0215078369104984 as Decimal, // 36.840326¢
+                    monzo: [1.5, 0.5, 0, 0, 0, 0, 0, 0, -0.5] as Monzo,
+                    decimal: 1.021507 as Decimal,
+                    cents: 36.840326 as Cents,
+                    quotient: [4.898979, 4.795832] as Quotient,
                 },
                 {
                     name: ".(|( '~|)" as Name<CommaMean>,
-                    decimal: 1.0217798642119988 as Decimal, // 37.301292¢
+                    monzo: [-3, 0.5, 0.5, 1, -0.5] as Monzo,
+                    decimal: 1.021779 as Decimal,
+                    cents: 37.301292 as Cents,
+                    quotient: [27.110883, 26.532998] as Quotient,
                 },
                 {
                     name: "'~|) /|~" as Name<CommaMean>,
-                    decimal: 1.0221041081324975 as Decimal, // 37.850582¢
+                    monzo: [-9, 2.5, 0, 1, 0, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.022104 as Decimal,
+                    cents: 37.850582 as Cents,
+                    quotient: [523.317303, 512] as Quotient,
                 },
                 {
                     name: "/|~ ,,(|(" as Name<CommaMean>,
-                    decimal: 1.0222288995508408 as Decimal, // 38.061940¢
+                    monzo: [-3, 1.5, -0.5, 0.5, 0, -0.5, 0, 0, 0.5] as Monzo,
+                    decimal: 1.022228 as Decimal,
+                    cents: 38.061940 as Cents,
+                    quotient: [65.931783, 64.498062] as Quotient,
                 },
                 {
                     name: ",,(|( ,(|(" as Name<CommaMean>,
-                    decimal: 1.0223741334649856 as Decimal, // 38.307889¢
+                    monzo: [0, 0.5, 0, 0.5, 0.5, -0.5, -0.5] as Monzo,
+                    decimal: 1.022374 as Decimal,
+                    cents: 38.307889 as Cents,
+                    quotient: [15.198684, 14.866069] as Quotient,
                 },
                 {
                     name: ",(|( (|(" as Name<CommaMean>,
-                    decimal: 1.0226199851298272 as Decimal, // 38.724151¢
+                    monzo: [2.5, -1, 0.5, 0, 0, 0, -0.5] as Monzo,
+                    decimal: 1.022619 as Decimal,
+                    cents: 38.724151 as Cents,
+                    quotient: [12.649111, 12.369317] as Quotient,
                 },
                 {
                     name: "(|( `(|(" as Name<CommaMean>,
-                    decimal: 1.0228521402294446 as Decimal, // 39.117131¢
+                    monzo: [4, 1, 0.5, -0.5, -1, -0.5] as Monzo,
+                    decimal: 1.022852 as Decimal,
+                    cents: 39.117131 as Cents,
+                    quotient: [107.331263, 104.933312] as Quotient,
                 },
                 {
                     name: "`(|( ~|\\" as Name<CommaMean>,
-                    decimal: 1.0231767244179324 as Decimal, // 39.666420¢
+                    monzo: [-2, 3, 0, -0.5, -0.5, -0.5, 0, 0, 0.5] as Monzo,
+                    decimal: 1.023176 as Decimal,
+                    cents: 39.666420 as Cents,
+                    quotient: [129.487451, 126.554336] as Quotient,
                 },
                 {
                     name: "~|\\ ,.//|" as Name<CommaMean>,
-                    decimal: 1.0235632153823178 as Decimal, // 40.320247¢
+                    monzo: [-9.5, 4, -1, 0.5, 0, 0.5, 0, 0, 0.5] as Monzo,
+                    decimal: 1.023563 as Decimal,
+                    cents: 40.320247 as Cents,
+                    quotient: [3705.694672, 3620.38672] as Quotient,
                 },
                 {
                     name: ",.//| .//|" as Name<CommaMean>,
-                    decimal: 1.023874992369674 as Decimal,  // 40.847500¢
+                    monzo: [1, 1, -2.5, 0.5, 0, 0.5] as Monzo,
+                    decimal: 1.023874 as Decimal,
+                    cents: 40.847500 as Cents,
+                    quotient: [57.236352, 55.901699] as Quotient,
                 },
                 {
                     name: ".//| `.//|" as Name<CommaMean>,
-                    decimal: 1.0241170486372915 as Decimal, // 41.256736¢
+                    monzo: [6.5, -3.5, -1, 0.5] as Monzo,
+                    decimal: 1.024117 as Decimal,
+                    cents: 41.256736 as Cents,
+                    quotient: [239.466073, 233.826859] as Quotient,
                 },
                 {
                     name: "`.//| ,,//|" as Name<CommaMean>,
-                    decimal: 1.0243938285880985 as Decimal, // 41.724559¢
+                    monzo: [0, -2, 0.5, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.024393 as Decimal,
+                    cents: 41.724559 as Cents,
+                    quotient: [9.219544, 9] as Quotient,
                 },
                 {
                     name: ",,//| ,//|" as Name<CommaMean>,
-                    decimal: 1.0247297544222076 as Decimal, // 42.292184¢
+                    monzo: [-13, 6.5, -0.5, 0, 0, 0.5, 0.5] as Monzo,
+                    decimal: 1.024729 as Decimal,
+                    cents: 42.292184 as Cents,
+                    quotient: [18770.86527, 18317.868872] as Quotient,
                 },
                 {
                     name: ",//| //|" as Name<CommaMean>,
-                    decimal: 1.0250311012172595 as Decimal, // 42.801221¢
+                    monzo: [-14, 9, -1.5, 0.5, 0, 0.5] as Monzo,
+                    decimal: 1.025031 as Decimal,
+                    cents: 42.801221 as Cents,
+                    quotient: [187763.853015, 183178.688717] as Quotient,
                 },
                 {
                     name: "//| `//|" as Name<CommaMean>,
-                    decimal: 1.025273430802806 as Decimal,  // 43.210457¢
+                    monzo: [-8.5, 4.5, 0, 0.5] as Monzo,
+                    decimal: 1.025273 as Decimal,
+                    cents: 43.210457 as Cents,
+                    quotient: [371.188631, 362.038672] as Quotient,
                 },
                 {
                     name: "`//| ``//|" as Name<CommaMean>,
-                    decimal: 1.0255158176779586 as Decimal, // 43.619693¢
+                    monzo: [-3, 0, 1.5, 0.5, 0, -0.5] as Monzo,
+                    decimal: 1.025515 as Decimal,
+                    cents: 43.619693 as Cents,
+                    quotient: [29.580399, 28.84441] as Quotient,
                 },
                 {
                     name: "``//| ,'//|" as Name<CommaMean>,
-                    decimal: 1.0258173956340964 as Decimal, // 44.128729¢
+                    monzo: [-4, 2.5, 0.5, 1, 0, -0.5, -0.5] as Monzo,
+                    decimal: 1.025817 as Decimal,
+                    cents: 44.128729 as Cents,
+                    quotient: [243.997951, 237.8571] as Quotient,
                 },
                 {
                     name: ",'//| '//|" as Name<CommaMean>,
-                    decimal: 1.0261547800851307 as Decimal, // 44.698027¢
+                    monzo: [-6, 3.5, 0, 1, 0, 0.5, -0.5, -0.5] as Monzo,
+                    decimal: 1.026154 as Decimal,
+                    cents: 44.698027 as Cents,
+                    quotient: [1180.304622, 1150.220848] as Quotient,
                 },
                 {
                     name: "'//| ,,)//|" as Name<CommaMean>,
-                    decimal: 1.0264912130779862 as Decimal, // 45.265533¢
+                    monzo: [-0.5, 0, -1, 0.5, 0.5, 0.5, 0, -0.5] as Monzo,
+                    decimal: 1.026491 as Decimal,
+                    cents: 45.265533 as Cents,
+                    quotient: [31.638584, 30.82207] as Quotient,
                 },
                 {
                     name: ",,)//| ,)//|" as Name<CommaMean>,
-                    decimal: 1.0267328955000532 as Decimal, // 45.673096¢
+                    monzo: [-6, 3, 0, 0.5, 0.5, -0.5] as Monzo,
+                    decimal: 1.026732 as Decimal,
+                    cents: 45.673096 as Cents,
+                    quotient: [236.924038, 230.755282] as Quotient,
                 },
                 {
                     name: ",)//| )//|" as Name<CommaMean>,
-                    decimal: 1.0269797953221866 as Decimal, // 46.089358¢
+                    monzo: [-3.5, 1.5, 0.5] as Monzo,
+                    decimal: 1.026979 as Decimal,
+                    cents: 46.089358 as Cents,
+                    quotient: [11.61895, 11.313708] as Quotient,
                 },
                 {
                     name: ")//| `)//|" as Name<CommaMean>,
-                    decimal: 1.0272859025931278 as Decimal, // 46.605302¢
+                    monzo: [11, -5, -1.5, -0.5, 0, 0.5] as Monzo,
+                    decimal: 1.027285 as Decimal,
+                    cents: 46.605302 as Cents,
+                    quotient: [7384.169012, 7188.036936] as Quotient,
                 },
                 {
                     name: "`)//| ``)//|" as Name<CommaMean>,
-                    decimal: 1.027594535889138 as Decimal,  // 47.125348¢
+                    monzo: [7.5, -4, -1, -0.5, 0, 0, 0, 0, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.027594 as Decimal,
+                    cents: 47.125348 as Cents,
+                    quotient: [1101.097634, 1071.529281] as Quotient,
                 },
                 {
                     name: "``)//| ,,/|)" as Name<CommaMean>,
-                    decimal: 1.0279273395452693 as Decimal, // 47.685947¢
+                    monzo: [-2.5, 1.5, -1, 0, 0.5, -0.5, 0, 0, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.027927 as Decimal,
+                    cents: 47.685947 as Cents,
+                    quotient: [104.828431, 101.98039] as Quotient,
                 },
                 {
                     name: ",,/|) ,/|)" as Name<CommaMean>,
-                    decimal: 1.0281986105867387 as Decimal, // 48.142761¢
+                    monzo: [-6.5, 4.5, -1, 0, 0.5] as Monzo,
+                    decimal: 1.028198 as Decimal,
+                    cents: 48.142761 as Cents,
+                    quotient: [465.309574, 452.54834] as Quotient,
                 },
                 {
                     name: ",/|) /|)" as Name<CommaMean>,
-                    decimal: 1.0284458628713242 as Decimal, // 48.559023¢
+                    monzo: [-4, 3, -0.5, -0.5, 0, 0.5] as Monzo,
+                    decimal: 1.028445 as Decimal,
+                    cents: 48.559023 as Cents,
+                    quotient: [97.349884, 94.657277] as Quotient,
                 },
                 {
                     name: "/|) `/|)" as Name<CommaMean>,
-                    decimal: 1.0286889997472795 as Decimal, // 48.968259¢
+                    monzo: [1.5, -1.5, 1, -0.5] as Monzo,
+                    decimal: 1.028688 as Decimal,
+                    cents: 48.968259 as Cents,
+                    quotient: [14.142136, 13.747727] as Quotient,
                 },
                 {
                     name: "`/|) (|~" as Name<CommaMean>,
-                    decimal: 1.0290231524277662 as Decimal, // 49.530530¢
+                    monzo: [2.5, -3.5, 1.5, 0, 0.5, 0, 0, -0.5] as Monzo,
+                    decimal: 1.029023 as Decimal,
+                    cents: 49.530530 as Cents,
+                    quotient: [209.76177, 203.84553] as Quotient,
                 },
                 {
                     name: "(|~ ,'/|)" as Name<CommaMean>,
-                    decimal: 1.0293605963396193 as Decimal, // 50.098155¢
+                    monzo: [-10.5, 5, 0.5, 0, 0.5, 0.5, 0, -0.5] as Monzo,
+                    decimal: 1.029360 as Decimal,
+                    cents: 50.098155 as Cents,
+                    quotient: [6497.694591, 6312.359939] as Quotient,
                 },
                 {
                     name: ",'/|) '/|)" as Name<CommaMean>,
-                    decimal: 1.029607132919122 as Decimal,  // 50.512744¢
+                    monzo: [-19, 11, 0.5, -0.5, 0, 0.5] as Monzo,
+                    decimal: 1.029607 as Decimal,
+                    cents: 50.512744 as Cents,
+                    quotient: [1428204.773338, 1387135.663375] as Quotient,
                 },
                 {
                     name: "'/|) `'/|)" as Name<CommaMean>,
-                    decimal: 1.0298505443331756 as Decimal, // 50.921980¢
+                    monzo: [-13.5, 6.5, 2, -0.5] as Monzo,
+                    decimal: 1.029850 as Decimal,
+                    cents: 50.921980 as Cents,
+                    quotient: [31566.625968, 30651.657312] as Quotient,
                 },
                 {
                     name: "`'/|) ./|\\" as Name<CommaMean>,
-                    decimal: 1.0300275676521753 as Decimal, // 51.219540¢
+                    monzo: [-2, -2, 1.5, 0, 0.5] as Monzo,
+                    decimal: 1.030027 as Decimal,
+                    cents: 51.219540 as Cents,
+                    quotient: [37.080992, 36] as Quotient,
                 },
                 {
                     name: "./|\\ `./|\\" as Name<CommaMean>,
-                    decimal: 1.0301949479826407 as Decimal, // 51.500844¢
+                    monzo: [5.5, -4, -0.5, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.030194 as Decimal,
+                    cents: 51.500844 as Cents,
+                    quotient: [186.590461, 181.121506] as Quotient,
                 },
                 {
                     name: "`./|\\ ,,/|\\" as Name<CommaMean>,
-                    decimal: 1.0304494113551723 as Decimal, // 51.928415¢
+                    monzo: [4, -2, 0.5, 0, -0.5, 0, 0.5, 0, -0.5] as Monzo,
+                    decimal: 1.030449 as Decimal,
+                    cents: 51.928415 as Cents,
+                    quotient: [147.512711, 143.153763] as Quotient,
                 },
                 {
                     name: ",,/|\\ ,/|\\" as Name<CommaMean>,
-                    decimal: 1.030752440154946 as Decimal,  // 52.437451¢
+                    monzo: [3, 0.5, -0.5, 0.5, -0.5, 0, 0, 0, -0.5] as Monzo,
+                    decimal: 1.030752 as Decimal,
+                    cents: 52.437451 as Cents,
+                    quotient: [36.660606, 35.566838] as Quotient,
                 },
                 {
                     name: ",/|\\ /|\\" as Name<CommaMean>,
-                    decimal: 1.031079531365064 as Decimal,  // 52.986741¢
+                    monzo: [-3, 2.5, -1, 0.5] as Monzo,
+                    decimal: 1.031079 as Decimal,
+                    cents: 52.986741 as Cents,
+                    quotient: [41.243181, 40] as Quotient,
                 },
                 {
                     name: "/|\\ `/|\\" as Name<CommaMean>,
-                    decimal: 1.0313581930105753 as Decimal, // 53.454565¢
+                    monzo: [-9.5, 4, 0.5, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.031358 as Decimal,
+                    cents: 53.454565 as Cents,
+                    quotient: [746.783101, 724.077344] as Quotient,
                 },
                 {
                     name: "`/|\\ ,(/|" as Name<CommaMean>,
-                    decimal: 1.03160620508414 as Decimal,   // 53.870827¢
+                    monzo: [-7, 2.5, 1, -0.5, -0.5, 0.5, 0.5] as Monzo,
+                    decimal: 1.031606 as Decimal,
+                    cents: 53.870827 as Cents,
+                    quotient: [1158.695387, 1123.195442] as Quotient,
                 },
                 {
                     name: ",(/| (/|" as Name<CommaMean>,
-                    decimal: 1.0318720003725614 as Decimal, // 54.316825¢
+                    monzo: [6, -3, 0.5, -1.5, 0, 0.5] as Monzo,
+                    decimal: 1.031872 as Decimal,
+                    cents: 54.316825 as Cents,
+                    quotient: [515.984496, 500.046998] as Quotient,
                 },
                 {
                     name: "(/| `(/|" as Name<CommaMean>,
-                    decimal: 1.0321280162555164 as Decimal, // 54.746305¢
+                    monzo: [8.5, -2, 0, -1, 0, 0, 0, 0, 0, 0, -0.5] as Monzo,
+                    decimal: 1.032128 as Decimal,
+                    cents: 54.746305 as Cents,
+                    quotient: [362.038672, 350.769155] as Quotient,
                 },
                 {
                     name: "`(/| '/|\\" as Name<CommaMean>,
-                    decimal: 1.0323362474674525 as Decimal, // 55.095545¢
+                    monzo: [-7.5, 4.5, 0.5, 0, 0.5, 0, 0, 0, 0, 0, -0.5] as Monzo,
+                    decimal: 1.032336 as Decimal,
+                    cents: 55.095545 as Cents,
+                    quotient: [1040.463839, 1007.873008] as Quotient,
                 },
                 {
                     name: "'/|\\ `'/|\\" as Name<CommaMean>,
-                    decimal: 1.0325404865741623 as Decimal, // 55.438022¢
+                    monzo: [-14, 8, 0.5, -0.5, 1, -0.5] as Monzo,
+                    decimal: 1.032540 as Decimal,
+                    cents: 55.438022 as Cents,
+                    quotient: [161379.262004, 156293.39876] as Quotient,
                 },
                 {
                     name: "`'/|\\ ,)/|\\" as Name<CommaMean>,
-                    decimal: 1.032826319295421 as Decimal,  // 55.917204¢
+                    monzo: [-7, 2.5, 0.5, 0, 0.5, -0.5, 0.5] as Monzo,
+                    decimal: 1.032826 as Decimal,
+                    cents: 55.917204 as Cents,
+                    quotient: [476.660256, 461.510563] as Quotient,
                 },
                 {
                     name: ",)/|\\ )/|\\" as Name<CommaMean>,
-                    decimal: 1.033074684411262 as Decimal,  // 56.333466¢
+                    monzo: [-4.5, 1, 1, -0.5, 0, 0, 0.5] as Monzo,
+                    decimal: 1.033074 as Decimal,
+                    cents: 56.333466 as Cents,
+                    quotient: [61.846584, 59.866518] as Quotient,
                 },
                 {
                     name: ")/|\\ `)/|\\" as Name<CommaMean>,
-                    decimal: 1.0333784852366532 as Decimal, // 56.842503¢
+                    monzo: [-5.5, 3.5] as Monzo,
+                    decimal: 1.033378 as Decimal,
+                    cents: 56.842503 as Cents,
+                    quotient: [46.765372, 45.254834] as Quotient,
                 },
                 {
                     name: "`)/|\\ ``)/|\\" as Name<CommaMean>,
-                    decimal: 1.0336823754020923 as Decimal, // 57.351539¢
+                    monzo: [-6.5, 6, -1, 0.5, 0, 0, -0.5] as Monzo,
+                    decimal: 1.033682 as Decimal,
+                    cents: 57.351539 as Cents,
+                    quotient: [1928.752706, 1865.904606] as Quotient,
                 },
                 {
                     name: "``)/|\\ ,.(|)" as Name<CommaMean>,
-                    decimal: 1.0339309463748814 as Decimal, // 57.767801¢
+                    monzo: [-4, 4.5, -0.5, 0, -0.5, 0.5, -0.5] as Monzo,
+                    decimal: 1.033930 as Decimal,
+                    cents: 57.767801 as Cents,
+                    quotient: [505.844838, 489.244315] as Quotient,
                 },
                 {
                     name: ",.(|) .(|)" as Name<CommaMean>,
-                    decimal: 1.0342171640097717 as Decimal, // 58.246983¢
+                    monzo: [3, -1, -0.5, 0.5, -1, 0.5] as Monzo,
+                    decimal: 1.034217 as Decimal,
+                    cents: 58.246983 as Cents,
+                    quotient: [76.315136, 73.790243] as Quotient,
                 },
                 {
                     name: ".(|) ,|\\)" as Name<CommaMean>,
-                    decimal: 1.0344217752401141 as Decimal, // 58.589460¢
+                    monzo: [-3.5, 2.5, -0.5, 0, -0.5, 0, 0, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.034421 as Decimal,
+                    cents: 58.589460 as Cents,
+                    quotient: [86.792857, 83.904708] as Quotient,
                 },
                 {
                     name: ",|\\) |\\)" as Name<CommaMean>,
-                    decimal: 1.0346304692165578 as Decimal, // 58.938700¢
+                    monzo: [-19.5, 9, 0, 1, 0, 0, 0, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.034630 as Decimal,
+                    cents: 58.938700 as Cents,
+                    quotient: [767132.141675, 741455.200189] as Quotient,
                 },
                 {
                     name: "|\\) `|\\)" as Name<CommaMean>,
-                    decimal: 1.0348871694981947 as Decimal, // 59.368180¢
+                    monzo: [-17, 10, -0.5, 1.5, 0, -0.5] as Monzo,
+                    decimal: 1.034887 as Decimal,
+                    cents: 59.368180 as Cents,
+                    quotient: [1093602.784169, 1056736.247585] as Quotient,
                 },
                 {
                     name: "`|\\) ,(|)" as Name<CommaMean>,
-                    decimal: 1.0351538101332982 as Decimal, // 59.814178¢
+                    monzo: [-4, 4.5, -1, 0.5, 0.5, -0.5, -0.5] as Monzo,
+                    decimal: 1.035153 as Decimal,
+                    cents: 59.814178 as Cents,
+                    quotient: [1231.093416, 1189.2855] as Quotient,
                 },
                 {
                     name: ",(|) (|)" as Name<CommaMean>,
-                    decimal: 1.0354027349439503 as Decimal, // 60.230440¢
+                    monzo: [-1.5, 3, -0.5, 0, 0, 0, -0.5] as Monzo,
+                    decimal: 1.035402 as Decimal,
+                    cents: 60.230440 as Cents,
+                    quotient: [27, 26.07681] as Quotient,
                 },
                 {
                     name: "(|) `(|)" as Name<CommaMean>,
-                    decimal: 1.0356825649872294 as Decimal, // 60.698264¢
+                    monzo: [-8, 4.5, 1, -0.5] as Monzo,
+                    decimal: 1.035682 as Decimal,
+                    cents: 60.698264 as Cents,
+                    quotient: [701.480577, 677.312336] as Quotient,
                 },
                 {
                     name: "`(|) ``(|)" as Name<CommaMean>,
-                    decimal: 1.0360112206860013 as Decimal, // 61.247554¢
+                    monzo: [-14, 6.5, 0.5, -0.5, 0.5, 0, 0, 0, 0.5] as Monzo,
+                    decimal: 1.036011 as Decimal,
+                    cents: 61.247554 as Cents,
+                    quotient: [44909.003496, 43347.98948] as Quotient,
                 },
                 {
                     name: "``(|) ,'(|)" as Name<CommaMean>,
-                    decimal: 1.0363158850715566 as Decimal, // 61.756590¢
+                    monzo: [-15, 9, -0.5, 0, 0.5, 0, -0.5, 0, 0.5] as Monzo,
+                    decimal: 1.036315 as Decimal,
+                    cents: 61.756590 as Cents,
+                    quotient: [313077.280742, 302106.032777] as Quotient,
                 },
                 {
                     name: ",'(|) '(|)" as Name<CommaMean>,
-                    decimal: 1.0365718603465663 as Decimal, // 62.184161¢
+                    monzo: [-16.5, 11, 0.5, 0, 0, 0, -0.5] as Monzo,
+                    decimal: 1.036571 as Decimal,
+                    cents: 62.184161 as Cents,
+                    quotient: [396112.73401, 382137.263381] as Quotient,
                 },
                 {
                     name: "'(|) ,.(|\\" as Name<CommaMean>,
-                    decimal: 1.0367403041299996 as Decimal, // 62.465465¢
+                    monzo: [-9, 9, -1.5, 0, -0.5] as Monzo,
+                    decimal: 1.036740 as Decimal,
+                    cents: 62.465465 as Cents,
+                    quotient: [19683, 18985.468127] as Quotient,
                 },
                 {
                     name: ",.(|\\ .(|\\" as Name<CommaMean>,
-                    decimal: 1.0369185117452575 as Decimal, // 62.763025¢
+                    monzo: [2.5, 0.5, -2, 0.5] as Monzo,
+                    decimal: 1.036918 as Decimal,
+                    cents: 62.763025 as Cents,
+                    quotient: [25.922963, 25] as Quotient,
                 },
                 {
                     name: ".(|\\ `.(|\\" as Name<CommaMean>,
-                    decimal: 1.0371636516565232 as Decimal, // 63.172261¢
+                    monzo: [8, -4, -0.5, 0.5, 0, -0.5] as Monzo,
+                    decimal: 1.037163 as Decimal,
+                    cents: 63.172261 as Cents,
+                    quotient: [677.312336, 653.042878] as Quotient,
                 },
                 {
                     name: "`.(|\\ |\\\\" as Name<CommaMean>,
-                    decimal: 1.0374120571035295 as Decimal, // 63.586850¢
+                    monzo: [-0.5, 2, -0.5, 0, -0.5, -0.5, 0, 0.5] as Monzo,
+                    decimal: 1.037412 as Decimal,
+                    cents: 63.586850 as Cents,
+                    quotient: [39.23009, 37.815341] as Quotient,
                 },
                 {
                     name: "|\\\\ ,(|\\" as Name<CommaMean>,
-                    decimal: 1.0377522519591325 as Decimal, // 64.154475¢
+                    monzo: [-13.5, 10.5, -1.5, 0, -0.5, 0, 0, 0.5] as Monzo,
+                    decimal: 1.037752 as Decimal,
+                    cents: 64.154475 as Cents,
+                    quotient: [445810.173568, 429592.10421] as Quotient,
                 },
                 {
                     name: ",(|\\ (|\\" as Name<CommaMean>,
-                    decimal: 1.038089348687841 as Decimal,  // 64.716746¢
+                    monzo: [-12.5, 8.5, -1, 0.5] as Monzo,
+                    decimal: 1.038089 as Decimal,
+                    cents: 64.716746 as Cents,
+                    quotient: [30066.279135, 28963.093757] as Quotient,
                 },
                 {
                     name: "(|\\ `(|\\" as Name<CommaMean>,
-                    decimal: 1.0383347653989332 as Decimal, // 65.125982¢
+                    monzo: [-7, 4, 0.5, 0.5, 0, -0.5] as Monzo,
+                    decimal: 1.038334 as Decimal,
+                    cents: 65.125982 as Cents,
+                    quotient: [479.202462, 461.510563] as Quotient,
                 },
                 {
                     name: "`(|\\ ``(|\\" as Name<CommaMean>,
-                    decimal: 1.03858445513812 as Decimal,   // 65.542244¢
+                    monzo: [-4.5, 2.5, 1, 0, -0.5] as Monzo,
+                    decimal: 1.038584 as Decimal,
+                    cents: 65.542244 as Cents,
+                    quotient: [77.942286, 75.046652] as Quotient,
                 },
                 {
                     name: "``(|\\ ,,)|\\\\" as Name<CommaMean>,
-                    decimal: 1.0388585386029336 as Decimal, // 65.999058¢
+                    monzo: [-8.5, 5.5, 1, 0, -0.5, 0.5, 0, 0, 0, 0, 0, -0.5] as Monzo,
+                    decimal: 1.038858 as Decimal,
+                    cents: 65.999058 as Cents,
+                    quotient: [7587.672568, 7303.85542] as Quotient,
                 },
                 {
                     name: ",,)|\\\\ ,)|\\\\" as Name<CommaMean>,
-                    decimal: 1.0391949902945057 as Decimal, // 66.559657¢
+                    monzo: [-18.5, 11, 1, 0.5, 0, 0, 0, 0, 0, 0, 0, -0.5] as Monzo,
+                    decimal: 1.039194 as Decimal,
+                    cents: 66.559657 as Cents,
+                    quotient: [2343434.537506, 2255047.954804] as Quotient,
                 },
                 {
                     name: ",)|\\\\ )|\\\\" as Name<CommaMean>,
-                    decimal: 1.039507201504883 as Decimal,  // 67.079703¢
+                    monzo: [-22, 12, 1.5, 0.5, 0, -0.5] as Monzo,
+                    decimal: 1.039507 as Decimal,
+                    cents: 67.079703 as Cents,
+                    quotient: [15720236.780051, 15122778.136884] as Quotient,
                 },
                 {
                     name: ")|\\\\ `)|\\\\" as Name<CommaMean>,
-                    decimal: 1.039817042763714 as Decimal,  // 67.595647¢
+                    monzo: [-7.5, 5.5, -0.5] as Monzo,
+                    decimal: 1.039817 as Decimal,
+                    cents: 67.595647 as Cents,
+                    quotient: [420.888346, 404.771541] as Quotient,
                 },
                 {
                     name: "`)|\\\\ ``)|\\\\" as Name<CommaMean>,
-                    decimal: 1.0400670889481058 as Decimal, // 68.011909¢
+                    monzo: [-5, 4, 0, -0.5, -0.5, 0.5] as Monzo,
+                    decimal: 1.040067 as Decimal,
+                    cents: 68.011909 as Cents,
+                    quotient: [292.049653, 280.79886] as Quotient,
                 },
             ])
         },

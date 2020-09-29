@@ -4,7 +4,6 @@ import {
     computeDecimalFromNum,
     computeRationalMonzoFromRatio,
     computeRationalQuotientFromRatio,
-    Num,
     Ratio,
 } from "../../../general"
 import { analyze23FreeClass } from "../two3FreeClass"

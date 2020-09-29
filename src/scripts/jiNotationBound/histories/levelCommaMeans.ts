@@ -1,4 +1,4 @@
-import { computeDecimalFromNum, computeNumSqrt, Id, indexOfFinalElement, multiplyRatios, Name } from "../../../general"
+import { computeNumSqrt, Id, indexOfFinalElement, multiplyRatios, Name } from "../../../general"
 import {
     CommaMean,
     getPrimaryComma,
@@ -36,8 +36,7 @@ const computeJiNotationLevelCommaMeans = (jiNotationLevel: JiNotationLevel): Com
             ].join(" ") as Name<CommaMean>
 
             return {
-                // TODO: now we're very close to just using the irraional monzo!
-                decimal: computeDecimalFromNum(commaMean),
+                ...commaMean,
                 name,
             }
         })
