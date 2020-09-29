@@ -23,6 +23,9 @@ import { ApotomeSlope, N2D3P9 } from "../../../../src/sagittal/ji"
 import { PRIMARY_COMMAS } from "../../../../src/sagittal/notations/primaryCommas"
 import { PrimaryCommaAnalysis } from "../../../../src/sagittal/notations/types"
 
+// TODO: More of these tests should just literally be pulling expectations from tsv files
+//  I'm not sure what the value is of representing them as these code structures is
+
 describe("PRIMARY_COMMAS", (): void => {
     it("has all the correct commas", (): void => {
         const actual = PRIMARY_COMMAS

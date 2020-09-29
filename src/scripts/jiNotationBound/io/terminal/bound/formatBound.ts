@@ -9,6 +9,9 @@ const formatJiNotationBound = (
 ): Formatted<JiNotationBoundAnalysis> => {
     const jiNotationBoundIdentifiers = extractJiNotationBoundIdentifiers(jiNotationBound)
 
+    // TODO: what if you had a helper that rounded all numbers in an object? that might save me from some repetitive
+    //  And pointless test failures, yeah?
+
     const formattedJiNotationBoundIdentifiers = stringify(jiNotationBoundIdentifiers, { multiline: true })
         .replace(/\\\\/g, "\\")
     const formattedJiNotationBoundAnalysis = stringify(jiNotationBoundAnalysis, { multiline: true })

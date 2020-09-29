@@ -25,23 +25,25 @@ const product = <T extends number>(...factors: T[]): Product<T> =>
         MULTIPLICATIVE_IDENTITY as Product<T>,
     )
 
-const add = <T extends number>(augend: T, addend: T | Addend<T>): T =>
+const add = <T extends number>(augend: T, addend: Addend<T> | T): T =>
     augend + addend as T                    // Sum
 
-const subtract = <T extends number>(minuend: T, subtrahend: T | Subtrahend<T>): T =>
+const subtract = <T extends number>(minuend: T, subtrahend: Subtrahend<T> | T): T =>
     minuend - subtrahend as T               // Difference
 
-const multiply = <T extends number>(multiplicand: T, multiplier: T | Multiplier<T>): T => {
+const multiply = <T extends number>(multiplicand: T, multiplier: Multiplier<T> | T): T => {
     return multiplicand * multiplier as T   // Product
 }
 
-const divide = <T extends number>(dividend: T, divisor: T | Divisor<T>): T => {
+const divide = <T extends number>(dividend: T, divisor: Divisor<T> | T): T => {
     return dividend / divisor as T          // Quotient
 }
 
 const mod = <T extends number>(dividend: T, divisor: T): Omit<T, "_IntegerBrand"> =>
     dividend % divisor as unknown as Omit<T, "_IntegerBrand">
 
+// TODO: use the technique I used elsewhere to prevent this from borking types that aren't integer already; 
+//  Oh, actually that's just what I did for sqrt below
 const reciprocal = <T extends number>(number: T): Omit<T, "_IntegerBrand"> =>
     1 / number as unknown as Omit<T, "_IntegerBrand">
 
@@ -63,6 +65,10 @@ const round = <T extends number>(number: T, precision?: Precision): T => {
 const abs = <T extends number>(number: T): Abs<T> =>
     Math.abs(number) as Abs<T>
 
+// TODO: And anything like that using rational/integer should live in num/
+//  Although I'm actually thinking in this case what we're looking for is in num/, a generic root helper
+//  And here, it should be more like pow, log, etc. where there should be a ... well it should return a Power<T>
+//  And that's really all...
 const sqrt: {
     <T extends IntegerDecimal>(integerDecimal: T): Decimal,
     <T extends RationalDecimal>(rationalDecimal: T): Decimal,

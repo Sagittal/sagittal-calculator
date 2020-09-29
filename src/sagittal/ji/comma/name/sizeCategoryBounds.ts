@@ -4,7 +4,7 @@ import { SizeCategoryBound } from "./types"
 const SIZE_CATEGORY_BOUNDS: SizeCategoryBound[] = [
     {
         name: "u|n" as Name<SizeCategoryBound>,                             // Half Pythagorean schisma
-        decimal: 1 as Decimal,                                              // 0
+        decimal: 1.0000000000000000 as Decimal,                             // 0
         monzo: [] as unknown[] as Monzo,
     },
     {

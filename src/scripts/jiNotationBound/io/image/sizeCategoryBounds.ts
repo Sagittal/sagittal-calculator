@@ -1,4 +1,4 @@
-import { computeCentsFromPitch, Io, Px } from "../../../../general"
+import { ACCURACY_THRESHOLD, computeCentsFromPitch, Io, Px, round } from "../../../../general"
 import { JiNotationLevel, SizeCategoryBound } from "../../../../sagittal"
 import { JI_NOTATION_LEVELS_SIZE_CATEGORY_BOUNDS } from "../../histories"
 import { JI_NOTATION_LEVEL_BOTTOMS, JI_NOTATION_LEVEL_TOPS } from "./levelHeights"
@@ -16,9 +16,9 @@ const visualizeSizeCategoryBounds = (): Io[] => {
         const { name } = sizeCategoryBound
         const cents = computeCentsFromPitch(sizeCategoryBound)
 
-        const topEdgeY: Px = JI_NOTATION_LEVEL_TOPS[ JiNotationLevel.INSANE ]
-        const bottomEdgeY: Px = JI_NOTATION_LEVEL_BOTTOMS[ JiNotationLevel.MEDIUM ]
-        const centerY: Px = (topEdgeY + bottomEdgeY) / 2 as Px
+        const topEdgeY: Px = round(JI_NOTATION_LEVEL_TOPS[ JiNotationLevel.INSANE ], ACCURACY_THRESHOLD)
+        const bottomEdgeY: Px = round(JI_NOTATION_LEVEL_BOTTOMS[ JiNotationLevel.MEDIUM ], ACCURACY_THRESHOLD)
+        const centerY: Px = round((topEdgeY + bottomEdgeY) / 2 as Px, ACCURACY_THRESHOLD)
 
         const positionX = computeX(cents)
 

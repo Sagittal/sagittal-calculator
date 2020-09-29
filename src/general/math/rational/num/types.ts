@@ -17,6 +17,9 @@ type RatioOrRationalDecimal<T extends NumTypeParameters = {}> =
     Ratio<T>
     | RationalDecimal<T>
 
+// TODO: I think we should revert the bit about “or” types and just write it with the |
+//  I sense that there's just no way I'm going to remember what the right thing is to do w/r/t to it later
+//  Gotta make this as intuitive as possible
 type IntegerOrIntegerDecimal<T extends NumTypeParameters = {}> =
     Integer<T>
     | IntegerDecimal<T>

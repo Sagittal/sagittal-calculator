@@ -12,6 +12,9 @@ const ANY_QUOTIENT_CHARS = /[\/:]/
 const ANY_DECIMAL_CHARS = /[.]/
 
 const SUPERSCRIPT_NUMS: Char[] = ["⁰", "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹"] as Char[]
+const SUBSCRIPT_NUMS: Char[] = ["₀", "₁", "₂", "₃", "₄", "₅", "₆", "₇", "₈", "₉"] as Char[]
+
+const SUBSCRIPT_HYPHEN: Char = "₋" as Char
 
 const NEWLINE = "\n" as Io
 const SPACE = " " as Io
@@ -42,4 +45,5 @@ export {
     ANY_QUOTIENT_CHARS,
     INITIAL_IO_SETTINGS,
     ANY_DECIMAL_CHARS,
+    SUBSCRIPT_HYPHEN,
 }

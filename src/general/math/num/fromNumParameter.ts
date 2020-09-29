@@ -3,6 +3,9 @@ import { Integer, IntegerOrIntegerDecimal, Ratio, RatioOrRationalDecimal } from 
 import { computeNumFromDecimal } from "./fromDecimal"
 import { Num, NumOrDecimal, NumTypeParameters } from "./types"
 
+// TODO: all such functions should be overloaded with all three layers like this, not just rational as many still are
+//  (or some don't have anything other than plain, that is)
+
 const computeNumFromNumParameter: {
     <T extends NumTypeParameters>(integerOrIntegerDecimal: IntegerOrIntegerDecimal<T>): Integer<T>
     <T extends NumTypeParameters>(ratioOrRationalDecimal: RatioOrRationalDecimal<T>): Ratio<T>

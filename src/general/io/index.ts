@@ -21,7 +21,7 @@ export { stringify } from "./stringify"
 export { Column, formatTable, Row, Table, splitColumnTitlesIntoRowsBySpaces, TableFormat } from "./table"
 export { sumTexts, join, split } from "./typedOperations"
 export { ColorMethod, Filename, HexColor, Io } from "./types"
-export { Basis, computePx, Px, Scale } from "./visualize"
+export { Basis, computePx, Px, Scale } from "./image"
 export {
     alignFormattedDecimal,
     formatIntegerDecimal,

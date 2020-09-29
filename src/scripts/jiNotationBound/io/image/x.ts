@@ -1,8 +1,8 @@
-import { Basis, Cents, computePx, Px } from "../../../../general"
+import { ACCURACY_THRESHOLD, Basis, Cents, computePx, Px, round } from "../../../../general"
 import { MARGIN, X_SCALE } from "./sizes"
 
 const computeX = (cents: Cents): Px =>
-    computePx(MARGIN + cents as Basis<Cents>, X_SCALE)
+    round(computePx(MARGIN + cents as Basis<Cents>, X_SCALE), ACCURACY_THRESHOLD)
 
 export {
     computeX,

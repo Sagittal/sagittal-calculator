@@ -1,5 +1,5 @@
-import { add, Basis, Cents, computePx, Multiplier, multiply, Px } from "../../../../general"
-import { JiNotationLevel, JI_NOTATION_LEVELS } from "../../../../sagittal"
+import { ACCURACY_THRESHOLD, add, Basis, Cents, computePx, Multiplier, multiply, Px, round } from "../../../../general"
+import { JI_NOTATION_LEVELS, JiNotationLevel } from "../../../../sagittal"
 import { computeReversedJiNotationLevelIndex } from "./reversedLevelIndex"
 import { LEVEL_HEIGHT, MARGIN, Y_SCALE } from "./sizes"
 
@@ -15,7 +15,18 @@ const computeJiNotationLevelHeights = (withinLevelHeight: Multiplier<Basis<Cents
 
             return {
                 ...jiNotationLevelTops,
-                [ jiNotationLevel ]: computePx(add(MARGIN, multiply(LEVEL_HEIGHT, jiNotationLevelHeight)), Y_SCALE),
+                [ jiNotationLevel ]: round(
+                    computePx(
+                        add(MARGIN,
+                            multiply(
+                                LEVEL_HEIGHT,
+                                jiNotationLevelHeight,
+                            ),
+                        ),
+                        Y_SCALE,
+                    ),
+                    ACCURACY_THRESHOLD,
+                ),
             }
         },
         {} as Record<JiNotationLevel, Px>,

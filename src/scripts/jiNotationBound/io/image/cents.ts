@@ -1,4 +1,4 @@
-import { ceil, Cents, computeCentsFromPitch, computePx, Io, Px } from "../../../../general"
+import { ACCURACY_THRESHOLD, ceil, Cents, computeCentsFromPitch, computePx, Io, Px, round } from "../../../../general"
 import { MAX_SYMBOL_CLASS_POSITION } from "../../../../sagittal"
 import { MARGIN, Y_SCALE } from "./sizes"
 import { computeX } from "./x"
@@ -7,7 +7,7 @@ const visualizeCents = (): Io[] => {
     const cents: Cents[] = [...Array(ceil(computeCentsFromPitch(MAX_SYMBOL_CLASS_POSITION))).keys()] as Cents[]
 
     const centElements: Io[] = []
-    const centsY: Px = computePx(MARGIN, Y_SCALE)
+    const centsY: Px = round(computePx(MARGIN, Y_SCALE), ACCURACY_THRESHOLD)
 
     cents.forEach((cent: Cents): void => {
         const positionX = computeX(cent)
