@@ -1,13 +1,30 @@
-import { ACCURACY_THRESHOLD, deepRound, Formatted, NEWLINE, stringify, sumTexts } from "../../../../../general"
+import {
+    ACCURACY_THRESHOLD,
+    deepMap,
+    Formatted,
+    isNumber,
+    NEWLINE,
+    Precision,
+    round,
+    stringify,
+    sumTexts,
+} from "../../../../../general"
 import { JiNotationBoundAnalysis } from "../../../bound"
 import { extractJiNotationBoundIdentifiers } from "../boundIdentifiers"
 import { FormatJiNotationBoundOptions } from "./types"
+
+const roundIfNumeric = (value: unknown, precision: Precision): unknown =>
+    isNumber(value) ? round(value, precision) : value
 
 const formatJiNotationBound = (
     jiNotationBoundAnalysis: JiNotationBoundAnalysis,
     { jiNotationBound }: FormatJiNotationBoundOptions,
 ): Formatted<JiNotationBoundAnalysis> => {
-    const jiNotationBoundIdentifiers = deepRound(extractJiNotationBoundIdentifiers(jiNotationBound), ACCURACY_THRESHOLD)
+    const jiNotationBoundIdentifiers = deepMap(
+        extractJiNotationBoundIdentifiers(jiNotationBound),
+        roundIfNumeric,
+        ACCURACY_THRESHOLD,
+    )
 
     const formattedJiNotationBoundIdentifiers = stringify(jiNotationBoundIdentifiers, { multiline: true })
         .replace(/\\\\/g, "\\")

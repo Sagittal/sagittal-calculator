@@ -40,7 +40,7 @@ export {
     Precision,
     MAX_JAVASCRIPT_PRECISION,
     isObject,
-    deepRound,
+    deepMap,
 } from "./code"
 export {
     sumTexts,

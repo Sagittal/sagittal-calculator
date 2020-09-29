@@ -58,8 +58,6 @@ describe("half-apotome mirror", (): void => {
 
             const actual = computeInterval(jiNotationBound, HALF_APOTOME)
             const expected = computeInterval(HALF_APOTOME, mirroredBound)
-            // TODO: I'm afraid of forgetting I need to use this... so should I establish a culture of calling this
-            //  Anytime I have any sort of number... and use an unnecessary toEqualString to help otherwise
             expect(actual).toEqualNum(expected)
 
             indexOffset = increment(indexOffset)
