@@ -1,15 +1,15 @@
 import { isNumber, isUndefined } from "../../../code"
 import { formatNum } from "../../../io"
-import { RationalDecimal, RatioOrRationalDecimal } from "../../rational"
-import { NumOrDecimal, NumTypeParameters } from "../types"
+import { Ratio, RationalDecimal } from "../../rational"
+import { Num, NumTypeParameters } from "../types"
 import { computeDecimalFromMonzo } from "./fromMonzo"
 import { computeDecimalFromQuotient } from "./fromQuotient"
 import { Decimal } from "./types"
 
 const computeDecimalFromNum: {
-    <T extends NumTypeParameters>(numOrDecimal: RatioOrRationalDecimal<T>): RationalDecimal<T>
-    <T extends NumTypeParameters>(numOrDecimal: NumOrDecimal<T>): Decimal<T>,
-} = <T extends NumTypeParameters>(numOrDecimal: NumOrDecimal<T>): Decimal<T> => {
+    <T extends NumTypeParameters>(numOrDecimal: Ratio<T> | RationalDecimal<T>): RationalDecimal<T>
+    <T extends NumTypeParameters>(numOrDecimal: Num<T> | Decimal<T>): Decimal<T>,
+} = <T extends NumTypeParameters>(numOrDecimal: Num<T> | Decimal<T>): Decimal<T> => {
     if (isNumber(numOrDecimal)) {
         return numOrDecimal
     }

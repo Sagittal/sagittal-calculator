@@ -1,26 +1,26 @@
 import { isUndefined } from "../code"
 import {
     computeDecimalFromNum,
-    computeNumFromNumParameter,
+    computeNumFromNumOrDecimal,
     computeQuotientFromMonzo,
     computeRationalMonzoFromRationalQuotient,
     Decimal,
     isRatio,
-    NumOrDecimal,
+    Num,
     NumTypeParameters,
 } from "../math"
 import { computeCentsFromPitch } from "./centsFromPitch"
 import { PitchAnalysis } from "./types"
 
-const analyzePitch = <T extends NumTypeParameters, U extends NumOrDecimal<T>>(
+const analyzePitch = <T extends NumTypeParameters, U extends Num | Decimal<T>>(
     pitchNumOrDecimal: U,
 ): Exclude<U, Decimal<T>> & PitchAnalysis<T> => {
-    const pitch = computeNumFromNumParameter(pitchNumOrDecimal)
+    const pitch = computeNumFromNumOrDecimal(pitchNumOrDecimal)
 
     const pitchAnalysis = {
         ...pitch,
-        decimal: computeDecimalFromNum(computeNumFromNumParameter(pitchNumOrDecimal)),
-        cents: computeCentsFromPitch(computeNumFromNumParameter(pitchNumOrDecimal)),
+        decimal: computeDecimalFromNum(computeNumFromNumOrDecimal(pitchNumOrDecimal)),
+        cents: computeCentsFromPitch(computeNumFromNumOrDecimal(pitchNumOrDecimal)),
     }
 
     if (isUndefined(pitch.quotient) && !isUndefined(pitch.monzo)) {

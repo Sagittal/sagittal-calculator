@@ -1,13 +1,13 @@
 import { isNumber, isUndefined } from "../../../code"
-import { NumOrDecimal, NumTypeParameters } from "../../num"
-import { isRationalDecimal } from "./decimal"
+import { Decimal, Num, NumTypeParameters } from "../../num"
+import { isRationalDecimal, RationalDecimal } from "./decimal"
 import { isRationalMonzo } from "./monzo"
 import { isRationalQuotient } from "./quotient"
-import { RatioOrRationalDecimal } from "./types"
+import { Ratio } from "./types"
 
 const isRatio = <T extends NumTypeParameters>(
-    candidateRatioOrRationalDecimal: NumOrDecimal<T>,
-): candidateRatioOrRationalDecimal is RatioOrRationalDecimal<T> => {
+    candidateRatioOrRationalDecimal: Num<T> | Decimal<T>,
+): candidateRatioOrRationalDecimal is Ratio<T> | RationalDecimal<T> => {
     if (isNumber(candidateRatioOrRationalDecimal)) {
         return isRationalDecimal(candidateRatioOrRationalDecimal)
     }

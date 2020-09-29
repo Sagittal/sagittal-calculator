@@ -1,4 +1,4 @@
-import { divideNums, divideRatios, isRatio, NumOrDecimal, NumTypeParameters, RatioOrRationalDecimal } from "../math"
+import { Decimal, divideNums, divideRatios, isRatio, Num, NumTypeParameters, Ratio, RationalDecimal } from "../math"
 
 // TODO: instead of "NumTypeParameters" something more like "NumProps" or "NumQuals"?
 
@@ -7,14 +7,14 @@ import { divideNums, divideRatios, isRatio, NumOrDecimal, NumTypeParameters, Rat
 
 const computeInterval: {
     <T extends NumTypeParameters>(
-        fromPitch: RatioOrRationalDecimal<T>,
-        toPitch: RatioOrRationalDecimal<T>,
-    ): RatioOrRationalDecimal<T>,
+        fromPitch: Ratio<T> | RationalDecimal<T>,
+        toPitch: Ratio<T> | RationalDecimal<T>,
+    ): Ratio<T> | RationalDecimal<T>,
     <T extends NumTypeParameters>(
-        fromPitch: NumOrDecimal<T>,
-        toPitch: NumOrDecimal<T>,
-    ): NumOrDecimal<T>,
-} = <T extends NumTypeParameters>(fromPitch: NumOrDecimal<T>, toPitch: NumOrDecimal<T>): any => {
+        fromPitch: Num<T> | Decimal<T>,
+        toPitch: Num<T> | Decimal<T>,
+    ): Num<T> | Decimal<T>,
+} = <T extends NumTypeParameters>(fromPitch: Num<T> | Decimal<T>, toPitch: Num<T> | Decimal<T>): any => {
     if (isRatio(fromPitch) && isRatio(toPitch)) {
         return divideRatios(toPitch, fromPitch)
     }

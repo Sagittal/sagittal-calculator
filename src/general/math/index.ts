@@ -38,8 +38,7 @@ export {
     computeNumFromMonzo,
     computeNumFromQuotient,
     divideNums,
-    computeNumFromNumParameter,
-    NumOrDecimal,
+    computeNumFromNumOrDecimal,
     computeNumSqrt,
 } from "./num"
 export { computeDistributions } from "./distributions"
@@ -134,5 +133,4 @@ export {
     isRoughIntegerDecimal,
     multiplyRatios,
     divideRatios,
-    RatioOrRationalDecimal,
 } from "./rational"

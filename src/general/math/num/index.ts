@@ -34,12 +34,11 @@ export { isSubNum, isSuperNum, isUnisonNum, computeSuperNum } from "./direction"
 export { computeNumFromMonzo } from "./fromMonzo"
 export { divideNums, computeNumSqrt } from "./typedOperations"
 export { computeNumFromQuotient } from "./fromQuotient"
-export { computeNumFromNumParameter } from "./fromNumParameter"
+export { computeNumFromNumOrDecimal } from "./fromNumOrDecimal"
 export { equalNums, numIsHigher, numIsLower, numIsLowerOrEqual, numIsHigherOrEqual } from "./comparison"
 export {
     Direction,
     NumTypeParameters,
     Num,
     NumTypeParameterEffects,
-    NumOrDecimal,
 } from "./types"

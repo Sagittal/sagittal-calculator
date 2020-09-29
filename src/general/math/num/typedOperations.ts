@@ -5,25 +5,25 @@ import { Exponent } from "../types"
 import { computeDecimalFromNum, Decimal } from "./decimal"
 import { Monzo } from "./monzo"
 import { Quotient, QuotientPart } from "./quotient"
-import { Num, NumOrDecimal, NumTypeParameters } from "./types"
+import { Num, NumTypeParameters } from "./types"
 
 const divideNums = <T extends NumTypeParameters>(
-    dividend: NumOrDecimal<T>,
-    divisor: NumOrDecimal<T>,
+    dividend: Num<T> | Decimal<T>,
+    divisor: Num<T> | Decimal<T>,
 ): Decimal<T> => {
     return divide(computeDecimalFromNum(dividend), computeDecimalFromNum(divisor))
 }
 
 const subtractNums = <T extends NumTypeParameters>(
-    dividend: NumOrDecimal<T>,
-    divisor: NumOrDecimal<T>,
+    dividend: Num<T> | Decimal<T>,
+    divisor: Num<T> | Decimal<T>,
 ): Decimal<T> => {
     return subtract(computeDecimalFromNum(dividend), computeDecimalFromNum(divisor))
 }
 
 const multiplyNums = <T extends NumTypeParameters>(
-    multiplicand: NumOrDecimal<T>,
-    multiplier: NumOrDecimal<T>,
+    multiplicand: Num<T> | Decimal<T>,
+    multiplier: Num<T> | Decimal<T>,
 ): Decimal<T> => {
     return multiply(computeDecimalFromNum(multiplicand), computeDecimalFromNum(multiplier))
 }
@@ -31,7 +31,7 @@ const multiplyNums = <T extends NumTypeParameters>(
 const computeNumSqrt: {
     <T extends NumTypeParameters>(num: Num<T>): Num<T & { rational: false, integer: false }>,
     <T extends NumTypeParameters>(decimal: Decimal<T>): Decimal<T & { rational: false, integer: false }>,
-} = <T extends NumTypeParameters>(numOrDecimal: NumOrDecimal<T>): any => {
+} = <T extends NumTypeParameters>(numOrDecimal: Num<T> | Decimal<T>): any => {
     if (isNumber(numOrDecimal)) {
         return sqrt(numOrDecimal)
     }

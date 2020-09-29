@@ -1,35 +1,38 @@
 import { deepClone, isNumber, isUndefined } from "../../code"
 import { reciprocal } from "../typedOperations"
-import { invertDecimal, isSubDecimal, isSuperDecimal, isUnisonDecimal } from "./decimal"
-import { computeNumFromNumParameter } from "./fromNumParameter"
+import { Decimal, invertDecimal, isSubDecimal, isSuperDecimal, isUnisonDecimal } from "./decimal"
+import { computeNumFromNumOrDecimal } from "./fromNumOrDecimal"
 import { invertMonzo, isSubMonzo, isSuperMonzo, isUnisonMonzo } from "./monzo"
 import { invertQuotient, isSubQuotient, isSuperQuotient, isUnisonQuotient } from "./quotient"
-import { Direction, NumOrDecimal, NumTypeParameters } from "./types"
+import { Direction, Num, NumTypeParameters } from "./types"
 
-const isSuperNum = <T extends NumTypeParameters, U extends NumOrDecimal<T>>(
+const isSuperNum = <T extends NumTypeParameters, U extends Num<T> | Decimal<T>>(
     candidateSuperNumParameter: U,
-): candidateSuperNumParameter is U & NumOrDecimal<T & { direction: Direction.SUPER }> => {
-    const { monzo, quotient, decimal } = computeNumFromNumParameter(candidateSuperNumParameter)
+): candidateSuperNumParameter is
+    U & (Num<T & { direction: Direction.SUPER }> | Decimal<T & { direction: Direction.SUPER }>) => {
+    const { monzo, quotient, decimal } = computeNumFromNumOrDecimal(candidateSuperNumParameter)
 
     return (!isUndefined(decimal) && isSuperDecimal(decimal)) ||
         (!isUndefined(quotient) && isSuperQuotient(quotient)) ||
         (!isUndefined(monzo) && isSuperMonzo(monzo))
 }
 
-const isSubNum = <T extends NumTypeParameters, U extends NumOrDecimal<T>>(
+const isSubNum = <T extends NumTypeParameters, U extends Num<T> | Decimal<T>>(
     candidateSubNumParameter: U,
-): candidateSubNumParameter is U & NumOrDecimal<T & { direction: Direction.SUB }> => {
-    const { monzo, quotient, decimal } = computeNumFromNumParameter(candidateSubNumParameter)
+): candidateSubNumParameter is
+    U & (Num<T & { direction: Direction.SUB }> | Decimal<T & { direction: Direction.SUB }>) => {
+    const { monzo, quotient, decimal } = computeNumFromNumOrDecimal(candidateSubNumParameter)
 
     return (!isUndefined(decimal) && isSubDecimal(decimal)) ||
         (!isUndefined(quotient) && isSubQuotient(quotient)) ||
         (!isUndefined(monzo) && isSubMonzo(monzo))
 }
 
-const isUnisonNum = <T extends NumTypeParameters, U extends NumOrDecimal<T>>(
+const isUnisonNum = <T extends NumTypeParameters, U extends Num<T> | Decimal<T>>(
     candidateUnisonNumParameter: U,
-): candidateUnisonNumParameter is U & NumOrDecimal<T & { direction: Direction.UNISON }> => {
-    const { monzo, quotient, decimal } = computeNumFromNumParameter(candidateUnisonNumParameter)
+): candidateUnisonNumParameter is
+    U & (Num<T & { direction: Direction.UNISON }> | Decimal<T & { direction: Direction.UNISON }>) => {
+    const { monzo, quotient, decimal } = computeNumFromNumOrDecimal(candidateUnisonNumParameter)
 
     return (!isUndefined(decimal) && isUnisonDecimal(decimal)) ||
         (!isUndefined(quotient) && isUnisonQuotient(quotient)) ||
@@ -39,16 +42,20 @@ const isUnisonNum = <T extends NumTypeParameters, U extends NumOrDecimal<T>>(
 // TODO: I'm not convinced this is going to actually give you back a decimal if you put one in.
 //  See computeNumSqrt for an exampel of me getting this to work.
 //  And that will affect invertNum if you ever implement it here too.
-const computeSuperNum = <T extends NumTypeParameters, U extends NumOrDecimal<T>>(
+const computeSuperNum = <T extends NumTypeParameters, U extends Num<T> | Decimal<T>>(
     numOrDecimal: U,
-): Exclude<U, NumOrDecimal> & NumOrDecimal<Omit<T, "direction"> & { direction: Direction.SUPER, integer: false }> => {
-    let superNum = {} as Exclude<U, NumOrDecimal> & NumOrDecimal<T & { direction: Direction.SUPER, integer: false }>
+): Exclude<U, Num<T> | Decimal<T>>
+    & (
+    Num<Omit<T, "direction"> & { direction: Direction.SUPER, integer: false }>
+    | Decimal<Omit<T, "direction"> & { direction: Direction.SUPER, integer: false }>
+    ) => {
+    let superNum = {} as Exclude<U, Decimal<T>>
+        & Decimal<Omit<T, "direction"> & { direction: Direction.SUPER, integer: false }>
 
     if (isSubNum(numOrDecimal)) {
         if (isNumber(numOrDecimal)) {
-            return reciprocal(
-                numOrDecimal,
-            ) as Exclude<U, NumOrDecimal> & NumOrDecimal<T & { direction: Direction.SUPER, integer: false }>
+            return reciprocal(numOrDecimal) as Exclude<U, Num<T> | Decimal<T>>
+                & Num<Omit<T, "direction"> & { direction: Direction.SUPER, integer: false }>
         }
 
         const { monzo, quotient, decimal } = numOrDecimal
@@ -63,11 +70,16 @@ const computeSuperNum = <T extends NumTypeParameters, U extends NumOrDecimal<T>>
         }
     } else {
         superNum = deepClone(
-            numOrDecimal as Exclude<U, NumOrDecimal> & NumOrDecimal<T & { direction: Direction.SUPER, integer: false }>,
+            numOrDecimal as Exclude<U, Decimal<T>>
+                & Decimal<Omit<T, "direction"> & { direction: Direction.SUPER, integer: false }>,
         )
     }
 
-    return superNum
+    return superNum as Exclude<U, Num<T> | Decimal<T>>
+        & (
+        Num<Omit<T, "direction"> & { direction: Direction.SUPER, integer: false }>
+        | Decimal<Omit<T, "direction"> & { direction: Direction.SUPER, integer: false }>
+        )
 }
 
 export {

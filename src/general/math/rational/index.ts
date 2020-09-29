@@ -51,8 +51,6 @@ export {
     IntegerDecimal,
     isIntegerDecimal,
     isRoughIntegerDecimal,
-    IntegerOrIntegerDecimal,
-    RatioOrRationalDecimal,
     ceil,
     floor,
     integerDivide,

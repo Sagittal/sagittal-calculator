@@ -1,13 +1,13 @@
 import { isUndefined } from "../../code"
-import { computeNumFromNumParameter, Num, NumOrDecimal } from "../../math"
+import { computeNumFromNumOrDecimal, Decimal, Num } from "../../math"
 import { stringify } from "../stringify"
 import { formatDecimal } from "./decimal"
 import { formatMonzo } from "./monzo"
 import { formatQuotient } from "./quotient"
 import { Formatted } from "./types"
 
-const formatNum = (numOrDecimal: NumOrDecimal, options: { align?: boolean } = {}): Formatted<Num> => {
-    const { quotient, monzo, decimal } = computeNumFromNumParameter(numOrDecimal)
+const formatNum = (numOrDecimal: Num | Decimal, options: { align?: boolean } = {}): Formatted<Num> => {
+    const { quotient, monzo, decimal } = computeNumFromNumOrDecimal(numOrDecimal)
 
     if (!isUndefined(quotient)) {
         return formatQuotient(quotient) as Formatted as Formatted<Num>
