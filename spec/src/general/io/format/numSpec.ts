@@ -56,6 +56,15 @@ describe("formatNum", (): void => {
         expect(actual).toBe(expected)
     })
 
+    it("if provided as a direct decimal, returns the decimal formatted", (): void => {
+        const decimal = 1.666667 as Decimal
+
+        const actual = formatNum(decimal)
+
+        const expected = "1.667" as Formatted<Num>
+        expect(actual).toBe(expected)
+    })
+
     it("return the num aligned (such as for tables)", (): void => {
         const num = { decimal: 1.666667 as Decimal }
 

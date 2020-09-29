@@ -1,6 +1,12 @@
-import { divide, subtract } from "../typedOperations"
+import { isNumber, isUndefined } from "../../code"
+import { formatNum } from "../../io"
+import { Prime } from "../rational"
+import { divide, sqrt, subtract } from "../typedOperations"
+import { Exponent } from "../types"
 import { computeDecimalFromNum, Decimal } from "./decimal"
-import { NumParameter, NumTypeParameters } from "./types"
+import { Monzo } from "./monzo"
+import { Quotient, QuotientPart } from "./quotient"
+import { Num, NumParameter, NumTypeParameters } from "./types"
 
 // TODO: this is basically "computeInterval", but in that case, I think you'd want to switch the order of the params
 //  And that could live in the music/ module I suppose
@@ -25,7 +31,39 @@ const subtractNums = <T extends NumTypeParameters>(
     return subtract(computeDecimalFromNum(dividend), computeDecimalFromNum(divisor))
 }
 
+// TODO: Okay, again, they aren't really "parameters" because they occur frequently as return values too...
+
+const computeNumSqrt: {
+    <T extends NumTypeParameters>(num: Num<T>): Num<T & { rational: false, integer: false }>,
+    <T extends NumTypeParameters>(decimal: Decimal<T>): Decimal<T & { rational: false, integer: false }>,
+} = <T extends NumTypeParameters>(numParameter: NumParameter<T>): any => {
+    if (isNumber(numParameter)) {
+        return sqrt(numParameter)
+    }
+
+    const { monzo, quotient, decimal } = numParameter
+
+    if (!isUndefined(monzo)) {
+        const newMonzo = (monzo as Array<Exponent<Prime>>).map((primeExponent: Exponent<Prime>): Exponent<Prime> => {
+            return primeExponent / 2 as Exponent<Prime>
+        }) as Monzo<T>
+
+        return { monzo: newMonzo }
+    } else if (!isUndefined(quotient)) {
+        const newQuotient = (quotient as QuotientPart[]).map((quotientPart: QuotientPart): QuotientPart => {
+            return sqrt(quotientPart) as QuotientPart
+        }) as Quotient<T>
+
+        return { quotient: newQuotient }
+    } else if (!isUndefined(decimal)) {
+        return { decimal: sqrt(decimal) as Decimal<T> }
+    } else {
+        throw new Error(`Tried to compute sqrt of num ${formatNum(numParameter)} but no numeric representations were found.`)
+    }
+}
+
 export {
     divideNums,
     subtractNums,
+    computeNumSqrt,
 }

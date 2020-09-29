@@ -13,6 +13,9 @@ export {
     isRoughIntegerDecimal,
     computeIntegerDecimalSmoothness,
     computeRationalDecimalSmoothness,
+    ceil,
+    floor,
+    integerDivide,
 } from "./decimal"
 export {
     isRoughRationalQuotient,

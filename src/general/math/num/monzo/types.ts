@@ -6,7 +6,7 @@ import { Quotient } from "../quotient"
 import { NumTypeParameterEffects, NumTypeParameters } from "../types"
 
 type Monzo<T extends NumTypeParameters = {}> =
-    Array<number & Exponent<Prime>>
+    Array<Exponent<Prime>>
     & NumTypeParameterEffects<T>
 
 type Val = Array<Exponent<Step>>

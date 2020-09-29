@@ -3,8 +3,8 @@ import { Index } from "../../../../types"
 import { dividesEvenly } from "../../../dividesEvenly"
 import { computeRoughnessIndex } from "../../primeCount"
 import { PRIMES } from "../../primes"
-import { integerDivide } from "../../typedOperations"
 import { Prime, Roughness } from "../../types"
+import { integerDivide } from "./typedOperations"
 import { IntegerDecimal } from "./types"
 
 const isRoughIntegerDecimal = (integerDecimal: IntegerDecimal, roughness: Roughness): boolean => {
@@ -31,18 +31,18 @@ const isRoughIntegerDecimal = (integerDecimal: IntegerDecimal, roughness: Roughn
 const computeRoughIntegerDecimal = <T extends IntegerDecimal>(integerDecimal: T, roughness: Roughness): T => {
     const roughnessIndex = computeRoughnessIndex(roughness)
 
-    let roughInteger = integerDecimal
+    let roughIntegerDecimal = integerDecimal
     let primeIndex = 0
     while (primeIndex < roughnessIndex) {
         const prime: IntegerDecimal = PRIMES[ primeIndex ]
-        while (dividesEvenly(roughInteger, prime)) {
-            roughInteger = integerDivide(roughInteger, prime) as T
+        while (dividesEvenly(roughIntegerDecimal, prime)) {
+            roughIntegerDecimal = integerDivide(roughIntegerDecimal, prime) as T
         }
 
         primeIndex = increment(primeIndex)
     }
 
-    return roughInteger
+    return roughIntegerDecimal
 }
 
 export {

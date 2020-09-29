@@ -1,4 +1,4 @@
-import { Comma, Decimal, Num, RationalMonzo, RationalQuotient, THREE_PRIME_INDEX } from "../general"
+import { Comma, computeNumSqrt, Decimal, Num, RationalMonzo, RationalQuotient, THREE_PRIME_INDEX } from "../general"
 
 const APOTOME: Comma = {
     monzo: [-11, 7] as RationalMonzo,
@@ -6,15 +6,7 @@ const APOTOME: Comma = {
     decimal: 2187 / 2048 as Decimal,    // 113.68500605771192¢
 } as Comma
 
-const HALF_APOTOME: Num = {
-    monzo: [-5.5, 3.5] as RationalMonzo,
-    // TODO: NUM SQRT HELPER
-    //  Here I definitely just want the sqrt of the Num, which just halves monzo terms and sqrts decimals or quotient pt
-    //  Could be cool to have a half-pitch helper or maybe just general multiply or divide
-    //  Which would adjust monzo, quotient, cents, number, etc. accordingly
-    //  It might spare me the pain of thinking I could just divide decimals by 2 instead of taking the sqrt...
-    //  So find all they places where you are doing that and update them
-}
+const HALF_APOTOME: Num = computeNumSqrt(APOTOME)
 
 const APOTOME_DECIMAL: Decimal = APOTOME.decimal!
 

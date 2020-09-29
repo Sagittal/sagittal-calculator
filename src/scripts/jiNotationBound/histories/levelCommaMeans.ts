@@ -32,8 +32,8 @@ const computeJiNotationLevelCommaMeans = (jiNotationLevel: JiNotationLevel): Com
             const nextSymbolClassId = jiNotationLevelSymbolClassIds[ index + 1 ]
 
             // TODO: NUM SQRT HELPER
-            //  Combine the nums, then take their sqrt, that's what you should do here.
-            //  Although maybe it should just be an average nums helper.
+            //  Combine the nums, (multiply) then take their sqrt, that's what you should do here.
+            //  Although maybe it should just be an average nums helper. er, well, geometric mean, then, I suppose.
             const cents = (
                 getJiNotationSymbolCents(symbolClassId) + getJiNotationSymbolCents(nextSymbolClassId)
             ) / 2 as Cents

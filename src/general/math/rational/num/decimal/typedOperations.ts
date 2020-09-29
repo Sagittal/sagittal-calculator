@@ -1,4 +1,4 @@
-import { IntegerDecimal } from "./num"
+import { IntegerDecimal } from "./types"
 
 const integerDivide = <T extends number>(dividend: T, divisor: T): T & IntegerDecimal =>
     floor(dividend / divisor) as T & IntegerDecimal

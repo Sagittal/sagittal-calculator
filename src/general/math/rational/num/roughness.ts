@@ -10,9 +10,7 @@ const isRoughRatio = <S extends Primes, T extends NumTypeParameters>(
     rationalParameter: RationalParameter<T>,
     roughness: S & Roughness,
 ): rationalParameter is RationalParameter<T & { rough: S }> => {
-    const ratio = computeNumFromNumParameter(rationalParameter)
-
-    const { monzo, quotient, decimal } = ratio
+    const { monzo, quotient, decimal } = computeNumFromNumParameter(rationalParameter)
 
     if (isUndefined(monzo) && isUndefined(quotient) && !isUndefined(decimal)) {
         return isRoughRationalQuotient(

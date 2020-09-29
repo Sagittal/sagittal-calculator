@@ -1,13 +1,14 @@
 import { isUndefined } from "../../code"
-import { Num } from "../../math"
+import { computeNumFromNumParameter, Num, NumParameter } from "../../math"
 import { stringify } from "../stringify"
 import { formatDecimal } from "./decimal"
 import { formatMonzo } from "./monzo"
 import { formatQuotient } from "./quotient"
 import { Formatted } from "./types"
 
-const formatNum = (num: Num, options: { align?: boolean } = {}): Formatted<Num> => {
-    const { quotient, monzo, decimal } = num
+const formatNum = (numParameter: NumParameter, options: { align?: boolean } = {}): Formatted<Num> => {
+    const { quotient, monzo, decimal } = computeNumFromNumParameter(numParameter)
+
     if (!isUndefined(quotient)) {
         return formatQuotient(quotient) as Formatted as Formatted<Num>
     } else if (!isUndefined(monzo)) {
@@ -16,7 +17,7 @@ const formatNum = (num: Num, options: { align?: boolean } = {}): Formatted<Num> 
         return formatDecimal(decimal, options) as Formatted as Formatted<Num>
     }
 
-    throw new Error(`Tried to format num ${stringify(num)} but it had no numeric members.`)
+    throw new Error(`Tried to format num ${stringify(numParameter)} but it had no numeric members.`)
 }
 
 export {

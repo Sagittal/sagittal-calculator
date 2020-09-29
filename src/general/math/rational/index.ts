@@ -13,7 +13,6 @@ export { computePrimeCount, computeRoughnessIndex, computeSmoothnessIndex } from
 export { PRIMES } from "./primes"
 export { computeSopfr } from "./sopfr"
 export { computeGreatestCommonDivisor } from "./common"
-export { ceil, floor, integerDivide } from "./typedOperations"
 export { Copfr, Prime, Roughness, Sopfr, Smoothness, Primes } from "./types"
 export {
     isRationalQuotient,
@@ -54,4 +53,7 @@ export {
     isRoughIntegerDecimal,
     IntegerParameter,
     RationalParameter,
+    ceil,
+    floor,
+    integerDivide,
 } from "./num"

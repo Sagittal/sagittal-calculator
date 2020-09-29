@@ -9,6 +9,7 @@ import { RationalMonzo } from "./types"
 const computeRationalMonzoFromRatio = <T extends NumTypeParameters>(
     ratio: Ratio<T>,
 ): RationalMonzo<T> => {
+    // TODO: doesn't this have to be rational? and also use RationalParameter....
     const { monzo, quotient, decimal } = ratio
     let rationalMonzo: RationalMonzo<T>
     if (!isUndefined(monzo)) {

@@ -5,7 +5,8 @@ import {
     MULTIPLICATIVE_IDENTITY,
     VALUE_BELOW_WHICH_ROUNDING_IMPLEMENTATION_BREAKS,
 } from "./constants"
-import { IntegerDecimal } from "./rational"
+import { Decimal } from "./num"
+import { IntegerDecimal, RationalDecimal } from "./rational"
 import { Abs, Avg, Base, Exponent, Max, Min, Power } from "./types"
 
 const count = <T>(array: T[]): Count<T> => {
@@ -62,11 +63,19 @@ const round = <T extends number>(number: T, precision?: Precision): T => {
 const abs = <T extends number>(number: T): Abs<T> =>
     Math.abs(number) as Abs<T>
 
-const sqrt = <T extends number>(number: T): Omit<T, "_IntegerBrand"> =>
-    Math.sqrt(number) as unknown as Omit<T, "_IntegerBrand">
+const sqrt: {
+    <T extends IntegerDecimal>(integerDecimal: T): Decimal,
+    <T extends RationalDecimal>(rationalDecimal: T): Decimal,
+    <T extends Decimal>(decimal: T): Decimal,
+} = <T extends Decimal>(decimal: T): any =>
+    Math.sqrt(decimal)
 
-const cubeRoot = <T extends number>(number: T): Omit<T, "_IntegerBrand"> =>
-    Math.cbrt(number) as unknown as Omit<T, "_IntegerBrand">
+const cubeRoot: {
+    <T extends IntegerDecimal>(integerDecimal: T): Decimal,
+    <T extends RationalDecimal>(rationalDecimal: T): Decimal,
+    <T extends Decimal>(decimal: T): Decimal,
+} = <T extends Decimal>(decimal: T): any =>
+    Math.cbrt(decimal) as unknown as Omit<T, "_IntegerBrand">
 
 const max = <T extends number>(...numbers: T[]): Max<T> =>
     Math.max(...numbers) as Max<T>
