@@ -1,4 +1,13 @@
-import { ACCURACY_THRESHOLD, HexColor, Io, Multiplier, Px, round, subtract } from "../../../../general"
+import {
+    ACCURACY_THRESHOLD,
+    computeAngle,
+    Coordinates,
+    HexColor,
+    Io,
+    Px,
+    radiansToDegrees,
+    round,
+} from "../../../../general"
 import { JiNotationLevel } from "../../../../sagittal"
 import { BoundEventAnalysis } from "../../history"
 import { JI_NOTATION_LEVEL_BOTTOMS, JI_NOTATION_LEVEL_CENTERS } from "./levelHeights"
@@ -37,8 +46,8 @@ const visualizeBoundEventAnalyses = (boundEventAnalyses: BoundEventAnalysis[]): 
         const positionX: Px = computeX(cents)
         const positionY: Px = round(
             jiNotationLevel ?
-            JI_NOTATION_LEVEL_CENTERS[ jiNotationLevel ] :
-            JI_NOTATION_LEVEL_BOTTOMS[ nextLevel ]
+                JI_NOTATION_LEVEL_CENTERS[ jiNotationLevel ] :
+                JI_NOTATION_LEVEL_BOTTOMS[ nextLevel ]
             , ACCURACY_THRESHOLD)
 
         const nextPositionX: Px = computeX(nextCents)
@@ -53,11 +62,10 @@ const visualizeBoundEventAnalyses = (boundEventAnalyses: BoundEventAnalysis[]): 
         const textX: Px = round((positionX + nextPositionX) / 2 as Px, ACCURACY_THRESHOLD)
         const textY: Px = round((positionY + nextPositionY) / 2 as Px, ACCURACY_THRESHOLD)
 
-            // TODO: extract this calculation to math/
-        const rise: Px = subtract(nextPositionY, positionY)
-        const run: Px = subtract(nextPositionX, positionX)
-        const slope: Multiplier<Px> = rise / run as Multiplier<Px>
-        const angle = round(Math.atan(slope) * (180 / Math.PI), ACCURACY_THRESHOLD)
+        const angle = round(radiansToDegrees(computeAngle(
+            [positionX, positionY] as unknown[] as Coordinates,
+            [nextPositionX, nextPositionY] as unknown[] as Coordinates,
+        )), ACCURACY_THRESHOLD)
         boundEventElements.push(`  <text stroke="white" stroke-width="0.45em" transform="rotate(${angle} ${textX} ${textY})" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="${textX}" y="${textY}">${formattedDistance} (${formattedInaDistance})</text>\n` as Io)
         boundEventElements.push(`  <text fill="red" transform="rotate(${angle} ${textX} ${textY})" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="${textX}" y="${textY}">${formattedDistance} (${formattedInaDistance})</text>\n` as Io)
     })

@@ -44,6 +44,7 @@ export {
 } from "./num"
 export { computeDistributions } from "./distributions"
 export { dividesEvenly } from "./dividesEvenly"
+export { computeAngle, radiansToDegrees } from "./angle"
 export { computeTriangularNumber } from "./triangularNumber"
 export {
     abs,
@@ -73,6 +74,7 @@ export {
     Power,
     Distribution,
     Avg,
+    Coordinates,
 } from "./types"
 export {
     FIVE_PRIME_INDEX,

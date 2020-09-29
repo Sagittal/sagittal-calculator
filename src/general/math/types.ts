@@ -19,6 +19,13 @@ type Approx<T extends number = number> = T & { _ApproxBrand: boolean }
 type Max<T extends unknown = number> = T & { _MaxBrand: boolean }
 type Min<T extends unknown = number> = T & { _MinBrand: boolean }
 
+type X = number & { _XBrand: boolean }
+type Y = number & { _YBrand: boolean }
+type Coordinate = X | Y
+type Coordinates = [ X, Y ]
+type Radians = number & { _RadiansBrand: boolean }
+type Degrees = number & { _DegreesBrand: boolean }
+
 export {
     Combination,
     Combinations,
@@ -31,4 +38,7 @@ export {
     Min,
     Avg,
     Abs,
+    Coordinates,
+    Radians,
+    Degrees,
 }

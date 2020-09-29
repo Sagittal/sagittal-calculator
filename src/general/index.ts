@@ -201,6 +201,9 @@ export {
     divideNums,
     computeNumSqrt,
     multiplyRatios,
+    computeAngle,
+    radiansToDegrees,
+    Coordinates,
 } from "./math"
 export {
     Cents,
