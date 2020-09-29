@@ -22,7 +22,6 @@ const computeDecimalFromNum: {
         return computeDecimalFromMonzo(numParameter.monzo)
     }
 
-    // TODO: should hunt down mentions of "num" in errors for rational nums and replace with "ratio" (same for integer)
     throw new Error(`Tried to compute decimal from num ${formatNum(numParameter)} but no numeric representations were found.`)
 }
 
