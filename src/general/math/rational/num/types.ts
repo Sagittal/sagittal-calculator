@@ -13,11 +13,11 @@ type Integer<T extends NumTypeParameters = {}> =
     | IntegerByMonzo<T>
     | IntegerByQuotient<T>
 
-type RationalParameter<T extends NumTypeParameters = {}> =
+type RatioOrRationalDecimal<T extends NumTypeParameters = {}> =
     Ratio<T>
     | RationalDecimal<T>
 
-type IntegerParameter<T extends NumTypeParameters = {}> =
+type IntegerOrIntegerDecimal<T extends NumTypeParameters = {}> =
     Integer<T>
     | IntegerDecimal<T>
 
@@ -25,6 +25,6 @@ export {
     Ratio,
     RatioByDecimal,
     Integer,
-    RationalParameter,
-    IntegerParameter,
+    RatioOrRationalDecimal,
+    IntegerOrIntegerDecimal,
 }

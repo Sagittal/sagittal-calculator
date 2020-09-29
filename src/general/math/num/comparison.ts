@@ -5,11 +5,11 @@ import { computeDecimalFromMonzo, computeDecimalFromNum, computeDecimalFromQuoti
 import { computeNumFromNumParameter } from "./fromNumParameter"
 import { equalMonzos } from "./monzo"
 import { computeQuotientFromMonzo } from "./quotient"
-import { NumParameter } from "./types"
+import { NumOrDecimal } from "./types"
 
 const equalNums = (
-    numParameterA: NumParameter,
-    numParameterB: NumParameter,
+    numParameterA: NumOrDecimal,
+    numParameterB: NumOrDecimal,
     precision: Precision = MAX_JAVASCRIPT_PRECISION,
 ): boolean => {
     const numA = computeNumFromNumParameter(numParameterA)
@@ -52,46 +52,46 @@ const equalNums = (
 }
 
 const numIsHigher = (
-    numParameter: NumParameter,
-    otherNumParameter: NumParameter,
+    numParameter: NumOrDecimal,
+    otherNumParameter: NumOrDecimal,
     precision: Precision = MAX_JAVASCRIPT_PRECISION,
 ): boolean => {
     const num = computeNumFromNumParameter(numParameter)
     const otherNum = computeNumFromNumParameter(otherNumParameter)
-    
+
     return !equalNums(num, otherNum, precision) && computeDecimalFromNum(num) > computeDecimalFromNum(otherNum)
 }
 
 const numIsLower = (
-    numParameter: NumParameter,
-    otherNumParameter: NumParameter,
+    numParameter: NumOrDecimal,
+    otherNumParameter: NumOrDecimal,
     precision: Precision = MAX_JAVASCRIPT_PRECISION,
 ): boolean => {
     const num = computeNumFromNumParameter(numParameter)
     const otherNum = computeNumFromNumParameter(otherNumParameter)
-    
+
     return !equalNums(num, otherNum, precision) && computeDecimalFromNum(num) < computeDecimalFromNum(otherNum)
 }
 
 const numIsHigherOrEqual = (
-    numParameter: NumParameter,
-    otherNumParameter: NumParameter,
+    numParameter: NumOrDecimal,
+    otherNumParameter: NumOrDecimal,
     precision: Precision = MAX_JAVASCRIPT_PRECISION,
 ): boolean => {
     const num = computeNumFromNumParameter(numParameter)
     const otherNum = computeNumFromNumParameter(otherNumParameter)
-    
+
     return equalNums(num, otherNum, precision) || numIsHigher(num, otherNum, precision)
 }
 
 const numIsLowerOrEqual = (
-    numParameter: NumParameter,
-    otherNumParameter: NumParameter,
+    numParameter: NumOrDecimal,
+    otherNumParameter: NumOrDecimal,
     precision: Precision = MAX_JAVASCRIPT_PRECISION,
 ): boolean => {
     const num = computeNumFromNumParameter(numParameter)
     const otherNum = computeNumFromNumParameter(otherNumParameter)
-    
+
     return equalNums(num, otherNum, precision) || numIsLower(num, otherNum, precision)
 }
 

@@ -2,8 +2,8 @@ export {
     Ratio,
     RatioByDecimal,
     Integer,
-    RationalParameter,
-    IntegerParameter,
+    RatioOrRationalDecimal,
+    IntegerOrIntegerDecimal,
 } from "./types"
 export {
     computeIntegerDecimalFromIntegerMonzo,

@@ -10,7 +10,7 @@ const computeRationalQuotientFromRatio = <T extends NumTypeParameters>(
     ratio: Ratio<T>,
     options: { disableErrorBecauseExactValueNotRequired?: boolean } = {},
 ): RationalQuotient<T> => {
-    // TODO: RationalParameter?
+    // TODO: RatioOrRationalDecimal?
     const { monzo, quotient, decimal } = ratio
 
     let rationalQuotient: RationalQuotient<T>

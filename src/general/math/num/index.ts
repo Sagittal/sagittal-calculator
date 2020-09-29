@@ -41,5 +41,5 @@ export {
     NumTypeParameters,
     Num,
     NumTypeParameterEffects,
-    NumParameter,
+    NumOrDecimal,
 } from "./types"

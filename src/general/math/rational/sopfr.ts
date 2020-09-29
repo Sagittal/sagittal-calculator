@@ -1,13 +1,13 @@
 import { computeNumFromNumParameter, NumTypeParameters } from "../num"
 import { abs } from "../typedOperations"
 import { Exponent } from "../types"
-import { computeRationalMonzoFromRatio, RationalParameter } from "./num"
+import { computeRationalMonzoFromRatio, RatioOrRationalDecimal } from "./num"
 import { PRIMES } from "./primes"
 import { Prime, Sopfr } from "./types"
 
 // Sum of prime factors
 
-const computeSopfr = <T extends NumTypeParameters>(rationalParameter: RationalParameter<T>): Sopfr<T> => {
+const computeSopfr = <T extends NumTypeParameters>(rationalParameter: RatioOrRationalDecimal<T>): Sopfr<T> => {
     const rationalMonzo = computeRationalMonzoFromRatio(computeNumFromNumParameter(rationalParameter))
 
     return rationalMonzo.reduce(

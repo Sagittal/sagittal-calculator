@@ -39,7 +39,7 @@ export {
     computeNumFromQuotient,
     divideNums,
     computeNumFromNumParameter,
-    NumParameter,
+    NumOrDecimal,
     computeNumSqrt,
 } from "./num"
 export { computeDistributions } from "./distributions"

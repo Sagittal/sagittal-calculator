@@ -6,14 +6,14 @@ import { Exponent } from "../types"
 import { computeDecimalFromNum, Decimal } from "./decimal"
 import { Monzo } from "./monzo"
 import { Quotient, QuotientPart } from "./quotient"
-import { Num, NumParameter, NumTypeParameters } from "./types"
+import { Num, NumOrDecimal, NumTypeParameters } from "./types"
 
 // TODO: this is basically "computeInterval", but in that case, I think you'd want to switch the order of the params
 //  And that could live in the music/ module I suppose
 
 const divideNums = <T extends NumTypeParameters>(
-    dividend: NumParameter<T>,
-    divisor: NumParameter<T>,
+    dividend: NumOrDecimal<T>,
+    divisor: NumOrDecimal<T>,
 ): Decimal<T> => {
     return divide(computeDecimalFromNum(dividend), computeDecimalFromNum(divisor))
 }
@@ -25,18 +25,16 @@ const divideNums = <T extends NumTypeParameters>(
 //  Which is exactly what you'd want for a comma mean... no wait, that's going to be sum monzos then use the sqrt helper
 
 const subtractNums = <T extends NumTypeParameters>(
-    dividend: NumParameter<T>,
-    divisor: NumParameter<T>,
+    dividend: NumOrDecimal<T>,
+    divisor: NumOrDecimal<T>,
 ): Decimal<T> => {
     return subtract(computeDecimalFromNum(dividend), computeDecimalFromNum(divisor))
 }
 
-// TODO: Okay, again, they aren't really "parameters" because they occur frequently as return values too...
-
 const computeNumSqrt: {
     <T extends NumTypeParameters>(num: Num<T>): Num<T & { rational: false, integer: false }>,
     <T extends NumTypeParameters>(decimal: Decimal<T>): Decimal<T & { rational: false, integer: false }>,
-} = <T extends NumTypeParameters>(numParameter: NumParameter<T>): any => {
+} = <T extends NumTypeParameters>(numParameter: NumOrDecimal<T>): any => {
     if (isNumber(numParameter)) {
         return sqrt(numParameter)
     }

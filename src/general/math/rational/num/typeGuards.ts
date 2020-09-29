@@ -8,7 +8,7 @@ import { Ratio } from "./types"
 const isRatio = <T extends NumTypeParameters>(
     candidateRatio: Num<T>,
 ): candidateRatio is Ratio<T> => {
-    // TODO: Use RationalParameter?
+    // TODO: Use RatioOrRationalDecimal?
     const { monzo, quotient, decimal } = candidateRatio
 
     return (!isUndefined(monzo) && isRationalMonzo(monzo)) ||

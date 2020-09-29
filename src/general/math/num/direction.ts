@@ -4,11 +4,11 @@ import { invertDecimal, isSubDecimal, isSuperDecimal, isUnisonDecimal } from "./
 import { computeNumFromNumParameter } from "./fromNumParameter"
 import { invertMonzo, isSubMonzo, isSuperMonzo, isUnisonMonzo } from "./monzo"
 import { invertQuotient, isSubQuotient, isSuperQuotient, isUnisonQuotient } from "./quotient"
-import { Direction, NumParameter, NumTypeParameters } from "./types"
+import { Direction, NumOrDecimal, NumTypeParameters } from "./types"
 
-const isSuperNum = <T extends NumTypeParameters, U extends NumParameter<T>>(
+const isSuperNum = <T extends NumTypeParameters, U extends NumOrDecimal<T>>(
     candidateSuperNumParameter: U,
-): candidateSuperNumParameter is U & NumParameter<T & { direction: Direction.SUPER }> => {
+): candidateSuperNumParameter is U & NumOrDecimal<T & { direction: Direction.SUPER }> => {
     const { monzo, quotient, decimal } = computeNumFromNumParameter(candidateSuperNumParameter)
 
     return (!isUndefined(decimal) && isSuperDecimal(decimal)) ||
@@ -16,9 +16,9 @@ const isSuperNum = <T extends NumTypeParameters, U extends NumParameter<T>>(
         (!isUndefined(monzo) && isSuperMonzo(monzo))
 }
 
-const isSubNum = <T extends NumTypeParameters, U extends NumParameter<T>>(
+const isSubNum = <T extends NumTypeParameters, U extends NumOrDecimal<T>>(
     candidateSubNumParameter: U,
-): candidateSubNumParameter is U & NumParameter<T & { direction: Direction.SUB }> => {
+): candidateSubNumParameter is U & NumOrDecimal<T & { direction: Direction.SUB }> => {
     const { monzo, quotient, decimal } = computeNumFromNumParameter(candidateSubNumParameter)
 
     return (!isUndefined(decimal) && isSubDecimal(decimal)) ||
@@ -26,9 +26,9 @@ const isSubNum = <T extends NumTypeParameters, U extends NumParameter<T>>(
         (!isUndefined(monzo) && isSubMonzo(monzo))
 }
 
-const isUnisonNum = <T extends NumTypeParameters, U extends NumParameter<T>>(
+const isUnisonNum = <T extends NumTypeParameters, U extends NumOrDecimal<T>>(
     candidateUnisonNumParameter: U,
-): candidateUnisonNumParameter is U & NumParameter<T & { direction: Direction.UNISON }> => {
+): candidateUnisonNumParameter is U & NumOrDecimal<T & { direction: Direction.UNISON }> => {
     const { monzo, quotient, decimal } = computeNumFromNumParameter(candidateUnisonNumParameter)
 
     return (!isUndefined(decimal) && isUnisonDecimal(decimal)) ||
@@ -39,16 +39,16 @@ const isUnisonNum = <T extends NumTypeParameters, U extends NumParameter<T>>(
 // TODO: I'm not convinced this is going to actually give you back a decimal if you put one in.
 //  See computeNumSqrt for an exampel of me getting this to work.
 //  And that will affect invertNum if you ever implement it here too.
-const computeSuperNum = <T extends NumTypeParameters, U extends NumParameter<T>>(
+const computeSuperNum = <T extends NumTypeParameters, U extends NumOrDecimal<T>>(
     numParameter: U,
-): Exclude<U, NumParameter> & NumParameter<Omit<T, "direction"> & { direction: Direction.SUPER, integer: false }> => {
-    let superNum = {} as Exclude<U, NumParameter> & NumParameter<T & { direction: Direction.SUPER, integer: false }>
+): Exclude<U, NumOrDecimal> & NumOrDecimal<Omit<T, "direction"> & { direction: Direction.SUPER, integer: false }> => {
+    let superNum = {} as Exclude<U, NumOrDecimal> & NumOrDecimal<T & { direction: Direction.SUPER, integer: false }>
 
     if (isSubNum(numParameter)) {
         if (isNumber(numParameter)) {
             return reciprocal(
                 numParameter,
-            ) as Exclude<U, NumParameter> & NumParameter<T & { direction: Direction.SUPER, integer: false }>
+            ) as Exclude<U, NumOrDecimal> & NumOrDecimal<T & { direction: Direction.SUPER, integer: false }>
         }
 
         const { monzo, quotient, decimal } = numParameter
@@ -63,7 +63,7 @@ const computeSuperNum = <T extends NumTypeParameters, U extends NumParameter<T>>
         }
     } else {
         superNum = deepClone(
-            numParameter as Exclude<U, NumParameter> & NumParameter<T & { direction: Direction.SUPER, integer: false }>,
+            numParameter as Exclude<U, NumOrDecimal> & NumOrDecimal<T & { direction: Direction.SUPER, integer: false }>,
         )
     }
 

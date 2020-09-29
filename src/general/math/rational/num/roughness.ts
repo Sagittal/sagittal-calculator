@@ -4,12 +4,12 @@ import { Primes, Roughness } from "../types"
 import { IntegerDecimal } from "./decimal"
 import { isRoughRationalMonzo } from "./monzo"
 import { computeRationalQuotientFromRationalDecimal, isRoughRationalQuotient } from "./quotient"
-import { RationalParameter } from "./types"
+import { RatioOrRationalDecimal } from "./types"
 
 const isRoughRatio = <S extends Primes, T extends NumTypeParameters>(
-    rationalParameter: RationalParameter<T>,
+    rationalParameter: RatioOrRationalDecimal<T>,
     roughness: S & Roughness,
-): rationalParameter is RationalParameter<T & { rough: S }> => {
+): rationalParameter is RatioOrRationalDecimal<T & { rough: S }> => {
     const { monzo, quotient, decimal } = computeNumFromNumParameter(rationalParameter)
 
     if (isUndefined(monzo) && isUndefined(quotient) && !isUndefined(decimal)) {
