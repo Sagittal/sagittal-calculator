@@ -1,5 +1,6 @@
 export { computeCardinality } from "./cardinality"
 export { deepClone, shallowClone } from "./clone"
+export { deepRound } from "./deepRound"
 export { concat } from "./concat"
 export {
     ACCURACY_THRESHOLD, ZERO_ONE_INDEX_DIFF, MAX_JAVASCRIPT_INTEGER_VALUE, NOT_FOUND, MAX_JAVASCRIPT_PRECISION,
