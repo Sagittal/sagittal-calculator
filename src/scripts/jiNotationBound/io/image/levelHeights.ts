@@ -1,5 +1,5 @@
 import { ACCURACY_THRESHOLD, add, Basis, Cents, computePx, Multiplier, multiply, Px, round } from "../../../../general"
-import { JI_NOTATION_LEVELS, JiNotationLevel } from "../../../../sagittal"
+import { JiNotationLevel, JI_NOTATION_LEVELS } from "../../../../sagittal"
 import { computeReversedJiNotationLevelIndex } from "./reversedLevelIndex"
 import { LEVEL_HEIGHT, MARGIN, Y_SCALE } from "./sizes"
 
