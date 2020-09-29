@@ -1,6 +1,9 @@
 import { Decimal, Monzo, Name } from "../../../../general"
 import { SizeCategoryBound } from "./types"
 
+// TODO: remove the decimals from these; only have them in a test, similar to the comma means one, which uses
+//  Analyze Pitch (not analyze JI pitch)
+
 const SIZE_CATEGORY_BOUNDS: SizeCategoryBound[] = [
     {
         name: "u|n" as Name<SizeCategoryBound>,                             // Half Pythagorean schisma

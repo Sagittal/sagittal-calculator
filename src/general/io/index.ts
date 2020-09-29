@@ -27,7 +27,6 @@ export {
     formatIntegerDecimal,
     formatMonzo,
     formatDecimal,
-    format23FreeClass,
     formatQuotient,
     formatTime,
     formatPitch,

@@ -6,6 +6,7 @@ import { Num, NumTypeParameters } from "./types"
 
 // TODO: all such functions should be overloaded with all three layers like this, not just rational as many still are
 //  (or some don't have anything other than plain, that is)
+//  Though I do wish that could just happen kind of automatically...
 
 // TODO: right, so I'm pretty sure a goal should be to have "decimal" not really occur outside of general/math
 //  Because all IntegerDecimal usages should just use Integer, and all RationalDecimal (not htat there are many)

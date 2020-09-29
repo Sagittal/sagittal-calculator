@@ -72,7 +72,6 @@ export {
     NEWLINE,
     parseCommands,
     parseMonzo,
-    format23FreeClass,
     parse23FreeClass,
     parseQuotient,
     Px,
@@ -224,5 +223,6 @@ export {
     computeNumberFromCents,
     computeCentsFromPitch,
     compute23FreeClassName,
+    format23FreeClass,
 } from "./music"
 export { Count, Ed, Extrema, Id, Index, Ms, Multiplier, Name, Step, Sum, Window } from "./types"

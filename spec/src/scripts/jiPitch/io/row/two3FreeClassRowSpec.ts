@@ -20,7 +20,7 @@ describe("compute23FreeClassRow", (): void => {
 
         const expected = [
             " 14    ",          // Prime limit
-            "5/1",              // 2,3-free class
+            "5/1₋₂₃",           // 2,3-free class name
             "  3    ",          // 2,3-free CoPFR
             " 13    ",          // 2,3-free SoPFR
             " 18.457",          // 2,3-free N2D3P9
@@ -34,7 +34,7 @@ describe("compute23FreeClassRow", (): void => {
         const actual = compute23FreeClassRow(two3FreeClassAnalysis)
 
         const expected = [
-            "5/1",              // 2,3-free class
+            "5/1₋₂₃",           // 2,3-free class name
             " 13    ",          // 2,3-free SoPFR
             " 18.457",          // 2,3-free N2D3P9
         ] as Row<{ of: Two3FreeClass, header: true }>

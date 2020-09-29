@@ -54,7 +54,7 @@ describe("computeFindCommasRow", (): void => {
             "  8.200",          // AAS
             "  1    ",          // ATE
             " 14    ",          // Prime limit
-            "5/1",              // 2,3-free class
+            "5/1₋₂₃",           // 2,3-free class name
             "  1    ",          // 2,3-free CoPFR
             " 13    ",          // 2,3-free SoPFR
             " 18.457",          // N2D3P9
@@ -74,7 +74,7 @@ describe("computeFindCommasRow", (): void => {
             "        11.200¢",  // Cents
             "  8.200",          // Apotome slope
             " 14    ",          // Prime limit
-            "5/1",              // 2,3-free class
+            "5/1₋₂₃",           // 2,3-free class name
             "  1    ",          // 2,3-free CoPFR
             " 13    ",          // 2,3-free SoPFR
             " 18.457",          // N2D3P9
