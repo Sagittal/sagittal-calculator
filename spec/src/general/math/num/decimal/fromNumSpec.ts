@@ -28,4 +28,12 @@ describe("computeDecimalFromNum", (): void => {
 
         expect(actual).toBe(num.decimal)
     })
+
+    it("when the num is a direct decimal, returns it", (): void => {
+        const decimal = 1.3 as Decimal
+
+        const actual = computeDecimalFromNum(decimal)
+
+        expect(actual).toBe(decimal)
+    })
 })

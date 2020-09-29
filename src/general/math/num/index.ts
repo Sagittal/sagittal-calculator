@@ -32,6 +32,7 @@ export {
 } from "./monzo"
 export { isSubNum, isSuperNum, isUnisonNum, computeSuperNum } from "./direction"
 export { computeNumFromMonzo } from "./fromMonzo"
+export { divideNums } from "./typedOperations"
 export { computeNumFromQuotient } from "./fromQuotient"
 export { computeNumFromNumParameter } from "./fromNumParameter"
 export { equalNums, numIsHigher, numIsLower, numIsLowerOrEqual, numIsHigherOrEqual } from "./comparison"

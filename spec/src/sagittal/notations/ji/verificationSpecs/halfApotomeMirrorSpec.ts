@@ -1,5 +1,5 @@
 import { increment } from "../../../../../../src/general/code"
-import { computeDecimalFromNum, equalNums, numIsHigher } from "../../../../../../src/general/math"
+import { divideNums, equalNums, numIsHigher } from "../../../../../../src/general/math"
 import {
     getPrimaryComma,
     HALF_APOTOME,
@@ -9,7 +9,9 @@ import {
     PrimaryComma,
 } from "../../../../../../src/sagittal"
 
-// The idea of symbol *class* is great. But I'm wondering if maybe there's room for improvement.
+// TODO: REALIZE ERD DIAGRAM FOR ELEMENTS AND SYMBOLS AND COMMAS
+//  Ah ha! found this note. had lost it.
+//  Original note: The idea of symbol *class* is great. But I'm wondering if maybe there's room for improvement.
 //  I'm thinking in particular of how choices of comma above the half-apotome mirror are not independent.
 //  (see: http://forum.sagittal.org/viewtopic.php?p=2317#p2317)
 //  But I'm also not sure we want to shift the whole basis back to commas...
@@ -31,11 +33,8 @@ describe("half-apotome mirror", (): void => {
             const comma = jiNotationPrimaryCommas[ index ]
             const mirroredComma = jiNotationPrimaryCommas[ mirroredIndex ]
 
-            // TODO: FRACTIONAL PITCH HELPER
-            //  Another place to use the pitch helper, the interval
-            //  And in apotome slope, you could use it too, I think for the apotome fraction bit
-            const actual = computeDecimalFromNum(comma) - computeDecimalFromNum(HALF_APOTOME)
-            const expected = computeDecimalFromNum(HALF_APOTOME) - computeDecimalFromNum(mirroredComma)
+            const actual = divideNums(comma, HALF_APOTOME)
+            const expected = divideNums(HALF_APOTOME, mirroredComma)
             expect(actual).toBeCloseTo(expected)
 
             indexOffset = increment(indexOffset)
@@ -56,8 +55,8 @@ describe("half-apotome mirror", (): void => {
             const jiNotationBound = JI_NOTATION_BOUNDS[ index ]
             const mirroredBound = JI_NOTATION_BOUNDS[ mirroredIndex ]
 
-            const actual = computeDecimalFromNum(jiNotationBound) - computeDecimalFromNum(HALF_APOTOME)
-            const expected = computeDecimalFromNum(HALF_APOTOME) - computeDecimalFromNum(mirroredBound)
+            const actual = divideNums(jiNotationBound, HALF_APOTOME)
+            const expected = divideNums(HALF_APOTOME, mirroredBound)
             expect(actual).toBeCloseTo(expected)
 
             indexOffset = increment(indexOffset)

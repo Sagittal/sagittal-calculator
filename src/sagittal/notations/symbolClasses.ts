@@ -5,7 +5,6 @@ import { PrimaryComma, SymbolClass } from "./types"
 // TODO: CONSTANTIZE EACH SYMBOL CLASS
 //  So they can have names, you don’t have to know their IDs
 //  As well as symbols, bounds maybe... anything that we have good names for
-//  Haven't really communicated this "symbol class" idea to Dave yet. he might like it, or he might not
 //  And when you're done with that, e.g. you should go through and replace (|//|) references to like UNISON.ascii, etc.
 
 const SYMBOL_CLASSES: SymbolClass[] = [

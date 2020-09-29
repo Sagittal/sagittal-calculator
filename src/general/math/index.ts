@@ -37,6 +37,7 @@ export {
     computeQuotientFromMonzo,
     computeNumFromMonzo,
     computeNumFromQuotient,
+    divideNums,
 } from "./num"
 export { computeDistributions } from "./distributions"
 export { dividesEvenly } from "./dividesEvenly"

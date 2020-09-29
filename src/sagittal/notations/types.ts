@@ -23,7 +23,7 @@ type PrimaryCommaAnalysis<T extends NumTypeParameters = {}> =
     & { id: Id<PrimaryComma> }
 
 interface SymbolClass {
-    // TODO: REALIZE ERD DIAGRAM FOR ELEMENTS AND SYMBOLS
+    // TODO: REALIZE ERD DIAGRAM FOR ELEMENTS AND SYMBOLS AND COMMAS
     //  Should this be an array of references to other objects instead of hardcoded?
     //  Probably, yes. but you should review how Dave thinks of symbols and elements before you do so
     //  Because all I can remember right now is that your intuitions were a bit off

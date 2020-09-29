@@ -12,8 +12,13 @@ describe("getMinaName", (): void => {
 
     const computeSplitMinaName = (symbolClassId: Id<SymbolClass>): Name<Mina> => {
         const [lowerBound, upperBound] = computeCaptureZone(symbolClassId)
-        // TODO: FRACTIONAL PITCH HELPER
-        //  An "interval" helper, which should return cents if pitches have cents, monzos if monzos, etc.
+        // TODO: CONDUCT AT NUM LEVEL, LOGARITHMIC FRACTION HELPER
+        //  This one is going to involve first weaning inas off of cents, i.e. bringing back the decimal versions of
+        //  Them alongside all the cents versions. after that, we can take the fraction of the decimalSpan with the
+        //  MINA_DECIMAL instead. so that is indeed dividing two pitches by each other, to get an interval.
+        //  And then you just get the decimal from that pitch division.
+        //  AND! this again is cents, so this is like the "logarithmic fraction" helper
+        //  - Old notes: An "interval" helper, which should return cents if pitches have cents, monzos if monzos, etc.
         //  As is familiar from creating 2,3-free classes from other pitches
         //  And it should return a branded pitch, an Interval, to enforce that it's not a position, but an interval
         //  And perhaps think about how it might play nice with a Zone

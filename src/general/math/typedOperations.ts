@@ -34,7 +34,7 @@ const multiply = <T extends number>(multiplicand: T, multiplier: T | Multiplier<
     return multiplicand * multiplier as T   // Product
 }
 
-const divide = <T extends number>(dividend: T, divisor: Divisor<T>): T => {
+const divide = <T extends number>(dividend: T, divisor: T | Divisor<T>): T => {
     return dividend / divisor as T          // Quotient
 }
 

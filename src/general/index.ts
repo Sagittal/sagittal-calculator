@@ -197,6 +197,7 @@ export {
     computeNumFromMonzo,
     computeNumFromQuotient,
     isRoughIntegerDecimal,
+    divideNums,
 } from "./math"
 export {
     Cents,

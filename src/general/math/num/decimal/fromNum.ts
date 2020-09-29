@@ -1,24 +1,29 @@
-import { isUndefined } from "../../../code"
+import { isNumber, isUndefined } from "../../../code"
 import { formatNum } from "../../../io"
-import { Ratio, RationalDecimal } from "../../rational"
-import { Num, NumTypeParameters } from "../types"
+import { RationalDecimal, RationalParameter } from "../../rational"
+import { NumParameter, NumTypeParameters } from "../types"
 import { computeDecimalFromMonzo } from "./fromMonzo"
 import { computeDecimalFromQuotient } from "./fromQuotient"
 import { Decimal } from "./types"
 
 const computeDecimalFromNum: {
-    <T extends NumTypeParameters>(num: Ratio<T>): RationalDecimal<T>
-    <T extends NumTypeParameters>(num: Num<T>): Decimal<T>,
-} = <T extends NumTypeParameters>(num: Num<T>): Decimal<T> => {
-    if (!isUndefined(num.decimal)) {
-        return num.decimal
-    } else if (!isUndefined(num.quotient)) {
-        return computeDecimalFromQuotient(num.quotient)
-    } else if (!isUndefined(num.monzo)) {
-        return computeDecimalFromMonzo(num.monzo)
+    <T extends NumTypeParameters>(numParameter: RationalParameter<T>): RationalDecimal<T>
+    <T extends NumTypeParameters>(numParameter: NumParameter<T>): Decimal<T>,
+} = <T extends NumTypeParameters>(numParameter: NumParameter<T>): Decimal<T> => {
+    if (isNumber(numParameter)) {
+        return numParameter
     }
 
-    throw new Error(`Tried to compute decimal from num ${formatNum(num)} but no numeric representations were found.`)
+    if (!isUndefined(numParameter.decimal)) {
+        return numParameter.decimal
+    } else if (!isUndefined(numParameter.quotient)) {
+        return computeDecimalFromQuotient(numParameter.quotient)
+    } else if (!isUndefined(numParameter.monzo)) {
+        return computeDecimalFromMonzo(numParameter.monzo)
+    }
+
+    // TODO: should hunt down mentions of "num" in errors for rational nums and replace with "ratio" (same for integer)
+    throw new Error(`Tried to compute decimal from num ${formatNum(numParameter)} but no numeric representations were found.`)
 }
 
 export {
