@@ -47,30 +47,20 @@ describe("divideNums", (): void => {
 })
 
 describe("computeNumSqrt", (): void => {
-    it("works for a monzo-based num", (): void => {
-        const num = { monzo: [-11, 7] as Monzo }
+    it("includes all representations for nums", (): void => {
+        const num = {
+            monzo: [-11, 7] as Monzo,
+            quotient: [3, 2] as Quotient,
+            decimal: 1.5 as Decimal,
+        }
 
         const actual = computeNumSqrt(num)
 
-        const expected = { monzo: [-5.5, 3.5] as Monzo }
-        expect(actual).toEqual(expected)
-    })
-
-    it("works for a quotient-based num", (): void => {
-        const num = { quotient: [3, 2] as Quotient }
-
-        const actual = computeNumSqrt(num)
-
-        const expected = { quotient: [sqrt(3), sqrt(2)] as Quotient }
-        expect(actual).toEqual(expected)
-    })
-
-    it("works for a decimal-based num", (): void => {
-        const num = { decimal: 1.5 }
-
-        const actual = computeNumSqrt(num)
-
-        const expected = { decimal: sqrt(1.5) }
+        const expected = {
+            monzo: [-5.5, 3.5] as Monzo,
+            quotient: [Math.sqrt(3), Math.sqrt(2)] as Quotient,
+            decimal: Math.sqrt(1.5) as Decimal,
+        }
         expect(actual).toEqual(expected)
     })
 
@@ -79,7 +69,7 @@ describe("computeNumSqrt", (): void => {
 
         const actual = computeNumSqrt(decimal)
 
-        const expected = sqrt(1.5)
+        const expected = Math.sqrt(1.5)
         expect(actual).toBeCloseTo(expected)
     })
 })

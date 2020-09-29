@@ -3,7 +3,6 @@ import {
     computeDecimalFromNum,
     computeMonzoSum,
     computeNumFromNumParameter,
-    computeQuotientProduct,
     invertMonzo,
     invertQuotient,
     NumTypeParameters,
@@ -14,19 +13,10 @@ import { computeRationalMonzoFromRatio, RationalMonzo } from "./monzo"
 import { computeRationalQuotientFromRatio, computeRationalQuotientProduct, RationalQuotient } from "./quotient"
 import { Ratio, RatioOrRationalDecimal } from "./types"
 
-const divideRatios: {
-    <T extends NumTypeParameters>(
-        dividend: Ratio<T>,
-        divisor: RatioOrRationalDecimal<T>,
-    ): Ratio<T>
-    <T extends NumTypeParameters>(
-        dividend: RationalDecimal<T>,
-        divisor: RatioOrRationalDecimal<T>,
-    ): RationalDecimal<T>
-} = <T extends NumTypeParameters>(
+const divideRatios = <T extends NumTypeParameters>(
     dividendRatioOrRationalDecimal: RatioOrRationalDecimal<T>,
     divisorRatioOrRationalDecimal: RatioOrRationalDecimal<T>,
-): any => {
+): RatioOrRationalDecimal<T> => {
     if (isNumber(dividendRatioOrRationalDecimal)) {
         return divide(dividendRatioOrRationalDecimal, computeDecimalFromNum(divisorRatioOrRationalDecimal))
     }
@@ -37,8 +27,6 @@ const divideRatios: {
         decimal: dividendDecimal,
     } = dividendRatioOrRationalDecimal
 
-    // TODO: okay, I think there may be some recent places where I'm just picking the first defined thing and returning
-    //  It only, rather than returning every thing that is defined on the thing presently.
     const dividedRatio: Ratio<T> = {} as Ratio<T>
     if (!isUndefined(dividendMonzo)) {
         const divisorMonzo =
@@ -52,7 +40,7 @@ const divideRatios: {
             computeRationalQuotientFromRatio(computeNumFromNumParameter(divisorRatioOrRationalDecimal))
 
         dividedRatio.quotient =
-            computeQuotientProduct(dividendQuotient, invertQuotient(divisorQuotient)) as RationalQuotient<T>
+            computeRationalQuotientProduct(dividendQuotient, invertQuotient(divisorQuotient)) as RationalQuotient<T>
     }
     if (!isUndefined(dividendDecimal)) {
         const divisorDecimal = computeDecimalFromNum(divisorRatioOrRationalDecimal)

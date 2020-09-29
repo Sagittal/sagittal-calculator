@@ -46,6 +46,6 @@ export {
     IntegerMonzo,
 } from "./monzo"
 export { isRatio } from "./typeGuards"
-export { multiplyRatios } from "./typedOperations"
+export { multiplyRatios, divideRatios } from "./typedOperations"
 export { isSmoothRatio, computeRatioSmoothness } from "./smoothness"
 export { isRoughRatio } from "./roughness"

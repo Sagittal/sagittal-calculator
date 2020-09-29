@@ -1,7 +1,7 @@
+import { divideRatios, multiplyRatios } from "../../../../../../src/general/math/rational/num"
 import { RationalDecimal } from "../../../../../../src/general/math/rational/num/decimal"
 import { RationalMonzo } from "../../../../../../src/general/math/rational/num/monzo"
 import { RationalQuotient } from "../../../../../../src/general/math/rational/num/quotient"
-import { divideRatios, multiplyRatios } from "../../../../../../src/general/math/rational/num/typedOperations"
 
 describe("divideRatios", (): void => {
     describe("dividend is ratio", (): void => {
@@ -80,6 +80,16 @@ describe("divideRatios", (): void => {
 
             expect(actual).toEqual(expected)
         })
+    })
+
+    it("reduces to lowest terms", (): void => {
+        const dividendRatio = { quotient: [7, 4] as RationalQuotient }
+        const divisorRatio = { quotient: [3, 2] as RationalQuotient }
+
+        const actual = divideRatios(dividendRatio, divisorRatio)
+
+        const expected = { quotient: [7, 6] as RationalQuotient }
+        expect(actual).toEqual(expected)
     })
 })
 

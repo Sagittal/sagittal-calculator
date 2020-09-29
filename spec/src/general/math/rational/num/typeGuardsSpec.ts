@@ -38,12 +38,38 @@ describe("isRatio", (): void => {
     })
 
     describe("works for nums with decimals", (): void => {
-        it("always returns true", (): void => {
-            const candidateRatio = { decimal: 1.589655}
+        it("returns true if the decimal is rational", (): void => {
+            const candidateRatio = { decimal: 1.58965 }
 
             const actual = isRatio(candidateRatio)
 
             expect(actual).toBeTruthy()
+        })
+
+        it("returns false if the decimal is irrational", (): void => {
+            const candidateRatio = { decimal: 1.589655 }
+
+            const actual = isRatio(candidateRatio)
+
+            expect(actual).toBeFalsy()
+        })
+    })
+
+    describe("works for direct decimals", (): void => {
+        it("returns true if the decimal is rational", (): void => {
+            const candidateRationalDecimal = 1.58965
+
+            const actual = isRatio(candidateRationalDecimal)
+
+            expect(actual).toBeTruthy()
+        })
+
+        it("returns false if the decimal is irrational", (): void => {
+            const candidateRationalDecimal = 1.589655
+
+            const actual = isRatio(candidateRationalDecimal)
+
+            expect(actual).toBeFalsy()
         })
     })
 })

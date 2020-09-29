@@ -1,5 +1,6 @@
 import { increment } from "../../../../../../src/general/code"
-import { divideNums, equalNums, numIsHigher } from "../../../../../../src/general/math"
+import { equalNums, numIsHigher } from "../../../../../../src/general/math"
+import { computeInterval } from "../../../../../../src/general/music/interval"
 import {
     getPrimaryComma,
     HALF_APOTOME,
@@ -33,9 +34,9 @@ describe("half-apotome mirror", (): void => {
             const comma = jiNotationPrimaryCommas[ index ]
             const mirroredComma = jiNotationPrimaryCommas[ mirroredIndex ]
 
-            const actual = divideNums(comma, HALF_APOTOME)
-            const expected = divideNums(HALF_APOTOME, mirroredComma)
-            expect(actual).toBeCloseTo(expected)
+            const actual = computeInterval(comma, HALF_APOTOME)
+            const expected = computeInterval(HALF_APOTOME, mirroredComma)
+            expect(actual).toEqualNum(expected)
 
             indexOffset = increment(indexOffset)
         }
@@ -55,9 +56,11 @@ describe("half-apotome mirror", (): void => {
             const jiNotationBound = JI_NOTATION_BOUNDS[ index ]
             const mirroredBound = JI_NOTATION_BOUNDS[ mirroredIndex ]
 
-            const actual = divideNums(jiNotationBound, HALF_APOTOME)
-            const expected = divideNums(HALF_APOTOME, mirroredBound)
-            expect(actual).toBeCloseTo(expected)
+            const actual = computeInterval(jiNotationBound, HALF_APOTOME)
+            const expected = computeInterval(HALF_APOTOME, mirroredBound)
+            // TODO: I'm afraid of forgetting I need to use this... so should I establish a culture of calling this
+            //  Anytime I have any sort of number... and use an unnecessary toEqualString to help otherwise
+            expect(actual).toEqualNum(expected)
 
             indexOffset = increment(indexOffset)
         }

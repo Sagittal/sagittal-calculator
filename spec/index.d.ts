@@ -1,6 +1,8 @@
 // tslint:disable-next-line no-type-definitions-outside-types-modules
 declare namespace jasmine {
     interface Matchers<T> {
+        toEqualNum(expected: T, precision?: number, negate?: boolean, message?: string): CustomMatcherResult
+
         toBeCloseToTyped(expected: T, precision?: number, negate?: boolean, message?: string): CustomMatcherResult
 
         toBeCloseToArray(expected: T, precision?: number, negate?: boolean, message?: string): CustomMatcherResult
