@@ -72,4 +72,18 @@ describe("analyzePitch", (): void => {
         }
         expect(actual).toBeCloseToObject(expected)
     })
+
+    it("doesn't bother getting quotients perfectly accurate for huge monzos", (): void => {
+        const pitch = { monzo: [ 158.5, -100 ] as Monzo }
+
+        const actual = analyzePitch(pitch)
+
+        const expected = {
+            monzo: [ 158.5, -100 ] as Monzo,
+            quotient: [5.167188592359618e+47, 5.153775207320113e+47] as Quotient,
+            decimal: 1.002603 as Decimal,
+            cents: 4.499913 as Cents,
+        }
+        expect(actual).toBeCloseToObject(expected)
+    })
 })

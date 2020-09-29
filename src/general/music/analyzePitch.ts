@@ -24,7 +24,8 @@ const analyzePitch = <T extends NumTypeParameters, U extends Num | Decimal<T>>(
     }
 
     if (isUndefined(pitch.quotient) && !isUndefined(pitch.monzo)) {
-        pitchAnalysis.quotient = computeQuotientFromMonzo(pitch.monzo)
+        pitchAnalysis.quotient = 
+            computeQuotientFromMonzo(pitch.monzo, { disableErrorBecauseExactValueNotRequired: true })
     }
     if (isUndefined(pitch.monzo) && !isUndefined(pitch.quotient) && isRatio(pitch)) {
         pitchAnalysis.monzo = computeRationalMonzoFromRationalQuotient(pitch.quotient)

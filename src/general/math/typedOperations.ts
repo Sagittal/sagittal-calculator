@@ -2,7 +2,7 @@ import { isUndefined, Precision } from "../code"
 import { Addend, Count, Divisor, Multiplier, Product, Subtrahend, Sum } from "../types"
 import {
     ADDITIVE_IDENTITY,
-    MULTIPLICATIVE_IDENTITY,
+    MULTIPLICATIVE_IDENTITY, VALUE_ABOVE_WHICH_ROUNDING_IMPLEMENTATION_BREAKS,
     VALUE_BELOW_WHICH_ROUNDING_IMPLEMENTATION_BREAKS,
 } from "./constants"
 import { Decimal } from "./num"
@@ -53,6 +53,10 @@ const negative = <T extends number>(number: T): T =>
 const round = <T extends number>(number: T, precision?: Precision): T => {
     if (isUndefined(precision)) {
         return Math.round(number) as T & IntegerDecimal
+    }
+    
+    if (abs(number) > VALUE_ABOVE_WHICH_ROUNDING_IMPLEMENTATION_BREAKS) {
+        return number
     }
 
     if (abs(number) < VALUE_BELOW_WHICH_ROUNDING_IMPLEMENTATION_BREAKS) {

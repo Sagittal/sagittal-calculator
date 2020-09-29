@@ -1,4 +1,4 @@
-import { Precision } from "../../../../src/general/code"
+import { ACCURACY_THRESHOLD, Precision } from "../../../../src/general/code"
 import { Base, Exponent, log, Power, round } from "../../../../src/general/math"
 
 describe("log", (): void => {
@@ -24,15 +24,27 @@ describe("log", (): void => {
 })
 
 describe("round", (): void => {
-    const num: number = 29.59845456
+    const number: number = 29.59845456
 
     it("rounds to the precision specified", (): void => {
-        expect(round(num, 1 as Precision)).toBe(29.6)
-        expect(round(num, 5 as Precision)).toBe(29.59845)
-        expect(round(num, 6 as Precision)).toBe(29.598455)
+        expect(round(number, 1 as Precision)).toBe(29.6)
+        expect(round(number, 5 as Precision)).toBe(29.59845)
+        expect(round(number, 6 as Precision)).toBe(29.598455)
     })
 
     it("defaults to precision 0", (): void => {
-        expect(round(num)).toBe(30)
+        expect(round(number)).toBe(30)
+    })
+
+    it("leaves scientific notated values alone", (): void => {    
+        const number = 5.153775207320113e+47
+        
+        expect(round(number)).toBe(number)
+    })
+
+    it("leaves scientific notated values alone, even with an accuracy threshold", (): void => {
+        const number = 5.153775207320113e+47
+
+        expect(round(number, ACCURACY_THRESHOLD)).toBe(number)
     })
 })
