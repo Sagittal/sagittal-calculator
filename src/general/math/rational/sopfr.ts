@@ -7,8 +7,8 @@ import { Prime, Sopfr } from "./types"
 
 // Sum of prime factors
 
-const computeSopfr = <T extends NumTypeParameters>(rationalParameter: RatioOrRationalDecimal<T>): Sopfr<T> => {
-    const rationalMonzo = computeRationalMonzoFromRatio(computeNumFromNumParameter(rationalParameter))
+const computeSopfr = <T extends NumTypeParameters>(ratioOrRationalDecimal: RatioOrRationalDecimal<T>): Sopfr<T> => {
+    const rationalMonzo = computeRationalMonzoFromRatio(computeNumFromNumParameter(ratioOrRationalDecimal))
 
     return rationalMonzo.reduce(
         (sopfr: Sopfr<T>, primeExponent: Exponent<Prime>, index: number): Sopfr<T> => {

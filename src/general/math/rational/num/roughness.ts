@@ -7,10 +7,10 @@ import { computeRationalQuotientFromRationalDecimal, isRoughRationalQuotient } f
 import { RatioOrRationalDecimal } from "./types"
 
 const isRoughRatio = <S extends Primes, T extends NumTypeParameters>(
-    rationalParameter: RatioOrRationalDecimal<T>,
+    ratioOrRationalDecimal: RatioOrRationalDecimal<T>,
     roughness: S & Roughness,
-): rationalParameter is RatioOrRationalDecimal<T & { rough: S }> => {
-    const { monzo, quotient, decimal } = computeNumFromNumParameter(rationalParameter)
+): ratioOrRationalDecimal is RatioOrRationalDecimal<T & { rough: S }> => {
+    const { monzo, quotient, decimal } = computeNumFromNumParameter(ratioOrRationalDecimal)
 
     if (isUndefined(monzo) && isUndefined(quotient) && !isUndefined(decimal)) {
         return isRoughRationalQuotient(

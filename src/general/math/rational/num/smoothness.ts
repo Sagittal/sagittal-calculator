@@ -12,10 +12,10 @@ import {
 import { Ratio, RatioOrRationalDecimal } from "./types"
 
 const isSmoothRatio = <S extends Primes, T extends NumTypeParameters>(
-    rationalParameter: RatioOrRationalDecimal<T>,
+    ratioOrRationalDecimal: RatioOrRationalDecimal<T>,
     smoothness: S & Smoothness,
-): rationalParameter is RatioOrRationalDecimal<T & { smooth: S }> => {
-    const ratio = computeNumFromNumParameter(rationalParameter)
+): ratioOrRationalDecimal is RatioOrRationalDecimal<T & { smooth: S }> => {
+    const ratio = computeNumFromNumParameter(ratioOrRationalDecimal)
 
     let { monzo, quotient, decimal } = ratio
 
@@ -37,9 +37,9 @@ const isSmoothRatio = <S extends Primes, T extends NumTypeParameters>(
 }
 
 const computeRatioSmoothness = <S extends Primes, T extends NumTypeParameters>(
-    rationalParameter: RatioOrRationalDecimal<T>,
+    ratioOrRationalDecimal: RatioOrRationalDecimal<T>,
 ): Smoothness => {
-    const ratio = computeNumFromNumParameter(rationalParameter)
+    const ratio = computeNumFromNumParameter(ratioOrRationalDecimal)
 
     const { monzo, quotient, decimal } = ratio
 

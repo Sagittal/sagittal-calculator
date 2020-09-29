@@ -1,7 +1,10 @@
 import { RationalDecimal } from "../../../../../../../src/general/math"
 import { Smoothness } from "../../../../../../../src/general/math/rational"
-import { IntegerDecimal, isSmoothIntegerDecimal } from "../../../../../../../src/general/math/rational/num/decimal"
-import { computeRationalDecimalSmoothness } from "../../../../../../../src/general/math/rational/num/decimal/smoothness"
+import {
+    computeRationalDecimalSmoothness,
+    IntegerDecimal,
+    isSmoothIntegerDecimal,
+} from "../../../../../../../src/general/math/rational/num/decimal"
 
 describe("isSmoothIntegerDecimal", (): void => {
     it("works, example when it is true (no prime factors > smoothness)", (): void => {

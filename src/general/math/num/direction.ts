@@ -40,18 +40,18 @@ const isUnisonNum = <T extends NumTypeParameters, U extends NumOrDecimal<T>>(
 //  See computeNumSqrt for an exampel of me getting this to work.
 //  And that will affect invertNum if you ever implement it here too.
 const computeSuperNum = <T extends NumTypeParameters, U extends NumOrDecimal<T>>(
-    numParameter: U,
+    numOrDecimal: U,
 ): Exclude<U, NumOrDecimal> & NumOrDecimal<Omit<T, "direction"> & { direction: Direction.SUPER, integer: false }> => {
     let superNum = {} as Exclude<U, NumOrDecimal> & NumOrDecimal<T & { direction: Direction.SUPER, integer: false }>
 
-    if (isSubNum(numParameter)) {
-        if (isNumber(numParameter)) {
+    if (isSubNum(numOrDecimal)) {
+        if (isNumber(numOrDecimal)) {
             return reciprocal(
-                numParameter,
+                numOrDecimal,
             ) as Exclude<U, NumOrDecimal> & NumOrDecimal<T & { direction: Direction.SUPER, integer: false }>
         }
 
-        const { monzo, quotient, decimal } = numParameter
+        const { monzo, quotient, decimal } = numOrDecimal
         if (!isUndefined(quotient)) {
             superNum.quotient = invertQuotient(quotient)
         }
@@ -63,7 +63,7 @@ const computeSuperNum = <T extends NumTypeParameters, U extends NumOrDecimal<T>>
         }
     } else {
         superNum = deepClone(
-            numParameter as Exclude<U, NumOrDecimal> & NumOrDecimal<T & { direction: Direction.SUPER, integer: false }>,
+            numOrDecimal as Exclude<U, NumOrDecimal> & NumOrDecimal<T & { direction: Direction.SUPER, integer: false }>,
         )
     }
 

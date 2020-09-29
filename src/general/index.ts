@@ -199,6 +199,7 @@ export {
     isRoughIntegerDecimal,
     divideNums,
     computeNumSqrt,
+    multiplyRatios,
 } from "./math"
 export {
     Cents,

@@ -4,6 +4,7 @@ export { computeRationalQuotientFromRationalDecimal } from "./fromDecimal"
 export { computeRationalQuotientFromRatio } from "./fromRatio"
 export { isRationalQuotient } from "./typeGuards"
 export { equalQuotients } from "./comparison"
+export { computeRationalQuotientProduct } from "./typedOperations"
 export { computeLowestTermsRationalQuotient } from "./lowestTerms"
 export {
     RatioByQuotient,

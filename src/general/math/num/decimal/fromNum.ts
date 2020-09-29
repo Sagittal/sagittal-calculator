@@ -7,22 +7,22 @@ import { computeDecimalFromQuotient } from "./fromQuotient"
 import { Decimal } from "./types"
 
 const computeDecimalFromNum: {
-    <T extends NumTypeParameters>(numParameter: RatioOrRationalDecimal<T>): RationalDecimal<T>
-    <T extends NumTypeParameters>(numParameter: NumOrDecimal<T>): Decimal<T>,
-} = <T extends NumTypeParameters>(numParameter: NumOrDecimal<T>): Decimal<T> => {
-    if (isNumber(numParameter)) {
-        return numParameter
+    <T extends NumTypeParameters>(numOrDecimal: RatioOrRationalDecimal<T>): RationalDecimal<T>
+    <T extends NumTypeParameters>(numOrDecimal: NumOrDecimal<T>): Decimal<T>,
+} = <T extends NumTypeParameters>(numOrDecimal: NumOrDecimal<T>): Decimal<T> => {
+    if (isNumber(numOrDecimal)) {
+        return numOrDecimal
     }
 
-    if (!isUndefined(numParameter.decimal)) {
-        return numParameter.decimal
-    } else if (!isUndefined(numParameter.quotient)) {
-        return computeDecimalFromQuotient(numParameter.quotient)
-    } else if (!isUndefined(numParameter.monzo)) {
-        return computeDecimalFromMonzo(numParameter.monzo)
+    if (!isUndefined(numOrDecimal.decimal)) {
+        return numOrDecimal.decimal
+    } else if (!isUndefined(numOrDecimal.quotient)) {
+        return computeDecimalFromQuotient(numOrDecimal.quotient)
+    } else if (!isUndefined(numOrDecimal.monzo)) {
+        return computeDecimalFromMonzo(numOrDecimal.monzo)
     }
 
-    throw new Error(`Tried to compute decimal from num ${formatNum(numParameter)} but no numeric representations were found.`)
+    throw new Error(`Tried to compute decimal from num ${formatNum(numOrDecimal)} but no numeric representations were found.`)
 }
 
 export {

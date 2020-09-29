@@ -1,7 +1,7 @@
 import { computeRange, computeTrimmedArray } from "../../../code"
-import { add, count, Exponent, max, Monzo, Prime } from "../../../math"
+import { add, count, Exponent, max, Monzo, NumTypeParameters, Prime } from "../../../math"
 
-const computeMonzoSum = (...monzos: Array<Monzo>): Monzo => {
+const computeMonzoSum = <T extends NumTypeParameters>(...monzos: Array<Monzo<T>>): Monzo<T> => {
     const maxMonzoLength = max(...monzos.map(count))
 
     const summedMonzos: Monzo = computeRange(maxMonzoLength).map((index: number): Exponent<Prime> => {
@@ -15,7 +15,7 @@ const computeMonzoSum = (...monzos: Array<Monzo>): Monzo => {
         ) as Exponent<Prime>
     }) as Monzo
 
-    return computeTrimmedArray(summedMonzos)
+    return computeTrimmedArray(summedMonzos) as Monzo<T>
 }
 
 export {

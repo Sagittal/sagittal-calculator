@@ -10,7 +10,7 @@ const catchBadSpecFiles = (basePath: Filename = "" as Filename): void => {
             catchBadSpecFiles(filename)
         } else {
             if (!new RegExp(".*Spec\.ts").test(filename)) {
-                throw new Error(`Spec is not named properly and will not run: ${filename}`)
+                throw new Error(`Spec is not named properly and will not run: ${path.join("spec/src", filename)}`)
             }
 
             if (

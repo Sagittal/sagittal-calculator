@@ -52,44 +52,44 @@ const equalNums = (
 }
 
 const numIsHigher = (
-    numParameter: NumOrDecimal,
+    numOrDecimal: NumOrDecimal,
     otherNumParameter: NumOrDecimal,
     precision: Precision = MAX_JAVASCRIPT_PRECISION,
 ): boolean => {
-    const num = computeNumFromNumParameter(numParameter)
+    const num = computeNumFromNumParameter(numOrDecimal)
     const otherNum = computeNumFromNumParameter(otherNumParameter)
 
     return !equalNums(num, otherNum, precision) && computeDecimalFromNum(num) > computeDecimalFromNum(otherNum)
 }
 
 const numIsLower = (
-    numParameter: NumOrDecimal,
+    numOrDecimal: NumOrDecimal,
     otherNumParameter: NumOrDecimal,
     precision: Precision = MAX_JAVASCRIPT_PRECISION,
 ): boolean => {
-    const num = computeNumFromNumParameter(numParameter)
+    const num = computeNumFromNumParameter(numOrDecimal)
     const otherNum = computeNumFromNumParameter(otherNumParameter)
 
     return !equalNums(num, otherNum, precision) && computeDecimalFromNum(num) < computeDecimalFromNum(otherNum)
 }
 
 const numIsHigherOrEqual = (
-    numParameter: NumOrDecimal,
+    numOrDecimal: NumOrDecimal,
     otherNumParameter: NumOrDecimal,
     precision: Precision = MAX_JAVASCRIPT_PRECISION,
 ): boolean => {
-    const num = computeNumFromNumParameter(numParameter)
+    const num = computeNumFromNumParameter(numOrDecimal)
     const otherNum = computeNumFromNumParameter(otherNumParameter)
 
     return equalNums(num, otherNum, precision) || numIsHigher(num, otherNum, precision)
 }
 
 const numIsLowerOrEqual = (
-    numParameter: NumOrDecimal,
+    numOrDecimal: NumOrDecimal,
     otherNumParameter: NumOrDecimal,
     precision: Precision = MAX_JAVASCRIPT_PRECISION,
 ): boolean => {
-    const num = computeNumFromNumParameter(numParameter)
+    const num = computeNumFromNumParameter(numOrDecimal)
     const otherNum = computeNumFromNumParameter(otherNumParameter)
 
     return equalNums(num, otherNum, precision) || numIsLower(num, otherNum, precision)

@@ -1,4 +1,4 @@
-import { Cents, computeCentsFromPitch, computeNumberFromCents, Id, indexOfFinalElement, Name } from "../../../general"
+import { computeDecimalFromNum, computeNumSqrt, Id, indexOfFinalElement, multiplyRatios, Name } from "../../../general"
 import {
     CommaMean,
     getPrimaryComma,
@@ -8,12 +8,6 @@ import {
     SymbolClass,
     SymbolLongAscii,
 } from "../../../sagittal"
-
-const getJiNotationSymbolCents = (symbolClassId: Id<SymbolClass>): Cents => {
-    const primaryComma = getPrimaryComma(symbolClassId)
-
-    return computeCentsFromPitch(primaryComma)
-}
 
 const getJiNotationSymbolAscii = (symbolClassId: Id<SymbolClass>): SymbolLongAscii => {
     const representativeSymbol = getRepresentativeSymbol(symbolClassId)
@@ -31,20 +25,19 @@ const computeJiNotationLevelCommaMeans = (jiNotationLevel: JiNotationLevel): Com
         .map((symbolClassId: Id<SymbolClass>, index: number): CommaMean => {
             const nextSymbolClassId = jiNotationLevelSymbolClassIds[ index + 1 ]
 
-            // TODO: NUM SQRT HELPER
-            //  Combine the nums, (multiply) then take their sqrt, that's what you should do here.
-            //  Although maybe it should just be an average nums helper. er, well, geometric mean, then, I suppose.
-            const cents = (
-                getJiNotationSymbolCents(symbolClassId) + getJiNotationSymbolCents(nextSymbolClassId)
-            ) / 2 as Cents
-            const number = computeNumberFromCents(cents)
+            const primaryComma = getPrimaryComma(symbolClassId)
+            const nextPrimaryComma = getPrimaryComma(nextSymbolClassId)
+            // TODO: Geometric mean helper would be cool
+            const commaMean = computeNumSqrt(multiplyRatios(primaryComma, nextPrimaryComma))
+
             const name = [
                 getJiNotationSymbolAscii(symbolClassId),
                 getJiNotationSymbolAscii(nextSymbolClassId),
             ].join(" ") as Name<CommaMean>
 
             return {
-                decimal: number,
+                // TODO: now we're very close to just using the irraional monzo!
+                decimal: computeDecimalFromNum(commaMean),
                 name,
             }
         })

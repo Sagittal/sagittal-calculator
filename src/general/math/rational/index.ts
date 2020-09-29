@@ -56,4 +56,5 @@ export {
     ceil,
     floor,
     integerDivide,
+    multiplyRatios,
 } from "./num"

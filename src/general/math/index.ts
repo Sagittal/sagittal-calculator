@@ -130,4 +130,5 @@ export {
     RationalDecimal,
     IntegerMonzo,
     isRoughIntegerDecimal,
+    multiplyRatios,
 } from "./rational"

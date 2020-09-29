@@ -1,9 +1,8 @@
 import { sqrt } from "../../../../../src/general/math"
-import { divideNums } from "../../../../../src/general/math/num"
+import { computeNumSqrt, divideNums } from "../../../../../src/general/math/num"
 import { Decimal } from "../../../../../src/general/math/num/decimal"
 import { Monzo } from "../../../../../src/general/math/num/monzo"
 import { Quotient } from "../../../../../src/general/math/num/quotient"
-import { computeNumSqrt } from "../../../../../src/general/math/num/typedOperations"
 
 describe("divideNums", (): void => {
     it("works for a monzo-based num by a monzo-based num", (): void => {
@@ -49,20 +48,20 @@ describe("divideNums", (): void => {
 
 describe("computeNumSqrt", (): void => {
     it("works for a monzo-based num", (): void => {
-        const num = { monzo: [ -11, 7 ] as Monzo }
+        const num = { monzo: [-11, 7] as Monzo }
 
         const actual = computeNumSqrt(num)
 
-        const expected = { monzo: [ -5.5, 3.5 ] as Monzo }
+        const expected = { monzo: [-5.5, 3.5] as Monzo }
         expect(actual).toEqual(expected)
     })
 
     it("works for a quotient-based num", (): void => {
-        const num = { quotient: [ 3, 2 ] as Quotient }
+        const num = { quotient: [3, 2] as Quotient }
 
         const actual = computeNumSqrt(num)
 
-        const expected = { quotient: [ sqrt(3), sqrt(2) ] as Quotient }
+        const expected = { quotient: [sqrt(3), sqrt(2)] as Quotient }
         expect(actual).toEqual(expected)
     })
 
