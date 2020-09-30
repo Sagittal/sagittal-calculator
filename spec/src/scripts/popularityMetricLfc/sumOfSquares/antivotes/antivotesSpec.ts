@@ -7,7 +7,7 @@ import { computeSubmetricAntivotes } from "../../../../../../src/scripts/popular
 import { Antivotes } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/types"
 
 describe("computeAntivotes", (): void => {
-    it("when k = 1 (default), and two 2,3-free quotients have the same SoPFR, but one has its primes all lopsided on one side, they still get ranked the same", (): void => {
+    it("when k = 1 (default), and two 2,3-free classes have the same SoPFR, but one has its primes all lopsided on one side, they still get ranked the same", (): void => {
         const balanced23FreeClass = { quotient: [11, 7] } as Two3FreeClass
         const lopsided23FreeClass = { quotient: [77, 1] } as Two3FreeClass
         const submetrics: Combination<Submetric> = [
@@ -23,7 +23,7 @@ describe("computeAntivotes", (): void => {
         expect(balancedResult).toBeCloseToTyped(lopsidedResult, ANTIVOTES_PRECISION)
     })
 
-    it("when k < 1, two 2,3-free quotients have the same SoPFR, but one has its primes all lopsided on one side, it gets ranked worse", (): void => {
+    it("when k < 1, two 2,3-free classes have the same SoPFR, but one has its primes all lopsided on one side, it gets ranked worse", (): void => {
         const balanced23FreeClass = { quotient: [11, 7] } as Two3FreeClass
         const lopsided23FreeClass = { quotient: [77, 1] } as Two3FreeClass
         const submetrics: Combination<Submetric> = [

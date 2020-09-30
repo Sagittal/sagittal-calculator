@@ -67,7 +67,7 @@ const compute23FreeClassSubmetricAntivotes = (
     })
 
     if (isNaN(numeratorAntivotes) || isNaN(denominatorAntivotes)) {
-        throw new Error(`You got NaN! in quotientSubmetricAntivotes ${two3FreeClass} ${stringify(submetric, { multiline: true })} ${numeratorAntivotes} ${denominatorAntivotes}`)
+        throw new Error(`You got NaN! in two3FreeClassSubmetricAntivotes ${two3FreeClass} ${stringify(submetric, { multiline: true })} ${numeratorAntivotes} ${denominatorAntivotes}`)
     }
 
     return numeratorAntivotes + denominatorAntivotes as Antivotes

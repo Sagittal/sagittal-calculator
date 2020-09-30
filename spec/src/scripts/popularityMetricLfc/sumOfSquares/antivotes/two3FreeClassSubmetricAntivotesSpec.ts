@@ -6,7 +6,7 @@ import { compute23FreeClassSubmetricAntivotes } from "../../../../../../src/scri
 import { Antivotes } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/types"
 
 describe("compute23FreeClassSubmetricAntivotes", (): void => {
-    it("splits the quotient into numerator and denominator, computes their submetric antivotes separately, then adjusts the denominator by k", (): void => {
+    it("splits the 2,3-free class into numerator and denominator, computes their submetric antivotes separately, then adjusts the denominator by k", (): void => {
         const kAsCoefficient = 0.46 as ParameterValue
         const two3FreeClass = { quotient: [11, 7] } as Two3FreeClass
         const submetric = { kAsCoefficient, sum: true }
