@@ -27,7 +27,7 @@ describe("computePopular23FreeClasses", (): void => {
 
             const expected = [
                 {
-                    name: "1/1" as Name<Two3FreeClass>,
+                    name: "1/1₋₂₃" as Name<Two3FreeClass>,
                     two3FreePrimeLimit: 1 as Max<Prime<{ rough: 5 }>>,
                     two3FreeSopfr: 0 as Sopfr<{rough: 5}>,
                     two3FreeCopfr: 0 as Copfr<{rough: 5}>,
@@ -41,7 +41,7 @@ describe("computePopular23FreeClasses", (): void => {
                     rank: 1 as Rank<Popular23FreeClass>,
                 },
                 {
-                    name: "5/1" as Name<Two3FreeClass>,
+                    name: "5/1₋₂₃" as Name<Two3FreeClass>,
                     two3FreePrimeLimit: 5 as Max<Prime<{ rough: 5 }>>,
                     two3FreeSopfr: 5 as Sopfr<{rough: 5}>,
                     two3FreeCopfr: 1 as Copfr<{rough: 5}>,
@@ -55,7 +55,7 @@ describe("computePopular23FreeClasses", (): void => {
                     rank: 2 as Rank<Popular23FreeClass>,
                 },
                 {
-                    name: "7/1" as Name<Two3FreeClass>,
+                    name: "7/1₋₂₃" as Name<Two3FreeClass>,
                     two3FreePrimeLimit: 7 as Max<Prime<{ rough: 5 }>>,
                     two3FreeSopfr: 7 as Sopfr<{rough: 5}>,
                     two3FreeCopfr: 1 as Copfr<{rough: 5}>,
@@ -69,7 +69,7 @@ describe("computePopular23FreeClasses", (): void => {
                     rank: 3 as Rank<Popular23FreeClass>,
                 },
                 {
-                    name: "25/1" as Name<Two3FreeClass>,
+                    name: "25/1₋₂₃" as Name<Two3FreeClass>,
                     two3FreePrimeLimit: 5 as Max<Prime<{ rough: 5 }>>,
                     two3FreeSopfr: 10 as Sopfr<{rough: 5}>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -83,7 +83,7 @@ describe("computePopular23FreeClasses", (): void => {
                     rank: 4 as Rank<Popular23FreeClass>,
                 },
                 {
-                    name: "7/5" as Name<Two3FreeClass>,
+                    name: "7/5₋₂₃" as Name<Two3FreeClass>,
                     two3FreePrimeLimit: 7 as Max<Prime<{ rough: 5 }>>,
                     two3FreeSopfr: 12 as Sopfr<{rough: 5}>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -111,7 +111,7 @@ describe("computePopular23FreeClasses", (): void => {
 
             const expected = [
                 {
-                    name: "1/1" as Name<Two3FreeClass>,
+                    name: "1/1₋₂₃" as Name<Two3FreeClass>,
                     two3FreePrimeLimit: 1 as Max<Prime<{ rough: 5 }>>,
                     two3FreeSopfr: 0 as Sopfr<{rough: 5}>,
                     two3FreeCopfr: 0 as Copfr<{rough: 5}>,
@@ -125,7 +125,7 @@ describe("computePopular23FreeClasses", (): void => {
                     rank: 1 as Rank<Popular23FreeClass>,
                 },
                 {
-                    name: "5/1" as Name<Two3FreeClass>,
+                    name: "5/1₋₂₃" as Name<Two3FreeClass>,
                     two3FreePrimeLimit: 5 as Max<Prime<{ rough: 5 }>>,
                     two3FreeSopfr: 5 as Sopfr<{rough: 5}>,
                     two3FreeCopfr: 1 as Copfr<{rough: 5}>,
@@ -139,7 +139,7 @@ describe("computePopular23FreeClasses", (): void => {
                     rank: 2 as Rank<Popular23FreeClass>,
                 },
                 {
-                    name: "7/1" as Name<Two3FreeClass>,
+                    name: "7/1₋₂₃" as Name<Two3FreeClass>,
                     two3FreePrimeLimit: 7 as Max<Prime<{ rough: 5 }>>,
                     two3FreeSopfr: 7 as Sopfr<{rough: 5}>,
                     two3FreeCopfr: 1 as Copfr<{rough: 5}>,
@@ -153,7 +153,7 @@ describe("computePopular23FreeClasses", (): void => {
                     rank: 3 as Rank<Popular23FreeClass>,
                 },
                 {
-                    name: "25/1" as Name<Two3FreeClass>,
+                    name: "25/1₋₂₃" as Name<Two3FreeClass>,
                     two3FreePrimeLimit: 5 as Max<Prime<{ rough: 5 }>>,
                     two3FreeSopfr: 10 as Sopfr<{rough: 5}>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -167,7 +167,7 @@ describe("computePopular23FreeClasses", (): void => {
                     rank: 4 as Rank<Popular23FreeClass>,
                 },
                 {
-                    name: "7/5" as Name<Two3FreeClass>,
+                    name: "7/5₋₂₃" as Name<Two3FreeClass>,
                     two3FreePrimeLimit: 7 as Max<Prime<{ rough: 5 }>>,
                     two3FreeSopfr: 12 as Sopfr<{rough: 5}>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,

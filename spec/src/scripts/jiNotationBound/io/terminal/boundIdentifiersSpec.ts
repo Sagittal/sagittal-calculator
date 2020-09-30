@@ -71,7 +71,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             aas: 2.411919815346935 as Abs<ApotomeSlope>,
                             ate: 1 as Abs<IntegerDecimal & Exponent<3 & Prime>>,
                             two3FreeClassAnalysis: {
-                                name: "25/19" as Name<Two3FreeClass>,
+                                name: "25/19₋₂₃" as Name<Two3FreeClass>,
                                 two3FreeCopfr: 3 as Copfr<{ rough: 5 }>,
                                 two3FreeSopfr: 29 as Sopfr<{ rough: 5 }>,
                                 monzo: [0, 0, 2, 0, 0, 0, 0, -1] as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
@@ -102,7 +102,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             aas: 10.555481691145998 as Abs<ApotomeSlope>,
                             ate: 12 as Abs<IntegerDecimal & Exponent<3 & Prime>>,
                             two3FreeClassAnalysis: {
-                                name: "1/1" as Name<Two3FreeClass>,
+                                name: "1/1₋₂₃" as Name<Two3FreeClass>,
                                 two3FreeCopfr: 0 as Copfr<{ rough: 5 }>,
                                 two3FreeSopfr: 0 as Sopfr<{ rough: 5 }>,
                                 monzo: [] as unknown[] as RationalMonzo as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
@@ -134,7 +134,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             aas: 2.411919815346935 as Abs<ApotomeSlope>,
                             ate: 1 as Abs<IntegerDecimal & Exponent<3 & Prime>>,
                             two3FreeClassAnalysis: {
-                                name: "25/19" as Name<Two3FreeClass>,
+                                name: "25/19₋₂₃" as Name<Two3FreeClass>,
                                 two3FreeCopfr: 3 as Copfr<{ rough: 5 }>,
                                 two3FreeSopfr: 29 as Sopfr<{ rough: 5 }>,
                                 monzo: [0, 0, 2, 0, 0, 0, 0, -1] as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
@@ -164,7 +164,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             aas: 10.555481691145998 as Abs<ApotomeSlope>,
                             ate: 12 as Abs<IntegerDecimal & Exponent<3 & Prime>>,
                             two3FreeClassAnalysis: {
-                                name: "1/1" as Name<Two3FreeClass>,
+                                name: "1/1₋₂₃" as Name<Two3FreeClass>,
                                 two3FreeCopfr: 0 as Copfr<{ rough: 5 }>,
                                 two3FreeSopfr: 0 as Sopfr<{ rough: 5 }>,
                                 monzo: [] as unknown[] as RationalMonzo as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
@@ -197,7 +197,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             aas: 2.411919815346935 as Abs<ApotomeSlope>,
                             ate: 1 as Abs<IntegerDecimal & Exponent<3 & Prime>>,
                             two3FreeClassAnalysis: {
-                                name: "25/19" as Name<Two3FreeClass>,
+                                name: "25/19₋₂₃" as Name<Two3FreeClass>,
                                 two3FreeCopfr: 3 as Copfr<{ rough: 5 }>,
                                 two3FreeSopfr: 29 as Sopfr<{ rough: 5 }>,
                                 monzo: [0, 0, 2, 0, 0, 0, 0, -1] as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
@@ -227,7 +227,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             aas: 10.555481691145998 as Abs<ApotomeSlope>,
                             ate: 12 as Abs<IntegerDecimal & Exponent<3 & Prime>>,
                             two3FreeClassAnalysis: {
-                                name: "1/1" as Name<Two3FreeClass>,
+                                name: "1/1₋₂₃" as Name<Two3FreeClass>,
                                 two3FreeCopfr: 0 as Copfr<{ rough: 5 }>,
                                 two3FreeSopfr: 0 as Sopfr<{ rough: 5 }>,
                                 monzo: [] as unknown[] as RationalMonzo as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,

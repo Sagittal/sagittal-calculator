@@ -35,6 +35,7 @@ const deepEquals = <T>(firstValue: T, secondValue: T, precision?: Precision): bo
         equal = true
     } else if (!isUndefined(precision) && isNumber(firstValue) && isNumber(secondValue)) {
         equal = isCloseTo(firstValue, secondValue, precision)
+        if (!equal) console.log("here is where it went wrong:", firstValue, secondValue)
     } else if (isArray(firstValue)) {
         equal = deepEqualsArray(secondValue as T & unknown[], firstValue as T & unknown[], precision)
     } else if (isObject(firstValue)) {

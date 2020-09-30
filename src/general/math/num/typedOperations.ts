@@ -55,9 +55,25 @@ const computeNumSqrt: {
     return sqrtNum
 }
 
+// TODO: if this one adds Max<>, then others should add types akin to in math/typedOperations
+const maxNums = <T extends NumTypeParameters>(...numsOrDecimals: Array<Num<T> | Decimal<T>>): Num<T> | Decimal<T> => {
+    let maxDecimal = -Infinity as Decimal
+    let maxIndex = undefined
+
+    numsOrDecimals.map(computeDecimalFromNum).forEach((decimal: Decimal, index: number): void => {
+        if (decimal > maxDecimal) {
+            maxDecimal = decimal
+            maxIndex = index
+        }
+    })
+
+    return numsOrDecimals[ maxIndex as unknown as number ]
+}
+
 export {
     divideNums,
     subtractNums,
     multiplyNums,
     computeNumSqrt,
+    maxNums,
 }

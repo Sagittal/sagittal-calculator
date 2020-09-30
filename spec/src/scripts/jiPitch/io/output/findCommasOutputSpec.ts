@@ -83,7 +83,7 @@ describe("computeFindCommasOutput", (): void => {
             "        \t      \t        \t                   \t               \t       \t       \t       \t2,3-free\t2,3-free\t2,3-free\t2,3-free\t2,3-free" + NEWLINE +
             "symbol  \t      \t        \t                   \t               \tapotome\t       \t       \tprime   \tclass   \tclass   \tclass   \tclass   " + NEWLINE +
             "class   \tname  \tquotient\tmonzo              \tcents          \tslope  \tAAS    \tATE    \tlimit   \tname    \tCoPFR   \tSoPFR   \tN2D3P9  ".underline + NEWLINE +
-            "    /|\\ \t11M   \t33/32   \t[   0   0   1 ⟩    \t        45.450¢\t -4.000\t  4.000\t  0    \t 11     \t11/1₋₂₃\t  1     \t 11     \t  6.722 " + NEWLINE +
+            "    /|\\ \t11M   \t33/32   \t[   0   0   1 ⟩    \t        45.450¢\t -4.000\t  4.000\t  0    \t 11     \t11/1₋₂₃ \t  1     \t 11     \t  6.722 " + NEWLINE +
             "        \t25/49M\t50/49   \t[   1   0   2  -2 ⟩\t        33.400¢\t -2.154\t  2.154\t  0    \t  7     \t49/25₋₂₃\t  4     \t 24     \t 26.466 " + NEWLINE as Io
         expect(actual).toEqual(expected)
     })

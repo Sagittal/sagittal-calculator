@@ -2,6 +2,8 @@ import { computeNumSqrt, divideNums } from "../../../../../src/general/math/num"
 import { Decimal } from "../../../../../src/general/math/num/decimal"
 import { Monzo } from "../../../../../src/general/math/num/monzo"
 import { Quotient } from "../../../../../src/general/math/num/quotient"
+import { maxNums } from "../../../../../src/general/math/num/typedOperations"
+import { RationalQuotient } from "../../../../../src/general/math/rational/num/quotient"
 
 describe("divideNums", (): void => {
     it("works for a monzo-based num by a monzo-based num", (): void => {
@@ -70,5 +72,23 @@ describe("computeNumSqrt", (): void => {
 
         const expected = Math.sqrt(1.5)
         expect(actual).toBeCloseTo(expected)
+    })
+})
+
+// TODO: Sheesh... in retrospect, might it have been simpler to just represent everything as a monzo?
+//  Any quotient could be expressed as a monzo
+//  Any decimal could be expressed as a power of 2, simply occupying the first term of the monzo...
+//  And then any EDO degree could be expressed with some power of 2, too.
+//  You'd have nested monzos: const pitch = [ [ -2, -1 ] ] and that'd be 1 step of 12tet
+describe("maxNums", (): void => {
+    it("works for a hodge-podge of num representations", (): void => {
+        const numA = 5.5
+        const numB = { quotient: [ 13, 8 ] as RationalQuotient }
+        const numC = { monzo: [ -2, -1.1, 0, 0, 1 ] as Monzo }
+        const numD = { decimal: 4.444 as Decimal }
+        
+        const actaul = maxNums(numA, numB, numC, numD)
+        
+        expect(actaul).toEqual(numA)
     })
 })

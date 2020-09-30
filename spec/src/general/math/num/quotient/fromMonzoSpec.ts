@@ -36,4 +36,13 @@ describe("computeQuotientFromMonzo", (): void => {
         const expected = [46.765372, 45.254834] as Quotient
         expect(actual).toBeCloseToArray(expected)
     })
+
+    it("another edge case?", (): void => {
+        const monzo = [-53, 33.5] as Monzo
+
+        const actual = computeQuotientFromMonzo(monzo, { disableErrorBecauseExactValueNotRequired: true })
+
+        const expected = [9628575343626794, 9007199254740992] as Quotient
+        expect(actual).toBeCloseToArray(expected)
+    })
 })
