@@ -28,10 +28,7 @@ const multiplyNums = <T extends NumTypeParameters>(
     return multiply(computeDecimalFromNum(multiplicand), computeDecimalFromNum(multiplier))
 }
 
-const computeNumSqrt: {
-    <T extends NumTypeParameters>(num: Num<T>): Num<T & { rational: false, integer: false }>,
-    <T extends NumTypeParameters>(decimal: Decimal<T>): Decimal<T & { rational: false, integer: false }>,
-} = <T extends NumTypeParameters>(numOrDecimal: Num<T> | Decimal<T>): any => {
+const computeNumSqrt = <T extends NumTypeParameters>(numOrDecimal: Num<T> | Decimal<T>): any => {
     if (isNumber(numOrDecimal)) {
         return sqrt(numOrDecimal)
     }

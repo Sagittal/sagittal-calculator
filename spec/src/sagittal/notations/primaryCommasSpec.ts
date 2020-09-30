@@ -23,8 +23,12 @@ import { ApotomeSlope, N2D3P9 } from "../../../../src/sagittal/ji"
 import { PRIMARY_COMMAS } from "../../../../src/sagittal/notations/primaryCommas"
 import { PrimaryCommaAnalysis } from "../../../../src/sagittal/notations/types"
 
-// TODO: More of these tests should just literally be pulling expectations from tsv files
+// TODO: STORE BIG TEST EXPECTATIONS IN TABULAR FORM
+//  More of these tests should just literally be pulling expectations from tsv files
 //  I'm not sure what the value is of representing them as these code structures is
+//  I'm afraid it might be really slowing down the compilation of the code when running tests
+//  It may be more helpful for people working on the code to see the information in tabular form
+//  And maybe these could essentially become replacements for my "Everything Sagittal" Google Sheets file
 
 describe("PRIMARY_COMMAS", (): void => {
     it("has all the correct commas", (): void => {

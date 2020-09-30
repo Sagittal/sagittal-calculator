@@ -39,9 +39,6 @@ const isUnisonNum = <T extends NumTypeParameters, U extends Num<T> | Decimal<T>>
         (!isUndefined(monzo) && isUnisonMonzo(monzo))
 }
 
-// TODO: I'm not convinced this is going to actually give you back a decimal if you put one in.
-//  See computeNumSqrt for an exampel of me getting this to work.
-//  And that will affect invertNum if you ever implement it here too.
 const computeSuperNum = <T extends NumTypeParameters, U extends Num<T> | Decimal<T>>(
     numOrDecimal: U,
 ): Exclude<U, Num<T> | Decimal<T>>

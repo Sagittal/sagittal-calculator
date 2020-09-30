@@ -52,16 +52,7 @@ const divideRatios = <T extends NumTypeParameters>(
     return dividedRatio
 }
 
-const multiplyRatios: {
-    <T extends NumTypeParameters>(
-        multiplicand: Ratio<T>,
-        multiplier: Ratio<T> | RationalDecimal<T>,
-    ): Ratio<T>
-    <T extends NumTypeParameters>(
-        multiplicand: RationalDecimal<T>,
-        multiplier: Ratio<T> | RationalDecimal<T>,
-    ): RationalDecimal<T>
-} = <T extends NumTypeParameters>(
+const multiplyRatios = <T extends NumTypeParameters>(
     multiplicandRatioOrRationalDecimal: Ratio<T> | RationalDecimal<T>,
     multiplierRatioOrRationalDecimal: Ratio<T> | RationalDecimal<T>,
 ): any => {

@@ -386,11 +386,11 @@ describe("computeSuperNum", (): void => {
     })
 
     it("works for direct decimals", (): void => {
-        const decimal = 0.2 as Decimal<{ direction: Direction.SUB }>
+        const decimal = 0.2
 
         const actual = computeSuperNum(decimal)
 
-        const expected = 5 as Decimal<{ direction: Direction.SUPER }>
+        const expected = 5
         expect(actual).toEqual(expected)
     })
 })
