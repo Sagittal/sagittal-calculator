@@ -2,12 +2,12 @@ import {
     Abs,
     Cents,
     Count,
-    Decimal,
     Id,
     IntegerDecimal,
     Multiplier,
     Name,
     Rank,
+    RealDecimal,
     Sum,
 } from "../../../../../src/general"
 import {
@@ -65,7 +65,7 @@ const boundEventConsolidationFixture: BoundEventConsolidation = {
 const jiNotationBoundFixture: JiNotationBound = {
     id: 0 as Id<JiNotationBound>,
     jiNotationLevels: [],
-    decimal: 1 as Decimal,
+    decimal: 1 as RealDecimal,
     boundType: BoundType.INA_MIDPOINT,
     name: "" as Name<Bound>,
 }

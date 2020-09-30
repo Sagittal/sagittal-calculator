@@ -1,20 +1,20 @@
-import { computeDecimalFromNum, Num } from "../../math"
+import { computeDecimalFromReal, Real } from "../../math"
 import { computeCents } from "../../music"
 import { ANY_DECIMAL_CHARS } from "../constants"
 import { formatCents } from "./cents"
-import { formatNum } from "./num"
+import { formatReal } from "./real"
 import { Formatted } from "./types"
 
-const formatPitch = (pitch: Num, options: { align?: boolean } = {}): Formatted<Num> => {
-    const formattedNum = formatNum(pitch, options)
+const formatPitch = (pitch: Real, options: { align?: boolean } = {}): Formatted<Real> => {
+    const formattedNum = formatReal(pitch, options)
 
     if (formattedNum.match(ANY_DECIMAL_CHARS)) {
         return formatCents(
             computeCents(
-                computeDecimalFromNum(pitch),
+                computeDecimalFromReal(pitch),
             ),
             options,
-        ) as Formatted as Formatted<Num>
+        ) as Formatted as Formatted<Real>
     } else {
         return formattedNum
     }

@@ -1,4 +1,4 @@
-import { Abs, add, Cents, computeCents, Decimal, Multiplier, Sum } from "../../../../../src/general"
+import { Abs, add, Cents, computeCents, Multiplier, RealDecimal, Sum } from "../../../../../src/general"
 import { multiply } from "../../../../../src/general/math"
 import { BoundType, Ina, JiNotationBound, JiNotationLevel, Tina, TINA } from "../../../../../src/sagittal/notations/ji"
 import { computeInitialPosition } from "../../../../../src/scripts/jiNotationBound/bound/initialPosition"
@@ -12,7 +12,7 @@ import {
 } from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
 
 describe("analyzeHistory", (): void => {
-    const actualJiNotationBoundDecimal = 1.00721027676 as Decimal   // 12.43789¢
+    const actualJiNotationBoundDecimal = 1.00721027676 as RealDecimal   // 12.43789¢
     let boundHistory: BoundHistory
     let cents: Cents
     let jiNotationBound: JiNotationBound

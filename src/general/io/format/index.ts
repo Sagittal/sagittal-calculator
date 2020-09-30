@@ -4,5 +4,5 @@ export { formatDecimal, formatIntegerDecimal, alignFormattedDecimal } from "./de
 export { formatQuotient } from "./quotient"
 export { formatTime } from "./time"
 export { formatPitch } from "./pitch"
-export { formatNum } from "./num"
+export { formatReal } from "./real"
 export { formatCents } from "./cents"

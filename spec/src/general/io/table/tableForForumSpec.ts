@@ -85,7 +85,7 @@ describe("formatTableForForum", (): void => {
 
     it("supports undefined cells, rendering them as blank", (): void => {
         const table = [
-            ["id", "name", "num", "thing"],
+            ["id", "name", "nmm", "thing"],
             ["1", "jim", "45", "barb"],
             ["2", "bob", undefined, "spot"],
             ["2", "bo", "9999", "jet"],
@@ -95,7 +95,7 @@ describe("formatTableForForum", (): void => {
 
         const expected =
             "[table]" + NEWLINE +
-            "[tr][th][pre]id[/pre][/th][th][pre]name[/pre][/th][th][pre]num[/pre][/th][th][pre]thing[/pre][/th][/tr]" + NEWLINE +
+            "[tr][th][pre]id[/pre][/th][th][pre]name[/pre][/th][th][pre]nmm[/pre][/th][th][pre]thing[/pre][/th][/tr]" + NEWLINE +
             "[tr][td][pre]1[/pre][/td][td][pre]jim[/pre][/td][td][pre]45[/pre][/td][td][pre]barb[/pre][/td][/tr]" + NEWLINE +
             "[tr][td][pre]2[/pre][/td][td][pre]bob[/pre][/td][td][pre][/pre][/td][td][pre]spot[/pre][/td][/tr]" + NEWLINE +
             "[tr][td][pre]2[/pre][/td][td][pre]bo[/pre][/td][td][pre]9999[/pre][/td][td][pre]jet[/pre][/td][/tr]" + NEWLINE +

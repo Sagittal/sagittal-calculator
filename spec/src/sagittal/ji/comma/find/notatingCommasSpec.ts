@@ -1,4 +1,4 @@
-import { Abs, Comma, Decimal, Max, Num, RationalMonzo } from "../../../../../../src/general"
+import { Abs, Comma, Max, RationalMonzo, Real, RealDecimal } from "../../../../../../src/general"
 import { ApotomeSlope, computeNotatingCommas } from "../../../../../../src/sagittal"
 
 describe("computeNotatingCommas", (): void => {
@@ -18,7 +18,7 @@ describe("computeNotatingCommas", (): void => {
     it("can filter", (): void => {
         const rationalMonzo = [0, 0, 0, 0, 1] as RationalMonzo
         const maxAas = 9 as Max<Abs<ApotomeSlope>>
-        const upperBound = { decimal: 1.032279 as Decimal } as Max<Num>
+        const upperBound = { decimal: 1.032279 as RealDecimal } as Max<Real>
 
         const actual = computeNotatingCommas({ monzo: rationalMonzo }, { maxAas, upperBound })
 

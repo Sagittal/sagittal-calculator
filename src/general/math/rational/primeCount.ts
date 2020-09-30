@@ -1,8 +1,8 @@
 import { finalElement } from "../../code"
 import { Count, Index } from "../../types"
 import { SMOOTH_ROUGH_OFFSET } from "./constants"
-import { IntegerDecimal } from "./num"
 import { PRIMES } from "./primes"
+import { IntegerDecimal } from "./real"
 import { Prime, Roughness, Smoothness } from "./types"
 
 // Prime Counting Function (π)

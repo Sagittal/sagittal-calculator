@@ -1,4 +1,4 @@
-import { Cents, Id, Name, Num } from "../../../general"
+import { Cents, Id, Name, Real } from "../../../general"
 import { SizeCategoryBound } from "../../ji"
 
 enum BoundType {
@@ -23,11 +23,11 @@ enum JiNotationLevel {
     INSANE = "insane",          // Corresponds closely with Magrathean symbol subset
 }
 
-type CommaMean = Num & {
+type CommaMean = Real & {
     name: Name<CommaMean>,
 }
 
-type InaMidpoint = Num & {
+type InaMidpoint = Real & {
     name: Name<InaMidpoint>,
 }
 

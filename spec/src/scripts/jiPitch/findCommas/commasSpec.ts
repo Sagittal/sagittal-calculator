@@ -1,4 +1,4 @@
-import { Decimal, Max, Min, Num, RationalMonzo, Sopfr } from "../../../../../src/general/math"
+import { Max, Min, RationalMonzo, Real, RealDecimal, Sopfr } from "../../../../../src/general/math"
 import { Comma } from "../../../../../src/general/music"
 import { computeCommas } from "../../../../../src/scripts/jiPitch/findCommas"
 
@@ -9,15 +9,15 @@ describe("computeCommas", (): void => {
         expect((): void => {
             computeCommas({
                 max23FreeSopfr,
-                lowerBound: { decimal: 1.02930223664 as Decimal } as Min<Num>,
-                upperBound: { decimal: 1.00579294107 as Decimal } as Max<Num>,
+                lowerBound: { decimal: 1.02930223664 as RealDecimal } as Min<Real>,
+                upperBound: { decimal: 1.00579294107 as RealDecimal } as Max<Real>,
             })
         }).toThrowError("Lower bound is not less than upper bound; range was 50.000¢ - 10.000¢.")
         expect((): void => {
             computeCommas({
                 max23FreeSopfr,
-                lowerBound: { decimal: 1.02930223664 as Decimal } as Min<Num>,
-                upperBound: { decimal: 1.02930223664 as Decimal } as Max<Num>,
+                lowerBound: { decimal: 1.02930223664 as RealDecimal } as Min<Real>,
+                upperBound: { decimal: 1.02930223664 as RealDecimal } as Max<Real>,
             })
         }).toThrowError("Lower bound is not less than upper bound; range was 50.000¢ - 50.000¢.")
     })
@@ -28,35 +28,35 @@ describe("computeCommas", (): void => {
             expect((): void => {
                 computeCommas({
                     max23FreeSopfr,
-                    lowerBound: { decimal: 0.84089641525 as Decimal } as Min<Num>,
+                    lowerBound: { decimal: 0.84089641525 as RealDecimal } as Min<Real>,
                 })
             }).toThrowError("Search range must be within comma size category bounds (±227.370¢); range was -300.000¢ - 56.843¢.")
             expect((): void => {
                 computeCommas({
                     max23FreeSopfr,
-                    lowerBound: { decimal: 0.79370052598 as Decimal } as Min<Num>,
-                    upperBound: { decimal: 0.84089641525 as Decimal } as Max<Num>,
+                    lowerBound: { decimal: 0.79370052598 as RealDecimal } as Min<Real>,
+                    upperBound: { decimal: 0.84089641525 as RealDecimal } as Max<Real>,
                 })
             }).toThrowError("Search range must be within comma size category bounds (±227.370¢); range was -400.000¢ - -300.000¢.")
             expect((): void => {
                 computeCommas({
                     max23FreeSopfr,
-                    lowerBound: { decimal: 1.189207115 as Decimal } as Min<Num>,
-                    upperBound: { decimal: 1.25992104989 as Decimal } as Max<Num>,
+                    lowerBound: { decimal: 1.189207115 as RealDecimal } as Min<Real>,
+                    upperBound: { decimal: 1.25992104989 as RealDecimal } as Max<Real>,
                 })
             }).toThrowError("Search range must be within comma size category bounds (±227.370¢); range was 300.000¢ - 400.000¢.")
             expect((): void => {
                 computeCommas({
                     max23FreeSopfr,
-                    upperBound: { decimal: 1.189207115 as Decimal } as Max<Num>,
+                    upperBound: { decimal: 1.189207115 as RealDecimal } as Max<Real>,
                 })
             }).toThrowError("Search range must be within comma size category bounds (±227.370¢); range was 0.000¢ - 300.000¢.")
         },
     )
 
     it("returns commas if the bounds are within the abs value of the max size category bound", (): void => {
-        const lowerBound = { decimal: 1.00870198379 as Decimal } as Min<Num>
-        const upperBound = { decimal: 1.0174796921 as Decimal } as Max<Num>
+        const lowerBound = { decimal: 1.00870198379 as RealDecimal } as Min<Real>
+        const upperBound = { decimal: 1.0174796921 as RealDecimal } as Max<Real>
 
         const actual = computeCommas({ lowerBound, upperBound, max23FreeSopfr })
 

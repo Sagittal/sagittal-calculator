@@ -1,16 +1,16 @@
 import {
     abs,
     Abs,
-    computeRationalMonzoFromRatio,
+    computeRationalMonzoFromRational,
     Exponent,
     IntegerDecimal,
     Prime,
-    Ratio,
+    Rational,
     THREE_PRIME_INDEX,
 } from "../../../general"
 
-const computeAte = (jiPitch: Ratio): Abs<IntegerDecimal & Exponent<3 & Prime>> => {
-    const monzo = computeRationalMonzoFromRatio(jiPitch)
+const computeAte = (jiPitch: Rational): Abs<IntegerDecimal & Exponent<3 & Prime>> => {
+    const monzo = computeRationalMonzoFromRational(jiPitch)
 
     return abs(monzo[ THREE_PRIME_INDEX ] || 0) as Abs<IntegerDecimal & Exponent<3 & Prime>>
 }

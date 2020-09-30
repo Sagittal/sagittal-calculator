@@ -1,4 +1,4 @@
-import { RationalQuotient } from "../../../../src/general/math/rational/num/quotient"
+import { RationalQuotient } from "../../../../src/general/math/rational/real/quotient"
 import { computeInterval } from "../../../../src/general/music/interval"
 
 describe("computeInterval", (): void => {

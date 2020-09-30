@@ -1,35 +1,35 @@
-import { Decimal, IntegerDecimal, NumTypeParameters, RationalDecimal, round } from "../../math"
+import { IntegerDecimal, NumericProperties, RationalDecimal, RealDecimal, round } from "../../math"
 import { IO_PRECISION } from "../constants"
 import { Formatted } from "./types"
 
 const alignFormattedDecimal: {
-    <T extends NumTypeParameters>(formattedDecimal: Formatted<IntegerDecimal<T>>): Formatted<IntegerDecimal<T>>
-    <T extends NumTypeParameters>(formattedDecimal: Formatted<RationalDecimal<T>>): Formatted<RationalDecimal<T>>
-    <T extends NumTypeParameters>(formattedDecimal: Formatted<Decimal<T>>): Formatted<Decimal<T>>
-} = <T extends NumTypeParameters>(
-    formattedDecimal: Formatted<Decimal<T>>,
-): Formatted<Decimal<T>> => {
+    <T extends NumericProperties>(formattedDecimal: Formatted<IntegerDecimal<T>>): Formatted<IntegerDecimal<T>>
+    <T extends NumericProperties>(formattedDecimal: Formatted<RationalDecimal<T>>): Formatted<RationalDecimal<T>>
+    <T extends NumericProperties>(formattedDecimal: Formatted<RealDecimal<T>>): Formatted<RealDecimal<T>>
+} = <T extends NumericProperties>(
+    formattedDecimal: Formatted<RealDecimal<T>>,
+): Formatted<RealDecimal<T>> => {
     while (formattedDecimal.length < 7) {
-        formattedDecimal = " " + formattedDecimal as Formatted<Decimal<T>>
+        formattedDecimal = " " + formattedDecimal as Formatted<RealDecimal<T>>
     }
 
     return formattedDecimal
 }
 
-const formatDecimal = <T extends NumTypeParameters>(
-    decimal: Decimal<T>,
+const formatDecimal = <T extends NumericProperties>(
+    decimal: RealDecimal<T>,
     { align }: { align?: boolean } = {},
-): Formatted<Decimal<T>> => {
+): Formatted<RealDecimal<T>> => {
     const roundedDecimal = round(decimal, IO_PRECISION)
         .toFixed(3)
-        .replace(/\.(\d\d\d)0*$/, ".$1") as Formatted<Decimal<T>>
+        .replace(/\.(\d\d\d)0*$/, ".$1") as Formatted<RealDecimal<T>>
 
     return align ?
         alignFormattedDecimal(roundedDecimal) :
         roundedDecimal
 }
 
-const formatIntegerDecimal = <T extends NumTypeParameters>(
+const formatIntegerDecimal = <T extends NumericProperties>(
     integerDecimal: IntegerDecimal<T>,
     { align }: { align?: boolean } = {},
 ): Formatted<IntegerDecimal<T>> => {

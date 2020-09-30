@@ -1,8 +1,8 @@
 import {
     abs,
     Comma,
-    computeNumFromMonzo,
     computePlusOrMinusRange,
+    computeRealFromMonzo,
     Exponent,
     IntegerDecimal,
     isUndefined,
@@ -60,7 +60,7 @@ const computeCommasFrom23FreeRationalMonzo = (
             computeRationalMonzoInZone(twoFreeRationalMonzo, [lowerBound, upperBound])
 
         if (rationalMonzoInZone) {
-            const comma = computeNumFromMonzo(rationalMonzoInZone) as Comma
+            const comma = computeRealFromMonzo(rationalMonzoInZone) as Comma
 
             const commaAnalysis: CommaAnalysis = analyzeComma(comma)
             if (

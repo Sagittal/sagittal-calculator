@@ -5,16 +5,16 @@ import {
     computeNumberFromCents,
     IDENTIFYING_COMMA_NAME_CHARS,
     Io,
-    Num,
     parseCents,
     parseDecimal,
     parseMonzo,
     parseQuotient,
+    Real,
 } from "../../general"
 import { computeCommaFromCommaNameQuotientAndSizeCategoryName, parseCommaName } from "../ji"
 
-const parsePitch = (pitchIo: Io): Num => {
-    let pitch: Num
+const parsePitch = (pitchIo: Io): Real => {
+    let pitch: Real
     if (pitchIo.match(IDENTIFYING_COMMA_NAME_CHARS)) {
         pitch = computeCommaFromCommaNameQuotientAndSizeCategoryName(parseCommaName(pitchIo))
     } else if (pitchIo.match(ANY_QUOTIENT_CHARS)) {

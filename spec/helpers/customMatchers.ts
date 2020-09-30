@@ -3,11 +3,11 @@
 import {
     ACCURACY_THRESHOLD,
     deepEquals,
-    equalNums,
+    equalReals,
     Io,
     isCloseTo,
     isUndefined,
-    Num,
+    Real,
     stringify,
 } from "../../src/general"
 import { Precision } from "../../src/general/code"
@@ -42,10 +42,10 @@ const assert = (condition: boolean, message: Io): void => {
     throw message
 }
 
-const testEqualNum = <T extends Num>(actual: T, expected: T, precision: Precision, negate?: boolean, message?: Io): void => {
+const testEqualReal = <T extends Real>(actual: T, expected: T, precision: Precision, negate?: boolean, message?: Io): void => {
     assert(
-        equalNums(actual, expected, precision),
-        message || `Expected num ${stringify(actual)} to equal num ${stringify(expected)}.` as Io,
+        equalReals(actual, expected, precision),
+        message || `Expected real ${stringify(actual)} to equal real ${stringify(expected)}.` as Io,
     )
 }
 
@@ -118,10 +118,10 @@ const eachExpectedElementHasSameContentsAsSomeActualElement = <T>(expectedElemen
 }
 
 const customMatchers: CustomMatcherFactories = {
-    toEqualNum: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({
-        compare: <T extends Num>(actual: T, expected: T, precision: Precision = ACCURACY_THRESHOLD, negate?: boolean, message?: Io): CustomMatcherResult =>
+    toEqualReal: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({
+        compare: <T extends Real>(actual: T, expected: T, precision: Precision = ACCURACY_THRESHOLD, negate?: boolean, message?: Io): CustomMatcherResult =>
             doAssertions((): void => {
-                testEqualNum(actual, expected, precision, negate, message)
+                testEqualReal(actual, expected, precision, negate, message)
             }),
     }),
     toBeCloseToTyped: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({

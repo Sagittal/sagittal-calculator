@@ -1,4 +1,4 @@
-import { Abs, Cents, Count, Decimal, Id, Multiplier, Name, Sum } from "../../../../../src/general"
+import { Abs, Cents, Count, Id, Multiplier, Name, RealDecimal, Sum } from "../../../../../src/general"
 import {
     Bound,
     BoundType,
@@ -64,7 +64,7 @@ describe("analyzeJiNotationBound", (): void => {
     ]
     const jiNotationBound: JiNotationBound = {
         ...jiNotationBoundFixture,
-        decimal: 1.01344211122 as Decimal, // 23.116420¢
+        decimal: 1.01344211122 as RealDecimal, // 23.116420¢
         jiNotationLevels: [JiNotationLevel.ULTRA, JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
         id: 47 as Id<JiNotationBound>,
         boundType: BoundType.INA_MIDPOINT,

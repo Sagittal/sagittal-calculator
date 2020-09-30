@@ -1,4 +1,4 @@
-import { Comma, formatPitch, isUndefined, numIsHigher } from "../../../../general"
+import { Comma, formatPitch, isUndefined, realIsHigher } from "../../../../general"
 import { SIZE_CATEGORIES } from "./sizeCategories"
 import { SIZE_CATEGORY_BOUNDS } from "./sizeCategoryBounds"
 import { SizeCategoryAbbreviation, SizeCategoryBound, SizeCategoryName, SizeCategoryOptions } from "./types"
@@ -12,7 +12,7 @@ const computeSizeCategory: {
     let sizeCategory = SIZE_CATEGORIES[ 0 ]
 
     SIZE_CATEGORY_BOUNDS.forEach((sizeCategoryBound: SizeCategoryBound, index: number): void => {
-        if (numIsHigher(comma, sizeCategoryBound)) {
+        if (realIsHigher(comma, sizeCategoryBound)) {
             sizeCategory = SIZE_CATEGORIES[ index + 1 ]
         }
     })

@@ -1,7 +1,7 @@
 import {
     computeCopfr,
     computeExtensionBase,
-    computeNumFromMonzo,
+    computeRealFromMonzo,
     computeSopfr,
     computeTrimmedArray,
     Copfr,
@@ -59,8 +59,8 @@ const compute23FreeRationalMonzosToCheck = (
             primeExponentExtremasGivenMaxN2D3P9 && primeExponentExtremasGivenMaxN2D3P9[ index + FIVE_PRIME_INDEX ]
 
         two3FreeRationalMonzosToCheck.forEach((two3FreeMonzoToCheck: RationalMonzo): void => {
-            const two3FreeSopfr = computeSopfr(computeNumFromMonzo(two3FreeMonzoToCheck))
-            const two3FreeCopfr = computeCopfr(computeNumFromMonzo(two3FreeMonzoToCheck))
+            const two3FreeSopfr = computeSopfr(computeRealFromMonzo(two3FreeMonzoToCheck))
+            const two3FreeCopfr = computeCopfr(computeRealFromMonzo(two3FreeMonzoToCheck))
 
             const adjustedMax23FreeSopfr = max23FreeSopfr &&
                 max23FreeSopfr - two3FreeSopfr as Max<Sopfr<{ rough: 5 }>>

@@ -1,14 +1,14 @@
 import {
     abs,
     computeGpf,
-    computeNumFromMonzo,
-    computeRationalMonzoFromRatio,
+    computeRationalMonzoFromRational,
+    computeRealFromMonzo,
     computeTrimmedArray,
     Direction,
     Exponent,
     formatMonzo,
     isSubMonzo,
-    NumTypeParameters,
+    NumericProperties,
     Prime,
     PRIMES,
     THREE_PRIME_INDEX,
@@ -17,11 +17,11 @@ import {
 } from "../../../../general"
 import { N2D3P9 } from "./types"
 
-const computeN2D3P9 = <T extends NumTypeParameters &
+const computeN2D3P9 = <T extends NumericProperties &
     { direction: Direction.SUPER, rough: 5 } = { direction: Direction.SUPER, rough: 5, rational: false }>(
     two3FreeClass: Two3FreeClass,
 ): N2D3P9 => {
-    const monzo = computeRationalMonzoFromRatio(two3FreeClass)
+    const monzo = computeRationalMonzoFromRational(two3FreeClass)
 
     if (computeTrimmedArray(monzo).length < 3) {
         return 1 as N2D3P9
@@ -42,7 +42,7 @@ const computeN2D3P9 = <T extends NumTypeParameters &
             return n2d3p9 * (prime / divisor) ** abs(primeExponent) as N2D3P9
         },
         1 as N2D3P9,
-    ) * computeGpf(computeNumFromMonzo(monzo)) * (1 / 9) as N2D3P9
+    ) * computeGpf(computeRealFromMonzo(monzo)) * (1 / 9) as N2D3P9
 }
 
 export {

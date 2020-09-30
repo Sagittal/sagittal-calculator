@@ -1,14 +1,14 @@
-import { NumTypeParameters } from "../num"
+import { NumericProperties } from "../real"
 import { Max } from "../types"
-import { computeRatioSmoothness, IntegerDecimal, Ratio, RationalDecimal } from "./num"
+import { computeRationalSmoothness, IntegerDecimal, Rational, RationalDecimal } from "./real"
 import { Prime } from "./types"
 
 // Greatest Prime Factor
 
-const computeGpf = <T extends NumTypeParameters>(
-    ratioOrRationalDecimal: Ratio<T> | RationalDecimal<T>,
+const computeGpf = <T extends NumericProperties>(
+    rationalOrRationalDecimal: Rational<T> | RationalDecimal<T>,
 ): Max<Prime<T>> =>
-    computeRatioSmoothness(ratioOrRationalDecimal) as IntegerDecimal as Max<Prime<T>>
+    computeRationalSmoothness(rationalOrRationalDecimal) as IntegerDecimal as Max<Prime<T>>
 
 export {
     computeGpf,

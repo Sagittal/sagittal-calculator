@@ -1,4 +1,4 @@
-import { RationalMonzo } from "../../../../../../src/general/math/rational/num/monzo"
+import { RationalMonzo } from "../../../../../../src/general/math/rational/real/monzo"
 import { computeSecorComplexity } from "../../../../../../src/sagittal/ji/comma/usefulness/secorComplexity"
 
 describe("computeSecorComplexity", (): void => {

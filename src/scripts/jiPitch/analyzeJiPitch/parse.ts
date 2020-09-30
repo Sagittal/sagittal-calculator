@@ -5,25 +5,25 @@ import {
     formatPitch,
     IntegerDecimal,
     Io,
-    isRatio,
+    isRational,
     isUndefined,
     LogTarget,
     Max,
     Prime,
-    Ratio,
+    Rational,
     saveLog,
 } from "../../../general"
 import { ApotomeSlope, computeAas, computeAte, JiPitchAnalysis, N2D3P9, parsePitch } from "../../../sagittal"
 import { FindCommasSettings, parseFindCommasSettings } from "../findCommas"
 
-const parseJiPitch = (): Ratio => {
+const parseJiPitch = (): Rational => {
     const jiPitchText = program.args[ 0 ] as Io
 
-    let jiPitch: Ratio
+    let jiPitch: Rational
     if (jiPitchText) {
         const pitch = parsePitch(jiPitchText)
 
-        if (isRatio(pitch)) {
+        if (isRational(pitch)) {
             jiPitch = pitch
 
             if (!isUndefined(pitch.monzo) || !isUndefined(pitch.quotient)) {

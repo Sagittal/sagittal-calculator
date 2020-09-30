@@ -1,4 +1,4 @@
-import { Name, Num, NumTypeParameters, RationalQuotient } from "../../../../general"
+import { Name, NumericProperties, RationalQuotient, Real } from "../../../../general"
 
 interface SizeCategoryOptions {
     abbreviated?: boolean,
@@ -9,7 +9,7 @@ interface SizeCategory {
     abbreviation: SizeCategoryAbbreviation,
 }
 
-type SizeCategoryBound<T extends NumTypeParameters = {}> = Num<T> & {
+type SizeCategoryBound<T extends NumericProperties = {}> = Real<T> & {
     name: Name<SizeCategoryBound>,
 }
 
@@ -78,7 +78,7 @@ type CommaNameOptions = Partial<{
 // Note, however, that when you return the 2's and 3's to this to make it comma-sized, of the size of its name,
 // It WILL be super! This is a subtle but critical point.
 // You can observe this difference in ordering in commaName.ts and two3FreeClass.ts
-type CommaNameQuotient<T extends NumTypeParameters = {}> =
+type CommaNameQuotient<T extends NumericProperties = {}> =
     RationalQuotient<T & { rough: 5 }>
     & { _CommaNameQuotientBrand: boolean }
 

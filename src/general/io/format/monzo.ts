@@ -1,5 +1,5 @@
 import { indexOfFinalElement } from "../../code"
-import { Exponent, Monzo, NumTypeParameters, Prime } from "../../math"
+import { Exponent, Monzo, NumericProperties, Prime } from "../../math"
 import { Io } from "../types"
 import { Formatted } from "./types"
 
@@ -12,7 +12,7 @@ const spacePrimeExponent = (primeExponent: Exponent<Prime>): Io => {
     return primeExponentText as Io
 }
 
-const formatMonzo = <T extends NumTypeParameters>(
+const formatMonzo = <T extends NumericProperties>(
     monzo: Monzo<T>,
     { punctuated = false }: { punctuated?: boolean } = {},
 ): Formatted<Monzo<T>> => {

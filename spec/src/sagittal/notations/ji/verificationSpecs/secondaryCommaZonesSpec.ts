@@ -1,4 +1,4 @@
-import { computeDecimalFromNum } from "../../../../../../src/general/math/num/decimal"
+import { computeDecimalFromReal } from "../../../../../../src/general/math/real/decimal"
 import { Zone } from "../../../../../../src/general/music"
 import { JI_NOTATION, PrimaryComma } from "../../../../../../src/sagittal"
 import { computeSecondaryCommaZone } from "../../../../../../src/sagittal/notations/ji"
@@ -159,8 +159,8 @@ describe("secondary comma zones", (): void => {
             [{ decimal: 1.040110 }, { decimal: 1.040403 }], // [{ cents: 68.084530 }, { cents: 68.572508 }],
         ] as Array<Zone<PrimaryComma>>
         expected.forEach((zone: Zone, index: number): void => {
-            expect(computeDecimalFromNum(actual[ index ][ 0 ])).toBeCloseToTyped(zone[ 0 ].decimal!)
-            expect(computeDecimalFromNum(actual[ index ][ 1 ])).toBeCloseToTyped(zone[ 1 ].decimal!)
+            expect(computeDecimalFromReal(actual[ index ][ 0 ])).toBeCloseToTyped(zone[ 0 ].decimal!)
+            expect(computeDecimalFromReal(actual[ index ][ 1 ])).toBeCloseToTyped(zone[ 1 ].decimal!)
         })
     })
 })

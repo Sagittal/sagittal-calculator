@@ -95,7 +95,7 @@ describe("formatTableForTerminal", (): void => {
 
     it("supports undefined cells, rendering them as blank", (): void => {
         const table = [
-            ["id", "name", "num", "thing"],
+            ["id", "name", "nmm", "thing"],
             ["1", "jim", "45", "barb"],
             ["2", "bob", undefined, "spot"],
             ["2", "bo", "9999", "jet"],
@@ -104,7 +104,7 @@ describe("formatTableForTerminal", (): void => {
         const actual = formatTableForTerminal(table)
 
         const expected =
-            "id\tname\tnum \tthing".underline + NEWLINE +
+            "id\tname\tnmm \tthing".underline + NEWLINE +
             "1 \tjim \t45  \tbarb " + NEWLINE +
             "2 \tbob \t    \tspot " + NEWLINE +
             "2 \tbo  \t9999\tjet  " + NEWLINE

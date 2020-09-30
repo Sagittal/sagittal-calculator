@@ -1,4 +1,4 @@
-import { IntegerNumerator } from "../../../../../../../../../src/general/math/rational/num/quotient"
+import { IntegerNumerator } from "../../../../../../../../../src/general/math/rational/real/quotient"
 import { N2P } from "../../../../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities"
 import { computeN2P } from "../../../../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/n2p"
 

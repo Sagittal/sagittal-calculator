@@ -1,5 +1,5 @@
 import { alignFormattedDecimal, formatDecimal, formatIntegerDecimal, Formatted } from "../../../../../src/general/io"
-import { IntegerDecimal } from "../../../../../src/general/math/rational/num/decimal"
+import { IntegerDecimal } from "../../../../../src/general/math/rational/real/decimal"
 
 describe("alignFormattedDecimal", (): void => {
     it("shifts over numbers so that the decimal places align", (): void => {

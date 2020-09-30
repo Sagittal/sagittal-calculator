@@ -1,5 +1,5 @@
-import { Direction } from "../../../../../src/general/math/num"
-import { RationalMonzo } from "../../../../../src/general/math/rational/num/monzo"
+import { RationalMonzo } from "../../../../../src/general/math/rational/real/monzo"
+import { Direction } from "../../../../../src/general/math/real"
 import { Two3FreeClass } from "../../../../../src/general/music/ji"
 
 const two3FreeClassFixture: Two3FreeClass = {

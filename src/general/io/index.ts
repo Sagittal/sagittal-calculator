@@ -8,7 +8,7 @@ export {
     IO_PRECISION,
     NEWLINE,
     SPACE,
-    SUPERSCRIPT_NUMS,
+    SUPERSCRIPT_NUMBERS,
     TAB,
     COMMA,
     ANY_CENTS_CHARS,
@@ -31,7 +31,7 @@ export {
     formatTime,
     formatPitch,
     Formatted,
-    formatNum,
+    formatReal,
     formatCents,
 } from "./format"
 export { time } from "./time"

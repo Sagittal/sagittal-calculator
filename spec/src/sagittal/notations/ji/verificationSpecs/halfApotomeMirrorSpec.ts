@@ -1,5 +1,5 @@
 import { increment } from "../../../../../../src/general/code"
-import { equalNums, numIsHigher } from "../../../../../../src/general/math"
+import { equalReals, realIsHigher } from "../../../../../../src/general/math"
 import { computeInterval } from "../../../../../../src/general/music/interval"
 import {
     getPrimaryComma,
@@ -10,20 +10,11 @@ import {
     PrimaryComma,
 } from "../../../../../../src/sagittal"
 
-// TODO: REALIZE ERD DIAGRAM FOR ELEMENTS AND SYMBOLS AND COMMAS
-//  Ah ha! found this note. had lost it.
-//  Original note: The idea of symbol *class* is great. But I'm wondering if maybe there's room for improvement.
-//  I'm thinking in particular of how choices of comma above the half-apotome mirror are not independent.
-//  (see: http://forum.sagittal.org/viewtopic.php?p=2317#p2317)
-//  But I'm also not sure we want to shift the whole basis back to commas...
-//  Yes perhaps the half-apotome mirror test should suffice here.
-//  What I *had* been thinking was that only the commas up to the half apotome mirror would define class-dom.
-
 describe("half-apotome mirror", (): void => {
     it("is the case that the commas in the JI notation are symmetrical about the half-apotome mirror", (): void => {
         const jiNotationPrimaryCommas = JI_NOTATION.map(getPrimaryComma)
         const firstCommaGreaterThanHalfApotomeMirrorIndex = jiNotationPrimaryCommas.findIndex(
-            (primaryComma: PrimaryComma): boolean => numIsHigher(primaryComma, HALF_APOTOME),
+            (primaryComma: PrimaryComma): boolean => realIsHigher(primaryComma, HALF_APOTOME),
         )
 
         let indexOffset = 0
@@ -36,7 +27,7 @@ describe("half-apotome mirror", (): void => {
 
             const actual = computeInterval(comma, HALF_APOTOME)
             const expected = computeInterval(HALF_APOTOME, mirroredComma)
-            expect(actual).toEqualNum(expected)
+            expect(actual).toEqualReal(expected)
 
             indexOffset = increment(indexOffset)
         }
@@ -45,7 +36,7 @@ describe("half-apotome mirror", (): void => {
     it("is the case that the bounds in the JI notation are symmetrical about the half-apotome mirror", (): void => {
         const jiNotationBoundAtHalfApotomeMirrorIndex =
             JI_NOTATION_BOUNDS.findIndex((jiNotationBound: JiNotationBound): boolean => {
-                return equalNums(jiNotationBound, HALF_APOTOME)
+                return equalReals(jiNotationBound, HALF_APOTOME)
             })
 
         let indexOffset = 1
@@ -58,7 +49,7 @@ describe("half-apotome mirror", (): void => {
 
             const actual = computeInterval(jiNotationBound, HALF_APOTOME)
             const expected = computeInterval(HALF_APOTOME, mirroredBound)
-            expect(actual).toEqualNum(expected)
+            expect(actual).toEqualReal(expected)
 
             indexOffset = increment(indexOffset)
         }

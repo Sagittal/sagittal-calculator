@@ -2,6 +2,11 @@ import { Apotome, Count, Direction, Id } from "../../general"
 import { SymbolLongAscii, SymbolUnicode } from "../io"
 import { Flavor, Symbol, SymbolClass } from "./types"
 
+// TODO: CONSTANTIZE EACH SYMBOL CLASS
+//  So they can have names, you don’t have to know their IDs
+//  As well as symbols, bounds maybe... anything that we have good names for
+//  And when you're done with that, e.g. you should go through and replace (|//|) references to like UNISON.ascii, etc.
+
 const SYMBOLS: Symbol[] = [
     {
         id: 0 as Id<Symbol>,

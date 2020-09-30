@@ -12,7 +12,8 @@ describe("getMinaName", (): void => {
 
     const computeSplitMinaName = (symbolClassId: Id<SymbolClass>): Name<Mina> => {
         const [lowerBound, upperBound] = computeCaptureZone(symbolClassId)
-        // TODO: CONDUCT AT NUM LEVEL, LOGARITHMIC FRACTION HELPER
+        // Todo: DEFER UNTIL AFTER SCALED MONZO
+        //  CONDUCT AT REAL LEVEL, LOGARITHMIC FRACTION HELPER
         //  This one is going to involve first weaning inas off of cents, i.e. bringing back the decimal versions of
         //  Them alongside all the cents versions. after that, we can take the fraction of the decimalSpan with the
         //  MINA_DECIMAL instead. so that is indeed dividing two pitches by each other, to get an interval.

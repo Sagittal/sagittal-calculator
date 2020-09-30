@@ -3,13 +3,13 @@ import {
     computeRationalMonzoFromRationalQuotient,
     isRationalQuotient,
     isSubQuotient,
-    NumTypeParameters,
+    NumericProperties,
 } from "../../math"
 import { Two3FreeClass } from "../../music"
 import { Io } from "../types"
 import { parseQuotient } from "./quotient"
 
-const parse23FreeClass = <T extends NumTypeParameters>(two3FreeClassIo: Io): Two3FreeClass<T> => {
+const parse23FreeClass = <T extends NumericProperties>(two3FreeClassIo: Io): Two3FreeClass<T> => {
     const two3FreeQuotient = parseQuotient(two3FreeClassIo)
 
     if (!isRationalQuotient(two3FreeQuotient)) {

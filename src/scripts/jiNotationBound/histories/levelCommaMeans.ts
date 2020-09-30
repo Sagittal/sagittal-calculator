@@ -1,4 +1,4 @@
-import { computeNumSqrt, Id, indexOfFinalElement, multiplyRatios, Name } from "../../../general"
+import { computeRealSqrt, Id, indexOfFinalElement, multiplyRationals, Name } from "../../../general"
 import {
     CommaMean,
     getPrimaryComma,
@@ -27,8 +27,9 @@ const computeJiNotationLevelCommaMeans = (jiNotationLevel: JiNotationLevel): Com
 
             const primaryComma = getPrimaryComma(symbolClassId)
             const nextPrimaryComma = getPrimaryComma(nextSymbolClassId)
-            // TODO: Geometric mean helper would be cool
-            const commaMean = computeNumSqrt(multiplyRatios(primaryComma, nextPrimaryComma))
+            // Todo: DEFER UNTIL AFTER SCALED MONZO
+            //  Geometric mean helper would be cool
+            const commaMean = computeRealSqrt(multiplyRationals(primaryComma, nextPrimaryComma))
 
             const name = [
                 getJiNotationSymbolAscii(symbolClassId),

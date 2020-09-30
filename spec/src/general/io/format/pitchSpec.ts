@@ -1,5 +1,5 @@
 import { formatPitch, Formatted } from "../../../../../src/general/io/format"
-import { Decimal, IntegerDecimal, Monzo, Num, Quotient } from "../../../../../src/general/math"
+import { IntegerDecimal, Monzo, Quotient, Real, RealDecimal } from "../../../../../src/general/math"
 import { Cents } from "../../../../../src/general/music"
 
 describe("formatPitch", (): void => {
@@ -8,7 +8,7 @@ describe("formatPitch", (): void => {
 
         const actual = formatPitch(pitch)
 
-        const expected = "5/3" as Formatted<Num>
+        const expected = "5/3" as Formatted<Real>
         expect(actual).toBe(expected)
     })
 
@@ -17,7 +17,7 @@ describe("formatPitch", (): void => {
 
         const actual = formatPitch(pitch)
 
-        const expected = "5/3" as Formatted<Num>
+        const expected = "5/3" as Formatted<Real>
         expect(actual).toBe(expected)
     })
 
@@ -26,7 +26,7 @@ describe("formatPitch", (): void => {
 
         const actual = formatPitch(pitch)
 
-        const expected = "5/1" as Formatted<Num>
+        const expected = "5/1" as Formatted<Real>
         expect(actual).toBe(expected)
     })
 
@@ -35,7 +35,7 @@ describe("formatPitch", (): void => {
 
         const actual = formatPitch(pitch)
 
-        const expected = "5/3" as Formatted<Num>
+        const expected = "5/3" as Formatted<Real>
         expect(actual).toBe(expected)
     })
 
@@ -44,7 +44,7 @@ describe("formatPitch", (): void => {
 
         const actual = formatPitch(pitch)
 
-        const expected = "[   0  -1   1 ⟩" as Formatted<Num>
+        const expected = "[   0  -1   1 ⟩" as Formatted<Real>
         expect(actual).toBe(expected)
     })
 
@@ -53,7 +53,7 @@ describe("formatPitch", (): void => {
 
         const actual = formatPitch(pitch)
 
-        const expected = "[   0   0   1 ⟩" as Formatted<Num>
+        const expected = "[   0   0   1 ⟩" as Formatted<Real>
         expect(actual).toBe(expected)
     })
 
@@ -62,34 +62,34 @@ describe("formatPitch", (): void => {
 
         const actual = formatPitch(pitch)
 
-        const expected = "[   0  -1   1 ⟩" as Formatted<Num>
+        const expected = "[   0  -1   1 ⟩" as Formatted<Real>
         expect(actual).toBe(expected)
     })
 
     it("if the decimal and cents are present, returns the cents formatted", (): void => {
-        const pitch = { decimal: 1.666667 as Decimal, cents: 884.358713 as Cents }
+        const pitch = { decimal: 1.666667 as RealDecimal, cents: 884.358713 as Cents }
 
         const actual = formatPitch(pitch)
 
-        const expected = "884.359¢" as Formatted<Num>
+        const expected = "884.359¢" as Formatted<Real>
         expect(actual).toBe(expected)
     })
 
     it("if only the decimal is present, returns it as formatted cents", (): void => {
-        const pitch = { decimal: 1.666667 as Decimal }
+        const pitch = { decimal: 1.666667 as RealDecimal }
 
         const actual = formatPitch(pitch)
 
-        const expected = "884.359¢" as Formatted<Num>
+        const expected = "884.359¢" as Formatted<Real>
         expect(actual).toBe(expected)
     })
 
     it("can return the pitch aligned (for tables)", (): void => {
-        const pitch = { decimal: 1.666667 as Decimal }
+        const pitch = { decimal: 1.666667 as RealDecimal }
 
         const actual = formatPitch(pitch, { align: true })
 
-        const expected = "       884.359¢" as Formatted<Num>
+        const expected = "       884.359¢" as Formatted<Real>
         expect(actual).toBe(expected)
     })
 })

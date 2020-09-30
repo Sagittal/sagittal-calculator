@@ -1,9 +1,9 @@
-import { computeDecimalFromNum, Num } from "../math"
+import { computeDecimalFromReal, Real } from "../math"
 import { computeCents } from "./cents"
 import { Cents } from "./types"
 
-const computeCentsFromPitch = (pitch: Num): Cents => {
-    const decimal = computeDecimalFromNum(pitch)
+const computeCentsFromPitch = (pitch: Real): Cents => {
+    const decimal = computeDecimalFromReal(pitch)
 
     return computeCents(decimal)
 }

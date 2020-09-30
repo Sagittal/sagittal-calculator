@@ -1,16 +1,16 @@
 import { Count, Sum } from "../../types"
-import { NumTypeParameterEffects, NumTypeParameters } from "../num"
-import { IntegerDecimal } from "./num"
+import { NumericProperties, NumTypeParameterEffects } from "../real"
+import { IntegerDecimal } from "./real"
 
-type Prime<T extends NumTypeParameters = {}> = IntegerDecimal<T> & { _PrimeBrand: "Prime" }
+type Prime<T extends NumericProperties = {}> = IntegerDecimal<T> & { _PrimeBrand: "Prime" }
 type Roughness = IntegerDecimal & { _RoughnessBrand: boolean }
 type Smoothness = IntegerDecimal & { _SmoothnessBrand: boolean }
 
-type Sopfr<T extends NumTypeParameters = {}> =
+type Sopfr<T extends NumericProperties = {}> =
     Sum<Prime>
     & { _SopfrBrand: boolean }
     & NumTypeParameterEffects<T>
-type Copfr<T extends NumTypeParameters = {}> =
+type Copfr<T extends NumericProperties = {}> =
     Count<Prime>
     & { _CopfrBrand: boolean }
     & NumTypeParameterEffects<T>

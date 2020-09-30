@@ -1,25 +1,29 @@
-import { Decimal, divideNums, divideRatios, isRatio, Num, NumTypeParameters, Ratio, RationalDecimal } from "../math"
-
-// TODO: instead of "NumTypeParameters" something more like "NumProps" or "NumQuals"?
-
-// TODO: maybe Pitch should be a branded Num, and Interval another branded Num
-//  So would that make a JiPitch a Ratio & Pitch?
+import {
+    divideRationals,
+    divideReals,
+    isRational,
+    NumericProperties,
+    Rational,
+    RationalDecimal,
+    Real,
+    RealDecimal,
+} from "../math"
 
 const computeInterval: {
-    <T extends NumTypeParameters>(
-        fromPitch: Ratio<T> | RationalDecimal<T>,
-        toPitch: Ratio<T> | RationalDecimal<T>,
-    ): Ratio<T> | RationalDecimal<T>,
-    <T extends NumTypeParameters>(
-        fromPitch: Num<T> | Decimal<T>,
-        toPitch: Num<T> | Decimal<T>,
-    ): Num<T> | Decimal<T>,
-} = <T extends NumTypeParameters>(fromPitch: Num<T> | Decimal<T>, toPitch: Num<T> | Decimal<T>): any => {
-    if (isRatio(fromPitch) && isRatio(toPitch)) {
-        return divideRatios(toPitch, fromPitch)
+    <T extends NumericProperties>(
+        fromPitch: Rational<T> | RationalDecimal<T>,
+        toPitch: Rational<T> | RationalDecimal<T>,
+    ): Rational<T> | RationalDecimal<T>,
+    <T extends NumericProperties>(
+        fromPitch: Real<T> | RealDecimal<T>,
+        toPitch: Real<T> | RealDecimal<T>,
+    ): Real<T> | RealDecimal<T>,
+} = <T extends NumericProperties>(fromPitch: Real<T> | RealDecimal<T>, toPitch: Real<T> | RealDecimal<T>): any => {
+    if (isRational(fromPitch) && isRational(toPitch)) {
+        return divideRationals(toPitch, fromPitch)
     }
 
-    return divideNums(toPitch, fromPitch)
+    return divideReals(toPitch, fromPitch)
 }
 
 export {

@@ -5,8 +5,8 @@ import {
     MULTIPLICATIVE_IDENTITY, VALUE_ABOVE_WHICH_ROUNDING_IMPLEMENTATION_BREAKS,
     VALUE_BELOW_WHICH_ROUNDING_IMPLEMENTATION_BREAKS,
 } from "./constants"
-import { Decimal } from "./num"
 import { IntegerDecimal, RationalDecimal } from "./rational"
+import { NumericProperties, RealDecimal } from "./real"
 import { Abs, Avg, Base, Exponent, Max, Min, Power } from "./types"
 
 const count = <T>(array: T[]): Count<T> => {
@@ -39,13 +39,19 @@ const divide = <T extends number>(dividend: T, divisor: Divisor<T> | T): T => {
     return dividend / divisor as T          // Quotient
 }
 
-const mod = <T extends number>(dividend: T, divisor: T): Omit<T, "_IntegerBrand"> =>
-    dividend % divisor as unknown as Omit<T, "_IntegerBrand">
+const mod: {
+    <T extends NumericProperties>(dividend: IntegerDecimal<T>, divisor: IntegerDecimal<T>): RealDecimal<T>,
+    <T extends NumericProperties>(dividend: RationalDecimal<T>, divisor: RationalDecimal<T>): RealDecimal<T>,
+    <T extends NumericProperties>(dividend: RealDecimal<T>, divisor: RealDecimal<T>): RealDecimal<T>,
+} = <T extends number>(dividend: T, divisor: T): any =>
+    dividend % divisor
 
-// TODO: use the technique I used elsewhere to prevent this from borking types that aren't integer already; 
-//  Oh, actually that's just what I did for sqrt below
-const reciprocal = <T extends number>(number: T): Omit<T, "_IntegerBrand"> =>
-    1 / number as unknown as Omit<T, "_IntegerBrand">
+const reciprocal: {
+    <T extends NumericProperties>(integerDecimal: IntegerDecimal<T>): RealDecimal<T>,
+    <T extends NumericProperties>(rationalDecimal: RationalDecimal<T>): RealDecimal<T>,
+    <T extends NumericProperties>(decimal: RealDecimal<T>): RealDecimal<T>,
+} = <T extends RealDecimal>(decimal: T): any =>
+    1 / decimal
 
 const negative = <T extends number>(number: T): T =>
     number === 0 ? 0 as T : -number as T
@@ -69,23 +75,24 @@ const round = <T extends number>(number: T, precision?: Precision): T => {
 const abs = <T extends number>(number: T): Abs<T> =>
     Math.abs(number) as Abs<T>
 
-// TODO: And anything like that using rational/integer should live in num/
-//  Although I'm actually thinking in this case what we're looking for is in num/, a generic root helper
+// Todo: DEFER UNTIL AFTER SCALED MONZO
+//  And anything like that using rational/integer should live in real/
+//  Although I'm actually thinking in this case what we're looking for is in real/, a generic root helper
 //  And here, it should be more like pow, log, etc. where there should be a ... well it should return a Power<T>
 //  And that's really all...
 const sqrt: {
-    <T extends IntegerDecimal>(integerDecimal: T): Decimal,
-    <T extends RationalDecimal>(rationalDecimal: T): Decimal,
-    <T extends Decimal>(decimal: T): Decimal,
-} = <T extends Decimal>(decimal: T): any =>
+    <T extends NumericProperties>(integerDecimal: IntegerDecimal<T>): RealDecimal<T>,
+    <T extends NumericProperties>(rationalDecimal: RationalDecimal<T>): RealDecimal<T>,
+    <T extends NumericProperties>(decimal: RealDecimal<T>): RealDecimal<T>,
+} = <T extends NumericProperties>(decimal: RealDecimal<T>): any =>
     Math.sqrt(decimal)
 
 const cubeRoot: {
-    <T extends IntegerDecimal>(integerDecimal: T): Decimal,
-    <T extends RationalDecimal>(rationalDecimal: T): Decimal,
-    <T extends Decimal>(decimal: T): Decimal,
-} = <T extends Decimal>(decimal: T): any =>
-    Math.cbrt(decimal) as unknown as Omit<T, "_IntegerBrand">
+    <T extends NumericProperties>(integerDecimal: IntegerDecimal<T>): RealDecimal<T>,
+    <T extends NumericProperties>(rationalDecimal: RationalDecimal<T>): RealDecimal<T>,
+    <T extends NumericProperties>(decimal: RealDecimal<T>): RealDecimal<T>,
+} = <T extends NumericProperties>(decimal: RealDecimal<T>): any =>
+    Math.cbrt(decimal)
 
 const max = <T extends number>(...numbers: T[]): Max<T> =>
     Math.max(...numbers) as Max<T>

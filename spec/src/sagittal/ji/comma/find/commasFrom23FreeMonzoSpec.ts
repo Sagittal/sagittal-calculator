@@ -1,10 +1,10 @@
-import { Abs, Comma, Decimal, Exponent, IntegerDecimal, Max, Min, Num, Prime, RationalMonzo } from "../../../../../../src/general"
+import { Abs, Comma, Exponent, IntegerDecimal, Max, Min, Prime, RationalMonzo, Real, RealDecimal } from "../../../../../../src/general"
 import { ApotomeSlope, computeCommasFrom23FreeRationalMonzo, N2D3P9 } from "../../../../../../src/sagittal"
 
 describe("computeCommasFrom23FreeRationalMonzo", (): void => {
     const two3FreeRationalMonzo: RationalMonzo<{ rough: 5 }> = [0, 0, 3, 5, -1] as RationalMonzo<{ rough: 5 }>
-    const lowerBound = { decimal: 1.023374 as Decimal } as Min<Num>
-    const upperBound = { decimal: 1.023433 as Decimal } as Max<Num>
+    const lowerBound = { decimal: 1.023374 as RealDecimal } as Min<Real>
+    const upperBound = { decimal: 1.023433 as RealDecimal } as Max<Real>
     const maxAte = 12 as Max<Abs<IntegerDecimal & Exponent<3 & Prime>>>
     const maxN2D3P9 = 40000 as Max<N2D3P9>
 
@@ -49,8 +49,8 @@ describe("computeCommasFrom23FreeRationalMonzo", (): void => {
 
     it("trims the monzo if necessary", (): void => {
         const two3FreeRationalMonzo: RationalMonzo<{ rough: 5 }> = [0, 0, 0] as RationalMonzo<{ rough: 5 }>
-        const lowerBound = { decimal: 1 as Decimal } as Min<Num>
-        const upperBound = { decimal: 1 as Decimal } as Max<Num>
+        const lowerBound = { decimal: 1 as RealDecimal } as Min<Real>
+        const upperBound = { decimal: 1 as RealDecimal } as Max<Real>
 
         const actual = computeCommasFrom23FreeRationalMonzo(two3FreeRationalMonzo, {
             lowerBound,

@@ -2,7 +2,7 @@ import { allElementsEqual, isEmpty, isSingleton } from "../../code"
 import { Divisor } from "../../types"
 import { abs, divide, mod } from "../typedOperations"
 import { ONE } from "./constants"
-import { IntegerDecimal } from "./num"
+import { IntegerDecimal } from "./real"
 import { CommonFunction } from "./types"
 
 const computeLowestCommonMultipleOfTwoNumbers = (

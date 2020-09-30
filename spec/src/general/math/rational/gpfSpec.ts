@@ -3,27 +3,27 @@ import { computeGpf, IntegerDecimal, RationalMonzo } from "../../../../../src/ge
 
 describe("computeGpf", (): void => {
     it("returns the greatest prime factor (AKA prime limit) of the given monzo", (): void => {
-        const ratio = { monzo: [2, 3, 0, 0, 4] as RationalMonzo }
+        const rational = { monzo: [2, 3, 0, 0, 4] as RationalMonzo }
 
-        const actual = computeGpf(ratio)
+        const actual = computeGpf(rational)
 
         const expected = 11 as Max<Prime>
         expect(actual).toBe(expected)
     })
 
     it("works when a monzo has trailing zeroes", (): void => {
-        const ratio = { monzo: [2, 3, 4, 0, 0] as RationalMonzo }
+        const rational = { monzo: [2, 3, 4, 0, 0] as RationalMonzo }
 
-        const actual = computeGpf(ratio)
+        const actual = computeGpf(rational)
 
         const expected = 5 as Max<Prime>
         expect(actual).toBe(expected)
     })
 
     it("works for an empty monzo (AKA the quotient 1/1), giving the conventional value of 1", (): void => {
-        const ratio = { monzo: [] as unknown[] as RationalMonzo }
+        const rational = { monzo: [] as unknown[] as RationalMonzo }
 
-        const actual = computeGpf(ratio)
+        const actual = computeGpf(rational)
 
         const expected = 1 as Max<Prime>
         expect(actual).toBe(expected)

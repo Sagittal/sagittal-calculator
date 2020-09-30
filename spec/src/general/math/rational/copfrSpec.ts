@@ -2,9 +2,9 @@ import { computeCopfr, Copfr, RationalDecimal, RationalMonzo } from "../../../..
 
 describe("computeCopfr", (): void => {
     it("returns the count of prime factors (with repetition) in the monzo", (): void => {
-        const ratio = { monzo: [5, 4, -3, -2, 5] as RationalMonzo }
+        const rational = { monzo: [5, 4, -3, -2, 5] as RationalMonzo }
 
-        const actual = computeCopfr(ratio)
+        const actual = computeCopfr(rational)
 
         const expected = 19 as Copfr
         expect(actual).toBe(expected)

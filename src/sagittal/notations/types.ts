@@ -1,4 +1,4 @@
-import { Apotome, Comma, Count, Direction, Id, Name, NumTypeParameters } from "../../general"
+import { Apotome, Comma, Count, Direction, Id, Name, NumericProperties } from "../../general"
 import { SymbolLongAscii, SymbolUnicode } from "../io"
 import { CommaAnalysis } from "../ji"
 import { JiNotationLevel, Mina } from "./ji"
@@ -14,11 +14,11 @@ enum SymbolSubset {
     TROJAN = "trojan",
 }
 
-type PrimaryComma<T extends NumTypeParameters = {}> =
+type PrimaryComma<T extends NumericProperties = {}> =
     Comma<T>
     & { id: Id<PrimaryComma> }
 
-type PrimaryCommaAnalysis<T extends NumTypeParameters = {}> =
+type PrimaryCommaAnalysis<T extends NumericProperties = {}> =
     CommaAnalysis<T>
     & { id: Id<PrimaryComma> }
 

@@ -1,4 +1,4 @@
-import { Comma, computeSuperNum, equalNums, formatPitch, numIsHigher, RationalMonzo } from "../../../general"
+import { Comma, computeSuperReal, equalReals, formatPitch, RationalMonzo, realIsHigher } from "../../../general"
 import {
     computeCommasFrom23FreeRationalMonzo,
     DEFAULT_LOWER_BOUND,
@@ -23,13 +23,13 @@ const computeCommas = (options: CommasOptions): Comma[] => {
         maxN2D3P9 = DEFAULT_MAX_N2D3P9,
     } = options
 
-    if (numIsHigher(lowerBound, upperBound) || equalNums(lowerBound, upperBound)) {
+    if (realIsHigher(lowerBound, upperBound) || equalReals(lowerBound, upperBound)) {
         throw new Error(`Lower bound is not less than upper bound; range was ${formatPitch(lowerBound)} - ${formatPitch(upperBound)}.`)
     }
 
     if (
-        numIsHigher(computeSuperNum(upperBound), MAX_SIZE_CATEGORY_BOUND) ||
-        numIsHigher(computeSuperNum(lowerBound), MAX_SIZE_CATEGORY_BOUND)
+        realIsHigher(computeSuperReal(upperBound), MAX_SIZE_CATEGORY_BOUND) ||
+        realIsHigher(computeSuperReal(lowerBound), MAX_SIZE_CATEGORY_BOUND)
     ) {
         throw new Error(`Search range must be within comma size category bounds (±227.370¢); range was ${formatPitch(lowerBound)} - ${formatPitch(upperBound)}.`)
     }

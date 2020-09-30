@@ -1,24 +1,24 @@
 import {
     Comma,
     computeIntegerMonzoFromIntegerDecimal,
-    computeRationalQuotientFromRatio,
+    computeRationalQuotientFromRational,
     computeRoughRationalQuotient,
     computeSubQuotient,
-    computeSuperNum,
+    computeSuperReal,
     Direction,
     Exponent,
     FIVE_ROUGHNESS,
     IntegerDecimal,
     IntegerQuotientPart,
-    isSubNum,
-    isUnisonNum,
+    isSubReal,
+    isUnisonReal,
     isWithinPrimeLimit,
     Name,
     Prime,
     PRIMES,
     RationalQuotient,
     stringify,
-    SUPERSCRIPT_NUMS,
+    SUPERSCRIPT_NUMBERS,
     THREE_PRIME_LIMIT,
 } from "../../../../general"
 import { computeSizeCategory } from "./sizeCategory"
@@ -41,7 +41,7 @@ const primeFactorize = (numeratorOrDenominator: IntegerQuotientPart): string => 
         }
 
         if (primeExponent > 1) {
-            factorizedTerms.push(`${PRIMES[ primeExponentIndex ]}${SUPERSCRIPT_NUMS[ primeExponent ]}`)
+            factorizedTerms.push(`${PRIMES[ primeExponentIndex ]}${SUPERSCRIPT_NUMBERS[ primeExponent ]}`)
         }
     })
 
@@ -68,17 +68,17 @@ const computeCommaName = (
 
     const maybeHyphen = abbreviated ? "" : "-"
 
-    const maybeDown = isSubNum(comma) ? " down" : ""
+    const maybeDown = isSubReal(comma) ? " down" : ""
 
-    const superComma: Comma<{ direction: Direction.SUPER }> = computeSuperNum(comma)
+    const superComma: Comma<{ direction: Direction.SUPER }> = computeSuperReal(comma)
     const sizeCategory: SizeCategoryAbbreviation | SizeCategoryName = computeSizeCategory(superComma, { abbreviated })
 
     let formattedCommaNameQuotient
-    if (isWithinPrimeLimit(comma, THREE_PRIME_LIMIT) && !isUnisonNum(comma)) {
+    if (isWithinPrimeLimit(comma, THREE_PRIME_LIMIT) && !isUnisonReal(comma)) {
         formattedCommaNameQuotient = "3"
     } else {
         const commaNameQuotient: CommaNameQuotient = computeRoughRationalQuotient(
-            computeRationalQuotientFromRatio(superComma),
+            computeRationalQuotientFromRational(superComma),
             FIVE_ROUGHNESS,
         ) as CommaNameQuotient
 

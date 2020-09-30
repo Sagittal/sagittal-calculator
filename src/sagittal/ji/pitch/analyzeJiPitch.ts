@@ -1,10 +1,10 @@
 import {
     compute23FreeClass,
     computeCentsFromPitch,
-    computeDecimalFromNum,
-    computeRationalMonzoFromRatio,
-    computeRationalQuotientFromRatio,
-    Ratio,
+    computeDecimalFromReal,
+    computeRationalMonzoFromRational,
+    computeRationalQuotientFromRational,
+    Rational,
 } from "../../../general"
 import { analyze23FreeClass } from "../two3FreeClass"
 import { computeAas } from "./aas"
@@ -12,10 +12,10 @@ import { computeApotomeSlope } from "./apotomeSlope"
 import { computeAte } from "./ate"
 import { JiPitchAnalysis } from "./types"
 
-const analyzeJiPitch = (jiPitch: Ratio): JiPitchAnalysis => {
-    const monzo = computeRationalMonzoFromRatio(jiPitch)
-    const quotient = computeRationalQuotientFromRatio(jiPitch)
-    const decimal = computeDecimalFromNum(jiPitch)
+const analyzeJiPitch = (jiPitch: Rational): JiPitchAnalysis => {
+    const monzo = computeRationalMonzoFromRational(jiPitch)
+    const quotient = computeRationalQuotientFromRational(jiPitch)
+    const decimal = computeDecimalFromReal(jiPitch)
 
     const apotomeSlope = computeApotomeSlope(jiPitch)
     const cents = computeCentsFromPitch(jiPitch)

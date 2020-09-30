@@ -1,9 +1,9 @@
-import { Decimal } from "../../../../src/general/math/num/decimal"
-import { Monzo } from "../../../../src/general/math/num/monzo"
-import { Quotient } from "../../../../src/general/math/num/quotient"
-import { RationalDecimal } from "../../../../src/general/math/rational/num/decimal"
-import { RationalMonzo } from "../../../../src/general/math/rational/num/monzo"
-import { RationalQuotient } from "../../../../src/general/math/rational/num/quotient"
+import { RationalDecimal } from "../../../../src/general/math/rational/real/decimal"
+import { RationalMonzo } from "../../../../src/general/math/rational/real/monzo"
+import { RationalQuotient } from "../../../../src/general/math/rational/real/quotient"
+import { RealDecimal } from "../../../../src/general/math/real/decimal"
+import { Monzo } from "../../../../src/general/math/real/monzo"
+import { Quotient } from "../../../../src/general/math/real/quotient"
 import { Cents } from "../../../../src/general/music"
 import { analyzePitch } from "../../../../src/general/music/analyzePitch"
 
@@ -16,7 +16,7 @@ describe("analyzePitch", (): void => {
         const expected = {
             monzo: [-4, -1, 0, 2.5] as Monzo,
             quotient: [129.641814, 48] as Quotient,
-            decimal: 2.700871 as Decimal,
+            decimal: 2.700871 as RealDecimal,
             cents: 1720.109765 as Cents,
         }
         expect(actual).toBeCloseToObject(expected)
@@ -29,7 +29,7 @@ describe("analyzePitch", (): void => {
 
         const expected = {
             quotient: [8.888889, 1.3] as Quotient,
-            decimal: 6.837607 as Decimal,
+            decimal: 6.837607 as RealDecimal,
             cents: 3328.189786 as Cents,
         }
         expect(actual).toBeCloseToObject(expected)
@@ -50,24 +50,24 @@ describe("analyzePitch", (): void => {
     })
 
     it("given a pitch with a decimal, merely adds the cents", (): void => {
-        const pitch = { decimal: 1.595814 as Decimal }
+        const pitch = { decimal: 1.595814 as RealDecimal }
 
         const actual = analyzePitch(pitch)
 
         const expected = {
-            decimal: 1.595814 as Decimal,
+            decimal: 1.595814 as RealDecimal,
             cents: 809.151010 as Cents,
         }
         expect(actual).toBeCloseToObject(expected)
     })
 
-    it("given a pitch as a direct decimal, creates a num and includes the cents", (): void => {
-        const pitch = 1.595814 as Decimal
+    it("given a pitch as a direct decimal, creates a real and includes the cents", (): void => {
+        const pitch = 1.595814 as RealDecimal
 
         const actual = analyzePitch(pitch)
 
         const expected = {
-            decimal: 1.595814 as Decimal,
+            decimal: 1.595814 as RealDecimal,
             cents: 809.151010 as Cents,
         }
         expect(actual).toBeCloseToObject(expected)
@@ -81,7 +81,7 @@ describe("analyzePitch", (): void => {
         const expected = {
             monzo: [ 158.5, -100 ] as Monzo,
             quotient: [5.167188592359618e+47, 5.153775207320113e+47] as Quotient,
-            decimal: 1.002603 as Decimal,
+            decimal: 1.002603 as RealDecimal,
             cents: 4.499913 as Cents,
         }
         expect(actual).toBeCloseToObject(expected)

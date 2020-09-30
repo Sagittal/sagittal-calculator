@@ -1,0 +1,5 @@
+export { RealDecimal, RealByDecimal } from "./types"
+export { computeDecimalFromReal } from "./fromReal"
+export { computeDecimalFromMonzo } from "./fromMonzo"
+export { computeDecimalFromQuotient } from "./fromQuotient"
+export { isSuperDecimal, isUnisonDecimal, isSubDecimal, invertDecimal } from "./direction"

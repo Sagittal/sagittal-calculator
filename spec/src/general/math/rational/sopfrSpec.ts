@@ -2,18 +2,18 @@ import { computeSopfr, IntegerDecimal, RationalMonzo, Sopfr } from "../../../../
 
 describe("computeSopfr", (): void => {
     it("sums the abs values of the prime factors (with repetition) in the monzo", (): void => {
-        const ratio = { monzo: [5, 6, 0, 0, 1, -1, 2] as RationalMonzo }
+        const rational = { monzo: [5, 6, 0, 0, 1, -1, 2] as RationalMonzo }
 
-        const actual = computeSopfr(ratio)
+        const actual = computeSopfr(rational)
 
         const expected = 2 + 2 + 2 + 2 + 2 + 3 + 3 + 3 + 3 + 3 + 3 + 11 + 13 + 17 + 17 as Sopfr
         expect(actual).toBe(expected)
     })
 
     it("works for an empty monzo", (): void => {
-        const ratio = { monzo: [] as unknown[] as RationalMonzo }
+        const rational = { monzo: [] as unknown[] as RationalMonzo }
 
-        const actual = computeSopfr(ratio)
+        const actual = computeSopfr(rational)
 
         const expected = 0 as Sopfr
         expect(actual).toBe(expected)

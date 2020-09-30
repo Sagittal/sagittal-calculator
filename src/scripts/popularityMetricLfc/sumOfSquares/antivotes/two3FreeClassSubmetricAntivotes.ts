@@ -1,6 +1,6 @@
 import {
     computeIntegerMonzoFromIntegerDecimal,
-    computeRationalMonzoFromRatio,
+    computeRationalMonzoFromRational,
     isUndefined,
     QuotientPartType,
     stringify,
@@ -36,7 +36,7 @@ const compute23FreeClassSubmetricAntivotes = (
         isUndefined(kAsPowerExponent) &&
         isUndefined(kAsPowerBase)
     ) {
-        const two3FreeNumberMonzo = computeRationalMonzoFromRatio(two3FreeClass)
+        const two3FreeNumberMonzo = computeRationalMonzoFromRational(two3FreeClass)
 
         return computeSubmetricAntivotes(two3FreeNumberMonzo, submetric)
     }

@@ -1,7 +1,7 @@
 import { Id, Index, Name, Ranked, RationalMonzo, Two3FreeClass } from "../../../../../../src/general"
 import { Rank } from "../../../../../../src/general/code"
 import { Row } from "../../../../../../src/general/io/table"
-import { Direction } from "../../../../../../src/general/math/num"
+import { Direction } from "../../../../../../src/general/math/real"
 import { Popularity, Votes } from "../../../../../../src/general/music/ji"
 import { N2D3P9 } from "../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
 import { SymbolClass, SymbolSubset } from "../../../../../../src/sagittal/notations"

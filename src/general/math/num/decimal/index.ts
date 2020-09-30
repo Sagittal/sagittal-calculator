@@ -1,5 +1,0 @@
-export { Decimal, NumByDecimal } from "./types"
-export { computeDecimalFromNum } from "./fromNum"
-export { computeDecimalFromMonzo } from "./fromMonzo"
-export { computeDecimalFromQuotient } from "./fromQuotient"
-export { isSuperDecimal, isUnisonDecimal, isSubDecimal, invertDecimal } from "./direction"

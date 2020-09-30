@@ -1,4 +1,4 @@
-import { Abs, Cents, Decimal, Id, Multiplier } from "../../../../../../src/general"
+import { Abs, Cents, Id, Multiplier, RealDecimal } from "../../../../../../src/general"
 import { BoundType, SymbolClass } from "../../../../../../src/sagittal/notations"
 import { Ina, JiNotationBound, JiNotationLevel } from "../../../../../../src/sagittal/notations/ji"
 import { computeJiNotationLevelBoundedSymbolClassIdsWithDistances } from "../../../../../../src/scripts/jiNotationBound/io/terminal/levelBoundedSymbolClasses"
@@ -9,7 +9,7 @@ describe("computeJiNotationLevelBoundedSymbolClassIdsWithDistances", (): void =>
     it("returns, given a JI notation bound, for each of its JI levels, an array of the pair of symbols it bounds at that JI notation level, as well as their distances and ina-distances from the bound", (): void => {
         const jiNotationBound: JiNotationBound = {
             ...jiNotationBoundFixture,
-            decimal: 1.01434739432 as Decimal,  // 24.662198¢
+            decimal: 1.01434739432 as RealDecimal,  // 24.662198¢
             jiNotationLevels: [JiNotationLevel.MEDIUM, JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
             id: 54 as Id<JiNotationBound>,
             boundType: BoundType.INA_MIDPOINT,
@@ -62,7 +62,7 @@ describe("computeJiNotationLevelBoundedSymbolClassIdsWithDistances", (): void =>
     it("works for the final JI notation bound", (): void => {
         const jiNotationBound: JiNotationBound = {
             ...jiNotationBoundFixture,
-            decimal: 1.04040393192 as Decimal,  // 68.572508¢
+            decimal: 1.04040393192 as RealDecimal,  // 68.572508¢
             jiNotationLevels: [
                 JiNotationLevel.MEDIUM,
                 JiNotationLevel.HIGH,
@@ -125,7 +125,7 @@ describe("computeJiNotationLevelBoundedSymbolClassIdsWithDistances", (): void =>
     it("works for the first JI notation bound", (): void => {
         const jiNotationBound: JiNotationBound = {
             ...jiNotationBoundFixture,
-            decimal: 1.00012176335 as Decimal,  // 0.210788021120605¢
+            decimal: 1.00012176335 as RealDecimal,  // 0.210788021120605¢
             jiNotationLevels: [JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
             id: 55 as Id<JiNotationBound>,
             boundType: BoundType.INA_MIDPOINT,

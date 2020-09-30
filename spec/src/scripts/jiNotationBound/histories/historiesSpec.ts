@@ -1,4 +1,4 @@
-import { Cents, Decimal, Name } from "../../../../../src/general"
+import { Cents, Name, RealDecimal } from "../../../../../src/general"
 import { Bound, BoundType, JiNotationBound, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 import { computeHistories } from "../../../../../src/scripts/jiNotationBound/histories"
 import { jiNotationBoundFixture } from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
@@ -7,7 +7,7 @@ describe("computeHistories", (): void => {
     it("given a JI notation bound, returns an array of all of its possible histories", (): void => {
         const jiNotationBound: JiNotationBound = {
             ...jiNotationBoundFixture,
-            decimal: 1.00550249862 as Decimal,  // 9.5¢
+            decimal: 1.00550249862 as RealDecimal,  // 9.5¢
             jiNotationLevels: [
                 JiNotationLevel.MEDIUM,
                 JiNotationLevel.ULTRA,
@@ -1066,7 +1066,7 @@ describe("computeHistories", (): void => {
     it("works for the final JI notation bound", (): void => {
         const jiNotationBound: JiNotationBound = {
             ...jiNotationBoundFixture,
-            decimal: 1.04040393192 as Decimal,  // 68.572508¢
+            decimal: 1.04040393192 as RealDecimal,  // 68.572508¢
             jiNotationLevels: [
                 JiNotationLevel.MEDIUM,
                 JiNotationLevel.HIGH,

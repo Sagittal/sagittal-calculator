@@ -1,4 +1,4 @@
-import { Id, ioSettings, Max, Maybe, Min, Num, numIsHigher, Zone } from "../../../general"
+import { Id, ioSettings, Max, Maybe, Min, Real, realIsHigher, Zone } from "../../../general"
 import { formatSymbolClass } from "../../io"
 import { getPrimaryComma } from "../primaryComma"
 import { UNISON } from "../primaryCommas"
@@ -27,15 +27,15 @@ const computeCaptureZone = (
 
     const indexOfBoundJustAboveSymbolAtThisLevel = jiNotationLevelBounds
         .findIndex((jiNotationBound: JiNotationBound): boolean => {
-            return numIsHigher(jiNotationBound, primaryComma)
+            return realIsHigher(jiNotationBound, primaryComma)
         })
     const indexOfJiNotationBoundJustBelowSymbolClassAtThisLevel = indexOfBoundJustAboveSymbolAtThisLevel - 1
 
     const lowerBound =
-        jiNotationLevelBounds[ indexOfJiNotationBoundJustBelowSymbolClassAtThisLevel ] as Num as Min<Num>
+        jiNotationLevelBounds[ indexOfJiNotationBoundJustBelowSymbolClassAtThisLevel ] as Real as Min<Real>
         || UNISON
     const upperBound =
-        jiNotationLevelBounds[ indexOfBoundJustAboveSymbolAtThisLevel ] as Num as Max<Num>
+        jiNotationLevelBounds[ indexOfBoundJustAboveSymbolAtThisLevel ] as Real as Max<Real>
 
     return [lowerBound, upperBound] as Zone<PrimaryComma>
 }

@@ -1,4 +1,4 @@
-import { Cents, computeCentsFromPitch, computeNumberFromCents, Maybe, Name, numIsHigher } from "../../../general"
+import { Cents, computeCentsFromPitch, computeNumberFromCents, Maybe, Name, realIsHigher } from "../../../general"
 import {
     APOTOME,
     InaMidpoint,
@@ -13,15 +13,16 @@ const computeInaMidpoints = (jiNotationLevel: JiNotationLevel): InaMidpoint[] =>
 
     const inaMidpoints = [...Array(eda).keys()].map((degree: number): Maybe<InaMidpoint> => {
         const midpoint = degree + 0.5
-        // TODO: IMPLEMENT EDO PITCHES ON POTENTIALLY IRRATIONAL NUMS
+        // Todo: DEFER UNTIL AFTER SCALED MONZO
+        //  IMPLEMENT EDO PITCHES ON POTENTIALLY IRRATIONAL NUMS
         //  Perhaps this would be a nice place to start improving... er, well, actually this is just
         //  Another place where we could use that helper for a fraction of a rational pitch!
-        //  Or actually, rather, ina midpoints should be encoded with the new ED property of Nums
+        //  Or actually, rather, ina midpoints should be encoded with the new ED property of Reals
         //  And when you do that, keep the decimals, but only in the form of a confirmational test
         const cents = computeCentsFromPitch(APOTOME) * midpoint / eda as Cents
         const number = computeNumberFromCents(cents)
 
-        if (numIsHigher(number, MAX_SYMBOL_CLASS_POSITION)) {
+        if (realIsHigher(number, MAX_SYMBOL_CLASS_POSITION)) {
             return undefined
         }
 

@@ -1,6 +1,6 @@
 import {
     computeIntegerDecimalFromIntegerMonzo,
-    computeNumFromMonzo,
+    computeRealFromMonzo,
     Direction,
     IntegerDecimal,
     IntegerMonzo,
@@ -20,7 +20,7 @@ const computeMaxNumeratorWithLessN2D3P9ThanMaxN2D3P9 = (
     const filteredNumeratorMonzosToCheck =
         numeratorMonzosToCheck.filter((numeratorMonzoToCheck: IntegerMonzo): boolean => {
             return computeN2D3P9(
-                computeNumFromMonzo(numeratorMonzoToCheck as RationalMonzo) as Two3FreeClass,
+                computeRealFromMonzo(numeratorMonzoToCheck as RationalMonzo) as Two3FreeClass,
             ) < maxN2D3P9
         })
 

@@ -1,4 +1,4 @@
-import { Cents, computeNumberFromCents, equalNums, Id, numIsHigher } from "../../../../../src/general"
+import { Cents, computeNumberFromCents, equalReals, Id, realIsHigher } from "../../../../../src/general"
 import { JiNotationBound, JI_NOTATION_BOUNDS, TINA } from "../../../../../src/sagittal"
 
 describe("JI_NOTATION_BOUNDS", (): void => {
@@ -23,9 +23,9 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 const currentHalfTinaCents: Cents = TINA * currentHalfTina as Cents
                 const currentHalfTinaPitch = { decimal: computeNumberFromCents(currentHalfTinaCents) }
 
-                if (equalNums(currentHalfTinaPitch, jiNotationBound)) {
+                if (equalReals(currentHalfTinaPitch, jiNotationBound)) {
                     break
-                } else if (numIsHigher(currentHalfTinaPitch, jiNotationBound)) {
+                } else if (realIsHigher(currentHalfTinaPitch, jiNotationBound)) {
                     if (!exceptionalJiNotationBoundIds.includes(jiNotationBound.id)) {
                         fail(`JI notation bound id ${jiNotationBound.id} was not close to a half-tina, nor registered as an exceptional bound.`)
                     }

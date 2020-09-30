@@ -1,5 +1,5 @@
 import { Io } from "../../../../src/general/io"
-import { Decimal, RationalMonzo, RationalQuotient } from "../../../../src/general/math"
+import { RationalMonzo, RationalQuotient, RealDecimal } from "../../../../src/general/math"
 import { parsePitch } from "../../../../src/sagittal/io"
 
 describe("parsePitch", (): void => {
@@ -35,7 +35,7 @@ describe("parsePitch", (): void => {
 
         const actual = parsePitch(pitchText)
 
-        const expected = { decimal: 1.019480 as Decimal }
+        const expected = { decimal: 1.019480 as RealDecimal }
         expect(actual).toBeCloseToObject(expected)
     })
 
@@ -44,7 +44,7 @@ describe("parsePitch", (): void => {
 
         const actual = parsePitch(pitchText)
 
-        const expected = { decimal: 3.4 as Decimal }
+        const expected = { decimal: 3.4 as RealDecimal }
         expect(actual).toEqual(expected)
     })
 })
