@@ -1,12 +1,12 @@
 import {
     Abs,
     Cents,
-    Decimal,
     Exponent,
     IntegerDecimal,
     NumTypeParameters,
     Prime,
     Ratio,
+    RationalDecimal,
     RationalMonzo,
     RationalQuotient,
 } from "../../../general"
@@ -18,7 +18,7 @@ interface JiPitchAnalysisProperties<T extends NumTypeParameters = {}> {
     aas: Abs<ApotomeSlope>,
     monzo: RationalMonzo<T>,
     quotient: RationalQuotient<T>,
-    decimal: Decimal<T>,
+    decimal: RationalDecimal<T>,
     cents: Cents,
     two3FreeClassAnalysis: Two3FreeClassAnalysis<T>,
 }
