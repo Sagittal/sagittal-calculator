@@ -2,7 +2,8 @@ import { Id } from "../../general"
 import { SymbolLongAscii } from "../io"
 import { PrimaryComma, SymbolClass } from "./types"
 
-// TODO: REALIZE ERD DIAGRAM FOR ELEMENTS AND SYMBOLS AND COMMAS
+// Todo: DEFER UNTIL AFTER RESOLVE CONVO WITH DAVE RE: CLASSES
+//  REALIZE ERD DIAGRAM FOR ELEMENTS AND SYMBOLS AND COMMAS
 //  So what this is here is symbol classes as they should be
 //  But there are way too many things right now that are using these instead of comma classes
 //  Like the JI Notation Bounds analysis, and the popular 2,3-free class script group, which are double-counting 
