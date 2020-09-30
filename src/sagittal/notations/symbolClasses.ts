@@ -732,7 +732,7 @@ const SYMBOL_CLASSES: SymbolClass[] = [
     {
         id: 144 as Id<SymbolClass>,
         primaryCommaId: 144 as Id<PrimaryComma>,
-        elements: [",,|", ")|", "|\\", "|\\"] as SymbolLongAscii[],
+        elements: [",,|", ")|", "|\\", "|\\"] as SymbolLongAscii[], // TODO: elements should move to symbols
     },
     {
         id: 145 as Id<SymbolClass>,
