@@ -1,10 +1,22 @@
-import { Abs, Copfr, Decimal, Exponent, IntegerDecimal, Max, Min, Num, Prime, Sopfr, sqrt } from "../../../../general"
-import { APOTOME_DECIMAL } from "../../../constants"
+import {
+    Abs,
+    Comma,
+    computeNumSqrt,
+    Copfr,
+    Exponent,
+    IntegerDecimal,
+    Max,
+    Min,
+    Prime,
+    Sopfr,
+} from "../../../../general"
+import { APOTOME } from "../../../constants"
+import { UNISON } from "../../../notations"
 import { ApotomeSlope } from "../../pitch"
 import { N2D3P9 } from "../../two3FreeClass"
 
-const DEFAULT_LOWER_BOUND = { decimal: 1 as Decimal } as Min<Num>             //  0.0000000000¢
-const DEFAULT_UPPER_BOUND = { decimal: sqrt(APOTOME_DECIMAL) } as Max<Num>    // 56.8425030289¢
+const DEFAULT_LOWER_BOUND = UNISON as Comma as Min<Comma>                         //  0.0000000000¢
+const DEFAULT_UPPER_BOUND = computeNumSqrt(APOTOME) as Max<Comma>                 // 56.8425030289¢
 const DEFAULT_MAX_ATE = 15 as Max<Abs<IntegerDecimal & Exponent<3 & Prime>>>
 const DEFAULT_MAX_AAS = 14 as Max<Abs<ApotomeSlope>>
 const DEFAULT_MAX_N2D3P9 = 307 as Max<N2D3P9>
