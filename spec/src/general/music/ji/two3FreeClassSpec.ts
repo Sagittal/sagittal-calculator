@@ -84,7 +84,7 @@ describe("format23FreeClass", (): void => {
         ioSettings.tableFormat = TableFormat.FORUM
         const actual = format23FreeClass(two3FreeClass, ioSettings)
 
-        const expected = "[latex]\\frac{11}/{5}_{\\scriptsize{(2,3)}}[/latex]" as Formatted<Two3FreeClass>
+        const expected = "[latex]\\frac{11}{5}_{\\scriptsize{(2,3)}}[/latex]" as Formatted<Two3FreeClass>
         expect(actual).toBe(expected)
     })
 })

@@ -32,7 +32,7 @@ describe("computePopular23FreeClassWithExactlyNotatingSymbolClassRow", (): void 
         )
 
         const expected = [
-            "7/5₍₂,₃₎",             // 2,3-free class name
+            "1/1₍₂,₃₎",             // 2,3-free class name
             "  2.000",              // N2D3P9
             "    )|(     ./|  ",    // Exactly notating symbol classes
             "1, 3",                 // Exactly notating symbol class smallest symbol subset indices
