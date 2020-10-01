@@ -1,10 +1,20 @@
-import { formatDecimal, Formatted, Id, ioSettings, isUndefined, Ranked, Row, SPACE } from "../../../../general"
+import {
+    format23FreeClass,
+    formatDecimal,
+    Formatted,
+    Id,
+    ioSettings,
+    isUndefined,
+    Ranked,
+    Row,
+    SPACE,
+} from "../../../../general"
 import { formatSymbolClass, SymbolClass, SymbolGlyph } from "../../../../sagittal"
 import { Popular23FreeClass } from "../../types"
 import { ExactlyNotatingSymbolClassProperties } from "../types"
 
 const computePopular23FreeClassWithExactlyNotatingSymbolClassRow = (
-    popular23FreeClass: Ranked<Popular23FreeClass & ExactlyNotatingSymbolClassProperties>,
+    popular23FreeClassWithExactlyNotatingSymbolClass: Ranked<Popular23FreeClass & ExactlyNotatingSymbolClassProperties>,
 ): Row<{ of: Popular23FreeClass, header: true }> => {
     const {
         n2d3p9,
@@ -13,10 +23,10 @@ const computePopular23FreeClassWithExactlyNotatingSymbolClassRow = (
         exactlyNotatingSymbolClassSmallestSymbolSubsetIndices,
         exactlyNotatingSymbolClassIds,
         votes,
-    } = popular23FreeClass
+    } = popular23FreeClassWithExactlyNotatingSymbolClass
 
     return [
-        popular23FreeClass.name,
+        format23FreeClass(popular23FreeClassWithExactlyNotatingSymbolClass, ioSettings),
         formatDecimal(n2d3p9, { align: true }),
         exactlyNotatingSymbolClassIds.map((exactlyNotatingSymbolClassId: Id<SymbolClass>): Formatted<SymbolGlyph> => {
             return formatSymbolClass(exactlyNotatingSymbolClassId, ioSettings)
