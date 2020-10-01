@@ -18,9 +18,9 @@ describe("compute23FreeClassOutput", (): void => {
         const expected =
             "   --- 2,3-free class ---" + NEWLINE +
             "" + NEWLINE +
-            "prime  \t      \t       \t       \t       " + NEWLINE +
-            "limit  \tname  \tCoPFR  \tSoPFR  \tN2D3P9 ".underline + NEWLINE +
-            " 14    \t5/1₋₂₃\t  2    \t 13    \t 18.457" + NEWLINE as Io
+            "prime  \t        \t       \t       \t       " + NEWLINE +
+            "limit  \tname    \tCoPFR  \tSoPFR  \tN2D3P9 ".underline + NEWLINE +
+            " 14    \t5/1₍₂,₃₎\t  2    \t 13    \t 18.457" + NEWLINE as Io
         expect(actual).toEqual(expected)
     })
 })

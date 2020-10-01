@@ -22,7 +22,7 @@ describe("computePopular23FreeClassWithBestNotatingCommaRow", (): void => {
         const rankedPopular23FreeClassWithBestNotatingComma:
             Ranked<Popular23FreeClass & BestNotatingCommaProperties> = {
             ...two3FreeClassAnalysisFixture,
-            name: "7/5₋₂₃" as Name<Two3FreeClass>,
+            name: "7/5₍₂,₃₎" as Name<Two3FreeClass>,
             rank: 4 as Rank<Popular23FreeClass & BestNotatingCommaProperties>,
             bestNotatingCommaCents: 5 as Cents,
             bestNotatingCommaMonzo: [1] as RationalMonzo,
@@ -36,7 +36,7 @@ describe("computePopular23FreeClassWithBestNotatingCommaRow", (): void => {
         const actual = computePopular23FreeClassWithBestNotatingCommaRow(rankedPopular23FreeClassWithBestNotatingComma)
 
         const expected = [
-            "7/5₋₂₃",           // 2,3-free class name
+            "7/5₍₂,₃₎",         // 2,3-free class name
             "4",                // Estimated rank
             "         5.000¢",  // Best notating comma cents
             "[   1 ⟩",          // Best notating comma monzo

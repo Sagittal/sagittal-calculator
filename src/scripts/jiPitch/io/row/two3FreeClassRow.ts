@@ -2,7 +2,7 @@ import {
     format23FreeClass,
     formatDecimal,
     formatIntegerDecimal,
-    Formatted,
+    Formatted, ioSettings,
     Row,
     Two3FreeClass,
 } from "../../../../general"
@@ -26,7 +26,7 @@ const compute23FreeClassRow = (
     }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(Two3FreeClassField.TWO_3_FREE_CLASS_NAME)) {
         rows.push(
-            format23FreeClass(two3FreeClassAnalysis) as Formatted as Formatted<Two3FreeClassAnalysis>,
+            format23FreeClass(two3FreeClassAnalysis, ioSettings) as Formatted as Formatted<Two3FreeClassAnalysis>,
         )
     }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(Two3FreeClassField.TWO_3_FREE_COPFR)) {

@@ -17,7 +17,7 @@ describe("computePopular23FreeClassWithExactlyNotatingSymbolClassRow", (): void 
         const rankedPopular23FreeClassWithExactlyNotatingSymbolClass:
             Ranked<Popular23FreeClass & ExactlyNotatingSymbolClassProperties> = {
             ...two3FreeClassAnalysisFixture,
-            name: "7/5₋₂₃" as Name<Two3FreeClass>,
+            name: "7/5₍₂,₃₎" as Name<Two3FreeClass>,
             rank: 4 as Rank<Popular23FreeClass & ExactlyNotatingSymbolClassProperties>,
             exactlyNotatingSymbolClassSmallestSymbolSubsetIndices: [1, 3] as Array<Index<SymbolSubset>>,
             exactlyNotatingSymbolClassIds: [20, 40] as Array<Id<SymbolClass>>,
@@ -32,7 +32,7 @@ describe("computePopular23FreeClassWithExactlyNotatingSymbolClassRow", (): void 
         )
 
         const expected = [
-            "7/5₋₂₃",               // 2,3-free class name
+            "7/5₍₂,₃₎",             // 2,3-free class name
             "  2.000",              // N2D3P9
             "    )|(     ./|  ",    // Exactly notating symbol classes
             "1, 3",                 // Exactly notating symbol class smallest symbol subset indices

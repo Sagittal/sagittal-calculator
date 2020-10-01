@@ -27,3 +27,5 @@ in the Jasmine run configuration template: `-r ts-node/register/transpile-only`.
 
 To set a new context for the run configuration, set a hotkey for `Run context configuration`.
 To re-run the existing configuration, set a hotkey for `Run`.
+
+The "DejaVu Sans Mono" font is recommended because it actually monospaces key characters such as "⟩" and subscript numbers.

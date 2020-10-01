@@ -1,5 +1,5 @@
 import { isUndefined } from "../../code"
-import { Formatted } from "../../io"
+import { Formatted, Table, TableFormat } from "../../io"
 import {
     computeDecimalFromQuotient,
     computeRationalQuotientFromRational,
@@ -56,8 +56,18 @@ const compute23FreeClassName = (two3FreeClass: Two3FreeClass): Name<Two3FreeClas
     return `${numerator}/${denominator}${TWO_3_FREE_CLASS_SIGN}` as Name<Two3FreeClass>
 }
 
-const format23FreeClass = (two3FreeClass: Two3FreeClass): Formatted<Two3FreeClass> => {
-    return compute23FreeClassName(two3FreeClass) as string as Formatted<Two3FreeClass>
+const format23FreeClass = (
+    two3FreeClass: Two3FreeClass,
+    { tableFormat }: { tableFormat?: TableFormat },
+): Formatted<Two3FreeClass> => {
+    const [numerator, denominator] = computeRationalQuotientFromRational(
+        two3FreeClass,
+        { disableErrorBecauseExactValueNotRequired: true },
+    )
+    
+    return tableFormat === TableFormat.FORUM ?
+        `[latex]\\frac{${numerator}}/{${denominator}}_{\\scriptsize{(2,3)}}[/latex]` as Formatted<Two3FreeClass> :
+        compute23FreeClassName(two3FreeClass) as string as Formatted<Two3FreeClass>
 }
 
 export {

@@ -3,6 +3,7 @@ import {
     Filename,
     format23FreeClass,
     Io,
+    ioSettings,
     LogTarget,
     saveLog,
     stringify,
@@ -19,4 +20,7 @@ const two3FreeClass: Two3FreeClass = { quotient: [11, 7] } as Two3FreeClass
 
 const antivotes = computeAntivotes(two3FreeClass, submetrics)
 
-saveLog(`${format23FreeClass(two3FreeClass)}\n${stringify(submetrics)}\n${antivotes}` as Io, LogTarget.FINAL)
+saveLog(
+    `${format23FreeClass(two3FreeClass, ioSettings)}\n${stringify(submetrics)}\n${antivotes}` as Io,
+    LogTarget.FINAL,
+)
