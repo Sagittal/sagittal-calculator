@@ -4,5 +4,6 @@ export { computeRationalMonzosFromPrimeExponentExtremas } from "./fromPrimeExpon
 export { isRoughRationalMonzo, computeRoughRationalMonzo } from "./roughness"
 export { isSmoothRationalMonzo, computeRationalMonzoSmoothness } from "./smoothness"
 export { isRationalMonzo } from "./typeGuards"
+export { doForEachMonzo } from "./doForEachMonzo"
 export { computeRationalMonzoFromRational } from "./fromRational"
 export { RationalByMonzo, RationalMonzo, IntegerMonzo, IntegerByMonzo } from "./types"

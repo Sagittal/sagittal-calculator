@@ -1,7 +1,11 @@
-import { computeTrimmedArray, increment, isUndefined, Maybe, shallowClone } from "../../code"
-import { Io, LogTarget, saveLog, stringify } from "../../io"
-import { Exponent, IntegerDecimal, IntegerMonzo, NumericProperties, Prime, RationalMonzo } from "../../math"
-import { Extrema } from "../../types"
+import { computeTrimmedArray, increment, isUndefined, Maybe, shallowClone } from "../../../../code"
+import { Io, LogTarget, saveLog, stringify } from "../../../../io"
+import { Extrema } from "../../../../types"
+import { NumericProperties } from "../../../real"
+import { Exponent } from "../../../types"
+import { Prime } from "../../types"
+import { IntegerDecimal } from "../decimal"
+import { IntegerMonzo, RationalMonzo } from "./types"
 
 const doForEachMonzo: {
     <T extends NumericProperties, U>(
@@ -82,7 +86,7 @@ const doForEachMonzo: {
         }
     }
 
-    return results 
+    return results
 }
 
 export {

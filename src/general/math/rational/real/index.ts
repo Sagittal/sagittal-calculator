@@ -42,6 +42,7 @@ export {
     RationalByMonzo,
     RationalMonzo,
     IntegerMonzo,
+    doForEachMonzo,
 } from "./monzo"
 export { isRational } from "./typeGuards"
 export { multiplyRationals, divideRationals } from "./typedOperations"

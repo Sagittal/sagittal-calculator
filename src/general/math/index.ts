@@ -133,4 +133,5 @@ export {
     isRoughIntegerDecimal,
     multiplyRationals,
     divideRationals,
+    doForEachMonzo,
 } from "./rational"
