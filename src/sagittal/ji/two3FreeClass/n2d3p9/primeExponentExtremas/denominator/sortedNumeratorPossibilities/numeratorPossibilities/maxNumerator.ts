@@ -1,12 +1,12 @@
 import { IntegerNumerator, Max } from "../../../../../../../../general"
 import { N2D3P9 } from "../../../../types"
 import { computeMaxNumeratorWithLessN2D3P9ThanMaxN2D3P9 } from "../../maxNumeratorWithLessN2D3P9"
-import { computeNumeratorMonzosToCheckGivenMaxN2D3P9 } from "./numeratorMonzosToCheck"
+import { computeNumeratorPrimeExponentExtremasGivenMaxN2D3P9 } from "./numeratorPrimeExponentExtremas"
 
 const computeMaxNumeratorGivenMaxN2D3P9 = (maxN2D3P9: Max<N2D3P9>): Max<IntegerNumerator> => {
-    const numeratorMonzosToCheck = computeNumeratorMonzosToCheckGivenMaxN2D3P9(maxN2D3P9)
+    const numeratorPrimeExponentExtremasGivenMaxN2D3P9 = computeNumeratorPrimeExponentExtremasGivenMaxN2D3P9(maxN2D3P9)
 
-    return computeMaxNumeratorWithLessN2D3P9ThanMaxN2D3P9(numeratorMonzosToCheck, maxN2D3P9)
+    return computeMaxNumeratorWithLessN2D3P9ThanMaxN2D3P9(numeratorPrimeExponentExtremasGivenMaxN2D3P9, maxN2D3P9)
 }
 
 export {

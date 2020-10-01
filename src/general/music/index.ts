@@ -14,6 +14,7 @@ export {
     computePrimeLimit,
     compute23FreeClassName,
     format23FreeClass,
+    doForEachMonzo,
 } from "./ji"
 export { CENTS_PER_OCTAVE } from "./constants"
 export { computeNumberFromCents } from "./numberFromCents"

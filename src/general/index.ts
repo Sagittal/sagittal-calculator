@@ -224,5 +224,6 @@ export {
     computeCentsFromPitch,
     compute23FreeClassName,
     format23FreeClass,
+    doForEachMonzo,
 } from "./music"
 export { Count, Ed, Extrema, Id, Index, Ms, Multiplier, Name, Step, Sum, Window } from "./types"
