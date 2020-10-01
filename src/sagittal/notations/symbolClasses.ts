@@ -2,22 +2,6 @@ import { Id } from "../../general"
 import { SymbolLongAscii } from "../io"
 import { PrimaryComma, SymbolClass } from "./types"
 
-// Todo: DEFER UNTIL AFTER RESOLVE CONVO WITH DAVE RE: CLASSES
-//  REALIZE ERD DIAGRAM FOR ELEMENTS AND SYMBOLS AND COMMAS
-//  So what this is here is symbol classes as they should be
-//  But there are way too many things right now that are using these instead of comma classes
-//  Like the JI Notation Bounds analysis, and the popular 2,3-free class script group, which are double-counting 
-//  Comma classes should only go up to the half-apotome
-//  What I have now as "primary commas" should actually be "comma classes"
-//  - (from old note in half-apotome mirror spec, which I've since disagreed with, obviously) 
-//  Ah ha! found this note. had lost it.
-//  Original note: The idea of symbol *class* is great. But I'm wondering if maybe there's room for improvement.
-//  I'm thinking in particular of how choices of comma above the half-apotome mirror are not independent.
-//  (see: http://forum.sagittal.org/viewtopic.php?p=2317#p2317)
-//  But I'm also not sure we want to shift the whole basis back to commas...
-//  Yes perhaps the half-apotome mirror test should suffice here.
-//  What I *had* been thinking was that only the commas up to the half apotome mirror would define class-dom.
-
 const SYMBOL_CLASSES: SymbolClass[] = [
     {
         id: 0 as Id<SymbolClass>,

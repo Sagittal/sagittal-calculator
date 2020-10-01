@@ -30,6 +30,7 @@ import { PrimaryCommaAnalysis } from "../../../../src/sagittal/notations/types"
 //  I'm afraid it might be really slowing down the compilation of the code when running tests
 //  It may be more helpful for people working on the code to see the information in tabular form
 //  And maybe these could essentially become replacements for my "Everything Sagittal" Google Sheets file
+//  I guess an advantage to the code representation is its nested structure, and the ability to copy-paste as needed
 
 describe("PRIMARY_COMMAS", (): void => {
     it("has all the correct commas", (): void => {
