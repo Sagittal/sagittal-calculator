@@ -1,8 +1,8 @@
-          	       	exactly                            	          	      	       	           
-2,3-      	       	notating                           	smallest  	      	       	           
-free      	       	JI                                 	symbol    	      	Scala  	Scala      
-class     	       	symbol                             	subset    	N2D3P9	archive	archive    
-name      	N2D3P9 	classes                            	indices   	rank  	rank   	occurrences
+            	       	exactly                            	          	      	       	           
+2,3-        	       	notating                           	smallest  	      	       	           
+free        	       	JI                                 	symbol    	      	Scala  	Scala      
+class       	       	symbol                             	subset    	N2D3P9	archive	archive    
+name        	N2D3P9 	classes                            	indices   	rank  	rank   	occurrences
 1/1₍₂,₃₎    	  1.000	 (|//|)     '/|                    	0, 5      	1     	1      	7624       
 5/1₍₂,₃₎    	  1.389	    '|       /|                    	5, 1      	2     	2      	5371       
 7/1₍₂,₃₎    	  2.722	     |)     '/|)     .(|\          	1, 5, 5   	3     	3      	3016       
