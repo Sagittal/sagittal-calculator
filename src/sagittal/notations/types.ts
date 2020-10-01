@@ -76,28 +76,48 @@ type Accent = ElementProperties & { _AccentBrand: boolean }
 type Shaft = ElementProperties & { _ShaftBrand: boolean }
 type Element = Flag | Accent | Shaft
 
-type Accidental = {
-    flAcCoId: Id<FlAcCo>,
+type CaptureZoneClass = {
+    // the frustrating thing is that since there is a 1:1 correspondence here, these three IDs will all be identical...
+    // and I don't like the "upperBound" idea, per the reason I described on the forum...
+    // so what if on the Accidental it's actually captureZoneId: Id<Bound | CommaClass>
+    id: Id<CaptureZone>             
     commaClassId: Id<CommaClass>,
+    upperBound(Class)Id: Id<Bound(Class)>,
+}
+
+type Accidental = {
+    id: Id<Accidental>,
+    
+    commaClassId: Id<CommaClass>,   *** or captureZoneClassId: Id<Bound(Class) | CommaClass>, per above ^^^
+    commaDirection: Direction,
+    apotomeCount: Count<Apotome>,
+    *** this is not enough though. you also need the commaDirection and apotomeCount
+    *** but that's weird because it's three pieces of information related to the comma side.
+    *** what about the flAcCo side? would I want to say whether it was oriented up or down?
+    *** the things is, that depends on whether it's Evo or Revo. whereas the comma side does NOT depend on that.
+    *** so is that an AccidentalClass? 
+    *** or should I have one for Evo and one for Revo?
+    *** or should this just be what it is, and then we have a separate structure which maps these ids to flaco?
+    flAcCoId: Id<FlAcCo>,
 }
  */
 
 interface Symbol {                          // ----> AccidentalAnalysis
-    id: Id<Symbol>,
     
     // Per refactor whereby analyses in general will no longer extend but rather contain the entity they're analyzing,
-    // This will relocate to living on the accidental as commaClassId: Id<CommaClass>,
+    // These four will relocate to living on the accidental as commaClassId: Id<CommaClass>,
+    id: Id<Symbol>,
     symbolClassId: Id<SymbolClass>,
+    commaDirection: Direction,
+    apotomeCount: Count<Apotome>,
 
-    // Add: accidental: Accidental,
+    // Add: accidental: Accidental,         // the accidental this is an analysis of
     // Add: elements: Array<Element>,
     // Add: primaryComma: Comma,    // which is a combination of a CommaClass's comma, direction, and -2 to 2 apotomes
     revoAscii: SymbolLongAscii,
     evoAscii: SymbolLongAscii<Flavor.EVO>,
     revoUnicode: SymbolUnicode,
     evoUnicode: SymbolUnicode<Flavor.EVO>,
-    commaDirection: Direction,
-    apotomeCount: Count<Apotome>,
 }
 
 enum Flavor {
