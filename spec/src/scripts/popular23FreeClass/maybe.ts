@@ -1,7 +1,7 @@
 import { Direction, Max, RationalMonzo } from "../../../../src/general/math"
 import { Two3FreeClass } from "../../../../src/general/music"
 import { N2D3P9 } from "../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
-import { computeMaybePopular23FreeClass } from "../../../../src/scripts/popular23FreeClass/maybePopular23FreeClass"
+import { computeMaybePopular23FreeClass } from "../../../../src/scripts/popular23FreeClass/maybe"
 
 describe("computeMaybePopular23FreeClass", (): void => {
     it("returns a popular 2,3-free class if the N2D3P9 is under the max and the monzo is super", (): void => {

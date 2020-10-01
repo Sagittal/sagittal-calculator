@@ -3,7 +3,6 @@ import {
     computeTrimmedArray,
     Exponent,
     Extrema,
-    Filename,
     increment,
     IntegerDecimal,
     Io,
@@ -12,37 +11,26 @@ import {
     KeyPath,
     LogTarget,
     Max,
-    parse23FreeClass,
     Prime,
     rank,
     Ranked,
     RankStrategy,
     RationalMonzo,
-    readLines,
     saveLog,
     shallowClone,
     stringify,
     Two3FreeClass,
 } from "../../general"
-import { analyze23FreeClass, computePrimeExponentExtremasGivenMaxN2D3P9, N2D3P9 } from "../../sagittal"
+import { computePrimeExponentExtremasGivenMaxN2D3P9, N2D3P9 } from "../../sagittal"
 import { popular23FreeClassesScriptGroupSettings } from "./globals"
-import { computeMaybePopular23FreeClass } from "./maybePopular23FreeClass"
-import { computePopular23FreeClass } from "./popular23FreeClass"
+import { computeKnownPopular23FreeClasses } from "./known"
+import { computeMaybePopular23FreeClass } from "./maybe"
 import { Popular23FreeClass } from "./types"
 
 const computePopular23FreeClasses = (maxN2D3P9: Max<N2D3P9>): Array<Ranked<Popular23FreeClass>> => {
-    let popular23FreeClassAnalyses
+    let popular23FreeClasses: Popular23FreeClass[]
     if (popular23FreeClassesScriptGroupSettings.useKnown) {
-        const knownPopular23FreeClasses =
-            readLines("src/scripts/popular23FreeClass/input/knownPopular23FreeClasses.txt" as Filename)
-                .map((knownPopular23FreeClassIo: Io): Two3FreeClass => {
-                    return parse23FreeClass(knownPopular23FreeClassIo)
-                })
-
-        popular23FreeClassAnalyses = knownPopular23FreeClasses
-            .map((two3FreeClass: Two3FreeClass): Popular23FreeClass => {
-                return computePopular23FreeClass(analyze23FreeClass(two3FreeClass))
-            })
+        popular23FreeClasses = computeKnownPopular23FreeClasses()
     } else {
         saveLog("About to calculate prime exponent extremas given max N2D3P9" as Io, LogTarget.PROGRESS)
 
@@ -72,7 +60,7 @@ const computePopular23FreeClasses = (maxN2D3P9: Max<N2D3P9>): Array<Ranked<Popul
         let two3FreeRationalMonzo: RationalMonzo<{ rough: 5 }> =
             shallowClone(initialMonzo) as RationalMonzo<{ rough: 5 }>
 
-        popular23FreeClassAnalyses = [] as Array<Popular23FreeClass>
+        popular23FreeClasses = [] as Array<Popular23FreeClass>
         while (true) {
             // Do the work (trimming has the extra win of shallow cloning, disconnecting from this ticking process)
             const two3FreeRationalMonzoForWork = computeTrimmedArray(two3FreeRationalMonzo)
@@ -94,7 +82,7 @@ const computePopular23FreeClasses = (maxN2D3P9: Max<N2D3P9>): Array<Ranked<Popul
 
             if (!isUndefined(maybePopular23FreeClass)) {
                 saveLog(stringify(maybePopular23FreeClass) as Io, LogTarget.PROGRESS)
-                popular23FreeClassAnalyses.push(maybePopular23FreeClass)
+                popular23FreeClasses.push(maybePopular23FreeClass)
             }
 
             // Figure out which index is the first one which hasn't reached its max
@@ -127,7 +115,7 @@ const computePopular23FreeClasses = (maxN2D3P9: Max<N2D3P9>): Array<Ranked<Popul
         }
     }
 
-    return rank(popular23FreeClassAnalyses, {
+    return rank(popular23FreeClasses, {
         by: "n2d3p9" as KeyPath,
         strategy: RankStrategy.FRACTIONAL,
         precision: ACCURACY_THRESHOLD,
