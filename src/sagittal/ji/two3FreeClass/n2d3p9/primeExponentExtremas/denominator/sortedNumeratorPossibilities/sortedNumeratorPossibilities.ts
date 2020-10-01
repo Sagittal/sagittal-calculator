@@ -1,4 +1,4 @@
-import { IntegerDenominator, Max, Prime } from "../../../../../../../general"
+import { IntegerDenominator, Io, LogTarget, Max, Prime, saveLog, stringify } from "../../../../../../../general"
 import { N2D3P9 } from "../../../types"
 import { NumeratorPossibilityForDenominatorGivenMaxN2D3P9 } from "./numeratorPossibilities"
 import { computeSortedNumeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenominatorPrimeSortedByN2P } from "./sortedNumeratorPossibilitiesWithGreaterGpf"
@@ -15,11 +15,26 @@ const computeSortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 = (
             denominatorPrime,
             numeratorPossibilitiesForDenominatorGivenMaxN2D3P9,
         })
+    saveLog(
+        stringify(
+            sortedNumeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2,
+            { multiline: true },
+        ) as Io,
+        LogTarget.PROGRESS,
+    )
+    
     const sortedNumeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenominatorPrimeSortedByN2P =
         computeSortedNumeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenominatorPrimeSortedByN2P({
             denominatorPrime,
             numeratorPossibilitiesForDenominatorGivenMaxN2D3P9,
         })
+    saveLog(
+        stringify(
+            sortedNumeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenominatorPrimeSortedByN2P,
+            { multiline: true },
+        ) as Io,
+        LogTarget.PROGRESS,
+    )
 
     return {
         sortedNumeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2,
