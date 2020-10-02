@@ -23,7 +23,7 @@ describe("JI_NOTATION_LEVELS_BOUNDS", (): void => {
             .map((jiNotationBound: JiNotationBound): Id<JiNotationBound> => jiNotationBound.id)
         
         const expected = [
-            5, 12, 16, 27, 38, 51, 63, 74, 86, 96, 109, 122, 135, 148,
+            5, 16, 27, 38, 51, 63, 74, 86, 96, 109, 122, 135, 148,
         ] as Array<Id<JiNotationBound>>
         expect(actual).toEqual(expected)
     })
