@@ -37,4 +37,8 @@ describe("JI_NOTATION_BOUNDS", (): void => {
             }
         })
     })
+    
+    it("gives the correct bound IDs per level", (): void => {
+        // TODO: e.g. [5,16,27... e.g. for MEDIUM)
+    })
 })

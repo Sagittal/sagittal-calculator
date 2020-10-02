@@ -2,8 +2,13 @@ import { finalElement, Id, sort } from "../../../general"
 import { SymbolClass } from "../types"
 import { JiNotationLevel } from "./types"
 
+const SAGITTAL_COMPATIBLE_SYMBOL_CLASS_IDS: Array<Id<SymbolClass>> = [
+    0,
+] as Array<Id<SymbolClass>>
+
 const MEDIUM_LEVEL_SYMBOL_CLASS_IDS = [
-    0, 12, 20, 30, 44, 58, 70, 84, 92, 104, 114, 131, 141,
+    ...SAGITTAL_COMPATIBLE_SYMBOL_CLASS_IDS,
+    12, 20, 30, 44, 58, 70, 84, 92, 104, 114, 131, 141,
 ] as Array<Id<SymbolClass>>
 
 const HIGH_LEVEL_SYMBOL_CLASS_IDS = sort([

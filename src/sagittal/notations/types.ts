@@ -22,29 +22,6 @@ type PrimaryCommaAnalysis<T extends NumericProperties = {}> =
     CommaAnalysis<T>
     & { id: Id<PrimaryComma> }
 
-// Todo: DEFER UNTIL AFTER RESOLVE CONVO WITH DAVE RE: CLASSES
-//  REALIZE ERD DIAGRAM FOR ELEMENTS, SYMBOLS, COMMAS, BOUNDS, CAPTURE ZONES, ACCIDENTALS, CLASSES THEREOF
-//  So what this is here is symbol classes as they should be
-//  But there are way too many things right now that are using these instead of comma classes
-//  Like the JI Notation Bounds analysis, and the popular 2,3-free class script group, which are double-counting 
-//  Comma classes should only go up to the half-apotome
-//  What I have now as "primary commas" should actually be "comma classes"
-//  - (from old note in half-apotome mirror spec, which I've since disagreed with, obviously) 
-//  Ah ha! found this note. had lost it.
-//  Original note: The idea of symbol *class* is great. But I'm wondering if maybe there's room for improvement.
-//  I'm thinking in particular of how choices of comma above the half-apotome mirror are not independent.
-//  (see: http://forum.sagittal.org/viewtopic.php?p=2317#p2317)
-//  But I'm also not sure we want to shift the whole basis back to commas...
-//  Yes perhaps the half-apotome mirror test should suffice here.
-//  What I *had* been thinking was that only the commas up to the half apotome mirror would define class-dom.
-//  - another question: Should elements be an array of references to other objects instead of hardcoded?
-//  Probably, yes. but you should review how Dave thinks of symbols and elements before you do so
-//  Because all I can remember right now is that your intuitions were a bit off
-//  Note though that they are symbol CLASS elements, because they're irrespective of comma direction
-//  - whatever you find, then make it so that in symbols.ts what's there now becomes a test expectation
-//  And the implementation code is as calculated as possible (-2, -1, 0, +1, +2 apotomes, and SUPER/SUB)
-//  As well as how their unicode and ascii, evo/revo, is calculated from elements
-
 // Apotome-inversion comma class (repeats in a mirrored pattern at the half-apotome)
 interface SymbolClass {               // ----> CommaClass
     elements: SymbolLongAscii[],      // ----> relocate this onto the FlAcCo as `combo: Array<Flag | Accent>`
@@ -61,59 +38,31 @@ type SymbolClassAnalysis = Omit<SymbolClass, "primaryCommaId"> & {  // ---> Comm
     smallestSymbolSubset: SymbolSubset,
 }
 
-/*
 // Flag and Accent Combination; basically a "symbol class" (see: http://forum.sagittal.org/viewtopic.php?p=2474#p2474)
+/* 
 type FlAcCo = {
     id: Id<FlAcCo>,
     combo: Array<Flag | Accent>,
 }
 
-type ElementProperties = {
-    ascii: SymbolLongAscii,
-}
-type Flag = ElementProperties & { _FlagBrand: boolean }
-type Accent = ElementProperties & { _AccentBrand: boolean }
-type Shaft = ElementProperties & { _ShaftBrand: boolean }
-type Element = Flag | Accent | Shaft
-
-type CaptureZoneClass = {
-    // the frustrating thing is that since there is a 1:1 correspondence here, these three IDs will all be identical...
-    // and I don't like the "upperBound" idea, per the reason I described on the forum...
-    // so what if on the Accidental it's actually captureZoneId: Id<Bound | CommaClass>
-    id: Id<CaptureZone>             
-    commaClassId: Id<CommaClass>,
-    upperBound(Class)Id: Id<Bound(Class)>,
+Notation = {
+    boundClassIds: Array<Id<BoundClass>>,
+    commaClassIds: Array<Id<CommaClass>>,
+    flAcCoIds: Array<Id<FlAcCo>>,
 }
 
-type Accidental = {
-    id: Id<Accidental>,
-    
-    commaClassId: Id<CommaClass>,   *** or captureZoneClassId: Id<Bound(Class) | CommaClass>, per above ^^^
-    commaDirection: Direction,
-    apotomeCount: Count<Apotome>,
-    *** this is not enough though. you also need the commaDirection and apotomeCount
-    *** but that's weird because it's three pieces of information related to the comma side.
-    *** what about the flAcCo side? would I want to say whether it was oriented up or down?
-    *** the things is, that depends on whether it's Evo or Revo. whereas the comma side does NOT depend on that.
-    *** so is that an AccidentalClass? 
-    *** or should I have one for Evo and one for Revo?
-    *** or should this just be what it is, and then we have a separate structure which maps these ids to flaco?
-    flAcCoId: Id<FlAcCo>,
-}
+State of the art plans described here: http://forum.sagittal.org/viewtopic.php?p=2492#p2492
  */
 
-interface Symbol {                          // ----> AccidentalAnalysis
-    
-    // Per refactor whereby analyses in general will no longer extend but rather contain the entity they're analyzing,
-    // These four will relocate to living on the accidental as commaClassId: Id<CommaClass>,
-    id: Id<Symbol>,
-    symbolClassId: Id<SymbolClass>,
+// Ranges from -2 to 2 apotomes
+interface Symbol {                          // ----> NotationCaptureZoneAccidental (bc per Level or Trojan, Binary, etc)
+    id: Id<Symbol>,                         // ---> DELETED. a capture zone accidental does not need an ID.
+                                            //      It gets looked up by its comma/captureZone ID, dir, & apotome count
+    symbolClassId: Id<SymbolClass>,         // ---> commaClassId: Id<CommaClass>
+    // Add: boundClassId: Id<Bound(Class)>  // Yeah, rename Bound to BoundClass please.
     commaDirection: Direction,
     apotomeCount: Count<Apotome>,
 
-    // Add: accidental: Accidental,         // the accidental this is an analysis of
-    // Add: elements: Array<Element>,
-    // Add: primaryComma: Comma,    // which is a combination of a CommaClass's comma, direction, and -2 to 2 apotomes
     revoAscii: SymbolLongAscii,
     evoAscii: SymbolLongAscii<Flavor.EVO>,
     revoUnicode: SymbolUnicode,
