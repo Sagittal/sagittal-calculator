@@ -1,29 +1,29 @@
-import { equalMonzos, Monzo } from "../../../../../../src/general/math/real/monzo"
+import { equalRealMonzos, RealMonzo } from "../../../../../../src/general/math/real/monzo"
 
-describe("equalMonzos", (): void => {
+describe("equalRealMonzos", (): void => {
     it("returns true if the monzos are equal", (): void => {
-        const monzoA: Monzo = [5, 4] as Monzo
-        const monzoB: Monzo = [5, 4] as Monzo
+        const monzoA: RealMonzo = [5, 4] as RealMonzo
+        const monzoB: RealMonzo = [5, 4] as RealMonzo
 
-        const actual = equalMonzos(monzoA, monzoB)
+        const actual = equalRealMonzos(monzoA, monzoB)
 
         expect(actual).toBeTruthy()
     })
 
     it("returns false if the monzos are not equal", (): void => {
-        const monzoA: Monzo = [5, 4] as Monzo
-        const monzoB: Monzo = [5, 0, 4] as Monzo
+        const monzoA: RealMonzo = [5, 4] as RealMonzo
+        const monzoB: RealMonzo = [5, 0, 4] as RealMonzo
 
-        const actual = equalMonzos(monzoA, monzoB)
+        const actual = equalRealMonzos(monzoA, monzoB)
 
         expect(actual).toBeFalsy()
     })
 
     it("returns true if the monzos are equal, trimming them if necessary", (): void => {
-        const monzoA: Monzo = [5, 4, 0] as Monzo
-        const monzoB: Monzo = [5, 4] as Monzo
+        const monzoA: RealMonzo = [5, 4, 0] as RealMonzo
+        const monzoB: RealMonzo = [5, 4] as RealMonzo
 
-        const actual = equalMonzos(monzoA, monzoB)
+        const actual = equalRealMonzos(monzoA, monzoB)
 
         expect(actual).toBeTruthy()
     })

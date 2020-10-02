@@ -1,42 +1,45 @@
 import { isUndefined } from "../../code"
 import { Formatted, Table, TableFormat } from "../../io"
 import {
-    computeDecimalFromQuotient,
     computeRationalQuotientFromRational,
     computeRationalQuotientFromRationalDecimal,
+    computeRealDecimalFromRealQuotient, computeRealFromRealOrRealDecimal,
     computeRoughRationalMonzo,
     computeRoughRationalQuotient,
-    computeSuperMonzo,
-    computeSuperQuotient,
+    computeSuperRealMonzo,
+    computeSuperRealQuotient, Direction,
     FIVE_ROUGHNESS,
     isIntegerDecimal,
     NumericProperties,
-    Rational,
+    Rational, RationalDecimal, RationalQuotient,
 } from "../../math"
 import { Name } from "../../types"
 import { TWO_3_FREE_CLASS_SIGN } from "./constants"
 import { Two3FreeClass } from "./types"
 
 const compute23FreeClass = <T extends NumericProperties>(
-    { monzo, quotient, decimal }: Rational<T>,
-): Two3FreeClass<T> => {
+    rationalOrRationalDecimal: Rational<T> | RationalDecimal<T>,
+): Two3FreeClass => {
+    const { monzo, quotient, decimal } = computeRealFromRealOrRealDecimal(rationalOrRationalDecimal)
+    
     const two3FreeClass = {} as Two3FreeClass
 
     if (!isUndefined(monzo)) {
         const two3FreeMonzo = computeRoughRationalMonzo(monzo, FIVE_ROUGHNESS)
-        two3FreeClass.monzo = computeSuperMonzo(two3FreeMonzo)
+        two3FreeClass.monzo = computeSuperRealMonzo(two3FreeMonzo)
     }
 
     if (!isUndefined(quotient)) {
         const two3FreeQuotient = computeRoughRationalQuotient(quotient, FIVE_ROUGHNESS)
-        two3FreeClass.quotient = computeSuperQuotient(two3FreeQuotient)
+        two3FreeClass.quotient = computeSuperRealQuotient(two3FreeQuotient)
     }
 
     if (!isUndefined(decimal)) {
-        const quotient = computeRationalQuotientFromRationalDecimal(decimal)
-        const two3FreeQuotient = computeRoughRationalQuotient(quotient, FIVE_ROUGHNESS)
-        const super23FreeQuotient = computeSuperQuotient(two3FreeQuotient)
-        const super23FreeDecimal = computeDecimalFromQuotient(super23FreeQuotient)
+        const realQuotient = computeRationalQuotientFromRationalDecimal(decimal)
+        const two3FreeQuotient: RationalQuotient<{ direction: Direction.SUPER, rough: 5}> = 
+            computeRoughRationalQuotient(realQuotient, FIVE_ROUGHNESS)
+        const super23FreeQuotient = computeSuperRealQuotient(two3FreeQuotient)
+        const super23FreeDecimal = computeRealDecimalFromRealQuotient(super23FreeQuotient)
 
         if (!isIntegerDecimal(super23FreeDecimal)) {
             throw new Error("Cannot safely represent a 2,3-free class (or JI in general) as a decimal which is not an integer.")
@@ -44,7 +47,7 @@ const compute23FreeClass = <T extends NumericProperties>(
         two3FreeClass.decimal = super23FreeDecimal
     }
 
-    return two3FreeClass as Two3FreeClass<T>
+    return two3FreeClass as Two3FreeClass
 }
 
 const compute23FreeClassName = (two3FreeClass: Two3FreeClass): Name<Two3FreeClass> => {

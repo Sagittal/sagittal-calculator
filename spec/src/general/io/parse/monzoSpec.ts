@@ -1,8 +1,8 @@
 import { Io, parseMonzo } from "../../../../../src/general/io"
-import { Monzo } from "../../../../../src/general/math"
+import { RealMonzo } from "../../../../../src/general/math"
 
 describe("parseMonzo", (): void => {
-    const expected = [3, 4, -5] as Monzo
+    const expected = [3, 4, -5] as RealMonzo
 
     it("parses monzos", (): void => {
         const monzoIo = "[3,4,-5]" as Io
@@ -73,6 +73,6 @@ describe("parseMonzo", (): void => {
 
         const actual = parseMonzo(monzoIo)
 
-        expect(actual).toEqual([-9.5, 6] as Monzo)
+        expect(actual).toEqual([-9.5, 6] as RealMonzo)
     })
 })

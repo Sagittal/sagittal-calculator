@@ -1,62 +1,62 @@
 import { RationalQuotient } from "../../rational"
 import { Direction, NumericProperties } from "../types"
-import { Denominator, Numerator, Quotient, QuotientPart } from "./types"
+import { Denominator, Numerator, QuotientPart, RealQuotient } from "./types"
 
-const isSuperQuotient = <T extends NumericProperties>(
-    candidateSuperQuotient: Quotient<Omit<T, "direction">>,
-): candidateSuperQuotient is Quotient<Omit<T, "direction"> & { direction: Direction.SUPER }> => {
-    const [numerator, denominator] = candidateSuperQuotient
+const isSuperRealQuotient = <T extends NumericProperties>(
+    candidateSuperRealQuotient: RealQuotient<Omit<T, "direction">>,
+): candidateSuperRealQuotient is RealQuotient<Omit<T, "direction"> & { direction: Direction.SUPER }> => {
+    const [numerator, denominator] = candidateSuperRealQuotient
 
     return numerator > denominator
 }
 
-const isSubQuotient = <T extends NumericProperties>(
-    candidateSubQuotient: Quotient<Omit<T, "direction">>,
-): candidateSubQuotient is Quotient<Omit<T, "direction"> & { direction: Direction.SUB }> => {
-    const [numerator, denominator] = candidateSubQuotient
+const isSubRealQuotient = <T extends NumericProperties>(
+    candidateSubRealQuotient: RealQuotient<Omit<T, "direction">>,
+): candidateSubRealQuotient is RealQuotient<Omit<T, "direction"> & { direction: Direction.SUB }> => {
+    const [numerator, denominator] = candidateSubRealQuotient
 
     return numerator < denominator
 }
 
-const isUnisonQuotient = <T extends NumericProperties>(
-    candidateUnisonQuotient: Quotient<Omit<T, "direction">>,
-): candidateUnisonQuotient is Quotient<Omit<T, "direction"> & { direction: Direction.UNISON }> => {
-    const [numerator, denominator] = candidateUnisonQuotient
+const isUnisonRealQuotient = <T extends NumericProperties>(
+    candidateUnisonRealQuotient: RealQuotient<Omit<T, "direction">>,
+): candidateUnisonRealQuotient is RealQuotient<Omit<T, "direction"> & { direction: Direction.UNISON }> => {
+    const [numerator, denominator] = candidateUnisonRealQuotient
 
     return numerator as QuotientPart === denominator as QuotientPart
 }
 
-const computeSuperQuotient: {
+const computeSuperRealQuotient: {
     <T extends NumericProperties>(
         rationalQuotient: RationalQuotient<T>,
     ): RationalQuotient<T & { direction: Direction.SUPER, integer: false }>,
     <T extends NumericProperties>(
-        quotient: Quotient<T>,
-    ): Quotient<T & { direction: Direction.SUPER, integer: false }>,
+        realQuotient: RealQuotient<T>,
+    ): RealQuotient<T & { direction: Direction.SUPER, integer: false }>,
 } = <T extends NumericProperties>(
-    quotient: Quotient<T>,
+    realQuotient: RealQuotient<T>,
 ): any => {
-    return isSuperQuotient(quotient) ?
-        quotient as Quotient<T & { direction: Direction.SUPER, integer: false }> :
-        invertQuotient(quotient)
+    return isSuperRealQuotient(realQuotient) ?
+        realQuotient as RealQuotient<T & { direction: Direction.SUPER, integer: false }> :
+        invertRealQuotient(realQuotient)
 }
 
-const computeSubQuotient: {
+const computeSubRealQuotient: {
     <T extends NumericProperties>(
         rationalQuotient: RationalQuotient<T>,
     ): RationalQuotient<T & { direction: Direction.SUB, integer: false }>,
     <T extends NumericProperties>(
-        quotient: Quotient<T>,
-    ): Quotient<T & { direction: Direction.SUB, integer: false }>
+        realQuotient: RealQuotient<T>,
+    ): RealQuotient<T & { direction: Direction.SUB, integer: false }>
 } = <T extends NumericProperties>(
-    quotient: Quotient<T>,
+    realQuotient: RealQuotient<T>,
 ): any => {
-    return isSubQuotient(quotient) ?
-        quotient as Quotient<T & { direction: Direction.SUB, integer: false }> :
-        invertQuotient(quotient)
+    return isSubRealQuotient(realQuotient) ?
+        realQuotient as RealQuotient<T & { direction: Direction.SUB, integer: false }> :
+        invertRealQuotient(realQuotient)
 }
 
-const invertQuotient: {
+const invertRealQuotient: {
     <T extends NumericProperties & { direction: Direction.SUPER }>(
         rationalQuotient: RationalQuotient<T>,
     ): RationalQuotient<T & { direction: Direction.SUB, integer: false }>,
@@ -67,28 +67,28 @@ const invertQuotient: {
         rationalQuotient: RationalQuotient<T>,
     ): RationalQuotient<T & { integer: false }>,
     <T extends NumericProperties & { direction: Direction.SUPER }>(
-        quotient: Quotient<T>,
-    ): Quotient<T & { direction: Direction.SUB, integer: false }>,
+        realQuotient: RealQuotient<T>,
+    ): RealQuotient<T & { direction: Direction.SUB, integer: false }>,
     <T extends NumericProperties & { direction: Direction.SUB }>(
-        quotient: Quotient<T>,
-    ): Quotient<T & { direction: Direction.SUPER, integer: false }>,
+        realQuotient: RealQuotient<T>,
+    ): RealQuotient<T & { direction: Direction.SUPER, integer: false }>,
     <T extends NumericProperties>(
-        quotient: Quotient<T>,
-    ): Quotient<T & { integer: false }>,
-} = <T extends NumericProperties>(quotient: Quotient<T>): any => {
-    const [numerator, denominator] = quotient
+        realQuotient: RealQuotient<T>,
+    ): RealQuotient<T & { integer: false }>,
+} = <T extends NumericProperties>(realQuotient: RealQuotient<T>): any => {
+    const [numerator, denominator] = realQuotient
 
     return [
         denominator as number as Numerator<T>,
         numerator as number as Denominator<T>,
-    ] as Quotient<T & { integer: false }>
+    ] as RealQuotient<T & { integer: false }>
 }
 
 export {
-    computeSuperQuotient,
-    computeSubQuotient,
-    isSuperQuotient,
-    isSubQuotient,
-    isUnisonQuotient,
-    invertQuotient,
+    computeSuperRealQuotient,
+    computeSubRealQuotient,
+    isSuperRealQuotient,
+    isSubRealQuotient,
+    isUnisonRealQuotient,
+    invertRealQuotient,
 }

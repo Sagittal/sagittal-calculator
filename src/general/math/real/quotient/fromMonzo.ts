@@ -2,27 +2,27 @@ import { MAX_JAVASCRIPT_INTEGER_VALUE } from "../../../code"
 import { formatMonzo } from "../../../io"
 import { Prime, PRIMES, RationalMonzo, RationalQuotient } from "../../rational"
 import { Exponent } from "../../types"
-import { Monzo } from "../monzo"
+import { RealMonzo } from "../monzo"
 import { NumericProperties } from "../types"
-import { Denominator, Numerator, Quotient } from "./types"
+import { Denominator, Numerator, RealQuotient } from "./types"
 
-const computeQuotientFromMonzo: {
+const computeRealQuotientFromRealMonzo: {
     <T extends NumericProperties>(
         rationalMonzo: RationalMonzo<T>,
         options?: { disableErrorBecauseExactValueNotRequired?: boolean },
     ): RationalQuotient<T>,
     <T extends NumericProperties>(
-        monzo: Monzo<T>,
+        realMonzo: RealMonzo<T>,
         options?: { disableErrorBecauseExactValueNotRequired?: boolean },
-    ): Quotient<T>,
+    ): RealQuotient<T>,
 } = <T extends NumericProperties>(
-    monzo: Monzo<T>,
+    realMonzo: RealMonzo<T>,
     { disableErrorBecauseExactValueNotRequired }: { disableErrorBecauseExactValueNotRequired?: boolean } = {},
 ): any => {
     let numerator: Numerator<T> = 1 as Numerator<T>
     let denominator: Denominator<T> = 1 as Denominator<T>
 
-    monzo.forEach((primeExponent: Exponent<Prime>, index: number): void => {
+    realMonzo.forEach((primeExponent: Exponent<Prime>, index: number): void => {
         if (primeExponent > 0) {
             numerator = numerator * PRIMES[ index ] ** primeExponent as Numerator<T>
         }
@@ -35,12 +35,12 @@ const computeQuotientFromMonzo: {
         !disableErrorBecauseExactValueNotRequired &&
         (numerator > MAX_JAVASCRIPT_INTEGER_VALUE || denominator > MAX_JAVASCRIPT_INTEGER_VALUE)
     ) {
-        throw new Error(`Tried to convert a monzo to a quotient where a fractional part would exceed JavaScript's maximum safe integer value. ${formatMonzo(monzo)}`)
+        throw new Error(`Tried to convert a monzo to a quotient where a fractional part would exceed JavaScript's maximum safe integer value. ${formatMonzo(realMonzo)}`)
     }
 
-    return [numerator, denominator] as Quotient<T>
+    return [numerator, denominator] as RealQuotient<T>
 }
 
 export {
-    computeQuotientFromMonzo,
+    computeRealQuotientFromRealMonzo,
 }

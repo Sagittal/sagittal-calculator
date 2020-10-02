@@ -1,16 +1,16 @@
-import { Monzo } from "../monzo"
-import { Quotient } from "../quotient"
+import { RealMonzo } from "../monzo"
+import { RealQuotient } from "../quotient"
 import { NumericProperties, NumTypeParameterEffects } from "../types"
 
 type RealDecimal<T extends NumericProperties = {}> = number & NumTypeParameterEffects<T>
 
-type RealByDecimal<T extends NumericProperties> = {
+type RealByRealDecimal<T extends NumericProperties> = {
     decimal: RealDecimal<T>,
-    monzo?: Monzo<T>,
-    quotient?: Quotient<T>,
+    monzo?: RealMonzo<T>,
+    quotient?: RealQuotient<T>,
 }
 
 export {
     RealDecimal,
-    RealByDecimal,
+    RealByRealDecimal,
 }

@@ -8,13 +8,13 @@ type RationalDecimal<T extends NumericProperties = {}> =
 type IntegerDecimal<T extends NumericProperties = {}> =
     RationalDecimal<T & { integer: true, rational: true, direction: Direction.SUPER }>
 
-type RationalByDecimal<T extends NumericProperties = {}> = {
+type RationalByRationalDecimal<T extends NumericProperties = {}> = {
     decimal: RationalDecimal<T>,
     monzo?: RationalMonzo<T>,
     quotient?: RationalQuotient<T>,
 }
 
-type IntegerByDecimal<T extends NumericProperties = {}> = {
+type IntegerByIntegerDecimal<T extends NumericProperties = {}> = {
     decimal: IntegerDecimal<T>,
     monzo?: IntegerMonzo<T>,
     quotient?: IntegerQuotient<T>,
@@ -23,6 +23,6 @@ type IntegerByDecimal<T extends NumericProperties = {}> = {
 export {
     RationalDecimal,
     IntegerDecimal,
-    RationalByDecimal,
-    IntegerByDecimal,
+    RationalByRationalDecimal,
+    IntegerByIntegerDecimal,
 }

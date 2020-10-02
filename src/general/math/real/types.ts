@@ -1,7 +1,7 @@
 import { Rational } from "../rational"
-import { RealByDecimal } from "./decimal"
-import { RealByMonzo } from "./monzo"
-import { RealByQuotient } from "./quotient"
+import { RealByRealDecimal } from "./decimal"
+import { RealByRealMonzo } from "./monzo"
+import { RealByRealQuotient } from "./quotient"
 
 enum Direction {
     SUPER = "super",
@@ -26,7 +26,10 @@ type NumTypeParameterEffects<T> =
     & (T extends { rational: true } ? { _RationalBrand: boolean } : {})
     & (T extends { integer: true } ? { _IntegerBrand: boolean } : {})
 
-type Real<T extends NumericProperties = {}> = Rational<T> | RealByDecimal<T> | RealByMonzo<T> | RealByQuotient<T>
+type Real<T extends NumericProperties = {}> = Rational<T> 
+    | RealByRealDecimal<T>
+    | RealByRealMonzo<T> 
+    | RealByRealQuotient<T>
 
 export {
     NumericProperties,

@@ -1,40 +1,40 @@
 export {
     RealDecimal,
-    computeDecimalFromReal,
-    computeDecimalFromQuotient,
-    computeDecimalFromMonzo,
+    computeRealDecimalFromReal,
+    computeRealDecimalFromRealQuotient,
+    computeRealDecimalFromRealMonzo,
 } from "./decimal"
 export {
-    isSubQuotient,
-    isSuperQuotient,
+    isSubRealQuotient,
+    isSuperRealQuotient,
     QuotientPartType,
-    computeSuperQuotient,
-    isUnisonQuotient,
-    Quotient,
-    computeSubQuotient,
-    invertQuotient,
+    computeSuperRealQuotient,
+    isUnisonRealQuotient,
+    RealQuotient,
+    computeSubRealQuotient,
+    invertRealQuotient,
     NumTypeParameterTranslationForQuotientsToTheirQuotientPartsExceptRationality,
     Denominator,
     QuotientPart,
-    computeQuotientFromMonzo,
-    equalIrrationalQuotients,
-    computeQuotientProduct,
+    computeRealQuotientFromRealMonzo,
+    equalRealQuotients,
+    computeRealQuotientProduct,
 } from "./quotient"
 export {
-    isSubMonzo,
-    computeSuperMonzo,
-    invertMonzo,
-    isSuperMonzo,
-    computeMonzoSum,
-    Monzo,
-    isUnisonMonzo,
-    equalMonzos,
+    isSubRealMonzo,
+    computeSuperRealMonzo,
+    invertRealMonzo,
+    isSuperRealMonzo,
+    computeRealMonzoSum,
+    RealMonzo,
+    isUnisonRealMonzo,
+    equalRealMonzos,
 } from "./monzo"
 export { isSubReal, isSuperReal, isUnisonReal, computeSuperReal } from "./direction"
-export { computeRealFromMonzo } from "./fromMonzo"
+export { computeRealFromRealMonzo } from "./fromMonzo"
 export { divideReals, computeRealSqrt } from "./typedOperations"
-export { computeRealFromQuotient } from "./fromQuotient"
-export { computeRealFromRealOrDecimal } from "./fromRealOrDecimal"
+export { computeRealFromRealQuotient } from "./fromQuotient"
+export { computeRealFromRealOrRealDecimal } from "./fromRealOrDecimal"
 export { equalReals, realIsHigher, realIsLower, realIsLowerOrEqual, realIsHigherOrEqual } from "./comparison"
 export {
     Direction,

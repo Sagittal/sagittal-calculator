@@ -1,5 +1,5 @@
 import { isUndefined } from "../../../code"
-import { computeRealFromRealOrDecimal, NumericProperties } from "../../real"
+import { computeRealFromRealOrRealDecimal, NumericProperties } from "../../real"
 import { Primes, Roughness } from "../types"
 import { IntegerDecimal, RationalDecimal } from "./decimal"
 import { isRoughRationalMonzo } from "./monzo"
@@ -10,7 +10,7 @@ const isRoughRational = <S extends Primes, T extends NumericProperties>(
     rationalOrRationalDecimal: Rational<T> | RationalDecimal<T>,
     roughness: S & Roughness,
 ): rationalOrRationalDecimal is Rational<T & { rough: S }> | RationalDecimal<T & { rough: S }> => {
-    const { monzo, quotient, decimal } = computeRealFromRealOrDecimal(rationalOrRationalDecimal)
+    const { monzo, quotient, decimal } = computeRealFromRealOrRealDecimal(rationalOrRationalDecimal)
 
     if (isUndefined(monzo) && isUndefined(quotient) && !isUndefined(decimal)) {
         return isRoughRationalQuotient(

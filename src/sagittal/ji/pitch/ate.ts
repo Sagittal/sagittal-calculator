@@ -10,9 +10,9 @@ import {
 } from "../../../general"
 
 const computeAte = (jiPitch: Rational): Abs<IntegerDecimal & Exponent<3 & Prime>> => {
-    const monzo = computeRationalMonzoFromRational(jiPitch)
+    const rationalMonzo = computeRationalMonzoFromRational(jiPitch)
 
-    return abs(monzo[ THREE_PRIME_INDEX ] || 0) as Abs<IntegerDecimal & Exponent<3 & Prime>>
+    return abs(rationalMonzo[ THREE_PRIME_INDEX ] || 0) as Abs<IntegerDecimal & Exponent<3 & Prime>>
 }
 
 export {

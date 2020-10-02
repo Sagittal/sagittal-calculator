@@ -1,6 +1,6 @@
 import { isUndefined } from "../../../../code"
 import { formatReal } from "../../../../io"
-import { computeQuotientFromMonzo, computeRealFromRealOrDecimal, NumericProperties } from "../../../real"
+import { computeRealFromRealOrRealDecimal, computeRealQuotientFromRealMonzo, NumericProperties } from "../../../real"
 import { RationalDecimal } from "../decimal"
 import { Rational } from "../types"
 import { computeRationalQuotientFromRationalDecimal } from "./fromDecimal"
@@ -11,13 +11,13 @@ const computeRationalQuotientFromRational = <T extends NumericProperties>(
     rationalOrRationalDecimal: Rational<T> | RationalDecimal<T>,
     options: { disableErrorBecauseExactValueNotRequired?: boolean } = {},
 ): RationalQuotient<T> => {
-    const { monzo, quotient, decimal } = computeRealFromRealOrDecimal(rationalOrRationalDecimal)
+    const { monzo, quotient, decimal } = computeRealFromRealOrRealDecimal(rationalOrRationalDecimal)
     
     let rationalQuotient: RationalQuotient<T>
     if (!isUndefined(quotient)) {
         rationalQuotient = quotient
     } else if (!isUndefined(monzo)) {
-        rationalQuotient = computeQuotientFromMonzo(monzo, options)
+        rationalQuotient = computeRealQuotientFromRealMonzo(monzo, options)
     } else if (!isUndefined(decimal)) {
         rationalQuotient = computeRationalQuotientFromRationalDecimal(decimal)
     } else {

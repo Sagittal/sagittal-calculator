@@ -1,6 +1,6 @@
 import { computeTrimmedArray, isUndefined } from "../../../../code"
 import { formatReal } from "../../../../io"
-import { computeRealFromRealOrDecimal, NumericProperties } from "../../../real"
+import { computeRealFromRealOrRealDecimal, NumericProperties } from "../../../real"
 import { RationalDecimal } from "../decimal"
 import { Rational } from "../types"
 import { computeRationalMonzoFromRationalDecimal } from "./fromDecimal"
@@ -10,7 +10,7 @@ import { RationalMonzo } from "./types"
 const computeRationalMonzoFromRational = <T extends NumericProperties>(
     rationalOrRationalDecimal: Rational<T> | RationalDecimal<T>,
 ): RationalMonzo<T> => {
-    const { monzo, quotient, decimal } = computeRealFromRealOrDecimal(rationalOrRationalDecimal)
+    const { monzo, quotient, decimal } = computeRealFromRealOrRealDecimal(rationalOrRationalDecimal)
 
     let rationalMonzo: RationalMonzo<T>
     if (!isUndefined(monzo)) {

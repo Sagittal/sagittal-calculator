@@ -1,6 +1,6 @@
 import {
-    computeQuotientFromMonzo,
     computeRationalMonzoFromRationalQuotient,
+    computeRealQuotientFromRealMonzo,
     Direction,
     KeyPath,
     Popularity,
@@ -32,7 +32,7 @@ describe("COMMA_POPULARITIES", (): void => {
             .map((
                 rationalMonzo: RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
             ): RationalQuotient<{ rough: 5, direction: Direction.SUPER }> => {
-                return computeQuotientFromMonzo(rationalMonzo)
+                return computeRealQuotientFromRealMonzo(rationalMonzo)
             })
 
         expect(rationalQuotients).toEqual(originalRationalQuotients)

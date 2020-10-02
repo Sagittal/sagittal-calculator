@@ -1,6 +1,6 @@
 import { isUndefined } from "../../../code"
 import { formatReal } from "../../../io"
-import { computeRealFromRealOrDecimal, NumericProperties } from "../../real"
+import { computeRealFromRealOrRealDecimal, NumericProperties } from "../../real"
 import { Primes, Smoothness } from "../types"
 import { computeRationalDecimalSmoothness, IntegerDecimal, RationalDecimal } from "./decimal"
 import { computeRationalMonzoSmoothness, isSmoothRationalMonzo } from "./monzo"
@@ -15,7 +15,7 @@ const isSmoothRational = <S extends Primes, T extends NumericProperties>(
     rationalOrRationalDecimal: Rational<T> | RationalDecimal<T>,
     smoothness: S & Smoothness,
 ): rationalOrRationalDecimal is Rational<T & { smooth: S }> | RationalDecimal<T & { smooth: S }> => {
-    const { monzo, quotient, decimal } = computeRealFromRealOrDecimal(rationalOrRationalDecimal)
+    const { monzo, quotient, decimal } = computeRealFromRealOrRealDecimal(rationalOrRationalDecimal)
     
     if (isUndefined(monzo) && isUndefined(quotient) && !isUndefined(decimal)) {
         return isSmoothRationalQuotient(
@@ -37,7 +37,7 @@ const isSmoothRational = <S extends Primes, T extends NumericProperties>(
 const computeRationalSmoothness = <S extends Primes, T extends NumericProperties>(
     rationalOrRationalDecimal: Rational<T> | RationalDecimal<T>,
 ): Smoothness => {
-    const { monzo, quotient, decimal } = computeRealFromRealOrDecimal(rationalOrRationalDecimal)
+    const { monzo, quotient, decimal } = computeRealFromRealOrRealDecimal(rationalOrRationalDecimal)
     
     if (!isUndefined(monzo)) {
         return computeRationalMonzoSmoothness(monzo)

@@ -1,11 +1,11 @@
 import { isCloseTo } from "../../../code"
-import { computeDecimalFromQuotient } from "../decimal"
-import { Quotient } from "./types"
+import { computeRealDecimalFromRealQuotient } from "../decimal"
+import { RealQuotient } from "./types"
 
-const equalIrrationalQuotients = (quotientA: Quotient, quotientB: Quotient): boolean => {
-    return isCloseTo(computeDecimalFromQuotient(quotientA), computeDecimalFromQuotient(quotientB))
+const equalRealQuotients = (quotientA: RealQuotient, quotientB: RealQuotient): boolean => {
+    return isCloseTo(computeRealDecimalFromRealQuotient(quotientA), computeRealDecimalFromRealQuotient(quotientB))
 }
 
 export {
-    equalIrrationalQuotients,
+    equalRealQuotients,
 }

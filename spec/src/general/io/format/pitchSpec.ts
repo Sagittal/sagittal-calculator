@@ -1,10 +1,10 @@
 import { formatPitch, Formatted } from "../../../../../src/general/io/format"
-import { IntegerDecimal, Monzo, Quotient, Real, RealDecimal } from "../../../../../src/general/math"
+import { IntegerDecimal, Real, RealDecimal, RealMonzo, RealQuotient } from "../../../../../src/general/math"
 import { Cents } from "../../../../../src/general/music"
 
 describe("formatPitch", (): void => {
     it("if only the quotient is present, returns it formatted", (): void => {
-        const pitch = { quotient: [5, 3] as Quotient }
+        const pitch = { quotient: [5, 3] as RealQuotient }
 
         const actual = formatPitch(pitch)
 
@@ -13,7 +13,7 @@ describe("formatPitch", (): void => {
     })
 
     it("if the quotient and monzo are present, returns the quotient formatted", (): void => {
-        const pitch = { quotient: [5, 3] as Quotient, monzo: [0, -1, 1] as Monzo }
+        const pitch = { quotient: [5, 3] as RealQuotient, monzo: [0, -1, 1] as RealMonzo }
 
         const actual = formatPitch(pitch)
 
@@ -22,7 +22,7 @@ describe("formatPitch", (): void => {
     })
 
     it("if the quotient and decimal are present, returns the quotient formatted", (): void => {
-        const pitch = { quotient: [5, 1] as Quotient, decimal: 5 as IntegerDecimal }
+        const pitch = { quotient: [5, 1] as RealQuotient, decimal: 5 as IntegerDecimal }
 
         const actual = formatPitch(pitch)
 
@@ -31,7 +31,7 @@ describe("formatPitch", (): void => {
     })
 
     it("if the quotient and cents are present, returns the quotient formatted", (): void => {
-        const pitch = { quotient: [5, 3] as Quotient, cents: 884.358713 as Cents }
+        const pitch = { quotient: [5, 3] as RealQuotient, cents: 884.358713 as Cents }
 
         const actual = formatPitch(pitch)
 
@@ -40,7 +40,7 @@ describe("formatPitch", (): void => {
     })
 
     it("if only the monzo is present, returns the monzo formatted", (): void => {
-        const pitch = { monzo: [0, -1, 1] as Monzo }
+        const pitch = { monzo: [0, -1, 1] as RealMonzo }
 
         const actual = formatPitch(pitch)
 
@@ -49,7 +49,7 @@ describe("formatPitch", (): void => {
     })
 
     it("if the monzo and decimal are present, returns the monzo formatted", (): void => {
-        const pitch = { monzo: [0, 0, 1] as Monzo, decimal: 5 as IntegerDecimal }
+        const pitch = { monzo: [0, 0, 1] as RealMonzo, decimal: 5 as IntegerDecimal }
 
         const actual = formatPitch(pitch)
 
@@ -58,7 +58,7 @@ describe("formatPitch", (): void => {
     })
 
     it("if the monzo and cents are present, returns the monzo formatted", (): void => {
-        const pitch = { monzo: [0, -1, 1] as Monzo, cents: 884.358713 as Cents }
+        const pitch = { monzo: [0, -1, 1] as RealMonzo, cents: 884.358713 as Cents }
 
         const actual = formatPitch(pitch)
 

@@ -8,7 +8,7 @@ type RationalMonzo<T extends NumericProperties = {}> =
     Array<IntegerDecimal & Exponent<Prime>>
     & NumTypeParameterEffects<T & { rational: true }>
 
-type RationalByMonzo<T extends NumericProperties = {}> = {
+type RationalByRationalMonzo<T extends NumericProperties = {}> = {
     decimal?: RationalDecimal<T>,
     monzo: RationalMonzo<T>,
     quotient?: RationalQuotient<T>,
@@ -18,7 +18,7 @@ type IntegerMonzo<T extends NumericProperties = {}> =
     Array<IntegerDecimal & Exponent<Prime>>
     & NumTypeParameterEffects<T & { integer: true, rational: true, direction: Direction.SUPER }>
 
-type IntegerByMonzo<T extends NumericProperties = {}> = {
+type IntegerByIntegerMonzo<T extends NumericProperties = {}> = {
     decimal?: IntegerDecimal<T>,
     monzo: IntegerMonzo<T>,
     quotient?: IntegerQuotient<T>,
@@ -26,7 +26,7 @@ type IntegerByMonzo<T extends NumericProperties = {}> = {
 
 export {
     RationalMonzo,
-    RationalByMonzo,
+    RationalByRationalMonzo,
     IntegerMonzo,
-    IntegerByMonzo,
+    IntegerByIntegerMonzo,
 }

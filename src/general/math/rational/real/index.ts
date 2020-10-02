@@ -1,6 +1,6 @@
 export {
     Rational,
-    RationalByDecimal,
+    RationalByRationalDecimal,
     Integer,
 } from "./types"
 export {
@@ -22,7 +22,7 @@ export {
     computeRationalQuotientFromRational,
     computeRationalQuotientFromRationalDecimal,
     isRationalQuotient,
-    RationalByQuotient,
+    RationalByRationalQuotient,
     computeLowestTermsRationalQuotient,
     IntegerDenominator,
     IntegerQuotientPart,
@@ -39,7 +39,7 @@ export {
     isRoughRationalMonzo,
     isSmoothRationalMonzo,
     computeRationalMonzoFromRational,
-    RationalByMonzo,
+    RationalByRationalMonzo,
     RationalMonzo,
     IntegerMonzo,
     doForEachMonzo,

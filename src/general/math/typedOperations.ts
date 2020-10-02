@@ -49,9 +49,9 @@ const mod: {
 const reciprocal: {
     <T extends NumericProperties>(integerDecimal: IntegerDecimal<T>): RealDecimal<T>,
     <T extends NumericProperties>(rationalDecimal: RationalDecimal<T>): RealDecimal<T>,
-    <T extends NumericProperties>(decimal: RealDecimal<T>): RealDecimal<T>,
-} = <T extends RealDecimal>(decimal: T): any =>
-    1 / decimal
+    <T extends NumericProperties>(realDecimal: RealDecimal<T>): RealDecimal<T>,
+} = <T extends RealDecimal>(realDecimal: T): any =>
+    1 / realDecimal
 
 const negative = <T extends number>(number: T): T =>
     number === 0 ? 0 as T : -number as T
@@ -83,16 +83,16 @@ const abs = <T extends number>(number: T): Abs<T> =>
 const sqrt: {
     <T extends NumericProperties>(integerDecimal: IntegerDecimal<T>): RealDecimal<T>,
     <T extends NumericProperties>(rationalDecimal: RationalDecimal<T>): RealDecimal<T>,
-    <T extends NumericProperties>(decimal: RealDecimal<T>): RealDecimal<T>,
-} = <T extends NumericProperties>(decimal: RealDecimal<T>): any =>
-    Math.sqrt(decimal)
+    <T extends NumericProperties>(realDecimal: RealDecimal<T>): RealDecimal<T>,
+} = <T extends NumericProperties>(realDecimal: RealDecimal<T>): any =>
+    Math.sqrt(realDecimal)
 
 const cubeRoot: {
     <T extends NumericProperties>(integerDecimal: IntegerDecimal<T>): RealDecimal<T>,
     <T extends NumericProperties>(rationalDecimal: RationalDecimal<T>): RealDecimal<T>,
-    <T extends NumericProperties>(decimal: RealDecimal<T>): RealDecimal<T>,
-} = <T extends NumericProperties>(decimal: RealDecimal<T>): any =>
-    Math.cbrt(decimal)
+    <T extends NumericProperties>(realDecimal: RealDecimal<T>): RealDecimal<T>,
+} = <T extends NumericProperties>(realDecimal: RealDecimal<T>): any =>
+    Math.cbrt(realDecimal)
 
 const max = <T extends number>(...numbers: T[]): Max<T> =>
     Math.max(...numbers) as Max<T>

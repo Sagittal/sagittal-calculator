@@ -2,16 +2,16 @@ import {
     ACCURACY_THRESHOLD,
     doForEachMonzo,
     Io,
-    isSubMonzo,
+    isSubRealMonzo,
     isUndefined,
     KeyPath,
     LogTarget,
     Max,
     Maybe,
-    Monzo,
     rank,
     Ranked,
     RankStrategy,
+    RealMonzo,
     saveLog,
     stringify,
     Two3FreeClass,
@@ -24,10 +24,10 @@ import { Popular23FreeClass } from "./types"
 
 // "Super" as in "not sub", not as in "super popular!"
 const computeMaybeSuperPopular23FreeClass = (
-    two3FreeRationalMonzoForWork: Monzo,
+    two3FreeRationalMonzoForWork: RealMonzo,
     maxN2D3P9: Max<N2D3P9>,
 ): Maybe<Popular23FreeClass> => {
-    const maybeSuperPopular23FreeClass = !isSubMonzo(two3FreeRationalMonzoForWork) ?
+    const maybeSuperPopular23FreeClass = !isSubRealMonzo(two3FreeRationalMonzoForWork) ?
         computeMaybePopular23FreeClass({ monzo: two3FreeRationalMonzoForWork } as Two3FreeClass, maxN2D3P9) :
         undefined
 

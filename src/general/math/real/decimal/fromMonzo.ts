@@ -2,12 +2,12 @@ import { MULTIPLICATIVE_IDENTITY } from "../../constants"
 import { Prime, PRIMES } from "../../rational"
 import { pow } from "../../typedOperations"
 import { Exponent } from "../../types"
-import { Monzo } from "../monzo"
+import { RealMonzo } from "../monzo"
 import { NumericProperties } from "../types"
 import { RealDecimal } from "./types"
 
-const computeDecimalFromMonzo = <T extends NumericProperties>(monzo: Monzo<T>): RealDecimal<T> => {
-    return monzo.reduce(
+const computeRealDecimalFromRealMonzo = <T extends NumericProperties>(realMonzo: RealMonzo<T>): RealDecimal<T> => {
+    return realMonzo.reduce(
         (value: RealDecimal<T>, primeExponent: Exponent<Prime>, index: number): RealDecimal<T> => {
             return value * pow(PRIMES[ index ], primeExponent) as RealDecimal<T>
         },
@@ -16,5 +16,5 @@ const computeDecimalFromMonzo = <T extends NumericProperties>(monzo: Monzo<T>): 
 }
 
 export {
-    computeDecimalFromMonzo,
+    computeRealDecimalFromRealMonzo,
 }

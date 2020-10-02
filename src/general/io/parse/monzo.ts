@@ -1,7 +1,7 @@
-import { Monzo } from "../../math"
+import { RealMonzo } from "../../math"
 import { Io } from "../types"
 
-const parseMonzo = (monzoIo: Io): Monzo => {
+const parseMonzo = (monzoIo: Io): RealMonzo => {
     const preparsedMonzoIo = monzoIo
         .replace("⟩", "]")
         .replace(">", "]")

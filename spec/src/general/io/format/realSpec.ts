@@ -1,9 +1,9 @@
 import { formatReal, Formatted } from "../../../../../src/general/io/format"
-import { Monzo, Quotient, Real, RealDecimal } from "../../../../../src/general/math"
+import { Real, RealDecimal, RealMonzo, RealQuotient } from "../../../../../src/general/math"
 
 describe("formatReal", (): void => {
     it("if only the quotient is present, returns it formatted", (): void => {
-        const real = { quotient: [5, 3] as Quotient }
+        const real = { quotient: [5, 3] as RealQuotient }
 
         const actual = formatReal(real)
 
@@ -12,7 +12,7 @@ describe("formatReal", (): void => {
     })
 
     it("if the quotient and monzo are present, returns the quotient formatted", (): void => {
-        const real = { quotient: [5, 3] as Quotient, monzo: [0, -1, 1] as Monzo }
+        const real = { quotient: [5, 3] as RealQuotient, monzo: [0, -1, 1] as RealMonzo }
 
         const actual = formatReal(real)
 
@@ -21,7 +21,7 @@ describe("formatReal", (): void => {
     })
 
     it("if the quotient and decimal are present, returns the quotient formatted", (): void => {
-        const real = { quotient: [5, 3] as Quotient, decimal: 1.666667 as RealDecimal }
+        const real = { quotient: [5, 3] as RealQuotient, decimal: 1.666667 as RealDecimal }
 
         const actual = formatReal(real)
 
@@ -30,7 +30,7 @@ describe("formatReal", (): void => {
     })
 
     it("if only the monzo is present, returns the monzo formatted", (): void => {
-        const real = { monzo: [0, -1, 1] as Monzo }
+        const real = { monzo: [0, -1, 1] as RealMonzo }
 
         const actual = formatReal(real)
 
@@ -39,7 +39,7 @@ describe("formatReal", (): void => {
     })
 
     it("if the monzo and decimal are present, returns the monzo formatted", (): void => {
-        const real = { monzo: [0, -1, 1] as Monzo, decimal: 1.666667 as RealDecimal }
+        const real = { monzo: [0, -1, 1] as RealMonzo, decimal: 1.666667 as RealDecimal }
 
         const actual = formatReal(real)
 
@@ -57,9 +57,9 @@ describe("formatReal", (): void => {
     })
 
     it("if provided as a direct decimal, returns the decimal formatted", (): void => {
-        const decimal = 1.666667 as RealDecimal
+        const realDecimal = 1.666667 as RealDecimal
 
-        const actual = formatReal(decimal)
+        const actual = formatReal(realDecimal)
 
         const expected = "1.667" as Formatted<Real>
         expect(actual).toBe(expected)

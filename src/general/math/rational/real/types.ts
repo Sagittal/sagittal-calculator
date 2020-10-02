@@ -1,20 +1,20 @@
 import { NumericProperties } from "../../real"
-import { IntegerByDecimal, RationalByDecimal } from "./decimal"
-import { IntegerByMonzo, RationalByMonzo } from "./monzo"
-import { IntegerByQuotient, RationalByQuotient } from "./quotient"
+import { IntegerByIntegerDecimal, RationalByRationalDecimal } from "./decimal"
+import { IntegerByIntegerMonzo, RationalByRationalMonzo } from "./monzo"
+import { IntegerByIntegerQuotient, RationalByRationalQuotient } from "./quotient"
 
 type Rational<T extends NumericProperties = {}> =
-    RationalByDecimal<T>
-    | RationalByMonzo<T>
-    | RationalByQuotient<T>
+    RationalByRationalDecimal<T>
+    | RationalByRationalMonzo<T>
+    | RationalByRationalQuotient<T>
 
 type Integer<T extends NumericProperties = {}> =
-    IntegerByDecimal<T>
-    | IntegerByMonzo<T>
-    | IntegerByQuotient<T>
+    IntegerByIntegerDecimal<T>
+    | IntegerByIntegerMonzo<T>
+    | IntegerByIntegerQuotient<T>
 
 export {
     Rational,
-    RationalByDecimal,
+    RationalByRationalDecimal,
     Integer,
 }

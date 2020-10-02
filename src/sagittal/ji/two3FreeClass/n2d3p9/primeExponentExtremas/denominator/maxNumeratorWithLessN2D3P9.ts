@@ -1,6 +1,6 @@
 import {
     computeIntegerDecimalFromIntegerMonzo,
-    computeRealFromMonzo,
+    computeRealFromRealMonzo,
     doForEachMonzo,
     Exponent,
     Extrema,
@@ -21,7 +21,7 @@ const computeMaybeNumeratorWithinMaxN2D3P9 = (
     numeratorMonzoToCheck: IntegerMonzo,
     maxN2D3P9: Max<N2D3P9>,
 ): Maybe<IntegerNumerator> => {
-    const n2d3p9 = computeN2D3P9(computeRealFromMonzo(numeratorMonzoToCheck as RationalMonzo) as Two3FreeClass)
+    const n2d3p9 = computeN2D3P9(computeRealFromRealMonzo(numeratorMonzoToCheck as RationalMonzo) as Two3FreeClass)
 
     return n2d3p9 < maxN2D3P9 ?
         computeIntegerDecimalFromIntegerMonzo(numeratorMonzoToCheck) as IntegerNumerator :

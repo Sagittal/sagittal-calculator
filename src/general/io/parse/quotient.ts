@@ -1,4 +1,4 @@
-import { Denominator, NumericProperties, Quotient, QuotientPart } from "../../math"
+import { Denominator, NumericProperties, QuotientPart, RealQuotient } from "../../math"
 import { BLANK, SUPERSCRIPT_NUMBERS } from "../constants"
 import { split } from "../typedOperations"
 import { Char, Io } from "../types"
@@ -6,8 +6,8 @@ import { parseInteger } from "./integer"
 
 const superscriptReals = SUPERSCRIPT_NUMBERS.join()
 
-const parseQuotient = <T extends NumericProperties>(quotientIo: Io): Quotient<T> => {
-    const quotient = split(quotientIo, /[\/:]/).map((quotientPartIo: Io): QuotientPart => {
+const parseQuotient = <T extends NumericProperties>(quotientIo: Io): RealQuotient<T> => {
+    const realQuotient = split(quotientIo, /[\/:]/).map((quotientPartIo: Io): QuotientPart => {
         if (quotientPartIo.match(new RegExp(`[${superscriptReals}.]`))) {
             const factorPowers = quotientPartIo.split(".")
             return factorPowers.reduce(
@@ -29,15 +29,15 @@ const parseQuotient = <T extends NumericProperties>(quotientIo: Io): Quotient<T>
         }
     })
 
-    if (quotient.length === 1) {
-        quotient.push(1 as Denominator)
+    if (realQuotient.length === 1) {
+        realQuotient.push(1 as Denominator)
     }
 
     if (quotientIo.includes(":")) {
-        quotient.reverse()
+        realQuotient.reverse()
     }
 
-    return quotient as Quotient<T>
+    return realQuotient as RealQuotient<T>
 }
 
 export {

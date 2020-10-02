@@ -1,7 +1,7 @@
 import {
-    computeRealFromMonzo,
+    computeRealFromRealMonzo,
     computeTrimmedArray,
-    equalMonzos,
+    equalRealMonzos,
     Exponent,
     IntegerDecimal,
     Maybe,
@@ -23,20 +23,20 @@ const computeRationalMonzoInZone = (
 
     const rationalMonzoInZone = shallowClone(twoFreeRationalMonzo)
 
-    if (!equalMonzos(rationalMonzoInZone, [] as unknown[] as RationalMonzo)) {
-        while (realIsHigher(computeRealFromMonzo(rationalMonzoInZone), upperBound)) {
+    if (!equalRealMonzos(rationalMonzoInZone, [] as unknown[] as RationalMonzo)) {
+        while (realIsHigher(computeRealFromRealMonzo(rationalMonzoInZone), upperBound)) {
             rationalMonzoInZone[ TWO_PRIME_INDEX ] =
                 rationalMonzoInZone[ TWO_PRIME_INDEX ] - 1 as IntegerDecimal & Exponent<Prime>
         }
-        while (realIsLower(computeRealFromMonzo(rationalMonzoInZone), lowerBound)) {
+        while (realIsLower(computeRealFromRealMonzo(rationalMonzoInZone), lowerBound)) {
             rationalMonzoInZone[ TWO_PRIME_INDEX ] =
                 rationalMonzoInZone[ TWO_PRIME_INDEX ] + 1 as IntegerDecimal & Exponent<Prime>
         }
     }
 
     return (
-        realIsHigherOrEqual(computeRealFromMonzo(rationalMonzoInZone), lowerBound) &&
-        realIsLowerOrEqual(computeRealFromMonzo(rationalMonzoInZone), upperBound)
+        realIsHigherOrEqual(computeRealFromRealMonzo(rationalMonzoInZone), lowerBound) &&
+        realIsLowerOrEqual(computeRealFromRealMonzo(rationalMonzoInZone), upperBound)
     ) ?
         computeTrimmedArray(rationalMonzoInZone) :
         undefined

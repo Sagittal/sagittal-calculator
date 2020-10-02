@@ -1,4 +1,4 @@
-import { Monzo, NumericProperties, Quotient, Real, RealDecimal } from "../math"
+import { NumericProperties, Real, RealDecimal, RealMonzo, RealQuotient } from "../math"
 import { Extrema } from "../types"
 
 type Cents = number & { _CentsBrand: boolean }
@@ -20,8 +20,8 @@ type Zone<T = void> = Extrema<Real> & (T extends void ? {} : { _ZoneOfBrand: T }
 type PitchAnalysis<T extends NumericProperties = {}> = Real<T> & {
     cents: Cents,
     decimal: RealDecimal<T>,
-    quotient?: Quotient<T>,
-    monzo?: Monzo<T>,
+    quotient?: RealQuotient<T>,
+    monzo?: RealMonzo<T>,
 }
 
 export {

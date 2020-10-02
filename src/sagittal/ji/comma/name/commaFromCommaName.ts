@@ -1,4 +1,4 @@
-import { Comma, computeRationalMonzoFromRationalQuotient, computeRealFromMonzo } from "../../../../general"
+import { Comma, computeRationalMonzoFromRationalQuotient, computeRealFromRealMonzo } from "../../../../general"
 import { computeNotatingCommas } from "../find"
 import { computeSizeCategoryExtrema } from "./sizeCategoryExtrema"
 import { CommaNameQuotient, SizeCategoryName } from "./types"
@@ -11,7 +11,7 @@ const computeCommaFromCommaNameQuotientAndSizeCategoryName = (
     const [lowerBound, upperBound] = computeSizeCategoryExtrema(sizeCategoryName)
 
     const two3FreeMonzo = computeRationalMonzoFromRationalQuotient(commaNameQuotient)
-    const commas = computeNotatingCommas(computeRealFromMonzo(two3FreeMonzo), { lowerBound, upperBound })
+    const commas = computeNotatingCommas(computeRealFromRealMonzo(two3FreeMonzo), { lowerBound, upperBound })
 
     if (commas.length !== 1) {
         throw new Error(`For whatever reason the number of commas exactly notating the monzo ${(two3FreeMonzo)} in the range of that size category ${sizeCategoryName} was not 1. It was ${commas.length}.`)

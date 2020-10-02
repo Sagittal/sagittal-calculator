@@ -3,7 +3,7 @@ import {
     computeIntegerMonzoFromIntegerDecimal,
     computeRationalQuotientFromRational,
     computeRoughRationalQuotient,
-    computeSubQuotient,
+    computeSubRealQuotient,
     computeSuperReal,
     Direction,
     Exponent,
@@ -28,10 +28,10 @@ import { CommaNameOptions, CommaNameQuotient, SizeCategoryAbbreviation, SizeCate
 const primeFactorize = (numeratorOrDenominator: IntegerQuotientPart): string => {
     if (numeratorOrDenominator === 1) return "1"
 
-    const monzo = computeIntegerMonzoFromIntegerDecimal(numeratorOrDenominator)
+    const integerMonzo = computeIntegerMonzoFromIntegerDecimal(numeratorOrDenominator)
     const factorizedTerms: string[] = []
 
-    monzo.forEach((primeExponent: IntegerDecimal & Exponent<Prime>, primeExponentIndex: number): void => {
+    integerMonzo.forEach((primeExponent: IntegerDecimal & Exponent<Prime>, primeExponentIndex: number): void => {
         if (primeExponent === 0) {
             return
         }
@@ -89,7 +89,7 @@ const computeCommaName = (
                 stringifiedQuotient[ 0 ] :
                 stringifiedQuotient.join("/")
         } else {
-            const stringifiedQuotient = stringifyQuotient(computeSubQuotient(commaNameQuotient), { factored })
+            const stringifiedQuotient = stringifyQuotient(computeSubRealQuotient(commaNameQuotient), { factored })
 
             formattedCommaNameQuotient = stringifiedQuotient[ 0 ] === "1" ?
                 stringifiedQuotient[ 1 ] :

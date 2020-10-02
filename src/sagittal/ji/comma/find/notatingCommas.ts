@@ -2,9 +2,9 @@ import {
     Comma,
     computeRationalMonzoFromRational,
     computeRoughRationalMonzo,
-    equalMonzos,
+    equalRealMonzos,
     FIVE_ROUGHNESS,
-    invertMonzo,
+    invertRealMonzo,
     NumericProperties,
     Rational,
     RationalMonzo,
@@ -26,13 +26,13 @@ const computeNotatingCommas = <T extends NumericProperties>(
     const two3FreeRationalMonzo: RationalMonzo<{ rough: 5 }> =
         computeRoughRationalMonzo(rationalMonzo, FIVE_ROUGHNESS) as RationalMonzo<{ rough: 5 }>
 
-    if (equalMonzos(two3FreeRationalMonzo, [])) {
+    if (equalRealMonzos(two3FreeRationalMonzo, [])) {
         return computeCommasFrom23FreeRationalMonzo(two3FreeRationalMonzo, options)
     }
 
     return [
         ...computeCommasFrom23FreeRationalMonzo(two3FreeRationalMonzo, options),
-        ...computeCommasFrom23FreeRationalMonzo(invertMonzo(two3FreeRationalMonzo), options),
+        ...computeCommasFrom23FreeRationalMonzo(invertRealMonzo(two3FreeRationalMonzo), options),
     ]
 }
 

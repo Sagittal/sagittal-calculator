@@ -11,9 +11,9 @@ import { IntegerMonzo, RationalMonzo } from "./types"
 const computeRationalMonzoFromRationalDecimal = <T extends NumericProperties>(
     rationalDecimal: RationalDecimal<T>,
 ): RationalMonzo<T> => {
-    const quotient = computeRationalQuotientFromRationalDecimal(rationalDecimal)
+    const rationalQuotient = computeRationalQuotientFromRationalDecimal(rationalDecimal)
 
-    return computeRationalMonzoFromRationalQuotient(quotient) as RationalMonzo<T>
+    return computeRationalMonzoFromRationalQuotient(rationalQuotient) as RationalMonzo<T>
 }
 
 const computeIntegerMonzoFromIntegerDecimal = <T extends NumericProperties>(

@@ -20,7 +20,7 @@ interface JiPitchAnalysisProperties<T extends NumericProperties = {}> {
     quotient: RationalQuotient<T>,
     decimal: RationalDecimal<T>,
     cents: Cents,
-    two3FreeClassAnalysis: Two3FreeClassAnalysis<T>,
+    two3FreeClassAnalysis: Two3FreeClassAnalysis,
 }
 
 type JiPitchAnalysis<T extends NumericProperties = {}> = Rational<T> & JiPitchAnalysisProperties<T>

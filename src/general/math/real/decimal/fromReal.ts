@@ -2,11 +2,11 @@ import { isNumber, isUndefined } from "../../../code"
 import { formatReal } from "../../../io"
 import { Rational, RationalDecimal } from "../../rational"
 import { NumericProperties, Real } from "../types"
-import { computeDecimalFromMonzo } from "./fromMonzo"
-import { computeDecimalFromQuotient } from "./fromQuotient"
+import { computeRealDecimalFromRealMonzo } from "./fromMonzo"
+import { computeRealDecimalFromRealQuotient } from "./fromQuotient"
 import { RealDecimal } from "./types"
 
-const computeDecimalFromReal: {
+const computeRealDecimalFromReal: {
     <T extends NumericProperties>(realOrRealDecimal: Rational<T> | RationalDecimal<T>): RationalDecimal<T>
     <T extends NumericProperties>(realOrRealDecimal: Real<T> | RealDecimal<T>): RealDecimal<T>,
 } = <T extends NumericProperties>(realOrRealDecimal: Real<T> | RealDecimal<T>): RealDecimal<T> => {
@@ -17,14 +17,14 @@ const computeDecimalFromReal: {
     if (!isUndefined(realOrRealDecimal.decimal)) {
         return realOrRealDecimal.decimal
     } else if (!isUndefined(realOrRealDecimal.quotient)) {
-        return computeDecimalFromQuotient(realOrRealDecimal.quotient)
+        return computeRealDecimalFromRealQuotient(realOrRealDecimal.quotient)
     } else if (!isUndefined(realOrRealDecimal.monzo)) {
-        return computeDecimalFromMonzo(realOrRealDecimal.monzo)
+        return computeRealDecimalFromRealMonzo(realOrRealDecimal.monzo)
     }
 
     throw new Error(`Tried to compute decimal from real ${formatReal(realOrRealDecimal)} but no numeric representations were found.`)
 }
 
 export {
-    computeDecimalFromReal,
+    computeRealDecimalFromReal,
 }

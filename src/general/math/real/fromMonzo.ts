@@ -1,14 +1,14 @@
 import { Integer, IntegerMonzo, Rational, RationalMonzo } from "../rational"
-import { Monzo } from "./monzo"
+import { RealMonzo } from "./monzo"
 import { NumericProperties, Real } from "./types"
 
-const computeRealFromMonzo: {
+const computeRealFromRealMonzo: {
     <T extends NumericProperties>(monzo: IntegerMonzo<T>): Integer<T>
     <T extends NumericProperties>(monzo: RationalMonzo<T>): Rational<T>
-    <T extends NumericProperties>(monzo: Monzo<T>): Real<T>,
-} = <T extends NumericProperties>(monzo: Monzo<T>): any =>
+    <T extends NumericProperties>(monzo: RealMonzo<T>): Real<T>,
+} = <T extends NumericProperties>(monzo: RealMonzo<T>): any =>
     ({ monzo })
 
 export {
-    computeRealFromMonzo,
+    computeRealFromRealMonzo,
 }

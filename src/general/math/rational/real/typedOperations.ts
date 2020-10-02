@@ -1,10 +1,10 @@
 import { isNumber, isUndefined } from "../../../code"
 import {
-    computeDecimalFromReal,
-    computeMonzoSum,
-    computeRealFromRealOrDecimal,
-    invertMonzo,
-    invertQuotient,
+    computeRealDecimalFromReal,
+    computeRealFromRealOrRealDecimal,
+    computeRealMonzoSum,
+    invertRealMonzo,
+    invertRealQuotient,
     NumericProperties,
 } from "../../real"
 import { divide, multiply } from "../../typedOperations"
@@ -18,7 +18,7 @@ const divideRationals = <T extends NumericProperties>(
     divisorRationalOrRationalDecimal: Rational<T> | RationalDecimal<T>,
 ): Rational<T> | RationalDecimal<T> => {
     if (isNumber(dividendRationalOrRationalDecimal)) {
-        return divide(dividendRationalOrRationalDecimal, computeDecimalFromReal(divisorRationalOrRationalDecimal))
+        return divide(dividendRationalOrRationalDecimal, computeRealDecimalFromReal(divisorRationalOrRationalDecimal))
     }
 
     const {
@@ -30,20 +30,20 @@ const divideRationals = <T extends NumericProperties>(
     const dividedRational: Rational<T> = {} as Rational<T>
     if (!isUndefined(dividendMonzo)) {
         const divisorMonzo =
-            computeRationalMonzoFromRational(computeRealFromRealOrDecimal(divisorRationalOrRationalDecimal))
+            computeRationalMonzoFromRational(computeRealFromRealOrRealDecimal(divisorRationalOrRationalDecimal))
 
         dividedRational.monzo =
-            computeMonzoSum(dividendMonzo, invertMonzo(divisorMonzo)) as RationalMonzo<T>
+            computeRealMonzoSum(dividendMonzo, invertRealMonzo(divisorMonzo)) as RationalMonzo<T>
     }
     if (!isUndefined(dividendQuotient)) {
         const divisorQuotient =
-            computeRationalQuotientFromRational(computeRealFromRealOrDecimal(divisorRationalOrRationalDecimal))
+            computeRationalQuotientFromRational(computeRealFromRealOrRealDecimal(divisorRationalOrRationalDecimal))
 
         dividedRational.quotient =
-            computeRationalQuotientProduct(dividendQuotient, invertQuotient(divisorQuotient)) as RationalQuotient<T>
+            computeRationalQuotientProduct(dividendQuotient, invertRealQuotient(divisorQuotient)) as RationalQuotient<T>
     }
     if (!isUndefined(dividendDecimal)) {
-        const divisorDecimal = computeDecimalFromReal(divisorRationalOrRationalDecimal)
+        const divisorDecimal = computeRealDecimalFromReal(divisorRationalOrRationalDecimal)
 
         dividedRational.decimal =
             divide(dividendDecimal, divisorDecimal)
@@ -59,7 +59,7 @@ const multiplyRationals = <T extends NumericProperties>(
     if (isNumber(multiplicandRationalOrRationalDecimal)) {
         return multiply(
             multiplicandRationalOrRationalDecimal, 
-            computeDecimalFromReal(multiplierRationalOrRationalDecimal)
+            computeRealDecimalFromReal(multiplierRationalOrRationalDecimal)
         )
     }
 
@@ -72,21 +72,21 @@ const multiplyRationals = <T extends NumericProperties>(
     const multipliedRational: Rational<T> = {} as Rational<T>
     if (!isUndefined(multiplicandMonzo)) {
         const multiplierMonzo =
-            computeRationalMonzoFromRational(computeRealFromRealOrDecimal(multiplierRationalOrRationalDecimal))
+            computeRationalMonzoFromRational(computeRealFromRealOrRealDecimal(multiplierRationalOrRationalDecimal))
 
         multipliedRational.monzo =
-            computeMonzoSum(multiplicandMonzo, multiplierMonzo) as RationalMonzo<T>
+            computeRealMonzoSum(multiplicandMonzo, multiplierMonzo) as RationalMonzo<T>
     }
     if (!isUndefined(multiplicandQuotient)) {
         const multiplierQuotient =
-            computeRationalQuotientFromRational(computeRealFromRealOrDecimal(multiplierRationalOrRationalDecimal))
+            computeRationalQuotientFromRational(computeRealFromRealOrRealDecimal(multiplierRationalOrRationalDecimal))
 
         multipliedRational.quotient =
             computeRationalQuotientProduct(multiplicandQuotient, multiplierQuotient) as RationalQuotient<T>
     }
     if (!isUndefined(multiplicandDecimal)) {
         const multiplierDecimal =
-            computeDecimalFromReal(multiplierRationalOrRationalDecimal)
+            computeRealDecimalFromReal(multiplierRationalOrRationalDecimal)
 
         multipliedRational.decimal =
             multiply(multiplicandDecimal, multiplierDecimal)

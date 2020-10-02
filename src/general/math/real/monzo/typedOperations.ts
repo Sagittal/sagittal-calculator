@@ -1,23 +1,23 @@
 import { computeRange, computeTrimmedArray } from "../../../code"
-import { add, count, Exponent, max, Monzo, NumericProperties, Prime } from "../../../math"
+import { add, count, Exponent, max, NumericProperties, Prime, RealMonzo } from "../../../math"
 
-const computeMonzoSum = <T extends NumericProperties>(...monzos: Array<Monzo<T>>): Monzo<T> => {
-    const maxMonzoLength = max(...monzos.map(count))
+const computeRealMonzoSum = <T extends NumericProperties>(...realMonzos: Array<RealMonzo<T>>): RealMonzo<T> => {
+    const maxMonzoLength = max(...realMonzos.map(count))
 
-    const summedMonzos: Monzo = computeRange(maxMonzoLength).map((index: number): Exponent<Prime> => {
-        return monzos.reduce(
-            (totalPrimeExponent: Exponent<Prime>, monzo: Monzo): Exponent<Prime> => {
+    const summedMonzos: RealMonzo = computeRange(maxMonzoLength).map((index: number): Exponent<Prime> => {
+        return realMonzos.reduce(
+            (totalPrimeExponent: Exponent<Prime>, monzo: RealMonzo): Exponent<Prime> => {
                 const primeExponent: Exponent<Prime> = monzo[ index ] || 0 as Exponent<Prime>
 
                 return add(totalPrimeExponent, primeExponent)
             },
             0 as Exponent<Prime>,
         ) as Exponent<Prime>
-    }) as Monzo
+    }) as RealMonzo
 
-    return computeTrimmedArray(summedMonzos) as Monzo<T>
+    return computeTrimmedArray(summedMonzos) as RealMonzo<T>
 }
 
 export {
-    computeMonzoSum,
+    computeRealMonzoSum,
 }

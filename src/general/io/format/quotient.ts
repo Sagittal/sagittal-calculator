@@ -1,10 +1,10 @@
-import { computeSuperQuotient, Quotient } from "../../math"
+import { computeSuperRealQuotient, RealQuotient } from "../../math"
 import { Formatted } from "./types"
 
-const formatQuotient = <T extends Quotient>(
+const formatQuotient = <T extends RealQuotient>(
     inputQuotient: T, { directed }: { directed: boolean } = { directed: true },
 ): Formatted<T> => {
-    const [numerator, denominator] = directed ? inputQuotient : computeSuperQuotient(inputQuotient)
+    const [numerator, denominator] = directed ? inputQuotient : computeSuperRealQuotient(inputQuotient)
 
     return directed ?
         `${numerator}/${denominator}` as Formatted<T> :
@@ -17,8 +17,8 @@ export {
 
 /*
 5/4 valid directed quotient (super)      4/5 valid directed quotient (sub)
-[5, 4] as Quotient                             [4, 5] as Quotient
+[5, 4] as RealQuotient                             [4, 5] as RealQuotient
 
 5:4 does not exist                          4:5 valid undirected quotient
-                                            [5, 4] as Quotient<Undirected>
+                                            [5, 4] as RealQuotient<Undirected>
  */

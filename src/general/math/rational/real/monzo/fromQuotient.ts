@@ -1,4 +1,4 @@
-import { computeMonzoSum, Direction, invertMonzo, NumericProperties } from "../../../real"
+import { computeRealMonzoSum, Direction, invertRealMonzo, NumericProperties } from "../../../real"
 import { RationalQuotient } from "../quotient"
 import { computeIntegerMonzoFromIntegerDecimal } from "./fromDecimal"
 import { RationalMonzo } from "./types"
@@ -9,9 +9,9 @@ const computeRationalMonzoFromRationalQuotient = <T extends NumericProperties>(
     const positiveFactors: RationalMonzo<{ direction: Direction.SUPER }> =
         computeIntegerMonzoFromIntegerDecimal(numerator)
     const negativeFactors: RationalMonzo<{ direction: Direction.SUB }> =
-        invertMonzo(computeIntegerMonzoFromIntegerDecimal(denominator))
+        invertRealMonzo(computeIntegerMonzoFromIntegerDecimal(denominator))
 
-    return computeMonzoSum(positiveFactors, negativeFactors) as RationalMonzo<T>
+    return computeRealMonzoSum(positiveFactors, negativeFactors) as RationalMonzo<T>
 }
 
 export {

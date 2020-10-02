@@ -1,5 +1,5 @@
 import { RealDecimal } from "../decimal"
-import { Monzo } from "../monzo"
+import { RealMonzo } from "../monzo"
 import { NumericProperties, NumTypeParameterEffects } from "../types"
 
 type NumTypeParameterTranslationForQuotientsToTheirQuotientPartsExceptRationality<T extends NumericProperties = {}> =
@@ -12,7 +12,7 @@ type Numerator<T extends NumericProperties = {}> =
 type Denominator<T extends NumericProperties = {}> =
     RealDecimal<NumTypeParameterTranslationForQuotientsToTheirQuotientPartsExceptRationality<T>>
     & { _DenominatorBrand: boolean }
-type Quotient<T extends NumericProperties = {}> =
+type RealQuotient<T extends NumericProperties = {}> =
     [Numerator<T>, Denominator<T>]
     & NumTypeParameterEffects<T>
 
@@ -23,18 +23,18 @@ enum QuotientPartType {
 
 type QuotientPart<T extends NumericProperties = {}> = Numerator<T> | Denominator<T>
 
-type RealByQuotient<T extends NumericProperties> = {
+type RealByRealQuotient<T extends NumericProperties> = {
     decimal?: RealDecimal<T>,
-    monzo?: Monzo<T>,
-    quotient: Quotient<T>,
+    monzo?: RealMonzo<T>,
+    quotient: RealQuotient<T>,
 }
 
 export {
     NumTypeParameterTranslationForQuotientsToTheirQuotientPartsExceptRationality,
     QuotientPartType,
-    Quotient,
+    RealQuotient,
     QuotientPart,
-    RealByQuotient,
+    RealByRealQuotient,
     Numerator,
     Denominator,
 }

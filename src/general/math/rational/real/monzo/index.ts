@@ -6,4 +6,4 @@ export { isSmoothRationalMonzo, computeRationalMonzoSmoothness } from "./smoothn
 export { isRationalMonzo } from "./typeGuards"
 export { doForEachMonzo } from "./doForEachMonzo"
 export { computeRationalMonzoFromRational } from "./fromRational"
-export { RationalByMonzo, RationalMonzo, IntegerMonzo, IntegerByMonzo } from "./types"
+export { RationalByRationalMonzo, RationalMonzo, IntegerMonzo, IntegerByIntegerMonzo } from "./types"

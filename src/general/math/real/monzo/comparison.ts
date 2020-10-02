@@ -1,9 +1,9 @@
 import { computeTrimmedArray, deepEquals } from "../../../code"
-import { Monzo } from "./types"
+import { RealMonzo } from "./types"
 
-const equalMonzos = (monzoA: Monzo, monzoB: Monzo): boolean =>
-    deepEquals(computeTrimmedArray(monzoA), computeTrimmedArray(monzoB))
+const equalRealMonzos = (realMonzoA: RealMonzo, realMonzoB: RealMonzo): boolean =>
+    deepEquals(computeTrimmedArray(realMonzoA), computeTrimmedArray(realMonzoB))
 
 export {
-    equalMonzos,
+    equalRealMonzos,
 }

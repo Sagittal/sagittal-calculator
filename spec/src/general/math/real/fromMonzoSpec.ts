@@ -1,22 +1,22 @@
 import { Integer, IntegerMonzo, Rational } from "../../../../../src/general/math/rational/real"
 import { RationalMonzo } from "../../../../../src/general/math/rational/real/monzo"
-import { computeRealFromMonzo, Real } from "../../../../../src/general/math/real"
-import { Monzo } from "../../../../../src/general/math/real/monzo"
+import { computeRealFromRealMonzo, Real } from "../../../../../src/general/math/real"
+import { RealMonzo } from "../../../../../src/general/math/real/monzo"
 
-describe("computeRealFromMonzo", (): void => {
+describe("computeRealFromRealMonzo", (): void => {
     it("creates a real from a monzo", (): void => {
-        const monzo = [0, 0, -1.1, 1] as Monzo
+        const monzo = [0, 0, -1.1, 1] as RealMonzo
 
-        const actual = computeRealFromMonzo(monzo)
+        const actual = computeRealFromRealMonzo(monzo)
 
-        const expected: Real = { monzo: [0, 0, -1.1, 1] as Monzo }
+        const expected: Real = { monzo: [0, 0, -1.1, 1] as RealMonzo }
         expect(actual).toEqual(expected)
     })
 
     it("works for rational monzos", (): void => {
         const rationalMonzo = [0, 0, -1, 1] as RationalMonzo
 
-        const actual = computeRealFromMonzo(rationalMonzo)
+        const actual = computeRealFromRealMonzo(rationalMonzo)
 
         const expected: Rational = { monzo: [0, 0, -1, 1] as RationalMonzo }
         expect(actual).toEqual(expected)
@@ -25,7 +25,7 @@ describe("computeRealFromMonzo", (): void => {
     it("works for integer monzos", (): void => {
         const integerMonzo = [0, 0, 1, 1] as IntegerMonzo
 
-        const actual = computeRealFromMonzo(integerMonzo)
+        const actual = computeRealFromRealMonzo(integerMonzo)
 
         const expected: Integer = { monzo: [0, 0, 1, 1] as IntegerMonzo }
         expect(actual).toEqual(expected)

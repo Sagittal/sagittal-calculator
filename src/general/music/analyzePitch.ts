@@ -1,9 +1,9 @@
 import { isUndefined } from "../code"
 import {
-    computeDecimalFromReal,
-    computeQuotientFromMonzo,
     computeRationalMonzoFromRationalQuotient,
-    computeRealFromRealOrDecimal,
+    computeRealDecimalFromReal,
+    computeRealFromRealOrRealDecimal,
+    computeRealQuotientFromRealMonzo,
     isRational,
     NumericProperties,
     Real,
@@ -15,19 +15,19 @@ import { PitchAnalysis } from "./types"
 const analyzePitch = <T extends NumericProperties, U extends Real | RealDecimal<T>>(
     pitchNumOrDecimal: U,
 ): Exclude<U, RealDecimal<T>> & PitchAnalysis<T> => {
-    const pitch = computeRealFromRealOrDecimal(pitchNumOrDecimal)
+    const pitch = computeRealFromRealOrRealDecimal(pitchNumOrDecimal)
 
     const pitchAnalysis = {
         ...pitch,
-        decimal: computeDecimalFromReal(computeRealFromRealOrDecimal(pitchNumOrDecimal)),
-        cents: computeCentsFromPitch(computeRealFromRealOrDecimal(pitchNumOrDecimal)),
+        decimal: computeRealDecimalFromReal(computeRealFromRealOrRealDecimal(pitchNumOrDecimal)),
+        cents: computeCentsFromPitch(computeRealFromRealOrRealDecimal(pitchNumOrDecimal)),
     }
 
     if (isUndefined(pitch.quotient) && !isUndefined(pitch.monzo)) {
         pitchAnalysis.quotient = 
-            computeQuotientFromMonzo(pitch.monzo, { disableErrorBecauseExactValueNotRequired: true })
+            computeRealQuotientFromRealMonzo(pitch.monzo, { disableErrorBecauseExactValueNotRequired: true })
     }
-    if (isUndefined(pitch.monzo) && !isUndefined(pitch.quotient) && isRational(pitch)) {
+    if (isRational(pitch) && isUndefined(pitch.monzo) && !isUndefined(pitch.quotient)) {
         pitchAnalysis.monzo = computeRationalMonzoFromRationalQuotient(pitch.quotient)
     }
 

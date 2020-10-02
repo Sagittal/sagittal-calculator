@@ -1,5 +1,5 @@
 import { isUndefined } from "../../code"
-import { computeRealFromRealOrDecimal, Real, RealDecimal } from "../../math"
+import { computeRealFromRealOrRealDecimal, Real, RealDecimal } from "../../math"
 import { stringify } from "../stringify"
 import { formatDecimal } from "./decimal"
 import { formatMonzo } from "./monzo"
@@ -7,7 +7,7 @@ import { formatQuotient } from "./quotient"
 import { Formatted } from "./types"
 
 const formatReal = (realOrRealDecimal: Real | RealDecimal, options: { align?: boolean } = {}): Formatted<Real> => {
-    const { quotient, monzo, decimal } = computeRealFromRealOrDecimal(realOrRealDecimal)
+    const { quotient, monzo, decimal } = computeRealFromRealOrRealDecimal(realOrRealDecimal)
 
     if (!isUndefined(quotient)) {
         return formatQuotient(quotient) as Formatted as Formatted<Real>

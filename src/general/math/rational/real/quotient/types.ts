@@ -20,7 +20,7 @@ type RationalQuotient<T extends NumericProperties = {}> =
     [IntegerNumerator<T>, IntegerDenominator<T>]
     & NumTypeParameterEffects<T & { rational: true }>
 
-type RationalByQuotient<T extends NumericProperties = {}> = {
+type RationalByRationalQuotient<T extends NumericProperties = {}> = {
     decimal?: RationalDecimal<T>,
     monzo?: RationalMonzo<T>,
     quotient: RationalQuotient<T>,
@@ -29,7 +29,7 @@ type IntegerQuotient<T extends NumericProperties = {}> =
     [IntegerNumerator<T>, IntegerDenominator<T>]
     & NumTypeParameterEffects<T & { integer: true, rational: true, direction: Direction.SUPER }>
 
-type IntegerByQuotient<T extends NumericProperties = {}> = {
+type IntegerByIntegerQuotient<T extends NumericProperties = {}> = {
     decimal?: IntegerDecimal<T>,
     monzo?: IntegerMonzo<T>,
     quotient: IntegerQuotient<T>,
@@ -40,7 +40,7 @@ export {
     IntegerDenominator,
     IntegerQuotientPart,
     RationalQuotient,
-    RationalByQuotient,
+    RationalByRationalQuotient,
     IntegerQuotient,
-    IntegerByQuotient,
+    IntegerByIntegerQuotient,
 }

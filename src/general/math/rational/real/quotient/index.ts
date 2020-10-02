@@ -7,11 +7,11 @@ export { equalQuotients } from "./comparison"
 export { computeRationalQuotientProduct } from "./typedOperations"
 export { computeLowestTermsRationalQuotient } from "./lowestTerms"
 export {
-    RationalByQuotient,
+    RationalByRationalQuotient,
     RationalQuotient,
     IntegerDenominator,
     IntegerQuotientPart,
     IntegerNumerator,
     IntegerQuotient,
-    IntegerByQuotient,
+    IntegerByIntegerQuotient,
 } from "./types"

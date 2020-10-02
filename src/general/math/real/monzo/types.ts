@@ -2,10 +2,10 @@ import { Ed, Step, Window } from "../../../types"
 import { Prime } from "../../rational"
 import { Exponent, Max } from "../../types"
 import { RealDecimal } from "../decimal"
-import { Quotient } from "../quotient"
+import { RealQuotient } from "../quotient"
 import { NumericProperties, NumTypeParameterEffects } from "../types"
 
-type Monzo<T extends NumericProperties = {}> =
+type RealMonzo<T extends NumericProperties = {}> =
     Array<Exponent<Prime>>
     & NumTypeParameterEffects<T>
 
@@ -45,15 +45,15 @@ interface PatentValOptions<T extends Window> {
     primeLimit: Max<Max<Prime>>
 }
 
-type RealByMonzo<T extends NumericProperties> = {
+type RealByRealMonzo<T extends NumericProperties> = {
     decimal?: RealDecimal<T>,
-    monzo: Monzo<T>,
-    quotient?: Quotient<T>,
+    monzo: RealMonzo<T>,
+    quotient?: RealQuotient<T>,
 }
 
 export {
     Val,
     PatentValOptions,
-    Monzo,
-    RealByMonzo,
+    RealMonzo,
+    RealByRealMonzo,
 }

@@ -1,11 +1,11 @@
-import { equalIrrationalQuotients, Quotient } from "../../../../../../src/general/math/real/quotient"
+import { equalRealQuotients, RealQuotient } from "../../../../../../src/general/math/real/quotient"
 
-describe("equalIrrationalQuotients", (): void => {
+describe("equalRealQuotients", (): void => {
     it("returns true when quotients are equal when reduced to lowest terms, even if they are irrational", (): void => {
-        const quotientA = [11.1, 7.2] as Quotient
-        const quotientB = [22.2, 14.4] as Quotient
+        const quotientA = [11.1, 7.2] as RealQuotient
+        const quotientB = [22.2, 14.4] as RealQuotient
 
-        const actual = equalIrrationalQuotients(quotientA, quotientB)
+        const actual = equalRealQuotients(quotientA, quotientB)
 
         expect(actual).toBeTruthy()
     })

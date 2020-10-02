@@ -3,7 +3,7 @@ import {
     computeCopfr,
     computePrimeLimit,
     computeRationalMonzoFromRational,
-    computeRealFromMonzo,
+    computeRealFromRealMonzo,
     computeSopfr,
     Copfr,
     Max,
@@ -23,9 +23,9 @@ const analyze23FreeClass = (two3FreeClass: Two3FreeClass): Two3FreeClassAnalysis
     //  CONDUCT AT REAL LEVEL
     const two3FreeClassMonzo = computeRationalMonzoFromRational(two3FreeClass)
     const two3FreeSopfr: Sopfr<{ rough: 5 }> =
-        computeSopfr(computeRealFromMonzo(two3FreeClassMonzo)) as Sopfr<{ rough: 5 }>
+        computeSopfr(computeRealFromRealMonzo(two3FreeClassMonzo)) as Sopfr<{ rough: 5 }>
     const two3FreeCopfr: Copfr<{ rough: 5 }> =
-        computeCopfr(computeRealFromMonzo(two3FreeClassMonzo)) as Copfr<{ rough: 5 }>
+        computeCopfr(computeRealFromRealMonzo(two3FreeClassMonzo)) as Copfr<{ rough: 5 }>
 
     const n2d3p9: N2D3P9 = computeN2D3P9(two3FreeClass)
 

@@ -4,12 +4,12 @@ import {
     CommandFlag,
     IntegerDecimal,
     Io,
-    Monzo,
     parseInteger,
     parseMonzo,
     parseQuotient,
-    Quotient,
     Real,
+    RealMonzo,
+    RealQuotient,
 } from "../../../general"
 import { computeCommaFromCommaNameQuotientAndSizeCategoryName, parseCommaName, parsePitch } from "../../../sagittal"
 
@@ -18,12 +18,12 @@ const readJiPitchOptions = (): void => {
         .option(
             `-${CommandFlag.MONZO}, --monzo <monzo>`,
             "monzo",
-            (monzoIo: string): Monzo => parseMonzo(monzoIo as Io),
+            (monzoIo: string): RealMonzo => parseMonzo(monzoIo as Io),
         )
         .option(
             `-${CommandFlag.QUOTIENT}, --quotient <quotient>`,
             "quotient",
-            (quotientIo: string): Quotient => parseQuotient(quotientIo as Io),
+            (quotientIo: string): RealQuotient => parseQuotient(quotientIo as Io),
         )
         .option(
             `-${CommandFlag.COMMA_NAME}, --comma-name <commaName>`,
