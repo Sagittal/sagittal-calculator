@@ -1,5 +1,3 @@
-export { computeCentsFromPitch } from "./centsFromPitch"
-export { computeCents } from "./cents"
 export {
     compute23FreeClass,
     THREE_PRIME_LIMIT,
@@ -14,7 +12,32 @@ export {
     computePrimeLimit,
     compute23FreeClassName,
     format23FreeClass,
+    isJi,
+    computeJiPitchCopfr,
+    computeJiPitchSopfr,
 } from "./ji"
 export { CENTS_PER_OCTAVE } from "./constants"
-export { computeNumberFromCents } from "./numberFromCents"
 export { Cents, Zone } from "./types"
+export {
+    isSubPitch,
+    isSuperPitch,
+    isUnisonPitch,
+    computeSuperPitch,
+    equalPitches,
+    pitchIsHigher,
+    pitchIsLower,
+    pitchIsLowerOrEqual,
+    pitchIsHigherOrEqual,
+    sqrtPitch,
+    computePitchFromDecimal,
+    Pitch,
+    SQRT_SCALER,
+    computeDecimalFromPitch,
+    computeCentsFromPitch,
+    computePitchFromCents,
+    computePitchFromMonzo,
+    computePitchFromQuotient,
+    computeMonzoFromPitch,
+    computeQuotientFromPitch,
+    addPitches,
+} from "./pitch"

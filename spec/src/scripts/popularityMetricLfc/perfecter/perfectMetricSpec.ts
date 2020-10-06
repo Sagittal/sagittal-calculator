@@ -1,4 +1,4 @@
-import { Combination, Ed, Index, IntegerDecimal, Io, Name, Step, Window } from "../../../../../src/general"
+import { Combination, Decimal, Ed, Index, Io, Name, Step, Window } from "../../../../../src/general"
 import { Metric, Scope, SumOfSquares } from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import { SamplePoint } from "../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
 import { recursiveSearchScopeAndMaybeUpdateBestMetric } from "../../../../../src/scripts/popularityMetricLfc/perfecter"
@@ -28,7 +28,7 @@ describe("searchScopeAndMaybeUpdateBestMetric", (): void => {
                 [ Parameter.A_AS_COEFFICIENT ]: 3.3 as ParameterValue,
             },
         ] as Scope
-        const depth = 8 as IntegerDecimal
+        const depth = 8 as Decimal<{ integer: true }>
         const metricTag = "this is fun" as MetricTag
         const localMin = {
             sumOfSquares: 0.04 as SumOfSquares,

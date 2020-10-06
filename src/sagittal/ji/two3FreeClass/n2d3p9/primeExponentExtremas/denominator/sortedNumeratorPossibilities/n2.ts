@@ -1,9 +1,22 @@
-import { BASE_2, computeCopfr, Count, Exponent, IntegerNumerator, pow, Prime } from "../../../../../../../general"
+import {
+    BASE_2,
+    computeRationalDecimalCopfr,
+    Count,
+    Decimal,
+    Exponent,
+    Numerator,
+    pow,
+    Prime,
+} from "../../../../../../../general"
 import { N2 } from "./types"
 
-const computeN2 = (integerNumerator: IntegerNumerator): N2 => {
-    return integerNumerator / pow(BASE_2, computeCopfr(integerNumerator) as number as Exponent<Count<Prime>>) as N2
-}
+const computeN2 = (numerator: Numerator & Decimal<{ integer: true }>): N2 =>
+    numerator /
+    pow(
+        BASE_2,
+        computeRationalDecimalCopfr(numerator) as number as Exponent<Count<Prime>>,
+    ) as N2
+
 
 export {
     computeN2,

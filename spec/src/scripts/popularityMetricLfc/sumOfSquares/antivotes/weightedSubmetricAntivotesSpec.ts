@@ -7,8 +7,9 @@ import { computeWeightedSubmetricAntivotes } from "../../../../../../src/scripts
 import { Antivotes } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/types"
 
 describe("computeWeightedSubmetricAntivotes", (): void => {
+    const two3FreeClass = { monzo: [-1, 1, 1, -1] } as Two3FreeClass
+
     it("returns 0 when the weight is 0", (): void => {
-        const two3FreeClass = { quotient: [15, 14] } as Two3FreeClass
         const submetric = { [ Parameter.WEIGHT_AS_COEFFICIENT ]: 0 as ParameterValue, [ Parameter.SUM ]: true }
 
         const actual = computeWeightedSubmetricAntivotes(two3FreeClass, submetric)
@@ -20,7 +21,6 @@ describe("computeWeightedSubmetricAntivotes", (): void => {
     it("does not waste resources calling compute23FreeClassSubmetricAntivotes when the weight is 0", (): void => {
         spyOn(two3FreeClassSubmetricAntivotes, "compute23FreeClassSubmetricAntivotes")
 
-        const two3FreeClass = { quotient: [15, 14] } as Two3FreeClass
         const submetric = { [ Parameter.WEIGHT_AS_COEFFICIENT ]: 0 as ParameterValue, [ Parameter.SUM ]: true }
 
         computeWeightedSubmetricAntivotes(two3FreeClass, submetric)
@@ -29,7 +29,6 @@ describe("computeWeightedSubmetricAntivotes", (): void => {
     })
 
     it("returns the full submetric antivotes when the weight is 1", (): void => {
-        const two3FreeClass = { quotient: [15, 14] } as Two3FreeClass
         const submetric = { [ Parameter.WEIGHT_AS_COEFFICIENT ]: 1 as ParameterValue, [ Parameter.SUM ]: true }
 
         const actual = computeWeightedSubmetricAntivotes(two3FreeClass, submetric)
@@ -42,7 +41,6 @@ describe("computeWeightedSubmetricAntivotes", (): void => {
     })
 
     it("returns the weighted value of the submetric antivotes", (): void => {
-        const two3FreeClass = { quotient: [15, 14] } as Two3FreeClass
         const submetric = { [ Parameter.WEIGHT_AS_COEFFICIENT ]: 0.5 as ParameterValue, [ Parameter.SUM ]: true }
 
         const actual = computeWeightedSubmetricAntivotes(two3FreeClass, submetric)
@@ -55,7 +53,6 @@ describe("computeWeightedSubmetricAntivotes", (): void => {
     })
 
     it("defaults the weight to 1", (): void => {
-        const two3FreeClass = { quotient: [15, 14] } as Two3FreeClass
 
         const actual = computeWeightedSubmetricAntivotes(two3FreeClass, { [ Parameter.SUM ]: true })
 
@@ -64,7 +61,6 @@ describe("computeWeightedSubmetricAntivotes", (): void => {
     })
 
     it("can use the weight as a logarithm base", (): void => {
-        const two3FreeClass = { quotient: [15, 14] } as Two3FreeClass
         const submetric = { [ Parameter.WEIGHT_AS_LOGARITHM_BASE ]: 2 as ParameterValue, [ Parameter.SUM ]: true }
 
         const actual = computeWeightedSubmetricAntivotes(two3FreeClass, submetric)
@@ -80,7 +76,6 @@ describe("computeWeightedSubmetricAntivotes", (): void => {
     })
 
     it("can use the weight as a power exponent", (): void => {
-        const two3FreeClass = { quotient: [15, 14] } as Two3FreeClass
         const submetric = { [ Parameter.WEIGHT_AS_POWER_EXPONENT ]: 2 as ParameterValue, [ Parameter.SUM ]: true }
 
         const actual = computeWeightedSubmetricAntivotes(two3FreeClass, submetric)
@@ -93,7 +88,6 @@ describe("computeWeightedSubmetricAntivotes", (): void => {
     })
 
     it("can use the weight as a power base", (): void => {
-        const two3FreeClass = { quotient: [15, 14] } as Two3FreeClass
         const submetric = { [ Parameter.WEIGHT_AS_POWER_BASE ]: 2 as ParameterValue, [ Parameter.SUM ]: true }
 
         const actual = computeWeightedSubmetricAntivotes(two3FreeClass, submetric)

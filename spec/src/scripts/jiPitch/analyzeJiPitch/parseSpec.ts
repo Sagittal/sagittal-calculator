@@ -1,28 +1,17 @@
 import { program } from "commander"
-import {
-    Abs,
-    Exponent,
-    IntegerDecimal,
-    Max,
-    Prime,
-    RationalDecimal,
-    RationalMonzo,
-    RationalQuotient,
-} from "../../../../../src/general/math"
+import { Abs, Decimal, Exponent, Max, Monzo, Prime } from "../../../../../src/general/math"
+import { Pitch } from "../../../../../src/general/music/pitch"
 import { ApotomeSlope, JiPitchAnalysis, N2D3P9 } from "../../../../../src/sagittal/ji"
 import { parseJiPitch, parseNotatingCommasSettings } from "../../../../../src/scripts/jiPitch/analyzeJiPitch"
 import { DEFAULT_FIND_COMMAS_SETTINGS } from "../../../../../src/scripts/jiPitch/findCommas"
-import {
-    jiPitchAnalysisFixture,
-    two3FreeClassAnalysisFixture,
-} from "../../../../helpers/src/scripts/jiPitch/fixtures"
+import { jiPitchAnalysisFixture, two3FreeClassAnalysisFixture } from "../../../../helpers/src/scripts/jiPitch/fixtures"
 
 describe("parseNotatingCommasSettings", (): void => {
     const n2d3p9 = DEFAULT_FIND_COMMAS_SETTINGS.maxN2D3P9 + 100 as N2D3P9
-    const ate = DEFAULT_FIND_COMMAS_SETTINGS.maxAte + 10 as Abs<IntegerDecimal & Exponent<3 & Prime>>
-    const rationalMonzo = [0, ate] as RationalMonzo
-    const rationalDecimal = 847300834270 as RationalDecimal             // 47548.9¢
-    const apotomeSlope = -2902.759003 as ApotomeSlope
+    const ate = DEFAULT_FIND_COMMAS_SETTINGS.maxAte + 10 as
+        Abs<Decimal<{ integer: true }> & Exponent<3 & Prime>>
+    const rationalMonzo = [0, ate] as Monzo<{ rational: true }>
+    const rationalDecimal = 847300834270 as Decimal<{ rational: true }>             // 47548.9¢
     const jiPitchAnalysis: JiPitchAnalysis = {
         ...jiPitchAnalysisFixture,
         two3FreeClassAnalysis: {
@@ -42,13 +31,13 @@ describe("parseNotatingCommasSettings", (): void => {
     it("adjusts the max AAS if the JI pitch has greater than the current settings", (): void => {
         const actual = parseNotatingCommasSettings(jiPitchAnalysis)
 
-        expect(actual.maxAas).toBeCloseToTyped(-apotomeSlope as Max<Abs<ApotomeSlope>>)
+        expect(actual.maxAas).toBeCloseToTyped(2902.757465 as Max<Abs<ApotomeSlope>>)
     })
 
     it("adjusts the max ATE if the JI pitch has greater than the current settings", (): void => {
         const actual = parseNotatingCommasSettings(jiPitchAnalysis)
 
-        expect(actual.maxAte).toBe(ate as Max<Abs<IntegerDecimal & Exponent<3 & Prime>>>)
+        expect(actual.maxAte).toBe(ate as Max<Abs<Decimal<{ integer: true }> & Exponent<3 & Prime>>>)
     })
 })
 
@@ -67,7 +56,7 @@ describe("parseJiPitch", (): void => {
 
             const actual = parseJiPitch()
 
-            const expected = { monzo: [0, 1, -2, 1] as RationalMonzo }
+            const expected = { monzo: [0, 1, -2, 1] } as Pitch<{ rational: true }>
             expect(actual).toEqual(expected)
         })
 
@@ -76,7 +65,7 @@ describe("parseJiPitch", (): void => {
 
             const actual = parseJiPitch()
 
-            const expected = { quotient: [7, 2] as RationalQuotient }
+            const expected = { monzo: [-1, 0, 0, 1] } as Pitch<{ rational: true }>
             expect(actual).toEqual(expected)
         })
 
@@ -85,7 +74,7 @@ describe("parseJiPitch", (): void => {
 
             const actual = parseJiPitch()
 
-            const expected = { monzo: [-11, 7] as RationalMonzo }
+            const expected = { monzo: [-11, 7] } as Pitch<{ rational: true }>
             expect(actual).toEqual(expected)
         })
 
@@ -94,7 +83,7 @@ describe("parseJiPitch", (): void => {
 
             const actual = parseJiPitch()
 
-            const expected = { decimal: 3 as IntegerDecimal }
+            const expected = { monzo: [0, 1] } as Pitch<{ rational: true }>
             expect(actual).toEqual(expected)
         })
     })
@@ -105,7 +94,7 @@ describe("parseJiPitch", (): void => {
 
             const actual = parseJiPitch()
 
-            const expected = { monzo: [0, 1, -2, 1] as RationalMonzo }
+            const expected = { monzo: [0, 1, -2, 1] } as Pitch<{ rational: true }>
             expect(actual).toEqual(expected)
         })
 
@@ -114,16 +103,16 @@ describe("parseJiPitch", (): void => {
 
             const actual = parseJiPitch()
 
-            const expected = { quotient: [7, 2] as RationalQuotient }
+            const expected = { monzo: [-1, 0, 0, 1] } as Pitch<{ rational: true }>
             expect(actual).toEqual(expected)
         })
 
         it("works for a comma name (which will have been pre-parsed into a comma)", (): void => {
-            program.commaName = { monzo: [-11, 7] as RationalMonzo }
+            program.commaName = { monzo: [-11, 7] }
 
             const actual = parseJiPitch()
 
-            const expected = { monzo: [-11, 7] as RationalMonzo }
+            const expected = { monzo: [-11, 7] } as Pitch<{ rational: true }>
             expect(actual).toEqual(expected)
         })
 
@@ -132,7 +121,7 @@ describe("parseJiPitch", (): void => {
 
             const actual = parseJiPitch()
 
-            const expected = { decimal: 3 as RationalDecimal }
+            const expected = { monzo: [0, 1] } as Pitch<{ rational: true }>
             expect(actual).toEqual(expected)
         })
     })

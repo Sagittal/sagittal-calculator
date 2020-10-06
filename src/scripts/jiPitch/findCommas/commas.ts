@@ -1,4 +1,4 @@
-import { Comma, computeSuperReal, equalReals, formatPitch, RationalMonzo, realIsHigher } from "../../../general"
+import { Comma, computeSuperPitch, equalPitches, formatPitch, Monzo, pitchIsHigher } from "../../../general"
 import {
     computeCommasFrom23FreeRationalMonzo,
     DEFAULT_LOWER_BOUND,
@@ -23,26 +23,26 @@ const computeCommas = (options: CommasOptions): Comma[] => {
         maxN2D3P9 = DEFAULT_MAX_N2D3P9,
     } = options
 
-    if (realIsHigher(lowerBound, upperBound) || equalReals(lowerBound, upperBound)) {
+    if (pitchIsHigher(lowerBound, upperBound) || equalPitches(lowerBound, upperBound)) {
         throw new Error(`Lower bound is not less than upper bound; range was ${formatPitch(lowerBound)} - ${formatPitch(upperBound)}.`)
     }
 
     if (
-        realIsHigher(computeSuperReal(upperBound), MAX_SIZE_CATEGORY_BOUND) ||
-        realIsHigher(computeSuperReal(lowerBound), MAX_SIZE_CATEGORY_BOUND)
+        pitchIsHigher(computeSuperPitch(upperBound), MAX_SIZE_CATEGORY_BOUND.pitch) ||
+        pitchIsHigher(computeSuperPitch(lowerBound), MAX_SIZE_CATEGORY_BOUND.pitch)
     ) {
         throw new Error(`Search range must be within comma size category bounds (±227.370¢); range was ${formatPitch(lowerBound)} - ${formatPitch(upperBound)}.`)
     }
 
     let commas: Comma[] = []
 
-    const two3FreeRationalMonzosToCheck: Array<RationalMonzo<{ rough: 5 }>> = compute23FreeRationalMonzosToCheck({
-        maxPrimeLimit,
-        max23FreeSopfr,
-        max23FreeCopfr,
-    })
+    const two3FreeRationalMonzosToCheck = compute23FreeRationalMonzosToCheck({
+            maxPrimeLimit,
+            max23FreeSopfr,
+            max23FreeCopfr,
+        })
 
-    two3FreeRationalMonzosToCheck.forEach((two3FreeRationalMonzoToCheck: RationalMonzo<{ rough: 5 }>): void => {
+    two3FreeRationalMonzosToCheck.forEach((two3FreeRationalMonzoToCheck: Monzo<{ rational: true, rough: 5 }>): void => {
         commas = commas.concat(
             computeCommasFrom23FreeRationalMonzo(
                 two3FreeRationalMonzoToCheck,

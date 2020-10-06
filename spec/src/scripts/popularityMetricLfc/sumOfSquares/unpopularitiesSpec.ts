@@ -9,21 +9,21 @@ import {
 import { Antivotes, Unpopularity } from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares/types"
 
 describe("computeUnpopularities", (): void => {
-    it("given a list of real popularities and submetric combinations, returns our estimated unpopularities, which have antivotes instead of votes", (): void => {
-        const realPopularities: Array<Ranked<Popularity>> = [
+    it("given a list of actual popularities and submetric combinations, returns our estimated unpopularities, which have antivotes instead of votes", (): void => {
+        const popularities: Array<Ranked<Popularity>> = [
             {
                 rank: 5 as Rank<Popularity>,
-                two3FreeClass: { quotient: [7, 5] } as Two3FreeClass,
+                two3FreeClass: { monzo: [0, 0, -1, 1] } as Two3FreeClass,
                 votes: 1318 as Votes,
             },
             {
                 rank: 8 as Rank<Popularity>,
-                two3FreeClass: { quotient: [125, 1] } as Two3FreeClass,
+                two3FreeClass: { monzo: [0, 0, 3] } as Two3FreeClass,
                 votes: 492 as Votes,
             },
             {
                 rank: 39 as Rank<Popularity>,
-                two3FreeClass: { quotient: [55, 49] } as Two3FreeClass,
+                two3FreeClass: { monzo: [0, 0, 1, -2, 1] } as Two3FreeClass,
                 votes: 51 as Votes,
             },
         ]
@@ -39,22 +39,22 @@ describe("computeUnpopularities", (): void => {
             },
         ] as Combination<Submetric>
 
-        const actual = computeUnpopularities(realPopularities, submetrics)
+        const actual = computeUnpopularities(popularities, submetrics)
 
         const expected: Unpopularity[] = [
             {
                 antivotes: 2 as Antivotes,
-                two3FreeClass: { quotient: [7, 5] } as Two3FreeClass,
+                two3FreeClass: { monzo: [0, 0, -1, 1] } as Two3FreeClass,
                 index: 0 as Index<Unpopularity>,
             },
             {
                 antivotes: 1 as Antivotes,
-                two3FreeClass: { quotient: [125, 1] } as Two3FreeClass,
+                two3FreeClass: { monzo: [0, 0, 3] } as Two3FreeClass,
                 index: 1 as Index<Unpopularity>,
             },
             {
                 antivotes: 3 as Antivotes,
-                two3FreeClass: { quotient: [55, 49] } as Two3FreeClass,
+                two3FreeClass: { monzo: [0, 0, 1, -2, 1] } as Two3FreeClass,
                 index: 2 as Index<Unpopularity>,
             },
         ]

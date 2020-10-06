@@ -145,7 +145,7 @@ describe("find-commas", (): void => {
 
         const expected = [
             "",
-            "lower bound:       \t1594323/1548800",
+            "lower bound:       \t[  -9  13  -2   0  -2 ⟩",
             "upper bound:       \t[ -25  12   1   0   0   1 ⟩",
             "max ATE:           \t 15    ",
             "max AAS:           \t 14.000",

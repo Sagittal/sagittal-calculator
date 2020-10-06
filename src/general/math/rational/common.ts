@@ -1,67 +1,73 @@
 import { allElementsEqual, isEmpty, isSingleton } from "../../code"
 import { Divisor } from "../../types"
-import { abs, divide, mod } from "../typedOperations"
+import { Decimal, mod } from "../numeric"
+import { abs, divide } from "../typedOperations"
 import { ONE } from "./constants"
-import { IntegerDecimal } from "./real"
 import { CommonFunction } from "./types"
 
-const computeLowestCommonMultipleOfTwoNumbers = (
-    firstValue: IntegerDecimal,
-    secondValue: IntegerDecimal,
-): IntegerDecimal =>
+const computeLowestCommonMultipleOfTwoIntegerDecimals = (
+    integerDecimalA: Decimal<{ integer: true }>,
+    integerDecimalB: Decimal<{ integer: true }>,
+): Decimal<{ integer: true }> =>
     abs(divide(
-        firstValue * secondValue as IntegerDecimal,
-        computeGreatestCommonDivisor(firstValue, secondValue),
-    )) as IntegerDecimal
+        integerDecimalA * integerDecimalB as Decimal<{ integer: true }>,
+        computeGreatestCommonDivisor(integerDecimalA, integerDecimalB),
+    )) as Decimal<{ integer: true }>
 
-const computeGreatestCommonDivisorOfTwoNumbers = (
-    firstValue: IntegerDecimal,
-    secondValue: IntegerDecimal,
-): IntegerDecimal => {
-    let output: IntegerDecimal = firstValue
-    let remainder: IntegerDecimal = secondValue
+const computeGreatestCommonDivisorOfTwoIntegerDecimals = (
+    integerDecimalA: Decimal<{ integer: true }>,
+    integerDecimalB: Decimal<{ integer: true }>,
+): Decimal<{ integer: true }> => {
+    let output: Decimal<{ integer: true }> = integerDecimalA
+    let remainder: Decimal<{ integer: true }> = integerDecimalB
     while (remainder) {
-        const previousRemainder: IntegerDecimal = remainder
-        remainder = mod(output, remainder) as IntegerDecimal
+        const previousRemainder: Decimal<{ integer: true }> = remainder
+        remainder = mod(output, remainder) as Decimal<{ integer: true }>
         output = previousRemainder
     }
 
     return output
 }
 
-const recurseCommon = (commonFunction: CommonFunction, ...integers: IntegerDecimal[]): IntegerDecimal => {
-    if (isSingleton(integers)) {
-        return integers[ 0 ]
+const recurseCommon = (
+    commonFunction: CommonFunction,
+    ...integerDecimals: Array<Decimal<{ integer: true }>>
+): Decimal<{ integer: true }> => {
+    if (isSingleton(integerDecimals)) {
+        return integerDecimals[ 0 ]
     }
-    if (isEmpty(integers)) {
+    if (isEmpty(integerDecimals)) {
         return ONE
     }
 
-    const result: IntegerDecimal = commonFunction(integers[ 0 ], integers[ 1 ])
-    if (integers.length === 2) {
+    const result: Decimal<{ integer: true }> = commonFunction(integerDecimals[ 0 ], integerDecimals[ 1 ])
+    if (integerDecimals.length === 2) {
         return result
     }
 
-    return recurseCommon(commonFunction, result, ...integers.slice(2))
+    return recurseCommon(commonFunction, result, ...integerDecimals.slice(2))
 }
 
-const computeCommon = (integers: IntegerDecimal[], commonFunction: CommonFunction): IntegerDecimal => {
-    if (isEmpty(integers)) {
+const computeCommon = (
+    integerDecimals: Array<Decimal<{ integer: true }>>,
+    commonFunction: CommonFunction
+): Decimal<{ integer: true }> => {
+    if (isEmpty(integerDecimals)) {
         return ONE
     }
 
-    if (allElementsEqual(integers)) {
-        return integers[ 0 ]
+    if (allElementsEqual(integerDecimals)) {
+        return integerDecimals[ 0 ]
     }
 
-    return recurseCommon(commonFunction, ...integers)
+    return recurseCommon(commonFunction, ...integerDecimals)
 }
 
-const computeLeastCommonMultiple = (...integers: IntegerDecimal[]): IntegerDecimal =>
-    computeCommon(integers, computeLowestCommonMultipleOfTwoNumbers)
+const computeLeastCommonMultiple = (...integerDecimals: Decimal<{ integer: true }>[]): Decimal<{ integer: true }> =>
+    computeCommon(integerDecimals, computeLowestCommonMultipleOfTwoIntegerDecimals)
 
-const computeGreatestCommonDivisor = <T extends IntegerDecimal>(...integers: T[]): Divisor<T> =>
-    computeCommon(integers, computeGreatestCommonDivisorOfTwoNumbers) as Divisor<T>
+const computeGreatestCommonDivisor = <T extends Decimal<{ integer: true }>>(...integerDecimals: T[]): Divisor<T> =>
+    computeCommon(integerDecimals, computeGreatestCommonDivisorOfTwoIntegerDecimals) as Divisor<T>
 
 export {
     computeLeastCommonMultiple,

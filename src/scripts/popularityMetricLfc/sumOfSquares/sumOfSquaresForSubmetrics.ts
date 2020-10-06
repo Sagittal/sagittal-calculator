@@ -21,10 +21,10 @@ import { computeUnpopularities } from "./unpopularities"
 const computeSumOfSquaresForSubmetrics = (submetrics: Combination<Submetric>): SumOfSquares => {
     checkSubmetricsForInvalidParameterValueCombinations(submetrics)
 
-    const realPopularities: Array<Ranked<Popularity>> =
-        COMMA_POPULARITIES.slice(0, popularityMetricLfcScriptGroupSettings.onlyTop)
+    const popularities: Array<Ranked<Popularity>> = COMMA_POPULARITIES
+        .slice(0, popularityMetricLfcScriptGroupSettings.onlyTop)
 
-    const unpopularities = computeUnpopularities(realPopularities, submetrics)
+    const unpopularities = computeUnpopularities(popularities, submetrics)
     if (unpopularities.some((unpopularity: Unpopularity): boolean => !isNumber(unpopularity.antivotes))) {
         throw new Error(`One way or another had some non-numeric popularities`)
     }
@@ -37,7 +37,7 @@ const computeSumOfSquaresForSubmetrics = (submetrics: Combination<Submetric>): S
     }
 
     const sumOfSquares =
-        computeSumOfSquares(rankedUnpopularities, realPopularities, popularityMetricLfcScriptGroupSettings.z)
+        computeSumOfSquares(rankedUnpopularities, popularities, popularityMetricLfcScriptGroupSettings.z)
 
     saveLog(`sum-of-squares ${sumOfSquares}` as Io, LogTarget.DETAILS)
 

@@ -1,4 +1,4 @@
-import { IntegerDecimal, Io, LogTarget, round, saveLog } from "../../../general"
+import { Decimal, Io, LogTarget, round, saveLog } from "../../../general"
 import {
     nonRecursiveSearchScopeAndMaybeUpdateBestMetric,
     nonRecursiveSearchScopeAndMaybeUpdateBestMetricSync,
@@ -21,7 +21,7 @@ const computeSearchNextLocalMinArguments = (
     { dynamicParameters, samples, sumsOfSquares, metricName }: SearchScopeResults,
 ): { nextLocalMinima: LocalMin[], searchNextLocalMinOptions: SearchLocalMinOptions } => {
     const {
-        depth = 0 as IntegerDecimal,
+        depth = 0 as Decimal<{ integer: true }>,
         metricTag = "" as MetricTag,
         localMin,
         onlyBetterThanSopfgtt = true,

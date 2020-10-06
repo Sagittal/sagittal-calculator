@@ -4,8 +4,8 @@
 //  I'm slightly concerned that once it gets to huge lists of scopes,
 //   We're going to get stuck on the populating step for too long.
 //  I guess that's an important idea to consider though:
-//   It doesn't really matter that much if we get stuck on the searching side;
-//   The risk, really, is getting stuck in the populating side and ending up with a giant object.
+//   It doesn't matter that much if we get stuck on the searching side;
+//   The risk is getting stuck in the populating side and ending up with a giant object.
 //  However, if you put a console log right after the work it does in populateScopes,
 //   It does seem to be interruptable in a good way, so that's a good sign.
 

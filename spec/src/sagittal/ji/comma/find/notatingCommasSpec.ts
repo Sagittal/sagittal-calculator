@@ -1,11 +1,11 @@
-import { Abs, Comma, Max, RationalMonzo, Real, RealDecimal } from "../../../../../../src/general"
+import { Abs, Comma, computePitchFromDecimal, Decimal, Max, Monzo, Pitch } from "../../../../../../src/general"
 import { ApotomeSlope, computeNotatingCommas } from "../../../../../../src/sagittal"
 
 describe("computeNotatingCommas", (): void => {
-    it("given a rational monzo, returns a list of the commas that notate it", (): void => {
-        const rationalMonzo = [0, 0, 0, 0, 1] as RationalMonzo
+    it("given a JI pitch, returns a list of the commas that notate it", (): void => {
+        const jiPitch = { monzo: [0, 0, 0, 0, 1] } as Pitch<{ rational: true }>
 
-        const actual = computeNotatingCommas({ monzo: rationalMonzo })
+        const actual = computeNotatingCommas(jiPitch)
 
         const expected = [
             { monzo: [14, -11, 0, 0, 1] },
@@ -16,11 +16,11 @@ describe("computeNotatingCommas", (): void => {
     })
 
     it("can filter", (): void => {
-        const rationalMonzo = [0, 0, 0, 0, 1] as RationalMonzo
+        const jiPitch = { monzo: [0, 0, 0, 0, 1] } as Pitch<{ rational: true }>
         const maxAas = 9 as Max<Abs<ApotomeSlope>>
-        const upperBound = { decimal: 1.032279 as RealDecimal } as Max<Real>
+        const upperBound = computePitchFromDecimal(1.032279 as Decimal) as Max<Pitch>
 
-        const actual = computeNotatingCommas({ monzo: rationalMonzo }, { maxAas, upperBound })
+        const actual = computeNotatingCommas(jiPitch, { maxAas, upperBound })
 
         const expected = [
             { monzo: [-5, 1, 0, 0, 1] },
@@ -29,10 +29,10 @@ describe("computeNotatingCommas", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    it("when given a unison monzo, does not return duplicates", (): void => {
-        const rationalMonzo = [] as unknown[] as RationalMonzo
+    it("when given the unison, does not return duplicates", (): void => {
+        const jiPitch = { monzo: [] as unknown[] } as Pitch<{ rational: true }>
 
-        const actual = computeNotatingCommas({ monzo: rationalMonzo })
+        const actual = computeNotatingCommas(jiPitch)
 
         const expected = [
             { monzo: [] },

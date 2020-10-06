@@ -1,15 +1,4 @@
-import {
-    BLANK,
-    dig,
-    Direction,
-    Index,
-    KeyPath,
-    Ms,
-    Name,
-    Obj,
-    RationalMonzo,
-    Two3FreeClass,
-} from "../../../../../src/general"
+import { BLANK, dig, Direction, Index, KeyPath, Monzo, Ms, Name, Obj, Two3FreeClass } from "../../../../../src/general"
 import * as doOnNextEventLoop from "../../../../../src/general/code/doOnNextEventLoop"
 import { Combination } from "../../../../../src/general/math"
 import { Metric, Sample, SumsOfSquares } from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
@@ -102,21 +91,21 @@ describe("computeSumOfSquaresAndMaybeUpdateBestMetric", (): void => {
             {
                 antivotes: 0 as Antivotes,
                 two3FreeClass: {
-                    monzo: [] as unknown[] as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
+                    monzo: [] as unknown[] as Monzo<{ rational: true, rough: 5, direction: Direction.SUPER }>,
                 } as Two3FreeClass,
                 index: 0 as Index<Unpopularity>,
             },
             {
                 antivotes: NaN as Antivotes,
                 two3FreeClass: {
-                    monzo: [0, 0, 1] as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
+                    monzo: [0, 0, 1] as Monzo<{ rational: true, rough: 5, direction: Direction.SUPER }>,
                 } as Two3FreeClass,
                 index: 0 as Index<Unpopularity>,
             },
             {
                 antivotes: 8 as Antivotes,
                 two3FreeClass: {
-                    monzo: [0, 0, 0, 1] as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
+                    monzo: [0, 0, 0, 1] as Monzo<{ rational: true, rough: 5, direction: Direction.SUPER }>,
                 } as Two3FreeClass,
                 index: 0 as Index<Unpopularity>,
             },

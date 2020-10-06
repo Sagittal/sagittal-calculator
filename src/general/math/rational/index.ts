@@ -7,54 +7,40 @@ export {
     THREE_SMOOTHNESS,
     TWO_PRIME_INDEX,
 } from "./constants"
-export { computeCopfr } from "./copfr"
-export { computeGpf } from "./gpf"
 export { computePrimeCount, computeRoughnessIndex, computeSmoothnessIndex } from "./primeCount"
 export { PRIMES } from "./primes"
-export { computeSopfr } from "./sopfr"
 export { computeGreatestCommonDivisor } from "./common"
 export { Copfr, Prime, Roughness, Sopfr, Smoothness, Primes } from "./types"
 export {
-    isRationalQuotient,
-    Rational,
-    RationalByRationalDecimal,
-    isRoughRationalQuotient,
-    computeRoughRationalQuotient,
-    isSmoothRationalQuotient,
-    computeIntegerDecimalFromIntegerMonzo,
-    computeIntegerMonzoFromIntegerDecimal,
-    computeRationalMonzoFromRationalQuotient,
-    computeRationalMonzosFromPrimeExponentExtremas,
-    computeRoughRationalMonzo,
-    isSmoothRationalMonzo,
-    computeRationalMonzoFromRational,
-    computeRationalQuotientFromRational,
-    computeRationalQuotientFromRationalDecimal,
-    isRoughRationalMonzo,
-    RationalByRationalMonzo,
-    RationalByRationalQuotient,
-    isRational,
-    computeLowestTermsRationalQuotient,
-    isSmoothRational,
-    computeRationalSmoothness,
-    isRoughRational,
-    IntegerDenominator,
-    IntegerQuotientPart,
-    IntegerNumerator,
-    RationalQuotient,
-    RationalMonzo,
-    equalQuotients,
-    RationalDecimal,
-    IntegerMonzo,
-    Integer,
-    IntegerQuotient,
-    IntegerDecimal,
     isIntegerDecimal,
     isRoughIntegerDecimal,
+    computeIntegerDecimalSmoothness,
+    computeRationalDecimalSmoothness,
     ceil,
     floor,
     integerDivide,
-    multiplyRationals,
-    divideRationals,
-    doForEachMonzo,
-} from "./real"
+    isRationalDecimal,
+    computeRationalDecimalCopfr,
+    computeRationalDecimalGpf,
+} from "./decimal"
+export {
+    isRoughRationalQuotient,
+    computeRoughRationalQuotient,
+    isSmoothRationalQuotient,
+    computeRationalQuotientFromRationalDecimal,
+    isRationalQuotient,
+    computeLowestTermsRationalQuotient,
+    equalRationalQuotients,
+} from "./quotient"
+export {
+    computeRationalMonzoFromRationalQuotient,
+    computeRoughRationalMonzo,
+    isRoughRationalMonzo,
+    isSmoothRationalMonzo,
+    doForEachRationalMonzo,
+    computeRationalMonzoFromRationalDecimal,
+    computeRationalMonzoCopfr,
+    computeRationalMonzoSmoothness,
+    computeRationalMonzoSopfr,
+    isRationalMonzo,
+} from "./monzo"

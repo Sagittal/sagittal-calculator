@@ -3,8 +3,8 @@ import { Coordinates, Radians } from "../../../../src/general/math/types"
 
 describe("computeAngle", (): void => {
     it("works for a horizontal line", (): void => {
-        const origin = [ 0, 0 ] as Coordinates
-        const point = [ 5, 0 ] as Coordinates
+        const origin = [0, 0] as Coordinates
+        const point = [5, 0] as Coordinates
 
         const actual = computeAngle(origin, point)
 
@@ -13,8 +13,8 @@ describe("computeAngle", (): void => {
     })
 
     it("works for a vertical line", (): void => {
-        const origin = [ 0, 0 ] as Coordinates
-        const point = [ 0, 5 ] as Coordinates
+        const origin = [0, 0] as Coordinates
+        const point = [0, 5] as Coordinates
 
         const actual = computeAngle(origin, point)
 

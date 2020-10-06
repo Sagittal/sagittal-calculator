@@ -1,6 +1,5 @@
-import { computeRealDecimalFromReal } from "../../../../../../src/general/math/real/decimal"
-import { Zone } from "../../../../../../src/general/music"
-import { JI_NOTATION, PrimaryComma } from "../../../../../../src/sagittal"
+import { computeDecimalFromPitch, Decimal, Extrema } from "../../../../../../src/general"
+import { JI_NOTATION } from "../../../../../../src/sagittal"
 import { computeSecondaryCommaZone } from "../../../../../../src/sagittal/notations/ji"
 
 describe("secondary comma zones", (): void => {
@@ -157,10 +156,10 @@ describe("secondary comma zones", (): void => {
             [{ decimal: 1.038929 }, { decimal: 1.040403 }], // [{ cents: 66.117175 }, { cents: 68.572508 }],
             [{ decimal: 1.039773 }, { decimal: 1.040110 }], // [{ cents: 67.522429 }, { cents: 68.084530 }],
             [{ decimal: 1.040110 }, { decimal: 1.040403 }], // [{ cents: 68.084530 }, { cents: 68.572508 }],
-        ] as Array<Zone<PrimaryComma>>
-        expected.forEach((zone: Zone, index: number): void => {
-            expect(computeRealDecimalFromReal(actual[ index ][ 0 ])).toBeCloseToTyped(zone[ 0 ].decimal!)
-            expect(computeRealDecimalFromReal(actual[ index ][ 1 ])).toBeCloseToTyped(zone[ 1 ].decimal!)
+        ] as Array<Extrema<{ decimal: Decimal }>>
+        expected.forEach((zone: Extrema<{ decimal: Decimal }>, index: number): void => {
+            expect(computeDecimalFromPitch(actual[ index ][ 0 ])).toBeCloseTo(zone[ 0 ].decimal!)
+            expect(computeDecimalFromPitch(actual[ index ][ 1 ])).toBeCloseTo(zone[ 1 ].decimal!)
         })
     })
 })

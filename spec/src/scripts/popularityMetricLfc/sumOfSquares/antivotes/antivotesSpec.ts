@@ -1,4 +1,4 @@
-import { Combination, RationalMonzo } from "../../../../../../src/general/math"
+import { Combination, Monzo } from "../../../../../../src/general/math"
 import { Two3FreeClass } from "../../../../../../src/general/music"
 import { Parameter, ParameterValue, Submetric } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 import { computeAntivotes } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes"
@@ -8,8 +8,8 @@ import { Antivotes } from "../../../../../../src/scripts/popularityMetricLfc/sum
 
 describe("computeAntivotes", (): void => {
     it("when k = 1 (default), and two 2,3-free classes have the same SoPFR, but one has its primes all lopsided on one side, they still get ranked the same", (): void => {
-        const balanced23FreeClass = { quotient: [11, 7] } as Two3FreeClass
-        const lopsided23FreeClass = { quotient: [77, 1] } as Two3FreeClass
+        const balanced23FreeClass = { monzo: [0, 0, 0, -1, 1] } as Two3FreeClass
+        const lopsided23FreeClass = { monzo: [0, 0, 0, 1, 1] } as Two3FreeClass
         const submetrics: Combination<Submetric> = [
             {
                 [ Parameter.SUM ]: true,
@@ -24,8 +24,8 @@ describe("computeAntivotes", (): void => {
     })
 
     it("when k < 1, two 2,3-free classes have the same SoPFR, but one has its primes all lopsided on one side, it gets ranked worse", (): void => {
-        const balanced23FreeClass = { quotient: [11, 7] } as Two3FreeClass
-        const lopsided23FreeClass = { quotient: [77, 1] } as Two3FreeClass
+        const balanced23FreeClass = { monzo: [0, 0, 0, -1, 1] } as Two3FreeClass
+        const lopsided23FreeClass = { monzo: [0, 0, 0, 1, 1] } as Two3FreeClass
         const submetrics: Combination<Submetric> = [
             {
                 [ Parameter.SUM ]: true,
@@ -40,7 +40,7 @@ describe("computeAntivotes", (): void => {
     })
 
     it("applies weights to each submetric", (): void => {
-        const two3FreeClass = { quotient: [77, 1] } as Two3FreeClass
+        const two3FreeClass = { monzo: [0, 0, 0, 1, 1] } as Two3FreeClass
         const submetrics = [
             {
                 [ Parameter.SUM ]: true,
@@ -56,11 +56,11 @@ describe("computeAntivotes", (): void => {
 
         const expected =
             0.5 * computeSubmetricAntivotes(
-                [0, 0, 0, 1, 1] as RationalMonzo,
+                [0, 0, 0, 1, 1] as Monzo<{ rational: true }>,
                 { [ Parameter.SUM ]: true },
             ) as Antivotes +
             0.3 * computeSubmetricAntivotes(
-                [0, 0, 0, 1, 1] as RationalMonzo,
+                [0, 0, 0, 1, 1] as Monzo<{ rational: true }>,
                 { [ Parameter.SUM ]: true },
             ) as Antivotes
         expect(actual).toBeCloseToTyped(expected, ANTIVOTES_PRECISION)
@@ -78,7 +78,7 @@ describe("computeAntivotes", (): void => {
                 [ Parameter.Y ]: 0.142857 as ParameterValue,
             },
         ] as Combination<Submetric>
-        const two3FreeClass = { quotient: [5, 1] } as Two3FreeClass
+        const two3FreeClass = { monzo: [0, 0, 1] } as Two3FreeClass
 
         const actual = computeAntivotes(two3FreeClass, submetrics)
 
@@ -93,7 +93,7 @@ describe("computeAntivotes", (): void => {
                 [ Parameter.W ]: -2 as ParameterValue,
             },
         ] as Combination<Submetric>
-        const two3FreeClass = { quotient: [5, 1] } as Two3FreeClass
+        const two3FreeClass = { monzo: [0, 0, 1] } as Two3FreeClass
 
         const actual = computeAntivotes(two3FreeClass, submetrics)
 

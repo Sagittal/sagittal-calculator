@@ -1,4 +1,4 @@
-import { Id, NEWLINE, RealDecimal } from "../../../../../../../src/general"
+import { computePitchFromDecimal, Decimal, Id, NEWLINE } from "../../../../../../../src/general"
 import { BoundType, JiNotationBound } from "../../../../../../../src/sagittal/notations/ji"
 import { JiNotationBoundAnalysis } from "../../../../../../../src/scripts/jiNotationBound/bound"
 import { formatJiNotationBound } from "../../../../../../../src/scripts/jiNotationBound/io"
@@ -12,7 +12,7 @@ describe("formatJiNotationBound", (): void => {
     it("returns a string which is a multi-line, properly indented rendition of the JI notation bound analysis, as well as identifying information for the JI notation bound", (): void => {
         const jiNotationBound: JiNotationBound = {
             ...jiNotationBoundFixture,
-            decimal: 1.00315163335 as RealDecimal,
+            pitch: computePitchFromDecimal(1.00315163335 as Decimal<{ rational: false }>),
             id: 10 as Id<JiNotationBound>,
         }
         const jiNotationBoundAnalysis: JiNotationBoundAnalysis = {

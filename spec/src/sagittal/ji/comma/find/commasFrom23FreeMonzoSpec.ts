@@ -1,11 +1,22 @@
-import { Abs, Comma, Exponent, IntegerDecimal, Max, Min, Prime, RationalMonzo, Real, RealDecimal } from "../../../../../../src/general"
+import {
+    Abs,
+    Comma,
+    computePitchFromDecimal,
+    Decimal,
+    Exponent,
+    Max,
+    Min,
+    Monzo,
+    Pitch,
+    Prime,
+} from "../../../../../../src/general"
 import { ApotomeSlope, computeCommasFrom23FreeRationalMonzo, N2D3P9 } from "../../../../../../src/sagittal"
 
 describe("computeCommasFrom23FreeRationalMonzo", (): void => {
-    const two3FreeRationalMonzo: RationalMonzo<{ rough: 5 }> = [0, 0, 3, 5, -1] as RationalMonzo<{ rough: 5 }>
-    const lowerBound = { decimal: 1.023374 as RealDecimal } as Min<Real>
-    const upperBound = { decimal: 1.023433 as RealDecimal } as Max<Real>
-    const maxAte = 12 as Max<Abs<IntegerDecimal & Exponent<3 & Prime>>>
+    const two3FreeRationalMonzo = [0, 0, 3, 5, -1] as Monzo<{ rational: true, rough: 5 }>
+    const lowerBound = computePitchFromDecimal(1.023374 as Decimal) as Min<Pitch>
+    const upperBound = computePitchFromDecimal(1.023433 as Decimal) as Max<Pitch>
+    const maxAte = 12 as Max<Abs<Decimal<{ integer: true }> & Exponent<3 & Prime>>>
     const maxN2D3P9 = 40000 as Max<N2D3P9>
 
     it("returns commas with the prime content from the 2,3-free rational monzo", (): void => {
@@ -16,7 +27,7 @@ describe("computeCommasFrom23FreeRationalMonzo", (): void => {
             maxN2D3P9,
         })
 
-        const expected = [{ monzo: [-8, -6, 3, 5, -1] as RationalMonzo } as Comma]
+        const expected = [{ monzo: [-8, -6, 3, 5, -1] } as Comma]
         expect(actual).toEqual(expected)
     })
 
@@ -33,7 +44,7 @@ describe("computeCommasFrom23FreeRationalMonzo", (): void => {
                 maxN2D3P9,
             })
 
-            const expected = [{ monzo: [-8, -6, 3, 5, -1] as RationalMonzo } as Comma]
+            const expected = [{ monzo: [-8, -6, 3, 5, -1] } as Comma]
             expect(resultWithHighMaxAas).toEqual(expected)
 
             const resultWithLowMaxAas = computeCommasFrom23FreeRationalMonzo(two3FreeRationalMonzo, {
@@ -48,9 +59,9 @@ describe("computeCommasFrom23FreeRationalMonzo", (): void => {
     })
 
     it("trims the monzo if necessary", (): void => {
-        const two3FreeRationalMonzo: RationalMonzo<{ rough: 5 }> = [0, 0, 0] as RationalMonzo<{ rough: 5 }>
-        const lowerBound = { decimal: 1 as RealDecimal } as Min<Real>
-        const upperBound = { decimal: 1 as RealDecimal } as Max<Real>
+        const two3FreeRationalMonzo = [0, 0, 0] as Monzo<{ rational: true, rough: 5 }>
+        const lowerBound = computePitchFromDecimal(1 as Decimal) as Min<Pitch>
+        const upperBound = computePitchFromDecimal(1 as Decimal) as Max<Pitch>
 
         const actual = computeCommasFrom23FreeRationalMonzo(two3FreeRationalMonzo, {
             lowerBound,
@@ -59,7 +70,7 @@ describe("computeCommasFrom23FreeRationalMonzo", (): void => {
             maxN2D3P9,
         })
 
-        const expected = [{ monzo: [] as unknown[] as RationalMonzo } as Comma]
+        const expected = [{ monzo: [] as unknown[] } as Comma]
         expect(actual).toEqual(expected)
     })
 })

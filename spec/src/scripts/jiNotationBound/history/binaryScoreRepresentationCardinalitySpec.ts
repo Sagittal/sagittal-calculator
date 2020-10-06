@@ -1,15 +1,15 @@
-import { IntegerDecimal, Rank } from "../../../../../src/general"
+import { Decimal, Rank } from "../../../../../src/general"
 import { BoundType } from "../../../../../src/sagittal/notations/ji"
 import { computeBinaryScoreRepresentationIndex } from "../../../../../src/scripts/jiNotationBound/history/binaryScoreRepresentationCardinality"
 import { RANKS } from "../../../../../src/scripts/jiNotationBound/ranks"
 
 describe("computeBinaryScoreRepresentationIndex", (): void => {
     it("gives the correct index for the power-of-two-based score", (): void => {
-        expect(computeBinaryScoreRepresentationIndex(0 as IntegerDecimal & Rank<BoundType>, 4)).toBe(0)
-        expect(computeBinaryScoreRepresentationIndex(0 as IntegerDecimal & Rank<BoundType>, 3)).toBe(1)
-        expect(computeBinaryScoreRepresentationIndex(0 as IntegerDecimal & Rank<BoundType>, 2)).toBe(2)
-        expect(computeBinaryScoreRepresentationIndex(0 as IntegerDecimal & Rank<BoundType>, 1)).toBe(3)
-        expect(computeBinaryScoreRepresentationIndex(0 as IntegerDecimal & Rank<BoundType>, 0)).toBe(4)
+        expect(computeBinaryScoreRepresentationIndex(0 as Decimal<{ integer: true }> & Rank<BoundType>, 4)).toBe(0)
+        expect(computeBinaryScoreRepresentationIndex(0 as Decimal<{ integer: true }> & Rank<BoundType>, 3)).toBe(1)
+        expect(computeBinaryScoreRepresentationIndex(0 as Decimal<{ integer: true }> & Rank<BoundType>, 2)).toBe(2)
+        expect(computeBinaryScoreRepresentationIndex(0 as Decimal<{ integer: true }> & Rank<BoundType>, 1)).toBe(3)
+        expect(computeBinaryScoreRepresentationIndex(0 as Decimal<{ integer: true }> & Rank<BoundType>, 0)).toBe(4)
 
         expect(computeBinaryScoreRepresentationIndex(RANKS[ BoundType.INA_MIDPOINT ], 4)).toBe(5)
         expect(computeBinaryScoreRepresentationIndex(RANKS[ BoundType.INA_MIDPOINT ], 3)).toBe(6)

@@ -7,7 +7,9 @@ const computeEqualDivision = (window: Window<ParameterValue>): Ed<ParameterValue
 
     const equalDivision = ceil(window / maxUnit as Ed<ParameterValue>)
 
-    return equalDivision > 1 ? equalDivision : 2 as Ed<ParameterValue>
+    return equalDivision > 1 ?
+        equalDivision as Ed<ParameterValue> :
+        2 as Ed<ParameterValue>
 }
 
 export {

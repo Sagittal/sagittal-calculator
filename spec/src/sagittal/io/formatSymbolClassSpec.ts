@@ -11,27 +11,21 @@ describe("formatSymbolClass", (): void => {
         expect(actual).toBe(expected)
     })
 
-    it(
-        "returns the symbol class as its representative symbols' smiley form if configured for pasting to the forum",
-        (): void => {
-            ioSettings.tableFormat = TableFormat.FORUM
-            const actual = formatSymbolClass(symbolClassId, ioSettings)
+    it("returns the symbol class as its representative symbols' smiley form if configured for pasting to the forum            ", (): void => {
+        ioSettings.tableFormat = TableFormat.FORUM
+        const actual = formatSymbolClass(symbolClassId, ioSettings)
 
-            const expected = ":,::(/|:" as Io
-            expect(actual).toBe(expected)
-        },
-    )
+        const expected = ":,::(/|:" as Io
+        expect(actual).toBe(expected)
+    })
 
-    it(
-        "returns the symbol class as its representative symbols' unicode if configured for importing into a spreadsheet program on a computer which might have Bravura installed",
-        (): void => {
-            ioSettings.tableFormat = TableFormat.SPREADSHEET
-            const actual = formatSymbolClass(symbolClassId, ioSettings)
+    it("returns the symbol class as its representative symbols' unicode if configured for importing into a spreadsheet program on a computer which might have Bravura installed", (): void => {
+        ioSettings.tableFormat = TableFormat.SPREADSHEET
+        const actual = formatSymbolClass(symbolClassId, ioSettings)
 
-            const expected = "" as Io
-            expect(actual).toBe(expected)
-        },
-    )
+        const expected = "" as Io
+        expect(actual).toBe(expected)
+    })
 
     it("does not align the parenthetical natural symbol in the same way - just centers it", (): void => {
         const actual = formatSymbolClass(0 as Id<SymbolClass>, ioSettings)

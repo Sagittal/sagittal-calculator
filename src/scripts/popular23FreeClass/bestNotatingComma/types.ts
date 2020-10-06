@@ -1,9 +1,9 @@
-import { Cents, Id, Maybe, RationalMonzo } from "../../../general"
+import { Cents, Id, Maybe, Monzo } from "../../../general"
 import { SymbolClass } from "../../../sagittal"
 
 interface BestNotatingCommaProperties {
     bestNotatingCommaCents: Cents,
-    bestNotatingCommaMonzo: RationalMonzo,
+    bestNotatingCommaMonzo: Monzo<{ rational: true }>,
     bestNotatingCommaMaybeSymbolClassId: Maybe<Id<SymbolClass>>,
 }
 

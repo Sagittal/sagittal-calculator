@@ -1,4 +1,4 @@
-import { IntegerDecimal } from "../math"
+import { Decimal } from "../math"
 
 type SortOptions = Partial<{
     by: KeyPath,
@@ -38,7 +38,7 @@ type Range<T = number> = Array<T> & { _RangeBrand: boolean }
 
 type Maybe<T> = T | undefined
 
-type Precision = IntegerDecimal & { _PrecisionBrand: boolean }
+type Precision = Decimal<{ integer: true }> & { _PrecisionBrand: boolean }
 
 export {
     SortOptions,

@@ -1,4 +1,4 @@
-import { Cents, Id, Name, Real } from "../../../general"
+import { Cents, Id, Name, NumericProperties, Pitch } from "../../../general"
 import { SizeCategoryBound } from "../../ji"
 
 enum BoundType {
@@ -23,17 +23,19 @@ enum JiNotationLevel {
     INSANE = "insane",          // Corresponds closely with Magrathean symbol subset
 }
 
-type CommaMean = Real & {
+type CommaMean<T extends NumericProperties = {}> = {
     name: Name<CommaMean>,
+    pitch: Pitch<T & { rational: false }>,
 }
 
-type InaMidpoint = Real & {
+type InaMidpoint<T extends NumericProperties = {}> = {
     name: Name<InaMidpoint>,
+    pitch: Pitch<T & { rational: false }>,
 }
 
-type Bound = InaMidpoint | CommaMean | SizeCategoryBound
+type Bound<T extends NumericProperties = {}> = InaMidpoint<T> | CommaMean<T> | SizeCategoryBound<T>
 
-type JiNotationBound = Bound & {
+type JiNotationBound<T extends NumericProperties = {}> = Bound<T> & {
     id: Id<JiNotationBound>,
     jiNotationLevels: JiNotationLevel[],
     boundType: BoundType,

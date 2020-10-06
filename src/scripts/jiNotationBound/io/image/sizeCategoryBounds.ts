@@ -14,7 +14,7 @@ const visualizeSizeCategoryBounds = (): Io[] => {
 
     sizeCategoryBounds.forEach((sizeCategoryBound: SizeCategoryBound): void => {
         const { name } = sizeCategoryBound
-        const cents = computeCentsFromPitch(sizeCategoryBound)
+        const cents = computeCentsFromPitch(sizeCategoryBound.pitch)
 
         const topEdgeY: Px = round(JI_NOTATION_LEVEL_TOPS[ JiNotationLevel.INSANE ], ACCURACY_THRESHOLD)
         const bottomEdgeY: Px = round(JI_NOTATION_LEVEL_BOTTOMS[ JiNotationLevel.MEDIUM ], ACCURACY_THRESHOLD)

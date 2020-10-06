@@ -1,4 +1,4 @@
-import { HexColor, IntegerDecimal, Rank, RecordKey } from "../../../../general"
+import { Decimal, HexColor, Rank, RecordKey } from "../../../../general"
 import { BoundType } from "../../../../sagittal"
 import { RANKS } from "../../ranks"
 
@@ -6,7 +6,7 @@ const INA_MIDPOINT_HEX_COLOR: HexColor = "#6666ff" as HexColor
 const COMMA_MEAN_HEX_COLOR: HexColor = "#88cccc" as HexColor
 const SIZE_CATEGORY_BOUND_HEX_COLOR: HexColor = "#88ff88" as HexColor
 
-const RANK_HEX_COLORS: Record<RecordKey<IntegerDecimal & Rank<BoundType>>, HexColor> = {
+const RANK_HEX_COLORS: Record<RecordKey<Decimal<{ integer: true }> & Rank<BoundType>>, HexColor> = {
     [ RANKS[ BoundType.INA_MIDPOINT ] ]: INA_MIDPOINT_HEX_COLOR,
     [ RANKS[ BoundType.COMMA_MEAN ] ]: COMMA_MEAN_HEX_COLOR,
     [ RANKS[ BoundType.SIZE_CATEGORY_BOUND ] ]: SIZE_CATEGORY_BOUND_HEX_COLOR,

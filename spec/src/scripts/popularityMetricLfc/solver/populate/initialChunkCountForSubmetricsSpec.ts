@@ -14,17 +14,14 @@ describe("computeInitialChunkCountForSubmetrics", (): void => {
             expect(actual).toBe(chunkCount as Count<Chunk<Submetric>>)
         })
 
-        it(
-            "when > the total count of possible submetric chunks (6), caps out at that total possible count",
-            (): void => {
-                const chunkCount = 7 as Count<Chunk>
+        it("when > the total count of possible submetric chunks (6), caps out at that total possible count               ", (): void => {
+            const chunkCount = 7 as Count<Chunk>
 
-                const actual = computeInitialChunkCountForSubmetrics(chunkCount)
+            const actual = computeInitialChunkCountForSubmetrics(chunkCount)
 
-                const expected = 6 as Count<Chunk<Submetric>>
-                expect(actual).toBe(expected)
-            },
-        )
+            const expected = 6 as Count<Chunk<Submetric>>
+            expect(actual).toBe(expected)
+        })
     })
 
     describe("when no useless chunks are being used", (): void => {
@@ -40,16 +37,13 @@ describe("computeInitialChunkCountForSubmetrics", (): void => {
             expect(actual).toBe(chunkCount as Count<Chunk<Submetric>>)
         })
 
-        it(
-            "when > the total count of possible submetric chunks (4), caps out at that total possible count",
-            (): void => {
-                const chunkCount = 7 as Count<Chunk>
+        it("when > the total count of possible submetric chunks (4), caps out at that total possible count              ", (): void => {
+            const chunkCount = 7 as Count<Chunk>
 
-                const actual = computeInitialChunkCountForSubmetrics(chunkCount)
+            const actual = computeInitialChunkCountForSubmetrics(chunkCount)
 
-                const expected = 4 as Count<Chunk<Submetric>>
-                expect(actual).toBe(expected)
-            },
-        )
+            const expected = 4 as Count<Chunk<Submetric>>
+            expect(actual).toBe(expected)
+        })
     })
 })

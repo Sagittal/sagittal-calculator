@@ -17,7 +17,7 @@ const analyzeHistory = (
 ): BoundHistoryAnalysis => {
     const position = computeBoundHistoryPosition(boundHistory)
 
-    const cents = computeCentsFromPitch(jiNotationBound)
+    const cents = computeCentsFromPitch(jiNotationBound.pitch)
 
     const boundEventAnalyses = analyzeBoundEvents(boundHistory, cents)
     const rank = computeRank(boundEventAnalyses)

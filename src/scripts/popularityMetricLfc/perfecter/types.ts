@@ -1,4 +1,4 @@
-import { IntegerDecimal } from "../../../general"
+import { Decimal } from "../../../general"
 import { DynamicParameter, Sample, Scope, SumOfSquares, SumOrSumsOfSquaresOptions } from "../bestMetric"
 
 type MetricTag = string & { _MetricTagBrand: boolean }
@@ -8,7 +8,7 @@ interface LocalMin extends Sample {
 }
 
 type RecursiveSearchScopeAndMaybeUpdateBestMetricOptions = Partial<{
-    depth: IntegerDecimal,
+    depth: Decimal<{ integer: true }>,
     localMin: LocalMin,
     metricTag: MetricTag,
     onlyBetterThanSopfgtt: boolean,
@@ -19,7 +19,7 @@ interface SearchLocalMinOptions extends SumOrSumsOfSquaresOptions {
     scope: Scope,
     metricTag: MetricTag,
     index: number,
-    depth: IntegerDecimal,
+    depth: Decimal<{ integer: true }>,
     nextLocalMinima: LocalMin[],
 }
 

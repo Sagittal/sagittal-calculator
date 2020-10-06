@@ -1,22 +1,11 @@
-import {
-    Abs,
-    Comma,
-    computeRealSqrt,
-    Copfr,
-    Exponent,
-    IntegerDecimal,
-    Max,
-    Min,
-    Prime,
-    Sopfr,
-} from "../../../../general"
-import { APOTOME_DECIMAL } from "../../../constants"
+import { Abs, Copfr, Decimal, Exponent, Max, Min, Pitch, Prime, Sopfr } from "../../../../general"
+import { HALF_APOTOME } from "../../../constants"
 import { ApotomeSlope } from "../../pitch"
 import { N2D3P9 } from "../../two3FreeClass"
 
-const DEFAULT_LOWER_BOUND = { decimal: 1 } as Min<Comma>                                //  0.0000000000¢
-const DEFAULT_UPPER_BOUND = { decimal: computeRealSqrt(APOTOME_DECIMAL) } as Max<Comma>  // 56.8425030289¢
-const DEFAULT_MAX_ATE = 15 as Max<Abs<IntegerDecimal & Exponent<3 & Prime>>>
+const DEFAULT_LOWER_BOUND = { monzo: [] as unknown[] } as Min<Pitch>                                //  0.0000000000¢
+const DEFAULT_UPPER_BOUND = HALF_APOTOME as Pitch as Max<Pitch>                                     // 56.8425030289¢
+const DEFAULT_MAX_ATE = 15 as Max<Abs<Decimal<{ integer: true }> & Exponent<3 & Prime>>>
 const DEFAULT_MAX_AAS = 14 as Max<Abs<ApotomeSlope>>
 const DEFAULT_MAX_N2D3P9 = 307 as Max<N2D3P9>
 const DEFAULT_MAX_2_3_FREE_SOPFR = 61 as Max<Sopfr<{ rough: 5 }>> // Can go as high as 127 without crashing

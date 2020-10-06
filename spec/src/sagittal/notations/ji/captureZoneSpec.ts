@@ -22,14 +22,11 @@ describe("computeCaptureZone", (): void => {
         expect(computeCentsFromPitch(actual![ 1 ])).toBeCloseToTyped(11.031239 as Cents)
     })
 
-    it(
-        "throws an error if a JI notation level is requested for a JI Notation symbol class which does not exist at that JI notation level",
-        (): void => {
-            const symbolClass: Id<SymbolClass> = 21 as Id<SymbolClass>
+    it("throws an error if a JI notation level is requested for a JI Notation symbol class which does not exist at that JI notation level", (): void => {
+        const symbolClass: Id<SymbolClass> = 21 as Id<SymbolClass>
 
-            expect((): void => {
-                computeCaptureZone(symbolClass, JiNotationLevel.ULTRA)
-            }).toThrowError("JI Notation symbol class `)|( is not present at the Ultra JI notation level; it is not introduced until the Extreme JI notation level.")
-        },
-    )
+        expect((): void => {
+            computeCaptureZone(symbolClass, JiNotationLevel.ULTRA)
+        }).toThrowError("JI Notation symbol class `)|( is not present at the Ultra JI notation level; it is not introduced until the Extreme JI notation level.")
+    })
 })

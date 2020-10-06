@@ -54,26 +54,23 @@ describe("populateScopesPhase", (): void => {
         )
     })
 
-    it(
-        "calculates the correct combinations of parameters and submetrics and memoizes them",
-        async (): Promise<void> => {
-            delete memoizedSubmetricChunkCombinations[ chunkCountForSubmetrics ]
-            delete memoizedParameterChunkCombinations[ expectedChunkCountForParameters ]
+    it("calculates the correct combinations of parameters and submetrics and memoizes them                                    ", async (): Promise<void> => {
+        delete memoizedSubmetricChunkCombinations[ chunkCountForSubmetrics ]
+        delete memoizedParameterChunkCombinations[ expectedChunkCountForParameters ]
 
-            await populateScopesPhase(chunkCount, chunkCountForSubmetrics)
+        await populateScopesPhase(chunkCount, chunkCountForSubmetrics)
 
-            expect(combinations.computeCombinations).toHaveBeenCalledWith(
-                SUBMETRIC_CHUNKS,
-                chunkCountForSubmetrics,
-                { withRepeatedElements: true },
-            )
-            expect(combinations.computeCombinations).toHaveBeenCalledWith(
-                PARAMETER_CHUNKS,
-                expectedChunkCountForParameters,
-                { withRepeatedElements: true },
-            )
-        },
-    )
+        expect(combinations.computeCombinations).toHaveBeenCalledWith(
+            SUBMETRIC_CHUNKS,
+            chunkCountForSubmetrics,
+            { withRepeatedElements: true },
+        )
+        expect(combinations.computeCombinations).toHaveBeenCalledWith(
+            PARAMETER_CHUNKS,
+            expectedChunkCountForParameters,
+            { withRepeatedElements: true },
+        )
+    })
 
     it("uses the memoized chunk combinations when they are available", async (): Promise<void> => {
         memoizedSubmetricChunkCombinations[ chunkCountForSubmetrics ] = submetricChunkCombinations

@@ -36,9 +36,9 @@ describe("round", (): void => {
         expect(round(number)).toBe(30)
     })
 
-    it("leaves scientific notated values alone", (): void => {    
+    it("leaves scientific notated values alone", (): void => {
         const number = 5.153775207320113e+47
-        
+
         expect(round(number)).toBe(number)
     })
 

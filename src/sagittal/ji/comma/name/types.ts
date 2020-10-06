@@ -1,4 +1,4 @@
-import { Name, NumericProperties, RationalQuotient, Real } from "../../../../general"
+import { Name, NumericProperties, Pitch, Quotient } from "../../../../general"
 
 interface SizeCategoryOptions {
     abbreviated?: boolean,
@@ -9,8 +9,9 @@ interface SizeCategory {
     abbreviation: SizeCategoryAbbreviation,
 }
 
-type SizeCategoryBound<T extends NumericProperties = {}> = Real<T> & {
+type SizeCategoryBound<T extends NumericProperties = {}> = {
     name: Name<SizeCategoryBound>,
+    pitch: Pitch<T & { rational: false }>,
 }
 
 enum SizeCategoryName {
@@ -79,7 +80,7 @@ type CommaNameOptions = Partial<{
 // It WILL be super! This is a subtle but critical point.
 // You can observe this difference in ordering in commaName.ts and two3FreeClass.ts
 type CommaNameQuotient<T extends NumericProperties = {}> =
-    RationalQuotient<T & { rough: 5 }>
+    Quotient<T & { rational: true, rough: 5 }>
     & { _CommaNameQuotientBrand: boolean }
 
 interface ParsedCommaName {

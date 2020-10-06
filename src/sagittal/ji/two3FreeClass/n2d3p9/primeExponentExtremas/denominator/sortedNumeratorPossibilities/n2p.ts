@@ -1,10 +1,9 @@
-import { computeGpf, IntegerNumerator } from "../../../../../../../general"
+import { computeRationalDecimalGpf, Decimal, Numerator } from "../../../../../../../general"
 import { computeN2 } from "./n2"
 import { N2P } from "./types"
 
-const computeN2P = (numerator: IntegerNumerator): N2P => {
-    return computeN2(numerator) * computeGpf(numerator) as N2P
-}
+const computeN2P = (numerator: Numerator & Decimal<{ integer: true }>): N2P =>
+    computeN2(numerator) * computeRationalDecimalGpf(numerator) as N2P
 
 export {
     computeN2P,

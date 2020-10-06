@@ -2,25 +2,25 @@ import { isCloseTo } from "./isCloseTo"
 import { isArray, isNumber, isObject, isUndefined } from "./typeGuards"
 import { Precision } from "./types"
 
-const deepEqualsArray = <T>(firstValue: T[], secondValue: T[], precision?: Precision): boolean =>
-    isArray(firstValue) &&
-    firstValue.length === secondValue.length &&
-    secondValue.every((el: T, index: number): boolean => deepEquals(el, firstValue[ index ], precision))
+const deepEqualsArray = <T>(valueA: T[], valueB: T[], precision?: Precision): boolean =>
+    isArray(valueA) &&
+    valueA.length === valueB.length &&
+    valueB.every((el: T, index: number): boolean => deepEquals(el, valueA[ index ], precision))
 
 const deepEqualsObject = <T extends Record<string, unknown>>(
-    firstValue: T,
-    secondValue: T,
+    valueA: T,
+    valueB: T,
     precision?: Precision,
 ): boolean => {
     let equal
 
-    if (isArray(firstValue)) {
+    if (isArray(valueA)) {
         equal = false
-    } else if (isObject(firstValue)) {
-        equal = Object.keys(firstValue).length === Object.keys(secondValue).length &&
-            Object.entries(secondValue)
+    } else if (isObject(valueA)) {
+        equal = Object.keys(valueA).length === Object.keys(valueB).length &&
+            Object.entries(valueB)
                 .every(([key, value]: [string, unknown]): boolean =>
-                    deepEquals(value, firstValue[ key ], precision))
+                    deepEquals(value, valueA[ key ], precision))
     } else {
         equal = false
     }
@@ -28,20 +28,19 @@ const deepEqualsObject = <T extends Record<string, unknown>>(
     return equal
 }
 
-const deepEquals = <T>(firstValue: T, secondValue: T, precision?: Precision): boolean => {
+const deepEquals = <T>(valueA: T, valueB: T, precision?: Precision): boolean => {
     let equal = false
 
-    if (firstValue === secondValue) {
+    if (valueA === valueB) {
         equal = true
-    } else if (!isUndefined(precision) && isNumber(firstValue) && isNumber(secondValue)) {
-        equal = isCloseTo(firstValue, secondValue, precision)
-        if (!equal) console.log("here is where it went wrong:", firstValue, secondValue)
-    } else if (isArray(firstValue)) {
-        equal = deepEqualsArray(secondValue as T & unknown[], firstValue as T & unknown[], precision)
-    } else if (isObject(firstValue)) {
+    } else if (!isUndefined(precision) && isNumber(valueA) && isNumber(valueB)) {
+        equal = isCloseTo(valueA, valueB, precision)
+    } else if (isArray(valueA)) {
+        equal = deepEqualsArray(valueB as T & unknown[], valueA as T & unknown[], precision)
+    } else if (isObject(valueA)) {
         equal = deepEqualsObject(
-            secondValue as T & Record<string, unknown>,
-            firstValue as T & { [ index: string ]: unknown },
+            valueB as T & Record<string, unknown>,
+            valueA as T & { [ index: string ]: unknown },
             precision,
         )
     }

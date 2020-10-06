@@ -1,22 +1,20 @@
-import { computeRealDecimalFromReal, Real } from "../../math"
-import { computeCents } from "../../music"
-import { ANY_DECIMAL_CHARS } from "../constants"
+import { isRationalQuotient } from "../../math"
+import { computeCentsFromPitch, isJi, Pitch } from "../../music"
 import { formatCents } from "./cents"
-import { formatReal } from "./real"
+import { formatMonzo } from "./monzo"
+import { formatQuotient } from "./quotient"
 import { Formatted } from "./types"
 
-const formatPitch = (pitch: Real, options: { align?: boolean } = {}): Formatted<Real> => {
-    const formattedNum = formatReal(pitch, options)
-
-    if (formattedNum.match(ANY_DECIMAL_CHARS)) {
-        return formatCents(
-            computeCents(
-                computeRealDecimalFromReal(pitch),
-            ),
-            options,
-        ) as Formatted as Formatted<Real>
+const formatPitch = (pitch: Pitch, options: { align?: boolean } = {}): Formatted<Pitch> => {
+    if (isJi(pitch)) {
+        return formatMonzo(pitch.monzo) as Formatted as Formatted<Pitch>
     } else {
-        return formattedNum
+        const { scaler, monzo } = pitch
+        if (isRationalQuotient(scaler)) {
+            return `${formatMonzo(monzo)}(${formatQuotient(scaler)})` as Formatted as Formatted<Pitch>
+        } else {
+            return formatCents(computeCentsFromPitch(pitch), options) as Formatted as Formatted<Pitch>
+        }
     }
 }
 

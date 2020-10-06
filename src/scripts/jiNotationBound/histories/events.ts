@@ -14,7 +14,7 @@ const computeBoundEvents = (
     const bounds = BOUNDS_BY_TYPE[ boundType ][ jiNotationLevel ]
 
     bounds.forEach((bound: Bound): void => {
-        const cents = computeCentsFromPitch(bound)
+        const cents = computeCentsFromPitch(bound.pitch)
         if (
             (!lesserBoundedSymbolPosition || cents > lesserBoundedSymbolPosition) &&
             (!greaterBoundedSymbolPosition || cents < greaterBoundedSymbolPosition)

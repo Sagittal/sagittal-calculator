@@ -1,7 +1,7 @@
-import { Id, Index, Name, Ranked, RationalMonzo, Two3FreeClass } from "../../../../../../src/general"
+import { Id, Index, Monzo, Name, Ranked, Two3FreeClass } from "../../../../../../src/general"
 import { Rank } from "../../../../../../src/general/code"
 import { Row } from "../../../../../../src/general/io/table"
-import { Direction } from "../../../../../../src/general/math/real"
+import { Direction } from "../../../../../../src/general/math/numeric"
 import { Popularity, Votes } from "../../../../../../src/general/music/ji"
 import { N2D3P9 } from "../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
 import { SymbolClass, SymbolSubset } from "../../../../../../src/sagittal/notations"
@@ -24,7 +24,7 @@ describe("computePopular23FreeClassWithExactlyNotatingSymbolClassRow", (): void 
             n2d3p9: 2 as N2D3P9,
             votes: 7 as Votes,
             popularityRank: 3 as Rank<Popularity>,
-            monzo: [0, 0, -1, 1] as RationalMonzo<{ rough: 5, direction: Direction.SUPER }>,
+            monzo: [0, 0, -1, 1] as Monzo<{ rational: true, rough: 5, direction: Direction.SUPER }>,
         }
 
         const actual = computePopular23FreeClassWithExactlyNotatingSymbolClassRow(
@@ -32,7 +32,7 @@ describe("computePopular23FreeClassWithExactlyNotatingSymbolClassRow", (): void 
         )
 
         const expected = [
-            "1/1₍₂,₃₎",             // 2,3-free class name
+            "7/5₍₂,₃₎",             // 2,3-free class name
             "  2.000",              // N2D3P9
             "    )|(     ./|  ",    // Exactly notating symbol classes
             "1, 3",                 // Exactly notating symbol class smallest symbol subset indices

@@ -1,21 +1,21 @@
-import { Denominator, NumericProperties, QuotientPart, RealQuotient } from "../../math"
+import { Denominator, NumericProperties, Quotient, QuotientPart } from "../../math"
 import { BLANK, SUPERSCRIPT_NUMBERS } from "../constants"
 import { split } from "../typedOperations"
 import { Char, Io } from "../types"
-import { parseInteger } from "./integer"
+import { parseInteger } from "./decimal"
 
-const superscriptReals = SUPERSCRIPT_NUMBERS.join()
+const superscriptNumbers = SUPERSCRIPT_NUMBERS.join()
 
-const parseQuotient = <T extends NumericProperties>(quotientIo: Io): RealQuotient<T> => {
-    const realQuotient = split(quotientIo, /[\/:]/).map((quotientPartIo: Io): QuotientPart => {
-        if (quotientPartIo.match(new RegExp(`[${superscriptReals}.]`))) {
+const parseQuotient = <T extends NumericProperties>(quotientIo: Io): Quotient<T> => {
+    const quotient = split(quotientIo, /[\/:]/).map((quotientPartIo: Io): QuotientPart => {
+        if (quotientPartIo.match(new RegExp(`[${superscriptNumbers}.]`))) {
             const factorPowers = quotientPartIo.split(".")
             return factorPowers.reduce(
                 (product: QuotientPart, factorPower: string): QuotientPart => {
-                    const exponentPartOfFactorPower: string = factorPower.replace(new RegExp(`[^${superscriptReals}]`, "g"), "")
+                    const exponentPartOfFactorPower: string = factorPower.replace(new RegExp(`[^${superscriptNumbers}]`, "g"), "")
                     const basePartOfFactorPower = factorPower.replace(exponentPartOfFactorPower, "")
 
-                    const base = parseInteger(basePartOfFactorPower)
+                    const base = parseInteger(basePartOfFactorPower as Io)
                     const power = exponentPartOfFactorPower === BLANK ?
                         1 :
                         SUPERSCRIPT_NUMBERS.indexOf(exponentPartOfFactorPower as Char)
@@ -29,15 +29,15 @@ const parseQuotient = <T extends NumericProperties>(quotientIo: Io): RealQuotien
         }
     })
 
-    if (realQuotient.length === 1) {
-        realQuotient.push(1 as Denominator)
+    if (quotient.length === 1) {
+        quotient.push(1 as Denominator)
     }
 
     if (quotientIo.includes(":")) {
-        realQuotient.reverse()
+        quotient.reverse()
     }
 
-    return realQuotient as RealQuotient<T>
+    return quotient as Quotient<T>
 }
 
 export {

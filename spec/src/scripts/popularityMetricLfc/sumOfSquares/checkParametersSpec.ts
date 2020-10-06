@@ -95,47 +95,38 @@ describe("checkSubmetricsForInvalidParameterCombinations", (): void => {
     })
 
     describe("denominator-specific parameters", (): void => {
-        it(
-            "gives a good error when b is provided but not w, since b is a denominator-specific alteration of w",
-            (): void => {
-                const submetrics = [
-                    {
-                        [ Parameter.SUM ]: true,
-                        [ Parameter.B ]: 2 as ParameterValue,
-                    },
-                ]
+        it("gives a good error when b is provided but not w, since b is a denominator-specific alteration of w          ", (): void => {
+            const submetrics = [
+                {
+                    [ Parameter.SUM ]: true,
+                    [ Parameter.B ]: 2 as ParameterValue,
+                },
+            ]
 
-                expect((): void => checkSubmetricsForInvalidParameterCombinations(submetrics)).toThrowError(`Submetric {"sum":true,"b":2} cannot specify b without w.`)
-            },
-        )
+            expect((): void => checkSubmetricsForInvalidParameterCombinations(submetrics)).toThrowError(`Submetric {"sum":true,"b":2} cannot specify b without w.`)
+        })
 
-        it(
-            "gives a good error when u is provided but not x, since u is a denominator-specific alteration of x",
-            (): void => {
-                const submetrics = [
-                    {
-                        [ Parameter.SUM ]: true,
-                        [ Parameter.U ]: 2 as ParameterValue,
-                    },
-                ]
+        it("gives a good error when u is provided but not x, since u is a denominator-specific alteration of x            ", (): void => {
+            const submetrics = [
+                {
+                    [ Parameter.SUM ]: true,
+                    [ Parameter.U ]: 2 as ParameterValue,
+                },
+            ]
 
-                expect((): void => checkSubmetricsForInvalidParameterCombinations(submetrics)).toThrowError(`Submetric {"sum":true,"u":2} cannot specify u without x.`)
-            },
-        )
+            expect((): void => checkSubmetricsForInvalidParameterCombinations(submetrics)).toThrowError(`Submetric {"sum":true,"u":2} cannot specify u without x.`)
+        })
 
-        it(
-            "gives a good error when v is provided but not y, since v is a denominator-specific alteration of y",
-            (): void => {
-                const submetrics = [
-                    {
-                        [ Parameter.SUM ]: true,
-                        [ Parameter.V ]: 2 as ParameterValue,
-                    },
-                ]
+        it("gives a good error when v is provided but not y, since v is a denominator-specific alteration of y          ", (): void => {
+            const submetrics = [
+                {
+                    [ Parameter.SUM ]: true,
+                    [ Parameter.V ]: 2 as ParameterValue,
+                },
+            ]
 
-                expect((): void => checkSubmetricsForInvalidParameterCombinations(submetrics)).toThrowError(`Submetric {"sum":true,"v":2} cannot specify v without y.`)
-            },
-        )
+            expect((): void => checkSubmetricsForInvalidParameterCombinations(submetrics)).toThrowError(`Submetric {"sum":true,"v":2} cannot specify v without y.`)
+        })
     })
 
     describe("weighting single-submetric metrics", (): void => {

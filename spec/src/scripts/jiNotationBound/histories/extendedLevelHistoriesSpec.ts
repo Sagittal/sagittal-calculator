@@ -1,4 +1,4 @@
-import { Cents, Name, RealDecimal } from "../../../../../src/general"
+import { Cents, computePitchFromDecimal, Decimal, Name } from "../../../../../src/general"
 import { Bound, BoundType, JiNotationBound, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 import { BoundEvent, BoundHistory } from "../../../../../src/scripts/jiNotationBound/histories"
 import { computeExtendedJiNotationLevelBoundHistories } from "../../../../../src/scripts/jiNotationBound/histories/extendedLevelHistories"
@@ -6,26 +6,26 @@ import { jiNotationBoundFixture } from "../../../../helpers/src/scripts/jiNotati
 
 describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
     it("given the histories for a bound up to the current JI notation level, returns the histories extended for all possible events at this JI notation level", (): void => {
-        const firstHistoryPriorEvent: BoundEvent = {
+        const historyPriorEventA: BoundEvent = {
             jiNotationLevel: JiNotationLevel.MEDIUM,
             boundType: BoundType.INA_MIDPOINT,
             name: "1.5°21" as Name<Bound>,
             cents: 8.120357 as Cents,
         }
-        const secondHistoryPriorEvent: BoundEvent = {
+        const historyPriorEventB: BoundEvent = {
             jiNotationLevel: JiNotationLevel.MEDIUM,
             boundType: BoundType.COMMA_MEAN,
             name: "|( )|(" as Name<Bound>,
             cents: 7.722881 as Cents,
         }
         const histories: BoundHistory[] = [
-            [firstHistoryPriorEvent],
-            [secondHistoryPriorEvent],
+            [historyPriorEventA],
+            [historyPriorEventB],
         ]
         const jiNotationLevel = JiNotationLevel.HIGH
         const jiNotationBound: JiNotationBound = {
             ...jiNotationBoundFixture,
-            decimal: 1.00468970588 as RealDecimal, // 8.100000¢
+            pitch: computePitchFromDecimal(1.00468970588 as Decimal<{ rational: false }>), // 8.100000¢
             jiNotationLevels: [JiNotationLevel.MEDIUM, JiNotationLevel.HIGH, JiNotationLevel.ULTRA],
         }
 
@@ -33,7 +33,7 @@ describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
 
         const expected = [
             [
-                firstHistoryPriorEvent,
+                historyPriorEventA,
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
                     boundType: BoundType.INA_MIDPOINT,
@@ -42,7 +42,7 @@ describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
                 },
             ],
             [
-                firstHistoryPriorEvent,
+                historyPriorEventA,
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
                     boundType: BoundType.INA_MIDPOINT,
@@ -51,7 +51,7 @@ describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
                 },
             ],
             [
-                firstHistoryPriorEvent,
+                historyPriorEventA,
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
                     boundType: BoundType.COMMA_MEAN,
@@ -60,7 +60,7 @@ describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
                 },
             ],
             [
-                secondHistoryPriorEvent,
+                historyPriorEventB,
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
                     boundType: BoundType.INA_MIDPOINT,
@@ -69,7 +69,7 @@ describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
                 },
             ],
             [
-                secondHistoryPriorEvent,
+                historyPriorEventB,
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
                     boundType: BoundType.INA_MIDPOINT,
@@ -78,7 +78,7 @@ describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
                 },
             ],
             [
-                secondHistoryPriorEvent,
+                historyPriorEventB,
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
                     boundType: BoundType.COMMA_MEAN,

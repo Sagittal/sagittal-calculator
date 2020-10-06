@@ -103,43 +103,40 @@ describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", (): void => {
         expect(bestMetrics.get(metricName)).toEqual(bestMetric)
     })
 
-    it(
-        "does not set the best metric when it gets an invalid parameter combination (and doesn't fail either)",
-        async (): Promise<void> => {
-            const bestMetric = {
-                sumOfSquares: 0.012000 as SumOfSquares,
-                name: "" as Name<Metric>,
+    it("does not set the best metric when it gets an invalid parameter combination (and doesn't fail either)             ", async (): Promise<void> => {
+        const bestMetric = {
+            sumOfSquares: 0.012000 as SumOfSquares,
+            name: "" as Name<Metric>,
+            submetrics: [{
+                [ Parameter.SUM ]: true,
+                [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
+                [ Parameter.W ]: 1.5 as ParameterValue,
+            }] as Combination<Submetric>,
+        }
+        bestMetrics.set(metricName, bestMetric)
+
+        const samples = [
+            {
+                samplePoint: [0, 0] as SamplePoint,
                 submetrics: [{
                     [ Parameter.SUM ]: true,
-                    [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
-                    [ Parameter.W ]: 1.5 as ParameterValue,
+                    // Invalid because it doesn't make sense to use weight on a metric with only a single submetric
+                    [ Parameter.WEIGHT_AS_COEFFICIENT ]: 1 as ParameterValue,
+                    [ Parameter.W ]: 0.5 as ParameterValue,
                 }] as Combination<Submetric>,
-            }
-            bestMetrics.set(metricName, bestMetric)
+            },
+            {
+                samplePoint: [0, 1] as SamplePoint,
+                submetrics: [{
+                    [ Parameter.SUM ]: true,
+                    [ Parameter.WEIGHT_AS_COEFFICIENT ]: 0 as ParameterValue,
+                    [ Parameter.W ]: 0.5 as ParameterValue,
+                }] as Combination<Submetric>,
+            },
+        ]
 
-            const samples = [
-                {
-                    samplePoint: [0, 0] as SamplePoint,
-                    submetrics: [{
-                        [ Parameter.SUM ]: true,
-                        // Invalid because it doesn't make sense to use weight on a metric with only a single submetric
-                        [ Parameter.WEIGHT_AS_COEFFICIENT ]: 1 as ParameterValue,
-                        [ Parameter.W ]: 0.5 as ParameterValue,
-                    }] as Combination<Submetric>,
-                },
-                {
-                    samplePoint: [0, 1] as SamplePoint,
-                    submetrics: [{
-                        [ Parameter.SUM ]: true,
-                        [ Parameter.WEIGHT_AS_COEFFICIENT ]: 0 as ParameterValue,
-                        [ Parameter.W ]: 0.5 as ParameterValue,
-                    }] as Combination<Submetric>,
-                },
-            ]
+        await computeSumsOfSquaresAndMaybeUpdateBestMetric(samples, { metricName })
 
-            await computeSumsOfSquaresAndMaybeUpdateBestMetric(samples, { metricName })
-
-            expect(bestMetrics.get(metricName)).toEqual(bestMetric)
-        },
-    )
+        expect(bestMetrics.get(metricName)).toEqual(bestMetric)
+    })
 })

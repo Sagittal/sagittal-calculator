@@ -125,27 +125,21 @@ describe("perfect-metrics", (): void => {
         `ONLY TOP 80`,
     ] as Io[]
 
-    it(
-        "takes the best metrics that were found per metric name, relatively roughly best, and then recursively searches local minima with an initial search space subdividing resolution an order of magnitude smaller than the best metrics search, until it finds the perfect metric for each best metric",
-        (): void => {
-            onlyRunInCi()
-            const command = "npm run perfect-metrics -- --log-targets finalPerfecterResults" as Io
+    it("takes the best metrics that were found per metric name, relatively roughly best, and then recursively searches local minima with an initial search space subdividing resolution an order of magnitude smaller than the best metrics search, until it finds the perfect metric for each best metric", (): void => {
+        onlyRunInCi()
+        const command = "npm run perfect-metrics -- --log-targets finalPerfecterResults" as Io
 
-            const actual = runCommandAndGetConsoleOutput(command)
+        const actual = runCommandAndGetConsoleOutput(command)
 
-            expect(actual).toEqual(expected)
-        },
-    )
+        expect(actual).toEqual(expected)
+    })
 
-    it(
-        "works in sync mode too",
-        (): void => {
-            onlyRunInCi()
-            const command = "npm run perfect-metrics -- --log-targets finalPerfecterResults --sync" as Io
+    it("works in sync mode too", (): void => {
+        onlyRunInCi()
+        const command = "npm run perfect-metrics -- --log-targets finalPerfecterResults --sync" as Io
 
-            const actual = runCommandAndGetConsoleOutput(command)
+        const actual = runCommandAndGetConsoleOutput(command)
 
-            expect(actual).toEqual(expected)
-        },
-    )
+        expect(actual).toEqual(expected)
+    })
 })

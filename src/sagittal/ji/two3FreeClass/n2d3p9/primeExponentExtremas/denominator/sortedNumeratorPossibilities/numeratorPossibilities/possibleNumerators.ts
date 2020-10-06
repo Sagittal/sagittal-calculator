@@ -1,18 +1,20 @@
-import { FIVE_ROUGHNESS, IntegerNumerator, isRoughIntegerDecimal, Max } from "../../../../../../../../general"
+import { Decimal, FIVE_ROUGHNESS, isRoughIntegerDecimal, Max, Numerator } from "../../../../../../../../general"
 import { N2D3P9 } from "../../../../types"
 import { computeMaxNumeratorGivenMaxN2D3P9 } from "./maxNumerator"
 
-const computePossibleNumeratorsGivenMaxN2D3P9 = (maxN2D3P9: Max<N2D3P9>): IntegerNumerator[] => {
+const computePossibleNumeratorsGivenMaxN2D3P9 = (
+    maxN2D3P9: Max<N2D3P9>,
+): Array<Numerator & Decimal<{ integer: true }>> => {
     const maxNumerator = computeMaxNumeratorGivenMaxN2D3P9(maxN2D3P9)
 
     const possibleNumerators = []
-    let possibleNumerator = 7 as IntegerNumerator
+    let possibleNumerator = 7 as Numerator & Decimal<{ integer: true }>
     while (possibleNumerator <= maxNumerator) {
         if (isRoughIntegerDecimal(possibleNumerator, FIVE_ROUGHNESS)) {
             possibleNumerators.push(possibleNumerator)
         }
 
-        possibleNumerator = possibleNumerator + 2 as IntegerNumerator
+        possibleNumerator = possibleNumerator + 2 as Numerator & Decimal<{ integer: true }>
     }
 
     return possibleNumerators

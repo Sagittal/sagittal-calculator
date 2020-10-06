@@ -1,4 +1,4 @@
-import { Id, ioSettings, Max, Maybe, Min, Real, realIsHigher, Zone } from "../../../general"
+import { Id, ioSettings, isUndefined, Max, Maybe, Min, Pitch, pitchIsHigher, Zone } from "../../../general"
 import { formatSymbolClass } from "../../io"
 import { getPrimaryComma } from "../primaryComma"
 import { UNISON } from "../primaryCommas"
@@ -27,17 +27,19 @@ const computeCaptureZone = (
 
     const indexOfBoundJustAboveSymbolAtThisLevel = jiNotationLevelBounds
         .findIndex((jiNotationBound: JiNotationBound): boolean => {
-            return realIsHigher(jiNotationBound, primaryComma)
+            return pitchIsHigher(jiNotationBound.pitch, primaryComma)
         })
     const indexOfJiNotationBoundJustBelowSymbolClassAtThisLevel = indexOfBoundJustAboveSymbolAtThisLevel - 1
 
-    const lowerBound =
-        jiNotationLevelBounds[ indexOfJiNotationBoundJustBelowSymbolClassAtThisLevel ] as Real as Min<Real>
-        || UNISON
-    const upperBound =
-        jiNotationLevelBounds[ indexOfBoundJustAboveSymbolAtThisLevel ] as Real as Max<Real>
+    const lowerBound = jiNotationLevelBounds[ indexOfJiNotationBoundJustBelowSymbolClassAtThisLevel ]
+    const lowerBoundPitch =
+        isUndefined(lowerBound) ?
+            UNISON :
+            lowerBound.pitch as Pitch as Min<Pitch>
+    const upperBoundPitch =
+        jiNotationLevelBounds[ indexOfBoundJustAboveSymbolAtThisLevel ].pitch as Pitch as Max<Pitch>
 
-    return [lowerBound, upperBound] as Zone<PrimaryComma>
+    return [lowerBoundPitch, upperBoundPitch] as Zone<PrimaryComma>
 }
 
 export {

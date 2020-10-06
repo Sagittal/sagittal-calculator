@@ -2,7 +2,7 @@ import {
     computeLowestTermsRationalQuotient,
     computeRationalMonzoFromRationalQuotient,
     isRationalQuotient,
-    isSubRealQuotient,
+    isSubQuotient,
 } from "../../math"
 import { Two3FreeClass } from "../../music"
 import { Io } from "../types"
@@ -14,7 +14,7 @@ const parse23FreeClass = (two3FreeClassIo: Io): Two3FreeClass => {
     if (!isRationalQuotient(two3FreeQuotient)) {
         throw new Error(`Attempted to parse ${two3FreeClassIo} to a 2,3-free class, but they must be rational`)
     }
-    if (isSubRealQuotient(two3FreeQuotient)) {
+    if (isSubQuotient(two3FreeQuotient)) {
         throw new Error(`Attempted to parse ${two3FreeClassIo} to a 2,3-free class, but they must be sub.`)
     }
 

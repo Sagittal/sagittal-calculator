@@ -3,11 +3,11 @@
 import {
     ACCURACY_THRESHOLD,
     deepEquals,
-    equalReals,
+    equalPitches,
     Io,
     isCloseTo,
     isUndefined,
-    Real,
+    Pitch,
     stringify,
 } from "../../src/general"
 import { Precision } from "../../src/general/code"
@@ -42,10 +42,10 @@ const assert = (condition: boolean, message: Io): void => {
     throw message
 }
 
-const testEqualReal = <T extends Real>(actual: T, expected: T, precision: Precision, negate?: boolean, message?: Io): void => {
+const testEqualPitches = <T extends Pitch>(actual: T, expected: T, precision: Precision, negate?: boolean, message?: Io): void => {
     assert(
-        equalReals(actual, expected, precision),
-        message || `Expected real ${stringify(actual)} to equal real ${stringify(expected)}.` as Io,
+        equalPitches(actual, expected, precision),
+        message || `Expected pitch ${stringify(actual)} to equal pitch ${stringify(expected)}.` as Io,
     )
 }
 
@@ -118,10 +118,10 @@ const eachExpectedElementHasSameContentsAsSomeActualElement = <T>(expectedElemen
 }
 
 const customMatchers: CustomMatcherFactories = {
-    toEqualReal: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({
-        compare: <T extends Real>(actual: T, expected: T, precision: Precision = ACCURACY_THRESHOLD, negate?: boolean, message?: Io): CustomMatcherResult =>
+    toEqualPitch: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({
+        compare: <T extends Pitch>(actual: T, expected: T, precision: Precision = ACCURACY_THRESHOLD, negate?: boolean, message?: Io): CustomMatcherResult =>
             doAssertions((): void => {
-                testEqualReal(actual, expected, precision, negate, message)
+                testEqualPitches(actual, expected, precision, negate, message)
             }),
     }),
     toBeCloseToTyped: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({

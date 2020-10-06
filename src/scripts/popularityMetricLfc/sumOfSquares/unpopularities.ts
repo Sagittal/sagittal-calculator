@@ -3,10 +3,10 @@ import { computeAntivotes } from "./antivotes"
 import { Submetric, Unpopularity } from "./types"
 
 const computeUnpopularities = (
-    realPopularities: Array<Ranked<Popularity>>,
+    popularities: Array<Ranked<Popularity>>,
     submetrics: Combination<Submetric>,
 ): Unpopularity[] =>
-    realPopularities.map(({ two3FreeClass }: Popularity, index: number): Unpopularity =>
+    popularities.map(({ two3FreeClass }: Popularity, index: number): Unpopularity =>
         ({
             index: index as Index<Unpopularity>,
             antivotes: computeAntivotes(two3FreeClass, submetrics),

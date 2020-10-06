@@ -1,58 +1,67 @@
 import {
     Comma,
-    computeIntegerMonzoFromIntegerDecimal,
-    computeRationalQuotientFromRational,
-    computeRoughRationalQuotient,
-    computeSubRealQuotient,
-    computeSuperReal,
-    Direction,
+    computeRationalMonzoFromRationalDecimal,
+    computeSubQuotient,
+    computeSuperPitch,
+    Decimal,
     Exponent,
-    FIVE_ROUGHNESS,
-    IntegerDecimal,
-    IntegerQuotientPart,
-    isSubReal,
-    isUnisonReal,
+    isSubPitch,
+    isUnisonPitch,
     isWithinPrimeLimit,
     Name,
     Prime,
     PRIMES,
-    RationalQuotient,
+    Quotient,
+    QuotientPart,
     stringify,
     SUPERSCRIPT_NUMBERS,
     THREE_PRIME_LIMIT,
 } from "../../../../general"
+import { computeCommaNameQuotient } from "./commaNameQuotient"
 import { computeSizeCategory } from "./sizeCategory"
 import { isCommaSized } from "./typeGuards"
-import { CommaNameOptions, CommaNameQuotient, SizeCategoryAbbreviation, SizeCategoryName } from "./types"
+import { CommaNameOptions, SizeCategoryAbbreviation, SizeCategoryName } from "./types"
 
-const primeFactorize = (numeratorOrDenominator: IntegerQuotientPart): string => {
+const primeFactorizeCommaNameQuotient = (
+    numeratorOrDenominator: QuotientPart & Decimal<{ integer: true }>,
+): string => {
     if (numeratorOrDenominator === 1) return "1"
 
-    const integerMonzo = computeIntegerMonzoFromIntegerDecimal(numeratorOrDenominator)
+    const integerMonzo = computeRationalMonzoFromRationalDecimal(numeratorOrDenominator)
     const factorizedTerms: string[] = []
 
-    integerMonzo.forEach((primeExponent: IntegerDecimal & Exponent<Prime>, primeExponentIndex: number): void => {
-        if (primeExponent === 0) {
-            return
-        }
+    integerMonzo.forEach(
+        (
+            primeExponent: Decimal<{ integer: true }> & Exponent<Prime>,
+            primeExponentIndex: number,
+        ): void => {
+            if (primeExponent === 0) {
+                return
+            }
 
-        if (primeExponent === 1) {
-            factorizedTerms.push(`${PRIMES[ primeExponentIndex ]}`)
-        }
+            if (primeExponent === 1) {
+                factorizedTerms.push(`${PRIMES[ primeExponentIndex ]}`)
+            }
 
-        if (primeExponent > 1) {
-            factorizedTerms.push(`${PRIMES[ primeExponentIndex ]}${SUPERSCRIPT_NUMBERS[ primeExponent ]}`)
-        }
-    })
+            if (primeExponent > 1) {
+                factorizedTerms.push(`${PRIMES[ primeExponentIndex ]}${SUPERSCRIPT_NUMBERS[ primeExponent ]}`)
+            }
+        },
+    )
 
     return factorizedTerms.join(".")
 }
 
-const stringifyQuotient = (rationalQuotient: RationalQuotient, { factored }: { factored: boolean }): string[] => {
+const formatCommaNameQuotient = (
+    rationalQuotient: Quotient<{ rational: true }>,
+    { factored }: { factored: boolean },
+): string[] => {
     return factored ?
-        rationalQuotient.map(primeFactorize) :
-        rationalQuotient.map((rationalQuotientPart: IntegerQuotientPart): string => {
-            return rationalQuotientPart.toString()
+        rationalQuotient.map(primeFactorizeCommaNameQuotient) :
+        rationalQuotient.map((
+            integerQuotientPart: QuotientPart & Decimal<{ integer: true }>,
+        ): string => {
+            return integerQuotientPart.toString()
         })
 }
 
@@ -68,28 +77,25 @@ const computeCommaName = (
 
     const maybeHyphen = abbreviated ? "" : "-"
 
-    const maybeDown = isSubReal(comma) ? " down" : ""
+    const maybeDown = isSubPitch(comma) ? " down" : ""
 
-    const superComma: Comma<{ direction: Direction.SUPER }> = computeSuperReal(comma)
+    const superComma: Comma = computeSuperPitch(comma)
     const sizeCategory: SizeCategoryAbbreviation | SizeCategoryName = computeSizeCategory(superComma, { abbreviated })
 
     let formattedCommaNameQuotient
-    if (isWithinPrimeLimit(comma, THREE_PRIME_LIMIT) && !isUnisonReal(comma)) {
+    if (isWithinPrimeLimit(comma, THREE_PRIME_LIMIT) && !isUnisonPitch(comma)) {
         formattedCommaNameQuotient = "3"
     } else {
-        const commaNameQuotient: CommaNameQuotient = computeRoughRationalQuotient(
-            computeRationalQuotientFromRational(superComma),
-            FIVE_ROUGHNESS,
-        ) as CommaNameQuotient
+        const commaNameQuotient = computeCommaNameQuotient(comma)
 
         if (directed) {
-            const stringifiedQuotient = stringifyQuotient(commaNameQuotient, { factored })
+            const stringifiedQuotient = formatCommaNameQuotient(commaNameQuotient, { factored })
 
             formattedCommaNameQuotient = stringifiedQuotient[ 1 ] === "1" ?
                 stringifiedQuotient[ 0 ] :
                 stringifiedQuotient.join("/")
         } else {
-            const stringifiedQuotient = stringifyQuotient(computeSubRealQuotient(commaNameQuotient), { factored })
+            const stringifiedQuotient = formatCommaNameQuotient(computeSubQuotient(commaNameQuotient), { factored })
 
             formattedCommaNameQuotient = stringifiedQuotient[ 0 ] === "1" ?
                 stringifiedQuotient[ 1 ] :

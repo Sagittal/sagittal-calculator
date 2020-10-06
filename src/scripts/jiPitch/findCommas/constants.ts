@@ -1,4 +1,4 @@
-import { RationalMonzo } from "../../../general"
+import { Monzo } from "../../../general"
 import {
     DEFAULT_LOWER_BOUND,
     DEFAULT_MAX_2_3_FREE_COPFR,
@@ -22,7 +22,7 @@ const DEFAULT_FIND_COMMAS_SETTINGS: FindCommasSettings = {
     maxAte: DEFAULT_MAX_ATE,
 }
 
-const TWO_3_FREE_MONZO_BASE = [0, 0] as RationalMonzo<{ rough: 5 }>
+const TWO_3_FREE_MONZO_BASE = [0, 0] as Monzo<{ rational: true, rough: 5 }>
 
 export {
     DEFAULT_FIND_COMMAS_SETTINGS,

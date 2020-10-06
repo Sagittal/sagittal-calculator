@@ -2,14 +2,14 @@ import { program } from "commander"
 import {
     Comma,
     CommandFlag,
-    IntegerDecimal,
+    Decimal,
     Io,
+    Monzo,
     parseInteger,
     parseMonzo,
     parseQuotient,
-    Real,
-    RealMonzo,
-    RealQuotient,
+    Pitch,
+    Quotient,
 } from "../../../general"
 import { computeCommaFromCommaNameQuotientAndSizeCategoryName, parseCommaName, parsePitch } from "../../../sagittal"
 
@@ -18,24 +18,24 @@ const readJiPitchOptions = (): void => {
         .option(
             `-${CommandFlag.MONZO}, --monzo <monzo>`,
             "monzo",
-            (monzoIo: string): RealMonzo => parseMonzo(monzoIo as Io),
+            (monzoText: string): Monzo => parseMonzo(monzoText as Io),
         )
         .option(
             `-${CommandFlag.QUOTIENT}, --quotient <quotient>`,
             "quotient",
-            (quotientIo: string): RealQuotient => parseQuotient(quotientIo as Io),
+            (quotientText: string): Quotient => parseQuotient(quotientText as Io),
         )
         .option(
             `-${CommandFlag.COMMA_NAME}, --comma-name <commaName>`,
             "comma name",
-            (commaNameIo: string): Comma => {
-                return computeCommaFromCommaNameQuotientAndSizeCategoryName(parseCommaName(commaNameIo as Io))
+            (commaNameText: string): Comma => {
+                return computeCommaFromCommaNameQuotientAndSizeCategoryName(parseCommaName(commaNameText as Io))
             },
         )
         .option(
             `-${CommandFlag.INTEGER}, --integer <integer>`,
             "integer",
-            (integerText: string): IntegerDecimal => parseInteger(integerText),
+            (integerText: string): Decimal<{ integer: true }> => parseInteger(integerText as Io),
         )
 }
 
@@ -44,11 +44,11 @@ const readFindCommasOptions = (): void => {
         .option(
             `-${CommandFlag.LOWER_BOUND}, --lower-bound <lowerBound>`,
             "lower bound",
-            (pitchIo: string): Real => parsePitch(pitchIo as Io))
+            (pitchIo: string): Pitch => parsePitch(pitchIo as Io))
         .option(
             `-${CommandFlag.UPPER_BOUND}, --upper-bound <upperBound>`,
             "upper bound",
-            (pitchIo: string): Real => parsePitch(pitchIo as Io),
+            (pitchIo: string): Pitch => parsePitch(pitchIo as Io),
         )
         .option(`-${CommandFlag.MAX_AAS}, --max-aas <maxAas>`, "max AAS", parseFloat)
         .option(`-${CommandFlag.MAX_ATE}, --max-ate <maxAte>`, "max ATE", parseInt)

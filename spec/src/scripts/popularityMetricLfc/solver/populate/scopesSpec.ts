@@ -16,24 +16,18 @@ import { onlyRunInCi } from "../../../../../helpers/onlyRunInCi"
 describe("populateScopes", (): void => {
     adjustAsyncTimeoutForSpec(1000000 as Ms)
 
-    it(
-        `given a chunk count, populates all possible distributions of all possible combinations of
-         parameter chunks across bins corresponding to all possible combinations of submetric chunks - 
-         works for 1, where each possibility is just a single submetric chunk, 
-         plus an empty 'all bins' chunk because that's just how it works to be simple`,
-        async (): Promise<void> => {
-            solverStatus.chunkCount = 1 as Count<Chunk>
+    it("given a chunk count, populates all possible distributions of all possible combinations of parameter chunks across bins corresponding to all possible combinations of submetric chunks - works for 1, where each possibility is just a single submetric chunk, plus an empty 'all bins' chunk because that's just how it works to be simple", async (): Promise<void> => {
+        solverStatus.chunkCount = 1 as Count<Chunk>
 
-            await populateScopes()
+        await populateScopes()
 
-            // Count: 6
-            expect(scopesToSearch).toEqual(
-                jasmine.arrayWithExactContents(SUBMETRIC_CHUNKS.map((chunk: Chunk<Submetric>): Scope => {
-                    return [{}, chunk] as Scope
-                })),
-            )
-        },
-    )
+        // Count: 6
+        expect(scopesToSearch).toEqual(
+            jasmine.arrayWithExactContents(SUBMETRIC_CHUNKS.map((chunk: Chunk<Submetric>): Scope => {
+                return [{}, chunk] as Scope
+            })),
+        )
+    })
 
     // Need to add the extra 7 bits (18 to 25) to each section below
     it("given a chunk count, populates all possible combinations of those parameters - works for 2", async (): Promise<void> => {

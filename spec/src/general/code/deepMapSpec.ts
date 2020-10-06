@@ -33,7 +33,7 @@ describe("deepMap", (): void => {
         const array = [
             1.1247329857279,
             { a: 6.656348989346, b: [34343.34343435565, 9.54545454] },
-            [8.8347358378535]
+            [8.8347358378535],
         ] as number[]
 
         const actual = deepMap(array, round, ACCURACY_THRESHOLD)

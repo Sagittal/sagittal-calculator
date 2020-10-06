@@ -1,26 +1,25 @@
 /* tslint:disable:no-reaching-imports */
 
 import {
-    compute23FreeClass,
-    computeGpf,
+    computeRationalDecimalGpf,
+    Decimal,
     dividesEvenly,
-    IntegerNumerator,
     Io,
     ioSettings,
     KeyPath,
     LogTarget,
+    Numerator,
     saveLog,
     sort,
     stringify,
 } from "../../../general"
-import { computeN2D3P9 } from "../../../sagittal/ji/two3FreeClass/n2d3p9"
 import {
     SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P,
     SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2,
 } from "../../../sagittal/ji/two3FreeClass/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities"
 import { computeN2 } from "../../../sagittal/ji/two3FreeClass/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/n2"
-import { computeN2P } from "../../../sagittal/ji/two3FreeClass/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/n2p"
 
+// Try out Dave's strategy for getting further along: http://forum.sagittal.org/viewtopic.php?p=2481#p2481
 
 const MAX_NUMERATOR = 9765625
 
@@ -33,34 +32,26 @@ const n2Results: SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncl
     [] as unknown[] as SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2[]
 
 for (
-    let numerator = 5 as IntegerNumerator;
+    let numerator = 5 as Numerator & Decimal<{ integer: true }>;
     numerator <= MAX_NUMERATOR;
-    numerator = numerator + 2 as IntegerNumerator
+    numerator = numerator + 2 as Numerator & Decimal<{ integer: true }>
 ) {
     // 5, 7, _ 11, 13, _, 17, 19
     if (dividesEvenly(numerator, 3)) continue
 
-    // TODO: isn't this just the same as n2p, and could save some calc?
-    const n2d3p9 = computeN2D3P9(compute23FreeClass({ decimal: numerator }))
+    const n2 = computeN2(numerator)
+    const gpf = computeRationalDecimalGpf(numerator)
+    const n2p = n2 * gpf
 
-    if (n2d3p9 < 3501) {
-        saveLog(`${numerator}: ${n2d3p9}` as Io, LogTarget.PROGRESS)
-        const gpf = computeGpf(numerator)
-        n2pResults.push({
-            numerator,
-            gpf,
-            n2p: computeN2P(numerator),
-        } as SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P)
-        n2Results.push({
-            numerator,
-            gpf,
-            n2: computeN2(numerator),
-        } as SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2)
-    }
+    if (n2p / 9 > 5298.2) continue
+
+    saveLog(`${numerator}: ${n2p}` as Io, LogTarget.PROGRESS)
+    n2Results.push({ numerator, gpf, n2 } as SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2)
+    n2pResults.push({ numerator, gpf, n2p } as SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P)
 }
 
-sort(n2pResults, { by: "n2p" as KeyPath })
 sort(n2Results, { by: "n2" as KeyPath })
+sort(n2pResults, { by: "n2p" as KeyPath })
 
-saveLog(stringify(n2pResults, { multiline: true }) as Io, LogTarget.FINAL)
 saveLog(stringify(n2Results, { multiline: true }) as Io, LogTarget.FINAL)
+saveLog(stringify(n2pResults, { multiline: true }) as Io, LogTarget.FINAL)

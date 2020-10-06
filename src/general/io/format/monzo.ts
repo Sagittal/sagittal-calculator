@@ -1,5 +1,5 @@
 import { indexOfFinalElement } from "../../code"
-import { Exponent, NumericProperties, Prime, RealMonzo } from "../../math"
+import { Exponent, Monzo, NumericProperties, Prime } from "../../math"
 import { Io } from "../types"
 import { Formatted } from "./types"
 
@@ -13,12 +13,12 @@ const spacePrimeExponent = (primeExponent: Exponent<Prime>): Io => {
 }
 
 const formatMonzo = <T extends NumericProperties>(
-    monzo: RealMonzo<T>,
+    monzo: Monzo<T>,
     { punctuated = false }: { punctuated?: boolean } = {},
-): Formatted<RealMonzo<T>> => {
+): Formatted<Monzo<T>> => {
     let contents
     if (punctuated) {
-        const two3FreeMonzo: RealMonzo<T & { rough: 5 }> = monzo.splice(2) as RealMonzo<T & { rough: 5 }>
+        const two3FreeMonzo: Monzo<T & { rough: 5 }> = monzo.splice(2) as Monzo<T & { rough: 5 }>
         contents = monzo.map(spacePrimeExponent).join(" ") + ", "
 
         let index = 0
@@ -37,7 +37,7 @@ const formatMonzo = <T extends NumericProperties>(
         contents = monzo.map(spacePrimeExponent).join(" ")
     }
 
-    return `[ ${contents} ⟩` as Formatted<RealMonzo<T>>
+    return `[ ${contents} ⟩` as Formatted<Monzo<T>>
 }
 
 export {

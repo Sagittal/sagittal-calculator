@@ -12,7 +12,7 @@ const computeExtendedHistories = (
     const extendedBoundHistories: BoundHistory[] = computeExtensionBase(ExtensionBaseType.ARRAY) as BoundHistory[]
 
     const boundedSymbolClassPositions: BoundedSymbolClassPositions =
-        computeBoundedSymbolClassPositions(computeCentsFromPitch(jiNotationBound), jiNotationLevel)
+        computeBoundedSymbolClassPositions(computeCentsFromPitch(jiNotationBound.pitch), jiNotationLevel)
 
     const newBoundEvents = [
         ...computeBoundEvents(jiNotationLevel, boundedSymbolClassPositions, BoundType.INA_MIDPOINT),

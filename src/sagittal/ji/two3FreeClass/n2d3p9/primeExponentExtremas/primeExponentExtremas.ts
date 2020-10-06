@@ -1,10 +1,10 @@
 import {
+    Decimal,
     deepEquals,
     Exponent,
     Extrema,
     FIVE_PRIME_INDEX,
     increment,
-    IntegerDecimal,
     Max,
     Prime,
     PRIMES,
@@ -18,8 +18,8 @@ import { computePrimeExponentExtremaGivenMaxN2D3P9 } from "./primeExponentExtrem
 const computePrimeExponentExtremasGivenMaxN2D3P9 = (
     maxN2D3P9: Max<N2D3P9>,
     options: { mirrored?: boolean } = {},
-): Array<Extrema<IntegerDecimal & Exponent<Prime>>> => {
-    const primeExponentExtremasGivenMaxN2D3P9: Array<Extrema<IntegerDecimal & Exponent<Prime>>> =
+): Array<Extrema<Decimal<{ integer: true }> & Exponent<Prime>>> => {
+    const primeExponentExtremasGivenMaxN2D3P9: Array<Extrema<Decimal<{ integer: true }> & Exponent<Prime>>> =
         shallowClone(INITIAL_PRIME_EXPONENT_EXTREMAS_FOR_TWO_AND_THREE)
 
     const numeratorPossibilitiesForDenominatorGivenMaxN2D3P9 =
@@ -28,7 +28,7 @@ const computePrimeExponentExtremasGivenMaxN2D3P9 = (
     let index = FIVE_PRIME_INDEX
     while (true) {
         const prime = PRIMES[ index ]
-        const primeExponentExtremaGivenMaxN2D3P9: Extrema<IntegerDecimal & Exponent<Prime>> =
+        const primeExponentExtremaGivenMaxN2D3P9: Extrema<Decimal<{ integer: true }> & Exponent<Prime>> =
             computePrimeExponentExtremaGivenMaxN2D3P9(
                 prime,
                 maxN2D3P9,

@@ -1,10 +1,13 @@
 import { Io } from "./io"
-import { IntegerDecimal, Max, Min } from "./math"
+import { Decimal, Max, Min } from "./math"
 
 // Numeric types where parameter is not numeric
-type Index<T = void> = IntegerDecimal & { _IndexBrand: boolean } & (T extends void ? {} : { _IndexOfBrand: T })
-type Id<T = void> = IntegerDecimal & { _IdBrand: boolean } & (T extends void ? {} : { _IdOfBrand: T })
-type Count<T = void> = IntegerDecimal & { _CountBrand: boolean } & (T extends void ? {} : { _CountOfBrand: T })
+type Index<T = void> =
+    Decimal<{ integer: true }> & { _IndexBrand: boolean } & (T extends void ? {} : { _IndexOfBrand: T })
+type Id<T = void> =
+    Decimal<{ integer: true }> & { _IdBrand: boolean } & (T extends void ? {} : { _IdOfBrand: T })
+type Count<T = void> =
+    Decimal<{ integer: true }> & { _CountBrand: boolean } & (T extends void ? {} : { _CountOfBrand: T })
 
 // Numeric types where parameter is also numeric
 type Addend<T extends number | void = void> =
@@ -33,11 +36,11 @@ type Product<T extends number | void = void> =
     & (T extends void ? {} : T & { _ProductOfBrand: T })
 
 type Step<EdCount extends number | void = void> =
-    number & { _StepBrand: boolean, _StepOfEdBrand: EdCount }
+    Decimal & { _StepBrand: boolean, _StepOfEdBrand: EdCount }
 type Ed<WindowSize extends number | void = void> =
-    number & { _EdBrand: boolean, _WindowSizeBrand: WindowSize }
+    Decimal<{ integer: true }> & { _EdBrand: boolean, _WindowSizeBrand: WindowSize }
 type Window<WindowSize extends number | unknown = unknown> =
-    number & { _WindowBrand: boolean, _WindowSizeBrand: WindowSize }
+    Decimal & { _WindowBrand: boolean, _WindowSizeBrand: WindowSize }
 
 type Name<T = void> = Io & { _NameBrand: boolean } & (T extends void ? {} : { _NameOfBrand: T })
 

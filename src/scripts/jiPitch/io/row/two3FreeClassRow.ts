@@ -2,7 +2,8 @@ import {
     format23FreeClass,
     formatDecimal,
     formatIntegerDecimal,
-    Formatted, ioSettings,
+    Formatted,
+    ioSettings,
     Row,
     Two3FreeClass,
 } from "../../../../general"

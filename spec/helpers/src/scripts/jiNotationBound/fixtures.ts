@@ -2,12 +2,14 @@ import {
     Abs,
     Cents,
     Count,
+    Decimal,
     Id,
-    IntegerDecimal,
+    Monzo,
     Multiplier,
     Name,
+    Pitch,
+    Quotient,
     Rank,
-    RealDecimal,
     Sum,
 } from "../../../../../src/general"
 import {
@@ -35,14 +37,14 @@ const boundEventAnalysisFixture: BoundEventAnalysis = {
     ...boundEventFixture,
     distance: 0 as Abs<Cents>,
     inaDistance: 0 as Multiplier<Ina>,
-    rank: 0 as IntegerDecimal & Rank<BoundType>,
+    rank: 0 as Decimal<{ integer: true }> & Rank<BoundType>,
     exact: false,
 }
 
 const boundHistoryAnalysisFixture: BoundHistoryAnalysis = {
     boundEventAnalyses: [],
     cents: 0 as Cents,
-    rank: 0 as IntegerDecimal & Rank<BoundType>,
+    rank: 0 as Decimal<{ integer: true }> & Rank<BoundType>,
     score: 0 as Score,
     totalDistance: 0 as Sum<Abs<Cents>>,
     exact: false,
@@ -56,8 +58,8 @@ const boundEventConsolidationFixture: BoundEventConsolidation = {
     ...boundEventFixture,
     isPossibleBoundHistoryMember: false,
     isBestPossibleBoundHistoryMember: false,
-    rankOfBestRankedMemberHistory: 0 as IntegerDecimal & Rank<BoundType>,
-    rankOfBestRankedEventInAnyMemberHistory: 0 as IntegerDecimal & Rank<BoundType>,
+    rankOfBestRankedMemberHistory: 0 as Decimal<{ integer: true }> & Rank<BoundType>,
+    rankOfBestRankedEventInAnyMemberHistory: 0 as Decimal<{ integer: true }> & Rank<BoundType>,
     nextBoundEvents: [] as Name<Bound>[],
     exact: false,
 }
@@ -65,7 +67,10 @@ const boundEventConsolidationFixture: BoundEventConsolidation = {
 const jiNotationBoundFixture: JiNotationBound = {
     id: 0 as Id<JiNotationBound>,
     jiNotationLevels: [],
-    decimal: 1 as RealDecimal,
+    pitch: {
+        monzo: [] as unknown[] as Monzo<{ rational: true }>,
+        scaler: [1, 1] as Quotient,
+    } as Pitch<{ rational: false }>,
     boundType: BoundType.INA_MIDPOINT,
     name: "" as Name<Bound>,
 }

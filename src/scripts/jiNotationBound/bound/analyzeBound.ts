@@ -27,7 +27,7 @@ const analyzeJiNotationBound = (
     const bestPossibleBoundHistoryTotalInaDistance = bestPossibleBoundHistoryAnalysis.totalInaDistance
 
     const initialPositionTinaDistance =
-        (computeCentsFromPitch(jiNotationBound) - initialPosition) / TINA as Multiplier<Tina>
+        (computeCentsFromPitch(jiNotationBound.pitch) - initialPosition) / TINA as Multiplier<Tina>
 
     updateRankAnalysis(bestRank, jiNotationBound.id)
     updateJiNotationLevelAnalysis(bestPossibleBoundHistoryAnalysis)

@@ -1,0 +1,5 @@
+export { Decimal } from "./types"
+export { computeDecimalFromMonzo } from "./fromMonzo"
+export { mod } from "./typedOperations"
+export { computeDecimalFromQuotient } from "./fromQuotient"
+export { isSuperDecimal, isUnisonDecimal, isSubDecimal, invertDecimal } from "./direction"

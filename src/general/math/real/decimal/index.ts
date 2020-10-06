@@ -1,5 +1,0 @@
-export { RealDecimal, RealByRealDecimal } from "./types"
-export { computeRealDecimalFromReal } from "./fromReal"
-export { computeRealDecimalFromRealMonzo } from "./fromMonzo"
-export { computeRealDecimalFromRealQuotient } from "./fromQuotient"
-export { isSuperRealDecimal, isUnisonRealDecimal, isSubRealDecimal, invertRealDecimal } from "./direction"

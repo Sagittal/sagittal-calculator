@@ -19,7 +19,7 @@ import {
 
 const extractJiNotationBoundIdentifiers = (jiNotationBound: JiNotationBound): JiNotationBoundIdentifiers => {
     const { id } = jiNotationBound
-    const cents = computeCentsFromPitch(jiNotationBound)
+    const cents = computeCentsFromPitch(jiNotationBound.pitch)
 
     const jiNotationBoundIdWithBoundedSymbolClassIdWithDistancesPairsByJiNotationLevel =
         JI_NOTATION_LEVEL_BOUNDED_SYMBOL_CLASSES.find(

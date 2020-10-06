@@ -1,4 +1,4 @@
-import { Count, increment, IntegerDecimal, Rank } from "../../../general"
+import { Count, Decimal, increment, Rank } from "../../../general"
 import { BoundType } from "../../../sagittal"
 import { jiNotationLevelsBestCumulativeHistoryRanks, jiNotationLevelsBestHistoryRanks } from "../globals"
 import { BoundEventAnalysis, BoundHistoryAnalysis } from "../history"
@@ -17,10 +17,11 @@ const updateJiNotationLevelAnalysis = (bestPossibleBoundHistoryAnalysis: BoundHi
         }
         if (!jiNotationLevelsBestHistoryRanks[ jiNotationLevel ][ rank ]) {
             jiNotationLevelsBestHistoryRanks[ jiNotationLevel ][ rank ] =
-                0 as Count<IntegerDecimal & Rank<BoundType>>
+                0 as Count<Decimal<{ integer: true }> & Rank<BoundType>>
         }
         jiNotationLevelsBestHistoryRanks[ jiNotationLevel ][ rank ] = increment(
-            jiNotationLevelsBestHistoryRanks[ jiNotationLevel ][ rank ] as Count<IntegerDecimal & Rank<BoundType>>,
+            jiNotationLevelsBestHistoryRanks[ jiNotationLevel ][ rank ] as
+                Count<Decimal<{ integer: true }> & Rank<BoundType>>,
         )
 
         if (!jiNotationLevelsBestCumulativeHistoryRanks[ jiNotationLevel ]) {
@@ -28,7 +29,7 @@ const updateJiNotationLevelAnalysis = (bestPossibleBoundHistoryAnalysis: BoundHi
         }
         if (!jiNotationLevelsBestCumulativeHistoryRanks[ jiNotationLevel ][ cumulativeRank ]) {
             jiNotationLevelsBestCumulativeHistoryRanks[ jiNotationLevel ][ cumulativeRank ] =
-                0 as Count<IntegerDecimal & Rank<BoundType>>
+                0 as Count<Decimal<{ integer: true }> & Rank<BoundType>>
         }
         jiNotationLevelsBestCumulativeHistoryRanks[ jiNotationLevel ][ cumulativeRank ] =
             increment(jiNotationLevelsBestCumulativeHistoryRanks[ jiNotationLevel ][ cumulativeRank ])

@@ -1,4 +1,4 @@
-import { Comma, formatPitch, isUndefined, realIsHigher } from "../../../../general"
+import { Comma, formatPitch, isUndefined, pitchIsHigher } from "../../../../general"
 import { SIZE_CATEGORIES } from "./sizeCategories"
 import { SIZE_CATEGORY_BOUNDS } from "./sizeCategoryBounds"
 import { SizeCategoryAbbreviation, SizeCategoryBound, SizeCategoryName, SizeCategoryOptions } from "./types"
@@ -8,11 +8,11 @@ const computeSizeCategory: {
     (comma: Comma, { abbreviated }: { abbreviated: false }): SizeCategoryName,
     (comma: Comma, {}: {}): SizeCategoryName | SizeCategoryAbbreviation,
     (comma: Comma): SizeCategoryName | SizeCategoryAbbreviation,
-} = (comma: Comma, { abbreviated = true }: SizeCategoryOptions = {}): any => {
+} = (comma: Comma, { abbreviated = true }: SizeCategoryOptions = {}): SizeCategoryName & SizeCategoryAbbreviation => {
     let sizeCategory = SIZE_CATEGORIES[ 0 ]
 
     SIZE_CATEGORY_BOUNDS.forEach((sizeCategoryBound: SizeCategoryBound, index: number): void => {
-        if (realIsHigher(comma, sizeCategoryBound)) {
+        if (pitchIsHigher(comma, sizeCategoryBound.pitch)) {
             sizeCategory = SIZE_CATEGORIES[ index + 1 ]
         }
     })
@@ -22,8 +22,8 @@ const computeSizeCategory: {
     }
 
     return abbreviated ?
-        sizeCategory.abbreviation :
-        sizeCategory.name
+        sizeCategory.abbreviation as SizeCategoryName & SizeCategoryAbbreviation :
+        sizeCategory.name as SizeCategoryName & SizeCategoryAbbreviation
 }
 
 export {

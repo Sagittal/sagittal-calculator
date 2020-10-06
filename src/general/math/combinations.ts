@@ -1,6 +1,6 @@
 import { deepClone, shallowClone } from "../code"
 import { Count } from "../types"
-import { IntegerDecimal } from "./rational"
+import { Decimal } from "./numeric"
 import { count } from "./typedOperations"
 import { Combination, Combinations } from "./types"
 
@@ -19,7 +19,7 @@ const computeCombinations = <T>(
         return [] as unknown[] as Combinations<T>
     }
 
-    const computeRecursiveCombinations = (integerDecimal: IntegerDecimal, combination: number[]): void => {
+    const computeRecursiveCombinations = (integerDecimal: Decimal<{ integer: true }>, combination: number[]): void => {
         if (combination.length === comboCount) {
             combinations.push(shallowClone(combination))
 
@@ -30,13 +30,13 @@ const computeCombinations = <T>(
             return
         }
 
-        computeRecursiveCombinations(integerDecimal + 1 as IntegerDecimal, combination)
+        computeRecursiveCombinations(integerDecimal + 1 as Decimal<{ integer: true }>, combination)
         combination.push(integerDecimal)
-        computeRecursiveCombinations(integerDecimal + 1 as IntegerDecimal, combination)
+        computeRecursiveCombinations(integerDecimal + 1 as Decimal<{ integer: true }>, combination)
         combination.pop()
     }
 
-    computeRecursiveCombinations(1 as IntegerDecimal, [])
+    computeRecursiveCombinations(1 as Decimal<{ integer: true }>, [])
 
     return combinations.map((combination: number[]): Combination<T> => {
         return combination.map((index: number): T => {

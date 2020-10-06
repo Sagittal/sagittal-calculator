@@ -31,7 +31,6 @@ export {
     formatTime,
     formatPitch,
     Formatted,
-    formatReal,
     formatCents,
 } from "./format"
 export { time } from "./time"

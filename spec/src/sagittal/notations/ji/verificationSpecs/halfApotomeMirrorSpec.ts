@@ -1,6 +1,6 @@
 import { increment } from "../../../../../../src/general/code"
-import { equalReals, realIsHigher } from "../../../../../../src/general/math"
-import { computeInterval } from "../../../../../../src/general/music/interval"
+import { equalPitches, pitchIsHigher } from "../../../../../../src/general/music/pitch"
+import { computeInterval } from "../../../../../../src/general/music/pitch/interval"
 import {
     getPrimaryComma,
     HALF_APOTOME,
@@ -14,7 +14,7 @@ describe("half-apotome mirror", (): void => {
     it("is the case that the commas in the JI notation are symmetrical about the half-apotome mirror", (): void => {
         const jiNotationPrimaryCommas = JI_NOTATION.map(getPrimaryComma)
         const firstCommaGreaterThanHalfApotomeMirrorIndex = jiNotationPrimaryCommas.findIndex(
-            (primaryComma: PrimaryComma): boolean => realIsHigher(primaryComma, HALF_APOTOME),
+            (primaryComma: PrimaryComma): boolean => pitchIsHigher(primaryComma, HALF_APOTOME),
         )
 
         let indexOffset = 0
@@ -27,7 +27,7 @@ describe("half-apotome mirror", (): void => {
 
             const actual = computeInterval(comma, HALF_APOTOME)
             const expected = computeInterval(HALF_APOTOME, mirroredComma)
-            expect(actual).toEqualReal(expected)
+            expect(actual).toEqualPitch(expected)
 
             indexOffset = increment(indexOffset)
         }
@@ -36,7 +36,7 @@ describe("half-apotome mirror", (): void => {
     it("is the case that the bounds in the JI notation are symmetrical about the half-apotome mirror", (): void => {
         const jiNotationBoundAtHalfApotomeMirrorIndex =
             JI_NOTATION_BOUNDS.findIndex((jiNotationBound: JiNotationBound): boolean => {
-                return equalReals(jiNotationBound, HALF_APOTOME)
+                return equalPitches(jiNotationBound.pitch, HALF_APOTOME)
             })
 
         let indexOffset = 1
@@ -47,9 +47,9 @@ describe("half-apotome mirror", (): void => {
             const jiNotationBound = JI_NOTATION_BOUNDS[ index ]
             const mirroredBound = JI_NOTATION_BOUNDS[ mirroredIndex ]
 
-            const actual = computeInterval(jiNotationBound, HALF_APOTOME)
-            const expected = computeInterval(HALF_APOTOME, mirroredBound)
-            expect(actual).toEqualReal(expected)
+            const actual = computeInterval(jiNotationBound.pitch, HALF_APOTOME)
+            const expected = computeInterval(HALF_APOTOME, mirroredBound.pitch)
+            expect(actual).toEqualPitch(expected)
 
             indexOffset = increment(indexOffset)
         }

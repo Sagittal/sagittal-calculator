@@ -1,4 +1,4 @@
-import { IntegerDenominator, Io, LogTarget, Max, Prime, saveLog, stringify } from "../../../../../../../general"
+import { Denominator, Io, LogTarget, Max, Prime, saveLog, stringify } from "../../../../../../../general"
 import { N2D3P9 } from "../../../types"
 import { NumeratorPossibilityForDenominatorGivenMaxN2D3P9 } from "./numeratorPossibilities"
 import { computeSortedNumeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenominatorPrimeSortedByN2P } from "./sortedNumeratorPossibilitiesWithGreaterGpf"
@@ -6,7 +6,7 @@ import { computeSortedNumeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenom
 import { SortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 } from "./types"
 
 const computeSortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 = (
-    denominatorPrime: IntegerDenominator & Prime,
+    denominatorPrime: Denominator & Prime,
     maxN2D3P9: Max<N2D3P9>,
     numeratorPossibilitiesForDenominatorGivenMaxN2D3P9: NumeratorPossibilityForDenominatorGivenMaxN2D3P9[],
 ): SortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 => {
@@ -22,7 +22,7 @@ const computeSortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 = (
         ) as Io,
         LogTarget.PROGRESS,
     )
-    
+
     const sortedNumeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenominatorPrimeSortedByN2P =
         computeSortedNumeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenominatorPrimeSortedByN2P({
             denominatorPrime,

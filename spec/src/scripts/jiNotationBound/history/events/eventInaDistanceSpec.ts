@@ -5,17 +5,14 @@ import { computeBoundEventInaDistance } from "../../../../../../src/scripts/jiNo
 import { boundEventFixture } from "../../../../../helpers/src/scripts/jiNotationBound/fixtures"
 
 describe("computeBoundEventInaDistance", (): void => {
-    it(
-        "returns the difference in position between the bound event and the previous bound event in the bound history",
-        (): void => {
-            const boundEvent = { ...boundEventFixture, cents: 5 as Cents, jiNotationLevel: JiNotationLevel.HIGH }
-            const boundHistory = [{ ...boundEventFixture, cents: 3 as Cents }, boundEvent]
-            const index = 1
+    it("returns the difference in position between the bound event and the previous bound event in the bound history                  ", (): void => {
+        const boundEvent = { ...boundEventFixture, cents: 5 as Cents, jiNotationLevel: JiNotationLevel.HIGH }
+        const boundHistory = [{ ...boundEventFixture, cents: 3 as Cents }, boundEvent]
+        const index = 1
 
-            const actual = computeBoundEventInaDistance(boundEvent, index, boundHistory)
+        const actual = computeBoundEventInaDistance(boundEvent, index, boundHistory)
 
-            const expected = 2 / HIGHINA as Multiplier<Ina>
-            expect(actual).toBeCloseToTyped(expected)
-        },
-    )
+        const expected = 2 / HIGHINA as Multiplier<Ina>
+        expect(actual).toBeCloseToTyped(expected)
+    })
 })

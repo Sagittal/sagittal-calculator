@@ -7,7 +7,7 @@ const INITIAL_JI_PITCH_SCRIPT_GROUP_SETTINGS: JiPitchScriptGroupSettings = {
     excludedFields: [],
 }
 
-// We must use this enum rather than the union type because it's technically a "type" not an "enum" 
+// We must use this enum rather than the union type because it's technically a "type" not an "enum"
 // And only enums have that special duality as actual JS objects
 // However, the FindCommasField enum actually encompasses all the same fields
 // In other words, the union type isn't strictly necessary; it's mostly expressing the conceptual truth

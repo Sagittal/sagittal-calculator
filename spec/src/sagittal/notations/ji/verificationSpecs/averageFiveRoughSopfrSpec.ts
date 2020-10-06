@@ -1,5 +1,5 @@
-import { compute23FreeClass, Id } from "../../../../../../src/general"
-import { Avg, computeSopfr, Sopfr } from "../../../../../../src/general/math"
+import { compute23FreeClass, computeJiPitchSopfr, Id } from "../../../../../../src/general"
+import { Avg, Sopfr } from "../../../../../../src/general/math"
 import { avg } from "../../../../../../src/general/math/typedOperations"
 import { getPrimaryComma, JI_NOTATION, SymbolClass } from "../../../../../../src/sagittal"
 
@@ -12,7 +12,7 @@ describe("average 2,3-free SoPFR", (): void => {
                 const primaryComma = getPrimaryComma(symbolClassId)
                 const two3FreeClass = compute23FreeClass(primaryComma)
 
-                return computeSopfr(two3FreeClass)
+                return computeJiPitchSopfr(two3FreeClass)
             })
 
         expect(avg(...two3FreeSopfrs)).toBeCloseToTyped(AVERAGE_2_3_FREE_SOPFR)

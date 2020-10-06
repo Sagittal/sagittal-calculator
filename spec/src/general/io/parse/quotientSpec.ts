@@ -1,4 +1,4 @@
-import { Formatted, Io, parseQuotient, RationalQuotient } from "../../../../../src/general"
+import { Io, parseQuotient, Quotient } from "../../../../../src/general"
 
 describe("parseQuotient", (): void => {
     it("works for directed quotients", (): void => {
@@ -6,7 +6,7 @@ describe("parseQuotient", (): void => {
 
         const actual = parseQuotient(quotientIo)
 
-        const expected = [5, 4] as RationalQuotient
+        const expected = [5, 4] as Quotient<{ rational: true }>
         expect(actual).toEqual(expected)
     })
 
@@ -15,7 +15,7 @@ describe("parseQuotient", (): void => {
 
         const actual = parseQuotient(quotientIo)
 
-        const expected = [4, 5] as RationalQuotient
+        const expected = [4, 5] as Quotient<{ rational: true }>
         expect(actual).toEqual(expected)
     })
 
@@ -24,7 +24,7 @@ describe("parseQuotient", (): void => {
 
         const actual = parseQuotient(quotientIo)
 
-        const expected = [275, 1] as RationalQuotient
+        const expected = [275, 1] as Quotient<{ rational: true }>
         expect(actual).toEqual(expected)
     })
 
@@ -33,7 +33,7 @@ describe("parseQuotient", (): void => {
 
         const actual = parseQuotient(quotientIo)
 
-        const expected = [275, 1] as RationalQuotient
+        const expected = [275, 1] as Quotient<{ rational: true }>
         expect(actual).toEqual(expected)
     })
 
@@ -42,7 +42,7 @@ describe("parseQuotient", (): void => {
 
         const actual = parseQuotient(quotientIo)
 
-        const expected = [25, 20] as RationalQuotient
+        const expected = [25, 20] as Quotient<{ rational: true }>
         expect(actual).toEqual(expected)
     })
 })

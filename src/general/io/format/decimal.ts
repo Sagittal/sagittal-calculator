@@ -1,43 +1,36 @@
-import { IntegerDecimal, NumericProperties, RationalDecimal, RealDecimal, round } from "../../math"
+import { Decimal, round } from "../../math"
 import { IO_PRECISION } from "../constants"
 import { Formatted } from "./types"
 
-const alignFormattedDecimal: {
-    <T extends NumericProperties>(formattedDecimal: Formatted<IntegerDecimal<T>>): Formatted<IntegerDecimal<T>>
-    <T extends NumericProperties>(formattedDecimal: Formatted<RationalDecimal<T>>): Formatted<RationalDecimal<T>>
-    <T extends NumericProperties>(formattedDecimal: Formatted<RealDecimal<T>>): Formatted<RealDecimal<T>>
-} = <T extends NumericProperties>(
-    formattedDecimal: Formatted<RealDecimal<T>>,
-): Formatted<RealDecimal<T>> => {
+const alignFormattedDecimal = (formattedDecimal: Formatted<Decimal>): Formatted<Decimal> => {
     while (formattedDecimal.length < 7) {
-        formattedDecimal = " " + formattedDecimal as Formatted<RealDecimal<T>>
+        formattedDecimal = " " + formattedDecimal as Formatted<Decimal>
     }
 
     return formattedDecimal
 }
 
-const formatDecimal = <T extends NumericProperties>(
-    decimal: RealDecimal<T>,
-    { align }: { align?: boolean } = {},
-): Formatted<RealDecimal<T>> => {
+const formatDecimal = (decimal: Decimal, { align }: { align?: boolean } = {}): Formatted<Decimal> => {
     const roundedDecimal = round(decimal, IO_PRECISION)
         .toFixed(3)
-        .replace(/\.(\d\d\d)0*$/, ".$1") as Formatted<RealDecimal<T>>
+        .replace(/\.(\d\d\d)0*$/, ".$1") as Formatted<Decimal>
 
     return align ?
         alignFormattedDecimal(roundedDecimal) :
         roundedDecimal
 }
 
-const formatIntegerDecimal = <T extends NumericProperties>(
-    integerDecimal: IntegerDecimal<T>,
+const formatIntegerDecimal = (
+    integerDecimal: Decimal<{ integer: true }>,
     { align }: { align?: boolean } = {},
-): Formatted<IntegerDecimal<T>> => {
+): Formatted<Decimal> => {
     const stringifiedIntegerDecimal = integerDecimal.toString()
 
     return align ?
-        alignFormattedDecimal(stringifiedIntegerDecimal + "    " as Formatted<IntegerDecimal<T>>) :
-        stringifiedIntegerDecimal as Formatted<IntegerDecimal<T>>
+        alignFormattedDecimal(
+            stringifiedIntegerDecimal + "    " as Formatted<Decimal<{ integer: true }>>,
+        ) :
+        stringifiedIntegerDecimal as Formatted<Decimal<{ integer: true }>>
 }
 
 export {

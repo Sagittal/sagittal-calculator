@@ -1,5 +1,5 @@
-import { NumericProperties, Real, RealDecimal, RealMonzo, RealQuotient } from "../math"
 import { Extrema } from "../types"
+import { Pitch } from "./pitch"
 
 type Cents = number & { _CentsBrand: boolean }
 
@@ -10,22 +10,11 @@ type Cents = number & { _CentsBrand: boolean }
 //  Like [3,5,7] such as is the case in the Yer tuning system, where it's a chunk in the middle, nonconsecutive
 //  And ji: true could map to rational: true
 //  To do that though you'd have to bring back the type Pitch as an alias type essentially
+//  Could now fairly easily accomplish this in the music/ module with a TypeParametersMapping from pitch to numeric
 
-type Zone<T = void> = Extrema<Real> & (T extends void ? {} : { _ZoneOfBrand: T })
-
-// Todo: DEFER UNTIL AFTER SCALED MONZO
-//  Maybe Pitch should be a branded Real, and Interval another branded Real
-//  So would that make a JiPitch a Rational & Pitch? we'd use Interval in tests for mina name and half-apotome mirror
-
-type PitchAnalysis<T extends NumericProperties = {}> = Real<T> & {
-    cents: Cents,
-    decimal: RealDecimal<T>,
-    quotient?: RealQuotient<T>,
-    monzo?: RealMonzo<T>,
-}
+type Zone<T = void> = Extrema<Pitch> & (T extends void ? {} : { _ZoneOfBrand: T })
 
 export {
     Cents,
     Zone,
-    PitchAnalysis,
 }

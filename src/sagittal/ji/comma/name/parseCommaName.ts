@@ -4,7 +4,7 @@ import {
     isUndefined,
     Maybe,
     parseQuotient,
-    RationalQuotient,
+    Quotient,
 } from "../../../../general"
 import { SIZE_CATEGORIES } from "./sizeCategories"
 import { CommaNameQuotient, ParsedCommaName, SizeCategoryName } from "./types"
@@ -17,8 +17,8 @@ const parseCommaName = (commaNameIo: Io): ParsedCommaName => {
         .replace(/-/, "") as Io
 
     const commaNameQuotient: CommaNameQuotient = computeLowestTermsRationalQuotient(
-        parseQuotient(two3FreePartOfCommaName) as RationalQuotient<{ rough: 5 }>,
-    ) as RationalQuotient<{ rough: 5 }> as CommaNameQuotient
+        parseQuotient(two3FreePartOfCommaName) as Quotient<{ rational: true, rough: 5 }>,
+    ) as Quotient<{ rational: true, rough: 5 }> as CommaNameQuotient
 
     let sizeCategoryName: Maybe<SizeCategoryName> = undefined
 

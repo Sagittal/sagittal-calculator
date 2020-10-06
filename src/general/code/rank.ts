@@ -1,4 +1,4 @@
-import { IntegerDecimal } from "../math"
+import { Decimal } from "../math"
 import { Count } from "../types"
 import { deepClone } from "./clone"
 import { ACCURACY_THRESHOLD } from "./constants"
@@ -54,35 +54,38 @@ const rank = <T>(arrayOfObjects: T[], options: RankOptions = {}): Array<T & { ra
                 }
             })
         case RankStrategy.COMPETITION:
-            return clonedArrayOfObjects.map((object: T): T & { rank: IntegerDecimal & Rank<T> } => {
+            return clonedArrayOfObjects.map((object: T): T & { rank: Decimal<{ integer: true }> & Rank<T> } => {
                 const rankingValue = dig(object as Obj, by)
                 if (isCloseOrEqual(rankingValue, previousValue, precision)) {
                     tiesCount = increment(tiesCount)
 
-                    return { ...object, rank: rank as IntegerDecimal & Rank<T> }
+                    return { ...object, rank: rank as Decimal<{ integer: true }> & Rank<T> }
                 } else {
-                    rank = rank + 1 + tiesCount as IntegerDecimal & Rank<T>
+                    rank = rank + 1 + tiesCount as Decimal<{ integer: true }> & Rank<T>
                     tiesCount = 0 as Count
                     previousValue = rankingValue
 
-                    return { ...object, rank: rank as IntegerDecimal & Rank<T> }
+                    return { ...object, rank: rank as Decimal<{ integer: true }> & Rank<T> }
                 }
             })
         case RankStrategy.DENSE:
-            return clonedArrayOfObjects.map((object: T): T & { rank: IntegerDecimal & Rank<T> } => {
+            return clonedArrayOfObjects.map((object: T): T & { rank: Decimal<{ integer: true }> & Rank<T> } => {
                 const rankingValue = dig(object as Obj, by)
                 if (isCloseOrEqual(rankingValue, previousValue, precision)) {
-                    return { ...object, rank: rank as IntegerDecimal & Rank<T> }
+                    return { ...object, rank: rank as Decimal<{ integer: true }> & Rank<T> }
                 } else {
                     rank = increment(rank)
                     previousValue = rankingValue
 
-                    return { ...object, rank: rank as IntegerDecimal & Rank<T> }
+                    return { ...object, rank: rank as Decimal<{ integer: true }> & Rank<T> }
                 }
             })
         case RankStrategy.ORDINAL:
-            return clonedArrayOfObjects.map((object: T, index: number): T & { rank: IntegerDecimal & Rank<T> } => {
-                return { ...object, rank: index + 1 as IntegerDecimal & Rank<T> }
+            return clonedArrayOfObjects.map((
+                object: T,
+                index: number,
+            ): T & { rank: Decimal<{ integer: true }> & Rank<T> } => {
+                return { ...object, rank: index + 1 as Decimal<{ integer: true }> & Rank<T> }
             })
         default:
             throw new Error(`unknown rank strategy ${strategy}`)

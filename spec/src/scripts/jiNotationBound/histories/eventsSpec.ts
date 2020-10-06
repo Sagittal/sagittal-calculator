@@ -35,26 +35,23 @@ describe("computeBoundEvents", (): void => {
                 expect(actual).toBeCloseToObject(expected)
             })
 
-            it(
-                `works when only one ina midpoint is between the bounded symbols, even if it is not within a half-ina`,
-                (): void => {
-                    jiNotationLevel = JiNotationLevel.ULTRA
-                    boundedSymbolClassPositions = computeBoundedSymbolClassPositions(4.5 as Cents, jiNotationLevel)
+            it("works when only one ina midpoint is between the bounded symbols, even if it is not within a half-ina            ", (): void => {
+                jiNotationLevel = JiNotationLevel.ULTRA
+                boundedSymbolClassPositions = computeBoundedSymbolClassPositions(4.5 as Cents, jiNotationLevel)
 
-                    const actual: BoundEvent[] =
-                        computeBoundEvents(jiNotationLevel, boundedSymbolClassPositions, boundType)
+                const actual: BoundEvent[] =
+                    computeBoundEvents(jiNotationLevel, boundedSymbolClassPositions, boundType)
 
-                    const expected: BoundEvent[] = [
-                        {
-                            jiNotationLevel: JiNotationLevel.ULTRA,
-                            boundType: BoundType.INA_MIDPOINT,
-                            name: "2.5°58" as Name<Bound>,
-                            cents: 4.900215 as Cents,
-                        },
-                    ]
-                    expect(actual).toBeCloseToObject(expected)
-                },
-            )
+                const expected: BoundEvent[] = [
+                    {
+                        jiNotationLevel: JiNotationLevel.ULTRA,
+                        boundType: BoundType.INA_MIDPOINT,
+                        name: "2.5°58" as Name<Bound>,
+                        cents: 4.900215 as Cents,
+                    },
+                ]
+                expect(actual).toBeCloseToObject(expected)
+            })
 
             it("works when multiple INA_MIDPOINT midpoints are between the bounded symbols", (): void => {
                 jiNotationLevel = JiNotationLevel.HIGH
@@ -79,18 +76,15 @@ describe("computeBoundEvents", (): void => {
                 expect(actual).toBeArrayWithDeepCloseContents(expected)
             })
 
-            it(
-                "returns an empty array if there are no INA_MIDPOINT midpoints between the position's bounded symbols",
-                (): void => {
-                    jiNotationLevel = JiNotationLevel.ULTRA
-                    boundedSymbolClassPositions = computeBoundedSymbolClassPositions(6.05 as Cents, jiNotationLevel)
+            it("returns an empty array if there are no INA_MIDPOINT midpoints between the position's bounded symbols            ", (): void => {
+                jiNotationLevel = JiNotationLevel.ULTRA
+                boundedSymbolClassPositions = computeBoundedSymbolClassPositions(6.05 as Cents, jiNotationLevel)
 
-                    const actual = computeBoundEvents(jiNotationLevel, boundedSymbolClassPositions, boundType)
+                const actual = computeBoundEvents(jiNotationLevel, boundedSymbolClassPositions, boundType)
 
-                    const expected = [] as BoundEvent[]
-                    expect(actual).toEqual(expected)
-                },
-            )
+                const expected = [] as BoundEvent[]
+                expect(actual).toEqual(expected)
+            })
         })
 
         describe("for events of snapping to comma mean positions", (): void => {
@@ -166,30 +160,27 @@ describe("computeBoundEvents", (): void => {
                 expect(actual).toBeCloseToObject(expected)
             })
 
-            it(
-                `works even if there is a closer comma mean to the position but it is not between the bounded symbols`,
-                (): void => {
-                    // Mean between )|) and |\ is 31.204382, 0.20 away
-                    // Mean between |) and )|) is 28.953101, 2.05 away
-                    // However, )|) is at 30.985839,
-                    // So the 30.5 position is between it and |), not between it and |\
+            it("works even if there is a closer comma mean to the position but it is not between the bounded symbols         ", (): void => {
+                // Mean between )|) and |\ is 31.204382, 0.20 away
+                // Mean between |) and )|) is 28.953101, 2.05 away
+                // However, )|) is at 30.985839,
+                // So the 30.5 position is between it and |), not between it and |\
 
-                    jiNotationLevel = JiNotationLevel.HIGH
-                    boundedSymbolClassPositions = computeBoundedSymbolClassPositions(30.5 as Cents, jiNotationLevel)
+                jiNotationLevel = JiNotationLevel.HIGH
+                boundedSymbolClassPositions = computeBoundedSymbolClassPositions(30.5 as Cents, jiNotationLevel)
 
-                    const actual = computeBoundEvents(jiNotationLevel, boundedSymbolClassPositions, boundType)
+                const actual = computeBoundEvents(jiNotationLevel, boundedSymbolClassPositions, boundType)
 
-                    const expected = [
-                        {
-                            jiNotationLevel: JiNotationLevel.HIGH,
-                            boundType: BoundType.COMMA_MEAN,
-                            name: "|) )|)" as Name<Bound>,
-                            cents: 28.953101 as Cents,
-                        },
-                    ]
-                    expect(actual).toBeCloseToObject(expected)
-                },
-            )
+                const expected = [
+                    {
+                        jiNotationLevel: JiNotationLevel.HIGH,
+                        boundType: BoundType.COMMA_MEAN,
+                        name: "|) )|)" as Name<Bound>,
+                        cents: 28.953101 as Cents,
+                    },
+                ]
+                expect(actual).toBeCloseToObject(expected)
+            })
         })
 
         describe("for events of snapping to size category bound positions", (): void => {
@@ -214,18 +205,15 @@ describe("computeBoundEvents", (): void => {
                 expect(actual).toBeCloseToObject(expected)
             })
 
-            it(
-                `returns an empty array if there are no size category bounds between the position's bounded symbols`,
-                (): void => {
-                    jiNotationLevel = JiNotationLevel.ULTRA
-                    boundedSymbolClassPositions = computeBoundedSymbolClassPositions(6.05 as Cents, jiNotationLevel)
+            it("returns an empty array if there are no size category bounds between the position's bounded symbols         ", (): void => {
+                jiNotationLevel = JiNotationLevel.ULTRA
+                boundedSymbolClassPositions = computeBoundedSymbolClassPositions(6.05 as Cents, jiNotationLevel)
 
-                    const actual = computeBoundEvents(jiNotationLevel, boundedSymbolClassPositions, boundType)
+                const actual = computeBoundEvents(jiNotationLevel, boundedSymbolClassPositions, boundType)
 
-                    const expected = [] as BoundEvent[]
-                    expect(actual).toEqual(expected)
-                },
-            )
+                const expected = [] as BoundEvent[]
+                expect(actual).toEqual(expected)
+            })
         })
     })
 })

@@ -1,9 +1,9 @@
-import { RealMonzo } from "../../../../../src/general"
+import { Monzo } from "../../../../../src/general"
 import { formatMonzo } from "../../../../../src/general/io"
 
 describe("formatMonzo", (): void => {
     it("formats it correctly, with enough space that 2-digit negative exponents will line up", (): void => {
-        const monzo = [-8, -6, 3, 5, -1] as RealMonzo
+        const monzo = [-8, -6, 3, 5, -1] as Monzo
 
         const actual = formatMonzo(monzo)
 
@@ -12,7 +12,7 @@ describe("formatMonzo", (): void => {
     })
 
     it("can format it using George Secor's punctuated format", (): void => {
-        const monzo = [-8, -6, 3, 5, -1, 0, 0, 0, 5, 4, 2, 3] as RealMonzo
+        const monzo = [-8, -6, 3, 5, -1, 0, 0, 0, 5, 4, 2, 3] as Monzo
 
         const actual = formatMonzo(monzo, { punctuated: true })
 

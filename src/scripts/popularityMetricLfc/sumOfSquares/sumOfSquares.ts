@@ -4,10 +4,10 @@ import { Unpopularity } from "./types"
 
 const computeSumOfSquares = (
     rankedUnpopularities: Array<Ranked<Unpopularity>>,
-    realPopularities: Array<Ranked<Popularity>>,
+    popularities: Array<Ranked<Popularity>>,
     z: number,
 ): SumOfSquares =>
-    realPopularities.reduce(
+    popularities.reduce(
         (sumOfSquares: SumOfSquares, popularity: Ranked<Popularity>, index: number): SumOfSquares => {
             const rankedUnpopularity: Ranked<Unpopularity> = rankedUnpopularities[ index ]
             const ourRank = rankedUnpopularity.rank

@@ -1,4 +1,4 @@
-import { computeRealSqrt, Id, indexOfFinalElement, multiplyRationals, Name } from "../../../general"
+import { addPitches, Id, indexOfFinalElement, Name, Pitch, SQRT_SCALER } from "../../../general"
 import {
     CommaMean,
     getPrimaryComma,
@@ -6,14 +6,7 @@ import {
     JiNotationLevel,
     JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS,
     SymbolClass,
-    SymbolLongAscii,
 } from "../../../sagittal"
-
-const getJiNotationSymbolAscii = (symbolClassId: Id<SymbolClass>): SymbolLongAscii => {
-    const representativeSymbol = getRepresentativeSymbol(symbolClassId)
-
-    return representativeSymbol.revoAscii
-}
 
 const computeJiNotationLevelCommaMeans = (jiNotationLevel: JiNotationLevel): CommaMean[] => {
     const jiNotationLevelSymbolClassIds = JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS[ jiNotationLevel ]
@@ -27,17 +20,17 @@ const computeJiNotationLevelCommaMeans = (jiNotationLevel: JiNotationLevel): Com
 
             const primaryComma = getPrimaryComma(symbolClassId)
             const nextPrimaryComma = getPrimaryComma(nextSymbolClassId)
-            // Todo: DEFER UNTIL AFTER SCALED MONZO
-            //  Geometric mean helper would be cool
-            const commaMean = computeRealSqrt(multiplyRationals(primaryComma, nextPrimaryComma))
 
             const name = [
-                getJiNotationSymbolAscii(symbolClassId),
-                getJiNotationSymbolAscii(nextSymbolClassId),
+                getRepresentativeSymbol(symbolClassId).revoAscii,
+                getRepresentativeSymbol(nextSymbolClassId).revoAscii,
             ].join(" ") as Name<CommaMean>
 
             return {
-                ...commaMean,
+                pitch: {
+                    monzo: addPitches(primaryComma, nextPrimaryComma).monzo,
+                    scaler: SQRT_SCALER,
+                } as Pitch<{ rational: false }>,
                 name,
             }
         })

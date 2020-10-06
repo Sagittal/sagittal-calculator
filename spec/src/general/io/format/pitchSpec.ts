@@ -1,95 +1,51 @@
 import { formatPitch, Formatted } from "../../../../../src/general/io/format"
-import { IntegerDecimal, Real, RealDecimal, RealMonzo, RealQuotient } from "../../../../../src/general/math"
-import { Cents } from "../../../../../src/general/music"
+import { Monzo } from "../../../../../src/general/math/numeric/monzo"
+import { Quotient } from "../../../../../src/general/math/numeric/quotient"
+import { Pitch } from "../../../../../src/general/music/pitch"
 
 describe("formatPitch", (): void => {
-    it("if only the quotient is present, returns it formatted", (): void => {
-        const pitch = { quotient: [5, 3] as RealQuotient }
-
-        const actual = formatPitch(pitch)
-
-        const expected = "5/3" as Formatted<Real>
-        expect(actual).toBe(expected)
-    })
-
-    it("if the quotient and monzo are present, returns the quotient formatted", (): void => {
-        const pitch = { quotient: [5, 3] as RealQuotient, monzo: [0, -1, 1] as RealMonzo }
-
-        const actual = formatPitch(pitch)
-
-        const expected = "5/3" as Formatted<Real>
-        expect(actual).toBe(expected)
-    })
-
-    it("if the quotient and decimal are present, returns the quotient formatted", (): void => {
-        const pitch = { quotient: [5, 1] as RealQuotient, decimal: 5 as IntegerDecimal }
-
-        const actual = formatPitch(pitch)
-
-        const expected = "5/1" as Formatted<Real>
-        expect(actual).toBe(expected)
-    })
-
-    it("if the quotient and cents are present, returns the quotient formatted", (): void => {
-        const pitch = { quotient: [5, 3] as RealQuotient, cents: 884.358713 as Cents }
-
-        const actual = formatPitch(pitch)
-
-        const expected = "5/3" as Formatted<Real>
-        expect(actual).toBe(expected)
-    })
-
     it("if only the monzo is present, returns the monzo formatted", (): void => {
-        const pitch = { monzo: [0, -1, 1] as RealMonzo }
+        const pitch = { monzo: [0, -1, 1] } as Pitch<{ rational: true }>
 
         const actual = formatPitch(pitch)
 
-        const expected = "[   0  -1   1 ⟩" as Formatted<Real>
+        const expected = "[   0  -1   1 ⟩" as Formatted<Pitch>
         expect(actual).toBe(expected)
     })
 
-    it("if the monzo and decimal are present, returns the monzo formatted", (): void => {
-        const pitch = { monzo: [0, 0, 1] as RealMonzo, decimal: 5 as IntegerDecimal }
+    it("if the scaler is present and rational, shows it in parens out to the right of the monzo", (): void => {
+        const pitch = {
+            monzo: [0, -1, 1] as Monzo<{ rational: true }>,
+            scaler: [1, 2] as Quotient,
+        } as Pitch<{ rational: false }>
 
         const actual = formatPitch(pitch)
 
-        const expected = "[   0   0   1 ⟩" as Formatted<Real>
+        const expected = "[   0  -1   1 ⟩(1/2)" as Formatted<Pitch>
         expect(actual).toBe(expected)
     })
 
-    it("if the monzo and cents are present, returns the monzo formatted", (): void => {
-        const pitch = { monzo: [0, -1, 1] as RealMonzo, cents: 884.358713 as Cents }
+    it("if the scaler is present but not rational, shows a cents representation of the whole thing", (): void => {
+        const pitch = {
+            monzo: [0, -1, 1] as Monzo<{ rational: true }>,
+            scaler: [1.238923, 1] as Quotient,
+        } as Pitch<{ rational: false }>
 
         const actual = formatPitch(pitch)
 
-        const expected = "[   0  -1   1 ⟩" as Formatted<Real>
+        const expected = "1095.652¢" as Formatted<Pitch>
         expect(actual).toBe(expected)
     })
 
-    it("if the decimal and cents are present, returns the cents formatted", (): void => {
-        const pitch = { decimal: 1.666667 as RealDecimal, cents: 884.358713 as Cents }
-
-        const actual = formatPitch(pitch)
-
-        const expected = "884.359¢" as Formatted<Real>
-        expect(actual).toBe(expected)
-    })
-
-    it("if only the decimal is present, returns it as formatted cents", (): void => {
-        const pitch = { decimal: 1.666667 as RealDecimal }
-
-        const actual = formatPitch(pitch)
-
-        const expected = "884.359¢" as Formatted<Real>
-        expect(actual).toBe(expected)
-    })
-
-    it("can return the pitch aligned (for tables)", (): void => {
-        const pitch = { decimal: 1.666667 as RealDecimal }
+    it("can return the decimal aligned (for tables)", (): void => {
+        const pitch = {
+            monzo: [0, -1, 1] as Monzo<{ rational: true }>,
+            scaler: [1.238923, 1] as Quotient,
+        } as Pitch<{ rational: false }>
 
         const actual = formatPitch(pitch, { align: true })
 
-        const expected = "       884.359¢" as Formatted<Real>
+        const expected = "      1095.652¢" as Formatted<Pitch>
         expect(actual).toBe(expected)
     })
 })

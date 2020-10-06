@@ -1,4 +1,4 @@
-import { equalReals } from "../../../general"
+import { equalPitches } from "../../../general"
 import { MAX_SYMBOL_CLASS_POSITION, SizeCategoryBound, SIZE_CATEGORY_BOUNDS } from "../../../sagittal"
 
 const computeSizeCategoryBoundsWithinMaximumPosition = (): SizeCategoryBound[] =>
@@ -6,7 +6,7 @@ const computeSizeCategoryBoundsWithinMaximumPosition = (): SizeCategoryBound[] =
         0,
         SIZE_CATEGORY_BOUNDS.findIndex(
             (sizeCategoryBound: SizeCategoryBound): boolean =>
-                equalReals(sizeCategoryBound, MAX_SYMBOL_CLASS_POSITION),
+                equalPitches(sizeCategoryBound.pitch, MAX_SYMBOL_CLASS_POSITION),
         ) + 1,
     )
 

@@ -16,7 +16,7 @@ applySharedPopularityMetricLfcCommandSetup({ defaultLogTargets: [LogTarget.DETAI
 
 const submetrics = load("submetrics" as Filename) as Combination<Submetric>
 
-const two3FreeClass: Two3FreeClass = { quotient: [11, 7] } as Two3FreeClass
+const two3FreeClass: Two3FreeClass = { monzo: [0, 0, 0, -1, 1] } as Two3FreeClass
 
 const antivotes = computeAntivotes(two3FreeClass, submetrics)
 

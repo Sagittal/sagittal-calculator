@@ -39,7 +39,7 @@ type SymbolClassAnalysis = Omit<SymbolClass, "primaryCommaId"> & {  // ---> Comm
 }
 
 // Flag and Accent Combination; basically a "symbol class" (see: http://forum.sagittal.org/viewtopic.php?p=2474#p2474)
-/* 
+/*
 type FlAcCo = {
     id: Id<FlAcCo>,
     combo: Array<Flag | Accent>,

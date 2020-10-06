@@ -1,4 +1,4 @@
-import { isCloseTo, MAX_JAVASCRIPT_PRECISION, Precision } from "../../../../src/general/code"
+import { isCloseTo, MAX_JS_PRECISION, Precision } from "../../../../src/general/code"
 
 describe("isCloseTo", (): void => {
     it("returns true if the two values are very close", (): void => {
@@ -45,7 +45,7 @@ describe("isCloseTo", (): void => {
     it("when given the max precision, returns true if the values are equal", (): void => {
         const valueA = 5.6862686268626862656265626562656265626562656265
         const valueB = 5.6862686268626862656265626562656265626562656265
-        const precision = MAX_JAVASCRIPT_PRECISION
+        const precision = MAX_JS_PRECISION
 
         const actual = isCloseTo(valueA, valueB, precision)
 
@@ -55,7 +55,7 @@ describe("isCloseTo", (): void => {
     it("when given the max precision, returns false if the values are not equal, within the ability for JavaScript to discern", (): void => {
         const valueA = 5.686268697656264
         const valueB = 5.686268697656265
-        const precision = MAX_JAVASCRIPT_PRECISION
+        const precision = MAX_JS_PRECISION
 
         const actual = isCloseTo(valueA, valueB, precision)
 
@@ -65,7 +65,7 @@ describe("isCloseTo", (): void => {
     it("when given the max precision, returns true even if the values aren't equal, if they are beyond max javascript precision", (): void => {
         const valueA = 5.6862686971656264
         const valueB = 5.6862686971656265
-        const precision = MAX_JAVASCRIPT_PRECISION
+        const precision = MAX_JS_PRECISION
 
         const actual = isCloseTo(valueA, valueB, precision)
 

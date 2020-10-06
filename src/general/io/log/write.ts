@@ -17,7 +17,7 @@ const write = (message: Io, target: LogTarget, scriptGroup: Filename, filenameOv
         // See: http://forum.sagittal.org/viewtopic.php?p=2410#p2410
         // And https://stackoverflow.com/a/27975629/6998322
         fs.appendFileSync(file, BOM, { encoding: "utf8" })
-        // This is to prevent Excel from dropping columns of real data
+        // This is to prevent Excel from dropping columns of desired data
         // Because it seems to base things on the first row of the file
         // Even if the table proper doesn't come for a few lines
         // Based on how I've designed the output of the scripts to be more than mere tables

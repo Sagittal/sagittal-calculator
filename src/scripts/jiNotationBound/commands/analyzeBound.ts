@@ -13,7 +13,7 @@ ioSettings.scriptGroup = ScriptGroup.JI_NOTATION_BOUND as Filename
 const jiNotationBoundId = program.args[ 0 ]
 
 const jiNotationBound = jiNotationBoundId && JI_NOTATION_BOUNDS.find(
-    (jiNotationBound: JiNotationBound): boolean => jiNotationBound.id === parseInteger(jiNotationBoundId),
+    (jiNotationBound: JiNotationBound): boolean => jiNotationBound.id === parseInteger(jiNotationBoundId as Io),
 )
 
 if (jiNotationBound) {

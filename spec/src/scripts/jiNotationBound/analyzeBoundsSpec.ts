@@ -11,45 +11,39 @@ import { JiNotationBoundAnalysis } from "../../../../src/scripts/jiNotationBound
 import { BoundEventAnalysis } from "../../../../src/scripts/jiNotationBound/history/events"
 
 describe("analyzeJiNotationBounds", (): void => {
-    it(
-        "returns the same bound types as in the actual JI notation (with the Extreme level being the current highest)",
-        (): void => {
-            const actual = analyzeJiNotationBounds()
-                .map((jiNotationBoundAnalysis: JiNotationBoundAnalysis): BoundType => {
-                    const jiNotationLevelEventAnalysis =
-                        jiNotationBoundAnalysis.bestPossibleBoundHistoryAnalysis.boundEventAnalyses
-                            .find((boundEventAnalysis: BoundEventAnalysis): boolean => {
-                                return boundEventAnalysis.jiNotationLevel === JiNotationLevel.EXTREME
-                            })
+    it("returns the same bound types as in the actual JI notation (with the Extreme level being the current highest)              ", (): void => {
+        const actual = analyzeJiNotationBounds()
+            .map((jiNotationBoundAnalysis: JiNotationBoundAnalysis): BoundType => {
+                const jiNotationLevelEventAnalysis =
+                    jiNotationBoundAnalysis.bestPossibleBoundHistoryAnalysis.boundEventAnalyses
+                        .find((boundEventAnalysis: BoundEventAnalysis): boolean => {
+                            return boundEventAnalysis.jiNotationLevel === JiNotationLevel.EXTREME
+                        })
 
-                    return jiNotationLevelEventAnalysis!.boundType
-                })
-
-            const expected = JI_NOTATION_BOUNDS.map((jiNotationBound: JiNotationBound): BoundType => {
-                return jiNotationBound.boundType
+                return jiNotationLevelEventAnalysis!.boundType
             })
-            expect(actual).toEqual(expected)
-        },
-    )
 
-    it(
-        "returns the same bound names as in the actual JI notation (with the Insane level being the current highest)",
-        (): void => {
-            const actual = analyzeJiNotationBounds()
-                .map((jiNotationBoundAnalysis: JiNotationBoundAnalysis): Name<Bound> => {
-                    const jiNotationLevelEventAnalysis =
-                        jiNotationBoundAnalysis.bestPossibleBoundHistoryAnalysis.boundEventAnalyses
-                            .find((boundEventAnalysis: BoundEventAnalysis): boolean => {
-                                return boundEventAnalysis.jiNotationLevel === JiNotationLevel.INSANE
-                            })
+        const expected = JI_NOTATION_BOUNDS.map((jiNotationBound: JiNotationBound): BoundType => {
+            return jiNotationBound.boundType
+        })
+        expect(actual).toEqual(expected)
+    })
 
-                    return jiNotationLevelEventAnalysis!.name
-                })
+    it("returns the same bound names as in the actual JI notation (with the Insane level being the current highest)               ", (): void => {
+        const actual = analyzeJiNotationBounds()
+            .map((jiNotationBoundAnalysis: JiNotationBoundAnalysis): Name<Bound> => {
+                const jiNotationLevelEventAnalysis =
+                    jiNotationBoundAnalysis.bestPossibleBoundHistoryAnalysis.boundEventAnalyses
+                        .find((boundEventAnalysis: BoundEventAnalysis): boolean => {
+                            return boundEventAnalysis.jiNotationLevel === JiNotationLevel.INSANE
+                        })
 
-            const expected = JI_NOTATION_BOUNDS.map((jiNotationBound: JiNotationBound): Name<Bound> => {
-                return jiNotationBound.name
+                return jiNotationLevelEventAnalysis!.name
             })
-            expect(actual).toEqual(expected)
-        },
-    )
+
+        const expected = JI_NOTATION_BOUNDS.map((jiNotationBound: JiNotationBound): Name<Bound> => {
+            return jiNotationBound.name
+        })
+        expect(actual).toEqual(expected)
+    })
 })

@@ -1,47 +1,42 @@
 import { program } from "commander"
 import {
     Abs,
+    computeRationalMonzoFromRationalDecimal,
+    computeRationalMonzoFromRationalQuotient,
+    Decimal,
     Exponent,
     formatPitch,
-    IntegerDecimal,
     Io,
-    isRational,
-    isUndefined,
-    LogTarget,
+    isJi,
     Max,
+    Pitch,
     Prime,
-    Rational,
-    saveLog,
 } from "../../../general"
 import { ApotomeSlope, computeAas, computeAte, JiPitchAnalysis, N2D3P9, parsePitch } from "../../../sagittal"
 import { FindCommasSettings, parseFindCommasSettings } from "../findCommas"
 
-const parseJiPitch = (): Rational => {
+const parseJiPitch = (): Pitch<{ rational: true }> => {
     const jiPitchText = program.args[ 0 ] as Io
 
-    let jiPitch: Rational
+    let jiPitch: Pitch<{ rational: true }>
     if (jiPitchText) {
         const pitch = parsePitch(jiPitchText)
 
-        if (isRational(pitch)) {
+        if (isJi(pitch)) {
             jiPitch = pitch
-
-            if (!isUndefined(pitch.monzo) || !isUndefined(pitch.quotient)) {
-                saveLog(`Warning: JI pitch ${formatPitch(pitch)} provided as decimal or cents, and may not be exactly what you intended.` as Io, LogTarget.ERROR)
-            }
         } else {
             throw new Error(`JI pitches must be rational. This pitch was ${formatPitch(pitch)}`)
         }
 
         // When provided via specific flags, they are pre-parsed (in readOptions.ts).
     } else if (program.monzo) {
-        jiPitch = { monzo: program.monzo }
+        jiPitch = { monzo: program.monzo } as Pitch<{ rational: true }>
     } else if (program.quotient) {
-        jiPitch = { quotient: program.quotient }
+        jiPitch = { monzo: computeRationalMonzoFromRationalQuotient(program.quotient) } as Pitch<{ rational: true }>
     } else if (program.commaName) {
         jiPitch = program.commaName
     } else if (program.integer) {
-        jiPitch = { decimal: program.integer }
+        jiPitch = { monzo: computeRationalMonzoFromRationalDecimal(program.integer) } as Pitch<{ rational: true }>
     } else {
         throw new Error("Unable to parse JI pitch.")
     }
@@ -61,7 +56,7 @@ const parseNotatingCommasSettings = (
 
     const ate = computeAte(jiPitchAnalysis)
     if (ate > findCommasSettings.maxAte) {
-        findCommasSettings.maxAte = ate as Max<Abs<IntegerDecimal & Exponent<3 & Prime>>>
+        findCommasSettings.maxAte = ate as Max<Abs<Decimal<{ integer: true }> & Exponent<3 & Prime>>>
     }
 
     const n2d3p9 = jiPitchAnalysis.two3FreeClassAnalysis.n2d3p9

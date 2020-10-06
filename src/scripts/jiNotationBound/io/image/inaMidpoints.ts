@@ -17,7 +17,7 @@ const visualizeInaMidpoints = (): Io[] => {
 
         inaMidpoints.forEach((inaMidpoint: InaMidpoint): void => {
             const { name } = inaMidpoint
-            const cents = computeCentsFromPitch(inaMidpoint)
+            const cents = computeCentsFromPitch(inaMidpoint.pitch)
 
             const x: Px = computeX(cents)
 

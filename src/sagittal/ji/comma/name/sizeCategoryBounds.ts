@@ -1,94 +1,159 @@
-import { Name, RealMonzo } from "../../../../general"
+import { Monzo, Name, Pitch, SQRT_SCALER } from "../../../../general"
 import { SizeCategoryBound } from "./types"
 
 const SIZE_CATEGORY_BOUNDS: SizeCategoryBound[] = [
     {
         name: "u|n" as Name<SizeCategoryBound>,
-        monzo: [] as unknown[] as RealMonzo,
+        pitch: {
+            monzo: [] as unknown[] as Monzo<{ rational: true }>,
+        } as Pitch<{ rational: false }>,
     },
     {
         name: "n|s" as Name<SizeCategoryBound>,                             // Half Pythagorean schisma
-        monzo: [-42, 26.5] as RealMonzo,
+        pitch: {
+            monzo: [-84, 53] as Monzo<{ rational: true }>,
+            scaler: SQRT_SCALER,
+        } as Pitch<{ rational: false }>,
     },
     {
         name: "s|k" as Name<SizeCategoryBound>,                             // Half complex Pythagorean kleisma
-        monzo: [158.5, -100] as RealMonzo,
+        pitch: {
+            monzo: [317, -200] as Monzo<{ rational: true }>,
+            scaler: SQRT_SCALER,
+        } as Pitch<{ rational: false }>,
     },
     {
         name: "k|C" as Name<SizeCategoryBound>,                             // Half Pythagorean comma
-        monzo: [-9.5, 6] as RealMonzo,
+        pitch: {
+            monzo: [-19, 12] as Monzo<{ rational: true }>,
+            scaler: SQRT_SCALER,
+        } as Pitch<{ rational: false }>,
     },
     {
         name: "C|S" as Name<SizeCategoryBound>,                             // Half Pythagorean large diesis
-        monzo: [13.5, -8.5] as RealMonzo,
+        pitch: {
+            monzo: [27, -17] as Monzo<{ rational: true }>,
+            scaler: SQRT_SCALER,
+        } as Pitch<{ rational: false }>,
     },
     {
         name: "S|M" as Name<SizeCategoryBound>,                             // Half limma
-        monzo: [4, -2.5] as RealMonzo,
+        pitch: {
+            monzo: [8, -5] as Monzo<{ rational: true }>,
+            scaler: SQRT_SCALER,
+        } as Pitch<{ rational: false }>,
     },
     {
         name: "M|L" as Name<SizeCategoryBound>,                             // Half apotome
-        monzo: [-5.5, 3.5] as RealMonzo,
+        pitch: {
+            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            scaler: SQRT_SCALER,
+        } as Pitch<{ rational: false }>,
     },
     {
         name: "L|SS" as Name<SizeCategoryBound>,                            // Half (apotome + Pythagorean comma)
-        monzo: [-15, 9.5] as RealMonzo,
+        pitch: {
+            monzo: [-30, 19] as Monzo<{ rational: true }>,
+            scaler: SQRT_SCALER,
+        } as Pitch<{ rational: false }>,
     },
     {
         name: "SS|MS" as Name<SizeCategoryBound>,                           // Half 31-3-comma
-        monzo: [-24.5, 15.5] as RealMonzo,
+        pitch: {
+            monzo: [-49, 31] as Monzo<{ rational: true }>,
+            scaler: SQRT_SCALER,
+        } as Pitch<{ rational: false }>,
     },
     {
         name: "MS|LS" as Name<SizeCategoryBound>,                           // Half Pythagorean whole tone
-        monzo: [-1.5, 1] as RealMonzo,
+        pitch: {
+            monzo: [-3, 2] as Monzo<{ rational: true }>,
+            scaler: SQRT_SCALER,
+        } as Pitch<{ rational: false }>,
     },
     {
         name: "LS|A" as Name<SizeCategoryBound>,
-        monzo: [31, -19.5] as RealMonzo,
+        pitch: {
+            monzo: [62, -39] as Monzo<{ rational: true }>,
+            scaler: SQRT_SCALER,
+        } as Pitch<{ rational: false }>,
     },
     {
         name: "A|s+A" as Name<SizeCategoryBound>,                           // Apotome + 1.8075229327¢
-        monzo: [-53, 33.5] as RealMonzo,
+        pitch: {
+            monzo: [-106, 67] as Monzo<{ rational: true }>,
+            scaler: SQRT_SCALER,
+        } as Pitch<{ rational: false }>,
     },
     {
         name: "s+A|k+A" as Name<SizeCategoryBound>,                         // Apotome + 4.4999134612584¢
-        monzo: [147.5, -93] as RealMonzo,
+        pitch: {
+            monzo: [295, -186] as Monzo<{ rational: true }>,
+            scaler: SQRT_SCALER,
+        } as Pitch<{ rational: false }>,
     },
     {
         name: "k+A|C+A" as Name<SizeCategoryBound>,                         // Apotome + 11.7300051923244¢
-        monzo: [-20.5, 13] as RealMonzo,
+        pitch: {
+            monzo: [-41, 26] as Monzo<{ rational: true }>,
+            scaler: SQRT_SCALER,
+        } as Pitch<{ rational: false }>,
     },
     {
         name: "C+A|S+A" as Name<SizeCategoryBound>,                         // Apotome + 33.382492644207¢
-        monzo: [2.5, -1.5] as RealMonzo,
+        pitch: {
+            monzo: [5, -3] as Monzo<{ rational: true }>,
+            scaler: SQRT_SCALER,
+        } as Pitch<{ rational: false }>,
     },
     {
         name: "S+A|M+A" as Name<SizeCategoryBound>,                         // Apotome + 45.112497836531¢
-        monzo: [-7, 4.5] as RealMonzo,
+        pitch: {
+            monzo: [-14, 9] as Monzo<{ rational: true }>,
+            scaler: SQRT_SCALER,
+        } as Pitch<{ rational: false }>,
     },
     {
         name: "M+A|L+A" as Name<SizeCategoryBound>,                         // Apotome + 56.842503028856¢
-        monzo: [-16.5, 10.5] as RealMonzo,
+        pitch: {
+            monzo: [-33, 21] as Monzo<{ rational: true }>,
+            scaler: SQRT_SCALER,
+        } as Pitch<{ rational: false }>,
     },
     {
         name: "L+A|SS+A" as Name<SizeCategoryBound>,                        // Apotome + 68.572508221180¢
-        monzo: [-26, 16.5] as RealMonzo,
+        pitch: {
+            monzo: [-52, 33] as Monzo<{ rational: true }>,
+            scaler: SQRT_SCALER,
+        } as Pitch<{ rational: false }>,
     },
     {
         name: "SS+A|MS+A" as Name<SizeCategoryBound>,                       // Apotome + 80.302513413505¢
-        monzo: [-35.5, 22.5] as RealMonzo,
+        pitch: {
+            monzo: [-71, 45] as Monzo<{ rational: true }>,
+            scaler: SQRT_SCALER,
+        } as Pitch<{ rational: false }>,
     },
     {
         name: "MS+A|LS+A" as Name<SizeCategoryBound>,                       // Apotome + 101.95500086539¢
-        monzo: [-12.5, 8] as RealMonzo,
+        pitch: {
+            monzo: [-25, 16] as Monzo<{ rational: true }>,
+            scaler: SQRT_SCALER,
+        } as Pitch<{ rational: false }>,
     },
     {
         name: "LS+A|A+A" as Name<SizeCategoryBound>,                        // Apotome + 111.87748312495¢
-        monzo: [20, -12.5] as RealMonzo,
+        pitch: {
+            monzo: [40, -25] as Monzo<{ rational: true }>,
+            scaler: SQRT_SCALER,
+        } as Pitch<{ rational: false }>,
     },
     {
         name: "A+A|" as Name<SizeCategoryBound>,                            // Apotome + apotome
-        monzo: [-22, 14] as RealMonzo,
+        pitch: {
+            monzo: [-44, 28] as Monzo<{ rational: true }>,
+            scaler: SQRT_SCALER,
+        } as Pitch<{ rational: false }>,
     },
 ]
 

@@ -13,7 +13,7 @@ describe("getMinaName", (): void => {
     const computeSplitMinaName = (symbolClassId: Id<SymbolClass>): Name<Mina> => {
         const [lowerBound, upperBound] = computeCaptureZone(symbolClassId)
         // Todo: DEFER UNTIL AFTER SCALED MONZO
-        //  CONDUCT AT REAL LEVEL, LOGARITHMIC FRACTION HELPER
+        //  CONDUCT AT PITCH LEVEL, LOGARITHMIC FRACTION HELPER
         //  This one is going to involve first weaning inas off of cents, i.e. bringing back the decimal versions of
         //  Them alongside all the cents versions. after that, we can take the fraction of the decimalSpan with the
         //  MINA_DECIMAL instead. so that is indeed dividing two pitches by each other, to get an interval.
@@ -31,21 +31,18 @@ describe("getMinaName", (): void => {
         return mina.toFixed(6) as Name<Mina>
     }
 
-    it(
-        "there is a mina name for every mina up to the max symbol class size, plus one for each split mina",
-        (): void => {
-            let symbolClassId = 0 as Id<SymbolClass>
-            const minaRange = computeRange(MAX_MINA)
+    it("there is a mina name for every mina up to the max symbol class size, plus one for each split mina                 ", (): void => {
+        let symbolClassId = 0 as Id<SymbolClass>
+        const minaRange = computeRange(MAX_MINA)
 
-            minaRange.forEach((mina: Mina): void => {
-                expect(getMinaName(symbolClassId)).toBe(mina.toString())
+        minaRange.forEach((mina: Mina): void => {
+            expect(getMinaName(symbolClassId)).toBe(mina.toString())
+            symbolClassId = increment(symbolClassId)
+
+            if (SPLIT_MINAS.includes(mina)) {
+                expect(getMinaName(symbolClassId)).toBe(computeSplitMinaName(decrement(symbolClassId)))
                 symbolClassId = increment(symbolClassId)
-
-                if (SPLIT_MINAS.includes(mina)) {
-                    expect(getMinaName(symbolClassId)).toBe(computeSplitMinaName(decrement(symbolClassId)))
-                    symbolClassId = increment(symbolClassId)
-                }
-            })
-        },
-    )
+            }
+        })
+    })
 })

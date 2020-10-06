@@ -1,4 +1,4 @@
-import { Exponent, Extrema, IntegerDecimal, Max, Prime } from "../../../../../../../../../../src/general"
+import { Decimal, Exponent, Extrema, Max, Prime } from "../../../../../../../../../../src/general"
 import { N2D3P9 } from "../../../../../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
 import { computeNumeratorPrimeExponentExtremasGivenMaxN2D3P9 } from "../../../../../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/numeratorPossibilities/numeratorPrimeExponentExtremas"
 
@@ -23,7 +23,7 @@ describe("computeNumeratorPrimeExponentExtremasGivenMaxN2D3P9", (): void => {
             [0, 0],
             [0, 1],
             [0, 1],
-        ] as Array<Extrema<IntegerDecimal & Exponent<Prime>>>
+        ] as Array<Extrema<Decimal<{ integer: true }> & Exponent<Prime>>>
         expect(actual).toEqual(expected)
     })
 })

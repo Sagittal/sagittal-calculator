@@ -16,7 +16,7 @@ const visualizeJiNotationLevelBounds = (): Io[] => {
             }
 
             jiNotationLevelBounds.forEach((jiNotationLevelBound: JiNotationBound, index: number): void => {
-                const cents = computeCentsFromPitch(jiNotationLevelBound)
+                const cents = computeCentsFromPitch(jiNotationLevelBound.pitch)
 
                 const topY: Px = round(JI_NOTATION_LEVEL_TOPS[ jiNotationLevel ], ACCURACY_THRESHOLD)
                 const bottomY: Px = round(JI_NOTATION_LEVEL_BOTTOMS[ jiNotationLevel ], ACCURACY_THRESHOLD)

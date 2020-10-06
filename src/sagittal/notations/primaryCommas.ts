@@ -1,13 +1,14 @@
-import { Id, RationalMonzo } from "../../general"
+import { Id } from "../../general"
 import { PrimaryComma } from "./types"
 
+// TODO: should be UNISON_COMMA, and EMPTY_MONZO; tried to do this before, at the wrong moment, and it didn't work out
 const UNISON: PrimaryComma = {
     id: 0 as Id<PrimaryComma>,
-    monzo: [] as unknown[] as RationalMonzo,
+    monzo: [] as unknown[],
 } as PrimaryComma
 const PYTHAGOREAN_COMMA: PrimaryComma = {
     id: 48 as Id<PrimaryComma>,
-    monzo: [-19, 12] as RationalMonzo,
+    monzo: [-19, 12],
 } as PrimaryComma
 
 const PRIMARY_COMMAS: PrimaryComma[] = [

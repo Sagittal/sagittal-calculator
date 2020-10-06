@@ -1,4 +1,4 @@
-import { IntegerNumerator, Max, Prime } from "../../../../../../../../../../src/general/math"
+import { Decimal, Max, Numerator, Prime } from "../../../../../../../../../../src/general/math"
 import { N2D3P9 } from "../../../../../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
 import { computeNumeratorPossibilitiesForDenominatorGivenMaxN2D3P9 } from "../../../../../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/numeratorPossibilities"
 
@@ -9,13 +9,13 @@ describe("computeNumeratorPossibilitiesForDenominatorGivenMaxN2D3P9", (): void =
         const actual = computeNumeratorPossibilitiesForDenominatorGivenMaxN2D3P9(maxN2D3P9)
 
         const expected = [
-            { numerator: 7 as IntegerNumerator, gpf: 7 as Max<Prime> },
-            { numerator: 11 as IntegerNumerator, gpf: 11 as Max<Prime> },
-            { numerator: 13 as IntegerNumerator, gpf: 13 as Max<Prime> },
-            { numerator: 17 as IntegerNumerator, gpf: 17 as Max<Prime> },
-            { numerator: 19 as IntegerNumerator, gpf: 19 as Max<Prime> },
-            { numerator: 23 as IntegerNumerator, gpf: 23 as Max<Prime> },
-            { numerator: 25 as IntegerNumerator, gpf: 5 as Max<Prime> },
+            { numerator: 7 as Numerator & Decimal<{ integer: true }>, gpf: 7 as Max<Prime> },
+            { numerator: 11 as Numerator & Decimal<{ integer: true }>, gpf: 11 as Max<Prime> },
+            { numerator: 13 as Numerator & Decimal<{ integer: true }>, gpf: 13 as Max<Prime> },
+            { numerator: 17 as Numerator & Decimal<{ integer: true }>, gpf: 17 as Max<Prime> },
+            { numerator: 19 as Numerator & Decimal<{ integer: true }>, gpf: 19 as Max<Prime> },
+            { numerator: 23 as Numerator & Decimal<{ integer: true }>, gpf: 23 as Max<Prime> },
+            { numerator: 25 as Numerator & Decimal<{ integer: true }>, gpf: 5 as Max<Prime> },
         ]
         expect(actual).toEqual(expected)
     })

@@ -1,5 +1,5 @@
-import { RealDecimal } from "../../../../../src/general/math"
-import { Cents } from "../../../../../src/general/music"
+import { Decimal } from "../../../../../src/general/math/numeric/decimal"
+import { Cents, computePitchFromDecimal } from "../../../../../src/general/music"
 import { JiNotationBound, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 import { computeInitialPosition } from "../../../../../src/scripts/jiNotationBound/bound/initialPosition"
 import { jiNotationBoundFixture } from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
@@ -9,8 +9,8 @@ describe("computeInitialPosition", (): void => {
         const jiNotationBound: JiNotationBound = {
             ...jiNotationBoundFixture,
             jiNotationLevels: [JiNotationLevel.HIGH, JiNotationLevel.EXTREME],
-            // ~42¢; between ~|\ (40.004352) and //| (43.012579) at the High JI notation level
-            decimal: 1.02455682303 as RealDecimal,
+            // This is chosen at ~42¢ to be between ~|\ (40.004352) and //| (43.012579) at the High JI notation level
+            pitch: computePitchFromDecimal(1.02455682303 as Decimal<{ rational: false }>),
         }
 
         const actual = computeInitialPosition(jiNotationBound)

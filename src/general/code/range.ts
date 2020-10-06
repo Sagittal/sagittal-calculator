@@ -1,7 +1,10 @@
-import { IntegerDecimal } from "../math"
+import { Decimal } from "../math"
 import { isUndefined, Range } from "./index"
 
-const computeRange = <T extends IntegerDecimal>(firstParameter: T, secondParameter?: T): Range<T> => {
+const computeRange = <T extends Decimal<{ integer: true }>>(
+    firstParameter: T,
+    secondParameter?: T,
+): Range<T> => {
     if (isUndefined(secondParameter)) {
         return [...Array(firstParameter).keys()] as Range<T>
     }

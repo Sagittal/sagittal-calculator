@@ -2,15 +2,15 @@ import {
     abs,
     Base,
     computePrimeCount,
+    Decimal,
     Exponent,
     indexOfFinalElement,
-    IntegerDecimal,
     isUndefined,
     log,
+    Monzo,
     Prime,
     PRIMES,
     QuotientPartType,
-    RationalMonzo,
     stringify,
 } from "../../../../general"
 import { Antivotes, ParameterValue, Submetric } from "../types"
@@ -22,7 +22,7 @@ import { secondaryParameterOverride } from "./secondaryParameter"
 // (maybe with (maybe adjusted) repetition)
 
 const computeSubmetricAntivotes = (
-    two3FreeRationalMonzo: RationalMonzo,
+    two3FreeRationalMonzo: Monzo<{ rational: true }>,
     submetric: Submetric = {},
     quotientPartType?: QuotientPartType,
 ): Antivotes => {
@@ -50,7 +50,11 @@ const computeSubmetricAntivotes = (
     }
 
     return two3FreeRationalMonzo.reduce(
-        (monzoAntivotes: Antivotes, primeExponent: IntegerDecimal & Exponent<Prime>, index: number): Antivotes => {
+        (
+            monzoAntivotes: Antivotes,
+            primeExponent: Decimal<{ integer: true }> & Exponent<Prime>,
+            index: number,
+        ): Antivotes => {
             if (max && index < indexOfFinalElement(two3FreeRationalMonzo)) {
                 return 0 as Antivotes
             }

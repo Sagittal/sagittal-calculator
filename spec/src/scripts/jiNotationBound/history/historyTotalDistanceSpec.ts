@@ -5,19 +5,16 @@ import { computeBoundHistoryTotalDistance } from "../../../../../src/scripts/jiN
 import { boundEventAnalysisFixture } from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
 
 describe("computeBoundHistoryTotalDistance", (): void => {
-    it(
-        "sums up the distances of all the bound events in the bound history (they are already all positive)",
-        (): void => {
-            const boundEventAnalyses: BoundEventAnalysis[] = [
-                { ...boundEventAnalysisFixture, distance: 4 as Abs<Cents> },
-                { ...boundEventAnalysisFixture, distance: 5 as Abs<Cents> },
-                { ...boundEventAnalysisFixture, distance: 6 as Abs<Cents> },
-            ]
+    it("sums up the distances of all the bound events in the bound history (they are already all positive)              ", (): void => {
+        const boundEventAnalyses: BoundEventAnalysis[] = [
+            { ...boundEventAnalysisFixture, distance: 4 as Abs<Cents> },
+            { ...boundEventAnalysisFixture, distance: 5 as Abs<Cents> },
+            { ...boundEventAnalysisFixture, distance: 6 as Abs<Cents> },
+        ]
 
-            const actual = computeBoundHistoryTotalDistance(boundEventAnalyses)
+        const actual = computeBoundHistoryTotalDistance(boundEventAnalyses)
 
-            const expected = 15 as Sum<Abs<Cents>>
-            expect(actual).toBe(expected)
-        },
-    )
+        const expected = 15 as Sum<Abs<Cents>>
+        expect(actual).toBe(expected)
+    })
 })

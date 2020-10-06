@@ -1,42 +1,43 @@
 import {
-    computeRealFromRealMonzo,
+    computePitchFromMonzo,
     computeTrimmedArray,
-    equalRealMonzos,
+    Decimal,
+    equalMonzos,
     Exponent,
-    IntegerDecimal,
     Maybe,
+    Monzo,
+    pitchIsHigher,
+    pitchIsHigherOrEqual,
+    pitchIsLower,
+    pitchIsLowerOrEqual,
     Prime,
-    RationalMonzo,
-    realIsHigher,
-    realIsHigherOrEqual,
-    realIsLower,
-    realIsLowerOrEqual,
     shallowClone,
     TWO_PRIME_INDEX,
     Zone,
 } from "../../../../general"
 
 const computeRationalMonzoInZone = (
-    twoFreeRationalMonzo: RationalMonzo<{ rough: 3 }>, zone: Zone,
-): Maybe<RationalMonzo> => {
+    twoFreeRationalMonzo: Monzo<{ rational: true, rough: 3 }>,
+    zone: Zone,
+): Maybe<Monzo<{ rational: true }>> => {
     const [lowerBound, upperBound] = zone
 
     const rationalMonzoInZone = shallowClone(twoFreeRationalMonzo)
 
-    if (!equalRealMonzos(rationalMonzoInZone, [] as unknown[] as RationalMonzo)) {
-        while (realIsHigher(computeRealFromRealMonzo(rationalMonzoInZone), upperBound)) {
-            rationalMonzoInZone[ TWO_PRIME_INDEX ] =
-                rationalMonzoInZone[ TWO_PRIME_INDEX ] - 1 as IntegerDecimal & Exponent<Prime>
+    if (!equalMonzos(rationalMonzoInZone, [] as unknown[] as Monzo<{ rational: true }>)) {
+        while (pitchIsHigher(computePitchFromMonzo(rationalMonzoInZone), upperBound)) {
+            rationalMonzoInZone[ TWO_PRIME_INDEX ] = rationalMonzoInZone[ TWO_PRIME_INDEX ] - 1 as
+                Decimal<{ integer: true }> & Exponent<Prime>
         }
-        while (realIsLower(computeRealFromRealMonzo(rationalMonzoInZone), lowerBound)) {
-            rationalMonzoInZone[ TWO_PRIME_INDEX ] =
-                rationalMonzoInZone[ TWO_PRIME_INDEX ] + 1 as IntegerDecimal & Exponent<Prime>
+        while (pitchIsLower(computePitchFromMonzo(rationalMonzoInZone), lowerBound)) {
+            rationalMonzoInZone[ TWO_PRIME_INDEX ] = rationalMonzoInZone[ TWO_PRIME_INDEX ] + 1 as
+                Decimal<{ integer: true }> & Exponent<Prime>
         }
     }
 
     return (
-        realIsHigherOrEqual(computeRealFromRealMonzo(rationalMonzoInZone), lowerBound) &&
-        realIsLowerOrEqual(computeRealFromRealMonzo(rationalMonzoInZone), upperBound)
+        pitchIsHigherOrEqual(computePitchFromMonzo(rationalMonzoInZone), lowerBound) &&
+        pitchIsLowerOrEqual(computePitchFromMonzo(rationalMonzoInZone), upperBound)
     ) ?
         computeTrimmedArray(rationalMonzoInZone) :
         undefined

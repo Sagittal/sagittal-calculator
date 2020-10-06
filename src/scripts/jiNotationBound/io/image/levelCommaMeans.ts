@@ -24,7 +24,7 @@ const visualizeJiNotationLevelCommaMeans = (): Io[] => {
 
         jiNotationLevelCommaMeans.forEach((jiNotationLevelCommaMean: CommaMean): void => {
             const { name } = jiNotationLevelCommaMean
-            const cents = computeCentsFromPitch(jiNotationLevelCommaMean)
+            const cents = computeCentsFromPitch(jiNotationLevelCommaMean.pitch)
 
             const formattedName = name?.split(" ")
                 .map((ascii: string): string => unicodeFromAscii(ascii as SymbolLongAscii)).join("   ") || ""

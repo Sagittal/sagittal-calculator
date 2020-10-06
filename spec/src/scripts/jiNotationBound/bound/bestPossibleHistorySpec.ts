@@ -6,37 +6,34 @@ import { BoundHistoryAnalysis, Score } from "../../../../../src/scripts/jiNotati
 import { boundHistoryAnalysisFixture } from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
 
 describe("computeBestPossibleBoundHistoryAnalysis", (): void => {
-    it(
-        "returns the bound history with the best score (the not possible ones are all already filtered out)",
-        (): void => {
-            const boundHistoryAnalyses: BoundHistoryAnalysis[] = [
-                {
-                    ...boundHistoryAnalysisFixture,
-                    score: 3436643 as Score,
-                    cents: 12.909 as Cents,
-                },
-                {
-                    ...boundHistoryAnalysisFixture,
-                    score: 245444 as Score,
-                    cents: 13.235 as Cents,
-                },
-                {
-                    ...boundHistoryAnalysisFixture,
-                    score: 2422436 as Score,
-                    cents: 13.47489 as Cents,
-                },
-            ]
-
-            const actual = computeBestPossibleBoundHistoryAnalysis(boundHistoryAnalyses)
-
-            const expected = {
+    it("returns the bound history with the best score (the not possible ones are all already filtered out)                ", (): void => {
+        const boundHistoryAnalyses: BoundHistoryAnalysis[] = [
+            {
+                ...boundHistoryAnalysisFixture,
+                score: 3436643 as Score,
+                cents: 12.909 as Cents,
+            },
+            {
                 ...boundHistoryAnalysisFixture,
                 score: 245444 as Score,
                 cents: 13.235 as Cents,
-            }
-            expect(actual).toEqual(expected)
-        },
-    )
+            },
+            {
+                ...boundHistoryAnalysisFixture,
+                score: 2422436 as Score,
+                cents: 13.47489 as Cents,
+            },
+        ]
+
+        const actual = computeBestPossibleBoundHistoryAnalysis(boundHistoryAnalyses)
+
+        const expected = {
+            ...boundHistoryAnalysisFixture,
+            score: 245444 as Score,
+            cents: 13.235 as Cents,
+        }
+        expect(actual).toEqual(expected)
+    })
 
     it("returns the best exact bound history even if its score is not the best", (): void => {
         const boundHistoryAnalyses = [

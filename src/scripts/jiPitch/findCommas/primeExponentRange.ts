@@ -2,9 +2,9 @@ import {
     add,
     computeRange,
     Copfr,
+    Decimal,
     Exponent,
     Extrema,
-    IntegerDecimal,
     integerDivide,
     Max,
     max,
@@ -20,7 +20,7 @@ import { PrimeExponentRangeOptions } from "./types"
 const computePrimeExponentRange = (
     prime: Prime,
     options: PrimeExponentRangeOptions = {},
-): Range<IntegerDecimal & Exponent<Prime>> => {
+): Range<Decimal<{ integer: true }> & Exponent<Prime>> => {
     const {
         max23FreeSopfr = Infinity as Sopfr<{ rough: 5 }>,
         max23FreeCopfr = Infinity as Copfr<{ rough: 5 }>,
@@ -31,32 +31,38 @@ const computePrimeExponentRange = (
         throw new Error("The range must be constrained somehow.")
     }
 
-    const [minPrimeExponentGivenMaxN2D3P9, maxPrimeExponentGivenMaxN2D3P9]: Extrema<IntegerDecimal & Exponent<Prime>> =
-    primeExponentExtremaGivenMaxN2D3P9 || [-Infinity, Infinity] as Extrema<IntegerDecimal & Exponent<Prime>>
+    const [
+        minPrimeExponentGivenMaxN2D3P9,
+        maxPrimeExponentGivenMaxN2D3P9,
+    ]: Extrema<Decimal<{ integer: true }> & Exponent<Prime>> =
+    primeExponentExtremaGivenMaxN2D3P9 || [-Infinity, Infinity] as Extrema<Decimal<{ integer: true }> & Exponent<Prime>>
 
-    const maxPrimeExponentGivenMaxSopfr: Max<IntegerDecimal & Exponent<Prime>> =
-        integerDivide(max23FreeSopfr, prime) as number as Max<IntegerDecimal & Exponent<Prime>>
-    const maxPrimeExponentGivenMaxCopfr: Max<IntegerDecimal & Exponent<Prime>> =
-        max23FreeCopfr as number as Max<IntegerDecimal & Exponent<Prime>>
+    const maxPrimeExponentGivenMaxSopfr: Max<Decimal<{ integer: true }> & Exponent<Prime>> =
+        integerDivide(max23FreeSopfr, prime) as number as Max<Decimal<{ integer: true }> & Exponent<Prime>>
+    const maxPrimeExponentGivenMaxCopfr: Max<Decimal<{ integer: true }> & Exponent<Prime>> =
+        max23FreeCopfr as number as Max<Decimal<{ integer: true }> & Exponent<Prime>>
 
-    const minPrimeExponentGivenMaxSopfr: Min<IntegerDecimal & Exponent<Prime>> =
-        -maxPrimeExponentGivenMaxSopfr as Min<IntegerDecimal & Exponent<Prime>>
-    const minPrimeExponentGivenMaxCopfr: Min<IntegerDecimal & Exponent<Prime>> =
-        -max23FreeCopfr as Min<IntegerDecimal & Exponent<Prime>>
+    const minPrimeExponentGivenMaxSopfr: Min<Decimal<{ integer: true }> & Exponent<Prime>> =
+        -maxPrimeExponentGivenMaxSopfr as Min<Decimal<{ integer: true }> & Exponent<Prime>>
+    const minPrimeExponentGivenMaxCopfr: Min<Decimal<{ integer: true }> & Exponent<Prime>> =
+        -max23FreeCopfr as Min<Decimal<{ integer: true }> & Exponent<Prime>>
 
-    const maxPrimeExponent: Min<Max<IntegerDecimal & Exponent<Prime>>> = min(
+    const maxPrimeExponent: Min<Max<Decimal<{ integer: true }> & Exponent<Prime>>> = min(
         maxPrimeExponentGivenMaxSopfr,
         maxPrimeExponentGivenMaxN2D3P9,
         maxPrimeExponentGivenMaxCopfr,
     )
 
-    const minPrimeExponent: IntegerDecimal & Max<Min<IntegerDecimal & Exponent<Prime>>> = max(
+    const minPrimeExponent: Decimal<{ integer: true }> & Max<Min<Decimal<{ integer: true }> & Exponent<Prime>>> = max(
         minPrimeExponentGivenMaxSopfr,
         minPrimeExponentGivenMaxN2D3P9,
         minPrimeExponentGivenMaxCopfr,
     )
 
-    return computeRange(minPrimeExponent, add(maxPrimeExponent, ONE)) as Range<IntegerDecimal & Exponent<Prime>>
+    return computeRange(
+        minPrimeExponent,
+        add(maxPrimeExponent, ONE),
+    ) as Range<Decimal<{ integer: true }> & Exponent<Prime>>
 }
 
 export {

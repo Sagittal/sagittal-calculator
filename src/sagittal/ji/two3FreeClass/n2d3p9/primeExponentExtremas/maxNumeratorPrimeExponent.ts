@@ -1,19 +1,19 @@
-import { Exponent, floor, IntegerNumerator, log, Max, Power, Prime } from "../../../../../general"
+import { Decimal, Exponent, floor, log, Max, Numerator, Power, Prime } from "../../../../../general"
 import { N2D3P9 } from "../types"
 
 const computeMaxNumeratorPrimeExponentGivenMaxN2D3P9 = (
-    numeratorPrime: IntegerNumerator & Prime,
+    numeratorPrime: Numerator & Prime,
     maxN2D3P9: Max<N2D3P9>,
-): Max<IntegerNumerator & Exponent<Prime>> => {
-    const power = maxN2D3P9 * 9 * (1 / numeratorPrime) as Power<IntegerNumerator & Prime>
+): Max<Numerator & Decimal<{ integer: true }> & Exponent<Prime>> => {
+    const power = maxN2D3P9 * 9 * (1 / numeratorPrime) as Power<Numerator & Prime>
 
     if (power <= 0) {
-        return 0 as Max<IntegerNumerator & Exponent<Prime>>
+        return 0 as Max<Numerator & Decimal<{ integer: true }> & Exponent<Prime>>
     }
 
     const base = numeratorPrime / 2
 
-    return floor(log(power, base)) as Max<IntegerNumerator & Exponent<Prime>>
+    return floor(log(power, base)) as Max<Numerator & Decimal<{ integer: true }> & Exponent<Prime>>
 
 }
 

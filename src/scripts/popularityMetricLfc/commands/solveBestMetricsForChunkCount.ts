@@ -16,7 +16,7 @@ const defaultLogTargets = [
 ]
 applySharedPopularityMetricLfcCommandSetup({ defaultLogTargets })
 
-solverStatus.chunkCount = parseInteger(program.args[ 0 ]) as Count<Chunk>
+solverStatus.chunkCount = parseInteger(program.args[ 0 ] as Io) as Count<Chunk>
 
 const finalOutput = (): void => {
     saveLog(`\n\nAND THE BEST METRICS WERE ${formatBestMetrics()}` as Io, LogTarget.FINAL)

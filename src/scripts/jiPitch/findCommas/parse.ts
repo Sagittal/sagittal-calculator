@@ -1,5 +1,5 @@
 import { program } from "commander"
-import { Abs, Exponent, IntegerDecimal, Max, Min, Prime, Real } from "../../../general"
+import { Abs, Decimal, Exponent, Max, Min, Pitch, Prime } from "../../../general"
 import { ApotomeSlope, N2D3P9 } from "../../../sagittal"
 import { DEFAULT_FIND_COMMAS_SETTINGS } from "./constants"
 import { FindCommasSettings } from "./types"
@@ -19,16 +19,16 @@ const parseFindCommasSettings = (
     const maxN2D3P9: Max<N2D3P9> = program.maxN2d3p9 ||
         defaultOverrides.maxN2D3P9 ||
         DEFAULT_FIND_COMMAS_SETTINGS.maxN2D3P9
-    const lowerBound: Min<Real> = program.lowerBound ||
+    const lowerBound: Min<Pitch> = program.lowerBound ||
         defaultOverrides.lowerBound ||
         DEFAULT_FIND_COMMAS_SETTINGS.lowerBound
-    const upperBound: Max<Real> = program.upperBound ||
+    const upperBound: Max<Pitch> = program.upperBound ||
         defaultOverrides.upperBound ||
         DEFAULT_FIND_COMMAS_SETTINGS.upperBound
     const maxAas: Max<Abs<ApotomeSlope>> = program.maxAas ||
         defaultOverrides.maxAas ||
         DEFAULT_FIND_COMMAS_SETTINGS.maxAas
-    const maxAte: Max<Abs<IntegerDecimal & Exponent<3 & Prime>>> = program.maxAte ||
+    const maxAte: Max<Abs<Decimal<{ integer: true }> & Exponent<3 & Prime>>> = program.maxAte ||
         defaultOverrides.maxAte ||
         DEFAULT_FIND_COMMAS_SETTINGS.maxAte
 

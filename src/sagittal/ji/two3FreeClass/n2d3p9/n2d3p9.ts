@@ -1,13 +1,10 @@
 import {
     abs,
-    computeGpf,
-    computeRationalMonzoFromRational,
-    computeRealFromRealMonzo,
+    computeRationalMonzoSmoothness,
     computeTrimmedArray,
-    Direction,
     Exponent,
     formatMonzo,
-    isSubRealMonzo,
+    isSubMonzo,
     NumericProperties,
     Prime,
     PRIMES,
@@ -17,11 +14,8 @@ import {
 } from "../../../../general"
 import { N2D3P9 } from "./types"
 
-const computeN2D3P9 = <T extends NumericProperties &
-    { direction: Direction.SUPER, rough: 5 } = { direction: Direction.SUPER, rough: 5, rational: false }>(
-    two3FreeClass: Two3FreeClass,
-): N2D3P9 => {
-    const rationalMonzo = computeRationalMonzoFromRational(two3FreeClass)
+const computeN2D3P9 = <T extends NumericProperties>(two3FreeClass: Two3FreeClass): N2D3P9 => {
+    const rationalMonzo = two3FreeClass.monzo
 
     if (computeTrimmedArray(rationalMonzo).length < 3) {
         return 1 as N2D3P9
@@ -30,7 +24,7 @@ const computeN2D3P9 = <T extends NumericProperties &
     if (rationalMonzo[ TWO_PRIME_INDEX ] !== 0 || rationalMonzo[ THREE_PRIME_INDEX ] !== 0) {
         throw new Error(`N2D3P9 must be given a 2,3-free class (5-rough, n ≥ d); received monzo ${formatMonzo(rationalMonzo)}`)
     }
-    if (isSubRealMonzo(rationalMonzo)) {
+    if (isSubMonzo(rationalMonzo)) {
         throw new Error(`N2D3P9 must be given a 2,3-free class (5-rough, n ≥ d); received monzo ${formatMonzo(rationalMonzo)}`)
     }
 
@@ -42,7 +36,7 @@ const computeN2D3P9 = <T extends NumericProperties &
             return n2d3p9 * (prime / divisor) ** abs(primeExponent) as N2D3P9
         },
         1 as N2D3P9,
-    ) * computeGpf(computeRealFromRealMonzo(rationalMonzo)) * (1 / 9) as N2D3P9
+    ) * computeRationalMonzoSmoothness(rationalMonzo) * (1 / 9) as N2D3P9
 }
 
 export {

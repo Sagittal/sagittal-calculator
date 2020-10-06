@@ -1,5 +1,5 @@
 import { alignFormattedDecimal, formatDecimal, formatIntegerDecimal, Formatted } from "../../../../../src/general/io"
-import { IntegerDecimal } from "../../../../../src/general/math/rational/real/decimal"
+import { Decimal } from "../../../../../src/general/math/numeric/decimal"
 
 describe("alignFormattedDecimal", (): void => {
     it("shifts over numbers so that the decimal places align", (): void => {
@@ -29,7 +29,7 @@ describe("formatDecimal", (): void => {
 })
 
 describe("formatIntegerDecimal", (): void => {
-    const integerDecimal = 1 as IntegerDecimal
+    const integerDecimal = 1 as Decimal<{ integer: true }>
 
     it("provides the same centering (3 digits, decimal point, 3 digits) as with formatted numbers", (): void => {
         const actual = formatIntegerDecimal(integerDecimal)

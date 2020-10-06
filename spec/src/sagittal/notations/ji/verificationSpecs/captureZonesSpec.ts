@@ -1,5 +1,5 @@
-import { computeRealDecimalFromReal, Id, Maybe, Zone } from "../../../../../../src/general"
-import { JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS, PrimaryComma, SymbolClass } from "../../../../../../src/sagittal"
+import { computeDecimalFromPitch, Decimal, Extrema, Id, Maybe, Zone } from "../../../../../../src/general"
+import { JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS, SymbolClass } from "../../../../../../src/sagittal"
 import { JiNotationLevel } from "../../../../../../src/sagittal/notations/ji"
 import { computeCaptureZone } from "../../../../../../src/sagittal/notations/ji/captureZone"
 
@@ -24,10 +24,10 @@ describe("capture zones", (): void => {
             [{ decimal: 1.030027 }, { decimal: 1.033378 }], // [{ cents: 51.219540 }, { cents: 56.842503 }],
             [{ decimal: 1.033378 }, { decimal: 1.036740 }], // [{ cents: 56.842503 }, { cents: 62.465465 }],
             [{ decimal: 1.036740 }, { decimal: 1.040403 }], // [{ cents: 62.465465 }, { cents: 68.572508 }],
-        ] as Array<Zone<PrimaryComma>>
-        expected.forEach((zone: Zone, index: number): void => {
-            expect(computeRealDecimalFromReal(actual[ index ]![ 0 ])).toBeCloseToTyped(zone[ 0 ].decimal!)
-            expect(computeRealDecimalFromReal(actual[ index ]![ 1 ])).toBeCloseToTyped(zone[ 1 ].decimal!)
+        ] as Array<Extrema<{ decimal: Decimal }>>
+        expected.forEach((zone: Extrema<{ decimal: Decimal }>, index: number): void => {
+            expect(computeDecimalFromPitch(actual[ index ]![ 0 ])).toBeCloseTo(zone[ 0 ].decimal!)
+            expect(computeDecimalFromPitch(actual[ index ]![ 1 ])).toBeCloseTo(zone[ 1 ].decimal!)
         })
     })
 
@@ -70,10 +70,10 @@ describe("capture zones", (): void => {
             [{ decimal: 1.036318 }, { decimal: 1.037749 }], // [{ cents: 61.760890 }, { cents: 64.149821 }],
             [{ decimal: 1.037749 }, { decimal: 1.038929 }], // [{ cents: 64.149821 }, { cents: 66.117175 }],
             [{ decimal: 1.038929 }, { decimal: 1.040403 }], // [{ cents: 66.117175 }, { cents: 68.572508 }],
-        ] as Array<Zone<PrimaryComma>>
-        expected.forEach((zone: Zone, index: number): void => {
-            expect(computeRealDecimalFromReal(actual[ index ]![ 0 ])).toBeCloseToTyped(zone[ 0 ].decimal!)
-            expect(computeRealDecimalFromReal(actual[ index ]![ 1 ])).toBeCloseToTyped(zone[ 1 ].decimal!)
+        ] as Array<Extrema<{ decimal: Decimal }>>
+        expected.forEach((zone: Extrema<{ decimal: Decimal }>, index: number): void => {
+            expect(computeDecimalFromPitch(actual[ index ]![ 0 ])).toBeCloseTo(zone[ 0 ].decimal!)
+            expect(computeDecimalFromPitch(actual[ index ]![ 1 ])).toBeCloseTo(zone[ 1 ].decimal!)
         })
     })
 
@@ -139,10 +139,10 @@ describe("capture zones", (): void => {
             [{ decimal: 1.037496 }, { decimal: 1.037749 }], // [{ cents: 63.728245 }, { cents: 64.149821 }],
             [{ decimal: 1.037749 }, { decimal: 1.038929 }], // [{ cents: 64.149821 }, { cents: 66.117175 }],
             [{ decimal: 1.038929 }, { decimal: 1.040403 }], // [{ cents: 66.117175 }, { cents: 68.572508 }],
-        ] as Array<Zone<PrimaryComma>>
-        expected.forEach((zone: Zone, index: number): void => {
-            expect(computeRealDecimalFromReal(actual[ index ]![ 0 ])).toBeCloseToTyped(zone[ 0 ].decimal!)
-            expect(computeRealDecimalFromReal(actual[ index ]![ 1 ])).toBeCloseToTyped(zone[ 1 ].decimal!)
+        ] as Array<Extrema<{ decimal: Decimal }>>
+        expected.forEach((zone: Extrema<{ decimal: Decimal }>, index: number): void => {
+            expect(computeDecimalFromPitch(actual[ index ]![ 0 ])).toBeCloseTo(zone[ 0 ].decimal!)
+            expect(computeDecimalFromPitch(actual[ index ]![ 1 ])).toBeCloseTo(zone[ 1 ].decimal!)
         })
     })
 
@@ -302,10 +302,10 @@ describe("capture zones", (): void => {
             [{ decimal: 1.039519 }, { decimal: 1.039773 }], // [{ cents: 67.100853 }, { cents: 67.522429 }],
             [{ decimal: 1.039773 }, { decimal: 1.040110 }], // [{ cents: 67.522429 }, { cents: 68.084530 }],
             [{ decimal: 1.040110 }, { decimal: 1.040403 }], // [{ cents: 68.084530 }, { cents: 68.572508 }],
-        ] as Array<Zone<PrimaryComma>>
-        expected.forEach((zone: Zone, index: number): void => {
-            expect(computeRealDecimalFromReal(actual[ index ]![ 0 ])).toBeCloseToTyped(zone[ 0 ].decimal!)
-            expect(computeRealDecimalFromReal(actual[ index ]![ 1 ])).toBeCloseToTyped(zone[ 1 ].decimal!)
+        ] as Array<Extrema<{ decimal: Decimal }>>
+        expected.forEach((zone: Extrema<{ decimal: Decimal }>, index: number): void => {
+            expect(computeDecimalFromPitch(actual[ index ]![ 0 ])).toBeCloseTo(zone[ 0 ].decimal!)
+            expect(computeDecimalFromPitch(actual[ index ]![ 1 ])).toBeCloseTo(zone[ 1 ].decimal!)
         })
     })
 })

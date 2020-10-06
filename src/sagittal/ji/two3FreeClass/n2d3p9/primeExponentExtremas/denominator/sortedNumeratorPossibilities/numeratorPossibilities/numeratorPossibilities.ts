@@ -1,4 +1,4 @@
-import { computeGpf, IntegerNumerator, Max, Prime } from "../../../../../../../../general"
+import { computeRationalDecimalGpf, Decimal, Max, Numerator, Prime } from "../../../../../../../../general"
 import { N2D3P9 } from "../../../../types"
 import { computePossibleNumeratorsGivenMaxN2D3P9 } from "./possibleNumerators"
 import { NumeratorPossibilityForDenominatorGivenMaxN2D3P9 } from "./types"
@@ -9,10 +9,12 @@ const computeNumeratorPossibilitiesForDenominatorGivenMaxN2D3P9 = (
     const possibleNumeratorsGivenMaxN2D3P9 = computePossibleNumeratorsGivenMaxN2D3P9(maxN2D3P9)
 
     return possibleNumeratorsGivenMaxN2D3P9
-        .map((possibleNumerator: IntegerNumerator): NumeratorPossibilityForDenominatorGivenMaxN2D3P9 => {
+        .map((
+            possibleNumerator: Numerator & Decimal<{ integer: true }>,
+        ): NumeratorPossibilityForDenominatorGivenMaxN2D3P9 => {
             return {
                 numerator: possibleNumerator,
-                gpf: computeGpf(possibleNumerator) as Max<Prime>,
+                gpf: computeRationalDecimalGpf(possibleNumerator) as Max<Prime>,
             }
         })
 }

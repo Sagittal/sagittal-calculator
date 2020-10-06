@@ -1,4 +1,13 @@
-import { Abs, add, Cents, computeCents, Multiplier, RealDecimal, Sum } from "../../../../../src/general"
+import {
+    Abs,
+    add,
+    Cents,
+    computeCentsFromPitch,
+    computePitchFromDecimal,
+    Decimal,
+    Multiplier,
+    Sum,
+} from "../../../../../src/general"
 import { multiply } from "../../../../../src/general/math"
 import { BoundType, Ina, JiNotationBound, JiNotationLevel, Tina, TINA } from "../../../../../src/sagittal/notations/ji"
 import { computeInitialPosition } from "../../../../../src/scripts/jiNotationBound/bound/initialPosition"
@@ -12,19 +21,69 @@ import {
 } from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
 
 describe("analyzeHistory", (): void => {
-    const actualJiNotationBoundDecimal = 1.00721027676 as RealDecimal   // 12.43789¢
+    const actualJiNotationBoundDecimal = 1.00721027676 as Decimal<{ rational: false }>  // 12.43789¢
     let boundHistory: BoundHistory
     let cents: Cents
     let jiNotationBound: JiNotationBound
     let initialPosition
 
-    it(
-        `returns its bound history but with its event augmented with analysis properties, 
-        and computes the final position of the bound history, 
-        and its distance from the initial position, 
-        and its overall distance the JI notation bound moved across all the bound events`,
-        (): void => {
-            cents = computeCents(actualJiNotationBoundDecimal) + 0.5 as Cents
+    it("returns its bound history but with its event augmented with analysis properties, and computes the final position of the bound history, and its distance from the initial position, and its overall distance the JI notation bound moved across all the bound events", (): void => {
+        cents = computeCentsFromPitch(computePitchFromDecimal(actualJiNotationBoundDecimal)) + 0.5 as Cents
+        boundHistory = [
+            {
+                ...boundEventFixture,
+                cents,
+                boundType: BoundType.INA_MIDPOINT,
+                jiNotationLevel: JiNotationLevel.EXTREME,
+            },
+            {
+                ...boundEventFixture,
+                cents,
+                boundType: BoundType.SIZE_CATEGORY_BOUND,
+                jiNotationLevel: JiNotationLevel.INSANE,
+            },
+        ]
+        jiNotationBound = {
+            ...jiNotationBoundFixture,
+            pitch: computePitchFromDecimal(actualJiNotationBoundDecimal),
+            jiNotationLevels: [JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
+        }
+        initialPosition = computeInitialPosition(jiNotationBound)
+
+        const actual = analyzeHistory(boundHistory, jiNotationBound, initialPosition)
+
+        expect(actual.boundEventAnalyses).toEqual([
+            {
+                ...boundEventAnalysisFixture,
+                cents,
+                boundType: BoundType.INA_MIDPOINT,
+                rank: RANKS[ BoundType.INA_MIDPOINT ],
+                exact: false,
+                distance: 0 as Abs<Cents>,
+                inaDistance: 0 as Multiplier<Ina>,
+                jiNotationLevel: JiNotationLevel.EXTREME,
+            },
+            {
+                ...boundEventAnalysisFixture,
+                cents,
+                boundType: BoundType.SIZE_CATEGORY_BOUND,
+                rank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
+                exact: false,
+                distance: 0 as Abs<Cents>,
+                inaDistance: 0 as Multiplier<Ina>,
+                jiNotationLevel: JiNotationLevel.INSANE,
+            },
+        ])
+        expect(actual.cents).toBe(cents)
+        expect(actual.rank).toBe(RANKS[ BoundType.SIZE_CATEGORY_BOUND ])
+        expect(actual.totalDistance).toBe(0 as Sum<Abs<Cents>>)
+        expect(actual.initialPositionTinaDistance)
+            .toBeCloseToTyped(3.681504 as Multiplier<Tina>)
+    })
+
+    describe("when the bound history's position matches the actual JI notation bound position", (): void => {
+        it("returns the bound history's events with their rank, plus true for the possible property and a 0 tina error           ", (): void => {
+            cents = computeCentsFromPitch(computePitchFromDecimal(actualJiNotationBoundDecimal))
             boundHistory = [
                 {
                     ...boundEventFixture,
@@ -41,76 +100,16 @@ describe("analyzeHistory", (): void => {
             ]
             jiNotationBound = {
                 ...jiNotationBoundFixture,
-                decimal: actualJiNotationBoundDecimal,
+                pitch: computePitchFromDecimal(actualJiNotationBoundDecimal),
                 jiNotationLevels: [JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
             }
             initialPosition = computeInitialPosition(jiNotationBound)
 
             const actual = analyzeHistory(boundHistory, jiNotationBound, initialPosition)
 
-            expect(actual.boundEventAnalyses).toEqual([
-                {
-                    ...boundEventAnalysisFixture,
-                    cents,
-                    boundType: BoundType.INA_MIDPOINT,
-                    rank: RANKS[ BoundType.INA_MIDPOINT ],
-                    exact: false,
-                    distance: 0 as Abs<Cents>,
-                    inaDistance: 0 as Multiplier<Ina>,
-                    jiNotationLevel: JiNotationLevel.EXTREME,
-                },
-                {
-                    ...boundEventAnalysisFixture,
-                    cents,
-                    boundType: BoundType.SIZE_CATEGORY_BOUND,
-                    rank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
-                    exact: false,
-                    distance: 0 as Abs<Cents>,
-                    inaDistance: 0 as Multiplier<Ina>,
-                    jiNotationLevel: JiNotationLevel.INSANE,
-                },
-            ])
-            expect(actual.cents).toBe(cents)
-            expect(actual.rank).toBe(RANKS[ BoundType.SIZE_CATEGORY_BOUND ])
-            expect(actual.totalDistance).toBe(0 as Sum<Abs<Cents>>)
-            expect(actual.initialPositionTinaDistance)
-                .toBeCloseToTyped(3.681504 as Multiplier<Tina>)
-        },
-    )
-
-    describe("when the bound history's position matches the actual JI notation bound position", (): void => {
-        it(
-            // tslint:disable-next-line max-line-length
-            `returns the bound history's events with their rank, plus true for the possible property and a 0 tina error`,
-            (): void => {
-                cents = computeCents(actualJiNotationBoundDecimal)
-                boundHistory = [
-                    {
-                        ...boundEventFixture,
-                        cents,
-                        boundType: BoundType.INA_MIDPOINT,
-                        jiNotationLevel: JiNotationLevel.EXTREME,
-                    },
-                    {
-                        ...boundEventFixture,
-                        cents,
-                        boundType: BoundType.SIZE_CATEGORY_BOUND,
-                        jiNotationLevel: JiNotationLevel.INSANE,
-                    },
-                ]
-                jiNotationBound = {
-                    ...jiNotationBoundFixture,
-                    decimal: actualJiNotationBoundDecimal,
-                    jiNotationLevels: [JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
-                }
-                initialPosition = computeInitialPosition(jiNotationBound)
-
-                const actual = analyzeHistory(boundHistory, jiNotationBound, initialPosition)
-
-                expect(actual.possible).toBe(true)
-                expect(actual.tinaError).toBeCloseToTyped(0 as Multiplier<Tina>)
-            },
-        )
+            expect(actual.possible).toBe(true)
+            expect(actual.tinaError).toBeCloseToTyped(0 as Multiplier<Tina>)
+        })
     })
 
     describe(
@@ -122,7 +121,7 @@ describe("analyzeHistory", (): void => {
                 (): void => {
                     const expectedTinaError = 2 / 5 as Multiplier<Tina>
                     cents = add(
-                        computeCents(actualJiNotationBoundDecimal),
+                        computeCentsFromPitch(computePitchFromDecimal(actualJiNotationBoundDecimal)),
                         multiply(TINA, expectedTinaError),
                     )
                     boundHistory = [{ ...boundEventFixture, boundType: BoundType.INA_MIDPOINT, cents }, {
@@ -132,7 +131,7 @@ describe("analyzeHistory", (): void => {
                     }]
                     jiNotationBound = {
                         ...jiNotationBoundFixture,
-                        decimal: actualJiNotationBoundDecimal,
+                        pitch: computePitchFromDecimal(actualJiNotationBoundDecimal),
                         jiNotationLevels: [JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
                     }
                     initialPosition = computeInitialPosition(jiNotationBound)
@@ -144,93 +143,84 @@ describe("analyzeHistory", (): void => {
                 },
             )
 
-            it(
-                "works when the position is greater than the actual JI notation bound position by more than a tina",
-                (): void => {
-                    const expectedTinaError = 5 / 2 as Multiplier<Tina>
-                    cents = add(
-                        computeCents(actualJiNotationBoundDecimal),
-                        multiply(TINA, expectedTinaError),
-                    )
-                    boundHistory = [{ ...boundEventFixture, boundType: BoundType.INA_MIDPOINT, cents }, {
-                        ...boundEventFixture,
-                        cents,
-                        boundType: BoundType.INA_MIDPOINT,
-                        jiNotationLevel: JiNotationLevel.EXTREME,
-                    }]
-                    jiNotationBound = {
-                        ...jiNotationBoundFixture,
-                        decimal: actualJiNotationBoundDecimal,
-                        jiNotationLevels: [JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
-                    }
-                    initialPosition = computeInitialPosition(jiNotationBound)
+            it("works when the position is greater than the actual JI notation bound position by more than a tina             ", (): void => {
+                const expectedTinaError = 5 / 2 as Multiplier<Tina>
+                cents = add(
+                    computeCentsFromPitch(computePitchFromDecimal(actualJiNotationBoundDecimal)),
+                    multiply(TINA, expectedTinaError),
+                )
+                boundHistory = [{ ...boundEventFixture, boundType: BoundType.INA_MIDPOINT, cents }, {
+                    ...boundEventFixture,
+                    cents,
+                    boundType: BoundType.INA_MIDPOINT,
+                    jiNotationLevel: JiNotationLevel.EXTREME,
+                }]
+                jiNotationBound = {
+                    ...jiNotationBoundFixture,
+                    pitch: computePitchFromDecimal(actualJiNotationBoundDecimal),
+                    jiNotationLevels: [JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
+                }
+                initialPosition = computeInitialPosition(jiNotationBound)
 
-                    const actual = analyzeHistory(boundHistory, jiNotationBound, initialPosition)
+                const actual = analyzeHistory(boundHistory, jiNotationBound, initialPosition)
 
-                    expect(actual.possible).toBe(false)
-                    expect(actual.tinaError).toBeCloseToTyped(expectedTinaError)
-                },
-            )
+                expect(actual.possible).toBe(false)
+                expect(actual.tinaError).toBeCloseToTyped(expectedTinaError)
+            })
 
-            it(
-                "works when the position is below the actual JI notation bound position by less than a tina",
-                (): void => {
-                    const expectedTinaError = -2 / 5 as Multiplier<Tina>
-                    cents = add(
-                        computeCents(actualJiNotationBoundDecimal),
-                        multiply(TINA, expectedTinaError),
-                    )
-                    boundHistory = [{
-                        ...boundEventFixture,
-                        boundType: BoundType.INA_MIDPOINT,
-                        cents,
-                        jiNotationLevel: JiNotationLevel.EXTREME,
-                    }, {
-                        ...boundEventFixture,
-                        cents,
-                        boundType: BoundType.SIZE_CATEGORY_BOUND,
-                        jiNotationLevel: JiNotationLevel.INSANE,
-                    }]
-                    jiNotationBound = {
-                        ...jiNotationBoundFixture,
-                        decimal: actualJiNotationBoundDecimal,
-                        jiNotationLevels: [JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
-                    }
-                    initialPosition = computeInitialPosition(jiNotationBound)
+            it("works when the position is below the actual JI notation bound position by less than a tina              ", (): void => {
+                const expectedTinaError = -2 / 5 as Multiplier<Tina>
+                cents = add(
+                    computeCentsFromPitch(computePitchFromDecimal(actualJiNotationBoundDecimal)),
+                    multiply(TINA, expectedTinaError),
+                )
+                boundHistory = [{
+                    ...boundEventFixture,
+                    boundType: BoundType.INA_MIDPOINT,
+                    cents,
+                    jiNotationLevel: JiNotationLevel.EXTREME,
+                }, {
+                    ...boundEventFixture,
+                    cents,
+                    boundType: BoundType.SIZE_CATEGORY_BOUND,
+                    jiNotationLevel: JiNotationLevel.INSANE,
+                }]
+                jiNotationBound = {
+                    ...jiNotationBoundFixture,
+                    pitch: computePitchFromDecimal(actualJiNotationBoundDecimal),
+                    jiNotationLevels: [JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
+                }
+                initialPosition = computeInitialPosition(jiNotationBound)
 
-                    const actual = analyzeHistory(boundHistory, jiNotationBound, initialPosition)
+                const actual = analyzeHistory(boundHistory, jiNotationBound, initialPosition)
 
-                    expect(actual.possible).toBe(false)
-                    expect(actual.tinaError).toBeCloseToTyped(expectedTinaError)
-                },
-            )
+                expect(actual.possible).toBe(false)
+                expect(actual.tinaError).toBeCloseToTyped(expectedTinaError)
+            })
 
-            it(
-                "works when the position is below the actual JI notation bound position by more than a tina",
-                (): void => {
-                    const expectedTinaError = -5 / 2 as Multiplier<Tina>
-                    cents = add(
-                        computeCents(actualJiNotationBoundDecimal),
-                        multiply(TINA, expectedTinaError),
-                    )
-                    boundHistory = [{ ...boundEventFixture, boundType: BoundType.INA_MIDPOINT, cents }, {
-                        ...boundEventFixture,
-                        cents,
-                        boundType: BoundType.COMMA_MEAN,
-                    }]
-                    jiNotationBound = {
-                        ...jiNotationBoundFixture,
-                        decimal: actualJiNotationBoundDecimal,
-                        jiNotationLevels: [JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
-                    }
-                    initialPosition = computeInitialPosition(jiNotationBound)
+            it("works when the position is below the actual JI notation bound position by more than a tina              ", (): void => {
+                const expectedTinaError = -5 / 2 as Multiplier<Tina>
+                cents = add(
+                    computeCentsFromPitch(computePitchFromDecimal(actualJiNotationBoundDecimal)),
+                    multiply(TINA, expectedTinaError),
+                )
+                boundHistory = [{ ...boundEventFixture, boundType: BoundType.INA_MIDPOINT, cents }, {
+                    ...boundEventFixture,
+                    cents,
+                    boundType: BoundType.COMMA_MEAN,
+                }]
+                jiNotationBound = {
+                    ...jiNotationBoundFixture,
+                    pitch: computePitchFromDecimal(actualJiNotationBoundDecimal),
+                    jiNotationLevels: [JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
+                }
+                initialPosition = computeInitialPosition(jiNotationBound)
 
-                    const actual = analyzeHistory(boundHistory, jiNotationBound, initialPosition)
+                const actual = analyzeHistory(boundHistory, jiNotationBound, initialPosition)
 
-                    expect(actual.possible).toBe(false)
-                    expect(actual.tinaError).toBeCloseToTyped(expectedTinaError)
-                },
-            )
+                expect(actual.possible).toBe(false)
+                expect(actual.tinaError).toBeCloseToTyped(expectedTinaError)
+            })
         },
     )
 })
