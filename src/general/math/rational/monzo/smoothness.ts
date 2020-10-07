@@ -6,9 +6,9 @@ import { PRIMES } from "../primes"
 import { Primes, Smoothness } from "../types"
 
 const isSmoothRationalMonzo = <S extends Primes, T extends NumericProperties>(
-    candidateSmoothRationalMonzo: Monzo<T>,
+    candidateSmoothRationalMonzo: Monzo<Omit<T, "smooth"> & { rational: true }>,
     smoothness: S & Smoothness,
-): candidateSmoothRationalMonzo is Monzo<T & { rational: true, smooth: S }> => {
+): candidateSmoothRationalMonzo is Monzo<Omit<T, "smooth"> & { rational: true, smooth: S }> => {
     let smoothnessIndex = computeSmoothnessIndex(smoothness)
 
     while (smoothnessIndex < count(candidateSmoothRationalMonzo)) {

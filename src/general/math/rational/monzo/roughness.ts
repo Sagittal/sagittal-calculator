@@ -8,7 +8,7 @@ import { Prime, Primes, Roughness } from "../types"
 const computeRoughRationalMonzo = <S extends Primes, T extends NumericProperties>(
     rationalMonzo: Monzo<Omit<T, "rough"> & { rational: true }>,
     roughness: S & Roughness,
-): Monzo<T & { rational: true, rough: S }> => {
+): Monzo<Omit<T, "rough"> & { rational: true, rough: S }> => {
     const roughnessIndex = computeRoughnessIndex(roughness)
 
     return computeTrimmedArray(
@@ -25,9 +25,9 @@ const computeRoughRationalMonzo = <S extends Primes, T extends NumericProperties
 }
 
 const isRoughRationalMonzo = <S extends Primes, T extends NumericProperties>(
-    candidateRoughRationalMonzo: Monzo<T & { rational: true }>,
+    candidateRoughRationalMonzo: Monzo<Omit<T, "rough"> & { rational: true }>,
     roughness: S & Roughness,
-): candidateRoughRationalMonzo is Monzo<T & { rational: true, rough: S }> => {
+): candidateRoughRationalMonzo is Monzo<Omit<T, "rough"> & { rational: true, rough: S }> => {
     const roughnessIndex = computeRoughnessIndex(roughness)
 
     let index = 0

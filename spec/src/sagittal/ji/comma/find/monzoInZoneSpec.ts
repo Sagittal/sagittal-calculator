@@ -1,4 +1,4 @@
-import { Decimal, Max, Min, Monzo } from "../../../../../../src/general/math"
+import { Decimal, EMPTY_MONZO, Max, Min, Monzo } from "../../../../../../src/general/math"
 import { computePitchFromDecimal, Pitch } from "../../../../../../src/general/music/pitch"
 import { computeRationalMonzoInZone } from "../../../../../../src/sagittal/ji/comma/find/monzoInZone"
 
@@ -41,7 +41,7 @@ describe("computeRationalMonzoInZone", (): void => {
 
         const actual = computeRationalMonzoInZone(twoFreeMonzo, [lowerBound, upperBound])
 
-        const expected = [] as unknown[] as Monzo<{ rational: true }>
+        const expected = EMPTY_MONZO as Monzo<{ rational: true }>
         expect(actual).toEqual(expected)
     })
 
@@ -52,7 +52,7 @@ describe("computeRationalMonzoInZone", (): void => {
 
         const actual = computeRationalMonzoInZone(twoFreeMonzo, [lowerBound, upperBound])
 
-        const expected = [] as unknown[] as Monzo<{ rational: true }>
+        const expected = EMPTY_MONZO as Monzo<{ rational: true }>
         expect(actual).toEqual(expected)
     })
 

@@ -182,6 +182,7 @@ export {
     computeRationalMonzoCopfr,
     computeRationalMonzoSopfr,
     computeRationalMonzoSmoothness,
+    EMPTY_MONZO,
 } from "./math"
 export {
     Cents,
@@ -223,6 +224,7 @@ export {
     computeMonzoFromPitch,
     computeQuotientFromPitch,
     addPitches,
+    UNISON,
 } from "./music"
 export { Count, Ed, Extrema, Id, Index, Ms, Multiplier, Name, Step, Sum, Window } from "./types"
 

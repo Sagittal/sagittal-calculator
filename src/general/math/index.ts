@@ -32,6 +32,7 @@ export {
     isUnisonDecimal,
     mod,
     subtractMonzos,
+    EMPTY_MONZO,
 } from "./numeric"
 export { computeDistributions } from "./distributions"
 export { dividesEvenly } from "./dividesEvenly"

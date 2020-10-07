@@ -1,6 +1,7 @@
 import {
     computeSuperMonzo,
     Direction,
+    EMPTY_MONZO,
     invertMonzo,
     isSubMonzo,
     isSuperMonzo,
@@ -25,10 +26,8 @@ describe("isSubMonzo", (): void => {
         expect(actual).toBeTruthy()
     })
 
-    it("returns false if the monzo is unison", (): void => {
-        const monzo = [] as Monzo      // 1/1 = 1
-
-        const actual = isSubMonzo(monzo)
+    it("returns false if the monzo is empty (and therefore neither super nor sub)", (): void => {
+        const actual = isSubMonzo(EMPTY_MONZO)
 
         expect(actual).toBeFalsy()
     })
@@ -95,10 +94,8 @@ describe("isUnisonMonzo", (): void => {
         expect(actual).toBeFalsy()
     })
 
-    it("returns true if the monzo is unison", (): void => {
-        const monzo = [] as Monzo      // 1/1 = 1
-
-        const actual = isUnisonMonzo(monzo)
+    it("returns true if the monzo is empty (and therefore neither super nor sub)", (): void => {
+        const actual = isUnisonMonzo(EMPTY_MONZO)
 
         expect(actual).toBeTruthy()
     })

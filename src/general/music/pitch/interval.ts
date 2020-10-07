@@ -24,7 +24,7 @@ const computeInterval: {
 } = <T extends NumericProperties>(
     fromPitch: Pitch<T>,
     toPitch: Pitch<T>,
-): any =>
+): Pitch<T & { direction: undefined, integer: false }> =>
     isJi(fromPitch) && isJi(toPitch) ?
         ({
             monzo: subtractMonzos(toPitch.monzo, fromPitch.monzo),
@@ -32,7 +32,6 @@ const computeInterval: {
         computePitchFromDecimal(
             divide(computeDecimalFromPitch(toPitch), computeDecimalFromPitch(fromPitch)),
         ) as Pitch<T & { direction: undefined, integer: false, rational: false }>
-
 
 export {
     computeInterval,

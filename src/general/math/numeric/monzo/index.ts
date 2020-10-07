@@ -2,3 +2,4 @@ export { computeSuperMonzo, isSubMonzo, isSuperMonzo, invertMonzo, isUnisonMonzo
 export { sumMonzos, subtractMonzos } from "./typedOperations"
 export { equalMonzos } from "./comparison"
 export { Monzo } from "./types"
+export { EMPTY_MONZO } from "./constants"

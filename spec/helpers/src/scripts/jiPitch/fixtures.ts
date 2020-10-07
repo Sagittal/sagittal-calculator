@@ -3,6 +3,7 @@ import {
     Copfr,
     Decimal,
     Direction,
+    EMPTY_MONZO,
     Exponent,
     Max,
     Monzo,
@@ -23,11 +24,11 @@ const two3FreeClassAnalysisFixture: Two3FreeClassAnalysis = {
     two3FreeCopfr: 0 as Copfr<{ rough: 5 }>,
     two3FreeSopfr: 0 as Sopfr<{ rough: 5 }>,
     n2d3p9: 1 as N2D3P9,
-    monzo: [] as unknown[] as Monzo<{ rational: true, rough: 5, direction: Direction.SUPER }>,
+    monzo: EMPTY_MONZO as Monzo<{ rational: true, rough: 5, direction: Direction.SUPER }>,
 }
 
 const jiPitchFixture = {
-    monzo: [] as unknown[] as Monzo<{ rational: true }>,
+    monzo: EMPTY_MONZO,
 } as Pitch<{ rational: true }>
 
 const jiPitchAnalysisFixture: JiPitchAnalysis = {

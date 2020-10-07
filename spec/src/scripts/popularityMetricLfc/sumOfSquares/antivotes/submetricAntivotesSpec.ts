@@ -1,4 +1,4 @@
-import { Base, log, Monzo } from "../../../../../../src/general/math"
+import { Base, EMPTY_MONZO, log, Monzo } from "../../../../../../src/general/math"
 import { Parameter, ParameterValue, Submetric } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 import { computeSubmetricAntivotes } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes/submetricAntivotes"
 import { Antivotes } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/types"
@@ -192,7 +192,7 @@ describe("computeSubmetricAntivotes", (): void => {
         })
 
         it("works for an empty monzo", (): void => {
-            const actual = computeSubmetricAntivotes([] as unknown[] as Monzo<{ rational: true }>, submetric)
+            const actual = computeSubmetricAntivotes(EMPTY_MONZO as Monzo<{ rational: true }>, submetric)
 
             const expected = 0 as Antivotes
             expect(actual).toBe(expected)

@@ -1,4 +1,16 @@
-import { BLANK, dig, Direction, Index, KeyPath, Monzo, Ms, Name, Obj, Two3FreeClass } from "../../../../../src/general"
+import {
+    BLANK,
+    dig,
+    Direction,
+    EMPTY_MONZO,
+    Index,
+    KeyPath,
+    Monzo,
+    Ms,
+    Name,
+    Obj,
+    Two3FreeClass,
+} from "../../../../../src/general"
 import * as doOnNextEventLoop from "../../../../../src/general/code/doOnNextEventLoop"
 import { Combination } from "../../../../../src/general/math"
 import { Metric, Sample, SumsOfSquares } from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
@@ -91,7 +103,7 @@ describe("computeSumOfSquaresAndMaybeUpdateBestMetric", (): void => {
             {
                 antivotes: 0 as Antivotes,
                 two3FreeClass: {
-                    monzo: [] as unknown[] as Monzo<{ rational: true, rough: 5, direction: Direction.SUPER }>,
+                    monzo: EMPTY_MONZO as Monzo<{ rational: true, rough: 5, direction: Direction.SUPER }>,
                 } as Two3FreeClass,
                 index: 0 as Index<Unpopularity>,
             },

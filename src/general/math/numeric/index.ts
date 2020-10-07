@@ -33,6 +33,7 @@ export {
     isUnisonMonzo,
     equalMonzos,
     subtractMonzos,
+    EMPTY_MONZO,
 } from "./monzo"
 export {
     Direction,

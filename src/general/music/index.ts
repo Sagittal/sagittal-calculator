@@ -40,4 +40,5 @@ export {
     computeMonzoFromPitch,
     computeQuotientFromPitch,
     addPitches,
+    UNISON,
 } from "./pitch"

@@ -1,11 +1,11 @@
-import { Monzo, Name, Pitch, SQRT_SCALER } from "../../../../general"
+import { EMPTY_MONZO, Monzo, Name, Pitch, SQRT_SCALER } from "../../../../general"
 import { SizeCategoryBound } from "./types"
 
 const SIZE_CATEGORY_BOUNDS: SizeCategoryBound[] = [
     {
         name: "u|n" as Name<SizeCategoryBound>,
         pitch: {
-            monzo: [] as unknown[] as Monzo<{ rational: true }>,
+            monzo: EMPTY_MONZO as Monzo<{ rational: true }>,
         } as Pitch<{ rational: false }>,
     },
     {

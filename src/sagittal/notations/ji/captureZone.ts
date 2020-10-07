@@ -1,7 +1,6 @@
-import { Id, ioSettings, isUndefined, Max, Maybe, Min, Pitch, pitchIsHigher, Zone } from "../../../general"
+import { Id, ioSettings, isUndefined, Max, Maybe, Min, Pitch, pitchIsHigher, UNISON, Zone } from "../../../general"
 import { formatSymbolClass } from "../../io"
 import { getPrimaryComma } from "../primaryComma"
-import { UNISON } from "../primaryCommas"
 import { PrimaryComma, SymbolClass } from "../types"
 import { formatJiNotationLevel } from "./formatLevel"
 import { getIntroducingJiNotationLevel } from "./introducingJiNotationLevel"
@@ -32,12 +31,8 @@ const computeCaptureZone = (
     const indexOfJiNotationBoundJustBelowSymbolClassAtThisLevel = indexOfBoundJustAboveSymbolAtThisLevel - 1
 
     const lowerBound = jiNotationLevelBounds[ indexOfJiNotationBoundJustBelowSymbolClassAtThisLevel ]
-    const lowerBoundPitch =
-        isUndefined(lowerBound) ?
-            UNISON :
-            lowerBound.pitch as Pitch as Min<Pitch>
-    const upperBoundPitch =
-        jiNotationLevelBounds[ indexOfBoundJustAboveSymbolAtThisLevel ].pitch as Pitch as Max<Pitch>
+    const lowerBoundPitch = isUndefined(lowerBound) ? UNISON : lowerBound.pitch as Pitch as Min<Pitch>
+    const upperBoundPitch = jiNotationLevelBounds[ indexOfBoundJustAboveSymbolAtThisLevel ].pitch as Pitch as Max<Pitch>
 
     return [lowerBoundPitch, upperBoundPitch] as Zone<PrimaryComma>
 }

@@ -2,6 +2,7 @@ import {
     computePitchFromMonzo,
     computeTrimmedArray,
     Decimal,
+    EMPTY_MONZO,
     equalMonzos,
     Exponent,
     Maybe,
@@ -24,7 +25,7 @@ const computeRationalMonzoInZone = (
 
     const rationalMonzoInZone = shallowClone(twoFreeRationalMonzo)
 
-    if (!equalMonzos(rationalMonzoInZone, [] as unknown[] as Monzo<{ rational: true }>)) {
+    if (!equalMonzos(rationalMonzoInZone, EMPTY_MONZO)) {
         while (pitchIsHigher(computePitchFromMonzo(rationalMonzoInZone), upperBound)) {
             rationalMonzoInZone[ TWO_PRIME_INDEX ] = rationalMonzoInZone[ TWO_PRIME_INDEX ] - 1 as
                 Decimal<{ integer: true }> & Exponent<Prime>

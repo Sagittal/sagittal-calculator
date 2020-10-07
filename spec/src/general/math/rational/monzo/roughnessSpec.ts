@@ -1,4 +1,4 @@
-import { computeRoughRationalMonzo, Monzo, Roughness } from "../../../../../../src/general/math"
+import { computeRoughRationalMonzo, EMPTY_MONZO, Monzo, Roughness } from "../../../../../../src/general/math"
 import { isRoughRationalMonzo } from "../../../../../../src/general/math/rational/monzo"
 
 describe("computeRoughRationalMonzo", (): void => {
@@ -6,9 +6,9 @@ describe("computeRoughRationalMonzo", (): void => {
         const rationalMonzo = [5, 6, 1, 0, 3] as Monzo<{ rational: true }>
         const roughness = 5 as 5 & Roughness
 
-        const actual = computeRoughRationalMonzo(rationalMonzo, roughness)
+        const actual: Monzo<{ rational: true, rough: 5 }> = computeRoughRationalMonzo(rationalMonzo, roughness)
 
-        const expected = [0, 0, 1, 0, 3] as Monzo<{ rational: true }>
+        const expected = [0, 0, 1, 0, 3] as Monzo<{ rational: true, rough: 5 }>
         expect(actual).toEqual(expected)
     })
 
@@ -16,9 +16,9 @@ describe("computeRoughRationalMonzo", (): void => {
         const rationalMonzo = [5, 6] as Monzo<{ rational: true }>
         const roughness = 5 as 5 & Roughness
 
-        const actual = computeRoughRationalMonzo(rationalMonzo, roughness)
+        const actual: Monzo<{ rational: true, rough: 5 }> = computeRoughRationalMonzo(rationalMonzo, roughness)
 
-        const expected = [] as unknown[] as Monzo<{ rational: true }>
+        const expected = EMPTY_MONZO as Monzo<{ rational: true, rough: 5 }>
         expect(actual).toEqual(expected)
     })
 })

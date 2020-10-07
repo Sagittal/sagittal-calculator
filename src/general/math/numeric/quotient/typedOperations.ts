@@ -16,7 +16,6 @@ const computeQuotientProduct = <T extends NumericProperties>(...quotients: Array
         [1, 1] as Quotient<T>,
     )
 
-
 export {
     computeQuotientProduct,
 }

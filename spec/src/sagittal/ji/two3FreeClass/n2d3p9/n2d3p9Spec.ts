@@ -1,4 +1,4 @@
-import { Direction, Monzo } from "../../../../../../src/general/math"
+import { Direction, EMPTY_MONZO, Monzo } from "../../../../../../src/general/math"
 import { Two3FreeClass } from "../../../../../../src/general/music"
 import { computeN2D3P9, N2D3P9 } from "../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
 
@@ -50,7 +50,7 @@ describe("computeN2D3P9", (): void => {
 
     it("can handle 1/1, the empty 2,3-free class", (): void => {
         const two3FreeClass = {
-            monzo: [] as unknown[] as Monzo<{ rational: true, direction: Direction.SUPER, rough: 5 }>,   // 1/1
+            monzo: EMPTY_MONZO as Monzo<{ rational: true, direction: Direction.SUPER, rough: 5 }>,   // 1/1
         } as Two3FreeClass
 
         const actual = computeN2D3P9(two3FreeClass)

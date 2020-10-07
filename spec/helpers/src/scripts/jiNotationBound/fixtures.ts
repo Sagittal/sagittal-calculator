@@ -3,8 +3,8 @@ import {
     Cents,
     Count,
     Decimal,
+    EMPTY_MONZO,
     Id,
-    Monzo,
     Multiplier,
     Name,
     Pitch,
@@ -68,7 +68,7 @@ const jiNotationBoundFixture: JiNotationBound = {
     id: 0 as Id<JiNotationBound>,
     jiNotationLevels: [],
     pitch: {
-        monzo: [] as unknown[] as Monzo<{ rational: true }>,
+        monzo: EMPTY_MONZO,
         scaler: [1, 1] as Quotient,
     } as Pitch<{ rational: false }>,
     boundType: BoundType.INA_MIDPOINT,
