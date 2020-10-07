@@ -19,6 +19,10 @@ import { Cents } from "../types"
 import { NON_JI_PITCH_BASE_MONZO } from "./constants"
 import { Pitch } from "./types"
 
+// TODO: how much could I speed things up if I broke these methods up into one for JI and for non-JI
+//  Is it perhaps the case that we should rely on their types to decide, i.e. that we should always know already
+//  Whether they are JI or not, based on context?
+
 const computePitchFromCents = (cents: Cents): Pitch =>
     computePitchFromDecimal(2 ** (cents / CENTS_PER_OCTAVE))
 
