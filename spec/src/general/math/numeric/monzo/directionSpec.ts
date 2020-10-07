@@ -1,3 +1,4 @@
+import { Dir } from "fs"
 import {
     computeSuperMonzo,
     Direction,
@@ -111,20 +112,28 @@ describe("isUnisonMonzo", (): void => {
 
 describe("computeSuperMonzo", (): void => {
     it("returns the monzo if it is already super", (): void => {
-        const monzo = [0, 0, 0, 0, 2] as Monzo
+        const monzo = [0, 0, 0, 0, 2] as Monzo<{ direction: Direction.SUPER }>
 
-        const actual = computeSuperMonzo(monzo)
+        const actual: Monzo<{ direction: Direction.SUPER }> = computeSuperMonzo(monzo)
 
         expect(actual).toEqual(monzo)
     })
 
     it("returns the reciprocal of the monzo if it is not already super", (): void => {
-        const monzo = [0, 0, 0, 1, -2] as Monzo     // 7/121 = 0.0579 < 1
+        const monzo = [0, 0, 0, 1, -2] as Monzo<{ direction: Direction.SUB }>     // 7/121 = 0.0579 < 1
 
-        const actual = computeSuperMonzo(monzo)
+        const actual: Monzo<{ direction: Direction.SUPER }> = computeSuperMonzo(monzo)
 
-        const expected = [0, 0, 0, -1, 2] as Monzo  // 121/7 = 17.286 > 1
+        const expected = [0, 0, 0, -1, 2] as Monzo<{ direction: Direction.SUPER }>  // 121/7 = 17.286 > 1
         expect(actual).toEqual(expected)
+    })
+
+    it("returns the monzo unchanged if it the empty monzo", (): void => {
+        const monzo = EMPTY_MONZO as Monzo<{ direction: Direction.UNISON }>
+
+        const actual: Monzo<{ direction: Direction.UNISON}> = computeSuperMonzo(monzo)
+
+        expect(actual).toEqual(EMPTY_MONZO)
     })
 })
 
@@ -134,7 +143,24 @@ describe("invertMonzo", (): void => {
 
         const actual: Monzo<{ direction: Direction.SUB }> = invertMonzo(monzo)
 
-        const expected = [-4, 0, 1, -1] as Monzo // 5/112
+        const expected = [-4, 0, 1, -1] as Monzo<{ direction: Direction.SUB }> // 5/112
         expect(actual).toEqual(expected)
+    })
+
+    it("works for sub monzos", (): void => {
+        const monzo = [0, 0, -3] as Monzo<{ direction: Direction.SUB }>
+
+        const actual: Monzo<{ direction: Direction.SUPER }> = invertMonzo(monzo)
+
+        const expected = [0, 0, 3] as Monzo<{ direction: Direction.SUPER }>
+        expect(actual).toEqual(expected)
+    })
+
+    it("works for the unison monzo (the empty monzo)", (): void => {
+        const monzo = EMPTY_MONZO as Monzo<{ direction: Direction.UNISON }>
+
+        const actual: Monzo<{ direction: Direction.UNISON}> = invertMonzo(monzo)
+
+        expect(actual).toEqual(EMPTY_MONZO)
     })
 })

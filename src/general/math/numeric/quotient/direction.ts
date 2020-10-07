@@ -25,40 +25,54 @@ const isUnisonQuotient = <T extends NumericProperties>(
     return numerator as QuotientPart === denominator as QuotientPart
 }
 
-const computeSuperQuotient = <T extends NumericProperties>(
-    quotient: Quotient<T>,
-): Quotient<T & { direction: Direction.SUPER, integer: false }> =>
-    isSuperQuotient(quotient) ?
-        quotient as Quotient<T & { direction: Direction.SUPER, integer: false }> :
-        invertQuotient(quotient)
-
-const computeSubQuotient = <T extends NumericProperties>(
-    quotient: Quotient<T>,
-): Quotient<T & { direction: Direction.SUB, integer: false }> =>
-    isSubQuotient(quotient) ?
-        quotient as Quotient<T & { direction: Direction.SUB, integer: false }> :
-        invertQuotient(quotient)
-
-// TODO: technically, both super, sub, and invert, for all three numeric types, should support for UNISON direction
-//  Returning something that is still UNISON.
-
-const invertQuotient: {
-    <T extends NumericProperties & { direction: Direction.SUPER }>(
-        quotient: Quotient<T>,
-    ): Quotient<Omit<T, "direction"> & { direction: Direction.SUB, integer: false }>,
-    <T extends NumericProperties & { direction: Direction.SUB }>(
+const computeSuperQuotient: {
+    <T extends NumericProperties>(
+        quotient: Quotient<T & { direction: Direction.UNISON }>,
+    ): Quotient<Omit<T, "direction"> & { direction: Direction.UNISON }>,
+    <T extends NumericProperties>(
         quotient: Quotient<T>,
     ): Quotient<Omit<T, "direction"> & { direction: Direction.SUPER, integer: false }>,
+} = <T extends NumericProperties>(
+    quotient: Quotient<T>,
+): Quotient<Omit<T, "direction"> & { direction: Direction.SUPER & Direction.UNISON }> =>
+    isSuperQuotient(quotient) ?
+        quotient as Quotient<Omit<T, "direction">> :
+        invertQuotient(quotient)
+
+const computeSubQuotient: {
+    <T extends NumericProperties>(
+        quotient: Quotient<T & { direction: Direction.UNISON }>,
+    ): Quotient<Omit<T, "direction"> & { direction: Direction.UNISON }>,
+    <T extends NumericProperties>(
+        quotient: Quotient<T>,
+    ): Quotient<Omit<T, "direction"> & { direction: Direction.SUB, integer: false }>,
+} = <T extends NumericProperties>(
+    quotient: Quotient<T>,
+): Quotient<Omit<T, "direction"> & { direction: Direction.SUB & Direction.UNISON }> =>
+    isSubQuotient(quotient) ?
+        quotient as Quotient<Omit<T, "direction">> :
+        invertQuotient(quotient)
+
+const invertQuotient: {
+    <T extends NumericProperties>(
+        quotient: Quotient<T & { direction: Direction.SUPER }>,
+    ): Quotient<Omit<T, "direction"> & { direction: Direction.SUB, integer: false }>,
+    <T extends NumericProperties>(
+        quotient: Quotient<T & { direction: Direction.SUB }>,
+    ): Quotient<Omit<T, "direction"> & { direction: Direction.SUPER, integer: false }>,
+    <T extends NumericProperties>(
+        quotient: Quotient<T & { direction: Direction.UNISON }>,
+    ): Quotient<Omit<T, "direction"> & { direction: Direction.UNISON }>,
     <T extends NumericProperties>(
         quotient: Quotient<T>,
     ): Quotient<Omit<T, "direction"> & { integer: false }>,
 } = <T extends NumericProperties>(
     [numerator, denominator]: Quotient<T>,
-): Quotient<Omit<T, "direction"> & { direction: Direction.SUPER & Direction.SUB, integer: false }> =>
+): Quotient<Omit<T, "direction"> & { direction: Direction.SUPER & Direction.SUB & Direction.UNISON }> =>
     [
         denominator as number as Numerator,
         numerator as number as Denominator,
-    ] as Quotient<Omit<T, "direction"> & { integer: false }>
+    ] as Quotient<Omit<T, "direction">>
 
 
 export {

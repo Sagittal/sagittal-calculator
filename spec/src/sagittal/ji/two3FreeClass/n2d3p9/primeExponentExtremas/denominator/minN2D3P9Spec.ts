@@ -14,13 +14,6 @@ describe("computeMinN2D3P9ForPossibleMaxDenominatorPrimeExponentGivenMaxN2D3P9",
             sortedNumeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2: [],
             sortedNumeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenominatorPrimeSortedByN2P: [],
         }
-        // TODO: here's a thought. since this "denominatorPrime" isn't truly a Denominator, just part of one, as opposed
-        //  To a numerator, perhaps we need to represent this slightly differently in the type.
-        //  Now, Exponent has an "of", because we can ask the quesiton "what is it an exponent of?" "a Prime."
-        //  But in this case we're just kind of generally "of" a Denominator. not denominator of a decimal, or decimal
-        //  Of a denominator, nor that either way for Exponent or Prime. basically it's just "Of" in general
-        //  So you could just make a type Of<T> = { _OfBrand: T } and use that for these denominator and numerator prime
-        //  Like this: Prime & Of<Denominator>
         const denominatorPrime = 7 as Prime & Of<Denominator>
         const possibleMaxDenominatorPrimeExponentGivenMaxN2D3P9 =
             2 as Max<Denominator & Decimal<{ integer: true }> & Exponent<Prime>>

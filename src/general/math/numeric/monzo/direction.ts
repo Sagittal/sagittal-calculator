@@ -6,8 +6,8 @@ import { Direction, NumericProperties } from "../types"
 import { Monzo } from "./types"
 
 const isSubMonzo = <T extends NumericProperties>(
-    candidateSubMonzo: Monzo<T>,
-): candidateSubMonzo is Monzo<T & { direction: Direction.SUB }> => {
+    candidateSubMonzo: Monzo<Omit<T, "direction">>,
+): candidateSubMonzo is Monzo<Omit<T, "direction"> & { direction: Direction.SUB }> => {
     if (
         candidateSubMonzo.length &&
         candidateSubMonzo.every((primeExponent: Exponent<Prime>): boolean => primeExponent >= 0)
@@ -25,43 +25,64 @@ const isSubMonzo = <T extends NumericProperties>(
 }
 
 const isSuperMonzo = <T extends NumericProperties>(
-    candidateSuperMonzo: Monzo<T>,
-): candidateSuperMonzo is Monzo<T & { direction: Direction.SUPER }> =>
+    candidateSuperMonzo: Monzo<Omit<T, "direction">>,
+): candidateSuperMonzo is Monzo<Omit<T, "direction"> & { direction: Direction.SUPER }> =>
     !(isUnisonMonzo(candidateSuperMonzo) || isSubMonzo(candidateSuperMonzo))
 
 const isUnisonMonzo = <T extends NumericProperties>(
-    candidateUnisonMonzo: Monzo<T>,
-): candidateUnisonMonzo is Monzo<T & { direction: Direction.UNISON }> =>
+    candidateUnisonMonzo: Monzo<Omit<T, "direction">>,
+): candidateUnisonMonzo is Monzo<Omit<T, "direction"> & { direction: Direction.UNISON }> =>
     candidateUnisonMonzo.every((primeExponent: Exponent<Prime>): boolean => primeExponent === 0)
 
-const computeSuperMonzo = <T extends NumericProperties>(
-    monzo: Monzo<T>,
-): Monzo<T & { direction: Direction.SUPER, integer: false }> => {
-    if (isSubMonzo(monzo)) {
-        return invertMonzo(monzo) as Monzo<T & { direction: Direction.SUPER, integer: false }>
-    }
-
-    return monzo as Monzo<T & { direction: Direction.SUPER, integer: false }>
-}
-
-const invertMonzo: {
-    <T extends NumericProperties & { direction: Direction.SUPER }>(
-        monzo: Monzo<T>,
-    ): Monzo<Omit<T, "direction"> & { direction: Direction.SUB, integer: false }>,
-    <T extends NumericProperties & { direction: Direction.SUB }>(
+const computeSuperMonzo: {
+    <T extends NumericProperties>(
+        monzo: Monzo<T & { direction: Direction.UNISON }>,
+    ): Monzo<Omit<T, "direction"> & { direction: Direction.UNISON }>,
+    <T extends NumericProperties>(
         monzo: Monzo<T>,
     ): Monzo<Omit<T, "direction"> & { direction: Direction.SUPER, integer: false }>,
+} = <T extends NumericProperties>(
+    monzo: Monzo<T>,
+): Monzo<Omit<T, "direction"> & { direction: Direction.SUPER & Direction.UNISON }> =>
+    isSuperMonzo(monzo) ?
+        monzo as Monzo<Omit<T, "direction">> :
+        invertMonzo(monzo)
+
+const computeSubMonzo: {
+    <T extends NumericProperties>(
+        monzo: Monzo<T & { direction: Direction.UNISON }>,
+    ): Monzo<Omit<T, "direction"> & { direction: Direction.UNISON }>,
+    <T extends NumericProperties>(
+        monzo: Monzo<T>,
+    ): Monzo<Omit<T, "direction"> & { direction: Direction.SUB, integer: false }>,
+} = <T extends NumericProperties>(
+    monzo: Monzo<T>,
+): Monzo<Omit<T, "direction"> & { direction: Direction.SUB & Direction.UNISON }> =>
+    isSubMonzo(monzo) ?
+        monzo as Monzo<Omit<T, "direction">> :
+        invertMonzo(monzo)
+
+const invertMonzo: {
+    <T extends NumericProperties>(
+        monzo: Monzo<T & { direction: Direction.SUPER }>,
+    ): Monzo<Omit<T, "direction"> & { direction: Direction.SUB, integer: false }>,
+    <T extends NumericProperties>(
+        monzo: Monzo<T & { direction: Direction.SUB }>,
+    ): Monzo<Omit<T, "direction"> & { direction: Direction.SUPER, integer: false }>,
+    <T extends NumericProperties>(
+        monzo: Monzo<T & { direction: Direction.UNISON }>,
+    ): Monzo<Omit<T, "direction"> & { direction: Direction.UNISON }>,
     <T extends NumericProperties>(
         monzo: Monzo<T>,
     ): Monzo<Omit<T, "direction"> & { integer: false }>,
 } = <T extends NumericProperties>(
-    monzo: Monzo<T>
-): Monzo<Omit<T, "direction"> & { direction: Direction.SUPER & Direction.SUB, integer: false }> =>
+    monzo: Monzo<T>,
+): Monzo<Omit<T, "direction"> & { direction: Direction.SUPER & Direction.SUB & Direction.UNISON }> =>
     monzo.map((primeExponent: Exponent<Prime>): Exponent<Prime> => {
         return primeExponent === 0 ?
             0 as Exponent<Prime> :
             -primeExponent as Exponent<Prime>
-    }) as Monzo<Omit<T, "direction"> & { integer: false }>
+    }) as Monzo<Omit<T, "direction">>
 
 
 export {
@@ -69,5 +90,6 @@ export {
     isSuperMonzo,
     isUnisonMonzo,
     computeSuperMonzo,
+    computeSubMonzo,
     invertMonzo,
 }

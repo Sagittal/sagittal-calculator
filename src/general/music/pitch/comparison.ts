@@ -1,9 +1,13 @@
 import { MAX_JS_PRECISION, Precision } from "../../code"
-import { equalMonzos, equalQuotients } from "../../math"
+import { equalMonzos, equalQuotients, NumericProperties } from "../../math"
 import { isJi } from "../ji"
 import { computeDecimalFromPitch, Pitch } from "../pitch"
 
-const equalPitches = (pitchA: Pitch, pitchB: Pitch, precision: Precision = MAX_JS_PRECISION): boolean =>
+const equalPitches = <T extends NumericProperties, U extends NumericProperties>(
+    pitchA: Pitch<T>,
+    pitchB: Pitch<U>,
+    precision: Precision = MAX_JS_PRECISION
+): boolean =>
     isJi(pitchA) ?
         isJi(pitchB) ?
             equalMonzos(pitchA.monzo, pitchB.monzo) :
@@ -15,28 +19,40 @@ const equalPitches = (pitchA: Pitch, pitchB: Pitch, precision: Precision = MAX_J
                 && equalQuotients(pitchA.scaler, pitchB.scaler, precision)
             )
 
-const pitchIsHigher = (pitch: Pitch, otherPitch: Pitch, precision: Precision = MAX_JS_PRECISION): boolean =>
+const pitchIsHigher = <T extends NumericProperties, U extends NumericProperties>(
+    pitch: Pitch<T>,
+    otherPitch: Pitch<U>,
+    precision: Precision = MAX_JS_PRECISION
+): boolean =>
     (
         !equalPitches(pitch, otherPitch, precision)
         && computeDecimalFromPitch(pitch) > computeDecimalFromPitch(otherPitch)
     )
 
-const pitchIsLower = (pitch: Pitch, otherPitch: Pitch, precision: Precision = MAX_JS_PRECISION): boolean =>
+const pitchIsLower = <T extends NumericProperties, U extends NumericProperties>(
+    pitch: Pitch<T>,
+    otherPitch: Pitch<U>,
+    precision: Precision = MAX_JS_PRECISION
+): boolean =>
     (
         !equalPitches(pitch, otherPitch, precision)
         && computeDecimalFromPitch(pitch) < computeDecimalFromPitch(otherPitch)
     )
 
-const pitchIsHigherOrEqual = (pitch: Pitch, otherPitch: Pitch, precision: Precision = MAX_JS_PRECISION): boolean =>
+const pitchIsHigherOrEqual = <T extends NumericProperties, U extends NumericProperties>(
+    pitch: Pitch<T>,
+    otherPitch: Pitch<U>,
+    precision: Precision = MAX_JS_PRECISION
+): boolean =>
     (
         equalPitches(pitch, otherPitch, precision)
         || pitchIsHigher(pitch, otherPitch, precision)
     )
 
-const pitchIsLowerOrEqual = (
-    pitch: Pitch,
-    otherPitch: Pitch,
-    precision: Precision = MAX_JS_PRECISION,
+const pitchIsLowerOrEqual = <T extends NumericProperties, U extends NumericProperties>(
+    pitch: Pitch<T>,
+    otherPitch: Pitch<U>,
+    precision: Precision = MAX_JS_PRECISION
 ): boolean =>
     (
         equalPitches(pitch, otherPitch, precision)

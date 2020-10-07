@@ -9,8 +9,8 @@ import {
 } from "../../../../general"
 import { CommaNameQuotient } from "./types"
 
-const computeCommaNameQuotient = <T extends NumericProperties>(comma: Comma<T>): CommaNameQuotient => {
-    const superComma: Comma<T & { rational: true, direction: Direction.SUPER }> = computeSuperPitch(comma)
+const computeCommaNameQuotient = (comma: Comma): CommaNameQuotient => {
+    const superComma = computeSuperPitch(comma) as Comma<{ rational: true, direction: Direction.SUPER }>
     const quotient = computeQuotientFromPitch(superComma)
 
     return computeRoughRationalQuotient(quotient, FIVE_ROUGHNESS) as CommaNameQuotient

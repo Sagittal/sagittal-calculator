@@ -1,4 +1,4 @@
-import { Direction, Monzo, Quotient } from "../../../../../src/general/math/numeric"
+import { Direction, EMPTY_MONZO, Monzo, Quotient } from "../../../../../src/general/math/numeric"
 import {
     computeSuperPitch,
     isSubPitch,
@@ -171,12 +171,12 @@ describe("isUnisonPitch", (): void => {
 })
 
 describe("computeSuperPitch", (): void => {
-    it("flips the monzo", (): void => {
+    it("if the pitch is sub, flips the monzo", (): void => {
         const pitch = {
             monzo: [-40, 22, 1, 1] as Monzo<{ rational: true, direction: Direction.SUB }>,
         } as Pitch<{ rational: true, direction: Direction.SUB }>
 
-        const actual = computeSuperPitch(pitch)
+        const actual: Pitch<{ rational: true, direction: Direction.SUPER }> = computeSuperPitch(pitch)
 
         const expected = {
             monzo: [40, -22, -1, -1] as Monzo<{ rational: true, direction: Direction.SUPER }>,
@@ -184,18 +184,38 @@ describe("computeSuperPitch", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    it("flips the monzo, even for a non-JI pitch, in which case it would be equivalent to negate the scaler - but we don't do that so we can preserve the relationship between the pitch and its monzo in terms of its numeric properties", (): void => {
+    it("if the pitch is sub, flips the monzo, even for a non-JI pitch, in which case it would be equivalent to negate the scaler - but we don't do that so we can preserve the relationship between the pitch and its monzo in terms of its numeric properties", (): void => {
         const pitch = {
             monzo: [-40, 22, 1, 1] as Monzo<{ rational: true }>,
             scaler: [1, 2] as Quotient,
-        } as Pitch<{ rational: false }>
+        } as Pitch<{ rational: false, direction: Direction.SUB }>
 
-        const actual = computeSuperPitch(pitch)
+        const actual: Pitch<{ rational: false, direction: Direction.SUPER }> = computeSuperPitch(pitch)
 
         const expected = {
             monzo: [40, -22, -1, -1] as Monzo<{ rational: true, direction: Direction.SUPER }>,
             scaler: [1, 2] as Quotient,
         } as Pitch<{ rational: false, direction: Direction.SUPER }>
         expect(actual).toEqual(expected)
+    })
+
+    it("returns unchanged a super pitch", (): void => {
+        const pitch = {
+            monzo: [40, -22, -1, -1] as Monzo<{ rational: true, direction: Direction.SUPER }>,
+        } as Pitch<{ rational: true, direction: Direction.SUPER }>
+
+        const actual: Pitch<{ rational: true, direction: Direction.SUPER }> = computeSuperPitch(pitch)
+
+        expect(actual).toEqual(pitch)
+    })
+
+    it("returns unchanged a unison pitch", (): void => {
+        const pitch = {
+            monzo: EMPTY_MONZO as Monzo<{ rational: true, direction: Direction.UNISON }>,
+        } as Pitch<{ rational: true, direction: Direction.UNISON }>
+
+        const actual: Pitch<{ rational: true, direction: Direction.UNISON }> = computeSuperPitch(pitch)
+
+        expect(actual).toEqual(pitch)
     })
 })
