@@ -1,13 +1,13 @@
 import { Decimal, Denominator, Exponent, Max, Prime } from "../../../../../../general"
 import { SortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 } from "./sortedNumeratorPossibilities"
 
-interface D39ForCandidateMaxDenominatorPrimeExponentOptions {
+interface D39ForPossibleMaxDenominatorPrimeExponentOptions {
     denominatorPrime: Denominator & Prime,
-    candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9: Max<Denominator & Decimal<{ integer: true }> & Exponent<Prime>>,
+    possibleMaxDenominatorPrimeExponentGivenMaxN2D3P9: Max<Denominator & Decimal<{ integer: true }> & Exponent<Prime>>,
 }
 
-interface MinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9Options
-    extends D39ForCandidateMaxDenominatorPrimeExponentOptions {
+interface MinN2PForPossibleMaxDenominatorPrimeExponentGivenMaxN2D3P9Options
+    extends D39ForPossibleMaxDenominatorPrimeExponentOptions {
     sortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9:
         SortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9,
 }
@@ -15,7 +15,7 @@ interface MinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9Options
 type D39 = number & { _D39Brand: boolean }
 
 export {
-    MinN2PForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9Options,
-    D39ForCandidateMaxDenominatorPrimeExponentOptions,
+    MinN2PForPossibleMaxDenominatorPrimeExponentGivenMaxN2D3P9Options,
+    D39ForPossibleMaxDenominatorPrimeExponentOptions,
     D39,
 }

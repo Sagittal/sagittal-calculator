@@ -1,16 +1,14 @@
 import { pow } from "../../../../../../general"
-import { D39, D39ForCandidateMaxDenominatorPrimeExponentOptions } from "./types"
+import { D39, D39ForPossibleMaxDenominatorPrimeExponentOptions } from "./types"
 
-// TODO: Inconsistent use of word "candidate" for type guards and in this module
-
-const computeD39ForCandidateMaxDenominatorPrimeExponent = (
-    options: D39ForCandidateMaxDenominatorPrimeExponentOptions,
+const computeD39ForPossibleMaxDenominatorPrimeExponent = (
+    options: D39ForPossibleMaxDenominatorPrimeExponentOptions,
 ): D39 => {
-    const { denominatorPrime, candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 } = options
+    const { denominatorPrime, possibleMaxDenominatorPrimeExponentGivenMaxN2D3P9 } = options
 
-    return pow(denominatorPrime / 3, candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9) / 9 as D39
+    return pow(denominatorPrime / 3, possibleMaxDenominatorPrimeExponentGivenMaxN2D3P9) / 9 as D39
 }
 
 export {
-    computeD39ForCandidateMaxDenominatorPrimeExponent,
+    computeD39ForPossibleMaxDenominatorPrimeExponent,
 }

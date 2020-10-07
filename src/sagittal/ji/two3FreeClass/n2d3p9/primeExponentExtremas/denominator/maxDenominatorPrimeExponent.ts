@@ -1,6 +1,6 @@
 import { Decimal, decrement, Denominator, Exponent, increment, Max, Prime } from "../../../../../../general"
 import { N2D3P9 } from "../../types"
-import { computeMinN2D3P9ForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 } from "./minN2D3P9"
+import { computeMinN2D3P9ForPossibleMaxDenominatorPrimeExponentGivenMaxN2D3P9 } from "./minN2D3P9"
 import {
     computeSortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9,
     NumeratorPossibilityForDenominatorGivenMaxN2D3P9,
@@ -30,27 +30,27 @@ const computeMaxDenominatorPrimeExponentGivenMaxN2D3P9 = (
             numeratorPossibilitiesForDenominatorGivenMaxN2D3P9,
         )
 
-    let candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 =
+    let possibleMaxDenominatorPrimeExponentGivenMaxN2D3P9 =
         1 as Max<Denominator & Decimal<{ integer: true }> & Exponent<Prime>>
     while (true) {
-        const minN2D3P9ForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 =
-            computeMinN2D3P9ForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9({
+        const minN2D3P9ForPossibleMaxDenominatorPrimeExponentGivenMaxN2D3P9 =
+            computeMinN2D3P9ForPossibleMaxDenominatorPrimeExponentGivenMaxN2D3P9({
                 sortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9,
                 denominatorPrime,
-                candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9,
+                possibleMaxDenominatorPrimeExponentGivenMaxN2D3P9,
             })
 
-        if (minN2D3P9ForCandidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 > maxN2D3P9) {
-            candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 =
-                decrement(candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9)
+        if (minN2D3P9ForPossibleMaxDenominatorPrimeExponentGivenMaxN2D3P9 > maxN2D3P9) {
+            possibleMaxDenominatorPrimeExponentGivenMaxN2D3P9 =
+                decrement(possibleMaxDenominatorPrimeExponentGivenMaxN2D3P9)
             break
         } else {
-            candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 =
-                increment(candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9)
+            possibleMaxDenominatorPrimeExponentGivenMaxN2D3P9 =
+                increment(possibleMaxDenominatorPrimeExponentGivenMaxN2D3P9)
         }
     }
 
-    return candidateMaxDenominatorPrimeExponentGivenMaxN2D3P9 as
+    return possibleMaxDenominatorPrimeExponentGivenMaxN2D3P9 as
         Max<Denominator & Decimal<{ integer: true }> & Exponent<Prime>>
 }
 
