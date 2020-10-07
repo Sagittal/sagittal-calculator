@@ -4,9 +4,6 @@ enum Direction {
     UNISON = "unison",
 }
 
-// TODO: So it's still possible to extend this with anything you want. it'd be great if you could somehow prevent that
-//  What if you tried having a different situation at the bedrock where it doesn’t actually extends
-//  But must be the numeric properties itself? something like that
 type NumericProperties = Partial<{
     integer: boolean,
     rational: boolean,
