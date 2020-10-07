@@ -1,4 +1,4 @@
-import { Denominator, Prime } from "../../../../../../../general"
+import { Denominator, Of, Prime } from "../../../../../../../general"
 import { NumeratorPossibilityForDenominatorGivenMaxN2D3P9 } from "./numeratorPossibilities"
 
 type N2 = number & { _N2Brand: boolean }
@@ -27,7 +27,7 @@ interface SortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 {
 }
 
 interface SortedNumeratorPossibilitiesOptions {
-    denominatorPrime: Denominator & Prime,
+    denominatorPrime: Prime & Of<Denominator>,
     numeratorPossibilitiesForDenominatorGivenMaxN2D3P9: NumeratorPossibilityForDenominatorGivenMaxN2D3P9[],
 }
 

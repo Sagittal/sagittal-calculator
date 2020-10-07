@@ -1,4 +1,4 @@
-import { Decimal, Max, Min, Prime } from "../../../../../../../../src/general"
+import { Decimal, Max, Min, Of, Prime } from "../../../../../../../../src/general"
 import { Denominator, Exponent } from "../../../../../../../../src/general/math"
 import { Numerator } from "../../../../../../../../src/general/math/numeric/quotient"
 import { computeMinN2PForPossibleMaxDenominatorPrimeExponentGivenMaxN2D3P9 } from "../../../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9/primeExponentExtremas/denominator/minN2P"
@@ -12,7 +12,7 @@ import {
 describe("computeMinN2PForPossibleMaxDenominatorPrimeExponentGivenMaxN2D3P9", (): void => {
     it("finds the min N2P out of the numerator possibilities where the GPF is greater than the denominator prime, and the min N2P out of the numerator possibilities where the GPF is lesser than the denominator prime, and then returns the min of those two", (): void => {
         // So the possible max denominator power will be 7^2 = 49
-        const denominatorPrime = 7 as Denominator & Prime
+        const denominatorPrime = 7 as Prime & Of<Denominator>
         const possibleMaxDenominatorPrimeExponentGivenMaxN2D3P9 =
             2 as Max<Denominator & Decimal<{ integer: true }> & Exponent<Prime>>
 
@@ -77,7 +77,7 @@ describe("computeMinN2PForPossibleMaxDenominatorPrimeExponentGivenMaxN2D3P9", ()
 
     it("another example where the min N2P from the list with the numerator possibilities with gcp < denominator prime is the one which gets picked", (): void => {
         // So the possible max denominator power will be 7^2 = 49
-        const denominatorPrime = 7 as Denominator & Prime
+        const denominatorPrime = 7 as Prime & Of<Denominator>
         const possibleMaxDenominatorPrimeExponentGivenMaxN2D3P9 =
             2 as Max<Denominator & Decimal<{ integer: true }> & Exponent<Prime>>
 

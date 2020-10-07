@@ -1,4 +1,4 @@
-import { Decimal, Index, Numerator } from "../../../../../../../../../../../src/general"
+import { Decimal, Index, Numerator, Of } from "../../../../../../../../../../../src/general"
 import { increment } from "../../../../../../../../../../../src/general/code"
 import { Exponent, Max, Prime, PRIMES } from "../../../../../../../../../../../src/general/math"
 import { N2D3P9 } from "../../../../../../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
@@ -86,7 +86,7 @@ describe("breaking points of max N2D3P9 per numerator prime", (): void => {
 
         while (true) {
             breakingPoints.push([] as Array<Max<N2D3P9>>)
-            const numeratorPrime = PRIMES[ primeIndex ] as Numerator & Prime
+            const numeratorPrime = PRIMES[ primeIndex ] as Prime & Of<Numerator>
 
             let maxNumeratorPrimeExponent =
                 0 as Max<Numerator & Decimal<{ integer: true }> & Exponent<Prime>>

@@ -1,8 +1,8 @@
-import { Decimal, Denominator, Exponent, Max, Prime } from "../../../../../../general"
+import { Decimal, Denominator, Exponent, Max, Of, Prime } from "../../../../../../general"
 import { SortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 } from "./sortedNumeratorPossibilities"
 
 interface D39ForPossibleMaxDenominatorPrimeExponentOptions {
-    denominatorPrime: Denominator & Prime,
+    denominatorPrime: Prime & Of<Denominator>,
     possibleMaxDenominatorPrimeExponentGivenMaxN2D3P9: Max<Denominator & Decimal<{ integer: true }> & Exponent<Prime>>,
 }
 

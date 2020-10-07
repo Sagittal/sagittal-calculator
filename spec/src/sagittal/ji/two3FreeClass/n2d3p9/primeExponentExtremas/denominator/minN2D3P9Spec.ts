@@ -1,4 +1,4 @@
-import { Decimal, Denominator, Exponent, Max, Min, Prime } from "../../../../../../../../src/general"
+import { Decimal, Denominator, Exponent, Max, Min, Of, Prime } from "../../../../../../../../src/general"
 import { N2D3P9 } from "../../../../../../../../src/sagittal"
 import * as d39
     from "../../../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9/primeExponentExtremas/denominator/d39"
@@ -21,7 +21,7 @@ describe("computeMinN2D3P9ForPossibleMaxDenominatorPrimeExponentGivenMaxN2D3P9",
         //  Of a denominator, nor that either way for Exponent or Prime. basically it's just "Of" in general
         //  So you could just make a type Of<T> = { _OfBrand: T } and use that for these denominator and numerator prime
         //  Like this: Prime & Of<Denominator>
-        const denominatorPrime = 7 as Denominator & Prime
+        const denominatorPrime = 7 as Prime & Of<Denominator>
         const possibleMaxDenominatorPrimeExponentGivenMaxN2D3P9 =
             2 as Max<Denominator & Decimal<{ integer: true }> & Exponent<Prime>>
 

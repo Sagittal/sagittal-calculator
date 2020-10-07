@@ -226,6 +226,4 @@ export {
     addPitches,
     UNISON,
 } from "./music"
-export { Count, Ed, Extrema, Id, Index, Ms, Multiplier, Name, Step, Sum, Window } from "./types"
-
-// Todo: don't forget to scan over the entire commit for messes
+export { Count, Ed, Extrema, Id, Index, Ms, Multiplier, Name, Step, Sum, Window, Of } from "./types"

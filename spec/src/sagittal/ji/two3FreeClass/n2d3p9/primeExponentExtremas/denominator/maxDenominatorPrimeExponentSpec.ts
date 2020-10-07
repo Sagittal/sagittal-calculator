@@ -1,4 +1,4 @@
-import { Decimal, Denominator, Exponent, Max, Min, Numerator, Prime } from "../../../../../../../../src/general"
+import { Decimal, Denominator, Exponent, Max, Min, Numerator, Of, Prime } from "../../../../../../../../src/general"
 import { N2D3P9 } from "../../../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
 import {
     computeMaxDenominatorPrimeExponentGivenMaxN2D3P9,
@@ -11,7 +11,7 @@ import * as sortedNumeratorPossibilities
 
 describe("computeMaxDenominatorPrimeExponentGivenMaxN2D3P9", (): void => {
     it("returns the max exponent for a denominator prime given a max N2D3P9", (): void => {
-        const denominatorPrime = 5 as Denominator & Prime
+        const denominatorPrime = 5 as Prime & Of<Denominator>
         const maxN2D3P9 = 27 as Max<N2D3P9> // N2D3P9(49/25) = 26.47
         const numeratorPossibilitiesForDenominatorGivenMaxN2D3P9 = [
             { numerator: 7 as Numerator & Decimal<{ integer: true }>, gpf: 7 as Max<Prime> },
@@ -43,7 +43,7 @@ describe("computeMaxDenominatorPrimeExponentGivenMaxN2D3P9", (): void => {
     })
 
     it("gets the sorted numerator possibilities, then works its way up through each possible max exponent for the denominator prime, seeing what the min N2D3P9 is for it, and returning the max exponent whose min N2D3P9 is less than the max N2D3P9", (): void => {
-        const denominatorPrime = 1033 as Denominator & Prime // Something crazy
+        const denominatorPrime = 1033 as Prime & Of<Denominator> // Something crazy
         const maxN2D3P9 = 10 as Max<N2D3P9>
         const numeratorPossibilitiesForDenominatorGivenMaxN2D3P9 = [
             { numerator: 7 as Numerator & Decimal<{ integer: true }>, gpf: 7 as Max<Prime> },

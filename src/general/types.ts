@@ -48,6 +48,8 @@ type Extrema<T extends unknown = number> = [Min<T>, Max<T>]
 
 type Ms = number & { _MsBrand: boolean }
 
+type Of<T> = { _OfBrand: T }
+
 export {
     Multiplier,
     Index,
@@ -64,4 +66,5 @@ export {
     Product,
     Addend,
     Subtrahend,
+    Of,
 }

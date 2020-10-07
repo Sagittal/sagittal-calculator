@@ -1,4 +1,4 @@
-import { Decimal, decrement, Denominator, Exponent, increment, Max, Prime } from "../../../../../../general"
+import { Decimal, decrement, Denominator, Exponent, increment, Max, Of, Prime } from "../../../../../../general"
 import { N2D3P9 } from "../../types"
 import { computeMinN2D3P9ForPossibleMaxDenominatorPrimeExponentGivenMaxN2D3P9 } from "./minN2D3P9"
 import {
@@ -19,7 +19,7 @@ http://forum.sagittal.org/viewtopic.php?p=2295#p2295
 */
 
 const computeMaxDenominatorPrimeExponentGivenMaxN2D3P9 = (
-    denominatorPrime: Denominator & Prime,
+    denominatorPrime: Prime & Of<Denominator>,
     maxN2D3P9: Max<N2D3P9>,
     numeratorPossibilitiesForDenominatorGivenMaxN2D3P9: NumeratorPossibilityForDenominatorGivenMaxN2D3P9[],
 ): Max<Denominator & Decimal<{ integer: true }> & Exponent<Prime>> => {

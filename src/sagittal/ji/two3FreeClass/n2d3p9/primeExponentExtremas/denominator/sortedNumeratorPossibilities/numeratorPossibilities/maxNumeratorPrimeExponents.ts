@@ -5,6 +5,7 @@ import {
     increment,
     Max,
     Numerator,
+    Of,
     Prime,
     PRIMES,
     shallowClone,
@@ -20,7 +21,7 @@ const computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9 = (
     const maxNumeratorPrimeExponentsGivenMaxN2D3P9 =
         shallowClone(INITIAL_MAX_NUMERATOR_PRIME_EXPONENTS_FOR_TWO_AND_THREE)
     while (true) {
-        const numeratorPrime = PRIMES[ numeratorPrimeIndex ] as Numerator & Prime
+        const numeratorPrime = PRIMES[ numeratorPrimeIndex ] as Prime & Of<Numerator>
 
         const maxNumeratorPrimeExponentGivenMaxN2D3P9 =
             computeMaxNumeratorPrimeExponentGivenMaxN2D3P9(numeratorPrime, maxN2D3P9)
