@@ -4,10 +4,7 @@ import { analyzeJiNotationBounds } from "../analyzeBounds"
 import { JiNotationBoundAnalysis } from "../bound"
 import { computeJiNotationBoundsImage, computeJiNotationBoundsOutput } from "../io"
 
-parseCommands(
-    ScriptGroup.JI_NOTATION_BOUND as Filename,
-    [LogTarget.FINAL, LogTarget.FINAL],
-)
+parseCommands(ScriptGroup.JI_NOTATION_BOUND as Filename, [LogTarget.FINAL])
 
 ioSettings.scriptGroup = ScriptGroup.JI_NOTATION_BOUND as Filename
 

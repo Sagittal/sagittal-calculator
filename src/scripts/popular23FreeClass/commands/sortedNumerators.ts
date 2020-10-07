@@ -4,11 +4,12 @@ import {
     computeRationalDecimalGpf,
     Decimal,
     dividesEvenly,
+    Filename,
     Io,
-    ioSettings,
     KeyPath,
     LogTarget,
     Numerator,
+    parseCommands,
     saveLog,
     sort,
     stringify,
@@ -18,13 +19,13 @@ import {
     SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2,
 } from "../../../sagittal/ji/two3FreeClass/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities"
 import { computeN2 } from "../../../sagittal/ji/two3FreeClass/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/n2"
+import { ScriptGroup } from "../../types"
 
 // Try out Dave's strategy for getting further along: http://forum.sagittal.org/viewtopic.php?p=2481#p2481
 
 const MAX_NUMERATOR = 9765625
 
-ioSettings.logTargets.progress = true   // TODO: this didn't default to true
-ioSettings.logTargets.final = true
+parseCommands(ScriptGroup.POPULAR_2_3_FREE_CLASSES as Filename, [LogTarget.PROGRESS, LogTarget.FINAL])
 
 const n2pResults: SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P[] =
     [] as unknown[] as SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P[]
