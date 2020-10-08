@@ -1,5 +1,5 @@
 import { computeJiInterval, computeStackedJiPitch } from "../../../../../src/general/music/ji"
-import { computeStackedPitch, Pitch } from "../../../../../src/general/music/pitch"
+import { Interval, Pitch } from "../../../../../src/general/music/pitch"
 
 describe("computeJiInterval", (): void => {
     it("works for two JI pitches, subtracting the from's monzo from the to's monzo", (): void => {
@@ -8,7 +8,7 @@ describe("computeJiInterval", (): void => {
 
         const actual = computeJiInterval(fromJiPitch, toJiPitch)
 
-        const expected = { monzo: [-1, -1, 0, 1] } as Pitch<{ rational: true }>
+        const expected = { monzo: [-1, -1, 0, 1] } as Interval<{ rational: true }>
         expect(actual).toEqual(expected)
     })
 })

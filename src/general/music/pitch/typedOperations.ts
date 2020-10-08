@@ -1,21 +1,16 @@
 import { Decimal, divide, multiply, NumericProperties } from "../../math"
 import { computeIrrationalDecimalFromPitch, computeNonJiPitchFromDecimal, SQRT_SCALER } from "../nonJi"
-import { Pitch } from "./types"
-
-// Todo: DEFER UNTIL AFTER SCALED MONZO
-//  Pitch & Interval
-//  Maybe the solution to make this name is: it takes a bunch of intervals and then returns a pitch?
-//  This might be helpful as a guide: http://forum.sagittal.org/viewtopic.php?p=2510#p2510
+import { Interval, Pitch } from "./types"
 
 const computeStackedPitch = (jiPitchA: Pitch, jiPitchB: Pitch): Pitch<{ direction: undefined, integer: false }> =>
     computeNonJiPitchFromDecimal(
         multiply(computeIrrationalDecimalFromPitch(jiPitchA), computeIrrationalDecimalFromPitch(jiPitchB)),
     ) as Pitch<{ direction: undefined, rational: false }>
 
-const computeInterval = (fromPitch: Pitch, toPitch: Pitch): Pitch<{ direction: undefined, rational: false }> =>
+const computeInterval = (fromPitch: Pitch, toPitch: Pitch): Interval<{ direction: undefined, rational: false }> =>
     computeNonJiPitchFromDecimal(
         divide(computeIrrationalDecimalFromPitch(toPitch), computeIrrationalDecimalFromPitch(fromPitch)),
-    ) as Pitch<{ direction: undefined, rational: false }>
+    ) as Interval<{ direction: undefined, rational: false }>
 
 const sqrtPitch = <T extends NumericProperties>(pitch: Pitch<T>): Pitch<T & { rational: false }> =>
     ({ ...pitch, scaler: SQRT_SCALER } as Pitch<T & { rational: false }>)

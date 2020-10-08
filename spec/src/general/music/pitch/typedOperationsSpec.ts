@@ -1,7 +1,7 @@
 import { Monzo } from "../../../../../src/general/math/numeric/monzo"
 import { Quotient } from "../../../../../src/general/math/numeric/quotient"
 import { NON_JI_PITCH_BASE_MONZO } from "../../../../../src/general/music/nonJi/constants"
-import { computeStackedPitch, Pitch, sqrtPitch } from "../../../../../src/general/music/pitch"
+import { computeStackedPitch, Interval, Pitch, sqrtPitch } from "../../../../../src/general/music/pitch"
 import { computeInterval, maxPitches } from "../../../../../src/general/music/pitch/typedOperations"
 
 describe("computeStackedPitch", (): void => {
@@ -20,7 +20,7 @@ describe("computeStackedPitch", (): void => {
 })
 
 describe("computeInterval", (): void => {
-    it("works for two JI pitches, returning a non-JI pitch", (): void => {
+    it("works for two JI pitches, returning a non-JI interval", (): void => {
         const fromPitch = { monzo: [-1, 1] } as Pitch<{ rational: true }>
         const toPitch = { monzo: [-2, 0, 0, 1] } as Pitch<{ rational: true }>
 
@@ -29,7 +29,7 @@ describe("computeInterval", (): void => {
         const expected = {
             monzo: NON_JI_PITCH_BASE_MONZO,
             scaler: [0.222392, 1],
-        } as Pitch<{ rational: false }>
+        } as Interval<{ rational: false }>
         expect(actual).toBeCloseToObject(expected)
     })
 
@@ -45,7 +45,7 @@ describe("computeInterval", (): void => {
         const expected = {
             monzo: NON_JI_PITCH_BASE_MONZO,
             scaler: [2.052810, 1] as Quotient,
-        } as Pitch<{ rational: false }>
+        } as Interval<{ rational: false }>
         expect(actual).toBeCloseToObject(expected)
     })
 
@@ -61,7 +61,7 @@ describe("computeInterval", (): void => {
         const expected = {
             monzo: NON_JI_PITCH_BASE_MONZO,
             scaler: [-0.033379, 1] as Quotient,
-        } as Pitch<{ rational: false }>
+        } as Interval<{ rational: false }>
         expect(actual).toBeCloseToObject(expected)
     })
 
@@ -80,7 +80,7 @@ describe("computeInterval", (): void => {
         const expected = {
             monzo: NON_JI_PITCH_BASE_MONZO,
             scaler: [0.504858, 1] as Quotient,
-        } as Pitch<{ rational: false }>
+        } as Interval<{ rational: false }>
         expect(actual).toBeCloseToObject(expected)
     })
 })
