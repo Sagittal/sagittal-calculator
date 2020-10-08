@@ -228,5 +228,6 @@ export {
     isSubJiPitch,
     isUnisonJiPitch,
     computeStackedJiPitch,
+    computePitchProportion,
 } from "./music"
 export { Count, Ed, Extrema, Id, Index, Ms, Multiplier, Name, Step, Sum, Window, Of } from "./types"

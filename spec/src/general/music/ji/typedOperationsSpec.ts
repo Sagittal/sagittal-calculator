@@ -1,4 +1,4 @@
-import { computeStackedJiPitch, computeJiInterval } from "../../../../../src/general/music/ji"
+import { computeJiInterval, computeStackedJiPitch } from "../../../../../src/general/music/ji"
 import { computeStackedPitch, Pitch } from "../../../../../src/general/music/pitch"
 
 describe("computeJiInterval", (): void => {

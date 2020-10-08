@@ -1,4 +1,4 @@
-import { computeCentsFromPitch, Pitch, THREE_PRIME_INDEX } from "../../../general"
+import { computePitchProportion, Pitch, THREE_PRIME_INDEX } from "../../../general"
 import { APOTOME, APOTOME_3_EXPONENT } from "../../constants"
 import { ApotomeSlope } from "./types"
 
@@ -6,11 +6,7 @@ import { ApotomeSlope } from "./types"
 
 const computeApotomeSlope = (jiPitch: Pitch<{ rational: true }>): ApotomeSlope => {
     const rationalMonzo3Exponent = jiPitch.monzo[ THREE_PRIME_INDEX ] || 0
-
-    // Todo: DEFER UNTIL AFTER SCALED MONZO
-    //  CONDUCT AT PITCH LEVEL, LOGARITHMIC FRACTION HELPER
-    //  Which I think is going to involve something like a "logarithmic fraction" helper
-    const apotomeFraction = computeCentsFromPitch(jiPitch) / computeCentsFromPitch(APOTOME)
+    const apotomeFraction = computePitchProportion(jiPitch, APOTOME)
 
     return rationalMonzo3Exponent - APOTOME_3_EXPONENT * apotomeFraction as ApotomeSlope
 }
