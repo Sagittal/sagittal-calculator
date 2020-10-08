@@ -1,3 +1,4 @@
+import { Max } from "../../../../../src/general/math"
 import { Monzo } from "../../../../../src/general/math/numeric/monzo"
 import { Quotient } from "../../../../../src/general/math/numeric/quotient"
 import { NON_JI_PITCH_BASE_MONZO } from "../../../../../src/general/music/nonJi/constants"
@@ -110,6 +111,6 @@ describe("maxPitches", (): void => {
 
         const actual = maxPitches(pitchA, pitchB, pitchC)
 
-        expect(actual).toEqual(pitchB)
+        expect(actual).toEqual(pitchB as Pitch as Max<Pitch>)
     })
 })
