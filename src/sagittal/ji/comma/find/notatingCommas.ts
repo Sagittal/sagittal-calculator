@@ -15,14 +15,6 @@ const computeNotatingCommas = <T extends NumericProperties>(
     { monzo }: Pitch<T & { rational: true }>,
     options?: CommasFrom23FreeMonzoOptions,
 ): Comma[] => {
-    // Todo: DEFER UNTIL AFTER SCALED MONZO
-    //  CONDUCT AT PITCH LEVEL
-    //  Yes, see all of this should be conducted at the pitch level. just computeRoughRatio, equalRatios,
-    //  And even, I think computeCommasFrom23FreeClass!
-    //  The monzo in zone thing could also be a rational in zone I think... but the name should be improved to reflect
-    //  How it's searching only by octave equivalence at this point...
-    //  Except now since all JI pitches ARE monzos, it feels more reasonable the way it is...
-
     const two3FreeRationalMonzo: Monzo<{ rational: true, rough: 5 }> =
         computeRoughRationalMonzo(monzo, FIVE_ROUGHNESS) as Monzo<{ rational: true, rough: 5 }>
 
