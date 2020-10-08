@@ -21,7 +21,7 @@ export {
     computeRationalQuotientFromJiPitch,
     isSubJiPitch,
     isUnisonJiPitch,
-    addJiPitches,
+    computeStackedJiPitch,
 } from "./ji"
 export { SQRT_SCALER } from "./nonJi"
 export { CENTS_PER_OCTAVE } from "./constants"
@@ -43,5 +43,5 @@ export {
     computePitchFromCents,
     computePitchFromMonzo,
     computePitchFromQuotient,
-    addPitches,
+    computeStackedPitch,
 } from "./pitch"

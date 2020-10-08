@@ -220,13 +220,13 @@ export {
     computePitchFromCents,
     computePitchFromMonzo,
     computePitchFromQuotient,
-    addPitches,
+    computeStackedPitch,
     UNISON,
     equalJiPitches,
     computeJiPitchFromRationalMonzo,
     computeRationalQuotientFromJiPitch,
     isSubJiPitch,
     isUnisonJiPitch,
-    addJiPitches,
+    computeStackedJiPitch,
 } from "./music"
 export { Count, Ed, Extrema, Id, Index, Ms, Multiplier, Name, Step, Sum, Window, Of } from "./types"

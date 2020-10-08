@@ -1,15 +1,15 @@
 import { Monzo } from "../../../../../src/general/math/numeric/monzo"
 import { Quotient } from "../../../../../src/general/math/numeric/quotient"
 import { NON_JI_PITCH_BASE_MONZO } from "../../../../../src/general/music/nonJi/constants"
-import { addPitches, Pitch, sqrtPitch } from "../../../../../src/general/music/pitch"
+import { computeStackedPitch, Pitch, sqrtPitch } from "../../../../../src/general/music/pitch"
 import { computeInterval, maxPitches } from "../../../../../src/general/music/pitch/typedOperations"
 
-describe("addPitches", (): void => {
+describe("computeStackedPitch", (): void => {
     it("even if the pitches are both JI, this method returns a non-JI pitch", (): void => {
         const augendPitch = { monzo: [2, -1, -1, 1] } as Pitch<{ rational: true }>
         const addendPitch = { monzo: [-2, 1] } as Pitch<{ rational: true }>
 
-        const actual = addPitches(augendPitch, addendPitch)
+        const actual = computeStackedPitch(augendPitch, addendPitch)
 
         const expected = {
             monzo: NON_JI_PITCH_BASE_MONZO,

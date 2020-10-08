@@ -18,7 +18,7 @@ export { isSubJiPitch, isSuperJiPitch, isUnisonJiPitch } from "./direction"
 export {
     computeJiPitchFromRationalDecimal, computeJiPitchFromRationalMonzo, computeJiPitchFromRationalQuotient,
 } from "./from"
-export { addJiPitches, computeJiInterval } from "./typedOperations"
+export { computeStackedJiPitch, computeJiInterval } from "./typedOperations"
 export {
     computeRationalDecimalFromJiPitch,
     computeRationalMonzoFromJiPitch,

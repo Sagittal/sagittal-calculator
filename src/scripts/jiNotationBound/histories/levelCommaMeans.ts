@@ -1,4 +1,4 @@
-import { addJiPitches, Id, indexOfFinalElement, Name, Pitch, SQRT_SCALER } from "../../../general"
+import { computeStackedJiPitch, Id, indexOfFinalElement, Name, Pitch, SQRT_SCALER } from "../../../general"
 import {
     CommaMean,
     getPrimaryComma,
@@ -28,7 +28,7 @@ const computeJiNotationLevelCommaMeans = (jiNotationLevel: JiNotationLevel): Com
 
             return {
                 pitch: {
-                    monzo: addJiPitches(primaryComma, nextPrimaryComma).monzo,
+                    monzo: computeStackedJiPitch(primaryComma, nextPrimaryComma).monzo,
                     scaler: SQRT_SCALER,
                 } as Pitch<{ rational: false }>,
                 name,
