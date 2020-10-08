@@ -2,33 +2,29 @@ import { deepClone } from "../../code"
 import {
     Direction,
     invertMonzo,
-    isSubDecimal,
-    isSuperDecimal,
-    isUnisonDecimal, isUnisonMonzo,
+    isDecimalSub,
+    isDecimalSuper,
+    isDecimalUnison, isMonzoUnison,
     Monzo,
     NumericProperties,
 } from "../../math"
 import { computeIrrationalDecimalFromPitch } from "../nonJi"
 import { Pitch } from "./types"
 
-// Todo: DEFER UNTIL AFTER SCALED MONZO
-//  I got confused for a moment and thought this meant "is this SUB thing REAL?" rather than "is this REAL thing Sub
-//  So maybe it should be "isRealSub" when a "SubReal" is not an actual thing?
-
-const isSuperPitch = <T extends NumericProperties>(
+const isPitchSuper = <T extends NumericProperties>(
     candidateSuperPitch: Pitch<T>,
 ): candidateSuperPitch is (Pitch<T & { direction: Direction.SUPER }>) =>
-    isSuperDecimal(computeIrrationalDecimalFromPitch(candidateSuperPitch))
+    isDecimalSuper(computeIrrationalDecimalFromPitch(candidateSuperPitch))
 
-const isSubPitch = <T extends NumericProperties>(
+const isPitchSub = <T extends NumericProperties>(
     candidateSubPitch: Pitch<T>,
 ): candidateSubPitch is Pitch<T & { direction: Direction.SUB }> =>
-    isSubDecimal(computeIrrationalDecimalFromPitch(candidateSubPitch))
+    isDecimalSub(computeIrrationalDecimalFromPitch(candidateSubPitch))
 
-const isUnisonPitch = <T extends NumericProperties>(
+const isPitchUnison = <T extends NumericProperties>(
     candidateUnisonPitch: Pitch<T>,
 ): candidateUnisonPitch is Pitch<T & { direction: Direction.UNISON }> =>
-    isUnisonDecimal(computeIrrationalDecimalFromPitch(candidateUnisonPitch))
+    isDecimalUnison(computeIrrationalDecimalFromPitch(candidateUnisonPitch))
 
 const computeSuperPitch: {
     <T extends NumericProperties>(
@@ -40,7 +36,7 @@ const computeSuperPitch: {
 } = <T extends NumericProperties>(
     pitch: Pitch<T>,
 ): Pitch<Omit<T, "direction"> & { direction: Direction.SUPER & Direction.UNISON }> =>
-    isSuperPitch(pitch) ?
+    isPitchSuper(pitch) ?
         pitch as Pitch<Omit<T, "direction">> :
         invertPitch(pitch) as Pitch<Omit<T, "direction">>
 
@@ -54,7 +50,7 @@ const computeSubPitch: {
 } = <T extends NumericProperties>(
     pitch: Pitch<T>,
 ): Pitch<Omit<T, "direction"> & { direction: Direction.SUB & Direction.UNISON }> =>
-    isSubPitch(pitch) ?
+    isPitchSub(pitch) ?
         pitch as Pitch<Omit<T, "direction">> :
         invertPitch(pitch) as Pitch<Omit<T, "direction">>
 
@@ -82,9 +78,9 @@ const invertPitch: {
 }
 
 export {
-    isSubPitch,
-    isSuperPitch,
-    isUnisonPitch,
+    isPitchSub,
+    isPitchSuper,
+    isPitchUnison,
     computeSuperPitch,
     computeSubPitch,
     invertPitch,

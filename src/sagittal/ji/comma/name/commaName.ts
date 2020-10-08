@@ -6,8 +6,8 @@ import {
     Decimal,
     Direction,
     Exponent,
-    isSubJiPitch,
-    isUnisonJiPitch,
+    isJiPitchSub,
+    isJiPitchUnison,
     isWithinPrimeLimit,
     Name,
     Prime,
@@ -78,13 +78,13 @@ const computeCommaName = (
 
     const maybeHyphen = abbreviated ? "" : "-"
 
-    const maybeDown = isSubJiPitch(comma) ? " down" : ""
+    const maybeDown = isJiPitchSub(comma) ? " down" : ""
 
     const superComma = computeSuperPitch(comma) as Comma<{ rational: true, direction: Direction.SUPER }>
     const sizeCategory: SizeCategoryAbbreviation | SizeCategoryName = computeSizeCategory(superComma, { abbreviated })
 
     let formattedCommaNameQuotient
-    if (isWithinPrimeLimit(comma, THREE_PRIME_LIMIT) && !isUnisonJiPitch(comma)) {
+    if (isWithinPrimeLimit(comma, THREE_PRIME_LIMIT) && !isJiPitchUnison(comma)) {
         formattedCommaNameQuotient = "3"
     } else {
         const commaNameQuotient = computeCommaNameQuotient(comma)

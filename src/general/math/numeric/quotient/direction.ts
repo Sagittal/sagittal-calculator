@@ -1,7 +1,7 @@
 import { Direction, NumericProperties } from "../types"
 import { Denominator, Numerator, Quotient, QuotientPart } from "./types"
 
-const isSuperQuotient = <T extends NumericProperties>(
+const isQuotientSuper = <T extends NumericProperties>(
     candidateSuperQuotient: Quotient<Omit<T, "direction">>,
 ): candidateSuperQuotient is Quotient<Omit<T, "direction"> & { direction: Direction.SUPER }> => {
     const [numerator, denominator] = candidateSuperQuotient
@@ -9,7 +9,7 @@ const isSuperQuotient = <T extends NumericProperties>(
     return numerator > denominator
 }
 
-const isSubQuotient = <T extends NumericProperties>(
+const isQuotientSub = <T extends NumericProperties>(
     candidateSubQuotient: Quotient<Omit<T, "direction">>,
 ): candidateSubQuotient is Quotient<Omit<T, "direction"> & { direction: Direction.SUB }> => {
     const [numerator, denominator] = candidateSubQuotient
@@ -17,7 +17,7 @@ const isSubQuotient = <T extends NumericProperties>(
     return numerator < denominator
 }
 
-const isUnisonQuotient = <T extends NumericProperties>(
+const isQuotientUnison = <T extends NumericProperties>(
     candidateUnisonQuotient: Quotient<Omit<T, "direction">>,
 ): candidateUnisonQuotient is Quotient<Omit<T, "direction"> & { direction: Direction.UNISON }> => {
     const [numerator, denominator] = candidateUnisonQuotient
@@ -35,7 +35,7 @@ const computeSuperQuotient: {
 } = <T extends NumericProperties>(
     quotient: Quotient<T>,
 ): Quotient<Omit<T, "direction"> & { direction: Direction.SUPER & Direction.UNISON }> =>
-    isSuperQuotient(quotient) ?
+    isQuotientSuper(quotient) ?
         quotient as Quotient<Omit<T, "direction">> :
         invertQuotient(quotient)
 
@@ -49,7 +49,7 @@ const computeSubQuotient: {
 } = <T extends NumericProperties>(
     quotient: Quotient<T>,
 ): Quotient<Omit<T, "direction"> & { direction: Direction.SUB & Direction.UNISON }> =>
-    isSubQuotient(quotient) ?
+    isQuotientSub(quotient) ?
         quotient as Quotient<Omit<T, "direction">> :
         invertQuotient(quotient)
 
@@ -77,8 +77,8 @@ const invertQuotient: {
 export {
     computeSuperQuotient,
     computeSubQuotient,
-    isSuperQuotient,
-    isSubQuotient,
-    isUnisonQuotient,
+    isQuotientSuper,
+    isQuotientSub,
+    isQuotientUnison,
     invertQuotient,
 }

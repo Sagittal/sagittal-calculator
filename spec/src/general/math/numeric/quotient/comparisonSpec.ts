@@ -1,11 +1,11 @@
-import { equalQuotients, Quotient } from "../../../../../../src/general/math/numeric/quotient"
+import { areQuotientsEqual, Quotient } from "../../../../../../src/general/math/numeric/quotient"
 
-describe("equalQuotients", (): void => {
+describe("areQuotientsEqual", (): void => {
     it("returns true when the quotients are equal", (): void => {
         const quotientA = [11, 10] as Quotient
         const quotientB = [11, 10] as Quotient
 
-        const actual = equalQuotients(quotientA, quotientB)
+        const actual = areQuotientsEqual(quotientA, quotientB)
 
         expect(actual).toBeTruthy()
     })
@@ -14,7 +14,7 @@ describe("equalQuotients", (): void => {
         const quotientA = [11, 10] as Quotient
         const quotientB = [11, 9] as Quotient
 
-        const actual = equalQuotients(quotientA, quotientB)
+        const actual = areQuotientsEqual(quotientA, quotientB)
 
         expect(actual).toBeFalsy()
     })
@@ -23,7 +23,7 @@ describe("equalQuotients", (): void => {
         const quotientA = [11, 10] as Quotient
         const quotientB = [33, 30] as Quotient
 
-        const actual = equalQuotients(quotientA, quotientB)
+        const actual = areQuotientsEqual(quotientA, quotientB)
 
         expect(actual).toBeTruthy()
     })
@@ -32,7 +32,7 @@ describe("equalQuotients", (): void => {
         const quotientA = [11.1, 7.2] as Quotient
         const quotientB = [11.1, 7.2] as Quotient
 
-        const actual = equalQuotients(quotientA, quotientB)
+        const actual = areQuotientsEqual(quotientA, quotientB)
 
         expect(actual).toBeTruthy()
     })
@@ -41,7 +41,7 @@ describe("equalQuotients", (): void => {
         const quotientA = [11.1, 7.2] as Quotient
         const quotientB = [22.2, 14.4] as Quotient
 
-        const actual = equalQuotients(quotientA, quotientB)
+        const actual = areQuotientsEqual(quotientA, quotientB)
 
         expect(actual).toBeTruthy()
     })

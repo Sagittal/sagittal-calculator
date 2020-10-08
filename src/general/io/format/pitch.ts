@@ -1,4 +1,4 @@
-import { isRationalQuotient } from "../../math"
+import { isQuotientRational } from "../../math"
 import { computeCentsFromPitch, isJi, Pitch } from "../../music"
 import { formatCents } from "./cents"
 import { formatMonzo } from "./monzo"
@@ -10,7 +10,7 @@ const formatPitch = (pitch: Pitch, options: { align?: boolean } = {}): Formatted
         return formatMonzo(pitch.monzo) as Formatted as Formatted<Pitch>
     } else {
         const { scaler, monzo } = pitch
-        if (isRationalQuotient(scaler)) {
+        if (isQuotientRational(scaler)) {
             return `${formatMonzo(monzo)}(${formatQuotient(scaler)})` as Formatted as Formatted<Pitch>
         } else {
             return formatCents(computeCentsFromPitch(pitch), options) as Formatted as Formatted<Pitch>

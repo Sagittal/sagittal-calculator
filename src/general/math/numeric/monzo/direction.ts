@@ -5,7 +5,7 @@ import { computeDecimalFromMonzo } from "../decimal"
 import { Direction, NumericProperties } from "../types"
 import { Monzo } from "./types"
 
-const isSubMonzo = <T extends NumericProperties>(
+const isMonzoSub = <T extends NumericProperties>(
     candidateSubMonzo: Monzo<Omit<T, "direction">>,
 ): candidateSubMonzo is Monzo<Omit<T, "direction"> & { direction: Direction.SUB }> => {
     if (
@@ -24,12 +24,12 @@ const isSubMonzo = <T extends NumericProperties>(
     return computeDecimalFromMonzo(candidateSubMonzo) < MULTIPLICATIVE_IDENTITY
 }
 
-const isSuperMonzo = <T extends NumericProperties>(
+const isMonzoSuper = <T extends NumericProperties>(
     candidateSuperMonzo: Monzo<Omit<T, "direction">>,
 ): candidateSuperMonzo is Monzo<Omit<T, "direction"> & { direction: Direction.SUPER }> =>
-    !(isUnisonMonzo(candidateSuperMonzo) || isSubMonzo(candidateSuperMonzo))
+    !(isMonzoUnison(candidateSuperMonzo) || isMonzoSub(candidateSuperMonzo))
 
-const isUnisonMonzo = <T extends NumericProperties>(
+const isMonzoUnison = <T extends NumericProperties>(
     candidateUnisonMonzo: Monzo<Omit<T, "direction">>,
 ): candidateUnisonMonzo is Monzo<Omit<T, "direction"> & { direction: Direction.UNISON }> =>
     candidateUnisonMonzo.every((primeExponent: Exponent<Prime>): boolean => primeExponent === 0)
@@ -44,7 +44,7 @@ const computeSuperMonzo: {
 } = <T extends NumericProperties>(
     monzo: Monzo<T>,
 ): Monzo<Omit<T, "direction"> & { direction: Direction.SUPER & Direction.UNISON }> =>
-    isSuperMonzo(monzo) ?
+    isMonzoSuper(monzo) ?
         monzo as Monzo<Omit<T, "direction">> :
         invertMonzo(monzo)
 
@@ -58,7 +58,7 @@ const computeSubMonzo: {
 } = <T extends NumericProperties>(
     monzo: Monzo<T>,
 ): Monzo<Omit<T, "direction"> & { direction: Direction.SUB & Direction.UNISON }> =>
-    isSubMonzo(monzo) ?
+    isMonzoSub(monzo) ?
         monzo as Monzo<Omit<T, "direction">> :
         invertMonzo(monzo)
 
@@ -85,9 +85,9 @@ const invertMonzo: {
     }) as Monzo<Omit<T, "direction">>
 
 export {
-    isSubMonzo,
-    isSuperMonzo,
-    isUnisonMonzo,
+    isMonzoSub,
+    isMonzoSuper,
+    isMonzoUnison,
     computeSuperMonzo,
     computeSubMonzo,
     invertMonzo,

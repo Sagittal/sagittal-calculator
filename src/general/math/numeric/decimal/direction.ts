@@ -2,17 +2,17 @@ import { MULTIPLICATIVE_IDENTITY } from "../../constants"
 import { Direction, NumericProperties } from "../types"
 import { Decimal } from "./types"
 
-const isSuperDecimal = <T extends NumericProperties>(
+const isDecimalSuper = <T extends NumericProperties>(
     candidateSuperDecimal: Decimal<Omit<T, "direction">>,
 ): candidateSuperDecimal is Decimal<Omit<T, "direction"> & { direction: Direction.SUPER }> =>
     candidateSuperDecimal > MULTIPLICATIVE_IDENTITY
 
-const isSubDecimal = <T extends NumericProperties>(
+const isDecimalSub = <T extends NumericProperties>(
     candidateSubDecimal: Decimal<Omit<T, "direction">>,
 ): candidateSubDecimal is Decimal<Omit<T, "direction"> & { direction: Direction.SUB }> =>
     candidateSubDecimal < MULTIPLICATIVE_IDENTITY
 
-const isUnisonDecimal = <T extends NumericProperties>(
+const isDecimalUnison = <T extends NumericProperties>(
     candidateUnisonDecimal: Decimal<Omit<T, "direction">>,
 ): candidateUnisonDecimal is Decimal<Omit<T, "direction"> & { direction: Direction.SUB }> =>
     candidateUnisonDecimal === MULTIPLICATIVE_IDENTITY
@@ -27,7 +27,7 @@ const computeSuperDecimal: {
 } = <T extends NumericProperties>(
     decimal: Decimal<T>,
 ): Decimal<Omit<T, "direction"> & { direction: Direction.SUPER & Direction.UNISON }> =>
-    isSuperDecimal(decimal) ?
+    isDecimalSuper(decimal) ?
         decimal as Decimal<Omit<T, "direction">> :
         invertDecimal(decimal)
 
@@ -41,7 +41,7 @@ const computeSubDecimal: {
 } = <T extends NumericProperties>(
     decimal: Decimal<T>,
 ): Decimal<Omit<T, "direction"> & { direction: Direction.SUB & Direction.UNISON }> =>
-    isSubDecimal(decimal) ?
+    isDecimalSub(decimal) ?
         decimal as Decimal<Omit<T, "direction">> :
         invertDecimal(decimal)
 
@@ -64,9 +64,9 @@ const invertDecimal: {
     1 / decimal as Decimal<Omit<T, "direction">>
 
 export {
-    isSubDecimal,
-    isSuperDecimal,
-    isUnisonDecimal,
+    isDecimalSub,
+    isDecimalSuper,
+    isDecimalUnison,
     invertDecimal,
     computeSubDecimal,
     computeSuperDecimal,

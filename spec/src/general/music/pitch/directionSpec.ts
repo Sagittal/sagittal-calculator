@@ -2,18 +2,18 @@ import { Direction, EMPTY_MONZO, Monzo, Quotient } from "../../../../../src/gene
 import { NON_JI_PITCH_BASE_MONZO } from "../../../../../src/general/music/nonJi/constants"
 import {
     computeSuperPitch,
-    isSubPitch,
-    isSuperPitch,
-    isUnisonPitch,
+    isPitchSub,
+    isPitchSuper,
+    isPitchUnison,
     Pitch,
 } from "../../../../../src/general/music/pitch"
 
-describe("isSubPitch", (): void => {
+describe("isPitchSub", (): void => {
     describe("for JI pitches", (): void => {
         it("returns true if the monzo is sub", (): void => {
             const pitch = { monzo: [-1] } as Pitch<{ rational: true }>
 
-            const actual = isSubPitch(pitch)
+            const actual = isPitchSub(pitch)
 
             expect(actual).toBeTruthy()
         })
@@ -21,7 +21,7 @@ describe("isSubPitch", (): void => {
         it("returns false if the monzo is unison", (): void => {
             const pitch = { monzo: [] as unknown[] } as Pitch<{ rational: true }>
 
-            const actual = isSubPitch(pitch)
+            const actual = isPitchSub(pitch)
 
             expect(actual).toBeFalsy()
         })
@@ -29,7 +29,7 @@ describe("isSubPitch", (): void => {
         it("returns false if the monzo is super", (): void => {
             const pitch = { monzo: [1] } as Pitch<{ rational: true }>
 
-            const actual = isSubPitch(pitch)
+            const actual = isPitchSub(pitch)
 
             expect(actual).toBeFalsy()
         })
@@ -39,7 +39,7 @@ describe("isSubPitch", (): void => {
         it("returns true if the pitch is sub", (): void => {
             const pitch = { monzo: NON_JI_PITCH_BASE_MONZO, scaler: [-1, 1] as Quotient } as Pitch<{ rational: false }>
 
-            const actual = isSubPitch(pitch)
+            const actual = isPitchSub(pitch)
 
             expect(actual).toBeTruthy()
         })
@@ -47,7 +47,7 @@ describe("isSubPitch", (): void => {
         it("returns false if the pitch is unison", (): void => {
             const pitch = { monzo: NON_JI_PITCH_BASE_MONZO, scaler: [0, 1] as Quotient } as Pitch<{ rational: false }>
 
-            const actual = isSubPitch(pitch)
+            const actual = isPitchSub(pitch)
 
             expect(actual).toBeFalsy()
         })
@@ -55,19 +55,19 @@ describe("isSubPitch", (): void => {
         it("returns false if the pitch is super", (): void => {
             const pitch = { monzo: NON_JI_PITCH_BASE_MONZO, scaler: [1, 1] as Quotient } as Pitch<{ rational: false }>
 
-            const actual = isSubPitch(pitch)
+            const actual = isPitchSub(pitch)
 
             expect(actual).toBeFalsy()
         })
     })
 })
 
-describe("isSuperPitch", (): void => {
+describe("isPitchSuper", (): void => {
     describe("for JI pitches", (): void => {
         it("returns false if the monzo is sub", (): void => {
             const pitch = { monzo: [-1] } as Pitch<{ rational: true }>
 
-            const actual = isSuperPitch(pitch)
+            const actual = isPitchSuper(pitch)
 
             expect(actual).toBeFalsy()
         })
@@ -75,7 +75,7 @@ describe("isSuperPitch", (): void => {
         it("returns false if the monzo is unison", (): void => {
             const pitch = { monzo: [] as unknown[] } as Pitch<{ rational: true }>
 
-            const actual = isSuperPitch(pitch)
+            const actual = isPitchSuper(pitch)
 
             expect(actual).toBeFalsy()
         })
@@ -83,7 +83,7 @@ describe("isSuperPitch", (): void => {
         it("returns true if the monzo is super", (): void => {
             const pitch = { monzo: [1] } as Pitch<{ rational: true }>
 
-            const actual = isSuperPitch(pitch)
+            const actual = isPitchSuper(pitch)
 
             expect(actual).toBeTruthy()
         })
@@ -93,7 +93,7 @@ describe("isSuperPitch", (): void => {
         it("returns false if the pitch is sub", (): void => {
             const pitch = { monzo: NON_JI_PITCH_BASE_MONZO, scaler: [-1, 1] as Quotient } as Pitch<{ rational: false }>
 
-            const actual = isSuperPitch(pitch)
+            const actual = isPitchSuper(pitch)
 
             expect(actual).toBeFalsy()
         })
@@ -101,7 +101,7 @@ describe("isSuperPitch", (): void => {
         it("returns false if the pitch is unison", (): void => {
             const pitch = { monzo: NON_JI_PITCH_BASE_MONZO, scaler: [0, 1] as Quotient } as Pitch<{ rational: false }>
 
-            const actual = isSuperPitch(pitch)
+            const actual = isPitchSuper(pitch)
 
             expect(actual).toBeFalsy()
         })
@@ -109,19 +109,19 @@ describe("isSuperPitch", (): void => {
         it("returns true if the pitch is super", (): void => {
             const pitch = { monzo: NON_JI_PITCH_BASE_MONZO, scaler: [1, 1] as Quotient } as Pitch<{ rational: false }>
 
-            const actual = isSuperPitch(pitch)
+            const actual = isPitchSuper(pitch)
 
             expect(actual).toBeTruthy()
         })
     })
 })
 
-describe("isUnisonPitch", (): void => {
+describe("isPitchUnison", (): void => {
     describe("for JI pitches", (): void => {
         it("returns false if the monzo is sub", (): void => {
             const pitch = { monzo: [-1] } as Pitch<{ rational: true }>
 
-            const actual = isUnisonPitch(pitch)
+            const actual = isPitchUnison(pitch)
 
             expect(actual).toBeFalsy()
         })
@@ -129,7 +129,7 @@ describe("isUnisonPitch", (): void => {
         it("returns true if the monzo is unison", (): void => {
             const pitch = { monzo: [] as unknown[] } as Pitch<{ rational: true }>
 
-            const actual = isUnisonPitch(pitch)
+            const actual = isPitchUnison(pitch)
 
             expect(actual).toBeTruthy()
         })
@@ -137,7 +137,7 @@ describe("isUnisonPitch", (): void => {
         it("returns false if the monzo is super", (): void => {
             const pitch = { monzo: [1] } as Pitch<{ rational: true }>
 
-            const actual = isUnisonPitch(pitch)
+            const actual = isPitchUnison(pitch)
 
             expect(actual).toBeFalsy()
         })
@@ -147,7 +147,7 @@ describe("isUnisonPitch", (): void => {
         it("returns false if the pitch is sub", (): void => {
             const pitch = { monzo: NON_JI_PITCH_BASE_MONZO, scaler: [-1, 1] as Quotient } as Pitch<{ rational: false }>
 
-            const actual = isUnisonPitch(pitch)
+            const actual = isPitchUnison(pitch)
 
             expect(actual).toBeFalsy()
         })
@@ -155,7 +155,7 @@ describe("isUnisonPitch", (): void => {
         it("returns true if the pitch is unison", (): void => {
             const pitch = { monzo: NON_JI_PITCH_BASE_MONZO, scaler: [0, 1] as Quotient } as Pitch<{ rational: false }>
 
-            const actual = isUnisonPitch(pitch)
+            const actual = isPitchUnison(pitch)
 
             expect(actual).toBeTruthy()
         })
@@ -163,7 +163,7 @@ describe("isUnisonPitch", (): void => {
         it("returns false if the pitch is super", (): void => {
             const pitch = { monzo: NON_JI_PITCH_BASE_MONZO, scaler: [1, 1] as Quotient } as Pitch<{ rational: false }>
 
-            const actual = isUnisonPitch(pitch)
+            const actual = isPitchUnison(pitch)
 
             expect(actual).toBeFalsy()
         })

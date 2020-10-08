@@ -2,7 +2,7 @@ import {
     ACCURACY_THRESHOLD,
     doForEachRationalMonzo,
     Io,
-    isSubMonzo,
+    isMonzoSub,
     isUndefined,
     KeyPath,
     LogTarget,
@@ -27,7 +27,7 @@ const computeMaybeSuperPopular23FreeClass = (
     two3FreeRationalMonzoForWork: Monzo,
     maxN2D3P9: Max<N2D3P9>,
 ): Maybe<Popular23FreeClass> => {
-    const maybeSuperPopular23FreeClass = !isSubMonzo(two3FreeRationalMonzoForWork) ?
+    const maybeSuperPopular23FreeClass = !isMonzoSub(two3FreeRationalMonzoForWork) ?
         computeMaybePopular23FreeClass({ monzo: two3FreeRationalMonzoForWork } as Two3FreeClass, maxN2D3P9) :
         undefined
 

@@ -1,53 +1,53 @@
 import { MAX_JS_PRECISION, Precision } from "../../code"
-import { equalMonzos, NumericProperties } from "../../math"
+import { areMonzosEqual, NumericProperties } from "../../math"
 import { Pitch } from "../pitch"
 import { computeRationalDecimalFromJiPitch } from "./to"
 
-const equalJiPitches = <T extends NumericProperties, U extends NumericProperties>(
+const areJiPitchesEqual = <T extends NumericProperties, U extends NumericProperties>(
     jiPitchA: Pitch<T & { rational: true }>,
     jiPitchB: Pitch<U & { rational: true }>,
     precision: Precision = MAX_JS_PRECISION,
 ): boolean =>
-    equalMonzos(jiPitchA.monzo, jiPitchB.monzo, precision)
+    areMonzosEqual(jiPitchA.monzo, jiPitchB.monzo, precision)
 
-const jiPitchIsHigher = <T extends NumericProperties, U extends NumericProperties>(
+const isJiPitchHigher = <T extends NumericProperties, U extends NumericProperties>(
     jiPitch: Pitch<T & { rational: true }>,
     otherJiPitch: Pitch<U & { rational: true }>,
     precision: Precision = MAX_JS_PRECISION,
 ): boolean =>
     (
-        !equalJiPitches(jiPitch, otherJiPitch, precision)
+        !areJiPitchesEqual(jiPitch, otherJiPitch, precision)
         && computeRationalDecimalFromJiPitch(jiPitch) > computeRationalDecimalFromJiPitch(otherJiPitch)
     )
 
-const jiPitchIsLower = <T extends NumericProperties, U extends NumericProperties>(
+const isJiPitchLower = <T extends NumericProperties, U extends NumericProperties>(
     jiPitch: Pitch<T & { rational: true }>,
     otherJiPitch: Pitch<U & { rational: true }>,
     precision: Precision = MAX_JS_PRECISION,
 ): boolean =>
     (
-        !equalJiPitches(jiPitch, otherJiPitch, precision)
+        !areJiPitchesEqual(jiPitch, otherJiPitch, precision)
         && computeRationalDecimalFromJiPitch(jiPitch) < computeRationalDecimalFromJiPitch(otherJiPitch)
     )
 
-const jiPitchIsHigherOrEqual = <T extends NumericProperties, U extends NumericProperties>(
+const isJiPitchHigherOrEqual = <T extends NumericProperties, U extends NumericProperties>(
     jiPitch: Pitch<T & { rational: true }>,
     otherJiPitch: Pitch<U & { rational: true }>,
     precision: Precision = MAX_JS_PRECISION,
 ): boolean =>
-    equalJiPitches(jiPitch, otherJiPitch, precision) || jiPitchIsHigher(jiPitch, otherJiPitch)
+    areJiPitchesEqual(jiPitch, otherJiPitch, precision) || isJiPitchHigher(jiPitch, otherJiPitch)
 
-const jiPitchIsLowerOrEqual = <T extends NumericProperties, U extends NumericProperties>(
+const isJiPitchLowerOrEqual = <T extends NumericProperties, U extends NumericProperties>(
     jiPitch: Pitch<T & { rational: true }>,
     otherJiPitch: Pitch<U & { rational: true }>,
     precision: Precision = MAX_JS_PRECISION,
 ): boolean =>
-    equalJiPitches(jiPitch, otherJiPitch, precision) || jiPitchIsLower(jiPitch, otherJiPitch)
+    areJiPitchesEqual(jiPitch, otherJiPitch, precision) || isJiPitchLower(jiPitch, otherJiPitch)
 
 export {
-    equalJiPitches,
-    jiPitchIsHigher,
-    jiPitchIsLower,
-    jiPitchIsHigherOrEqual,
-    jiPitchIsLowerOrEqual,
+    areJiPitchesEqual,
+    isJiPitchHigher,
+    isJiPitchLower,
+    isJiPitchHigherOrEqual,
+    isJiPitchLowerOrEqual,
 }

@@ -5,9 +5,9 @@ import {
     Decimal,
     Id,
     isCloseTo,
+    isPitchHigher,
     Monzo,
     Pitch,
-    pitchIsHigher,
     Quotient,
 } from "../../../../../src/general"
 import { computeIrrationalDecimalFromPitch } from "../../../../../src/general/music/nonJi"
@@ -41,7 +41,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 if (isCloseTo(currentHalfTinaPitch, computeIrrationalDecimalFromPitch(jiNotationBound.pitch))) {
                     break
                 } else if (
-                    pitchIsHigher(computePitchFromDecimal(currentHalfTinaPitch), jiNotationBound.pitch)
+                    isPitchHigher(computePitchFromDecimal(currentHalfTinaPitch), jiNotationBound.pitch)
                 ) {
                     if (!exceptionalJiNotationBoundIds.includes(jiNotationBound.id)) {
                         fail(`JI notation bound id ${jiNotationBound.id} was not close to a half-tina, nor registered as an exceptional bound.`)

@@ -1,7 +1,7 @@
 import {
+    areMonzosEqual,
     Comma,
     computeRoughRationalMonzo,
-    equalMonzos,
     FIVE_ROUGHNESS,
     invertMonzo,
     Monzo,
@@ -26,7 +26,7 @@ const computeNotatingCommas = <T extends NumericProperties>(
     const two3FreeRationalMonzo: Monzo<{ rational: true, rough: 5 }> =
         computeRoughRationalMonzo(monzo, FIVE_ROUGHNESS) as Monzo<{ rational: true, rough: 5 }>
 
-    if (equalMonzos(two3FreeRationalMonzo, [])) {
+    if (areMonzosEqual(two3FreeRationalMonzo, [])) {
         return computeCommasFrom23FreeRationalMonzo(two3FreeRationalMonzo, options)
     }
 

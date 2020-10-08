@@ -1,5 +1,5 @@
 import { increment } from "../../../../../../src/general/code"
-import { equalPitches, pitchIsHigher } from "../../../../../../src/general/music/pitch"
+import { arePitchesEqual, isPitchHigher } from "../../../../../../src/general/music/pitch"
 import { computeInterval } from "../../../../../../src/general/music/pitch/typedOperations"
 import {
     getPrimaryComma,
@@ -14,7 +14,7 @@ describe("half-apotome mirror", (): void => {
     it("is the case that the commas in the JI notation are symmetrical about the half-apotome mirror", (): void => {
         const jiNotationPrimaryCommas = JI_NOTATION.map(getPrimaryComma)
         const firstCommaGreaterThanHalfApotomeMirrorIndex = jiNotationPrimaryCommas.findIndex(
-            (primaryComma: PrimaryComma): boolean => pitchIsHigher(primaryComma, HALF_APOTOME),
+            (primaryComma: PrimaryComma): boolean => isPitchHigher(primaryComma, HALF_APOTOME),
         )
 
         let indexOffset = 0
@@ -36,7 +36,7 @@ describe("half-apotome mirror", (): void => {
     it("is the case that the bounds in the JI notation are symmetrical about the half-apotome mirror", (): void => {
         const jiNotationBoundAtHalfApotomeMirrorIndex =
             JI_NOTATION_BOUNDS.findIndex((jiNotationBound: JiNotationBound): boolean => {
-                return equalPitches(jiNotationBound.pitch, HALF_APOTOME)
+                return arePitchesEqual(jiNotationBound.pitch, HALF_APOTOME)
             })
 
         let indexOffset = 1

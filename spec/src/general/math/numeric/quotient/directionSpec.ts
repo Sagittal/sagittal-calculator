@@ -2,20 +2,20 @@ import { computeSuperQuotient, Direction } from "../../../../../../src/general/m
 import {
     Denominator,
     invertQuotient,
-    isSubQuotient,
-    isSuperQuotient,
-    isUnisonQuotient,
+    isQuotientSub,
+    isQuotientSuper,
+    isQuotientUnison,
     Numerator,
     Quotient,
 } from "../../../../../../src/general/math/numeric/quotient"
 
-describe("isSuperQuotient", (): void => {
+describe("isQuotientSuper", (): void => {
     it("returns true if n > d", (): void => {
         const numerator = 55 as Numerator
         const denominator = 54 as Denominator
         const quotient = [numerator, denominator] as Quotient
 
-        const actual = isSuperQuotient(quotient)
+        const actual = isQuotientSuper(quotient)
 
         expect(actual).toBeTruthy()
     })
@@ -25,7 +25,7 @@ describe("isSuperQuotient", (): void => {
         const denominator = 55 as Denominator
         const quotient = [numerator, denominator] as Quotient
 
-        const actual = isSuperQuotient(quotient)
+        const actual = isQuotientSuper(quotient)
 
         expect(actual).toBeFalsy()
     })
@@ -35,19 +35,19 @@ describe("isSuperQuotient", (): void => {
         const denominator = 56 as Denominator
         const quotient = [numerator, denominator] as Quotient
 
-        const actual = isSuperQuotient(quotient)
+        const actual = isQuotientSuper(quotient)
 
         expect(actual).toBeFalsy()
     })
 })
 
-describe("isSubQuotient", (): void => {
+describe("isQuotientSub", (): void => {
     it("returns false if n > d", (): void => {
         const numerator = 55 as Numerator
         const denominator = 54 as Denominator
         const quotient = [numerator, denominator] as Quotient
 
-        const actual = isSubQuotient(quotient)
+        const actual = isQuotientSub(quotient)
 
         expect(actual).toBeFalsy()
     })
@@ -57,7 +57,7 @@ describe("isSubQuotient", (): void => {
         const denominator = 55 as Denominator
         const quotient = [numerator, denominator] as Quotient
 
-        const actual = isSubQuotient(quotient)
+        const actual = isQuotientSub(quotient)
 
         expect(actual).toBeFalsy()
     })
@@ -67,19 +67,19 @@ describe("isSubQuotient", (): void => {
         const denominator = 56 as Denominator
         const quotient = [numerator, denominator] as Quotient
 
-        const actual = isSubQuotient(quotient)
+        const actual = isQuotientSub(quotient)
 
         expect(actual).toBeTruthy()
     })
 })
 
-describe("isUnisonQuotient", (): void => {
+describe("isQuotientUnison", (): void => {
     it("returns false if n > d", (): void => {
         const numerator = 55 as Numerator
         const denominator = 54 as Denominator
         const quotient = [numerator, denominator] as Quotient
 
-        const actual = isUnisonQuotient(quotient)
+        const actual = isQuotientUnison(quotient)
 
         expect(actual).toBeFalsy()
     })
@@ -89,7 +89,7 @@ describe("isUnisonQuotient", (): void => {
         const denominator = 55 as Denominator
         const quotient = [numerator, denominator] as Quotient
 
-        const actual = isUnisonQuotient(quotient)
+        const actual = isQuotientUnison(quotient)
 
         expect(actual).toBeTruthy()
     })
@@ -99,7 +99,7 @@ describe("isUnisonQuotient", (): void => {
         const denominator = 56 as Denominator
         const quotient = [numerator, denominator] as Quotient
 
-        const actual = isUnisonQuotient(quotient)
+        const actual = isQuotientUnison(quotient)
 
         expect(actual).toBeFalsy()
     })

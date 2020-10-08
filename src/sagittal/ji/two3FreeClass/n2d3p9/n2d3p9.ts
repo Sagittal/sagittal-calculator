@@ -4,7 +4,7 @@ import {
     computeTrimmedArray,
     Exponent,
     formatMonzo,
-    isSubMonzo,
+    isMonzoSub,
     NumericProperties,
     Prime,
     PRIMES,
@@ -24,7 +24,7 @@ const computeN2D3P9 = <T extends NumericProperties>(two3FreeClass: Two3FreeClass
     if (rationalMonzo[ TWO_PRIME_INDEX ] !== 0 || rationalMonzo[ THREE_PRIME_INDEX ] !== 0) {
         throw new Error(`N2D3P9 must be given a 2,3-free class (5-rough, n ≥ d); received monzo ${formatMonzo(rationalMonzo)}`)
     }
-    if (isSubMonzo(rationalMonzo)) {
+    if (isMonzoSub(rationalMonzo)) {
         throw new Error(`N2D3P9 must be given a 2,3-free class (5-rough, n ≥ d); received monzo ${formatMonzo(rationalMonzo)}`)
     }
 

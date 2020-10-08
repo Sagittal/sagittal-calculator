@@ -2,8 +2,8 @@
 
 import {
     ACCURACY_THRESHOLD,
+    arePitchesEqual,
     deepEquals,
-    equalPitches,
     Io,
     isCloseTo,
     isUndefined,
@@ -44,7 +44,7 @@ const assert = (condition: boolean, message: Io): void => {
 
 const testEqualPitches = <T extends Pitch>(actual: T, expected: T, precision: Precision, negate?: boolean, message?: Io): void => {
     assert(
-        equalPitches(actual, expected, precision),
+        arePitchesEqual(actual, expected, precision),
         message || `Expected pitch ${stringify(actual)} to equal pitch ${stringify(expected)}.` as Io,
     )
 }

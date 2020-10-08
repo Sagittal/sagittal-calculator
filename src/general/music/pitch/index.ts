@@ -1,12 +1,12 @@
 export { Pitch } from "./types"
 export { computeCentsFromPitch } from "./to"
 export { computePitchFromDecimal, computePitchFromQuotient, computePitchFromCents, computePitchFromMonzo } from "./from"
-export { isSubPitch, isSuperPitch, isUnisonPitch, computeSuperPitch } from "./direction"
+export { isPitchSub, isPitchSuper, isPitchUnison, computeSuperPitch } from "./direction"
 export { sqrtPitch, computeStackedPitch } from "./typedOperations"
 export {
-    equalPitches,
-    pitchIsHigher,
-    pitchIsLower,
-    pitchIsLowerOrEqual,
-    pitchIsHigherOrEqual,
+    arePitchesEqual,
+    isPitchHigher,
+    isPitchLower,
+    isPitchLowerOrEqual,
+    isPitchHigherOrEqual,
 } from "./comparison"

@@ -1,4 +1,4 @@
-import { Comma, formatPitch, isUndefined, pitchIsHigher } from "../../../../general"
+import { Comma, formatPitch, isPitchHigher, isUndefined } from "../../../../general"
 import { SIZE_CATEGORIES } from "./sizeCategories"
 import { SIZE_CATEGORY_BOUNDS } from "./sizeCategoryBounds"
 import { SizeCategoryAbbreviation, SizeCategoryBound, SizeCategoryName, SizeCategoryOptions } from "./types"
@@ -12,7 +12,7 @@ const computeSizeCategory: {
     let sizeCategory = SIZE_CATEGORIES[ 0 ]
 
     SIZE_CATEGORY_BOUNDS.forEach((sizeCategoryBound: SizeCategoryBound, index: number): void => {
-        if (pitchIsHigher(comma, sizeCategoryBound.pitch)) {
+        if (isPitchHigher(comma, sizeCategoryBound.pitch)) {
             sizeCategory = SIZE_CATEGORIES[ index + 1 ]
         }
     })

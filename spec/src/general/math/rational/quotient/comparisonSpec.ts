@@ -1,12 +1,12 @@
 import { Quotient } from "../../../../../../src/general/math/numeric/quotient"
-import { equalRationalQuotients } from "../../../../../../src/general/math/rational/quotient"
+import { areRationalQuotientsEqual } from "../../../../../../src/general/math/rational/quotient"
 
-describe("equalRationalQuotients", (): void => {
+describe("areRationalQuotientsEqual", (): void => {
     it("returns true when the quotients are equal", (): void => {
         const rationalQuotientA = [11, 10] as Quotient<{ rational: true }>
         const rationalQuotientB = [11, 10] as Quotient<{ rational: true }>
 
-        const actual = equalRationalQuotients(rationalQuotientA, rationalQuotientB)
+        const actual = areRationalQuotientsEqual(rationalQuotientA, rationalQuotientB)
 
         expect(actual).toBeTruthy()
     })
@@ -15,7 +15,7 @@ describe("equalRationalQuotients", (): void => {
         const rationalQuotientA = [11, 10] as Quotient<{ rational: true }>
         const rationalQuotientB = [11, 9] as Quotient<{ rational: true }>
 
-        const actual = equalRationalQuotients(rationalQuotientA, rationalQuotientB)
+        const actual = areRationalQuotientsEqual(rationalQuotientA, rationalQuotientB)
 
         expect(actual).toBeFalsy()
     })
@@ -24,7 +24,7 @@ describe("equalRationalQuotients", (): void => {
         const rationalQuotientA = [11, 10] as Quotient<{ rational: true }>
         const rationalQuotientB = [33, 30] as Quotient<{ rational: true }>
 
-        const actual = equalRationalQuotients(rationalQuotientA, rationalQuotientB)
+        const actual = areRationalQuotientsEqual(rationalQuotientA, rationalQuotientB)
 
         expect(actual).toBeTruthy()
     })

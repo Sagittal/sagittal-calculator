@@ -1,4 +1,4 @@
-import { computeSuperPitch, NumericProperties, Pitch, pitchIsHigher } from "../../../../general"
+import { computeSuperPitch, isPitchHigher, NumericProperties, Pitch } from "../../../../general"
 import { MAX_SIZE_CATEGORY_BOUND } from "./constants"
 
 // But not necessarily a Comma, since it isn't necessarily rational.
@@ -7,7 +7,7 @@ import { MAX_SIZE_CATEGORY_BOUND } from "./constants"
 const isCommaSized = <T extends NumericProperties>(
     candidateCommaSizedPitch: Pitch<T>,
 ): candidateCommaSizedPitch is Pitch<T> & { _CommaBrand: boolean } =>
-    pitchIsHigher(MAX_SIZE_CATEGORY_BOUND.pitch, computeSuperPitch(candidateCommaSizedPitch))
+    isPitchHigher(MAX_SIZE_CATEGORY_BOUND.pitch, computeSuperPitch(candidateCommaSizedPitch))
 
 export {
     isCommaSized,

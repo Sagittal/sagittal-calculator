@@ -1,4 +1,4 @@
-import { Maybe, Name, Pitch, pitchIsHigher, Quotient } from "../../../general"
+import { isPitchHigher, Maybe, Name, Pitch, Quotient } from "../../../general"
 import {
     APOTOME,
     InaMidpoint,
@@ -18,7 +18,7 @@ const computeInaMidpoints = (jiNotationLevel: JiNotationLevel): InaMidpoint[] =>
             scaler: [midpoint, eda as number] as Quotient,
         } as Pitch<{ rational: false }>
 
-        if (pitchIsHigher(pitch, MAX_SYMBOL_CLASS_POSITION)) {
+        if (isPitchHigher(pitch, MAX_SYMBOL_CLASS_POSITION)) {
             return undefined
         }
 

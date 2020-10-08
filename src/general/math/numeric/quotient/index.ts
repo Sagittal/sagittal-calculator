@@ -1,5 +1,5 @@
-export { isSubQuotient, isSuperQuotient, isUnisonQuotient, computeSubQuotient, invertQuotient } from "./direction"
-export { equalQuotients } from "./comparison"
+export { isQuotientSub, isQuotientSuper, isQuotientUnison, computeSubQuotient, invertQuotient } from "./direction"
+export { areQuotientsEqual } from "./comparison"
 export { computeQuotientFromMonzo } from "./fromMonzo"
 export {
     QuotientPartType,

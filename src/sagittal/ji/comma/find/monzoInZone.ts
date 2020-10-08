@@ -1,16 +1,16 @@
 import {
+    areMonzosEqual,
     computePitchFromMonzo,
     computeTrimmedArray,
     Decimal,
     EMPTY_MONZO,
-    equalMonzos,
     Exponent,
+    isPitchHigher,
+    isPitchHigherOrEqual,
+    isPitchLower,
+    isPitchLowerOrEqual,
     Maybe,
     Monzo,
-    pitchIsHigher,
-    pitchIsHigherOrEqual,
-    pitchIsLower,
-    pitchIsLowerOrEqual,
     Prime,
     shallowClone,
     TWO_PRIME_INDEX,
@@ -25,20 +25,20 @@ const computeRationalMonzoInZone = (
 
     const rationalMonzoInZone = shallowClone(twoFreeRationalMonzo)
 
-    if (!equalMonzos(rationalMonzoInZone, EMPTY_MONZO)) {
-        while (pitchIsHigher(computePitchFromMonzo(rationalMonzoInZone), upperBound)) {
+    if (!areMonzosEqual(rationalMonzoInZone, EMPTY_MONZO)) {
+        while (isPitchHigher(computePitchFromMonzo(rationalMonzoInZone), upperBound)) {
             rationalMonzoInZone[ TWO_PRIME_INDEX ] = rationalMonzoInZone[ TWO_PRIME_INDEX ] - 1 as
                 Decimal<{ integer: true }> & Exponent<Prime>
         }
-        while (pitchIsLower(computePitchFromMonzo(rationalMonzoInZone), lowerBound)) {
+        while (isPitchLower(computePitchFromMonzo(rationalMonzoInZone), lowerBound)) {
             rationalMonzoInZone[ TWO_PRIME_INDEX ] = rationalMonzoInZone[ TWO_PRIME_INDEX ] + 1 as
                 Decimal<{ integer: true }> & Exponent<Prime>
         }
     }
 
     return (
-        pitchIsHigherOrEqual(computePitchFromMonzo(rationalMonzoInZone), lowerBound) &&
-        pitchIsLowerOrEqual(computePitchFromMonzo(rationalMonzoInZone), upperBound)
+        isPitchHigherOrEqual(computePitchFromMonzo(rationalMonzoInZone), lowerBound) &&
+        isPitchLowerOrEqual(computePitchFromMonzo(rationalMonzoInZone), upperBound)
     ) ?
         computeTrimmedArray(rationalMonzoInZone) :
         undefined

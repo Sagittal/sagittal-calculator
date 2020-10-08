@@ -4,17 +4,17 @@ import {
     Direction,
     EMPTY_MONZO,
     invertMonzo,
-    isSubMonzo,
-    isSuperMonzo,
+    isMonzoSub,
+    isMonzoSuper,
     Monzo,
 } from "../../../../../../src/general/math"
-import { isUnisonMonzo } from "../../../../../../src/general/math/numeric/monzo"
+import { isMonzoUnison } from "../../../../../../src/general/math/numeric/monzo"
 
-describe("isSubMonzo", (): void => {
+describe("isMonzoSub", (): void => {
     it("returns false if the monzo is super", (): void => {
         const monzo = [-1, 1] as Monzo      // 3/2 = 1.5 > 1
 
-        const actual = isSubMonzo(monzo)
+        const actual = isMonzoSub(monzo)
 
         expect(actual).toBeFalsy()
     })
@@ -22,13 +22,13 @@ describe("isSubMonzo", (): void => {
     it("returns true if the monzo is sub", (): void => {
         const monzo = [1, -1] as Monzo      // 2/3 = 0.667 < 1
 
-        const actual = isSubMonzo(monzo)
+        const actual = isMonzoSub(monzo)
 
         expect(actual).toBeTruthy()
     })
 
     it("returns false if the monzo is empty (and therefore neither super nor sub)", (): void => {
-        const actual = isSubMonzo(EMPTY_MONZO)
+        const actual = isMonzoSub(EMPTY_MONZO)
 
         expect(actual).toBeFalsy()
     })
@@ -36,7 +36,7 @@ describe("isSubMonzo", (): void => {
     it("can handle the situation where a monzo represents a huge number", (): void => {
         const monzo = [0, 0, 6, 4, 2, 2, 0, 1, 1, 1] as Monzo
 
-        const actual = isSubMonzo(monzo)
+        const actual = isMonzoSub(monzo)
 
         expect(actual).toBeFalsy()
     })
@@ -44,7 +44,7 @@ describe("isSubMonzo", (): void => {
     it("can handle the situation where a monzo represents a tiny number", (): void => {
         const monzo = [0, 0, -6, -4, -2, -2, 0, -1, -1, -1] as Monzo
 
-        const actual = isSubMonzo(monzo)
+        const actual = isMonzoSub(monzo)
 
         expect(actual).toBeTruthy()
     })
@@ -52,7 +52,7 @@ describe("isSubMonzo", (): void => {
     it("can handle another situation where a monzo represents a huge number", (): void => {
         const monzo = [0, 0, 6, 4, 2, 2, 0, -1, 1, 2] as Monzo
 
-        const actual = isSubMonzo(monzo)
+        const actual = isMonzoSub(monzo)
 
         expect(actual).toBeFalsy()
     })
@@ -60,7 +60,7 @@ describe("isSubMonzo", (): void => {
     it("can handle another situation where a monzo represents a tiny number", (): void => {
         const monzo = [0, 0, -6, -4, -2, -2, 0, 1, -1, -2] as Monzo
 
-        const actual = isSubMonzo(monzo)
+        const actual = isMonzoSub(monzo)
 
         expect(actual).toBeTruthy()
     })
@@ -68,35 +68,35 @@ describe("isSubMonzo", (): void => {
     it("can handle another situation where a monzo is really huge for both the numerator and denominator", (): void => {
         const monzo = [0, 0, 10, -14, 10, -12, 10, -10, 10, -12] as Monzo
 
-        const actual = isSubMonzo(monzo)
+        const actual = isMonzoSub(monzo)
 
         expect(actual).toBeTruthy()
     })
 })
 
-describe("isSuperMonzo", (): void => {
-    it("works the opposite from isSubMonzo (except the unison, which is also false)", (): void => {
-        expect(isSuperMonzo([-1, 1] as Monzo)).toBeTruthy()
-        expect(isSuperMonzo([1, -1] as Monzo)).toBeFalsy()
-        expect(isSuperMonzo([] as Monzo)).toBeFalsy()
-        expect(isSuperMonzo([0, 0, 6, 4, 2, 2, 0, 1, 1, 1] as Monzo)).toBeTruthy()
-        expect(isSuperMonzo([0, 0, -6, -4, -2, -2, 0, -1, -1, -1] as Monzo)).toBeFalsy()
-        expect(isSuperMonzo([0, 0, 6, 4, 2, 2, 0, -1, 1, 2] as Monzo)).toBeTruthy()
-        expect(isSuperMonzo([0, 0, -6, -4, -2, -2, 0, 1, -1, -2] as Monzo)).toBeFalsy()
+describe("isMonzoSuper", (): void => {
+    it("works the opposite from isMonzoSub (except the unison, which is also false)", (): void => {
+        expect(isMonzoSuper([-1, 1] as Monzo)).toBeTruthy()
+        expect(isMonzoSuper([1, -1] as Monzo)).toBeFalsy()
+        expect(isMonzoSuper([] as Monzo)).toBeFalsy()
+        expect(isMonzoSuper([0, 0, 6, 4, 2, 2, 0, 1, 1, 1] as Monzo)).toBeTruthy()
+        expect(isMonzoSuper([0, 0, -6, -4, -2, -2, 0, -1, -1, -1] as Monzo)).toBeFalsy()
+        expect(isMonzoSuper([0, 0, 6, 4, 2, 2, 0, -1, 1, 2] as Monzo)).toBeTruthy()
+        expect(isMonzoSuper([0, 0, -6, -4, -2, -2, 0, 1, -1, -2] as Monzo)).toBeFalsy()
     })
 })
 
-describe("isUnisonMonzo", (): void => {
+describe("isMonzoUnison", (): void => {
     it("returns false if the monzo is super", (): void => {
         const monzo = [-1, 1] as Monzo      // 3/2 = 1.5 > 1
 
-        const actual = isUnisonMonzo(monzo)
+        const actual = isMonzoUnison(monzo)
 
         expect(actual).toBeFalsy()
     })
 
     it("returns true if the monzo is empty (and therefore neither super nor sub)", (): void => {
-        const actual = isUnisonMonzo(EMPTY_MONZO)
+        const actual = isMonzoUnison(EMPTY_MONZO)
 
         expect(actual).toBeTruthy()
     })
@@ -104,7 +104,7 @@ describe("isUnisonMonzo", (): void => {
     it("returns false if the monzo is sub", (): void => {
         const monzo = [1, -1] as Monzo      // 2/3 = 0.667 < 1
 
-        const actual = isUnisonMonzo(monzo)
+        const actual = isMonzoUnison(monzo)
 
         expect(actual).toBeFalsy()
     })

@@ -12,14 +12,14 @@ export { PRIMES } from "./primes"
 export { computeGreatestCommonDivisor } from "./common"
 export { Copfr, Prime, Roughness, Sopfr, Smoothness, Primes } from "./types"
 export {
-    isIntegerDecimal,
+    isDecimalInteger,
     isRoughIntegerDecimal,
     computeIntegerDecimalSmoothness,
     computeRationalDecimalSmoothness,
     ceil,
     floor,
     integerDivide,
-    isRationalDecimal,
+    isDecimalRational,
     computeRationalDecimalCopfr,
     computeRationalDecimalGpf,
 } from "./decimal"
@@ -28,9 +28,9 @@ export {
     computeRoughRationalQuotient,
     isSmoothRationalQuotient,
     computeRationalQuotientFromRationalDecimal,
-    isRationalQuotient,
+    isQuotientRational,
     computeLowestTermsRationalQuotient,
-    equalRationalQuotients,
+    areRationalQuotientsEqual,
 } from "./quotient"
 export {
     computeRationalMonzoFromRationalQuotient,
@@ -42,5 +42,5 @@ export {
     computeRationalMonzoCopfr,
     computeRationalMonzoSmoothness,
     computeRationalMonzoSopfr,
-    isRationalMonzo,
+    isMonzoRational,
 } from "./monzo"

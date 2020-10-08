@@ -2,7 +2,7 @@ import { isCloseTo, isUndefined, MAX_JS_PRECISION, Precision } from "../../../co
 import { NumericProperties } from "../types"
 import { Decimal } from "./types"
 
-const equalDecimals = <T extends NumericProperties, U extends NumericProperties>(
+const areDecimalsEqual = <T extends NumericProperties, U extends NumericProperties>(
     decimalA: Decimal<T>,
     decimalB: Decimal<U>,
     precision?: Precision,
@@ -11,38 +11,38 @@ const equalDecimals = <T extends NumericProperties, U extends NumericProperties>
         decimalA as Decimal === decimalB as Decimal :
         isCloseTo(decimalA, decimalB)
 
-const decimalIsHigher = <T extends NumericProperties, U extends NumericProperties>(
+const isDecimalHigher = <T extends NumericProperties, U extends NumericProperties>(
     decimal: Decimal<T>,
     otherDecimal: Decimal<U>,
     precision: Precision = MAX_JS_PRECISION,
 ): boolean =>
-    !equalDecimals(decimal, otherDecimal, precision) && decimal > otherDecimal
+    !areDecimalsEqual(decimal, otherDecimal, precision) && decimal > otherDecimal
 
-const decimalIsLower = <T extends NumericProperties, U extends NumericProperties>(
+const isDecimalLower = <T extends NumericProperties, U extends NumericProperties>(
     decimal: Decimal<T>,
     otherDecimal: Decimal<U>,
     precision: Precision = MAX_JS_PRECISION,
 ): boolean =>
-    !equalDecimals(decimal, otherDecimal, precision) && decimal < otherDecimal
+    !areDecimalsEqual(decimal, otherDecimal, precision) && decimal < otherDecimal
 
-const decimalIsHigherOrEqual = <T extends NumericProperties, U extends NumericProperties>(
+const isDecimalHigherOrEqual = <T extends NumericProperties, U extends NumericProperties>(
     decimal: Decimal<T>,
     otherDecimal: Decimal<U>,
     precision: Precision = MAX_JS_PRECISION,
 ): boolean =>
-    equalDecimals(decimal, otherDecimal, precision) || decimal > otherDecimal
+    areDecimalsEqual(decimal, otherDecimal, precision) || decimal > otherDecimal
 
-const decimalIsLowerOrEqual = <T extends NumericProperties, U extends NumericProperties>(
+const isDecimalLowerOrEqual = <T extends NumericProperties, U extends NumericProperties>(
     decimal: Decimal<T>,
     otherDecimal: Decimal<U>,
     precision: Precision = MAX_JS_PRECISION,
 ): boolean =>
-    equalDecimals(decimal, otherDecimal, precision) || decimal < otherDecimal
+    areDecimalsEqual(decimal, otherDecimal, precision) || decimal < otherDecimal
 
 export {
-    equalDecimals,
-    decimalIsHigher,
-    decimalIsLower,
-    decimalIsHigherOrEqual,
-    decimalIsLowerOrEqual,
+    areDecimalsEqual,
+    isDecimalHigher,
+    isDecimalLower,
+    isDecimalHigherOrEqual,
+    isDecimalLowerOrEqual,
 }

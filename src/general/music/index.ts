@@ -16,11 +16,11 @@ export {
     computeJiPitchCopfr,
     computeJiPitchSopfr,
     UNISON,
-    equalJiPitches,
+    areJiPitchesEqual,
     computeJiPitchFromRationalMonzo,
     computeRationalQuotientFromJiPitch,
-    isSubJiPitch,
-    isUnisonJiPitch,
+    isJiPitchSub,
+    isJiPitchUnison,
     computeStackedJiPitch,
 } from "./ji"
 export { SQRT_SCALER } from "./nonJi"
@@ -28,15 +28,15 @@ export { dividePitch } from "./cents"
 export { CENTS_PER_OCTAVE } from "./constants"
 export { Cents, Zone } from "./types"
 export {
-    isSubPitch,
-    isSuperPitch,
-    isUnisonPitch,
+    isPitchSub,
+    isPitchSuper,
+    isPitchUnison,
     computeSuperPitch,
-    equalPitches,
-    pitchIsHigher,
-    pitchIsLower,
-    pitchIsLowerOrEqual,
-    pitchIsHigherOrEqual,
+    arePitchesEqual,
+    isPitchHigher,
+    isPitchLower,
+    isPitchLowerOrEqual,
+    isPitchHigherOrEqual,
     sqrtPitch,
     computePitchFromDecimal,
     Pitch,

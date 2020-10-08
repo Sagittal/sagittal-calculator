@@ -8,13 +8,13 @@ export { computeJiPitchCopfr } from "./copfr"
 export { computeJiPitchSopfr } from "./sopfr"
 export { UNISON } from "./constants"
 export {
-    equalJiPitches,
-    jiPitchIsHigher,
-    jiPitchIsHigherOrEqual,
-    jiPitchIsLower,
-    jiPitchIsLowerOrEqual,
+    areJiPitchesEqual,
+    isJiPitchHigher,
+    isJiPitchHigherOrEqual,
+    isJiPitchLower,
+    isJiPitchLowerOrEqual,
 } from "./comparison"
-export { isSubJiPitch, isSuperJiPitch, isUnisonJiPitch } from "./direction"
+export { isJiPitchSub, isJiPitchSuper, isJiPitchUnison } from "./direction"
 export {
     computeJiPitchFromRationalDecimal, computeJiPitchFromRationalMonzo, computeJiPitchFromRationalQuotient,
 } from "./from"

@@ -2,7 +2,7 @@ import { deepEquals } from "../../../code"
 import { Quotient } from "../../numeric"
 import { computeLowestTermsRationalQuotient } from "./lowestTerms"
 
-const equalRationalQuotients = (
+const areRationalQuotientsEqual = (
     rationalQuotientA: Quotient<{ rational: true }>,
     rationalQuotientB: Quotient<{ rational: true }>,
 ): boolean =>
@@ -12,5 +12,5 @@ const equalRationalQuotients = (
     )
 
 export {
-    equalRationalQuotients,
+    areRationalQuotientsEqual,
 }

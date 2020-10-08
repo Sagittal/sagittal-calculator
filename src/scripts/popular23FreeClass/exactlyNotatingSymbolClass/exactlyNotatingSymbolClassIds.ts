@@ -1,4 +1,4 @@
-import { computeRoughRationalMonzo, equalMonzos, FIVE_ROUGHNESS, Id, invertMonzo, Pitch } from "../../../general"
+import { areMonzosEqual, computeRoughRationalMonzo, FIVE_ROUGHNESS, Id, invertMonzo, Pitch } from "../../../general"
 import { getPrimaryComma, JI_NOTATION, SymbolClass } from "../../../sagittal"
 
 // Different than computeNotatingCommas because this one only concerns itself with commas that are in Sagittal
@@ -14,8 +14,8 @@ const computeExactlyNotatingSymbolClassIds = (jiPitch: Pitch<{ rational: true }>
         const two3FreePrimaryCommaMonzo = computeRoughRationalMonzo(primaryCommaMonzo, FIVE_ROUGHNESS)
 
         if (
-            equalMonzos(two3FreeRationalMonzo, two3FreePrimaryCommaMonzo) ||
-            equalMonzos(two3FreeRationalMonzo, invertMonzo(two3FreePrimaryCommaMonzo))
+            areMonzosEqual(two3FreeRationalMonzo, two3FreePrimaryCommaMonzo) ||
+            areMonzosEqual(two3FreeRationalMonzo, invertMonzo(two3FreePrimaryCommaMonzo))
         ) {
             exactlyNotatingSymbolClassIds.push(symbolClassId)
         }

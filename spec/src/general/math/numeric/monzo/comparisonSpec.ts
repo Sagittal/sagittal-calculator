@@ -1,11 +1,11 @@
-import { equalMonzos, Monzo } from "../../../../../../src/general/math/numeric/monzo"
+import { areMonzosEqual, Monzo } from "../../../../../../src/general/math/numeric/monzo"
 
-describe("equalMonzos", (): void => {
+describe("areMonzosEqual", (): void => {
     it("returns true if the monzos are equal", (): void => {
         const monzoA: Monzo = [5, 4] as Monzo
         const monzoB: Monzo = [5, 4] as Monzo
 
-        const actual = equalMonzos(monzoA, monzoB)
+        const actual = areMonzosEqual(monzoA, monzoB)
 
         expect(actual).toBeTruthy()
     })
@@ -14,7 +14,7 @@ describe("equalMonzos", (): void => {
         const monzoA: Monzo = [5, 4] as Monzo
         const monzoB: Monzo = [5, 0, 4] as Monzo
 
-        const actual = equalMonzos(monzoA, monzoB)
+        const actual = areMonzosEqual(monzoA, monzoB)
 
         expect(actual).toBeFalsy()
     })
@@ -23,7 +23,7 @@ describe("equalMonzos", (): void => {
         const monzoA: Monzo = [5, 4, 0] as Monzo
         const monzoB: Monzo = [5, 4] as Monzo
 
-        const actual = equalMonzos(monzoA, monzoB)
+        const actual = areMonzosEqual(monzoA, monzoB)
 
         expect(actual).toBeTruthy()
     })

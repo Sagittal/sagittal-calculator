@@ -1,21 +1,21 @@
 import { Monzo } from "../../../../../src/general/math/numeric/monzo"
 import { Quotient } from "../../../../../src/general/math/numeric/quotient"
 import {
-    equalPitches,
+    arePitchesEqual,
+    isPitchHigher,
+    isPitchHigherOrEqual,
+    isPitchLower,
+    isPitchLowerOrEqual,
     Pitch,
-    pitchIsHigher,
-    pitchIsHigherOrEqual,
-    pitchIsLower,
-    pitchIsLowerOrEqual,
 } from "../../../../../src/general/music/pitch"
 
-describe("equalPitches", (): void => {
+describe("arePitchesEqual", (): void => {
     describe("for JI pitches", (): void => {
         it("returns true if the monzos match", (): void => {
             const pitchA = { monzo: [0, 0, 1, -1] } as Pitch<{ rational: true }>
             const pitchB = { monzo: [0, 0, 1, -1] } as Pitch<{ rational: true }>
 
-            const actual = equalPitches(pitchA, pitchB)
+            const actual = arePitchesEqual(pitchA, pitchB)
 
             expect(actual).toBeTruthy()
         })
@@ -24,7 +24,7 @@ describe("equalPitches", (): void => {
             const pitchA = { monzo: [0, 0, 1, -1] } as Pitch<{ rational: true }>
             const pitchB = { monzo: [0, 0, -1, -1] } as Pitch<{ rational: true }>
 
-            const actual = equalPitches(pitchA, pitchB)
+            const actual = arePitchesEqual(pitchA, pitchB)
 
             expect(actual).toBeFalsy()
         })
@@ -33,7 +33,7 @@ describe("equalPitches", (): void => {
             const pitchA = { monzo: [0, 0] } as Pitch<{ rational: true }>
             const pitchB = { monzo: [0] } as Pitch<{ rational: true }>
 
-            const actual = equalPitches(pitchA, pitchB)
+            const actual = arePitchesEqual(pitchA, pitchB)
 
             expect(actual).toBeTruthy()
         })
@@ -50,7 +50,7 @@ describe("equalPitches", (): void => {
                 scaler: [1, 12] as Quotient,
             } as Pitch<{ rational: false }>
 
-            const actual = equalPitches(pitchA, pitchB)
+            const actual = arePitchesEqual(pitchA, pitchB)
 
             expect(actual).toBeTruthy()
         })
@@ -65,7 +65,7 @@ describe("equalPitches", (): void => {
                 scaler: [1, 12] as Quotient,
             } as Pitch<{ rational: false }>
 
-            const actual = equalPitches(pitchA, pitchB)
+            const actual = arePitchesEqual(pitchA, pitchB)
 
             expect(actual).toBeFalsy()
         })
@@ -80,7 +80,7 @@ describe("equalPitches", (): void => {
                 scaler: [1, 2] as Quotient,
             } as Pitch<{ rational: false }>
 
-            const actual = equalPitches(pitchA, pitchB)
+            const actual = arePitchesEqual(pitchA, pitchB)
 
             expect(actual).toBeFalsy()
         })
@@ -96,7 +96,7 @@ describe("equalPitches", (): void => {
                 scaler: [1, 2] as Quotient,
             } as Pitch<{ rational: false }>
 
-            const actual = equalPitches(pitchA, pitchB)
+            const actual = arePitchesEqual(pitchA, pitchB)
 
             expect(actual).toBeTruthy()
         })
@@ -110,19 +110,19 @@ describe("equalPitches", (): void => {
                 scaler: [1, 2] as Quotient,
             } as Pitch<{ rational: false }>
 
-            const actual = equalPitches(pitchA, pitchB)
+            const actual = arePitchesEqual(pitchA, pitchB)
 
             expect(actual).toBeFalsy()
         })
     })
 })
 
-describe("pitchIsHigher", (): void => {
+describe("isPitchHigher", (): void => {
     it("returns true if the pitch is higher than the other", (): void => {
         const pitch = { monzo: [-2, 0, 1] } as Pitch<{ rational: true }>
         const otherPitch = { monzo: [-3, 2] } as Pitch<{ rational: true }>
 
-        const actual = pitchIsHigher(pitch, otherPitch)
+        const actual = isPitchHigher(pitch, otherPitch)
 
         expect(actual).toBeTruthy()
     })
@@ -131,7 +131,7 @@ describe("pitchIsHigher", (): void => {
         const pitch = { monzo: [-2, 0, 1] } as Pitch<{ rational: true }>
         const otherPitch = { monzo: [-2, 0, 1] } as Pitch<{ rational: true }>
 
-        const actual = pitchIsHigher(pitch, otherPitch)
+        const actual = isPitchHigher(pitch, otherPitch)
 
         expect(actual).toBeFalsy()
     })
@@ -140,18 +140,18 @@ describe("pitchIsHigher", (): void => {
         const pitch = { monzo: [-3, 2] } as Pitch<{ rational: true }>
         const otherPitch = { monzo: [-2, 0, 1] } as Pitch<{ rational: true }>
 
-        const actual = pitchIsHigher(pitch, otherPitch)
+        const actual = isPitchHigher(pitch, otherPitch)
 
         expect(actual).toBeFalsy()
     })
 })
 
-describe("pitchIsLower", (): void => {
+describe("isPitchLower", (): void => {
     it("returns false if the pitch is higher than the other", (): void => {
         const pitch = { monzo: [-2, 0, 1] } as Pitch<{ rational: true }>
         const otherPitch = { monzo: [-3, 2] } as Pitch<{ rational: true }>
 
-        const actual = pitchIsLower(pitch, otherPitch)
+        const actual = isPitchLower(pitch, otherPitch)
 
         expect(actual).toBeFalsy()
     })
@@ -160,7 +160,7 @@ describe("pitchIsLower", (): void => {
         const pitch = { monzo: [-2, 0, 1] } as Pitch<{ rational: true }>
         const otherPitch = { monzo: [-2, 0, 1] } as Pitch<{ rational: true }>
 
-        const actual = pitchIsLower(pitch, otherPitch)
+        const actual = isPitchLower(pitch, otherPitch)
 
         expect(actual).toBeFalsy()
     })
@@ -169,19 +169,19 @@ describe("pitchIsLower", (): void => {
         const pitch = { monzo: [-3, 2] } as Pitch<{ rational: true }>
         const otherPitch = { monzo: [-2, 0, 1] } as Pitch<{ rational: true }>
 
-        const actual = pitchIsLower(pitch, otherPitch)
+        const actual = isPitchLower(pitch, otherPitch)
 
         expect(actual).toBeTruthy()
     })
 
 })
 
-describe("pitchIsHigherOrEqual", (): void => {
+describe("isPitchHigherOrEqual", (): void => {
     it("returns true if the pitch is higher than the other", (): void => {
         const pitch = { monzo: [-2, 0, 1] } as Pitch<{ rational: true }>
         const otherPitch = { monzo: [-3, 2] } as Pitch<{ rational: true }>
 
-        const actual = pitchIsHigherOrEqual(pitch, otherPitch)
+        const actual = isPitchHigherOrEqual(pitch, otherPitch)
 
         expect(actual).toBeTruthy()
     })
@@ -190,7 +190,7 @@ describe("pitchIsHigherOrEqual", (): void => {
         const pitch = { monzo: [-2, 0, 1] } as Pitch<{ rational: true }>
         const otherPitch = { monzo: [-2, 0, 1] } as Pitch<{ rational: true }>
 
-        const actual = pitchIsHigherOrEqual(pitch, otherPitch)
+        const actual = isPitchHigherOrEqual(pitch, otherPitch)
 
         expect(actual).toBeTruthy()
     })
@@ -199,18 +199,18 @@ describe("pitchIsHigherOrEqual", (): void => {
         const pitch = { monzo: [-3, 2] } as Pitch<{ rational: true }>
         const otherPitch = { monzo: [-2, 0, 1] } as Pitch<{ rational: true }>
 
-        const actual = pitchIsHigherOrEqual(pitch, otherPitch)
+        const actual = isPitchHigherOrEqual(pitch, otherPitch)
 
         expect(actual).toBeFalsy()
     })
 })
 
-describe("pitchIsLowerOrEqual", (): void => {
+describe("isPitchLowerOrEqual", (): void => {
     it("returns false if the pitch is higher than the other", (): void => {
         const pitch = { monzo: [-2, 0, 1] } as Pitch<{ rational: true }>
         const otherPitch = { monzo: [-3, 2] } as Pitch<{ rational: true }>
 
-        const actual = pitchIsLowerOrEqual(pitch, otherPitch)
+        const actual = isPitchLowerOrEqual(pitch, otherPitch)
 
         expect(actual).toBeFalsy()
     })
@@ -219,7 +219,7 @@ describe("pitchIsLowerOrEqual", (): void => {
         const pitch = { monzo: [-2, 0, 1] } as Pitch<{ rational: true }>
         const otherPitch = { monzo: [-2, 0, 1] } as Pitch<{ rational: true }>
 
-        const actual = pitchIsLowerOrEqual(pitch, otherPitch)
+        const actual = isPitchLowerOrEqual(pitch, otherPitch)
 
         expect(actual).toBeTruthy()
     })
@@ -228,7 +228,7 @@ describe("pitchIsLowerOrEqual", (): void => {
         const pitch = { monzo: [-3, 2] } as Pitch<{ rational: true }>
         const otherPitch = { monzo: [-2, 0, 1] } as Pitch<{ rational: true }>
 
-        const actual = pitchIsLowerOrEqual(pitch, otherPitch)
+        const actual = isPitchLowerOrEqual(pitch, otherPitch)
 
         expect(actual).toBeTruthy()
     })
