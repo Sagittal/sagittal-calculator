@@ -13,6 +13,7 @@ import {
     Quotient,
     Row,
     Sopfr,
+    Two3FreeClass,
 } from "../../../../../../src/general"
 import { ApotomeSlope, CommaAnalysis, SymbolClass, Two3FreeClassAnalysis } from "../../../../../../src/sagittal"
 import { N2D3P9 } from "../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
@@ -35,8 +36,10 @@ describe("computeNotatingCommasRow", (): void => {
             two3FreePrimeLimit: 14 as Prime,
             two3FreeCopfr: 1 as Copfr<{ rough: 5 }>,
             two3FreeSopfr: 13 as Sopfr<{ rough: 5 }>,
-            monzo: [0, 0, 1] as Monzo<{ rational: true, rough: 5, direction: Direction.SUPER }>,
             n2d3p9: 18.4567 as N2D3P9,
+            two3FreeClass: {
+                monzo: [0, 0, 1] as Monzo<{ rational: true, rough: 5, direction: Direction.SUPER }>,
+            } as Two3FreeClass,
         } as Two3FreeClassAnalysis,
     } as CommaAnalysis
     const symbolClassId = 44 as Id<SymbolClass>

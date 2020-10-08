@@ -24,7 +24,9 @@ describe("computePopular23FreeClassWithExactlyNotatingSymbolClassRow", (): void 
             n2d3p9: 2 as N2D3P9,
             votes: 7 as Votes,
             popularityRank: 3 as Rank<Popularity>,
-            monzo: [0, 0, -1, 1] as Monzo<{ rational: true, rough: 5, direction: Direction.SUPER }>,
+            two3FreeClass: {
+                monzo: [0, 0, -1, 1] as Monzo<{ rational: true, rough: 5, direction: Direction.SUPER }>
+            } as Two3FreeClass,
         }
 
         const actual = computePopular23FreeClassWithExactlyNotatingSymbolClassRow(

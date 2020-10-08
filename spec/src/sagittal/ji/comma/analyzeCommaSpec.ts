@@ -35,10 +35,12 @@ describe("analyzeComma", (): void => {
             two3FreeClassAnalysis: {
                 name: "2100875/11₍₂,₃₎" as Name<Two3FreeClass>,
                 two3FreePrimeLimit: 11 as Max<Prime<{ rough: 5 }>>,
-                monzo: [0, 0, 3, 5, -1] as Monzo<{ rational: true, rough: 5, direction: Direction.SUPER }>,
                 two3FreeCopfr: 9 as Copfr<{ rough: 5 }>,
                 two3FreeSopfr: 61 as Sopfr<{ rough: 5 }>,
                 n2d3p9: 36777.470341 as N2D3P9,
+                two3FreeClass: {
+                    monzo: [0, 0, 3, 5, -1] as Monzo<{ rational: true, rough: 5, direction: Direction.SUPER }>,
+                } as Two3FreeClass,
             } as Two3FreeClassAnalysis,
         } as CommaAnalysis
         expect(actual).toBeCloseToObject(expected)

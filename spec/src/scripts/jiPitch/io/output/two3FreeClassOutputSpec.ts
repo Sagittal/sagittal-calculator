@@ -1,12 +1,14 @@
-import { Copfr, Io, Monzo, NEWLINE, Prime, Sopfr } from "../../../../../../src/general"
+import { Copfr, Io, Monzo, NEWLINE, Prime, Sopfr, Two3FreeClass } from "../../../../../../src/general"
 import { Two3FreeClassAnalysis } from "../../../../../../src/sagittal/ji/two3FreeClass"
 import { N2D3P9 } from "../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
 import { compute23FreeClassOutput } from "../../../../../../src/scripts/jiPitch/io"
 
 describe("compute23FreeClassOutput", (): void => {
     const two3FreeClassAnalysis = {
+        two3FreeClass: {
+            monzo: [0, 0, 1] as Monzo<{ rational: true }>,
+        } as Two3FreeClass,
         two3FreePrimeLimit: 14 as Prime,
-        monzo: [0, 0, 1] as Monzo<{ rational: true }>,
         two3FreeCopfr: 2 as Copfr<{ rough: 5 }>,
         two3FreeSopfr: 13 as Sopfr<{ rough: 5 }>,
         n2d3p9: 18.4567 as N2D3P9,

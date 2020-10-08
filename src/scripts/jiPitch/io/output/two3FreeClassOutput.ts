@@ -10,7 +10,7 @@ const compute23FreeClassOutput = (
     const two3FreeClassHeaderRows = compute23FreeClassHeaderRows()
     const headerRowCount = count(two3FreeClassHeaderRows)
 
-    const two3FreeClassTable: Table<Two3FreeClass> = [
+    const two3FreeClassTable: Table<Two3FreeClassAnalysis> = [
         ...two3FreeClassHeaderRows,
         compute23FreeClassRow(two3FreeClassAnalysis),
     ]

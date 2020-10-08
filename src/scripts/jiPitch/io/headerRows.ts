@@ -1,5 +1,5 @@
-import { Io, Row, splitColumnTitlesIntoRowsBySpaces, Two3FreeClass } from "../../../general"
-import { CommaAnalysis, JiPitchAnalysis } from "../../../sagittal"
+import { Io, Row, splitColumnTitlesIntoRowsBySpaces } from "../../../general"
+import { CommaAnalysis, JiPitchAnalysis, Two3FreeClassAnalysis } from "../../../sagittal"
 import { FindCommasField, JiPitchField, NotatingCommasField, Two3FreeClassField } from "../types"
 import { excludeFields } from "./excludeFields"
 
@@ -42,7 +42,7 @@ const computeJiPitchHeaderRows = (): Array<Row<{ of: JiPitchAnalysis, header: tr
         excludeFields(JI_PITCH_COLUMN_TITLES),
     )
 
-const compute23FreeClassHeaderRows = (): Array<Row<{ of: Two3FreeClass, header: true }>> =>
+const compute23FreeClassHeaderRows = (): Array<Row<{ of: Two3FreeClassAnalysis, header: true }>> =>
     splitColumnTitlesIntoRowsBySpaces(
         excludeFields(TWO_3_FREE_CLASS_COLUMN_TITLES),
     )

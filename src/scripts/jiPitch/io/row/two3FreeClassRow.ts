@@ -5,7 +5,6 @@ import {
     Formatted,
     ioSettings,
     Row,
-    Two3FreeClass,
 } from "../../../../general"
 import { Two3FreeClassAnalysis } from "../../../../sagittal"
 import { jiPitchScriptGroupSettings } from "../../globals"
@@ -13,8 +12,8 @@ import { Two3FreeClassField } from "../../types"
 
 const compute23FreeClassRow = (
     two3FreeClassAnalysis: Two3FreeClassAnalysis,
-): Row<{ of: Two3FreeClass }> => {
-    const { two3FreePrimeLimit, two3FreeCopfr, two3FreeSopfr, n2d3p9 } = two3FreeClassAnalysis
+): Row<{ of: Two3FreeClassAnalysis }> => {
+    const { two3FreeClass, two3FreePrimeLimit, two3FreeCopfr, two3FreeSopfr, n2d3p9 } = two3FreeClassAnalysis
 
     const rows = [] as unknown[] as Row<{ of: Two3FreeClassAnalysis }>
     if (!jiPitchScriptGroupSettings.excludedFields.includes(Two3FreeClassField.TWO_3_FREE_PRIME_LIMIT)) {
@@ -27,7 +26,7 @@ const compute23FreeClassRow = (
     }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(Two3FreeClassField.TWO_3_FREE_CLASS_NAME)) {
         rows.push(
-            format23FreeClass(two3FreeClassAnalysis, ioSettings) as Formatted as Formatted<Two3FreeClassAnalysis>,
+            format23FreeClass(two3FreeClass, ioSettings) as Formatted as Formatted<Two3FreeClassAnalysis>,
         )
     }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(Two3FreeClassField.TWO_3_FREE_COPFR)) {

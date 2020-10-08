@@ -17,6 +17,7 @@ const computePopular23FreeClassWithExactlyNotatingSymbolClassRow = (
     popular23FreeClassWithExactlyNotatingSymbolClass: Ranked<Popular23FreeClass & ExactlyNotatingSymbolClassProperties>,
 ): Row<{ of: Popular23FreeClass, header: true }> => {
     const {
+        two3FreeClass,
         n2d3p9,
         rank: estimatedRank,
         popularityRank: actualRank,
@@ -26,7 +27,7 @@ const computePopular23FreeClassWithExactlyNotatingSymbolClassRow = (
     } = popular23FreeClassWithExactlyNotatingSymbolClass
 
     return [
-        format23FreeClass(popular23FreeClassWithExactlyNotatingSymbolClass, ioSettings),
+        format23FreeClass(two3FreeClass, ioSettings),
         formatDecimal(n2d3p9, { align: true }),
         exactlyNotatingSymbolClassIds.map((exactlyNotatingSymbolClassId: Id<SymbolClass>): Formatted<SymbolGlyph> => {
             return formatSymbolClass(exactlyNotatingSymbolClassId, ioSettings)

@@ -23,7 +23,6 @@ import {
 import { ApotomeSlope, CommaAnalysis, SymbolClass } from "../../../../../../src/sagittal"
 import { N2D3P9 } from "../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
 import { computeFindCommasOutput } from "../../../../../../src/scripts/jiPitch/io"
-import { two3FreeClassFixture } from "../../../../../helpers/src/general/music/fixtures"
 
 describe("computeFindCommasOutput", (): void => {
     // I'm pretty sure that this is not legitimate comma data, since these commas are unrelated.
@@ -37,12 +36,13 @@ describe("computeFindCommasOutput", (): void => {
             aas: 4 as Abs<ApotomeSlope>,
             ate: 0 as Abs<Decimal<{ integer: true }> & Exponent<3 & Prime>>,
             two3FreeClassAnalysis: {
-                ...two3FreeClassFixture,
                 name: "11/1" as Name<Two3FreeClass>,
                 two3FreePrimeLimit: 11 as Prime,
                 two3FreeCopfr: 1 as Copfr<{ rough: 5 }>,
                 two3FreeSopfr: 11 as Sopfr<{ rough: 5 }>,
-                monzo: [0, 0, 0, 0, 1] as Monzo<{ rational: true, rough: 5, direction: Direction.SUPER }>,
+                two3FreeClass: {
+                    monzo: [0, 0, 0, 0, 1] as Monzo<{ rational: true, rough: 5, direction: Direction.SUPER }>,
+                } as Two3FreeClass,
                 n2d3p9: 6.722 as N2D3P9,
             },
         },
@@ -55,12 +55,13 @@ describe("computeFindCommasOutput", (): void => {
             aas: 2.154 as Abs<ApotomeSlope>,
             ate: 0 as Abs<Decimal<{ integer: true }> & Exponent<3 & Prime>>,
             two3FreeClassAnalysis: {
-                ...two3FreeClassFixture,
                 name: "49/25" as Name<Two3FreeClass>,
                 two3FreePrimeLimit: 7 as Prime,
                 two3FreeCopfr: 4 as Copfr<{ rough: 5 }>,
                 two3FreeSopfr: 24 as Sopfr<{ rough: 5 }>,
-                monzo: [0, 0, -2, 2] as Monzo<{ rational: true, rough: 5, direction: Direction.SUPER }>,
+                two3FreeClass: {
+                    monzo: [0, 0, -2, 2] as Monzo<{ rational: true, rough: 5, direction: Direction.SUPER }>,
+                } as Two3FreeClass,
                 n2d3p9: 26.466 as N2D3P9,
             },
         },

@@ -23,7 +23,7 @@ const analyze23FreeClass = (two3FreeClass: Two3FreeClass): Two3FreeClassAnalysis
     const n2d3p9: N2D3P9 = computeN2D3P9(two3FreeClass)
 
     return {
-        ...two3FreeClass,
+        two3FreeClass,
         name,
         two3FreePrimeLimit,
         two3FreeSopfr,

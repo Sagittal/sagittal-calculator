@@ -8,20 +8,17 @@ import { Popular23FreeClass } from "./types"
 const computePopular23FreeClass = (
     two3FreeClassAnalysis: Two3FreeClassAnalysis,
 ): Popular23FreeClass => {
+    const { two3FreeClass } = two3FreeClassAnalysis
     const popularity = COMMA_POPULARITIES.find((popularity: Popularity): boolean => {
-        return equalJiPitches(popularity.two3FreeClass, two3FreeClassAnalysis)
+        return equalJiPitches(popularity.two3FreeClass, two3FreeClass)
     })
     const popularityRank = !isUndefined(popularity) ? popularity.rank : undefined
     const votes = popularity?.votes || 0 as Votes
 
-    let bestNotatingCommaOrExactlyNotatingSymbolClassProperties
-    if (popular23FreeClassesScriptGroupSettings.useBestNotatingCommas) {
-        bestNotatingCommaOrExactlyNotatingSymbolClassProperties =
-            computeBestNotatingCommaProperties(two3FreeClassAnalysis)
-    } else {
-        bestNotatingCommaOrExactlyNotatingSymbolClassProperties =
-            computeExactlyNotatingSymbolClassProperties(two3FreeClassAnalysis)
-    }
+    const bestNotatingCommaOrExactlyNotatingSymbolClassProperties =
+        popular23FreeClassesScriptGroupSettings.useBestNotatingCommas ?
+            computeBestNotatingCommaProperties(two3FreeClass) :
+            computeExactlyNotatingSymbolClassProperties(two3FreeClass)
 
     return {
         ...two3FreeClassAnalysis,

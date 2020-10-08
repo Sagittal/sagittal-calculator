@@ -1,4 +1,4 @@
-import { Cents, Direction, Id, Index, Monzo, Rank } from "../../../../src/general"
+import { Cents, Direction, Id, Index, Monzo, Rank, Two3FreeClass } from "../../../../src/general"
 import { Popularity, Votes } from "../../../../src/general/music"
 import { Two3FreeClassAnalysis } from "../../../../src/sagittal/ji/two3FreeClass"
 import { N2D3P9 } from "../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
@@ -12,7 +12,9 @@ describe("computePopular23FreeClass", (): void => {
     const two3FreeClassAnalysis: Two3FreeClassAnalysis = {
         ...two3FreeClassAnalysisFixture,
         n2d3p9: 1.388889 as N2D3P9,
-        monzo: [0, 0, 1] as Monzo<{ rational: true, rough: 5, direction: Direction.SUPER }>,
+        two3FreeClass: {
+            monzo: [0, 0, 1] as Monzo<{ rational: true, rough: 5, direction: Direction.SUPER }>
+        } as Two3FreeClass,
     }
 
     it("assembles helpful information about a 2,3-free class, given a valid 2,3-free monzo & its N2D3P9", (): void => {
