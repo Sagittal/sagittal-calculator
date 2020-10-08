@@ -18,8 +18,10 @@ describe("parseNotatingCommasSettings", (): void => {
             ...two3FreeClassAnalysisFixture,
             n2d3p9,
         },
-        monzo: rationalMonzo,
         decimal: rationalDecimal,
+        pitch: {
+            monzo: rationalMonzo,
+        } as Pitch<{ rational: true}>,
     }
 
     it("adjusts the max N2D3P9 if the JI pitch has greater than the current settings", (): void => {

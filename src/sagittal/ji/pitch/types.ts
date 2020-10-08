@@ -12,7 +12,8 @@ interface JiPitchAnalysisProperties<T extends NumericProperties = {}> {
     two3FreeClassAnalysis: Two3FreeClassAnalysis,
 }
 
-type JiPitchAnalysis<T extends NumericProperties = {}> = Pitch<T & { rational: true }> & JiPitchAnalysisProperties<T>
+type JiPitchAnalysis<T extends NumericProperties = {}> =
+    JiPitchAnalysisProperties<T> & { pitch: Pitch<T & { rational: true }> }
 
 type ApotomeSlope = number & { _ApotomeSlopeBrand: boolean }
 

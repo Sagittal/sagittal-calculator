@@ -19,8 +19,7 @@ type PrimaryComma<T extends NumericProperties = {}> =
     & { id: Id<PrimaryComma> }
 
 type PrimaryCommaAnalysis<T extends NumericProperties = {}> =
-    CommaAnalysis<T>
-    & { id: Id<PrimaryComma> }
+    CommaAnalysis<T, PrimaryComma<T>>
 
 // Apotome-inversion comma class (repeats in a mirrored pattern at the half-apotome)
 interface SymbolClass {               // ----> CommaClass

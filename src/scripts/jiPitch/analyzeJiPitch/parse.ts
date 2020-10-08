@@ -45,21 +45,21 @@ const parseJiPitch = (): Pitch<{ rational: true }> => {
 }
 
 const parseNotatingCommasSettings = (
-    jiPitchAnalysis: JiPitchAnalysis,
+    { pitch, two3FreeClassAnalysis }: JiPitchAnalysis,
 ): FindCommasSettings => {
     const findCommasSettings = parseFindCommasSettings()
 
-    const aas = computeAas(jiPitchAnalysis)
+    const aas = computeAas(pitch)
     if (aas > findCommasSettings.maxAas) {
         findCommasSettings.maxAas = aas as Max<Abs<ApotomeSlope>>
     }
 
-    const ate = computeAte(jiPitchAnalysis)
+    const ate = computeAte(pitch)
     if (ate > findCommasSettings.maxAte) {
         findCommasSettings.maxAte = ate as Max<Abs<Decimal<{ integer: true }> & Exponent<3 & Prime>>>
     }
 
-    const n2d3p9 = jiPitchAnalysis.two3FreeClassAnalysis.n2d3p9
+    const n2d3p9 = two3FreeClassAnalysis.n2d3p9
     if (n2d3p9 > findCommasSettings.maxN2D3P9) {
         findCommasSettings.maxN2D3P9 = n2d3p9 as Max<N2D3P9>
     }

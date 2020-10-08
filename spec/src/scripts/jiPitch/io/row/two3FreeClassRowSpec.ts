@@ -1,21 +1,23 @@
 import { Row } from "../../../../../../src/general/io/table"
-import { Copfr, Monzo, Prime, Sopfr } from "../../../../../../src/general/math"
+import { Copfr, Max, Monzo, Prime, Sopfr } from "../../../../../../src/general/math"
 import { Two3FreeClass } from "../../../../../../src/general/music"
 import { N2D3P9, Two3FreeClassAnalysis } from "../../../../../../src/sagittal/ji"
 import { jiPitchScriptGroupSettings } from "../../../../../../src/scripts/jiPitch/globals"
 import { compute23FreeClassRow } from "../../../../../../src/scripts/jiPitch/io/row"
 import { FindCommasField } from "../../../../../../src/scripts/jiPitch/types"
+import { two3FreeClassAnalysisFixture } from "../../../../../helpers/src/scripts/jiPitch/fixtures"
 
 describe("compute23FreeClassRow", (): void => {
     const two3FreeClassAnalysis: Two3FreeClassAnalysis = {
+        ...two3FreeClassAnalysisFixture,
         two3FreeClass: {
             monzo: [0, 0, 1] as Monzo<{ rational: true }>,
         } as Two3FreeClass,
         two3FreeSopfr: 13 as Sopfr<{ rough: 5 }>,
         two3FreeCopfr: 3 as Copfr<{ rough: 5 }>,
         n2d3p9: 18.4567 as N2D3P9,
-        two3FreePrimeLimit: 14 as Prime,
-    } as Two3FreeClassAnalysis
+        two3FreePrimeLimit: 14 as Max<Prime<{ rough: 5 }>>,
+    }
 
     it("returns a row of information about the JI pitch", (): void => {
         const actual = compute23FreeClassRow(two3FreeClassAnalysis)

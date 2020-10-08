@@ -26,7 +26,7 @@ const analyzeJiPitch = (jiPitch: Pitch<{ rational: true }>): JiPitchAnalysis => 
     const ate = computeAte(jiPitch)
 
     return {
-        ...jiPitch,
+        pitch: jiPitch,
         monzo,
         quotient,
         cents,

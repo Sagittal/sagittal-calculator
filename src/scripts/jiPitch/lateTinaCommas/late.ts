@@ -3,11 +3,11 @@ import { CommaAnalysis, computeAte, computeNotatingCommas } from "../../../sagit
 import { jiPitchScriptGroupSettings } from "../globals"
 import { INFINITE_N2D3P9 } from "./constants"
 
-const isCommaLate = (commaAnalysis: CommaAnalysis): boolean => {
-    const ate = computeAte(commaAnalysis)
+const isCommaLate = (comma: Comma): boolean => {
+    const ate = computeAte(comma)
 
     const notatingCommas =
-        computeNotatingCommas(commaAnalysis, { ...jiPitchScriptGroupSettings, maxN2D3P9: INFINITE_N2D3P9 })
+        computeNotatingCommas(comma, { ...jiPitchScriptGroupSettings, maxN2D3P9: INFINITE_N2D3P9 })
     const ates = notatingCommas.map((notatingComma: Comma): Exponent<Prime> => {
         return computeAte(notatingComma)
     })
@@ -29,7 +29,7 @@ const computeLateComma = (tinaCommaAnalyses: CommaAnalysis[]): Maybe<CommaAnalys
             `Checking comma ${index}: ${tinaCommaAnalysis.monzo}, N2D3P9 ${tinaCommaAnalysis.two3FreeClassAnalysis.n2d3p9}` as Io,
             LogTarget.PROGRESS,
         )
-        if (isCommaLate(tinaCommaAnalysis)) {
+        if (isCommaLate(tinaCommaAnalysis.pitch)) {
             lateComma = tinaCommaAnalysis
             break
         }

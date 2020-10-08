@@ -19,11 +19,12 @@ import {
 import { ApotomeSlope, CommaAnalysis } from "../../../../../../src/sagittal/ji"
 import { SymbolClass } from "../../../../../../src/sagittal/notations"
 import { computeNotatingCommasOutput } from "../../../../../../src/scripts/jiPitch/io"
-import { two3FreeClassAnalysisFixture } from "../../../../../helpers/src/scripts/jiPitch/fixtures"
+import { commaAnalysisFixture, two3FreeClassAnalysisFixture } from "../../../../../helpers/src/scripts/jiPitch/fixtures"
 
 describe("computeNotatingCommasOutput", (): void => {
     const notatingCommaAnalyses: CommaAnalysis[] = [
         {
+            ...commaAnalysisFixture,
             name: "11M" as Name<Comma>,
             cents: 45.45 as Cents,
             monzo: [0, 0, 1] as Monzo<{ rational: true }>,
@@ -34,6 +35,7 @@ describe("computeNotatingCommasOutput", (): void => {
             two3FreeClassAnalysis: two3FreeClassAnalysisFixture,
         },
         {
+            ...commaAnalysisFixture,
             name: "25/49M" as Name<Comma>,
             cents: 33.4 as Cents,
             monzo: [1, 0, 2, -2] as Monzo<{ rational: true }>,
@@ -43,7 +45,7 @@ describe("computeNotatingCommasOutput", (): void => {
             ate: 0 as Abs<Decimal<{ integer: true }> & Exponent<3 & Prime>>,
             two3FreeClassAnalysis: two3FreeClassAnalysisFixture,
         },
-    ] as CommaAnalysis[]
+    ]
     const maybeSymbolClassIds = [114 as Id<SymbolClass>, undefined]
 
     it("can format the symbols for the terminal", (): void => {

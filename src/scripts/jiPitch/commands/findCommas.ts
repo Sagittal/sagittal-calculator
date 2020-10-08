@@ -10,6 +10,9 @@ applySharedPitchCommandSetup()
 
 const findCommasSettings = parseFindCommasSettings()
 const commaAnalyses: CommaAnalysis[] = computeCommaAnalyses(findCommasSettings)
-const maybeSymbolClassIds: Array<Maybe<Id<SymbolClass>>> = commaAnalyses.map(computeMaybeSymbolClassId)
+const maybeSymbolClassIds: Array<Maybe<Id<SymbolClass>>> = commaAnalyses
+    .map((commaAnalysis: CommaAnalysis): Maybe<Id<SymbolClass>> => {
+        return computeMaybeSymbolClassId(commaAnalysis.pitch)
+    })
 const findCommasOutput: Io = computeFindCommasOutput(commaAnalyses, maybeSymbolClassIds, findCommasSettings)
 saveLog(findCommasOutput, LogTarget.FINAL)

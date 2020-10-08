@@ -29,7 +29,7 @@ const visualizeJiNotationLevelSymbolClasses = (): Io[] => {
         jiNotationLevelSymbolClassIds.forEach((jiNotationLevelSymbolClassId: Id<SymbolClass>): void => {
             const { minaName, primaryCommaAnalysis, ascii, unicode } = analyzeSymbolClass(jiNotationLevelSymbolClassId)
 
-            const positionX: Px = computeX(computeCentsFromPitch(primaryCommaAnalysis))
+            const positionX: Px = computeX(computeCentsFromPitch(primaryCommaAnalysis.pitch))
 
             const adjustedUnicode = ascii === "/|~" ?
                 unicode + "         " :

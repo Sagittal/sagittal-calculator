@@ -1,5 +1,5 @@
-import { LogTarget, saveLog } from "../../../general"
-import { analyzeJiPitch, computeMaybeSymbolClassId } from "../../../sagittal"
+import { Id, LogTarget, Maybe, saveLog } from "../../../general"
+import { analyzeJiPitch, CommaAnalysis, computeMaybeSymbolClassId, SymbolClass } from "../../../sagittal"
 import { computeNotatingCommaAnalyses, parseJiPitch, parseNotatingCommasSettings } from "../analyzeJiPitch"
 import { compute23FreeClassOutput, computeJiPitchOutput, computeNotatingCommasOutput, readJiPitchOptions } from "../io"
 import { applySharedPitchCommandSetup } from "./shared"
@@ -18,6 +18,8 @@ saveLog(two3FreeClassOutput, LogTarget.FINAL)
 
 const notatingCommasSettings = parseNotatingCommasSettings(jiPitchAnalysis)
 const notatingCommaAnalyses = computeNotatingCommaAnalyses(jiPitch, notatingCommasSettings)
-const maybeSymbolClassIds = notatingCommaAnalyses.map(computeMaybeSymbolClassId)
+const maybeSymbolClassIds = notatingCommaAnalyses.map((commaAnalysis: CommaAnalysis): Maybe<Id<SymbolClass>> => {
+    return computeMaybeSymbolClassId(commaAnalysis.pitch)
+})
 const notatingCommasOutput = computeNotatingCommasOutput(notatingCommaAnalyses, maybeSymbolClassIds)
 saveLog(notatingCommasOutput, LogTarget.FINAL)

@@ -7,10 +7,12 @@ import {
     Copfr,
     Decimal,
     Direction,
+    EMPTY_MONZO,
     Exponent,
     Id,
     Io,
     ioSettings,
+    Max,
     Monzo,
     Name,
     NEWLINE,
@@ -23,11 +25,13 @@ import {
 import { ApotomeSlope, CommaAnalysis, SymbolClass } from "../../../../../../src/sagittal"
 import { N2D3P9 } from "../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
 import { computeFindCommasOutput } from "../../../../../../src/scripts/jiPitch/io"
+import { commaAnalysisFixture } from "../../../../../helpers/src/scripts/jiPitch/fixtures"
 
 describe("computeFindCommasOutput", (): void => {
     // I'm pretty sure that this is not legitimate comma data, since these commas are unrelated.
     const commaAnalyses: CommaAnalysis[] = [
         {
+            ...commaAnalysisFixture,
             name: "11M" as Name<Comma>,
             cents: 45.45 as Cents,
             monzo: [0, 0, 1] as Monzo<{ rational: true }>,
@@ -37,7 +41,7 @@ describe("computeFindCommasOutput", (): void => {
             ate: 0 as Abs<Decimal<{ integer: true }> & Exponent<3 & Prime>>,
             two3FreeClassAnalysis: {
                 name: "11/1" as Name<Two3FreeClass>,
-                two3FreePrimeLimit: 11 as Prime,
+                two3FreePrimeLimit: 11 as Max<Prime<{ rough: 5 }>>,
                 two3FreeCopfr: 1 as Copfr<{ rough: 5 }>,
                 two3FreeSopfr: 11 as Sopfr<{ rough: 5 }>,
                 two3FreeClass: {
@@ -47,6 +51,7 @@ describe("computeFindCommasOutput", (): void => {
             },
         },
         {
+            ...commaAnalysisFixture,
             name: "25/49M" as Name<Comma>,
             cents: 33.4 as Cents,
             monzo: [1, 0, 2, -2] as Monzo<{ rational: true }>,
@@ -56,7 +61,7 @@ describe("computeFindCommasOutput", (): void => {
             ate: 0 as Abs<Decimal<{ integer: true }> & Exponent<3 & Prime>>,
             two3FreeClassAnalysis: {
                 name: "49/25" as Name<Two3FreeClass>,
-                two3FreePrimeLimit: 7 as Prime,
+                two3FreePrimeLimit: 7 as Max<Prime<{ rough: 5 }>>,
                 two3FreeCopfr: 4 as Copfr<{ rough: 5 }>,
                 two3FreeSopfr: 24 as Sopfr<{ rough: 5 }>,
                 two3FreeClass: {
@@ -65,7 +70,7 @@ describe("computeFindCommasOutput", (): void => {
                 n2d3p9: 26.466 as N2D3P9,
             },
         },
-    ] as CommaAnalysis[]
+    ]
     const maybeSymbolClassIds = [114 as Id<SymbolClass>, undefined]
 
     it("changes column widths so that each cell in a column has the same width", (): void => {

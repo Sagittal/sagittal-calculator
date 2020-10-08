@@ -24,10 +24,11 @@ describe("analyzeComma", (): void => {
         const actual = analyzeComma(comma)
 
         const expected = {
+            pitch: comma,
             cents: 40.022726 as Cents,
             monzo: [-8, -6, 3, 5, -1] as Monzo<{ rational: true }>,
             quotient: [2100875, 2052864] as Quotient<{ rational: true }>,
-            decimal: 1.023387 as Decimal,
+            decimal: 1.023387 as Decimal<{ rational: true }>,
             name: "2100875/11S" as Name<Comma>,
             apotomeSlope: -8.464345 as ApotomeSlope,
             aas: 8.464345 as Abs<ApotomeSlope>,
@@ -41,8 +42,8 @@ describe("analyzeComma", (): void => {
                 two3FreeClass: {
                     monzo: [0, 0, 3, 5, -1] as Monzo<{ rational: true, rough: 5, direction: Direction.SUPER }>,
                 } as Two3FreeClass,
-            } as Two3FreeClassAnalysis,
-        } as CommaAnalysis
+            },
+        }
         expect(actual).toBeCloseToObject(expected)
     })
 })

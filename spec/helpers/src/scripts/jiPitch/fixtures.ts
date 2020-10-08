@@ -1,5 +1,5 @@
 import {
-    Abs,
+    Abs, Comma,
     Copfr,
     Decimal,
     EMPTY_MONZO,
@@ -13,7 +13,13 @@ import {
 } from "../../../../../src/general"
 import { Prime, Sopfr } from "../../../../../src/general/math"
 import { Cents } from "../../../../../src/general/music"
-import { ApotomeSlope, JiPitchAnalysis, N2D3P9, Two3FreeClassAnalysis } from "../../../../../src/sagittal/ji"
+import {
+    ApotomeSlope,
+    CommaAnalysis,
+    JiPitchAnalysis,
+    N2D3P9,
+    Two3FreeClassAnalysis,
+} from "../../../../../src/sagittal/ji"
 import { two3FreeClassFixture } from "../../general/music/fixtures"
 
 const two3FreeClassAnalysisFixture: Two3FreeClassAnalysis = {
@@ -25,12 +31,29 @@ const two3FreeClassAnalysisFixture: Two3FreeClassAnalysis = {
     n2d3p9: 1 as N2D3P9,
 }
 
-const jiPitchFixture = {
+const jiPitchFixture: Pitch<{ rational: true }> = {
     monzo: EMPTY_MONZO,
 } as Pitch<{ rational: true }>
 
 const jiPitchAnalysisFixture: JiPitchAnalysis = {
-    ...jiPitchFixture,
+    pitch: jiPitchFixture,
+    cents: 0 as Cents,
+    decimal: 1 as Decimal<{ rational: true }>,
+    monzo: [] as unknown[] as Monzo<{ rational: true }>,
+    quotient: [1, 1] as Quotient<{ rational: true }>,
+    apotomeSlope: 0 as ApotomeSlope,
+    aas: 0 as Abs<ApotomeSlope>,
+    ate: 0 as Abs<Decimal<{ integer: true }> & Exponent<3 & Prime>>,
+    two3FreeClassAnalysis: two3FreeClassAnalysisFixture,
+}
+
+const commaFixture: Comma = {
+    monzo: EMPTY_MONZO,
+} as Comma
+
+const commaAnalysisFixture: CommaAnalysis = {
+    pitch: commaFixture,
+    name: "" as Name<Comma>,
     cents: 0 as Cents,
     decimal: 1 as Decimal<{ rational: true }>,
     monzo: [] as unknown[] as Monzo<{ rational: true }>,
@@ -45,4 +68,6 @@ export {
     jiPitchFixture,
     jiPitchAnalysisFixture,
     two3FreeClassAnalysisFixture,
+    commaFixture,
+    commaAnalysisFixture,
 }

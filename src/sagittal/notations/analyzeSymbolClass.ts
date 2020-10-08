@@ -13,8 +13,8 @@ const analyzeSymbolClass = (
     const symbolClass = getSymbolClass(symbolClassId)
     const { primaryCommaId, ...otherSymbolClassProperties } = symbolClass
 
-    const primaryComma: PrimaryComma = getPrimaryComma(symbolClassId)
-    const primaryCommaAnalysis: PrimaryCommaAnalysis = analyzeComma(primaryComma) as PrimaryCommaAnalysis
+    const primaryComma = getPrimaryComma(symbolClassId)
+    const primaryCommaAnalysis = analyzeComma(primaryComma)
 
     const { revoAscii, revoUnicode } = getRepresentativeSymbol(symbolClassId)
 
