@@ -84,7 +84,6 @@ const invertMonzo: {
             -primeExponent as Exponent<Prime>
     }) as Monzo<Omit<T, "direction">>
 
-
 export {
     isSubMonzo,
     isSuperMonzo,

@@ -2,8 +2,8 @@ import { Decimal } from "../../../../../src/general/math/numeric/decimal"
 import { Monzo } from "../../../../../src/general/math/numeric/monzo"
 import { Quotient } from "../../../../../src/general/math/numeric/quotient"
 import { Cents, computePitchFromCents, computePitchFromQuotient } from "../../../../../src/general/music"
+import { NON_JI_PITCH_BASE_MONZO } from "../../../../../src/general/music/nonJi/constants"
 import { computePitchFromDecimal, computePitchFromMonzo, Pitch } from "../../../../../src/general/music/pitch"
-import { NON_JI_PITCH_BASE_MONZO } from "../../../../../src/general/music/pitch/constants"
 
 describe("computePitchFromDecimal", (): void => {
     it("when given a rational decimal, returns a JI pitch", (): void => {

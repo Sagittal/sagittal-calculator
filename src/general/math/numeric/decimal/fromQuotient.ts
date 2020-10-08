@@ -7,7 +7,6 @@ const computeDecimalFromQuotient = <T extends NumericProperties>(
 ): Decimal<T> =>
     numerator / denominator as Decimal<T>
 
-
 export {
     computeDecimalFromQuotient,
 }

@@ -1,7 +1,7 @@
 import {
     compute23FreeClass,
     computeDecimalFromMonzo,
-    computePitchFromMonzo,
+    computeJiPitchFromRationalMonzo,
     Decimal,
     doForEachRationalMonzo,
     Exponent,
@@ -20,7 +20,9 @@ const computeMaybeNumeratorWithinMaxN2D3P9 = (
     numeratorMonzoToCheck: Monzo<{ integer: true }>,
     maxN2D3P9: Max<N2D3P9>,
 ): Maybe<Numerator & Decimal<{ integer: true }>> => {
-    const two3FreeClass = compute23FreeClass(computePitchFromMonzo(numeratorMonzoToCheck))
+    const two3FreeClass = compute23FreeClass(
+        computeJiPitchFromRationalMonzo(numeratorMonzoToCheck as Monzo<{ integer: true, rational: true }>),
+    )
     const n2d3p9 = computeN2D3P9(two3FreeClass)
 
     return n2d3p9 < maxN2D3P9 ?

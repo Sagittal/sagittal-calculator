@@ -1,6 +1,6 @@
 import { increment } from "../../../../../../src/general/code"
 import { equalPitches, pitchIsHigher } from "../../../../../../src/general/music/pitch"
-import { computeInterval } from "../../../../../../src/general/music/pitch/interval"
+import { computeInterval } from "../../../../../../src/general/music/pitch/typedOperations"
 import {
     getPrimaryComma,
     HALF_APOTOME,

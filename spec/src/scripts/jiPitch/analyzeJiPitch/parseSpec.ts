@@ -78,7 +78,7 @@ describe("parseJiPitch", (): void => {
             expect(actual).toEqual(expected)
         })
 
-        it("works for an integer", (): void => {
+        it("works for an integer decimal", (): void => {
             program.args = ["3"]
 
             const actual = parseJiPitch()

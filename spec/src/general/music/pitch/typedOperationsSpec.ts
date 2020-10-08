@@ -1,16 +1,86 @@
 import { Monzo } from "../../../../../src/general/math/numeric/monzo"
 import { Quotient } from "../../../../../src/general/math/numeric/quotient"
+import { NON_JI_PITCH_BASE_MONZO } from "../../../../../src/general/music/nonJi/constants"
 import { addPitches, Pitch, sqrtPitch } from "../../../../../src/general/music/pitch"
-import { maxPitches } from "../../../../../src/general/music/pitch/typedOperations"
+import { computeInterval, maxPitches } from "../../../../../src/general/music/pitch/typedOperations"
 
 describe("addPitches", (): void => {
-    it("works", (): void => {
-        const augendJiPitch = { monzo: [2, -1, -1, 1] } as Pitch<{ rational: true }>
-        const addendJiPitch = { monzo: [-2, 1] } as Pitch<{ rational: true }>
+    it("even if the pitches are both JI, this method returns a non-JI pitch", (): void => {
+        const augendPitch = { monzo: [2, -1, -1, 1] } as Pitch<{ rational: true }>
+        const addendPitch = { monzo: [-2, 1] } as Pitch<{ rational: true }>
 
-        const actual = addPitches(augendJiPitch, addendJiPitch)
+        const actual = addPitches(augendPitch, addendPitch)
 
-        const expected = { monzo: [0, 0, -1, 1] } as Pitch<{ rational: true }>
+        const expected = {
+            monzo: NON_JI_PITCH_BASE_MONZO,
+            scaler: [0.485427, 1],
+        } as Pitch<{ rational: false }>
+        expect(actual).toBeCloseToObject(expected)
+    })
+})
+
+describe("computeInterval", (): void => {
+    it("works for two JI pitches, returning a non-JI pitch", (): void => {
+        const fromPitch = { monzo: [-1, 1] } as Pitch<{ rational: true }>
+        const toPitch = { monzo: [-2, 0, 0, 1] } as Pitch<{ rational: true }>
+
+        const actual = computeInterval(fromPitch, toPitch)
+
+        const expected = {
+            monzo: NON_JI_PITCH_BASE_MONZO,
+            scaler: [0.222392, 1],
+        } as Pitch<{ rational: false }>
+        expect(actual).toBeCloseToObject(expected)
+    })
+
+    it("works when the from pitch is non-JI", (): void => {
+        const fromPitch = {
+            monzo: [-2, 0, 0, 1] as Monzo<{ rational: true }>,
+            scaler: [1, 3] as Quotient,
+        } as Pitch<{ rational: false }>
+        const toPitch = { monzo: [0, 0, 1] } as Pitch<{ rational: true }>
+
+        const actual = computeInterval(fromPitch, toPitch)
+
+        const expected = {
+            monzo: NON_JI_PITCH_BASE_MONZO,
+            scaler: [2.052810, 1] as Quotient,
+        } as Pitch<{ rational: false }>
+        expect(actual).toBeCloseToObject(expected)
+    })
+
+    it("works when the to pitch is non-JI", (): void => {
+        const fromPitch = { monzo: [-2, 0, 0, 1] } as Pitch<{ rational: true }>
+        const toPitch = {
+            monzo: [0, 0, 1] as Monzo<{ rational: true }>,
+            scaler: [1, 3] as Quotient,
+        } as Pitch<{ rational: false }>
+
+        const actual = computeInterval(fromPitch, toPitch)
+
+        const expected = {
+            monzo: NON_JI_PITCH_BASE_MONZO,
+            scaler: [-0.033379, 1] as Quotient,
+        } as Pitch<{ rational: false }>
+        expect(actual).toBeCloseToObject(expected)
+    })
+
+    it("works when both the from and to pitches are non-JI", (): void => {
+        const fromPitch = {
+            monzo: [-2, 0, 0, 1] as Monzo<{ rational: true }>,
+            scaler: [1, 3] as Quotient,
+        } as Pitch<{ rational: false }>
+        const toPitch = {
+            monzo: [0, 0, 1] as Monzo<{ rational: true }>,
+            scaler: [1, 3] as Quotient,
+        } as Pitch<{ rational: false }>
+
+        const actual = computeInterval(fromPitch, toPitch)
+
+        const expected = {
+            monzo: NON_JI_PITCH_BASE_MONZO,
+            scaler: [0.504858, 1] as Quotient,
+        } as Pitch<{ rational: false }>
         expect(actual).toBeCloseToObject(expected)
     })
 })
@@ -34,8 +104,8 @@ describe("maxPitches", (): void => {
         const pitchA = { monzo: [-2, -1, 0, 0, 1] } as Pitch<{ rational: true }>   // 11/12
         const pitchB = {
             monzo: [1] as Monzo<{ rational: true }>,
-            scaler: [3, 1] as Quotient
-        } as Pitch<{ rational: false }>                                                                         // 8
+            scaler: [3, 1] as Quotient,
+        } as Pitch<{ rational: false }>                                            // 8
         const pitchC = { monzo: [0, 1] } as Pitch<{ rational: true }>              // 7
 
         const actual = maxPitches(pitchA, pitchB, pitchC)

@@ -3,16 +3,12 @@ import {
     Direction,
     invertMonzo,
     isSubDecimal,
-    isSubMonzo,
     isSuperDecimal,
-    isSuperMonzo,
-    isUnisonDecimal,
-    isUnisonMonzo,
+    isUnisonDecimal, isUnisonMonzo,
     Monzo,
     NumericProperties,
 } from "../../math"
-import { isJi } from "../ji"
-import { computeDecimalFromPitch } from "./to"
+import { computeIrrationalDecimalFromPitch } from "../nonJi"
 import { Pitch } from "./types"
 
 // Todo: DEFER UNTIL AFTER SCALED MONZO
@@ -22,24 +18,17 @@ import { Pitch } from "./types"
 const isSuperPitch = <T extends NumericProperties>(
     candidateSuperPitch: Pitch<T>,
 ): candidateSuperPitch is (Pitch<T & { direction: Direction.SUPER }>) =>
-    isJi(candidateSuperPitch) ?
-        isSuperMonzo(candidateSuperPitch.monzo) :
-        isSuperDecimal(computeDecimalFromPitch(candidateSuperPitch))
+    isSuperDecimal(computeIrrationalDecimalFromPitch(candidateSuperPitch))
 
 const isSubPitch = <T extends NumericProperties>(
     candidateSubPitch: Pitch<T>,
 ): candidateSubPitch is Pitch<T & { direction: Direction.SUB }> =>
-    isJi(candidateSubPitch) ?
-        isSubMonzo(candidateSubPitch.monzo) :
-        isSubDecimal(computeDecimalFromPitch(candidateSubPitch))
-
+    isSubDecimal(computeIrrationalDecimalFromPitch(candidateSubPitch))
 
 const isUnisonPitch = <T extends NumericProperties>(
     candidateUnisonPitch: Pitch<T>,
 ): candidateUnisonPitch is Pitch<T & { direction: Direction.UNISON }> =>
-    isJi(candidateUnisonPitch) ?
-        isUnisonMonzo(candidateUnisonPitch.monzo) :
-        isUnisonDecimal(computeDecimalFromPitch(candidateUnisonPitch))
+    isUnisonDecimal(computeIrrationalDecimalFromPitch(candidateUnisonPitch))
 
 const computeSuperPitch: {
     <T extends NumericProperties>(

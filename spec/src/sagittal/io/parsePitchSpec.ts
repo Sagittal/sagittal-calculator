@@ -1,8 +1,7 @@
 import { Io } from "../../../../src/general/io"
-import { Monzo } from "../../../../src/general/math/numeric/monzo"
 import { Quotient } from "../../../../src/general/math/numeric/quotient"
+import { NON_JI_PITCH_BASE_MONZO } from "../../../../src/general/music/nonJi/constants"
 import { Pitch } from "../../../../src/general/music/pitch"
-import { NON_JI_PITCH_BASE_MONZO } from "../../../../src/general/music/pitch/constants"
 import { parsePitch } from "../../../../src/sagittal/io"
 
 describe("parsePitch", (): void => {

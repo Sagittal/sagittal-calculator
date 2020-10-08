@@ -13,7 +13,6 @@ const computeRange = <T extends Decimal<{ integer: true }>>(
         .map((number: number): number => number + firstParameter) as Range<T>
 }
 
-
 export {
     computeRange,
 }

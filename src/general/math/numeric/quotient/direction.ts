@@ -74,7 +74,6 @@ const invertQuotient: {
         numerator as number as Denominator,
     ] as Quotient<Omit<T, "direction">>
 
-
 export {
     computeSuperQuotient,
     computeSubQuotient,

@@ -15,7 +15,15 @@ export {
     isJi,
     computeJiPitchCopfr,
     computeJiPitchSopfr,
+    UNISON,
+    equalJiPitches,
+    computeJiPitchFromRationalMonzo,
+    computeRationalQuotientFromJiPitch,
+    isSubJiPitch,
+    isUnisonJiPitch,
+    addJiPitches,
 } from "./ji"
+export { SQRT_SCALER } from "./nonJi"
 export { CENTS_PER_OCTAVE } from "./constants"
 export { Cents, Zone } from "./types"
 export {
@@ -31,14 +39,9 @@ export {
     sqrtPitch,
     computePitchFromDecimal,
     Pitch,
-    SQRT_SCALER,
-    computeDecimalFromPitch,
     computeCentsFromPitch,
     computePitchFromCents,
     computePitchFromMonzo,
     computePitchFromQuotient,
-    computeMonzoFromPitch,
-    computeQuotientFromPitch,
     addPitches,
-    UNISON,
 } from "./pitch"

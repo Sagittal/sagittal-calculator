@@ -1,4 +1,5 @@
-import { computeDecimalFromPitch, Decimal, Extrema, Id, Maybe, Zone } from "../../../../../../src/general"
+import { Decimal, Extrema, Id, Maybe, Zone } from "../../../../../../src/general"
+import { computeIrrationalDecimalFromPitch } from "../../../../../../src/general/music/nonJi"
 import { JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS, SymbolClass } from "../../../../../../src/sagittal"
 import { JiNotationLevel } from "../../../../../../src/sagittal/notations/ji"
 import { computeCaptureZone } from "../../../../../../src/sagittal/notations/ji/captureZone"
@@ -26,8 +27,8 @@ describe("capture zones", (): void => {
             [{ decimal: 1.036740 }, { decimal: 1.040403 }], // [{ cents: 62.465465 }, { cents: 68.572508 }],
         ] as Array<Extrema<{ decimal: Decimal }>>
         expected.forEach((zone: Extrema<{ decimal: Decimal }>, index: number): void => {
-            expect(computeDecimalFromPitch(actual[ index ]![ 0 ])).toBeCloseTo(zone[ 0 ].decimal!)
-            expect(computeDecimalFromPitch(actual[ index ]![ 1 ])).toBeCloseTo(zone[ 1 ].decimal!)
+            expect(computeIrrationalDecimalFromPitch(actual[ index ]![ 0 ])).toBeCloseTo(zone[ 0 ].decimal!)
+            expect(computeIrrationalDecimalFromPitch(actual[ index ]![ 1 ])).toBeCloseTo(zone[ 1 ].decimal!)
         })
     })
 
@@ -72,8 +73,8 @@ describe("capture zones", (): void => {
             [{ decimal: 1.038929 }, { decimal: 1.040403 }], // [{ cents: 66.117175 }, { cents: 68.572508 }],
         ] as Array<Extrema<{ decimal: Decimal }>>
         expected.forEach((zone: Extrema<{ decimal: Decimal }>, index: number): void => {
-            expect(computeDecimalFromPitch(actual[ index ]![ 0 ])).toBeCloseTo(zone[ 0 ].decimal!)
-            expect(computeDecimalFromPitch(actual[ index ]![ 1 ])).toBeCloseTo(zone[ 1 ].decimal!)
+            expect(computeIrrationalDecimalFromPitch(actual[ index ]![ 0 ])).toBeCloseTo(zone[ 0 ].decimal!)
+            expect(computeIrrationalDecimalFromPitch(actual[ index ]![ 1 ])).toBeCloseTo(zone[ 1 ].decimal!)
         })
     })
 
@@ -141,8 +142,8 @@ describe("capture zones", (): void => {
             [{ decimal: 1.038929 }, { decimal: 1.040403 }], // [{ cents: 66.117175 }, { cents: 68.572508 }],
         ] as Array<Extrema<{ decimal: Decimal }>>
         expected.forEach((zone: Extrema<{ decimal: Decimal }>, index: number): void => {
-            expect(computeDecimalFromPitch(actual[ index ]![ 0 ])).toBeCloseTo(zone[ 0 ].decimal!)
-            expect(computeDecimalFromPitch(actual[ index ]![ 1 ])).toBeCloseTo(zone[ 1 ].decimal!)
+            expect(computeIrrationalDecimalFromPitch(actual[ index ]![ 0 ])).toBeCloseTo(zone[ 0 ].decimal!)
+            expect(computeIrrationalDecimalFromPitch(actual[ index ]![ 1 ])).toBeCloseTo(zone[ 1 ].decimal!)
         })
     })
 
@@ -304,8 +305,8 @@ describe("capture zones", (): void => {
             [{ decimal: 1.040110 }, { decimal: 1.040403 }], // [{ cents: 68.084530 }, { cents: 68.572508 }],
         ] as Array<Extrema<{ decimal: Decimal }>>
         expected.forEach((zone: Extrema<{ decimal: Decimal }>, index: number): void => {
-            expect(computeDecimalFromPitch(actual[ index ]![ 0 ])).toBeCloseTo(zone[ 0 ].decimal!)
-            expect(computeDecimalFromPitch(actual[ index ]![ 1 ])).toBeCloseTo(zone[ 1 ].decimal!)
+            expect(computeIrrationalDecimalFromPitch(actual[ index ]![ 0 ])).toBeCloseTo(zone[ 0 ].decimal!)
+            expect(computeIrrationalDecimalFromPitch(actual[ index ]![ 1 ])).toBeCloseTo(zone[ 1 ].decimal!)
         })
     })
 })

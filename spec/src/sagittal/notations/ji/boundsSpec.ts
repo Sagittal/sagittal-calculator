@@ -1,6 +1,5 @@
 import {
     Cents,
-    computeDecimalFromPitch,
     computePitchFromCents,
     computePitchFromDecimal,
     Decimal,
@@ -11,6 +10,7 @@ import {
     pitchIsHigher,
     Quotient,
 } from "../../../../../src/general"
+import { computeIrrationalDecimalFromPitch } from "../../../../../src/general/music/nonJi"
 import { APOTOME, JiNotationBound, JI_NOTATION_BOUNDS, TINA } from "../../../../../src/sagittal"
 import { analyzePitch } from "../../../../helpers/src/general/music/analyzePitch"
 import { PitchAnalysis } from "../../../../helpers/src/general/music/types"
@@ -35,9 +35,10 @@ describe("JI_NOTATION_BOUNDS", (): void => {
         JI_NOTATION_BOUNDS.forEach((jiNotationBound: JiNotationBound): void => {
             while (true) {
                 const currentHalfTinaCents: Cents = TINA * currentHalfTina as Cents
-                const currentHalfTinaPitch = computeDecimalFromPitch(computePitchFromCents(currentHalfTinaCents))
+                const currentHalfTinaPitch =
+                    computeIrrationalDecimalFromPitch(computePitchFromCents(currentHalfTinaCents))
 
-                if (isCloseTo(currentHalfTinaPitch, computeDecimalFromPitch(jiNotationBound.pitch))) {
+                if (isCloseTo(currentHalfTinaPitch, computeIrrationalDecimalFromPitch(jiNotationBound.pitch))) {
                     break
                 } else if (
                     pitchIsHigher(computePitchFromDecimal(currentHalfTinaPitch), jiNotationBound.pitch)

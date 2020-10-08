@@ -85,6 +85,36 @@ describe("equalPitches", (): void => {
             expect(actual).toBeFalsy()
         })
     })
+
+    describe("for a combination of a JI pitch and a non-JI pitch", (): void => {
+        it("returns true if they are equivalent", (): void => {
+            const pitchA = {
+                monzo: [0, 0, 1, -1] as Monzo<{ rational: true }>,
+            } as Pitch<{ rational: true }>
+            const pitchB = {
+                monzo: [0, 0, 2, -2] as Monzo<{ rational: true }>,
+                scaler: [1, 2] as Quotient,
+            } as Pitch<{ rational: false }>
+
+            const actual = equalPitches(pitchA, pitchB)
+
+            expect(actual).toBeTruthy()
+        })
+
+        it("returns false if they are not equivalent", (): void => {
+            const pitchA = {
+                monzo: [0, 0, 2, -2] as Monzo<{ rational: true }>,
+            } as Pitch<{ rational: true }>
+            const pitchB = {
+                monzo: [0, 0, 2, -2] as Monzo<{ rational: true }>,
+                scaler: [1, 2] as Quotient,
+            } as Pitch<{ rational: false }>
+
+            const actual = equalPitches(pitchA, pitchB)
+
+            expect(actual).toBeFalsy()
+        })
+    })
 })
 
 describe("pitchIsHigher", (): void => {

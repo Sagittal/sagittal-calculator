@@ -12,7 +12,6 @@ const equalQuotients = (quotientA: Quotient, quotientB: Quotient, precision: Pre
             precision,
         )
 
-
 export {
     equalQuotients,
 }

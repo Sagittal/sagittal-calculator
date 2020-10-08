@@ -3,12 +3,13 @@ import {
     computeRationalMonzoFromRationalDecimal,
     computeSubQuotient,
     computeSuperPitch,
-    Decimal, Direction,
+    Decimal,
+    Direction,
     Exponent,
-    isSubPitch,
-    isUnisonPitch,
+    isSubJiPitch,
+    isUnisonJiPitch,
     isWithinPrimeLimit,
-    Name, NumericProperties, Pitch,
+    Name,
     Prime,
     PRIMES,
     Quotient,
@@ -77,13 +78,13 @@ const computeCommaName = (
 
     const maybeHyphen = abbreviated ? "" : "-"
 
-    const maybeDown = isSubPitch(comma) ? " down" : ""
+    const maybeDown = isSubJiPitch(comma) ? " down" : ""
 
     const superComma = computeSuperPitch(comma) as Comma<{ rational: true, direction: Direction.SUPER }>
     const sizeCategory: SizeCategoryAbbreviation | SizeCategoryName = computeSizeCategory(superComma, { abbreviated })
 
     let formattedCommaNameQuotient
-    if (isWithinPrimeLimit(comma, THREE_PRIME_LIMIT) && !isUnisonPitch(comma)) {
+    if (isWithinPrimeLimit(comma, THREE_PRIME_LIMIT) && !isUnisonJiPitch(comma)) {
         formattedCommaNameQuotient = "3"
     } else {
         const commaNameQuotient = computeCommaNameQuotient(comma)

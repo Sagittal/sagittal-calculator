@@ -1,17 +1,16 @@
 import {
     Comma,
-    computeQuotientFromPitch,
+    computeRationalQuotientFromJiPitch,
     computeRoughRationalQuotient,
     computeSuperPitch,
     Direction,
     FIVE_ROUGHNESS,
-    NumericProperties,
 } from "../../../../general"
 import { CommaNameQuotient } from "./types"
 
 const computeCommaNameQuotient = (comma: Comma): CommaNameQuotient => {
     const superComma = computeSuperPitch(comma) as Comma<{ rational: true, direction: Direction.SUPER }>
-    const quotient = computeQuotientFromPitch(superComma)
+    const quotient = computeRationalQuotientFromJiPitch(superComma)
 
     return computeRoughRationalQuotient(quotient, FIVE_ROUGHNESS) as CommaNameQuotient
 }

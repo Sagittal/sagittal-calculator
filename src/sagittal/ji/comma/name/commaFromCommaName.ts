@@ -1,6 +1,6 @@
 import {
     Comma,
-    computePitchFromMonzo,
+    computeJiPitchFromRationalMonzo,
     computeRationalMonzoFromRationalQuotient,
     Max,
     Min,
@@ -19,7 +19,7 @@ const computeCommaFromCommaNameQuotientAndSizeCategoryName = (
 
     const two3FreeMonzo = computeRationalMonzoFromRationalQuotient(commaNameQuotient)
     const commas = computeNotatingCommas(
-        computePitchFromMonzo(two3FreeMonzo),
+        computeJiPitchFromRationalMonzo(two3FreeMonzo),
         {
             lowerBound: lowerBound.pitch as Pitch as Min<Pitch>,
             upperBound: upperBound.pitch as Pitch as Max<Pitch>,

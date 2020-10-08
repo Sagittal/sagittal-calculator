@@ -1,18 +1,17 @@
 import { NumericProperties } from "../../../../../src/general/math"
+import { computeCentsFromPitch, Pitch } from "../../../../../src/general/music"
 import {
-    computeCentsFromPitch,
-    computeDecimalFromPitch,
-    computeMonzoFromPitch,
-    Pitch,
-} from "../../../../../src/general/music"
+    computeIrrationalDecimalFromPitch,
+    computeIrrationalMonzoFromPitch,
+} from "../../../../../src/general/music/nonJi"
 import { PitchAnalysis } from "./types"
 
 const analyzePitch = <T extends NumericProperties>(pitch: Pitch<T>): PitchAnalysis<T> =>
     ({
         pitch,
-        decimal: computeDecimalFromPitch(pitch),
+        decimal: computeIrrationalDecimalFromPitch(pitch),
         cents: computeCentsFromPitch(pitch),
-        monzo: computeMonzoFromPitch(pitch),
+        monzo: computeIrrationalMonzoFromPitch(pitch),
     }) as PitchAnalysis<T>
 
 export {

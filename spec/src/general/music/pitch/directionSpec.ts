@@ -1,4 +1,5 @@
 import { Direction, EMPTY_MONZO, Monzo, Quotient } from "../../../../../src/general/math/numeric"
+import { NON_JI_PITCH_BASE_MONZO } from "../../../../../src/general/music/nonJi/constants"
 import {
     computeSuperPitch,
     isSubPitch,
@@ -6,7 +7,6 @@ import {
     isUnisonPitch,
     Pitch,
 } from "../../../../../src/general/music/pitch"
-import { NON_JI_PITCH_BASE_MONZO } from "../../../../../src/general/music/pitch/constants"
 
 describe("isSubPitch", (): void => {
     describe("for JI pitches", (): void => {

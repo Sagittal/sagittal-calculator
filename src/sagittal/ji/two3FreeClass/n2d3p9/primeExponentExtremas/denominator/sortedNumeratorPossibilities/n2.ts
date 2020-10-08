@@ -17,7 +17,6 @@ const computeN2 = (numerator: Numerator & Decimal<{ integer: true }>): N2 =>
         computeRationalDecimalCopfr(numerator) as number as Exponent<Count<Prime>>,
     ) as N2
 
-
 export {
     computeN2,
 }

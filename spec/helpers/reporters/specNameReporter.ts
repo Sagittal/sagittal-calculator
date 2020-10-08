@@ -6,6 +6,8 @@ import { LogTarget, saveLog } from "../../../src/general/io/log"
 
 const PRINT_NAMES = process.argv[ 2 ] === "--names=true"
 
+// TODO: so this doesn't actually work. I suspect it has something to do with saveLog not working in SPEC
+
 const specNameReporter: jasmine.CustomReporter = {
     specStarted(result: CustomReporterResult): void {
         if (PRINT_NAMES) saveLog(result.fullName as Io, LogTarget.SPEC)
