@@ -24,7 +24,7 @@ export {
     computeStackedJiPitch,
 } from "./ji"
 export { SQRT_SCALER } from "./nonJi"
-export { computePitchProportion } from "./pitchProportion"
+export { dividePitch } from "./cents"
 export { CENTS_PER_OCTAVE } from "./constants"
 export { Cents, Zone } from "./types"
 export {

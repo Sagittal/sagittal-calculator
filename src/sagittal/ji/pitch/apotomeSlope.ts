@@ -1,4 +1,4 @@
-import { computePitchProportion, Pitch, THREE_PRIME_INDEX } from "../../../general"
+import { dividePitch, Pitch, THREE_PRIME_INDEX } from "../../../general"
 import { APOTOME, APOTOME_3_EXPONENT } from "../../constants"
 import { ApotomeSlope } from "./types"
 
@@ -6,7 +6,7 @@ import { ApotomeSlope } from "./types"
 
 const computeApotomeSlope = (jiPitch: Pitch<{ rational: true }>): ApotomeSlope => {
     const rationalMonzo3Exponent = jiPitch.monzo[ THREE_PRIME_INDEX ] || 0
-    const apotomeFraction = computePitchProportion(jiPitch, APOTOME)
+    const apotomeFraction = dividePitch(jiPitch, APOTOME)
 
     return rationalMonzo3Exponent - APOTOME_3_EXPONENT * apotomeFraction as ApotomeSlope
 }
