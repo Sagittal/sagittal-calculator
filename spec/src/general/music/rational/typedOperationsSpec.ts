@@ -1,10 +1,10 @@
 import { Mean, MeanType } from "../../../../../src/general/math"
+import { Interval, Pitch } from "../../../../../src/general/music/pitch"
 import {
     computeJiInterval,
     computeJiPitchGeometricMean,
     computeStackedJiPitch,
 } from "../../../../../src/general/music/rational"
-import { Interval, Pitch } from "../../../../../src/general/music/pitch"
 
 describe("computeJiInterval", (): void => {
     it("works for two JI pitches, subtracting the from's monzo from the to's monzo", (): void => {

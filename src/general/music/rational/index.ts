@@ -1,6 +1,6 @@
 export { compute23FreeClass, compute23FreeClassName, format23FreeClass } from "./two3FreeClass"
 export { THREE_PRIME_LIMIT } from "./constants"
-export { Comma, Popularity, Votes, Two3FreeClass, Apotome, JiPitch } from "./types"
+export { Comma, Popularity, Votes, Two3FreeClass, Apotome } from "./types"
 export { COMMA_POPULARITIES } from "./popularities"
 export { isJi } from "./typeGuards"
 export { isJiPitchRough } from "./roughness"

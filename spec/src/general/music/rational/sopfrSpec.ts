@@ -1,6 +1,6 @@
 import { Sopfr } from "../../../../../src/general/math"
-import { computeJiPitchSopfr } from "../../../../../src/general/music/rational"
 import { Pitch } from "../../../../../src/general/music/pitch"
+import { computeJiPitchSopfr } from "../../../../../src/general/music/rational"
 
 describe("computeJiPitchSopfr", (): void => {
     it("sums the abs values of the prime factors (with repetition) in the monzo", (): void => {

@@ -1,7 +1,7 @@
 import { Max, Prime, Smoothness, THREE_SMOOTHNESS } from "../../../../../src/general/math"
 import { FIVE_SMOOTHNESS } from "../../../../../src/general/math/rational/constants"
 import { Pitch } from "../../../../../src/general/music/pitch"
-import { computeJiPitchSmoothness, isJiPitchSmooth } from "../../../../../src/general/music/rational/smoothness"
+import { computeJiPitchSmoothness, isJiPitchSmooth } from "../../../../../src/general/music/rational"
 
 describe("isJiPitchSmooth", (): void => {
     it("returns true if the pitch is n-smooth (within the n prime limit)", (): void => {

@@ -1,7 +1,6 @@
 import { compute23FreeClass, computeJiPitchSopfr, Id } from "../../../../../../src/general"
-import { Mean, Sopfr } from "../../../../../../src/general/math"
+import { Mean, MeanType, Sopfr } from "../../../../../../src/general/math"
 import { computeArithmeticMean } from "../../../../../../src/general/math/numeric/decimal/typedOperations"
-import { MeanType } from "../../../../../../src/general/math/types"
 import { getPrimaryComma, JI_NOTATION, SymbolClass } from "../../../../../../src/sagittal"
 
 const AVERAGE_2_3_FREE_SOPFR = 22.785235 as Mean<{ of: Sopfr<{ rough: 5 }>, meanType: MeanType.ARITHMETIC }>

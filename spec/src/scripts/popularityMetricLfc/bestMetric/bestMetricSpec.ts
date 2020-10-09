@@ -1,5 +1,5 @@
 import { Combination, Count, Ed, Index, Mean, Name, Step, Window } from "../../../../../src/general"
-import { MeanType } from "../../../../../src/general/math/types"
+import { MeanType } from "../../../../../src/general/math"
 import {
     Metric,
     nonRecursiveSearchScopeAndMaybeUpdateBestMetric,

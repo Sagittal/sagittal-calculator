@@ -1,6 +1,5 @@
 import { Monzo } from "../../../../../../src/general/math"
-import { sumMonzos } from "../../../../../../src/general/math/numeric/monzo"
-import { addMonzos, subtractMonzos } from "../../../../../../src/general/math/numeric/monzo/typedOperations"
+import { addMonzos, subtractMonzos, sumMonzos } from "../../../../../../src/general/math/numeric/monzo"
 
 describe("sumMonzos", (): void => {
     it("sums each of the terms of all of the monzos", (): void => {

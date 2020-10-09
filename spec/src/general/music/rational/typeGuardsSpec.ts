@@ -1,7 +1,7 @@
 import { Monzo } from "../../../../../src/general/math/numeric/monzo"
 import { Quotient } from "../../../../../src/general/math/numeric/quotient"
-import { isJi } from "../../../../../src/general/music/rational"
 import { Pitch } from "../../../../../src/general/music/pitch"
+import { isJi } from "../../../../../src/general/music/rational"
 
 describe("isJi", (): void => {
     it("returns true if the scaler is absent", (): void => {

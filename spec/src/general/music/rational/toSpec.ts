@@ -1,6 +1,6 @@
 import { Quotient } from "../../../../../src/general/math/numeric/quotient"
-import { computeRationalQuotientFromJiPitch } from "../../../../../src/general/music/rational"
 import { Pitch } from "../../../../../src/general/music/pitch"
+import { computeRationalQuotientFromJiPitch } from "../../../../../src/general/music/rational"
 
 describe("computeRationalQuotientFromJiPitch", (): void => {
     it("given a JI pitch, returns a rational quotient", (): void => {

@@ -1,6 +1,6 @@
 import { Copfr } from "../../../../../src/general/math/rational"
-import { computeJiPitchCopfr } from "../../../../../src/general/music/rational"
 import { Pitch } from "../../../../../src/general/music/pitch"
+import { computeJiPitchCopfr } from "../../../../../src/general/music/rational"
 
 describe("computeJiPitchCopfr", (): void => {
     it("returns the count of prime factors (with repetition) in the monzo", (): void => {

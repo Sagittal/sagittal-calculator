@@ -1,6 +1,6 @@
 import { Monzo } from "../../../../../src/general/math/numeric/monzo"
-import { computeJiPitchFromRationalMonzo } from "../../../../../src/general/music/rational"
 import { Pitch } from "../../../../../src/general/music/pitch"
+import { computeJiPitchFromRationalMonzo } from "../../../../../src/general/music/rational"
 
 describe("computeJiPitchFromRationalMonzo", (): void => {
     it("returns a JI pitch with the rational monzo as its monzo", (): void => {
