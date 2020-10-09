@@ -1,4 +1,5 @@
-import { Cents, Multiplier, Name } from "../../../../../src/general"
+import { Multiplier, Name, Pitch, SQRT_SCALER } from "../../../../../src/general"
+import { APOTOME } from "../../../../../src/sagittal"
 import { Bound, BoundType, JiNotationLevel, Tina } from "../../../../../src/sagittal/notations/ji"
 import { consolidateBoundHistories } from "../../../../../src/scripts/jiNotationBound/consolidateHistories"
 import { BoundEventAnalysis, BoundHistoryAnalysis } from "../../../../../src/scripts/jiNotationBound/history"
@@ -15,7 +16,7 @@ describe("consolidateBoundHistories", (): void => {
             jiNotationLevel: JiNotationLevel.ULTRA,
             boundType: BoundType.COMMA_MEAN,
             name: "'/| )/|" as Name<Bound>,
-            cents: 24.200000 as Cents,
+            pitch: { monzo: [], scaler: SQRT_SCALER } as Pitch<{ rational: false }>,
             rank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
             exact: false,
         }
@@ -24,7 +25,7 @@ describe("consolidateBoundHistories", (): void => {
             jiNotationLevel: JiNotationLevel.ULTRA,
             boundType: BoundType.INA_MIDPOINT,
             name: "12.5°58" as Name<Bound>,
-            cents: 24.333333 as Cents,
+            pitch: { monzo: APOTOME.monzo, scaler: [12.5, 58] } as Pitch<{ rational: false }>,
             rank: RANKS[ BoundType.COMMA_MEAN ],
             exact: false,
         }
@@ -32,8 +33,8 @@ describe("consolidateBoundHistories", (): void => {
             ...boundEventAnalysisFixture,
             jiNotationLevel: JiNotationLevel.EXTREME,
             boundType: BoundType.COMMA_MEAN,
-            name: ",)/|_)/|" as Name<Bound>,
-            cents: 24.581395 as Cents,
+            name: ",)/| )/|" as Name<Bound>,
+            pitch: { monzo: [], scaler: SQRT_SCALER } as Pitch<{ rational: false }>,
             rank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
             exact: false,
         }
@@ -42,7 +43,7 @@ describe("consolidateBoundHistories", (): void => {
             jiNotationLevel: JiNotationLevel.EXTREME,
             boundType: BoundType.INA_MIDPOINT,
             name: "50.5°233" as Name<Bound>,
-            cents: 24.151964 as Cents,
+            pitch: { monzo: APOTOME.monzo, scaler: [50.5, 233] } as Pitch<{ rational: false }>,
             rank: RANKS[ BoundType.COMMA_MEAN ],
             exact: false,
         }
@@ -50,8 +51,8 @@ describe("consolidateBoundHistories", (): void => {
             ...boundEventAnalysisFixture,
             jiNotationLevel: JiNotationLevel.EXTREME,
             boundType: BoundType.COMMA_MEAN,
-            name: ",)/|_)/|" as Name<Bound>,
-            cents: 24.581395 as Cents,
+            name: ",)/| )/|" as Name<Bound>,
+            pitch: { monzo: [], scaler: SQRT_SCALER } as Pitch<{ rational: false }>,
             rank: RANKS[ BoundType.COMMA_MEAN ],
             exact: false,
         }
@@ -65,7 +66,7 @@ describe("consolidateBoundHistories", (): void => {
             rank: RANKS[ BoundType.COMMA_MEAN ],
             possible: true,
             tinaError: 0 as Multiplier<Tina>,
-            cents: 24.581395 as Cents,
+            pitch: { monzo: [], scaler: SQRT_SCALER } as Pitch<{ rational: false }>,
         }
         const boundHistoryAnalyses: BoundHistoryAnalysis[] = [
             {
@@ -77,7 +78,7 @@ describe("consolidateBoundHistories", (): void => {
                 rank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
                 possible: true,
                 tinaError: 0 as Multiplier<Tina>,
-                cents: 24.581395 as Cents,
+                pitch: { monzo: [], scaler: SQRT_SCALER } as Pitch<{ rational: false }>,
             },
             bestPossibleBoundHistoryAnalysis,
             {
@@ -89,7 +90,7 @@ describe("consolidateBoundHistories", (): void => {
                 rank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
                 possible: false,
                 tinaError: 3.05589400712 as Multiplier<Tina>,
-                cents: 24.151964 as Cents,
+                pitch: { monzo: [], scaler: SQRT_SCALER } as Pitch<{ rational: false }>,
             },
             {
                 ...boundHistoryAnalysisFixture,
@@ -99,7 +100,7 @@ describe("consolidateBoundHistories", (): void => {
                 rank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
                 possible: false,
                 tinaError: 2.26723955922 as Multiplier<Tina>,
-                cents: 24.900000 as Cents,
+                pitch: { monzo: [], scaler: SQRT_SCALER } as Pitch<{ rational: false }>,
             },
         ]
 
@@ -111,7 +112,7 @@ describe("consolidateBoundHistories", (): void => {
                     boundType: boundEventAnalysisAGoesToEventCAndD.boundType,
                     jiNotationLevel: boundEventAnalysisAGoesToEventCAndD.jiNotationLevel,
                     name: boundEventAnalysisAGoesToEventCAndD.name,
-                    cents: boundEventAnalysisAGoesToEventCAndD.cents,
+                    pitch: boundEventAnalysisAGoesToEventCAndD.pitch,
                     isPossibleBoundHistoryMember: true,
                     isBestPossibleBoundHistoryMember: false,
                     exact: false,
@@ -126,7 +127,7 @@ describe("consolidateBoundHistories", (): void => {
                     boundType: boundEventAnalysisBGoesToEventC.boundType,
                     jiNotationLevel: boundEventAnalysisBGoesToEventC.jiNotationLevel,
                     name: boundEventAnalysisBGoesToEventC.name,
-                    cents: boundEventAnalysisBGoesToEventC.cents,
+                    pitch: boundEventAnalysisBGoesToEventC.pitch,
                     isPossibleBoundHistoryMember: true,
                     isBestPossibleBoundHistoryMember: true,
                     exact: false,
@@ -142,7 +143,7 @@ describe("consolidateBoundHistories", (): void => {
                     boundType: boundEventAnalysisC.boundType,
                     jiNotationLevel: boundEventAnalysisC.jiNotationLevel,
                     name: boundEventAnalysisC.name,
-                    cents: boundEventAnalysisC.cents,
+                    pitch: boundEventAnalysisC.pitch,
                     isPossibleBoundHistoryMember: true,
                     isBestPossibleBoundHistoryMember: true,
                     exact: false,
@@ -154,7 +155,7 @@ describe("consolidateBoundHistories", (): void => {
                     boundType: boundEventAnalysisD.boundType,
                     jiNotationLevel: boundEventAnalysisD.jiNotationLevel,
                     name: boundEventAnalysisD.name,
-                    cents: boundEventAnalysisD.cents,
+                    pitch: boundEventAnalysisD.pitch,
                     isPossibleBoundHistoryMember: false,
                     isBestPossibleBoundHistoryMember: false,
                     exact: false,

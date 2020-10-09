@@ -243,44 +243,41 @@ describe("updateEventConsolidation", (): void => {
         })
     })
 
-    describe(
-        "rank of the best ranked bound history any event updated into this event consolidation was a member of",
-        (): void => {
-            it("when the history analysis's rank is less than the rank of the best ranked history this event consolidation has so far been updated with an event from, it updates its rank of best ranked member history", (): void => {
-                const boundEventConsolidation: BoundEventConsolidation = {
-                    ...boundEventConsolidationFixture,
-                    rankOfBestRankedMemberHistory: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
-                }
-                boundHistoryAnalysis = { ...boundHistoryAnalysisFixture, rank: RANKS[ BoundType.COMMA_MEAN ] }
+    describe("rank of the best ranked bound history any event updated into this event consolidation was a member of          ", (): void => {
+        it("when the history analysis's rank is less than the rank of the best ranked history this event consolidation has so far been updated with an event from, it updates its rank of best ranked member history", (): void => {
+            const boundEventConsolidation: BoundEventConsolidation = {
+                ...boundEventConsolidationFixture,
+                rankOfBestRankedMemberHistory: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
+            }
+            boundHistoryAnalysis = { ...boundHistoryAnalysisFixture, rank: RANKS[ BoundType.COMMA_MEAN ] }
 
-                updateEventConsolidation(boundEventConsolidation, {
-                    boundHistoryAnalysis,
-                    boundEventAnalysis: boundEventAnalysis,
-                    nextBoundEventAnalysis,
-                    bestPossibleBoundHistoryAnalysis,
-                })
-
-                expect(boundEventConsolidation.rankOfBestRankedMemberHistory).toBe(RANKS[ BoundType.COMMA_MEAN ])
+            updateEventConsolidation(boundEventConsolidation, {
+                boundHistoryAnalysis,
+                boundEventAnalysis: boundEventAnalysis,
+                nextBoundEventAnalysis,
+                bestPossibleBoundHistoryAnalysis,
             })
 
-            it("when the history analysis's rank is not less than the rank of the best ranked history this event consolidation has so far been updated with an event from, it keeps its rank of best ranked member history the same", (): void => {
-                const boundEventConsolidation: BoundEventConsolidation = {
-                    ...boundEventConsolidationFixture,
-                    rankOfBestRankedMemberHistory: RANKS[ BoundType.COMMA_MEAN ],
-                }
-                boundHistoryAnalysis = { ...boundHistoryAnalysisFixture, rank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ] }
+            expect(boundEventConsolidation.rankOfBestRankedMemberHistory).toBe(RANKS[ BoundType.COMMA_MEAN ])
+        })
 
-                updateEventConsolidation(boundEventConsolidation, {
-                    boundHistoryAnalysis,
-                    boundEventAnalysis: boundEventAnalysis,
-                    nextBoundEventAnalysis,
-                    bestPossibleBoundHistoryAnalysis,
-                })
+        it("when the history analysis's rank is not less than the rank of the best ranked history this event consolidation has so far been updated with an event from, it keeps its rank of best ranked member history the same", (): void => {
+            const boundEventConsolidation: BoundEventConsolidation = {
+                ...boundEventConsolidationFixture,
+                rankOfBestRankedMemberHistory: RANKS[ BoundType.COMMA_MEAN ],
+            }
+            boundHistoryAnalysis = { ...boundHistoryAnalysisFixture, rank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ] }
 
-                expect(boundEventConsolidation.rankOfBestRankedMemberHistory).toBe(RANKS[ BoundType.COMMA_MEAN ])
+            updateEventConsolidation(boundEventConsolidation, {
+                boundHistoryAnalysis,
+                boundEventAnalysis: boundEventAnalysis,
+                nextBoundEventAnalysis,
+                bestPossibleBoundHistoryAnalysis,
             })
-        },
-    )
+
+            expect(boundEventConsolidation.rankOfBestRankedMemberHistory).toBe(RANKS[ BoundType.COMMA_MEAN ])
+        })
+    })
 
     describe("rank of the best ranked bound event updated into this event consolidation", (): void => {
         it("when the bound event analysis's rank is less than the rank of the best ranked bound event this event consolidation has so far been updated with, it updates its rank of best ranked bound event", (): void => {

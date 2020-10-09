@@ -4,9 +4,12 @@ import { JiNotationBound, JI_NOTATION_BOUNDS } from "../../../../../../../src/sa
 import { analyzeJiNotationBound } from "../../../../../../../src/scripts/jiNotationBound/bound"
 import { computeHistories } from "../../../../../../../src/scripts/jiNotationBound/histories"
 import { formatRankAnalyses } from "../../../../../../../src/scripts/jiNotationBound/io/terminal/rank"
+import { onlyRunInCi } from "../../../../../../helpers/onlyRunInCi"
 
 describe("formatRankAnalyses", (): void => {
     it("gives the correct answer", (): void => {
+        onlyRunInCi()
+
         JI_NOTATION_BOUNDS.map((jiNotationBound: JiNotationBound): void => {
             const histories = computeHistories(jiNotationBound)
             analyzeJiNotationBound(histories, jiNotationBound)

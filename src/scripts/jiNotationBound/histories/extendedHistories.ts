@@ -1,18 +1,17 @@
-import { computeCentsFromPitch, computeExtensionBase, ExtensionBaseType } from "../../../general"
+import { computeExtensionBase, ExtensionBaseType } from "../../../general"
 import { BoundType, JiNotationBound, JiNotationLevel } from "../../../sagittal"
-import { BoundedSymbolClassPositions, computeBoundedSymbolClassPositions } from "../boundedPositions"
+import { computeBoundedSymbolClassPositions } from "../boundedPositions"
 import { computeBoundEvents } from "./events"
 import { BoundEvent, BoundHistory } from "./types"
 
 const computeExtendedHistories = (
     boundHistory: BoundHistory,
     jiNotationLevel: JiNotationLevel,
-    jiNotationBound: JiNotationBound,
+    { pitch }: JiNotationBound,
 ): BoundHistory[] => {
-    const extendedBoundHistories: BoundHistory[] = computeExtensionBase(ExtensionBaseType.ARRAY) as BoundHistory[]
+    const extendedBoundHistories = computeExtensionBase(ExtensionBaseType.ARRAY) as BoundHistory[]
 
-    const boundedSymbolClassPositions: BoundedSymbolClassPositions =
-        computeBoundedSymbolClassPositions(computeCentsFromPitch(jiNotationBound.pitch), jiNotationLevel)
+    const boundedSymbolClassPositions = computeBoundedSymbolClassPositions(pitch, jiNotationLevel)
 
     const newBoundEvents = [
         ...computeBoundEvents(jiNotationLevel, boundedSymbolClassPositions, BoundType.INA_MIDPOINT),

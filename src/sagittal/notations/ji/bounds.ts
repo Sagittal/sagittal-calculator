@@ -1,6 +1,7 @@
 // tslint:disable max-line-length
 
 import { Id, Monzo, Name, Pitch, Quotient, SQRT_SCALER } from "../../../general"
+import { APOTOME } from "../../constants"
 import { SizeCategoryBound } from "../../ji"
 import { BoundType, CommaMean, InaMidpoint, JiNotationBound, JiNotationLevel } from "./types"
 
@@ -9,7 +10,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 0 as Id<JiNotationBound>,
         name: "1.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [1.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -19,7 +20,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 1 as Id<JiNotationBound>,
         name: "5.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [5.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -29,7 +30,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 2 as Id<JiNotationBound>,
         name: "8.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [8.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -39,7 +40,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 3 as Id<JiNotationBound>,
         name: "12.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [12.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -49,7 +50,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 4 as Id<JiNotationBound>,
         name: "15.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [15.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -59,7 +60,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 5 as Id<JiNotationBound>,
         name: "19.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [19.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -69,7 +70,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 6 as Id<JiNotationBound>,
         name: "22.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [22.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -79,7 +80,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 7 as Id<JiNotationBound>,
         name: "26.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [26.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -89,7 +90,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 8 as Id<JiNotationBound>,
         name: "29.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [29.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -99,7 +100,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 9 as Id<JiNotationBound>,
         name: "32.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [32.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -109,7 +110,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 10 as Id<JiNotationBound>,
         name: "36.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [36.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -119,7 +120,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 11 as Id<JiNotationBound>,
         name: "39.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [39.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -129,7 +130,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 12 as Id<JiNotationBound>,
         name: "43.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [43.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -139,7 +140,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 13 as Id<JiNotationBound>,
         name: "46.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [46.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -149,7 +150,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 14 as Id<JiNotationBound>,
         name: "50.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [50.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -159,7 +160,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 15 as Id<JiNotationBound>,
         name: "53.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [53.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -169,7 +170,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 16 as Id<JiNotationBound>,
         name: "57.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [57.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -179,7 +180,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 17 as Id<JiNotationBound>,
         name: "60.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [60.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -189,7 +190,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 18 as Id<JiNotationBound>,
         name: "64.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [64.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -199,7 +200,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 19 as Id<JiNotationBound>,
         name: "67.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [67.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -209,7 +210,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 20 as Id<JiNotationBound>,
         name: "71.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [71.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -219,7 +220,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 21 as Id<JiNotationBound>,
         name: "74.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [74.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -229,7 +230,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 22 as Id<JiNotationBound>,
         name: "78.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [78.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -239,7 +240,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 23 as Id<JiNotationBound>,
         name: "81.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [81.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -249,7 +250,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 24 as Id<JiNotationBound>,
         name: "85.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [85.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -259,7 +260,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 25 as Id<JiNotationBound>,
         name: "88.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [88.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -269,7 +270,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 26 as Id<JiNotationBound>,
         name: "92.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [92.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -279,7 +280,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 27 as Id<JiNotationBound>,
         name: "95.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [95.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -289,7 +290,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 28 as Id<JiNotationBound>,
         name: "98.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [98.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -299,7 +300,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 29 as Id<JiNotationBound>,
         name: "102.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [102.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -309,7 +310,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 30 as Id<JiNotationBound>,
         name: "105.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [105.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -319,7 +320,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 31 as Id<JiNotationBound>,
         name: "109.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [109.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -329,7 +330,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 32 as Id<JiNotationBound>,
         name: "112.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [112.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -339,7 +340,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 33 as Id<JiNotationBound>,
         name: "116.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [116.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -349,7 +350,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 34 as Id<JiNotationBound>,
         name: "119.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [119.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -359,7 +360,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 35 as Id<JiNotationBound>,
         name: "123.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [123.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -369,7 +370,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 36 as Id<JiNotationBound>,
         name: "126.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [126.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -379,7 +380,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 37 as Id<JiNotationBound>,
         name: "130.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [130.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -389,7 +390,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 38 as Id<JiNotationBound>,
         name: "133.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [133.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -399,7 +400,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 39 as Id<JiNotationBound>,
         name: "137.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [137.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -409,7 +410,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 40 as Id<JiNotationBound>,
         name: "140.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [140.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -419,7 +420,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 41 as Id<JiNotationBound>,
         name: "144.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [144.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -429,7 +430,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 42 as Id<JiNotationBound>,
         name: "147.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [147.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -439,7 +440,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 43 as Id<JiNotationBound>,
         name: "151.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [151.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -449,7 +450,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 44 as Id<JiNotationBound>,
         name: "154.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [154.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -459,7 +460,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 45 as Id<JiNotationBound>,
         name: "157.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [157.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -469,7 +470,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 46 as Id<JiNotationBound>,
         name: "161.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [161.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -479,7 +480,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 47 as Id<JiNotationBound>,
         name: "164.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [164.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -489,7 +490,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 48 as Id<JiNotationBound>,
         name: "168.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [168.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -509,7 +510,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 50 as Id<JiNotationBound>,
         name: "171.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [171.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -519,7 +520,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 51 as Id<JiNotationBound>,
         name: "175.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [175.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -539,7 +540,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 53 as Id<JiNotationBound>,
         name: "178.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [178.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -549,7 +550,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 54 as Id<JiNotationBound>,
         name: "182.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [182.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -559,7 +560,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 55 as Id<JiNotationBound>,
         name: "185.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [185.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -569,7 +570,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 56 as Id<JiNotationBound>,
         name: "189.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [189.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -579,7 +580,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 57 as Id<JiNotationBound>,
         name: "192.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [192.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -589,7 +590,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 58 as Id<JiNotationBound>,
         name: "196.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [196.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -599,7 +600,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 59 as Id<JiNotationBound>,
         name: "199.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [199.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -609,7 +610,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 60 as Id<JiNotationBound>,
         name: "203.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [203.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -619,7 +620,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 61 as Id<JiNotationBound>,
         name: "206.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [206.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -629,7 +630,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 62 as Id<JiNotationBound>,
         name: "210.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [210.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -639,7 +640,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 63 as Id<JiNotationBound>,
         name: "213.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [213.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -649,7 +650,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 64 as Id<JiNotationBound>,
         name: "217.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [217.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -659,7 +660,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 65 as Id<JiNotationBound>,
         name: "220.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [220.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -669,7 +670,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 66 as Id<JiNotationBound>,
         name: "223.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [223.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -679,7 +680,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 67 as Id<JiNotationBound>,
         name: "227.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [227.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -689,7 +690,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 68 as Id<JiNotationBound>,
         name: "230.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [230.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -699,7 +700,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 69 as Id<JiNotationBound>,
         name: "234.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [234.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -709,7 +710,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 70 as Id<JiNotationBound>,
         name: "237.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [237.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -719,7 +720,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 71 as Id<JiNotationBound>,
         name: "241.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [241.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -729,7 +730,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 72 as Id<JiNotationBound>,
         name: "244.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [244.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -739,7 +740,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 73 as Id<JiNotationBound>,
         name: "248.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [248.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -759,7 +760,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 75 as Id<JiNotationBound>,
         name: "251.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [251.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -769,7 +770,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 76 as Id<JiNotationBound>,
         name: "255.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [255.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -779,7 +780,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 77 as Id<JiNotationBound>,
         name: "258.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [258.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -789,7 +790,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 78 as Id<JiNotationBound>,
         name: "262.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [262.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -799,7 +800,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 79 as Id<JiNotationBound>,
         name: "265.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [265.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -809,7 +810,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 80 as Id<JiNotationBound>,
         name: "269.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [269.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -829,7 +830,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 82 as Id<JiNotationBound>,
         name: "272.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [272.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -839,7 +840,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 83 as Id<JiNotationBound>,
         name: "276.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [276.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -849,7 +850,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 84 as Id<JiNotationBound>,
         name: "279.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [279.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -859,7 +860,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 85 as Id<JiNotationBound>,
         name: "282.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [282.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -869,7 +870,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 86 as Id<JiNotationBound>,
         name: "286.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [286.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -879,7 +880,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 87 as Id<JiNotationBound>,
         name: "289.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [289.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -889,7 +890,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 88 as Id<JiNotationBound>,
         name: "293.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [293.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -899,7 +900,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 89 as Id<JiNotationBound>,
         name: "296.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [296.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -909,7 +910,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 90 as Id<JiNotationBound>,
         name: "300.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [300.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -919,7 +920,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 91 as Id<JiNotationBound>,
         name: "303.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [303.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -929,7 +930,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 92 as Id<JiNotationBound>,
         name: "307.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [307.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -939,7 +940,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 93 as Id<JiNotationBound>,
         name: "310.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [310.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -949,7 +950,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 94 as Id<JiNotationBound>,
         name: "314.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [314.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -959,7 +960,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 95 as Id<JiNotationBound>,
         name: "317.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [317.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -979,7 +980,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 97 as Id<JiNotationBound>,
         name: "324.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [324.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -989,7 +990,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 98 as Id<JiNotationBound>,
         name: "328.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [328.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -999,7 +1000,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 99 as Id<JiNotationBound>,
         name: "331.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [331.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1009,7 +1010,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 100 as Id<JiNotationBound>,
         name: "335.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [335.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1019,7 +1020,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 101 as Id<JiNotationBound>,
         name: "338.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [338.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1029,7 +1030,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 102 as Id<JiNotationBound>,
         name: "342.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [342.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1039,7 +1040,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 103 as Id<JiNotationBound>,
         name: "345.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [345.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1049,7 +1050,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 104 as Id<JiNotationBound>,
         name: "348.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [348.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1059,7 +1060,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 105 as Id<JiNotationBound>,
         name: "352.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [352.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1069,7 +1070,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 106 as Id<JiNotationBound>,
         name: "355.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [355.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1079,7 +1080,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 107 as Id<JiNotationBound>,
         name: "359.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [359.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1089,7 +1090,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 108 as Id<JiNotationBound>,
         name: "362.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [362.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1109,7 +1110,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 110 as Id<JiNotationBound>,
         name: "366.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [366.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1119,7 +1120,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 111 as Id<JiNotationBound>,
         name: "369.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [369.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1129,7 +1130,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 112 as Id<JiNotationBound>,
         name: "373.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [373.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1139,7 +1140,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 113 as Id<JiNotationBound>,
         name: "376.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [376.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1149,7 +1150,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 114 as Id<JiNotationBound>,
         name: "380.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [380.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1159,7 +1160,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 115 as Id<JiNotationBound>,
         name: "383.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [383.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1169,7 +1170,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 116 as Id<JiNotationBound>,
         name: "387.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [387.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1179,7 +1180,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 117 as Id<JiNotationBound>,
         name: "390.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [390.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1199,7 +1200,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 119 as Id<JiNotationBound>,
         name: "394.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [394.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1209,7 +1210,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 120 as Id<JiNotationBound>,
         name: "397.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [397.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1219,7 +1220,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 121 as Id<JiNotationBound>,
         name: "401.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [401.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1229,7 +1230,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 122 as Id<JiNotationBound>,
         name: "404.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [404.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1239,7 +1240,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 123 as Id<JiNotationBound>,
         name: "407.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [407.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1249,7 +1250,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 124 as Id<JiNotationBound>,
         name: "411.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [411.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1259,7 +1260,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 125 as Id<JiNotationBound>,
         name: "414.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [414.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1279,7 +1280,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 127 as Id<JiNotationBound>,
         name: "418.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [418.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1289,7 +1290,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 128 as Id<JiNotationBound>,
         name: "421.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [421.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1299,7 +1300,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 129 as Id<JiNotationBound>,
         name: "425.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [425.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1309,7 +1310,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 130 as Id<JiNotationBound>,
         name: "428.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [428.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1319,7 +1320,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 131 as Id<JiNotationBound>,
         name: "432.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [432.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1329,7 +1330,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 132 as Id<JiNotationBound>,
         name: "435.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [435.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1339,7 +1340,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 133 as Id<JiNotationBound>,
         name: "439.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [439.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1349,7 +1350,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 134 as Id<JiNotationBound>,
         name: "442.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [442.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1369,7 +1370,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 136 as Id<JiNotationBound>,
         name: "446.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [446.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1379,7 +1380,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 137 as Id<JiNotationBound>,
         name: "449.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [449.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1389,7 +1390,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 138 as Id<JiNotationBound>,
         name: "453.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [453.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1399,7 +1400,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 139 as Id<JiNotationBound>,
         name: "456.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [456.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1409,7 +1410,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 140 as Id<JiNotationBound>,
         name: "460.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [460.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1419,7 +1420,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 141 as Id<JiNotationBound>,
         name: "463.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [463.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1429,7 +1430,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 142 as Id<JiNotationBound>,
         name: "466.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [466.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1439,7 +1440,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 143 as Id<JiNotationBound>,
         name: "470.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [470.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1449,7 +1450,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 144 as Id<JiNotationBound>,
         name: "473.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [473.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1459,7 +1460,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 145 as Id<JiNotationBound>,
         name: "477.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [477.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1469,7 +1470,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 146 as Id<JiNotationBound>,
         name: "480.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [480.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1479,7 +1480,7 @@ const JI_NOTATION_BOUNDS: JiNotationBound[] = [
         id: 147 as Id<JiNotationBound>,
         name: "484.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: [-11, 7] as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
             scaler: [484.5, 809] as Quotient,
         } as Pitch<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,

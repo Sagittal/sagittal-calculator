@@ -6,3 +6,4 @@ export {
     computeIrrationalMonzoFromPitch,
     computeIrrationalQuotientFromPitch,
 } from "./to"
+export { areNonJiPitchesEqual } from "./comparison"

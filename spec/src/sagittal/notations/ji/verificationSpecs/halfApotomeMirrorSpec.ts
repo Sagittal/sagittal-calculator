@@ -1,4 +1,5 @@
 import { increment } from "../../../../../../src/general/code"
+import { areNonJiPitchesEqual } from "../../../../../../src/general/music/nonJi/comparison"
 import { arePitchesEqual, isPitchHigher } from "../../../../../../src/general/music/pitch"
 import { computeInterval } from "../../../../../../src/general/music/pitch/typedOperations"
 import {
@@ -36,7 +37,7 @@ describe("half-apotome mirror", (): void => {
     it("is the case that the bounds in the JI notation are symmetrical about the half-apotome mirror", (): void => {
         const jiNotationBoundAtHalfApotomeMirrorIndex =
             JI_NOTATION_BOUNDS.findIndex((jiNotationBound: JiNotationBound): boolean => {
-                return arePitchesEqual(jiNotationBound.pitch, HALF_APOTOME)
+                return areNonJiPitchesEqual(jiNotationBound.pitch, HALF_APOTOME)
             })
 
         let indexOffset = 1

@@ -1,11 +1,8 @@
-import { Cents, finalElement } from "../../../general"
+import { finalElement, Pitch } from "../../../general"
 import { BoundHistory } from "../histories"
 
-const computeBoundHistoryPosition = (boundHistory: BoundHistory): Cents => {
-    const mostRecentBoundEvent = finalElement(boundHistory)
-
-    return mostRecentBoundEvent.cents
-}
+const computeBoundHistoryPosition = (boundHistory: BoundHistory): Pitch =>
+    finalElement(boundHistory).pitch
 
 export {
     computeBoundHistoryPosition,

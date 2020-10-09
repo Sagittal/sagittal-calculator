@@ -129,11 +129,11 @@ describe("computeCommaName", (): void => {
     })
 
     it("this one is apparently a close call; when fiddling with default precision, it came out to 385s", (): void => {
-        const comma = { monzo: [-7, -1, 1, 1, 1] } as Comma
+        const comma = { monzo: [-7, -1, 1, 1, 1] } as Comma // 1.00260416667 = 4.50256183908¢
 
         const actual = computeCommaName(comma)
 
-        const expected = "385k"
+        const expected = "385k"     // The s|k boundary is ~4.499913¢
         expect(actual).toBe(expected)
     })
 })

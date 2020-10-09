@@ -1,4 +1,4 @@
-import { Abs, abs, Cents, computeCentsFromPitch, Id, Maybe, subtract } from "../../../../general"
+import { Abs, abs, Cents, Id, Maybe, subtractPitch } from "../../../../general"
 import {
     getPrimaryComma,
     getSymbolClass,
@@ -19,8 +19,7 @@ import {
 const computeJiNotationLevelBoundedSymbolClassIdsWithDistances = (
     jiNotationBound: JiNotationBound,
 ): JiNotationBoundIdWithBoundedSymbolClassIdsWithDistancesPairsByJiNotationLevel => {
-    const { jiNotationLevels, id } = jiNotationBound
-    const cents = computeCentsFromPitch(jiNotationBound.pitch)
+    const { pitch, jiNotationLevels, id } = jiNotationBound
 
     return jiNotationLevels.reduce(
         (
@@ -29,7 +28,7 @@ const computeJiNotationLevelBoundedSymbolClassIdsWithDistances = (
             jiNotationLevel: JiNotationLevel,
         ): JiNotationBoundIdWithBoundedSymbolClassIdsWithDistancesPairsByJiNotationLevel => {
             const jiNotationLevelBoundedSymbolClasses: Array<Maybe<SymbolClass>> =
-                computeBoundedSymbolClassPositions(cents, jiNotationLevel)
+                computeBoundedSymbolClassPositions(pitch, jiNotationLevel)
                     .map(computePositionSymbolClassId)
                     .map((symbolClassId: Maybe<Id<SymbolClass>>): Maybe<SymbolClass> => {
                         return symbolClassId && getSymbolClass(symbolClassId)
@@ -39,8 +38,7 @@ const computeJiNotationLevelBoundedSymbolClassIdsWithDistances = (
                     (symbolClass: Maybe<SymbolClass>): Maybe<BoundedSymbolClassIdWithDistances> => {
                         if (symbolClass) {
                             const primaryComma = getPrimaryComma(symbolClass.id)
-                            const primaryCommaCents = computeCentsFromPitch(primaryComma)
-                            const distance: Abs<Cents> = abs(subtract(cents, primaryCommaCents))
+                            const distance: Abs<Cents> = abs(subtractPitch(pitch, primaryComma))
 
                             return {
                                 id: symbolClass.id,

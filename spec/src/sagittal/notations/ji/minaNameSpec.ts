@@ -1,7 +1,7 @@
 import { Count, decrement, Id, increment, Name } from "../../../../../src/general"
 import { computeRange } from "../../../../../src/general/code"
 import { Max } from "../../../../../src/general/math"
-import { subtractPitch } from "../../../../../src/general/music/cents"
+import { subtractPitch } from "../../../../../src/general/music"
 import { SymbolClass } from "../../../../../src/sagittal/notations"
 import { getMinaName, Mina } from "../../../../../src/sagittal/notations/ji"
 import { computeCaptureZone } from "../../../../../src/sagittal/notations/ji/captureZone"

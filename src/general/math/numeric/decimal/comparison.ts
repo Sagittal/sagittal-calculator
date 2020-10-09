@@ -9,7 +9,8 @@ const areDecimalsEqual = <T extends NumericProperties, U extends NumericProperti
 ): boolean =>
     isUndefined(precision) ?
         decimalA as Decimal === decimalB as Decimal :
-        isCloseTo(decimalA, decimalB)
+        // TODO: and that's why YOU TEST THIS STUFF!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        isCloseTo(decimalA, decimalB, precision)
 
 const isDecimalHigher = <T extends NumericProperties, U extends NumericProperties>(
     decimal: Decimal<T>,

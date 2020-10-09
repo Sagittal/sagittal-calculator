@@ -33,7 +33,7 @@ describe("computeIrrationalDecimalFromPitch", (): void => {
         const actual = computeIrrationalDecimalFromPitch(nonJiPitch)
 
         const expected = 84.45893 as Decimal<{ rational: false }>
-        expect(actual).toBeCloseToObject(expected)
+        expect(actual).toBeCloseTo(expected)
     })
 })
 

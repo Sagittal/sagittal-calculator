@@ -1,4 +1,4 @@
-import { ACCURACY_THRESHOLD, add, computeCentsFromPitch, Io, Px, round, subtract } from "../../../../general"
+import { ACCURACY_THRESHOLD, add, Io, Px, round, subtract } from "../../../../general"
 import { InaMidpoint, JiNotationLevel } from "../../../../sagittal"
 import { INA_MIDPOINTS } from "../../histories"
 import { JI_NOTATION_LEVEL_CENTERS } from "./levelHeights"
@@ -15,11 +15,8 @@ const visualizeInaMidpoints = (): Io[] => {
         const topY: Px = round(subtract(centerY, HALF_TICK_SIZE), ACCURACY_THRESHOLD)
         const bottomY: Px = round(add(centerY, HALF_TICK_SIZE), ACCURACY_THRESHOLD)
 
-        inaMidpoints.forEach((inaMidpoint: InaMidpoint): void => {
-            const { name } = inaMidpoint
-            const cents = computeCentsFromPitch(inaMidpoint.pitch)
-
-            const x: Px = computeX(cents)
+        inaMidpoints.forEach(({ name, pitch }: InaMidpoint): void => {
+            const x: Px = computeX(pitch)
 
             inaMidpointElements.push(`  <line stroke-dasharray="${DASH_SIZE}" stroke="${INA_MIDPOINT_HEX_COLOR}" x1="${x}" x2="${x}" y1="${topY}" y2="${bottomY}"/>\n` as Io)
             inaMidpointElements.push(`  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="${x}" y="${topY}" font-size="6px" font-family="Helvetica">${name}</text>\n` as Io)

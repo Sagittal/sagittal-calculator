@@ -1,7 +1,7 @@
 // tslint:disable comment-format
 
 import { Cents, Decimal, EMPTY_MONZO, Monzo, Pitch, SQRT_SCALER } from "../../../../../../src/general"
-import { SizeCategoryBound, SIZE_CATEGORY_BOUNDS } from "../../../../../../src/sagittal"
+import { APOTOME, SizeCategoryBound, SIZE_CATEGORY_BOUNDS } from "../../../../../../src/sagittal"
 import { analyzePitch } from "../../../../../helpers/src/general/music/analyzePitch"
 import { PitchAnalysis } from "../../../../../helpers/src/general/music/types"
 
@@ -75,7 +75,7 @@ describe("SIZE_CATEGORY_BOUNDS", (): void => {
             {
                 // M|L
                 pitch: {
-                    monzo: [-11, 7] as Monzo<{ rational: true }>,
+                    monzo: APOTOME.monzo,
                     scaler: SQRT_SCALER,
                 } as Pitch<{ rational: false }>,
                 monzo: [-5.5, 3.5] as Monzo,

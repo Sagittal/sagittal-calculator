@@ -4,7 +4,7 @@ import {
     Abs,
     Cents,
     Comma,
-    computePitchFromDecimal,
+    computePitchFromCents,
     Copfr,
     Decimal,
     Direction,
@@ -42,7 +42,7 @@ import { jiNotationBoundFixture } from "../../../../../helpers/src/scripts/jiNot
 describe("extractJiNotationBoundIdentifiers", (): void => {
     const jiNotationBound: JiNotationBound = {
         ...jiNotationBoundFixture,
-        pitch: computePitchFromDecimal(1.01344211084 as Decimal<{ rational: false }>),  // 23.116419¢
+        pitch: computePitchFromCents(23.116419 as Cents),
         jiNotationLevels: [JiNotationLevel.ULTRA, JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
         id: 47 as Id<JiNotationBound>,
         boundType: BoundType.INA_MIDPOINT,

@@ -1,14 +1,17 @@
 import {
     Abs,
     Cents,
-    computePitchFromDecimal,
+    computePitchFromCents,
     Count,
-    Decimal,
     Id,
+    Monzo,
     Multiplier,
     Name,
+    Pitch,
+    SQRT_SCALER,
     Sum,
 } from "../../../../../src/general"
+import { APOTOME } from "../../../../../src/sagittal"
 import {
     Bound,
     BoundType,
@@ -31,19 +34,28 @@ describe("analyzeJiNotationBound", (): void => {
             jiNotationLevel: JiNotationLevel.ULTRA,
             boundType: BoundType.COMMA_MEAN,
             name: ".)/| '/|" as Name<Bound>,
-            cents: 23.2 as Cents,
+            pitch: {
+                monzo: [-17, 11, -2, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
+                scaler: SQRT_SCALER,
+            } as Pitch<{ rational: false }>,
         },
         {
             jiNotationLevel: JiNotationLevel.EXTREME,
             boundType: BoundType.COMMA_MEAN,
             name: ".)/| '/|" as Name<Bound>,
-            cents: 23.2 as Cents,
+            pitch: {
+                monzo: [-17, 11, -2, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
+                scaler: SQRT_SCALER,
+            } as Pitch<{ rational: false }>,
         },
         {
             jiNotationLevel: JiNotationLevel.INSANE,
             boundType: BoundType.INA_MIDPOINT,
             name: "164.5°809" as Name<Bound>,
-            cents: 23.116419649559468 as Cents,
+            pitch: {
+                monzo: APOTOME.monzo,
+                scaler: [164.5, 809],
+            } as Pitch<{ rational: false }>,
             // This one gets rank 4
         },
     ]
@@ -52,19 +64,28 @@ describe("analyzeJiNotationBound", (): void => {
             jiNotationLevel: JiNotationLevel.ULTRA,
             boundType: BoundType.COMMA_MEAN,
             name: ".)/| '/|" as Name<Bound>,
-            cents: 23.2 as Cents,
+            pitch: {
+                monzo: [-17, 11, -2, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
+                scaler: SQRT_SCALER,
+            } as Pitch<{ rational: false }>,
         },
         {
             jiNotationLevel: JiNotationLevel.EXTREME,
             boundType: BoundType.INA_MIDPOINT,
             name: "47.5°233" as Name<Bound>,
-            cents: 23.15 as Cents,
+            pitch: {
+                monzo: APOTOME.monzo,
+                scaler: [47.5, 233],
+            } as Pitch<{ rational: false }>,
         },
         {
             jiNotationLevel: JiNotationLevel.INSANE,
             boundType: BoundType.INA_MIDPOINT,
             name: "164.5°809" as Name<Bound>,
-            cents: 23.116419649559468 as Cents,
+            pitch: {
+                monzo: APOTOME.monzo,
+                scaler: [164.5, 809],
+            } as Pitch<{ rational: false }>,
             // This one gets rank 1
         },
     ]
@@ -74,7 +95,7 @@ describe("analyzeJiNotationBound", (): void => {
     ]
     const jiNotationBound: JiNotationBound = {
         ...jiNotationBoundFixture,
-        pitch: computePitchFromDecimal(1.01344211122 as Decimal<{ rational: false }>), // 23.116420¢
+        pitch: computePitchFromCents(23.116420 as Cents),
         jiNotationLevels: [JiNotationLevel.ULTRA, JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
         id: 47 as Id<JiNotationBound>,
         boundType: BoundType.INA_MIDPOINT,
@@ -84,7 +105,10 @@ describe("analyzeJiNotationBound", (): void => {
             jiNotationLevel: JiNotationLevel.ULTRA,
             boundType: BoundType.COMMA_MEAN,
             name: ".)/| '/|" as Name<Bound>,
-            cents: 23.2 as Cents,
+            pitch: {
+                monzo: [-17, 11, -2, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
+                scaler: SQRT_SCALER,
+            } as Pitch<{ rational: false }>,
             rank: RANKS[ BoundType.COMMA_MEAN ],
             distance: 0 as Abs<Cents>,
             inaDistance: 0 as Multiplier<Ina>,
@@ -94,34 +118,43 @@ describe("analyzeJiNotationBound", (): void => {
             jiNotationLevel: JiNotationLevel.EXTREME,
             boundType: BoundType.INA_MIDPOINT,
             name: "47.5°233" as Name<Bound>,
-            cents: 23.15 as Cents,
+            pitch: {
+                monzo: APOTOME.monzo,
+                scaler: [47.5, 233],
+            } as Pitch<{ rational: false }>,
             rank: RANKS[ BoundType.INA_MIDPOINT ],
-            distance: 0.05000000000000071 as Abs<Cents>,
-            inaDistance: 0.10247613475154385 as Multiplier<Ina>,
+            distance: 0.019171116563747148 as Abs<Cents>,
+            inaDistance: 0.03929163848648158 as Multiplier<Ina>,
             exact: false,
         },
         {
             jiNotationLevel: JiNotationLevel.INSANE,
             boundType: BoundType.INA_MIDPOINT,
             name: "164.5°809" as Name<Bound>,
-            cents: 23.116419649559468 as Cents,
+            pitch: {
+                monzo: APOTOME.monzo,
+                scaler: [164.5, 809],
+            } as Pitch<{ rational: false }>,
             rank: RANKS[ BoundType.INA_MIDPOINT ],
-            distance: 0.03358035044053054 as Abs<Cents>,
-            inaDistance: 0.23896294197845397 as Multiplier<Ina>,
+            distance: 0.05970819482401879 as Abs<Cents>,
+            inaDistance: 0.4248927038637779 as Multiplier<Ina>,
             exact: true,
         },
     ]
     const expectedBestPossibleBoundHistoryAnalysis: BoundHistoryAnalysis = {
         boundEventAnalyses: expectedBestBoundHistoryBoundEventAnalyses,
-        cents: 23.116419649559468 as Cents as Cents,
+        pitch: {
+            monzo: APOTOME.monzo,
+            scaler: [164.5, 809],
+        } as Pitch<{ rational: false }>,
         rank: RANKS[ BoundType.COMMA_MEAN ],
         score: 131 as Score,
         possible: true,
         exact: false,
-        totalDistance: 0.08358035044053125 as Sum<Abs<Cents>>,
-        totalInaDistance: 0.34143907672999785 as Sum<Multiplier<Ina>>,
+        totalDistance: 0.07887931138776594 as Sum<Abs<Cents>>,
+        totalInaDistance: 0.4641843423502595 as Sum<Multiplier<Ina>>,
         tinaError: 0 as Multiplier<Tina>,
-        initialPositionTinaDistance: -0.5613173198957342 as Multiplier<Tina>,
+        initialPositionTinaDistance: -0.5613173198962398 as Multiplier<Tina>,
     }
 
     it("returns an analysis of the JI notation bound using its histories, including a consolidation of said bound histories, and its best possible bound history, and the difference between the bound and its initial position", (): void => {
@@ -129,19 +162,25 @@ describe("analyzeJiNotationBound", (): void => {
 
         const expected = {
             bestRank: RANKS[ BoundType.COMMA_MEAN ],
-            initialPosition: 23.195298960947348 as Cents,
-            initialPositionTinaDistance: -0.5613173198954056 as Multiplier<Tina>,
+            initialPosition: {
+                monzo: [-17, 11, -2, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
+                scaler: SQRT_SCALER,
+            } as Pitch<{ rational: false }>,
+            initialPositionTinaDistance: -0.5613148261064571 as Multiplier<Tina>,
             possibleBoundHistoryCount: 2 as Count<BoundHistoryAnalysis>,
             bestPossibleBoundHistoryAnalysis: expectedBestPossibleBoundHistoryAnalysis,
-            bestPossibleBoundHistoryTotalDistance: 0.08358035044053125 as Cents,
-            bestPossibleBoundHistoryTotalInaDistance: 0.34143907672999785 as Sum<Multiplier<Ina>>,
+            bestPossibleBoundHistoryTotalDistance: 0.07887931138776594 as Cents,
+            bestPossibleBoundHistoryTotalInaDistance: 0.4641843423502595 as Sum<Multiplier<Ina>>,
             boundHistoryConsolidation: {
                 [ JiNotationLevel.ULTRA ]: [
                     {
                         jiNotationLevel: JiNotationLevel.ULTRA,
                         boundType: BoundType.COMMA_MEAN,
                         name: ".)/| '/|" as Name<Bound>,
-                        cents: 23.2 as Cents,
+                        pitch: {
+                            monzo: [-17, 11, -2, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
+                            scaler: SQRT_SCALER,
+                        } as Pitch<{ rational: false }>,
                         isPossibleBoundHistoryMember: true,
                         isBestPossibleBoundHistoryMember: true,
                         exact: false,
@@ -158,7 +197,10 @@ describe("analyzeJiNotationBound", (): void => {
                         jiNotationLevel: JiNotationLevel.EXTREME,
                         boundType: BoundType.COMMA_MEAN,
                         name: ".)/| '/|" as Name<Bound>,
-                        cents: 23.2 as Cents,
+                        pitch: {
+                            monzo: [-17, 11, -2, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
+                            scaler: SQRT_SCALER,
+                        } as Pitch<{ rational: false }>,
                         isPossibleBoundHistoryMember: true,
                         isBestPossibleBoundHistoryMember: false,
                         exact: false,
@@ -172,7 +214,10 @@ describe("analyzeJiNotationBound", (): void => {
                         jiNotationLevel: JiNotationLevel.EXTREME,
                         boundType: BoundType.INA_MIDPOINT,
                         name: "47.5°233" as Name<Bound>,
-                        cents: 23.15 as Cents,
+                        pitch: {
+                            monzo: APOTOME.monzo,
+                            scaler: [47.5, 233],
+                        } as Pitch<{ rational: false }>,
                         isPossibleBoundHistoryMember: true,
                         isBestPossibleBoundHistoryMember: true,
                         exact: false,
@@ -188,7 +233,10 @@ describe("analyzeJiNotationBound", (): void => {
                         jiNotationLevel: JiNotationLevel.INSANE,
                         boundType: BoundType.INA_MIDPOINT,
                         name: "164.5°809" as Name<Bound>,
-                        cents: 23.116419649559468 as Cents,
+                        pitch: {
+                            monzo: APOTOME.monzo,
+                            scaler: [164.5, 809],
+                        } as Pitch<{ rational: false }>,
                         isPossibleBoundHistoryMember: true,
                         isBestPossibleBoundHistoryMember: true,
                         exact: true,
@@ -199,7 +247,7 @@ describe("analyzeJiNotationBound", (): void => {
                 ],
             },
         }
-        expect(actual).toBeCloseToObject(expected)
+        expect(actual).toEqual(expected)
     })
 
     it("updates the rank analysis", (): void => {

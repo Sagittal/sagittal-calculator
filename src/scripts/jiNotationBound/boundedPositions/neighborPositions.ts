@@ -1,10 +1,13 @@
-import { Cents } from "../../../general"
+import { computeCentsFromPitch, NumericProperties, Pitch } from "../../../general"
 import { computeNeighborPositionIndices } from "./neighborPositionIndices"
 import { NeighborPositions } from "./types"
 
-const computeNeighborPositions = (position: Cents, targetPositions: Cents[]): NeighborPositions => {
+const computeNeighborPositions = <T extends NumericProperties>(
+    position: Pitch,
+    targetPositions: Array<Pitch<T>>
+): NeighborPositions => {
     const [lesserNeighborPositionIndex, greaterNeighborPositionIndex] =
-        computeNeighborPositionIndices(position, targetPositions)
+        computeNeighborPositionIndices(computeCentsFromPitch(position), targetPositions.map(computeCentsFromPitch))
 
     return [
         targetPositions[ lesserNeighborPositionIndex ],

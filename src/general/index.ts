@@ -183,6 +183,7 @@ export {
     computeRationalMonzoSopfr,
     computeRationalMonzoSmoothness,
     EMPTY_MONZO,
+    reciprocal,
 } from "./math"
 export {
     Cents,
@@ -229,5 +230,7 @@ export {
     isJiPitchUnison,
     computeStackedJiPitch,
     dividePitch,
+    subtractPitch,
+    areNonJiPitchesEqual,
 } from "./music"
 export { Count, Ed, Extrema, Id, Index, Ms, Multiplier, Name, Step, Sum, Window, Of } from "./types"

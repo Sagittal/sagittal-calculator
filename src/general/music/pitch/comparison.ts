@@ -1,14 +1,13 @@
 import { isUndefined, MAX_JS_PRECISION, Precision } from "../../code"
-import { areMonzosEqual, areQuotientsEqual, NumericProperties } from "../../math"
-import { computeIrrationalDecimalFromPitch, computeIrrationalMonzoFromPitch } from "../nonJi"
+import { areDecimalsEqual, areMonzosEqual, areQuotientsEqual, NumericProperties } from "../../math"
+import { computeIrrationalDecimalFromPitch } from "../nonJi"
 import { Pitch } from "./types"
 
 const arePitchesEqual = <T extends NumericProperties, U extends NumericProperties>(
     pitchA: Pitch<T>,
     pitchB: Pitch<U>,
     precision: Precision = MAX_JS_PRECISION,
-): boolean =>
-    (
+): boolean => (
         areMonzosEqual(pitchA.monzo, pitchB.monzo, precision)
         && (
             isUndefined(pitchA.scaler) && isUndefined(pitchB.scaler)
@@ -18,8 +17,9 @@ const arePitchesEqual = <T extends NumericProperties, U extends NumericPropertie
             )
         )
     )
-    || areMonzosEqual(computeIrrationalMonzoFromPitch(pitchA), computeIrrationalMonzoFromPitch(pitchB), precision)
+    || areDecimalsEqual(computeIrrationalDecimalFromPitch(pitchA), computeIrrationalDecimalFromPitch(pitchB), precision)
 
+// TODO: make this an example  { monzo: [ -7, -1, 1, 1, 1 ] } > { monzo: [ 317, -200 ], scaler: [ 1, 2 ] }
 const isPitchHigher = <T extends NumericProperties, U extends NumericProperties>(
     pitch: Pitch<T>,
     otherPitch: Pitch<U>,

@@ -1,5 +1,5 @@
-import { Decimal } from "../../../../../src/general/math/numeric/decimal"
-import { Cents, computePitchFromDecimal } from "../../../../../src/general/music"
+import { Monzo } from "../../../../../src/general/math/numeric/monzo"
+import { Cents, computePitchFromCents, Pitch, SQRT_SCALER } from "../../../../../src/general/music"
 import { JiNotationBound, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 import { computeInitialPosition } from "../../../../../src/scripts/jiNotationBound/bound/initialPosition"
 import { jiNotationBoundFixture } from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
@@ -10,12 +10,18 @@ describe("computeInitialPosition", (): void => {
             ...jiNotationBoundFixture,
             jiNotationLevels: [JiNotationLevel.HIGH, JiNotationLevel.EXTREME],
             // This is chosen at ~42¢ to be between ~|\ (40.004352) and //| (43.012579) at the High JI notation level
-            pitch: computePitchFromDecimal(1.02455682303 as Decimal<{ rational: false }>),
+            pitch: computePitchFromCents(42 as Cents),
         }
 
         const actual = computeInitialPosition(jiNotationBound)
 
-        const expected = (40.004352 + 43.012579) / 2 as Cents
-        expect(actual).toBeCloseTo(expected)
+        const expected = {
+            //   [ -14   6   0   0   0   0   0   0   1 ⟩       ~|\
+            // + [  -8   8  -2                         ⟩      //|
+            // / 2 =
+            monzo: [-22, 14, -2, 0, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
+            scaler: SQRT_SCALER,
+        } as Pitch<{ rational: false }>
+        expect(actual).toEqual(expected)
     })
 })

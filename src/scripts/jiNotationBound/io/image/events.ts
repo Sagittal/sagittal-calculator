@@ -19,7 +19,7 @@ const visualizeBoundEventAnalyses = (boundEventAnalyses: BoundEventAnalysis[]): 
     const boundEventElements: Io[] = []
 
     const initialBoundEventAnalysis: BoundEventAnalysis = boundEventAnalyses[ 0 ]
-    const { cents: initialPosition, rank: initialRank, jiNotationLevel: initialLevel } = initialBoundEventAnalysis
+    const { pitch: initialPosition, rank: initialRank, jiNotationLevel: initialLevel } = initialBoundEventAnalysis
     const initialX: Px = round(computeX(initialPosition), ACCURACY_THRESHOLD)
     const initialY: Px = round(JI_NOTATION_LEVEL_CENTERS[ initialLevel ], ACCURACY_THRESHOLD)
     const initialStroke: HexColor = RANK_HEX_COLORS[ initialRank ]
@@ -27,15 +27,14 @@ const visualizeBoundEventAnalyses = (boundEventAnalyses: BoundEventAnalysis[]): 
         `  <circle stroke="${initialStroke}" r="${DOT_SIZE}" cx="${initialX}" cy="${initialY}" />\n` as Io,
     )
 
-    boundEventAnalyses.forEach((boundEventAnalysis: BoundEventAnalysis, index: number): void => {
-        const { jiNotationLevel, cents } = boundEventAnalysis
+    boundEventAnalyses.forEach(({ jiNotationLevel }: BoundEventAnalysis, index: number): void => {
         if (jiNotationLevel === JiNotationLevel.INSANE) {
             return
         }
 
         const {
             jiNotationLevel: nextLevel,
-            cents: nextCents,
+            pitch: nextPitch,
             rank: nextRank,
             distance: nextDistance,
             inaDistance: nextInaDistance,
@@ -43,14 +42,14 @@ const visualizeBoundEventAnalyses = (boundEventAnalyses: BoundEventAnalysis[]): 
 
         const stroke: HexColor = RANK_HEX_COLORS[ nextRank ]
 
-        const positionX: Px = computeX(cents)
+        const positionX: Px = computeX(nextPitch)
         const positionY: Px = round(
             jiNotationLevel ?
                 JI_NOTATION_LEVEL_CENTERS[ jiNotationLevel ] :
                 JI_NOTATION_LEVEL_BOTTOMS[ nextLevel ]
             , ACCURACY_THRESHOLD)
 
-        const nextPositionX: Px = computeX(nextCents)
+        const nextPositionX: Px = computeX(nextPitch)
         const nextPositionY: Px = round(JI_NOTATION_LEVEL_CENTERS[ nextLevel ], ACCURACY_THRESHOLD)
 
         boundEventElements.push(`  <line stroke="${stroke}" x1="${positionX}" y1="${positionY}" x2="${nextPositionX}" y2="${nextPositionY}" />\n` as Io)

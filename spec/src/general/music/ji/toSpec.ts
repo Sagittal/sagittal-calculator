@@ -9,6 +9,6 @@ describe("computeRationalQuotientFromJiPitch", (): void => {
         const actual = computeRationalQuotientFromJiPitch(jiPitch)
 
         const expected = [81, 80] as Quotient<{ rational: true }>
-        expect(actual).toBeCloseToObject(expected)
+        expect(actual).toEqual(expected)
     })
 })

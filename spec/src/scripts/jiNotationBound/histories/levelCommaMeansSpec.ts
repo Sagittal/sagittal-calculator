@@ -95,7 +95,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                     } as Pitch<{ rational: false }>,
                 },
             ]
-            expect(actual).toBeCloseToObject(expected)
+            expect(actual).toEqual(expected)
         })
 
         it("returns the comma means for the High level, named by the bounded commas' symbols", (): void => {
@@ -320,7 +320,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                     } as Pitch<{ rational: false }>,
                 },
             ]
-            expect(actual).toBeCloseToObject(expected)
+            expect(actual).toEqual(expected)
         })
 
         it("returns the comma means for the Ultra level, named by the bounded commas' symbols", (): void => {
@@ -706,7 +706,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                     } as Pitch<{ rational: false }>,
                 },
             ]
-            expect(actual).toBeCloseToObject(expected)
+            expect(actual).toEqual(expected)
         })
 
         it("returns the comma means for the Extreme level, named by the bounded commas' symbols", (): void => {
@@ -1750,7 +1750,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                     } as Pitch<{ rational: false }>,
                 },
             ]
-            expect(actual).toBeCloseToObject(expected)
+            expect(actual).toEqual(expected)
         })
     })
 

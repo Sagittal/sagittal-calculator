@@ -1,7 +1,8 @@
-import { Cents, Maybe } from "../../../general"
+import { Maybe, NumericProperties, Pitch } from "../../../general"
 
-type NeighborPositions = [Maybe<Cents>, Maybe<Cents>]
-type BoundedSymbolClassPositions = NeighborPositions
+type NeighborPositions<T extends NumericProperties = {}> = [Maybe<Pitch<T>>, Maybe<Pitch<T>>]
+
+type BoundedSymbolClassPositions = NeighborPositions<{ rational: true }>
 
 export {
     NeighborPositions,

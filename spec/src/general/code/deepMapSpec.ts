@@ -1,5 +1,4 @@
-import { ACCURACY_THRESHOLD } from "../../../../src/general/code"
-import { deepMap } from "../../../../src/general/code/deepMap"
+import { ACCURACY_THRESHOLD, deepMap } from "../../../../src/general/code"
 import { round } from "../../../../src/general/math"
 
 describe("deepMap", (): void => {

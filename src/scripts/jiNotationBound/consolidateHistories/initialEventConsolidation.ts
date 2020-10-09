@@ -8,7 +8,7 @@ const computeInitialEventConsolidation = (boundEventAnalysis: BoundEventAnalysis
     jiNotationLevel: boundEventAnalysis.jiNotationLevel,
     boundType: boundEventAnalysis.boundType,
     name: boundEventAnalysis.name,
-    cents: boundEventAnalysis.cents,
+    pitch: boundEventAnalysis.pitch,
     exact: boundEventAnalysis.exact,
     isPossibleBoundHistoryMember: false,
     isBestPossibleBoundHistoryMember: false,

@@ -14,7 +14,7 @@ describe("computePitchFromDecimal", (): void => {
         const expected = {
             monzo: [2, 1, 0, 1] as Monzo<{ rational: true }>,
         } as Pitch<{ rational: true }>
-        expect(actual).toBeCloseToObject(expected)
+        expect(actual).toEqual(expected)
     })
 
     it("when given an irrational decimal, returns a pitch which includes it as a power of 2, with the base 2 as the monzo and exponent as the scaler quotient (the log over 1)", (): void => {
@@ -37,7 +37,7 @@ describe("computePitchFromDecimal", (): void => {
         const expected = {
             monzo: [-5, 13, -5],
         } as Pitch<{ rational: true }>
-        expect(actual).toBeCloseToObject(expected)
+        expect(actual).toEqual(expected)
     })
 })
 

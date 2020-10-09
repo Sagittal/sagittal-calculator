@@ -1,4 +1,4 @@
-import { computePitchFromDecimal, Decimal, Id, NEWLINE } from "../../../../../../../src/general"
+import { Cents, computePitchFromCents, Decimal, Id, NEWLINE } from "../../../../../../../src/general"
 import { BoundType, JiNotationBound } from "../../../../../../../src/sagittal/notations/ji"
 import { JiNotationBoundAnalysis } from "../../../../../../../src/scripts/jiNotationBound/bound"
 import { formatJiNotationBound } from "../../../../../../../src/scripts/jiNotationBound/io"
@@ -12,7 +12,7 @@ describe("formatJiNotationBound", (): void => {
     it("returns a string which is a multi-line, properly indented rendition of the JI notation bound analysis, as well as identifying information for the JI notation bound", (): void => {
         const jiNotationBound: JiNotationBound = {
             ...jiNotationBoundFixture,
-            pitch: computePitchFromDecimal(1.00315163335 as Decimal<{ rational: false }>),
+            pitch: computePitchFromCents(5.447635 as Cents),
             id: 10 as Id<JiNotationBound>,
         }
         const jiNotationBoundAnalysis: JiNotationBoundAnalysis = {
@@ -318,7 +318,15 @@ describe("formatJiNotationBound", (): void => {
             `{`,
             `    "bestPossibleBoundHistoryAnalysis": {`,
             `        "boundEventAnalyses": [],`,
-            `        "cents": 0,`,
+            `        "pitch": {`,
+            `            "monzo": [`,
+            `                1`,
+            `            ],`,
+            `            "scaler": [`,
+            `                1,`,
+            `                2`,
+            `            ]`,
+            `        },`,
             `        "rank": 0,`,
             `        "score": 0,`,
             `        "totalDistance": 0,`,
@@ -329,7 +337,9 @@ describe("formatJiNotationBound", (): void => {
             `        "initialPositionTinaDistance": 0`,
             `    },`,
             `    "bestRank": 3,`,
-            `    "initialPosition": 0,`,
+            `    "initialPosition": {`,
+            `        "monzo": []`,
+            `    },`,
             `    "initialPositionTinaDistance": 0,`,
             `    "bestPossibleBoundHistoryTotalDistance": 0,`,
             `    "bestPossibleBoundHistoryTotalInaDistance": 0,`,

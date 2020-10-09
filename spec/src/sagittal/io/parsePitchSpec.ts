@@ -50,7 +50,7 @@ describe("parsePitch", (): void => {
         const actual = parsePitch(pitchText)
 
         const expected = { monzo: [0, 0, -1, 0, 0, 0, 1] } as Pitch<{ rational: true }>
-        expect(actual).toBeCloseToObject(expected)
+        expect(actual).toEqual(expected)
     })
 
     it("works when given as a irrational (non-JI) decimal, returning a non-JI pitch", (): void => {

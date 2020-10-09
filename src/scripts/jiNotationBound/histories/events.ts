@@ -1,4 +1,4 @@
-import { computeCentsFromPitch, Name } from "../../../general"
+import { isPitchHigher, isPitchLower, Name } from "../../../general"
 import { Bound, BoundType, JiNotationLevel } from "../../../sagittal"
 import { BoundedSymbolClassPositions } from "../boundedPositions"
 import { BOUNDS_BY_TYPE } from "./bounds"
@@ -13,18 +13,12 @@ const computeBoundEvents = (
 
     const bounds = BOUNDS_BY_TYPE[ boundType ][ jiNotationLevel ]
 
-    bounds.forEach((bound: Bound): void => {
-        const cents = computeCentsFromPitch(bound.pitch)
+    bounds.forEach(({ pitch, name = "" as Name<Bound> }: Bound): void => {
         if (
-            (!lesserBoundedSymbolPosition || cents > lesserBoundedSymbolPosition) &&
-            (!greaterBoundedSymbolPosition || cents < greaterBoundedSymbolPosition)
+            (!lesserBoundedSymbolPosition || isPitchHigher(pitch, lesserBoundedSymbolPosition)) &&
+            (!greaterBoundedSymbolPosition || isPitchLower(pitch, greaterBoundedSymbolPosition))
         ) {
-            boundEvent.push({
-                jiNotationLevel,
-                boundType: boundType,
-                name: bound.name || "" as Name<Bound>,
-                cents: cents,
-            })
+            boundEvent.push({ jiNotationLevel, boundType, name, pitch })
         }
     })
 

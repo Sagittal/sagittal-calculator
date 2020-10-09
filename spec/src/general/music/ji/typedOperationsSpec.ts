@@ -21,6 +21,6 @@ describe("computeStackedJiPitch", (): void => {
         const actual = computeStackedJiPitch(augendJiPitch, addendJiPitch)
 
         const expected = { monzo: [0, 0, -1, 1] } as Pitch<{ rational: true }>
-        expect(actual).toBeCloseToObject(expected)
+        expect(actual).toEqual(expected)
     })
 })

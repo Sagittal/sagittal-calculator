@@ -1,4 +1,4 @@
-import { arePitchesEqual } from "../../../general"
+import { areNonJiPitchesEqual } from "../../../general"
 import { MAX_SYMBOL_CLASS_POSITION, SizeCategoryBound, SIZE_CATEGORY_BOUNDS } from "../../../sagittal"
 
 const computeSizeCategoryBoundsWithinMaximumPosition = (): SizeCategoryBound[] =>
@@ -6,7 +6,7 @@ const computeSizeCategoryBoundsWithinMaximumPosition = (): SizeCategoryBound[] =
         0,
         SIZE_CATEGORY_BOUNDS.findIndex(
             (sizeCategoryBound: SizeCategoryBound): boolean =>
-                arePitchesEqual(sizeCategoryBound.pitch, MAX_SYMBOL_CLASS_POSITION),
+                areNonJiPitchesEqual(sizeCategoryBound.pitch, MAX_SYMBOL_CLASS_POSITION),
         ) + 1,
     )
 

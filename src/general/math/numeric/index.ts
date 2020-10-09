@@ -6,6 +6,8 @@ export {
     isDecimalSuper,
     isDecimalUnison,
     mod,
+    reciprocal,
+    areDecimalsEqual,
 } from "./decimal"
 export {
     isQuotientSub,

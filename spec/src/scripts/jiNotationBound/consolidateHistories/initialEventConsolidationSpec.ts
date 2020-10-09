@@ -1,4 +1,5 @@
-import { Cents, Name } from "../../../../../src/general"
+import { Name, Pitch } from "../../../../../src/general"
+import { APOTOME } from "../../../../../src/sagittal"
 import { Bound, BoundType } from "../../../../../src/sagittal/notations/ji"
 import { computeInitialEventConsolidation } from "../../../../../src/scripts/jiNotationBound/consolidateHistories/initialEventConsolidation"
 import { BoundEventConsolidation } from "../../../../../src/scripts/jiNotationBound/consolidateHistories/types"
@@ -14,7 +15,7 @@ describe("computeInitialEventConsolidation", (): void => {
         boundType: BoundType.INA_MIDPOINT,
         name: "12.5°58" as Name<Bound>,
         rank: RANKS[ BoundType.COMMA_MEAN ],
-        cents: 43.343455 as Cents,
+        pitch: { monzo: APOTOME.monzo, scaler: [12.5, 58] } as Pitch<{ rational: false }>,
     }
 
     beforeEach((): void => {
@@ -46,6 +47,6 @@ describe("computeInitialEventConsolidation", (): void => {
         expect(actual.boundType).toBe(boundEventAnalysis.boundType)
         expect(actual.jiNotationLevel).toBe(boundEventAnalysis.jiNotationLevel)
         expect(actual.name).toBe(boundEventAnalysis.name)
-        expect(actual.cents).toBe(boundEventAnalysis.cents)
+        expect(actual.pitch).toBe(boundEventAnalysis.pitch)
     })
 })

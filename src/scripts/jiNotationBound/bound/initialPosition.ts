@@ -1,17 +1,22 @@
-import { Cents, computeCentsFromPitch } from "../../../general"
+import { computeStackedJiPitch, Pitch, SQRT_SCALER, UNISON } from "../../../general"
 import { JiNotationBound, MAX_SYMBOL_CLASS_POSITION } from "../../../sagittal"
 import { computeBoundedSymbolClassPositions } from "../boundedPositions"
 
-const computeInitialPosition = (jiNotationBound: JiNotationBound): Cents => {
+const computeInitialPosition = (jiNotationBound: JiNotationBound): Pitch => {
     const { jiNotationLevels } = jiNotationBound
-    const cents = computeCentsFromPitch(jiNotationBound.pitch)
+
     const initialLevel = jiNotationLevels[ 0 ]
-    const [lesserBoundedCommaPosition = 0, greaterBoundedCommaPosition] =
-        computeBoundedSymbolClassPositions(cents, initialLevel)
+    const [lesserBoundedCommaPosition = UNISON, greaterBoundedCommaPosition] =
+        computeBoundedSymbolClassPositions(jiNotationBound.pitch, initialLevel)
 
     return greaterBoundedCommaPosition ?
-        (lesserBoundedCommaPosition + greaterBoundedCommaPosition) / 2 as Cents :
-        computeCentsFromPitch(MAX_SYMBOL_CLASS_POSITION)
+        {
+            monzo: computeStackedJiPitch(lesserBoundedCommaPosition, greaterBoundedCommaPosition).monzo,
+            // TODO: argh!!!! definitely need a pitchMean helper... so sad...
+            //  All this investment in the type system, and it doesn't even really help sometimes!
+            scaler: SQRT_SCALER,
+        } as Pitch<{ rational: false }> :
+        MAX_SYMBOL_CLASS_POSITION
 }
 
 export {

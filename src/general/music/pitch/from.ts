@@ -17,8 +17,8 @@ import { computeNonJiPitchFromDecimal, computeNonJiPitchFromMonzo, computeNonJiP
 import { Cents } from "../types"
 import { Pitch } from "./types"
 
-const computePitchFromCents = (cents: Cents): Pitch =>
-    computePitchFromDecimal(2 ** (cents / CENTS_PER_OCTAVE))
+const computePitchFromCents = (cents: Cents): Pitch<{ rational: false }> =>
+    computePitchFromDecimal(2 ** (cents / CENTS_PER_OCTAVE) as Decimal<{ rational: false }>)
 
 const computePitchFromDecimal = <T extends NumericProperties>(decimal: Decimal<T>): Pitch<T> =>
     isDecimalRational(decimal) ?

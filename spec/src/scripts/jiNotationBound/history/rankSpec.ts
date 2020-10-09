@@ -1,5 +1,4 @@
-import { Cents } from "../../../../../src/general/music"
-import { BoundType, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
+import { BoundType } from "../../../../../src/sagittal/notations/ji"
 import { BoundEventAnalysis } from "../../../../../src/scripts/jiNotationBound/history"
 import { computeRank } from "../../../../../src/scripts/jiNotationBound/history/rank"
 import { RANKS } from "../../../../../src/scripts/jiNotationBound/ranks"
@@ -10,30 +9,21 @@ describe("computeRank", (): void => {
         const boundEventAnalyses: BoundEventAnalysis[] = [
             {
                 ...boundEventAnalysisFixture,
-                boundType: BoundType.INA_MIDPOINT,
-                jiNotationLevel: JiNotationLevel.HIGH,
-                cents: 10.0 as Cents,
-                rank: RANKS[ BoundType.INA_MIDPOINT ],
+                rank: RANKS[ BoundType.INA_MIDPOINT ],          // 1 = best
             },
             {
                 ...boundEventAnalysisFixture,
-                boundType: BoundType.SIZE_CATEGORY_BOUND,
-                jiNotationLevel: JiNotationLevel.ULTRA,
-                cents: 10.2 as Cents,
-                rank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
+                rank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],   // 3 = worst
             },
             {
                 ...boundEventAnalysisFixture,
-                boundType: BoundType.COMMA_MEAN,
-                jiNotationLevel: JiNotationLevel.EXTREME,
-                cents: 10.1 as Cents,
-                rank: RANKS[ BoundType.COMMA_MEAN ],
+                rank: RANKS[ BoundType.COMMA_MEAN ],            // 2 = in the middle
             },
         ]
 
         const actual = computeRank(boundEventAnalyses)
 
-        const expected = RANKS[ BoundType.SIZE_CATEGORY_BOUND ]
+        const expected = RANKS[ BoundType.SIZE_CATEGORY_BOUND ] // 3 = worst
         expect(actual).toBe(expected)
     })
 })

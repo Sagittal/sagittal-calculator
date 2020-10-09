@@ -1,4 +1,4 @@
-import { computeCentsFromPitch, count, Multiplier } from "../../../general"
+import { count, isUndefined, Multiplier, subtractPitch } from "../../../general"
 import { JiNotationBound, Tina, TINA } from "../../../sagittal"
 import { consolidateBoundHistories } from "../consolidateHistories"
 import { BoundHistory } from "../histories"
@@ -22,12 +22,14 @@ const analyzeJiNotationBound = (
         .filter((boundHistoryAnalysis: BoundHistoryAnalysis): boolean => boundHistoryAnalysis.possible)
     const possibleBoundHistoryCount = count(possibleBoundHistories)
     const bestPossibleBoundHistoryAnalysis = computeBestPossibleBoundHistoryAnalysis(possibleBoundHistories)
+    if (isUndefined(bestPossibleBoundHistoryAnalysis)) {
+        throw new Error(`Unable to find a best possible bound history for bound ${jiNotationBound}`)
+    }
     const bestRank = bestPossibleBoundHistoryAnalysis.rank
     const bestPossibleBoundHistoryTotalDistance = bestPossibleBoundHistoryAnalysis.totalDistance
     const bestPossibleBoundHistoryTotalInaDistance = bestPossibleBoundHistoryAnalysis.totalInaDistance
 
-    const initialPositionTinaDistance =
-        (computeCentsFromPitch(jiNotationBound.pitch) - initialPosition) / TINA as Multiplier<Tina>
+    const initialPositionTinaDistance = subtractPitch(jiNotationBound.pitch, initialPosition) / TINA as Multiplier<Tina>
 
     updateRankAnalysis(bestRank, jiNotationBound.id)
     updateJiNotationLevelAnalysis(bestPossibleBoundHistoryAnalysis)

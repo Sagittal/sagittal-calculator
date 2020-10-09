@@ -33,6 +33,8 @@ export {
     mod,
     subtractMonzos,
     EMPTY_MONZO,
+    reciprocal,
+    areDecimalsEqual,
 } from "./numeric"
 export { computeDistributions } from "./distributions"
 export { dividesEvenly } from "./dividesEvenly"

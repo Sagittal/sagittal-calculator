@@ -1,7 +1,7 @@
-import { Cents, computeCentsFromPitch, Id, isCloseTo, isUndefined, Maybe } from "../../../../general"
+import { ACCURACY_THRESHOLD, areNonJiPitchesEqual, Id, isUndefined, Maybe, Pitch } from "../../../../general"
 import { getPrimaryComma, JI_NOTATION, SymbolClass } from "../../../../sagittal"
 
-const computePositionSymbolClassId = (position: Maybe<Cents>): Maybe<Id<SymbolClass>> => {
+const computePositionSymbolClassId = (position: Maybe<Pitch>): Maybe<Id<SymbolClass>> => {
     if (!position) {
         return undefined
     }
@@ -9,7 +9,7 @@ const computePositionSymbolClassId = (position: Maybe<Cents>): Maybe<Id<SymbolCl
     const symbolClassId = JI_NOTATION.find((symbolClassId: Id<SymbolClass>): boolean => {
         const primaryComma = getPrimaryComma(symbolClassId)
 
-        return isCloseTo(computeCentsFromPitch(primaryComma), position)
+        return areNonJiPitchesEqual(primaryComma, position, ACCURACY_THRESHOLD)
     })
 
     if (!isUndefined(symbolClassId)) {

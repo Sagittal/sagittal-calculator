@@ -1,4 +1,5 @@
-import { Cents, computePitchFromDecimal, Decimal, Name } from "../../../../../src/general"
+import { Cents, computePitchFromCents, Monzo, Name, Pitch, SQRT_SCALER } from "../../../../../src/general"
+import { APOTOME } from "../../../../../src/sagittal"
 import { Bound, BoundType, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 import { BoundEvent, BoundHistory } from "../../../../../src/scripts/jiNotationBound/histories"
 import { computeExtendedHistories } from "../../../../../src/scripts/jiNotationBound/histories/extendedHistories"
@@ -11,7 +12,8 @@ describe("computeExtendedHistories", (): void => {
         jiNotationLevel: JiNotationLevel.HIGH,
         boundType: BoundType.INA_MIDPOINT,
         name: "16.5°47" as Name<Bound>,
-        cents: 45.45 as Cents,
+        pitch: { monzo: APOTOME.monzo, scaler: [16.5, 47] } as Pitch<{ rational: false }>,
+
     }
     beforeEach((): void => {
         boundHistory = [
@@ -20,11 +22,11 @@ describe("computeExtendedHistories", (): void => {
     })
 
     it("returns an array with potentially many elements: for each bound position of any bound type, a new bound history which is like the passed-in history extended with a new event of snapping to that position, and its rank updated if necessary", (): void => {
-        const actualJiNotationBoundDecimal = 1.02657094474 as Decimal<{ rational: false }>   // 45.4¢
+        const actualJiNotationBoundDecimal = 45.4 as Cents
 
         const actual = computeExtendedHistories(boundHistory, JiNotationLevel.ULTRA, {
             ...jiNotationBoundFixture,
-            pitch: computePitchFromDecimal(actualJiNotationBoundDecimal),
+            pitch: computePitchFromCents(actualJiNotationBoundDecimal),
             jiNotationLevels: [JiNotationLevel.ULTRA, JiNotationLevel.EXTREME],
         })
 
@@ -35,7 +37,7 @@ describe("computeExtendedHistories", (): void => {
                     jiNotationLevel: JiNotationLevel.ULTRA,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "23.5°58" as Name<Bound>,
-                    cents: 46.062028 as Cents,
+                    pitch: { monzo: APOTOME.monzo, scaler: [23.5, 58] } as Pitch<{ rational: false }>,
                 },
             ],
             [
@@ -44,7 +46,10 @@ describe("computeExtendedHistories", (): void => {
                     jiNotationLevel: JiNotationLevel.ULTRA,
                     boundType: BoundType.COMMA_MEAN,
                     name: "'//| )//|" as Name<Bound>,
-                    cents: 45.681795 as Cents,
+                    pitch: {
+                        monzo: [4, -3, -1, 0, 0, 2, 0, -1] as Monzo<{ rational: true }>,
+                        scaler: SQRT_SCALER,
+                    } as Pitch<{ rational: false }>,
                 },
             ],
             [
@@ -53,10 +58,13 @@ describe("computeExtendedHistories", (): void => {
                     jiNotationLevel: JiNotationLevel.ULTRA,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "S|M" as Name<Bound>,
-                    cents: 45.112498 as Cents,
+                    pitch: {
+                        monzo: [8, -5] as Monzo<{ rational: true }>,
+                        scaler: SQRT_SCALER,
+                    } as Pitch<{ rational: false }>,
                 },
             ],
         ]
-        expect(actual).toBeArrayWithDeepCloseContents(expected)
+        expect(actual).toEqual(expected)
     })
 })

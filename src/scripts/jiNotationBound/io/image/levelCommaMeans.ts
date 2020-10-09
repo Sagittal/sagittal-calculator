@@ -22,13 +22,10 @@ const visualizeJiNotationLevelCommaMeans = (): Io[] => {
         const topY: Px = round(subtract(centerY, HALF_TICK_SIZE), ACCURACY_THRESHOLD)
         const bottomY: Px = round(subtract(centerY, HALF_TICK_SIZE), ACCURACY_THRESHOLD)
 
-        jiNotationLevelCommaMeans.forEach((jiNotationLevelCommaMean: CommaMean): void => {
-            const { name } = jiNotationLevelCommaMean
-            const cents = computeCentsFromPitch(jiNotationLevelCommaMean.pitch)
-
+        jiNotationLevelCommaMeans.forEach(({ name, pitch }: CommaMean): void => {
             const formattedName = name?.split(" ")
                 .map((ascii: string): string => unicodeFromAscii(ascii as SymbolLongAscii)).join("   ") || ""
-            const positionX: Px = computeX(cents)
+            const positionX: Px = computeX(pitch)
 
             jiNotationLevelCommaMeanElements.push(`  <line stroke-dasharray="${DASH_SIZE}" stroke="${COMMA_MEAN_HEX_COLOR}" x1="${positionX}" x2="${positionX}" y1="${topY}" y2="${bottomY}"/>\n` as Io)
             jiNotationLevelCommaMeanElements.push(`  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="${positionX}" y="${bottomY}" font-size="6px" font-family="Helvetica">${name}</text>\n` as Io) // For searchability by ascii

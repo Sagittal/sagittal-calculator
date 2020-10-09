@@ -9,9 +9,12 @@ import {
 import { analyzeJiNotationBounds } from "../../../../src/scripts/jiNotationBound/analyzeBounds"
 import { JiNotationBoundAnalysis } from "../../../../src/scripts/jiNotationBound/bound"
 import { BoundEventAnalysis } from "../../../../src/scripts/jiNotationBound/history/events"
+import { onlyRunInCi } from "../../../helpers/onlyRunInCi"
 
 describe("analyzeJiNotationBounds", (): void => {
     it("returns the same bound types as in the actual JI notation (with the Extreme level being the current highest)              ", (): void => {
+        onlyRunInCi()
+
         const actual = analyzeJiNotationBounds()
             .map((jiNotationBoundAnalysis: JiNotationBoundAnalysis): BoundType => {
                 const jiNotationLevelEventAnalysis =
@@ -30,6 +33,8 @@ describe("analyzeJiNotationBounds", (): void => {
     })
 
     it("returns the same bound names as in the actual JI notation (with the Insane level being the current highest)               ", (): void => {
+        onlyRunInCi()
+
         const actual = analyzeJiNotationBounds()
             .map((jiNotationBoundAnalysis: JiNotationBoundAnalysis): Name<Bound> => {
                 const jiNotationLevelEventAnalysis =

@@ -11,17 +11,14 @@ describe("computeBestPossibleBoundHistoryAnalysis", (): void => {
             {
                 ...boundHistoryAnalysisFixture,
                 score: 3436643 as Score,
-                cents: 12.909 as Cents,
             },
             {
                 ...boundHistoryAnalysisFixture,
                 score: 245444 as Score,
-                cents: 13.235 as Cents,
             },
             {
                 ...boundHistoryAnalysisFixture,
                 score: 2422436 as Score,
-                cents: 13.47489 as Cents,
             },
         ]
 
@@ -30,7 +27,6 @@ describe("computeBestPossibleBoundHistoryAnalysis", (): void => {
         const expected = {
             ...boundHistoryAnalysisFixture,
             score: 245444 as Score,
-            cents: 13.235 as Cents,
         }
         expect(actual).toEqual(expected)
     })
@@ -40,19 +36,16 @@ describe("computeBestPossibleBoundHistoryAnalysis", (): void => {
             {
                 ...boundHistoryAnalysisFixture,
                 score: 3436643 as Score,
-                cents: 12.909 as Cents,
                 exact: true,
             },
             {
                 ...boundHistoryAnalysisFixture,
                 score: 45575474 as Score,
-                cents: 12.909 as Cents,
                 exact: true,
             },
             {
                 ...boundHistoryAnalysisFixture,
                 score: 245444 as Score,
-                cents: 13.235 as Cents,
             },
         ]
 
@@ -61,7 +54,6 @@ describe("computeBestPossibleBoundHistoryAnalysis", (): void => {
         const expected = {
             ...boundHistoryAnalysisFixture,
             score: 3436643 as Score,
-            cents: 12.909 as Cents,
             exact: true,
         }
         expect(actual).toEqual(expected)
@@ -73,14 +65,12 @@ describe("computeBestPossibleBoundHistoryAnalysis", (): void => {
                 ...boundHistoryAnalysisFixture,
                 score: 3436643 as Score,
                 totalDistance: 0.2 as Sum<Abs<Cents>>,
-                cents: 12.909 as Cents,
                 exact: true,
             },
             {
                 ...boundHistoryAnalysisFixture,
                 score: 3436643 as Score,
                 totalDistance: 0.1 as Sum<Abs<Cents>>,
-                cents: 12.909 as Cents,
                 exact: true,
             },
         ]
@@ -91,7 +81,6 @@ describe("computeBestPossibleBoundHistoryAnalysis", (): void => {
             ...boundHistoryAnalysisFixture,
             score: 3436643 as Score,
             totalDistance: 0.1 as Sum<Abs<Cents>>,
-            cents: 12.909 as Cents,
             exact: true,
         }
         expect(actual).toEqual(expected)

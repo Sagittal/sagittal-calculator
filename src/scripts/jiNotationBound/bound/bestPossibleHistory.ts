@@ -1,8 +1,11 @@
+import { isEmpty, Maybe } from "../../../general"
 import { BoundHistoryAnalysis, Score } from "../history"
 
 const computeBestPossibleBoundHistoryAnalysis = (
     boundHistoryAnalyses: BoundHistoryAnalysis[],
-): BoundHistoryAnalysis => {
+): Maybe<BoundHistoryAnalysis> => {
+    if (isEmpty(boundHistoryAnalyses)) return undefined
+
     let bestPossibleBoundHistoryAnalysis: BoundHistoryAnalysis = { score: Infinity as Score } as BoundHistoryAnalysis
 
     const atLeastOneExactBoundHistory = boundHistoryAnalyses

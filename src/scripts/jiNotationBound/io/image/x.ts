@@ -1,8 +1,17 @@
-import { ACCURACY_THRESHOLD, Basis, Cents, computePx, Px, round } from "../../../../general"
+import {
+    ACCURACY_THRESHOLD,
+    Basis,
+    Cents,
+    computeCentsFromPitch,
+    computePx,
+    Pitch,
+    Px,
+    round,
+} from "../../../../general"
 import { MARGIN, X_SCALE } from "./sizes"
 
-const computeX = (cents: Cents): Px =>
-    round(computePx(MARGIN + cents as Basis<Cents>, X_SCALE), ACCURACY_THRESHOLD)
+const computeX = (pitch: Pitch): Px =>
+    round(computePx(MARGIN + computeCentsFromPitch(pitch) as Basis<Cents>, X_SCALE), ACCURACY_THRESHOLD)
 
 export {
     computeX,

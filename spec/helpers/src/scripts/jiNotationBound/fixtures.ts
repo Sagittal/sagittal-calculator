@@ -10,8 +10,11 @@ import {
     Pitch,
     Quotient,
     Rank,
+    SQRT_SCALER,
     Sum,
+    UNISON,
 } from "../../../../../src/general"
+import { NON_JI_PITCH_BASE_MONZO } from "../../../../../src/general/music/nonJi/constants"
 import {
     Bound,
     BoundType,
@@ -27,7 +30,7 @@ import { BoundEventAnalysis, BoundHistoryAnalysis, Score } from "../../../../../
 import { RANKS } from "../../../../../src/scripts/jiNotationBound/ranks"
 
 const boundEventFixture: BoundEvent = {
-    cents: 0 as Cents,
+    pitch: { monzo: NON_JI_PITCH_BASE_MONZO, scaler: SQRT_SCALER } as Pitch<{ rational: false }>,
     boundType: "" as BoundType,
     jiNotationLevel: "" as JiNotationLevel,
     name: "" as Name<Bound>,
@@ -43,7 +46,7 @@ const boundEventAnalysisFixture: BoundEventAnalysis = {
 
 const boundHistoryAnalysisFixture: BoundHistoryAnalysis = {
     boundEventAnalyses: [],
-    cents: 0 as Cents,
+    pitch: { monzo: NON_JI_PITCH_BASE_MONZO, scaler: SQRT_SCALER } as Pitch<{ rational: false }>,
     rank: 0 as Decimal<{ integer: true }> & Rank<BoundType>,
     score: 0 as Score,
     totalDistance: 0 as Sum<Abs<Cents>>,
@@ -78,7 +81,7 @@ const jiNotationBoundFixture: JiNotationBound = {
 const jiNotationBoundAnalysisFixture: JiNotationBoundAnalysis = {
     bestPossibleBoundHistoryAnalysis: boundHistoryAnalysisFixture,
     bestRank: RANKS[ BoundType.INA_MIDPOINT ],
-    initialPosition: 0 as Cents,
+    initialPosition: UNISON,
     initialPositionTinaDistance: 0 as Multiplier<Tina>,
     bestPossibleBoundHistoryTotalDistance: 0 as Cents,
     bestPossibleBoundHistoryTotalInaDistance: 0 as Sum<Multiplier<Ina>>,

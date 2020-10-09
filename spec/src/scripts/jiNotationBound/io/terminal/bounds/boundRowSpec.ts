@@ -1,8 +1,7 @@
 import {
     Abs,
     Cents,
-    computePitchFromDecimal,
-    Decimal,
+    computePitchFromCents,
     Id,
     Multiplier,
     Row,
@@ -23,7 +22,7 @@ describe("computeJiNotationBoundRow", (): void => {
     it("a summarized version to be formatted in a list with all the other bounds; returns a string of the bound id, identifying symbol, actual bound cents, whether it has a possible bound history, the error in tinas, and the ranks at each JI notation level of the best possible bound history, separated by tabs in a single line, and makes it the correct color", (): void => {
         const jiNotationBound: JiNotationBound = {
             ...jiNotationBoundFixture,
-            pitch: computePitchFromDecimal(1.00315163335 as Decimal<{ rational: false }>),  // 5.447635¢
+            pitch: computePitchFromCents(5.447635 as Cents),
             id: 10 as Id<JiNotationBound>,
         }
         const jiNotationBoundAnalysis: JiNotationBoundAnalysis = {
@@ -55,7 +54,7 @@ describe("computeJiNotationBoundRow", (): void => {
                 ],
             },
             bestRank: RANKS[ BoundType.COMMA_MEAN ],
-            initialPosition: 5.48533 as Cents,
+            initialPosition: computePitchFromCents(5.48533 as Cents),
             initialPositionTinaDistance: 0.0393 as Multiplier<Tina>,
             bestPossibleBoundHistoryTotalDistance: 0.355 as Cents,
             bestPossibleBoundHistoryTotalInaDistance: 0.839 as Sum<Multiplier<Ina>>,

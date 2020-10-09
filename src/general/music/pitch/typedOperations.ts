@@ -2,9 +2,9 @@ import { Decimal, divide, Max, Min, multiply, NumericProperties } from "../../ma
 import { computeIrrationalDecimalFromPitch, computeNonJiPitchFromDecimal, SQRT_SCALER } from "../nonJi"
 import { Interval, Pitch } from "./types"
 
-const computeStackedPitch = (jiPitchA: Pitch, jiPitchB: Pitch): Pitch<{ direction: undefined, integer: false }> =>
+const computeStackedPitch = (pitchA: Pitch, pitchB: Pitch): Pitch<{ direction: undefined, rational: false }> =>
     computeNonJiPitchFromDecimal(
-        multiply(computeIrrationalDecimalFromPitch(jiPitchA), computeIrrationalDecimalFromPitch(jiPitchB)),
+        multiply(computeIrrationalDecimalFromPitch(pitchA), computeIrrationalDecimalFromPitch(pitchB)),
     ) as Pitch<{ direction: undefined, rational: false }>
 
 const computeInterval = (fromPitch: Pitch, toPitch: Pitch): Interval<{ direction: undefined, rational: false }> =>

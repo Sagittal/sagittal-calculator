@@ -1,14 +1,14 @@
-import { Cents, isCloseTo } from "../../../../general"
+import { ACCURACY_THRESHOLD, areNonJiPitchesEqual, Pitch } from "../../../../general"
 import { BoundEvent, BoundHistory } from "../../histories"
 import { RANKS } from "../../ranks"
 import { computeBoundEventDistance } from "./eventDistance"
 import { computeBoundEventInaDistance } from "./eventInaDistance"
 import { BoundEventAnalysis } from "./types"
 
-const analyzeBoundEvents = (boundHistory: BoundHistory, actualJiNotationBoundCents: Cents): BoundEventAnalysis[] =>
+const analyzeBoundEvents = (boundHistory: BoundHistory, actualJiNotationBoundPitch: Pitch): BoundEventAnalysis[] =>
     boundHistory.map((boundEvent: BoundEvent, index: number): BoundEventAnalysis => {
-        const { cents, boundType } = boundEvent
-        const exact = isCloseTo(cents, actualJiNotationBoundCents)
+        const { pitch, boundType } = boundEvent
+        const exact = areNonJiPitchesEqual(pitch, actualJiNotationBoundPitch)
         const rank = RANKS[ boundType ]
         const distance = computeBoundEventDistance(boundEvent, index, boundHistory)
         const inaDistance = computeBoundEventInaDistance(boundEvent, index, boundHistory)

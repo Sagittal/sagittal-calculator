@@ -1,4 +1,15 @@
-import { Abs, Cents, computePitchFromDecimal, Decimal, Id, Multiplier } from "../../../../../../src/general"
+import {
+    Abs,
+    Cents,
+    computePitchFromCents,
+    Id,
+    Monzo,
+    Multiplier,
+    Pitch,
+    Quotient,
+    SQRT_SCALER,
+} from "../../../../../../src/general"
+import { APOTOME } from "../../../../../../src/sagittal"
 import { BoundType, SymbolClass } from "../../../../../../src/sagittal/notations"
 import { Ina, JiNotationBound, JiNotationLevel } from "../../../../../../src/sagittal/notations/ji"
 import { computeJiNotationLevelBoundedSymbolClassIdsWithDistances } from "../../../../../../src/scripts/jiNotationBound/io/terminal/levelBoundedSymbolClasses"
@@ -9,7 +20,7 @@ describe("computeJiNotationLevelBoundedSymbolClassIdsWithDistances", (): void =>
     it("returns, given a JI notation bound, for each of its JI levels, an array of the pair of symbols it bounds at that JI notation level, as well as their distances and ina-distances from the bound", (): void => {
         const jiNotationBound: JiNotationBound = {
             ...jiNotationBoundFixture,
-            pitch: computePitchFromDecimal(1.01434739432 as Decimal<{ rational: false }>),  // 24.662198¢
+            pitch: computePitchFromCents(24.662198 as Cents),
             jiNotationLevels: [JiNotationLevel.MEDIUM, JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
             id: 54 as Id<JiNotationBound>,
             boundType: BoundType.INA_MIDPOINT,
@@ -62,7 +73,10 @@ describe("computeJiNotationLevelBoundedSymbolClassIdsWithDistances", (): void =>
     it("works for the final JI notation bound", (): void => {
         const jiNotationBound: JiNotationBound = {
             ...jiNotationBoundFixture,
-            pitch: computePitchFromDecimal(1.04040393192 as Decimal<{ rational: false }>),  // 68.572508¢
+            pitch: {
+                monzo: [-30, 19] as Monzo<{ rational: true }>,
+                scaler: SQRT_SCALER,
+            } as Pitch<{ rational: false }>,
             jiNotationLevels: [
                 JiNotationLevel.MEDIUM,
                 JiNotationLevel.HIGH,
@@ -125,7 +139,10 @@ describe("computeJiNotationLevelBoundedSymbolClassIdsWithDistances", (): void =>
     it("works for the first JI notation bound", (): void => {
         const jiNotationBound: JiNotationBound = {
             ...jiNotationBoundFixture,
-            pitch: computePitchFromDecimal(1.00012176335 as Decimal<{ rational: false }>),  // 0.210788021120605¢
+            pitch: {
+                monzo: APOTOME.monzo,
+                scaler: [1.5, 809] as Quotient,
+            } as Pitch<{ rational: false }>,
             jiNotationLevels: [JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
             id: 55 as Id<JiNotationBound>,
             boundType: BoundType.INA_MIDPOINT,
