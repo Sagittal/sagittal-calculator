@@ -8,18 +8,18 @@ import {
     Max,
     Monzo,
     Name,
-    Pitch,
     Prime,
     Quotient,
+    Scamon,
     Sopfr,
     Two3FreeClass,
 } from "../../../../../src/general"
-import { ApotomeSlope, N2D3P9, Two3FreeClassAnalysis } from "../../../../../src/sagittal"
+import { ApotomeSlope, N2D3P9 } from "../../../../../src/sagittal"
 import { analyzeJiPitch } from "../../../../../src/sagittal/ji"
 
 describe("analyzeJiPitch", (): void => {
     it("returns an analysis of a JI pitch, given its monzo", (): void => {
-        const jiPitch = { monzo: [-7, -6, 3, 5, -1] } as Pitch<{ rational: true }>
+        const jiPitch = { monzo: [-7, -6, 3, 5, -1] } as Scamon<{ rational: true }>
 
         const actual = analyzeJiPitch(jiPitch)
 

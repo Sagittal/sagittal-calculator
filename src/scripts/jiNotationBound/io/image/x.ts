@@ -4,13 +4,13 @@ import {
     computeCentsFromPitch,
     computePx,
     DEFAULT_PRECISION,
-    Pitch,
     Px,
     round,
+    Scamon,
 } from "../../../../general"
 import { MARGIN, X_SCALE } from "./sizes"
 
-const computeX = (pitch: Pitch): Px =>
+const computeX = (pitch: Scamon): Px =>
     round(computePx(MARGIN + computeCentsFromPitch(pitch) as Basis<Cents>, X_SCALE), DEFAULT_PRECISION)
 
 export {

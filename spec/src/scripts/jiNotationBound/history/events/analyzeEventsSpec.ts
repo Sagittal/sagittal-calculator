@@ -1,4 +1,4 @@
-import { Abs, Multiplier, Pitch } from "../../../../../../src/general"
+import { Abs, Multiplier, Scamon } from "../../../../../../src/general"
 import { Cents } from "../../../../../../src/general/music"
 import { APOTOME } from "../../../../../../src/sagittal"
 import { BoundType, Ina, JiNotationLevel } from "../../../../../../src/sagittal/notations/ji"
@@ -18,25 +18,25 @@ describe("analyzeBoundEvents", (): void => {
                 ...boundEventFixture,
                 boundType: BoundType.INA_MIDPOINT,
                 jiNotationLevel: JiNotationLevel.HIGH,
-                pitch: { monzo: APOTOME.monzo, scaler: [27.5, HIGH_EDA] } as Pitch<{ rational: false }>,
+                pitch: { monzo: APOTOME.monzo, scaler: [27.5, HIGH_EDA] } as Scamon<{ rational: false }>,
             },
             {
                 ...boundEventFixture,
                 boundType: BoundType.SIZE_CATEGORY_BOUND,
                 jiNotationLevel: JiNotationLevel.ULTRA,
-                pitch: { monzo: APOTOME.monzo, scaler: [33.5, ULTRA_EDA] } as Pitch<{ rational: false }>,
+                pitch: { monzo: APOTOME.monzo, scaler: [33.5, ULTRA_EDA] } as Scamon<{ rational: false }>,
             },
             {
                 ...boundEventFixture,
                 boundType: BoundType.COMMA_MEAN,
                 jiNotationLevel: JiNotationLevel.EXTREME,
-                pitch: { monzo: APOTOME.monzo, scaler: [135.5, EXTREME_EDA] } as Pitch<{ rational: false }>,
+                pitch: { monzo: APOTOME.monzo, scaler: [135.5, EXTREME_EDA] } as Scamon<{ rational: false }>,
             },
         ]
         const actualJiNotationBoundPitch = {
             monzo: APOTOME.monzo, 
             scaler: [33.5, ULTRA_EDA] 
-        } as Pitch<{ rational: false }>
+        } as Scamon<{ rational: false }>
 
         const actual = analyzeBoundEvents(boundHistory, actualJiNotationBoundPitch)
 
@@ -45,7 +45,7 @@ describe("analyzeBoundEvents", (): void => {
                 ...boundEventAnalysisFixture,
                 boundType: BoundType.INA_MIDPOINT,
                 jiNotationLevel: JiNotationLevel.HIGH,
-                pitch: { monzo: APOTOME.monzo, scaler: [27.5, HIGH_EDA] } as Pitch<{ rational: false }>,
+                pitch: { monzo: APOTOME.monzo, scaler: [27.5, HIGH_EDA] } as Scamon<{ rational: false }>,
                 rank: RANKS[ BoundType.INA_MIDPOINT ],
                 exact: false,
                 distance: 0.000000 as Abs<Cents>,
@@ -55,7 +55,7 @@ describe("analyzeBoundEvents", (): void => {
                 ...boundEventAnalysisFixture,
                 boundType: BoundType.SIZE_CATEGORY_BOUND,
                 jiNotationLevel: JiNotationLevel.ULTRA,
-                pitch: { monzo: APOTOME.monzo, scaler: [33.5, ULTRA_EDA] } as Pitch<{ rational: false }>,
+                pitch: { monzo: APOTOME.monzo, scaler: [33.5, ULTRA_EDA] } as Scamon<{ rational: false }>,
                 rank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
                 exact: true,
                 distance: 0.854931 as Abs<Cents>,
@@ -65,7 +65,7 @@ describe("analyzeBoundEvents", (): void => {
                 ...boundEventAnalysisFixture,
                 boundType: BoundType.COMMA_MEAN,
                 jiNotationLevel: JiNotationLevel.EXTREME,
-                pitch: { monzo: APOTOME.monzo, scaler: [135.5, EXTREME_EDA] } as Pitch<{ rational: false }>,
+                pitch: { monzo: APOTOME.monzo, scaler: [135.5, EXTREME_EDA] } as Scamon<{ rational: false }>,
                 rank: RANKS[ BoundType.COMMA_MEAN ],
                 exact: false,
                 distance: 0.450063 as Abs<Cents>,

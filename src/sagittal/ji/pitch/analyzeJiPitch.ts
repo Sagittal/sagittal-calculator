@@ -3,7 +3,7 @@ import {
     computeCentsFromPitch,
     computeDecimalFromMonzo,
     computeQuotientFromMonzo,
-    Pitch,
+    Scamon,
 } from "../../../general"
 import { analyze23FreeClass } from "../two3FreeClass"
 import { computeAas } from "./aas"
@@ -11,7 +11,7 @@ import { computeApotomeSlope } from "./apotomeSlope"
 import { computeAte } from "./ate"
 import { JiPitchAnalysis } from "./types"
 
-const analyzeJiPitch = (jiPitch: Pitch<{ rational: true }>): JiPitchAnalysis => {
+const analyzeJiPitch = (jiPitch: Scamon<{ rational: true }>): JiPitchAnalysis => {
     const monzo = jiPitch.monzo
     const quotient = computeQuotientFromMonzo(monzo)
     const decimal = computeDecimalFromMonzo(monzo)

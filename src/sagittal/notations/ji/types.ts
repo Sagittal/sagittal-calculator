@@ -1,4 +1,4 @@
-import { Cents, Id, Name, NumericProperties, Pitch } from "../../../general"
+import { Cents, Id, Name, NumericProperties, Scamon } from "../../../general"
 import { SizeCategoryBound } from "../../ji"
 
 enum BoundType {
@@ -25,12 +25,12 @@ enum JiNotationLevel {
 
 type CommaMean<T extends NumericProperties = {}> = {
     name: Name<CommaMean>,
-    pitch: Pitch<T & { rational: false }>,
+    pitch: Scamon<T & { rational: false }>,
 }
 
 type InaMidpoint<T extends NumericProperties = {}> = {
     name: Name<InaMidpoint>,
-    pitch: Pitch<T & { rational: false }>,
+    pitch: Scamon<T & { rational: false }>,
 }
 
 type Bound<T extends NumericProperties = {}> = InaMidpoint<T> | CommaMean<T> | SizeCategoryBound<T>

@@ -1,4 +1,4 @@
-import { computeJiPitchGeometricMean, Id, indexOfFinalElement, Name } from "../../../general"
+import { computeRationalScamonGeometricMean, Id, indexOfFinalElement, Name } from "../../../general"
 import {
     CommaMean,
     getPrimaryComma,
@@ -27,7 +27,7 @@ const computeJiNotationLevelCommaMeans = (jiNotationLevel: JiNotationLevel): Com
             ].join(" ") as Name<CommaMean>
 
             return {
-                pitch: computeJiPitchGeometricMean(primaryComma, nextPrimaryComma),
+                pitch: computeRationalScamonGeometricMean(primaryComma, nextPrimaryComma),
                 name,
             }
         })

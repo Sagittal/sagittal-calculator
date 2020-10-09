@@ -4,6 +4,10 @@ enum Direction {
     UNISON = "unison",
 }
 
+// TypeScript - waiting on support for an Exact Generic Constraint 
+// See: https://stackoverflow.com/a/58879805/6998322
+// And: https://github.com/microsoft/TypeScript/issues/12936
+// This could assist in enforcing this object cannot have any members other than real ones
 type NumericProperties = Partial<{
     integer: boolean,
     rational: boolean,

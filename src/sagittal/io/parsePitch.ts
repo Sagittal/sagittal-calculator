@@ -3,37 +3,37 @@ import {
     ANY_MONZO_CHARS,
     ANY_QUOTIENT_CHARS,
     computePitchFromCents,
-    computePitchFromDecimal,
-    computePitchFromMonzo,
-    computePitchFromQuotient,
+    computeScamonFromDecimal,
+    computeScamonFromMonzo,
+    computeScamonFromQuotient,
     IDENTIFYING_COMMA_NAME_CHARS,
     Io,
     parseCents,
     parseDecimal,
     parseMonzo,
     parseQuotient,
-    Pitch,
+    Scamon,
 } from "../../general"
 import { computeCommaFromCommaNameQuotientAndSizeCategoryName, parseCommaName } from "../ji"
 
-const parsePitch = (pitchIo: Io): Pitch => {
-    let pitch: Pitch
+const parsePitch = (pitchIo: Io): Scamon => {
+    let pitch: Scamon
 
     if (pitchIo.match(IDENTIFYING_COMMA_NAME_CHARS)) {
         const commaNameQuotientAndSizeCategoryName = parseCommaName(pitchIo)
         pitch = computeCommaFromCommaNameQuotientAndSizeCategoryName(commaNameQuotientAndSizeCategoryName)
     } else if (pitchIo.match(ANY_QUOTIENT_CHARS)) {
         const quotient = parseQuotient(pitchIo)
-        pitch = computePitchFromQuotient(quotient)
+        pitch = computeScamonFromQuotient(quotient)
     } else if (pitchIo.match(ANY_MONZO_CHARS)) {
         const monzo = parseMonzo(pitchIo)
-        pitch = computePitchFromMonzo(monzo)
+        pitch = computeScamonFromMonzo(monzo)
     } else if (pitchIo.match(ANY_CENTS_CHARS)) {
         const cents = parseCents(pitchIo)
         pitch = computePitchFromCents(cents)
     } else {
         const decimal = parseDecimal(pitchIo)
-        pitch = computePitchFromDecimal(decimal)
+        pitch = computeScamonFromDecimal(decimal)
     }
 
     return pitch

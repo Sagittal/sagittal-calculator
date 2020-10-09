@@ -1,4 +1,4 @@
-import { Comma } from "../../../../../src/general/music/rational"
+import { Comma } from "../../../../../src/general/music/ji"
 import { isLaas } from "../../../../../src/scripts/popular23FreeClass/bestNotatingComma/isLaas"
 
 describe("isLaas", (): void => {

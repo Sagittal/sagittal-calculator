@@ -1,6 +1,5 @@
 import { program } from "commander"
-import { Abs, Decimal, Exponent, Max, Monzo, Prime } from "../../../../../src/general/math"
-import { Pitch } from "../../../../../src/general/music/pitch"
+import { Abs, Decimal, Exponent, Max, Monzo, Prime, Scamon } from "../../../../../src/general/math"
 import { ApotomeSlope, JiPitchAnalysis, N2D3P9 } from "../../../../../src/sagittal/ji"
 import { parseJiPitch, parseNotatingCommasSettings } from "../../../../../src/scripts/jiPitch/analyzeJiPitch"
 import { DEFAULT_FIND_COMMAS_SETTINGS } from "../../../../../src/scripts/jiPitch/findCommas"
@@ -21,7 +20,7 @@ describe("parseNotatingCommasSettings", (): void => {
         decimal: rationalDecimal,
         pitch: {
             monzo: rationalMonzo,
-        } as Pitch<{ rational: true}>,
+        } as Scamon<{ rational: true}>,
     }
 
     it("adjusts the max N2D3P9 if the JI pitch has greater than the current settings", (): void => {
@@ -58,7 +57,7 @@ describe("parseJiPitch", (): void => {
 
             const actual = parseJiPitch()
 
-            const expected = { monzo: [0, 1, -2, 1] } as Pitch<{ rational: true }>
+            const expected = { monzo: [0, 1, -2, 1] } as Scamon<{ rational: true }>
             expect(actual).toEqual(expected)
         })
 
@@ -67,7 +66,7 @@ describe("parseJiPitch", (): void => {
 
             const actual = parseJiPitch()
 
-            const expected = { monzo: [-1, 0, 0, 1] } as Pitch<{ rational: true }>
+            const expected = { monzo: [-1, 0, 0, 1] } as Scamon<{ rational: true }>
             expect(actual).toEqual(expected)
         })
 
@@ -76,7 +75,7 @@ describe("parseJiPitch", (): void => {
 
             const actual = parseJiPitch()
 
-            const expected = { monzo: [-11, 7] } as Pitch<{ rational: true }>
+            const expected = { monzo: [-11, 7] } as Scamon<{ rational: true }>
             expect(actual).toEqual(expected)
         })
 
@@ -85,7 +84,7 @@ describe("parseJiPitch", (): void => {
 
             const actual = parseJiPitch()
 
-            const expected = { monzo: [0, 1] } as Pitch<{ rational: true }>
+            const expected = { monzo: [0, 1] } as Scamon<{ rational: true }>
             expect(actual).toEqual(expected)
         })
     })
@@ -96,7 +95,7 @@ describe("parseJiPitch", (): void => {
 
             const actual = parseJiPitch()
 
-            const expected = { monzo: [0, 1, -2, 1] } as Pitch<{ rational: true }>
+            const expected = { monzo: [0, 1, -2, 1] } as Scamon<{ rational: true }>
             expect(actual).toEqual(expected)
         })
 
@@ -105,7 +104,7 @@ describe("parseJiPitch", (): void => {
 
             const actual = parseJiPitch()
 
-            const expected = { monzo: [-1, 0, 0, 1] } as Pitch<{ rational: true }>
+            const expected = { monzo: [-1, 0, 0, 1] } as Scamon<{ rational: true }>
             expect(actual).toEqual(expected)
         })
 
@@ -114,7 +113,7 @@ describe("parseJiPitch", (): void => {
 
             const actual = parseJiPitch()
 
-            const expected = { monzo: [-11, 7] } as Pitch<{ rational: true }>
+            const expected = { monzo: [-11, 7] } as Scamon<{ rational: true }>
             expect(actual).toEqual(expected)
         })
 
@@ -123,7 +122,7 @@ describe("parseJiPitch", (): void => {
 
             const actual = parseJiPitch()
 
-            const expected = { monzo: [0, 1] } as Pitch<{ rational: true }>
+            const expected = { monzo: [0, 1] } as Scamon<{ rational: true }>
             expect(actual).toEqual(expected)
         })
     })

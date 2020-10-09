@@ -31,6 +31,7 @@ export {
     isQuotientRational,
     computeLowestTermsRationalQuotient,
     areRationalQuotientsEqual,
+    computeRationalQuotientFromRationalScamon,
 } from "./quotient"
 export {
     computeRationalMonzoFromRationalQuotient,
@@ -44,3 +45,19 @@ export {
     isMonzoRational,
     isRationalMonzoSmooth,
 } from "./monzo"
+export {
+    computeRationalScamonFromRationalDecimal,
+    computeRationalScamonFromRationalMonzo,
+    computeRationalScamonFromRationalQuotient,
+    isScamonRational,
+    computeRationalScamonCopfr,
+    computeRationalScamonSopfr,
+    areRationalScamonsEqual,
+    isRationalScamonSub,
+    isRationalScamonUnison,
+    addRationalScamons,
+    computeRationalScamonGeometricMean,
+    isRationalScamonRough,
+    computeRationalScamonSmoothness,
+    isRationalScamonSmooth,
+} from "./scamon"

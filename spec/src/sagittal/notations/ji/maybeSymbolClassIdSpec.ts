@@ -1,5 +1,5 @@
 import { Id } from "../../../../../src/general"
-import { Comma } from "../../../../../src/general/music/rational"
+import { Comma } from "../../../../../src/general/music/ji"
 import { SymbolClass } from "../../../../../src/sagittal"
 import { computeMaybeSymbolClassId } from "../../../../../src/sagittal/notations/ji"
 

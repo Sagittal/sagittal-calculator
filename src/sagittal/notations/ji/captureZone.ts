@@ -1,4 +1,4 @@
-import { Id, ioSettings, isPitchHigher, isUndefined, Max, Maybe, Min, Pitch, UNISON, Zone } from "../../../general"
+import { Id, ioSettings, isScamonGreater, isUndefined, Max, Maybe, Min, Scamon, UNISON, Zone } from "../../../general"
 import { formatSymbolClass } from "../../io"
 import { getPrimaryComma } from "../primaryComma"
 import { PrimaryComma, SymbolClass } from "../types"
@@ -26,13 +26,16 @@ const computeCaptureZone = (
 
     const indexOfBoundJustAboveSymbolAtThisLevel = jiNotationLevelBounds
         .findIndex((jiNotationBound: JiNotationBound): boolean => {
-            return isPitchHigher(jiNotationBound.pitch, primaryComma)
+            return isScamonGreater(jiNotationBound.pitch, primaryComma)
         })
     const indexOfJiNotationBoundJustBelowSymbolClassAtThisLevel = indexOfBoundJustAboveSymbolAtThisLevel - 1
 
     const lowerBound = jiNotationLevelBounds[ indexOfJiNotationBoundJustBelowSymbolClassAtThisLevel ]
-    const lowerBoundPitch = isUndefined(lowerBound) ? UNISON : lowerBound.pitch as Pitch as Min<Pitch>
-    const upperBoundPitch = jiNotationLevelBounds[ indexOfBoundJustAboveSymbolAtThisLevel ].pitch as Pitch as Max<Pitch>
+    const lowerBoundPitch = isUndefined(lowerBound) ? 
+        UNISON : 
+        lowerBound.pitch as Scamon as Min<Scamon>
+    const upperBoundPitch = 
+        jiNotationLevelBounds[ indexOfBoundJustAboveSymbolAtThisLevel ].pitch as Scamon as Max<Scamon>
 
     return [lowerBoundPitch, upperBoundPitch] as Zone<PrimaryComma>
 }

@@ -1,15 +1,15 @@
 import { formatPitch, Formatted } from "../../../../../src/general/io/format"
 import { Monzo } from "../../../../../src/general/math/numeric/monzo"
 import { Quotient } from "../../../../../src/general/math/numeric/quotient"
-import { Pitch } from "../../../../../src/general/music/pitch"
+import { Scamon } from "../../../../../src/general/math/numeric/scamon"
 
 describe("formatPitch", (): void => {
     it("if only the monzo is present, returns the monzo formatted", (): void => {
-        const pitch = { monzo: [0, -1, 1] } as Pitch<{ rational: true }>
+        const pitch = { monzo: [0, -1, 1] } as Scamon<{ rational: true }>
 
         const actual = formatPitch(pitch)
 
-        const expected = "[   0  -1   1 ⟩" as Formatted<Pitch>
+        const expected = "[   0  -1   1 ⟩" as Formatted<Scamon>
         expect(actual).toBe(expected)
     })
 
@@ -17,11 +17,11 @@ describe("formatPitch", (): void => {
         const pitch = {
             monzo: [0, -1, 1] as Monzo<{ rational: true }>,
             scaler: [1, 2] as Quotient,
-        } as Pitch<{ rational: false }>
+        } as Scamon<{ rational: false }>
 
         const actual = formatPitch(pitch)
 
-        const expected = "[   0  -1   1 ⟩(1/2)" as Formatted<Pitch>
+        const expected = "[   0  -1   1 ⟩(1/2)" as Formatted<Scamon>
         expect(actual).toBe(expected)
     })
 
@@ -29,11 +29,11 @@ describe("formatPitch", (): void => {
         const pitch = {
             monzo: [0, -1, 1] as Monzo<{ rational: true }>,
             scaler: [1.238923, 1] as Quotient,
-        } as Pitch<{ rational: false }>
+        } as Scamon<{ rational: false }>
 
         const actual = formatPitch(pitch)
 
-        const expected = "1095.652¢" as Formatted<Pitch>
+        const expected = "1095.652¢" as Formatted<Scamon>
         expect(actual).toBe(expected)
     })
 
@@ -41,11 +41,11 @@ describe("formatPitch", (): void => {
         const pitch = {
             monzo: [0, -1, 1] as Monzo<{ rational: true }>,
             scaler: [1.238923, 1] as Quotient,
-        } as Pitch<{ rational: false }>
+        } as Scamon<{ rational: false }>
 
         const actual = formatPitch(pitch, { align: true })
 
-        const expected = "      1095.652¢" as Formatted<Pitch>
+        const expected = "      1095.652¢" as Formatted<Scamon>
         expect(actual).toBe(expected)
     })
 })

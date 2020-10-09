@@ -7,14 +7,13 @@ import {
     Id,
     Multiplier,
     Name,
-    Pitch,
     Quotient,
-    Rank,
+    Rank, Scamon,
     SQRT_SCALER,
     Sum,
     UNISON,
 } from "../../../../../src/general"
-import { NON_JI_PITCH_BASE_MONZO } from "../../../../../src/general/music/irrational/constants"
+import { IRRATIONAL_SCAMON_BASE_MONZO } from "../../../../../src/general/math/irrational/scamon/constants"
 import {
     Bound,
     BoundType,
@@ -30,7 +29,7 @@ import { BoundEventAnalysis, BoundHistoryAnalysis, Score } from "../../../../../
 import { RANKS } from "../../../../../src/scripts/jiNotationBound/ranks"
 
 const boundEventFixture: BoundEvent = {
-    pitch: { monzo: NON_JI_PITCH_BASE_MONZO, scaler: SQRT_SCALER } as Pitch<{ rational: false }>,
+    pitch: { monzo: IRRATIONAL_SCAMON_BASE_MONZO, scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
     boundType: "" as BoundType,
     jiNotationLevel: "" as JiNotationLevel,
     name: "" as Name<Bound>,
@@ -46,7 +45,7 @@ const boundEventAnalysisFixture: BoundEventAnalysis = {
 
 const boundHistoryAnalysisFixture: BoundHistoryAnalysis = {
     boundEventAnalyses: [],
-    pitch: { monzo: NON_JI_PITCH_BASE_MONZO, scaler: SQRT_SCALER } as Pitch<{ rational: false }>,
+    pitch: { monzo: IRRATIONAL_SCAMON_BASE_MONZO, scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
     rank: 0 as Decimal<{ integer: true }> & Rank<BoundType>,
     score: 0 as Score,
     totalDistance: 0 as Sum<Abs<Cents>>,
@@ -73,7 +72,7 @@ const jiNotationBoundFixture: JiNotationBound = {
     pitch: {
         monzo: EMPTY_MONZO,
         scaler: [1, 1] as Quotient,
-    } as Pitch<{ rational: false }>,
+    } as Scamon<{ rational: false }>,
     boundType: BoundType.INA_MIDPOINT,
     name: "" as Name<Bound>,
 }

@@ -1,4 +1,4 @@
-import { Monzo, Name, Pitch, Quotient, SQRT_SCALER } from "../../../../../src/general"
+import { Monzo, Name, Quotient, Scamon, SQRT_SCALER } from "../../../../../src/general"
 import { APOTOME } from "../../../../../src/sagittal"
 import { Bound, BoundType, JiNotationBound, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 import { EXTREME_EDA, INSANE_EDA, MEDIUM_EDA, ULTRA_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"
@@ -12,7 +12,7 @@ describe("computeHistories", (): void => {
             pitch: {
                 monzo: APOTOME.monzo,
                 scaler: [67.5, INSANE_EDA],
-            } as Pitch<{ rational: false }>,
+            } as Scamon<{ rational: false }>,
             jiNotationLevels: [
                 JiNotationLevel.MEDIUM,
                 JiNotationLevel.ULTRA,
@@ -32,7 +32,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -41,7 +41,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [4.5, ULTRA_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -50,7 +50,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [19.5, EXTREME_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -59,7 +59,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [65.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -70,7 +70,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -79,7 +79,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [4.5, ULTRA_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -88,7 +88,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [19.5, EXTREME_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -97,7 +97,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [66.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -108,7 +108,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -117,7 +117,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [4.5, ULTRA_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -126,7 +126,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [19.5, EXTREME_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -135,7 +135,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [67.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -146,7 +146,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -155,7 +155,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [4.5, ULTRA_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -164,7 +164,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [19.5, EXTREME_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -173,7 +173,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [68.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -184,7 +184,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -193,7 +193,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [4.5, ULTRA_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -202,7 +202,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [19.5, EXTREME_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -211,7 +211,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -222,7 +222,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -231,7 +231,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [4.5, ULTRA_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -240,7 +240,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -249,7 +249,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [65.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -260,7 +260,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -269,7 +269,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [4.5, ULTRA_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -278,7 +278,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -287,7 +287,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [66.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -298,7 +298,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -307,7 +307,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [4.5, ULTRA_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -316,7 +316,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -325,7 +325,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [67.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -336,7 +336,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -345,7 +345,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [4.5, ULTRA_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -354,7 +354,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -363,7 +363,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [68.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -374,7 +374,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -383,7 +383,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [4.5, ULTRA_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -392,7 +392,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -401,7 +401,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -412,7 +412,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -421,7 +421,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -430,7 +430,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [19.5, EXTREME_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -439,7 +439,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [65.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -450,7 +450,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -459,7 +459,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -468,7 +468,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [19.5, EXTREME_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -477,7 +477,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [66.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -488,7 +488,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -497,7 +497,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -506,7 +506,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [19.5, EXTREME_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -515,7 +515,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [67.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -526,7 +526,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -535,7 +535,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -544,7 +544,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [19.5, EXTREME_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -553,7 +553,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [68.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -564,7 +564,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -573,7 +573,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -582,7 +582,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [19.5, EXTREME_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -591,7 +591,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -602,7 +602,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -611,7 +611,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -620,7 +620,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -629,7 +629,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [65.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -640,7 +640,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -649,7 +649,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -658,7 +658,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -667,7 +667,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [66.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -678,7 +678,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -687,7 +687,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -696,7 +696,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -705,7 +705,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [67.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -716,7 +716,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -725,7 +725,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -734,7 +734,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -743,7 +743,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [68.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -754,7 +754,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -763,7 +763,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -772,7 +772,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -781,7 +781,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -792,7 +792,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -801,7 +801,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [4.5, ULTRA_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -810,7 +810,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [19.5, EXTREME_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -819,7 +819,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [65.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -830,7 +830,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -839,7 +839,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [4.5, ULTRA_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -848,7 +848,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [19.5, EXTREME_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -857,7 +857,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [66.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -868,7 +868,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -877,7 +877,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [4.5, ULTRA_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -886,7 +886,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [19.5, EXTREME_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -895,7 +895,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [67.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -906,7 +906,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -915,7 +915,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [4.5, ULTRA_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -924,7 +924,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [19.5, EXTREME_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -933,7 +933,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [68.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -944,7 +944,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -953,7 +953,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [4.5, ULTRA_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -962,7 +962,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [19.5, EXTREME_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -971,7 +971,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -982,7 +982,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -991,7 +991,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [4.5, ULTRA_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -1000,7 +1000,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -1009,7 +1009,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [65.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -1020,7 +1020,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -1029,7 +1029,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [4.5, ULTRA_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -1038,7 +1038,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -1047,7 +1047,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [66.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -1058,7 +1058,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -1067,7 +1067,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [4.5, ULTRA_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -1076,7 +1076,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -1085,7 +1085,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [67.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -1096,7 +1096,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -1105,7 +1105,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [4.5, ULTRA_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -1114,7 +1114,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -1123,7 +1123,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [68.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -1134,7 +1134,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -1143,7 +1143,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [4.5, ULTRA_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -1152,7 +1152,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -1161,7 +1161,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -1172,7 +1172,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -1181,7 +1181,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -1190,7 +1190,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [19.5, EXTREME_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -1199,7 +1199,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [65.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -1210,7 +1210,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -1219,7 +1219,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -1228,7 +1228,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [19.5, EXTREME_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -1237,7 +1237,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [66.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -1248,7 +1248,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -1257,7 +1257,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -1266,7 +1266,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [19.5, EXTREME_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -1275,7 +1275,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [67.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -1286,7 +1286,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -1295,7 +1295,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -1304,7 +1304,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [19.5, EXTREME_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -1313,7 +1313,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [68.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -1324,7 +1324,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -1333,7 +1333,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -1342,7 +1342,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [19.5, EXTREME_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -1351,7 +1351,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -1362,7 +1362,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -1371,7 +1371,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -1380,7 +1380,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -1389,7 +1389,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [65.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -1400,7 +1400,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -1409,7 +1409,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -1418,7 +1418,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -1427,7 +1427,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [66.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -1438,7 +1438,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -1447,7 +1447,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -1456,7 +1456,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -1465,7 +1465,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [67.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -1476,7 +1476,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -1485,7 +1485,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -1494,7 +1494,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -1503,7 +1503,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [68.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -1514,7 +1514,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -1523,7 +1523,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -1532,7 +1532,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -1541,7 +1541,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
         ]
@@ -1554,7 +1554,7 @@ describe("computeHistories", (): void => {
             pitch: {
                 monzo: [-30, 19] as Monzo<{ rational: true }>,
                 scaler: SQRT_SCALER,
-            } as Pitch<{ rational: false }>,
+            } as Scamon<{ rational: false }>,
             jiNotationLevels: [
                 JiNotationLevel.MEDIUM,
                 JiNotationLevel.HIGH,
@@ -1575,7 +1575,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [12.5, MEDIUM_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
@@ -1584,7 +1584,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -1593,7 +1593,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [34.5, ULTRA_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -1602,7 +1602,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [140.5, EXTREME_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -1611,7 +1611,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [485.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -1622,7 +1622,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [12.5, MEDIUM_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
@@ -1631,7 +1631,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -1640,7 +1640,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [34.5, ULTRA_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -1649,7 +1649,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [140.5, EXTREME_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -1658,7 +1658,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [486.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -1669,7 +1669,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [12.5, MEDIUM_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
@@ -1678,7 +1678,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -1687,7 +1687,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [34.5, ULTRA_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -1696,7 +1696,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [140.5, EXTREME_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -1705,7 +1705,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [487.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -1716,7 +1716,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [12.5, MEDIUM_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
@@ -1725,7 +1725,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -1734,7 +1734,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [34.5, ULTRA_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -1743,7 +1743,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [140.5, EXTREME_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -1752,7 +1752,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -1763,7 +1763,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [12.5, MEDIUM_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
@@ -1772,7 +1772,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -1781,7 +1781,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [34.5, ULTRA_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -1790,7 +1790,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -1799,7 +1799,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [485.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -1810,7 +1810,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [12.5, MEDIUM_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
@@ -1819,7 +1819,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -1828,7 +1828,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [34.5, ULTRA_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -1837,7 +1837,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -1846,7 +1846,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [486.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -1857,7 +1857,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [12.5, MEDIUM_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
@@ -1866,7 +1866,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -1875,7 +1875,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [34.5, ULTRA_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -1884,7 +1884,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -1893,7 +1893,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [487.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -1904,7 +1904,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [12.5, MEDIUM_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
@@ -1913,7 +1913,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -1922,7 +1922,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [34.5, ULTRA_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -1931,7 +1931,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -1940,7 +1940,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -1951,7 +1951,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [12.5, MEDIUM_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
@@ -1960,7 +1960,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -1969,7 +1969,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -1978,7 +1978,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [140.5, EXTREME_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -1987,7 +1987,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [485.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -1998,7 +1998,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [12.5, MEDIUM_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
@@ -2007,7 +2007,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -2016,7 +2016,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -2025,7 +2025,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [140.5, EXTREME_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -2034,7 +2034,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [486.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -2045,7 +2045,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [12.5, MEDIUM_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
@@ -2054,7 +2054,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -2063,7 +2063,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -2072,7 +2072,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [140.5, EXTREME_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -2081,7 +2081,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [487.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -2092,7 +2092,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [12.5, MEDIUM_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
@@ -2101,7 +2101,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -2110,7 +2110,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -2119,7 +2119,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [140.5, EXTREME_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -2128,7 +2128,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -2139,7 +2139,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [12.5, MEDIUM_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
@@ -2148,7 +2148,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -2157,7 +2157,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -2166,7 +2166,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -2175,7 +2175,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [485.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -2186,7 +2186,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [12.5, MEDIUM_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
@@ -2195,7 +2195,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -2204,7 +2204,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -2213,7 +2213,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -2222,7 +2222,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [486.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -2233,7 +2233,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [12.5, MEDIUM_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
@@ -2242,7 +2242,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -2251,7 +2251,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -2260,7 +2260,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -2269,7 +2269,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [487.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -2280,7 +2280,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [12.5, MEDIUM_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
@@ -2289,7 +2289,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -2298,7 +2298,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -2307,7 +2307,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -2316,7 +2316,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -2327,7 +2327,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
@@ -2336,7 +2336,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -2345,7 +2345,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [34.5, ULTRA_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -2354,7 +2354,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [140.5, EXTREME_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -2363,7 +2363,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [485.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -2374,7 +2374,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
@@ -2383,7 +2383,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -2392,7 +2392,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [34.5, ULTRA_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -2401,7 +2401,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [140.5, EXTREME_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -2410,7 +2410,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [486.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -2421,7 +2421,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
@@ -2430,7 +2430,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -2439,7 +2439,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [34.5, ULTRA_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -2448,7 +2448,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [140.5, EXTREME_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -2457,7 +2457,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [487.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -2468,7 +2468,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
@@ -2477,7 +2477,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -2486,7 +2486,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [34.5, ULTRA_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -2495,7 +2495,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [140.5, EXTREME_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -2504,7 +2504,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -2515,7 +2515,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
@@ -2524,7 +2524,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -2533,7 +2533,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [34.5, ULTRA_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -2542,7 +2542,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -2551,7 +2551,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [485.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -2562,7 +2562,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
@@ -2571,7 +2571,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -2580,7 +2580,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [34.5, ULTRA_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -2589,7 +2589,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -2598,7 +2598,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [486.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -2609,7 +2609,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
@@ -2618,7 +2618,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -2627,7 +2627,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [34.5, ULTRA_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -2636,7 +2636,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -2645,7 +2645,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [487.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -2656,7 +2656,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
@@ -2665,7 +2665,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -2674,7 +2674,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [34.5, ULTRA_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -2683,7 +2683,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -2692,7 +2692,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -2703,7 +2703,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
@@ -2712,7 +2712,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -2721,7 +2721,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -2730,7 +2730,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [140.5, EXTREME_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -2739,7 +2739,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [485.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -2750,7 +2750,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
@@ -2759,7 +2759,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -2768,7 +2768,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -2777,7 +2777,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [140.5, EXTREME_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -2786,7 +2786,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [486.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -2797,7 +2797,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
@@ -2806,7 +2806,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -2815,7 +2815,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -2824,7 +2824,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [140.5, EXTREME_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -2833,7 +2833,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [487.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -2844,7 +2844,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
@@ -2853,7 +2853,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -2862,7 +2862,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -2871,7 +2871,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [140.5, EXTREME_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -2880,7 +2880,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -2891,7 +2891,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
@@ -2900,7 +2900,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -2909,7 +2909,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -2918,7 +2918,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -2927,7 +2927,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [485.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -2938,7 +2938,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
@@ -2947,7 +2947,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -2956,7 +2956,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -2965,7 +2965,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -2974,7 +2974,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [486.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -2985,7 +2985,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
@@ -2994,7 +2994,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -3003,7 +3003,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -3012,7 +3012,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -3021,7 +3021,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: APOTOME.monzo,
                         scaler: [487.5, INSANE_EDA],
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -3032,7 +3032,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.HIGH,
@@ -3041,7 +3041,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
@@ -3050,7 +3050,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -3059,7 +3059,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -3068,7 +3068,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         monzo: [-30, 19] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
         ]

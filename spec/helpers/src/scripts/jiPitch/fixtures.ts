@@ -7,8 +7,8 @@ import {
     Max,
     Monzo,
     Name,
-    Pitch,
     Quotient,
+    Scamon,
     Two3FreeClass,
 } from "../../../../../src/general"
 import { Prime, Sopfr } from "../../../../../src/general/math"
@@ -31,9 +31,9 @@ const two3FreeClassAnalysisFixture: Two3FreeClassAnalysis = {
     n2d3p9: 1 as N2D3P9,
 }
 
-const jiPitchFixture: Pitch<{ rational: true }> = {
+const jiPitchFixture: Scamon<{ rational: true }> = {
     monzo: EMPTY_MONZO,
-} as Pitch<{ rational: true }>
+} as Scamon<{ rational: true }>
 
 const jiPitchAnalysisFixture: JiPitchAnalysis = {
     pitch: jiPitchFixture,

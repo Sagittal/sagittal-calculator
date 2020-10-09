@@ -1,4 +1,4 @@
-import { Abs, Cents, Id, Monzo, Multiplier, Name, Pitch, Quotient, SQRT_SCALER } from "../../../../../../src/general"
+import { Abs, Cents, Id, Monzo, Multiplier, Name, Quotient, Scamon, SQRT_SCALER } from "../../../../../../src/general"
 import { APOTOME, BoundType, CommaMean, InaMidpoint, SizeCategoryBound } from "../../../../../../src/sagittal"
 import { SymbolClass } from "../../../../../../src/sagittal/notations"
 import { Ina, JiNotationBound, JiNotationLevel } from "../../../../../../src/sagittal/notations/ji"
@@ -12,7 +12,7 @@ describe("computeJiNotationLevelBoundedSymbolClassIdsWithDistances", (): void =>
             pitch: {
                 monzo: APOTOME.monzo,
                 scaler: [175.5, INSANE_EDA],
-            } as Pitch<{ rational: false }>,
+            } as Scamon<{ rational: false }>,
             jiNotationLevels: [JiNotationLevel.MEDIUM, JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
             id: 51 as Id<JiNotationBound>,
             name: "175.5°809" as Name<InaMidpoint>,
@@ -68,7 +68,7 @@ describe("computeJiNotationLevelBoundedSymbolClassIdsWithDistances", (): void =>
             pitch: {
                 monzo: [-30, 19] as Monzo<{ rational: true }>,
                 scaler: SQRT_SCALER,
-            } as Pitch<{ rational: false }>,
+            } as Scamon<{ rational: false }>,
             jiNotationLevels: [
                 JiNotationLevel.MEDIUM,
                 JiNotationLevel.HIGH,
@@ -134,7 +134,7 @@ describe("computeJiNotationLevelBoundedSymbolClassIdsWithDistances", (): void =>
             pitch: {
                 monzo: APOTOME.monzo,
                 scaler: [1.5, INSANE_EDA],
-            } as Pitch<{ rational: false }>,
+            } as Scamon<{ rational: false }>,
             jiNotationLevels: [JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
             id: 0 as Id<JiNotationBound>,
             name: "1.5°809" as Name<InaMidpoint>,
@@ -170,7 +170,7 @@ describe("computeJiNotationLevelBoundedSymbolClassIdsWithDistances", (): void =>
             pitch: {
                 monzo: [-4, -1, -1, 0, 0, 1, 0, 1] as Monzo<{ rational: true }>,
                 scaler: SQRT_SCALER,
-            } as Pitch<{ rational: false }>,
+            } as Scamon<{ rational: false }>,
             jiNotationLevels: [JiNotationLevel.ULTRA, JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
             id: 52 as Id<JiNotationBound>,
             name: ")/| ,.|)" as Name<CommaMean>,

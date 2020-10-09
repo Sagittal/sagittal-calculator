@@ -1,4 +1,4 @@
-import { Name, NumericProperties, Pitch, Quotient } from "../../../../general"
+import { Name, NumericProperties, Quotient, Scamon } from "../../../../general"
 
 interface SizeCategoryOptions {
     abbreviated?: boolean,
@@ -11,7 +11,7 @@ interface SizeCategory {
 
 type SizeCategoryBound<T extends NumericProperties = {}> = {
     name: Name<SizeCategoryBound>,
-    pitch: Pitch<T & { rational: false }>,
+    pitch: Scamon<T & { rational: false }>,
 }
 
 enum SizeCategoryName {

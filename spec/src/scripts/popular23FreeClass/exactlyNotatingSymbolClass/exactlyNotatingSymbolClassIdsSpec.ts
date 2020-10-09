@@ -1,10 +1,10 @@
-import { Id, Pitch } from "../../../../../src/general"
+import { Id, Scamon } from "../../../../../src/general"
 import { SymbolClass } from "../../../../../src/sagittal/notations"
 import { computeExactlyNotatingSymbolClassIds } from "../../../../../src/scripts/popular23FreeClass/exactlyNotatingSymbolClass/exactlyNotatingSymbolClassIds"
 
 describe("computeExactlyNotatingSymbolClassIds", (): void => {
     it("returns a list of JI Notation symbol class IDs for symbol classes which exactly notate this pitch relative to a skeleton of Pythagorean nominals", (): void => {
-        const jiPitch = { monzo: [0, -2, 0, 0, 1] } as Pitch<{ rational: true }>
+        const jiPitch = { monzo: [0, -2, 0, 0, 1] } as Scamon<{ rational: true }>
 
         const actual = computeExactlyNotatingSymbolClassIds(jiPitch)
 
@@ -17,7 +17,7 @@ describe("computeExactlyNotatingSymbolClassIds", (): void => {
     })
 
     it("another example", (): void => {
-        const jiPitch = { monzo: [0, 0, 1, 1] } as Pitch<{ rational: true }>
+        const jiPitch = { monzo: [0, 0, 1, 1] } as Scamon<{ rational: true }>
 
         const actual = computeExactlyNotatingSymbolClassIds(jiPitch)
 

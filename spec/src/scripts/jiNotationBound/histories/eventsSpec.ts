@@ -1,4 +1,4 @@
-import { Cents, computePitchFromCents, Monzo, Name, Pitch, SQRT_SCALER } from "../../../../../src/general"
+import { Cents, computePitchFromCents, Monzo, Name, Scamon, SQRT_SCALER } from "../../../../../src/general"
 import { APOTOME } from "../../../../../src/sagittal"
 import { Bound, BoundType, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 import { HIGH_EDA, ULTRA_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"
@@ -32,7 +32,7 @@ describe("computeBoundEvents", (): void => {
                         jiNotationLevel: JiNotationLevel.ULTRA,
                         boundType: BoundType.INA_MIDPOINT,
                         name: "2.5°58" as Name<Bound>,
-                        pitch: { monzo: APOTOME.monzo, scaler: [2.5, ULTRA_EDA] } as Pitch<{ rational: false }>,
+                        pitch: { monzo: APOTOME.monzo, scaler: [2.5, ULTRA_EDA] } as Scamon<{ rational: false }>,
                     },
                 ]
                 expect(actual).toEqual(expected)
@@ -51,7 +51,7 @@ describe("computeBoundEvents", (): void => {
                         jiNotationLevel: JiNotationLevel.ULTRA,
                         boundType: BoundType.INA_MIDPOINT,
                         name: "2.5°58" as Name<Bound>,
-                        pitch: { monzo: APOTOME.monzo, scaler: [2.5, ULTRA_EDA] } as Pitch<{ rational: false }>,
+                        pitch: { monzo: APOTOME.monzo, scaler: [2.5, ULTRA_EDA] } as Scamon<{ rational: false }>,
                     },
                 ]
                 expect(actual).toEqual(expected)
@@ -69,13 +69,13 @@ describe("computeBoundEvents", (): void => {
                         jiNotationLevel: JiNotationLevel.HIGH,
                         boundType: BoundType.INA_MIDPOINT,
                         name: "11.5°47" as Name<Bound>,
-                        pitch: { monzo: APOTOME.monzo, scaler: [11.5, HIGH_EDA] } as Pitch<{ rational: false }>,
+                        pitch: { monzo: APOTOME.monzo, scaler: [11.5, HIGH_EDA] } as Scamon<{ rational: false }>,
                     },
                     {
                         jiNotationLevel: JiNotationLevel.HIGH,
                         boundType: BoundType.INA_MIDPOINT,
                         name: "12.5°47" as Name<Bound>,
-                        pitch: { monzo: APOTOME.monzo, scaler: [12.5, HIGH_EDA] } as Pitch<{ rational: false }>,
+                        pitch: { monzo: APOTOME.monzo, scaler: [12.5, HIGH_EDA] } as Scamon<{ rational: false }>,
                     },
                 ]
                 expect(actual).toEqual(expected)
@@ -113,7 +113,7 @@ describe("computeBoundEvents", (): void => {
                         pitch: {
                             monzo: [ 2, 2, -1, -1],
                             scaler: SQRT_SCALER,
-                        } as Pitch<{ rational: false }>,
+                        } as Scamon<{ rational: false }>,
                     },
                 ]
                 expect(actual).toEqual(expected)
@@ -134,7 +134,7 @@ describe("computeBoundEvents", (): void => {
                         pitch: {
                             monzo: [ -7, 5, -1, -1, 0, 0, 0, 1],
                             scaler: SQRT_SCALER,
-                        } as Pitch<{ rational: false }>,
+                        } as Scamon<{ rational: false }>,
                     },
                 ]
                 expect(actual).toEqual(expected)
@@ -155,7 +155,7 @@ describe("computeBoundEvents", (): void => {
                         pitch: {
                             monzo: [ 27, -12, -1, -2],
                             scaler: SQRT_SCALER,
-                        } as Pitch<{ rational: false }>,
+                        } as Scamon<{ rational: false }>,
                     },
                 ]
                 expect(actual).toEqual(expected)
@@ -176,7 +176,7 @@ describe("computeBoundEvents", (): void => {
                         pitch: {
                             monzo: [-10, 4, -1, 1, 2, -1],
                             scaler: SQRT_SCALER,
-                        } as Pitch<{ rational: false }>,
+                        } as Scamon<{ rational: false }>,
                     },
                 ]
                 expect(actual).toEqual(expected)
@@ -202,7 +202,7 @@ describe("computeBoundEvents", (): void => {
                         pitch: {
                             monzo: [3, -1, 0, -2, 0, 0, 0, 1],
                             scaler: SQRT_SCALER,
-                        } as Pitch<{ rational: false }>,
+                        } as Scamon<{ rational: false }>,
                     },
                 ]
                 expect(actual).toEqual(expected)
@@ -229,7 +229,7 @@ describe("computeBoundEvents", (): void => {
                         pitch: {
                             monzo: [27, -17] as Monzo<{ rational: true }>,
                             scaler: SQRT_SCALER,
-                        } as Pitch<{ rational: false }>,
+                        } as Scamon<{ rational: false }>,
                     },
                 ]
                 expect(actual).toEqual(expected)

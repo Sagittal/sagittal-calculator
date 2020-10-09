@@ -1,6 +1,6 @@
 import { increment } from "../../../../../../src/general/code"
-import { arePitchesEqual, isPitchHigher } from "../../../../../../src/general/music/pitch"
-import { computeInterval } from "../../../../../../src/general/music/pitch/typedOperations"
+import { areScamonsEqual, isScamonGreater } from "../../../../../../src/general/math/numeric/scamon"
+import { subtractScamons } from "../../../../../../src/general/math/numeric/scamon/typedOperations"
 import {
     getPrimaryComma,
     HALF_APOTOME,
@@ -14,7 +14,7 @@ describe("half-apotome mirror", (): void => {
     it("is the case that the commas in the JI notation are symmetrical about the half-apotome mirror", (): void => {
         const jiNotationPrimaryCommas = JI_NOTATION.map(getPrimaryComma)
         const firstCommaGreaterThanHalfApotomeMirrorIndex = jiNotationPrimaryCommas.findIndex(
-            (primaryComma: PrimaryComma): boolean => isPitchHigher(primaryComma, HALF_APOTOME),
+            (primaryComma: PrimaryComma): boolean => isScamonGreater(primaryComma, HALF_APOTOME),
         )
 
         let indexOffset = 0
@@ -25,8 +25,8 @@ describe("half-apotome mirror", (): void => {
             const comma = jiNotationPrimaryCommas[ index ]
             const mirroredComma = jiNotationPrimaryCommas[ mirroredIndex ]
 
-            const actual = computeInterval(comma, HALF_APOTOME)
-            const expected = computeInterval(HALF_APOTOME, mirroredComma)
+            const actual = subtractScamons(comma, HALF_APOTOME)
+            const expected = subtractScamons(HALF_APOTOME, mirroredComma)
             expect(actual).toEqualPitch(expected)
 
             indexOffset = increment(indexOffset)
@@ -36,7 +36,7 @@ describe("half-apotome mirror", (): void => {
     it("is the case that the bounds in the JI notation are symmetrical about the half-apotome mirror", (): void => {
         const jiNotationBoundAtHalfApotomeMirrorIndex =
             JI_NOTATION_BOUNDS.findIndex((jiNotationBound: JiNotationBound): boolean => {
-                return arePitchesEqual(jiNotationBound.pitch, HALF_APOTOME)
+                return areScamonsEqual(jiNotationBound.pitch, HALF_APOTOME)
             })
 
         let indexOffset = 1
@@ -47,8 +47,8 @@ describe("half-apotome mirror", (): void => {
             const jiNotationBound = JI_NOTATION_BOUNDS[ index ]
             const mirroredBound = JI_NOTATION_BOUNDS[ mirroredIndex ]
 
-            const actual = computeInterval(jiNotationBound.pitch, HALF_APOTOME)
-            const expected = computeInterval(HALF_APOTOME, mirroredBound.pitch)
+            const actual = subtractScamons(jiNotationBound.pitch, HALF_APOTOME)
+            const expected = subtractScamons(HALF_APOTOME, mirroredBound.pitch)
             expect(actual).toEqualPitch(expected)
 
             indexOffset = increment(indexOffset)

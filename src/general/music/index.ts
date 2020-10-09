@@ -1,3 +1,6 @@
+export { dividePitch, subtractPitch, computeCentsFromPitch, computePitchFromCents } from "./cents"
+export { CENTS_PER_OCTAVE } from "./constants"
+export { Cents, Zone } from "./types"
 export {
     compute23FreeClass,
     THREE_PRIME_LIMIT,
@@ -9,41 +12,6 @@ export {
     COMMA_POPULARITIES,
     compute23FreeClassName,
     format23FreeClass,
-    isJi,
-    computeJiPitchCopfr,
-    computeJiPitchSopfr,
     UNISON,
-    areJiPitchesEqual,
-    computeJiPitchFromRationalMonzo,
-    computeRationalQuotientFromJiPitch,
-    isJiPitchSub,
-    isJiPitchUnison,
-    computeStackedJiPitch,
-    computeJiPitchGeometricMean,
-    isJiPitchRough,
-    computeJiPitchSmoothness,
-    isJiPitchSmooth,
-} from "./rational"
-export { SQRT_SCALER, computeIrrationalDecimalFromPitch } from "./irrational"
-export { dividePitch, subtractPitch } from "./cents"
-export { CENTS_PER_OCTAVE } from "./constants"
-export { Cents, Zone } from "./types"
-export {
-    isPitchSub,
-    isPitchSuper,
-    isPitchUnison,
-    computeSuperPitch,
-    arePitchesEqual,
-    isPitchHigher,
-    isPitchLower,
-    isPitchLowerOrEqual,
-    isPitchHigherOrEqual,
-    sqrtPitch,
-    computePitchFromDecimal,
-    Pitch,
-    computeCentsFromPitch,
-    computePitchFromCents,
-    computePitchFromMonzo,
-    computePitchFromQuotient,
-    computeStackedPitch,
-} from "./pitch"
+    TWO_3_FREE,
+} from "./ji"

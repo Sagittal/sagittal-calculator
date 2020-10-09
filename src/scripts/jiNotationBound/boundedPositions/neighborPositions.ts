@@ -1,14 +1,14 @@
-import { computeIrrationalDecimalFromPitch, NumericProperties, Pitch } from "../../../general"
+import { computeIrrationalDecimalFromScamon, NumericProperties, Scamon } from "../../../general"
 import { computeNeighborPositionIndices } from "./neighborPositionIndices"
 import { NeighborPositions } from "./types"
 
 const computeNeighborPositions = <T extends NumericProperties>(
-    position: Pitch,
-    targetPositions: Array<Pitch<T>>,
+    position: Scamon,
+    targetPositions: Array<Scamon<T>>,
 ): NeighborPositions => {
     const [lesserNeighborPositionIndex, greaterNeighborPositionIndex] = computeNeighborPositionIndices(
-        computeIrrationalDecimalFromPitch(position),
-        targetPositions.map(computeIrrationalDecimalFromPitch),
+        computeIrrationalDecimalFromScamon(position),
+        targetPositions.map(computeIrrationalDecimalFromScamon),
     )
 
     return [

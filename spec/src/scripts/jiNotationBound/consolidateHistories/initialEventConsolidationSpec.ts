@@ -1,4 +1,4 @@
-import { Name, Pitch } from "../../../../../src/general"
+import { Name, Scamon } from "../../../../../src/general"
 import { APOTOME } from "../../../../../src/sagittal"
 import { Bound, BoundType } from "../../../../../src/sagittal/notations/ji"
 import { ULTRA_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"
@@ -16,7 +16,7 @@ describe("computeInitialEventConsolidation", (): void => {
         boundType: BoundType.INA_MIDPOINT,
         name: "12.5°58" as Name<Bound>,
         rank: RANKS[ BoundType.COMMA_MEAN ],
-        pitch: { monzo: APOTOME.monzo, scaler: [12.5, ULTRA_EDA] } as Pitch<{ rational: false }>,
+        pitch: { monzo: APOTOME.monzo, scaler: [12.5, ULTRA_EDA] } as Scamon<{ rational: false }>,
     }
 
     beforeEach((): void => {

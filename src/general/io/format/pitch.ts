@@ -1,19 +1,19 @@
-import { isQuotientRational } from "../../math"
-import { computeCentsFromPitch, isJi, Pitch } from "../../music"
+import { isQuotientRational, isScamonRational, Scamon } from "../../math"
+import { computeCentsFromPitch } from "../../music"
 import { formatCents } from "./cents"
 import { formatMonzo } from "./monzo"
 import { formatQuotient } from "./quotient"
 import { Formatted } from "./types"
 
-const formatPitch = (pitch: Pitch, options: { align?: boolean } = {}): Formatted<Pitch> => {
-    if (isJi(pitch)) {
-        return formatMonzo(pitch.monzo) as Formatted as Formatted<Pitch>
+const formatPitch = (pitch: Scamon, options: { align?: boolean } = {}): Formatted<Scamon> => {
+    if (isScamonRational(pitch)) {
+        return formatMonzo(pitch.monzo) as Formatted as Formatted<Scamon>
     } else {
         const { scaler, monzo } = pitch
         if (isQuotientRational(scaler)) {
-            return `${formatMonzo(monzo)}(${formatQuotient(scaler)})` as Formatted as Formatted<Pitch>
+            return `${formatMonzo(monzo)}(${formatQuotient(scaler)})` as Formatted as Formatted<Scamon>
         } else {
-            return formatCents(computeCentsFromPitch(pitch), options) as Formatted as Formatted<Pitch>
+            return formatCents(computeCentsFromPitch(pitch), options) as Formatted as Formatted<Scamon>
         }
     }
 }

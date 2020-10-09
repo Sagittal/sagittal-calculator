@@ -1,4 +1,4 @@
-import { Cents, computePitchFromCents, Monzo, Name, Pitch, SQRT_SCALER } from "../../../../../src/general"
+import { Cents, computePitchFromCents, Monzo, Name, Scamon, SQRT_SCALER } from "../../../../../src/general"
 import { APOTOME } from "../../../../../src/sagittal"
 import { Bound, BoundType, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 import { HIGH_EDA, ULTRA_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"
@@ -13,7 +13,7 @@ describe("computeExtendedHistories", (): void => {
         jiNotationLevel: JiNotationLevel.HIGH,
         boundType: BoundType.INA_MIDPOINT,
         name: "16.5°47" as Name<Bound>,
-        pitch: { monzo: APOTOME.monzo, scaler: [16.5, HIGH_EDA] } as Pitch<{ rational: false }>,
+        pitch: { monzo: APOTOME.monzo, scaler: [16.5, HIGH_EDA] } as Scamon<{ rational: false }>,
 
     }
     beforeEach((): void => {
@@ -38,7 +38,7 @@ describe("computeExtendedHistories", (): void => {
                     jiNotationLevel: JiNotationLevel.ULTRA,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "23.5°58" as Name<Bound>,
-                    pitch: { monzo: APOTOME.monzo, scaler: [23.5, ULTRA_EDA] } as Pitch<{ rational: false }>,
+                    pitch: { monzo: APOTOME.monzo, scaler: [23.5, ULTRA_EDA] } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -50,7 +50,7 @@ describe("computeExtendedHistories", (): void => {
                     pitch: {
                         monzo: [4, -3, -1, 0, 0, 2, 0, -1] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -62,7 +62,7 @@ describe("computeExtendedHistories", (): void => {
                     pitch: {
                         monzo: [8, -5] as Monzo<{ rational: true }>,
                         scaler: SQRT_SCALER,
-                    } as Pitch<{ rational: false }>,
+                    } as Scamon<{ rational: false }>,
                 },
             ],
         ]

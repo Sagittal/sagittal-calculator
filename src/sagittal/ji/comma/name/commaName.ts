@@ -2,13 +2,13 @@ import {
     Comma,
     computeRationalMonzoFromRationalDecimal,
     computeSubQuotient,
-    computeSuperPitch,
+    computeSuperScamon,
     Decimal,
     Direction,
     Exponent,
-    isJiPitchSmooth,
-    isJiPitchSub,
-    isJiPitchUnison,
+    isRationalScamonSmooth,
+    isRationalScamonSub,
+    isRationalScamonUnison,
     Name,
     Prime,
     PRIMES,
@@ -78,13 +78,13 @@ const computeCommaName = (
 
     const maybeHyphen = abbreviated ? "" : "-"
 
-    const maybeDown = isJiPitchSub(comma) ? " down" : ""
+    const maybeDown = isRationalScamonSub(comma) ? " down" : ""
 
-    const superComma = computeSuperPitch(comma) as Comma<{ rational: true, direction: Direction.SUPER }>
+    const superComma = computeSuperScamon(comma) as Comma<{ rational: true, direction: Direction.SUPER }>
     const sizeCategory: SizeCategoryAbbreviation | SizeCategoryName = computeSizeCategory(superComma, { abbreviated })
 
     let formattedCommaNameQuotient
-    if (isJiPitchSmooth(comma, THREE_SMOOTHNESS) && !isJiPitchUnison(comma)) {
+    if (isRationalScamonSmooth(comma, THREE_SMOOTHNESS) && !isRationalScamonUnison(comma)) {
         formattedCommaNameQuotient = "3"
     } else {
         const commaNameQuotient = computeCommaNameQuotient(comma)

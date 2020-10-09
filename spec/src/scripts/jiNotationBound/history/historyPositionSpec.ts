@@ -1,4 +1,4 @@
-import { Pitch } from "../../../../../src/general/music"
+import { Scamon } from "../../../../../src/general/math/numeric/scamon"
 import { APOTOME } from "../../../../../src/sagittal"
 import { EXTREME_EDA, HIGH_EDA, ULTRA_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"
 import { BoundHistory } from "../../../../../src/scripts/jiNotationBound/histories"
@@ -13,21 +13,21 @@ describe("computeBoundHistoryPosition", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [27.5, HIGH_EDA],
-                } as Pitch<{ rational: false }>,    // Not yet...
+                } as Scamon<{ rational: false }>,    // Not yet...
             },
             {
                 ...boundEventFixture,
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [33.5, ULTRA_EDA],
-                } as Pitch<{ rational: false }>,    // Almost there...
+                } as Scamon<{ rational: false }>,    // Almost there...
             },
             {
                 ...boundEventFixture,
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [135.5, EXTREME_EDA],
-                } as Pitch<{ rational: false }>,    // Final event
+                } as Scamon<{ rational: false }>,    // Final event
             },
         ]
 
@@ -36,7 +36,7 @@ describe("computeBoundHistoryPosition", (): void => {
         const expected = {
             monzo: APOTOME.monzo,
             scaler: [135.5, EXTREME_EDA],
-        } as Pitch<{ rational: false }>
+        } as Scamon<{ rational: false }>
         expect(actual).toEqual(expected)
     })
 })

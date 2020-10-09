@@ -1,5 +1,7 @@
+import { SQRT_SCALER } from "../../../../../src/general/math/irrational/scamon"
 import { Monzo } from "../../../../../src/general/math/numeric/monzo"
-import { Cents, computePitchFromCents, Pitch, SQRT_SCALER } from "../../../../../src/general/music"
+import { Scamon } from "../../../../../src/general/math/numeric/scamon"
+import { Cents, computePitchFromCents } from "../../../../../src/general/music"
 import { JiNotationBound, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 import { computeInitialPosition } from "../../../../../src/scripts/jiNotationBound/bound/initialPosition"
 import { jiNotationBoundFixture } from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
@@ -21,7 +23,7 @@ describe("computeInitialPosition", (): void => {
             // / 2 =
             monzo: [-22, 14, -2, 0, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
             scaler: SQRT_SCALER,
-        } as Pitch<{ rational: false }>
+        } as Scamon<{ rational: false }>
         expect(actual).toEqual(expected)
     })
 })

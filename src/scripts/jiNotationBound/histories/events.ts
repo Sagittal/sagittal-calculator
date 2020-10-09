@@ -1,4 +1,4 @@
-import { isPitchHigher, isPitchLower, Name } from "../../../general"
+import { isScamonGreater, isScamonLesser, Name } from "../../../general"
 import { Bound, BoundType, JiNotationLevel } from "../../../sagittal"
 import { BoundedSymbolClassPositions } from "../boundedPositions"
 import { BOUNDS_BY_TYPE } from "./bounds"
@@ -15,8 +15,8 @@ const computeBoundEvents = (
 
     bounds.forEach(({ pitch, name = "" as Name<Bound> }: Bound): void => {
         if (
-            (!lesserBoundedSymbolPosition || isPitchHigher(pitch, lesserBoundedSymbolPosition)) &&
-            (!greaterBoundedSymbolPosition || isPitchLower(pitch, greaterBoundedSymbolPosition))
+            (!lesserBoundedSymbolPosition || isScamonGreater(pitch, lesserBoundedSymbolPosition)) &&
+            (!greaterBoundedSymbolPosition || isScamonLesser(pitch, greaterBoundedSymbolPosition))
         ) {
             boundEvent.push({ jiNotationLevel, boundType, name, pitch })
         }

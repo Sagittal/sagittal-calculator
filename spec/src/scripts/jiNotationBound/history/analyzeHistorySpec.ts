@@ -1,15 +1,14 @@
 import {
     Abs,
+    addScamons,
     Cents,
     computePitchFromCents,
-    computeStackedPitch,
     Multiplier,
-    Pitch,
-    Quotient,
+    Quotient, Scamon,
     Sum,
 } from "../../../../../src/general"
 import { multiply } from "../../../../../src/general/math"
-import { NON_JI_PITCH_BASE_MONZO } from "../../../../../src/general/music/irrational/constants"
+import { IRRATIONAL_SCAMON_BASE_MONZO } from "../../../../../src/general/math/irrational/scamon/constants"
 import { APOTOME } from "../../../../../src/sagittal"
 import { BoundType, Ina, JiNotationBound, JiNotationLevel, Tina, TINA } from "../../../../../src/sagittal/notations/ji"
 import { EXTREME_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"
@@ -27,19 +26,19 @@ describe("analyzeHistory", (): void => {
     const actualJiNotationBoundPitch = { 
         monzo: APOTOME.monzo, 
         scaler: [25.5, EXTREME_EDA] 
-    } as Pitch<{ rational: false }>
+    } as Scamon<{ rational: false }>
     let boundHistory: BoundHistory
-    let pitch: Pitch<{ rational: false }>
+    let pitch: Scamon<{ rational: false }>
     let jiNotationBound: JiNotationBound
     let initialPosition
 
     it("returns its bound history but with its event augmented with analysis properties, and computes the final position of the bound history, and its distance from the initial position, and its overall distance the JI notation bound moved across all the bound events", (): void => {
-        pitch = computeStackedPitch(
+        pitch = addScamons(
             actualJiNotationBoundPitch,
             {
-                monzo: NON_JI_PITCH_BASE_MONZO,
+                monzo: IRRATIONAL_SCAMON_BASE_MONZO,
                 scaler: [1, 2400] as Quotient,  // 2^(1/2400) = 0.5¢
-            } as Pitch<{ rational: false }>,
+            } as Scamon<{ rational: false }>,
         )
         boundHistory = [
             {
@@ -127,7 +126,7 @@ describe("analyzeHistory", (): void => {
     describe(`when the bound history's position does not match the actual JI notation bound position, returns the bound history plus false for the possible property and the error in tinas`, (): void => {
         it("works when the position is greater than the actual JI notation bound position by less than a tina              ", (): void => {
             const expectedTinaError = 2 / 5 as Multiplier<Tina>
-            pitch = computeStackedPitch(
+            pitch = addScamons(
                 actualJiNotationBoundPitch,
                 computePitchFromCents(multiply(TINA, expectedTinaError)),
             )
@@ -158,7 +157,7 @@ describe("analyzeHistory", (): void => {
 
         it("works when the position is greater than the actual JI notation bound position by more than a tina             ", (): void => {
             const expectedTinaError = 5 / 2 as Multiplier<Tina>
-            pitch = computeStackedPitch(
+            pitch = addScamons(
                 actualJiNotationBoundPitch,
                 computePitchFromCents(multiply(TINA, expectedTinaError)),
             )
@@ -191,7 +190,7 @@ describe("analyzeHistory", (): void => {
 
         it("works when the position is below the actual JI notation bound position by less than a tina                       ", (): void => {
             const expectedTinaError = -2 / 5 as Multiplier<Tina>
-            pitch = computeStackedPitch(
+            pitch = addScamons(
                 actualJiNotationBoundPitch,
                 computePitchFromCents(multiply(TINA, expectedTinaError)),
             )
@@ -224,7 +223,7 @@ describe("analyzeHistory", (): void => {
 
         it("works when the position is below the actual JI notation bound position by more than a tina                       ", (): void => {
             const expectedTinaError = -5 / 2 as Multiplier<Tina>
-            pitch = computeStackedPitch(
+            pitch = addScamons(
                 actualJiNotationBoundPitch,
                 computePitchFromCents(multiply(TINA, expectedTinaError)),
             )

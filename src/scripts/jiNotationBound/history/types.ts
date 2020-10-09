@@ -1,4 +1,4 @@
-import { Abs, Cents, Decimal, Multiplier, Pitch, Rank, Sum } from "../../../general"
+import { Abs, Cents, Decimal, Multiplier, Rank, Scamon, Sum } from "../../../general"
 import { BoundType, Ina, Tina } from "../../../sagittal"
 import { BoundEventAnalysis } from "./events"
 
@@ -10,7 +10,7 @@ interface BoundHistoryAnalysis {
     exact: boolean,
     totalInaDistance: Sum<Multiplier<Ina>>,
     initialPositionTinaDistance: Multiplier<Tina>,
-    pitch: Pitch,
+    pitch: Scamon,
     possible: boolean,
     rank: Decimal<{ integer: true }> & Rank<BoundType>,
     score: Score,

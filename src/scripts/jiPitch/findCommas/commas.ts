@@ -1,4 +1,4 @@
-import { arePitchesEqual, Comma, computeSuperPitch, formatPitch, isPitchHigher, Monzo } from "../../../general"
+import { areScamonsEqual, Comma, computeSuperScamon, formatPitch, isScamonGreater, Monzo } from "../../../general"
 import {
     computeCommasFrom23FreeRationalMonzo,
     DEFAULT_LOWER_BOUND,
@@ -23,13 +23,13 @@ const computeCommas = (options: CommasOptions): Comma[] => {
         maxN2D3P9 = DEFAULT_MAX_N2D3P9,
     } = options
 
-    if (isPitchHigher(lowerBound, upperBound) || arePitchesEqual(lowerBound, upperBound)) {
+    if (isScamonGreater(lowerBound, upperBound) || areScamonsEqual(lowerBound, upperBound)) {
         throw new Error(`Lower bound is not less than upper bound; range was ${formatPitch(lowerBound)} - ${formatPitch(upperBound)}.`)
     }
 
     if (
-        isPitchHigher(computeSuperPitch(upperBound), MAX_SIZE_CATEGORY_BOUND.pitch) ||
-        isPitchHigher(computeSuperPitch(lowerBound), MAX_SIZE_CATEGORY_BOUND.pitch)
+        isScamonGreater(computeSuperScamon(upperBound), MAX_SIZE_CATEGORY_BOUND.pitch) ||
+        isScamonGreater(computeSuperScamon(lowerBound), MAX_SIZE_CATEGORY_BOUND.pitch)
     ) {
         throw new Error(`Search range must be within comma size category bounds (±227.370¢); range was ${formatPitch(lowerBound)} - ${formatPitch(upperBound)}.`)
     }

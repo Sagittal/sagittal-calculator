@@ -39,6 +39,23 @@ export {
     addMonzos,
 } from "./monzo"
 export {
+    Scamon,
+    isScamonSub,
+    isScamonSuper,
+    isScamonUnison,
+    computeSuperScamon,
+    areScamonsEqual,
+    isScamonGreater,
+    isScamonLesser,
+    isScamonLesserOrEqual,
+    isScamonGreaterOrEqual,
+    halfScamon,
+    computeScamonFromDecimal,
+    computeScamonFromMonzo,
+    computeScamonFromQuotient,
+    addScamons,
+} from "./scamon"
+export {
     Direction,
     NumericProperties,
     NumericPropertyTranslationForMonzosAndQuotientsToTheirTerms,

@@ -1,10 +1,10 @@
-import { Comma, Pitch, sort } from "../../../general"
+import { Comma, Scamon, sort } from "../../../general"
 import { analyzeComma, CommaAnalysis, computeNotatingCommas } from "../../../sagittal"
 import { FindCommasSettings } from "../findCommas"
 import { jiPitchScriptGroupSettings } from "../globals"
 
 const computeNotatingCommaAnalyses = (
-    jiPitch: Pitch<{ rational: true }>,
+    jiPitch: Scamon<{ rational: true }>,
     notatingCommasSettings: Partial<FindCommasSettings> = {},
 ): CommaAnalysis[] => {
     const notatingCommas: Comma[] =

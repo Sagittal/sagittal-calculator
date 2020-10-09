@@ -1,10 +1,10 @@
 import {
     Comma,
-    computeJiPitchFromRationalMonzo,
     computeRationalMonzoFromRationalQuotient,
+    computeRationalScamonFromRationalMonzo,
     Max,
     Min,
-    Pitch,
+    Scamon,
 } from "../../../../general"
 import { computeNotatingCommas } from "../find"
 import { computeSizeCategoryExtrema } from "./sizeCategoryExtrema"
@@ -19,10 +19,10 @@ const computeCommaFromCommaNameQuotientAndSizeCategoryName = (
 
     const two3FreeMonzo = computeRationalMonzoFromRationalQuotient(commaNameQuotient)
     const commas = computeNotatingCommas(
-        computeJiPitchFromRationalMonzo(two3FreeMonzo),
+        computeRationalScamonFromRationalMonzo(two3FreeMonzo),
         {
-            lowerBound: lowerBound.pitch as Pitch as Min<Pitch>,
-            upperBound: upperBound.pitch as Pitch as Max<Pitch>,
+            lowerBound: lowerBound.pitch as Scamon as Min<Scamon>,
+            upperBound: upperBound.pitch as Scamon as Max<Scamon>,
         },
     )
 

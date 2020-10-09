@@ -1,18 +1,18 @@
 import {
     Comma,
-    computeRationalQuotientFromJiPitch,
+    computeRationalQuotientFromRationalScamon,
     computeRoughRationalQuotient,
-    computeSuperPitch,
+    computeSuperScamon,
     Direction,
-    FIVE_ROUGHNESS,
+    TWO_3_FREE,
 } from "../../../../general"
 import { CommaNameQuotient } from "./types"
 
 const computeCommaNameQuotient = (comma: Comma): CommaNameQuotient => {
-    const superComma = computeSuperPitch(comma) as Comma<{ rational: true, direction: Direction.SUPER }>
-    const quotient = computeRationalQuotientFromJiPitch(superComma)
+    const superComma = computeSuperScamon(comma) as Comma<{ rational: true, direction: Direction.SUPER }>
+    const quotient = computeRationalQuotientFromRationalScamon(superComma)
 
-    return computeRoughRationalQuotient(quotient, FIVE_ROUGHNESS) as CommaNameQuotient
+    return computeRoughRationalQuotient(quotient, TWO_3_FREE) as CommaNameQuotient
 }
 
 export {

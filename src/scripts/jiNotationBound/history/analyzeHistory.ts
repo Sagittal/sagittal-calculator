@@ -1,4 +1,4 @@
-import { isCloseTo, Multiplier, Pitch, subtractPitch } from "../../../general"
+import { isCloseTo, Multiplier, Scamon, subtractPitch } from "../../../general"
 import { JiNotationBound, Tina, TINA } from "../../../sagittal"
 import { BoundHistory } from "../histories"
 import { analyzeBoundEvents } from "./events"
@@ -13,7 +13,7 @@ import { BoundHistoryAnalysis } from "./types"
 const analyzeHistory = (
     boundHistory: BoundHistory,
     { pitch }: JiNotationBound,
-    initialPosition: Pitch,
+    initialPosition: Scamon,
 ): BoundHistoryAnalysis => {
     const position = computeBoundHistoryPosition(boundHistory)
 

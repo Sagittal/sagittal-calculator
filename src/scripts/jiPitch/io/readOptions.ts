@@ -8,8 +8,8 @@ import {
     parseInteger,
     parseMonzo,
     parseQuotient,
-    Pitch,
     Quotient,
+    Scamon,
 } from "../../../general"
 import { computeCommaFromCommaNameQuotientAndSizeCategoryName, parseCommaName, parsePitch } from "../../../sagittal"
 
@@ -44,11 +44,11 @@ const readFindCommasOptions = (): void => {
         .option(
             `-${CommandFlag.LOWER_BOUND}, --lower-bound <lowerBound>`,
             "lower bound",
-            (pitchIo: string): Pitch => parsePitch(pitchIo as Io))
+            (pitchIo: string): Scamon => parsePitch(pitchIo as Io))
         .option(
             `-${CommandFlag.UPPER_BOUND}, --upper-bound <upperBound>`,
             "upper bound",
-            (pitchIo: string): Pitch => parsePitch(pitchIo as Io),
+            (pitchIo: string): Scamon => parsePitch(pitchIo as Io),
         )
         .option(`-${CommandFlag.MAX_AAS}, --max-aas <maxAas>`, "max AAS", parseFloat)
         .option(`-${CommandFlag.MAX_ATE}, --max-ate <maxAte>`, "max ATE", parseInt)

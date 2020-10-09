@@ -1,4 +1,4 @@
-import { Abs, Cents, Decimal, Exponent, Monzo, NumericProperties, Pitch, Prime, Quotient } from "../../../general"
+import { Abs, Cents, Decimal, Exponent, Monzo, NumericProperties, Prime, Quotient, Scamon } from "../../../general"
 import { Two3FreeClassAnalysis } from "../two3FreeClass"
 
 interface JiPitchAnalysisProperties<T extends NumericProperties = {}> {
@@ -13,7 +13,7 @@ interface JiPitchAnalysisProperties<T extends NumericProperties = {}> {
 }
 
 type JiPitchAnalysis<T extends NumericProperties = {}> =
-    JiPitchAnalysisProperties<T> & { pitch: Pitch<T & { rational: true }> }
+    JiPitchAnalysisProperties<T> & { pitch: Scamon<T & { rational: true }> }
 
 type ApotomeSlope = number & { _ApotomeSlopeBrand: boolean }
 

@@ -1,5 +1,4 @@
-import { Decimal, Extrema } from "../../../../../../src/general"
-import { computeIrrationalDecimalFromPitch } from "../../../../../../src/general/music/irrational"
+import { computeIrrationalDecimalFromScamon, Decimal, Extrema } from "../../../../../../src/general"
 import { JI_NOTATION } from "../../../../../../src/sagittal"
 import { computeSecondaryCommaZone } from "../../../../../../src/sagittal/notations/ji"
 
@@ -159,8 +158,8 @@ describe("secondary comma zones", (): void => {
             [{ decimal: 1.040110 }, { decimal: 1.040403 }], // [{ cents: 68.084530 }, { cents: 68.572508 }],
         ] as Array<Extrema<{ decimal: Decimal }>>
         expected.forEach((zone: Extrema<{ decimal: Decimal }>, index: number): void => {
-            expect(computeIrrationalDecimalFromPitch(actual[ index ][ 0 ])).toBeCloseTo(zone[ 0 ].decimal!)
-            expect(computeIrrationalDecimalFromPitch(actual[ index ][ 1 ])).toBeCloseTo(zone[ 1 ].decimal!)
+            expect(computeIrrationalDecimalFromScamon(actual[ index ][ 0 ])).toBeCloseTo(zone[ 0 ].decimal!)
+            expect(computeIrrationalDecimalFromScamon(actual[ index ][ 1 ])).toBeCloseTo(zone[ 1 ].decimal!)
         })
     })
 })

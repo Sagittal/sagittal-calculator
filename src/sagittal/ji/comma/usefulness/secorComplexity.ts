@@ -1,19 +1,19 @@
 import {
     abs,
     compute23FreeClass,
-    computeJiPitchSopfr,
     computeQuotientFromMonzo,
     computeRationalDecimalCopfr,
-    Pitch,
+    computeRationalScamonSopfr,
+    Scamon,
     THREE_PRIME_INDEX,
 } from "../../../../general"
 import { computeApotomeSlope } from "../../pitch"
 
 // As reverse-engineered here: http://forum.sagittal.org/viewtopic.php?p=1659#p1659
 
-const computeSecorComplexity = (jiPitch: Pitch<{ rational: true }>): number => {
+const computeSecorComplexity = (jiPitch: Scamon<{ rational: true }>): number => {
     const two3FreeClass = compute23FreeClass(jiPitch)
-    const g = computeJiPitchSopfr(two3FreeClass)
+    const g = computeRationalScamonSopfr(two3FreeClass)
 
     const [numerator, denominator] = computeQuotientFromMonzo(two3FreeClass.monzo)
     const h = computeRationalDecimalCopfr(numerator)

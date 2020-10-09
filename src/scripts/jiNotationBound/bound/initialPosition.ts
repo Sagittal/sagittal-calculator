@@ -1,8 +1,8 @@
-import { computeJiPitchGeometricMean, Pitch, UNISON } from "../../../general"
+import { computeRationalScamonGeometricMean, Scamon, UNISON } from "../../../general"
 import { JiNotationBound, MAX_SYMBOL_CLASS_POSITION } from "../../../sagittal"
 import { computeBoundedSymbolClassPositions } from "../boundedPositions"
 
-const computeInitialPosition = (jiNotationBound: JiNotationBound): Pitch => {
+const computeInitialPosition = (jiNotationBound: JiNotationBound): Scamon => {
     const { jiNotationLevels } = jiNotationBound
 
     const initialLevel = jiNotationLevels[ 0 ]
@@ -10,7 +10,7 @@ const computeInitialPosition = (jiNotationBound: JiNotationBound): Pitch => {
         computeBoundedSymbolClassPositions(jiNotationBound.pitch, initialLevel)
 
     return greaterBoundedCommaPosition ?
-        computeJiPitchGeometricMean(lesserBoundedCommaPosition, greaterBoundedCommaPosition) :
+        computeRationalScamonGeometricMean(lesserBoundedCommaPosition, greaterBoundedCommaPosition) :
         MAX_SYMBOL_CLASS_POSITION
 }
 

@@ -1,4 +1,4 @@
-import { Multiplier, Name, Pitch, SQRT_SCALER } from "../../../../../src/general"
+import { Multiplier, Name, Scamon, SQRT_SCALER } from "../../../../../src/general"
 import { APOTOME } from "../../../../../src/sagittal"
 import { Bound, BoundType, JiNotationLevel, Tina } from "../../../../../src/sagittal/notations/ji"
 import { EXTREME_EDA, ULTRA_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"
@@ -17,7 +17,7 @@ describe("consolidateBoundHistories", (): void => {
             jiNotationLevel: JiNotationLevel.ULTRA,
             boundType: BoundType.COMMA_MEAN,
             name: "'/| )/|" as Name<Bound>,
-            pitch: { monzo: [], scaler: SQRT_SCALER } as Pitch<{ rational: false }>,
+            pitch: { monzo: [], scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
             rank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
             exact: false,
         }
@@ -26,7 +26,7 @@ describe("consolidateBoundHistories", (): void => {
             jiNotationLevel: JiNotationLevel.ULTRA,
             boundType: BoundType.INA_MIDPOINT,
             name: "12.5°58" as Name<Bound>,
-            pitch: { monzo: APOTOME.monzo, scaler: [12.5, ULTRA_EDA] } as Pitch<{ rational: false }>,
+            pitch: { monzo: APOTOME.monzo, scaler: [12.5, ULTRA_EDA] } as Scamon<{ rational: false }>,
             rank: RANKS[ BoundType.COMMA_MEAN ],
             exact: false,
         }
@@ -35,7 +35,7 @@ describe("consolidateBoundHistories", (): void => {
             jiNotationLevel: JiNotationLevel.EXTREME,
             boundType: BoundType.COMMA_MEAN,
             name: ",)/| )/|" as Name<Bound>,
-            pitch: { monzo: [], scaler: SQRT_SCALER } as Pitch<{ rational: false }>,
+            pitch: { monzo: [], scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
             rank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
             exact: false,
         }
@@ -44,7 +44,7 @@ describe("consolidateBoundHistories", (): void => {
             jiNotationLevel: JiNotationLevel.EXTREME,
             boundType: BoundType.INA_MIDPOINT,
             name: "50.5°233" as Name<Bound>,
-            pitch: { monzo: APOTOME.monzo, scaler: [50.5, EXTREME_EDA] } as Pitch<{ rational: false }>,
+            pitch: { monzo: APOTOME.monzo, scaler: [50.5, EXTREME_EDA] } as Scamon<{ rational: false }>,
             rank: RANKS[ BoundType.COMMA_MEAN ],
             exact: false,
         }
@@ -53,7 +53,7 @@ describe("consolidateBoundHistories", (): void => {
             jiNotationLevel: JiNotationLevel.EXTREME,
             boundType: BoundType.COMMA_MEAN,
             name: ",)/| )/|" as Name<Bound>,
-            pitch: { monzo: [], scaler: SQRT_SCALER } as Pitch<{ rational: false }>,
+            pitch: { monzo: [], scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
             rank: RANKS[ BoundType.COMMA_MEAN ],
             exact: false,
         }
@@ -67,7 +67,7 @@ describe("consolidateBoundHistories", (): void => {
             rank: RANKS[ BoundType.COMMA_MEAN ],
             possible: true,
             tinaError: 0 as Multiplier<Tina>,
-            pitch: { monzo: [], scaler: SQRT_SCALER } as Pitch<{ rational: false }>,
+            pitch: { monzo: [], scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
         }
         const boundHistoryAnalyses: BoundHistoryAnalysis[] = [
             {
@@ -79,7 +79,7 @@ describe("consolidateBoundHistories", (): void => {
                 rank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
                 possible: true,
                 tinaError: 0 as Multiplier<Tina>,
-                pitch: { monzo: [], scaler: SQRT_SCALER } as Pitch<{ rational: false }>,
+                pitch: { monzo: [], scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
             },
             bestPossibleBoundHistoryAnalysis,
             {
@@ -91,7 +91,7 @@ describe("consolidateBoundHistories", (): void => {
                 rank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
                 possible: false,
                 tinaError: 3.05589400712 as Multiplier<Tina>,
-                pitch: { monzo: [], scaler: SQRT_SCALER } as Pitch<{ rational: false }>,
+                pitch: { monzo: [], scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
             },
             {
                 ...boundHistoryAnalysisFixture,
@@ -101,7 +101,7 @@ describe("consolidateBoundHistories", (): void => {
                 rank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
                 possible: false,
                 tinaError: 2.26723955922 as Multiplier<Tina>,
-                pitch: { monzo: [], scaler: SQRT_SCALER } as Pitch<{ rational: false }>,
+                pitch: { monzo: [], scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
             },
         ]
 

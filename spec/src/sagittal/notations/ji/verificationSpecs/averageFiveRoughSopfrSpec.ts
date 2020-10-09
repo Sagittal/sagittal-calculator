@@ -1,4 +1,4 @@
-import { compute23FreeClass, computeJiPitchSopfr, Id } from "../../../../../../src/general"
+import { compute23FreeClass, computeRationalScamonSopfr, Id } from "../../../../../../src/general"
 import { Mean, MeanType, Sopfr } from "../../../../../../src/general/math"
 import { computeArithmeticMean } from "../../../../../../src/general/math/numeric/decimal/typedOperations"
 import { getPrimaryComma, JI_NOTATION, SymbolClass } from "../../../../../../src/sagittal"
@@ -12,7 +12,7 @@ describe("average 2,3-free SoPFR", (): void => {
                 const primaryComma = getPrimaryComma(symbolClassId)
                 const two3FreeClass = compute23FreeClass(primaryComma)
 
-                return computeJiPitchSopfr(two3FreeClass)
+                return computeRationalScamonSopfr(two3FreeClass)
             })
 
         expect(computeArithmeticMean(...two3FreeSopfrs)).toBeCloseToTyped(AVERAGE_2_3_FREE_SOPFR)

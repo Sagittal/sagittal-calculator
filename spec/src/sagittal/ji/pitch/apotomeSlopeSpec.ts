@@ -1,11 +1,10 @@
-import { Monzo } from "../../../../../src/general/math/numeric/monzo"
-import { Pitch } from "../../../../../src/general/music/pitch"
+import { Scamon } from "../../../../../src/general/math/numeric/scamon"
 import { ApotomeSlope } from "../../../../../src/sagittal"
 import { computeApotomeSlope } from "../../../../../src/sagittal/ji/pitch"
 
 describe("computeApotomeSlope", (): void => {
     it("gives the amount that the comma changes by when tempering the apotome", (): void => {
-        const jiPitch = { monzo: [-15, 8, 1] } as Pitch<{ rational: true }>
+        const jiPitch = { monzo: [-15, 8, 1] } as Scamon<{ rational: true }>
 
         const actual = computeApotomeSlope(jiPitch)
 
@@ -14,7 +13,7 @@ describe("computeApotomeSlope", (): void => {
     })
 
     it("works for monzos without three exponents", (): void => {
-        const jiPitch = { monzo: [] as unknown[] } as Pitch<{ rational: true }>
+        const jiPitch = { monzo: [] as unknown[] } as Scamon<{ rational: true }>
 
         const actual = computeApotomeSlope(jiPitch)
 
