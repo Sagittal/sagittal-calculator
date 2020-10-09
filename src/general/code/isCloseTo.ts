@@ -1,12 +1,12 @@
 import { abs, negative, round } from "../math"
-import { ACCURACY_THRESHOLD } from "./constants"
+import { DEFAULT_PRECISION } from "./constants"
 import { isUndefined } from "./typeGuards"
 import { Maybe, Precision } from "./types"
 
 const isCloseTo = (
     actual: Maybe<number>,
     expected: Maybe<number>,
-    precision: Precision = ACCURACY_THRESHOLD,
+    precision: Precision = DEFAULT_PRECISION,
 ): boolean => {
     if (actual === Infinity && expected === Infinity) {
         return true

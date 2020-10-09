@@ -1,4 +1,4 @@
-import { ACCURACY_THRESHOLD, computeCentsFromPitch, Io, Px, round, subtract } from "../../../../general"
+import { DEFAULT_PRECISION, Io, Px, round, subtract } from "../../../../general"
 import { CommaMean, JiNotationLevel, SymbolLongAscii, unicodeFromAscii } from "../../../../sagittal"
 import { JI_NOTATION_LEVELS_COMMA_MEANS } from "../../histories"
 import { JI_NOTATION_LEVEL_CENTERS } from "./levelHeights"
@@ -18,9 +18,9 @@ const visualizeJiNotationLevelCommaMeans = (): Io[] => {
             return
         }
 
-        const centerY: Px = round(JI_NOTATION_LEVEL_CENTERS[ jiNotationLevel ], ACCURACY_THRESHOLD)
-        const topY: Px = round(subtract(centerY, HALF_TICK_SIZE), ACCURACY_THRESHOLD)
-        const bottomY: Px = round(subtract(centerY, HALF_TICK_SIZE), ACCURACY_THRESHOLD)
+        const centerY: Px = round(JI_NOTATION_LEVEL_CENTERS[ jiNotationLevel ], DEFAULT_PRECISION)
+        const topY: Px = round(subtract(centerY, HALF_TICK_SIZE), DEFAULT_PRECISION)
+        const bottomY: Px = round(subtract(centerY, HALF_TICK_SIZE), DEFAULT_PRECISION)
 
         jiNotationLevelCommaMeans.forEach(({ name, pitch }: CommaMean): void => {
             const formattedName = name?.split(" ")

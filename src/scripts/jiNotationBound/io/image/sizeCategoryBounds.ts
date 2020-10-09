@@ -1,4 +1,4 @@
-import { ACCURACY_THRESHOLD, Io, Px, round } from "../../../../general"
+import { DEFAULT_PRECISION, Io, Px, round } from "../../../../general"
 import { JiNotationLevel, SizeCategoryBound } from "../../../../sagittal"
 import { JI_NOTATION_LEVELS_SIZE_CATEGORY_BOUNDS } from "../../histories"
 import { JI_NOTATION_LEVEL_BOTTOMS, JI_NOTATION_LEVEL_TOPS } from "./levelHeights"
@@ -13,9 +13,9 @@ const visualizeSizeCategoryBounds = (): Io[] => {
     const sizeCategoryBoundElements: Io[] = []
 
     sizeCategoryBounds.forEach(({ name, pitch }: SizeCategoryBound): void => {
-        const topEdgeY: Px = round(JI_NOTATION_LEVEL_TOPS[ JiNotationLevel.INSANE ], ACCURACY_THRESHOLD)
-        const bottomEdgeY: Px = round(JI_NOTATION_LEVEL_BOTTOMS[ JiNotationLevel.MEDIUM ], ACCURACY_THRESHOLD)
-        const centerY: Px = round((topEdgeY + bottomEdgeY) / 2 as Px, ACCURACY_THRESHOLD)
+        const topEdgeY: Px = round(JI_NOTATION_LEVEL_TOPS[ JiNotationLevel.INSANE ], DEFAULT_PRECISION)
+        const bottomEdgeY: Px = round(JI_NOTATION_LEVEL_BOTTOMS[ JiNotationLevel.MEDIUM ], DEFAULT_PRECISION)
+        const centerY: Px = round((topEdgeY + bottomEdgeY) / 2 as Px, DEFAULT_PRECISION)
 
         const positionX = computeX(pitch)
 

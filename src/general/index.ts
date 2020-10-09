@@ -1,5 +1,5 @@
 export {
-    ACCURACY_THRESHOLD,
+    DEFAULT_PRECISION,
     computeDeepDistinct,
     computeExtensionBase,
     computePlusOrMinusRange,
@@ -231,6 +231,5 @@ export {
     computeStackedJiPitch,
     dividePitch,
     subtractPitch,
-    areNonJiPitchesEqual,
 } from "./music"
 export { Count, Ed, Extrema, Id, Index, Ms, Multiplier, Name, Step, Sum, Window, Of } from "./types"

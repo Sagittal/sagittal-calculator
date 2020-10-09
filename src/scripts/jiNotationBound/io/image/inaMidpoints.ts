@@ -1,4 +1,4 @@
-import { ACCURACY_THRESHOLD, add, Io, Px, round, subtract } from "../../../../general"
+import { add, DEFAULT_PRECISION, Io, Px, round, subtract } from "../../../../general"
 import { InaMidpoint, JiNotationLevel } from "../../../../sagittal"
 import { INA_MIDPOINTS } from "../../histories"
 import { JI_NOTATION_LEVEL_CENTERS } from "./levelHeights"
@@ -11,9 +11,9 @@ const visualizeInaMidpoints = (): Io[] => {
 
     const inaMidpointEntries = Object.entries(INA_MIDPOINTS) as Array<[JiNotationLevel, InaMidpoint[]]>
     inaMidpointEntries.forEach(([jiNotationLevel, inaMidpoints]: [JiNotationLevel, InaMidpoint[]]): void => {
-        const centerY: Px = round(JI_NOTATION_LEVEL_CENTERS[ jiNotationLevel ], ACCURACY_THRESHOLD)
-        const topY: Px = round(subtract(centerY, HALF_TICK_SIZE), ACCURACY_THRESHOLD)
-        const bottomY: Px = round(add(centerY, HALF_TICK_SIZE), ACCURACY_THRESHOLD)
+        const centerY: Px = round(JI_NOTATION_LEVEL_CENTERS[ jiNotationLevel ], DEFAULT_PRECISION)
+        const topY: Px = round(subtract(centerY, HALF_TICK_SIZE), DEFAULT_PRECISION)
+        const bottomY: Px = round(add(centerY, HALF_TICK_SIZE), DEFAULT_PRECISION)
 
         inaMidpoints.forEach(({ name, pitch }: InaMidpoint): void => {
             const x: Px = computeX(pitch)

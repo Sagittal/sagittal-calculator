@@ -1,13 +1,13 @@
 import {
     Abs,
     Cents,
-    computePitchFromCents,
     Count,
     Id,
     Monzo,
     Multiplier,
     Name,
     Pitch,
+    Quotient,
     SQRT_SCALER,
     Sum,
 } from "../../../../../src/general"
@@ -95,7 +95,10 @@ describe("analyzeJiNotationBound", (): void => {
     ]
     const jiNotationBound: JiNotationBound = {
         ...jiNotationBoundFixture,
-        pitch: computePitchFromCents(23.116420 as Cents),
+        pitch: {
+            monzo: APOTOME.monzo,
+            scaler: [164.5, 809] as Quotient,
+        } as Pitch<{ rational: false }>,
         jiNotationLevels: [JiNotationLevel.ULTRA, JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
         id: 47 as Id<JiNotationBound>,
         boundType: BoundType.INA_MIDPOINT,
@@ -166,7 +169,7 @@ describe("analyzeJiNotationBound", (): void => {
                 monzo: [-17, 11, -2, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
                 scaler: SQRT_SCALER,
             } as Pitch<{ rational: false }>,
-            initialPositionTinaDistance: -0.5613148261064571 as Multiplier<Tina>,
+            initialPositionTinaDistance: -0.5613173198962398 as Multiplier<Tina>,
             possibleBoundHistoryCount: 2 as Count<BoundHistoryAnalysis>,
             bestPossibleBoundHistoryAnalysis: expectedBestPossibleBoundHistoryAnalysis,
             bestPossibleBoundHistoryTotalDistance: 0.07887931138776594 as Cents,

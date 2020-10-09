@@ -1,6 +1,6 @@
 import { Cents, increment, Index, subtract } from "../../../general"
 
-const computeNeighborPositionIndices = (
+const computeNeighborPositionIndices = (    // TODO: this should be in decimal, for consistency & performance
     position: Cents,
     sortedTargetPositions: Cents[],
 ): [Index<Cents>, Index<Cents>] => {

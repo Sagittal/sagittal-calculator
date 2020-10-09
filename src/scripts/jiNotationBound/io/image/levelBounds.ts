@@ -1,4 +1,4 @@
-import { ACCURACY_THRESHOLD, Io, Px, round, subtract } from "../../../../general"
+import { DEFAULT_PRECISION, Io, Px, round, subtract } from "../../../../general"
 import { JiNotationBound, JiNotationLevel, JI_NOTATION_LEVELS_BOUNDS } from "../../../../sagittal"
 import { JI_NOTATION_LEVEL_BOTTOMS, JI_NOTATION_LEVEL_TOPS } from "./levelHeights"
 import { DASH_SIZE, SYMBOL_OFFSET } from "./sizes"
@@ -16,11 +16,11 @@ const visualizeJiNotationLevelBounds = (): Io[] => {
             }
 
             jiNotationLevelBounds.forEach(({ pitch }: JiNotationBound, index: number): void => {
-                const topY: Px = round(JI_NOTATION_LEVEL_TOPS[ jiNotationLevel ], ACCURACY_THRESHOLD)
-                const bottomY: Px = round(JI_NOTATION_LEVEL_BOTTOMS[ jiNotationLevel ], ACCURACY_THRESHOLD)
+                const topY: Px = round(JI_NOTATION_LEVEL_TOPS[ jiNotationLevel ], DEFAULT_PRECISION)
+                const bottomY: Px = round(JI_NOTATION_LEVEL_BOTTOMS[ jiNotationLevel ], DEFAULT_PRECISION)
                 const positionX: Px = computeX(pitch)
 
-                const textY: Px = round(subtract(topY, SYMBOL_OFFSET), ACCURACY_THRESHOLD)
+                const textY: Px = round(subtract(topY, SYMBOL_OFFSET), DEFAULT_PRECISION)
 
                 jiNotationLevelBoundElements.push(`  <line stroke-dasharray="${DASH_SIZE}" stroke="black" x1="${positionX}" x2="${positionX}" y1="${topY}" y2="${bottomY}" />\n` as Io)
 

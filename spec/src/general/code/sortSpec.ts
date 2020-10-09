@@ -1,4 +1,4 @@
-import { ACCURACY_THRESHOLD, KeyPath, sort } from "../../../../src/general/code"
+import { DEFAULT_PRECISION, KeyPath, sort } from "../../../../src/general/code"
 
 describe("sort", (): void => {
     it("takes an array and sorts it numerically, in place", (): void => {
@@ -95,7 +95,7 @@ describe("sort", (): void => {
     it("accepts precision as an option", (): void => {
         const array = [5, 2.0000001, 7, 2, 4, 3]
 
-        sort(array, { precision: ACCURACY_THRESHOLD })
+        sort(array, { precision: DEFAULT_PRECISION })
 
         const expected = [2.0000001, 2, 3, 4, 5, 7]
         expect(array).toEqual(expected)

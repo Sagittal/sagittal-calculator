@@ -1,4 +1,4 @@
-import { ACCURACY_THRESHOLD, deepClone, KeyPath, RankStrategy } from "../../../../src/general"
+import { deepClone, DEFAULT_PRECISION, KeyPath, RankStrategy } from "../../../../src/general"
 import { rank, Rank } from "../../../../src/general/code"
 
 describe("rank", (): void => {
@@ -98,7 +98,7 @@ describe("rank", (): void => {
             { value: 1, otherValue: 2 },
         ]
 
-        const actual = rank(arrayOfObjects, { precision: ACCURACY_THRESHOLD })
+        const actual = rank(arrayOfObjects, { precision: DEFAULT_PRECISION })
 
         const expected = [
             { value: 1, otherValue: 1, rank: 1 as Rank<unknown> },

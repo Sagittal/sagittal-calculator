@@ -1,35 +1,27 @@
-import {
-    Abs,
-    Cents,
-    computePitchFromCents,
-    Id,
-    Monzo,
-    Multiplier,
-    Pitch,
-    Quotient,
-    SQRT_SCALER,
-} from "../../../../../../src/general"
-import { APOTOME } from "../../../../../../src/sagittal"
-import { BoundType, SymbolClass } from "../../../../../../src/sagittal/notations"
+import { Abs, Cents, Id, Monzo, Multiplier, Name, Pitch, Quotient, SQRT_SCALER } from "../../../../../../src/general"
+import { APOTOME, BoundType, CommaMean, InaMidpoint, SizeCategoryBound } from "../../../../../../src/sagittal"
+import { SymbolClass } from "../../../../../../src/sagittal/notations"
 import { Ina, JiNotationBound, JiNotationLevel } from "../../../../../../src/sagittal/notations/ji"
 import { computeJiNotationLevelBoundedSymbolClassIdsWithDistances } from "../../../../../../src/scripts/jiNotationBound/io/terminal/levelBoundedSymbolClasses"
 import { JiNotationBoundIdWithBoundedSymbolClassIdsWithDistancesPairsByJiNotationLevel } from "../../../../../../src/scripts/jiNotationBound/io/terminal/types"
-import { jiNotationBoundFixture } from "../../../../../helpers/src/scripts/jiNotationBound/fixtures"
 
 describe("computeJiNotationLevelBoundedSymbolClassIdsWithDistances", (): void => {
     it("returns, given a JI notation bound, for each of its JI levels, an array of the pair of symbols it bounds at that JI notation level, as well as their distances and ina-distances from the bound", (): void => {
         const jiNotationBound: JiNotationBound = {
-            ...jiNotationBoundFixture,
-            pitch: computePitchFromCents(24.662198 as Cents),
+            pitch: {
+                monzo: APOTOME.monzo,
+                scaler: [175.5, 809] as Quotient,
+            } as Pitch<{ rational: false }>,
             jiNotationLevels: [JiNotationLevel.MEDIUM, JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
-            id: 54 as Id<JiNotationBound>,
+            id: 51 as Id<JiNotationBound>,
+            name: "175.5°809" as Name<InaMidpoint>,
             boundType: BoundType.INA_MIDPOINT,
         }
 
         const actual = computeJiNotationLevelBoundedSymbolClassIdsWithDistances(jiNotationBound)
 
         const expected: JiNotationBoundIdWithBoundedSymbolClassIdsWithDistancesPairsByJiNotationLevel = {
-            id: 54 as Id<JiNotationBound>,
+            id: 51 as Id<JiNotationBound>,
             [ JiNotationLevel.MEDIUM ]: [
                 {
                     id: 44 as Id<SymbolClass>,
@@ -72,7 +64,6 @@ describe("computeJiNotationLevelBoundedSymbolClassIdsWithDistances", (): void =>
 
     it("works for the final JI notation bound", (): void => {
         const jiNotationBound: JiNotationBound = {
-            ...jiNotationBoundFixture,
             pitch: {
                 monzo: [-30, 19] as Monzo<{ rational: true }>,
                 scaler: SQRT_SCALER,
@@ -84,14 +75,15 @@ describe("computeJiNotationLevelBoundedSymbolClassIdsWithDistances", (): void =>
                 JiNotationLevel.EXTREME,
                 JiNotationLevel.INSANE,
             ],
-            id: 54 as Id<JiNotationBound>,
+            id: 148 as Id<JiNotationBound>,
+            name: "L|SS" as Name<SizeCategoryBound>,
             boundType: BoundType.SIZE_CATEGORY_BOUND,
         }
 
         const actual = computeJiNotationLevelBoundedSymbolClassIdsWithDistances(jiNotationBound)
 
         const expected: JiNotationBoundIdWithBoundedSymbolClassIdsWithDistancesPairsByJiNotationLevel = {
-            id: 54 as Id<JiNotationBound>,
+            id: 148 as Id<JiNotationBound>,
             [ JiNotationLevel.MEDIUM ]: [
                 {
                     id: 141 as Id<SymbolClass>,
@@ -138,20 +130,20 @@ describe("computeJiNotationLevelBoundedSymbolClassIdsWithDistances", (): void =>
 
     it("works for the first JI notation bound", (): void => {
         const jiNotationBound: JiNotationBound = {
-            ...jiNotationBoundFixture,
             pitch: {
                 monzo: APOTOME.monzo,
                 scaler: [1.5, 809] as Quotient,
             } as Pitch<{ rational: false }>,
             jiNotationLevels: [JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
-            id: 55 as Id<JiNotationBound>,
+            id: 0 as Id<JiNotationBound>,
+            name: "1.5°809" as Name<InaMidpoint>,
             boundType: BoundType.INA_MIDPOINT,
         }
 
         const actual = computeJiNotationLevelBoundedSymbolClassIdsWithDistances(jiNotationBound)
 
         const expected: JiNotationBoundIdWithBoundedSymbolClassIdsWithDistancesPairsByJiNotationLevel = {
-            id: 55 as Id<JiNotationBound>,
+            id: 0 as Id<JiNotationBound>,
             [ JiNotationLevel.EXTREME ]: [
                 undefined,
                 {
@@ -166,6 +158,62 @@ describe("computeJiNotationLevelBoundedSymbolClassIdsWithDistances", (): void =>
                     id: 1 as Id<SymbolClass>,
                     distance: 0.211928 as Abs<Cents>,
                     inaDistance: 1.508113 as Multiplier<Ina>,
+                },
+            ],
+        }
+        expect(actual).toBeCloseToObject(expected)
+    })
+
+    it("works for the bound between the two commas which are extremely close together", (): void => {
+        const jiNotationBound: JiNotationBound = {
+            pitch: {
+                monzo: [-4, -1, -1, 0, 0, 1, 0, 1] as Monzo<{ rational: true }>,
+                scaler: SQRT_SCALER,
+            } as Pitch<{ rational: false }>,
+            jiNotationLevels: [JiNotationLevel.ULTRA, JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
+            id: 52 as Id<JiNotationBound>,
+            name: ")/| ,.|)" as Name<CommaMean>,
+            boundType: BoundType.COMMA_MEAN,
+        }
+
+        const actual = computeJiNotationLevelBoundedSymbolClassIdsWithDistances(jiNotationBound)
+
+        const expected: JiNotationBoundIdWithBoundedSymbolClassIdsWithDistancesPairsByJiNotationLevel = {
+            id: 52 as Id<JiNotationBound>,
+            [ JiNotationLevel.ULTRA ]: [
+                {
+                    id: 52 as Id<SymbolClass>,
+                    distance: 0.001673 as Abs<Cents>,
+                    inaDistance: 0.000854 as Multiplier<Ina>,
+                },
+                {
+                    id: 54 as Id<SymbolClass>,
+                    distance: 0.424389 as Abs<Cents>,
+                    inaDistance: 0.216516 as Multiplier<Ina>,
+                },
+            ],
+            [ JiNotationLevel.EXTREME ]: [
+                {
+                    id: 52 as Id<SymbolClass>,
+                    distance: 0.001673 as Abs<Cents>,
+                    inaDistance: 0.003429 as Multiplier<Ina>,
+                },
+                {
+                    id: 53 as Id<SymbolClass>,
+                    distance: 0.001673 as Abs<Cents>,
+                    inaDistance: 0.003429 as Multiplier<Ina>,
+                },
+            ],
+            [ JiNotationLevel.INSANE ]: [
+                {
+                    id: 52 as Id<SymbolClass>,
+                    distance: 0.001673 as Abs<Cents>,
+                    inaDistance: 0.011907 as Multiplier<Ina>,
+                },
+                {
+                    id: 53 as Id<SymbolClass>,
+                    distance: 0.001673 as Abs<Cents>,
+                    inaDistance: 0.011907 as Multiplier<Ina>,
                 },
             ],
         }

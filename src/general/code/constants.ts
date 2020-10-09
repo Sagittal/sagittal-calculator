@@ -1,6 +1,6 @@
 import { Precision } from "./types"
 
-const ACCURACY_THRESHOLD = 5 as Precision
+const DEFAULT_PRECISION = 5 as Precision
 const MAX_JS_PRECISION = 15 as Precision
 
 const ARRAY_EXTENSION_BASE: unknown[] = []
@@ -15,7 +15,7 @@ const NOT_FOUND = -1
 export {
     ARRAY_EXTENSION_BASE,
     OBJECT_EXTENSION_BASE,
-    ACCURACY_THRESHOLD,
+    DEFAULT_PRECISION,
     ZERO_ONE_INDEX_DIFF,
     MAX_JS_INTEGER_VALUE,
     MAX_JS_PRECISION,

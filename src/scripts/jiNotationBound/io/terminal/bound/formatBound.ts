@@ -1,6 +1,6 @@
 import {
-    ACCURACY_THRESHOLD,
     deepMap,
+    DEFAULT_PRECISION,
     Formatted,
     isNumber,
     NEWLINE,
@@ -23,7 +23,7 @@ const formatJiNotationBound = (
     const jiNotationBoundIdentifiers = deepMap(
         extractJiNotationBoundIdentifiers(jiNotationBound),
         roundIfNumeric,
-        ACCURACY_THRESHOLD,
+        DEFAULT_PRECISION,
     )
 
     const formattedJiNotationBoundIdentifiers = stringify(jiNotationBoundIdentifiers, { multiline: true })

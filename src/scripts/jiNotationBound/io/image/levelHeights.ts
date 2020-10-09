@@ -1,4 +1,4 @@
-import { ACCURACY_THRESHOLD, add, Basis, Cents, computePx, Multiplier, multiply, Px, round } from "../../../../general"
+import { add, Basis, Cents, computePx, DEFAULT_PRECISION, Multiplier, multiply, Px, round } from "../../../../general"
 import { JiNotationLevel, JI_NOTATION_LEVELS } from "../../../../sagittal"
 import { computeReversedJiNotationLevelIndex } from "./reversedLevelIndex"
 import { LEVEL_HEIGHT, MARGIN, Y_SCALE } from "./sizes"
@@ -25,7 +25,7 @@ const computeJiNotationLevelHeights = (withinLevelHeight: Multiplier<Basis<Cents
                         ),
                         Y_SCALE,
                     ),
-                    ACCURACY_THRESHOLD,
+                    DEFAULT_PRECISION,
                 ),
             }
         },

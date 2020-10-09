@@ -1,7 +1,7 @@
 import { Decimal } from "../math"
 import { Count } from "../types"
 import { deepClone } from "./clone"
-import { ACCURACY_THRESHOLD } from "./constants"
+import { DEFAULT_PRECISION } from "./constants"
 import { increment } from "./crement"
 import { dig } from "./dig"
 import { isCloseTo } from "./isCloseTo"
@@ -9,7 +9,7 @@ import { sort } from "./sort"
 import { isNumber, isUndefined } from "./typeGuards"
 import { KeyPath, Obj, Precision, Rank, RankOptions, RankStrategy } from "./types"
 
-const isCloseOrEqual = (a: unknown, b: unknown, precision: Precision = ACCURACY_THRESHOLD): boolean => {
+const isCloseOrEqual = (a: unknown, b: unknown, precision: Precision = DEFAULT_PRECISION): boolean => {
     if (isUndefined(precision) || !isNumber(a) || !isNumber(b)) {
         return a === b
     } else {

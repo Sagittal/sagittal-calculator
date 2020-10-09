@@ -1,4 +1,4 @@
-import { ACCURACY_THRESHOLD } from "../../../code"
+import { DEFAULT_PRECISION } from "../../../code"
 import { dividesEvenly } from "../../dividesEvenly"
 import { Decimal, NumericProperties } from "../../numeric"
 import { round } from "../../typedOperations"
@@ -6,7 +6,7 @@ import { round } from "../../typedOperations"
 const isDecimalRational = <T extends NumericProperties>(
     candidateRationalDecimal: Decimal<T>,
 ): candidateRationalDecimal is Decimal<T & { rational: true }> =>
-    candidateRationalDecimal === round(candidateRationalDecimal, ACCURACY_THRESHOLD)
+    candidateRationalDecimal === round(candidateRationalDecimal, DEFAULT_PRECISION)
 
 const isDecimalInteger = <T extends NumericProperties>(
     candidateIntegerDecimal: Decimal<T>,

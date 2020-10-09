@@ -1,5 +1,5 @@
 import {
-    ACCURACY_THRESHOLD,
+    DEFAULT_PRECISION,
     doForEachRationalMonzo,
     Io,
     isMonzoSub,
@@ -59,7 +59,7 @@ const computePopular23FreeClasses = (maxN2D3P9: Max<N2D3P9>): Array<Ranked<Popul
     return rank(popular23FreeClasses, {
         by: "n2d3p9" as KeyPath,
         strategy: RankStrategy.FRACTIONAL,
-        precision: ACCURACY_THRESHOLD,
+        precision: DEFAULT_PRECISION,
     })
 }
 

@@ -17,11 +17,9 @@ import {
 } from "./types"
 
 const computeJiNotationLevelBoundedSymbolClassIdsWithDistances = (
-    jiNotationBound: JiNotationBound,
-): JiNotationBoundIdWithBoundedSymbolClassIdsWithDistancesPairsByJiNotationLevel => {
-    const { pitch, jiNotationLevels, id } = jiNotationBound
-
-    return jiNotationLevels.reduce(
+    { pitch, jiNotationLevels, id }: JiNotationBound,
+): JiNotationBoundIdWithBoundedSymbolClassIdsWithDistancesPairsByJiNotationLevel =>
+    jiNotationLevels.reduce(
         (
             jiNotationBoundIdWithBoundedSymbolClassIdsWithDistancesPairsByLevel:
                 JiNotationBoundIdWithBoundedSymbolClassIdsWithDistancesPairsByJiNotationLevel,
@@ -60,7 +58,6 @@ const computeJiNotationLevelBoundedSymbolClassIdsWithDistances = (
             id,
         },
     )
-}
 
 // tslint:disable-next-line max-line-length
 const JI_NOTATION_LEVEL_BOUNDED_SYMBOL_CLASSES: JiNotationBoundIdWithBoundedSymbolClassIdsWithDistancesPairsByJiNotationLevel[] =

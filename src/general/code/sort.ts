@@ -1,10 +1,10 @@
-import { ACCURACY_THRESHOLD } from "./constants"
+import { DEFAULT_PRECISION } from "./constants"
 import { dig } from "./dig"
 import { isCloseTo } from "./isCloseTo"
 import { isNumber } from "./typeGuards"
 import { Precision, Sortable, SortOptions } from "./types"
 
-const isNotClose = (a: number | string, b: number | string, precision: Precision = ACCURACY_THRESHOLD): boolean => {
+const isNotClose = (a: number | string, b: number | string, precision: Precision = DEFAULT_PRECISION): boolean => {
     return isNumber(a) && isNumber(b) ?
         !isCloseTo(a, b, precision)
         : true

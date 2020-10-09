@@ -1,4 +1,4 @@
-import { ACCURACY_THRESHOLD, add, computeCentsFromPitch, Id, Io, Px, round, subtract } from "../../../../general"
+import { add, DEFAULT_PRECISION, Id, Io, Px, round, subtract } from "../../../../general"
 import {
     analyzeSymbolClass,
     JiNotationLevel,
@@ -22,9 +22,9 @@ const visualizeJiNotationLevelSymbolClasses = (): Io[] => {
             return
         }
 
-        const centerY: Px = round(JI_NOTATION_LEVEL_CENTERS[ jiNotationLevel ], ACCURACY_THRESHOLD)
-        const dotY: Px = round(subtract(centerY, SYMBOL_OFFSET), ACCURACY_THRESHOLD)
-        const symbolY: Px = round(add(centerY, SYMBOL_OFFSET), ACCURACY_THRESHOLD)
+        const centerY: Px = round(JI_NOTATION_LEVEL_CENTERS[ jiNotationLevel ], DEFAULT_PRECISION)
+        const dotY: Px = round(subtract(centerY, SYMBOL_OFFSET), DEFAULT_PRECISION)
+        const symbolY: Px = round(add(centerY, SYMBOL_OFFSET), DEFAULT_PRECISION)
 
         jiNotationLevelSymbolClassIds.forEach((jiNotationLevelSymbolClassId: Id<SymbolClass>): void => {
             const { minaName, primaryCommaAnalysis, ascii, unicode } = analyzeSymbolClass(jiNotationLevelSymbolClassId)
@@ -42,7 +42,7 @@ const visualizeJiNotationLevelSymbolClasses = (): Io[] => {
             jiNotationLevelSymbolElements.push(`  <text fill="black" text-anchor="middle" x="${positionX}" y="${symbolY}" font-size="40px" font-family="Bravura">${adjustedUnicode}</text>\n` as Io)
 
             if (jiNotationLevel === JiNotationLevel.EXTREME) {
-                const minaY: Px = round(subtract(symbolY, MINA_OFFSET), ACCURACY_THRESHOLD)
+                const minaY: Px = round(subtract(symbolY, MINA_OFFSET), DEFAULT_PRECISION)
                 jiNotationLevelSymbolElements.push(`  <text text-anchor="middle" x="${positionX}" y="${minaY}" font-size="10px" font-family="Bravura">${formatMinaName(minaName)}</text>\n` as Io)
             }
         })

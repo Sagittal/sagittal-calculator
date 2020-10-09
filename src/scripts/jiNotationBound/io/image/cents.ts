@@ -1,10 +1,10 @@
 import {
-    ACCURACY_THRESHOLD,
     ceil,
     Cents,
     computeCentsFromPitch,
     computePitchFromCents,
     computePx,
+    DEFAULT_PRECISION,
     Io,
     Px,
     round,
@@ -17,7 +17,7 @@ const visualizeCents = (): Io[] => {
     const cents: Cents[] = [...Array(ceil(computeCentsFromPitch(MAX_SYMBOL_CLASS_POSITION))).keys()] as Cents[]
 
     const centElements: Io[] = []
-    const centsY: Px = round(computePx(MARGIN, Y_SCALE), ACCURACY_THRESHOLD)
+    const centsY: Px = round(computePx(MARGIN, Y_SCALE), DEFAULT_PRECISION)
 
     cents.forEach((cent: Cents): void => {
         const positionX = computeX(computePitchFromCents(cent))
