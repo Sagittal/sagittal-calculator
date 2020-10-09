@@ -19,7 +19,6 @@ const arePitchesEqual = <T extends NumericProperties, U extends NumericPropertie
     )
     || areDecimalsEqual(computeIrrationalDecimalFromPitch(pitchA), computeIrrationalDecimalFromPitch(pitchB), precision)
 
-// TODO: make this an example  { monzo: [ -7, -1, 1, 1, 1 ] } > { monzo: [ 317, -200 ], scaler: [ 1, 2 ] }
 const isPitchHigher = <T extends NumericProperties, U extends NumericProperties>(
     pitch: Pitch<T>,
     otherPitch: Pitch<U>,

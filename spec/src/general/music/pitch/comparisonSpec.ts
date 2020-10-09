@@ -144,6 +144,15 @@ describe("isPitchHigher", (): void => {
 
         expect(actual).toBeFalsy()
     })
+
+    it("example of a JI pitch and a non-JI pitch which are quite close", (): void => {
+        const pitch = { monzo: [ -7, -1, 1, 1, 1 ] } as Pitch<{ rational: true }>
+        const otherPitch = { monzo: [ 317, -200 ], scaler: [ 1, 2 ] } as Pitch<{ rational: false }>
+
+        const actual = isPitchHigher(pitch, otherPitch)
+
+        expect(actual).toBeTruthy()
+    })
 })
 
 describe("isPitchLower", (): void => {
