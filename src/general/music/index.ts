@@ -23,7 +23,7 @@ export {
     isJiPitchUnison,
     computeStackedJiPitch,
 } from "./ji"
-export { SQRT_SCALER } from "./nonJi"
+export { SQRT_SCALER, computeIrrationalDecimalFromPitch } from "./nonJi"
 export { dividePitch, subtractPitch } from "./cents"
 export { CENTS_PER_OCTAVE } from "./constants"
 export { Cents, Zone } from "./types"

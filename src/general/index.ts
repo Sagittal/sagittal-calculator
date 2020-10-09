@@ -231,5 +231,6 @@ export {
     computeStackedJiPitch,
     dividePitch,
     subtractPitch,
+    computeIrrationalDecimalFromPitch,
 } from "./music"
 export { Count, Ed, Extrema, Id, Index, Ms, Multiplier, Name, Step, Sum, Window, Of } from "./types"

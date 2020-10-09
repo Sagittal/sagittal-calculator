@@ -1,10 +1,7 @@
-import { Cents, increment, Index, subtract } from "../../../general"
+import { increment, Index, subtract } from "../../../general"
 
-const computeNeighborPositionIndices = (    // TODO: this should be in decimal, for consistency & performance
-    position: Cents,
-    sortedTargetPositions: Cents[],
-): [Index<Cents>, Index<Cents>] => {
-    let index = 0 as Index<Cents>
+const computeNeighborPositionIndices = (position: number, sortedTargetPositions: number[]): [Index, Index] => {
+    let index = 0 as Index
     let target = sortedTargetPositions[ index ]
     while (target < position) {
         index = increment(index)
@@ -12,7 +9,7 @@ const computeNeighborPositionIndices = (    // TODO: this should be in decimal, 
     }
 
     return [
-        subtract(index, 1 as Index<Cents>),
+        subtract(index, 1 as Index),
         index,
     ]
 }
