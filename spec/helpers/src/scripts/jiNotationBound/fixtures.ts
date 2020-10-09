@@ -83,7 +83,7 @@ const jiNotationBoundAnalysisFixture: JiNotationBoundAnalysis = {
     bestRank: RANKS[ BoundType.INA_MIDPOINT ],
     initialPosition: UNISON,
     initialPositionTinaDistance: 0 as Multiplier<Tina>,
-    bestPossibleBoundHistoryTotalDistance: 0 as Cents,
+    bestPossibleBoundHistoryTotalDistance: 0 as Sum<Abs<Cents>>,
     bestPossibleBoundHistoryTotalInaDistance: 0 as Sum<Multiplier<Ina>>,
     boundHistoryConsolidation: {},
     possibleBoundHistoryCount: 0 as Count<BoundHistoryAnalysis>,

@@ -49,7 +49,7 @@ describe("extractJiNotationLevelDistances", (): void => {
             "  3.333",
             "  2.222",
             "  1.111",
-        ] as Array<Formatted<Cents>>
+        ] as Array<Formatted<Abs<Cents>>>
         expect(actual).toEqual(expected)
     })
 
@@ -87,7 +87,7 @@ describe("extractJiNotationLevelDistances", (): void => {
             "  2.222",
             "",
             "  1.111",
-        ] as Array<Formatted<Cents>>
+        ] as Array<Formatted<Abs<Cents>>>
         expect(actual).toEqual(expected)
     })
 

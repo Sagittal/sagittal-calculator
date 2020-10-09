@@ -172,7 +172,7 @@ describe("analyzeJiNotationBound", (): void => {
             initialPositionTinaDistance: -0.5613173198962398 as Multiplier<Tina>,
             possibleBoundHistoryCount: 2 as Count<BoundHistoryAnalysis>,
             bestPossibleBoundHistoryAnalysis: expectedBestPossibleBoundHistoryAnalysis,
-            bestPossibleBoundHistoryTotalDistance: 0.07887931138776594 as Cents,
+            bestPossibleBoundHistoryTotalDistance: 0.07887931138776594 as Sum<Abs<Cents>>,
             bestPossibleBoundHistoryTotalInaDistance: 0.4641843423502595 as Sum<Multiplier<Ina>>,
             boundHistoryConsolidation: {
                 [ JiNotationLevel.ULTRA ]: [
