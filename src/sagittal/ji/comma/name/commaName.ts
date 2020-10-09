@@ -6,9 +6,9 @@ import {
     Decimal,
     Direction,
     Exponent,
+    isJiPitchSmooth,
     isJiPitchSub,
     isJiPitchUnison,
-    isWithinPrimeLimit,
     Name,
     Prime,
     PRIMES,
@@ -16,7 +16,7 @@ import {
     QuotientPart,
     stringify,
     SUPERSCRIPT_NUMBERS,
-    THREE_PRIME_LIMIT,
+    THREE_SMOOTHNESS,
 } from "../../../../general"
 import { computeCommaNameQuotient } from "./commaNameQuotient"
 import { computeSizeCategory } from "./sizeCategory"
@@ -84,7 +84,7 @@ const computeCommaName = (
     const sizeCategory: SizeCategoryAbbreviation | SizeCategoryName = computeSizeCategory(superComma, { abbreviated })
 
     let formattedCommaNameQuotient
-    if (isWithinPrimeLimit(comma, THREE_PRIME_LIMIT) && !isJiPitchUnison(comma)) {
+    if (isJiPitchSmooth(comma, THREE_SMOOTHNESS) && !isJiPitchUnison(comma)) {
         formattedCommaNameQuotient = "3"
     } else {
         const commaNameQuotient = computeCommaNameQuotient(comma)

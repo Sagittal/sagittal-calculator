@@ -2,7 +2,7 @@ import { Decimal } from "../../../../../src/general/math/numeric/decimal"
 import { Monzo } from "../../../../../src/general/math/numeric/monzo"
 import { Quotient } from "../../../../../src/general/math/numeric/quotient"
 import { Cents, computePitchFromCents, computePitchFromQuotient } from "../../../../../src/general/music"
-import { NON_JI_PITCH_BASE_MONZO } from "../../../../../src/general/music/nonJi/constants"
+import { NON_JI_PITCH_BASE_MONZO } from "../../../../../src/general/music/irrational/constants"
 import { computePitchFromDecimal, computePitchFromMonzo, Pitch } from "../../../../../src/general/music/pitch"
 
 describe("computePitchFromDecimal", (): void => {

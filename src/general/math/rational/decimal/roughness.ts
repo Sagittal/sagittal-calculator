@@ -7,7 +7,7 @@ import { PRIMES } from "../primes"
 import { Prime, Primes, Roughness } from "../types"
 import { integerDivide } from "./typedOperations"
 
-const isRoughIntegerDecimal = (integerDecimal: Decimal<{ integer: true }>, roughness: Roughness): boolean => {
+const isIntegerDecimalRough = (integerDecimal: Decimal<{ integer: true }>, roughness: Roughness): boolean => {
     let isRough = true
 
     let index = 0 as Index<Prime>
@@ -50,6 +50,6 @@ const computeRoughIntegerDecimal = <S extends Primes, T extends NumericPropertie
 }
 
 export {
-    isRoughIntegerDecimal,
+    isIntegerDecimalRough,
     computeRoughIntegerDecimal,
 }

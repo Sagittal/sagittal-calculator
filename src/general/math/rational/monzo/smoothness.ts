@@ -5,7 +5,7 @@ import { computeSmoothnessIndex } from "../primeCount"
 import { PRIMES } from "../primes"
 import { Primes, Smoothness } from "../types"
 
-const isSmoothRationalMonzo = <S extends Primes, T extends NumericProperties>(
+const isRationalMonzoSmooth = <S extends Primes, T extends NumericProperties>(
     candidateSmoothRationalMonzo: Monzo<Omit<T, "smooth"> & { rational: true }>,
     smoothness: S & Smoothness,
 ): candidateSmoothRationalMonzo is Monzo<Omit<T, "smooth"> & { rational: true, smooth: S }> => {
@@ -30,6 +30,6 @@ const computeRationalMonzoSmoothness = (rationalMonzo: Monzo<{ rational: true }>
 }
 
 export {
-    isSmoothRationalMonzo,
+    isRationalMonzoSmooth,
     computeRationalMonzoSmoothness,
 }

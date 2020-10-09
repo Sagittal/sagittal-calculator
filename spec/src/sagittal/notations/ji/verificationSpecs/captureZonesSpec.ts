@@ -1,5 +1,5 @@
 import { Decimal, Extrema, Id, Maybe, Zone } from "../../../../../../src/general"
-import { computeIrrationalDecimalFromPitch } from "../../../../../../src/general/music/nonJi"
+import { computeIrrationalDecimalFromPitch } from "../../../../../../src/general/music/irrational"
 import { JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS, SymbolClass } from "../../../../../../src/sagittal"
 import { JiNotationLevel } from "../../../../../../src/sagittal/notations/ji"
 import { computeCaptureZone } from "../../../../../../src/sagittal/notations/ji/captureZone"

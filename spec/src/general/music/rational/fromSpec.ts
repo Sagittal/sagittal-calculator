@@ -1,5 +1,5 @@
 import { Monzo } from "../../../../../src/general/math/numeric/monzo"
-import { computeJiPitchFromRationalMonzo } from "../../../../../src/general/music/ji"
+import { computeJiPitchFromRationalMonzo } from "../../../../../src/general/music/rational"
 import { Pitch } from "../../../../../src/general/music/pitch"
 
 describe("computeJiPitchFromRationalMonzo", (): void => {

@@ -1,5 +1,5 @@
 import { NumericProperties, Quotient } from "../../numeric"
-import { computeRoughIntegerDecimal, isRoughIntegerDecimal } from "../decimal"
+import { computeRoughIntegerDecimal, isIntegerDecimalRough } from "../decimal"
 import { Primes, Roughness } from "../types"
 
 const computeRoughRationalQuotient = <S extends Primes, T extends NumericProperties>(
@@ -9,16 +9,16 @@ const computeRoughRationalQuotient = <S extends Primes, T extends NumericPropert
 // @ts-ignore
     ([computeRoughIntegerDecimal(numerator, roughness), computeRoughIntegerDecimal(denominator, roughness)])
 
-const isRoughRationalQuotient = <S extends Primes, T extends NumericProperties>(
+const isRationalQuotientRough = <S extends Primes, T extends NumericProperties>(
     candidateRoughRationalQuotient: Quotient<T & { rational: true }>,
     roughness: S & Roughness,
 ): candidateRoughRationalQuotient is Quotient<T & { rational: true, rough: S }> => {
     const [numerator, denominator] = candidateRoughRationalQuotient
 
-    return isRoughIntegerDecimal(numerator, roughness) && isRoughIntegerDecimal(denominator, roughness)
+    return isIntegerDecimalRough(numerator, roughness) && isIntegerDecimalRough(denominator, roughness)
 }
 
 export {
     computeRoughRationalQuotient,
-    isRoughRationalQuotient,
+    isRationalQuotientRough,
 }

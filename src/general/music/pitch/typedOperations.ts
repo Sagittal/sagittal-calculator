@@ -1,5 +1,5 @@
 import { Decimal, divide, Max, Min, multiply, NumericProperties } from "../../math"
-import { computeIrrationalDecimalFromPitch, computeNonJiPitchFromDecimal, SQRT_SCALER } from "../nonJi"
+import { computeIrrationalDecimalFromPitch, computeNonJiPitchFromDecimal, SQRT_SCALER } from "../irrational"
 import { Interval, Pitch } from "./types"
 
 const computeStackedPitch = (pitchA: Pitch, pitchB: Pitch): Pitch<{ direction: undefined, rational: false }> =>

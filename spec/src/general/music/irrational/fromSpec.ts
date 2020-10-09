@@ -1,7 +1,7 @@
 import { Monzo } from "../../../../../src/general/math/numeric/monzo"
 import { Quotient } from "../../../../../src/general/math/numeric/quotient"
-import { computeNonJiPitchFromMonzo } from "../../../../../src/general/music/nonJi"
-import { NON_JI_PITCH_BASE_MONZO } from "../../../../../src/general/music/nonJi/constants"
+import { computeNonJiPitchFromMonzo } from "../../../../../src/general/music/irrational"
+import { NON_JI_PITCH_BASE_MONZO } from "../../../../../src/general/music/irrational/constants"
 import { Pitch } from "../../../../../src/general/music/pitch"
 
 describe("computeNonJiPitchFromMonzo", (): void => {

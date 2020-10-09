@@ -14,7 +14,7 @@ import {
     Sum,
     UNISON,
 } from "../../../../../src/general"
-import { NON_JI_PITCH_BASE_MONZO } from "../../../../../src/general/music/nonJi/constants"
+import { NON_JI_PITCH_BASE_MONZO } from "../../../../../src/general/music/irrational/constants"
 import {
     Bound,
     BoundType,

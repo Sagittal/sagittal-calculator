@@ -10,7 +10,7 @@ import {
     Pitch,
     Quotient,
 } from "../../../../../src/general"
-import { computeIrrationalDecimalFromPitch } from "../../../../../src/general/music/nonJi"
+import { computeIrrationalDecimalFromPitch } from "../../../../../src/general/music/irrational"
 import { APOTOME, JiNotationBound, JI_NOTATION_BOUNDS, TINA } from "../../../../../src/sagittal"
 import { INSANE_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"
 import { analyzePitch } from "../../../../helpers/src/general/music/analyzePitch"

@@ -1,7 +1,7 @@
 import { Max } from "../../../../../src/general/math"
 import { Monzo } from "../../../../../src/general/math/numeric/monzo"
 import { Quotient } from "../../../../../src/general/math/numeric/quotient"
-import { NON_JI_PITCH_BASE_MONZO } from "../../../../../src/general/music/nonJi/constants"
+import { NON_JI_PITCH_BASE_MONZO } from "../../../../../src/general/music/irrational/constants"
 import { computeStackedPitch, Interval, Pitch, sqrtPitch } from "../../../../../src/general/music/pitch"
 import { computeInterval, maxPitches } from "../../../../../src/general/music/pitch/typedOperations"
 

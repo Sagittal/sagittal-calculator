@@ -4,11 +4,11 @@ import {
     invertMonzo,
     isDecimalSub,
     isDecimalSuper,
-    isDecimalUnison, isMonzoUnison,
+    isDecimalUnison,
     Monzo,
     NumericProperties,
 } from "../../math"
-import { computeIrrationalDecimalFromPitch } from "../nonJi"
+import { computeIrrationalDecimalFromPitch } from "../irrational"
 import { Pitch } from "./types"
 
 const isPitchSuper = <T extends NumericProperties>(

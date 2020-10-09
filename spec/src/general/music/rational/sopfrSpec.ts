@@ -1,5 +1,5 @@
 import { Sopfr } from "../../../../../src/general/math"
-import { computeJiPitchSopfr } from "../../../../../src/general/music/ji"
+import { computeJiPitchSopfr } from "../../../../../src/general/music/rational"
 import { Pitch } from "../../../../../src/general/music/pitch"
 
 describe("computeJiPitchSopfr", (): void => {

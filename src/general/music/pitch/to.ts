@@ -1,6 +1,6 @@
 import { BASE_2, log } from "../../math"
 import { CENTS_PER_OCTAVE } from "../constants"
-import { computeIrrationalDecimalFromPitch } from "../nonJi"
+import { computeIrrationalDecimalFromPitch } from "../irrational"
 import { Cents } from "../types"
 import { Pitch } from "./types"
 

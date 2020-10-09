@@ -1,5 +1,5 @@
 import { computeRoughRationalMonzo, EMPTY_MONZO, Monzo, Roughness } from "../../../../../../src/general/math"
-import { isRoughRationalMonzo } from "../../../../../../src/general/math/rational/monzo"
+import { isRationalMonzoRough } from "../../../../../../src/general/math/rational/monzo"
 
 describe("computeRoughRationalMonzo", (): void => {
     it("roughens the monzo to the requested roughness (setting initial elements of the monzo to 0)", (): void => {
@@ -23,11 +23,11 @@ describe("computeRoughRationalMonzo", (): void => {
     })
 })
 
-describe("isRoughRationalMonzo", (): void => {
+describe("isRationalMonzoRough", (): void => {
     it("returns true if the monzo is at the requested roughness", (): void => {
         const rationalMonzo = [0, 0, 0, 4, 3] as Monzo<{ rational: true }>
 
-        const actual = isRoughRationalMonzo(rationalMonzo, 7 as 7 & Roughness)
+        const actual = isRationalMonzoRough(rationalMonzo, 7 as 7 & Roughness)
 
         expect(actual).toBeTruthy()
     })
@@ -35,7 +35,7 @@ describe("isRoughRationalMonzo", (): void => {
     it("returns false if the monzo is not at the requested roughness", (): void => {
         const rationalMonzo = [0, -5, 0, 4, 3] as Monzo<{ rational: true }>
 
-        const actual = isRoughRationalMonzo(rationalMonzo, 7 as 7 & Roughness)
+        const actual = isRationalMonzoRough(rationalMonzo, 7 as 7 & Roughness)
 
         expect(actual).toBeFalsy()
     })

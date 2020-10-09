@@ -1,14 +1,14 @@
 import { FIVE_ROUGHNESS, Quotient, Roughness } from "../../../../../../src/general/math"
 import {
     computeRoughRationalQuotient,
-    isRoughRationalQuotient,
+    isRationalQuotientRough,
 } from "../../../../../../src/general/math/rational/quotient"
 
-describe("isRoughRationalQuotient", (): void => {
+describe("isRationalQuotientRough", (): void => {
     it("returns true if the quotient is to the requested roughness", (): void => {
         const rationalQuotient = [7, 5] as Quotient<{ rational: true }>
 
-        const actual = isRoughRationalQuotient(rationalQuotient, FIVE_ROUGHNESS)
+        const actual = isRationalQuotientRough(rationalQuotient, FIVE_ROUGHNESS)
 
         expect(actual).toBeTruthy()
     })
@@ -16,7 +16,7 @@ describe("isRoughRationalQuotient", (): void => {
     it("returns false if the quotient is not to the requested roughness", (): void => {
         const rationalQuotient = [7, 5] as Quotient<{ rational: true }>
 
-        const actual = isRoughRationalQuotient(rationalQuotient, 11 as 11 & Roughness)
+        const actual = isRationalQuotientRough(rationalQuotient, 11 as 11 & Roughness)
 
         expect(actual).toBeFalsy()
     })

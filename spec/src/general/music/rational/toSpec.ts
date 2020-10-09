@@ -1,5 +1,5 @@
 import { Quotient } from "../../../../../src/general/math/numeric/quotient"
-import { computeRationalQuotientFromJiPitch } from "../../../../../src/general/music/ji"
+import { computeRationalQuotientFromJiPitch } from "../../../../../src/general/music/rational"
 import { Pitch } from "../../../../../src/general/music/pitch"
 
 describe("computeRationalQuotientFromJiPitch", (): void => {

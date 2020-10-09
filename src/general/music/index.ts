@@ -7,9 +7,6 @@ export {
     Two3FreeClass,
     Apotome,
     COMMA_POPULARITIES,
-    isWithinPrimeLimit,
-    isWithinPrimeMin,
-    computePrimeLimit,
     compute23FreeClassName,
     format23FreeClass,
     isJi,
@@ -23,8 +20,11 @@ export {
     isJiPitchUnison,
     computeStackedJiPitch,
     computeJiPitchGeometricMean,
-} from "./ji"
-export { SQRT_SCALER, computeIrrationalDecimalFromPitch } from "./nonJi"
+    isJiPitchRough,
+    computeJiPitchSmoothness,
+    isJiPitchSmooth,
+} from "./rational"
+export { SQRT_SCALER, computeIrrationalDecimalFromPitch } from "./irrational"
 export { dividePitch, subtractPitch } from "./cents"
 export { CENTS_PER_OCTAVE } from "./constants"
 export { Cents, Zone } from "./types"

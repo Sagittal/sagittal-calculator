@@ -9,7 +9,7 @@ import {
     Sum,
 } from "../../../../../src/general"
 import { multiply } from "../../../../../src/general/math"
-import { NON_JI_PITCH_BASE_MONZO } from "../../../../../src/general/music/nonJi/constants"
+import { NON_JI_PITCH_BASE_MONZO } from "../../../../../src/general/music/irrational/constants"
 import { APOTOME } from "../../../../../src/sagittal"
 import { BoundType, Ina, JiNotationBound, JiNotationLevel, Tina, TINA } from "../../../../../src/sagittal/notations/ji"
 import { EXTREME_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"

@@ -5,8 +5,8 @@ import {
     computeIrrationalDecimalFromPitch,
     computeIrrationalMonzoFromPitch,
     computeIrrationalQuotientFromPitch,
-} from "../../../../../src/general/music/nonJi"
-import { NON_JI_PITCH_BASE_MONZO } from "../../../../../src/general/music/nonJi/constants"
+} from "../../../../../src/general/music/irrational"
+import { NON_JI_PITCH_BASE_MONZO } from "../../../../../src/general/music/irrational/constants"
 import { Pitch } from "../../../../../src/general/music/pitch"
 
 describe("computeIrrationalMonzoFromPitch", (): void => {

@@ -2,15 +2,15 @@ import { Decimal } from "../../../../../../src/general/math/numeric/decimal"
 import { Smoothness } from "../../../../../../src/general/math/rational"
 import {
     computeRationalDecimalSmoothness,
-    isSmoothIntegerDecimal,
+    isIntegerDecimalSmooth,
 } from "../../../../../../src/general/math/rational/decimal"
 
-describe("isSmoothIntegerDecimal", (): void => {
+describe("isIntegerDecimalSmooth", (): void => {
     it("returns true when the integer decimal has no prime factors greater than the smoothness", (): void => {
         const integerDecimal = 35 as Decimal<{ integer: true }>
         const smoothness = 7 as 7 & Smoothness
 
-        const actual = isSmoothIntegerDecimal(integerDecimal, smoothness)
+        const actual = isIntegerDecimalSmooth(integerDecimal, smoothness)
 
         expect(actual).toBeTruthy()
     })
@@ -19,7 +19,7 @@ describe("isSmoothIntegerDecimal", (): void => {
         const integerDecimal = 35 as Decimal<{ integer: true }>
         const smoothness = 5 as 5 & Smoothness
 
-        const actual = isSmoothIntegerDecimal(integerDecimal, smoothness)
+        const actual = isIntegerDecimalSmooth(integerDecimal, smoothness)
 
         expect(actual).toBeFalsy()
     })

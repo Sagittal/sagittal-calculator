@@ -24,7 +24,7 @@ const computeRoughRationalMonzo = <S extends Primes, T extends NumericProperties
     ) as Monzo<T & { rational: true, rough: S }>
 }
 
-const isRoughRationalMonzo = <S extends Primes, T extends NumericProperties>(
+const isRationalMonzoRough = <S extends Primes, T extends NumericProperties>(
     candidateRoughRationalMonzo: Monzo<Omit<T, "rough"> & { rational: true }>,
     roughness: S & Roughness,
 ): candidateRoughRationalMonzo is Monzo<Omit<T, "rough"> & { rational: true, rough: S }> => {
@@ -41,5 +41,5 @@ const isRoughRationalMonzo = <S extends Primes, T extends NumericProperties>(
 
 export {
     computeRoughRationalMonzo,
-    isRoughRationalMonzo,
+    isRationalMonzoRough,
 }

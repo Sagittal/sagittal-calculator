@@ -1,6 +1,6 @@
 import { NumericProperties } from "../../math"
-import { JiPitch } from "../ji"
-import { NonJiPitch } from "../nonJi"
+import { NonJiPitch } from "../irrational"
+import { JiPitch } from "../rational"
 
 type Pitch<T extends NumericProperties = {}> = JiPitch<T> | NonJiPitch<T>
 

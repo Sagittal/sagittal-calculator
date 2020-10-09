@@ -1,6 +1,6 @@
 import { Monzo } from "../../../../../src/general/math/numeric/monzo"
 import { Quotient } from "../../../../../src/general/math/numeric/quotient"
-import { isJi } from "../../../../../src/general/music/ji"
+import { isJi } from "../../../../../src/general/music/rational"
 import { Pitch } from "../../../../../src/general/music/pitch"
 
 describe("isJi", (): void => {

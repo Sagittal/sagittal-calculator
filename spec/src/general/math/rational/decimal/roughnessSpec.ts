@@ -1,13 +1,13 @@
 import { Decimal } from "../../../../../../src/general/math/numeric/decimal"
 import { Roughness } from "../../../../../../src/general/math/rational"
-import { computeRoughIntegerDecimal, isRoughIntegerDecimal } from "../../../../../../src/general/math/rational/decimal"
+import { computeRoughIntegerDecimal, isIntegerDecimalRough } from "../../../../../../src/general/math/rational/decimal"
 
-describe("isRoughIntegerDecimal", (): void => {
+describe("isIntegerDecimalRough", (): void => {
     it("returns true when the integer decimal has no prime factors less than the requested roughness", (): void => {
         const integerDecimal = 221 as Decimal<{ integer: true }>
         const roughness = 11 as Roughness
 
-        const actual = isRoughIntegerDecimal(integerDecimal, roughness)
+        const actual = isIntegerDecimalRough(integerDecimal, roughness)
 
         expect(actual).toBeTruthy()
     })
@@ -16,7 +16,7 @@ describe("isRoughIntegerDecimal", (): void => {
         const integerDecimal = 33 as Decimal<{ integer: true }>
         const roughness = 5 as Roughness
 
-        const actual = isRoughIntegerDecimal(integerDecimal, roughness)
+        const actual = isIntegerDecimalRough(integerDecimal, roughness)
 
         expect(actual).toBeFalsy()
     })
@@ -25,7 +25,7 @@ describe("isRoughIntegerDecimal", (): void => {
         const integerDecimal = 1 as Decimal<{ integer: true }>
         const roughness = 5 as Roughness
 
-        const actual = isRoughIntegerDecimal(integerDecimal, roughness)
+        const actual = isIntegerDecimalRough(integerDecimal, roughness)
 
         expect(actual).toBeTruthy()
     })
@@ -34,7 +34,7 @@ describe("isRoughIntegerDecimal", (): void => {
         const integerDecimal = 10 as Decimal<{ integer: true }>
         const roughness = 11 as Roughness
 
-        const actual = isRoughIntegerDecimal(integerDecimal, roughness)
+        const actual = isIntegerDecimalRough(integerDecimal, roughness)
 
         expect(actual).toBeFalsy()
     })
@@ -43,7 +43,7 @@ describe("isRoughIntegerDecimal", (): void => {
         const integerDecimal = 11 as Decimal<{ integer: true }>
         const roughness = 11 as Roughness
 
-        const actual = isRoughIntegerDecimal(integerDecimal, roughness)
+        const actual = isIntegerDecimalRough(integerDecimal, roughness)
 
         expect(actual).toBeTruthy()
     })

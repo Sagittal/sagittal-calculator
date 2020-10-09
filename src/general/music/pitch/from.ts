@@ -8,12 +8,12 @@ import {
     Quotient,
 } from "../../math"
 import { CENTS_PER_OCTAVE } from "../constants"
+import { computeNonJiPitchFromDecimal, computeNonJiPitchFromMonzo, computeNonJiPitchFromQuotient } from "../irrational"
 import {
     computeJiPitchFromRationalDecimal,
     computeJiPitchFromRationalMonzo,
     computeJiPitchFromRationalQuotient,
-} from "../ji"
-import { computeNonJiPitchFromDecimal, computeNonJiPitchFromMonzo, computeNonJiPitchFromQuotient } from "../nonJi"
+} from "../rational"
 import { Cents } from "../types"
 import { Pitch } from "./types"
 

@@ -1,5 +1,5 @@
 import { Id, Index } from "../../../../../src/general"
-import { Two3FreeClass } from "../../../../../src/general/music/ji"
+import { Two3FreeClass } from "../../../../../src/general/music/rational"
 import { SymbolClass, SymbolSubset } from "../../../../../src/sagittal/notations"
 import {
     computeExactlyNotatingSymbolClassProperties,

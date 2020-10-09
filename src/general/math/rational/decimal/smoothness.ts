@@ -6,7 +6,7 @@ import { computeRationalQuotientFromRationalDecimal, computeRationalQuotientSmoo
 import { Primes, Roughness, Smoothness } from "../types"
 import { computeRoughIntegerDecimal } from "./roughness"
 
-const isSmoothIntegerDecimal = (integerDecimal: Decimal<{ integer: true }>, smoothness: Smoothness): boolean =>
+const isIntegerDecimalSmooth = (integerDecimal: Decimal<{ integer: true }>, smoothness: Smoothness): boolean =>
     computeRoughIntegerDecimal(
         integerDecimal,
         smoothness + SMOOTH_ROUGH_OFFSET as Primes & Roughness,
@@ -25,7 +25,7 @@ const computeRationalDecimalSmoothness = (rationalDecimal: Decimal<{ rational: t
 }
 
 export {
-    isSmoothIntegerDecimal,
+    isIntegerDecimalSmooth,
     computeIntegerDecimalSmoothness,
     computeRationalDecimalSmoothness,
 }

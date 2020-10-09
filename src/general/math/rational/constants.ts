@@ -10,6 +10,7 @@ const THREE_ROUGHNESS = 3 as 3 & Roughness
 const FIVE_ROUGHNESS = 5 as 5 & Roughness
 
 const THREE_SMOOTHNESS = 3 as 3 & Smoothness
+const FIVE_SMOOTHNESS = 5 as 5 & Smoothness
 
 const ONE = 1 as Decimal<{ integer: true }>
 
@@ -23,5 +24,6 @@ export {
     ONE,
     THREE_ROUGHNESS,
     THREE_SMOOTHNESS,
+    FIVE_SMOOTHNESS,
     SMOOTH_ROUGH_OFFSET,
 }

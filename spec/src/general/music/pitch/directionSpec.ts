@@ -1,5 +1,5 @@
 import { Direction, EMPTY_MONZO, Monzo, Quotient } from "../../../../../src/general/math/numeric"
-import { NON_JI_PITCH_BASE_MONZO } from "../../../../../src/general/music/nonJi/constants"
+import { NON_JI_PITCH_BASE_MONZO } from "../../../../../src/general/music/irrational/constants"
 import {
     computeSuperPitch,
     isPitchSub,

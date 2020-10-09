@@ -1,5 +1,5 @@
 import { Decimal, Extrema } from "../../../../../../src/general"
-import { computeIrrationalDecimalFromPitch } from "../../../../../../src/general/music/nonJi"
+import { computeIrrationalDecimalFromPitch } from "../../../../../../src/general/music/irrational"
 import { JI_NOTATION } from "../../../../../../src/sagittal"
 import { computeSecondaryCommaZone } from "../../../../../../src/sagittal/notations/ji"
 

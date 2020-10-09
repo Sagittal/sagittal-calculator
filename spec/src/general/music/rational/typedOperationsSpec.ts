@@ -3,7 +3,7 @@ import {
     computeJiInterval,
     computeJiPitchGeometricMean,
     computeStackedJiPitch,
-} from "../../../../../src/general/music/ji"
+} from "../../../../../src/general/music/rational"
 import { Interval, Pitch } from "../../../../../src/general/music/pitch"
 
 describe("computeJiInterval", (): void => {

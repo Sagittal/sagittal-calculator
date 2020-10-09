@@ -1,7 +1,7 @@
 import { Direction, Id, Monzo, Name, Popularity, Row, Two3FreeClass, Votes } from "../../../../../../src/general"
 import { Rank, Ranked } from "../../../../../../src/general/code"
 import { Cents } from "../../../../../../src/general/music"
-import { NON_JI_PITCH_BASE_MONZO } from "../../../../../../src/general/music/nonJi/constants"
+import { NON_JI_PITCH_BASE_MONZO } from "../../../../../../src/general/music/irrational/constants"
 import { N2D3P9 } from "../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
 import { SymbolClass } from "../../../../../../src/sagittal/notations"
 import { BestNotatingCommaProperties } from "../../../../../../src/scripts/popular23FreeClass/bestNotatingComma"

@@ -1,5 +1,4 @@
-import { Monzo } from "../../../../../../src/general/math/numeric/monzo"
-import { Comma } from "../../../../../../src/general/music/ji"
+import { Comma } from "../../../../../../src/general/music/rational"
 import { computeCommaFromCommaNameQuotientAndSizeCategoryName } from "../../../../../../src/sagittal"
 import { CommaNameQuotient, SizeCategoryName } from "../../../../../../src/sagittal/ji/comma/name/types"
 

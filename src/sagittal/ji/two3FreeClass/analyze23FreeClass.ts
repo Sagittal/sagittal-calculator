@@ -1,8 +1,8 @@
 import {
     compute23FreeClassName,
     computeJiPitchCopfr,
+    computeJiPitchSmoothness,
     computeJiPitchSopfr,
-    computePrimeLimit,
     Copfr,
     Max,
     Prime,
@@ -15,7 +15,7 @@ import { Two3FreeClassAnalysis } from "./types"
 const analyze23FreeClass = (two3FreeClass: Two3FreeClass): Two3FreeClassAnalysis => {
     const name = compute23FreeClassName(two3FreeClass)
 
-    const two3FreePrimeLimit: Max<Prime<{ rough: 5 }>> = computePrimeLimit(two3FreeClass)
+    const two3FreePrimeLimit: Max<Prime<{ rough: 5 }>> = computeJiPitchSmoothness(two3FreeClass)
 
     const two3FreeSopfr: Sopfr<{ rough: 5 }> = computeJiPitchSopfr(two3FreeClass) as Sopfr<{ rough: 5 }>
     const two3FreeCopfr: Copfr<{ rough: 5 }> = computeJiPitchCopfr(two3FreeClass) as Copfr<{ rough: 5 }>

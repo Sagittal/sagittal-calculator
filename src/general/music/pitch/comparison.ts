@@ -1,6 +1,6 @@
 import { isUndefined, MAX_JS_PRECISION, Precision } from "../../code"
 import { areDecimalsEqual, areMonzosEqual, areQuotientsEqual, NumericProperties } from "../../math"
-import { computeIrrationalDecimalFromPitch } from "../nonJi"
+import { computeIrrationalDecimalFromPitch } from "../irrational"
 import { Pitch } from "./types"
 
 const arePitchesEqual = <T extends NumericProperties, U extends NumericProperties>(

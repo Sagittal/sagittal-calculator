@@ -1,14 +1,14 @@
 import { Quotient, Smoothness } from "../../../../../../src/general/math"
 import {
     computeRationalQuotientSmoothness,
-    isSmoothRationalQuotient,
+    isRationalQuotientSmooth,
 } from "../../../../../../src/general/math/rational/quotient"
 
-describe("isSmoothRationalQuotient", (): void => {
+describe("isRationalQuotientSmooth", (): void => {
     it("returns true if the quotient is smooth to the requested smoothness", (): void => {
         const rationalQuotient = [7, 5] as Quotient<{ rational: true }>
 
-        const actual = isSmoothRationalQuotient(rationalQuotient, 7 as 7 & Smoothness)
+        const actual = isRationalQuotientSmooth(rationalQuotient, 7 as 7 & Smoothness)
 
         expect(actual).toBeTruthy()
     })
@@ -16,7 +16,7 @@ describe("isSmoothRationalQuotient", (): void => {
     it("returns false if the quotient is not smooth to the requested smoothness", (): void => {
         const rationalQuotient = [7, 5] as Quotient<{ rational: true }>
 
-        const actual = isSmoothRationalQuotient(rationalQuotient, 5 as 5 & Smoothness)
+        const actual = isRationalQuotientSmooth(rationalQuotient, 5 as 5 & Smoothness)
 
         expect(actual).toBeFalsy()
     })

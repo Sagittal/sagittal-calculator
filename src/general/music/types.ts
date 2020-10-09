@@ -11,6 +11,9 @@ type Cents = number & { _CentsBrand: boolean }
 //   And ji: true could map to rational: true
 //   Could now fairly easily accomplish this in the music/ module with a TypeParametersMapping from pitch to numeric
 //   And I tried that... but the TypeScript compiler couldn't handle it.
+//   So I think the only real solution is to keep the variable names musical, like "pitch"
+//   While everything stays "math" but you've got to come up with another name for a Pitch, like a Meq
+//   (Monzo w/ Exponent Quotient) or Scaledmonzo
 
 type Zone<T = void> = Extrema<Pitch> & (T extends void ? {} : { _ZoneOfBrand: T })
 
