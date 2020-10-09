@@ -36,6 +36,7 @@ export {
     areMonzosEqual,
     subtractMonzos,
     EMPTY_MONZO,
+    addMonzos,
 } from "./monzo"
 export {
     Direction,

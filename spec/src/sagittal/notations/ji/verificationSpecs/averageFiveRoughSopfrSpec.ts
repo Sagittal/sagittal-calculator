@@ -1,9 +1,10 @@
 import { compute23FreeClass, computeJiPitchSopfr, Id } from "../../../../../../src/general"
-import { Avg, Sopfr } from "../../../../../../src/general/math"
-import { avg } from "../../../../../../src/general/math/typedOperations"
+import { Mean, Sopfr } from "../../../../../../src/general/math"
+import { computeArithmeticMean } from "../../../../../../src/general/math/numeric/decimal/typedOperations"
+import { MeanType } from "../../../../../../src/general/math/types"
 import { getPrimaryComma, JI_NOTATION, SymbolClass } from "../../../../../../src/sagittal"
 
-const AVERAGE_2_3_FREE_SOPFR: Avg<Sopfr<{ rough: 5 }>> = 22.785235 as Avg<Sopfr<{ rough: 5 }>>
+const AVERAGE_2_3_FREE_SOPFR = 22.785235 as Mean<{ of: Sopfr<{ rough: 5 }>, meanType: MeanType.ARITHMETIC }>
 
 describe("average 2,3-free SoPFR", (): void => {
     it("is about 23", (): void => {
@@ -15,6 +16,6 @@ describe("average 2,3-free SoPFR", (): void => {
                 return computeJiPitchSopfr(two3FreeClass)
             })
 
-        expect(avg(...two3FreeSopfrs)).toBeCloseToTyped(AVERAGE_2_3_FREE_SOPFR)
+        expect(computeArithmeticMean(...two3FreeSopfrs)).toBeCloseToTyped(AVERAGE_2_3_FREE_SOPFR)
     })
 })

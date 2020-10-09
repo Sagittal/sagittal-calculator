@@ -1,4 +1,5 @@
-import { Avg, Combination, Count, Ed, Index, Name, Step, Window } from "../../../../../src/general"
+import { Mean, Combination, Count, Ed, Index, Name, Step, Window } from "../../../../../src/general"
+import { MeanType } from "../../../../../src/general/math/types"
 import {
     Metric,
     nonRecursiveSearchScopeAndMaybeUpdateBestMetric,
@@ -80,13 +81,14 @@ describe("nonRecursiveSearchScopeAndMaybeUpdateBestMetric", (): void => {
 
     it("updates the average samples per scope", async (): Promise<void> => {
         solverStatus.sampleCount = 54 as Count<Sample>
-        solverStatus.averageSamplesPerScope = 10 as Avg<Count<Sample>>
+        solverStatus.averageSamplesPerScope = 10 as Mean<{ of: Count<Sample>, meanType: MeanType.ARITHMETIC }>
         solverStatus.populatedScopeCount = 7 as Count<Scope>
 
         await nonRecursiveSearchScopeAndMaybeUpdateBestMetric(scope)
 
         // (54 + 10 = 64) / 7 = 9.14285714286 -> round to 9
-        expect(solverStatus.averageSamplesPerScope).toBe(9 as Avg<Count<Sample>>)
+        expect(solverStatus.averageSamplesPerScope)
+            .toBe(9 as Mean<{ of: Count<Sample>, meanType: MeanType.ARITHMETIC }>)
     })
 
     it("computes the sums of squares and returns them, along with the dynamic parameters, samples computed from the scope, and the metric name", async (): Promise<void> => {

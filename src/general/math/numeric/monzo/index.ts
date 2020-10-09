@@ -1,5 +1,5 @@
 export { computeSuperMonzo, isMonzoSub, isMonzoSuper, invertMonzo, isMonzoUnison } from "./direction"
-export { sumMonzos, subtractMonzos } from "./typedOperations"
+export { sumMonzos, subtractMonzos, addMonzos } from "./typedOperations"
 export { areMonzosEqual } from "./comparison"
 export { Monzo } from "./types"
 export { EMPTY_MONZO } from "./constants"

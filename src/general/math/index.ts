@@ -35,6 +35,7 @@ export {
     EMPTY_MONZO,
     reciprocal,
     areDecimalsEqual,
+    addMonzos,
 } from "./numeric"
 export { computeDistributions } from "./distributions"
 export { dividesEvenly } from "./dividesEvenly"
@@ -66,7 +67,8 @@ export {
     Min,
     Power,
     Distribution,
-    Avg,
+    Mean,
+    MeanType,
     Coordinates,
 } from "./types"
 export {

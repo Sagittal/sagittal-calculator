@@ -22,6 +22,7 @@ export {
     isJiPitchSub,
     isJiPitchUnison,
     computeStackedJiPitch,
+    computeJiPitchGeometricMean,
 } from "./ji"
 export { SQRT_SCALER, computeIrrationalDecimalFromPitch } from "./nonJi"
 export { dividePitch, subtractPitch } from "./cents"

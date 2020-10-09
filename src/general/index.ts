@@ -159,7 +159,7 @@ export {
     add,
     computeDecimalFromMonzo,
     areMonzosEqual,
-    Avg,
+    Mean,
     computeLowestTermsRationalQuotient,
     Monzo,
     Quotient,
@@ -184,6 +184,7 @@ export {
     computeRationalMonzoSmoothness,
     EMPTY_MONZO,
     reciprocal,
+    MeanType,
 } from "./math"
 export {
     Cents,
@@ -232,5 +233,6 @@ export {
     dividePitch,
     subtractPitch,
     computeIrrationalDecimalFromPitch,
+    computeJiPitchGeometricMean,
 } from "./music"
 export { Count, Ed, Extrema, Id, Index, Ms, Multiplier, Name, Step, Sum, Window, Of } from "./types"

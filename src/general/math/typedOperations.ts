@@ -7,7 +7,7 @@ import {
     VALUE_BELOW_WHICH_ROUNDING_IMPLEMENTATION_BREAKS,
 } from "./constants"
 import { Decimal } from "./numeric"
-import { Abs, Avg, Base, Exponent, Max, Min, Power } from "./types"
+import { Abs, Base, Exponent, Max, Mean, MeanType, Min, Power } from "./types"
 
 const count = <T>(array: T[]): Count<T> => {
     return array.length as Count<T>
@@ -73,9 +73,6 @@ const pow = <T extends number>(base: Base<T> | T, exponent: Exponent<T> | T): Po
 const log = <T extends number>(power: Power<T> | T, base: Base<T> | T = Math.E as Base<T>): Exponent<T> =>
     Math.log(power) / Math.log(base) as Exponent<T>
 
-const avg = <T extends number>(...numbers: T[]): Avg<T> =>
-    sum(...numbers) / count(numbers) as Avg<T>
-
 export {
     sum,
     product,
@@ -91,5 +88,4 @@ export {
     pow,
     log,
     count,
-    avg,
 }
