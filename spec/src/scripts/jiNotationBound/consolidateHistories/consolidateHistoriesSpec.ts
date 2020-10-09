@@ -1,6 +1,7 @@
 import { Multiplier, Name, Pitch, SQRT_SCALER } from "../../../../../src/general"
 import { APOTOME } from "../../../../../src/sagittal"
 import { Bound, BoundType, JiNotationLevel, Tina } from "../../../../../src/sagittal/notations/ji"
+import { EXTREME_EDA, ULTRA_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"
 import { consolidateBoundHistories } from "../../../../../src/scripts/jiNotationBound/consolidateHistories"
 import { BoundEventAnalysis, BoundHistoryAnalysis } from "../../../../../src/scripts/jiNotationBound/history"
 import { RANKS } from "../../../../../src/scripts/jiNotationBound/ranks"
@@ -25,7 +26,7 @@ describe("consolidateBoundHistories", (): void => {
             jiNotationLevel: JiNotationLevel.ULTRA,
             boundType: BoundType.INA_MIDPOINT,
             name: "12.5°58" as Name<Bound>,
-            pitch: { monzo: APOTOME.monzo, scaler: [12.5, 58] } as Pitch<{ rational: false }>,
+            pitch: { monzo: APOTOME.monzo, scaler: [12.5, ULTRA_EDA] } as Pitch<{ rational: false }>,
             rank: RANKS[ BoundType.COMMA_MEAN ],
             exact: false,
         }
@@ -43,7 +44,7 @@ describe("consolidateBoundHistories", (): void => {
             jiNotationLevel: JiNotationLevel.EXTREME,
             boundType: BoundType.INA_MIDPOINT,
             name: "50.5°233" as Name<Bound>,
-            pitch: { monzo: APOTOME.monzo, scaler: [50.5, 233] } as Pitch<{ rational: false }>,
+            pitch: { monzo: APOTOME.monzo, scaler: [50.5, EXTREME_EDA] } as Pitch<{ rational: false }>,
             rank: RANKS[ BoundType.COMMA_MEAN ],
             exact: false,
         }

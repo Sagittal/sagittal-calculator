@@ -1,6 +1,7 @@
 import { Name, Pitch, Quotient, SQRT_SCALER } from "../../../../../src/general"
 import { APOTOME } from "../../../../../src/sagittal"
 import { Bound, BoundType, JiNotationBound, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
+import { EXTREME_EDA, HIGH_EDA, MEDIUM_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"
 import { BoundEvent, BoundHistory } from "../../../../../src/scripts/jiNotationBound/histories"
 import { computeExtendedJiNotationLevelBoundHistories } from "../../../../../src/scripts/jiNotationBound/histories/extendedLevelHistories"
 import { jiNotationBoundFixture } from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
@@ -13,7 +14,7 @@ describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
             name: "1.5°21" as Name<Bound>,
             pitch: {
                 monzo: APOTOME.monzo,
-                scaler: [1.5, 21] as Quotient,
+                scaler: [1.5, MEDIUM_EDA],
             } as Pitch<{ rational: false }>,
         }
         const historyPriorEventB: BoundEvent = {
@@ -32,10 +33,10 @@ describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
         const jiNotationLevel = JiNotationLevel.HIGH
         const jiNotationBound: JiNotationBound = {
             ...jiNotationBoundFixture,
-            // TODO: it might be nice if that 233 could be EXTREME_EDA, but it can't because it's type Ed
-            //  Which is a shame because that's the main purpose for the scaler, so perhaps it should support having
-            //  A quotient whose n & d are Step and Ed types?
-            pitch: { monzo: APOTOME.monzo, scaler: [16.5, 233] as Quotient } as Pitch<{ rational: false }>,
+            pitch: {
+                monzo: APOTOME.monzo,
+                scaler: [16.5, EXTREME_EDA],
+            } as Pitch<{ rational: false }>,
             jiNotationLevels: [JiNotationLevel.MEDIUM, JiNotationLevel.HIGH, JiNotationLevel.ULTRA],
         }
 
@@ -48,7 +49,7 @@ describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
                     jiNotationLevel: JiNotationLevel.HIGH,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "2.5°47" as Name<Bound>,
-                    pitch: { monzo: APOTOME.monzo, scaler: [2.5, 47] } as Pitch<{ rational: false }>,
+                    pitch: { monzo: APOTOME.monzo, scaler: [2.5, HIGH_EDA] } as Pitch<{ rational: false }>,
                 },
             ],
             [
@@ -57,7 +58,7 @@ describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
                     jiNotationLevel: JiNotationLevel.HIGH,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "3.5°47" as Name<Bound>,
-                    pitch: { monzo: APOTOME.monzo, scaler: [3.5, 47] } as Pitch<{ rational: false }>,
+                    pitch: { monzo: APOTOME.monzo, scaler: [3.5, HIGH_EDA] } as Pitch<{ rational: false }>,
                 },
             ],
             [
@@ -66,7 +67,7 @@ describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
                     jiNotationLevel: JiNotationLevel.HIGH,
                     boundType: BoundType.COMMA_MEAN,
                     name: "|( ~|" as Name<Bound>,
-                    pitch: { monzo: [  3, 1, 1, -1, 0, 0, -1], scaler: SQRT_SCALER } as Pitch<{ rational: false }>,
+                    pitch: { monzo: [3, 1, 1, -1, 0, 0, -1], scaler: SQRT_SCALER } as Pitch<{ rational: false }>,
                 },
             ],
             [
@@ -75,7 +76,7 @@ describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
                     jiNotationLevel: JiNotationLevel.HIGH,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "2.5°47" as Name<Bound>,
-                    pitch: { monzo: APOTOME.monzo, scaler: [2.5, 47] } as Pitch<{ rational: false }>,
+                    pitch: { monzo: APOTOME.monzo, scaler: [2.5, HIGH_EDA] } as Pitch<{ rational: false }>,
                 },
             ],
             [
@@ -84,7 +85,7 @@ describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
                     jiNotationLevel: JiNotationLevel.HIGH,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "3.5°47" as Name<Bound>,
-                    pitch: { monzo: APOTOME.monzo, scaler: [3.5, 47] } as Pitch<{ rational: false }>,
+                    pitch: { monzo: APOTOME.monzo, scaler: [3.5, HIGH_EDA] } as Pitch<{ rational: false }>,
                 },
             ],
             [
@@ -93,7 +94,7 @@ describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
                     jiNotationLevel: JiNotationLevel.HIGH,
                     boundType: BoundType.COMMA_MEAN,
                     name: "|( ~|" as Name<Bound>,
-                    pitch: { monzo: [  3, 1, 1, -1, 0, 0, -1], scaler: SQRT_SCALER } as Pitch<{ rational: false }>,
+                    pitch: { monzo: [3, 1, 1, -1, 0, 0, -1], scaler: SQRT_SCALER } as Pitch<{ rational: false }>,
                 },
             ],
         ]

@@ -2,6 +2,7 @@ import { Abs, Cents, Id, Monzo, Multiplier, Name, Pitch, Quotient, SQRT_SCALER }
 import { APOTOME, BoundType, CommaMean, InaMidpoint, SizeCategoryBound } from "../../../../../../src/sagittal"
 import { SymbolClass } from "../../../../../../src/sagittal/notations"
 import { Ina, JiNotationBound, JiNotationLevel } from "../../../../../../src/sagittal/notations/ji"
+import { INSANE_EDA } from "../../../../../../src/sagittal/notations/ji/levelEdas"
 import { computeJiNotationLevelBoundedSymbolClassIdsWithDistances } from "../../../../../../src/scripts/jiNotationBound/io/terminal/levelBoundedSymbolClasses"
 import { JiNotationBoundIdWithBoundedSymbolClassIdsWithDistancesPairsByJiNotationLevel } from "../../../../../../src/scripts/jiNotationBound/io/terminal/types"
 
@@ -10,7 +11,7 @@ describe("computeJiNotationLevelBoundedSymbolClassIdsWithDistances", (): void =>
         const jiNotationBound: JiNotationBound = {
             pitch: {
                 monzo: APOTOME.monzo,
-                scaler: [175.5, 809] as Quotient,
+                scaler: [175.5, INSANE_EDA],
             } as Pitch<{ rational: false }>,
             jiNotationLevels: [JiNotationLevel.MEDIUM, JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
             id: 51 as Id<JiNotationBound>,
@@ -132,7 +133,7 @@ describe("computeJiNotationLevelBoundedSymbolClassIdsWithDistances", (): void =>
         const jiNotationBound: JiNotationBound = {
             pitch: {
                 monzo: APOTOME.monzo,
-                scaler: [1.5, 809] as Quotient,
+                scaler: [1.5, INSANE_EDA],
             } as Pitch<{ rational: false }>,
             jiNotationLevels: [JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
             id: 0 as Id<JiNotationBound>,

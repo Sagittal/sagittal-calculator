@@ -1,6 +1,7 @@
 import { Name, Pitch } from "../../../../../src/general"
 import { APOTOME } from "../../../../../src/sagittal"
 import { Bound, BoundType } from "../../../../../src/sagittal/notations/ji"
+import { ULTRA_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"
 import { computeInitialEventConsolidation } from "../../../../../src/scripts/jiNotationBound/consolidateHistories/initialEventConsolidation"
 import { BoundEventConsolidation } from "../../../../../src/scripts/jiNotationBound/consolidateHistories/types"
 import { BoundEvent } from "../../../../../src/scripts/jiNotationBound/histories"
@@ -15,7 +16,7 @@ describe("computeInitialEventConsolidation", (): void => {
         boundType: BoundType.INA_MIDPOINT,
         name: "12.5°58" as Name<Bound>,
         rank: RANKS[ BoundType.COMMA_MEAN ],
-        pitch: { monzo: APOTOME.monzo, scaler: [12.5, 58] } as Pitch<{ rational: false }>,
+        pitch: { monzo: APOTOME.monzo, scaler: [12.5, ULTRA_EDA] } as Pitch<{ rational: false }>,
     }
 
     beforeEach((): void => {

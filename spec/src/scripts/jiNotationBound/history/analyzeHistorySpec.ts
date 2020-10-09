@@ -12,6 +12,7 @@ import { multiply } from "../../../../../src/general/math"
 import { NON_JI_PITCH_BASE_MONZO } from "../../../../../src/general/music/nonJi/constants"
 import { APOTOME } from "../../../../../src/sagittal"
 import { BoundType, Ina, JiNotationBound, JiNotationLevel, Tina, TINA } from "../../../../../src/sagittal/notations/ji"
+import { EXTREME_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"
 import { computeInitialPosition } from "../../../../../src/scripts/jiNotationBound/bound/initialPosition"
 import { BoundHistory } from "../../../../../src/scripts/jiNotationBound/histories"
 import { analyzeHistory } from "../../../../../src/scripts/jiNotationBound/history"
@@ -23,7 +24,10 @@ import {
 } from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
 
 describe("analyzeHistory", (): void => {
-    const actualJiNotationBoundPitch = { monzo: APOTOME.monzo, scaler: [25.5, 233] } as Pitch<{ rational: false }>
+    const actualJiNotationBoundPitch = { 
+        monzo: APOTOME.monzo, 
+        scaler: [25.5, EXTREME_EDA] 
+    } as Pitch<{ rational: false }>
     let boundHistory: BoundHistory
     let pitch: Pitch<{ rational: false }>
     let jiNotationBound: JiNotationBound

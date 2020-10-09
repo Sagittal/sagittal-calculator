@@ -1,6 +1,7 @@
 import { Cents, computePitchFromCents, Monzo, Name, Pitch, SQRT_SCALER } from "../../../../../src/general"
 import { APOTOME } from "../../../../../src/sagittal"
 import { Bound, BoundType, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
+import { HIGH_EDA, ULTRA_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"
 import {
     BoundedSymbolClassPositions,
     computeBoundedSymbolClassPositions,
@@ -31,7 +32,7 @@ describe("computeBoundEvents", (): void => {
                         jiNotationLevel: JiNotationLevel.ULTRA,
                         boundType: BoundType.INA_MIDPOINT,
                         name: "2.5°58" as Name<Bound>,
-                        pitch: { monzo: APOTOME.monzo, scaler: [2.5, 58] } as Pitch<{ rational: false }>,
+                        pitch: { monzo: APOTOME.monzo, scaler: [2.5, ULTRA_EDA] } as Pitch<{ rational: false }>,
                     },
                 ]
                 expect(actual).toEqual(expected)
@@ -50,7 +51,7 @@ describe("computeBoundEvents", (): void => {
                         jiNotationLevel: JiNotationLevel.ULTRA,
                         boundType: BoundType.INA_MIDPOINT,
                         name: "2.5°58" as Name<Bound>,
-                        pitch: { monzo: APOTOME.monzo, scaler: [2.5, 58] } as Pitch<{ rational: false }>,
+                        pitch: { monzo: APOTOME.monzo, scaler: [2.5, ULTRA_EDA] } as Pitch<{ rational: false }>,
                     },
                 ]
                 expect(actual).toEqual(expected)
@@ -68,13 +69,13 @@ describe("computeBoundEvents", (): void => {
                         jiNotationLevel: JiNotationLevel.HIGH,
                         boundType: BoundType.INA_MIDPOINT,
                         name: "11.5°47" as Name<Bound>,
-                        pitch: { monzo: APOTOME.monzo, scaler: [11.5, 47] } as Pitch<{ rational: false }>,
+                        pitch: { monzo: APOTOME.monzo, scaler: [11.5, HIGH_EDA] } as Pitch<{ rational: false }>,
                     },
                     {
                         jiNotationLevel: JiNotationLevel.HIGH,
                         boundType: BoundType.INA_MIDPOINT,
                         name: "12.5°47" as Name<Bound>,
-                        pitch: { monzo: APOTOME.monzo, scaler: [12.5, 47] } as Pitch<{ rational: false }>,
+                        pitch: { monzo: APOTOME.monzo, scaler: [12.5, HIGH_EDA] } as Pitch<{ rational: false }>,
                     },
                 ]
                 expect(actual).toEqual(expected)

@@ -1,6 +1,7 @@
 import { Cents, computePitchFromCents, Monzo, Name, Pitch, SQRT_SCALER } from "../../../../../src/general"
 import { APOTOME } from "../../../../../src/sagittal"
 import { Bound, BoundType, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
+import { HIGH_EDA, ULTRA_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"
 import { BoundEvent, BoundHistory } from "../../../../../src/scripts/jiNotationBound/histories"
 import { computeExtendedHistories } from "../../../../../src/scripts/jiNotationBound/histories/extendedHistories"
 import { jiNotationBoundFixture } from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
@@ -12,7 +13,7 @@ describe("computeExtendedHistories", (): void => {
         jiNotationLevel: JiNotationLevel.HIGH,
         boundType: BoundType.INA_MIDPOINT,
         name: "16.5°47" as Name<Bound>,
-        pitch: { monzo: APOTOME.monzo, scaler: [16.5, 47] } as Pitch<{ rational: false }>,
+        pitch: { monzo: APOTOME.monzo, scaler: [16.5, HIGH_EDA] } as Pitch<{ rational: false }>,
 
     }
     beforeEach((): void => {
@@ -37,7 +38,7 @@ describe("computeExtendedHistories", (): void => {
                     jiNotationLevel: JiNotationLevel.ULTRA,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "23.5°58" as Name<Bound>,
-                    pitch: { monzo: APOTOME.monzo, scaler: [23.5, 58] } as Pitch<{ rational: false }>,
+                    pitch: { monzo: APOTOME.monzo, scaler: [23.5, ULTRA_EDA] } as Pitch<{ rational: false }>,
                 },
             ],
             [

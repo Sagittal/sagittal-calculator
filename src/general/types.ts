@@ -1,5 +1,5 @@
 import { Io } from "./io"
-import { Decimal, Max, Min } from "./math"
+import { Decimal, Max, Min, Quotient } from "./math"
 
 // Numeric types where parameter is not numeric
 type Index<T = void> =
@@ -35,12 +35,13 @@ type Product<T extends number | void = void> =
     & { _ProductBrand: boolean }
     & (T extends void ? {} : T & { _ProductOfBrand: T })
 
-type Step<EdCount extends number | void = void> =
+type Step<EdCount extends number | void = void> =                                               // Iteration?
     Decimal & { _StepBrand: boolean, _StepOfEdBrand: EdCount }
-type Ed<WindowSize extends number | void = void> =
+type Ed<WindowSize extends number | void = void> =                                              // Generator?
     Decimal<{ integer: true }> & { _EdBrand: boolean, _WindowSizeBrand: WindowSize }
-type Window<WindowSize extends number | unknown = unknown> =
+type Window<WindowSize extends number | unknown = unknown> =                                    // Period?
     Decimal & { _WindowBrand: boolean, _WindowSizeBrand: WindowSize }
+type Degree = [Step<any>, Ed<any>] & Quotient
 
 type Name<T = void> = Io & { _NameBrand: boolean } & (T extends void ? {} : { _NameOfBrand: T })
 
@@ -67,4 +68,5 @@ export {
     Addend,
     Subtrahend,
     Of,
+    Degree,
 }

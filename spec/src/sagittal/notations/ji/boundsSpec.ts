@@ -12,6 +12,7 @@ import {
 } from "../../../../../src/general"
 import { computeIrrationalDecimalFromPitch } from "../../../../../src/general/music/nonJi"
 import { APOTOME, JiNotationBound, JI_NOTATION_BOUNDS, TINA } from "../../../../../src/sagittal"
+import { INSANE_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"
 import { analyzePitch } from "../../../../helpers/src/general/music/analyzePitch"
 import { PitchAnalysis } from "../../../../helpers/src/general/music/types"
 
@@ -70,7 +71,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [1.5, 809] as Quotient,
+                    scaler: [1.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -82,7 +83,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [5.5, 809] as Quotient,
+                    scaler: [5.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -94,7 +95,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [8.5, 809] as Quotient,
+                    scaler: [8.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -106,7 +107,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [12.5, 809] as Quotient,
+                    scaler: [12.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -118,7 +119,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [15.5, 809] as Quotient,
+                    scaler: [15.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -130,7 +131,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [19.5, 809] as Quotient,
+                    scaler: [19.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -142,7 +143,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [22.5, 809] as Quotient,
+                    scaler: [22.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -154,7 +155,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [26.5, 809] as Quotient,
+                    scaler: [26.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -166,7 +167,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [29.5, 809] as Quotient,
+                    scaler: [29.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -178,7 +179,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [32.5, 809] as Quotient,
+                    scaler: [32.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -190,7 +191,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [36.5, 809] as Quotient,
+                    scaler: [36.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -202,7 +203,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [39.5, 809] as Quotient,
+                    scaler: [39.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -214,7 +215,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [43.5, 809] as Quotient,
+                    scaler: [43.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -226,7 +227,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [46.5, 809] as Quotient,
+                    scaler: [46.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -238,7 +239,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [50.5, 809] as Quotient,
+                    scaler: [50.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -250,7 +251,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [53.5, 809] as Quotient,
+                    scaler: [53.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -262,7 +263,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [57.5, 809] as Quotient,
+                    scaler: [57.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -274,7 +275,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [60.5, 809] as Quotient,
+                    scaler: [60.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -286,7 +287,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [64.5, 809] as Quotient,
+                    scaler: [64.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -298,7 +299,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [67.5, 809] as Quotient,
+                    scaler: [67.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -310,7 +311,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [71.5, 809] as Quotient,
+                    scaler: [71.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -322,7 +323,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [74.5, 809] as Quotient,
+                    scaler: [74.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -334,7 +335,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [78.5, 809] as Quotient,
+                    scaler: [78.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -346,7 +347,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [81.5, 809] as Quotient,
+                    scaler: [81.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -358,7 +359,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [85.5, 809] as Quotient,
+                    scaler: [85.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -370,7 +371,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [88.5, 809] as Quotient,
+                    scaler: [88.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -382,7 +383,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [92.5, 809] as Quotient,
+                    scaler: [92.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -394,7 +395,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [95.5, 809] as Quotient,
+                    scaler: [95.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -406,7 +407,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [98.5, 809] as Quotient,
+                    scaler: [98.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -418,7 +419,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [102.5, 809] as Quotient,
+                    scaler: [102.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -430,7 +431,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [105.5, 809] as Quotient,
+                    scaler: [105.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -442,7 +443,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [109.5, 809] as Quotient,
+                    scaler: [109.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -454,7 +455,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [112.5, 809] as Quotient,
+                    scaler: [112.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -466,7 +467,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [116.5, 809] as Quotient,
+                    scaler: [116.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -478,7 +479,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [119.5, 809] as Quotient,
+                    scaler: [119.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -490,7 +491,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [123.5, 809] as Quotient,
+                    scaler: [123.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -502,7 +503,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [126.5, 809] as Quotient,
+                    scaler: [126.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -514,7 +515,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [130.5, 809] as Quotient,
+                    scaler: [130.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -526,7 +527,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [133.5, 809] as Quotient,
+                    scaler: [133.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -538,7 +539,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [137.5, 809] as Quotient,
+                    scaler: [137.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -550,7 +551,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [140.5, 809] as Quotient,
+                    scaler: [140.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -562,7 +563,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [144.5, 809] as Quotient,
+                    scaler: [144.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -574,7 +575,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [147.5, 809] as Quotient,
+                    scaler: [147.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -586,7 +587,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [151.5, 809] as Quotient,
+                    scaler: [151.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -598,7 +599,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [154.5, 809] as Quotient,
+                    scaler: [154.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -610,7 +611,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [157.5, 809] as Quotient,
+                    scaler: [157.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -622,7 +623,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [161.5, 809] as Quotient,
+                    scaler: [161.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -634,7 +635,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [164.5, 809] as Quotient,
+                    scaler: [164.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -646,7 +647,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [168.5, 809] as Quotient,
+                    scaler: [168.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -667,7 +668,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [171.5, 809] as Quotient,
+                    scaler: [171.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -679,7 +680,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [175.5, 809] as Quotient,
+                    scaler: [175.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -700,7 +701,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [178.5, 809] as Quotient,
+                    scaler: [178.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -712,7 +713,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [182.5, 809] as Quotient,
+                    scaler: [182.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -724,7 +725,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [185.5, 809] as Quotient,
+                    scaler: [185.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -736,7 +737,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [189.5, 809] as Quotient,
+                    scaler: [189.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -748,7 +749,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [192.5, 809] as Quotient,
+                    scaler: [192.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -760,7 +761,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [196.5, 809] as Quotient,
+                    scaler: [196.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -772,7 +773,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [199.5, 809] as Quotient,
+                    scaler: [199.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -784,7 +785,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [203.5, 809] as Quotient,
+                    scaler: [203.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -796,7 +797,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [206.5, 809] as Quotient,
+                    scaler: [206.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -808,7 +809,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [210.5, 809] as Quotient,
+                    scaler: [210.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -820,7 +821,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [213.5, 809] as Quotient,
+                    scaler: [213.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -832,7 +833,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [217.5, 809] as Quotient,
+                    scaler: [217.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -844,7 +845,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [220.5, 809] as Quotient,
+                    scaler: [220.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -856,7 +857,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [223.5, 809] as Quotient,
+                    scaler: [223.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -868,7 +869,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [227.5, 809] as Quotient,
+                    scaler: [227.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -880,7 +881,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [230.5, 809] as Quotient,
+                    scaler: [230.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -892,7 +893,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [234.5, 809] as Quotient,
+                    scaler: [234.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -904,7 +905,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [237.5, 809] as Quotient,
+                    scaler: [237.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -916,7 +917,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [241.5, 809] as Quotient,
+                    scaler: [241.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -928,7 +929,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [244.5, 809] as Quotient,
+                    scaler: [244.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -940,7 +941,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [248.5, 809] as Quotient,
+                    scaler: [248.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -961,7 +962,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [251.5, 809] as Quotient,
+                    scaler: [251.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -973,7 +974,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [255.5, 809] as Quotient,
+                    scaler: [255.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -985,7 +986,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [258.5, 809] as Quotient,
+                    scaler: [258.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -997,7 +998,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [262.5, 809] as Quotient,
+                    scaler: [262.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1009,7 +1010,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [265.5, 809] as Quotient,
+                    scaler: [265.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1021,7 +1022,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [269.5, 809] as Quotient,
+                    scaler: [269.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1042,7 +1043,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [272.5, 809] as Quotient,
+                    scaler: [272.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1054,7 +1055,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [276.5, 809] as Quotient,
+                    scaler: [276.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1066,7 +1067,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [279.5, 809] as Quotient,
+                    scaler: [279.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1078,7 +1079,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [282.5, 809] as Quotient,
+                    scaler: [282.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1090,7 +1091,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [286.5, 809] as Quotient,
+                    scaler: [286.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1102,7 +1103,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [289.5, 809] as Quotient,
+                    scaler: [289.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1114,7 +1115,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [293.5, 809] as Quotient,
+                    scaler: [293.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1126,7 +1127,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [296.5, 809] as Quotient,
+                    scaler: [296.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1138,7 +1139,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [300.5, 809] as Quotient,
+                    scaler: [300.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1150,7 +1151,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [303.5, 809] as Quotient,
+                    scaler: [303.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1162,7 +1163,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [307.5, 809] as Quotient,
+                    scaler: [307.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1174,7 +1175,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [310.5, 809] as Quotient,
+                    scaler: [310.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1186,7 +1187,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [314.5, 809] as Quotient,
+                    scaler: [314.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1198,7 +1199,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [317.5, 809] as Quotient,
+                    scaler: [317.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1219,7 +1220,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [324.5, 809] as Quotient,
+                    scaler: [324.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1231,7 +1232,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [328.5, 809] as Quotient,
+                    scaler: [328.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1243,7 +1244,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [331.5, 809] as Quotient,
+                    scaler: [331.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1255,7 +1256,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [335.5, 809] as Quotient,
+                    scaler: [335.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1267,7 +1268,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [338.5, 809] as Quotient,
+                    scaler: [338.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1279,7 +1280,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [342.5, 809] as Quotient,
+                    scaler: [342.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1291,7 +1292,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [345.5, 809] as Quotient,
+                    scaler: [345.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1303,7 +1304,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [348.5, 809] as Quotient,
+                    scaler: [348.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1315,7 +1316,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [352.5, 809] as Quotient,
+                    scaler: [352.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1327,7 +1328,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [355.5, 809] as Quotient,
+                    scaler: [355.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1339,7 +1340,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [359.5, 809] as Quotient,
+                    scaler: [359.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1351,7 +1352,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [362.5, 809] as Quotient,
+                    scaler: [362.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1372,7 +1373,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [366.5, 809] as Quotient,
+                    scaler: [366.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1384,7 +1385,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [369.5, 809] as Quotient,
+                    scaler: [369.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1396,7 +1397,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [373.5, 809] as Quotient,
+                    scaler: [373.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1408,7 +1409,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [376.5, 809] as Quotient,
+                    scaler: [376.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1420,7 +1421,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [380.5, 809] as Quotient,
+                    scaler: [380.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1432,7 +1433,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [383.5, 809] as Quotient,
+                    scaler: [383.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1444,7 +1445,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [387.5, 809] as Quotient,
+                    scaler: [387.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1456,7 +1457,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [390.5, 809] as Quotient,
+                    scaler: [390.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1477,7 +1478,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [394.5, 809] as Quotient,
+                    scaler: [394.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1489,7 +1490,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [397.5, 809] as Quotient,
+                    scaler: [397.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1501,7 +1502,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [401.5, 809] as Quotient,
+                    scaler: [401.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1513,7 +1514,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [404.5, 809] as Quotient,   // = 1/2
+                    scaler: [404.5, INSANE_EDA],   // = 1/2
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1525,7 +1526,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [407.5, 809] as Quotient,
+                    scaler: [407.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1537,7 +1538,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [411.5, 809] as Quotient,
+                    scaler: [411.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1549,7 +1550,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [414.5, 809] as Quotient,
+                    scaler: [414.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1570,7 +1571,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [418.5, 809] as Quotient,
+                    scaler: [418.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1582,7 +1583,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [421.5, 809] as Quotient,
+                    scaler: [421.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1594,7 +1595,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [425.5, 809] as Quotient,
+                    scaler: [425.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1606,7 +1607,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [428.5, 809] as Quotient,
+                    scaler: [428.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1618,7 +1619,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [432.5, 809] as Quotient,
+                    scaler: [432.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1630,7 +1631,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [435.5, 809] as Quotient,
+                    scaler: [435.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1642,7 +1643,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [439.5, 809] as Quotient,
+                    scaler: [439.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1654,7 +1655,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [442.5, 809] as Quotient,
+                    scaler: [442.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1675,7 +1676,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [446.5, 809] as Quotient,
+                    scaler: [446.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1687,7 +1688,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [449.5, 809] as Quotient,
+                    scaler: [449.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1699,7 +1700,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [453.5, 809] as Quotient,
+                    scaler: [453.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1711,7 +1712,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [456.5, 809] as Quotient,
+                    scaler: [456.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1723,7 +1724,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [460.5, 809] as Quotient,
+                    scaler: [460.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1735,7 +1736,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [463.5, 809] as Quotient,
+                    scaler: [463.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1747,7 +1748,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [466.5, 809] as Quotient,
+                    scaler: [466.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1759,7 +1760,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [470.5, 809] as Quotient,
+                    scaler: [470.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1771,7 +1772,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [473.5, 809] as Quotient,
+                    scaler: [473.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1783,7 +1784,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [477.5, 809] as Quotient,
+                    scaler: [477.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1795,7 +1796,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [480.5, 809] as Quotient,
+                    scaler: [480.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {
@@ -1807,7 +1808,7 @@ describe("JI_NOTATION_BOUNDS", (): void => {
                 ] as Monzo,
                 pitch: {
                     monzo: APOTOME.monzo,
-                    scaler: [484.5, 809] as Quotient,
+                    scaler: [484.5, INSANE_EDA],
                 } as Pitch<{ rational: false }>,
             },
             {

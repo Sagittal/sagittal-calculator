@@ -20,6 +20,7 @@ import {
     JiNotationLevel,
     Tina,
 } from "../../../../../src/sagittal/notations/ji"
+import { EXTREME_EDA, INSANE_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"
 import { analyzeJiNotationBound } from "../../../../../src/scripts/jiNotationBound/bound"
 import * as jiNotationLevels from "../../../../../src/scripts/jiNotationBound/bound/levels"
 import * as ranks from "../../../../../src/scripts/jiNotationBound/bound/ranks"
@@ -54,7 +55,7 @@ describe("analyzeJiNotationBound", (): void => {
             name: "164.5°809" as Name<Bound>,
             pitch: {
                 monzo: APOTOME.monzo,
-                scaler: [164.5, 809],
+                scaler: [164.5, INSANE_EDA],
             } as Pitch<{ rational: false }>,
             // This one gets rank 4
         },
@@ -75,7 +76,7 @@ describe("analyzeJiNotationBound", (): void => {
             name: "47.5°233" as Name<Bound>,
             pitch: {
                 monzo: APOTOME.monzo,
-                scaler: [47.5, 233],
+                scaler: [47.5, EXTREME_EDA],
             } as Pitch<{ rational: false }>,
         },
         {
@@ -84,7 +85,7 @@ describe("analyzeJiNotationBound", (): void => {
             name: "164.5°809" as Name<Bound>,
             pitch: {
                 monzo: APOTOME.monzo,
-                scaler: [164.5, 809],
+                scaler: [164.5, INSANE_EDA],
             } as Pitch<{ rational: false }>,
             // This one gets rank 1
         },
@@ -97,7 +98,7 @@ describe("analyzeJiNotationBound", (): void => {
         ...jiNotationBoundFixture,
         pitch: {
             monzo: APOTOME.monzo,
-            scaler: [164.5, 809] as Quotient,
+            scaler: [164.5, INSANE_EDA],
         } as Pitch<{ rational: false }>,
         jiNotationLevels: [JiNotationLevel.ULTRA, JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
         id: 47 as Id<JiNotationBound>,
@@ -123,7 +124,7 @@ describe("analyzeJiNotationBound", (): void => {
             name: "47.5°233" as Name<Bound>,
             pitch: {
                 monzo: APOTOME.monzo,
-                scaler: [47.5, 233],
+                scaler: [47.5, EXTREME_EDA],
             } as Pitch<{ rational: false }>,
             rank: RANKS[ BoundType.INA_MIDPOINT ],
             distance: 0.019171116563747148 as Abs<Cents>,
@@ -136,7 +137,7 @@ describe("analyzeJiNotationBound", (): void => {
             name: "164.5°809" as Name<Bound>,
             pitch: {
                 monzo: APOTOME.monzo,
-                scaler: [164.5, 809],
+                scaler: [164.5, INSANE_EDA],
             } as Pitch<{ rational: false }>,
             rank: RANKS[ BoundType.INA_MIDPOINT ],
             distance: 0.05970819482401879 as Abs<Cents>,
@@ -148,7 +149,7 @@ describe("analyzeJiNotationBound", (): void => {
         boundEventAnalyses: expectedBestBoundHistoryBoundEventAnalyses,
         pitch: {
             monzo: APOTOME.monzo,
-            scaler: [164.5, 809],
+            scaler: [164.5, INSANE_EDA],
         } as Pitch<{ rational: false }>,
         rank: RANKS[ BoundType.COMMA_MEAN ],
         score: 131 as Score,
@@ -219,7 +220,7 @@ describe("analyzeJiNotationBound", (): void => {
                         name: "47.5°233" as Name<Bound>,
                         pitch: {
                             monzo: APOTOME.monzo,
-                            scaler: [47.5, 233],
+                            scaler: [47.5, EXTREME_EDA],
                         } as Pitch<{ rational: false }>,
                         isPossibleBoundHistoryMember: true,
                         isBestPossibleBoundHistoryMember: true,
@@ -238,7 +239,7 @@ describe("analyzeJiNotationBound", (): void => {
                         name: "164.5°809" as Name<Bound>,
                         pitch: {
                             monzo: APOTOME.monzo,
-                            scaler: [164.5, 809],
+                            scaler: [164.5, INSANE_EDA],
                         } as Pitch<{ rational: false }>,
                         isPossibleBoundHistoryMember: true,
                         isBestPossibleBoundHistoryMember: true,
