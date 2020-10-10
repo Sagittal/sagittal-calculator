@@ -5,7 +5,7 @@ import { join, sumTexts } from "../typedOperations"
 import { Io } from "../types"
 import { computeColumnRange } from "./columnRange"
 import { DEFAULT_FORMAT_TABLE_OPTIONS } from "./constants"
-import { computeJustifications, computeJustifiedCellForForum } from "./justification"
+import { computeColumnWidths, computeJustifications, computeJustifiedCell } from "./justification"
 import { FormatTableOptions, Row, Table, TableForForumRowPartsOptions } from "./types"
 
 const computeTableForForumRowParts = <T = unknown>(
@@ -37,14 +37,17 @@ const formatTableForForum = <T = unknown>(table: Table<T>, options?: Partial<For
     const columnRange = computeColumnRange(table)
     const justifications = computeJustifications(justification, columnRange)
 
+    const columnWidths = computeColumnWidths(table, columnRange)
+
     const formattedRows: Io[] = table.map((row: Row<{ of: T }>, index: number): Io => {
         const { rowOpen, rowClose, separator } = computeTableForForumRowParts({ index, headerRowCount, colors })
 
         const rowText = row.reduce(
             (justifiedRow: Io, cell: Maybe<Formatted<T>>, cellIndex: number): Io => {
+                const columnWidth = columnWidths[ cellIndex ]
                 const columnJustification = justifications[ cellIndex ]
 
-                const justifiedCell: Io = computeJustifiedCellForForum(cell, { columnJustification })
+                const justifiedCell: Io = computeJustifiedCell(cell, { columnWidth, columnJustification })
 
                 const maybeSeparator: Io = cellIndex === indexOfFinalElement(row) ? BLANK : separator
 

@@ -17,8 +17,6 @@ import { FormatTableOptions, Row, Table, TableFormat } from "./types"
 //  And look no further than quotients which can be 57/56 or 1707519933/1677721600
 //  The point is: a robust alignment capability must process all entries in a column,
 //  Variable entries, as a pass at the end
-//  - note that, while you did just add the [pre] monospaced tag for the forum tables
-//  That should stipulate that you use the same spacing methods for the forum tables now too...
 //  - also format monzos for tables
 //  In TSV it would be best if all the closing angle-brackets ended up in the same rightward column,
 //  So we don't have columns with some numbers and some angle-brackets. (for any table format should work out that way)

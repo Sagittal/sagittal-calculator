@@ -21,8 +21,8 @@ const computeFindCommasTitle = (findCommasSettings: FindCommasSettings): Io => {
 
     return [
         "",
-        `lower bound:       \t${formatPitch(lowerBound, { align: true })}`,
-        `upper bound:       \t${formatPitch(upperBound, { align: true })}`,
+        `lower bound:       \t${formatPitch(lowerBound, { align: true, noLaTeXScaler: true })}`,
+        `upper bound:       \t${formatPitch(upperBound, { align: true, noLaTeXScaler: true })}`,
         `max ATE:           \t${formatIntegerDecimal(maxAte, { align: true })}`,
         `max AAS:           \t${formatDecimal(maxAas, { align: true })}`,
         `max N2D3P9:        \t${formatDecimal(maxN2D3P9, { align: true })}`,

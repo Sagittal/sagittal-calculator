@@ -31,7 +31,7 @@ const computePopular23FreeClassWithExactlyNotatingSymbolClassRow = (
         formatDecimal(n2d3p9, { align: true }),
         exactlyNotatingSymbolClassIds.map((exactlyNotatingSymbolClassId: Id<SymbolClass>): Formatted<SymbolGlyph> => {
             return formatSymbolClass(exactlyNotatingSymbolClassId, ioSettings)
-        }).join(SPACE),
+        }).join(SPACE).replace(/\[pre] \[\/pre]/g, " "),
         exactlyNotatingSymbolClassSmallestSymbolSubsetIndices.join(", "),
         estimatedRank.toString(),
         isUndefined(actualRank) ? "-" : actualRank.toString(),

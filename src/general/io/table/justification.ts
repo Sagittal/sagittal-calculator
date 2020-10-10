@@ -5,7 +5,7 @@ import { length } from "../typedOperations"
 import { Char, Io } from "../types"
 import { Justification, JustificationOption, JustifiedCellOptions, Row, Table } from "./types"
 
-const computeJustifications = (justification: JustificationOption, columnRange: number[]): Justification[] =>
+const computeJustifications = (justification: JustificationOption, columnRange: Range): Justification[] =>
     isString(justification) ?
         columnRange.map((_: number): Justification => justification) :
         columnRange.map((index: number): Justification => justification[ index ] || Justification.LEFT)
@@ -15,7 +15,9 @@ const computeColumnWidths = <T = unknown>(table: Table<T>, columnRange: Range): 
         return table.reduce(
             (columnWidth: Count<Char>, row: Row<{ of: T }>): Count<Char> => {
                 const columnCell = row[ columnIndex ]
-                const cellWidth = isUndefined(columnCell) ? 0 as Count<Char> : length(columnCell)
+                const cellWidth = isUndefined(columnCell) || columnCell.includes("[/pre]") ?
+                    0 as Count<Char> :
+                    length(columnCell)
                 if (cellWidth > columnWidth) {
                     columnWidth = cellWidth
                 }
@@ -37,7 +39,7 @@ const furtherJustifyCell = (justifiedCell: Io, columnJustification: Justificatio
                 justifiedCell + " " as Io
 }
 
-const computeJustifiedCellForTerminal = (
+const computeJustifiedCell = (
     cell: Maybe<Io>,
     { columnWidth, columnJustification }: JustifiedCellOptions,
 ): Io => {
@@ -50,20 +52,8 @@ const computeJustifiedCellForTerminal = (
     return justifiedCell
 }
 
-const computeJustifiedCellForForum = (
-    cell: Maybe<Io>,
-    { columnJustification }: { columnJustification: Justification },
-): Io => {
-    return isUndefined(cell) ?
-        BLANK :
-        columnJustification === Justification.LEFT ?
-            cell :
-            `[${columnJustification}]${cell}[/${columnJustification}]` as Io
-}
-
 export {
     computeJustifications,
     computeColumnWidths,
-    computeJustifiedCellForTerminal,
-    computeJustifiedCellForForum,
+    computeJustifiedCell,
 }

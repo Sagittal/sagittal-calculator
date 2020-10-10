@@ -11,11 +11,11 @@ describe("formatSymbolClass", (): void => {
         expect(actual).toBe(expected)
     })
 
-    it("returns the symbol class as its representative symbols' smiley form if configured for pasting to the forum            ", (): void => {
+    it("returns the symbol class as its representative symbols' smiley form if configured for pasting to the forum, including a disabling of the monospacing pre tag", (): void => {
         ioSettings.tableFormat = TableFormat.FORUM
         const actual = formatSymbolClass(symbolClassId, ioSettings)
 
-        const expected = ":,::(/|:" as Io
+        const expected = "[/pre]:,::(/|:[pre]" as Io
         expect(actual).toBe(expected)
     })
 

@@ -23,13 +23,13 @@ describe("format23FreeClass", (): void => {
         expect(actual).toBe(expected)
     })
 
-    it("uses the LaTeX bbCode when formatting for the forum", (): void => {
+    it("uses the LaTeX bbCode when formatting for the forum, and needs to cancel the pre tags in order for it to display properly", (): void => {
         const two3FreeClass = { monzo: [0, 0, -1, 0, 1] } as Two3FreeClass
 
         ioSettings.tableFormat = TableFormat.FORUM
         const actual = format23FreeClass(two3FreeClass, ioSettings)
 
-        const expected = "[latex]\\frac{11}{5}_{\\scriptsize{(2,3)}}[/latex]" as Formatted<Two3FreeClass>
+        const expected = "[/pre][latex]\\frac{11}{5}_{\\scriptsize{(2,3)}}[/latex][pre]" as Formatted<Two3FreeClass>
         expect(actual).toBe(expected)
     })
 })

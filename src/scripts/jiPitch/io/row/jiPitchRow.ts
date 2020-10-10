@@ -4,7 +4,7 @@ import {
     formatIntegerDecimal,
     formatMonzo,
     formatQuotient,
-    Formatted,
+    Formatted, ioSettings,
     Row,
 } from "../../../../general"
 import { JiPitchAnalysis } from "../../../../sagittal"
@@ -17,7 +17,7 @@ const computeJiPitchRow = (jiPitchAnalysis: JiPitchAnalysis): Row<{ of: JiPitchA
     const rows = [] as unknown[] as Row<{ of: JiPitchAnalysis }>
 
     if (!jiPitchScriptGroupSettings.excludedFields.includes(JiPitchField.QUOTIENT)) {
-        rows.push(formatQuotient(quotient) as Formatted as Formatted<JiPitchAnalysis>)
+        rows.push(formatQuotient(quotient, ioSettings) as Formatted as Formatted<JiPitchAnalysis>)
     }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(JiPitchField.MONZO)) {
         rows.push(formatMonzo(monzo) as Formatted as Formatted<JiPitchAnalysis>)

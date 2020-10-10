@@ -14,7 +14,7 @@ const formatSymbol = (
         case TableFormat.TERMINAL:
             return align ? formatSymbolAscii(ascii) : ascii as string as Formatted<SymbolLongAscii>
         case TableFormat.FORUM:
-            return computeSmileyFromAscii(ascii) as string as Formatted<SymbolSmiley>
+            return `[/pre]${computeSmileyFromAscii(ascii)}[pre]` as Formatted<SymbolSmiley>
         case TableFormat.SPREADSHEET:
             return symbol.revoUnicode as string as Formatted<SymbolUnicode>
     }

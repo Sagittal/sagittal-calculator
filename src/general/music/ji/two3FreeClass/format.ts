@@ -13,7 +13,8 @@ const format23FreeClass = (
     )
 
     return tableFormat === TableFormat.FORUM ?
-        `[latex]\\frac{${numerator}}{${denominator}}_{\\scriptsize{(2,3)}}[/latex]` as Formatted<Two3FreeClass> :
+        `[/pre][latex]\\frac{${numerator}}{${denominator}}_{\\scriptsize{(2,3)}}[/latex][pre]` as
+            Formatted<Two3FreeClass> :
         compute23FreeClassName(two3FreeClass) as string as Formatted<Two3FreeClass>
 }
 

@@ -1,7 +1,7 @@
 import { Maybe } from "../../code"
 import { Count } from "../../types"
 import { Formatted } from "../format"
-import { ColorMethod } from "../types"
+import { Char, ColorMethod } from "../types"
 
 enum Justification {
     LEFT = "left",
@@ -31,7 +31,7 @@ type Table<T = void> = Array<Row<{ of: T }>>
 
 interface JustifiedCellOptions {
     columnJustification: Justification,
-    columnWidth: number,
+    columnWidth: Count<Char>,
 }
 
 type FormatTableOptions<T> = {
