@@ -7,9 +7,9 @@ type Scamon<T extends NumericProperties = {}> =
         scaler: never,
     } & NumericPropertyEffects<T & { rational: true }>
     | {
-        monzo: Monzo<T & { rational: true }>,
-        scaler: Quotient | Degree,
-    } & NumericPropertyEffects<T & { rational: false }>
+    monzo: Monzo<T & { rational: true }>,
+    scaler: Quotient | Degree,
+} & NumericPropertyEffects<T & { rational: false }>
 
 export {
     Scamon,

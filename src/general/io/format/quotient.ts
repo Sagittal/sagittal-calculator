@@ -1,15 +1,16 @@
 import { computeSuperQuotient, Quotient } from "../../math"
+import { ioSettings } from "../globals"
 import { TableFormat } from "../table"
 import { Formatted } from "./types"
 
 const formatQuotient = <T extends Quotient>(
     inputQuotient: T,
-    { tableFormat, directed = true }: { tableFormat?: TableFormat, directed?: boolean },
+    { directed = true, noLaTeXScaler = false }: { directed?: boolean, noLaTeXScaler?: boolean } = {},
 ): Formatted<T> => {
     const [numerator, denominator] = directed ? inputQuotient : computeSuperQuotient(inputQuotient)
 
     return directed ?
-        tableFormat === TableFormat.FORUM ?
+        ioSettings.tableFormat === TableFormat.FORUM && !noLaTeXScaler ?
             `[/pre][latex]\\frac{${numerator}}{${denominator}}[/latex][pre]` as Formatted<T> :
             `${numerator}/${denominator}` as Formatted<T> :
         `${denominator}:${numerator}` as Formatted<T>

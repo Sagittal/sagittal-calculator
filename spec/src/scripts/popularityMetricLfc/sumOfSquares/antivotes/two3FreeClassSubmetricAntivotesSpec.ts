@@ -137,7 +137,7 @@ describe("compute23FreeClassSubmetricAntivotes", (): void => {
                 computeSubmetricAntivotes(
                     [0, 0, 1] as Monzo<{ rational: true }>,
                     submetric,
-                ) as number as Power, BASE_2
+                ) as number as Power, BASE_2,
             ) as number +
             computeSubmetricAntivotes([0, 0, 0, 1] as Monzo<{ rational: true }>, submetric) as Antivotes,
         )

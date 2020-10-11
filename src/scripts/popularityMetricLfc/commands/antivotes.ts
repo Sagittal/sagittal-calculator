@@ -3,7 +3,6 @@ import {
     Filename,
     format23FreeClass,
     Io,
-    ioSettings,
     LogTarget,
     saveLog,
     stringify,
@@ -21,6 +20,6 @@ const two3FreeClass: Two3FreeClass = { monzo: [0, 0, 0, -1, 1] } as Two3FreeClas
 const antivotes = computeAntivotes(two3FreeClass, submetrics)
 
 saveLog(
-    `${format23FreeClass(two3FreeClass, ioSettings)}\n${stringify(submetrics)}\n${antivotes}` as Io,
+    `${format23FreeClass(two3FreeClass)}\n${stringify(submetrics)}\n${antivotes}` as Io,
     LogTarget.FINAL,
 )

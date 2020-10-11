@@ -1,4 +1,4 @@
-import { Comma, Id, Io, ioSettings, LogTarget, saveLog, stringify } from "../../../general"
+import { Comma, Id, Io, LogTarget, saveLog, stringify } from "../../../general"
 import {
     analyzeComma,
     CommaAnalysis,
@@ -26,7 +26,7 @@ JI_NOTATION.forEach((symbolClassId: Id<SymbolClass>): void => {
     const primaryComma = getPrimaryComma(symbolClassId)
     const commaName = computeCommaName(primaryComma)
 
-    saveLog(`\n\n${formatSymbolClass(symbolClassId, ioSettings)} ${commaName}\n\n` as Io, LogTarget.ALL)
+    saveLog(`\n\n${formatSymbolClass(symbolClassId)} ${commaName}\n\n` as Io, LogTarget.ALL)
 
     const secondaryCommaZone = computeSecondaryCommaZone(symbolClassId)
     const lowerBound = secondaryCommaZone[ 0 ]

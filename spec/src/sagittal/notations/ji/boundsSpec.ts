@@ -8,7 +8,8 @@ import {
     isCloseTo,
     isScamonGreater,
     Monzo,
-    Quotient, Scamon,
+    Quotient,
+    Scamon,
 } from "../../../../../src/general"
 import { APOTOME, JiNotationBound, JI_NOTATION_BOUNDS, TINA } from "../../../../../src/sagittal"
 import { INSANE_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"

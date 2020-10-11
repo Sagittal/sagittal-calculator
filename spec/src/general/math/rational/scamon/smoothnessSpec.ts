@@ -2,7 +2,10 @@ import { Max, Prime } from "../../../../../../src/general/math"
 import { Scamon } from "../../../../../../src/general/math/numeric/scamon"
 import { Smoothness } from "../../../../../../src/general/math/rational"
 import { FIVE_SMOOTHNESS, THREE_SMOOTHNESS } from "../../../../../../src/general/math/rational/constants"
-import { computeRationalScamonSmoothness, isRationalScamonSmooth } from "../../../../../../src/general/math/rational/scamon"
+import {
+    computeRationalScamonSmoothness,
+    isRationalScamonSmooth,
+} from "../../../../../../src/general/math/rational/scamon"
 
 describe("isRationalScamonSmooth", (): void => {
     it("returns true if the scamon is n-smooth (within the n prime limit)", (): void => {

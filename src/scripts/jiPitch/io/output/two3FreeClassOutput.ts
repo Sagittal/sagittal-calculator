@@ -1,4 +1,4 @@
-import { count, formatTable, Io, sumTexts, Table, Two3FreeClass } from "../../../../general"
+import { count, formatTable, Io, sumTexts, Table } from "../../../../general"
 import { Two3FreeClassAnalysis } from "../../../../sagittal"
 import { compute23FreeClassHeaderRows } from "../headerRows"
 import { compute23FreeClassRow } from "../row"

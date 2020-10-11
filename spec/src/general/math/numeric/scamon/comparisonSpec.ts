@@ -3,7 +3,9 @@ import { Quotient } from "../../../../../../src/general/math/numeric/quotient"
 import {
     areScamonsEqual,
     isScamonGreater,
-    isScamonGreaterOrEqual, isScamonLesser, isScamonLesserOrEqual,
+    isScamonGreaterOrEqual,
+    isScamonLesser,
+    isScamonLesserOrEqual,
     Scamon,
 } from "../../../../../../src/general/math/numeric/scamon"
 
@@ -144,8 +146,8 @@ describe("isScamonGreater", (): void => {
     })
 
     it("example of a Rational scamon and a irrational scamon which are quite close", (): void => {
-        const scamon = { monzo: [ -7, -1, 1, 1, 1 ] } as Scamon<{ rational: true }>
-        const otherScamon = { monzo: [ 317, -200 ], scaler: [ 1, 2 ] } as Scamon<{ rational: false }>
+        const scamon = { monzo: [-7, -1, 1, 1, 1] } as Scamon<{ rational: true }>
+        const otherScamon = { monzo: [317, -200], scaler: [1, 2] } as Scamon<{ rational: false }>
 
         const actual = isScamonGreater(scamon, otherScamon)
 

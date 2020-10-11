@@ -1,5 +1,6 @@
 import {
-    Abs, Comma,
+    Abs,
+    Comma,
     Copfr,
     Decimal,
     EMPTY_MONZO,

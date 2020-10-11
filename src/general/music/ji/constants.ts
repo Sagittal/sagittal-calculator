@@ -1,4 +1,4 @@
-import { Max, Min, Prime, Scamon } from "../../math"
+import { Max, Prime, Scamon } from "../../math"
 
 const THREE_PRIME_LIMIT: 3 & Max<Prime> = 3 as 3 & Max<Prime>
 const FIVE_PRIME_LIMIT: 5 & Max<Prime> = 5 as 5 & Max<Prime>

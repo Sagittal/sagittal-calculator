@@ -1,4 +1,4 @@
-import { Decimal, Direction, NumericProperties, Scamon } from "../../math"
+import { NumericProperties, Scamon } from "../../math"
 import { Cents } from "../types"
 
 type Comma<T extends NumericProperties = {}> = Scamon<T & { rational: true }> & { _CommaBrand: boolean }

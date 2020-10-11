@@ -36,7 +36,7 @@ describe("formatDecimal", (): void => {
 
     it("does not align when formatting for a spreadsheet", (): void => {
         ioSettings.tableFormat = TableFormat.SPREADSHEET
-        expect(formatDecimal(12.340, { ...ioSettings, align: true })).toBe("12.340")
+        expect(formatDecimal(12.340, { align: true })).toBe("12.340")
     })
 })
 
@@ -60,7 +60,7 @@ describe("formatIntegerDecimal", (): void => {
     it("does not align when formatting for a spreadsheet", (): void => {
         ioSettings.tableFormat = TableFormat.SPREADSHEET
 
-        const actual = formatIntegerDecimal(integerDecimal, { ...ioSettings, align: true })
+        const actual = formatIntegerDecimal(integerDecimal, { align: true })
 
         const expected = "1"
         expect(actual).toBe(expected)

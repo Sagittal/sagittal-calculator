@@ -6,7 +6,6 @@ import {
     formatMonzo,
     Formatted,
     Io,
-    ioSettings,
     Max,
     Monzo,
     parseInteger,
@@ -24,7 +23,7 @@ const formatSplitMonzo = (
     splitFormattedMonzo.shift()             // Remove the "["
     splitFormattedMonzo.pop()               // Remove the "⟩"
     splitFormattedMonzo = splitFormattedMonzo.map((formattedPrimeExponent: string): Formatted<Decimal> => {
-        return formatIntegerDecimal(parseInteger(formattedPrimeExponent as Io), { ...ioSettings, align: true })
+        return formatIntegerDecimal(parseInteger(formattedPrimeExponent as Io), { align: true })
     })
     splitFormattedMonzo.unshift("[")  // Put back the "["
     while (splitFormattedMonzo.length < maxMonzoLength + 1) { // +1 for the [

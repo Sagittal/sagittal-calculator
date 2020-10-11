@@ -14,7 +14,7 @@ import {
     Sopfr,
     Two3FreeClass,
 } from "../../../../../src/general"
-import { ApotomeSlope, CommaAnalysis, N2D3P9, Two3FreeClassAnalysis } from "../../../../../src/sagittal"
+import { ApotomeSlope, N2D3P9 } from "../../../../../src/sagittal"
 import { analyzeComma } from "../../../../../src/sagittal/ji"
 
 describe("analyzeComma", (): void => {

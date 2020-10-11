@@ -13,7 +13,7 @@ describe("computePopular23FreeClass", (): void => {
         ...two3FreeClassAnalysisFixture,
         n2d3p9: 1.388889 as N2D3P9,
         two3FreeClass: {
-            monzo: [0, 0, 1] as Monzo<{ rational: true, rough: 5, direction: Direction.SUPER }>
+            monzo: [0, 0, 1] as Monzo<{ rational: true, rough: 5, direction: Direction.SUPER }>,
         } as Two3FreeClass,
     }
 

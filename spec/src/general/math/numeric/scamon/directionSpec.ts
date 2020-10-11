@@ -35,7 +35,7 @@ describe("isScamonSub", (): void => {
         it("returns true if the scamon is sub", (): void => {
             const scamon = {
                 monzo: IRRATIONAL_SCAMON_BASE_MONZO,
-                scaler: [-1, 1] as Quotient
+                scaler: [-1, 1] as Quotient,
             } as Scamon<{ rational: false }>
 
             const actual = isScamonSub(scamon)
@@ -46,7 +46,7 @@ describe("isScamonSub", (): void => {
         it("returns false if the scamon is unison", (): void => {
             const scamon = {
                 monzo: IRRATIONAL_SCAMON_BASE_MONZO,
-                scaler: [0, 1] as Quotient
+                scaler: [0, 1] as Quotient,
             } as Scamon<{ rational: false }>
 
             const actual = isScamonSub(scamon)
@@ -57,7 +57,7 @@ describe("isScamonSub", (): void => {
         it("returns false if the scamon is super", (): void => {
             const scamon = {
                 monzo: IRRATIONAL_SCAMON_BASE_MONZO,
-                scaler: [1, 1] as Quotient
+                scaler: [1, 1] as Quotient,
             } as Scamon<{ rational: false }>
 
             const actual = isScamonSub(scamon)
@@ -98,7 +98,7 @@ describe("isScamonSuper", (): void => {
         it("returns false if the scamon is sub", (): void => {
             const scamon = {
                 monzo: IRRATIONAL_SCAMON_BASE_MONZO,
-                scaler: [-1, 1] as Quotient
+                scaler: [-1, 1] as Quotient,
             } as Scamon<{ rational: false }>
 
             const actual = isScamonSuper(scamon)
@@ -109,7 +109,7 @@ describe("isScamonSuper", (): void => {
         it("returns false if the scamon is unison", (): void => {
             const scamon = {
                 monzo: IRRATIONAL_SCAMON_BASE_MONZO,
-                scaler: [0, 1] as Quotient
+                scaler: [0, 1] as Quotient,
             } as Scamon<{ rational: false }>
 
             const actual = isScamonSuper(scamon)
@@ -120,7 +120,7 @@ describe("isScamonSuper", (): void => {
         it("returns true if the scamon is super", (): void => {
             const scamon = {
                 monzo: IRRATIONAL_SCAMON_BASE_MONZO,
-                scaler: [1, 1] as Quotient
+                scaler: [1, 1] as Quotient,
             } as Scamon<{ rational: false }>
 
             const actual = isScamonSuper(scamon)
@@ -161,7 +161,7 @@ describe("isScamonUnison", (): void => {
         it("returns false if the scamon is sub", (): void => {
             const scamon = {
                 monzo: IRRATIONAL_SCAMON_BASE_MONZO,
-                scaler: [-1, 1] as Quotient
+                scaler: [-1, 1] as Quotient,
             } as Scamon<{ rational: false }>
 
             const actual = isScamonUnison(scamon)
@@ -172,7 +172,7 @@ describe("isScamonUnison", (): void => {
         it("returns true if the scamon is unison", (): void => {
             const scamon = {
                 monzo: IRRATIONAL_SCAMON_BASE_MONZO,
-                scaler: [0, 1] as Quotient
+                scaler: [0, 1] as Quotient,
             } as Scamon<{ rational: false }>
 
             const actual = isScamonUnison(scamon)
@@ -183,7 +183,7 @@ describe("isScamonUnison", (): void => {
         it("returns false if the scamon is super", (): void => {
             const scamon = {
                 monzo: IRRATIONAL_SCAMON_BASE_MONZO,
-                scaler: [1, 1] as Quotient
+                scaler: [1, 1] as Quotient,
             } as Scamon<{ rational: false }>
 
             const actual = isScamonUnison(scamon)

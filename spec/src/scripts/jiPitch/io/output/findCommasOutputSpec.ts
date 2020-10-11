@@ -127,12 +127,12 @@ describe("computeFindCommasOutput", (): void => {
             "" + NEWLINE +
             "lower bound:       \t[  ⟩" + NEWLINE +
             "upper bound:       \t[ -11   7 ⟩(1/2)" + NEWLINE +
-            "max ATE:           \t 15    " + NEWLINE +
-            "max AAS:           \t 14.000" + NEWLINE +
+            "max ATE:           \t15" + NEWLINE +
+            "max AAS:           \t14.000" + NEWLINE +
             "max N2D3P9:        \t307.000" + NEWLINE +
-            "max 2,3-free sopfr:\t 61    " + NEWLINE +
-            "max 2,3-free copfr:\t555    " + NEWLINE +
-            "max prime limit:   \t 47    " + NEWLINE +
+            "max 2,3-free sopfr:\t61" + NEWLINE +
+            "max 2,3-free copfr:\t555" + NEWLINE +
+            "max prime limit:   \t47" + NEWLINE +
             "" + NEWLINE +
             "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t2,3-free\t2,3-free\t2,3-free\t2,3-free\t2,3-free" + NEWLINE +
             "symbol\t\tquotient\t\t\tmonzo\t\t\t\t\t\t\tapotome\t\t\tprime\tclass\tclass\tclass\tclass" + NEWLINE +

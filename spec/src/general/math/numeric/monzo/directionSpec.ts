@@ -1,4 +1,3 @@
-import { Dir } from "fs"
 import {
     computeSuperMonzo,
     Direction,
@@ -131,7 +130,7 @@ describe("computeSuperMonzo", (): void => {
     it("returns the monzo unchanged if it the empty monzo", (): void => {
         const monzo = EMPTY_MONZO as Monzo<{ direction: Direction.UNISON }>
 
-        const actual: Monzo<{ direction: Direction.UNISON}> = computeSuperMonzo(monzo)
+        const actual: Monzo<{ direction: Direction.UNISON }> = computeSuperMonzo(monzo)
 
         expect(actual).toEqual(EMPTY_MONZO)
     })
@@ -159,7 +158,7 @@ describe("invertMonzo", (): void => {
     it("works for the unison monzo (the empty monzo)", (): void => {
         const monzo = EMPTY_MONZO as Monzo<{ direction: Direction.UNISON }>
 
-        const actual: Monzo<{ direction: Direction.UNISON}> = invertMonzo(monzo)
+        const actual: Monzo<{ direction: Direction.UNISON }> = invertMonzo(monzo)
 
         expect(actual).toEqual(EMPTY_MONZO)
     })

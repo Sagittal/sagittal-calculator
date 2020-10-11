@@ -21,7 +21,7 @@ describe("formatCents", (): void => {
 
     it("does not align the cents, even when asked to, when formatting for a spreadsheet", (): void => {
         ioSettings.tableFormat = TableFormat.SPREADSHEET
-        const actual = formatCents(cents, { ...ioSettings, align: true })
+        const actual = formatCents(cents, { align: true })
 
         const expected = "884.359¢" as Formatted<Cents>
         expect(actual).toBe(expected)

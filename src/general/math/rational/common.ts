@@ -50,7 +50,7 @@ const recurseCommon = (
 
 const computeCommon = (
     integerDecimals: Array<Decimal<{ integer: true }>>,
-    commonFunction: CommonFunction
+    commonFunction: CommonFunction,
 ): Decimal<{ integer: true }> => {
     if (isEmpty(integerDecimals)) {
         return ONE

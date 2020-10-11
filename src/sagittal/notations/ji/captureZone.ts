@@ -1,4 +1,4 @@
-import { Id, ioSettings, isScamonGreater, isUndefined, Max, Maybe, Min, Scamon, UNISON, Zone } from "../../../general"
+import { Id, isScamonGreater, isUndefined, Max, Maybe, Min, Scamon, UNISON, Zone } from "../../../general"
 import { formatSymbolClass } from "../../io"
 import { getPrimaryComma } from "../primaryComma"
 import { PrimaryComma, SymbolClass } from "../types"
@@ -16,10 +16,7 @@ const computeCaptureZone = (
 
     const introducingJiNotationLevel = getIntroducingJiNotationLevel(symbolClassId)
     if (!isWithinJiNotationLevel(introducingJiNotationLevel, jiNotationLevel)) {
-        throw new Error(`JI Notation symbol class ${formatSymbolClass(symbolClassId, {
-            ...ioSettings,
-            align: false,
-        })} is not present at the ${formatJiNotationLevel(jiNotationLevel)} JI notation level; it is not introduced until the ${formatJiNotationLevel(introducingJiNotationLevel)} JI notation level.`)
+        throw new Error(`JI Notation symbol class ${formatSymbolClass(symbolClassId, { align: false })} is not present at the ${formatJiNotationLevel(jiNotationLevel)} JI notation level; it is not introduced until the ${formatJiNotationLevel(introducingJiNotationLevel)} JI notation level.`)
     }
 
     const primaryComma = getPrimaryComma(symbolClassId)
@@ -31,10 +28,10 @@ const computeCaptureZone = (
     const indexOfJiNotationBoundJustBelowSymbolClassAtThisLevel = indexOfBoundJustAboveSymbolAtThisLevel - 1
 
     const lowerBound = jiNotationLevelBounds[ indexOfJiNotationBoundJustBelowSymbolClassAtThisLevel ]
-    const lowerBoundPitch = isUndefined(lowerBound) ? 
-        UNISON : 
+    const lowerBoundPitch = isUndefined(lowerBound) ?
+        UNISON :
         lowerBound.pitch as Scamon as Min<Scamon>
-    const upperBoundPitch = 
+    const upperBoundPitch =
         jiNotationLevelBounds[ indexOfBoundJustAboveSymbolAtThisLevel ].pitch as Scamon as Max<Scamon>
 
     return [lowerBoundPitch, upperBoundPitch] as Zone<PrimaryComma>

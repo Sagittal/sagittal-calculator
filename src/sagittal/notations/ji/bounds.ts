@@ -1,6 +1,6 @@
 // tslint:disable max-line-length
 
-import { Id, Monzo, Name, Quotient, Scamon, SQRT_SCALER } from "../../../general"
+import { Id, Monzo, Name, Scamon, SQRT_SCALER } from "../../../general"
 import { APOTOME } from "../../constants"
 import { SizeCategoryBound } from "../../ji"
 import { INSANE_EDA } from "./levelEdas"

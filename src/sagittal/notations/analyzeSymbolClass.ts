@@ -5,7 +5,7 @@ import { getPrimaryComma } from "./primaryComma"
 import { getRepresentativeSymbol } from "./representativeSymbol"
 import { getSmallestSymbolSubset } from "./smallestSymbolSubset"
 import { getSymbolClass } from "./symbolClass"
-import { PrimaryComma, PrimaryCommaAnalysis, SymbolClass, SymbolClassAnalysis } from "./types"
+import { SymbolClass, SymbolClassAnalysis } from "./types"
 
 const analyzeSymbolClass = (
     symbolClassId: Id<SymbolClass>,

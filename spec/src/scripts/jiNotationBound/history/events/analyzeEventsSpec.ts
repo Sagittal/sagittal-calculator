@@ -34,8 +34,8 @@ describe("analyzeBoundEvents", (): void => {
             },
         ]
         const actualJiNotationBoundPitch = {
-            monzo: APOTOME.monzo, 
-            scaler: [33.5, ULTRA_EDA] 
+            monzo: APOTOME.monzo,
+            scaler: [33.5, ULTRA_EDA],
         } as Scamon<{ rational: false }>
 
         const actual = analyzeBoundEvents(boundHistory, actualJiNotationBoundPitch)

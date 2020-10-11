@@ -10,7 +10,8 @@ import {
     Direction,
     EMPTY_MONZO,
     Exponent,
-    Id, Max,
+    Id,
+    Max,
     Monzo,
     Multiplier,
     Name,
@@ -28,13 +29,11 @@ import {
     SymbolClass,
     SymbolLongAscii,
     TINA,
-    Two3FreeClassAnalysis,
 } from "../../../../../../src/sagittal"
 import { SymbolUnicode } from "../../../../../../src/sagittal/io"
 import { SymbolSubset } from "../../../../../../src/sagittal/notations"
 import { JiNotationBound, JiNotationLevel, Mina } from "../../../../../../src/sagittal/notations/ji"
 import { MINA, ULTRINA } from "../../../../../../src/sagittal/notations/ji/intervals"
-import { PrimaryCommaAnalysis } from "../../../../../../src/sagittal/notations/types"
 import { extractJiNotationBoundIdentifiers } from "../../../../../../src/scripts/jiNotationBound/io/terminal/boundIdentifiers"
 import { JiNotationBoundIdentifiers } from "../../../../../../src/scripts/jiNotationBound/io/terminal/types"
 import { jiNotationBoundFixture } from "../../../../../helpers/src/scripts/jiNotationBound/fixtures"

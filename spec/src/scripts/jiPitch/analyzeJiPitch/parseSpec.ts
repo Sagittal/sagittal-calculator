@@ -20,7 +20,7 @@ describe("parseNotatingCommasSettings", (): void => {
         decimal: rationalDecimal,
         pitch: {
             monzo: rationalMonzo,
-        } as Scamon<{ rational: true}>,
+        } as Scamon<{ rational: true }>,
     }
 
     it("adjusts the max N2D3P9 if the JI pitch has greater than the current settings", (): void => {

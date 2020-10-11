@@ -2,7 +2,6 @@ import {
     formatIntegerDecimal,
     Formatted,
     indexOfFinalElement,
-    ioSettings,
     isUndefined,
     Maybe,
     parseInteger,
@@ -23,7 +22,7 @@ const formatPrimeHeaders = <T>(
                         if (!isUndefined(headerCell) && headerCell.match(/^\d+$/)) {
                             return formatIntegerDecimal(
                                 parseInteger(headerCell),
-                                { ...ioSettings, align: true },
+                                { align: true },
                             ) as Formatted as Formatted<T>
                         } else {
                             return headerCell
@@ -33,7 +32,7 @@ const formatPrimeHeaders = <T>(
             } else {
                 return headerRow
             }
-        }
+        },
     )
 }
 

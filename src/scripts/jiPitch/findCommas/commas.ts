@@ -37,10 +37,10 @@ const computeCommas = (options: CommasOptions): Comma[] => {
     let commas: Comma[] = []
 
     const two3FreeRationalMonzosToCheck = compute23FreeRationalMonzosToCheck({
-            maxPrimeLimit,
-            max23FreeSopfr,
-            max23FreeCopfr,
-        })
+        maxPrimeLimit,
+        max23FreeSopfr,
+        max23FreeCopfr,
+    })
 
     two3FreeRationalMonzosToCheck.forEach((two3FreeRationalMonzoToCheck: Monzo<{ rational: true, rough: 5 }>): void => {
         commas = commas.concat(

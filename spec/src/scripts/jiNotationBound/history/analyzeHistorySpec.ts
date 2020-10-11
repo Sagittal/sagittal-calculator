@@ -4,7 +4,8 @@ import {
     Cents,
     computePitchFromCents,
     Multiplier,
-    Quotient, Scamon,
+    Quotient,
+    Scamon,
     Sum,
 } from "../../../../../src/general"
 import { multiply } from "../../../../../src/general/math"
@@ -23,9 +24,9 @@ import {
 } from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
 
 describe("analyzeHistory", (): void => {
-    const actualJiNotationBoundPitch = { 
-        monzo: APOTOME.monzo, 
-        scaler: [25.5, EXTREME_EDA] 
+    const actualJiNotationBoundPitch = {
+        monzo: APOTOME.monzo,
+        scaler: [25.5, EXTREME_EDA],
     } as Scamon<{ rational: false }>
     let boundHistory: BoundHistory
     let pitch: Scamon<{ rational: false }>

@@ -111,7 +111,7 @@ describe("computeBoundEvents", (): void => {
                         boundType: BoundType.COMMA_MEAN,
                         name: "/| |)" as Name<Bound>,
                         pitch: {
-                            monzo: [ 2, 2, -1, -1],
+                            monzo: [2, 2, -1, -1],
                             scaler: SQRT_SCALER,
                         } as Scamon<{ rational: false }>,
                     },
@@ -132,7 +132,7 @@ describe("computeBoundEvents", (): void => {
                         boundType: BoundType.COMMA_MEAN,
                         name: ")/| |)" as Name<Bound>,
                         pitch: {
-                            monzo: [ -7, 5, -1, -1, 0, 0, 0, 1],
+                            monzo: [-7, 5, -1, -1, 0, 0, 0, 1],
                             scaler: SQRT_SCALER,
                         } as Scamon<{ rational: false }>,
                     },
@@ -153,7 +153,7 @@ describe("computeBoundEvents", (): void => {
                         boundType: BoundType.COMMA_MEAN,
                         name: ".|) |)" as Name<Bound>,
                         pitch: {
-                            monzo: [ 27, -12, -1, -2],
+                            monzo: [27, -12, -1, -2],
                             scaler: SQRT_SCALER,
                         } as Scamon<{ rational: false }>,
                     },

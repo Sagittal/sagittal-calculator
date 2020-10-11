@@ -7,7 +7,7 @@ import {
     VALUE_BELOW_WHICH_ROUNDING_IMPLEMENTATION_BREAKS,
 } from "./constants"
 import { Decimal } from "./numeric"
-import { Abs, Base, Exponent, Max, Mean, MeanType, Min, Power } from "./types"
+import { Abs, Base, Exponent, Max, Min, Power } from "./types"
 
 const count = <T>(array: T[]): Count<T> => {
     return array.length as Count<T>

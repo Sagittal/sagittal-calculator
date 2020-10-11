@@ -1,4 +1,4 @@
-import { Name, Quotient } from "../../../../../src/general"
+import { Name } from "../../../../../src/general"
 import { APOTOME } from "../../../../../src/sagittal"
 import { InaMidpoint, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 import { EXTREME_EDA, MEDIUM_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"

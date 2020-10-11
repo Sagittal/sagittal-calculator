@@ -1,4 +1,4 @@
-import { BLANK, Count, Exponent, Id, ioSettings, Max, Maybe, Prime, Row } from "../../../../general"
+import { BLANK, Count, Exponent, Id, Max, Maybe, Prime, Row } from "../../../../general"
 import { CommaAnalysis, formatSymbolClass, SymbolClass } from "../../../../sagittal"
 import { jiPitchScriptGroupSettings } from "../../globals"
 import { NotatingCommasField } from "../../types"
@@ -12,7 +12,7 @@ const computeNotatingCommasRow = (
     const row = []
 
     if (!jiPitchScriptGroupSettings.excludedFields.includes(NotatingCommasField.SYMBOL_CLASS)) {
-        const formattedSymbolClass = maybeSymbolClassId ? formatSymbolClass(maybeSymbolClassId, ioSettings) : BLANK
+        const formattedSymbolClass = maybeSymbolClassId ? formatSymbolClass(maybeSymbolClassId) : BLANK
         row.push(formattedSymbolClass)
     }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(NotatingCommasField.NAME)) {

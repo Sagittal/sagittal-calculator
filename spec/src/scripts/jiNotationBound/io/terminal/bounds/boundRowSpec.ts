@@ -1,12 +1,4 @@
-import {
-    Abs,
-    Cents,
-    computePitchFromCents,
-    Id,
-    Multiplier,
-    Row,
-    Sum,
-} from "../../../../../../../src/general"
+import { Abs, Cents, computePitchFromCents, Id, Multiplier, Row, Sum } from "../../../../../../../src/general"
 import { BoundType, Ina, JiNotationBound, JiNotationLevel, Tina } from "../../../../../../../src/sagittal"
 import { JiNotationBoundAnalysis } from "../../../../../../../src/scripts/jiNotationBound/bound"
 import { computeJiNotationBoundRow } from "../../../../../../../src/scripts/jiNotationBound/io/terminal/bounds/boundRow"

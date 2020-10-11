@@ -5,9 +5,9 @@ describe("areDecimalsEqual", (): void => {
     it("works when two decimals are equal", (): void => {
         const decimalA = 0.123456
         const decimalB = 0.123456
-        
+
         const actual = areDecimalsEqual(decimalA, decimalB)
-        
+
         expect(actual).toBeTruthy()
     })
 

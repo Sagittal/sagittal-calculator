@@ -1,4 +1,4 @@
-import { Formatted, TableFormat } from "../../general"
+import { Formatted, ioSettings, TableFormat } from "../../general"
 import { Symbol } from "../notations"
 import { formatSymbolAscii } from "./formatSymbolAscii"
 import { computeSmileyFromAscii } from "./smiley"
@@ -6,11 +6,11 @@ import { SymbolGlyph, SymbolLongAscii, SymbolSmiley, SymbolUnicode } from "./typ
 
 const formatSymbol = (
     symbol: Symbol,
-    { tableFormat = TableFormat.TERMINAL, align = true }: { tableFormat?: TableFormat, align?: boolean },
+    { align = true }: { align?: boolean } = {},
 ): Formatted<SymbolGlyph> => {
     const ascii = symbol.revoAscii
 
-    switch (tableFormat) {
+    switch (ioSettings.tableFormat) {
         case TableFormat.TERMINAL:
             return align ? formatSymbolAscii(ascii) : ascii as string as Formatted<SymbolLongAscii>
         case TableFormat.FORUM:

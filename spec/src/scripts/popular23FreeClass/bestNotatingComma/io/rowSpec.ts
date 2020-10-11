@@ -23,7 +23,7 @@ describe("computePopular23FreeClassWithBestNotatingCommaRow", (): void => {
             votes: 7 as Votes,
             popularityRank: 3 as Rank<Popularity>,
             two3FreeClass: {
-                monzo: [0, 0, -1, 1] as Monzo<{ rational: true, rough: 5, direction: Direction.SUPER }>
+                monzo: [0, 0, -1, 1] as Monzo<{ rational: true, rough: 5, direction: Direction.SUPER }>,
             } as Two3FreeClass,
         }
 

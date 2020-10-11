@@ -1,4 +1,4 @@
-import { Comma, Monzo } from "../../../../../../src/general"
+import { Comma } from "../../../../../../src/general"
 import { computeCommaName } from "../../../../../../src/sagittal/ji/comma/name"
 
 describe("computeCommaName", (): void => {

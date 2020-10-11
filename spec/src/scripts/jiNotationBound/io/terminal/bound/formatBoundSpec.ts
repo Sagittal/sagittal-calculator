@@ -1,4 +1,4 @@
-import { Cents, computePitchFromCents, Decimal, Id, NEWLINE } from "../../../../../../../src/general"
+import { Cents, computePitchFromCents, Id, NEWLINE } from "../../../../../../../src/general"
 import { BoundType, JiNotationBound } from "../../../../../../../src/sagittal/notations/ji"
 import { JiNotationBoundAnalysis } from "../../../../../../../src/scripts/jiNotationBound/bound"
 import { formatJiNotationBound } from "../../../../../../../src/scripts/jiNotationBound/io"

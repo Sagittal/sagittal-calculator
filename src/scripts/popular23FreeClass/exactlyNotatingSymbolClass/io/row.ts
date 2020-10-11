@@ -1,14 +1,4 @@
-import {
-    format23FreeClass,
-    formatDecimal,
-    Formatted,
-    Id,
-    ioSettings,
-    isUndefined,
-    Ranked,
-    Row,
-    SPACE,
-} from "../../../../general"
+import { format23FreeClass, formatDecimal, Formatted, Id, isUndefined, Ranked, Row, SPACE } from "../../../../general"
 import { formatSymbolClass, SymbolClass, SymbolGlyph } from "../../../../sagittal"
 import { Popular23FreeClass } from "../../types"
 import { ExactlyNotatingSymbolClassProperties } from "../types"
@@ -27,10 +17,10 @@ const computePopular23FreeClassWithExactlyNotatingSymbolClassRow = (
     } = popular23FreeClassWithExactlyNotatingSymbolClass
 
     return [
-        format23FreeClass(two3FreeClass, ioSettings),
+        format23FreeClass(two3FreeClass),
         formatDecimal(n2d3p9, { align: true }),
         exactlyNotatingSymbolClassIds.map((exactlyNotatingSymbolClassId: Id<SymbolClass>): Formatted<SymbolGlyph> => {
-            return formatSymbolClass(exactlyNotatingSymbolClassId, ioSettings)
+            return formatSymbolClass(exactlyNotatingSymbolClassId)
         }).join(SPACE).replace(/\[pre] \[\/pre]/g, " "),
         exactlyNotatingSymbolClassSmallestSymbolSubsetIndices.join(", "),
         estimatedRank.toString(),

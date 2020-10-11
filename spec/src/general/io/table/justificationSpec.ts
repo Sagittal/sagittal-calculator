@@ -57,7 +57,7 @@ describe("computeColumnWidths", (): void => {
     it("does not count cells which are for the forum and which have turned off monospacing in its computation              ", (): void => {
         const table = [
             ["a", "", "lorde"],
-            ["dddd", "bb", "[/pre][latex]\\frac{1}{1}[/latex][pre]"]
+            ["dddd", "bb", "[/pre][latex]\\frac{1}{1}[/latex][pre]"],
         ] as Table
 
         const actual = computeColumnWidths(table, [0, 1, 2] as Range)
