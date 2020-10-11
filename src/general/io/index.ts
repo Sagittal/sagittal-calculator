@@ -18,7 +18,16 @@ export { clearLogFiles, LogTarget, saveLog, setLogTargets } from "./log"
 export { parse23FreeClass, parseMonzo, parseQuotient, parseCents, parseInteger, parseDecimal } from "./parse"
 export { removeColor } from "./removeColor"
 export { stringify } from "./stringify"
-export { Column, formatTable, Row, Table, splitColumnTitlesIntoRowsBySpaces, TableFormat } from "./table"
+export {
+    Column,
+    formatTable,
+    Row,
+    Table,
+    splitColumnTitlesIntoRowsBySpaces,
+    TableFormat,
+    Justification,
+    JustificationOption,
+} from "./table"
 export { sumTexts, join, split } from "./typedOperations"
 export { ColorMethod, Filename, HexColor, Io } from "./types"
 export { Basis, computePx, Px, Scale } from "./image"

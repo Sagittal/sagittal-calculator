@@ -1,41 +1,48 @@
 import {
+    Count,
+    Exponent,
     formatCents,
     formatDecimal,
     formatIntegerDecimal,
-    formatMonzo,
-    formatQuotient,
-    Formatted, ioSettings,
+    Formatted,
+    ioSettings,
+    Max,
+    Prime,
     Row,
 } from "../../../../general"
 import { JiPitchAnalysis } from "../../../../sagittal"
 import { jiPitchScriptGroupSettings } from "../../globals"
 import { JiPitchField } from "../../types"
+import { formatSplitMonzo, formatSplitQuotient } from "../splitMonzoAndQuotient"
 
-const computeJiPitchRow = (jiPitchAnalysis: JiPitchAnalysis): Row<{ of: JiPitchAnalysis }> => {
+const computeJiPitchRow = (
+    jiPitchAnalysis: JiPitchAnalysis,
+    maxMonzoLength: Max<Count<Exponent<Prime>>>,
+): Row<{ of: JiPitchAnalysis }> => {
     const { cents, monzo, quotient, apotomeSlope, aas, ate } = jiPitchAnalysis
 
-    const rows = [] as unknown[] as Row<{ of: JiPitchAnalysis }>
+    const row = [] as unknown[] as Row<{ of: JiPitchAnalysis }>
 
     if (!jiPitchScriptGroupSettings.excludedFields.includes(JiPitchField.QUOTIENT)) {
-        rows.push(formatQuotient(quotient, ioSettings) as Formatted as Formatted<JiPitchAnalysis>)
+        row.push(...formatSplitQuotient(quotient))
     }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(JiPitchField.MONZO)) {
-        rows.push(formatMonzo(monzo) as Formatted as Formatted<JiPitchAnalysis>)
+        row.push(...formatSplitMonzo(monzo, maxMonzoLength))
     }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(JiPitchField.CENTS)) {
-        rows.push(formatCents(cents, { align: true }) as Formatted as Formatted<JiPitchAnalysis>)
+        row.push(formatCents(cents, { ...ioSettings, align: true }) as Formatted as Formatted<JiPitchAnalysis>)
     }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(JiPitchField.APOTOME_SLOPE)) {
-        rows.push(formatDecimal(apotomeSlope, { align: true }) as Formatted as Formatted<JiPitchAnalysis>)
+        row.push(formatDecimal(apotomeSlope, { ...ioSettings, align: true }) as Formatted as Formatted<JiPitchAnalysis>)
     }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(JiPitchField.AAS)) {
-        rows.push(formatDecimal(aas, { align: true }) as Formatted as Formatted<JiPitchAnalysis>)
+        row.push(formatDecimal(aas, { ...ioSettings, align: true }) as Formatted as Formatted<JiPitchAnalysis>)
     }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(JiPitchField.ATE)) {
-        rows.push(formatIntegerDecimal(ate, { align: true }) as Formatted as Formatted<JiPitchAnalysis>)
+        row.push(formatIntegerDecimal(ate, { ...ioSettings, align: true }) as Formatted as Formatted<JiPitchAnalysis>)
     }
 
-    return rows
+    return row
 }
 
 export {

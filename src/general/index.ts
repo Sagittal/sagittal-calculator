@@ -98,6 +98,8 @@ export {
     formatCents,
     parseInteger,
     parseDecimal,
+    Justification,
+    JustificationOption,
 } from "./io"
 export {
     abs,

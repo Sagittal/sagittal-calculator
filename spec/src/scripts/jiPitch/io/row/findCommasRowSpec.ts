@@ -3,6 +3,7 @@ import {
     Cents,
     Comma,
     Copfr,
+    Count,
     Decimal,
     Direction,
     Exponent,
@@ -47,15 +48,24 @@ describe("computeFindCommasRow", (): void => {
         },
     }
     const symbolClassId = 44 as Id<SymbolClass>
+    const maxMonzoLength = 5 as Max<Count<Exponent<Prime>>>
 
     it("takes the properties of the comma and puts them in order in a row", (): void => {
-        const actual = computeFindCommasRow(commaAnalysis, symbolClassId)
+        const actual = computeFindCommasRow(commaAnalysis, symbolClassId, maxMonzoLength)
 
         const expected = [
             "    /|  ",         // Symbol class
             "1/5C",             // Comma name
-            "5/4",              // Quotient
-            "[   0  -1   1 ⟩",  // Monzo
+            "5",                // Quotient numerator
+            "/",                // Quotient vinculum
+            "4",                // Quotient denominator
+            "[",                // Monzo [
+            "  0    ",          // Monzo 2
+            " -1    ",          // Monzo 3
+            "  1    ",          // Monzo 5
+            "",                 // Monzo 7
+            "",                 // Monzo 11
+            "⟩",                // Monzo ⟩
             "        11.200¢",  // Cents
             "  8.200",          // Apotome slope
             "  8.200",          // AAS
@@ -71,13 +81,21 @@ describe("computeFindCommasRow", (): void => {
 
     it("can filter excluded fields", (): void => {
         jiPitchScriptGroupSettings.excludedFields = [FindCommasField.AAS, FindCommasField.ATE]
-        const actual = computeFindCommasRow(commaAnalysis, symbolClassId)
+        const actual = computeFindCommasRow(commaAnalysis, symbolClassId, maxMonzoLength)
 
         const expected = [
             "    /|  ",         // Symbol class
             "1/5C",             // Comma name
-            "5/4",              // Quotient
-            "[   0  -1   1 ⟩",  // Monzo
+            "5",                // Quotient numerator
+            "/",                // Quotient vinculum
+            "4",                // Quotient denominator
+            "[",                // Monzo [
+            "  0    ",          // Monzo 2
+            " -1    ",          // Monzo 3
+            "  1    ",          // Monzo 5
+            "",                 // Monzo 7
+            "",                 // Monzo 11
+            "⟩",                // Monzo ⟩
             "        11.200¢",  // Cents
             "  8.200",          // Apotome slope
             " 14    ",          // Prime limit

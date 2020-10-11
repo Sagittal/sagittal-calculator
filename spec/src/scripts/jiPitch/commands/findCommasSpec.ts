@@ -165,4 +165,36 @@ describe("find-commas", (): void => {
         ] as Io[]
         expect(actual).toEqual(expected)
     })
+
+    it("can format for a spreadsheet", (): void => {
+        onlyRunInCi()
+
+        const command = `           \
+        npm run find-commas -- --lower-bound 50c --upper-bound 50.31c --sort-by apotomeSlope --table-format spreadsheet \
+        ` as Io
+
+        const actual = runCommandAndGetConsoleOutput(command)
+
+        const expected = [
+            "",
+            "lower bound:       \t        50.000¢",
+            "upper bound:       \t        50.310¢",
+            "max ATE:           \t 15    ",
+            "max AAS:           \t 14.000",
+            "max N2D3P9:        \t307.000",
+            "max 2,3-free sopfr:\t 61    ",
+            "max 2,3-free copfr:\t555    ",
+            "max prime limit:   \t 47    ",
+            "",
+            "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t2,3-free\t2,3-free\t2,3-free\t2,3-free\t2,3-free",
+            "symbol\t\tquotient\tmonzo\t\t\t\t\t\t\t\t\t\t\t\t\tapotome\t\t\tprime\tclass\tclass\tclass\tclass",
+            "class\tname\tn\t/\td\t[\t2\t3\t5\t7\t11\t13\t17\t19\t⟩\tcents\tslope\tAAS\tATE\tlimit\tname\tCoPFR\tSoPFR\tN2D3P9",
+            "\t19/175M\t4864\t/\t4725\t[\t8\t-3\t-2\t-1\t0\t0\t0\t1\t⟩\t50.195¢\t-6.091\t6.091\t3\t19\t175/19₍₂,₃₎\t4\t36\t292.477",
+            "\t35/17M\t35\t/\t34\t[\t-1\t0\t1\t1\t0\t0\t-1\t\t⟩\t50.184¢\t-3.090\t3.090\t0\t17\t35/17₍₂,₃₎\t3\t29\t93.657",
+            "\t65M\t34543665\t/\t33554432\t[\t-25\t12\t1\t0\t0\t1\t\t\t⟩\t50.301¢\t8.903\t8.903\t12\t13\t65/1₍₂,₃₎\t2\t18\t23.472",
+            "\t1/3025M\t1594323\t/\t1548800\t[\t-9\t13\t-2\t0\t-2\t\t\t\t⟩\t50.152¢\t9.912\t9.912\t13\t11\t3025/1₍₂,₃₎\t4\t32\t231.076",
+            "",
+        ] as Io[]
+        expect(actual).toEqual(expected)
+    })
 })

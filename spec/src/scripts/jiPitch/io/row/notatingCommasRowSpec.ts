@@ -3,10 +3,12 @@ import {
     Cents,
     Comma,
     Copfr,
+    Count,
     Decimal,
     Direction,
     Exponent,
-    Id, Max,
+    Id,
+    Max,
     Monzo,
     Name,
     Prime,
@@ -15,7 +17,7 @@ import {
     Sopfr,
     Two3FreeClass,
 } from "../../../../../../src/general"
-import { ApotomeSlope, CommaAnalysis, SymbolClass, Two3FreeClassAnalysis } from "../../../../../../src/sagittal"
+import { ApotomeSlope, CommaAnalysis, SymbolClass } from "../../../../../../src/sagittal"
 import { N2D3P9 } from "../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
 import { jiPitchScriptGroupSettings } from "../../../../../../src/scripts/jiPitch/globals"
 import { computeNotatingCommasRow } from "../../../../../../src/scripts/jiPitch/io/row"
@@ -46,15 +48,24 @@ describe("computeNotatingCommasRow", (): void => {
         },
     }
     const symbolClassId = 44 as Id<SymbolClass>
+    const maxMonzoLength = 5 as Max<Count<Exponent<Prime>>>
 
     it("takes the properties of the comma and puts them in order in a row", (): void => {
-        const actual = computeNotatingCommasRow(commaAnalysis, symbolClassId)
+        const actual = computeNotatingCommasRow(commaAnalysis, symbolClassId, maxMonzoLength)
 
         const expected = [
             "    /|  ",         // Symbol class
             "1/5C",             // Comma name
-            "5/4",              // Quotient
-            "[   0  -1   1 ⟩",  // Monzo
+            "5",                // Quotient numerator
+            "/",                // Quotient vinculum
+            "4",                // Quotient denominator
+            "[",                // Monzo [
+            "  0    ",          // Monzo 2
+            " -1    ",          // Monzo 3
+            "  1    ",          // Monzo 5
+            "",                 // Monzo 7
+            "",                 // Monzo 11
+            "⟩",                // Monzo ⟩
             "        11.200¢",  // Cents
             "  8.200",          // Apotome slope
             "  8.200",          // AAS
@@ -66,12 +77,38 @@ describe("computeNotatingCommasRow", (): void => {
     it("can filter the excluded fields", (): void => {
         jiPitchScriptGroupSettings.excludedFields = [NotatingCommasField.CENTS, NotatingCommasField.MONZO]
 
-        const actual = computeNotatingCommasRow(commaAnalysis, symbolClassId)
+        const actual = computeNotatingCommasRow(commaAnalysis, symbolClassId, maxMonzoLength)
 
         const expected = [
             "    /|  ",         // Symbol class
             "1/5C",             // Comma name
-            "5/4",              // Quotient
+            "5",                // Quotient numerator
+            "/",                // Quotient vinculum
+            "4",                // Quotient denominator
+            "  8.200",          // Apotome slope
+            "  8.200",          // AAS
+            "  1    ",          // ATE
+        ] as Row<{ of: CommaAnalysis }>
+        expect(actual).toEqual(expected)
+    })
+
+    it("can handle the situation where the row's monzo is shorter than the longest monzo", (): void => {
+        const actual = computeNotatingCommasRow(commaAnalysis, symbolClassId, maxMonzoLength)
+
+        const expected = [
+            "    /|  ",         // Symbol class
+            "1/5C",             // Comma name
+            "5",                // Quotient denominator
+            "/",                // Quotient vinculum
+            "4",                // Quotient numerator
+            "[",                // Monzo [
+            "  0    ",          // Monzo 2
+            " -1    ",          // Monzo 3
+            "  1    ",          // Monzo 5
+            "",                 // Monzo 7
+            "",                 // Monzo 11
+            "⟩",                // Monzo ⟩
+            "        11.200¢",  // Cents
             "  8.200",          // Apotome slope
             "  8.200",          // AAS
             "  1    ",          // ATE

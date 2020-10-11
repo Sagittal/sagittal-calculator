@@ -75,4 +75,10 @@ describe("parseMonzo", (): void => {
 
         expect(actual).toEqual([-9.5, 6] as Monzo)
     })
+
+    // TODO: it would be cool if this was smart enough to parse monzos given in George's punctuated format
+    //  Though that would involve it being able to distinguish between those just copied and pasted from JS w/ commas
+    //  And those with the distinctive 2, 3, 3, 3 ... spacing of the commas
+    //  - Also, wait, does the punctuated monzo format supposed to collapse stretches of 3 zeroes to just a comma?
+    //  - And regardless, should we default to punctuated style if the monzo exceeds a certain length?
 })

@@ -1,3 +1,4 @@
+import { Count, Max } from "../../../../../../src/general"
 import { Row } from "../../../../../../src/general/io/table"
 import { Abs, Decimal, Exponent, Monzo, Prime, Quotient } from "../../../../../../src/general/math"
 import { Cents } from "../../../../../../src/general/music"
@@ -21,13 +22,21 @@ describe("computeJiPitchRow", (): void => {
         ate: 1 as Abs<Decimal<{ integer: true }> & Exponent<3 & Prime>>,
         two3FreeClassAnalysis: two3FreeClassAnalysisFixture,
     }
+    const maxMonzoLength = 5 as Max<Count<Exponent<Prime>>>
 
     it("returns a row of information about the JI pitch", (): void => {
-        const actual = computeJiPitchRow(jiPitchAnalysis)
-
+        const actual = computeJiPitchRow(jiPitchAnalysis, maxMonzoLength)
         const expected = [
-            "5/4",              // Quotient
-            "[   0  -1   1 ⟩",  // Monzo
+            "5",                // Quotient numerator
+            "/",                // Quotient vinculum
+            "4",                // Quotient denominator
+            "[",                // Monzo [
+            "  0    ",          // Monzo 2
+            " -1    ",          // Monzo 3
+            "  1    ",          // Monzo 5
+            "",                 // Monzo 7
+            "",                 // Monzo 11
+            "⟩",                // Monzo ⟩
             "        11.200¢",  // Cents
             "  8.200",          // Apotome slope
             "  8.200",          // AAS
@@ -38,10 +47,16 @@ describe("computeJiPitchRow", (): void => {
 
     it("can filter the excluded fields", (): void => {
         jiPitchScriptGroupSettings.excludedFields = [JiPitchField.APOTOME_SLOPE, JiPitchField.QUOTIENT]
-        const actual = computeJiPitchRow(jiPitchAnalysis)
+        const actual = computeJiPitchRow(jiPitchAnalysis, maxMonzoLength)
 
         const expected = [
-            "[   0  -1   1 ⟩",  // Monzo
+            "[",                // Monzo [
+            "  0    ",          // Monzo 2
+            " -1    ",          // Monzo 3
+            "  1    ",          // Monzo 5
+            "",                 // Monzo 7
+            "",                 // Monzo 11
+            "⟩",                // Monzo ⟩
             "        11.200¢",  // Cents
             "  8.200",          // AAS
             "  1    ",          // ATE

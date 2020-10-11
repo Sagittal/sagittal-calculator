@@ -15,43 +15,43 @@ const compute23FreeClassRow = (
 ): Row<{ of: Two3FreeClassAnalysis }> => {
     const { two3FreeClass, two3FreePrimeLimit, two3FreeCopfr, two3FreeSopfr, n2d3p9 } = two3FreeClassAnalysis
 
-    const rows = [] as unknown[] as Row<{ of: Two3FreeClassAnalysis }>
+    const row = [] as unknown[] as Row<{ of: Two3FreeClassAnalysis }>
     if (!jiPitchScriptGroupSettings.excludedFields.includes(Two3FreeClassField.TWO_3_FREE_PRIME_LIMIT)) {
-        rows.push(
+        row.push(
             formatIntegerDecimal(
                 two3FreePrimeLimit,
-                { align: true },
+                { ...ioSettings, align: true },
             ) as Formatted as Formatted<Two3FreeClassAnalysis>,
         )
     }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(Two3FreeClassField.TWO_3_FREE_CLASS_NAME)) {
-        rows.push(
+        row.push(
             format23FreeClass(two3FreeClass, ioSettings) as Formatted as Formatted<Two3FreeClassAnalysis>,
         )
     }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(Two3FreeClassField.TWO_3_FREE_COPFR)) {
-        rows.push(
+        row.push(
             formatIntegerDecimal(
                 two3FreeCopfr,
-                { align: true },
+                { ...ioSettings, align: true },
             ) as Formatted as Formatted<Two3FreeClassAnalysis>,
         )
     }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(Two3FreeClassField.TWO_3_FREE_SOPFR)) {
-        rows.push(
+        row.push(
             formatIntegerDecimal(
                 two3FreeSopfr,
-                { align: true },
+                { ...ioSettings, align: true },
             ) as Formatted as Formatted<Two3FreeClassAnalysis>,
         )
     }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(Two3FreeClassField.N2D3P9)) {
-        rows.push(
-            formatDecimal(n2d3p9, { align: true }) as Formatted as Formatted<Two3FreeClassAnalysis>,
+        row.push(
+            formatDecimal(n2d3p9, { ...ioSettings, align: true }) as Formatted as Formatted<Two3FreeClassAnalysis>,
         )
     }
 
-    return rows
+    return row
 }
 
 export {

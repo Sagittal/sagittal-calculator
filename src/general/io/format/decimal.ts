@@ -1,5 +1,6 @@
 import { Decimal, round } from "../../math"
 import { IO_PRECISION } from "../constants"
+import { TableFormat } from "../table"
 import { Formatted } from "./types"
 
 const alignFormattedDecimal = (formattedDecimal: Formatted<Decimal>): Formatted<Decimal> => {
@@ -10,23 +11,26 @@ const alignFormattedDecimal = (formattedDecimal: Formatted<Decimal>): Formatted<
     return formattedDecimal
 }
 
-const formatDecimal = (decimal: Decimal, { align }: { align?: boolean } = {}): Formatted<Decimal> => {
+const formatDecimal = (
+    decimal: Decimal,
+    { tableFormat, align }: { tableFormat?: TableFormat, align?: boolean } = {},
+): Formatted<Decimal> => {
     const roundedDecimal = round(decimal, IO_PRECISION)
         .toFixed(3)
         .replace(/\.(\d\d\d)0*$/, ".$1") as Formatted<Decimal>
 
-    return align ?
+    return align && tableFormat !== TableFormat.SPREADSHEET ?
         alignFormattedDecimal(roundedDecimal) :
         roundedDecimal
 }
 
 const formatIntegerDecimal = (
     integerDecimal: Decimal<{ integer: true }>,
-    { align }: { align?: boolean } = {},
+    { tableFormat, align }: { tableFormat?: TableFormat, align?: boolean } = {},
 ): Formatted<Decimal> => {
     const stringifiedIntegerDecimal = integerDecimal.toString()
 
-    return align ?
+    return align && tableFormat !== TableFormat.SPREADSHEET ?
         alignFormattedDecimal(
             stringifiedIntegerDecimal + "    " as Formatted<Decimal<{ integer: true }>>,
         ) :

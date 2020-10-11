@@ -1,23 +1,26 @@
 import { count, formatTable, Io, sumTexts, Table } from "../../../../general"
 import { JiPitchAnalysis } from "../../../../sagittal"
 import { computeJiPitchHeaderRows } from "../headerRows"
+import { computeMaxMonzoLength, computeMonzoAndQuotientJustification } from "../splitMonzoAndQuotient"
 import { computeJiPitchRow } from "../row"
 import { JI_PITCH_TITLE } from "../titles"
 
 const computeJiPitchOutput = (
     jiPitchAnalysis: JiPitchAnalysis,
 ): Io => {
-    const jiPitchHeaderRows = computeJiPitchHeaderRows()
+    const maxMonzoLength = computeMaxMonzoLength([jiPitchAnalysis])
+    const jiPitchHeaderRows = computeJiPitchHeaderRows(maxMonzoLength)
     const headerRowCount = count(jiPitchHeaderRows)
+    const justification = computeMonzoAndQuotientJustification(jiPitchHeaderRows)
 
     const jiPitchTable: Table<JiPitchAnalysis> = [
         ...jiPitchHeaderRows,
-        computeJiPitchRow(jiPitchAnalysis),
+        computeJiPitchRow(jiPitchAnalysis, maxMonzoLength),
     ]
 
     return sumTexts(
         JI_PITCH_TITLE,
-        formatTable(jiPitchTable, { headerRowCount }),
+        formatTable(jiPitchTable, { headerRowCount, justification }),
     )
 }
 

@@ -1,7 +1,8 @@
-import { Io, Row, splitColumnTitlesIntoRowsBySpaces } from "../../../general"
+import { Count, Exponent, Io, Max, Prime, Row, splitColumnTitlesIntoRowsBySpaces } from "../../../general"
 import { CommaAnalysis, JiPitchAnalysis, Two3FreeClassAnalysis } from "../../../sagittal"
 import { FindCommasField, JiPitchField, NotatingCommasField, Two3FreeClassField } from "../types"
 import { excludeFields } from "./excludeFields"
+import { formatPrimeHeaders, splitMonzoAndQuotientColumnTitles } from "./splitMonzoAndQuotient"
 
 const JI_PITCH_COLUMN_TITLES: Record<JiPitchField, Io> = {
     [ JiPitchField.QUOTIENT ]: "quotient" as Io,
@@ -37,9 +38,16 @@ const FIND_COMMAS_COLUMN_TITLES: Record<FindCommasField, Io> = {
     [ FindCommasField.N2D3P9 ]: "2,3-free class N2D3P9" as Io,
 }
 
-const computeJiPitchHeaderRows = (): Array<Row<{ of: JiPitchAnalysis, header: true }>> =>
-    splitColumnTitlesIntoRowsBySpaces(
-        excludeFields(JI_PITCH_COLUMN_TITLES),
+const computeJiPitchHeaderRows = (
+    maxMonzoLength: Max<Count<Exponent<Prime>>>,
+): Array<Row<{ of: JiPitchAnalysis, header: true }>> =>
+    formatPrimeHeaders(
+        splitColumnTitlesIntoRowsBySpaces(
+            splitMonzoAndQuotientColumnTitles(
+                excludeFields(JI_PITCH_COLUMN_TITLES),
+                maxMonzoLength,
+            ),
+        ),
     )
 
 const compute23FreeClassHeaderRows = (): Array<Row<{ of: Two3FreeClassAnalysis, header: true }>> =>
@@ -48,15 +56,25 @@ const compute23FreeClassHeaderRows = (): Array<Row<{ of: Two3FreeClassAnalysis, 
     )
 
 const computeNotatingCommasHeaderRows =
-    (): Array<Row<{ of: CommaAnalysis, header: true }>> =>
-        splitColumnTitlesIntoRowsBySpaces(
-            excludeFields(NOTATING_COMMAS_WITH_MAYBE_SAGITTAL_SYMBOL_CLASSES_COLUMN_TITLES),
+    (maxMonzoLength: Max<Count<Exponent<Prime>>>): Array<Row<{ of: CommaAnalysis, header: true }>> =>
+        formatPrimeHeaders(
+            splitColumnTitlesIntoRowsBySpaces(
+                splitMonzoAndQuotientColumnTitles(
+                    excludeFields(NOTATING_COMMAS_WITH_MAYBE_SAGITTAL_SYMBOL_CLASSES_COLUMN_TITLES),
+                    maxMonzoLength,
+                ),
+            ),
         )
 
 const computeFindCommasHeaderRows =
-    (): Array<Row<{ of: CommaAnalysis, header: true }>> =>
-        splitColumnTitlesIntoRowsBySpaces(
-            excludeFields(FIND_COMMAS_COLUMN_TITLES),
+    (maxMonzoLength: Max<Count<Exponent<Prime>>>): Array<Row<{ of: CommaAnalysis, header: true }>> =>
+        formatPrimeHeaders(
+            splitColumnTitlesIntoRowsBySpaces(
+                splitMonzoAndQuotientColumnTitles(
+                    excludeFields(FIND_COMMAS_COLUMN_TITLES),
+                    maxMonzoLength,
+                ),
+            ),
         )
 
 export {
