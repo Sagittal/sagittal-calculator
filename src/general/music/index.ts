@@ -14,4 +14,5 @@ export {
     format23FreeClass,
     UNISON,
     TWO_3_FREE,
+    TWO_3_FREE_CLASS_SIGN,
 } from "./ji"

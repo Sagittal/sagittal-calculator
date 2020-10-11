@@ -237,5 +237,6 @@ export {
     compute23FreeClassName,
     format23FreeClass,
     TWO_3_FREE,
+    TWO_3_FREE_CLASS_SIGN,
 } from "./music"
 export { Count, Ed, Extrema, Id, Index, Ms, Multiplier, Name, Step, Sum, Window, Of } from "./types"

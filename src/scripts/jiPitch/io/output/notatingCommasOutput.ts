@@ -10,12 +10,12 @@ const computeNotatingCommasOutput = (
     maybeSymbolClassIds: Array<Maybe<Id<SymbolClass>>>,
 ): Io => {
     const maxMonzoLength = computeMaxMonzoLength(notatingCommaAnalyses)
-    const headerRows = computeNotatingCommasHeaderRows(maxMonzoLength)
-    const headerRowCount = count(headerRows)
-    const justification = computeMonzoAndQuotientJustification(headerRows)
+    const notatingCommasHeaderRows = computeNotatingCommasHeaderRows(maxMonzoLength)
+    const headerRowCount = count(notatingCommasHeaderRows)
+    const justification = computeMonzoAndQuotientJustification(notatingCommasHeaderRows)
 
     const maybeNotatingCommasTable = [
-        ...headerRows,
+        ...notatingCommasHeaderRows,
         ...notatingCommaAnalyses
             .map((notatingCommaAnalysis: CommaAnalysis, index: number): Row<{ of: CommaAnalysis }> => {
                 return computeNotatingCommasRow(notatingCommaAnalysis, maybeSymbolClassIds[ index ], maxMonzoLength)

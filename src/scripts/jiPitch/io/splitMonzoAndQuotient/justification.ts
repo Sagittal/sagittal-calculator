@@ -1,8 +1,7 @@
 import { finalElement, Formatted, Justification, JustificationOption, Maybe, Row } from "../../../../general"
-import { JiPitchAnalysis } from "../../../../sagittal"
 
-const computeMonzoAndQuotientJustification = (
-    headerRows: Array<Row<{ of: JiPitchAnalysis, header: true }>>,
+const computeMonzoAndQuotientJustification = <T>(
+    headerRows: Array<Row<{ of: T, header: true }>>,
 ): JustificationOption => {
     const finalHeaderRow = finalElement(headerRows)
 

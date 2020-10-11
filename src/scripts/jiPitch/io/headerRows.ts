@@ -45,14 +45,17 @@ const computeJiPitchHeaderRows = (
         splitColumnTitlesIntoRowsBySpaces(
             splitMonzoAndQuotientColumnTitles(
                 excludeFields(JI_PITCH_COLUMN_TITLES),
-                maxMonzoLength,
+                { maxMonzoLength },
             ),
         ),
     )
 
 const compute23FreeClassHeaderRows = (): Array<Row<{ of: Two3FreeClassAnalysis, header: true }>> =>
     splitColumnTitlesIntoRowsBySpaces(
-        excludeFields(TWO_3_FREE_CLASS_COLUMN_TITLES),
+        splitMonzoAndQuotientColumnTitles(
+            excludeFields(TWO_3_FREE_CLASS_COLUMN_TITLES),
+            { recognizeNameTitleAsBeingFor23FreeClass: true }
+        )
     )
 
 const computeNotatingCommasHeaderRows =
@@ -61,7 +64,7 @@ const computeNotatingCommasHeaderRows =
             splitColumnTitlesIntoRowsBySpaces(
                 splitMonzoAndQuotientColumnTitles(
                     excludeFields(NOTATING_COMMAS_WITH_MAYBE_SAGITTAL_SYMBOL_CLASSES_COLUMN_TITLES),
-                    maxMonzoLength,
+                    { maxMonzoLength },
                 ),
             ),
         )
@@ -72,7 +75,7 @@ const computeFindCommasHeaderRows =
             splitColumnTitlesIntoRowsBySpaces(
                 splitMonzoAndQuotientColumnTitles(
                     excludeFields(FIND_COMMAS_COLUMN_TITLES),
-                    maxMonzoLength,
+                    { maxMonzoLength },
                 ),
             ),
         )

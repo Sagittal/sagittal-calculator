@@ -21,6 +21,7 @@ const formatTable = <T = unknown>(table: Table<T>, options?: Partial<FormatTable
 
     switch (ioSettings.tableFormat) {
         case TableFormat.FORUM:
+        case TableFormat.FORUM_WITH_SPLIT_QUOTIENTS:
             return formatTableForForum(table, options)
         case TableFormat.TERMINAL:
             return formatTableForTerminal(table, options)

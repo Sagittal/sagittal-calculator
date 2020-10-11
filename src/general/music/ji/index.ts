@@ -9,4 +9,5 @@ export {
     Two3FreeClass,
     COMMA_POPULARITIES,
     TWO_3_FREE,
+    TWO_3_FREE_CLASS_SIGN,
 } from "./two3FreeClass"

@@ -24,4 +24,24 @@ describe("computeMonzoAndQuotientJustification", (): void => {
         ]
         expect(actual).toEqual(expected)
     })
+
+    it("also works for 2,3-free class tables", (): void => {
+        const headerRows = [
+            ["2,3-free", "2,3-free", "", "", "", "2,3-free"],
+            ["prime", "class", "", "", "", "class"],
+            ["limit", "n", "/", "d", "₍₂,₃₎", "CoPFR"],
+        ] as Array<Row<{ of: JiPitchAnalysis, header: true }>>
+
+        const actual = computeMonzoAndQuotientJustification(headerRows)
+
+        const expected = [
+            Justification.LEFT,     // 2,3-free prime limit
+            Justification.RIGHT,    // 2,3-free class numinator
+            Justification.CENTER,   // 2,3-free class vinculum
+            Justification.LEFT,     // 2,3-free class diminuator
+            Justification.LEFT,     // 2,3-free class sign
+            Justification.LEFT,     // 2,3-free class CoPFR
+        ]
+        expect(actual).toEqual(expected)
+    })
 })

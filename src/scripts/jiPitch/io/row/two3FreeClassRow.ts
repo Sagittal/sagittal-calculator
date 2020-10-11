@@ -1,7 +1,8 @@
-import { format23FreeClass, formatDecimal, formatIntegerDecimal, Formatted, Row } from "../../../../general"
+import { formatDecimal, formatIntegerDecimal, Formatted, Row } from "../../../../general"
 import { Two3FreeClassAnalysis } from "../../../../sagittal"
 import { jiPitchScriptGroupSettings } from "../../globals"
 import { Two3FreeClassField } from "../../types"
+import { formatSplit23FreeClass } from "../splitMonzoAndQuotient"
 
 const compute23FreeClassRow = (
     two3FreeClassAnalysis: Two3FreeClassAnalysis,
@@ -15,7 +16,7 @@ const compute23FreeClassRow = (
         )
     }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(Two3FreeClassField.TWO_3_FREE_CLASS_NAME)) {
-        row.push(format23FreeClass(two3FreeClass) as Formatted as Formatted<Two3FreeClassAnalysis>)
+        row.push(...formatSplit23FreeClass(two3FreeClass))
     }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(Two3FreeClassField.TWO_3_FREE_COPFR)) {
         row.push(formatIntegerDecimal(two3FreeCopfr, { align: true }) as Formatted as Formatted<Two3FreeClassAnalysis>)

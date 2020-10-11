@@ -48,6 +48,7 @@ interface TableForForumRowPartsOptions<T> {
 
 enum TableFormat {
     FORUM = "forum",
+    FORUM_WITH_SPLIT_QUOTIENTS = "forumWithSplitQuotients",
     TERMINAL = "terminal",
     SPREADSHEET = "spreadsheet",
 }
