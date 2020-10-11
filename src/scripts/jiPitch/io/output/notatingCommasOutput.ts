@@ -1,8 +1,8 @@
 import { count, formatTable, Id, Io, Maybe, Row, sumTexts } from "../../../../general"
 import { CommaAnalysis, SymbolClass } from "../../../../sagittal"
 import { computeNotatingCommasHeaderRows } from "../headerRows"
-import { computeMaxMonzoLength, computeMonzoAndQuotientJustification } from "../splitMonzoAndQuotient"
 import { computeNotatingCommasRow } from "../row"
+import { computeMaxMonzoLength, computeMonzoAndQuotientJustification } from "../splitMonzoAndQuotient"
 import { NOTATING_COMMAS_TITLE } from "../titles"
 
 const computeNotatingCommasOutput = (

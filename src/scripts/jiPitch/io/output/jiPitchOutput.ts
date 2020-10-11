@@ -1,8 +1,8 @@
 import { count, formatTable, Io, sumTexts, Table } from "../../../../general"
 import { JiPitchAnalysis } from "../../../../sagittal"
 import { computeJiPitchHeaderRows } from "../headerRows"
-import { computeMaxMonzoLength, computeMonzoAndQuotientJustification } from "../splitMonzoAndQuotient"
 import { computeJiPitchRow } from "../row"
+import { computeMaxMonzoLength, computeMonzoAndQuotientJustification } from "../splitMonzoAndQuotient"
 import { JI_PITCH_TITLE } from "../titles"
 
 const computeJiPitchOutput = (

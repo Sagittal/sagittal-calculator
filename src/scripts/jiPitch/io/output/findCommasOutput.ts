@@ -2,8 +2,8 @@ import { count, formatTable, Id, Io, Maybe, Row, sumTexts, Table } from "../../.
 import { CommaAnalysis, SymbolClass } from "../../../../sagittal"
 import { DEFAULT_FIND_COMMAS_SETTINGS, FindCommasSettings } from "../../findCommas"
 import { computeFindCommasHeaderRows } from "../headerRows"
-import { computeMaxMonzoLength, computeMonzoAndQuotientJustification } from "../splitMonzoAndQuotient"
 import { computeFindCommasRow } from "../row"
+import { computeMaxMonzoLength, computeMonzoAndQuotientJustification } from "../splitMonzoAndQuotient"
 import { computeFindCommasTitle } from "../titles"
 
 const computeFindCommasOutput = (
