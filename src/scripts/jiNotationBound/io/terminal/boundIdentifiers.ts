@@ -46,7 +46,7 @@ const extractJiNotationBoundIdentifiers = ({ pitch, id }: JiNotationBound): JiNo
             ...getCommaClass(extremeLevelLesserBoundedCommaClassIdWithDistance.id),
         } as BoundedCommaClass
     const formattedExtremeLevelLesserBoundedCommaClass = extremeLevelLesserBoundedCommaClass ?
-        getRepresentativeSymbol(extremeLevelLesserBoundedCommaClass.id).revoAscii :
+        getRepresentativeSymbol(extremeLevelLesserBoundedCommaClass.id) as string as Ascii :
         "" as Ascii
     const lesserBoundedMinaName = extremeLevelLesserBoundedCommaClass &&
         getMinaName(extremeLevelLesserBoundedCommaClass.id)
@@ -57,7 +57,7 @@ const extractJiNotationBoundIdentifiers = ({ pitch, id }: JiNotationBound): JiNo
             ...getCommaClass(extremeLevelGreaterBoundedCommaClassIdWithDistance.id),
         } as BoundedCommaClass
     const formattedExtremeLevelGreaterBoundedCommaClass = extremeLevelGreaterBoundedCommaClass ?
-        getRepresentativeSymbol(extremeLevelGreaterBoundedCommaClass.id).revoAscii :
+        getRepresentativeSymbol(extremeLevelGreaterBoundedCommaClass.id) as string as Ascii :
         "" as Ascii
     const greaterBoundedMinaName = extremeLevelGreaterBoundedCommaClass &&
         getMinaName(extremeLevelGreaterBoundedCommaClass.id)

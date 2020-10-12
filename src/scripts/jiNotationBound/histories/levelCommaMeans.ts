@@ -22,8 +22,8 @@ const computeJiNotationLevelCommaMeans = (jiNotationLevel: JiNotationLevel): Com
             const nextPrimaryComma = getPrimaryComma(nextCommaClassId)
 
             const name = [
-                getRepresentativeSymbol(commaClassId).revoAscii,
-                getRepresentativeSymbol(nextCommaClassId).revoAscii,
+                getRepresentativeSymbol(commaClassId),
+                getRepresentativeSymbol(nextCommaClassId),
             ].join(" ") as Name<CommaMean>
 
             return {

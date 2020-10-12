@@ -1,9 +1,10 @@
-import { Ascii, Smiley } from "./types"
+import { SagittalSymbol } from "../notations"
+import { Smiley } from "./types"
 
-const computeSmileyFromAscii = (ascii: Ascii): Smiley => {
-    if (ascii === "(|//|)") return "(:h:)" as Smiley
+const computeSmileyFromSymbol = (symbol: SagittalSymbol): Smiley => {
+    if (symbol === "(|//|)") return "(:h:)" as Smiley
 
-    const withoutAccentsAndFixedSlashes = ascii
+    const withoutAccentsAndFixedSlashes = symbol
         .replace(/`/g, "")
         .replace(/,/g, "")
         .replace(/'/g, "")
@@ -11,7 +12,7 @@ const computeSmileyFromAscii = (ascii: Ascii): Smiley => {
         .replace(/\/\//g, "/ /")
         .replace(/\\\\/g, "\\ \\")
 
-    const fixedAccentsOnly = ascii
+    const fixedAccentsOnly = symbol
         .replace(/``/g, ":``:")
         .replace(/,,/g, ":,,:")
         .replace(/`([^:`])/g, ":`:$1")
@@ -30,5 +31,5 @@ const computeSmileyFromAscii = (ascii: Ascii): Smiley => {
 }
 
 export {
-    computeSmileyFromAscii,
+    computeSmileyFromSymbol,
 }

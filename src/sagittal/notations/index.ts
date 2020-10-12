@@ -23,13 +23,19 @@ export {
     InaMidpoint,
     CommaMean,
 } from "./ji"
-export { PrimaryComma, CommaClass, NotationCaptureZoneAccidental, CommaClassAnalysis, SymbolSubset, Flavor } from "./types"
+export {
+    PrimaryComma,
+    CommaClass,
+    CommaClassAnalysis,
+    SymbolSubset,
+    Flavor,
+    SagittalSymbol,
+} from "./types"
 export { COMMA_CLASSES } from "./commaClasses"
 export { SYMBOL_SUBSETS } from "./symbolSubsets"
-export { EXTREME_NOTATION_CAPTURE_ZONE_ACCIDENTALS } from "./extremeNotationCaptureZoneAccidentals"
 export { analyzeCommaClass } from "./analyzeCommaClass"
 export { getCommaClass } from "./commaClass"
 export { getPrimaryComma } from "./primaryComma"
-export { getRepresentativeSymbol } from "./representativeSymbol"
+export { getRepresentativeSymbol } from "./representativeSymbolAscii"
 export { getSmallestSymbolSubset } from "./smallestSymbolSubset"
 export { UNISON_COMMA } from "./primaryCommas"

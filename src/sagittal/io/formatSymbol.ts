@@ -1,24 +1,24 @@
 import { Formatted, ioSettings, TableFormat } from "../../general"
-import { NotationCaptureZoneAccidental } from "../notations"
+import { SagittalSymbol } from "../notations"
 import { formatAscii } from "./formatAscii"
-import { computeSmileyFromAscii } from "./smiley"
+import { computeSmileyFromSymbol } from "./smiley"
 import { Ascii, Glyph, Smiley, Unicode } from "./types"
+import { SYMBOL_TO_UNICODE_MAP } from "./unicode"
 
 const formatSymbol = (
-    // TODO: needs work
-    symbol: NotationCaptureZoneAccidental,
+    symbol: SagittalSymbol,
     { align = true }: { align?: boolean } = {},
 ): Formatted<Glyph> => {
-    const ascii = symbol.revoAscii
-
+    // TODO: at this point I'm just slightly perturbed that unicode is a dereference, smiley is a computation, and
+    //  Ascii is a simple type assertion. I guess even if it's not peak performance it'd be nice if they starndardized
     switch (ioSettings.tableFormat) {
         case TableFormat.TERMINAL:
-            return align ? formatAscii(ascii) : ascii as string as Formatted<Ascii>
+            return align ? formatAscii(symbol as string as Ascii) : symbol as string as Formatted<Ascii>
         case TableFormat.FORUM:
         case TableFormat.FORUM_WITH_SPLIT_QUOTIENTS:
-            return `[/pre]${computeSmileyFromAscii(ascii)}[pre]` as Formatted<Smiley>
+            return `[/pre]${computeSmileyFromSymbol(symbol)}[pre]` as Formatted<Smiley>
         case TableFormat.SPREADSHEET:
-            return symbol.revoUnicode as string as Formatted<Unicode>
+            return SYMBOL_TO_UNICODE_MAP[ symbol ] as string as Formatted<Unicode>
     }
 }
 

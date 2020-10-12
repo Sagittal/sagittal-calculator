@@ -36,7 +36,7 @@ export {
     formatCommaClass,
     formatAscii,
     Ascii,
-    unicodeFromAscii,
+    SYMBOL_TO_UNICODE_MAP,
     Smiley,
     Unicode,
     Glyph,

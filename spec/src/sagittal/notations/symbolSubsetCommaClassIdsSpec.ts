@@ -1,15 +1,10 @@
-import { Id } from "../../../../src/general"
 import { Ascii } from "../../../../src/sagittal/io"
-import { CommaClass, getRepresentativeSymbol, SymbolSubset } from "../../../../src/sagittal/notations"
+import { getRepresentativeSymbol, SymbolSubset } from "../../../../src/sagittal/notations"
 import { SYMBOL_SUBSET_COMMA_CLASS_IDS } from "../../../../src/sagittal/notations/symbolSubsetCommaClassIds"
 
 describe("SYMBOL_SUBSET_COMMA_CLASS_IDS", (): void => {
-    const subject = (symbolSubset: SymbolSubset): Ascii[] => {
-        return SYMBOL_SUBSET_COMMA_CLASS_IDS[ symbolSubset ]
-            .map((commaClassId: Id<CommaClass>): Ascii => {
-                return getRepresentativeSymbol(commaClassId).revoAscii
-            })
-    }
+    const subject = (symbolSubset: SymbolSubset): Ascii[] => SYMBOL_SUBSET_COMMA_CLASS_IDS[ symbolSubset ]
+        .map(getRepresentativeSymbol) as string[] as Ascii[]
 
     it("has the correct comma classes in Sagittal-compatibles", (): void => {
         const symbolSubset = SymbolSubset.SAGITTAL_COMPATIBLE

@@ -1,9 +1,10 @@
 import { Id } from "../../general"
+import { Ascii, SYMBOL_TO_UNICODE_MAP } from "../io"
 import { analyzeComma } from "../ji"
 import { getCommaClass } from "./commaClass"
 import { getIntroducingJiNotationLevel, getMinaName } from "./ji"
 import { getPrimaryComma } from "./primaryComma"
-import { getRepresentativeSymbol } from "./representativeSymbol"
+import { getRepresentativeSymbol } from "./representativeSymbolAscii"
 import { getSmallestSymbolSubset } from "./smallestSymbolSubset"
 import { CommaClass, CommaClassAnalysis } from "./types"
 
@@ -16,7 +17,9 @@ const analyzeCommaClass = (
     const primaryComma = getPrimaryComma(commaClassId)
     const primaryCommaAnalysis = analyzeComma(primaryComma)
 
-    const { revoAscii, revoUnicode } = getRepresentativeSymbol(commaClassId)
+    const symbol = getRepresentativeSymbol(commaClassId)
+    const ascii = symbol as string as Ascii
+    const unicode = SYMBOL_TO_UNICODE_MAP[ symbol ]
 
     const introducingJiNotationLevel = getIntroducingJiNotationLevel(commaClassId)
 
@@ -28,8 +31,8 @@ const analyzeCommaClass = (
         ...otherCommaClassProperties,
         smallestSymbolSubset,
         minaName,
-        ascii: revoAscii,
-        unicode: revoUnicode,
+        ascii,
+        unicode,
         introducingJiNotationLevel,
         primaryCommaAnalysis,
     }
