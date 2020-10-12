@@ -1,4 +1,4 @@
-import { BLANK, finalElement, isEmpty } from "../../general"
+import { BLANK, isEmpty } from "../../general"
 import { Flacco, SagittalSymbol } from "./types"
 
 const computeSymbolFromFlacco = (flacco: Flacco): SagittalSymbol => {
