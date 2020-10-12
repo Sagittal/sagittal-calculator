@@ -27,7 +27,7 @@ const computeCommaFromCommaNameQuotientAndSizeCategoryName = (
     )
 
     if (commas.length !== 1) {
-        throw new Error(`For whatever reason the number of commas exactly notating the monzo ${(two3FreeMonzo)} in the range of that size category ${sizeCategoryName} was not 1. It was ${commas.length}.`)
+        throw new Error(`For whatever reason the number of commas notating the monzo ${(two3FreeMonzo)} in the range of that size category ${sizeCategoryName} was not 1. It was ${commas.length}.`)
     }
 
     return commas[ 0 ]

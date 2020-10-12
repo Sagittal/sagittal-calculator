@@ -1,16 +1,16 @@
 import { Id } from "../../general"
+import { getCommaClass } from "./commaClass"
 import { PRIMARY_COMMAS } from "./primaryCommas"
-import { getSymbolClass } from "./symbolClass"
-import { PrimaryComma, SymbolClass } from "./types"
+import { CommaClass, PrimaryComma } from "./types"
 
-const getPrimaryComma = (symbolClassId: Id<SymbolClass>): PrimaryComma => {
-    const symbolClass = getSymbolClass(symbolClassId)
+const getPrimaryComma = (commaClassId: Id<CommaClass>): PrimaryComma => {
+    const commaClass = getCommaClass(commaClassId)
 
     const primaryComma = PRIMARY_COMMAS
-        .find((primaryComma: PrimaryComma): boolean => primaryComma.id === symbolClass.primaryCommaId)
+        .find((primaryComma: PrimaryComma): boolean => primaryComma.id === commaClass.primaryCommaId)
 
     if (!primaryComma) {
-        throw new Error(`Primary comma with ID ${symbolClass.primaryCommaId} not found`)
+        throw new Error(`Primary comma with ID ${commaClass.primaryCommaId} not found`)
     }
 
     return primaryComma

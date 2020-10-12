@@ -17,7 +17,7 @@ import {
     Votes,
 } from "../../../../src/general"
 import { N2D3P9 } from "../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
-import { SymbolClass, SymbolSubset } from "../../../../src/sagittal/notations"
+import { CommaClass, SymbolSubset } from "../../../../src/sagittal/notations"
 import { popular23FreeClassesScriptGroupSettings } from "../../../../src/scripts/popular23FreeClass/globals"
 import { computePopular23FreeClasses } from "../../../../src/scripts/popular23FreeClass/popular23FreeClasses"
 import { Popular23FreeClass } from "../../../../src/scripts/popular23FreeClass/types"
@@ -40,8 +40,8 @@ describe("computePopular23FreeClasses", (): void => {
                 } as Two3FreeClass,
                 popularityRank: 1 as Rank<Popularity>,
                 votes: 7624 as Votes,
-                exactlyNotatingSymbolClassIds: [0, 48] as Array<Id<SymbolClass>>,
-                exactlyNotatingSymbolClassSmallestSymbolSubsetIndices:
+                notatingCommaClassIds: [0, 48] as Array<Id<CommaClass>>,
+                notatingCommaClassSmallestSymbolSubsetIndices:
                     [0, 5] as Array<Index<SymbolSubset>>,
                 rank: 1 as Rank<Popular23FreeClass>,
             },
@@ -56,8 +56,8 @@ describe("computePopular23FreeClasses", (): void => {
                 } as Two3FreeClass,
                 popularityRank: 2 as Rank<Popularity>,
                 votes: 5371 as Votes,
-                exactlyNotatingSymbolClassIds: [4, 44] as Array<Id<SymbolClass>>,
-                exactlyNotatingSymbolClassSmallestSymbolSubsetIndices:
+                notatingCommaClassIds: [4, 44] as Array<Id<CommaClass>>,
+                notatingCommaClassSmallestSymbolSubsetIndices:
                     [5, 1] as Array<Index<SymbolSubset>>,
                 rank: 2 as Rank<Popular23FreeClass>,
             },
@@ -72,8 +72,8 @@ describe("computePopular23FreeClasses", (): void => {
                 } as Two3FreeClass,
                 popularityRank: 3 as Rank<Popularity>,
                 votes: 3016 as Votes,
-                exactlyNotatingSymbolClassIds: [58, 108, 137] as Array<Id<SymbolClass>>,
-                exactlyNotatingSymbolClassSmallestSymbolSubsetIndices:
+                notatingCommaClassIds: [58, 108, 137] as Array<Id<CommaClass>>,
+                notatingCommaClassSmallestSymbolSubsetIndices:
                     [1, 5, 5] as Array<Index<SymbolSubset>>,
                 rank: 3 as Rank<Popular23FreeClass>,
             },
@@ -88,8 +88,8 @@ describe("computePopular23FreeClasses", (): void => {
                 } as Two3FreeClass,
                 popularityRank: 4 as Rank<Popularity>,
                 votes: 1610 as Votes,
-                exactlyNotatingSymbolClassIds: [40, 92] as Array<Id<SymbolClass>>,
-                exactlyNotatingSymbolClassSmallestSymbolSubsetIndices:
+                notatingCommaClassIds: [40, 92] as Array<Id<CommaClass>>,
+                notatingCommaClassSmallestSymbolSubsetIndices:
                     [5, 1] as Array<Index<SymbolSubset>>,
                 rank: 4 as Rank<Popular23FreeClass>,
             },
@@ -104,8 +104,8 @@ describe("computePopular23FreeClasses", (): void => {
                 } as Two3FreeClass,
                 popularityRank: 5 as Rank<Popularity>,
                 votes: 1318 as Votes,
-                exactlyNotatingSymbolClassIds: [12, 62] as Array<Id<SymbolClass>>,
-                exactlyNotatingSymbolClassSmallestSymbolSubsetIndices:
+                notatingCommaClassIds: [12, 62] as Array<Id<CommaClass>>,
+                notatingCommaClassSmallestSymbolSubsetIndices:
                     [1, 5] as Array<Index<SymbolSubset>>,
                 rank: 5 as Rank<Popular23FreeClass>,
             },
@@ -133,7 +133,7 @@ describe("computePopular23FreeClasses", (): void => {
                 votes: 7624 as Votes,
                 bestNotatingCommaCents: 0 as Cents,
                 bestNotatingCommaMonzo: EMPTY_MONZO as Monzo<{ rational: true }>,
-                bestNotatingCommaMaybeSymbolClassId: 0 as Id<SymbolClass>,
+                bestNotatingCommaMaybeCommaClassId: 0 as Id<CommaClass>,
                 rank: 1 as Rank<Popular23FreeClass>,
             },
             {
@@ -149,7 +149,7 @@ describe("computePopular23FreeClasses", (): void => {
                 votes: 5371 as Votes,
                 bestNotatingCommaCents: 21.506290 as Cents,
                 bestNotatingCommaMonzo: [-4, 4, -1] as Monzo<{ rational: true }>,
-                bestNotatingCommaMaybeSymbolClassId: 44 as Id<SymbolClass>,
+                bestNotatingCommaMaybeCommaClassId: 44 as Id<CommaClass>,
                 rank: 2 as Rank<Popular23FreeClass>,
             },
             {
@@ -165,7 +165,7 @@ describe("computePopular23FreeClasses", (): void => {
                 votes: 3016 as Votes,
                 bestNotatingCommaCents: 27.264092 as Cents,
                 bestNotatingCommaMonzo: [6, -2, 0, -1] as Monzo<{ rational: true }>,
-                bestNotatingCommaMaybeSymbolClassId: 58 as Id<SymbolClass>,
+                bestNotatingCommaMaybeCommaClassId: 58 as Id<CommaClass>,
                 rank: 3 as Rank<Popular23FreeClass>,
             },
             {
@@ -181,7 +181,7 @@ describe("computePopular23FreeClasses", (): void => {
                 votes: 1610 as Votes,
                 bestNotatingCommaCents: 19.552569 as Cents,
                 bestNotatingCommaMonzo: [11, -4, -2] as Monzo<{ rational: true }>,
-                bestNotatingCommaMaybeSymbolClassId: 40 as Id<SymbolClass>,
+                bestNotatingCommaMaybeCommaClassId: 40 as Id<CommaClass>,
                 rank: 4 as Rank<Popular23FreeClass>,
             },
             {
@@ -197,7 +197,7 @@ describe("computePopular23FreeClasses", (): void => {
                 votes: 1318 as Votes,
                 bestNotatingCommaCents: 29.217813 as Cents,
                 bestNotatingCommaMonzo: [-9, 6, 1, -1] as Monzo<{ rational: true }>,
-                bestNotatingCommaMaybeSymbolClassId: 62 as Id<SymbolClass>,
+                bestNotatingCommaMaybeCommaClassId: 62 as Id<CommaClass>,
                 rank: 5 as Rank<Popular23FreeClass>,
             },
         ] as Array<Ranked<Popular23FreeClass>>

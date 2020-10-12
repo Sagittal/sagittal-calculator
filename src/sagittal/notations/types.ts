@@ -1,5 +1,5 @@
 import { Apotome, Comma, Count, Direction, Id, Name, NumericProperties } from "../../general"
-import { SymbolLongAscii, SymbolUnicode } from "../io"
+import { Ascii, Unicode } from "../io"
 import { CommaAnalysis } from "../ji"
 import { JiNotationLevel, Mina } from "./ji"
 
@@ -22,28 +22,38 @@ type PrimaryCommaAnalysis<T extends NumericProperties = {}> =
     CommaAnalysis<T, PrimaryComma<T>>
 
 // Apotome-inversion comma class (repeats in a mirrored pattern at the half-apotome)
-interface SymbolClass {               // ----> CommaClass
-    elements: SymbolLongAscii[],      // ----> relocate this onto the FlAcCo as `combo: Array<Flag | Accent>`
-    id: Id<SymbolClass>,              // ----> commaClassId: Id<CommaClass>,
+interface CommaClass {
+    id: Id<CommaClass>,
     primaryCommaId: Id<PrimaryComma>, // ----> remove and inline the Comma; former primary commas are now comma classes
 }
 
-type SymbolClassAnalysis = Omit<SymbolClass, "primaryCommaId"> & {  // ---> CommaClassAnalysis
+type CommaClassAnalysis = Omit<CommaClass, "primaryCommaId"> & {
     primaryCommaAnalysis: PrimaryCommaAnalysis,                     // ---> remove and inline, per CommaClass
-    ascii: SymbolLongAscii,                                         // So this is the representative symbol then
-    unicode: SymbolUnicode,                                         // So this is the representative symbol then
+    ascii: Ascii,                                         // So this is the representative symbol then
+    unicode: Unicode,                                         // So this is the representative symbol then
     introducingJiNotationLevel: JiNotationLevel,
     minaName: Name<Mina>,
     smallestSymbolSubset: SymbolSubset,
 }
 
-// Flag and Accent Combination; basically a "symbol class" (see: http://forum.sagittal.org/viewtopic.php?p=2474#p2474)
 /*
-type FlAcCo = {
-    id: Id<FlAcCo>,
+type ElementProperties = {
+    ascii: Ascii,
+}
+later use this ^^^ instead of Ascii directly so it can have primary comma etc.
+ */
+type Flag = Ascii & { _FlagBrand: boolean }
+type Accent = Ascii & { _AccentBrand: boolean }
+type Shaft = Ascii & { _ShaftBrand: boolean }
+type Element = Flag | Accent | Shaft
+
+// Flag and Accent Combination; basically a "symbol class" (see: http://forum.sagittal.org/viewtopic.php?p=2474#p2474)
+type Flacco = {
+    id: Id<Flacco>,
     combo: Array<Flag | Accent>,
 }
 
+/*
 Notation = {
     boundClassIds: Array<Id<BoundClass>>,
     commaClassIds: Array<Id<CommaClass>>,
@@ -54,18 +64,18 @@ State of the art plans described here: http://forum.sagittal.org/viewtopic.php?p
  */
 
 // Ranges from -2 to 2 apotomes
-interface Symbol {                          // ----> NotationCaptureZoneAccidental (bc per Level or Trojan, Binary, etc)
-    id: Id<Symbol>,                         // ---> DELETED. a capture zone accidental does not need an ID.
-                                            //      It gets looked up by its comma/captureZone ID, dir, & apotome count
-    symbolClassId: Id<SymbolClass>,         // ---> commaClassId: Id<CommaClass>
-    // Add: boundClassId: Id<Bound(Class)>  // Yeah, rename Bound to BoundClass please.
+interface NotationCaptureZoneAccidental {
+    id: Id<NotationCaptureZoneAccidental>, // ---> DELETED. a capture zone accidental does not need an ID.
+                                           //  It should get looked up by its comma/captureZone ID, dir, & apotome count
+    commaClassId: Id<CommaClass>,
+    // Add: boundClassId: Id<Bound(Class)> // Yeah, rename Bound to BoundClass please.
     commaDirection: Direction,
     apotomeCount: Count<Apotome>,
 
-    revoAscii: SymbolLongAscii,
-    evoAscii: SymbolLongAscii<Flavor.EVO>,
-    revoUnicode: SymbolUnicode,
-    evoUnicode: SymbolUnicode<Flavor.EVO>,
+    revoAscii: Ascii,
+    evoAscii: Ascii<Flavor.EVO>,
+    revoUnicode: Unicode,
+    evoUnicode: Unicode<Flavor.EVO>,
 }
 
 enum Flavor {
@@ -76,9 +86,14 @@ enum Flavor {
 export {
     SymbolSubset,
     PrimaryComma,
-    SymbolClass,
-    Symbol,
-    SymbolClassAnalysis,
+    CommaClass,
+    NotationCaptureZoneAccidental,
+    CommaClassAnalysis,
     PrimaryCommaAnalysis,
     Flavor,
+    Flacco,
+    Flag,
+    Accent,
+    Shaft,
+    Element,
 }

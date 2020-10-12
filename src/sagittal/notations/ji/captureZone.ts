@@ -1,7 +1,7 @@
 import { Id, isScamonGreater, isUndefined, Max, Maybe, Min, Scamon, UNISON, Zone } from "../../../general"
-import { formatSymbolClass } from "../../io"
+import { formatCommaClass } from "../../io"
 import { getPrimaryComma } from "../primaryComma"
-import { PrimaryComma, SymbolClass } from "../types"
+import { CommaClass, PrimaryComma } from "../types"
 import { formatJiNotationLevel } from "./formatLevel"
 import { getIntroducingJiNotationLevel } from "./introducingJiNotationLevel"
 import { isWithinJiNotationLevel } from "./isWithinLevel"
@@ -9,30 +9,30 @@ import { JI_NOTATION_LEVELS_BOUNDS } from "./levelsBounds"
 import { JiNotationBound, JiNotationLevel } from "./types"
 
 const computeCaptureZone = (
-    symbolClassId: Id<SymbolClass>,
+    commaClassId: Id<CommaClass>,
     jiNotationLevel: JiNotationLevel = JiNotationLevel.EXTREME,
 ): Maybe<Zone> => {
     const jiNotationLevelBounds = JI_NOTATION_LEVELS_BOUNDS[ jiNotationLevel ]
 
-    const introducingJiNotationLevel = getIntroducingJiNotationLevel(symbolClassId)
+    const introducingJiNotationLevel = getIntroducingJiNotationLevel(commaClassId)
     if (!isWithinJiNotationLevel(introducingJiNotationLevel, jiNotationLevel)) {
-        throw new Error(`JI Notation symbol class ${formatSymbolClass(symbolClassId, { align: false })} is not present at the ${formatJiNotationLevel(jiNotationLevel)} JI notation level; it is not introduced until the ${formatJiNotationLevel(introducingJiNotationLevel)} JI notation level.`)
+        throw new Error(`JI Notation comma class ${formatCommaClass(commaClassId, { align: false })} is not present at the ${formatJiNotationLevel(jiNotationLevel)} JI notation level; it is not introduced until the ${formatJiNotationLevel(introducingJiNotationLevel)} JI notation level.`)
     }
 
-    const primaryComma = getPrimaryComma(symbolClassId)
+    const primaryComma = getPrimaryComma(commaClassId)
 
-    const indexOfBoundJustAboveSymbolAtThisLevel = jiNotationLevelBounds
+    const indexOfBoundJustAboveCommaAtThisLevel = jiNotationLevelBounds
         .findIndex((jiNotationBound: JiNotationBound): boolean => {
             return isScamonGreater(jiNotationBound.pitch, primaryComma)
         })
-    const indexOfJiNotationBoundJustBelowSymbolClassAtThisLevel = indexOfBoundJustAboveSymbolAtThisLevel - 1
+    const indexOfJiNotationBoundJustBelowCommaClassAtThisLevel = indexOfBoundJustAboveCommaAtThisLevel - 1
 
-    const lowerBound = jiNotationLevelBounds[ indexOfJiNotationBoundJustBelowSymbolClassAtThisLevel ]
+    const lowerBound = jiNotationLevelBounds[ indexOfJiNotationBoundJustBelowCommaClassAtThisLevel ]
     const lowerBoundPitch = isUndefined(lowerBound) ?
         UNISON :
         lowerBound.pitch as Scamon as Min<Scamon>
     const upperBoundPitch =
-        jiNotationLevelBounds[ indexOfBoundJustAboveSymbolAtThisLevel ].pitch as Scamon as Max<Scamon>
+        jiNotationLevelBounds[ indexOfBoundJustAboveCommaAtThisLevel ].pitch as Scamon as Max<Scamon>
 
     return [lowerBoundPitch, upperBoundPitch] as Zone<PrimaryComma>
 }

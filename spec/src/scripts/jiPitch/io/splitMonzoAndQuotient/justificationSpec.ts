@@ -5,14 +5,14 @@ import { computeMonzoAndQuotientJustification } from "../../../../../../src/scri
 describe("computeMonzoAndQuotientJustification", (): void => {
     it("justifies quotients to center on the vinculum, and monzos so that the square bracket is closer to the rest of the materials", (): void => {
         const headerRows = [
-            ["symbol", "quotient", "", "", "monzo", "", "", "", "apotome"],
+            ["comma", "quotient", "", "", "monzo", "", "", "", "apotome"],
             ["name", "n", "/", "d", "[", "2", "3", "⟩", "slope"],
         ] as Array<Row<{ of: JiPitchAnalysis, header: true }>>
 
         const actual = computeMonzoAndQuotientJustification(headerRows)
 
         const expected = [
-            Justification.LEFT,     // Symbol name
+            Justification.LEFT,     // Comma name
             Justification.RIGHT,    // Quotient numerator
             Justification.CENTER,   // Quotient vinculum
             Justification.LEFT,     // Quotient denominator

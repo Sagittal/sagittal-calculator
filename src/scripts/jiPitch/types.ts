@@ -42,7 +42,7 @@ enum NotatingCommasField {
     APOTOME_SLOPE = "apotomeSlope",
     AAS = "aas",
     ATE = "ate",
-    SYMBOL_CLASS = "symbolClass",
+    COMMA_CLASS = "commaClass",
     NAME = "name",
 }
 
@@ -53,7 +53,7 @@ enum FindCommasField {
     APOTOME_SLOPE = "apotomeSlope",
     AAS = "aas",
     ATE = "ate",
-    SYMBOL_CLASS = "symbolClass",
+    COMMA_CLASS = "commaClass",
     NAME = "name",
     TWO_3_FREE_PRIME_LIMIT = "two3FreePrimeLimit",
     TWO_3_FREE_CLASS_NAME = "two3FreeClassName",

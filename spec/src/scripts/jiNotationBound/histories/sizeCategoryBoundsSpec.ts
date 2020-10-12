@@ -1,6 +1,6 @@
 import { Scamon } from "../../../../../src/general/math/numeric/scamon"
 import { maxScamon } from "../../../../../src/general/math/numeric/scamon/typedOperations"
-import { MAX_SYMBOL_CLASS_POSITION, SizeCategoryBound } from "../../../../../src/sagittal"
+import { MAX_SINGLE_SHAFT_POSITION, SizeCategoryBound } from "../../../../../src/sagittal"
 import { computeSizeCategoryBoundsWithinMaximumPosition } from "../../../../../src/scripts/jiNotationBound/histories/sizeCategoryBounds"
 
 describe("computeSizeCategoryBoundsWithinMaximumPosition", (): void => {
@@ -8,6 +8,6 @@ describe("computeSizeCategoryBoundsWithinMaximumPosition", (): void => {
         const actual = computeSizeCategoryBoundsWithinMaximumPosition()
             .map((sizeCategoryBound: SizeCategoryBound): Scamon => sizeCategoryBound.pitch)
 
-        expect(maxScamon(...actual)).toEqualPitch(MAX_SYMBOL_CLASS_POSITION)
+        expect(maxScamon(...actual)).toEqualPitch(MAX_SINGLE_SHAFT_POSITION)
     })
 })

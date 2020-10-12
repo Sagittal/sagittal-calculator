@@ -58,8 +58,8 @@ describe("computeJiNotationBoundRow", (): void => {
             " 10    ",          // Bound ID
             " 10",              // Lesser bounded mina name
             " 11",              // Greater bounded mina name
-            "   ,,|( ",         // Extreme lesser bounded symbol class
-            "    ,|( ",         // Extreme greater bounded symbol class
+            "   ,,|( ",         // Extreme lesser bounded comma class
+            "    ,|( ",         // Extreme greater bounded comma class
             " ",                // Medium rank
             " ",                // High rank
             "  1    ",          // Ultra rank

@@ -9,12 +9,12 @@ import {
     Px,
     round,
 } from "../../../../general"
-import { MAX_SYMBOL_CLASS_POSITION } from "../../../../sagittal"
+import { MAX_SINGLE_SHAFT_POSITION } from "../../../../sagittal"
 import { MARGIN, Y_SCALE } from "./sizes"
 import { computeX } from "./x"
 
 const visualizeCents = (): Io[] => {
-    const cents: Cents[] = [...Array(ceil(computeCentsFromPitch(MAX_SYMBOL_CLASS_POSITION))).keys()] as Cents[]
+    const cents: Cents[] = [...Array(ceil(computeCentsFromPitch(MAX_SINGLE_SHAFT_POSITION))).keys()] as Cents[]
 
     const centElements: Io[] = []
     const centsY: Px = round(computePx(MARGIN, Y_SCALE), DEFAULT_PRECISION)

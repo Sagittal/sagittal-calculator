@@ -1,4 +1,4 @@
-export { computeMaybeSymbolClassId } from "./maybeSymbolClassId"
+export { computeMaybeCommaClassId } from "./maybeCommaClassId"
 export { formatJiNotationLevel } from "./formatLevel"
 export { computeSecondaryCommaZone } from "./secondaryCommaZone"
 export { INA_SIZES, TINA } from "./intervals"
@@ -8,8 +8,8 @@ export { getIntroducingJiNotationLevel } from "./introducingJiNotationLevel"
 export { JI_NOTATION_LEVEL_EDAS } from "./levelEdas"
 export { JI_NOTATION_LEVELS } from "./levels"
 export { JI_NOTATION_LEVELS_BOUNDS } from "./levelsBounds"
-export { JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS } from "./levelSymbolClassIds"
+export { JI_NOTATION_LEVELS_COMMA_CLASS_IDS } from "./levelCommaClassIds"
 export {
     JiNotationBound, Ina, JiNotationLevel, Mina, Tina, BoundType, Bound, InaMidpoint, CommaMean,
 } from "./types"
-export { JI_NOTATION } from "./levelSymbolClassIds"
+export { JI_NOTATION } from "./levelCommaClassIds"

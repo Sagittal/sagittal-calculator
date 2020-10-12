@@ -17,7 +17,7 @@ import {
     Sopfr,
     Two3FreeClass,
 } from "../../../../../../src/general"
-import { ApotomeSlope, CommaAnalysis, SymbolClass } from "../../../../../../src/sagittal"
+import { ApotomeSlope, CommaAnalysis, CommaClass } from "../../../../../../src/sagittal"
 import { N2D3P9 } from "../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
 import { jiPitchScriptGroupSettings } from "../../../../../../src/scripts/jiPitch/globals"
 import { computeNotatingCommasRow } from "../../../../../../src/scripts/jiPitch/io/row"
@@ -26,7 +26,6 @@ import { commaAnalysisFixture, two3FreeClassAnalysisFixture } from "../../../../
 
 describe("computeNotatingCommasRow", (): void => {
     // This comma is made up and internally inconsistent.
-    // Only the name is important as it is used to find the symbol.
     const commaAnalysis: CommaAnalysis = {
         ...commaAnalysisFixture,
         name: "1/5C" as Name<Comma>,
@@ -47,14 +46,14 @@ describe("computeNotatingCommasRow", (): void => {
             } as Two3FreeClass,
         },
     }
-    const symbolClassId = 44 as Id<SymbolClass>
+    const commaClassId = 44 as Id<CommaClass>
     const maxMonzoLength = 5 as Max<Count<Exponent<Prime>>>
 
     it("takes the properties of the comma and puts them in order in a row", (): void => {
-        const actual = computeNotatingCommasRow(commaAnalysis, symbolClassId, maxMonzoLength)
+        const actual = computeNotatingCommasRow(commaAnalysis, commaClassId, maxMonzoLength)
 
         const expected = [
-            "    /|  ",         // Symbol class
+            "    /|  ",         // Comma class
             "1/5C",             // Comma name
             "5",                // Quotient numerator
             "/",                // Quotient vinculum
@@ -77,10 +76,10 @@ describe("computeNotatingCommasRow", (): void => {
     it("can filter the excluded fields", (): void => {
         jiPitchScriptGroupSettings.excludedFields = [NotatingCommasField.CENTS, NotatingCommasField.MONZO]
 
-        const actual = computeNotatingCommasRow(commaAnalysis, symbolClassId, maxMonzoLength)
+        const actual = computeNotatingCommasRow(commaAnalysis, commaClassId, maxMonzoLength)
 
         const expected = [
-            "    /|  ",         // Symbol class
+            "    /|  ",         // Comma class
             "1/5C",             // Comma name
             "5",                // Quotient numerator
             "/",                // Quotient vinculum
@@ -93,10 +92,10 @@ describe("computeNotatingCommasRow", (): void => {
     })
 
     it("can handle the situation where the row's monzo is shorter than the longest monzo", (): void => {
-        const actual = computeNotatingCommasRow(commaAnalysis, symbolClassId, maxMonzoLength)
+        const actual = computeNotatingCommasRow(commaAnalysis, commaClassId, maxMonzoLength)
 
         const expected = [
-            "    /|  ",         // Symbol class
+            "    /|  ",         // Comma class
             "1/5C",             // Comma name
             "5",                // Quotient denominator
             "/",                // Quotient vinculum

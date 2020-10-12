@@ -7,7 +7,7 @@ const POPULAR_2_3_FREE_CLASS_WITH_BEST_NOTATING_COMMA_COLUMN_TITLES: Io[] = [
     "N2D3P9 rank",
     "best notating comma cents",
     "best notating comma monzo",
-    "best notating comma symbol class",
+    "best notating comma maybe symbol",
 ] as Io[]
 
 const computePopular23FreeClassWithBestNotatingCommaHeaderRows =

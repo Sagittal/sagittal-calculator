@@ -1,6 +1,6 @@
-export { MAX_SYMBOL_CLASS_POSITION } from "./intervals"
+export { MAX_SINGLE_SHAFT_POSITION } from "./intervals"
 export {
-    computeMaybeSymbolClassId,
+    computeMaybeCommaClassId,
     JiNotationBound,
     formatJiNotationLevel,
     Ina,
@@ -9,7 +9,7 @@ export {
     JiNotationLevel,
     JI_NOTATION_LEVELS,
     JI_NOTATION_LEVELS_BOUNDS,
-    JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS,
+    JI_NOTATION_LEVELS_COMMA_CLASS_IDS,
     JI_NOTATION_LEVEL_EDAS,
     Mina,
     Tina,
@@ -23,12 +23,12 @@ export {
     InaMidpoint,
     CommaMean,
 } from "./ji"
-export { PrimaryComma, SymbolClass, Symbol, SymbolClassAnalysis, SymbolSubset, Flavor } from "./types"
-export { SYMBOL_CLASSES } from "./symbolClasses"
+export { PrimaryComma, CommaClass, NotationCaptureZoneAccidental, CommaClassAnalysis, SymbolSubset, Flavor } from "./types"
+export { COMMA_CLASSES } from "./commaClasses"
 export { SYMBOL_SUBSETS } from "./symbolSubsets"
-export { SYMBOLS } from "./symbols"
-export { analyzeSymbolClass } from "./analyzeSymbolClass"
-export { getSymbolClass } from "./symbolClass"
+export { EXTREME_NOTATION_CAPTURE_ZONE_ACCIDENTALS } from "./extremeNotationCaptureZoneAccidentals"
+export { analyzeCommaClass } from "./analyzeCommaClass"
+export { getCommaClass } from "./commaClass"
 export { getPrimaryComma } from "./primaryComma"
 export { getRepresentativeSymbol } from "./representativeSymbol"
 export { getSmallestSymbolSubset } from "./smallestSymbolSubset"

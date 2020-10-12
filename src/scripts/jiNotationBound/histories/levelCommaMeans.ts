@@ -1,29 +1,29 @@
 import { computeRationalScamonGeometricMean, Id, indexOfFinalElement, Name } from "../../../general"
 import {
+    CommaClass,
     CommaMean,
     getPrimaryComma,
     getRepresentativeSymbol,
     JiNotationLevel,
-    JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS,
-    SymbolClass,
+    JI_NOTATION_LEVELS_COMMA_CLASS_IDS,
 } from "../../../sagittal"
 
 const computeJiNotationLevelCommaMeans = (jiNotationLevel: JiNotationLevel): CommaMean[] => {
-    const jiNotationLevelSymbolClassIds = JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS[ jiNotationLevel ]
+    const jiNotationLevelCommaClassIds = JI_NOTATION_LEVELS_COMMA_CLASS_IDS[ jiNotationLevel ]
 
-    const jiNotationLevelSymbolClassIdsExcludingTheFinalSymbolClass =
-        jiNotationLevelSymbolClassIds.slice(0, indexOfFinalElement(jiNotationLevelSymbolClassIds))
+    const jiNotationLevelCommaClassIdsExcludingTheFinalCommaClass =
+        jiNotationLevelCommaClassIds.slice(0, indexOfFinalElement(jiNotationLevelCommaClassIds))
 
-    return jiNotationLevelSymbolClassIdsExcludingTheFinalSymbolClass
-        .map((symbolClassId: Id<SymbolClass>, index: number): CommaMean => {
-            const nextSymbolClassId = jiNotationLevelSymbolClassIds[ index + 1 ]
+    return jiNotationLevelCommaClassIdsExcludingTheFinalCommaClass
+        .map((commaClassId: Id<CommaClass>, index: number): CommaMean => {
+            const nextCommaClassId = jiNotationLevelCommaClassIds[ index + 1 ]
 
-            const primaryComma = getPrimaryComma(symbolClassId)
-            const nextPrimaryComma = getPrimaryComma(nextSymbolClassId)
+            const primaryComma = getPrimaryComma(commaClassId)
+            const nextPrimaryComma = getPrimaryComma(nextCommaClassId)
 
             const name = [
-                getRepresentativeSymbol(symbolClassId).revoAscii,
-                getRepresentativeSymbol(nextSymbolClassId).revoAscii,
+                getRepresentativeSymbol(commaClassId).revoAscii,
+                getRepresentativeSymbol(nextCommaClassId).revoAscii,
             ].join(" ") as Name<CommaMean>
 
             return {

@@ -1,5 +1,5 @@
 export { unicodeFromAscii } from "./asciiUnicode"
-export { formatSymbolClass } from "./formatSymbolClass"
-export { formatSymbolAscii } from "./formatSymbolAscii"
-export { SymbolLongAscii, SymbolUnicode, SymbolSmiley, SymbolGlyph } from "./types"
+export { formatCommaClass } from "./formatCommaClass"
+export { formatAscii } from "./formatAscii"
+export { Ascii, Unicode, Smiley, Glyph } from "./types"
 export { parsePitch } from "./parsePitch"

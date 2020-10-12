@@ -4,14 +4,14 @@ import { formatPrimeHeaders } from "../../../../../../src/scripts/jiPitch/io/spl
 describe("formatPrimeHeaders", (): void => {
     it("aligns the headers for the prime headers of monzos", (): void => {
         const headerRows = [
-            ["symbol", "quotient", "", "", "monzo", "", "", "", "apotome"],
+            ["comma", "quotient", "", "", "monzo", "", "", "", "apotome"],
             ["name", "n", "/", "d", "[", "2", "3", "⟩", "slope"],
         ] as Array<Row<{ header: true }>>
 
         const actual = formatPrimeHeaders(headerRows)
 
         const expected = [
-            ["symbol", "quotient", "", "", "monzo", "", "", "", "apotome"],
+            ["comma", "quotient", "", "", "monzo", "", "", "", "apotome"],
             ["name", "n", "/", "d", "[", "  2    ", "  3    ", "⟩", "slope"],
         ] as Array<Row<{ header: true }>>
         expect(actual).toEqual(expected)

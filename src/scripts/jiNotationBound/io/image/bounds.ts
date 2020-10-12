@@ -6,9 +6,9 @@ import { visualizeBoundEventAnalyses } from "./events"
 import { addFont } from "./font"
 import { visualizeInaMidpoints } from "./inaMidpoints"
 import { visualizeJiNotationLevelBounds } from "./levelBounds"
+import { visualizeJiNotationLevelCommaClasses } from "./levelCommaClasses"
 import { visualizeJiNotationLevelCommaMeans } from "./levelCommaMeans"
 import { visualizeJiNotationLevels } from "./levels"
-import { visualizeJiNotationLevelSymbolClasses } from "./levelSymbolClasses"
 import { addParentSvg } from "./parentSvg"
 import { visualizeSizeCategoryBounds } from "./sizeCategoryBounds"
 
@@ -41,7 +41,7 @@ const computeJiNotationBoundsImage = (jiNotationBoundAnalyses: JiNotationBoundAn
     elements = elements.concat(visualizeJiNotationLevelCommaMeans())
     elements = elements.concat(visualizeInaMidpoints())
 
-    elements = elements.concat(visualizeJiNotationLevelSymbolClasses())
+    elements = elements.concat(visualizeJiNotationLevelCommaClasses())
 
     elements = elements.concat("</svg>\n" as Io)
 

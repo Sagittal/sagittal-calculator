@@ -1,5 +1,5 @@
 import { BLANK, format23FreeClass, formatCents, formatMonzo, isUndefined, Ranked, Row } from "../../../../general"
-import { formatSymbolClass } from "../../../../sagittal"
+import { formatCommaClass } from "../../../../sagittal"
 import { Popular23FreeClass } from "../../types"
 import { BestNotatingCommaProperties } from "../types"
 
@@ -11,7 +11,7 @@ const computePopular23FreeClassWithBestNotatingCommaRow = (
         rank: estimatedRank,
         bestNotatingCommaCents,
         bestNotatingCommaMonzo,
-        bestNotatingCommaMaybeSymbolClassId,
+        bestNotatingCommaMaybeCommaClassId,
     } = rankedPopular23FreeClassWithBestNotatingComma
 
     return [
@@ -19,9 +19,9 @@ const computePopular23FreeClassWithBestNotatingCommaRow = (
         estimatedRank.toString(),
         formatCents(bestNotatingCommaCents, { align: true }),
         formatMonzo(bestNotatingCommaMonzo),
-        isUndefined(bestNotatingCommaMaybeSymbolClassId) ?
+        isUndefined(bestNotatingCommaMaybeCommaClassId) ?
             BLANK :
-            formatSymbolClass(bestNotatingCommaMaybeSymbolClassId),
+            formatCommaClass(bestNotatingCommaMaybeCommaClassId),
     ] as Row<{ of: Popular23FreeClass & BestNotatingCommaProperties, header: true }>
 }
 

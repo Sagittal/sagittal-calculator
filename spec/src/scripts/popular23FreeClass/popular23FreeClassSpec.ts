@@ -2,7 +2,7 @@ import { Cents, Direction, Id, Index, Monzo, Rank, Two3FreeClass } from "../../.
 import { Popularity, Votes } from "../../../../src/general/music"
 import { Two3FreeClassAnalysis } from "../../../../src/sagittal/ji/two3FreeClass"
 import { N2D3P9 } from "../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
-import { SymbolClass, SymbolSubset } from "../../../../src/sagittal/notations"
+import { CommaClass, SymbolSubset } from "../../../../src/sagittal/notations"
 import { popular23FreeClassesScriptGroupSettings } from "../../../../src/scripts/popular23FreeClass/globals"
 import { computePopular23FreeClass } from "../../../../src/scripts/popular23FreeClass/popular23FreeClass"
 import { Popular23FreeClass } from "../../../../src/scripts/popular23FreeClass/types"
@@ -24,8 +24,8 @@ describe("computePopular23FreeClass", (): void => {
             ...two3FreeClassAnalysis,
             popularityRank: 2 as Rank<Popularity>,
             votes: 5371 as Votes,
-            exactlyNotatingSymbolClassIds: [4, 44] as Array<Id<SymbolClass>>,
-            exactlyNotatingSymbolClassSmallestSymbolSubsetIndices: [5, 1] as Array<Index<SymbolSubset>>,
+            notatingCommaClassIds: [4, 44] as Array<Id<CommaClass>>,
+            notatingCommaClassSmallestSymbolSubsetIndices: [5, 1] as Array<Index<SymbolSubset>>,
         }
         expect(actual).toEqual(expected)
     })
@@ -40,7 +40,7 @@ describe("computePopular23FreeClass", (): void => {
             votes: 5371 as Votes,
             bestNotatingCommaCents: 21.506290 as Cents,
             bestNotatingCommaMonzo: [-4, 4, -1] as Monzo<{ rational: true }>,
-            bestNotatingCommaMaybeSymbolClassId: 44 as Id<SymbolClass>,
+            bestNotatingCommaMaybeCommaClassId: 44 as Id<CommaClass>,
         }
         expect(actual).toBeCloseToObject(expected)
     })

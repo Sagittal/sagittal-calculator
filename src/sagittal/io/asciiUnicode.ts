@@ -1,15 +1,19 @@
 import { Maybe } from "../../general"
-import { Symbol, SYMBOLS } from "../notations"
-import { SymbolLongAscii, SymbolUnicode } from "./types"
+import { EXTREME_NOTATION_CAPTURE_ZONE_ACCIDENTALS, NotationCaptureZoneAccidental } from "../notations"
+import { Ascii, Unicode } from "./types"
 
-const unicodeFromAscii = (ascii: SymbolLongAscii): SymbolUnicode => {
-    const symbol: Maybe<Symbol> = SYMBOLS.find((symbol: Symbol): boolean => symbol.revoAscii === ascii)
+const unicodeFromAscii = (ascii: Ascii): Unicode => {
+    const extremeNotationCaptureZoneAccidental: Maybe<NotationCaptureZoneAccidental> =
+        EXTREME_NOTATION_CAPTURE_ZONE_ACCIDENTALS.find(
+            (extremeNotationCaptureZoneAccidental: NotationCaptureZoneAccidental): boolean => {
+                return extremeNotationCaptureZoneAccidental.revoAscii === ascii
+            })
 
-    if (!symbol) {
-        throw new Error(`No symbol found with ascii ${ascii}`)
+    if (!extremeNotationCaptureZoneAccidental) {
+        throw new Error(`No Extreme notation capture zone accidental found with ascii ${ascii}`)
     }
 
-    return symbol.revoUnicode
+    return extremeNotationCaptureZoneAccidental.revoUnicode
 }
 
 export {

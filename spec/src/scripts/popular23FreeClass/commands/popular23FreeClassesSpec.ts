@@ -17,10 +17,10 @@ describe("popular-2-3-free-classes", (): void => {
             "count of results with N2D3P9 ≤ 136: 131",
             "",
             "[table]",
-            "[tr][th][pre]     [/pre][/th][th][pre]       [/pre][/th][th][pre]exactly [/pre][/th][th][pre]          [/pre][/th][th][pre]      [/pre][/th][th][pre]       [/pre][/th][th][pre]           [/pre][/th][/tr]",
-            "[tr][th][pre]2,3- [/pre][/th][th][pre]       [/pre][/th][th][pre]notating[/pre][/th][th][pre]smallest  [/pre][/th][th][pre]      [/pre][/th][th][pre]       [/pre][/th][th][pre]           [/pre][/th][/tr]",
-            "[tr][th][pre]free [/pre][/th][th][pre]       [/pre][/th][th][pre]JI      [/pre][/th][th][pre]symbol    [/pre][/th][th][pre]      [/pre][/th][th][pre]Scala  [/pre][/th][th][pre]Scala      [/pre][/th][/tr]",
-            "[tr][th][pre]class[/pre][/th][th][pre]       [/pre][/th][th][pre]symbol  [/pre][/th][th][pre]subset    [/pre][/th][th][pre]N2D3P9[/pre][/th][th][pre]archive[/pre][/th][th][pre]archive    [/pre][/th][/tr]",
+            "[tr][th][pre]     [/pre][/th][th][pre]       [/pre][/th][th][pre]        [/pre][/th][th][pre]          [/pre][/th][th][pre]      [/pre][/th][th][pre]       [/pre][/th][th][pre]           [/pre][/th][/tr]",
+            "[tr][th][pre]2,3- [/pre][/th][th][pre]       [/pre][/th][th][pre]        [/pre][/th][th][pre]smallest  [/pre][/th][th][pre]      [/pre][/th][th][pre]       [/pre][/th][th][pre]           [/pre][/th][/tr]",
+            "[tr][th][pre]free [/pre][/th][th][pre]       [/pre][/th][th][pre]notating[/pre][/th][th][pre]symbol    [/pre][/th][th][pre]      [/pre][/th][th][pre]Scala  [/pre][/th][th][pre]Scala      [/pre][/th][/tr]",
+            "[tr][th][pre]class[/pre][/th][th][pre]       [/pre][/th][th][pre]comma   [/pre][/th][th][pre]subset    [/pre][/th][th][pre]N2D3P9[/pre][/th][th][pre]archive[/pre][/th][th][pre]archive    [/pre][/th][/tr]",
             "[tr][th][pre]name [/pre][/th][th][pre]N2D3P9 [/pre][/th][th][pre]classes [/pre][/th][th][pre]indices   [/pre][/th][th][pre]rank  [/pre][/th][th][pre]rank   [/pre][/th][th][pre]occurrences[/pre][/th][/tr]",
             "[tr][td][pre][/pre][latex]\\frac{1}{1}_{\\scriptsize{(2,3)}}[/latex][pre][/pre][/td][td][pre]  1.000[/pre][/td][td][pre][/pre](:h:) :'::/|:[pre][/pre][/td][td][pre]0, 5      [/pre][/td][td][pre]1     [/pre][/td][td][pre]1      [/pre][/td][td][pre]7624       [/pre][/td][/tr]",
             "[tr][td][pre][/pre][latex]\\frac{5}{1}_{\\scriptsize{(2,3)}}[/latex][pre][/pre][/td][td][pre]  1.389[/pre][/td][td][pre][/pre]:'::|: :/|:[pre][/pre][/td][td][pre]5, 1      [/pre][/td][td][pre]2     [/pre][/td][td][pre]2      [/pre][/td][td][pre]5371       [/pre][/td][/tr]",
@@ -170,12 +170,11 @@ describe("popular-2-3-free-classes", (): void => {
             "count of results with N2D3P9 ≤ 10: 10",
             "",
             "[table]",
-            "[tr][th][pre]     [/pre][/th][th][pre]       [/pre][/th][th][pre]exactly [/pre][/th][th][pre]          [/pre][/th][th][pre]      [/pre][/th][th][pre]       [/pre][/th][th][pre]           [/pre][/th][/tr]",
-            "[tr][th][pre]2,3- [/pre][/th][th][pre]       [/pre][/th][th][pre]notating[/pre][/th][th][pre]smallest  [/pre][/th][th][pre]      [/pre][/th][th][pre]       [/pre][/th][th][pre]           [/pre][/th][/tr]",
-            "[tr][th][pre]free [/pre][/th][th][pre]       [/pre][/th][th][pre]JI      [/pre][/th][th][pre]symbol    [/pre][/th][th][pre]      [/pre][/th][th][pre]Scala  [/pre][/th][th][pre]Scala      [/pre][/th][/tr]",
-            "[tr][th][pre]class[/pre][/th][th][pre]       [/pre][/th][th][pre]symbol  [/pre][/th][th][pre]subset    [/pre][/th][th][pre]N2D3P9[/pre][/th][th][pre]archive[/pre][/th][th][pre]archive    [/pre][/th][/tr]",
-            "[tr][th][pre]name [/pre][/th][th][pre]N2D3P9 [/pre][/th][th][pre]classes [/pre][/th][th][pre]indices   [/pre][/th][th][pre]rank  [/pre][/th][th][pre]rank   [/pre][/th][th][pre]occurrences[/pre][/th][/tr]",
-            "[tr][td][pre][/pre][latex]\\frac{1}{1}_{\\scriptsize{(2,3)}}[/latex][pre][/pre][/td][td][pre]  1.000[/pre][/td][td][pre][/pre](:h:) :'::/|:[pre][/pre][/td][td][pre]0, 5      [/pre][/td][td][pre]1     [/pre][/td][td][pre]1      [/pre][/td][td][pre]7624       [/pre][/td][/tr]",
+            "[tr][th][pre]     [/pre][/th][th][pre]       [/pre][/th][th][pre]        [/pre][/th][th][pre]          [/pre][/th][th][pre]      [/pre][/th][th][pre]       [/pre][/th][th][pre]           [/pre][/th][/tr]",
+            "[tr][th][pre]2,3- [/pre][/th][th][pre]       [/pre][/th][th][pre]        [/pre][/th][th][pre]smallest  [/pre][/th][th][pre]      [/pre][/th][th][pre]       [/pre][/th][th][pre]           [/pre][/th][/tr]",
+            "[tr][th][pre]free [/pre][/th][th][pre]       [/pre][/th][th][pre]notating[/pre][/th][th][pre]symbol    [/pre][/th][th][pre]      [/pre][/th][th][pre]Scala  [/pre][/th][th][pre]Scala      [/pre][/th][/tr]",
+            "[tr][th][pre]class[/pre][/th][th][pre]       [/pre][/th][th][pre]comma   [/pre][/th][th][pre]subset    [/pre][/th][th][pre]N2D3P9[/pre][/th][th][pre]archive[/pre][/th][th][pre]archive    [/pre][/th][/tr]",
+            "[tr][th][pre]name [/pre][/th][th][pre]N2D3P9 [/pre][/th][th][pre]classes [/pre][/th][th][pre]indices   [/pre][/th][th][pre]rank  [/pre][/th][th][pre]rank   [/pre][/th][th][pre]occurrences[/pre][/th][/tr]",           "[tr][td][pre][/pre][latex]\\frac{1}{1}_{\\scriptsize{(2,3)}}[/latex][pre][/pre][/td][td][pre]  1.000[/pre][/td][td][pre][/pre](:h:) :'::/|:[pre][/pre][/td][td][pre]0, 5      [/pre][/td][td][pre]1     [/pre][/td][td][pre]1      [/pre][/td][td][pre]7624       [/pre][/td][/tr]",
             "[tr][td][pre][/pre][latex]\\frac{5}{1}_{\\scriptsize{(2,3)}}[/latex][pre][/pre][/td][td][pre]  1.389[/pre][/td][td][pre][/pre]:'::|: :/|:[pre][/pre][/td][td][pre]5, 1      [/pre][/td][td][pre]2     [/pre][/td][td][pre]2      [/pre][/td][td][pre]5371       [/pre][/td][/tr]",
             "[tr][td][pre][/pre][latex]\\frac{7}{1}_{\\scriptsize{(2,3)}}[/latex][pre][/pre][/td][td][pre]  2.722[/pre][/td][td][pre][/pre]:|): :'::/|): :.::(|\\:[pre][/pre][/td][td][pre]1, 5, 5   [/pre][/td][td][pre]3     [/pre][/td][td][pre]3      [/pre][/td][td][pre]3016       [/pre][/td][/tr]",
             "[tr][td][pre][/pre][latex]\\frac{25}{1}_{\\scriptsize{(2,3)}}[/latex][pre][/pre][/td][td][pre]  3.472[/pre][/td][td][pre][/pre]:.::/|: :/ /|:[pre][/pre][/td][td][pre]5, 1      [/pre][/td][td][pre]4     [/pre][/td][td][pre]4      [/pre][/td][td][pre]1610       [/pre][/td][/tr]",
@@ -202,7 +201,7 @@ describe("popular-2-3-free-classes", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    it("can associate the popular 2,3-free classes with their best notating commas (instead of all of their exactly notating symbol classes)", (): void => {
+    it("can associate the popular 2,3-free classes with their best notating commas (instead of all of their notating comma classes)", (): void => {
         onlyRunInCi()
 
         const command = "npm run popular-2-3-free-classes -- --use-best-notating-commas --max-n2d3p9 10 --table-format forum" as Io
@@ -216,8 +215,8 @@ describe("popular-2-3-free-classes", (): void => {
             "[tr][th][pre]     [/pre][/th][th][pre]      [/pre][/th][th][pre]               [/pre][/th][th][pre]                           [/pre][/th][th][pre]best    [/pre][/th][/tr]",
             "[tr][th][pre]2,3- [/pre][/th][th][pre]      [/pre][/th][th][pre]best           [/pre][/th][th][pre]best                       [/pre][/th][th][pre]notating[/pre][/th][/tr]",
             "[tr][th][pre]free [/pre][/th][th][pre]      [/pre][/th][th][pre]notating       [/pre][/th][th][pre]notating                   [/pre][/th][th][pre]comma   [/pre][/th][/tr]",
-            "[tr][th][pre]class[/pre][/th][th][pre]N2D3P9[/pre][/th][th][pre]comma          [/pre][/th][th][pre]comma                      [/pre][/th][th][pre]symbol  [/pre][/th][/tr]",
-            "[tr][th][pre]name [/pre][/th][th][pre]rank  [/pre][/th][th][pre]cents          [/pre][/th][th][pre]monzo                      [/pre][/th][th][pre]class   [/pre][/th][/tr]",
+            "[tr][th][pre]class[/pre][/th][th][pre]N2D3P9[/pre][/th][th][pre]comma          [/pre][/th][th][pre]comma                      [/pre][/th][th][pre]maybe   [/pre][/th][/tr]",
+            "[tr][th][pre]name [/pre][/th][th][pre]rank  [/pre][/th][th][pre]cents          [/pre][/th][th][pre]monzo                      [/pre][/th][th][pre]symbol  [/pre][/th][/tr]",
             "[tr][td][pre][/pre][latex]\\frac{1}{1}_{\\scriptsize{(2,3)}}[/latex][pre][/pre][/td][td][pre]1     [/pre][/td][td][pre]         0.000¢[/pre][/td][td][pre][  ⟩                       [/pre][/td][td][pre][/pre](:h:)[pre][/pre][/td][/tr]",
             "[tr][td][pre][/pre][latex]\\frac{5}{1}_{\\scriptsize{(2,3)}}[/latex][pre][/pre][/td][td][pre]2     [/pre][/td][td][pre]        21.506¢[/pre][/td][td][pre][  -4   4  -1 ⟩            [/pre][/td][td][pre][/pre]:/|:[pre][/pre][/td][/tr]",
             "[tr][td][pre][/pre][latex]\\frac{7}{1}_{\\scriptsize{(2,3)}}[/latex][pre][/pre][/td][td][pre]3     [/pre][/td][td][pre]        27.264¢[/pre][/td][td][pre][   6  -2   0  -1 ⟩        [/pre][/td][td][pre][/pre]:|):[pre][/pre][/td][/tr]",

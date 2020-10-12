@@ -4,7 +4,7 @@
        	       	       	        	        	       	       	       	       	       	       	       	       	       	       	       	       	       	       	       	       	initial	       
        	       	       	lesser  	greater 	       	       	       	       	       	       	       	       	       	       	       	       	       	       	       	actual 	comma  	a.b.vs 
        	lesser 	greater	extreme 	extreme 	medium 	high   	ultra  	extreme	       	medium 	high   	ultra  	extreme	overall	medium 	high   	ultra  	extreme	overall	bound  	mean   	i.c.m. 
-bound  	mina   	mina   	symbol  	symbol  	level  	level  	level  	level  	overall	dstance	dstance	dstance	dstance	dstance	ina-dst	ina-dst	ina-dst	ina-dst	ina-dst	pos    	pos    	error  
+bound  	mina   	mina   	comma   	comma   	level  	level  	level  	level  	overall	dstance	dstance	dstance	dstance	dstance	ina-dst	ina-dst	ina-dst	ina-dst	ina-dst	pos    	pos    	error
 ID     	name   	name   	class   	class   	rank   	rank   	rank   	rank   	rank   	moved  	moved  	moved  	moved  	moved  	moved  	moved  	moved  	moved  	moved  	(¢)    	(¢)    	(tinas)
        	       	       	        	        	       	       	       	       	       	       	       	       	       	       	       	       	       	       	       	       	       	       
   0    	       	  1    	        	    `|  	       	       	       	  1    	  1    	       	       	       	  0.033	  0.033	       	       	       	  0.236	  0.236	  0.211	  0.211	 -0.004

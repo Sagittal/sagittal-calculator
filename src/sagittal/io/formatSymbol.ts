@@ -1,23 +1,24 @@
 import { Formatted, ioSettings, TableFormat } from "../../general"
-import { Symbol } from "../notations"
-import { formatSymbolAscii } from "./formatSymbolAscii"
+import { NotationCaptureZoneAccidental } from "../notations"
+import { formatAscii } from "./formatAscii"
 import { computeSmileyFromAscii } from "./smiley"
-import { SymbolGlyph, SymbolLongAscii, SymbolSmiley, SymbolUnicode } from "./types"
+import { Ascii, Glyph, Smiley, Unicode } from "./types"
 
 const formatSymbol = (
-    symbol: Symbol,
+    // TODO: needs work
+    symbol: NotationCaptureZoneAccidental,
     { align = true }: { align?: boolean } = {},
-): Formatted<SymbolGlyph> => {
+): Formatted<Glyph> => {
     const ascii = symbol.revoAscii
 
     switch (ioSettings.tableFormat) {
         case TableFormat.TERMINAL:
-            return align ? formatSymbolAscii(ascii) : ascii as string as Formatted<SymbolLongAscii>
+            return align ? formatAscii(ascii) : ascii as string as Formatted<Ascii>
         case TableFormat.FORUM:
         case TableFormat.FORUM_WITH_SPLIT_QUOTIENTS:
-            return `[/pre]${computeSmileyFromAscii(ascii)}[pre]` as Formatted<SymbolSmiley>
+            return `[/pre]${computeSmileyFromAscii(ascii)}[pre]` as Formatted<Smiley>
         case TableFormat.SPREADSHEET:
-            return symbol.revoUnicode as string as Formatted<SymbolUnicode>
+            return symbol.revoUnicode as string as Formatted<Unicode>
     }
 }
 

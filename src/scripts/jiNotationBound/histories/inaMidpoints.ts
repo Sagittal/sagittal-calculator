@@ -5,7 +5,7 @@ import {
     JiNotationLevel,
     JI_NOTATION_LEVELS,
     JI_NOTATION_LEVEL_EDAS,
-    MAX_SYMBOL_CLASS_POSITION,
+    MAX_SINGLE_SHAFT_POSITION,
 } from "../../../sagittal"
 
 const computeInaMidpoints = (jiNotationLevel: JiNotationLevel): InaMidpoint[] => {
@@ -18,7 +18,7 @@ const computeInaMidpoints = (jiNotationLevel: JiNotationLevel): InaMidpoint[] =>
             scaler: [midpoint, eda as number] as Quotient,
         } as Scamon<{ rational: false }>
 
-        if (isScamonGreater(pitch, MAX_SYMBOL_CLASS_POSITION)) {
+        if (isScamonGreater(pitch, MAX_SINGLE_SHAFT_POSITION)) {
             return undefined
         }
 

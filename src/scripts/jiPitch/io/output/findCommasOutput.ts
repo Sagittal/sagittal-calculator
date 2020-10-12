@@ -1,5 +1,5 @@
 import { count, formatTable, Id, Io, Maybe, Row, sumTexts, Table } from "../../../../general"
-import { CommaAnalysis, SymbolClass } from "../../../../sagittal"
+import { CommaAnalysis, CommaClass } from "../../../../sagittal"
 import { DEFAULT_FIND_COMMAS_SETTINGS, FindCommasSettings } from "../../findCommas"
 import { computeFindCommasHeaderRows } from "../headerRows"
 import { computeFindCommasRow } from "../row"
@@ -8,7 +8,7 @@ import { computeFindCommasTitle } from "../titles"
 
 const computeFindCommasOutput = (
     commaAnalyses: CommaAnalysis[],
-    maybeSymbolClassIds: Array<Maybe<Id<SymbolClass>>>,
+    maybeCommaClassIds: Array<Maybe<Id<CommaClass>>>,
     findCommasSettings: FindCommasSettings = DEFAULT_FIND_COMMAS_SETTINGS,
 ): Io => {
     const maxMonzoLength = computeMaxMonzoLength(commaAnalyses)
@@ -19,7 +19,7 @@ const computeFindCommasOutput = (
     const findCommasTable: Table<CommaAnalysis> = [
         ...findCommasHeaderRows,
         ...commaAnalyses.map((commaAnalysis: CommaAnalysis, index: number): Row<{ of: CommaAnalysis }> => {
-            return computeFindCommasRow(commaAnalysis, maybeSymbolClassIds[ index ], maxMonzoLength)
+            return computeFindCommasRow(commaAnalysis, maybeCommaClassIds[ index ], maxMonzoLength)
         }),
     ]
 

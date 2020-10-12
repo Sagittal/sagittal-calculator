@@ -21,14 +21,14 @@ const TWO_3_FREE_CLASS_COLUMN_TITLES: Record<Two3FreeClassField, Io> = {
     [ Two3FreeClassField.N2D3P9 ]: "N2D3P9" as Io,
 }
 
-const NOTATING_COMMAS_WITH_MAYBE_SAGITTAL_SYMBOL_CLASSES_COLUMN_TITLES: Record<NotatingCommasField, Io> = {
-    [ NotatingCommasField.SYMBOL_CLASS ]: "symbol class" as Io,
+const NOTATING_COMMAS_WITH_MAYBE_COMMA_CLASSES_COLUMN_TITLES: Record<NotatingCommasField, Io> = {
+    [ NotatingCommasField.COMMA_CLASS ]: "comma class" as Io,
     [ NotatingCommasField.NAME ]: "name" as Io,
     ...JI_PITCH_COLUMN_TITLES,
 }
 
 const FIND_COMMAS_COLUMN_TITLES: Record<FindCommasField, Io> = {
-    ...NOTATING_COMMAS_WITH_MAYBE_SAGITTAL_SYMBOL_CLASSES_COLUMN_TITLES,
+    ...NOTATING_COMMAS_WITH_MAYBE_COMMA_CLASSES_COLUMN_TITLES,
     // Pretty much the same as TWO_3_FREE_CLASS_COLUMN_TITLES,
     // But here we can't assume the "2,3-free class" part b/c there's no 2,3-free class title just above
     [ FindCommasField.TWO_3_FREE_PRIME_LIMIT ]: "2,3-free prime limit" as Io,
@@ -63,7 +63,7 @@ const computeNotatingCommasHeaderRows =
         formatPrimeHeaders(
             splitColumnTitlesIntoRowsBySpaces(
                 splitMonzoAndQuotientColumnTitles(
-                    excludeFields(NOTATING_COMMAS_WITH_MAYBE_SAGITTAL_SYMBOL_CLASSES_COLUMN_TITLES),
+                    excludeFields(NOTATING_COMMAS_WITH_MAYBE_COMMA_CLASSES_COLUMN_TITLES),
                     { maxMonzoLength },
                 ),
             ),

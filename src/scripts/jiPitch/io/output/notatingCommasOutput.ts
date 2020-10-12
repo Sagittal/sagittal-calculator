@@ -1,5 +1,5 @@
 import { count, formatTable, Id, Io, Maybe, Row, sumTexts } from "../../../../general"
-import { CommaAnalysis, SymbolClass } from "../../../../sagittal"
+import { CommaAnalysis, CommaClass } from "../../../../sagittal"
 import { computeNotatingCommasHeaderRows } from "../headerRows"
 import { computeNotatingCommasRow } from "../row"
 import { computeMaxMonzoLength, computeMonzoAndQuotientJustification } from "../splitMonzoAndQuotient"
@@ -7,7 +7,7 @@ import { NOTATING_COMMAS_TITLE } from "../titles"
 
 const computeNotatingCommasOutput = (
     notatingCommaAnalyses: CommaAnalysis[],
-    maybeSymbolClassIds: Array<Maybe<Id<SymbolClass>>>,
+    maybeCommaClassIds: Array<Maybe<Id<CommaClass>>>,
 ): Io => {
     const maxMonzoLength = computeMaxMonzoLength(notatingCommaAnalyses)
     const notatingCommasHeaderRows = computeNotatingCommasHeaderRows(maxMonzoLength)
@@ -18,7 +18,7 @@ const computeNotatingCommasOutput = (
         ...notatingCommasHeaderRows,
         ...notatingCommaAnalyses
             .map((notatingCommaAnalysis: CommaAnalysis, index: number): Row<{ of: CommaAnalysis }> => {
-                return computeNotatingCommasRow(notatingCommaAnalysis, maybeSymbolClassIds[ index ], maxMonzoLength)
+                return computeNotatingCommasRow(notatingCommaAnalysis, maybeCommaClassIds[ index ], maxMonzoLength)
             }),
     ]
 

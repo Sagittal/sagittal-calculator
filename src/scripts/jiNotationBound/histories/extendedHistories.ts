@@ -1,6 +1,6 @@
 import { computeExtensionBase, ExtensionBaseType } from "../../../general"
 import { BoundType, JiNotationBound, JiNotationLevel } from "../../../sagittal"
-import { computeBoundedSymbolClassPositions } from "../boundedPositions"
+import { computeBoundedCommaClassPositions } from "../boundedPositions"
 import { computeBoundEvents } from "./events"
 import { BoundEvent, BoundHistory } from "./types"
 
@@ -11,12 +11,12 @@ const computeExtendedHistories = (
 ): BoundHistory[] => {
     const extendedBoundHistories = computeExtensionBase(ExtensionBaseType.ARRAY) as BoundHistory[]
 
-    const boundedSymbolClassPositions = computeBoundedSymbolClassPositions(pitch, jiNotationLevel)
+    const boundedCommaClassPositions = computeBoundedCommaClassPositions(pitch, jiNotationLevel)
 
     const newBoundEvents = [
-        ...computeBoundEvents(jiNotationLevel, boundedSymbolClassPositions, BoundType.INA_MIDPOINT),
-        ...computeBoundEvents(jiNotationLevel, boundedSymbolClassPositions, BoundType.COMMA_MEAN),
-        ...computeBoundEvents(jiNotationLevel, boundedSymbolClassPositions, BoundType.SIZE_CATEGORY_BOUND),
+        ...computeBoundEvents(jiNotationLevel, boundedCommaClassPositions, BoundType.INA_MIDPOINT),
+        ...computeBoundEvents(jiNotationLevel, boundedCommaClassPositions, BoundType.COMMA_MEAN),
+        ...computeBoundEvents(jiNotationLevel, boundedCommaClassPositions, BoundType.SIZE_CATEGORY_BOUND),
     ]
 
     newBoundEvents.forEach((boundEvent: BoundEvent): void => {

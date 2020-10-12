@@ -5,12 +5,12 @@ import {
     computePopular23FreeClassWithBestNotatingCommaHeaderRows,
     computePopular23FreeClassWithBestNotatingCommaRow,
 } from "../bestNotatingComma"
-import {
-    computePopular23FreeClassWithExactlyNotatingSymbolClassesHeaderRows,
-    computePopular23FreeClassWithExactlyNotatingSymbolClassRow,
-    ExactlyNotatingSymbolClassProperties,
-} from "../exactlyNotatingSymbolClass"
 import { popular23FreeClassesScriptGroupSettings } from "../globals"
+import {
+    computePopular23FreeClassWithNotatingCommaClassesHeaderRows,
+    computePopular23FreeClassWithNotatingCommaClassesRow,
+    NotatingCommaClassesProperties,
+} from "../notatingCommaClasses"
 import { Popular23FreeClass } from "../types"
 
 const computePopular23FreeClassesOutput = (
@@ -19,7 +19,7 @@ const computePopular23FreeClassesOutput = (
 ): Io => {
     const headerRows: Table<Popular23FreeClass> = popular23FreeClassesScriptGroupSettings.useBestNotatingCommas ?
         computePopular23FreeClassWithBestNotatingCommaHeaderRows() :
-        computePopular23FreeClassWithExactlyNotatingSymbolClassesHeaderRows()
+        computePopular23FreeClassWithNotatingCommaClassesHeaderRows()
     const headerRowCount = count(headerRows) as Count<Row<{ of: Popular23FreeClass, header: true }>>
 
     const rows = popular23FreeClasses
@@ -29,8 +29,8 @@ const computePopular23FreeClassesOutput = (
                     popular23FreeClass as Ranked<Popular23FreeClass & BestNotatingCommaProperties>,
                 )
             } else {
-                return computePopular23FreeClassWithExactlyNotatingSymbolClassRow(
-                    popular23FreeClass as Ranked<Popular23FreeClass & ExactlyNotatingSymbolClassProperties>,
+                return computePopular23FreeClassWithNotatingCommaClassesRow(
+                    popular23FreeClass as Ranked<Popular23FreeClass & NotatingCommaClassesProperties>,
                 )
             }
         })

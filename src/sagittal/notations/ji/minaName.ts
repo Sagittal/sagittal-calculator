@@ -1,8 +1,8 @@
 import { Id, Name, RecordKey } from "../../../general"
-import { SymbolClass } from "../types"
+import { CommaClass } from "../types"
 import { Mina } from "./types"
 
-const EXTREME_NOTATION_MINAS: Record<RecordKey<Id<SymbolClass>>, Name<Mina>> = {
+const EXTREME_NOTATION_MINAS: Record<RecordKey<Id<CommaClass>>, Name<Mina>> = {
     [ 0 ]: "0" as Name<Mina>,
     [ 1 ]: "1" as Name<Mina>,
     [ 2 ]: "2" as Name<Mina>,
@@ -154,8 +154,8 @@ const EXTREME_NOTATION_MINAS: Record<RecordKey<Id<SymbolClass>>, Name<Mina>> = {
     [ 148 ]: "140" as Name<Mina>,
 }
 
-const getMinaName = (symbolClassId: Id<SymbolClass>): Name<Mina> =>
-    EXTREME_NOTATION_MINAS[ symbolClassId ]
+const getMinaName = (commaClassId: Id<CommaClass>): Name<Mina> =>
+    EXTREME_NOTATION_MINAS[ commaClassId ]
 
 export {
     getMinaName,

@@ -1,17 +1,17 @@
 import { Id } from "../../../general"
-import { SymbolClass } from "../types"
+import { CommaClass } from "../types"
+import { JI_NOTATION_LEVELS_COMMA_CLASS_IDS } from "./levelCommaClassIds"
 import { JI_NOTATION_LEVELS } from "./levels"
-import { JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS } from "./levelSymbolClassIds"
 import { JiNotationLevel } from "./types"
 
-const getIntroducingJiNotationLevel = (symbolClassId: Id<SymbolClass>): JiNotationLevel => {
+const getIntroducingJiNotationLevel = (commaClassId: Id<CommaClass>): JiNotationLevel => {
     for (const jiNotationLevel of JI_NOTATION_LEVELS) {
-        if (JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS[ jiNotationLevel ].includes(symbolClassId)) {
+        if (JI_NOTATION_LEVELS_COMMA_CLASS_IDS[ jiNotationLevel ].includes(commaClassId)) {
             return jiNotationLevel
         }
     }
 
-    throw new Error(`Symbol class ID ${symbolClassId} does not appear in a JI notation level.`)
+    throw new Error(`Comma class ID ${commaClassId} does not appear in a JI notation level.`)
 }
 
 export {

@@ -3,7 +3,7 @@ import { Rank, Ranked } from "../../../../../../src/general/code"
 import { IRRATIONAL_SCAMON_BASE_MONZO } from "../../../../../../src/general/math/irrational/scamon/constants"
 import { Cents } from "../../../../../../src/general/music"
 import { N2D3P9 } from "../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
-import { SymbolClass } from "../../../../../../src/sagittal/notations"
+import { CommaClass } from "../../../../../../src/sagittal/notations"
 import { BestNotatingCommaProperties } from "../../../../../../src/scripts/popular23FreeClass/bestNotatingComma"
 import { computePopular23FreeClassWithBestNotatingCommaRow } from "../../../../../../src/scripts/popular23FreeClass/bestNotatingComma/io"
 import { Popular23FreeClass } from "../../../../../../src/scripts/popular23FreeClass/types"
@@ -18,7 +18,7 @@ describe("computePopular23FreeClassWithBestNotatingCommaRow", (): void => {
             rank: 4 as Rank<Popular23FreeClass & BestNotatingCommaProperties>,
             bestNotatingCommaCents: 5 as Cents,
             bestNotatingCommaMonzo: IRRATIONAL_SCAMON_BASE_MONZO,
-            bestNotatingCommaMaybeSymbolClassId: 6 as Id<SymbolClass>,
+            bestNotatingCommaMaybeCommaClassId: 6 as Id<CommaClass>,
             n2d3p9: 2 as N2D3P9,
             votes: 7 as Votes,
             popularityRank: 3 as Rank<Popularity>,
@@ -34,7 +34,7 @@ describe("computePopular23FreeClassWithBestNotatingCommaRow", (): void => {
             "4",                // Estimated rank
             "         5.000¢",  // Best notating comma cents
             "[   1 ⟩",          // Best notating comma monzo
-            "   ,)|  ",         // Best notating comma maybe symbol class
+            "   ,)|  ",         // Best notating comma maybe symbol
         ] as Row<{ of: Popular23FreeClass & BestNotatingCommaProperties, header: true }>
         expect(actual).toEqual(expected)
     })

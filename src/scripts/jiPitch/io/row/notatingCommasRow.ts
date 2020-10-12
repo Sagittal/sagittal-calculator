@@ -1,19 +1,19 @@
 import { BLANK, Count, Exponent, Id, Max, Maybe, Prime, Row } from "../../../../general"
-import { CommaAnalysis, formatSymbolClass, SymbolClass } from "../../../../sagittal"
+import { CommaAnalysis, CommaClass, formatCommaClass } from "../../../../sagittal"
 import { jiPitchScriptGroupSettings } from "../../globals"
 import { NotatingCommasField } from "../../types"
 import { computeJiPitchRow } from "./jiPitchRow"
 
 const computeNotatingCommasRow = (
     commaAnalysis: CommaAnalysis,
-    maybeSymbolClassId: Maybe<Id<SymbolClass>>,
+    maybeCommaClassId: Maybe<Id<CommaClass>>,
     maxMonzoLength: Max<Count<Exponent<Prime>>>,
 ): Row<{ of: CommaAnalysis }> => {
     const row = []
 
-    if (!jiPitchScriptGroupSettings.excludedFields.includes(NotatingCommasField.SYMBOL_CLASS)) {
-        const formattedSymbolClass = maybeSymbolClassId ? formatSymbolClass(maybeSymbolClassId) : BLANK
-        row.push(formattedSymbolClass)
+    if (!jiPitchScriptGroupSettings.excludedFields.includes(NotatingCommasField.COMMA_CLASS)) {
+        const formattedCommaClass = maybeCommaClassId ? formatCommaClass(maybeCommaClassId) : BLANK
+        row.push(formattedCommaClass)
     }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(NotatingCommasField.NAME)) {
         const { name } = commaAnalysis

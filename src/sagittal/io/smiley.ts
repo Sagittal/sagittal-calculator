@@ -1,7 +1,7 @@
-import { SymbolLongAscii, SymbolSmiley } from "./types"
+import { Ascii, Smiley } from "./types"
 
-const computeSmileyFromAscii = (ascii: SymbolLongAscii): SymbolSmiley => {
-    if (ascii === "(|//|)") return "(:h:)" as SymbolSmiley
+const computeSmileyFromAscii = (ascii: Ascii): Smiley => {
+    if (ascii === "(|//|)") return "(:h:)" as Smiley
 
     const withoutAccentsAndFixedSlashes = ascii
         .replace(/`/g, "")
@@ -26,7 +26,7 @@ const computeSmileyFromAscii = (ascii: SymbolLongAscii): SymbolSmiley => {
         .replace(/\)/g, "")
         .replace(/~/g, "")
 
-    return fixedAccentsOnly + ":" + withoutAccentsAndFixedSlashes + ":" as SymbolSmiley
+    return fixedAccentsOnly + ":" + withoutAccentsAndFixedSlashes + ":" as Smiley
 }
 
 export {

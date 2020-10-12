@@ -1,5 +1,5 @@
 import { Id, Io, LogTarget, Maybe, saveLog } from "../../../general"
-import { CommaAnalysis, computeMaybeSymbolClassId, SymbolClass } from "../../../sagittal"
+import { CommaAnalysis, CommaClass, computeMaybeCommaClassId } from "../../../sagittal"
 import { computeCommaAnalyses, parseFindCommasSettings } from "../findCommas"
 import { computeFindCommasOutput, readFindCommasOptions } from "../io"
 import { applySharedPitchCommandSetup } from "./shared"
@@ -10,9 +10,9 @@ applySharedPitchCommandSetup()
 
 const findCommasSettings = parseFindCommasSettings()
 const commaAnalyses: CommaAnalysis[] = computeCommaAnalyses(findCommasSettings)
-const maybeSymbolClassIds: Array<Maybe<Id<SymbolClass>>> = commaAnalyses
-    .map((commaAnalysis: CommaAnalysis): Maybe<Id<SymbolClass>> => {
-        return computeMaybeSymbolClassId(commaAnalysis.pitch)
+const maybeCommaClassIds: Array<Maybe<Id<CommaClass>>> = commaAnalyses
+    .map((commaAnalysis: CommaAnalysis): Maybe<Id<CommaClass>> => {
+        return computeMaybeCommaClassId(commaAnalysis.pitch)
     })
-const findCommasOutput: Io = computeFindCommasOutput(commaAnalyses, maybeSymbolClassIds, findCommasSettings)
+const findCommasOutput: Io = computeFindCommasOutput(commaAnalyses, maybeCommaClassIds, findCommasSettings)
 saveLog(findCommasOutput, LogTarget.FINAL)

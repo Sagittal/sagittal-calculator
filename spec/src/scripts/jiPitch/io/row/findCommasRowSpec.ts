@@ -17,7 +17,7 @@ import {
     Sopfr,
     Two3FreeClass,
 } from "../../../../../../src/general"
-import { ApotomeSlope, CommaAnalysis, SymbolClass } from "../../../../../../src/sagittal"
+import { ApotomeSlope, CommaAnalysis, CommaClass } from "../../../../../../src/sagittal"
 import { N2D3P9 } from "../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
 import { jiPitchScriptGroupSettings } from "../../../../../../src/scripts/jiPitch/globals"
 import { computeFindCommasRow } from "../../../../../../src/scripts/jiPitch/io/row"
@@ -26,7 +26,6 @@ import { commaAnalysisFixture, two3FreeClassAnalysisFixture } from "../../../../
 
 describe("computeFindCommasRow", (): void => {
     // This comma is made up and internally inconsistent.
-    // Only the name is important as it is used to find the symbol.
     const commaAnalysis: CommaAnalysis = {
         ...commaAnalysisFixture,
         cents: 11.2 as Cents,
@@ -47,14 +46,14 @@ describe("computeFindCommasRow", (): void => {
             } as Two3FreeClass,
         },
     }
-    const symbolClassId = 44 as Id<SymbolClass>
+    const commaClassId = 44 as Id<CommaClass>
     const maxMonzoLength = 5 as Max<Count<Exponent<Prime>>>
 
     it("takes the properties of the comma and puts them in order in a row", (): void => {
-        const actual = computeFindCommasRow(commaAnalysis, symbolClassId, maxMonzoLength)
+        const actual = computeFindCommasRow(commaAnalysis, commaClassId, maxMonzoLength)
 
         const expected = [
-            "    /|  ",         // Symbol class
+            "    /|  ",         // Comma class
             "1/5C",             // Comma name
             "5",                // Quotient numerator
             "/",                // Quotient vinculum
@@ -84,10 +83,10 @@ describe("computeFindCommasRow", (): void => {
 
     it("can filter excluded fields", (): void => {
         jiPitchScriptGroupSettings.excludedFields = [FindCommasField.AAS, FindCommasField.ATE]
-        const actual = computeFindCommasRow(commaAnalysis, symbolClassId, maxMonzoLength)
+        const actual = computeFindCommasRow(commaAnalysis, commaClassId, maxMonzoLength)
 
         const expected = [
-            "    /|  ",         // Symbol class
+            "    /|  ",         // Comma class
             "1/5C",             // Comma name
             "5",                // Quotient numerator
             "/",                // Quotient vinculum

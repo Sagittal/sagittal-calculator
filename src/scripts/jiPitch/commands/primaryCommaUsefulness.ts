@@ -2,12 +2,12 @@ import { Comma, Id, Io, LogTarget, saveLog, stringify } from "../../../general"
 import {
     analyzeComma,
     CommaAnalysis,
+    CommaClass,
     computeCommaName,
     computeSecondaryCommaZone,
-    formatSymbolClass,
+    formatCommaClass,
     getPrimaryComma,
     JI_NOTATION,
-    SymbolClass,
 } from "../../../sagittal"
 import { computeCommas, parseFindCommasSettings } from "../findCommas"
 import { jiPitchScriptGroupSettings } from "../globals"
@@ -22,13 +22,13 @@ applySharedPitchCommandSetup()
 
 const findCommasSettings = parseFindCommasSettings()
 
-JI_NOTATION.forEach((symbolClassId: Id<SymbolClass>): void => {
-    const primaryComma = getPrimaryComma(symbolClassId)
+JI_NOTATION.forEach((commaClassId: Id<CommaClass>): void => {
+    const primaryComma = getPrimaryComma(commaClassId)
     const commaName = computeCommaName(primaryComma)
 
-    saveLog(`\n\n${formatSymbolClass(symbolClassId)} ${commaName}\n\n` as Io, LogTarget.ALL)
+    saveLog(`\n\n${formatCommaClass(commaClassId)} ${commaName}\n\n` as Io, LogTarget.ALL)
 
-    const secondaryCommaZone = computeSecondaryCommaZone(symbolClassId)
+    const secondaryCommaZone = computeSecondaryCommaZone(commaClassId)
     const lowerBound = secondaryCommaZone[ 0 ]
     const upperBound = secondaryCommaZone[ 1 ]
 

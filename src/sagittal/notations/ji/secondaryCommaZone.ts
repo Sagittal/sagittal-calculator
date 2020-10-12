@@ -1,12 +1,12 @@
 import { Id, Zone } from "../../../general"
-import { PrimaryComma, SymbolClass } from "../types"
+import { CommaClass, PrimaryComma } from "../types"
 import { computeCaptureZone } from "./captureZone"
 import { getIntroducingJiNotationLevel } from "./introducingJiNotationLevel"
 
-const computeSecondaryCommaZone = (symbolClassId: Id<SymbolClass>): Zone<PrimaryComma> => {
+const computeSecondaryCommaZone = (commaClassId: Id<CommaClass>): Zone<PrimaryComma> => {
     return computeCaptureZone(
-        symbolClassId,
-        getIntroducingJiNotationLevel(symbolClassId),
+        commaClassId,
+        getIntroducingJiNotationLevel(commaClassId),
     ) as Zone<PrimaryComma>
 }
 

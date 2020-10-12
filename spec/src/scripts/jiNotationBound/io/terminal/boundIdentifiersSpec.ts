@@ -22,15 +22,15 @@ import {
 } from "../../../../../../src/general"
 import {
     ApotomeSlope,
+    Ascii,
     BoundType,
+    CommaClass,
     Ina,
     N2D3P9,
     PrimaryComma,
-    SymbolClass,
-    SymbolLongAscii,
     TINA,
 } from "../../../../../../src/sagittal"
-import { SymbolUnicode } from "../../../../../../src/sagittal/io"
+import { Unicode } from "../../../../../../src/sagittal/io"
 import { SymbolSubset } from "../../../../../../src/sagittal/notations"
 import { JiNotationBound, JiNotationLevel, Mina } from "../../../../../../src/sagittal/notations/ji"
 import { MINA, ULTRINA } from "../../../../../../src/sagittal/notations/ji/intervals"
@@ -51,18 +51,18 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
         const actual: JiNotationBoundIdentifiers = extractJiNotationBoundIdentifiers(jiNotationBound)
 
         const expected: JiNotationBoundIdentifiers = {
-            extremeLevelLesserBoundedSymbolClass: ".)/|" as SymbolLongAscii,
-            extremeLevelGreaterBoundedSymbolClass: "'/|" as SymbolLongAscii,
+            extremeLevelLesserBoundedCommaClass: ".)/|" as Ascii,
+            extremeLevelGreaterBoundedCommaClass: "'/|" as Ascii,
             cents: 23.116419 as Cents as Cents,
-            boundedSymbolClassAnalyses: {
+            boundedCommaClassAnalyses: {
                 id: 47 as Id<JiNotationBound>,
                 [ JiNotationLevel.ULTRA ]: [
                     {
                         introducingJiNotationLevel: JiNotationLevel.ULTRA,
                         distance: 23.1164196495597 - 22.9305875372457 as Abs<Cents>,
                         inaDistance: (23.1164196495597 - 22.9305875372457) / ULTRINA as Multiplier<Ina>,
-                        ascii: ".)/|" as SymbolLongAscii,
-                        unicode: "" as SymbolUnicode,
+                        ascii: ".)/|" as Ascii,
+                        unicode: "" as Unicode,
                         smallestSymbolSubset: SymbolSubset.HERCULEAN,
                         minaName: "47" as Name<Mina>,
                         primaryCommaAnalysis: {
@@ -90,15 +90,14 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             } as PrimaryComma,
                         },
                         // Not the best example b/c ID and mina name are the same up to this point
-                        id: 47 as Id<SymbolClass>,
-                        elements: [".|", ")|", "/|"] as SymbolLongAscii[],
+                        id: 47 as Id<CommaClass>,
                     },
                     {
                         introducingJiNotationLevel: JiNotationLevel.ULTRA,
                         distance: 23.46001038464900 - 23.1164196495597 as Abs<Cents>,
                         inaDistance: (23.46001038464900 - 23.1164196495597) / ULTRINA as Multiplier<Ina>,
-                        ascii: "'/|" as SymbolLongAscii,
-                        unicode: "" as SymbolUnicode,
+                        ascii: "'/|" as Ascii,
+                        unicode: "" as Unicode,
                         smallestSymbolSubset: SymbolSubset.HERCULEAN,
                         minaName: "48" as Name<Mina>,
                         primaryCommaAnalysis: {
@@ -125,8 +124,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                                 monzo: [-19, 12] as Monzo<{ rational: true }>,
                             } as PrimaryComma,
                         },
-                        id: 48 as Id<SymbolClass>,
-                        elements: ["'|", "/|"] as SymbolLongAscii[],
+                        id: 48 as Id<CommaClass>,
                     },
                 ],
                 [ JiNotationLevel.EXTREME ]: [
@@ -134,8 +132,8 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         introducingJiNotationLevel: JiNotationLevel.ULTRA,
                         distance: 23.1164196495597 - 22.9305875372457 as Abs<Cents>,
                         inaDistance: (23.1164196495597 - 22.9305875372457) / MINA as Multiplier<Ina>,
-                        ascii: ".)/|" as SymbolLongAscii,
-                        unicode: "" as SymbolUnicode,
+                        ascii: ".)/|" as Ascii,
+                        unicode: "" as Unicode,
                         smallestSymbolSubset: SymbolSubset.HERCULEAN,
                         minaName: "47" as Name<Mina>,
                         primaryCommaAnalysis: {
@@ -162,15 +160,14 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                                 monzo: [2, -1, -2, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
                             } as PrimaryComma,
                         },
-                        id: 47 as Id<SymbolClass>,
-                        elements: [".|", ")|", "/|"] as SymbolLongAscii[],
+                        id: 47 as Id<CommaClass>,
                     },
                     {
                         introducingJiNotationLevel: JiNotationLevel.ULTRA,
                         distance: 23.46001038464900 - 23.1164196495597 as Abs<Cents>,
                         inaDistance: (23.46001038464900 - 23.1164196495597) / MINA as Multiplier<Ina>,
-                        ascii: "'/|" as SymbolLongAscii,
-                        unicode: "" as SymbolUnicode,
+                        ascii: "'/|" as Ascii,
+                        unicode: "" as Unicode,
                         smallestSymbolSubset: SymbolSubset.HERCULEAN,
                         minaName: "48" as Name<Mina>,
                         primaryCommaAnalysis: {
@@ -197,8 +194,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                                 monzo: [-19, 12] as Monzo<{ rational: true }>,
                             } as PrimaryComma,
                         },
-                        id: 48 as Id<SymbolClass>,
-                        elements: ["'|", "/|"] as SymbolLongAscii[],
+                        id: 48 as Id<CommaClass>,
                     },
                 ],
                 [ JiNotationLevel.INSANE ]: [
@@ -206,11 +202,11 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         introducingJiNotationLevel: JiNotationLevel.ULTRA,
                         distance: 23.1164196495597 - 22.9305875372457 as Abs<Cents>,
                         inaDistance: (23.1164196495597 - 22.9305875372457) / TINA as Multiplier<Ina>,
-                        ascii: ".)/|" as SymbolLongAscii,
-                        unicode: "" as SymbolUnicode,
+                        ascii: ".)/|" as Ascii,
+                        unicode: "" as Unicode,
                         minaName: "47" as Name<Mina>,
                         smallestSymbolSubset: SymbolSubset.HERCULEAN,
-                        id: 47 as Id<SymbolClass>,
+                        id: 47 as Id<CommaClass>,
                         primaryCommaAnalysis: {
                             apotomeSlope: -2.411919815346935 as ApotomeSlope,
                             aas: 2.411919815346935 as Abs<ApotomeSlope>,
@@ -235,17 +231,16 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                                 monzo: [2, -1, -2, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
                             } as PrimaryComma,
                         },
-                        elements: [".|", ")|", "/|"] as SymbolLongAscii[],
                     },
                     {
                         introducingJiNotationLevel: JiNotationLevel.ULTRA,
                         distance: 23.46001038464900 - 23.1164196495597 as Abs<Cents>,
                         inaDistance: (23.46001038464900 - 23.1164196495597) / TINA as Multiplier<Ina>,
-                        ascii: "'/|" as SymbolLongAscii,
-                        unicode: "" as SymbolUnicode,
+                        ascii: "'/|" as Ascii,
+                        unicode: "" as Unicode,
                         minaName: "48" as Name<Mina>,
                         smallestSymbolSubset: SymbolSubset.HERCULEAN,
-                        id: 48 as Id<SymbolClass>,
+                        id: 48 as Id<CommaClass>,
                         primaryCommaAnalysis: {
                             apotomeSlope: 10.555481691145998 as ApotomeSlope,
                             aas: 10.555481691145998 as Abs<ApotomeSlope>,
@@ -270,7 +265,6 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                                 monzo: [-19, 12] as Monzo<{ rational: true }>,
                             } as PrimaryComma,
                         },
-                        elements: ["'|", "/|"] as SymbolLongAscii[],
                     },
                 ],
             },

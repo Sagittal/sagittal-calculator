@@ -3,29 +3,29 @@ import { APOTOME } from "../../../../../src/sagittal"
 import { Bound, BoundType, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 import { HIGH_EDA, ULTRA_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"
 import {
-    BoundedSymbolClassPositions,
-    computeBoundedSymbolClassPositions,
+    BoundedCommaClassPositions,
+    computeBoundedCommaClassPositions,
 } from "../../../../../src/scripts/jiNotationBound/boundedPositions"
 import { BoundEvent } from "../../../../../src/scripts/jiNotationBound/histories"
 import { computeBoundEvents } from "../../../../../src/scripts/jiNotationBound/histories/events"
 
 describe("computeBoundEvents", (): void => {
     let jiNotationLevel: JiNotationLevel
-    let boundedSymbolClassPositions: BoundedSymbolClassPositions
+    let boundedCommaClassPositions: BoundedCommaClassPositions
     let boundType: BoundType
 
-    describe("returns an event for each bound position between the bounded symbol class positions for this bound type and JI notation level", (): void => {
+    describe("returns an event for each bound position between the bounded comma class positions for this bound type and JI notation level", (): void => {
         describe("for events of snapping to ina midpoint positions", (): void => {
             beforeEach((): void => {
                 boundType = BoundType.INA_MIDPOINT
             })
 
-            it("works when only one ina midpoint is between the bounded symbols", (): void => {
+            it("works when only one ina midpoint is between the bounded comma class positions", (): void => {
                 jiNotationLevel = JiNotationLevel.ULTRA
-                boundedSymbolClassPositions =
-                    computeBoundedSymbolClassPositions(computePitchFromCents(4.5 as Cents), jiNotationLevel)
+                boundedCommaClassPositions =
+                    computeBoundedCommaClassPositions(computePitchFromCents(4.5 as Cents), jiNotationLevel)
 
-                const actual: BoundEvent[] = computeBoundEvents(jiNotationLevel, boundedSymbolClassPositions, boundType)
+                const actual: BoundEvent[] = computeBoundEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
 
                 const expected: BoundEvent[] = [
                     {
@@ -38,13 +38,13 @@ describe("computeBoundEvents", (): void => {
                 expect(actual).toEqual(expected)
             })
 
-            it("works when only one ina midpoint is between the bounded symbols, even if it is not within a half-ina            ", (): void => {
+            it("works when only one ina midpoint is between the bounded comma class positions, even if it is not within a half-ina            ", (): void => {
                 jiNotationLevel = JiNotationLevel.ULTRA
-                boundedSymbolClassPositions =
-                    computeBoundedSymbolClassPositions(computePitchFromCents(4.5 as Cents), jiNotationLevel)
+                boundedCommaClassPositions =
+                    computeBoundedCommaClassPositions(computePitchFromCents(4.5 as Cents), jiNotationLevel)
 
                 const actual: BoundEvent[] =
-                    computeBoundEvents(jiNotationLevel, boundedSymbolClassPositions, boundType)
+                    computeBoundEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
 
                 const expected: BoundEvent[] = [
                     {
@@ -57,12 +57,12 @@ describe("computeBoundEvents", (): void => {
                 expect(actual).toEqual(expected)
             })
 
-            it("works when multiple INA_MIDPOINT midpoints are between the bounded symbols", (): void => {
+            it("works when multiple INA_MIDPOINT midpoints are between the bounded comma class positions", (): void => {
                 jiNotationLevel = JiNotationLevel.HIGH
-                boundedSymbolClassPositions =
-                    computeBoundedSymbolClassPositions(computePitchFromCents(28.0 as Cents), jiNotationLevel)
+                boundedCommaClassPositions =
+                    computeBoundedCommaClassPositions(computePitchFromCents(28.0 as Cents), jiNotationLevel)
 
-                const actual = computeBoundEvents(jiNotationLevel, boundedSymbolClassPositions, boundType)
+                const actual = computeBoundEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
 
                 const expected = [
                     {
@@ -81,12 +81,12 @@ describe("computeBoundEvents", (): void => {
                 expect(actual).toEqual(expected)
             })
 
-            it("returns an empty array if there are no INA_MIDPOINT midpoints between the position's bounded symbols            ", (): void => {
+            it("returns an empty array if there are no INA_MIDPOINT midpoints between the position's bounded comma class positions            ", (): void => {
                 jiNotationLevel = JiNotationLevel.ULTRA
-                boundedSymbolClassPositions =
-                    computeBoundedSymbolClassPositions(computePitchFromCents(6.05 as Cents), jiNotationLevel)
+                boundedCommaClassPositions =
+                    computeBoundedCommaClassPositions(computePitchFromCents(6.05 as Cents), jiNotationLevel)
 
-                const actual = computeBoundEvents(jiNotationLevel, boundedSymbolClassPositions, boundType)
+                const actual = computeBoundEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
 
                 const expected = [] as BoundEvent[]
                 expect(actual).toEqual(expected)
@@ -100,10 +100,10 @@ describe("computeBoundEvents", (): void => {
 
             it("works at the Medium JI notation level", (): void => {
                 jiNotationLevel = JiNotationLevel.MEDIUM
-                boundedSymbolClassPositions =
-                    computeBoundedSymbolClassPositions(computePitchFromCents(26.25 as Cents), jiNotationLevel)
+                boundedCommaClassPositions =
+                    computeBoundedCommaClassPositions(computePitchFromCents(26.25 as Cents), jiNotationLevel)
 
-                const actual = computeBoundEvents(jiNotationLevel, boundedSymbolClassPositions, boundType)
+                const actual = computeBoundEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
 
                 const expected = [
                     {
@@ -121,10 +121,10 @@ describe("computeBoundEvents", (): void => {
 
             it("works at the High JI notation level", (): void => {
                 jiNotationLevel = JiNotationLevel.HIGH
-                boundedSymbolClassPositions =
-                    computeBoundedSymbolClassPositions(computePitchFromCents(26.25 as Cents), jiNotationLevel)
+                boundedCommaClassPositions =
+                    computeBoundedCommaClassPositions(computePitchFromCents(26.25 as Cents), jiNotationLevel)
 
-                const actual = computeBoundEvents(jiNotationLevel, boundedSymbolClassPositions, boundType)
+                const actual = computeBoundEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
 
                 const expected = [
                     {
@@ -142,10 +142,10 @@ describe("computeBoundEvents", (): void => {
 
             it("works at the Ultra JI notation level", (): void => {
                 jiNotationLevel = JiNotationLevel.ULTRA
-                boundedSymbolClassPositions =
-                    computeBoundedSymbolClassPositions(computePitchFromCents(26.25 as Cents), jiNotationLevel)
+                boundedCommaClassPositions =
+                    computeBoundedCommaClassPositions(computePitchFromCents(26.25 as Cents), jiNotationLevel)
 
-                const actual = computeBoundEvents(jiNotationLevel, boundedSymbolClassPositions, boundType)
+                const actual = computeBoundEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
 
                 const expected = [
                     {
@@ -163,10 +163,10 @@ describe("computeBoundEvents", (): void => {
 
             it("works at the Extreme JI notation level", (): void => {
                 jiNotationLevel = JiNotationLevel.EXTREME
-                boundedSymbolClassPositions =
-                    computeBoundedSymbolClassPositions(computePitchFromCents(26.25 as Cents), jiNotationLevel)
+                boundedCommaClassPositions =
+                    computeBoundedCommaClassPositions(computePitchFromCents(26.25 as Cents), jiNotationLevel)
 
-                const actual = computeBoundEvents(jiNotationLevel, boundedSymbolClassPositions, boundType)
+                const actual = computeBoundEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
 
                 const expected = [
                     {
@@ -182,17 +182,17 @@ describe("computeBoundEvents", (): void => {
                 expect(actual).toEqual(expected)
             })
 
-            it("works even if there is a closer comma mean to the position but it is not between the bounded symbols         ", (): void => {
+            it("works even if there is a closer comma mean to the position but it is not between the bounded comma class positions         ", (): void => {
                 // Mean between )|) and |\ is 31.204382, 0.20 away
                 // Mean between |) and )|) is 28.953101, 2.05 away
                 // However, )|) is at 30.985839,
                 // So the 30.5 position is between it and |), not between it and |\
 
                 jiNotationLevel = JiNotationLevel.HIGH
-                boundedSymbolClassPositions =
-                    computeBoundedSymbolClassPositions(computePitchFromCents(30.5 as Cents), jiNotationLevel)
+                boundedCommaClassPositions =
+                    computeBoundedCommaClassPositions(computePitchFromCents(30.5 as Cents), jiNotationLevel)
 
-                const actual = computeBoundEvents(jiNotationLevel, boundedSymbolClassPositions, boundType)
+                const actual = computeBoundEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
 
                 const expected = [
                     {
@@ -214,12 +214,12 @@ describe("computeBoundEvents", (): void => {
                 boundType = BoundType.SIZE_CATEGORY_BOUND
             })
 
-            it("returns one event for each size category bound between the position's bounded symbols", (): void => {
+            it("returns one event for each size category bound between the position's bounded comma class positions         ", (): void => {
                 jiNotationLevel = JiNotationLevel.MEDIUM
-                boundedSymbolClassPositions =
-                    computeBoundedSymbolClassPositions(computePitchFromCents(34.0 as Cents), jiNotationLevel)
+                boundedCommaClassPositions =
+                    computeBoundedCommaClassPositions(computePitchFromCents(34.0 as Cents), jiNotationLevel)
 
-                const actual = computeBoundEvents(jiNotationLevel, boundedSymbolClassPositions, boundType)
+                const actual = computeBoundEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
 
                 const expected = [
                     {
@@ -235,12 +235,12 @@ describe("computeBoundEvents", (): void => {
                 expect(actual).toEqual(expected)
             })
 
-            it("returns an empty array if there are no size category bounds between the position's bounded symbols         ", (): void => {
+            it("returns an empty array if there are no size category bounds between the position's bounded comma class positions         ", (): void => {
                 jiNotationLevel = JiNotationLevel.ULTRA
-                boundedSymbolClassPositions =
-                    computeBoundedSymbolClassPositions(computePitchFromCents(6.05 as Cents), jiNotationLevel)
+                boundedCommaClassPositions =
+                    computeBoundedCommaClassPositions(computePitchFromCents(6.05 as Cents), jiNotationLevel)
 
-                const actual = computeBoundEvents(jiNotationLevel, boundedSymbolClassPositions, boundType)
+                const actual = computeBoundEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
 
                 const expected = [] as BoundEvent[]
                 expect(actual).toEqual(expected)

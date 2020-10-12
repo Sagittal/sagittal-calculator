@@ -1,16 +1,16 @@
 import { Id } from "../../general"
+import { SYMBOL_SUBSET_COMMA_CLASS_IDS } from "./symbolSubsetCommaClassIds"
 import { SYMBOL_SUBSETS } from "./symbolSubsets"
-import { SYMBOL_SUBSET_SYMBOL_CLASS_IDS } from "./symbolSubsetSymbolClassIds"
-import { SymbolClass, SymbolSubset } from "./types"
+import { CommaClass, SymbolSubset } from "./types"
 
-const getSmallestSymbolSubset = (symbolClassId: Id<SymbolClass>): SymbolSubset => {
+const getSmallestSymbolSubset = (commaClassId: Id<CommaClass>): SymbolSubset => {
     for (const symbolSubset of SYMBOL_SUBSETS) {
-        if (SYMBOL_SUBSET_SYMBOL_CLASS_IDS[ symbolSubset ].includes(symbolClassId)) {
+        if (SYMBOL_SUBSET_COMMA_CLASS_IDS[ symbolSubset ].includes(commaClassId)) {
             return symbolSubset
         }
     }
 
-    throw new Error(`Symbol class ID ${symbolClassId} was not found in any symbol subset.`)
+    throw new Error(`Comma class ID ${commaClassId} was not found in any symbol subset.`)
 }
 
 export {

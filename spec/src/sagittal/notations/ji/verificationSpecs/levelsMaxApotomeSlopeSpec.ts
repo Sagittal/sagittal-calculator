@@ -1,21 +1,21 @@
 import { Abs, abs, Id, Max } from "../../../../../../src/general"
-import { getPrimaryComma, SymbolClass } from "../../../../../../src/sagittal"
+import { CommaClass, getPrimaryComma } from "../../../../../../src/sagittal"
 import { ApotomeSlope, computeApotomeSlope } from "../../../../../../src/sagittal/ji/pitch"
-import { JiNotationLevel, JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS } from "../../../../../../src/sagittal/notations/ji"
+import { JiNotationLevel, JI_NOTATION_LEVELS_COMMA_CLASS_IDS } from "../../../../../../src/sagittal/notations/ji"
 
 describe("max AAS per JI notation level", (): void => {
     it("increases a bit at each JI notation level", (): void => {
         const entries =
-            Object.entries(JI_NOTATION_LEVELS_SYMBOL_CLASS_IDS) as Array<[JiNotationLevel, Array<Id<SymbolClass>>]>
+            Object.entries(JI_NOTATION_LEVELS_COMMA_CLASS_IDS) as Array<[JiNotationLevel, Array<Id<CommaClass>>]>
         const actual = entries.map((
-            [jiNotationLevel, jiNotationLevelSymbolClassIds]: [JiNotationLevel, Array<Id<SymbolClass>>],
+            [jiNotationLevel, jiNotationLevelCommaClassIds]: [JiNotationLevel, Array<Id<CommaClass>>],
         ): Partial<Record<JiNotationLevel, ApotomeSlope>> => {
-            const jiNotationLevelMaxAas: Max<Abs<ApotomeSlope>> = jiNotationLevelSymbolClassIds.reduce(
+            const jiNotationLevelMaxAas: Max<Abs<ApotomeSlope>> = jiNotationLevelCommaClassIds.reduce(
                 (
                     jiNotationLevelMaxAas: Max<Abs<ApotomeSlope>>,
-                    jiNotationLevelSymbolClassId: Id<SymbolClass>,
+                    jiNotationLevelCommaClassId: Id<CommaClass>,
                 ): Max<Abs<ApotomeSlope>> => {
-                    const primaryComma = getPrimaryComma(jiNotationLevelSymbolClassId)
+                    const primaryComma = getPrimaryComma(jiNotationLevelCommaClassId)
                     const apotomeSlope = abs(computeApotomeSlope(primaryComma))
 
                     return apotomeSlope > jiNotationLevelMaxAas ?

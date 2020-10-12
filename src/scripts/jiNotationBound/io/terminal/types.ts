@@ -1,12 +1,12 @@
 import { Abs, Cents, Id, Maybe, Multiplier, Name } from "../../../../general"
 import {
+    Ascii,
+    CommaClass,
+    CommaClassAnalysis,
     Ina,
     JiNotationBound,
     JiNotationLevel,
     Mina,
-    SymbolClass,
-    SymbolClassAnalysis,
-    SymbolLongAscii,
 } from "../../../../sagittal"
 
 // Shared
@@ -18,50 +18,50 @@ interface BoundedProperties {
 
 // Only used temporarily within a method
 
-interface BoundedSymbolClass extends SymbolClass, BoundedProperties {
+interface BoundedCommaClass extends CommaClass, BoundedProperties {
 }
 
 // Building up to JiNotationBoundIdentifiers
 
-interface BoundedSymbolClassAnalysis extends SymbolClassAnalysis, BoundedProperties {
+interface BoundedCommaClassAnalysis extends CommaClassAnalysis, BoundedProperties {
 }
 
-type BoundedSymbolClassAnalysisPair =
-    [Maybe<BoundedSymbolClassAnalysis>, Maybe<BoundedSymbolClassAnalysis>]
+type BoundedCommaClassAnalysisPair =
+    [Maybe<BoundedCommaClassAnalysis>, Maybe<BoundedCommaClassAnalysis>]
 
-type BoundedSymbolClassAnalyses = { id: Id<JiNotationBound> }
-    & Partial<Record<JiNotationLevel, BoundedSymbolClassAnalysisPair>>
+type BoundedCommaClassAnalyses = { id: Id<JiNotationBound> }
+    & Partial<Record<JiNotationLevel, BoundedCommaClassAnalysisPair>>
 
 interface JiNotationBoundIdentifiers {
-    boundedSymbolClassAnalyses: BoundedSymbolClassAnalyses,
-    extremeLevelGreaterBoundedSymbolClass: SymbolLongAscii,
-    extremeLevelLesserBoundedSymbolClass: SymbolLongAscii,
+    boundedCommaClassAnalyses: BoundedCommaClassAnalyses,
+    extremeLevelGreaterBoundedCommaClass: Ascii,
+    extremeLevelLesserBoundedCommaClass: Ascii,
     greaterBoundedMinaName?: Name<Mina>,
     lesserBoundedMinaName?: Name<Mina>,
     cents: Cents,
 }
 
-// Building up to JiNotationBoundIdWithBoundedSymbolClassIdsWithDistancesPairsByJiNotationLevel
+// Building up to JiNotationBoundIdWithBoundedCommaClassIdsWithDistancesPairsByJiNotationLevel
 
-interface BoundedSymbolClassIdWithDistances extends BoundedProperties {
-    id: Id<SymbolClass>,
+interface BoundedCommaClassIdWithDistances extends BoundedProperties {
+    id: Id<CommaClass>,
 }
 
-type BoundedSymbolClassIdWithDistancesPair = [
-    Maybe<BoundedSymbolClassIdWithDistances>,
-    Maybe<BoundedSymbolClassIdWithDistances>,
+type BoundedCommaClassIdWithDistancesPair = [
+    Maybe<BoundedCommaClassIdWithDistances>,
+    Maybe<BoundedCommaClassIdWithDistances>,
 ]
 
-type JiNotationBoundIdWithBoundedSymbolClassIdsWithDistancesPairsByJiNotationLevel =
+type JiNotationBoundIdWithBoundedCommaClassIdsWithDistancesPairsByJiNotationLevel =
     { id: Id<JiNotationBound> }
-    & Partial<Record<JiNotationLevel, BoundedSymbolClassIdWithDistancesPair>>
+    & Partial<Record<JiNotationLevel, BoundedCommaClassIdWithDistancesPair>>
 
 export {
-    BoundedSymbolClass,
-    SymbolClassAnalysis,
-    BoundedSymbolClassAnalyses,
+    BoundedCommaClass,
+    CommaClassAnalysis,
+    BoundedCommaClassAnalyses,
     JiNotationBoundIdentifiers,
-    JiNotationBoundIdWithBoundedSymbolClassIdsWithDistancesPairsByJiNotationLevel,
-    BoundedSymbolClassIdWithDistancesPair,
-    BoundedSymbolClassIdWithDistances,
+    JiNotationBoundIdWithBoundedCommaClassIdsWithDistancesPairsByJiNotationLevel,
+    BoundedCommaClassIdWithDistancesPair,
+    BoundedCommaClassIdWithDistances,
 }

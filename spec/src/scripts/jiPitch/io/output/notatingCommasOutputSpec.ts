@@ -17,7 +17,7 @@ import {
     TableFormat,
 } from "../../../../../../src/general"
 import { ApotomeSlope, CommaAnalysis } from "../../../../../../src/sagittal/ji"
-import { SymbolClass } from "../../../../../../src/sagittal/notations"
+import { CommaClass } from "../../../../../../src/sagittal/notations"
 import { computeNotatingCommasOutput } from "../../../../../../src/scripts/jiPitch/io"
 import { commaAnalysisFixture, two3FreeClassAnalysisFixture } from "../../../../../helpers/src/scripts/jiPitch/fixtures"
 
@@ -46,33 +46,33 @@ describe("computeNotatingCommasOutput", (): void => {
             two3FreeClassAnalysis: two3FreeClassAnalysisFixture,
         },
     ]
-    const maybeSymbolClassIds = [114 as Id<SymbolClass>, undefined]
+    const maybeCommaClassIds = [114 as Id<CommaClass>, undefined]
 
-    it("can format the symbols for the terminal", (): void => {
-        const actual = computeNotatingCommasOutput(notatingCommaAnalyses, maybeSymbolClassIds)
+    it("can format the notating commas for the terminal", (): void => {
+        const actual = computeNotatingCommasOutput(notatingCommaAnalyses, maybeCommaClassIds)
 
         const expected =
             "   --- notating commas ---" + NEWLINE +
             "" + NEWLINE +
-            "symbol  \t      \tquotient\t \t  \tmonzo\t       \t       \t       \t       \t \t               \tapotome\t       \t       " + NEWLINE +
+            "comma   \t      \tquotient\t \t  \tmonzo\t       \t       \t       \t       \t \t               \tapotome\t       \t       " + NEWLINE +
             "class   \tname  \t       n\t/\td \t    [\t  2    \t  3    \t  5    \t  7    \t⟩\tcents          \tslope  \tAAS    \tATE    ".underline + NEWLINE +
             "    /|\\ \t11M   \t      33\t/\t32\t    [\t  0    \t  0    \t  1    \t       \t⟩\t        45.450¢\t -4.000\t  4.000\t  0    " + NEWLINE +
             "        \t25/49M\t      50\t/\t49\t    [\t  1    \t  0    \t  2    \t -2    \t⟩\t        33.400¢\t -2.154\t  2.154\t  0    " + NEWLINE as Io
         expect(actual).toBe(expected)
     })
 
-    it("can format the symbols for the forum", (): void => {
+    it("can format the notating commas for the forum", (): void => {
         ioSettings.tableFormat = TableFormat.FORUM
-        const actual = computeNotatingCommasOutput(notatingCommaAnalyses, maybeSymbolClassIds)
+        const actual = computeNotatingCommasOutput(notatingCommaAnalyses, maybeCommaClassIds)
 
         const expected =
             "   --- notating commas ---" + NEWLINE +
             "" + NEWLINE +
             "[table]" + NEWLINE +
-            "[tr][th][pre]symbol[/pre][/th][th][pre]      [/pre][/th][th][pre]        [/pre][/th][th][pre]monzo[/pre][/th][th][pre]       [/pre][/th][th][pre]       [/pre][/th][th][pre]       [/pre][/th][th][pre]       [/pre][/th][th][pre] [/pre][/th][th][pre]               [/pre][/th][th][pre]apotome[/pre][/th][th][pre]       [/pre][/th][th][pre]       [/pre][/th][/tr]" + NEWLINE +
-            "[tr][th][pre]class [/pre][/th][th][pre]name  [/pre][/th][th][pre]quotient[/pre][/th][th][pre]    [[/pre][/th][th][pre]  2    [/pre][/th][th][pre]  3    [/pre][/th][th][pre]  5    [/pre][/th][th][pre]  7    [/pre][/th][th][pre]⟩[/pre][/th][th][pre]cents          [/pre][/th][th][pre]slope  [/pre][/th][th][pre]AAS    [/pre][/th][th][pre]ATE    [/pre][/th][/tr]" + NEWLINE +
+            "[tr][th][pre]comma[/pre][/th][th][pre]      [/pre][/th][th][pre]        [/pre][/th][th][pre]monzo[/pre][/th][th][pre]       [/pre][/th][th][pre]       [/pre][/th][th][pre]       [/pre][/th][th][pre]       [/pre][/th][th][pre] [/pre][/th][th][pre]               [/pre][/th][th][pre]apotome[/pre][/th][th][pre]       [/pre][/th][th][pre]       [/pre][/th][/tr]" + NEWLINE +
+            "[tr][th][pre]class[/pre][/th][th][pre]name  [/pre][/th][th][pre]quotient[/pre][/th][th][pre]    [[/pre][/th][th][pre]  2    [/pre][/th][th][pre]  3    [/pre][/th][th][pre]  5    [/pre][/th][th][pre]  7    [/pre][/th][th][pre]⟩[/pre][/th][th][pre]cents          [/pre][/th][th][pre]slope  [/pre][/th][th][pre]AAS    [/pre][/th][th][pre]ATE    [/pre][/th][/tr]" + NEWLINE +
             "[tr][td][pre][/pre]:/|\\:[pre][/pre][/td][td][pre]11M   [/pre][/td][td][pre][/pre][latex]\\frac{33}{32}[/latex][pre][/pre][/td][td][pre]    [[/pre][/td][td][pre]  0    [/pre][/td][td][pre]  0    [/pre][/td][td][pre]  1    [/pre][/td][td][pre]       [/pre][/td][td][pre]⟩[/pre][/td][td][pre]        45.450¢[/pre][/td][td][pre] -4.000[/pre][/td][td][pre]  4.000[/pre][/td][td][pre]  0    [/pre][/td][/tr]" + NEWLINE +
-            "[tr][td][pre]      [/pre][/td][td][pre]25/49M[/pre][/td][td][pre][/pre][latex]\\frac{50}{49}[/latex][pre][/pre][/td][td][pre]    [[/pre][/td][td][pre]  1    [/pre][/td][td][pre]  0    [/pre][/td][td][pre]  2    [/pre][/td][td][pre] -2    [/pre][/td][td][pre]⟩[/pre][/td][td][pre]        33.400¢[/pre][/td][td][pre] -2.154[/pre][/td][td][pre]  2.154[/pre][/td][td][pre]  0    [/pre][/td][/tr]" + NEWLINE +
+            "[tr][td][pre]     [/pre][/td][td][pre]25/49M[/pre][/td][td][pre][/pre][latex]\\frac{50}{49}[/latex][pre][/pre][/td][td][pre]    [[/pre][/td][td][pre]  1    [/pre][/td][td][pre]  0    [/pre][/td][td][pre]  2    [/pre][/td][td][pre] -2    [/pre][/td][td][pre]⟩[/pre][/td][td][pre]        33.400¢[/pre][/td][td][pre] -2.154[/pre][/td][td][pre]  2.154[/pre][/td][td][pre]  0    [/pre][/td][/tr]" + NEWLINE +
             "[/table]" + NEWLINE as Io
         expect(actual).toBe(expected)
     })
