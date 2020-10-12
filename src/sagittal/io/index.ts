@@ -1,4 +1,6 @@
-export { SYMBOL_TO_UNICODE_MAP } from "./unicode"
+export { computeUnicodeFromSymbol } from "./unicode"
+export { computeAsciiFromSymbol } from "./ascii"
+export { computeSmileyFromSymbol } from "./smiley"
 export { formatCommaClass } from "./formatCommaClass"
 export { formatAscii } from "./formatAscii"
 export { Ascii, Unicode, Smiley, Glyph } from "./types"

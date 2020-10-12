@@ -986,6 +986,9 @@ const SYMBOL_TO_UNICODE_MAP: Record<RecordKey<SagittalSymbol>, Unicode> = {
     "')Y(": "" as Unicode,
 }
 
+const computeUnicodeFromSymbol = (symbol: SagittalSymbol): Unicode => 
+    SYMBOL_TO_UNICODE_MAP[ symbol ]
+
 export {
-    SYMBOL_TO_UNICODE_MAP,
+    computeUnicodeFromSymbol,
 }

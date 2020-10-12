@@ -1,5 +1,5 @@
 import { Id } from "../../general"
-import { Ascii, SYMBOL_TO_UNICODE_MAP } from "../io"
+import { Ascii, computeAsciiFromSymbol, computeUnicodeFromSymbol } from "../io"
 import { analyzeComma } from "../ji"
 import { getCommaClass } from "./commaClass"
 import { getIntroducingJiNotationLevel, getMinaName } from "./ji"
@@ -18,8 +18,8 @@ const analyzeCommaClass = (
     const primaryCommaAnalysis = analyzeComma(primaryComma)
 
     const symbol = getRepresentativeSymbol(commaClassId)
-    const ascii = symbol as string as Ascii
-    const unicode = SYMBOL_TO_UNICODE_MAP[ symbol ]
+    const ascii = computeAsciiFromSymbol(symbol)
+    const unicode = computeUnicodeFromSymbol(symbol)
 
     const introducingJiNotationLevel = getIntroducingJiNotationLevel(commaClassId)
 

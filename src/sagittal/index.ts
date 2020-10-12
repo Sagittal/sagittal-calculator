@@ -36,7 +36,8 @@ export {
     formatCommaClass,
     formatAscii,
     Ascii,
-    SYMBOL_TO_UNICODE_MAP,
+    computeUnicodeFromSymbol,
+    computeAsciiFromSymbol,
     Smiley,
     Unicode,
     Glyph,
@@ -76,5 +77,6 @@ export {
     Bound,
     InaMidpoint,
     CommaMean,
+    SagittalSymbol,
 } from "./notations"
 export { APOTOME, HALF_APOTOME } from "./constants"

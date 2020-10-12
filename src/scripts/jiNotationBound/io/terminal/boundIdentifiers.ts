@@ -1,6 +1,7 @@
 import { computeCentsFromPitch, Maybe } from "../../../../general"
 import {
     Ascii,
+    computeAsciiFromSymbol,
     getCommaClass,
     getMinaName,
     getRepresentativeSymbol,
@@ -46,7 +47,7 @@ const extractJiNotationBoundIdentifiers = ({ pitch, id }: JiNotationBound): JiNo
             ...getCommaClass(extremeLevelLesserBoundedCommaClassIdWithDistance.id),
         } as BoundedCommaClass
     const formattedExtremeLevelLesserBoundedCommaClass = extremeLevelLesserBoundedCommaClass ?
-        getRepresentativeSymbol(extremeLevelLesserBoundedCommaClass.id) as string as Ascii :
+        computeAsciiFromSymbol(getRepresentativeSymbol(extremeLevelLesserBoundedCommaClass.id)) :
         "" as Ascii
     const lesserBoundedMinaName = extremeLevelLesserBoundedCommaClass &&
         getMinaName(extremeLevelLesserBoundedCommaClass.id)
@@ -57,7 +58,7 @@ const extractJiNotationBoundIdentifiers = ({ pitch, id }: JiNotationBound): JiNo
             ...getCommaClass(extremeLevelGreaterBoundedCommaClassIdWithDistance.id),
         } as BoundedCommaClass
     const formattedExtremeLevelGreaterBoundedCommaClass = extremeLevelGreaterBoundedCommaClass ?
-        getRepresentativeSymbol(extremeLevelGreaterBoundedCommaClass.id) as string as Ascii :
+        computeAsciiFromSymbol(getRepresentativeSymbol(extremeLevelGreaterBoundedCommaClass.id)) :
         "" as Ascii
     const greaterBoundedMinaName = extremeLevelGreaterBoundedCommaClass &&
         getMinaName(extremeLevelGreaterBoundedCommaClass.id)
