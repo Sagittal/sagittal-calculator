@@ -1,4 +1,4 @@
-import { computeIrrationalQuotientFromScamon } from "../../../../../../src/general/math/irrational/quotient/fromScamon"
+import { computeIrrationalQuotientFromScamon } from "../../../../../../src/general/math/irrational/quotient"
 import { IRRATIONAL_SCAMON_BASE_MONZO } from "../../../../../../src/general/math/irrational/scamon/constants"
 import { Quotient } from "../../../../../../src/general/math/numeric/quotient"
 import { Scamon } from "../../../../../../src/general/math/numeric/scamon"

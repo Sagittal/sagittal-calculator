@@ -1,7 +1,7 @@
 import { Id, isScamonGreater, isUndefined, Max, Maybe, Min, Scamon, UNISON, Zone } from "../../../general"
 import { formatCommaClass } from "../../io"
-import { getPrimaryComma } from "../primaryComma"
-import { CommaClass, PrimaryComma } from "../types"
+import { getCommaClass } from "../commaClass"
+import { CommaClass } from "../types"
 import { formatJiNotationLevel } from "./formatLevel"
 import { getIntroducingJiNotationLevel } from "./introducingJiNotationLevel"
 import { isWithinJiNotationLevel } from "./isWithinLevel"
@@ -19,11 +19,11 @@ const computeCaptureZone = (
         throw new Error(`JI Notation comma class ${formatCommaClass(commaClassId, { align: false })} is not present at the ${formatJiNotationLevel(jiNotationLevel)} JI notation level; it is not introduced until the ${formatJiNotationLevel(introducingJiNotationLevel)} JI notation level.`)
     }
 
-    const primaryComma = getPrimaryComma(commaClassId)
+    const commaClass = getCommaClass(commaClassId)
 
     const indexOfBoundJustAboveCommaAtThisLevel = jiNotationLevelBounds
         .findIndex((jiNotationBound: JiNotationBound): boolean => {
-            return isScamonGreater(jiNotationBound.pitch, primaryComma)
+            return isScamonGreater(jiNotationBound.pitch, commaClass)
         })
     const indexOfJiNotationBoundJustBelowCommaClassAtThisLevel = indexOfBoundJustAboveCommaAtThisLevel - 1
 
@@ -34,7 +34,7 @@ const computeCaptureZone = (
     const upperBoundPitch =
         jiNotationLevelBounds[ indexOfBoundJustAboveCommaAtThisLevel ].pitch as Scamon as Max<Scamon>
 
-    return [lowerBoundPitch, upperBoundPitch] as Zone<PrimaryComma>
+    return [lowerBoundPitch, upperBoundPitch] as Zone<CommaClass>
 }
 
 export {

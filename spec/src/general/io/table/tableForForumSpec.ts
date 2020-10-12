@@ -1,8 +1,8 @@
 // tslint:disable max-line-length
 
 import { Count, Io, NEWLINE, Row, Table } from "../../../../../src/general"
+import { Justification } from "../../../../../src/general/io/table"
 import { formatTableForForum } from "../../../../../src/general/io/table/tableForForum"
-import { Justification } from "../../../../../src/general/io/table/types"
 
 describe("formatTableForForum", (): void => {
     it("formats a table to be posted on the Sagittal forum", (): void => {

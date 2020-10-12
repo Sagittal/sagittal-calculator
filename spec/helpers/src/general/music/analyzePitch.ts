@@ -1,5 +1,5 @@
 import { computeIrrationalDecimalFromScamon, NumericProperties, Scamon } from "../../../../../src/general/math"
-import { computeIrrationalMonzoFromScamon } from "../../../../../src/general/math/irrational/monzo/fromScamon"
+import { computeIrrationalMonzoFromScamon } from "../../../../../src/general/math/irrational/monzo"
 import { computeCentsFromPitch } from "../../../../../src/general/music"
 import { PitchAnalysis } from "./types"
 

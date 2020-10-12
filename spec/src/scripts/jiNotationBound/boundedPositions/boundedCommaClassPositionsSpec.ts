@@ -1,5 +1,5 @@
 import { Cents, computePitchFromCents, Id, Monzo } from "../../../../../src/general"
-import { JiNotationLevel, PrimaryComma } from "../../../../../src/sagittal"
+import { CommaClass, JiNotationLevel } from "../../../../../src/sagittal"
 import { computeBoundedCommaClassPositions } from "../../../../../src/scripts/jiNotationBound/boundedPositions"
 
 describe("computeBoundedCommaClassPositions", (): void => {
@@ -12,14 +12,14 @@ describe("computeBoundedCommaClassPositions", (): void => {
         const expected = [
             // |(       ~5.757802¢
             {
-                id: 12 as Id<PrimaryComma>,
+                id: 12 as Id<CommaClass>,
                 monzo: [10, -6, 1, -1] as Monzo<{ rational: true }>,
-            } as PrimaryComma,
+            } as CommaClass,
             // )|(      ~9.687960¢
             {
-                id: 20 as Id<PrimaryComma>,
+                id: 20 as Id<CommaClass>,
                 monzo: [7, -4, 0, 1, -1] as Monzo<{ rational: true }>,
-            } as PrimaryComma,
+            } as CommaClass,
         ]
 
         expect(actual).toEqual(expected)
@@ -34,9 +34,9 @@ describe("computeBoundedCommaClassPositions", (): void => {
         const expected = [
             // )|\\     ~67.291062¢
             {
-                id: 146 as Id<PrimaryComma>,
+                id: 146 as Id<CommaClass>,
                 monzo: [-16, 11, 1, 0, 0, -1] as Monzo<{ rational: true }>,
-            } as PrimaryComma,
+            } as CommaClass,
             undefined,
         ]
         expect(actual).toEqual(expected)

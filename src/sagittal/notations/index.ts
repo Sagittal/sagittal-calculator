@@ -24,18 +24,13 @@ export {
     CommaMean,
 } from "./ji"
 export {
-    PrimaryComma,
     CommaClass,
-    CommaClassAnalysis,
     SymbolSubset,
     Flavor,
     SagittalSymbol,
 } from "./types"
-export { COMMA_CLASSES } from "./commaClasses"
+export { COMMA_CLASSES, UNISON_COMMA_CLASS} from "./commaClasses"
 export { SYMBOL_SUBSETS } from "./symbolSubsets"
-export { analyzeCommaClass } from "./analyzeCommaClass"
 export { getCommaClass } from "./commaClass"
-export { getPrimaryComma } from "./primaryComma"
 export { getRepresentativeSymbol } from "./representativeSymbolAscii"
 export { getSmallestSymbolSubset } from "./smallestSymbolSubset"
-export { UNISON_COMMA } from "./primaryCommas"

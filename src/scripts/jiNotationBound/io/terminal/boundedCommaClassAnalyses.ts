@@ -1,5 +1,6 @@
 import { Id, isUndefined, Maybe } from "../../../../general"
-import { analyzeCommaClass, JiNotationBound } from "../../../../sagittal"
+import { JiNotationBound } from "../../../../sagittal"
+import { computeCommaClassInfo } from "../commaClassInfo"
 import {
     BoundedCommaClassAnalyses,
     BoundedCommaClassIdWithDistancesPair,
@@ -20,24 +21,23 @@ const computeBoundedCommaClassAnalyses = (
 
             const [first, second] = jiNotationBoundIdWithBoundedCommaClassIdWithDistancesPair
 
-            // TODO: needs work after merging primary comma into comma class
-            let firstBoundedCommaClassWithPrimaryComma
+            let firstBoundedCommaClassAnalysis
             if (!isUndefined(first)) {
-                const firstJiNotationCommaClassWithPrimaryComma = analyzeCommaClass(first.id)
-                firstBoundedCommaClassWithPrimaryComma = { ...first, ...firstJiNotationCommaClassWithPrimaryComma }
+                const firstJiNotationCommaClassAnalysis = computeCommaClassInfo(first.id)
+                firstBoundedCommaClassAnalysis = { ...first, ...firstJiNotationCommaClassAnalysis }
             }
 
-            let secondBoundedCommaClassWithPrimaryComma
+            let secondBoundedCommaClassAnalysis
             if (!isUndefined(second)) {
-                const secondJiNotationCommaClassWithPrimaryComma = analyzeCommaClass(second.id)
-                secondBoundedCommaClassWithPrimaryComma = { ...second, ...secondJiNotationCommaClassWithPrimaryComma }
+                const secondJiNotationCommaClassAnalysis = computeCommaClassInfo(second.id)
+                secondBoundedCommaClassAnalysis = { ...second, ...secondJiNotationCommaClassAnalysis }
             }
 
             return {
                 ...boundedCommaClassAnalyses,
                 [ jiNotationLevel ]: [
-                    firstBoundedCommaClassWithPrimaryComma,
-                    secondBoundedCommaClassWithPrimaryComma,
+                    firstBoundedCommaClassAnalysis,
+                    secondBoundedCommaClassAnalysis,
                 ],
             }
         },

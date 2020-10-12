@@ -18,10 +18,9 @@ import {
     Sopfr,
     Two3FreeClass,
 } from "../../../../src/general"
-import { analyzeComma, PrimaryComma } from "../../../../src/sagittal"
+import { analyzeComma, CommaAnalysis, CommaClass } from "../../../../src/sagittal"
 import { ApotomeSlope, N2D3P9 } from "../../../../src/sagittal/ji"
-import { PRIMARY_COMMAS } from "../../../../src/sagittal/notations/primaryCommas"
-import { PrimaryCommaAnalysis } from "../../../../src/sagittal/notations/types"
+import { COMMA_CLASSES } from "../../../../src/sagittal/notations"
 
 // Todo: DEFER UNTIL AFTER RESOLVE CONVO WITH DAVE RE: CLASSES
 //  STORE BIG TEST EXPECTATIONS IN TABULAR FORM
@@ -32,11 +31,16 @@ import { PrimaryCommaAnalysis } from "../../../../src/sagittal/notations/types"
 //  And maybe these could essentially become replacements for my "Everything Sagittal" Google Sheets file
 //  I guess an advantage to the code representation is its nested structure, and the ability to copy-paste as needed
 
-describe("PRIMARY_COMMAS", (): void => {
+describe("COMMA_CLASSES", (): void => {
     it("has all the correct commas", (): void => {
-        const actual = PRIMARY_COMMAS
-            .map((primaryComma: PrimaryComma): PrimaryCommaAnalysis => {
-                return analyzeComma(primaryComma)
+        const actual = COMMA_CLASSES
+            .map((commaClass: CommaClass): CommaAnalysis => {
+                // TODO: COMMA CLASS HAS REPRESENTATIVE FLACCO ID 
+                //  This is a bit confusing. perhaps comma class should have comma on it, not *be* it
+                //  Yeah also because we're having the problem where it inherits its need for the Comma brand
+                //  I had to do that in one test 
+                //  And especially if we then want each comma class to have a representativeFlaccoId too
+                return analyzeComma(commaClass) 
             })
 
         const expected = [
@@ -60,9 +64,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 0 as Cents,
                 name: "1u" as Name<Comma>,
                 pitch: {
-                    id: 0 as Id<PrimaryComma>,
+                    id: 0 as Id<CommaClass>,
                     monzo: EMPTY_MONZO as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -2.026028 as ApotomeSlope,
@@ -84,9 +88,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 0.422716 as Cents,
                 name: "1/455n" as Name<Comma>,
                 pitch: {
-                    id: 1 as Id<PrimaryComma>,
+                    id: 1 as Id<CommaClass>,
                     monzo: [12, -2, -1, -1, 0, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -3.051261 as ApotomeSlope,
@@ -108,9 +112,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 0.832524 as Cents,
                 name: "65/77n" as Name<Comma>,
                 pitch: {
-                    id: 2 as Id<PrimaryComma>,
+                    id: 2 as Id<CommaClass>,
                     monzo: [5, -3, 1, -1, -1, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -5.087699 as ApotomeSlope,
@@ -132,9 +136,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 1.424297 as Cents,
                 name: "19/5n" as Name<Comma>,
                 pitch: {
-                    id: 3 as Id<PrimaryComma>,
+                    id: 3 as Id<CommaClass>,
                     monzo: [6, -5, -1, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 7.879702 as ApotomeSlope,
@@ -156,9 +160,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 1.953720 as Cents,
                 name: "5s" as Name<Comma>,
                 pitch: {
-                    id: 4 as Id<PrimaryComma>,
+                    id: 4 as Id<CommaClass>,
                     monzo: [-15, 8, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 5.853674 as ApotomeSlope,
@@ -180,9 +184,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 2.376436 as Cents,
                 name: "1/91s" as Name<Comma>,
                 pitch: {
-                    id: 5 as Id<PrimaryComma>,
+                    id: 5 as Id<CommaClass>,
                     monzo: [-3, 6, 0, -1, 0, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 9.816371 as ApotomeSlope,
@@ -204,9 +208,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 2.982262 as Cents,
                 name: "19/4375s" as Name<Comma>,
                 pitch: {
-                    id: 6 as Id<PrimaryComma>,
+                    id: 6 as Id<CommaClass>,
                     monzo: [-8, 10, -4, -1, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 2.792003 as ApotomeSlope,
@@ -228,9 +232,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 3.378018 as Cents,
                 name: "19s" as Name<Comma>,
                 pitch: {
-                    id: 7 as Id<PrimaryComma>,
+                    id: 7 as Id<CommaClass>,
                     monzo: [-9, 3, 0, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 1.758005 as ApotomeSlope,
@@ -252,9 +256,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 3.930158 as Cents,
                 name: "49/55s" as Name<Comma>,
                 pitch: {
-                    id: 8 as Id<PrimaryComma>,
+                    id: 8 as Id<CommaClass>,
                     monzo: [-3, 2, -1, 2, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -1.277239 as ApotomeSlope,
@@ -276,9 +280,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 4.502561 as Cents,
                 name: "385k" as Name<Comma>,
                 pitch: {
-                    id: 9 as Id<PrimaryComma>,
+                    id: 9 as Id<CommaClass>,
                     monzo: [-7, -1, 1, 1, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -3.303267 as ApotomeSlope,
@@ -300,9 +304,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 4.925277 as Cents,
                 name: "11/13k" as Name<Comma>,
                 pitch: {
-                    id: 10 as Id<PrimaryComma>,
+                    id: 10 as Id<CommaClass>,
                     monzo: [5, -3, 0, 0, 1, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 5.664569 as ApotomeSlope,
@@ -324,9 +328,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 5.447635 as Cents,
                 name: "31/11k" as Name<Comma>,
                 pitch: {
-                    id: 11 as Id<PrimaryComma>,
+                    id: 11 as Id<CommaClass>,
                     monzo: [-11, 6, 0, 0, -1, 0, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -6.354528 as ApotomeSlope,
@@ -348,9 +352,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 5.757802 as Cents,
                 name: "5/7k" as Name<Comma>,
                 pitch: {
-                    id: 12 as Id<PrimaryComma>,
+                    id: 12 as Id<CommaClass>,
                     monzo: [10, -6, 1, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -7.398935 as ApotomeSlope,
@@ -372,9 +376,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 6.478999 as Cents,
                 name: "343/5k" as Name<Comma>,
                 pitch: {
-                    id: 13 as Id<PrimaryComma>,
+                    id: 13 as Id<CommaClass>,
                     monzo: [5, -7, -1, 3] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -1.417215 as ApotomeSlope,
@@ -396,9 +400,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 6.775875 as Cents,
                 name: "1/85k" as Name<Comma>,
                 pitch: {
-                    id: 14 as Id<PrimaryComma>,
+                    id: 14 as Id<CommaClass>,
                     monzo: [8, -1, -1, 0, 0, 0, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 8.549541 as ApotomeSlope,
@@ -420,9 +424,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 7.315767 as Cents,
                 name: "1/1225k" as Name<Comma>,
                 pitch: {
-                    id: 15 as Id<PrimaryComma>,
+                    id: 15 as Id<CommaClass>,
                     monzo: [-4, 9, -2, -2] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 1.525173 as ApotomeSlope,
@@ -444,9 +448,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 7.711522 as Cents,
                 name: "25/7k" as Name<Comma>,
                 pitch: {
-                    id: 16 as Id<PrimaryComma>,
+                    id: 16 as Id<CommaClass>,
                     monzo: [-5, 2, 2, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 0.480766 as ApotomeSlope,
@@ -468,9 +472,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 8.432720 as Cents,
                 name: "343k" as Name<Comma>,
                 pitch: {
-                    id: 17 as Id<PrimaryComma>,
+                    id: 17 as Id<CommaClass>,
                     monzo: [-10, 1, 0, 3] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 6.462486 as ApotomeSlope,
@@ -492,9 +496,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 8.729596 as Cents,
                 name: "1/17k" as Name<Comma>,
                 pitch: {
-                    id: 18 as Id<PrimaryComma>,
+                    id: 18 as Id<CommaClass>,
                     monzo: [-7, 7, 0, 0, 0, 0, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 1.434644 as ApotomeSlope,
@@ -516,9 +520,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 9.181771 as Cents,
                 name: "14641k" as Name<Comma>,
                 pitch: {
-                    id: 19 as Id<PrimaryComma>,
+                    id: 19 as Id<CommaClass>,
                     monzo: [-17, 2, 0, 0, 4] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -4.596523 as ApotomeSlope,
@@ -540,9 +544,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 9.687960 as Cents,
                 name: "7/11k" as Name<Comma>,
                 pitch: {
-                    id: 20 as Id<PrimaryComma>,
+                    id: 20 as Id<CommaClass>,
                     monzo: [7, -4, 0, 1, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -7.631767 as ApotomeSlope,
@@ -564,9 +568,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 10.260364 as Cents,
                 name: "275k" as Name<Comma>,
                 pitch: {
-                    id: 21 as Id<PrimaryComma>,
+                    id: 21 as Id<CommaClass>,
                     monzo: [3, -7, 2, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 6.334440 as ApotomeSlope,
@@ -588,9 +592,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 10.809157 as Cents,
                 name: "49/13k" as Name<Comma>,
                 pitch: {
-                    id: 22 as Id<PrimaryComma>,
+                    id: 22 as Id<CommaClass>,
                     monzo: [-13, 7, 0, 2, 0, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -5.684689 as ApotomeSlope,
@@ -612,9 +616,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 11.119848 as Cents,
                 name: "1/8575k" as Name<Comma>,
                 pitch: {
-                    id: 23 as Id<PrimaryComma>,
+                    id: 23 as Id<CommaClass>,
                     monzo: [21, -5, -2, -3] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 3.283179 as ApotomeSlope,
@@ -636,9 +640,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 11.641681 as Cents,
                 name: "35/11k" as Name<Comma>,
                 pitch: {
-                    id: 24 as Id<PrimaryComma>,
+                    id: 24 as Id<CommaClass>,
                     monzo: [-8, 4, 1, 1, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 1.257151 as ApotomeSlope,
@@ -660,9 +664,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 12.064397 as Cents,
                 name: "1/143C" as Name<Comma>,
                 pitch: {
-                    id: 25 as Id<PrimaryComma>,
+                    id: 25 as Id<CommaClass>,
                     monzo: [4, 2, 0, 0, -1, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -3.786707 as ApotomeSlope,
@@ -684,9 +688,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 12.776693 as Cents,
                 name: "17/5C" as Name<Comma>,
                 pitch: {
-                    id: 26 as Id<PrimaryComma>,
+                    id: 26 as Id<CommaClass>,
                     monzo: [3, -3, -1, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -5.816995 as ApotomeSlope,
@@ -708,9 +712,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 13.268590 as Cents,
                 name: "11/23C" as Name<Comma>,
                 pitch: {
-                    id: 27 as Id<PrimaryComma>,
+                    id: 27 as Id<CommaClass>,
                     monzo: [9, -5, 0, 0, 1, 0, 0, 0, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 1.150605 as ApotomeSlope,
@@ -732,9 +736,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 13.794766 as Cents,
                 name: "7/125C" as Name<Comma>,
                 pitch: {
-                    id: 28 as Id<PrimaryComma>,
+                    id: 28 as Id<CommaClass>,
                     monzo: [1, 2, -3, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -5.873762 as ApotomeSlope,
@@ -756,9 +760,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 14.190522 as Cents,
                 name: "245C" as Name<Comma>,
                 pitch: {
-                    id: 29 as Id<PrimaryComma>,
+                    id: 29 as Id<CommaClass>,
                     monzo: [0, -5, 1, 2] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 4.092994 as ApotomeSlope,
@@ -780,9 +784,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 14.730413 as Cents,
                 name: "17C" as Name<Comma>,
                 pitch: {
-                    id: 30 as Id<PrimaryComma>,
+                    id: 30 as Id<CommaClass>,
                     monzo: [-12, 5, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -4.935900 as ApotomeSlope,
@@ -804,9 +808,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 15.199694 as Cents,
                 name: "143/7C" as Name<Comma>,
                 pitch: {
-                    id: 31 as Id<PrimaryComma>,
+                    id: 31 as Id<CommaClass>,
                     monzo: [2, -4, 0, -1, 1, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 9.030308 as ApotomeSlope,
@@ -828,9 +832,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 15.748487 as Cents,
                 name: "7/25C" as Name<Comma>,
                 pitch: {
-                    id: 32 as Id<PrimaryComma>,
+                    id: 32 as Id<CommaClass>,
                     monzo: [-14, 10, -2, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 2.005940 as ApotomeSlope,
@@ -852,9 +856,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 16.144243 as Cents,
                 name: "1225C" as Name<Comma>,
                 pitch: {
-                    id: 33 as Id<PrimaryComma>,
+                    id: 33 as Id<CommaClass>,
                     monzo: [-15, 3, 2, 2] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -7.018695 as ApotomeSlope,
@@ -876,9 +880,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 16.544342 as Cents,
                 name: "23C" as Name<Comma>,
                 pitch: {
-                    id: 34 as Id<PrimaryComma>,
+                    id: 34 as Id<CommaClass>,
                     monzo: [5, -6, 0, 0, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -2.046116 as ApotomeSlope,
@@ -900,9 +904,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 16.989675 as Cents,
                 name: "1/169C" as Name<Comma>,
                 pitch: {
-                    id: 35 as Id<PrimaryComma>,
+                    id: 35 as Id<CommaClass>,
                     monzo: [9, -1, 0, 0, 0, -2] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 0.917773 as ApotomeSlope,
@@ -924,9 +928,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 17.576131 as Cents,
                 name: "11/49C" as Name<Comma>,
                 pitch: {
-                    id: 36 as Id<PrimaryComma>,
+                    id: 36 as Id<CommaClass>,
                     monzo: [-1, 2, 0, -2, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 4.890912 as ApotomeSlope,
@@ -948,9 +952,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 18.012375 as Cents,
                 name: "11/31C" as Name<Comma>,
                 pitch: {
-                    id: 37 as Id<PrimaryComma>,
+                    id: 37 as Id<CommaClass>,
                     monzo: [-8, 6, 0, 0, 1, 0, 0, 0, 0, 0, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -10.141236 as ApotomeSlope,
@@ -972,9 +976,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 18.534495 as Cents,
                 name: "17/7C" as Name<Comma>,
                 pitch: {
-                    id: 38 as Id<PrimaryComma>,
+                    id: 38 as Id<CommaClass>,
                     monzo: [13, -9, 0, -1, 0, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -3.177894 as ApotomeSlope,
@@ -996,9 +1000,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 19.129852 as Cents,
                 name: "91/5C" as Name<Comma>,
                 pitch: {
-                    id: 39 as Id<PrimaryComma>,
+                    id: 39 as Id<CommaClass>,
                     monzo: [-1, -2, -1, 1, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -5.203922 as ApotomeSlope,
@@ -1020,9 +1024,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 19.552569 as Cents,
                 name: "1/25C" as Name<Comma>,
                 pitch: {
-                    id: 40 as Id<PrimaryComma>,
+                    id: 40 as Id<CommaClass>,
                     monzo: [11, -4, -2] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 7.763478 as ApotomeSlope,
@@ -1044,9 +1048,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 20.081991 as Cents,
                 name: "1/19C" as Name<Comma>,
                 pitch: {
-                    id: 41 as Id<PrimaryComma>,
+                    id: 41 as Id<CommaClass>,
                     monzo: [-10, 9, 0, 0, 0, 0, 0, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -1.256577 as ApotomeSlope,
@@ -1068,9 +1072,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 20.407710 as Cents,
                 name: "1/253C" as Name<Comma>,
                 pitch: {
-                    id: 42 as Id<PrimaryComma>,
+                    id: 42 as Id<CommaClass>,
                     monzo: [8, 0, 0, 0, -1, 0, 0, 0, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 4.701807 as ApotomeSlope,
@@ -1092,9 +1096,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 21.083573 as Cents,
                 name: "91C" as Name<Comma>,
                 pitch: {
-                    id: 43 as Id<PrimaryComma>,
+                    id: 43 as Id<CommaClass>,
                     monzo: [-16, 6, 0, 1, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 2.675779 as ApotomeSlope,
@@ -1116,9 +1120,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 21.506289 as Cents,
                 name: "1/5C" as Name<Comma>,
                 pitch: {
-                    id: 44 as Id<PrimaryComma>,
+                    id: 44 as Id<CommaClass>,
                     monzo: [-4, 4, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -4.348588 as ApotomeSlope,
@@ -1140,9 +1144,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 21.902045 as Cents,
                 name: "875C" as Name<Comma>,
                 pitch: {
-                    id: 45 as Id<PrimaryComma>,
+                    id: 45 as Id<CommaClass>,
                     monzo: [-5, -3, 3, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -6.374616 as ApotomeSlope,
@@ -1164,9 +1168,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 22.324761 as Cents,
                 name: "25/13C" as Name<Comma>,
                 pitch: {
-                    id: 46 as Id<PrimaryComma>,
+                    id: 46 as Id<CommaClass>,
                     monzo: [7, -5, 2, 0, 0, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -2.411919 as ApotomeSlope,
@@ -1188,9 +1192,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 22.930587 as Cents,
                 name: "19/25C" as Name<Comma>,
                 pitch: {
-                    id: 47 as Id<PrimaryComma>,
+                    id: 47 as Id<CommaClass>,
                     monzo: [2, -1, -2, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 10.555481 as ApotomeSlope,
@@ -1212,9 +1216,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 23.460010 as Cents,
                 name: "3C" as Name<Comma>,
                 pitch: {
-                    id: 48 as Id<PrimaryComma>,
+                    id: 48 as Id<CommaClass>,
                     monzo: [-19, 12] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 3.531113 as ApotomeSlope,
@@ -1236,9 +1240,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 23.855766 as Cents,
                 name: "4375C" as Name<Comma>,
                 pitch: {
-                    id: 49 as Id<PrimaryComma>,
+                    id: 49 as Id<CommaClass>,
                     monzo: [-20, 5, 4, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -6.481162 as ApotomeSlope,
@@ -1260,9 +1264,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 24.055130 as Cents,
                 name: "77/5C" as Name<Comma>,
                 pitch: {
-                    id: 50 as Id<PrimaryComma>,
+                    id: 50 as Id<CommaClass>,
                     monzo: [4, -5, -1, 1, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 1.505085 as ApotomeSlope,
@@ -1284,9 +1288,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 24.278482 as Cents,
                 name: "125/13C" as Name<Comma>,
                 pitch: {
-                    id: 51 as Id<PrimaryComma>,
+                    id: 51 as Id<CommaClass>,
                     monzo: [-8, 3, 3, 0, 0, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 5.467782 as ApotomeSlope,
@@ -1308,9 +1312,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 24.884308 as Cents,
                 name: "19/5C" as Name<Comma>,
                 pitch: {
-                    id: 52 as Id<PrimaryComma>,
+                    id: 52 as Id<CommaClass>,
                     monzo: [-13, 7, -1, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -9.532423 as ApotomeSlope,
@@ -1332,9 +1336,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 24.887654 as Cents,
                 name: "13C" as Name<Comma>,
                 pitch: {
-                    id: 53 as Id<PrimaryComma>,
+                    id: 53 as Id<CommaClass>,
                     monzo: [9, -8, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -11.558451 as ApotomeSlope,
@@ -1356,9 +1360,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 25.310371 as Cents,
                 name: "1/35C" as Name<Comma>,
                 pitch: {
-                    id: 54 as Id<PrimaryComma>,
+                    id: 54 as Id<CommaClass>,
                     monzo: [21, -10, -1, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 1.398540 as ApotomeSlope,
@@ -1380,9 +1384,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 26.008851 as Cents,
                 name: "77C" as Name<Comma>,
                 pitch: {
-                    id: 55 as Id<PrimaryComma>,
+                    id: 55 as Id<CommaClass>,
                     monzo: [-11, 3, 0, 1, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -0.627487 as ApotomeSlope,
@@ -1404,9 +1408,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 26.431567 as Cents,
                 name: "11/65C" as Name<Comma>,
                 pitch: {
-                    id: 56 as Id<PrimaryComma>,
+                    id: 56 as Id<CommaClass>,
                     monzo: [1, 1, -1, 0, 1, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -1.652721 as ApotomeSlope,
@@ -1428,9 +1432,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 26.841375 as Cents,
                 name: "65C" as Name<Comma>,
                 pitch: {
-                    id: 57 as Id<PrimaryComma>,
+                    id: 57 as Id<CommaClass>,
                     monzo: [-6, 0, 1, 0, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -3.678749 as ApotomeSlope,
@@ -1452,9 +1456,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 27.264092 as Cents,
                 name: "1/7C" as Name<Comma>,
                 pitch: {
-                    id: 58 as Id<PrimaryComma>,
+                    id: 58 as Id<CommaClass>,
                     monzo: [6, -2, 0, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -10.703117 as ApotomeSlope,
@@ -1476,9 +1480,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 27.659847 as Cents,
                 name: "625C" as Name<Comma>,
                 pitch: {
-                    id: 59 as Id<PrimaryComma>,
+                    id: 59 as Id<CommaClass>,
                     monzo: [5, -9, 4] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 7.252214 as ApotomeSlope,
@@ -1500,9 +1504,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 28.385288 as Cents,
                 name: "11/13C" as Name<Comma>,
                 pitch: {
-                    id: 60 as Id<PrimaryComma>,
+                    id: 60 as Id<CommaClass>,
                     monzo: [-14, 9, 0, 0, 1, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 6.226981 as ApotomeSlope,
@@ -1524,9 +1528,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 28.795096 as Cents,
                 name: "325C" as Name<Comma>,
                 pitch: {
-                    id: 61 as Id<PrimaryComma>,
+                    id: 61 as Id<CommaClass>,
                     monzo: [-21, 8, 2, 0, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 4.200952 as ApotomeSlope,
@@ -1548,9 +1552,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 29.217813 as Cents,
                 name: "5/7C" as Name<Comma>,
                 pitch: {
-                    id: 62 as Id<PrimaryComma>,
+                    id: 62 as Id<CommaClass>,
                     monzo: [-9, 6, 1, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -2.823415 as ApotomeSlope,
@@ -1572,9 +1576,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 29.613568 as Cents,
                 name: "3125C" as Name<Comma>,
                 pitch: {
-                    id: 63 as Id<PrimaryComma>,
+                    id: 63 as Id<CommaClass>,
                     monzo: [-10, -1, 5] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -6.858057 as ApotomeSlope,
@@ -1596,9 +1600,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 30.176176 as Cents,
                 name: "85/11C" as Name<Comma>,
                 pitch: {
-                    id: 64 as Id<PrimaryComma>,
+                    id: 64 as Id<CommaClass>,
                     monzo: [5, -5, 1, 0, -1, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -0.886746 as ApotomeSlope,
@@ -1620,9 +1624,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 30.642110 as Cents,
                 name: "19/7C" as Name<Comma>,
                 pitch: {
-                    id: 65 as Id<PrimaryComma>,
+                    id: 65 as Id<CommaClass>,
                     monzo: [-3, 1, 0, -1, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -1.920743 as ApotomeSlope,
@@ -1644,9 +1648,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 31.194250 as Cents,
                 name: "7/55C" as Name<Comma>,
                 pitch: {
-                    id: 66 as Id<PrimaryComma>,
+                    id: 66 as Id<CommaClass>,
                     monzo: [3, 0, -1, 1, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -4.955988 as ApotomeSlope,
@@ -1668,9 +1672,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 31.766653 as Cents,
                 name: "55C" as Name<Comma>,
                 pitch: {
-                    id: 67 as Id<PrimaryComma>,
+                    id: 67 as Id<CommaClass>,
                     monzo: [-1, -3, 1, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -6.982016 as ApotomeSlope,
@@ -1692,9 +1696,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 32.189369 as Cents,
                 name: "11/91C" as Name<Comma>,
                 pitch: {
-                    id: 68 as Id<PrimaryComma>,
+                    id: 68 as Id<CommaClass>,
                     monzo: [11, -5, 0, -1, 1, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -1.008642 as ApotomeSlope,
@@ -1716,9 +1720,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 32.621795 as Cents,
                 name: "125/23C" as Name<Comma>,
                 pitch: {
-                    id: 69 as Id<PrimaryComma>,
+                    id: 69 as Id<CommaClass>,
                     monzo: [-4, 1, 3, 0, 0, 0, 0, 0, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 5.958958 as ApotomeSlope,
@@ -1740,9 +1744,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 33.147971 as Cents,
                 name: "7/11C" as Name<Comma>,
                 pitch: {
-                    id: 70 as Id<PrimaryComma>,
+                    id: 70 as Id<CommaClass>,
                     monzo: [-12, 8, 0, 1, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -3.069936 as ApotomeSlope,
@@ -1764,9 +1768,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 33.617251 as Cents,
                 name: "13/17S" as Name<Comma>,
                 pitch: {
-                    id: 71 as Id<PrimaryComma>,
+                    id: 71 as Id<CommaClass>,
                     monzo: [2, -1, 0, 0, 0, 1, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -1.110928 as ApotomeSlope,
@@ -1788,9 +1792,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 34.282982 as Cents,
                 name: "17/25S" as Name<Comma>,
                 pitch: {
-                    id: 72 as Id<PrimaryComma>,
+                    id: 72 as Id<CommaClass>,
                     monzo: [-1, 1, -2, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -0.136311 as ApotomeSlope,
@@ -1812,9 +1816,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 34.695230 as Cents,
                 name: "7/247S" as Name<Comma>,
                 pitch: {
-                    id: 73 as Id<PrimaryComma>,
+                    id: 73 as Id<CommaClass>,
                     monzo: [2, 2, 0, 1, 0, -1, 0, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -2.153576 as ApotomeSlope,
@@ -1836,9 +1840,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 34.975614 as Cents,
                 name: "25/49S" as Name<Comma>,
                 pitch: {
-                    id: 74 as Id<PrimaryComma>,
+                    id: 74 as Id<CommaClass>,
                     monzo: [1, 0, 2, -2] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -7.171121 as ApotomeSlope,
@@ -1860,9 +1864,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 35.260568 as Cents,
                 name: "31S" as Name<Comma>,
                 pitch: {
-                    id: 75 as Id<PrimaryComma>,
+                    id: 75 as Id<CommaClass>,
                     monzo: [3, -5, 0, 0, 0, 0, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -3.197982 as ApotomeSlope,
@@ -1884,9 +1888,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 35.696812 as Cents,
                 name: "49S" as Name<Comma>,
                 pitch: {
-                    id: 76 as Id<PrimaryComma>,
+                    id: 76 as Id<CommaClass>,
                     monzo: [-4, -1, 0, 2] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 6.768774 as ApotomeSlope,
@@ -1908,9 +1912,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 36.236703 as Cents,
                 name: "17/5S" as Name<Comma>,
                 pitch: {
-                    id: 77 as Id<PrimaryComma>,
+                    id: 77 as Id<CommaClass>,
                     monzo: [-16, 9, -1, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 4.738486 as ApotomeSlope,
@@ -1932,9 +1936,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 36.728601 as Cents,
                 name: "11/23S" as Name<Comma>,
                 pitch: {
-                    id: 78 as Id<PrimaryComma>,
+                    id: 78 as Id<CommaClass>,
                     monzo: [-10, 7, 0, 0, 1, 0, 0, 0, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -8.275272 as ApotomeSlope,
@@ -1956,9 +1960,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 36.952052 as Cents,
                 name: "1/11S" as Name<Comma>,
                 pitch: {
-                    id: 79 as Id<PrimaryComma>,
+                    id: 79 as Id<CommaClass>,
                     monzo: [13, -6, 0, 0, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 4.681719 as ApotomeSlope,
@@ -1980,9 +1984,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 37.650532 as Cents,
                 name: "245S" as Name<Comma>,
                 pitch: {
-                    id: 80 as Id<PrimaryComma>,
+                    id: 80 as Id<CommaClass>,
                     monzo: [-19, 7, 1, 2] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -4.342916 as ApotomeSlope,
@@ -2004,9 +2008,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 38.050631 as Cents,
                 name: "23/5S" as Name<Comma>,
                 pitch: {
-                    id: 81 as Id<PrimaryComma>,
+                    id: 81 as Id<CommaClass>,
                     monzo: [1, -2, -1, 0, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 2.655691 as ApotomeSlope,
@@ -2028,9 +2032,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 38.073249 as Cents,
                 name: "7/13S" as Name<Comma>,
                 pitch: {
-                    id: 82 as Id<PrimaryComma>,
+                    id: 82 as Id<CommaClass>,
                     monzo: [-7, 5, 0, 1, 0, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -6.373203 as ApotomeSlope,
@@ -2052,9 +2056,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 38.542529 as Cents,
                 name: "11/17S" as Name<Comma>,
                 pitch: {
-                    id: 83 as Id<PrimaryComma>,
+                    id: 83 as Id<CommaClass>,
                     monzo: [7, -4, 0, 0, 1, 0, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -0.395570 as ApotomeSlope,
@@ -2076,9 +2080,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 38.905773 as Cents,
                 name: "5/11S" as Name<Comma>,
                 pitch: {
-                    id: 84 as Id<PrimaryComma>,
+                    id: 84 as Id<CommaClass>,
                     monzo: [-2, 2, 1, 0, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -2.421598 as ApotomeSlope,
@@ -2100,9 +2104,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 39.328489 as Cents,
                 name: "1/1001S" as Name<Comma>,
                 pitch: {
-                    id: 85 as Id<PrimaryComma>,
+                    id: 85 as Id<CommaClass>,
                     monzo: [10, 0, 0, -1, -1, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 3.536786 as ApotomeSlope,
@@ -2124,9 +2128,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 40.004352 as Cents,
                 name: "23S" as Name<Comma>,
                 pitch: {
-                    id: 86 as Id<PrimaryComma>,
+                    id: 86 as Id<CommaClass>,
                     monzo: [-14, 6, 0, 0, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -0.502115 as ApotomeSlope,
@@ -2148,9 +2152,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 40.636142 as Cents,
                 name: "91/25S" as Name<Comma>,
                 pitch: {
-                    id: 87 as Id<PrimaryComma>,
+                    id: 87 as Id<CommaClass>,
                     monzo: [-5, 2, -2, 1, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -2.528143 as ApotomeSlope,
@@ -2172,9 +2176,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 41.058858 as Cents,
                 name: "1/125S" as Name<Comma>,
                 pitch: {
-                    id: 88 as Id<PrimaryComma>,
+                    id: 88 as Id<CommaClass>,
                     monzo: [7, 0, -3] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -9.552511 as ApotomeSlope,
@@ -2196,9 +2200,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 41.454614 as Cents,
                 name: "35S" as Name<Comma>,
                 pitch: {
-                    id: 89 as Id<PrimaryComma>,
+                    id: 89 as Id<CommaClass>,
                     monzo: [6, -7, 1, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 0.414245 as ApotomeSlope,
@@ -2220,9 +2224,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 41.994505 as Cents,
                 name: "17/7S" as Name<Comma>,
                 pitch: {
-                    id: 90 as Id<PrimaryComma>,
+                    id: 90 as Id<CommaClass>,
                     monzo: [-6, 3, 0, -1, 0, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 7.377586 as ApotomeSlope,
@@ -2244,9 +2248,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 42.589863 as Cents,
                 name: "91/5S" as Name<Comma>,
                 pitch: {
-                    id: 91 as Id<PrimaryComma>,
+                    id: 91 as Id<CommaClass>,
                     monzo: [-20, 10, -1, 1, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 5.351558 as ApotomeSlope,
@@ -2268,9 +2272,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 43.012579 as Cents,
                 name: "1/25S" as Name<Comma>,
                 pitch: {
-                    id: 92 as Id<PrimaryComma>,
+                    id: 92 as Id<CommaClass>,
                     monzo: [-8, 8, -2] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -1.672809 as ApotomeSlope,
@@ -2292,9 +2296,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 43.408335 as Cents,
                 name: "175S" as Name<Comma>,
                 pitch: {
-                    id: 93 as Id<PrimaryComma>,
+                    id: 93 as Id<CommaClass>,
                     monzo: [-9, 1, 2, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -3.698837 as ApotomeSlope,
@@ -2316,9 +2320,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 43.831051 as Cents,
                 name: "5/13S" as Name<Comma>,
                 pitch: {
-                    id: 94 as Id<PrimaryComma>,
+                    id: 94 as Id<CommaClass>,
                     monzo: [3, -1, 1, 0, 0, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 3.264504 as ApotomeSlope,
@@ -2340,9 +2344,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 44.426408 as Cents,
                 name: "49/17S" as Name<Comma>,
                 pitch: {
-                    id: 95 as Id<PrimaryComma>,
+                    id: 95 as Id<CommaClass>,
                     monzo: [-11, 6, 0, 2, 0, 0, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -1.768944 as ApotomeSlope,
@@ -2364,9 +2368,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 44.969646 as Cents,
                 name: "13/19S" as Name<Comma>,
                 pitch: {
-                    id: 96 as Id<PrimaryComma>,
+                    id: 96 as Id<CommaClass>,
                     monzo: [-1, 1, 0, 0, 0, 1, 0, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -3.805382 as ApotomeSlope,
@@ -2388,9 +2392,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 45.561420 as Cents,
                 name: "77/25M" as Name<Comma>,
                 pitch: {
-                    id: 97 as Id<PrimaryComma>,
+                    id: 97 as Id<CommaClass>,
                     monzo: [0, -1, -2, 1, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 4.180864 as ApotomeSlope,
@@ -2412,9 +2416,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 45.784772 as Cents,
                 name: "25/13M" as Name<Comma>,
                 pitch: {
-                    id: 98 as Id<PrimaryComma>,
+                    id: 98 as Id<CommaClass>,
                     monzo: [-12, 7, 2, 0, 0, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -6.856644 as ApotomeSlope,
@@ -2436,9 +2440,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 46.393944 as Cents,
                 name: "13/5M" as Name<Comma>,
                 pitch: {
-                    id: 99 as Id<PrimaryComma>,
+                    id: 99 as Id<CommaClass>,
                     monzo: [5, -4, -1, 0, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -8.882672 as ApotomeSlope,
@@ -2460,9 +2464,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 46.816660 as Cents,
                 name: "1/175M" as Name<Comma>,
                 pitch: {
-                    id: 100 as Id<PrimaryComma>,
+                    id: 100 as Id<CommaClass>,
                     monzo: [17, -6, -2, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -4.920686 as ApotomeSlope,
@@ -2484,9 +2488,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 47.434037 as Cents,
                 name: "37M" as Name<Comma>,
                 pitch: {
-                    id: 101 as Id<PrimaryComma>,
+                    id: 101 as Id<CommaClass>,
                     monzo: [-2, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 2.048291 as ApotomeSlope,
@@ -2508,9 +2512,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 47.937857 as Cents,
                 name: "11/325M" as Name<Comma>,
                 pitch: {
-                    id: 102 as Id<PrimaryComma>,
+                    id: 102 as Id<CommaClass>,
                     monzo: [-3, 5, -2, 0, 1, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 1.023058 as ApotomeSlope,
@@ -2532,9 +2536,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 48.347665 as Cents,
                 name: "13M" as Name<Comma>,
                 pitch: {
-                    id: 103 as Id<PrimaryComma>,
+                    id: 103 as Id<CommaClass>,
                     monzo: [-10, 4, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -1.002970 as ApotomeSlope,
@@ -2556,9 +2560,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 48.770381 as Cents,
                 name: "1/35M" as Name<Comma>,
                 pitch: {
-                    id: 104 as Id<PrimaryComma>,
+                    id: 104 as Id<CommaClass>,
                     monzo: [2, 2, -1, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -8.027338 as ApotomeSlope,
@@ -2580,9 +2584,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 49.166137 as Cents,
                 name: "125M" as Name<Comma>,
                 pitch: {
-                    id: 105 as Id<PrimaryComma>,
+                    id: 105 as Id<CommaClass>,
                     monzo: [1, -5, 3] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -5.072212 as ApotomeSlope,
@@ -2604,9 +2608,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 49.894924 as Cents,
                 name: "11/19M" as Name<Comma>,
                 pitch: {
-                    id: 106 as Id<PrimaryComma>,
+                    id: 106 as Id<CommaClass>,
                     monzo: [4, -2, 0, 0, 1, 0, 0, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 8.902760 as ApotomeSlope,
@@ -2628,9 +2632,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 50.301386 as Cents,
                 name: "65M" as Name<Comma>,
                 pitch: {
-                    id: 107 as Id<PrimaryComma>,
+                    id: 107 as Id<CommaClass>,
                     monzo: [-25, 12, 1, 0, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 6.876732 as ApotomeSlope,
@@ -2652,9 +2656,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 50.724102 as Cents,
                 name: "1/7M" as Name<Comma>,
                 pitch: {
-                    id: 108 as Id<PrimaryComma>,
+                    id: 108 as Id<CommaClass>,
                     monzo: [-13, 10, 0, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -0.147635 as ApotomeSlope,
@@ -2676,9 +2680,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 51.119858 as Cents,
                 name: "625M" as Name<Comma>,
                 pitch: {
-                    id: 109 as Id<PrimaryComma>,
+                    id: 109 as Id<CommaClass>,
                     monzo: [-14, 3, 4] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -10.159911 as ApotomeSlope,
@@ -2700,9 +2704,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 51.319222 as Cents,
                 name: "11/5M" as Name<Comma>,
                 pitch: {
-                    id: 110 as Id<PrimaryComma>,
+                    id: 110 as Id<CommaClass>,
                     monzo: [10, -7, -1, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -4.182277 as ApotomeSlope,
@@ -2724,9 +2728,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 51.682466 as Cents,
                 name: "17/11M" as Name<Comma>,
                 pitch: {
-                    id: 111 as Id<PrimaryComma>,
+                    id: 111 as Id<CommaClass>,
                     monzo: [1, -1, 0, 0, -1, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -6.212565 as ApotomeSlope,
@@ -2748,9 +2752,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 52.174364 as Cents,
                 name: "5/23M" as Name<Comma>,
                 pitch: {
-                    id: 112 as Id<PrimaryComma>,
+                    id: 112 as Id<CommaClass>,
                     monzo: [7, -3, 1, 0, 0, 0, 0, 0, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 0.755035 as ApotomeSlope,
@@ -2772,9 +2776,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 52.700539 as Cents,
                 name: "7/275M" as Name<Comma>,
                 pitch: {
-                    id: 113 as Id<PrimaryComma>,
+                    id: 113 as Id<CommaClass>,
                     monzo: [-1, 4, -2, 1, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -2.280209 as ApotomeSlope,
@@ -2796,9 +2800,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 53.272943 as Cents,
                 name: "11M" as Name<Comma>,
                 pitch: {
-                    id: 114 as Id<PrimaryComma>,
+                    id: 114 as Id<CommaClass>,
                     monzo: [-5, 1, 0, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 3.697424 as ApotomeSlope,
@@ -2820,9 +2824,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 53.636187 as Cents,
                 name: "85/11M" as Name<Comma>,
                 pitch: {
-                    id: 115 as Id<PrimaryComma>,
+                    id: 115 as Id<CommaClass>,
                     monzo: [-14, 7, 1, 0, -1, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -5.331470 as ApotomeSlope,
@@ -2844,9 +2848,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 54.105467 as Cents,
                 name: "65/7M" as Name<Comma>,
                 pitch: {
-                    id: 116 as Id<PrimaryComma>,
+                    id: 116 as Id<CommaClass>,
                     monzo: [0, -2, 1, -1, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -7.357498 as ApotomeSlope,
@@ -2868,9 +2872,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 54.528183 as Cents,
                 name: "1/49M" as Name<Comma>,
                 pitch: {
-                    id: 117 as Id<PrimaryComma>,
+                    id: 117 as Id<CommaClass>,
                     monzo: [12, -4, 0, -2] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -3.384360 as ApotomeSlope,
@@ -2892,9 +2896,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 54.964427 as Cents,
                 name: "1/31M" as Name<Comma>,
                 pitch: {
-                    id: 118 as Id<PrimaryComma>,
+                    id: 118 as Id<CommaClass>,
                     monzo: [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 5.599493 as ApotomeSlope,
@@ -2916,9 +2920,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 55.226664 as Cents,
                 name: "55M" as Name<Comma>,
                 pitch: {
-                    id: 119 as Id<PrimaryComma>,
+                    id: 119 as Id<CommaClass>,
                     monzo: [-20, 9, 1, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 3.573464 as ApotomeSlope,
@@ -2940,9 +2944,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 55.649380 as Cents,
                 name: "11/91M" as Name<Comma>,
                 pitch: {
-                    id: 120 as Id<PrimaryComma>,
+                    id: 120 as Id<CommaClass>,
                     monzo: [-8, 7, 0, -1, 1, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -5.459516 as ApotomeSlope,
@@ -2964,9 +2968,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 56.185028 as Cents,
                 name: "595M" as Name<Comma>,
                 pitch: {
-                    id: 121 as Id<PrimaryComma>,
+                    id: 121 as Id<CommaClass>,
                     monzo: [-6, -2, 1, 1, 0, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 0.522203 as ApotomeSlope,
@@ -2988,9 +2992,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 56.481904 as Cents,
                 name: "5/49M" as Name<Comma>,
                 pitch: {
-                    id: 122 as Id<PrimaryComma>,
+                    id: 122 as Id<CommaClass>,
                     monzo: [-3, 4, 1, -2] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -0.522203 as ApotomeSlope,
@@ -3012,9 +3016,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 57.203101 as Cents,
                 name: "49/5L" as Name<Comma>,
                 pitch: {
-                    id: 123 as Id<PrimaryComma>,
+                    id: 123 as Id<CommaClass>,
                     monzo: [-8, 3, -1, 2] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 5.459516 as ApotomeSlope,
@@ -3036,9 +3040,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 57.499977 as Cents,
                 name: "1/595L" as Name<Comma>,
                 pitch: {
-                    id: 124 as Id<PrimaryComma>,
+                    id: 124 as Id<CommaClass>,
                     monzo: [-5, 9, -1, -1, 0, 0, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -3.573464 as ApotomeSlope,
@@ -3060,9 +3064,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 58.035625 as Cents,
                 name: "91/11L" as Name<Comma>,
                 pitch: {
-                    id: 125 as Id<PrimaryComma>,
+                    id: 125 as Id<CommaClass>,
                     monzo: [-3, 0, 0, 1, -1, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -5.599493 as ApotomeSlope,
@@ -3084,9 +3088,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 58.458342 as Cents,
                 name: "1/55L" as Name<Comma>,
                 pitch: {
-                    id: 126 as Id<PrimaryComma>,
+                    id: 126 as Id<CommaClass>,
                     monzo: [9, -2, -1, 0, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 3.384360 as ApotomeSlope,
@@ -3108,9 +3112,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 58.720578 as Cents,
                 name: "31L" as Name<Comma>,
                 pitch: {
-                    id: 127 as Id<PrimaryComma>,
+                    id: 127 as Id<CommaClass>,
                     monzo: [-16, 7, 0, 0, 0, 0, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 7.357498 as ApotomeSlope,
@@ -3132,9 +3136,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 59.156822 as Cents,
                 name: "49L" as Name<Comma>,
                 pitch: {
-                    id: 128 as Id<PrimaryComma>,
+                    id: 128 as Id<CommaClass>,
                     monzo: [-23, 11, 0, 2] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 5.331470 as ApotomeSlope,
@@ -3156,9 +3160,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 59.579538 as Cents,
                 name: "7/65L" as Name<Comma>,
                 pitch: {
-                    id: 129 as Id<PrimaryComma>,
+                    id: 129 as Id<CommaClass>,
                     monzo: [-11, 9, -1, 1, 0, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -3.697424 as ApotomeSlope,
@@ -3180,9 +3184,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 60.048818 as Cents,
                 name: "11/85L" as Name<Comma>,
                 pitch: {
-                    id: 130 as Id<PrimaryComma>,
+                    id: 130 as Id<CommaClass>,
                     monzo: [3, 0, -1, 0, 1, 0, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 2.280209 as ApotomeSlope,
@@ -3204,9 +3208,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 60.412062 as Cents,
                 name: "1/11L" as Name<Comma>,
                 pitch: {
-                    id: 131 as Id<PrimaryComma>,
+                    id: 131 as Id<CommaClass>,
                     monzo: [-6, 6, 0, 0, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -0.755035 as ApotomeSlope,
@@ -3228,9 +3232,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 60.984466 as Cents,
                 name: "275/7L" as Name<Comma>,
                 pitch: {
-                    id: 132 as Id<PrimaryComma>,
+                    id: 132 as Id<CommaClass>,
                     monzo: [-10, 3, 2, -1, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 6.212565 as ApotomeSlope,
@@ -3252,9 +3256,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 61.510642 as Cents,
                 name: "23/5L" as Name<Comma>,
                 pitch: {
-                    id: 133 as Id<PrimaryComma>,
+                    id: 133 as Id<CommaClass>,
                     monzo: [-18, 10, -1, 0, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 4.182277 as ApotomeSlope,
@@ -3276,9 +3280,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 62.002539 as Cents,
                 name: "11/17L" as Name<Comma>,
                 pitch: {
-                    id: 134 as Id<PrimaryComma>,
+                    id: 134 as Id<CommaClass>,
                     monzo: [-12, 8, 0, 0, 1, 0, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 10.159911 as ApotomeSlope,
@@ -3300,9 +3304,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 62.365783 as Cents,
                 name: "5/11L" as Name<Comma>,
                 pitch: {
-                    id: 135 as Id<PrimaryComma>,
+                    id: 135 as Id<CommaClass>,
                     monzo: [-21, 14, 1, 0, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 0.147635 as ApotomeSlope,
@@ -3324,9 +3328,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 62.565148 as Cents,
                 name: "1/625L" as Name<Comma>,
                 pitch: {
-                    id: 136 as Id<PrimaryComma>,
+                    id: 136 as Id<CommaClass>,
                     monzo: [3, 4, -4] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -6.876732 as ApotomeSlope,
@@ -3348,9 +3352,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 62.960903 as Cents,
                 name: "7L" as Name<Comma>,
                 pitch: {
-                    id: 137 as Id<PrimaryComma>,
+                    id: 137 as Id<CommaClass>,
                     monzo: [2, -3, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -8.902760 as ApotomeSlope,
@@ -3372,9 +3376,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 63.383620 as Cents,
                 name: "1/65L" as Name<Comma>,
                 pitch: {
-                    id: 138 as Id<PrimaryComma>,
+                    id: 138 as Id<CommaClass>,
                     monzo: [14, -5, -1, 0, 0, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 5.072212 as ApotomeSlope,
@@ -3396,9 +3400,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 63.790081 as Cents,
                 name: "19/11L" as Name<Comma>,
                 pitch: {
-                    id: 139 as Id<PrimaryComma>,
+                    id: 139 as Id<CommaClass>,
                     monzo: [-15, 9, 0, 0, -1, 0, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 8.027338 as ApotomeSlope,
@@ -3420,9 +3424,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 64.518868 as Cents,
                 name: "1/125L" as Name<Comma>,
                 pitch: {
-                    id: 140 as Id<PrimaryComma>,
+                    id: 140 as Id<CommaClass>,
                     monzo: [-12, 12, -3] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 1.002970 as ApotomeSlope,
@@ -3444,9 +3448,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 64.914624 as Cents,
                 name: "35L" as Name<Comma>,
                 pitch: {
-                    id: 141 as Id<PrimaryComma>,
+                    id: 141 as Id<CommaClass>,
                     monzo: [-13, 5, 1, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -1.023058 as ApotomeSlope,
@@ -3468,9 +3472,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 65.337340 as Cents,
                 name: "1/13L" as Name<Comma>,
                 pitch: {
-                    id: 142 as Id<PrimaryComma>,
+                    id: 142 as Id<CommaClass>,
                     monzo: [-1, 3, 0, 0, 0, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -2.048291 as ApotomeSlope,
@@ -3492,9 +3496,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 65.747148 as Cents,
                 name: "325/11L" as Name<Comma>,
                 pitch: {
-                    id: 143 as Id<PrimaryComma>,
+                    id: 143 as Id<CommaClass>,
                     monzo: [-8, 2, 2, 0, -1, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 4.920686 as ApotomeSlope,
@@ -3516,9 +3520,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 66.250969 as Cents,
                 name: "1/37L" as Name<Comma>,
                 pitch: {
-                    id: 144 as Id<PrimaryComma>,
+                    id: 144 as Id<CommaClass>,
                     monzo: [-9, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 8.882672 as ApotomeSlope,
@@ -3540,9 +3544,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 66.868345 as Cents,
                 name: "175L" as Name<Comma>,
                 pitch: {
-                    id: 145 as Id<PrimaryComma>,
+                    id: 145 as Id<CommaClass>,
                     monzo: [-28, 13, 2, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 6.856644 as ApotomeSlope,
@@ -3564,9 +3568,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 67.291061 as Cents,
                 name: "5/13L" as Name<Comma>,
                 pitch: {
-                    id: 146 as Id<PrimaryComma>,
+                    id: 146 as Id<CommaClass>,
                     monzo: [-16, 11, 1, 0, 0, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: -4.180864 as ApotomeSlope,
@@ -3588,9 +3592,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 67.900234 as Cents,
                 name: "13/25L" as Name<Comma>,
                 pitch: {
-                    id: 147 as Id<PrimaryComma>,
+                    id: 147 as Id<CommaClass>,
                     monzo: [1, 0, -2, 0, 0, 1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
             {
                 apotomeSlope: 3.805382 as ApotomeSlope,
@@ -3612,9 +3616,9 @@ describe("PRIMARY_COMMAS", (): void => {
                 cents: 68.123585 as Cents,
                 name: "25/77L" as Name<Comma>,
                 pitch: {
-                    id: 148 as Id<PrimaryComma>,
+                    id: 148 as Id<CommaClass>,
                     monzo: [-11, 8, 2, -1, -1] as Monzo<{ rational: true }>,
-                } as PrimaryComma,
+                } as CommaClass,
             },
         ]
         expect(actual).toBeCloseToObject(expected)

@@ -1,12 +1,5 @@
 import { Abs, abs, Cents, Id, Maybe, subtractPitch } from "../../../../general"
-import {
-    CommaClass,
-    getCommaClass,
-    getPrimaryComma,
-    JiNotationBound,
-    JiNotationLevel,
-    JI_NOTATION_BOUNDS,
-} from "../../../../sagittal"
+import { CommaClass, getCommaClass, JiNotationBound, JiNotationLevel, JI_NOTATION_BOUNDS } from "../../../../sagittal"
 import { computeBoundedCommaClassPositions } from "../../boundedPositions"
 import { computeInaDistance } from "../../history"
 import { computePositionCommaClassId } from "./positionCommaClassId"
@@ -35,8 +28,7 @@ const computeJiNotationLevelBoundedCommaClassIdsWithDistances = (
                 .map(
                     (commaClass: Maybe<CommaClass>): Maybe<BoundedCommaClassIdWithDistances> => {
                         if (commaClass) {
-                            const primaryComma = getPrimaryComma(commaClass.id)
-                            const distance: Abs<Cents> = abs(subtractPitch(pitch, primaryComma))
+                            const distance: Abs<Cents> = abs(subtractPitch(pitch, commaClass))
 
                             return {
                                 id: commaClass.id,

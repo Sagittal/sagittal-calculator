@@ -1,5 +1,5 @@
 import { Abs, abs, Id, Max } from "../../../../../../src/general"
-import { CommaClass, getPrimaryComma } from "../../../../../../src/sagittal"
+import { CommaClass, getCommaClass } from "../../../../../../src/sagittal"
 import { ApotomeSlope, computeApotomeSlope } from "../../../../../../src/sagittal/ji/pitch"
 import { JiNotationLevel, JI_NOTATION_LEVELS_COMMA_CLASS_IDS } from "../../../../../../src/sagittal/notations/ji"
 
@@ -15,8 +15,8 @@ describe("max AAS per JI notation level", (): void => {
                     jiNotationLevelMaxAas: Max<Abs<ApotomeSlope>>,
                     jiNotationLevelCommaClassId: Id<CommaClass>,
                 ): Max<Abs<ApotomeSlope>> => {
-                    const primaryComma = getPrimaryComma(jiNotationLevelCommaClassId)
-                    const apotomeSlope = abs(computeApotomeSlope(primaryComma))
+                    const commaClass = getCommaClass(jiNotationLevelCommaClassId)
+                    const apotomeSlope = abs(computeApotomeSlope(commaClass))
 
                     return apotomeSlope > jiNotationLevelMaxAas ?
                         apotomeSlope as Max<Abs<ApotomeSlope>> :

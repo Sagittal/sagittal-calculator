@@ -6,7 +6,7 @@ import {
     computeCommaName,
     computeSecondaryCommaZone,
     formatCommaClass,
-    getPrimaryComma,
+    getCommaClass,
     JI_NOTATION,
 } from "../../../sagittal"
 import { computeCommas, parseFindCommasSettings } from "../findCommas"
@@ -23,8 +23,8 @@ applySharedPitchCommandSetup()
 const findCommasSettings = parseFindCommasSettings()
 
 JI_NOTATION.forEach((commaClassId: Id<CommaClass>): void => {
-    const primaryComma = getPrimaryComma(commaClassId)
-    const commaName = computeCommaName(primaryComma)
+    const commaClass = getCommaClass(commaClassId)
+    const commaName = computeCommaName(commaClass)
 
     saveLog(`\n\n${formatCommaClass(commaClassId)} ${commaName}\n\n` as Io, LogTarget.ALL)
 

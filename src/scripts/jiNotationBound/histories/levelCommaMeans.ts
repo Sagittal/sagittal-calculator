@@ -2,7 +2,7 @@ import { computeRationalScamonGeometricMean, Id, indexOfFinalElement, Name } fro
 import {
     CommaClass,
     CommaMean,
-    getPrimaryComma,
+    getCommaClass,
     getRepresentativeSymbol,
     JiNotationLevel,
     JI_NOTATION_LEVELS_COMMA_CLASS_IDS,
@@ -18,8 +18,8 @@ const computeJiNotationLevelCommaMeans = (jiNotationLevel: JiNotationLevel): Com
         .map((commaClassId: Id<CommaClass>, index: number): CommaMean => {
             const nextCommaClassId = jiNotationLevelCommaClassIds[ index + 1 ]
 
-            const primaryComma = getPrimaryComma(commaClassId)
-            const nextPrimaryComma = getPrimaryComma(nextCommaClassId)
+            const commaClass = getCommaClass(commaClassId)
+            const nextCommaClass = getCommaClass(nextCommaClassId)
 
             const name = [
                 getRepresentativeSymbol(commaClassId),
@@ -27,7 +27,7 @@ const computeJiNotationLevelCommaMeans = (jiNotationLevel: JiNotationLevel): Com
             ].join(" ") as Name<CommaMean>
 
             return {
-                pitch: computeRationalScamonGeometricMean(primaryComma, nextPrimaryComma),
+                pitch: computeRationalScamonGeometricMean(commaClass, nextCommaClass),
                 name,
             }
         })

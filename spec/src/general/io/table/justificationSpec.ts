@@ -1,7 +1,7 @@
 import { Count, Range, Table } from "../../../../../src/general"
 import { Io } from "../../../../../src/general/io"
+import { Justification } from "../../../../../src/general/io/table"
 import { computeColumnWidths, computeJustifiedCell } from "../../../../../src/general/io/table/justification"
-import { Justification } from "../../../../../src/general/io/table/types"
 import { Char } from "../../../../../src/general/io/types"
 
 describe("computeJustifiedCell", (): void => {

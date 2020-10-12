@@ -1,17 +1,16 @@
-import { Id } from "../../../../src/general"
-import { Ascii } from "../../../../src/sagittal/io"
-import { CommaClass, getCommaClass, PrimaryComma } from "../../../../src/sagittal/notations"
+import { Id, Monzo } from "../../../../src/general"
+import { CommaClass, getCommaClass } from "../../../../src/sagittal/notations"
 
 describe("getCommaClass", (): void => {
     it("given a comma class ID, returns the full comma class", (): void => {
-        const jiNotationCommaClassId = 55 as Id<CommaClass>
+        const commaClassId = 55 as Id<CommaClass>
 
-        const actual: CommaClass = getCommaClass(jiNotationCommaClassId)
+        const actual: CommaClass = getCommaClass(commaClassId)
 
         const expected: CommaClass = {
             id: 55 as Id<CommaClass>,
-            primaryCommaId: 55 as Id<PrimaryComma>,
-        }
+            monzo: [-11, 3, 0, 1, 1] as Monzo<{ rational: true }>,
+        } as CommaClass
         expect(actual).toEqual(expected)
     })
 })

@@ -2,31 +2,31 @@ import { increment } from "../../../../../../src/general/code"
 import { areScamonsEqual, isScamonGreater } from "../../../../../../src/general/math/numeric/scamon"
 import { subtractScamons } from "../../../../../../src/general/math/numeric/scamon/typedOperations"
 import {
-    getPrimaryComma,
+    CommaClass,
+    getCommaClass,
     HALF_APOTOME,
     JiNotationBound,
     JI_NOTATION,
     JI_NOTATION_BOUNDS,
-    PrimaryComma,
 } from "../../../../../../src/sagittal"
 
 describe("half-apotome mirror", (): void => {
     it("is the case that the commas in the JI notation are symmetrical about the half-apotome mirror", (): void => {
-        const jiNotationPrimaryCommas = JI_NOTATION.map(getPrimaryComma)
-        const firstCommaGreaterThanHalfApotomeMirrorIndex = jiNotationPrimaryCommas.findIndex(
-            (primaryComma: PrimaryComma): boolean => isScamonGreater(primaryComma, HALF_APOTOME),
+        const jiNotationCommaClasses = JI_NOTATION.map(getCommaClass)
+        const firstCommaClassGreaterThanHalfApotomeMirrorIndex = jiNotationCommaClasses.findIndex(
+            (commaClass: CommaClass): boolean => isScamonGreater(commaClass, HALF_APOTOME),
         )
 
         let indexOffset = 0
-        while (firstCommaGreaterThanHalfApotomeMirrorIndex + indexOffset < jiNotationPrimaryCommas.length) {
-            const index = firstCommaGreaterThanHalfApotomeMirrorIndex + indexOffset
-            const mirroredIndex = firstCommaGreaterThanHalfApotomeMirrorIndex - 1 - indexOffset
+        while (firstCommaClassGreaterThanHalfApotomeMirrorIndex + indexOffset < jiNotationCommaClasses.length) {
+            const index = firstCommaClassGreaterThanHalfApotomeMirrorIndex + indexOffset
+            const mirroredIndex = firstCommaClassGreaterThanHalfApotomeMirrorIndex - 1 - indexOffset
 
-            const comma = jiNotationPrimaryCommas[ index ]
-            const mirroredComma = jiNotationPrimaryCommas[ mirroredIndex ]
+            const commaClass = jiNotationCommaClasses[ index ]
+            const mirroredCommaClass = jiNotationCommaClasses[ mirroredIndex ]
 
-            const actual = subtractScamons(comma, HALF_APOTOME)
-            const expected = subtractScamons(HALF_APOTOME, mirroredComma)
+            const actual = subtractScamons(commaClass, HALF_APOTOME)
+            const expected = subtractScamons(HALF_APOTOME, mirroredCommaClass)
             expect(actual).toEqualPitch(expected)
 
             indexOffset = increment(indexOffset)

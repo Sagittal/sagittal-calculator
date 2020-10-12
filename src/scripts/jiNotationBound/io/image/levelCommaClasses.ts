@@ -1,10 +1,6 @@
 import { add, DEFAULT_PRECISION, Id, Io, Px, round, subtract } from "../../../../general"
-import {
-    analyzeCommaClass,
-    CommaClass,
-    JiNotationLevel,
-    JI_NOTATION_LEVELS_COMMA_CLASS_IDS,
-} from "../../../../sagittal"
+import { CommaClass, JiNotationLevel, JI_NOTATION_LEVELS_COMMA_CLASS_IDS } from "../../../../sagittal"
+import { computeCommaClassInfo } from "../commaClassInfo"
 import { formatMinaName } from "../terminal"
 import { JI_NOTATION_LEVEL_CENTERS } from "./levelHeights"
 import { DOT_SIZE, MINA_OFFSET, SYMBOL_OFFSET } from "./sizes"
@@ -27,18 +23,20 @@ const visualizeJiNotationLevelCommaClasses = (): Io[] => {
         const symbolY: Px = round(add(centerY, SYMBOL_OFFSET), DEFAULT_PRECISION)
 
         jiNotationLevelCommaClassIds.forEach((jiNotationLevelCommaClassId: Id<CommaClass>): void => {
-            const { minaName, primaryCommaAnalysis, ascii, unicode } = analyzeCommaClass(jiNotationLevelCommaClassId)
+            const { minaName, commaAnalysis, representativeSymbol } = computeCommaClassInfo(jiNotationLevelCommaClassId)
 
-            const positionX: Px = computeX(primaryCommaAnalysis.pitch)
+            const positionX: Px = computeX(commaAnalysis.pitch)
 
-            const adjustedUnicode = ascii === "/|~" ?
-                unicode + "         " :
-                ascii === ",,(|(" ? "         " + unicode : unicode
+            const adjustedUnicode = representativeSymbol.ascii === "/|~" ?
+                representativeSymbol.unicode + "         " :
+                representativeSymbol.ascii === ",,(|(" ?
+                    "         " + representativeSymbol.unicode :
+                    representativeSymbol.unicode
 
             jiNotationLevelCommaClassElements.push(
                 `  <circle stroke="black" cx="${positionX}" cy="${dotY}" r="${DOT_SIZE}" />\n` as Io,
             )
-            jiNotationLevelCommaClassElements.push(`  <text fill="white" text-anchor="middle" x="${positionX}" y="${symbolY}" font-size="10px" font-family="Helvetica">${ascii}</text>\n` as Io) // For searchability by ascii
+            jiNotationLevelCommaClassElements.push(`  <text fill="white" text-anchor="middle" x="${positionX}" y="${symbolY}" font-size="10px" font-family="Helvetica">${representativeSymbol.ascii}</text>\n` as Io) // For searchability by ascii
             jiNotationLevelCommaClassElements.push(`  <text fill="black" text-anchor="middle" x="${positionX}" y="${symbolY}" font-size="40px" font-family="Bravura">${adjustedUnicode}</text>\n` as Io)
 
             if (jiNotationLevel === JiNotationLevel.EXTREME) {

@@ -1,5 +1,5 @@
 import { areScamonsEqual, Id, isUndefined, Maybe, Scamon } from "../../../../general"
-import { CommaClass, getPrimaryComma, JI_NOTATION } from "../../../../sagittal"
+import { CommaClass, getCommaClass, JI_NOTATION } from "../../../../sagittal"
 
 const computePositionCommaClassId = (position: Maybe<Scamon<{ rational: true }>>): Maybe<Id<CommaClass>> => {
     if (!position) {
@@ -7,9 +7,9 @@ const computePositionCommaClassId = (position: Maybe<Scamon<{ rational: true }>>
     }
 
     const commaClassId = JI_NOTATION.find((commaClassId: Id<CommaClass>): boolean => {
-        const primaryComma = getPrimaryComma(commaClassId)
+        const commaClass = getCommaClass(commaClassId)
 
-        return areScamonsEqual(primaryComma, position)
+        return areScamonsEqual(commaClass, position)
     })
 
     if (!isUndefined(commaClassId)) {

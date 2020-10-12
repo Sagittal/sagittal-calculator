@@ -1,4 +1,4 @@
-import { computeIrrationalMonzoFromScamon } from "../../../../../../src/general/math/irrational/monzo/fromScamon"
+import { computeIrrationalMonzoFromScamon } from "../../../../../../src/general/math/irrational/monzo"
 import { Monzo } from "../../../../../../src/general/math/numeric/monzo"
 import { Quotient } from "../../../../../../src/general/math/numeric/quotient"
 import { Scamon } from "../../../../../../src/general/math/numeric/scamon"

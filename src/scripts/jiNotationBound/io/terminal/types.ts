@@ -2,12 +2,12 @@ import { Abs, Cents, Id, Maybe, Multiplier, Name } from "../../../../general"
 import {
     Ascii,
     CommaClass,
-    CommaClassAnalysis,
     Ina,
     JiNotationBound,
     JiNotationLevel,
     Mina,
 } from "../../../../sagittal"
+import { CommaClassInfo } from "../types"
 
 // Shared
 
@@ -23,14 +23,14 @@ interface BoundedCommaClass extends CommaClass, BoundedProperties {
 
 // Building up to JiNotationBoundIdentifiers
 
-interface BoundedCommaClassAnalysis extends CommaClassAnalysis, BoundedProperties {
+interface BoundedCommaClassInfo extends CommaClassInfo, BoundedProperties {
 }
 
-type BoundedCommaClassAnalysisPair =
-    [Maybe<BoundedCommaClassAnalysis>, Maybe<BoundedCommaClassAnalysis>]
+type BoundedCommaClassInfoPair =
+    [Maybe<BoundedCommaClassInfo>, Maybe<BoundedCommaClassInfo>]
 
 type BoundedCommaClassAnalyses = { id: Id<JiNotationBound> }
-    & Partial<Record<JiNotationLevel, BoundedCommaClassAnalysisPair>>
+    & Partial<Record<JiNotationLevel, BoundedCommaClassInfoPair>>
 
 interface JiNotationBoundIdentifiers {
     boundedCommaClassAnalyses: BoundedCommaClassAnalyses,
@@ -58,7 +58,7 @@ type JiNotationBoundIdWithBoundedCommaClassIdsWithDistancesPairsByJiNotationLeve
 
 export {
     BoundedCommaClass,
-    CommaClassAnalysis,
+    CommaClassInfo,
     BoundedCommaClassAnalyses,
     JiNotationBoundIdentifiers,
     JiNotationBoundIdWithBoundedCommaClassIdsWithDistancesPairsByJiNotationLevel,

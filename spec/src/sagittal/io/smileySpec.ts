@@ -1,5 +1,4 @@
-import { Smiley } from "../../../../src/sagittal/io"
-import { computeSmileyFromSymbol } from "../../../../src/sagittal/io/smiley"
+import { computeSmileyFromSymbol, Smiley } from "../../../../src/sagittal/io"
 import { SagittalSymbol } from "../../../../src/sagittal/notations"
 
 describe("computeSmileyFromSymbol", (): void => {

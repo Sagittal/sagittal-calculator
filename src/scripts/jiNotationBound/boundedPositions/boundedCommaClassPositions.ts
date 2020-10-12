@@ -1,5 +1,5 @@
 import { Id, Scamon } from "../../../general"
-import { CommaClass, getPrimaryComma, JiNotationLevel, JI_NOTATION_LEVELS_COMMA_CLASS_IDS } from "../../../sagittal"
+import { CommaClass, getCommaClass, JiNotationLevel, JI_NOTATION_LEVELS_COMMA_CLASS_IDS } from "../../../sagittal"
 import { computeNeighborPositions } from "./neighborPositions"
 import { BoundedCommaClassPositions } from "./types"
 
@@ -11,7 +11,7 @@ const computeBoundedCommaClassPositions = (
 
     const jiNotationLevelCommaClassPositions: Scamon[] = jiNotationLevelCommaClassIds
         .map((jiNotationLevelCommaClassId: Id<CommaClass>): Scamon => {
-            return getPrimaryComma(jiNotationLevelCommaClassId)
+            return getCommaClass(jiNotationLevelCommaClassId)
         })
 
     return computeNeighborPositions(position, jiNotationLevelCommaClassPositions) as BoundedCommaClassPositions

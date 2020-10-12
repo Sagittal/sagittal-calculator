@@ -1,7 +1,6 @@
-import { Apotome, Comma, Count, Direction, Id, Name, NumericProperties } from "../../general"
+import { Apotome, Comma, Count, Direction, Id } from "../../general"
 import { Ascii, Unicode } from "../io"
-import { CommaAnalysis } from "../ji"
-import { Bound, JiNotationLevel, Mina } from "./ji"
+import { Bound } from "./ji"
 
 enum SymbolSubset {
     SAGITTAL_COMPATIBLE = "sagittalCompatible",
@@ -14,27 +13,8 @@ enum SymbolSubset {
     TROJAN = "trojan",
 }
 
-type PrimaryComma<T extends NumericProperties = {}> =
-    Comma<T>
-    & { id: Id<PrimaryComma> }
-
-type PrimaryCommaAnalysis<T extends NumericProperties = {}> =
-    CommaAnalysis<T, PrimaryComma<T>>
-
 // Apotome-inversion comma class (repeats in a mirrored pattern at the half-apotome)
-interface CommaClass {
-    id: Id<CommaClass>,
-    primaryCommaId: Id<PrimaryComma>, // ----> remove and inline the Comma; former primary commas are now comma classes
-}
-
-type CommaClassAnalysis = Omit<CommaClass, "primaryCommaId"> & {
-    primaryCommaAnalysis: PrimaryCommaAnalysis,                 // ---> remove and inline, per CommaClass
-    ascii: Ascii,                                               // So this is the representative symbol then
-    unicode: Unicode,                                           // So this is the representative symbol then
-    introducingJiNotationLevel: JiNotationLevel,
-    minaName: Name<Mina>,
-    smallestSymbolSubset: SymbolSubset,
-}
+type CommaClass = Comma & { id: Id<CommaClass> }
 
 /*
 type ElementProperties = {
@@ -67,8 +47,8 @@ State of the art plans described here: http://forum.sagittal.org/viewtopic.php?p
 
 // Ranges from -2 to 2 apotomes
 interface NotationCaptureZoneAccidental {
-    commaClassId: Id<CommaClass>,
-    boundClassId: Id<Bound>                 // Yeah, rename Bound to BoundClass please.
+    commaClassId: Id<CommaClass>, // If anything is a "primary comma", it's a "compute" from this + dir + apotome count
+    boundClassId: Id<Bound>       // Yeah, rename Bound to BoundClass please.
     commaDirection: Direction,
     apotomeCount: Count<Apotome>,
 
@@ -85,10 +65,7 @@ enum Flavor {
 
 export {
     SymbolSubset,
-    PrimaryComma,
     CommaClass,
-    CommaClassAnalysis,
-    PrimaryCommaAnalysis,
     Flavor,
     Flacco,
     Flag,
