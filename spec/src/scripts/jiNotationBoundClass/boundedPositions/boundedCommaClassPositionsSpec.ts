@@ -18,13 +18,13 @@ describe("computeBoundedCommaClassPositions", (): void => {
     })
 
     it("when the position is greater than the greatest comma class at the JI notation level, gives the position of the greatest comma class for the lesser comma class and undefined for the greater comma class", (): void => {
-        const position = computePitchFromCents(68.4 as Cents)
+        const position = computePitchFromCents(57 as Cents)
         const jiNotationLevel = JiNotationLevel.ULTRA
 
         const actual = computeBoundedCommaClassPositions(position, jiNotationLevel)
 
         const expected = [
-            { monzo: [-16, 11, 1, 0, 0, -1] as Monzo<{ rational: true }> } as Comma,    // )|\\    ~67.291062¢
+            { monzo: [-3, 4, 1, -2] as Monzo<{ rational: true }> } as Comma,            // )/|\     ~56.481904¢
             undefined,
         ]
         expect(actual).toEqual(expected)

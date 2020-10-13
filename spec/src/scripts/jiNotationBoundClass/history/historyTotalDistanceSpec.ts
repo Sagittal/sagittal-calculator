@@ -2,7 +2,7 @@ import { Abs, Sum } from "../../../../../src/general"
 import { Cents } from "../../../../../src/general/music"
 import { BoundClassEventAnalysis } from "../../../../../src/scripts/jiNotationBoundClass/history"
 import { computeBoundClassHistoryTotalDistance } from "../../../../../src/scripts/jiNotationBoundClass/history/historyTotalDistance"
-import { boundClassEventAnalysisFixture } from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
+import { boundClassEventAnalysisFixture } from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
 describe("computeBoundClassHistoryTotalDistance", (): void => {
     it("sums up the distances of all the bound class events in the bound class history (they are already all positive)              ", (): void => {

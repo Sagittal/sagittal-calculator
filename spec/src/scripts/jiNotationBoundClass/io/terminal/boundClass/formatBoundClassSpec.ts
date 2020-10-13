@@ -6,7 +6,7 @@ import { RANKS } from "../../../../../../../src/scripts/jiNotationBoundClass/ran
 import {
     jiNotationBoundClassAnalysisFixture,
     jiNotationBoundClassFixture,
-} from "../../../../../../helpers/src/scripts/jiNotationBound/fixtures"
+} from "../../../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
 describe("formatJiNotationBoundClass", (): void => {
     it("returns a string which is a multi-line, properly indented rendition of the JI notation bound class analysis, as well as identifying information for the JI notation bound", (): void => {

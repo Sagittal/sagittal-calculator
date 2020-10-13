@@ -8,7 +8,7 @@ import { RANKS } from "../../../../../src/scripts/jiNotationBoundClass/ranks"
 import {
     boundClassEventAnalysisFixture,
     boundClassHistoryAnalysisFixture,
-} from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
+} from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
 describe("consolidateBoundClassHistories", (): void => {
     it("consolidates bound histories to collapse redundancies per JI notation level and show which bound class events can lead into which events in the next JI notation level, and which ones are members of histories that are possible, and what the best rank is in any event that becomes part of this consolidation, and what the best rank of any bound class history this bound class event is a member of is, and membership in the best possible bound class history", (): void => {

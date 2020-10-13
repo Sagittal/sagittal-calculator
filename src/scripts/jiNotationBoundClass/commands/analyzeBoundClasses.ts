@@ -16,10 +16,10 @@ const imageOutput: Io = computeJiNotationBoundClassesImage(jiNotationBoundClassA
 
 saveLog(tableOutput, LogTarget.FINAL, {
     useTargetColor: false,
-    filenameOverride: "jiNotationBound/jiNotationBoundsTable.txt" as Filename,
+    filenameOverride: "jiNotationBoundClass/jiNotationBoundClassesTable.txt" as Filename,
 })
 saveLog(imageOutput, LogTarget.FINAL, {
     useTargetColor: false,
-    filenameOverride: "jiNotationBound/jiNotationBoundsImage.svg" as Filename,
+    filenameOverride: "jiNotationBoundClass/jiNotationBoundClassesImage.svg" as Filename,
     writeOnly: !process.env.TEST_MODE,
 })

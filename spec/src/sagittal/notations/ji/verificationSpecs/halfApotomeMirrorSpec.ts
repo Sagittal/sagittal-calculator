@@ -1,3 +1,8 @@
+// tslint:disable max-line-length
+
+// TODO: Part of this test can be adapted to drive out the NotationCaptureZoneAccidental functionality
+
+/*
 import { increment } from "../../../../../../src/general/code"
 import { areScamonsEqual, isScamonGreater } from "../../../../../../src/general/math/numeric/scamon"
 import { subtractScamons } from "../../../../../../src/general/math/numeric/scamon/typedOperations"
@@ -27,12 +32,14 @@ describe("half-apotome mirror", (): void => {
 
             const actual = subtractScamons(commaClass.pitch, HALF_APOTOME)
             const expected = subtractScamons(HALF_APOTOME, mirroredCommaClass.pitch)
-            expect(actual).toEqualPitch(expected)
+            expect(actual).toEqualScamon(expected)
 
             indexOffset = increment(indexOffset)
         }
     })
 
+    // tslint:disable-next-line:max-line-length
+    // tslint:disable-next-line:max-line-length
     it("is the case that the bound classes in the JI notation are symmetrical about the half-apotome mirror                   ", (): void => {
         const jiNotationBoundClassAtHalfApotomeMirrorIndex =
             JI_NOTATION_BOUND_CLASSES.findIndex((jiNotationBoundClass: JiNotationBoundClass): boolean => {
@@ -44,14 +51,15 @@ describe("half-apotome mirror", (): void => {
             const index = jiNotationBoundClassAtHalfApotomeMirrorIndex + indexOffset
             const mirroredIndex = jiNotationBoundClassAtHalfApotomeMirrorIndex - indexOffset
 
-            const jiNotationBound = JI_NOTATION_BOUND_CLASSES[ index ]
+            const jiNotationBoundClass = JI_NOTATION_BOUND_CLASSES[ index ]
             const mirroredBound = JI_NOTATION_BOUND_CLASSES[ mirroredIndex ]
 
-            const actual = subtractScamons(jiNotationBound.pitch, HALF_APOTOME)
+            const actual = subtractScamons(jiNotationBoundClass.pitch, HALF_APOTOME)
             const expected = subtractScamons(HALF_APOTOME, mirroredBound.pitch)
-            expect(actual).toEqualPitch(expected)
+            expect(actual).toEqualScamon(expected)
 
             indexOffset = increment(indexOffset)
         }
     })
 })
+*/

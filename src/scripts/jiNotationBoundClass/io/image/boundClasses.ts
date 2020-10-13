@@ -15,10 +15,10 @@ import { visualizeSizeCategoryBounds } from "./sizeCategoryBounds"
 const computeJiNotationBoundClassesImage = (jiNotationBoundClassAnalysis: JiNotationBoundClassAnalysis[]): Io => {
     if (!ioSettings.noWrite) {
         fs.existsSync("dist") || fs.mkdirSync("dist")
-        fs.existsSync(`dist/jiNotationBound`) || fs.mkdirSync(`dist/jiNotationBound`)
+        fs.existsSync(`dist/jiNotationBoundClass`) || fs.mkdirSync(`dist/jiNotationBoundClass`)
         fs.copyFileSync(
             "assets/fonts/BravuraSagittalUpdate_v10.otf",
-            "dist/jiNotationBound/BravuraSagittalUpdate_v10.otf",
+            "dist/jiNotationBoundClass/BravuraSagittalUpdate_v10.otf",
         )
     }
 

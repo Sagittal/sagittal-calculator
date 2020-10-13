@@ -2,6 +2,7 @@ import { EMPTY_MONZO, Monzo, Name, Scamon, SQRT_SCALER } from "../../../../gener
 import { APOTOME } from "../../../constants"
 import { SizeCategoryBound } from "./types"
 
+// TODO: constantize these too
 const SIZE_CATEGORY_BOUNDS: SizeCategoryBound[] = [
     {
         name: "u|n" as Name<SizeCategoryBound>,
@@ -47,7 +48,7 @@ const SIZE_CATEGORY_BOUNDS: SizeCategoryBound[] = [
     {
         name: "M|L" as Name<SizeCategoryBound>,                             // Half apotome
         pitch: {
-            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo,
             scaler: SQRT_SCALER,
         } as Scamon<{ rational: false }>,
     },

@@ -66,65 +66,43 @@ describe("computeJiNotationLevelBoundedCommaClassIdsWithDistances", (): void => 
     it("works for the final JI notation bound class", (): void => {
         const jiNotationBoundClass: JiNotationBoundClass = {
             pitch: {
-                monzo: [-30, 19] as Monzo<{ rational: true }>,
-                scaler: SQRT_SCALER,
+                monzo: APOTOME.monzo as Monzo<{ rational: true }>,
+                scaler: [404.5, INSANE_EDA],
             } as Scamon<{ rational: false }>,
-            jiNotationLevels: [
-                JiNotationLevel.MEDIUM,
-                JiNotationLevel.HIGH,
-                JiNotationLevel.ULTRA,
-                JiNotationLevel.EXTREME,
-                JiNotationLevel.INSANE,
-            ],
-            id: 148 as Id<JiNotationBoundClass>,
-            name: "L|SS" as Name<SizeCategoryBound>,
-            boundType: BoundType.SIZE_CATEGORY_BOUND,
+            jiNotationLevels: [JiNotationLevel.MEDIUM, JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
+            id: 122 as Id<JiNotationBoundClass>,
+            name: "404.5°809" as Name<InaMidpoint>,
+            boundType: BoundType.INA_MIDPOINT,
         }
 
         const actual = computeJiNotationLevelBoundedCommaClassIdsWithDistances(jiNotationBoundClass)
 
         const expected: JiNotationBoundClassIdWithBoundedCommaClassIdsWithDistancesPairsByJiNotationLevel = {
-            id: 148 as Id<JiNotationBoundClass>,
-            [ JiNotationLevel.MEDIUM ]: [
+            id: 122 as Id<JiNotationBoundClass>,
+            [JiNotationLevel.MEDIUM]: [
                 {
-                    id: 141 as Id<CommaClass>,
-                    distance: 3.657883 as Abs<Cents>,
-                    inaDistance: 0.675687 as Multiplier<Ina>,
+                    id: 114 as Id<CommaClass>,
+                    distance: 3.569559798711765 as Abs<Cents>,
+                    inaDistance: 0.6593724042631744 as Multiplier<Ina>,
                 },
                 undefined,
             ],
-            [ JiNotationLevel.HIGH ]: [
+            [JiNotationLevel.EXTREME]: [
                 {
-                    id: 146 as Id<CommaClass>,
-                    distance: 1.281446 as Abs<Cents>,
-                    inaDistance: 0.529779 as Multiplier<Ina>,
+                    id: 122 as Id<CommaClass>,
+                    distance: 0.3605986407212427 as Abs<Cents>,
+                    inaDistance: 0.7390550979554618 as Multiplier<Ina>,
                 },
                 undefined,
             ],
-            [ JiNotationLevel.ULTRA ]: [
+            [JiNotationLevel.INSANE]: [
                 {
-                    id: 146 as Id<CommaClass>,
-                    distance: 1.281446 as Abs<Cents>,
-                    inaDistance: 0.653770 as Multiplier<Ina>,
+                    id: 122 as Id<CommaClass>,
+                    distance: 0.3605986407212427 as Abs<Cents>,
+                    inaDistance: 2.5660754259483625 as Multiplier<Ina>,
                 },
                 undefined,
-            ],
-            [ JiNotationLevel.EXTREME ]: [
-                {
-                    id: 148 as Id<CommaClass>,
-                    distance: 0.448922 as Abs<Cents>,
-                    inaDistance: 0.920076 as Multiplier<Ina>,
-                },
-                undefined,
-            ],
-            [ JiNotationLevel.INSANE ]: [
-                {
-                    id: 148 as Id<CommaClass>,
-                    distance: 0.448922 as Abs<Cents>,
-                    inaDistance: 3.194600 as Multiplier<Ina>,
-                },
-                undefined,
-            ],
+            ]
         }
         expect(actual).toBeCloseToObject(expected)
     })

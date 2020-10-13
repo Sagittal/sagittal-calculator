@@ -4,7 +4,7 @@ import { BoundClass, BoundType, JiNotationBoundClass, JiNotationLevel } from "..
 import { EXTREME_EDA, HIGH_EDA, MEDIUM_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"
 import { BoundClassEvent, BoundClassHistory } from "../../../../../src/scripts/jiNotationBoundClass/histories"
 import { computeExtendedJiNotationLevelBoundClassHistories } from "../../../../../src/scripts/jiNotationBoundClass/histories/extendedLevelHistories"
-import { jiNotationBoundClassFixture } from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
+import { jiNotationBoundClassFixture } from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
 describe("computeExtendedJiNotationLevelBoundClassHistories", (): void => {
     it("given the histories for a bound up to the current JI notation level, returns the histories extended for all possible events at this JI notation level", (): void => {

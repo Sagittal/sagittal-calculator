@@ -1,11 +1,11 @@
 import { isScamonGreater, Maybe, Name, Quotient, Scamon } from "../../../general"
 import {
     APOTOME,
+    HALF_APOTOME,
     InaMidpoint,
     JiNotationLevel,
     JI_NOTATION_LEVELS,
     JI_NOTATION_LEVEL_EDAS,
-    MAX_SINGLE_SHAFT_POSITION,
 } from "../../../sagittal"
 
 const computeInaMidpoints = (jiNotationLevel: JiNotationLevel): InaMidpoint[] => {
@@ -18,7 +18,7 @@ const computeInaMidpoints = (jiNotationLevel: JiNotationLevel): InaMidpoint[] =>
             scaler: [midpoint, eda as number] as Quotient,
         } as Scamon<{ rational: false }>
 
-        if (isScamonGreater(pitch, MAX_SINGLE_SHAFT_POSITION)) {
+        if (isScamonGreater(pitch, HALF_APOTOME)) {
             return undefined
         }
 

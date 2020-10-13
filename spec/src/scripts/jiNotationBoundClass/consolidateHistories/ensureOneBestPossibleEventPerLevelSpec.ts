@@ -1,7 +1,7 @@
 import { JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 import { BoundClassHistoryConsolidation } from "../../../../../src/scripts/jiNotationBoundClass/consolidateHistories"
 import { ensureOneBestPossibleEventPerJiNotationLevel } from "../../../../../src/scripts/jiNotationBoundClass/consolidateHistories/ensureOneBestPossibleEventPerLevel"
-import { boundClassEventConsolidationFixture } from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
+import { boundClassEventConsolidationFixture } from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
 describe("ensureOneBestPossibleEventPerJiNotationLevel", (): void => {
     it("throws an error if a bound class history consolidation has more than one event in a single JI notation level which is considered to be the one which is a member of the best possible bound class history", (): void => {

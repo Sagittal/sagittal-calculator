@@ -9,7 +9,7 @@ import {
 } from "../../../sagittal"
 import { computeInaMidpoints } from "./inaMidpoints"
 import { computeJiNotationLevelCommaMeans } from "./levelCommaMeans"
-import { computeSizeCategoryBoundsWithinMaximumPosition } from "./sizeCategoryBounds"
+import { computeSizeCategoryBoundsUpToHalfApotome } from "./sizeCategoryBounds"
 
 const computeBoundPositions = <T extends BoundClass>(
     computeLevelBoundPositions: (jiNotationLevel: JiNotationLevel) => T[],
@@ -31,7 +31,7 @@ const INA_MIDPOINTS: Record<JiNotationLevel, InaMidpoint[]> =
 const JI_NOTATION_LEVELS_COMMA_MEANS: Record<JiNotationLevel, CommaMean[]> =
     computeBoundPositions(computeJiNotationLevelCommaMeans)
 const JI_NOTATION_LEVELS_SIZE_CATEGORY_BOUNDS: Record<JiNotationLevel, SizeCategoryBound[]> =
-    computeBoundPositions(computeSizeCategoryBoundsWithinMaximumPosition)
+    computeBoundPositions(computeSizeCategoryBoundsUpToHalfApotome)
 
 // TODO: why aren't these actually JiNotationBoundClass[] ? hwat makes the difference?
 const JI_NOTATION_BOUND_CLASSES_BY_TYPE: Record<BoundType, Record<JiNotationLevel, BoundClass[]>> = {

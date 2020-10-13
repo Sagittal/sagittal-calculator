@@ -129,73 +129,47 @@ ID     	name   	name   	class   	class   	rank   	rank   	rank   	rank   	rank  
 119    	113.452	114    	   '/|\ 	  `'/|\ 	       	       	       	  1    	  1    	       	       	       	  0.059	  0.059	       	       	       	  0.416	  0.416	 55.437	 55.438	 -0.005
 120    	114    	115    	  `'/|\ 	  ,)/|\ 	       	  2    	  1    	  1    	  2    	       	  0.357	  0.004	  0.008	  0.369	       	  0.182	  0.009	  0.056	  0.247	 55.859	 55.505	  2.518
 121    	115    	116    	  ,)/|\ 	   )/|\ 	       	       	       	  1    	  1    	       	       	       	  0.066	  0.066	       	       	       	  0.472	  0.472	 56.421	 56.333	  0.622
-122    	116    	117    	   )/|\ 	  `)/|\ 	  1    	       	       	  1    	  1    	  0.000	       	       	  0.000	  0.000	  0.000	       	       	  0.000	  0.000	 56.843	 56.843	  0.000
-123    	117    	118    	  `)/|\ 	 ``)/|\ 	       	       	       	  1    	  1    	       	       	       	  0.066	  0.066	       	       	       	  0.472	  0.472	 57.264	 57.352	 -0.622
-124    	118    	119    	 ``)/|\ 	  ,.(|) 	       	  1    	  1    	  1    	  1    	       	  0.980	  0.004	  0.008	  0.992	       	  0.500	  0.009	  0.056	  0.564	 57.826	 57.819	  0.049
-125    	119    	120    	  ,.(|) 	   .(|) 	       	       	       	  1    	  1    	       	       	       	  0.059	  0.059	       	       	       	  0.416	  0.416	 58.248	 58.247	  0.005
-126    	120    	120.700	   .(|) 	    ,|\)	       	       	  2    	  2    	  2    	       	       	  0.218	  0.000	  0.218	       	       	  0.447	  0.000	  0.447	 58.589	 58.808	 -1.552
-127    	120.700	121    	    ,|\)	     |\)	       	       	       	  1    	  1    	       	       	       	  0.016	  0.016	       	       	       	  0.112	  0.112	 58.810	 58.939	 -0.917
-128    	121    	122    	     |\)	    `|\)	       	       	       	  1    	  1    	       	       	       	  0.051	  0.051	       	       	       	  0.361	  0.361	 59.231	 59.368	 -0.973
-129    	122    	123    	    `|\)	   ,(|) 	       	  1    	  1    	  1    	  1    	       	  0.521	  0.013	  0.024	  0.557	       	  0.266	  0.026	  0.167	  0.459	 59.794	 59.784	  0.065
-130    	123    	124    	   ,(|) 	    (|) 	       	       	       	  1    	  1    	       	       	       	  0.043	  0.043	       	       	       	  0.305	  0.305	 60.215	 60.230	 -0.109
-131    	124    	125    	    (|) 	   `(|) 	       	       	       	  1    	  1    	       	       	       	  0.031	  0.031	       	       	       	  0.223	  0.223	 60.777	 60.698	  0.562
-132    	125    	126    	   `(|) 	  ``(|) 	       	       	       	  1    	  1    	       	       	       	  0.035	  0.035	       	       	       	  0.249	  0.249	 61.199	 61.248	 -0.347
-133    	126    	127    	  ``(|) 	  ,'(|) 	       	  1    	  1    	  1    	  1    	       	  0.063	  0.021	  0.039	  0.123	       	  0.032	  0.043	  0.279	  0.354	 61.761	 62.101	 -2.421
-134    	127    	128    	  ,'(|) 	   '(|) 	       	       	       	  1    	  1    	       	       	       	  0.027	  0.027	       	       	       	  0.193	  0.193	 62.182	 62.184	 -0.012
-135    	128    	128.580	   '(|) 	  ,.(|\ 	  1    	       	  2    	  2    	  2    	  0.407	       	  0.198	  0.000	  0.605	  0.208	       	  0.406	  0.000	  0.613	 62.465	 62.663	 -1.408
-136    	128.580	129    	  ,.(|\ 	   .(|\ 	       	       	       	  1    	  1    	       	       	       	  0.047	  0.047	       	       	       	  0.335	  0.335	 62.745	 62.763	 -0.131
-137    	129    	130    	   .(|\ 	  `.(|\ 	       	       	       	  1    	  1    	       	       	       	  0.019	  0.019	       	       	       	  0.137	  0.137	 63.166	 63.172	 -0.044
-138    	130    	131    	  `.(|\ 	     |\\	       	       	  1    	  1    	  1    	       	       	  0.029	  0.055	  0.084	       	       	  0.060	  0.391	  0.451	 63.728	 63.375	  2.510
-139    	131    	132    	     |\\	   ,(|\ 	       	  1    	  2    	  1    	  2    	       	  0.253	  0.191	  0.011	  0.456	       	  0.129	  0.392	  0.082	  0.602	 64.150	 64.352	 -1.441
-140    	132    	133    	   ,(|\ 	    (|\ 	       	       	       	  1    	  1    	       	       	       	  0.063	  0.063	       	       	       	  0.446	  0.446	 64.712	 64.717	 -0.034
-141    	133    	134    	    (|\ 	   `(|\ 	       	       	       	  1    	  1    	       	       	       	  0.004	  0.004	       	       	       	  0.026	  0.026	 65.133	 65.126	  0.053
-142    	134    	135    	   `(|\ 	  ``(|\ 	       	       	       	  1    	  1    	       	       	       	  0.070	  0.070	       	       	       	  0.498	  0.498	 65.555	 65.542	  0.091
-143    	135    	136    	  ``(|\ 	  ,,)|\\	       	  1    	  1    	  1    	  1    	       	  0.855	  0.450	  0.004	  1.309	       	  0.436	  0.922	  0.030	  1.389	 66.117	 66.103	  0.102
-144    	136    	137    	  ,,)|\\	   ,)|\\	       	       	       	  1    	  1    	       	       	       	  0.062	  0.062	       	       	       	  0.442	  0.442	 66.539	 66.560	 -0.149
-145    	137    	138    	   ,)|\\	    )|\\	       	       	       	  1    	  1    	       	       	       	  0.012	  0.012	       	       	       	  0.086	  0.086	 67.101	 67.080	  0.151
-146    	138    	139    	    )|\\	   `)|\\	       	       	       	  1    	  1    	       	       	       	  0.054	  0.054	       	       	       	  0.386	  0.386	 67.522	 67.596	 -0.521
-147    	139    	140    	   `)|\\	  ``)|\\	       	       	       	  1    	  1    	       	       	       	  0.020	  0.020	       	       	       	  0.142	  0.142	 68.085	 68.012	  0.517
-148    	140    	       	  ``)|\\	        	  3    	  3    	  3    	  3    	  3    	  0.000	  0.000	  0.000	  0.000	  0.000	  0.000	  0.000	  0.000	  0.000	  0.000	 68.573	 68.573	  0.000
+122    	116    	       	   )/|\ 	        	  1    	  1    	  3    	  1    	  3    	  0.000	  0.000	  0.000	  0.000	  0.000	  0.000	  0.000	  0.000	  0.000	  0.000	 56.843	 56.843	  0.000
 
 
    ---   JI Notation Level Analyses   ---   
 
 
 Extreme            	here   	cumulative
-ina midpoint       	139    	122       
-comma mean         	  8    	 25       
-size category bound	  2    	  2       
+ina midpoint       	116    	 99       
+comma mean         	  6    	 22       
+size category bound	  1    	  2       
 
 Ultra              	here   	cumulative
-ina midpoint       	 33    	 29       
-comma mean         	 20    	 24       
+ina midpoint       	 28    	 24       
+comma mean         	 17    	 21       
 size category bound	  2    	  2       
 
 High               	here   	cumulative
-ina midpoint       	 25    	 25       
+ina midpoint       	 21    	 21       
 comma mean         	  5    	  5       
-size category bound	  2    	  2       
+size category bound	  1    	  1       
 
 Medium             	here   	cumulative
-ina midpoint       	 11    	 11       
-size category bound	  2    	  2       
+ina midpoint       	 10    	 10       
+size category bound	  1    	  1       
 
 
    ---   Rank Analyses   ---   
 
 
 ina midpoint event was worst-ranked bound class event:
-	total: 122 bounds
-	bounds: 0, 1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 17, 19, 20, 21, 22, 23, 25, 26, 27, 28, 29, 30, 32, 33, 34, 36, 37, 38, 39, 41, 42, 43, 44, 45, 46, 48, 50, 51, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 67, 68, 69, 70, 71, 72, 73, 75, 76, 77, 78, 82, 83, 84, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 97, 98, 99, 100, 101, 102, 103, 104, 106, 107, 108, 110, 111, 112, 113, 114, 115, 116, 117, 119, 121, 122, 123, 124, 125, 127, 128, 129, 130, 131, 132, 133, 134, 136, 137, 138, 140, 141, 142, 143, 144, 145, 146, 147
+	total: 99 bounds
+	bounds: 0, 1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 17, 19, 20, 21, 22, 23, 25, 26, 27, 28, 29, 30, 32, 33, 34, 36, 37, 38, 39, 41, 42, 43, 44, 45, 46, 48, 50, 51, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 67, 68, 69, 70, 71, 72, 73, 75, 76, 77, 78, 82, 83, 84, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 97, 98, 99, 100, 101, 102, 103, 104, 106, 107, 108, 110, 111, 112, 113, 114, 115, 116, 117, 119, 121
 
 comma mean event was worst-ranked bound class event:
-	total: 25 bounds
-	bounds: 3, 13, 16, 18, 24, 31, 35, 40, 47, 49, 52, 65, 66, 74, 79, 80, 81, 85, 105, 109, 118, 120, 126, 135, 139
+	total: 22 bounds
+	bounds: 3, 13, 16, 18, 24, 31, 35, 40, 47, 49, 52, 65, 66, 74, 79, 80, 81, 85, 105, 109, 118, 120
 
 size category bound event was worst-ranked bound class event:
 	total: 2 bounds
-	bounds: 96, 148
-<svg width="34386.25411" height="510" viewBox="0 0 34386.25411 510" xmlns="http://www.w3.org/2000/svg">
+	bounds: 96, 122
+<svg width="28521.25151" height="510" viewBox="0 0 28521.25151 510" xmlns="http://www.w3.org/2000/svg">
   <style> @font-face { font-family: 'Bravura'; src: url('BravuraSagittalUpdate_v10.otf'); font-style: normal; }</style>
   <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="50" y="10" font-size="10px" font-family="Helvetica">0¢</text>
   <text fill="black" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="50" y="10" font-size="10px" font-family="Helvetica">0¢</text>
@@ -311,35 +285,11 @@ size category bound event was worst-ranked bound class event:
   <text fill="black" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="27550" y="10" font-size="10px" font-family="Helvetica">55¢</text>
   <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="28050" y="10" font-size="10px" font-family="Helvetica">56¢</text>
   <text fill="black" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="28050" y="10" font-size="10px" font-family="Helvetica">56¢</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="28550" y="10" font-size="10px" font-family="Helvetica">57¢</text>
-  <text fill="black" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="28550" y="10" font-size="10px" font-family="Helvetica">57¢</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="29050" y="10" font-size="10px" font-family="Helvetica">58¢</text>
-  <text fill="black" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="29050" y="10" font-size="10px" font-family="Helvetica">58¢</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="29550" y="10" font-size="10px" font-family="Helvetica">59¢</text>
-  <text fill="black" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="29550" y="10" font-size="10px" font-family="Helvetica">59¢</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="30050" y="10" font-size="10px" font-family="Helvetica">60¢</text>
-  <text fill="black" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="30050" y="10" font-size="10px" font-family="Helvetica">60¢</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="30550" y="10" font-size="10px" font-family="Helvetica">61¢</text>
-  <text fill="black" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="30550" y="10" font-size="10px" font-family="Helvetica">61¢</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="31050" y="10" font-size="10px" font-family="Helvetica">62¢</text>
-  <text fill="black" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="31050" y="10" font-size="10px" font-family="Helvetica">62¢</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="31550" y="10" font-size="10px" font-family="Helvetica">63¢</text>
-  <text fill="black" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="31550" y="10" font-size="10px" font-family="Helvetica">63¢</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="32050" y="10" font-size="10px" font-family="Helvetica">64¢</text>
-  <text fill="black" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="32050" y="10" font-size="10px" font-family="Helvetica">64¢</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="32550" y="10" font-size="10px" font-family="Helvetica">65¢</text>
-  <text fill="black" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="32550" y="10" font-size="10px" font-family="Helvetica">65¢</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="33050" y="10" font-size="10px" font-family="Helvetica">66¢</text>
-  <text fill="black" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="33050" y="10" font-size="10px" font-family="Helvetica">66¢</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="33550" y="10" font-size="10px" font-family="Helvetica">67¢</text>
-  <text fill="black" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="33550" y="10" font-size="10px" font-family="Helvetica">67¢</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="34050" y="10" font-size="10px" font-family="Helvetica">68¢</text>
-  <text fill="black" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="34050" y="10" font-size="10px" font-family="Helvetica">68¢</text>
-  <line stroke="black" x1="50" x2="34336.25411" y1="510" y2="510"/>
-  <line stroke="black" x1="50" x2="34336.25411" y1="410" y2="410"/>
-  <line stroke="black" x1="50" x2="34336.25411" y1="310" y2="310"/>
-  <line stroke="black" x1="50" x2="34336.25411" y1="210" y2="210"/>
-  <line stroke="black" x1="50" x2="34336.25411" y1="110" y2="110"/>
+  <line stroke="black" x1="50" x2="28471.25151" y1="510" y2="510"/>
+  <line stroke="black" x1="50" x2="28471.25151" y1="410" y2="410"/>
+  <line stroke="black" x1="50" x2="28471.25151" y1="310" y2="310"/>
+  <line stroke="black" x1="50" x2="28471.25151" y1="210" y2="210"/>
+  <line stroke="black" x1="50" x2="28471.25151" y1="110" y2="110"/>
   <line stroke-dasharray="1" stroke="black" x1="1420.12214" x2="1420.12214" y1="410" y2="510" />
   <line stroke-dasharray="1" stroke="black" x1="4090.10374" x2="4090.10374" y1="410" y2="510" />
   <line stroke-dasharray="1" stroke="black" x1="6760.08534" x2="6760.08534" y1="410" y2="510" />
@@ -351,8 +301,6 @@ size category bound event was worst-ranked bound class event:
   <line stroke-dasharray="1" stroke="black" x1="22606.24892" x2="22606.24892" y1="410" y2="510" />
   <line stroke-dasharray="1" stroke="black" x1="25659.77012" x2="25659.77012" y1="410" y2="510" />
   <line stroke-dasharray="1" stroke="black" x1="28471.25151" x2="28471.25151" y1="410" y2="510" />
-  <line stroke-dasharray="1" stroke="black" x1="31282.7329" x2="31282.7329" y1="410" y2="510" />
-  <line stroke-dasharray="1" stroke="black" x1="34336.25411" x2="34336.25411" y1="410" y2="510" />
   <line stroke-dasharray="1" stroke="black" x1="647.23273" x2="647.23273" y1="310" y2="410" />
   <line stroke-dasharray="1" stroke="black" x1="2333.5369" x2="2333.5369" y1="310" y2="410" />
   <line stroke-dasharray="1" stroke="black" x1="3317.21433" x2="3317.21433" y1="310" y2="410" />
@@ -379,12 +327,7 @@ size category bound event was worst-ranked bound class event:
   <line stroke-dasharray="1" stroke="black" x1="26012.05793" x2="26012.05793" y1="310" y2="410" />
   <line stroke-dasharray="1" stroke="black" x1="26995.73537" x2="26995.73537" y1="310" y2="410" />
   <line stroke-dasharray="1" stroke="black" x1="27979.4128" x2="27979.4128" y1="310" y2="410" />
-  <line stroke-dasharray="1" stroke="black" x1="28963.09023" x2="28963.09023" y1="310" y2="410" />
-  <line stroke-dasharray="1" stroke="black" x1="29946.76766" x2="29946.76766" y1="310" y2="410" />
-  <line stroke-dasharray="1" stroke="black" x1="30930.44509" x2="30930.44509" y1="310" y2="410" />
-  <line stroke-dasharray="1" stroke="black" x1="32124.91055" x2="32124.91055" y1="310" y2="410" />
-  <line stroke-dasharray="1" stroke="black" x1="33108.58798" x2="33108.58798" y1="310" y2="410" />
-  <line stroke-dasharray="1" stroke="black" x1="34336.25411" x2="34336.25411" y1="310" y2="410" />
+  <line stroke-dasharray="1" stroke="black" x1="28471.25151" x2="28471.25151" y1="310" y2="410" />
   <line stroke-dasharray="1" stroke="black" x1="647.23273" x2="647.23273" y1="210" y2="310" />
   <line stroke-dasharray="1" stroke="black" x1="928.28342" x2="928.28342" y1="210" y2="310" />
   <line stroke-dasharray="1" stroke="black" x1="1420.12214" x2="1420.12214" y1="210" y2="310" />
@@ -431,15 +374,7 @@ size category bound event was worst-ranked bound class event:
   <line stroke-dasharray="1" stroke="black" x1="26995.73537" x2="26995.73537" y1="210" y2="310" />
   <line stroke-dasharray="1" stroke="black" x1="27597.77289" x2="27597.77289" y1="210" y2="310" />
   <line stroke-dasharray="1" stroke="black" x1="27979.4128" x2="27979.4128" y1="210" y2="310" />
-  <line stroke-dasharray="1" stroke="black" x1="28963.09023" x2="28963.09023" y1="210" y2="310" />
-  <line stroke-dasharray="1" stroke="black" x1="29344.73014" x2="29344.73014" y1="210" y2="310" />
-  <line stroke-dasharray="1" stroke="black" x1="29946.76766" x2="29946.76766" y1="210" y2="310" />
-  <line stroke-dasharray="1" stroke="black" x1="30930.44509" x2="30930.44509" y1="210" y2="310" />
-  <line stroke-dasharray="1" stroke="black" x1="31282.7329" x2="31282.7329" y1="210" y2="310" />
-  <line stroke-dasharray="1" stroke="black" x1="31914.12253" x2="31914.12253" y1="210" y2="310" />
-  <line stroke-dasharray="1" stroke="black" x1="32124.91055" x2="32124.91055" y1="210" y2="310" />
-  <line stroke-dasharray="1" stroke="black" x1="33108.58798" x2="33108.58798" y1="210" y2="310" />
-  <line stroke-dasharray="1" stroke="black" x1="34336.25411" x2="34336.25411" y1="210" y2="310" />
+  <line stroke-dasharray="1" stroke="black" x1="28471.25151" x2="28471.25151" y1="210" y2="310" />
   <line stroke-dasharray="1" stroke="black" x1="155.39401" x2="155.39401" y1="110" y2="210" />
   <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="155.39401" y="100" font-size="12px" font-family="Helvetica">0</text>
   <text fill="black" text-anchor="middle" xml:space="preserve" x="155.39401" y="100" font-size="12px" font-family="Helvetica">0</text>
@@ -809,84 +744,6 @@ size category bound event was worst-ranked bound class event:
   <line stroke-dasharray="1" stroke="black" x1="28471.25151" x2="28471.25151" y1="110" y2="210" />
   <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="28471.25151" y="100" font-size="12px" font-family="Helvetica">122</text>
   <text fill="black" text-anchor="middle" xml:space="preserve" x="28471.25151" y="100" font-size="12px" font-family="Helvetica">122</text>
-  <line stroke-dasharray="1" stroke="black" x1="28682.03954" x2="28682.03954" y1="110" y2="210" />
-  <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="28682.03954" y="100" font-size="12px" font-family="Helvetica">123</text>
-  <text fill="black" text-anchor="middle" xml:space="preserve" x="28682.03954" y="100" font-size="12px" font-family="Helvetica">123</text>
-  <line stroke-dasharray="1" stroke="black" x1="28963.09023" x2="28963.09023" y1="110" y2="210" />
-  <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="28963.09023" y="100" font-size="12px" font-family="Helvetica">124</text>
-  <text fill="black" text-anchor="middle" xml:space="preserve" x="28963.09023" y="100" font-size="12px" font-family="Helvetica">124</text>
-  <line stroke-dasharray="1" stroke="black" x1="29173.87825" x2="29173.87825" y1="110" y2="210" />
-  <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="29173.87825" y="100" font-size="12px" font-family="Helvetica">125</text>
-  <text fill="black" text-anchor="middle" xml:space="preserve" x="29173.87825" y="100" font-size="12px" font-family="Helvetica">125</text>
-  <line stroke-dasharray="1" stroke="black" x1="29344.73014" x2="29344.73014" y1="110" y2="210" />
-  <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="29344.73014" y="100" font-size="12px" font-family="Helvetica">126</text>
-  <text fill="black" text-anchor="middle" xml:space="preserve" x="29344.73014" y="100" font-size="12px" font-family="Helvetica">126</text>
-  <line stroke-dasharray="1" stroke="black" x1="29454.92895" x2="29454.92895" y1="110" y2="210" />
-  <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="29454.92895" y="100" font-size="12px" font-family="Helvetica">127</text>
-  <text fill="black" text-anchor="middle" xml:space="preserve" x="29454.92895" y="100" font-size="12px" font-family="Helvetica">127</text>
-  <line stroke-dasharray="1" stroke="black" x1="29665.71697" x2="29665.71697" y1="110" y2="210" />
-  <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="29665.71697" y="100" font-size="12px" font-family="Helvetica">128</text>
-  <text fill="black" text-anchor="middle" xml:space="preserve" x="29665.71697" y="100" font-size="12px" font-family="Helvetica">128</text>
-  <line stroke-dasharray="1" stroke="black" x1="29946.76766" x2="29946.76766" y1="110" y2="210" />
-  <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="29946.76766" y="100" font-size="12px" font-family="Helvetica">129</text>
-  <text fill="black" text-anchor="middle" xml:space="preserve" x="29946.76766" y="100" font-size="12px" font-family="Helvetica">129</text>
-  <line stroke-dasharray="1" stroke="black" x1="30157.55568" x2="30157.55568" y1="110" y2="210" />
-  <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="30157.55568" y="100" font-size="12px" font-family="Helvetica">130</text>
-  <text fill="black" text-anchor="middle" xml:space="preserve" x="30157.55568" y="100" font-size="12px" font-family="Helvetica">130</text>
-  <line stroke-dasharray="1" stroke="black" x1="30438.60638" x2="30438.60638" y1="110" y2="210" />
-  <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="30438.60638" y="100" font-size="12px" font-family="Helvetica">131</text>
-  <text fill="black" text-anchor="middle" xml:space="preserve" x="30438.60638" y="100" font-size="12px" font-family="Helvetica">131</text>
-  <line stroke-dasharray="1" stroke="black" x1="30649.3944" x2="30649.3944" y1="110" y2="210" />
-  <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="30649.3944" y="100" font-size="12px" font-family="Helvetica">132</text>
-  <text fill="black" text-anchor="middle" xml:space="preserve" x="30649.3944" y="100" font-size="12px" font-family="Helvetica">132</text>
-  <line stroke-dasharray="1" stroke="black" x1="30930.44509" x2="30930.44509" y1="110" y2="210" />
-  <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="30930.44509" y="100" font-size="12px" font-family="Helvetica">133</text>
-  <text fill="black" text-anchor="middle" xml:space="preserve" x="30930.44509" y="100" font-size="12px" font-family="Helvetica">133</text>
-  <line stroke-dasharray="1" stroke="black" x1="31141.23312" x2="31141.23312" y1="110" y2="210" />
-  <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="31141.23312" y="100" font-size="12px" font-family="Helvetica">134</text>
-  <text fill="black" text-anchor="middle" xml:space="preserve" x="31141.23312" y="100" font-size="12px" font-family="Helvetica">134</text>
-  <line stroke-dasharray="1" stroke="black" x1="31282.7329" x2="31282.7329" y1="110" y2="210" />
-  <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="31282.7329" y="100" font-size="12px" font-family="Helvetica">135</text>
-  <text fill="black" text-anchor="middle" xml:space="preserve" x="31282.7329" y="100" font-size="12px" font-family="Helvetica">135</text>
-  <line stroke-dasharray="1" stroke="black" x1="31422.28381" x2="31422.28381" y1="110" y2="210" />
-  <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="31422.28381" y="100" font-size="12px" font-family="Helvetica">136</text>
-  <text fill="black" text-anchor="middle" xml:space="preserve" x="31422.28381" y="100" font-size="12px" font-family="Helvetica">136</text>
-  <line stroke-dasharray="1" stroke="black" x1="31633.07183" x2="31633.07183" y1="110" y2="210" />
-  <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="31633.07183" y="100" font-size="12px" font-family="Helvetica">137</text>
-  <text fill="black" text-anchor="middle" xml:space="preserve" x="31633.07183" y="100" font-size="12px" font-family="Helvetica">137</text>
-  <line stroke-dasharray="1" stroke="black" x1="31914.12253" x2="31914.12253" y1="110" y2="210" />
-  <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="31914.12253" y="100" font-size="12px" font-family="Helvetica">138</text>
-  <text fill="black" text-anchor="middle" xml:space="preserve" x="31914.12253" y="100" font-size="12px" font-family="Helvetica">138</text>
-  <line stroke-dasharray="1" stroke="black" x1="32124.91055" x2="32124.91055" y1="110" y2="210" />
-  <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="32124.91055" y="100" font-size="12px" font-family="Helvetica">139</text>
-  <text fill="black" text-anchor="middle" xml:space="preserve" x="32124.91055" y="100" font-size="12px" font-family="Helvetica">139</text>
-  <line stroke-dasharray="1" stroke="black" x1="32405.96124" x2="32405.96124" y1="110" y2="210" />
-  <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="32405.96124" y="100" font-size="12px" font-family="Helvetica">140</text>
-  <text fill="black" text-anchor="middle" xml:space="preserve" x="32405.96124" y="100" font-size="12px" font-family="Helvetica">140</text>
-  <line stroke-dasharray="1" stroke="black" x1="32616.74926" x2="32616.74926" y1="110" y2="210" />
-  <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="32616.74926" y="100" font-size="12px" font-family="Helvetica">141</text>
-  <text fill="black" text-anchor="middle" xml:space="preserve" x="32616.74926" y="100" font-size="12px" font-family="Helvetica">141</text>
-  <line stroke-dasharray="1" stroke="black" x1="32827.53728" x2="32827.53728" y1="110" y2="210" />
-  <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="32827.53728" y="100" font-size="12px" font-family="Helvetica">142</text>
-  <text fill="black" text-anchor="middle" xml:space="preserve" x="32827.53728" y="100" font-size="12px" font-family="Helvetica">142</text>
-  <line stroke-dasharray="1" stroke="black" x1="33108.58798" x2="33108.58798" y1="110" y2="210" />
-  <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="33108.58798" y="100" font-size="12px" font-family="Helvetica">143</text>
-  <text fill="black" text-anchor="middle" xml:space="preserve" x="33108.58798" y="100" font-size="12px" font-family="Helvetica">143</text>
-  <line stroke-dasharray="1" stroke="black" x1="33319.376" x2="33319.376" y1="110" y2="210" />
-  <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="33319.376" y="100" font-size="12px" font-family="Helvetica">144</text>
-  <text fill="black" text-anchor="middle" xml:space="preserve" x="33319.376" y="100" font-size="12px" font-family="Helvetica">144</text>
-  <line stroke-dasharray="1" stroke="black" x1="33600.4267" x2="33600.4267" y1="110" y2="210" />
-  <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="33600.4267" y="100" font-size="12px" font-family="Helvetica">145</text>
-  <text fill="black" text-anchor="middle" xml:space="preserve" x="33600.4267" y="100" font-size="12px" font-family="Helvetica">145</text>
-  <line stroke-dasharray="1" stroke="black" x1="33811.21472" x2="33811.21472" y1="110" y2="210" />
-  <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="33811.21472" y="100" font-size="12px" font-family="Helvetica">146</text>
-  <text fill="black" text-anchor="middle" xml:space="preserve" x="33811.21472" y="100" font-size="12px" font-family="Helvetica">146</text>
-  <line stroke-dasharray="1" stroke="black" x1="34092.26541" x2="34092.26541" y1="110" y2="210" />
-  <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="34092.26541" y="100" font-size="12px" font-family="Helvetica">147</text>
-  <text fill="black" text-anchor="middle" xml:space="preserve" x="34092.26541" y="100" font-size="12px" font-family="Helvetica">147</text>
-  <line stroke-dasharray="1" stroke="black" x1="34336.25411" x2="34336.25411" y1="110" y2="210" />
-  <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="34336.25411" y="100" font-size="12px" font-family="Helvetica">148</text>
-  <text fill="black" text-anchor="middle" xml:space="preserve" x="34336.25411" y="100" font-size="12px" font-family="Helvetica">148</text>
   <circle stroke="#6666ff" r="1" cx="171.97962" cy="160" />
   <line stroke="#6666ff" x1="171.97962" y1="160" x2="155.39401" y2="60" />
   <circle stroke="#6666ff" r="1" cx="155.39401" cy="60" />
@@ -1826,212 +1683,22 @@ size category bound event was worst-ranked bound class event:
   <text stroke="white" stroke-width="0.45em" transform="rotate(-71.64869 28243.87788 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="28243.87788" y="110">0.066342 (47.2%)</text>
   <text fill="red" transform="rotate(-71.64869 28243.87788 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="28243.87788" y="110">0.066342 (47.2%)</text>
   <circle stroke="#6666ff" r="1" cx="28471.25151" cy="460" />
-  <line stroke="#6666ff" x1="28471.25151" y1="460" x2="28471.25151" y2="160" />
-  <circle stroke="#6666ff" r="1" cx="28471.25151" cy="160" />
+  <line stroke="#6666ff" x1="28471.25151" y1="460" x2="28471.25151" y2="360" />
+  <circle stroke="#6666ff" r="1" cx="28471.25151" cy="360" />
+  <text stroke="white" stroke-width="0.45em" transform="rotate(-90 28471.25151 410)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="28471.25151" y="410">0.0000 (0.00%)</text>
+  <text fill="red" transform="rotate(-90 28471.25151 410)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="28471.25151" y="410">0.0000 (0.00%)</text>
+  <line stroke="#88ff88" x1="28471.25151" y1="360" x2="28471.25151" y2="260" />
+  <circle stroke="#88ff88" r="1" cx="28471.25151" cy="260" />
   <text stroke="white" stroke-width="0.45em" transform="rotate(-90 28471.25151 310)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="28471.25151" y="310">0.0000 (0.00%)</text>
   <text fill="red" transform="rotate(-90 28471.25151 310)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="28471.25151" y="310">0.0000 (0.00%)</text>
+  <line stroke="#6666ff" x1="28471.25151" y1="260" x2="28471.25151" y2="160" />
+  <circle stroke="#6666ff" r="1" cx="28471.25151" cy="160" />
+  <text stroke="white" stroke-width="0.45em" transform="rotate(-90 28471.25151 210)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="28471.25151" y="210">0.0000 (0.00%)</text>
+  <text fill="red" transform="rotate(-90 28471.25151 210)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="28471.25151" y="210">0.0000 (0.00%)</text>
   <line stroke="#6666ff" x1="28471.25151" y1="160" x2="28471.25151" y2="60" />
   <circle stroke="#6666ff" r="1" cx="28471.25151" cy="60" />
   <text stroke="white" stroke-width="0.45em" transform="rotate(-90 28471.25151 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="28471.25151" y="110">0.0000 (0.00%)</text>
   <text fill="red" transform="rotate(-90 28471.25151 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="28471.25151" y="110">0.0000 (0.00%)</text>
-  <circle stroke="#6666ff" r="1" cx="28715.21075" cy="160" />
-  <line stroke="#6666ff" x1="28715.21075" y1="160" x2="28682.03954" y2="60" />
-  <circle stroke="#6666ff" r="1" cx="28682.03954" cy="60" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(71.64869 28698.62515 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="28698.62515" y="110">0.066342 (47.2%)</text>
-  <text fill="red" transform="rotate(71.64869 28698.62515 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="28698.62515" y="110">0.066342 (47.2%)</text>
-  <circle stroke="#6666ff" r="1" cx="28471.25151" cy="360" />
-  <line stroke="#6666ff" x1="28471.25151" y1="360" x2="28961.27309" y2="260" />
-  <circle stroke="#6666ff" r="1" cx="28961.27309" cy="260" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(-11.53413 28716.2623 310)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="28716.2623" y="310">0.98004 (50.0%)</text>
-  <text fill="red" transform="rotate(-11.53413 28716.2623 310)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="28716.2623" y="310">0.98004 (50.0%)</text>
-  <line stroke="#6666ff" x1="28961.27309" y1="260" x2="28959.17" y2="160" />
-  <circle stroke="#6666ff" r="1" cx="28959.17" cy="160" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(88.7952 28960.22155 210)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="28960.22155" y="210">0.0042062 (0.862%)</text>
-  <text fill="red" transform="rotate(88.7952 28960.22155 210)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="28960.22155" y="210">0.0042062 (0.862%)</text>
-  <line stroke="#6666ff" x1="28959.17" y1="160" x2="28963.09023" y2="60" />
-  <circle stroke="#6666ff" r="1" cx="28963.09023" cy="60" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(-87.75502 28961.13012 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="28961.13012" y="110">0.0078405 (5.58%)</text>
-  <text fill="red" transform="rotate(-87.75502 28961.13012 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="28961.13012" y="110">0.0078405 (5.58%)</text>
-  <circle stroke="#6666ff" r="1" cx="29203.12924" cy="160" />
-  <line stroke="#6666ff" x1="29203.12924" y1="160" x2="29173.87825" y2="60" />
-  <circle stroke="#6666ff" r="1" cx="29173.87825" cy="60" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(73.69528 29188.50375 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="29188.50375" y="110">0.058502 (41.6%)</text>
-  <text fill="red" transform="rotate(73.69528 29188.50375 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="29188.50375" y="110">0.058502 (41.6%)</text>
-  <circle stroke="#88cccc" r="1" cx="29453.79112" cy="260" />
-  <line stroke="#88cccc" x1="29453.79112" y1="260" x2="29344.73014" y2="160" />
-  <circle stroke="#88cccc" r="1" cx="29344.73014" cy="160" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(42.51828 29399.26063 210)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="29399.26063" y="210">0.21812 (44.7%)</text>
-  <text fill="red" transform="rotate(42.51828 29399.26063 210)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="29399.26063" y="210">0.21812 (44.7%)</text>
-  <line stroke="#88cccc" x1="29344.73014" y1="160" x2="29344.73014" y2="60" />
-  <circle stroke="#88cccc" r="1" cx="29344.73014" cy="60" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(-90 29344.73014 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="29344.73014" y="110">0.0000 (0.00%)</text>
-  <text fill="red" transform="rotate(-90 29344.73014 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="29344.73014" y="110">0.0000 (0.00%)</text>
-  <circle stroke="#6666ff" r="1" cx="29447.08848" cy="160" />
-  <line stroke="#6666ff" x1="29447.08848" y1="160" x2="29454.92895" y2="60" />
-  <circle stroke="#6666ff" r="1" cx="29454.92895" cy="60" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(-85.51691 29451.00872 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="29451.00872" y="110">0.015681 (11.2%)</text>
-  <text fill="red" transform="rotate(-85.51691 29451.00872 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="29451.00872" y="110">0.015681 (11.2%)</text>
-  <circle stroke="#6666ff" r="1" cx="29691.04772" cy="160" />
-  <line stroke="#6666ff" x1="29691.04772" y1="160" x2="29665.71697" y2="60" />
-  <circle stroke="#6666ff" r="1" cx="29665.71697" cy="60" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(75.78554 29678.38235 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="29678.38235" y="110">0.050661 (36.1%)</text>
-  <text fill="red" transform="rotate(75.78554 29678.38235 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="29678.38235" y="110">0.050661 (36.1%)</text>
-  <circle stroke="#6666ff" r="1" cx="29680.66647" cy="360" />
-  <line stroke="#6666ff" x1="29680.66647" y1="360" x2="29941.31625" y2="260" />
-  <circle stroke="#6666ff" r="1" cx="29941.31625" cy="260" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(-20.98964 29810.99136 310)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="29810.99136" y="310">0.52130 (26.6%)</text>
-  <text fill="red" transform="rotate(-20.98964 29810.99136 310)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="29810.99136" y="310">0.52130 (26.6%)</text>
-  <line stroke="#6666ff" x1="29941.31625" y1="260" x2="29935.00696" y2="160" />
-  <circle stroke="#6666ff" r="1" cx="29935.00696" cy="160" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(86.38983 29938.16161 210)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="29938.16161" y="210">0.012619 (2.59%)</text>
-  <text fill="red" transform="rotate(86.38983 29938.16161 210)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="29938.16161" y="210">0.012619 (2.59%)</text>
-  <line stroke="#6666ff" x1="29935.00696" y1="160" x2="29946.76766" y2="60" />
-  <circle stroke="#6666ff" r="1" cx="29946.76766" cy="60" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(-83.29243 29940.88731 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="29940.88731" y="110">0.023521 (16.7%)</text>
-  <text fill="red" transform="rotate(-83.29243 29940.88731 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="29940.88731" y="110">0.023521 (16.7%)</text>
-  <circle stroke="#6666ff" r="1" cx="30178.9662" cy="160" />
-  <line stroke="#6666ff" x1="30178.9662" y1="160" x2="30157.55568" y2="60" />
-  <circle stroke="#6666ff" r="1" cx="30157.55568" cy="60" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(77.91513 30168.26094 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="30168.26094" y="110">0.042821 (30.5%)</text>
-  <text fill="red" transform="rotate(77.91513 30168.26094 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="30168.26094" y="110">0.042821 (30.5%)</text>
-  <circle stroke="#6666ff" r="1" cx="30422.92544" cy="160" />
-  <line stroke="#6666ff" x1="30422.92544" y1="160" x2="30438.60638" y2="60" />
-  <circle stroke="#6666ff" r="1" cx="30438.60638" cy="60" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(-81.08806 30430.76591 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="30430.76591" y="110">0.031362 (22.3%)</text>
-  <text fill="red" transform="rotate(-81.08806 30430.76591 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="30430.76591" y="110">0.031362 (22.3%)</text>
-  <circle stroke="#6666ff" r="1" cx="30666.88468" cy="160" />
-  <line stroke="#6666ff" x1="30666.88468" y1="160" x2="30649.3944" y2="60" />
-  <circle stroke="#6666ff" r="1" cx="30649.3944" cy="60" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(80.07916 30658.13954 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="30658.13954" y="110">0.034981 (24.9%)</text>
-  <text fill="red" transform="rotate(80.07916 30658.13954 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="30658.13954" y="110">0.034981 (24.9%)</text>
-  <circle stroke="#6666ff" r="1" cx="30890.08143" cy="360" />
-  <line stroke="#6666ff" x1="30890.08143" y1="360" x2="30921.3594" y2="260" />
-  <circle stroke="#6666ff" r="1" cx="30921.3594" cy="260" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(-72.63138 30905.72042 310)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="30905.72042" y="310">0.062556 (3.19%)</text>
-  <text fill="red" transform="rotate(-72.63138 30905.72042 310)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="30905.72042" y="310">0.062556 (3.19%)</text>
-  <line stroke="#6666ff" x1="30921.3594" y1="260" x2="30910.84392" y2="160" />
-  <circle stroke="#6666ff" r="1" cx="30910.84392" cy="160" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(83.99713 30916.10166 210)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="30916.10166" y="210">0.021031 (4.31%)</text>
-  <text fill="red" transform="rotate(83.99713 30916.10166 210)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="30916.10166" y="210">0.021031 (4.31%)</text>
-  <line stroke="#6666ff" x1="30910.84392" y1="160" x2="30930.44509" y2="60" />
-  <circle stroke="#6666ff" r="1" cx="30930.44509" cy="60" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(-78.90996 30920.64451 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="30920.64451" y="110">0.039202 (27.9%)</text>
-  <text fill="red" transform="rotate(-78.90996 30920.64451 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="30920.64451" y="110">0.039202 (27.9%)</text>
-  <circle stroke="#6666ff" r="1" cx="31154.80316" cy="160" />
-  <line stroke="#6666ff" x1="31154.80316" y1="160" x2="31141.23312" y2="60" />
-  <circle stroke="#6666ff" r="1" cx="31141.23312" cy="60" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(82.27214 31148.01814 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="31148.01814" y="110">0.027140 (19.3%)</text>
-  <text fill="red" transform="rotate(82.27214 31148.01814 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="31148.01814" y="110">0.027140 (19.3%)</text>
-  <circle stroke="#6666ff" r="1" cx="31178.03737" cy="460" />
-  <line stroke="#88cccc" x1="31178.03737" y1="460" x2="31381.67187" y2="260" />
-  <circle stroke="#88cccc" r="1" cx="31381.67187" cy="260" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(-44.4841 31279.85462 360)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="31279.85462" y="360">0.40727 (20.8%)</text>
-  <text fill="red" transform="rotate(-44.4841 31279.85462 360)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="31279.85462" y="360">0.40727 (20.8%)</text>
-  <line stroke="#88cccc" x1="31381.67187" y1="260" x2="31282.7329" y2="160" />
-  <circle stroke="#88cccc" r="1" cx="31282.7329" cy="160" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(45.30558 31332.20238 210)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="31332.20238" y="210">0.19788 (40.6%)</text>
-  <text fill="red" transform="rotate(45.30558 31332.20238 210)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="31332.20238" y="210">0.19788 (40.6%)</text>
-  <line stroke="#88cccc" x1="31282.7329" y1="160" x2="31282.7329" y2="60" />
-  <circle stroke="#88cccc" r="1" cx="31282.7329" cy="60" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(-90 31282.7329 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="31282.7329" y="110">0.0000 (0.00%)</text>
-  <text fill="red" transform="rotate(-90 31282.7329 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="31282.7329" y="110">0.0000 (0.00%)</text>
-  <circle stroke="#6666ff" r="1" cx="31398.7624" cy="160" />
-  <line stroke="#6666ff" x1="31398.7624" y1="160" x2="31422.28381" y2="60" />
-  <circle stroke="#6666ff" r="1" cx="31422.28381" cy="60" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(-76.76382 31410.52311 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="31410.52311" y="110">0.047043 (33.5%)</text>
-  <text fill="red" transform="rotate(-76.76382 31410.52311 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="31410.52311" y="110">0.047043 (33.5%)</text>
-  <circle stroke="#6666ff" r="1" cx="31642.72164" cy="160" />
-  <line stroke="#6666ff" x1="31642.72164" y1="160" x2="31633.07183" y2="60" />
-  <circle stroke="#6666ff" r="1" cx="31633.07183" cy="60" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(84.48813 31637.89674 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="31637.89674" y="110">0.019300 (13.7%)</text>
-  <text fill="red" transform="rotate(84.48813 31637.89674 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="31637.89674" y="110">0.019300 (13.7%)</text>
-  <circle stroke="#6666ff" r="1" cx="31901.40256" cy="260" />
-  <line stroke="#6666ff" x1="31901.40256" y1="260" x2="31886.68088" y2="160" />
-  <circle stroke="#6666ff" r="1" cx="31886.68088" cy="160" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(81.62525 31894.04172 210)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="31894.04172" y="210">0.029443 (6.03%)</text>
-  <text fill="red" transform="rotate(81.62525 31894.04172 210)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="31894.04172" y="210">0.029443 (6.03%)</text>
-  <line stroke="#6666ff" x1="31886.68088" y1="160" x2="31914.12253" y2="60" />
-  <circle stroke="#6666ff" r="1" cx="31914.12253" cy="60" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(-74.65483 31900.40171 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="31900.40171" y="110">0.054883 (39.1%)</text>
-  <text fill="red" transform="rotate(-74.65483 31900.40171 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="31900.40171" y="110">0.054883 (39.1%)</text>
-  <circle stroke="#6666ff" r="1" cx="32099.49639" cy="360" />
-  <line stroke="#88cccc" x1="32099.49639" y1="360" x2="32226.17655" y2="260" />
-  <circle stroke="#88cccc" r="1" cx="32226.17655" cy="260" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(-38.28719 32162.83647 310)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="32162.83647" y="310">0.25336 (12.9%)</text>
-  <text fill="red" transform="rotate(-38.28719 32162.83647 310)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="32162.83647" y="310">0.25336 (12.9%)</text>
-  <line stroke="#6666ff" x1="32226.17655" y1="260" x2="32130.64012" y2="160" />
-  <circle stroke="#6666ff" r="1" cx="32130.64012" cy="160" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(46.30768 32178.40834 210)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="32178.40834" y="210">0.19107 (39.2%)</text>
-  <text fill="red" transform="rotate(46.30768 32178.40834 210)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="32178.40834" y="210">0.19107 (39.2%)</text>
-  <line stroke="#6666ff" x1="32130.64012" y1="160" x2="32124.91055" y2="60" />
-  <circle stroke="#6666ff" r="1" cx="32124.91055" cy="60" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(86.72078 32127.77534 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="32127.77534" y="110">0.011459 (8.15%)</text>
-  <text fill="red" transform="rotate(86.72078 32127.77534 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="32127.77534" y="110">0.011459 (8.15%)</text>
-  <circle stroke="#6666ff" r="1" cx="32374.59936" cy="160" />
-  <line stroke="#6666ff" x1="32374.59936" y1="160" x2="32405.96124" y2="60" />
-  <circle stroke="#6666ff" r="1" cx="32405.96124" cy="60" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(-72.58759 32390.2803 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="32390.2803" y="110">0.062724 (44.6%)</text>
-  <text fill="red" transform="rotate(-72.58759 32390.2803 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="32390.2803" y="110">0.062724 (44.6%)</text>
-  <circle stroke="#6666ff" r="1" cx="32618.5586" cy="160" />
-  <line stroke="#6666ff" x1="32618.5586" y1="160" x2="32616.74926" y2="60" />
-  <circle stroke="#6666ff" r="1" cx="32616.74926" cy="60" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(88.96344 32617.65393 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="32617.65393" y="110">0.0036187 (2.58%)</text>
-  <text fill="red" transform="rotate(88.96344 32617.65393 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="32617.65393" y="110">0.0036187 (2.58%)</text>
-  <circle stroke="#6666ff" r="1" cx="32862.51784" cy="160" />
-  <line stroke="#6666ff" x1="32862.51784" y1="160" x2="32827.53728" y2="60" />
-  <circle stroke="#6666ff" r="1" cx="32827.53728" cy="60" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(70.71988 32845.02756 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="32845.02756" y="110">0.069961 (49.8%)</text>
-  <text fill="red" transform="rotate(70.71988 32845.02756 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="32845.02756" y="110">0.069961 (49.8%)</text>
-  <circle stroke="#6666ff" r="1" cx="33308.91135" cy="360" />
-  <line stroke="#6666ff" x1="33308.91135" y1="360" x2="32881.44571" y2="260" />
-  <circle stroke="#6666ff" r="1" cx="32881.44571" cy="260" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(13.16682 33095.17853 310)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="33095.17853" y="310">0.85493 (43.6%)</text>
-  <text fill="red" transform="rotate(13.16682 33095.17853 310)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="33095.17853" y="310">0.85493 (43.6%)</text>
-  <line stroke="#6666ff" x1="32881.44571" y1="260" x2="33106.47708" y2="160" />
-  <circle stroke="#6666ff" r="1" cx="33106.47708" cy="160" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(-23.95952 32993.9614 210)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="32993.9614" y="210">0.45006 (92.2%)</text>
-  <text fill="red" transform="rotate(-23.95952 32993.9614 210)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="32993.9614" y="210">0.45006 (92.2%)</text>
-  <line stroke="#6666ff" x1="33106.47708" y1="160" x2="33108.58798" y2="60" />
-  <circle stroke="#6666ff" r="1" cx="33108.58798" cy="60" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(-88.79072 33107.53253 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="33107.53253" y="110">0.0042218 (3.00%)</text>
-  <text fill="red" transform="rotate(-88.79072 33107.53253 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="33107.53253" y="110">0.0042218 (3.00%)</text>
-  <circle stroke="#6666ff" r="1" cx="33350.43632" cy="160" />
-  <line stroke="#6666ff" x1="33350.43632" y1="160" x2="33319.376" y2="60" />
-  <circle stroke="#6666ff" r="1" cx="33319.376" cy="60" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(72.74504 33334.90616 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="33334.90616" y="110">0.062121 (44.2%)</text>
-  <text fill="red" transform="rotate(72.74504 33334.90616 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="33334.90616" y="110">0.062121 (44.2%)</text>
-  <circle stroke="#6666ff" r="1" cx="33594.39556" cy="160" />
-  <line stroke="#6666ff" x1="33594.39556" y1="160" x2="33600.4267" y2="60" />
-  <circle stroke="#6666ff" r="1" cx="33600.4267" cy="60" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(-86.54859 33597.41113 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="33597.41113" y="110">0.012062 (8.58%)</text>
-  <text fill="red" transform="rotate(-86.54859 33597.41113 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="33597.41113" y="110">0.012062 (8.58%)</text>
-  <circle stroke="#6666ff" r="1" cx="33838.3548" cy="160" />
-  <line stroke="#6666ff" x1="33838.3548" y1="160" x2="33811.21472" y2="60" />
-  <circle stroke="#6666ff" r="1" cx="33811.21472" cy="60" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(74.81564 33824.78476 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="33824.78476" y="110">0.054280 (38.6%)</text>
-  <text fill="red" transform="rotate(74.81564 33824.78476 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="33824.78476" y="110">0.054280 (38.6%)</text>
-  <circle stroke="#6666ff" r="1" cx="34082.31405" cy="160" />
-  <line stroke="#6666ff" x1="34082.31405" y1="160" x2="34092.26541" y2="60" />
-  <circle stroke="#6666ff" r="1" cx="34092.26541" cy="60" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(-84.317 34087.28973 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="34087.28973" y="110">0.019903 (14.2%)</text>
-  <text fill="red" transform="rotate(-84.317 34087.28973 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="34087.28973" y="110">0.019903 (14.2%)</text>
-  <circle stroke="#88ff88" r="1" cx="34336.25411" cy="460" />
-  <line stroke="#88ff88" x1="34336.25411" y1="460" x2="34336.25411" y2="360" />
-  <circle stroke="#88ff88" r="1" cx="34336.25411" cy="360" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(-90 34336.25411 410)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="34336.25411" y="410">0.0000 (0.00%)</text>
-  <text fill="red" transform="rotate(-90 34336.25411 410)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="34336.25411" y="410">0.0000 (0.00%)</text>
-  <line stroke="#88ff88" x1="34336.25411" y1="360" x2="34336.25411" y2="260" />
-  <circle stroke="#88ff88" r="1" cx="34336.25411" cy="260" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(-90 34336.25411 310)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="34336.25411" y="310">0.0000 (0.00%)</text>
-  <text fill="red" transform="rotate(-90 34336.25411 310)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="34336.25411" y="310">0.0000 (0.00%)</text>
-  <line stroke="#88ff88" x1="34336.25411" y1="260" x2="34336.25411" y2="160" />
-  <circle stroke="#88ff88" r="1" cx="34336.25411" cy="160" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(-90 34336.25411 210)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="34336.25411" y="210">0.0000 (0.00%)</text>
-  <text fill="red" transform="rotate(-90 34336.25411 210)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="34336.25411" y="210">0.0000 (0.00%)</text>
-  <line stroke="#88ff88" x1="34336.25411" y1="160" x2="34336.25411" y2="60" />
-  <circle stroke="#88ff88" r="1" cx="34336.25411" cy="60" />
-  <text stroke="white" stroke-width="0.45em" transform="rotate(-90 34336.25411 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="34336.25411" y="110">0.0000 (0.00%)</text>
-  <text fill="red" transform="rotate(-90 34336.25411 110)" text-anchor="middle" alignment-baseline="hanging" xml:space="preserve" font-family="Helvetica" font-size="6px" x="34336.25411" y="110">0.0000 (0.00%)</text>
   <line stroke-dasharray="1" stroke="#88ff88" x1="50" x2="50" y1="10" y2="510" />
   <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="50" y="260" font-size="10px" font-family="Helvetica">u|n</text>  <text fill="#88ff88" text-anchor="middle" xml:space="preserve" x="50" y="260" font-size="10px" font-family="Helvetica">u|n</text>  <line stroke-dasharray="1" stroke="#88ff88" x1="953.76147" x2="953.76147" y1="10" y2="510" />
   <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="953.76147" y="260" font-size="10px" font-family="Helvetica">n|s</text>  <text fill="#88ff88" text-anchor="middle" xml:space="preserve" x="953.76147" y="260" font-size="10px" font-family="Helvetica">n|s</text>  <line stroke-dasharray="1" stroke="#88ff88" x1="2299.95673" x2="2299.95673" y1="10" y2="510" />
@@ -2039,8 +1706,7 @@ size category bound event was worst-ranked bound class event:
   <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="5915.0026" y="260" font-size="10px" font-family="Helvetica">k|C</text>  <text fill="#88ff88" text-anchor="middle" xml:space="preserve" x="5915.0026" y="260" font-size="10px" font-family="Helvetica">k|C</text>  <line stroke-dasharray="1" stroke="#88ff88" x1="16741.24632" x2="16741.24632" y1="10" y2="510" />
   <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="16741.24632" y="260" font-size="10px" font-family="Helvetica">C|S</text>  <text fill="#88ff88" text-anchor="middle" xml:space="preserve" x="16741.24632" y="260" font-size="10px" font-family="Helvetica">C|S</text>  <line stroke-dasharray="1" stroke="#88ff88" x1="22606.24892" x2="22606.24892" y1="10" y2="510" />
   <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="22606.24892" y="260" font-size="10px" font-family="Helvetica">S|M</text>  <text fill="#88ff88" text-anchor="middle" xml:space="preserve" x="22606.24892" y="260" font-size="10px" font-family="Helvetica">S|M</text>  <line stroke-dasharray="1" stroke="#88ff88" x1="28471.25151" x2="28471.25151" y1="10" y2="510" />
-  <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="28471.25151" y="260" font-size="10px" font-family="Helvetica">M|L</text>  <text fill="#88ff88" text-anchor="middle" xml:space="preserve" x="28471.25151" y="260" font-size="10px" font-family="Helvetica">M|L</text>  <line stroke-dasharray="1" stroke="#88ff88" x1="34336.25411" x2="34336.25411" y1="10" y2="510" />
-  <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="34336.25411" y="260" font-size="10px" font-family="Helvetica">L|SS</text>  <text fill="#88ff88" text-anchor="middle" xml:space="preserve" x="34336.25411" y="260" font-size="10px" font-family="Helvetica">L|SS</text>  <line stroke-dasharray="1" stroke="#88cccc" x1="1489.45055" x2="1489.45055" y1="435" y2="435"/>
+  <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="28471.25151" y="260" font-size="10px" font-family="Helvetica">M|L</text>  <text fill="#88ff88" text-anchor="middle" xml:space="preserve" x="28471.25151" y="260" font-size="10px" font-family="Helvetica">M|L</text>  <line stroke-dasharray="1" stroke="#88cccc" x1="1489.45055" x2="1489.45055" y1="435" y2="435"/>
   <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="1489.45055" y="435" font-size="6px" font-family="Helvetica">(|//|) |(</text>
   <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="1489.45055" y="435" font-size="10px" font-family="Bravura">(♮)   </text>
   <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="1489.45055" y="435" font-size="10px" font-family="Bravura">(♮)   </text>
@@ -2080,14 +1746,6 @@ size category bound event was worst-ranked bound class event:
   <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="25560.83116" y="435" font-size="6px" font-family="Helvetica">/|) /|\</text>
   <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="25560.83116" y="435" font-size="10px" font-family="Bravura">   </text>
   <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="25560.83116" y="435" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="28471.25151" x2="28471.25151" y1="435" y2="435"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="28471.25151" y="435" font-size="6px" font-family="Helvetica">/|\ (|)</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="28471.25151" y="435" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="28471.25151" y="435" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="31381.67187" x2="31381.67187" y1="435" y2="435"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="31381.67187" y="435" font-size="6px" font-family="Helvetica">(|) (|\</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="31381.67187" y="435" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="31381.67187" y="435" font-size="10px" font-family="Bravura">   </text>
   <line stroke-dasharray="1" stroke="#88cccc" x1="894.50468" x2="894.50468" y1="335" y2="335"/>
   <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="894.50468" y="335" font-size="6px" font-family="Helvetica">(|//|) )|</text>
   <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="894.50468" y="335" font-size="10px" font-family="Bravura">(♮)   </text>
@@ -2192,26 +1850,6 @@ size category bound event was worst-ranked bound class event:
   <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="27802.522" y="335" font-size="6px" font-family="Helvetica">(/| )/|\</text>
   <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="27802.522" y="335" font-size="10px" font-family="Bravura">   </text>
   <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="27802.522" y="335" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="28959.68171" x2="28959.68171" y1="335" y2="335"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="28959.68171" y="335" font-size="6px" font-family="Helvetica">)/|\ |\)</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="28959.68171" y="335" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="28959.68171" y="335" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="29942.22132" x2="29942.22132" y1="335" y2="335"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="29942.22132" y="335" font-size="6px" font-family="Helvetica">|\) (|)</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="29942.22132" y="335" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="29942.22132" y="335" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="31100.5361" x2="31100.5361" y1="335" y2="335"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="31100.5361" y="335" font-size="6px" font-family="Helvetica">(|) |\\</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="31100.5361" y="335" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="31100.5361" y="335" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="32226.17655" x2="32226.17655" y1="335" y2="335"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="32226.17655" y="335" font-size="6px" font-family="Helvetica">|\\ (|\</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="32226.17655" y="335" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="32226.17655" y="335" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="33101.42157" x2="33101.42157" y1="335" y2="335"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="33101.42157" y="335" font-size="6px" font-family="Helvetica">(|\ )|\\</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="33101.42157" y="335" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="33101.42157" y="335" font-size="10px" font-family="Bravura">   </text>
   <line stroke-dasharray="1" stroke="#88cccc" x1="406.07449" x2="406.07449" y1="235" y2="235"/>
   <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="406.07449" y="235" font-size="6px" font-family="Helvetica">(|//|) .)|</text>
   <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="406.07449" y="235" font-size="10px" font-family="Bravura">(♮)   </text>
@@ -2396,38 +2034,6 @@ size category bound event was worst-ranked bound class event:
   <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="27977.1421" y="235" font-size="6px" font-family="Helvetica">'/|\ )/|\</text>
   <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="27977.1421" y="235" font-size="10px" font-family="Bravura">   </text>
   <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="27977.1421" y="235" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="28785.06161" x2="28785.06161" y1="235" y2="235"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="28785.06161" y="235" font-size="6px" font-family="Helvetica">)/|\ .(|)</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="28785.06161" y="235" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="28785.06161" y="235" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="29453.79112" x2="29453.79112" y1="235" y2="235"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="29453.79112" y="235" font-size="6px" font-family="Helvetica">.(|) |\)</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="29453.79112" y="235" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="29453.79112" y="235" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="29942.22132" x2="29942.22132" y1="235" y2="235"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="29942.22132" y="235" font-size="6px" font-family="Helvetica">|\) (|)</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="29942.22132" y="235" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="29942.22132" y="235" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="30744.46161" x2="30744.46161" y1="235" y2="235"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="30744.46161" y="235" font-size="6px" font-family="Helvetica">(|) '(|)</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="30744.46161" y="235" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="30744.46161" y="235" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="31381.67187" x2="31381.67187" y1="235" y2="235"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="31381.67187" y="235" font-size="6px" font-family="Helvetica">'(|) .(|\</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="31381.67187" y="235" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="31381.67187" y="235" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="31737.74636" x2="31737.74636" y1="235" y2="235"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="31737.74636" y="235" font-size="6px" font-family="Helvetica">.(|\ |\\</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="31737.74636" y="235" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="31737.74636" y="235" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="32226.17655" x2="32226.17655" y1="235" y2="235"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="32226.17655" y="235" font-size="6px" font-family="Helvetica">|\\ (|\</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="32226.17655" y="235" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="32226.17655" y="235" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="33101.42157" x2="33101.42157" y1="235" y2="235"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="33101.42157" y="235" font-size="6px" font-family="Helvetica">(|\ )|\\</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="33101.42157" y="235" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="33101.42157" y="235" font-size="10px" font-family="Bravura">   </text>
   <line stroke-dasharray="1" stroke="#88cccc" x1="155.67904" x2="155.67904" y1="135" y2="135"/>
   <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="155.67904" y="135" font-size="6px" font-family="Helvetica">(|//|) `|</text>
   <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="155.67904" y="135" font-size="10px" font-family="Bravura">(♮)   </text>
@@ -2916,110 +2522,6 @@ size category bound event was worst-ranked bound class event:
   <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="28216.73312" y="135" font-size="6px" font-family="Helvetica">,)/|\ )/|\</text>
   <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="28216.73312" y="135" font-size="10px" font-family="Bravura">   </text>
   <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="28216.73312" y="135" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="28471.25151" x2="28471.25151" y1="135" y2="135"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="28471.25151" y="135" font-size="6px" font-family="Helvetica">)/|\ `)/|\</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="28471.25151" y="135" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="28471.25151" y="135" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="28725.76991" x2="28725.76991" y1="135" y2="135"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="28725.76991" y="135" font-size="6px" font-family="Helvetica">`)/|\ ``)/|\</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="28725.76991" y="135" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="28725.76991" y="135" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="28933.90096" x2="28933.90096" y1="135" y2="135"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="28933.90096" y="135" font-size="6px" font-family="Helvetica">``)/|\ ,.(|)</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="28933.90096" y="135" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="28933.90096" y="135" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="29173.49198" x2="29173.49198" y1="135" y2="135"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="29173.49198" y="135" font-size="6px" font-family="Helvetica">,.(|) .(|)</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="29173.49198" y="135" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="29173.49198" y="135" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="29344.73014" x2="29344.73014" y1="135" y2="135"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="29344.73014" y="135" font-size="6px" font-family="Helvetica">.(|) ,|\)</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="29344.73014" y="135" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="29344.73014" y="135" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="29519.35024" x2="29519.35024" y1="135" y2="135"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="29519.35024" y="135" font-size="6px" font-family="Helvetica">,|\) |\)</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="29519.35024" y="135" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="29519.35024" y="135" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="29734.09027" x2="29734.09027" y1="135" y2="135"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="29734.09027" y="135" font-size="6px" font-family="Helvetica">|\) `|\)</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="29734.09027" y="135" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="29734.09027" y="135" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="29957.08941" x2="29957.08941" y1="135" y2="135"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="29957.08941" y="135" font-size="6px" font-family="Helvetica">`|\) ,(|)</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="29957.08941" y="135" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="29957.08941" y="135" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="30165.22046" x2="30165.22046" y1="135" y2="135"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="30165.22046" y="135" font-size="6px" font-family="Helvetica">,(|) (|)</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="30165.22046" y="135" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="30165.22046" y="135" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="30399.13226" x2="30399.13226" y1="135" y2="135"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="30399.13226" y="135" font-size="6px" font-family="Helvetica">(|) `(|)</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="30399.13226" y="135" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="30399.13226" y="135" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="30673.77707" x2="30673.77707" y1="135" y2="135"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="30673.77707" y="135" font-size="6px" font-family="Helvetica">`(|) ``(|)</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="30673.77707" y="135" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="30673.77707" y="135" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="30928.29546" x2="30928.29546" y1="135" y2="135"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="30928.29546" y="135" font-size="6px" font-family="Helvetica">``(|) ,'(|)</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="30928.29546" y="135" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="30928.29546" y="135" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="31142.08085" x2="31142.08085" y1="135" y2="135"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="31142.08085" y="135" font-size="6px" font-family="Helvetica">,'(|) '(|)</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="31142.08085" y="135" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="31142.08085" y="135" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="31282.7329" x2="31282.7329" y1="135" y2="135"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="31282.7329" y="135" font-size="6px" font-family="Helvetica">'(|) ,.(|\</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="31282.7329" y="135" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="31282.7329" y="135" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="31431.51297" x2="31431.51297" y1="135" y2="135"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="31431.51297" y="135" font-size="6px" font-family="Helvetica">,.(|\ .(|\</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="31431.51297" y="135" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="31431.51297" y="135" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="31636.13098" x2="31636.13098" y1="135" y2="135"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="31636.13098" y="135" font-size="6px" font-family="Helvetica">.(|\ `.(|\</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="31636.13098" y="135" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="31636.13098" y="135" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="31843.4254" x2="31843.4254" y1="135" y2="135"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="31843.4254" y="135" font-size="6px" font-family="Helvetica">`.(|\ |\\</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="31843.4254" y="135" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="31843.4254" y="135" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="32127.23759" x2="32127.23759" y1="135" y2="135"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="32127.23759" y="135" font-size="6px" font-family="Helvetica">|\\ ,(|\</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="32127.23759" y="135" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="32127.23759" y="135" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="32408.37336" x2="32408.37336" y1="135" y2="135"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="32408.37336" y="135" font-size="6px" font-family="Helvetica">,(|\ (|\</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="32408.37336" y="135" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="32408.37336" y="135" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="32612.99137" x2="32612.99137" y1="135" y2="135"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="32612.99137" y="135" font-size="6px" font-family="Helvetica">(|\ `(|\</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="32612.99137" y="135" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="32612.99137" y="135" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="32821.12242" x2="32821.12242" y1="135" y2="135"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="32821.12242" y="135" font-size="6px" font-family="Helvetica">`(|\ ``(|\</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="32821.12242" y="135" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="32821.12242" y="135" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="33049.52947" x2="33049.52947" y1="135" y2="135"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="33049.52947" y="135" font-size="6px" font-family="Helvetica">``(|\ ,,)|\\</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="33049.52947" y="135" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="33049.52947" y="135" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="33329.82862" x2="33329.82862" y1="135" y2="135"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="33329.82862" y="135" font-size="6px" font-family="Helvetica">,,)|\\ ,)|\\</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="33329.82862" y="135" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="33329.82862" y="135" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="33589.85177" x2="33589.85177" y1="135" y2="135"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="33589.85177" y="135" font-size="6px" font-family="Helvetica">,)|\\ )|\\</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="33589.85177" y="135" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="33589.85177" y="135" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="33847.82391" x2="33847.82391" y1="135" y2="135"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="33847.82391" y="135" font-size="6px" font-family="Helvetica">)|\\ `)|\\</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="33847.82391" y="135" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="33847.82391" y="135" font-size="10px" font-family="Bravura">   </text>
-  <line stroke-dasharray="1" stroke="#88cccc" x1="34055.95496" x2="34055.95496" y1="135" y2="135"/>
-  <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="34055.95496" y="135" font-size="6px" font-family="Helvetica">`)|\\ ``)|\\</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="34055.95496" y="135" font-size="10px" font-family="Bravura">   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="34055.95496" y="135" font-size="10px" font-family="Bravura">   </text>
   <line stroke-dasharray="1" stroke="#6666ff" x1="1403.39293" x2="1403.39293" y1="435" y2="485"/>
   <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="1403.39293" y="435" font-size="6px" font-family="Helvetica">0.5°21</text>
   <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="1403.39293" y="435" font-size="6px" font-family="Helvetica">0.5°21</text>
@@ -3053,12 +2555,6 @@ size category bound event was worst-ranked bound class event:
   <line stroke-dasharray="1" stroke="#6666ff" x1="28471.25151" x2="28471.25151" y1="435" y2="485"/>
   <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="28471.25151" y="435" font-size="6px" font-family="Helvetica">10.5°21</text>
   <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="28471.25151" y="435" font-size="6px" font-family="Helvetica">10.5°21</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="31178.03737" x2="31178.03737" y1="435" y2="485"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="31178.03737" y="435" font-size="6px" font-family="Helvetica">11.5°21</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="31178.03737" y="435" font-size="6px" font-family="Helvetica">11.5°21</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="33884.82323" x2="33884.82323" y1="435" y2="485"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="33884.82323" y="435" font-size="6px" font-family="Helvetica">12.5°21</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="33884.82323" y="435" font-size="6px" font-family="Helvetica">12.5°21</text>
   <line stroke-dasharray="1" stroke="#6666ff" x1="654.70748" x2="654.70748" y1="335" y2="385"/>
   <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="654.70748" y="335" font-size="6px" font-family="Helvetica">0.5°47</text>
   <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="654.70748" y="335" font-size="6px" font-family="Helvetica">0.5°47</text>
@@ -3131,18 +2627,6 @@ size category bound event was worst-ranked bound class event:
   <line stroke-dasharray="1" stroke="#6666ff" x1="28471.25151" x2="28471.25151" y1="335" y2="385"/>
   <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="28471.25151" y="335" font-size="6px" font-family="Helvetica">23.5°47</text>
   <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="28471.25151" y="335" font-size="6px" font-family="Helvetica">23.5°47</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="29680.66647" x2="29680.66647" y1="335" y2="385"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="29680.66647" y="335" font-size="6px" font-family="Helvetica">24.5°47</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="29680.66647" y="335" font-size="6px" font-family="Helvetica">24.5°47</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="30890.08143" x2="30890.08143" y1="335" y2="385"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="30890.08143" y="335" font-size="6px" font-family="Helvetica">25.5°47</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="30890.08143" y="335" font-size="6px" font-family="Helvetica">25.5°47</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="32099.49639" x2="32099.49639" y1="335" y2="385"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="32099.49639" y="335" font-size="6px" font-family="Helvetica">26.5°47</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="32099.49639" y="335" font-size="6px" font-family="Helvetica">26.5°47</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="33308.91135" x2="33308.91135" y1="335" y2="385"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="33308.91135" y="335" font-size="6px" font-family="Helvetica">27.5°47</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="33308.91135" y="335" font-size="6px" font-family="Helvetica">27.5°47</text>
   <line stroke-dasharray="1" stroke="#6666ff" x1="540.02158" x2="540.02158" y1="235" y2="285"/>
   <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="540.02158" y="235" font-size="6px" font-family="Helvetica">0.5°58</text>
   <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="540.02158" y="235" font-size="6px" font-family="Helvetica">0.5°58</text>
@@ -3230,24 +2714,6 @@ size category bound event was worst-ranked bound class event:
   <line stroke-dasharray="1" stroke="#6666ff" x1="27981.22994" x2="27981.22994" y1="235" y2="285"/>
   <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="27981.22994" y="235" font-size="6px" font-family="Helvetica">28.5°58</text>
   <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="27981.22994" y="235" font-size="6px" font-family="Helvetica">28.5°58</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="28961.27309" x2="28961.27309" y1="235" y2="285"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="28961.27309" y="235" font-size="6px" font-family="Helvetica">29.5°58</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="28961.27309" y="235" font-size="6px" font-family="Helvetica">29.5°58</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="29941.31625" x2="29941.31625" y1="235" y2="285"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="29941.31625" y="235" font-size="6px" font-family="Helvetica">30.5°58</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="29941.31625" y="235" font-size="6px" font-family="Helvetica">30.5°58</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="30921.3594" x2="30921.3594" y1="235" y2="285"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="30921.3594" y="235" font-size="6px" font-family="Helvetica">31.5°58</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="30921.3594" y="235" font-size="6px" font-family="Helvetica">31.5°58</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="31901.40256" x2="31901.40256" y1="235" y2="285"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="31901.40256" y="235" font-size="6px" font-family="Helvetica">32.5°58</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="31901.40256" y="235" font-size="6px" font-family="Helvetica">32.5°58</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="32881.44571" x2="32881.44571" y1="235" y2="285"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="32881.44571" y="235" font-size="6px" font-family="Helvetica">33.5°58</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="32881.44571" y="235" font-size="6px" font-family="Helvetica">33.5°58</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="33861.48887" x2="33861.48887" y1="235" y2="285"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="33861.48887" y="235" font-size="6px" font-family="Helvetica">34.5°58</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="33861.48887" y="235" font-size="6px" font-family="Helvetica">34.5°58</text>
   <line stroke-dasharray="1" stroke="#6666ff" x1="171.97962" x2="171.97962" y1="135" y2="185"/>
   <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="171.97962" y="135" font-size="6px" font-family="Helvetica">0.5°233</text>
   <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="171.97962" y="135" font-size="6px" font-family="Helvetica">0.5°233</text>
@@ -3599,78 +3065,6 @@ size category bound event was worst-ranked bound class event:
   <line stroke-dasharray="1" stroke="#6666ff" x1="28471.25151" x2="28471.25151" y1="135" y2="185"/>
   <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="28471.25151" y="135" font-size="6px" font-family="Helvetica">116.5°233</text>
   <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="28471.25151" y="135" font-size="6px" font-family="Helvetica">116.5°233</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="28715.21075" x2="28715.21075" y1="135" y2="185"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="28715.21075" y="135" font-size="6px" font-family="Helvetica">117.5°233</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="28715.21075" y="135" font-size="6px" font-family="Helvetica">117.5°233</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="28959.17" x2="28959.17" y1="135" y2="185"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="28959.17" y="135" font-size="6px" font-family="Helvetica">118.5°233</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="28959.17" y="135" font-size="6px" font-family="Helvetica">118.5°233</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="29203.12924" x2="29203.12924" y1="135" y2="185"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="29203.12924" y="135" font-size="6px" font-family="Helvetica">119.5°233</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="29203.12924" y="135" font-size="6px" font-family="Helvetica">119.5°233</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="29447.08848" x2="29447.08848" y1="135" y2="185"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="29447.08848" y="135" font-size="6px" font-family="Helvetica">120.5°233</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="29447.08848" y="135" font-size="6px" font-family="Helvetica">120.5°233</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="29691.04772" x2="29691.04772" y1="135" y2="185"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="29691.04772" y="135" font-size="6px" font-family="Helvetica">121.5°233</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="29691.04772" y="135" font-size="6px" font-family="Helvetica">121.5°233</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="29935.00696" x2="29935.00696" y1="135" y2="185"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="29935.00696" y="135" font-size="6px" font-family="Helvetica">122.5°233</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="29935.00696" y="135" font-size="6px" font-family="Helvetica">122.5°233</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="30178.9662" x2="30178.9662" y1="135" y2="185"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="30178.9662" y="135" font-size="6px" font-family="Helvetica">123.5°233</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="30178.9662" y="135" font-size="6px" font-family="Helvetica">123.5°233</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="30422.92544" x2="30422.92544" y1="135" y2="185"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="30422.92544" y="135" font-size="6px" font-family="Helvetica">124.5°233</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="30422.92544" y="135" font-size="6px" font-family="Helvetica">124.5°233</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="30666.88468" x2="30666.88468" y1="135" y2="185"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="30666.88468" y="135" font-size="6px" font-family="Helvetica">125.5°233</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="30666.88468" y="135" font-size="6px" font-family="Helvetica">125.5°233</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="30910.84392" x2="30910.84392" y1="135" y2="185"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="30910.84392" y="135" font-size="6px" font-family="Helvetica">126.5°233</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="30910.84392" y="135" font-size="6px" font-family="Helvetica">126.5°233</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="31154.80316" x2="31154.80316" y1="135" y2="185"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="31154.80316" y="135" font-size="6px" font-family="Helvetica">127.5°233</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="31154.80316" y="135" font-size="6px" font-family="Helvetica">127.5°233</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="31398.7624" x2="31398.7624" y1="135" y2="185"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="31398.7624" y="135" font-size="6px" font-family="Helvetica">128.5°233</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="31398.7624" y="135" font-size="6px" font-family="Helvetica">128.5°233</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="31642.72164" x2="31642.72164" y1="135" y2="185"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="31642.72164" y="135" font-size="6px" font-family="Helvetica">129.5°233</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="31642.72164" y="135" font-size="6px" font-family="Helvetica">129.5°233</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="31886.68088" x2="31886.68088" y1="135" y2="185"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="31886.68088" y="135" font-size="6px" font-family="Helvetica">130.5°233</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="31886.68088" y="135" font-size="6px" font-family="Helvetica">130.5°233</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="32130.64012" x2="32130.64012" y1="135" y2="185"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="32130.64012" y="135" font-size="6px" font-family="Helvetica">131.5°233</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="32130.64012" y="135" font-size="6px" font-family="Helvetica">131.5°233</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="32374.59936" x2="32374.59936" y1="135" y2="185"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="32374.59936" y="135" font-size="6px" font-family="Helvetica">132.5°233</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="32374.59936" y="135" font-size="6px" font-family="Helvetica">132.5°233</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="32618.5586" x2="32618.5586" y1="135" y2="185"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="32618.5586" y="135" font-size="6px" font-family="Helvetica">133.5°233</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="32618.5586" y="135" font-size="6px" font-family="Helvetica">133.5°233</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="32862.51784" x2="32862.51784" y1="135" y2="185"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="32862.51784" y="135" font-size="6px" font-family="Helvetica">134.5°233</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="32862.51784" y="135" font-size="6px" font-family="Helvetica">134.5°233</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="33106.47708" x2="33106.47708" y1="135" y2="185"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="33106.47708" y="135" font-size="6px" font-family="Helvetica">135.5°233</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="33106.47708" y="135" font-size="6px" font-family="Helvetica">135.5°233</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="33350.43632" x2="33350.43632" y1="135" y2="185"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="33350.43632" y="135" font-size="6px" font-family="Helvetica">136.5°233</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="33350.43632" y="135" font-size="6px" font-family="Helvetica">136.5°233</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="33594.39556" x2="33594.39556" y1="135" y2="185"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="33594.39556" y="135" font-size="6px" font-family="Helvetica">137.5°233</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="33594.39556" y="135" font-size="6px" font-family="Helvetica">137.5°233</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="33838.3548" x2="33838.3548" y1="135" y2="185"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="33838.3548" y="135" font-size="6px" font-family="Helvetica">138.5°233</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="33838.3548" y="135" font-size="6px" font-family="Helvetica">138.5°233</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="34082.31405" x2="34082.31405" y1="135" y2="185"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="34082.31405" y="135" font-size="6px" font-family="Helvetica">139.5°233</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="34082.31405" y="135" font-size="6px" font-family="Helvetica">139.5°233</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="34326.27329" x2="34326.27329" y1="135" y2="185"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="34326.27329" y="135" font-size="6px" font-family="Helvetica">140.5°233</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="34326.27329" y="135" font-size="6px" font-family="Helvetica">140.5°233</text>
   <line stroke-dasharray="1" stroke="#6666ff" x1="85.13134" x2="85.13134" y1="35" y2="85"/>
   <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="85.13134" y="35" font-size="6px" font-family="Helvetica">0.5°809</text>
   <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="85.13134" y="35" font-size="6px" font-family="Helvetica">0.5°809</text>
@@ -4886,255 +4280,6 @@ size category bound event was worst-ranked bound class event:
   <line stroke-dasharray="1" stroke="#6666ff" x1="28471.25151" x2="28471.25151" y1="35" y2="85"/>
   <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="28471.25151" y="35" font-size="6px" font-family="Helvetica">404.5°809</text>
   <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="28471.25151" y="35" font-size="6px" font-family="Helvetica">404.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="28541.51419" x2="28541.51419" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="28541.51419" y="35" font-size="6px" font-family="Helvetica">405.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="28541.51419" y="35" font-size="6px" font-family="Helvetica">405.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="28611.77686" x2="28611.77686" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="28611.77686" y="35" font-size="6px" font-family="Helvetica">406.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="28611.77686" y="35" font-size="6px" font-family="Helvetica">406.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="28682.03954" x2="28682.03954" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="28682.03954" y="35" font-size="6px" font-family="Helvetica">407.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="28682.03954" y="35" font-size="6px" font-family="Helvetica">407.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="28752.30221" x2="28752.30221" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="28752.30221" y="35" font-size="6px" font-family="Helvetica">408.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="28752.30221" y="35" font-size="6px" font-family="Helvetica">408.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="28822.56488" x2="28822.56488" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="28822.56488" y="35" font-size="6px" font-family="Helvetica">409.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="28822.56488" y="35" font-size="6px" font-family="Helvetica">409.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="28892.82756" x2="28892.82756" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="28892.82756" y="35" font-size="6px" font-family="Helvetica">410.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="28892.82756" y="35" font-size="6px" font-family="Helvetica">410.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="28963.09023" x2="28963.09023" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="28963.09023" y="35" font-size="6px" font-family="Helvetica">411.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="28963.09023" y="35" font-size="6px" font-family="Helvetica">411.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="29033.3529" x2="29033.3529" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="29033.3529" y="35" font-size="6px" font-family="Helvetica">412.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="29033.3529" y="35" font-size="6px" font-family="Helvetica">412.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="29103.61558" x2="29103.61558" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="29103.61558" y="35" font-size="6px" font-family="Helvetica">413.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="29103.61558" y="35" font-size="6px" font-family="Helvetica">413.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="29173.87825" x2="29173.87825" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="29173.87825" y="35" font-size="6px" font-family="Helvetica">414.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="29173.87825" y="35" font-size="6px" font-family="Helvetica">414.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="29244.14093" x2="29244.14093" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="29244.14093" y="35" font-size="6px" font-family="Helvetica">415.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="29244.14093" y="35" font-size="6px" font-family="Helvetica">415.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="29314.4036" x2="29314.4036" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="29314.4036" y="35" font-size="6px" font-family="Helvetica">416.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="29314.4036" y="35" font-size="6px" font-family="Helvetica">416.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="29384.66627" x2="29384.66627" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="29384.66627" y="35" font-size="6px" font-family="Helvetica">417.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="29384.66627" y="35" font-size="6px" font-family="Helvetica">417.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="29454.92895" x2="29454.92895" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="29454.92895" y="35" font-size="6px" font-family="Helvetica">418.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="29454.92895" y="35" font-size="6px" font-family="Helvetica">418.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="29525.19162" x2="29525.19162" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="29525.19162" y="35" font-size="6px" font-family="Helvetica">419.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="29525.19162" y="35" font-size="6px" font-family="Helvetica">419.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="29595.45429" x2="29595.45429" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="29595.45429" y="35" font-size="6px" font-family="Helvetica">420.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="29595.45429" y="35" font-size="6px" font-family="Helvetica">420.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="29665.71697" x2="29665.71697" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="29665.71697" y="35" font-size="6px" font-family="Helvetica">421.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="29665.71697" y="35" font-size="6px" font-family="Helvetica">421.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="29735.97964" x2="29735.97964" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="29735.97964" y="35" font-size="6px" font-family="Helvetica">422.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="29735.97964" y="35" font-size="6px" font-family="Helvetica">422.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="29806.24231" x2="29806.24231" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="29806.24231" y="35" font-size="6px" font-family="Helvetica">423.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="29806.24231" y="35" font-size="6px" font-family="Helvetica">423.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="29876.50499" x2="29876.50499" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="29876.50499" y="35" font-size="6px" font-family="Helvetica">424.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="29876.50499" y="35" font-size="6px" font-family="Helvetica">424.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="29946.76766" x2="29946.76766" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="29946.76766" y="35" font-size="6px" font-family="Helvetica">425.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="29946.76766" y="35" font-size="6px" font-family="Helvetica">425.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="30017.03034" x2="30017.03034" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="30017.03034" y="35" font-size="6px" font-family="Helvetica">426.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="30017.03034" y="35" font-size="6px" font-family="Helvetica">426.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="30087.29301" x2="30087.29301" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="30087.29301" y="35" font-size="6px" font-family="Helvetica">427.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="30087.29301" y="35" font-size="6px" font-family="Helvetica">427.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="30157.55568" x2="30157.55568" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="30157.55568" y="35" font-size="6px" font-family="Helvetica">428.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="30157.55568" y="35" font-size="6px" font-family="Helvetica">428.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="30227.81836" x2="30227.81836" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="30227.81836" y="35" font-size="6px" font-family="Helvetica">429.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="30227.81836" y="35" font-size="6px" font-family="Helvetica">429.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="30298.08103" x2="30298.08103" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="30298.08103" y="35" font-size="6px" font-family="Helvetica">430.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="30298.08103" y="35" font-size="6px" font-family="Helvetica">430.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="30368.3437" x2="30368.3437" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="30368.3437" y="35" font-size="6px" font-family="Helvetica">431.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="30368.3437" y="35" font-size="6px" font-family="Helvetica">431.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="30438.60638" x2="30438.60638" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="30438.60638" y="35" font-size="6px" font-family="Helvetica">432.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="30438.60638" y="35" font-size="6px" font-family="Helvetica">432.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="30508.86905" x2="30508.86905" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="30508.86905" y="35" font-size="6px" font-family="Helvetica">433.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="30508.86905" y="35" font-size="6px" font-family="Helvetica">433.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="30579.13173" x2="30579.13173" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="30579.13173" y="35" font-size="6px" font-family="Helvetica">434.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="30579.13173" y="35" font-size="6px" font-family="Helvetica">434.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="30649.3944" x2="30649.3944" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="30649.3944" y="35" font-size="6px" font-family="Helvetica">435.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="30649.3944" y="35" font-size="6px" font-family="Helvetica">435.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="30719.65707" x2="30719.65707" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="30719.65707" y="35" font-size="6px" font-family="Helvetica">436.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="30719.65707" y="35" font-size="6px" font-family="Helvetica">436.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="30789.91975" x2="30789.91975" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="30789.91975" y="35" font-size="6px" font-family="Helvetica">437.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="30789.91975" y="35" font-size="6px" font-family="Helvetica">437.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="30860.18242" x2="30860.18242" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="30860.18242" y="35" font-size="6px" font-family="Helvetica">438.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="30860.18242" y="35" font-size="6px" font-family="Helvetica">438.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="30930.44509" x2="30930.44509" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="30930.44509" y="35" font-size="6px" font-family="Helvetica">439.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="30930.44509" y="35" font-size="6px" font-family="Helvetica">439.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="31000.70777" x2="31000.70777" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="31000.70777" y="35" font-size="6px" font-family="Helvetica">440.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="31000.70777" y="35" font-size="6px" font-family="Helvetica">440.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="31070.97044" x2="31070.97044" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="31070.97044" y="35" font-size="6px" font-family="Helvetica">441.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="31070.97044" y="35" font-size="6px" font-family="Helvetica">441.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="31141.23312" x2="31141.23312" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="31141.23312" y="35" font-size="6px" font-family="Helvetica">442.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="31141.23312" y="35" font-size="6px" font-family="Helvetica">442.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="31211.49579" x2="31211.49579" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="31211.49579" y="35" font-size="6px" font-family="Helvetica">443.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="31211.49579" y="35" font-size="6px" font-family="Helvetica">443.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="31281.75846" x2="31281.75846" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="31281.75846" y="35" font-size="6px" font-family="Helvetica">444.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="31281.75846" y="35" font-size="6px" font-family="Helvetica">444.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="31352.02114" x2="31352.02114" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="31352.02114" y="35" font-size="6px" font-family="Helvetica">445.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="31352.02114" y="35" font-size="6px" font-family="Helvetica">445.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="31422.28381" x2="31422.28381" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="31422.28381" y="35" font-size="6px" font-family="Helvetica">446.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="31422.28381" y="35" font-size="6px" font-family="Helvetica">446.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="31492.54648" x2="31492.54648" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="31492.54648" y="35" font-size="6px" font-family="Helvetica">447.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="31492.54648" y="35" font-size="6px" font-family="Helvetica">447.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="31562.80916" x2="31562.80916" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="31562.80916" y="35" font-size="6px" font-family="Helvetica">448.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="31562.80916" y="35" font-size="6px" font-family="Helvetica">448.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="31633.07183" x2="31633.07183" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="31633.07183" y="35" font-size="6px" font-family="Helvetica">449.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="31633.07183" y="35" font-size="6px" font-family="Helvetica">449.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="31703.3345" x2="31703.3345" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="31703.3345" y="35" font-size="6px" font-family="Helvetica">450.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="31703.3345" y="35" font-size="6px" font-family="Helvetica">450.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="31773.59718" x2="31773.59718" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="31773.59718" y="35" font-size="6px" font-family="Helvetica">451.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="31773.59718" y="35" font-size="6px" font-family="Helvetica">451.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="31843.85985" x2="31843.85985" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="31843.85985" y="35" font-size="6px" font-family="Helvetica">452.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="31843.85985" y="35" font-size="6px" font-family="Helvetica">452.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="31914.12253" x2="31914.12253" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="31914.12253" y="35" font-size="6px" font-family="Helvetica">453.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="31914.12253" y="35" font-size="6px" font-family="Helvetica">453.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="31984.3852" x2="31984.3852" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="31984.3852" y="35" font-size="6px" font-family="Helvetica">454.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="31984.3852" y="35" font-size="6px" font-family="Helvetica">454.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="32054.64787" x2="32054.64787" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="32054.64787" y="35" font-size="6px" font-family="Helvetica">455.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="32054.64787" y="35" font-size="6px" font-family="Helvetica">455.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="32124.91055" x2="32124.91055" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="32124.91055" y="35" font-size="6px" font-family="Helvetica">456.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="32124.91055" y="35" font-size="6px" font-family="Helvetica">456.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="32195.17322" x2="32195.17322" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="32195.17322" y="35" font-size="6px" font-family="Helvetica">457.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="32195.17322" y="35" font-size="6px" font-family="Helvetica">457.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="32265.43589" x2="32265.43589" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="32265.43589" y="35" font-size="6px" font-family="Helvetica">458.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="32265.43589" y="35" font-size="6px" font-family="Helvetica">458.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="32335.69857" x2="32335.69857" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="32335.69857" y="35" font-size="6px" font-family="Helvetica">459.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="32335.69857" y="35" font-size="6px" font-family="Helvetica">459.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="32405.96124" x2="32405.96124" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="32405.96124" y="35" font-size="6px" font-family="Helvetica">460.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="32405.96124" y="35" font-size="6px" font-family="Helvetica">460.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="32476.22392" x2="32476.22392" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="32476.22392" y="35" font-size="6px" font-family="Helvetica">461.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="32476.22392" y="35" font-size="6px" font-family="Helvetica">461.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="32546.48659" x2="32546.48659" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="32546.48659" y="35" font-size="6px" font-family="Helvetica">462.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="32546.48659" y="35" font-size="6px" font-family="Helvetica">462.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="32616.74926" x2="32616.74926" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="32616.74926" y="35" font-size="6px" font-family="Helvetica">463.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="32616.74926" y="35" font-size="6px" font-family="Helvetica">463.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="32687.01194" x2="32687.01194" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="32687.01194" y="35" font-size="6px" font-family="Helvetica">464.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="32687.01194" y="35" font-size="6px" font-family="Helvetica">464.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="32757.27461" x2="32757.27461" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="32757.27461" y="35" font-size="6px" font-family="Helvetica">465.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="32757.27461" y="35" font-size="6px" font-family="Helvetica">465.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="32827.53728" x2="32827.53728" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="32827.53728" y="35" font-size="6px" font-family="Helvetica">466.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="32827.53728" y="35" font-size="6px" font-family="Helvetica">466.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="32897.79996" x2="32897.79996" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="32897.79996" y="35" font-size="6px" font-family="Helvetica">467.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="32897.79996" y="35" font-size="6px" font-family="Helvetica">467.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="32968.06263" x2="32968.06263" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="32968.06263" y="35" font-size="6px" font-family="Helvetica">468.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="32968.06263" y="35" font-size="6px" font-family="Helvetica">468.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="33038.32531" x2="33038.32531" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="33038.32531" y="35" font-size="6px" font-family="Helvetica">469.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="33038.32531" y="35" font-size="6px" font-family="Helvetica">469.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="33108.58798" x2="33108.58798" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="33108.58798" y="35" font-size="6px" font-family="Helvetica">470.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="33108.58798" y="35" font-size="6px" font-family="Helvetica">470.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="33178.85065" x2="33178.85065" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="33178.85065" y="35" font-size="6px" font-family="Helvetica">471.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="33178.85065" y="35" font-size="6px" font-family="Helvetica">471.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="33249.11333" x2="33249.11333" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="33249.11333" y="35" font-size="6px" font-family="Helvetica">472.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="33249.11333" y="35" font-size="6px" font-family="Helvetica">472.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="33319.376" x2="33319.376" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="33319.376" y="35" font-size="6px" font-family="Helvetica">473.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="33319.376" y="35" font-size="6px" font-family="Helvetica">473.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="33389.63867" x2="33389.63867" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="33389.63867" y="35" font-size="6px" font-family="Helvetica">474.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="33389.63867" y="35" font-size="6px" font-family="Helvetica">474.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="33459.90135" x2="33459.90135" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="33459.90135" y="35" font-size="6px" font-family="Helvetica">475.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="33459.90135" y="35" font-size="6px" font-family="Helvetica">475.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="33530.16402" x2="33530.16402" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="33530.16402" y="35" font-size="6px" font-family="Helvetica">476.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="33530.16402" y="35" font-size="6px" font-family="Helvetica">476.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="33600.4267" x2="33600.4267" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="33600.4267" y="35" font-size="6px" font-family="Helvetica">477.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="33600.4267" y="35" font-size="6px" font-family="Helvetica">477.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="33670.68937" x2="33670.68937" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="33670.68937" y="35" font-size="6px" font-family="Helvetica">478.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="33670.68937" y="35" font-size="6px" font-family="Helvetica">478.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="33740.95204" x2="33740.95204" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="33740.95204" y="35" font-size="6px" font-family="Helvetica">479.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="33740.95204" y="35" font-size="6px" font-family="Helvetica">479.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="33811.21472" x2="33811.21472" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="33811.21472" y="35" font-size="6px" font-family="Helvetica">480.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="33811.21472" y="35" font-size="6px" font-family="Helvetica">480.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="33881.47739" x2="33881.47739" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="33881.47739" y="35" font-size="6px" font-family="Helvetica">481.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="33881.47739" y="35" font-size="6px" font-family="Helvetica">481.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="33951.74006" x2="33951.74006" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="33951.74006" y="35" font-size="6px" font-family="Helvetica">482.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="33951.74006" y="35" font-size="6px" font-family="Helvetica">482.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="34022.00274" x2="34022.00274" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="34022.00274" y="35" font-size="6px" font-family="Helvetica">483.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="34022.00274" y="35" font-size="6px" font-family="Helvetica">483.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="34092.26541" x2="34092.26541" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="34092.26541" y="35" font-size="6px" font-family="Helvetica">484.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="34092.26541" y="35" font-size="6px" font-family="Helvetica">484.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="34162.52808" x2="34162.52808" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="34162.52808" y="35" font-size="6px" font-family="Helvetica">485.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="34162.52808" y="35" font-size="6px" font-family="Helvetica">485.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="34232.79076" x2="34232.79076" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="34232.79076" y="35" font-size="6px" font-family="Helvetica">486.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="34232.79076" y="35" font-size="6px" font-family="Helvetica">486.5°809</text>
-  <line stroke-dasharray="1" stroke="#6666ff" x1="34303.05343" x2="34303.05343" y1="35" y2="85"/>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="baseline" text-anchor="middle" x="34303.05343" y="35" font-size="6px" font-family="Helvetica">487.5°809</text>
-  <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="34303.05343" y="35" font-size="6px" font-family="Helvetica">487.5°809</text>
   <circle stroke="black" cx="50" cy="450" r="1" />
   <text fill="white" text-anchor="middle" x="50" y="470" font-size="10px" font-family="Helvetica">(|//|)</text>
   <text fill="black" text-anchor="middle" x="50" y="470" font-size="40px" font-family="Bravura">(♮)</text>
@@ -5168,12 +4313,6 @@ size category bound event was worst-ranked bound class event:
   <circle stroke="black" cx="26686.47162" cy="450" r="1" />
   <text fill="white" text-anchor="middle" x="26686.47162" y="470" font-size="10px" font-family="Helvetica">/|\</text>
   <text fill="black" text-anchor="middle" x="26686.47162" y="470" font-size="40px" font-family="Bravura"></text>
-  <circle stroke="black" cx="30256.03141" cy="450" r="1" />
-  <text fill="white" text-anchor="middle" x="30256.03141" y="470" font-size="10px" font-family="Helvetica">(|)</text>
-  <text fill="black" text-anchor="middle" x="30256.03141" y="470" font-size="40px" font-family="Bravura"></text>
-  <circle stroke="black" cx="32507.31233" cy="450" r="1" />
-  <text fill="white" text-anchor="middle" x="32507.31233" y="470" font-size="10px" font-family="Helvetica">(|\</text>
-  <text fill="black" text-anchor="middle" x="32507.31233" y="470" font-size="40px" font-family="Bravura"></text>
   <circle stroke="black" cx="50" cy="350" r="1" />
   <text fill="white" text-anchor="middle" x="50" y="370" font-size="10px" font-family="Helvetica">(|//|)</text>
   <text fill="black" text-anchor="middle" x="50" y="370" font-size="40px" font-family="Bravura">(♮)</text>
@@ -5255,21 +4394,6 @@ size category bound event was worst-ranked bound class event:
   <circle stroke="black" cx="28290.95219" cy="350" r="1" />
   <text fill="white" text-anchor="middle" x="28290.95219" y="370" font-size="10px" font-family="Helvetica">)/|\</text>
   <text fill="black" text-anchor="middle" x="28290.95219" y="370" font-size="40px" font-family="Bravura"></text>
-  <circle stroke="black" cx="29628.41123" cy="350" r="1" />
-  <text fill="white" text-anchor="middle" x="29628.41123" y="370" font-size="10px" font-family="Helvetica">|\)</text>
-  <text fill="black" text-anchor="middle" x="29628.41123" y="370" font-size="40px" font-family="Bravura"></text>
-  <circle stroke="black" cx="30256.03141" cy="350" r="1" />
-  <text fill="white" text-anchor="middle" x="30256.03141" y="370" font-size="10px" font-family="Helvetica">(|)</text>
-  <text fill="black" text-anchor="middle" x="30256.03141" y="370" font-size="40px" font-family="Bravura"></text>
-  <circle stroke="black" cx="31945.04078" cy="350" r="1" />
-  <text fill="white" text-anchor="middle" x="31945.04078" y="370" font-size="10px" font-family="Helvetica">|\\</text>
-  <text fill="black" text-anchor="middle" x="31945.04078" y="370" font-size="40px" font-family="Bravura"></text>
-  <circle stroke="black" cx="32507.31233" cy="350" r="1" />
-  <text fill="white" text-anchor="middle" x="32507.31233" y="370" font-size="10px" font-family="Helvetica">(|\</text>
-  <text fill="black" text-anchor="middle" x="32507.31233" y="370" font-size="40px" font-family="Bravura"></text>
-  <circle stroke="black" cx="33695.53081" cy="350" r="1" />
-  <text fill="white" text-anchor="middle" x="33695.53081" y="370" font-size="10px" font-family="Helvetica">)|\\</text>
-  <text fill="black" text-anchor="middle" x="33695.53081" y="370" font-size="40px" font-family="Bravura"></text>
   <circle stroke="black" cx="50" cy="250" r="1" />
   <text fill="white" text-anchor="middle" x="50" y="270" font-size="10px" font-family="Helvetica">(|//|)</text>
   <text fill="black" text-anchor="middle" x="50" y="270" font-size="40px" font-family="Bravura">(♮)</text>
@@ -5411,30 +4535,6 @@ size category bound event was worst-ranked bound class event:
   <circle stroke="black" cx="28290.95219" cy="250" r="1" />
   <text fill="white" text-anchor="middle" x="28290.95219" y="270" font-size="10px" font-family="Helvetica">)/|\</text>
   <text fill="black" text-anchor="middle" x="28290.95219" y="270" font-size="40px" font-family="Bravura"></text>
-  <circle stroke="black" cx="29279.17102" cy="250" r="1" />
-  <text fill="white" text-anchor="middle" x="29279.17102" y="270" font-size="10px" font-family="Helvetica">.(|)</text>
-  <text fill="black" text-anchor="middle" x="29279.17102" y="270" font-size="40px" font-family="Bravura"></text>
-  <circle stroke="black" cx="29628.41123" cy="250" r="1" />
-  <text fill="white" text-anchor="middle" x="29628.41123" y="270" font-size="10px" font-family="Helvetica">|\)</text>
-  <text fill="black" text-anchor="middle" x="29628.41123" y="270" font-size="40px" font-family="Bravura"></text>
-  <circle stroke="black" cx="30256.03141" cy="250" r="1" />
-  <text fill="white" text-anchor="middle" x="30256.03141" y="270" font-size="10px" font-family="Helvetica">(|)</text>
-  <text fill="black" text-anchor="middle" x="30256.03141" y="270" font-size="40px" font-family="Bravura"></text>
-  <circle stroke="black" cx="31232.89181" cy="250" r="1" />
-  <text fill="white" text-anchor="middle" x="31232.89181" y="270" font-size="10px" font-family="Helvetica">'(|)</text>
-  <text fill="black" text-anchor="middle" x="31232.89181" y="270" font-size="40px" font-family="Bravura"></text>
-  <circle stroke="black" cx="31530.45194" cy="250" r="1" />
-  <text fill="white" text-anchor="middle" x="31530.45194" y="270" font-size="10px" font-family="Helvetica">.(|\</text>
-  <text fill="black" text-anchor="middle" x="31530.45194" y="270" font-size="40px" font-family="Bravura"></text>
-  <circle stroke="black" cx="31945.04078" cy="250" r="1" />
-  <text fill="white" text-anchor="middle" x="31945.04078" y="270" font-size="10px" font-family="Helvetica">|\\</text>
-  <text fill="black" text-anchor="middle" x="31945.04078" y="270" font-size="40px" font-family="Bravura"></text>
-  <circle stroke="black" cx="32507.31233" cy="250" r="1" />
-  <text fill="white" text-anchor="middle" x="32507.31233" y="270" font-size="10px" font-family="Helvetica">(|\</text>
-  <text fill="black" text-anchor="middle" x="32507.31233" y="270" font-size="40px" font-family="Bravura"></text>
-  <circle stroke="black" cx="33695.53081" cy="250" r="1" />
-  <text fill="white" text-anchor="middle" x="33695.53081" y="270" font-size="10px" font-family="Helvetica">)|\\</text>
-  <text fill="black" text-anchor="middle" x="33695.53081" y="270" font-size="40px" font-family="Bravura"></text>
   <circle stroke="black" cx="50" cy="150" r="1" />
   <text fill="white" text-anchor="middle" x="50" y="170" font-size="10px" font-family="Helvetica">(|//|)</text>
   <text fill="black" text-anchor="middle" x="50" y="170" font-size="40px" font-family="Bravura">(♮)</text>
@@ -5927,109 +5027,5 @@ size category bound event was worst-ranked bound class event:
   <text fill="white" text-anchor="middle" x="28290.95219" y="170" font-size="10px" font-family="Helvetica">)/|\</text>
   <text fill="black" text-anchor="middle" x="28290.95219" y="170" font-size="40px" font-family="Bravura"></text>
   <text text-anchor="middle" x="28290.95219" y="140" font-size="10px" font-family="Bravura">116</text>
-  <circle stroke="black" cx="28651.55083" cy="150" r="1" />
-  <text fill="white" text-anchor="middle" x="28651.55083" y="170" font-size="10px" font-family="Helvetica">`)/|\</text>
-  <text fill="black" text-anchor="middle" x="28651.55083" y="170" font-size="40px" font-family="Bravura"></text>
-  <text text-anchor="middle" x="28651.55083" y="140" font-size="10px" font-family="Bravura">117</text>
-  <circle stroke="black" cx="28799.98898" cy="150" r="1" />
-  <text fill="white" text-anchor="middle" x="28799.98898" y="170" font-size="10px" font-family="Helvetica">``)/|\</text>
-  <text fill="black" text-anchor="middle" x="28799.98898" y="170" font-size="40px" font-family="Bravura"></text>
-  <text text-anchor="middle" x="28799.98898" y="140" font-size="10px" font-family="Bravura">118</text>
-  <circle stroke="black" cx="29067.81294" cy="150" r="1" />
-  <text fill="white" text-anchor="middle" x="29067.81294" y="170" font-size="10px" font-family="Helvetica">,.(|)</text>
-  <text fill="black" text-anchor="middle" x="29067.81294" y="170" font-size="40px" font-family="Bravura"></text>
-  <text text-anchor="middle" x="29067.81294" y="140" font-size="10px" font-family="Bravura">119</text>
-  <circle stroke="black" cx="29279.17102" cy="150" r="1" />
-  <text fill="white" text-anchor="middle" x="29279.17102" y="170" font-size="10px" font-family="Helvetica">.(|)</text>
-  <text fill="black" text-anchor="middle" x="29279.17102" y="170" font-size="40px" font-family="Bravura"></text>
-  <text text-anchor="middle" x="29279.17102" y="140" font-size="10px" font-family="Bravura">120</text>
-  <circle stroke="black" cx="29410.28926" cy="150" r="1" />
-  <text fill="white" text-anchor="middle" x="29410.28926" y="170" font-size="10px" font-family="Helvetica">,|\)</text>
-  <text fill="black" text-anchor="middle" x="29410.28926" y="170" font-size="40px" font-family="Bravura"></text>
-  <text text-anchor="middle" x="29410.28926" y="140" font-size="10px" font-family="Bravura">120.700</text>
-  <circle stroke="black" cx="29628.41123" cy="150" r="1" />
-  <text fill="white" text-anchor="middle" x="29628.41123" y="170" font-size="10px" font-family="Helvetica">|\)</text>
-  <text fill="black" text-anchor="middle" x="29628.41123" y="170" font-size="40px" font-family="Bravura"></text>
-  <text text-anchor="middle" x="29628.41123" y="140" font-size="10px" font-family="Bravura">121</text>
-  <circle stroke="black" cx="29839.76931" cy="150" r="1" />
-  <text fill="white" text-anchor="middle" x="29839.76931" y="170" font-size="10px" font-family="Helvetica">`|\)</text>
-  <text fill="black" text-anchor="middle" x="29839.76931" y="170" font-size="40px" font-family="Bravura"></text>
-  <text text-anchor="middle" x="29839.76931" y="140" font-size="10px" font-family="Bravura">122</text>
-  <circle stroke="black" cx="30074.4095" cy="150" r="1" />
-  <text fill="white" text-anchor="middle" x="30074.4095" y="170" font-size="10px" font-family="Helvetica">,(|)</text>
-  <text fill="black" text-anchor="middle" x="30074.4095" y="170" font-size="40px" font-family="Bravura"></text>
-  <text text-anchor="middle" x="30074.4095" y="140" font-size="10px" font-family="Bravura">123</text>
-  <circle stroke="black" cx="30256.03141" cy="150" r="1" />
-  <text fill="white" text-anchor="middle" x="30256.03141" y="170" font-size="10px" font-family="Helvetica">(|)</text>
-  <text fill="black" text-anchor="middle" x="30256.03141" y="170" font-size="40px" font-family="Bravura"></text>
-  <text text-anchor="middle" x="30256.03141" y="140" font-size="10px" font-family="Bravura">124</text>
-  <circle stroke="black" cx="30542.23311" cy="150" r="1" />
-  <text fill="white" text-anchor="middle" x="30542.23311" y="170" font-size="10px" font-family="Helvetica">`(|)</text>
-  <text fill="black" text-anchor="middle" x="30542.23311" y="170" font-size="40px" font-family="Bravura"></text>
-  <text text-anchor="middle" x="30542.23311" y="140" font-size="10px" font-family="Bravura">125</text>
-  <circle stroke="black" cx="30805.32103" cy="150" r="1" />
-  <text fill="white" text-anchor="middle" x="30805.32103" y="170" font-size="10px" font-family="Helvetica">``(|)</text>
-  <text fill="black" text-anchor="middle" x="30805.32103" y="170" font-size="40px" font-family="Bravura"></text>
-  <text text-anchor="middle" x="30805.32103" y="140" font-size="10px" font-family="Bravura">126</text>
-  <circle stroke="black" cx="31051.26989" cy="150" r="1" />
-  <text fill="white" text-anchor="middle" x="31051.26989" y="170" font-size="10px" font-family="Helvetica">,'(|)</text>
-  <text fill="black" text-anchor="middle" x="31051.26989" y="170" font-size="40px" font-family="Bravura"></text>
-  <text text-anchor="middle" x="31051.26989" y="140" font-size="10px" font-family="Bravura">127</text>
-  <circle stroke="black" cx="31232.89181" cy="150" r="1" />
-  <text fill="white" text-anchor="middle" x="31232.89181" y="170" font-size="10px" font-family="Helvetica">'(|)</text>
-  <text fill="black" text-anchor="middle" x="31232.89181" y="170" font-size="40px" font-family="Bravura"></text>
-  <text text-anchor="middle" x="31232.89181" y="140" font-size="10px" font-family="Bravura">128</text>
-  <circle stroke="black" cx="31332.574" cy="150" r="1" />
-  <text fill="white" text-anchor="middle" x="31332.574" y="170" font-size="10px" font-family="Helvetica">,.(|\</text>
-  <text fill="black" text-anchor="middle" x="31332.574" y="170" font-size="40px" font-family="Bravura"></text>
-  <text text-anchor="middle" x="31332.574" y="140" font-size="10px" font-family="Bravura">128.580</text>
-  <circle stroke="black" cx="31530.45194" cy="150" r="1" />
-  <text fill="white" text-anchor="middle" x="31530.45194" y="170" font-size="10px" font-family="Helvetica">.(|\</text>
-  <text fill="black" text-anchor="middle" x="31530.45194" y="170" font-size="40px" font-family="Bravura"></text>
-  <text text-anchor="middle" x="31530.45194" y="140" font-size="10px" font-family="Bravura">129</text>
-  <circle stroke="black" cx="31741.81002" cy="150" r="1" />
-  <text fill="white" text-anchor="middle" x="31741.81002" y="170" font-size="10px" font-family="Helvetica">`.(|\</text>
-  <text fill="black" text-anchor="middle" x="31741.81002" y="170" font-size="40px" font-family="Bravura"></text>
-  <text text-anchor="middle" x="31741.81002" y="140" font-size="10px" font-family="Bravura">130</text>
-  <circle stroke="black" cx="31945.04078" cy="150" r="1" />
-  <text fill="white" text-anchor="middle" x="31945.04078" y="170" font-size="10px" font-family="Helvetica">|\\</text>
-  <text fill="black" text-anchor="middle" x="31945.04078" y="170" font-size="40px" font-family="Bravura"></text>
-  <text text-anchor="middle" x="31945.04078" y="140" font-size="10px" font-family="Bravura">131</text>
-  <circle stroke="black" cx="32309.4344" cy="150" r="1" />
-  <text fill="white" text-anchor="middle" x="32309.4344" y="170" font-size="10px" font-family="Helvetica">,(|\</text>
-  <text fill="black" text-anchor="middle" x="32309.4344" y="170" font-size="40px" font-family="Bravura"></text>
-  <text text-anchor="middle" x="32309.4344" y="140" font-size="10px" font-family="Bravura">132</text>
-  <circle stroke="black" cx="32507.31233" cy="150" r="1" />
-  <text fill="white" text-anchor="middle" x="32507.31233" y="170" font-size="10px" font-family="Helvetica">(|\</text>
-  <text fill="black" text-anchor="middle" x="32507.31233" y="170" font-size="40px" font-family="Bravura"></text>
-  <text text-anchor="middle" x="32507.31233" y="140" font-size="10px" font-family="Bravura">133</text>
-  <circle stroke="black" cx="32718.67041" cy="150" r="1" />
-  <text fill="white" text-anchor="middle" x="32718.67041" y="170" font-size="10px" font-family="Helvetica">`(|\</text>
-  <text fill="black" text-anchor="middle" x="32718.67041" y="170" font-size="40px" font-family="Bravura"></text>
-  <text text-anchor="middle" x="32718.67041" y="140" font-size="10px" font-family="Bravura">134</text>
-  <circle stroke="black" cx="32923.57443" cy="150" r="1" />
-  <text fill="white" text-anchor="middle" x="32923.57443" y="170" font-size="10px" font-family="Helvetica">``(|\</text>
-  <text fill="black" text-anchor="middle" x="32923.57443" y="170" font-size="40px" font-family="Bravura"></text>
-  <text text-anchor="middle" x="32923.57443" y="140" font-size="10px" font-family="Bravura">135</text>
-  <circle stroke="black" cx="33175.48452" cy="150" r="1" />
-  <text fill="white" text-anchor="middle" x="33175.48452" y="170" font-size="10px" font-family="Helvetica">,,)|\\</text>
-  <text fill="black" text-anchor="middle" x="33175.48452" y="170" font-size="40px" font-family="Bravura"></text>
-  <text text-anchor="middle" x="33175.48452" y="140" font-size="10px" font-family="Bravura">136</text>
-  <circle stroke="black" cx="33484.17272" cy="150" r="1" />
-  <text fill="white" text-anchor="middle" x="33484.17272" y="170" font-size="10px" font-family="Helvetica">,)|\\</text>
-  <text fill="black" text-anchor="middle" x="33484.17272" y="170" font-size="40px" font-family="Bravura"></text>
-  <text text-anchor="middle" x="33484.17272" y="140" font-size="10px" font-family="Bravura">137</text>
-  <circle stroke="black" cx="33695.53081" cy="150" r="1" />
-  <text fill="white" text-anchor="middle" x="33695.53081" y="170" font-size="10px" font-family="Helvetica">)|\\</text>
-  <text fill="black" text-anchor="middle" x="33695.53081" y="170" font-size="40px" font-family="Bravura"></text>
-  <text text-anchor="middle" x="33695.53081" y="140" font-size="10px" font-family="Bravura">138</text>
-  <circle stroke="black" cx="34000.11702" cy="150" r="1" />
-  <text fill="white" text-anchor="middle" x="34000.11702" y="170" font-size="10px" font-family="Helvetica">`)|\\</text>
-  <text fill="black" text-anchor="middle" x="34000.11702" y="170" font-size="40px" font-family="Bravura"></text>
-  <text text-anchor="middle" x="34000.11702" y="140" font-size="10px" font-family="Bravura">139</text>
-  <circle stroke="black" cx="34111.79291" cy="150" r="1" />
-  <text fill="white" text-anchor="middle" x="34111.79291" y="170" font-size="10px" font-family="Helvetica">``)|\\</text>
-  <text fill="black" text-anchor="middle" x="34111.79291" y="170" font-size="40px" font-family="Bravura"></text>
-  <text text-anchor="middle" x="34111.79291" y="140" font-size="10px" font-family="Bravura">140</text>
 </svg>
 

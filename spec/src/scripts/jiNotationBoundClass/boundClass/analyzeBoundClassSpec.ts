@@ -15,7 +15,7 @@ import * as ranks from "../../../../../src/scripts/jiNotationBoundClass/boundCla
 import { BoundClassHistory } from "../../../../../src/scripts/jiNotationBoundClass/histories"
 import { BoundClassEventAnalysis, BoundClassHistoryAnalysis, Score } from "../../../../../src/scripts/jiNotationBoundClass/history"
 import { RANKS } from "../../../../../src/scripts/jiNotationBoundClass/ranks"
-import { jiNotationBoundClassFixture } from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
+import { jiNotationBoundClassFixture } from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
 describe("analyzeJiNotationBound", (): void => {
     const notBestHistory: BoundClassHistory = [

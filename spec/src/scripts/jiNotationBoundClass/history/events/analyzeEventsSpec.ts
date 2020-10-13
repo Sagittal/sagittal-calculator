@@ -9,7 +9,7 @@ import { RANKS } from "../../../../../../src/scripts/jiNotationBoundClass/ranks"
 import {
     boundClassEventAnalysisFixture,
     boundClassEventFixture,
-} from "../../../../../helpers/src/scripts/jiNotationBound/fixtures"
+} from "../../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
 describe("analyzeBoundClassEvents", (): void => {
     it("adds some analysis properties to each event: rank, distance, and exact", (): void => {

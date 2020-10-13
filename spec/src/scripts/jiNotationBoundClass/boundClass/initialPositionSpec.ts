@@ -4,7 +4,7 @@ import { Scamon } from "../../../../../src/general/math/numeric/scamon"
 import { Cents, computePitchFromCents } from "../../../../../src/general/music"
 import { JiNotationBoundClass, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 import { computeInitialPosition } from "../../../../../src/scripts/jiNotationBoundClass/boundClass/initialPosition"
-import { jiNotationBoundClassFixture } from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
+import { jiNotationBoundClassFixture } from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
 describe("computeInitialPosition", (): void => {
     it("returns the mean of the bounded commas at the introducing JI notation level", (): void => {

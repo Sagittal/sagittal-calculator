@@ -10,7 +10,7 @@ import { RANKS } from "../../../../../src/scripts/jiNotationBoundClass/ranks"
 import {
     boundClassEventAnalysisFixture,
     boundClassHistoryAnalysisFixture,
-} from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
+} from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
 describe("updateJiNotationLevelAnalysis", (): void => {
     describe("jiNotationLevelsBestHistoryRanks", (): void => {

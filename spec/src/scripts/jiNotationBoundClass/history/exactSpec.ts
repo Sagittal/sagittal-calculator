@@ -1,6 +1,6 @@
 import { BoundClassEventAnalysis } from "../../../../../src/scripts/jiNotationBoundClass/history"
 import { computeExact } from "../../../../../src/scripts/jiNotationBoundClass/history/exact"
-import { boundClassEventAnalysisFixture } from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
+import { boundClassEventAnalysisFixture } from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
 describe("computeExact", (): void => {
     it("returns true if every event's position is the same as the actual bound position", (): void => {

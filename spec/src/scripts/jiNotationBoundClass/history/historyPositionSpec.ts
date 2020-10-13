@@ -3,7 +3,7 @@ import { APOTOME } from "../../../../../src/sagittal"
 import { EXTREME_EDA, HIGH_EDA, ULTRA_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"
 import { BoundClassHistory } from "../../../../../src/scripts/jiNotationBoundClass/histories"
 import { computeBoundClassHistoryPosition } from "../../../../../src/scripts/jiNotationBoundClass/history/historyPosition"
-import { boundClassEventFixture } from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
+import { boundClassEventFixture } from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
 describe("computeBoundClassHistoryPosition", (): void => {
     it("returns the position of the bound class history's final bound class event", (): void => {

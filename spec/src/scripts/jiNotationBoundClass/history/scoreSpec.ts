@@ -2,7 +2,7 @@ import { BoundType, JiNotationLevel } from "../../../../../src/sagittal/notation
 import { BoundClassEventAnalysis } from "../../../../../src/scripts/jiNotationBoundClass/history"
 import { computeScore } from "../../../../../src/scripts/jiNotationBoundClass/history/score"
 import { RANKS } from "../../../../../src/scripts/jiNotationBoundClass/ranks"
-import { boundClassEventAnalysisFixture } from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
+import { boundClassEventAnalysisFixture } from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
 describe("computeScore", (): void => {
     it("scores histories with worse ranks worse", (): void => {

@@ -4,18 +4,18 @@ import { BoundClass, BoundType, JiNotationLevel } from "../../../../../src/sagit
 import { HIGH_EDA, ULTRA_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"
 import { BoundClassEvent, BoundClassHistory } from "../../../../../src/scripts/jiNotationBoundClass/histories"
 import { computeExtendedHistories } from "../../../../../src/scripts/jiNotationBoundClass/histories/extendedHistories"
-import { jiNotationBoundClassFixture } from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
+import { jiNotationBoundClassFixture } from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
 describe("computeExtendedHistories", (): void => {
     let boundClassHistory: BoundClassHistory
 
-    let passedInBoundClassEvent: BoundClassEvent = {
+    const passedInBoundClassEvent: BoundClassEvent = {
         jiNotationLevel: JiNotationLevel.HIGH,
         boundType: BoundType.INA_MIDPOINT,
         name: "16.5°47" as Name<BoundClass>,
         pitch: { monzo: APOTOME.monzo, scaler: [16.5, HIGH_EDA] } as Scamon<{ rational: false }>,
-
     }
+    
     beforeEach((): void => {
         boundClassHistory = [
             passedInBoundClassEvent,

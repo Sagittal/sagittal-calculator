@@ -7,7 +7,7 @@ import { BoundClassEventConsolidation } from "../../../../../src/scripts/jiNotat
 import { BoundClassEvent } from "../../../../../src/scripts/jiNotationBoundClass/histories"
 import { BoundClassEventAnalysis } from "../../../../../src/scripts/jiNotationBoundClass/history"
 import { RANKS } from "../../../../../src/scripts/jiNotationBoundClass/ranks"
-import { boundClassEventAnalysisFixture } from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
+import { boundClassEventAnalysisFixture } from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
 describe("computeInitialEventConsolidation", (): void => {
     let actual: BoundClassEventConsolidation

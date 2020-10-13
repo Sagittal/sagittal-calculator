@@ -22,8 +22,6 @@ describe("capture zones", (): void => {
             [{ decimal: 1.023527 }, { decimal: 1.026400 }], // [{ cents: 40.260512 }, { cents: 45.112497 }],
             [{ decimal: 1.026400 }, { decimal: 1.030027 }], // [{ cents: 45.112497 }, { cents: 51.219540 }],
             [{ decimal: 1.030027 }, { decimal: 1.033378 }], // [{ cents: 51.219540 }, { cents: 56.842503 }],
-            [{ decimal: 1.033378 }, { decimal: 1.036740 }], // [{ cents: 56.842503 }, { cents: 62.465465 }],
-            [{ decimal: 1.036740 }, { decimal: 1.040403 }], // [{ cents: 62.465465 }, { cents: 68.572508 }],
         ] as Array<Extrema<{ decimal: Decimal }>>
         expected.forEach((zone: Extrema<{ decimal: Decimal }>, index: number): void => {
             expect(computeIrrationalDecimalFromScamon(actual[ index ]![ 0 ])).toBeCloseTo(zone[ 0 ].decimal!)
@@ -64,12 +62,7 @@ describe("capture zones", (): void => {
             [{ decimal: 1.029025 }, { decimal: 1.030446 }], // [{ cents: 49.535184 }, { cents: 51.924115 }],
             [{ decimal: 1.030446 }, { decimal: 1.031618 }], // [{ cents: 51.924115 }, { cents: 53.891470 }],
             [{ decimal: 1.031618 }, { decimal: 1.032791 }], // [{ cents: 53.891470 }, { cents: 55.858825 }],
-            [{ decimal: 1.032791 }, { decimal: 1.033965 }], // [{ cents: 55.858825 }, { cents: 57.826180 }],
-            [{ decimal: 1.033965 }, { decimal: 1.035141 }], // [{ cents: 57.826180 }, { cents: 59.793535 }],
-            [{ decimal: 1.035141 }, { decimal: 1.036318 }], // [{ cents: 59.793535 }, { cents: 61.760890 }],
-            [{ decimal: 1.036318 }, { decimal: 1.037749 }], // [{ cents: 61.760890 }, { cents: 64.149821 }],
-            [{ decimal: 1.037749 }, { decimal: 1.038929 }], // [{ cents: 64.149821 }, { cents: 66.117175 }],
-            [{ decimal: 1.038929 }, { decimal: 1.040403 }], // [{ cents: 66.117175 }, { cents: 68.572508 }],
+            [{ decimal: 1.032791 }, { decimal: 1.033965 }], // [{ cents: 55.858825 }, { cents: 56.842503 }],
         ] as Array<Extrema<{ decimal: Decimal }>>
         expected.forEach((zone: Extrema<{ decimal: Decimal }>, index: number): void => {
             expect(computeIrrationalDecimalFromScamon(actual[ index ]![ 0 ])).toBeCloseTo(zone[ 0 ].decimal!)
@@ -130,15 +123,7 @@ describe("capture zones", (): void => {
             [{ decimal: 1.030446 }, { decimal: 1.031618 }], // [{ cents: 51.924115 }, { cents: 53.891470 }],
             [{ decimal: 1.031618 }, { decimal: 1.032336 }], // [{ cents: 53.891470 }, { cents: 55.095545 }],
             [{ decimal: 1.032336 }, { decimal: 1.032791 }], // [{ cents: 55.095545 }, { cents: 55.858825 }],
-            [{ decimal: 1.032791 }, { decimal: 1.033965 }], // [{ cents: 55.858825 }, { cents: 57.826180 }],
-            [{ decimal: 1.033965 }, { decimal: 1.034421 }], // [{ cents: 57.826180 }, { cents: 58.589460 }],
-            [{ decimal: 1.034421 }, { decimal: 1.035141 }], // [{ cents: 58.589460 }, { cents: 59.793535 }],
-            [{ decimal: 1.035141 }, { decimal: 1.036318 }], // [{ cents: 59.793535 }, { cents: 61.760890 }],
-            [{ decimal: 1.036318 }, { decimal: 1.036740 }], // [{ cents: 61.760890 }, { cents: 62.465465 }],
-            [{ decimal: 1.036740 }, { decimal: 1.037496 }], // [{ cents: 62.465465 }, { cents: 63.728245 }],
-            [{ decimal: 1.037496 }, { decimal: 1.037749 }], // [{ cents: 63.728245 }, { cents: 64.149821 }],
-            [{ decimal: 1.037749 }, { decimal: 1.038929 }], // [{ cents: 64.149821 }, { cents: 66.117175 }],
-            [{ decimal: 1.038929 }, { decimal: 1.040403 }], // [{ cents: 66.117175 }, { cents: 68.572508 }],
+            [{ decimal: 1.032791 }, { decimal: 1.033965 }], // [{ cents: 55.858825 }, { cents: 56.842503 }],
         ] as Array<Extrema<{ decimal: Decimal }>>
         expected.forEach((zone: Extrema<{ decimal: Decimal }>, index: number): void => {
             expect(computeIrrationalDecimalFromScamon(actual[ index ]![ 0 ])).toBeCloseTo(zone[ 0 ].decimal!)
@@ -276,32 +261,6 @@ describe("capture zones", (): void => {
             [{ decimal: 1.032540 }, { decimal: 1.032791 }], // [{ cents: 55.437249 }, { cents: 55.858825 }],
             [{ decimal: 1.032791 }, { decimal: 1.033126 }], // [{ cents: 55.858825 }, { cents: 56.420926 }],
             [{ decimal: 1.033126 }, { decimal: 1.033378 }], // [{ cents: 56.420926 }, { cents: 56.842503 }],
-            [{ decimal: 1.033378 }, { decimal: 1.033630 }], // [{ cents: 56.842503 }, { cents: 57.264079 }],
-            [{ decimal: 1.033630 }, { decimal: 1.033965 }], // [{ cents: 57.264079 }, { cents: 57.826180 }],
-            [{ decimal: 1.033965 }, { decimal: 1.034217 }], // [{ cents: 57.826180 }, { cents: 58.247756 }],
-            [{ decimal: 1.034217 }, { decimal: 1.034421 }], // [{ cents: 58.247756 }, { cents: 58.589460 }],
-            [{ decimal: 1.034421 }, { decimal: 1.034553 }], // [{ cents: 58.589460 }, { cents: 58.809857 }],
-            [{ decimal: 1.034553 }, { decimal: 1.034805 }], // [{ cents: 58.809857 }, { cents: 59.231433 }],
-            [{ decimal: 1.034805 }, { decimal: 1.035141 }], // [{ cents: 59.231433 }, { cents: 59.793535 }],
-            [{ decimal: 1.035141 }, { decimal: 1.035393 }], // [{ cents: 59.793535 }, { cents: 60.215111 }],
-            [{ decimal: 1.035393 }, { decimal: 1.035729 }], // [{ cents: 60.215111 }, { cents: 60.777212 }],
-            [{ decimal: 1.035729 }, { decimal: 1.035982 }], // [{ cents: 60.777212 }, { cents: 61.198788 }],
-            [{ decimal: 1.035982 }, { decimal: 1.036318 }], // [{ cents: 61.198788 }, { cents: 61.760890 }],
-            [{ decimal: 1.036318 }, { decimal: 1.036570 }], // [{ cents: 61.760890 }, { cents: 62.182466 }],
-            [{ decimal: 1.036570 }, { decimal: 1.036740 }], // [{ cents: 62.182466 }, { cents: 62.465465 }],
-            [{ decimal: 1.036740 }, { decimal: 1.036907 }], // [{ cents: 62.465465 }, { cents: 62.744567 }],
-            [{ decimal: 1.036907 }, { decimal: 1.037159 }], // [{ cents: 62.744567 }, { cents: 63.166143 }],
-            [{ decimal: 1.037159 }, { decimal: 1.037496 }], // [{ cents: 63.166143 }, { cents: 63.728245 }],
-            [{ decimal: 1.037496 }, { decimal: 1.037749 }], // [{ cents: 63.728245 }, { cents: 64.149821 }],
-            [{ decimal: 1.037749 }, { decimal: 1.038086 }], // [{ cents: 64.149821 }, { cents: 64.711922 }],
-            [{ decimal: 1.038086 }, { decimal: 1.038339 }], // [{ cents: 64.711922 }, { cents: 65.133498 }],
-            [{ decimal: 1.038339 }, { decimal: 1.038592 }], // [{ cents: 65.133498 }, { cents: 65.555074 }],
-            [{ decimal: 1.038592 }, { decimal: 1.038929 }], // [{ cents: 65.555074 }, { cents: 66.117175 }],
-            [{ decimal: 1.038929 }, { decimal: 1.039182 }], // [{ cents: 66.117175 }, { cents: 66.538752 }],
-            [{ decimal: 1.039182 }, { decimal: 1.039519 }], // [{ cents: 66.538752 }, { cents: 67.100853 }],
-            [{ decimal: 1.039519 }, { decimal: 1.039773 }], // [{ cents: 67.100853 }, { cents: 67.522429 }],
-            [{ decimal: 1.039773 }, { decimal: 1.040110 }], // [{ cents: 67.522429 }, { cents: 68.084530 }],
-            [{ decimal: 1.040110 }, { decimal: 1.040403 }], // [{ cents: 68.084530 }, { cents: 68.572508 }],
         ] as Array<Extrema<{ decimal: Decimal }>>
         expected.forEach((zone: Extrema<{ decimal: Decimal }>, index: number): void => {
             expect(computeIrrationalDecimalFromScamon(actual[ index ]![ 0 ])).toBeCloseTo(zone[ 0 ].decimal!)

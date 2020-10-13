@@ -2,7 +2,7 @@ import { Cents, computePitchFromCents, Multiplier } from "../../../../../../src/
 import { Ina, JiNotationLevel } from "../../../../../../src/sagittal"
 import { HIGHINA } from "../../../../../../src/sagittal/notations/ji/intervals"
 import { computeBoundClassEventInaDistance } from "../../../../../../src/scripts/jiNotationBoundClass/history/events/eventInaDistance"
-import { boundClassEventFixture } from "../../../../../helpers/src/scripts/jiNotationBound/fixtures"
+import { boundClassEventFixture } from "../../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
 describe("computeBoundClassEventInaDistance", (): void => {
     it("returns the difference in position between the bound class event and the previous bound class event in the bound class history                  ", (): void => {

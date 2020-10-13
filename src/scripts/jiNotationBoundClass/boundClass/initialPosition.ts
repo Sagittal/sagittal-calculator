@@ -1,5 +1,5 @@
 import { computeRationalScamonGeometricMean, Scamon, UNISON } from "../../../general"
-import { JiNotationBoundClass, MAX_SINGLE_SHAFT_POSITION } from "../../../sagittal"
+import { HALF_APOTOME, JiNotationBoundClass } from "../../../sagittal"
 import { computeBoundedCommaClassPositions } from "../boundedPositions"
 
 const computeInitialPosition = (jiNotationBoundClass: JiNotationBoundClass): Scamon => {
@@ -11,7 +11,7 @@ const computeInitialPosition = (jiNotationBoundClass: JiNotationBoundClass): Sca
 
     return greaterBoundedCommaClassPosition ?
         computeRationalScamonGeometricMean(lesserBoundedCommaClassPosition, greaterBoundedCommaClassPosition) :
-        MAX_SINGLE_SHAFT_POSITION
+        HALF_APOTOME
 }
 
 export {

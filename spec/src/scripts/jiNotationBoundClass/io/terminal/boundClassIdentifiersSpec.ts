@@ -27,7 +27,7 @@ import { JiNotationBoundClass, JiNotationLevel, Mina } from "../../../../../../s
 import { MINA, ULTRINA } from "../../../../../../src/sagittal/notations/ji/intervals"
 import { extractJiNotationBoundClassIdentifiers } from "../../../../../../src/scripts/jiNotationBoundClass/io/terminal/boundClassIdentifiers"
 import { JiNotationBoundClassIdentifiers } from "../../../../../../src/scripts/jiNotationBoundClass/io/terminal/types"
-import { jiNotationBoundClassFixture } from "../../../../../helpers/src/scripts/jiNotationBound/fixtures"
+import { jiNotationBoundClassFixture } from "../../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
 describe("extractJiNotationBoundIdentifiers", (): void => {
     const jiNotationBoundClass: JiNotationBoundClass = {

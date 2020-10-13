@@ -5,7 +5,7 @@ import { BoundType } from "../../../../../../../src/sagittal/notations/ji"
 import { JiNotationBoundClassAnalysis } from "../../../../../../../src/scripts/jiNotationBoundClass/boundClass"
 import { computeJiNotationBoundClassAnalysesOutput } from "../../../../../../../src/scripts/jiNotationBoundClass/io/terminal/boundClasses"
 import { RANKS } from "../../../../../../../src/scripts/jiNotationBoundClass/ranks"
-import { jiNotationBoundClassAnalysisFixture } from "../../../../../../helpers/src/scripts/jiNotationBound/fixtures"
+import { jiNotationBoundClassAnalysisFixture } from "../../../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
 describe("computeJiNotationBoundClassAnalysesOutput", (): void => {
     it("colors the rows correctly, according to their best rank", (): void => {

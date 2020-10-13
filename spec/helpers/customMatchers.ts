@@ -42,7 +42,7 @@ const assert = (condition: boolean, message: Io): void => {
     throw message
 }
 
-const testEqualPitches = <T extends Scamon>(actual: T, expected: T, precision: Precision, negate?: boolean, message?: Io): void => {
+const testEqualScamons = <T extends Scamon>(actual: T, expected: T, precision: Precision, negate?: boolean, message?: Io): void => {
     assert(
         areScamonsEqual(actual, expected, precision),
         message || `Expected pitch ${stringify(actual)} to equal pitch ${stringify(expected)}.` as Io,
@@ -118,10 +118,10 @@ const eachExpectedElementHasSameContentsAsSomeActualElement = <T>(expectedElemen
 }
 
 const customMatchers: CustomMatcherFactories = {
-    toEqualPitch: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({
+    toEqualScamon: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({
         compare: <T extends Scamon>(actual: T, expected: T, precision: Precision = DEFAULT_PRECISION, negate?: boolean, message?: Io): CustomMatcherResult =>
             doAssertions((): void => {
-                testEqualPitches(actual, expected, precision, negate, message)
+                testEqualScamons(actual, expected, precision, negate, message)
             }),
     }),
     toBeCloseToTyped: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({

@@ -2,7 +2,7 @@ import { Multiplier, Sum } from "../../../../../src/general"
 import { Ina } from "../../../../../src/sagittal/notations/ji"
 import { BoundClassEventAnalysis } from "../../../../../src/scripts/jiNotationBoundClass/history"
 import { computeBoundClassHistoryTotalInaDistance } from "../../../../../src/scripts/jiNotationBoundClass/history/historyTotalInaDistance"
-import { boundClassEventAnalysisFixture } from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
+import { boundClassEventAnalysisFixture } from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
 describe("computeBoundClassHistoryTotalInaDistance", (): void => {
     it("sums up the ina-distances of all the bound class events in the bound class history (they are already all positive)           ", (): void => {

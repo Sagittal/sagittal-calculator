@@ -1,6 +1,3 @@
-import { FLACCO_SUBSETS_SORTED_BY_SIZE } from "./flaccoSubsets"
-
-export { MAX_SINGLE_SHAFT_POSITION } from "./intervals"
 export {
     computeMaybeCommaClassId,
     JiNotationBoundClass,

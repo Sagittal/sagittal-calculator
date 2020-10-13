@@ -11,7 +11,6 @@ describe("computeNotatingCommaClassIds", (): void => {
         const expected = [
             79,     // 1/11S
             114,    // 11M
-            131,    // 1/11L
         ] as Array<Id<CommaClass>>
         expect(actual).toEqual(expected)
     })
@@ -25,7 +24,6 @@ describe("computeNotatingCommaClassIds", (): void => {
             54,     // 1/35C
             89,     // 35S
             104,    // 1/35M
-            141,    // 35L
         ] as Array<Id<CommaClass>>
         expect(actual).toEqual(expected)
     })

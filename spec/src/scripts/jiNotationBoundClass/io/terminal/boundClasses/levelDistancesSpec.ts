@@ -7,7 +7,7 @@ import { extractJiNotationLevelDistances } from "../../../../../../../src/script
 import {
     boundClassEventAnalysisFixture,
     boundClassHistoryAnalysisFixture,
-} from "../../../../../../helpers/src/scripts/jiNotationBound/fixtures"
+} from "../../../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
 describe("extractJiNotationLevelDistances", (): void => {
     it("returns an array of the distances of each event (from the previous bound class event)", (): void => {

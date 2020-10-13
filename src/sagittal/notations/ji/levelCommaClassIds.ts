@@ -8,20 +8,20 @@ const SAGITTAL_COMPATIBLE_COMMA_CLASS_IDS: Array<Id<CommaClass>> = [
 
 const MEDIUM_LEVEL_COMMA_CLASS_IDS = [
     ...SAGITTAL_COMPATIBLE_COMMA_CLASS_IDS,
-    12, 20, 30, 44, 58, 70, 84, 92, 104, 114, 131, 141,
+    12, 20, 30, 44, 58, 70, 84, 92, 104, 114,
 ] as Array<Id<CommaClass>>
 
 const HIGH_LEVEL_COMMA_CLASS_IDS = sort([
     ...MEDIUM_LEVEL_COMMA_CLASS_IDS,
     7, 18, 25, 34, 36, 41, 52, 65,
     // 65 is an exception; all other comma classes introduced in the Athenian flacco subset are in the Medium level
-    67, 76, 81, 86, 99, 106, 117, 122, 128, 139, 146,
+    67, 76, 81, 86, 99, 106, 117, 122,
 ]) as Array<Id<CommaClass>>
 
 const ULTRA_LEVEL_COMMA_CLASS_IDS = sort([
     ...HIGH_LEVEL_COMMA_CLASS_IDS,
     3, 4, 14, 16, 24, 26, 40, 47, 48, 54, 62, 66,
-    74, 79, 80, 88, 96, 108, 110, 119, 126, 135, 137,
+    74, 79, 80, 88, 96, 108, 110, 119,
 ]) as Array<Id<CommaClass>>
 
 const EXTREME_LEVEL_COMMA_CLASS_IDS = sort([
@@ -31,9 +31,7 @@ const EXTREME_LEVEL_COMMA_CLASS_IDS = sort([
     49, 50, 51, 53, 55, 56, 57, 59, 60, 61, 63, 64, 68, 69,
     71, 72, 73, 75, 77, 78, 82, 83, 85, 87, 89, 90, 91, 93,
     94, 95, 97, 98, 100, 101, 102, 103, 105, 107, 109, 111,
-    112, 113, 115, 116, 118, 120, 121, 123, 124, 125, 127,
-    129, 130, 132, 133, 134, 136, 138, 140, 142, 143, 144,
-    145, 147, 148,
+    112, 113, 115, 116, 118, 120, 121,
 ]) as Array<Id<CommaClass>>
 
 const INSANE_LEVEL_COMMA_CLASS_IDS = sort([

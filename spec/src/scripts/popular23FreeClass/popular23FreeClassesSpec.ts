@@ -72,9 +72,9 @@ describe("computePopular23FreeClasses", (): void => {
                 } as Two3FreeClass,
                 popularityRank: 3 as Rank<Popularity>,
                 votes: 3016 as Votes,
-                notatingCommaClassIds: [58, 108, 137] as Array<Id<CommaClass>>,
+                notatingCommaClassIds: [58, 108] as Array<Id<CommaClass>>,
                 notatingCommaClassSmallestFlaccoSubsetIndices:
-                    [1, 5, 5] as Array<Index<FlaccoSubset>>,
+                    [1, 5] as Array<Index<FlaccoSubset>>,
                 rank: 3 as Rank<Popular23FreeClass>,
             },
             {

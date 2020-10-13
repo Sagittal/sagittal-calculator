@@ -1,5 +1,3 @@
-import { FLACCO_SUBSETS_SORTED_BY_SIZE } from "./notations"
-
 export {
     analyzeComma,
     JiPitchAnalysis,
@@ -59,7 +57,6 @@ export {
     JI_NOTATION_LEVELS,
     JI_NOTATION_LEVELS_BOUND_CLASSES,
     JI_NOTATION_LEVELS_COMMA_CLASS_IDS,
-    MAX_SINGLE_SHAFT_POSITION,
     Mina,
     Tina,
     TINA,

@@ -21,7 +21,7 @@ import {
     boundClassEventAnalysisFixture,
     boundClassEventFixture,
     jiNotationBoundClassFixture,
-} from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
+} from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
 describe("analyzeHistory", (): void => {
     const actualJiNotationBoundPitch = {

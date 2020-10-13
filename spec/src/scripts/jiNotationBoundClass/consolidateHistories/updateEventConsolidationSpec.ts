@@ -11,7 +11,7 @@ import {
     boundClassEventAnalysisFixture,
     boundClassEventConsolidationFixture,
     boundClassHistoryAnalysisFixture,
-} from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
+} from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
 describe("updateEventConsolidation", (): void => {
     let boundClassHistoryAnalysis: BoundClassHistoryAnalysis

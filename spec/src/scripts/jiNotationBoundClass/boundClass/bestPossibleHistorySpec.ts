@@ -3,7 +3,7 @@ import { Abs } from "../../../../../src/general/math"
 import { Cents } from "../../../../../src/general/music"
 import { computeBestPossibleBoundClassHistoryAnalysis } from "../../../../../src/scripts/jiNotationBoundClass/boundClass/bestPossibleHistory"
 import { BoundClassHistoryAnalysis, Score } from "../../../../../src/scripts/jiNotationBoundClass/history"
-import { boundClassHistoryAnalysisFixture } from "../../../../helpers/src/scripts/jiNotationBound/fixtures"
+import { boundClassHistoryAnalysisFixture } from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
 describe("computeBestPossibleBoundClassHistoryAnalysis", (): void => {
     it("returns the bound class history with the best score (the not possible ones are all already filtered out)                ", (): void => {
