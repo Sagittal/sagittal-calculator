@@ -1,4 +1,4 @@
-import { Multiplier, Name, Scamon, HALF_SCALER } from "../../../../../src/general"
+import { HALF_SCALER, Multiplier, Name, Scamon } from "../../../../../src/general"
 import { APOTOME } from "../../../../../src/sagittal"
 import { BoundClass, BoundType, JiNotationLevel, Tina } from "../../../../../src/sagittal/notations/ji"
 import { EXTREME_EDA, ULTRA_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"

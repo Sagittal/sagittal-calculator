@@ -1,605 +1,193 @@
 import { Id } from "../../general"
 import { Accent, Flacco, Flag } from "./types"
 
+const WING_UP = "`|" as Accent
+const WING_DOWN = ",|" as Accent
+
+const BIRD_UP = "``|" as Accent
+const BIRD_DOWN = ",,|" as Accent
+
+const TICK_DOWN = ".|" as Accent
+const TICK_UP = "'|" as Accent
+
+const SCROLL_LEFT = ")|" as Flag
+const SCROLL_RIGHT = "|(" as Flag
+
+const BOATHOOK_LEFT = "~|" as Flag
+const BOATHOOK_RIGHT = "|~" as Flag
+
+const ARC_RIGHT = "|)" as Flag
+const ARC_LEFT = "(|" as Flag
+
+const BARB_LEFT = "/|" as Flag
+const BARB_RIGHT = "|\\" as Flag
+
 const FLACCOS: Flacco[] = [
-    {
-        id: 0 as Id<Flacco>,
-        combo: [] as Array<Flag | Accent>,
-    },
-    {
-        id: 1 as Id<Flacco>,
-        combo: ["`|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 2 as Id<Flacco>,
-        combo: ["``|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 3 as Id<Flacco>,
-        combo: [".|", ")|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 4 as Id<Flacco>,
-        combo: ["'|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 5 as Id<Flacco>,
-        combo: ["`|", "'|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 6 as Id<Flacco>,
-        combo: [",|", ")|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 7 as Id<Flacco>,
-        combo: [")|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 8 as Id<Flacco>,
-        combo: ["`|", ")|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 9 as Id<Flacco>,
-        combo: ["``|", ")|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 10 as Id<Flacco>,
-        combo: [",,|", "|("] as Array<Flag | Accent>,
-    },
-    {
-        id: 11 as Id<Flacco>,
-        combo: [",|", "|("] as Array<Flag | Accent>,
-    },
-    {
-        id: 12 as Id<Flacco>,
-        combo: ["|("] as Array<Flag | Accent>,
-    },
-    {
-        id: 13 as Id<Flacco>,
-        combo: ["`|", "|("] as Array<Flag | Accent>,
-    },
-    {
-        id: 14 as Id<Flacco>,
-        combo: [".|", "~|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 15 as Id<Flacco>,
-        combo: [",|", "'|", "|("] as Array<Flag | Accent>,
-    },
-    {
-        id: 16 as Id<Flacco>,
-        combo: ["'|", "|("] as Array<Flag | Accent>,
-    },
-    {
-        id: 17 as Id<Flacco>,
-        combo: [",|", "~|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 18 as Id<Flacco>,
-        combo: ["~|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 19 as Id<Flacco>,
-        combo: [",|", ")|", "|("] as Array<Flag | Accent>,
-    },
-    {
-        id: 20 as Id<Flacco>,
-        combo: [")|", "|("] as Array<Flag | Accent>,
-    },
-    {
-        id: 21 as Id<Flacco>,
-        combo: ["`|", ")|", "|("] as Array<Flag | Accent>,
-    },
-    {
-        id: 22 as Id<Flacco>,
-        combo: ["``|", ")|", "|("] as Array<Flag | Accent>,
-    },
-    {
-        id: 23 as Id<Flacco>,
-        combo: [",|", "'|", ")|", "|("] as Array<Flag | Accent>,
-    },
-    {
-        id: 24 as Id<Flacco>,
-        combo: ["'|", ")|", "|("] as Array<Flag | Accent>,
-    },
-    {
-        id: 25 as Id<Flacco>,
-        combo: [")|", "~|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 26 as Id<Flacco>,
-        combo: [".|", "~|", "|("] as Array<Flag | Accent>,
-    },
-    {
-        id: 27 as Id<Flacco>,
-        combo: ["`|", ".|", "~|", "|("] as Array<Flag | Accent>,
-    },
-    {
-        id: 28 as Id<Flacco>,
-        combo: [",,|", "~|", "|("] as Array<Flag | Accent>,
-    },
-    {
-        id: 29 as Id<Flacco>,
-        combo: [",|", "~|", "|("] as Array<Flag | Accent>,
-    },
-    {
-        id: 30 as Id<Flacco>,
-        combo: ["~|", "|("] as Array<Flag | Accent>,
-    },
-    {
-        id: 31 as Id<Flacco>,
-        combo: ["`|", "~|", "|("] as Array<Flag | Accent>,
-    },
-    {
-        id: 32 as Id<Flacco>,
-        combo: [",,|", "|~"] as Array<Flag | Accent>,
-    },
-    {
-        id: 33 as Id<Flacco>,
-        combo: [",|", "|~"] as Array<Flag | Accent>,
-    },
-    {
-        id: 34 as Id<Flacco>,
-        combo: ["|~"] as Array<Flag | Accent>,
-    },
-    {
-        id: 35 as Id<Flacco>,
-        combo: ["`|", "|~"] as Array<Flag | Accent>,
-    },
-    {
-        id: 36 as Id<Flacco>,
-        combo: ["~|", "~|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 37 as Id<Flacco>,
-        combo: ["`|", "~|", "~|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 38 as Id<Flacco>,
-        combo: ["``|", "~|", "~|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 39 as Id<Flacco>,
-        combo: [",|", ".|", "/|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 40 as Id<Flacco>,
-        combo: [".|", "/|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 41 as Id<Flacco>,
-        combo: [")|", "|~"] as Array<Flag | Accent>,
-    },
-    {
-        id: 42 as Id<Flacco>,
-        combo: [",,|", "/|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 43 as Id<Flacco>,
-        combo: [",|", "/|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 44 as Id<Flacco>,
-        combo: ["/|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 45 as Id<Flacco>,
-        combo: ["`|", "/|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 46 as Id<Flacco>,
-        combo: ["``|", "/|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 47 as Id<Flacco>,
-        combo: [".|", ")|", "/|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 48 as Id<Flacco>,
-        combo: ["'|", "/|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 49 as Id<Flacco>,
-        combo: ["`|", "'|", "/|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 50 as Id<Flacco>,
-        combo: [",,|", ")|", "/|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 51 as Id<Flacco>,
-        combo: [",|", ")|", "/|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 52 as Id<Flacco>,
-        combo: [")|", "/|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 53 as Id<Flacco>,
-        combo: [",|", ".|", "|)"] as Array<Flag | Accent>,
-    },
-    {
-        id: 54 as Id<Flacco>,
-        combo: [".|", "|)"] as Array<Flag | Accent>,
-    },
-    {
-        id: 55 as Id<Flacco>,
-        combo: ["`|", ".|", "|)"] as Array<Flag | Accent>,
-    },
-    {
-        id: 56 as Id<Flacco>,
-        combo: [",,|", "|)"] as Array<Flag | Accent>,
-    },
-    {
-        id: 57 as Id<Flacco>,
-        combo: [",|", "|)"] as Array<Flag | Accent>,
-    },
-    {
-        id: 58 as Id<Flacco>,
-        combo: ["|)"] as Array<Flag | Accent>,
-    },
-    {
-        id: 59 as Id<Flacco>,
-        combo: ["`|", "|)"] as Array<Flag | Accent>,
-    },
-    {
-        id: 60 as Id<Flacco>,
-        combo: ["``|", "|)"] as Array<Flag | Accent>,
-    },
-    {
-        id: 61 as Id<Flacco>,
-        combo: [",|", "'|", "|)"] as Array<Flag | Accent>,
-    },
-    {
-        id: 62 as Id<Flacco>,
-        combo: ["'|", "|)"] as Array<Flag | Accent>,
-    },
-    {
-        id: 63 as Id<Flacco>,
-        combo: ["`|", "'|", "|)"] as Array<Flag | Accent>,
-    },
-    {
-        id: 64 as Id<Flacco>,
-        combo: [",|", ")|", "|)"] as Array<Flag | Accent>,
-    },
-    {
-        id: 65 as Id<Flacco>,
-        combo: [")|", "|)"] as Array<Flag | Accent>,
-    },
-    {
-        id: 66 as Id<Flacco>,
-        combo: [".|", "(|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 67 as Id<Flacco>,
-        combo: ["|\\"] as Array<Flag | Accent>,
-    },
-    {
-        id: 68 as Id<Flacco>,
-        combo: ["`|", "|\\"] as Array<Flag | Accent>,
-    },
-    {
-        id: 69 as Id<Flacco>,
-        combo: [",|", "(|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 70 as Id<Flacco>,
-        combo: ["(|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 71 as Id<Flacco>,
-        combo: ["`|", "(|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 72 as Id<Flacco>,
-        combo: ["``|", "(|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 73 as Id<Flacco>,
-        combo: [",|", "'|", "(|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 74 as Id<Flacco>,
-        combo: ["'|", "(|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 75 as Id<Flacco>,
-        combo: [",|", "~|", "|)"] as Array<Flag | Accent>,
-    },
-    {
-        id: 76 as Id<Flacco>,
-        combo: ["~|", "|)"] as Array<Flag | Accent>,
-    },
-    {
-        id: 77 as Id<Flacco>,
-        combo: ["`|", "~|", "|)"] as Array<Flag | Accent>,
-    },
-    {
-        id: 78 as Id<Flacco>,
-        combo: [",|", ".|", "(|", "|("] as Array<Flag | Accent>,
-    },
-    {
-        id: 79 as Id<Flacco>,
-        combo: [".|", "(|", "|("] as Array<Flag | Accent>,
-    },
-    {
-        id: 80 as Id<Flacco>,
-        combo: ["'|", "~|", "|)"] as Array<Flag | Accent>,
-    },
-    {
-        id: 81 as Id<Flacco>,
-        combo: ["/|", "|~"] as Array<Flag | Accent>,
-    },
-    {
-        id: 82 as Id<Flacco>,
-        combo: [",,|", "(|", "|("] as Array<Flag | Accent>,
-    },
-    {
-        id: 83 as Id<Flacco>,
-        combo: [",|", "(|", "|("] as Array<Flag | Accent>,
-    },
-    {
-        id: 84 as Id<Flacco>,
-        combo: ["(|", "|("] as Array<Flag | Accent>,
-    },
-    {
-        id: 85 as Id<Flacco>,
-        combo: ["`|", "(|", "|("] as Array<Flag | Accent>,
-    },
-    {
-        id: 86 as Id<Flacco>,
-        combo: ["~|", "|\\"] as Array<Flag | Accent>,
-    },
-    {
-        id: 87 as Id<Flacco>,
-        combo: [",|", ".|", "/|", "/|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 88 as Id<Flacco>,
-        combo: [".|", "/|", "/|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 89 as Id<Flacco>,
-        combo: ["`|", ".|", "/|", "/|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 90 as Id<Flacco>,
-        combo: [",,|", "/|", "/|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 91 as Id<Flacco>,
-        combo: [",|", "/|", "/|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 92 as Id<Flacco>,
-        combo: ["/|", "/|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 93 as Id<Flacco>,
-        combo: ["`|", "/|", "/|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 94 as Id<Flacco>,
-        combo: ["``|", "/|", "/|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 95 as Id<Flacco>,
-        combo: [",|", "'|", "/|", "/|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 96 as Id<Flacco>,
-        combo: ["'|", "/|", "/|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 97 as Id<Flacco>,
-        combo: [",,|", ")|", "/|", "/|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 98 as Id<Flacco>,
-        combo: [",|", ")|", "/|", "/|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 99 as Id<Flacco>,
-        combo: [")|", "/|", "/|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 100 as Id<Flacco>,
-        combo: ["`|", ")|", "/|", "/|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 101 as Id<Flacco>,
-        combo: ["``|", ")|", "/|", "/|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 102 as Id<Flacco>,
-        combo: [",,|", "/|", "|)"] as Array<Flag | Accent>,
-    },
-    {
-        id: 103 as Id<Flacco>,
-        combo: [",|", "/|", "|)"] as Array<Flag | Accent>,
-    },
-    {
-        id: 104 as Id<Flacco>,
-        combo: ["/|", "|)"] as Array<Flag | Accent>,
-    },
-    {
-        id: 105 as Id<Flacco>,
-        combo: ["`|", "/|", "|)"] as Array<Flag | Accent>,
-    },
-    {
-        id: 106 as Id<Flacco>,
-        combo: ["(|", "|~"] as Array<Flag | Accent>,
-    },
-    {
-        id: 107 as Id<Flacco>,
-        combo: [",|", "'|", "/|", "|)"] as Array<Flag | Accent>,
-    },
-    {
-        id: 108 as Id<Flacco>,
-        combo: ["'|", "/|", "|)"] as Array<Flag | Accent>,
-    },
-    {
-        id: 109 as Id<Flacco>,
-        combo: ["`|", "'|", "/|", "|)"] as Array<Flag | Accent>,
-    },
-    {
-        id: 110 as Id<Flacco>,
-        combo: [".|", "/|", "|\\"] as Array<Flag | Accent>,
-    },
-    {
-        id: 111 as Id<Flacco>,
-        combo: ["`|", ".|", "/|", "|\\"] as Array<Flag | Accent>,
-    },
-    {
-        id: 112 as Id<Flacco>,
-        combo: [",,|", "/|", "|\\"] as Array<Flag | Accent>,
-    },
-    {
-        id: 113 as Id<Flacco>,
-        combo: [",|", "/|", "|\\"] as Array<Flag | Accent>,
-    },
-    {
-        id: 114 as Id<Flacco>,
-        combo: ["/|", "|\\"] as Array<Flag | Accent>,
-    },
-    {
-        id: 115 as Id<Flacco>,
-        combo: ["`|", "/|", "|\\"] as Array<Flag | Accent>,
-    },
-    {
-        id: 116 as Id<Flacco>,
-        combo: [",|", "(|", "/|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 117 as Id<Flacco>,
-        combo: ["(|", "/|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 118 as Id<Flacco>,
-        combo: ["`|", "(|", "/|"] as Array<Flag | Accent>,
-    },
-    {
-        id: 119 as Id<Flacco>,
-        combo: ["'|", "/|", "|\\"] as Array<Flag | Accent>,
-    },
-    {
-        id: 120 as Id<Flacco>,
-        combo: ["`|", "'|", "/|", "|\\"] as Array<Flag | Accent>,
-    },
-    {
-        id: 121 as Id<Flacco>,
-        combo: [",|", ")|", "/|", "|\\"] as Array<Flag | Accent>,
-    },
-    {
-        id: 122 as Id<Flacco>,
-        combo: [")|", "/|", "|\\"] as Array<Flag | Accent>,
-    },
-    {
-        id: 123 as Id<Flacco>,
-        combo: ["`|", ")|", "/|", "|\\"] as Array<Flag | Accent>,
-    },
-    {
-        id: 124 as Id<Flacco>,
-        combo: ["``|", ")|", "/|", "|\\"] as Array<Flag | Accent>,
-    },
-    {
-        id: 125 as Id<Flacco>,
-        combo: [",|", ".|", "(|", "|)"] as Array<Flag | Accent>,
-    },
-    {
-        id: 126 as Id<Flacco>,
-        combo: [".|", "(|", "|)"] as Array<Flag | Accent>,
-    },
-    {
-        id: 127 as Id<Flacco>,
-        combo: [",|", "|\\", "|)"] as Array<Flag | Accent>,
-    },
-    {
-        id: 128 as Id<Flacco>,
-        combo: ["|\\", "|)"] as Array<Flag | Accent>,
-    },
-    {
-        id: 129 as Id<Flacco>,
-        combo: ["`|", "|\\", "|)"] as Array<Flag | Accent>,
-    },
-    {
-        id: 130 as Id<Flacco>,
-        combo: [",|", "(|", "|)"] as Array<Flag | Accent>,
-    },
-    {
-        id: 131 as Id<Flacco>,
-        combo: ["(|", "|)"] as Array<Flag | Accent>,
-    },
-    {
-        id: 132 as Id<Flacco>,
-        combo: ["`|", "(|", "|)"] as Array<Flag | Accent>,
-    },
-    {
-        id: 133 as Id<Flacco>,
-        combo: ["``|", "(|", "|)"] as Array<Flag | Accent>,
-    },
-    {
-        id: 134 as Id<Flacco>,
-        combo: [",|", "'|", "(|", "|)"] as Array<Flag | Accent>,
-    },
-    {
-        id: 135 as Id<Flacco>,
-        combo: ["'|", "(|", "|)"] as Array<Flag | Accent>,
-    },
-    {
-        id: 136 as Id<Flacco>,
-        combo: [",|", ".|", "(|", "|\\"] as Array<Flag | Accent>,
-    },
-    {
-        id: 137 as Id<Flacco>,
-        combo: [".|", "(|", "|\\"] as Array<Flag | Accent>,
-    },
-    {
-        id: 138 as Id<Flacco>,
-        combo: ["`|", ".|", "(|", "|\\"] as Array<Flag | Accent>,
-    },
-    {
-        id: 139 as Id<Flacco>,
-        combo: ["|\\", "|\\"] as Array<Flag | Accent>,
-    },
-    {
-        id: 140 as Id<Flacco>,
-        combo: [",|", "(|", "|\\"] as Array<Flag | Accent>,
-    },
-    {
-        id: 141 as Id<Flacco>,
-        combo: ["(|", "|\\"] as Array<Flag | Accent>,
-    },
-    {
-        id: 142 as Id<Flacco>,
-        combo: ["`|", "(|", "|\\"] as Array<Flag | Accent>,
-    },
-    {
-        id: 143 as Id<Flacco>,
-        combo: ["``|", "(|", "|\\"] as Array<Flag | Accent>,
-    },
-    {
-        id: 144 as Id<Flacco>,
-        combo: [",,|", ")|", "|\\", "|\\"] as Array<Flag | Accent>,
-    },
-    {
-        id: 145 as Id<Flacco>,
-        combo: [",|", ")|", "|\\", "|\\"] as Array<Flag | Accent>,
-    },
-    {
-        id: 146 as Id<Flacco>,
-        combo: [")|", "|\\", "|\\"] as Array<Flag | Accent>,
-    },
-    {
-        id: 147 as Id<Flacco>,
-        combo: ["`|", ")|", "|\\", "|\\"] as Array<Flag | Accent>,
-    },
-    {
-        id: 148 as Id<Flacco>,
-        combo: ["``|", ")|", "|\\", "|\\"] as Array<Flag | Accent>,
-    },
+    { id: 0 as Id<Flacco>, combo: [] },
+    { id: 1 as Id<Flacco>, combo: [WING_UP] },
+    { id: 2 as Id<Flacco>, combo: [BIRD_UP] },
+    { id: 3 as Id<Flacco>, combo: [TICK_DOWN, SCROLL_LEFT] },
+    { id: 4 as Id<Flacco>, combo: [TICK_UP] },
+    { id: 5 as Id<Flacco>, combo: [WING_UP, TICK_UP] },
+    { id: 6 as Id<Flacco>, combo: [WING_DOWN, SCROLL_LEFT] },
+    { id: 7 as Id<Flacco>, combo: [SCROLL_LEFT] },
+    { id: 8 as Id<Flacco>, combo: [WING_UP, SCROLL_LEFT] },
+    { id: 9 as Id<Flacco>, combo: [BIRD_UP, SCROLL_LEFT] },
+    { id: 10 as Id<Flacco>, combo: [BIRD_DOWN, SCROLL_RIGHT] },
+    { id: 11 as Id<Flacco>, combo: [WING_DOWN, SCROLL_RIGHT] },
+    { id: 12 as Id<Flacco>, combo: [SCROLL_RIGHT] },
+    { id: 13 as Id<Flacco>, combo: [WING_UP, SCROLL_RIGHT] },
+    { id: 14 as Id<Flacco>, combo: [TICK_DOWN, BOATHOOK_LEFT] },
+    { id: 15 as Id<Flacco>, combo: [WING_DOWN, TICK_UP, SCROLL_RIGHT] },
+    { id: 16 as Id<Flacco>, combo: [TICK_UP, SCROLL_RIGHT] },
+    { id: 17 as Id<Flacco>, combo: [WING_DOWN, BOATHOOK_LEFT] },
+    { id: 18 as Id<Flacco>, combo: [BOATHOOK_LEFT] },
+    { id: 19 as Id<Flacco>, combo: [WING_DOWN, SCROLL_LEFT, SCROLL_RIGHT] },
+    { id: 20 as Id<Flacco>, combo: [SCROLL_LEFT, SCROLL_RIGHT] },
+    { id: 21 as Id<Flacco>, combo: [WING_UP, SCROLL_LEFT, SCROLL_RIGHT] },
+    { id: 22 as Id<Flacco>, combo: [BIRD_UP, SCROLL_LEFT, SCROLL_RIGHT] },
+    { id: 23 as Id<Flacco>, combo: [WING_DOWN, TICK_UP, SCROLL_LEFT, SCROLL_RIGHT] },
+    { id: 24 as Id<Flacco>, combo: [TICK_UP, SCROLL_LEFT, SCROLL_RIGHT] },
+    { id: 25 as Id<Flacco>, combo: [SCROLL_LEFT, BOATHOOK_LEFT] },
+    { id: 26 as Id<Flacco>, combo: [TICK_DOWN, BOATHOOK_LEFT, SCROLL_RIGHT] },
+    { id: 27 as Id<Flacco>, combo: [WING_UP, TICK_DOWN, BOATHOOK_LEFT, SCROLL_RIGHT] },
+    { id: 28 as Id<Flacco>, combo: [BIRD_DOWN, BOATHOOK_LEFT, SCROLL_RIGHT] },
+    { id: 29 as Id<Flacco>, combo: [WING_DOWN, BOATHOOK_LEFT, SCROLL_RIGHT] },
+    { id: 30 as Id<Flacco>, combo: [BOATHOOK_LEFT, SCROLL_RIGHT] },
+    { id: 31 as Id<Flacco>, combo: [WING_UP, BOATHOOK_LEFT, SCROLL_RIGHT] },
+    { id: 32 as Id<Flacco>, combo: [BIRD_DOWN, BOATHOOK_RIGHT] },
+    { id: 33 as Id<Flacco>, combo: [WING_DOWN, BOATHOOK_RIGHT] },
+    { id: 34 as Id<Flacco>, combo: [BOATHOOK_RIGHT] },
+    { id: 35 as Id<Flacco>, combo: [WING_UP, BOATHOOK_RIGHT] },
+    { id: 36 as Id<Flacco>, combo: [BOATHOOK_LEFT, BOATHOOK_LEFT] },
+    { id: 37 as Id<Flacco>, combo: [WING_UP, BOATHOOK_LEFT, BOATHOOK_LEFT] },
+    { id: 38 as Id<Flacco>, combo: [BIRD_UP, BOATHOOK_LEFT, BOATHOOK_LEFT] },
+    { id: 39 as Id<Flacco>, combo: [WING_DOWN, TICK_DOWN, BARB_LEFT] },
+    { id: 40 as Id<Flacco>, combo: [TICK_DOWN, BARB_LEFT] },
+    { id: 41 as Id<Flacco>, combo: [SCROLL_LEFT, BOATHOOK_RIGHT] },
+    { id: 42 as Id<Flacco>, combo: [BIRD_DOWN, BARB_LEFT] },
+    { id: 43 as Id<Flacco>, combo: [WING_DOWN, BARB_LEFT] },
+    { id: 44 as Id<Flacco>, combo: [BARB_LEFT] },
+    { id: 45 as Id<Flacco>, combo: [WING_UP, BARB_LEFT] },
+    { id: 46 as Id<Flacco>, combo: [BIRD_UP, BARB_LEFT] },
+    { id: 47 as Id<Flacco>, combo: [TICK_DOWN, SCROLL_LEFT, BARB_LEFT] },
+    { id: 48 as Id<Flacco>, combo: [TICK_UP, BARB_LEFT] },
+    { id: 49 as Id<Flacco>, combo: [WING_UP, TICK_UP, BARB_LEFT] },
+    { id: 50 as Id<Flacco>, combo: [BIRD_DOWN, SCROLL_LEFT, BARB_LEFT] },
+    { id: 51 as Id<Flacco>, combo: [WING_DOWN, SCROLL_LEFT, BARB_LEFT] },
+    { id: 52 as Id<Flacco>, combo: [SCROLL_LEFT, BARB_LEFT] },
+    { id: 53 as Id<Flacco>, combo: [WING_DOWN, TICK_DOWN, ARC_RIGHT] },
+    { id: 54 as Id<Flacco>, combo: [TICK_DOWN, ARC_RIGHT] },
+    { id: 55 as Id<Flacco>, combo: [WING_UP, TICK_DOWN, ARC_RIGHT] },
+    { id: 56 as Id<Flacco>, combo: [BIRD_DOWN, ARC_RIGHT] },
+    { id: 57 as Id<Flacco>, combo: [WING_DOWN, ARC_RIGHT] },
+    { id: 58 as Id<Flacco>, combo: [ARC_RIGHT] },
+    { id: 59 as Id<Flacco>, combo: [WING_UP, ARC_RIGHT] },
+    { id: 60 as Id<Flacco>, combo: [BIRD_UP, ARC_RIGHT] },
+    { id: 61 as Id<Flacco>, combo: [WING_DOWN, TICK_UP, ARC_RIGHT] },
+    { id: 62 as Id<Flacco>, combo: [TICK_UP, ARC_RIGHT] },
+    { id: 63 as Id<Flacco>, combo: [WING_UP, TICK_UP, ARC_RIGHT] },
+    { id: 64 as Id<Flacco>, combo: [WING_DOWN, SCROLL_LEFT, ARC_RIGHT] },
+    { id: 65 as Id<Flacco>, combo: [SCROLL_LEFT, ARC_RIGHT] },
+    { id: 66 as Id<Flacco>, combo: [TICK_DOWN, ARC_LEFT] },
+    { id: 67 as Id<Flacco>, combo: [BARB_RIGHT] },
+    { id: 68 as Id<Flacco>, combo: [WING_UP, BARB_RIGHT] },
+    { id: 69 as Id<Flacco>, combo: [WING_DOWN, ARC_LEFT] },
+    { id: 70 as Id<Flacco>, combo: [ARC_LEFT] },
+    { id: 71 as Id<Flacco>, combo: [WING_UP, ARC_LEFT] },
+    { id: 72 as Id<Flacco>, combo: [BIRD_UP, ARC_LEFT] },
+    { id: 73 as Id<Flacco>, combo: [WING_DOWN, TICK_UP, ARC_LEFT] },
+    { id: 74 as Id<Flacco>, combo: [TICK_UP, ARC_LEFT] },
+    { id: 75 as Id<Flacco>, combo: [WING_DOWN, BOATHOOK_LEFT, ARC_RIGHT] },
+    { id: 76 as Id<Flacco>, combo: [BOATHOOK_LEFT, ARC_RIGHT] },
+    { id: 77 as Id<Flacco>, combo: [WING_UP, BOATHOOK_LEFT, ARC_RIGHT] },
+    { id: 78 as Id<Flacco>, combo: [WING_DOWN, TICK_DOWN, ARC_LEFT, SCROLL_RIGHT] },
+    { id: 79 as Id<Flacco>, combo: [TICK_DOWN, ARC_LEFT, SCROLL_RIGHT] },
+    { id: 80 as Id<Flacco>, combo: [TICK_UP, BOATHOOK_LEFT, ARC_RIGHT] },
+    { id: 81 as Id<Flacco>, combo: [BARB_LEFT, BOATHOOK_RIGHT] },
+    { id: 82 as Id<Flacco>, combo: [BIRD_DOWN, ARC_LEFT, SCROLL_RIGHT] },
+    { id: 83 as Id<Flacco>, combo: [WING_DOWN, ARC_LEFT, SCROLL_RIGHT] },
+    { id: 84 as Id<Flacco>, combo: [ARC_LEFT, SCROLL_RIGHT] },
+    { id: 85 as Id<Flacco>, combo: [WING_UP, ARC_LEFT, SCROLL_RIGHT] },
+    { id: 86 as Id<Flacco>, combo: [BOATHOOK_LEFT, BARB_RIGHT] },
+    { id: 87 as Id<Flacco>, combo: [WING_DOWN, TICK_DOWN, BARB_LEFT, BARB_LEFT] },
+    { id: 88 as Id<Flacco>, combo: [TICK_DOWN, BARB_LEFT, BARB_LEFT] },
+    { id: 89 as Id<Flacco>, combo: [WING_UP, TICK_DOWN, BARB_LEFT, BARB_LEFT] },
+    { id: 90 as Id<Flacco>, combo: [BIRD_DOWN, BARB_LEFT, BARB_LEFT] },
+    { id: 91 as Id<Flacco>, combo: [WING_DOWN, BARB_LEFT, BARB_LEFT] },
+    { id: 92 as Id<Flacco>, combo: [BARB_LEFT, BARB_LEFT] },
+    { id: 93 as Id<Flacco>, combo: [WING_UP, BARB_LEFT, BARB_LEFT] },
+    { id: 94 as Id<Flacco>, combo: [BIRD_UP, BARB_LEFT, BARB_LEFT] },
+    { id: 95 as Id<Flacco>, combo: [WING_DOWN, TICK_UP, BARB_LEFT, BARB_LEFT] },
+    { id: 96 as Id<Flacco>, combo: [TICK_UP, BARB_LEFT, BARB_LEFT] },
+    { id: 97 as Id<Flacco>, combo: [BIRD_DOWN, SCROLL_LEFT, BARB_LEFT, BARB_LEFT] },
+    { id: 98 as Id<Flacco>, combo: [WING_DOWN, SCROLL_LEFT, BARB_LEFT, BARB_LEFT] },
+    { id: 99 as Id<Flacco>, combo: [SCROLL_LEFT, BARB_LEFT, BARB_LEFT] },
+    { id: 100 as Id<Flacco>, combo: [WING_UP, SCROLL_LEFT, BARB_LEFT, BARB_LEFT] },
+    { id: 101 as Id<Flacco>, combo: [BIRD_UP, SCROLL_LEFT, BARB_LEFT, BARB_LEFT] },
+    { id: 102 as Id<Flacco>, combo: [BIRD_DOWN, BARB_LEFT, ARC_RIGHT] },
+    { id: 103 as Id<Flacco>, combo: [WING_DOWN, BARB_LEFT, ARC_RIGHT] },
+    { id: 104 as Id<Flacco>, combo: [BARB_LEFT, ARC_RIGHT] },
+    { id: 105 as Id<Flacco>, combo: [WING_UP, BARB_LEFT, ARC_RIGHT] },
+    { id: 106 as Id<Flacco>, combo: [ARC_LEFT, BOATHOOK_RIGHT] },
+    { id: 107 as Id<Flacco>, combo: [WING_DOWN, TICK_UP, BARB_LEFT, ARC_RIGHT] },
+    { id: 108 as Id<Flacco>, combo: [TICK_UP, BARB_LEFT, ARC_RIGHT] },
+    { id: 109 as Id<Flacco>, combo: [WING_UP, TICK_UP, BARB_LEFT, ARC_RIGHT] },
+    { id: 110 as Id<Flacco>, combo: [TICK_DOWN, BARB_LEFT, BARB_RIGHT] },
+    { id: 111 as Id<Flacco>, combo: [WING_UP, TICK_DOWN, BARB_LEFT, BARB_RIGHT] },
+    { id: 112 as Id<Flacco>, combo: [BIRD_DOWN, BARB_LEFT, BARB_RIGHT] },
+    { id: 113 as Id<Flacco>, combo: [WING_DOWN, BARB_LEFT, BARB_RIGHT] },
+    { id: 114 as Id<Flacco>, combo: [BARB_LEFT, BARB_RIGHT] },
+    { id: 115 as Id<Flacco>, combo: [WING_UP, BARB_LEFT, BARB_RIGHT] },
+    { id: 116 as Id<Flacco>, combo: [WING_DOWN, ARC_LEFT, BARB_LEFT] },
+    { id: 117 as Id<Flacco>, combo: [ARC_LEFT, BARB_LEFT] },
+    { id: 118 as Id<Flacco>, combo: [WING_UP, ARC_LEFT, BARB_LEFT] },
+    { id: 119 as Id<Flacco>, combo: [TICK_UP, BARB_LEFT, BARB_RIGHT] },
+    { id: 120 as Id<Flacco>, combo: [WING_UP, TICK_UP, BARB_LEFT, BARB_RIGHT] },
+    { id: 121 as Id<Flacco>, combo: [WING_DOWN, SCROLL_LEFT, BARB_LEFT, BARB_RIGHT] },
+    { id: 122 as Id<Flacco>, combo: [SCROLL_LEFT, BARB_LEFT, BARB_RIGHT] },
+    { id: 123 as Id<Flacco>, combo: [WING_UP, SCROLL_LEFT, BARB_LEFT, BARB_RIGHT] },
+    { id: 124 as Id<Flacco>, combo: [BIRD_UP, SCROLL_LEFT, BARB_LEFT, BARB_RIGHT] },
+    { id: 125 as Id<Flacco>, combo: [WING_DOWN, TICK_DOWN, ARC_LEFT, ARC_RIGHT] },
+    { id: 126 as Id<Flacco>, combo: [TICK_DOWN, ARC_LEFT, ARC_RIGHT] },
+    { id: 127 as Id<Flacco>, combo: [WING_DOWN, BARB_RIGHT, ARC_RIGHT] },
+    { id: 128 as Id<Flacco>, combo: [BARB_RIGHT, ARC_RIGHT] },
+    { id: 129 as Id<Flacco>, combo: [WING_UP, BARB_RIGHT, ARC_RIGHT] },
+    { id: 130 as Id<Flacco>, combo: [WING_DOWN, ARC_LEFT, ARC_RIGHT] },
+    { id: 131 as Id<Flacco>, combo: [ARC_LEFT, ARC_RIGHT] },
+    { id: 132 as Id<Flacco>, combo: [WING_UP, ARC_LEFT, ARC_RIGHT] },
+    { id: 133 as Id<Flacco>, combo: [BIRD_UP, ARC_LEFT, ARC_RIGHT] },
+    { id: 134 as Id<Flacco>, combo: [WING_DOWN, TICK_UP, ARC_LEFT, ARC_RIGHT] },
+    { id: 135 as Id<Flacco>, combo: [TICK_UP, ARC_LEFT, ARC_RIGHT] },
+    { id: 136 as Id<Flacco>, combo: [WING_DOWN, TICK_DOWN, ARC_LEFT, BARB_RIGHT] },
+    { id: 137 as Id<Flacco>, combo: [TICK_DOWN, ARC_LEFT, BARB_RIGHT] },
+    { id: 138 as Id<Flacco>, combo: [WING_UP, TICK_DOWN, ARC_LEFT, BARB_RIGHT] },
+    { id: 139 as Id<Flacco>, combo: [BARB_RIGHT, BARB_RIGHT] },
+    { id: 140 as Id<Flacco>, combo: [WING_DOWN, ARC_LEFT, BARB_RIGHT] },
+    { id: 141 as Id<Flacco>, combo: [ARC_LEFT, BARB_RIGHT] },
+    { id: 142 as Id<Flacco>, combo: [WING_UP, ARC_LEFT, BARB_RIGHT] },
+    { id: 143 as Id<Flacco>, combo: [BIRD_UP, ARC_LEFT, BARB_RIGHT] },
+    { id: 144 as Id<Flacco>, combo: [BIRD_DOWN, SCROLL_LEFT, BARB_RIGHT, BARB_RIGHT] },
+    { id: 145 as Id<Flacco>, combo: [WING_DOWN, SCROLL_LEFT, BARB_RIGHT, BARB_RIGHT] },
+    { id: 146 as Id<Flacco>, combo: [SCROLL_LEFT, BARB_RIGHT, BARB_RIGHT] },
+    { id: 147 as Id<Flacco>, combo: [WING_UP, SCROLL_LEFT, BARB_RIGHT, BARB_RIGHT] },
+    { id: 148 as Id<Flacco>, combo: [BIRD_UP, SCROLL_LEFT, BARB_RIGHT, BARB_RIGHT] },
 ]
 
 export {
     FLACCOS,
+    WING_UP,
+    WING_DOWN,
+    BIRD_UP,
+    BIRD_DOWN,
+    TICK_DOWN,
+    TICK_UP,
+    SCROLL_LEFT,
+    SCROLL_RIGHT,
+    BOATHOOK_LEFT,
+    BOATHOOK_RIGHT,
+    ARC_RIGHT,
+    ARC_LEFT,
+    BARB_LEFT,
+    BARB_RIGHT,
 }

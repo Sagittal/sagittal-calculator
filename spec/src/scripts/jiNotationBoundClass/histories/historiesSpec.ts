@@ -1,4 +1,4 @@
-import { Monzo, Name, Scamon, HALF_SCALER } from "../../../../../src/general"
+import { HALF_SCALER, Monzo, Name, Scamon } from "../../../../../src/general"
 import { APOTOME } from "../../../../../src/sagittal"
 import { BoundClass, BoundType, JiNotationBoundClass, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 import { EXTREME_EDA, INSANE_EDA, MEDIUM_EDA, ULTRA_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"

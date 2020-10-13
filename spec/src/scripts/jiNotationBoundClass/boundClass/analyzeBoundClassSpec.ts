@@ -1,4 +1,4 @@
-import { Abs, Cents, Count, Id, Monzo, Multiplier, Name, Scamon, HALF_SCALER, Sum } from "../../../../../src/general"
+import { Abs, Cents, Count, HALF_SCALER, Id, Monzo, Multiplier, Name, Scamon, Sum } from "../../../../../src/general"
 import { APOTOME } from "../../../../../src/sagittal"
 import {
     BoundClass,

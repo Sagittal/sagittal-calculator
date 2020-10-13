@@ -1,4 +1,4 @@
-import { Cents, computePitchFromCents, Monzo, Name, Scamon, HALF_SCALER } from "../../../../../src/general"
+import { Cents, computePitchFromCents, HALF_SCALER, Monzo, Name, Scamon } from "../../../../../src/general"
 import { APOTOME } from "../../../../../src/sagittal"
 import { BoundClass, BoundType, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 import { HIGH_EDA, ULTRA_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"

@@ -20,6 +20,7 @@ type CommaClass = {
     representativeFlaccoId: Id<Flacco>,
 }
 
+// TODO: finish this
 /*
 type ElementProperties = {
     ascii: Ascii,

@@ -1,4 +1,4 @@
-import { Cents, Decimal, Monzo, Name, Scamon, HALF_SCALER } from "../../../../../src/general"
+import { Cents, Decimal, HALF_SCALER, Monzo, Name, Scamon } from "../../../../../src/general"
 import { CommaMean, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 import { computeJiNotationLevelCommaMeans } from "../../../../../src/scripts/jiNotationBoundClass/histories/levelCommaMeans"
 import { analyzePitch } from "../../../../helpers/src/general/music/analyzePitch"

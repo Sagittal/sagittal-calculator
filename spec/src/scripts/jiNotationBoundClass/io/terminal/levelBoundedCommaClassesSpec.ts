@@ -1,4 +1,4 @@
-import { Abs, Cents, Id, Monzo, Multiplier, Name, Scamon, HALF_SCALER } from "../../../../../../src/general"
+import { Abs, Cents, HALF_SCALER, Id, Monzo, Multiplier, Name, Scamon } from "../../../../../../src/general"
 import { APOTOME, BoundType, CommaMean, InaMidpoint, SizeCategoryBound } from "../../../../../../src/sagittal"
 import { CommaClass } from "../../../../../../src/sagittal/notations"
 import { Ina, JiNotationBoundClass, JiNotationLevel } from "../../../../../../src/sagittal/notations/ji"

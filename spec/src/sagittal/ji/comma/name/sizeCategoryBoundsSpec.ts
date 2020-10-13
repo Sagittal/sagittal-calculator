@@ -1,6 +1,6 @@
 // tslint:disable comment-format
 
-import { Cents, Decimal, EMPTY_MONZO, Monzo, Scamon, HALF_SCALER } from "../../../../../../src/general"
+import { Cents, Decimal, EMPTY_MONZO, HALF_SCALER, Monzo, Scamon } from "../../../../../../src/general"
 import { APOTOME, SizeCategoryBound, SIZE_CATEGORY_BOUNDS } from "../../../../../../src/sagittal"
 import { analyzePitch } from "../../../../../helpers/src/general/music/analyzePitch"
 import { PitchAnalysis } from "../../../../../helpers/src/general/music/types"

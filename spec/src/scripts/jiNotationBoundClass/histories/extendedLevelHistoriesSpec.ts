@@ -1,4 +1,4 @@
-import { Name, Scamon, HALF_SCALER } from "../../../../../src/general"
+import { HALF_SCALER, Name, Scamon } from "../../../../../src/general"
 import { APOTOME } from "../../../../../src/sagittal"
 import { BoundClass, BoundType, JiNotationBoundClass, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 import { EXTREME_EDA, HIGH_EDA, MEDIUM_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"
