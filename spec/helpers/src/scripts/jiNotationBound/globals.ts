@@ -5,9 +5,9 @@ import {
     INITIAL_RANK_COUNTS,
     jiNotationLevelsBestCumulativeHistoryRanks,
     jiNotationLevelsBestHistoryRanks,
-    rankBoundIndices,
+    rankBoundClassIndices,
     rankCounts,
-} from "../../../../../src/scripts/jiNotationBound/globals"
+} from "../../../../../src/scripts/jiNotationBoundClass/globals"
 
 afterEach((): void => {
     cleanObject(jiNotationLevelsBestHistoryRanks)
@@ -15,7 +15,7 @@ afterEach((): void => {
 
     setAllPropertiesOfObjectOnAnother({ objectToChange: rankCounts, objectWithProperties: INITIAL_RANK_COUNTS })
     setAllPropertiesOfObjectOnAnother({
-        objectToChange: rankBoundIndices,
+        objectToChange: rankBoundClassIndices,
         objectWithProperties: INITIAL_RANK_BOUND_INDICES,
     })
 })

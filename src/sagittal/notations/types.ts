@@ -1,6 +1,6 @@
 import { Apotome, Comma, Count, Direction, Id } from "../../general"
 import { Ascii, Unicode } from "../io"
-import { Bound } from "./ji"
+import { BoundClass } from "./ji"
 
 enum SymbolSubset {
     SAGITTAL_COMPATIBLE = "sagittalCompatible",
@@ -47,8 +47,12 @@ State of the art plans described here: http://forum.sagittal.org/viewtopic.php?p
 
 // Ranges from -2 to 2 apotomes
 interface NotationCaptureZoneAccidental {
-    commaClassId: Id<CommaClass>, // If anything is a "primary comma", it's a "compute" from this + dir + apotome count
-    boundClassId: Id<Bound>       // Yeah, rename Bound to BoundClass please.
+    // TODO: If anything is a "primary comma", it's a "compute" from this + dir + apotome count
+    //  - also, okay, interesting, I guess we don't need this yet for any current script group? kinda surprising...
+    //  Almost feel like we *should* be using it, like we're getting around it somehow. like maybe all the work we do
+    //  To compute the bounded symbols could be circiumvrented if we actually built this ability to generate these?
+    commaClassId: Id<CommaClass>,
+    boundClassId: Id<BoundClass>,
     commaDirection: Direction,
     apotomeCount: Count<Apotome>,
 

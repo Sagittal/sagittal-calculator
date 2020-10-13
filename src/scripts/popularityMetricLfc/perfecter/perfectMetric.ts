@@ -59,7 +59,7 @@ const recursiveSearchScopeAndMaybeUpdateBestMetric = async (
     const { nextLocalMinima, searchNextLocalMinOptions } =
         computeSearchNextLocalMinArguments(scope, options, searchScopeResults)
 
-    const nextLocalMinimaPromises: Promise<void>[] =
+    const nextLocalMinimaPromises: Array<Promise<void>> =
         nextLocalMinima.map((nextLocalMin: LocalMin, index: number): Promise<void> => {
             return searchNextLocalMin(nextLocalMin, { ...searchNextLocalMinOptions, index })
         })

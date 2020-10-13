@@ -5,9 +5,9 @@ import {
     CommaClass,
     getCommaClass,
     HALF_APOTOME,
-    JiNotationBound,
+    JiNotationBoundClass,
     JI_NOTATION,
-    JI_NOTATION_BOUNDS,
+    JI_NOTATION_BOUND_CLASSES,
 } from "../../../../../../src/sagittal"
 
 describe("half-apotome mirror", (): void => {
@@ -33,19 +33,19 @@ describe("half-apotome mirror", (): void => {
         }
     })
 
-    it("is the case that the bounds in the JI notation are symmetrical about the half-apotome mirror", (): void => {
-        const jiNotationBoundAtHalfApotomeMirrorIndex =
-            JI_NOTATION_BOUNDS.findIndex((jiNotationBound: JiNotationBound): boolean => {
-                return areScamonsEqual(jiNotationBound.pitch, HALF_APOTOME)
+    it("is the case that the bound classes in the JI notation are symmetrical about the half-apotome mirror                   ", (): void => {
+        const jiNotationBoundClassAtHalfApotomeMirrorIndex =
+            JI_NOTATION_BOUND_CLASSES.findIndex((jiNotationBoundClass: JiNotationBoundClass): boolean => {
+                return areScamonsEqual(jiNotationBoundClass.pitch, HALF_APOTOME)
             })
 
         let indexOffset = 1
-        while (jiNotationBoundAtHalfApotomeMirrorIndex + indexOffset < JI_NOTATION_BOUNDS.length) {
-            const index = jiNotationBoundAtHalfApotomeMirrorIndex + indexOffset
-            const mirroredIndex = jiNotationBoundAtHalfApotomeMirrorIndex - indexOffset
+        while (jiNotationBoundClassAtHalfApotomeMirrorIndex + indexOffset < JI_NOTATION_BOUND_CLASSES.length) {
+            const index = jiNotationBoundClassAtHalfApotomeMirrorIndex + indexOffset
+            const mirroredIndex = jiNotationBoundClassAtHalfApotomeMirrorIndex - indexOffset
 
-            const jiNotationBound = JI_NOTATION_BOUNDS[ index ]
-            const mirroredBound = JI_NOTATION_BOUNDS[ mirroredIndex ]
+            const jiNotationBound = JI_NOTATION_BOUND_CLASSES[ index ]
+            const mirroredBound = JI_NOTATION_BOUND_CLASSES[ mirroredIndex ]
 
             const actual = subtractScamons(jiNotationBound.pitch, HALF_APOTOME)
             const expected = subtractScamons(HALF_APOTOME, mirroredBound.pitch)

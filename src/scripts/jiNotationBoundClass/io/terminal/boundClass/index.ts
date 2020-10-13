@@ -1,0 +1,1 @@
+export { formatJiNotationBoundClass } from "./formatBoundClass"

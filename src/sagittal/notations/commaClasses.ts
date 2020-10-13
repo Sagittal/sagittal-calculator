@@ -10,6 +10,8 @@ const PYTHAGOREAN_COMMA_CLASS: CommaClass = {
     monzo: [-19, 12],
 } as CommaClass
 
+// TODO: cut this off at the half-apotome and see what chaos ensues in the script groups!
+
 const COMMA_CLASSES: CommaClass[] = [
     UNISON_COMMA_CLASS,
     { id: 1 as Id<CommaClass>, monzo: [12, -2, -1, -1, 0, -1] },

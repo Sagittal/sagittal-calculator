@@ -1,14 +1,14 @@
 export { MAX_SINGLE_SHAFT_POSITION } from "./intervals"
 export {
     computeMaybeCommaClassId,
-    JiNotationBound,
+    JiNotationBoundClass,
     formatJiNotationLevel,
     Ina,
     INA_SIZES,
-    JI_NOTATION_BOUNDS,
+    JI_NOTATION_BOUND_CLASSES,
     JiNotationLevel,
     JI_NOTATION_LEVELS,
-    JI_NOTATION_LEVELS_BOUNDS,
+    JI_NOTATION_LEVELS_BOUND_CLASSES,
     JI_NOTATION_LEVELS_COMMA_CLASS_IDS,
     JI_NOTATION_LEVEL_EDAS,
     Mina,
@@ -19,7 +19,7 @@ export {
     JI_NOTATION,
     computeSecondaryCommaZone,
     BoundType,
-    Bound,
+    BoundClass,
     InaMidpoint,
     CommaMean,
 } from "./ji"

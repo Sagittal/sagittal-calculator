@@ -11,7 +11,7 @@ const solverStatus: SolverStatus = JSON.parse(JSON.stringify(INITIAL_SOLVER_STAT
 
 const bestMetrics: Map<Name<Metric>, Metric> = new Map()
 
-const metricNames: Name<Metric>[] = []
+const metricNames: Array<Name<Metric>> = []
 
 const memoizedSubmetricChunkCombinations: Array<Combinations<Chunk<Submetric>>> = []
 const memoizedParameterChunkCombinations: Array<Combinations<Chunk<Parameter>>> = []

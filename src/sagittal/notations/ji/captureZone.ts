@@ -5,14 +5,14 @@ import { CommaClass } from "../types"
 import { formatJiNotationLevel } from "./formatLevel"
 import { getIntroducingJiNotationLevel } from "./introducingJiNotationLevel"
 import { isWithinJiNotationLevel } from "./isWithinLevel"
-import { JI_NOTATION_LEVELS_BOUNDS } from "./levelsBounds"
-import { JiNotationBound, JiNotationLevel } from "./types"
+import { JI_NOTATION_LEVELS_BOUND_CLASSES } from "./levelsBoundClasses"
+import { JiNotationBoundClass, JiNotationLevel } from "./types"
 
 const computeCaptureZone = (
     commaClassId: Id<CommaClass>,
     jiNotationLevel: JiNotationLevel = JiNotationLevel.EXTREME,
 ): Maybe<Zone> => {
-    const jiNotationLevelBounds = JI_NOTATION_LEVELS_BOUNDS[ jiNotationLevel ]
+    const jiNotationLevelBoundClasses = JI_NOTATION_LEVELS_BOUND_CLASSES[ jiNotationLevel ]
 
     const introducingJiNotationLevel = getIntroducingJiNotationLevel(commaClassId)
     if (!isWithinJiNotationLevel(introducingJiNotationLevel, jiNotationLevel)) {
@@ -21,20 +21,20 @@ const computeCaptureZone = (
 
     const commaClass = getCommaClass(commaClassId)
 
-    const indexOfBoundJustAboveCommaAtThisLevel = jiNotationLevelBounds
-        .findIndex((jiNotationBound: JiNotationBound): boolean => {
-            return isScamonGreater(jiNotationBound.pitch, commaClass)
+    const indexOfBoundClassJustAboveCommaAtThisLevel = jiNotationLevelBoundClasses
+        .findIndex((jiNotationBoundClass: JiNotationBoundClass): boolean => {
+            return isScamonGreater(jiNotationBoundClass.pitch, commaClass)
         })
-    const indexOfJiNotationBoundJustBelowCommaClassAtThisLevel = indexOfBoundJustAboveCommaAtThisLevel - 1
+    const indexOfJiNotationBoundJustBelowCommaClassAtThisLevel = indexOfBoundClassJustAboveCommaAtThisLevel - 1
 
-    const lowerBound = jiNotationLevelBounds[ indexOfJiNotationBoundJustBelowCommaClassAtThisLevel ]
-    const lowerBoundPitch = isUndefined(lowerBound) ?
+    const lowerBoundClass = jiNotationLevelBoundClasses[ indexOfJiNotationBoundJustBelowCommaClassAtThisLevel ]
+    const lowerBoundClassPitch = isUndefined(lowerBoundClass) ?
         UNISON :
-        lowerBound.pitch as Scamon as Min<Scamon>
-    const upperBoundPitch =
-        jiNotationLevelBounds[ indexOfBoundJustAboveCommaAtThisLevel ].pitch as Scamon as Max<Scamon>
+        lowerBoundClass.pitch as Scamon as Min<Scamon>
+    const upperBoundClassPitch =
+        jiNotationLevelBoundClasses[ indexOfBoundClassJustAboveCommaAtThisLevel ].pitch as Scamon as Max<Scamon>
 
-    return [lowerBoundPitch, upperBoundPitch] as Zone<CommaClass>
+    return [lowerBoundClassPitch, upperBoundClassPitch] as Zone<CommaClass>
 }
 
 export {

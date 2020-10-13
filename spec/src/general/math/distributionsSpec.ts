@@ -455,7 +455,7 @@ describe("computeDistributions", (): void => {
         const actual = computeDistributions(array, binCount)
 
         expect(actual.length).toBe(2)
-        const expected: Distribution<string>[] = [
+        const expected: Array<Distribution<string>> = [
             [
                 ["a"],
                 [],
@@ -464,7 +464,7 @@ describe("computeDistributions", (): void => {
                 [],
                 ["a"],
             ],
-        ] as Distribution<string>[]
+        ] as Array<Distribution<string>>
         expect(actual).toEqual(expected)
     })
 })

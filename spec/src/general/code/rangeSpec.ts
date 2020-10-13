@@ -7,7 +7,7 @@ describe("computeRange", (): void => {
 
         const actual = computeRange(firstParameter)
 
-        const expected = [0, 1, 2] as Decimal<{ integer: true }>[]
+        const expected = [0, 1, 2] as Array<Decimal<{ integer: true }>>
         expect(actual).toEqual(expected)
     })
 
@@ -17,7 +17,7 @@ describe("computeRange", (): void => {
 
         const actual = computeRange(firstParameter, secondParameter)
 
-        const expected = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6] as Decimal<{ integer: true }>[]
+        const expected = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6] as Array<Decimal<{ integer: true }>>
         expect(actual).toEqual(expected)
     })
 })

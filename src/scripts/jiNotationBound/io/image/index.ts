@@ -1,1 +1,0 @@
-export { computeJiNotationBoundsImage } from "./bounds"

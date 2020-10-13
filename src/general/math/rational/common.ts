@@ -63,7 +63,9 @@ const computeCommon = (
     return recurseCommon(commonFunction, ...integerDecimals)
 }
 
-const computeLeastCommonMultiple = (...integerDecimals: Decimal<{ integer: true }>[]): Decimal<{ integer: true }> =>
+const computeLeastCommonMultiple = (
+    ...integerDecimals: Array<Decimal<{ integer: true }>>
+): Decimal<{ integer: true }> =>
     computeCommon(integerDecimals, computeLowestCommonMultipleOfTwoIntegerDecimals)
 
 const computeGreatestCommonDivisor = <T extends Decimal<{ integer: true }>>(...integerDecimals: T[]): Divisor<T> =>

@@ -44,7 +44,7 @@ describe("computeDynamicParameterValueIndices", (): void => {
             submetricIndex,
         })
 
-        const expected = [4, 3] as Index<ParameterValue>[]
+        const expected = [4, 3] as Array<Index<ParameterValue>>
         expect(actual).toEqual(expected)
     })
 })

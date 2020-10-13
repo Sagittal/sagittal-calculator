@@ -56,7 +56,7 @@ describe("combineSubmetricsPossibilitiesIntoSamples", (): void => {
         // Now remember: submetric zero is the "all bins" one, so that's why there's actually only two submetrics
         // In each of the output results, and a possibility from submetric zero is spread into each of them,
         // But whatever possibility it is, it is spread the same one across all of them
-        const submetricsPossibilities: Combination<SubmetricPossibility>[] = [
+        const submetricsPossibilities: Array<Combination<SubmetricPossibility>> = [
             [
                 submetricZeroPossibilityA,
                 submetricZeroPossibilityB,

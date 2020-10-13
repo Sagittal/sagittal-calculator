@@ -33,10 +33,10 @@ type InaMidpoint<T extends NumericProperties = {}> = {
     pitch: Scamon<T & { rational: false }>,
 }
 
-type Bound<T extends NumericProperties = {}> = InaMidpoint<T> | CommaMean<T> | SizeCategoryBound<T>
+type BoundClass<T extends NumericProperties = {}> = InaMidpoint<T> | CommaMean<T> | SizeCategoryBound<T>
 
-type JiNotationBound<T extends NumericProperties = {}> = Bound<T> & {
-    id: Id<JiNotationBound>,
+type JiNotationBoundClass<T extends NumericProperties = {}> = BoundClass<T> & {
+    id: Id<JiNotationBoundClass>,
     jiNotationLevels: JiNotationLevel[],
     boundType: BoundType,
 }
@@ -48,10 +48,10 @@ export {
     Highina,
     Medina,
     JiNotationLevel,
-    JiNotationBound,
+    JiNotationBoundClass,
     Ina,
     BoundType,
     CommaMean,
     InaMidpoint,
-    Bound,
+    BoundClass,
 }
