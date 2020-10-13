@@ -20,35 +20,27 @@ type CommaClass = {
     representativeFlaccoId: Id<Flacco>,
 }
 
-// TODO: finish this
-/*
-type ElementProperties = {
-    ascii: Ascii,
-}
-later use this ^^^ instead of Ascii directly so it can have primary comma etc.
- */
-type Elemental = string & { _ElementBrand: boolean }
-type Flag = Elemental & { _FlagBrand: boolean }
-type Accent = Elemental & { _AccentBrand: boolean }
-type Shaft = Elemental & { _ShaftBrand: boolean }
-type Element = Flag | Accent | Shaft
-type SagittalSymbol = Elemental & { _SymbolBrand: boolean }
+type Element = string & { _ElementBrand: boolean }
+type Flag = Element & { _FlagBrand: boolean }
+type Accent = Element & { _AccentBrand: boolean }
+type Shaft = Element & { _ShaftBrand: boolean }
+
+type SagittalSymbol = string & { _SymbolBrand: boolean }
+
+type Core = Flag[]
 
 // Flag and Accent Combination; basically a "symbol class" (see: http://forum.sagittal.org/viewtopic.php?p=2474#p2474)
-type Flacco = {
+interface Flacco {
     id: Id<Flacco>,
     combo: Array<Flag | Accent>,
 }
 
-/*
-Notation = {
+// State of the art plans described here: http://forum.sagittal.org/viewtopic.php?p=2492#p2492
+interface Notation {
     boundClassIds: Array<Id<BoundClass>>,
     commaClassIds: Array<Id<CommaClass>>,
-    flAcCoIds: Array<Id<FlAcCo>>,
+    flaccoIds: Array<Id<Flacco>>,
 }
-
-State of the art plans described here: http://forum.sagittal.org/viewtopic.php?p=2492#p2492
- */
 
 // Ranges from -2 to 2 apotomes
 interface NotationCaptureZoneAccidental {
@@ -82,4 +74,5 @@ export {
     Shaft,
     Element,
     SagittalSymbol,
+    Core,
 }
