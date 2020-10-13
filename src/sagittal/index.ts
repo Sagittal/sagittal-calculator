@@ -1,4 +1,4 @@
-import { FLACCO_SUBSETS_SORTED_BY_SIZE } from "./notations/flaccoSubsets"
+import { FLACCO_SUBSETS_SORTED_BY_SIZE } from "./notations"
 
 export {
     analyzeComma,

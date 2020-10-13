@@ -1,8 +1,8 @@
 import { Id, Index, Two3FreeClass } from "../../../general"
 import {
     CommaClass,
-    FLACCO_SUBSETS_SORTED_BY_SIZE,
     FlaccoSubset,
+    FLACCO_SUBSETS_SORTED_BY_SIZE,
     getCommaClass,
     getSmallestFlaccoSubset,
 } from "../../../sagittal"
