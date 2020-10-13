@@ -1,3 +1,5 @@
+import { FLACCO_SUBSETS_SORTED_BY_SIZE } from "./notations/flaccoSubsets"
+
 export {
     analyzeComma,
     JiPitchAnalysis,
@@ -50,7 +52,8 @@ export {
     Ina,
     INA_SIZES,
     JI_NOTATION_BOUND_CLASSES,
-    SYMBOL_SUBSETS,
+    FLACCO_SUBSETS,
+    FLACCO_SUBSETS_SORTED_BY_SIZE,
     JiNotationLevel,
     JI_NOTATION_LEVEL_EDAS,
     JI_NOTATION_LEVELS,
@@ -66,8 +69,8 @@ export {
     getCommaClass,
     getMinaName,
     JI_NOTATION,
-    getSmallestSymbolSubset,
-    SymbolSubset,
+    getSmallestFlaccoSubset,
+    FlaccoSubset,
     computeSecondaryCommaZone,
     BoundType,
     BoundClass,

@@ -28,7 +28,7 @@ const computeJiNotationLevelBoundedCommaClassIdsWithDistances = (
                 .map(
                     (commaClass: Maybe<CommaClass>): Maybe<BoundedCommaClassIdWithDistances> => {
                         if (commaClass) {
-                            const distance: Abs<Cents> = abs(subtractPitch(pitch, commaClass))
+                            const distance: Abs<Cents> = abs(subtractPitch(pitch, commaClass.pitch))
 
                             return {
                                 id: commaClass.id,

@@ -1,92 +1,93 @@
-import { Ascii } from "../../../../src/sagittal/io"
-import { getRepresentativeSymbol, SymbolSubset } from "../../../../src/sagittal/notations"
-import { SYMBOL_SUBSET_COMMA_CLASS_IDS } from "../../../../src/sagittal/notations/symbolSubsetCommaClassIds"
+import { FlaccoSubset, FLACCO_SUBSETS, SagittalSymbol } from "../../../../src/sagittal/notations"
+import { getFlacco } from "../../../../src/sagittal/notations/flacco"
+import { computeSymbolFromFlacco } from "../../../../src/sagittal/notations/symbolFromFlacco"
 
-describe("SYMBOL_SUBSET_COMMA_CLASS_IDS", (): void => {
-    const subject = (symbolSubset: SymbolSubset): Ascii[] => SYMBOL_SUBSET_COMMA_CLASS_IDS[ symbolSubset ]
-        .map(getRepresentativeSymbol) as string[] as Ascii[]
+describe("FLACCO_SUBSETS", (): void => {
+    const subject = (flaccoSubset: FlaccoSubset): SagittalSymbol[] => FLACCO_SUBSETS[ flaccoSubset ]
+        .map(getFlacco)
+        .map(computeSymbolFromFlacco)
 
-    it("has the correct comma classes in Sagittal-compatibles", (): void => {
-        const symbolSubset = SymbolSubset.SAGITTAL_COMPATIBLE
+    it("has the correct flaccos in the Sagittal-compatibles subset", (): void => {
+        const flaccoSubset = FlaccoSubset.SAGITTAL_COMPATIBLE
 
-        const actual: Ascii[] = subject(symbolSubset)
+        const actual: SagittalSymbol[] = subject(flaccoSubset)
 
         const expected = [
             "(|//|)",
-        ] as Ascii[]
+        ] as SagittalSymbol[]
         expect(actual.length).toEqual(1)
         expect(actual).toEqual(expected)
     })
 
-    it("has the correct comma classes in Spartan", (): void => {
-        const symbolSubset = SymbolSubset.SPARTAN
+    it("has the correct flaccos in the Spartan subset", (): void => {
+        const flaccoSubset = FlaccoSubset.SPARTAN
 
-        const actual: Ascii[] = subject(symbolSubset)
+        const actual: SagittalSymbol[] = subject(flaccoSubset)
 
         const expected = [
             "|(", "/|", "|)", "//|", "/|)", "/|\\", "(|)", "(|\\",
-        ] as Ascii[]
+        ] as SagittalSymbol[]
         expect(actual.length).toEqual(8)
         expect(actual).toEqual(expected)
     })
 
-    it("has the correct comma classes in Athenian", (): void => {
-        const symbolSubset = SymbolSubset.ATHENIAN
+    it("has the correct flaccos in the Athenian subset", (): void => {
+        const flaccoSubset = FlaccoSubset.ATHENIAN
 
-        const actual: Ascii[] = subject(symbolSubset)
+        const actual: SagittalSymbol[] = subject(flaccoSubset)
 
         const expected = [
             "|(", ")|(", "~|(", "/|", "|)", "|\\", "(|", "(|(", "//|", "/|)", "/|\\", "(|)", "(|\\",
-        ] as Ascii[]
+        ] as SagittalSymbol[]
         expect(actual.length).toEqual(13)
         expect(actual).toEqual(expected)
     })
 
-    it("has the correct comma classes in Trojan", (): void => {
-        const symbolSubset = SymbolSubset.TROJAN
+    it("has the correct flaccos in the Trojan subset", (): void => {
+        const flaccoSubset = FlaccoSubset.TROJAN
 
-        const actual: Ascii[] = subject(symbolSubset)
+        const actual: SagittalSymbol[] = subject(flaccoSubset)
 
         const expected = [
             "~|(", ")/|", "/|", "(|", "|~", "|)", "|\\", "/|~", "/|)", "/|\\", "(|\\",
-        ] as Ascii[]
+        ] as SagittalSymbol[]
         expect(actual.length).toEqual(11)
         expect(actual).toEqual(expected)
     })
 
-    it("has the correct comma classes in Promethean", (): void => {
-        const symbolSubset = SymbolSubset.PROMETHEAN
+    it("has the correct flaccos in the Promethean subset", (): void => {
+        const flaccoSubset = FlaccoSubset.PROMETHEAN
 
-        const actual: Ascii[] = subject(symbolSubset)
+        const actual: SagittalSymbol[] = subject(flaccoSubset)
 
         const expected = [
             ")|", "|(", "~|", ")|(", ")~|", "~|(", "|~", "~~|", ")|~", "/|", ")/|", "|)", ")|)", "|\\", "(|",
             "~|)", "/|~", "(|(", "~|\\", "//|", ")//|", "/|)", "(|~", "/|\\", "(/|", ")/|\\", "|\\)", "(|)", "|\\\\",
             "(|\\", ")|\\\\",
-        ] as Ascii[]
+        ] as SagittalSymbol[]
         expect(actual.length).toEqual(31)
         expect(actual).toEqual(expected)
     })
 
-    it("has the correct comma classes in Herculean", (): void => {
-        const symbolSubset = SymbolSubset.HERCULEAN
+    it("has the correct flaccos in the Herculean subset", (): void => {
+        const flaccoSubset = FlaccoSubset.HERCULEAN
 
-        const actual: Ascii[] = subject(symbolSubset)
+        const actual: SagittalSymbol[] = subject(flaccoSubset)
 
         const expected = [
             ".)|", "'|", ")|", "|(", ".~|", "'|(", "~|", ")|(", "')|(", ")~|", ".~|(", "~|(", "|~", "~~|", "./|",
             ")|~", "/|", ".)/|", "'/|", ")/|", ".|)", "|)", "'|)", ")|)", ".(|", "|\\", "(|", "'(|", "~|)", ".(|(",
             "'~|)", "/|~", "(|(", "~|\\", ".//|", "//|", "'//|", ")//|", "/|)", "(|~", "'/|)", "./|\\", "/|\\", "(/|",
             "'/|\\", ")/|\\", ".(|)", "|\\)", "(|)", "'(|)", ".(|\\", "|\\\\", "(|\\", ")|\\\\",
-        ] as Ascii[]
+        ] as SagittalSymbol[]
         expect(actual.length).toEqual(54)
         expect(actual).toEqual(expected)
     })
 
-    it("has the correct comma classes in Olympian", (): void => {
-        const symbolSubset = SymbolSubset.OLYMPIAN
+    it("has the correct flaccos in the Olympian subset", (): void => {
+        const flaccoSubset = FlaccoSubset.OLYMPIAN
 
-        const actual: Ascii[] = subject(symbolSubset)
+        const actual: SagittalSymbol[] = subject(flaccoSubset)
 
         const expected = [
             "`|", "``|", ".)|", "'|", "`'|", ",)|", ")|", "`)|", "``)|", ",,|(", ",|(", "|(", "`|(", ".~|", ",'|(",
@@ -101,7 +102,7 @@ describe("SYMBOL_SUBSET_COMMA_CLASS_IDS", (): void => {
             ",)/|\\", ")/|\\", "`)/|\\", "``)/|\\", ",.(|)", ".(|)", ",|\\)", "|\\)", "`|\\)", ",(|)", "(|)", "`(|)",
             "``(|)", ",'(|)", "'(|)", ",.(|\\", ".(|\\", "`.(|\\", "|\\\\", ",(|\\", "(|\\", "`(|\\", "``(|\\",
             ",,)|\\\\", ",)|\\\\", ")|\\\\", "`)|\\\\", "``)|\\\\",
-        ] as Ascii[]
+        ] as SagittalSymbol[]
         expect(actual.length).toEqual(148)
         expect(actual).toEqual(expected)
     })

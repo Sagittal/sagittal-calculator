@@ -1,5 +1,5 @@
-import { Cents, computePitchFromCents, Id, Monzo } from "../../../../../src/general"
-import { CommaClass, JiNotationLevel } from "../../../../../src/sagittal"
+import { Cents, Comma, computePitchFromCents, Monzo } from "../../../../../src/general"
+import { JiNotationLevel } from "../../../../../src/sagittal"
 import { computeBoundedCommaClassPositions } from "../../../../../src/scripts/jiNotationBoundClass/boundedPositions"
 
 describe("computeBoundedCommaClassPositions", (): void => {
@@ -10,16 +10,8 @@ describe("computeBoundedCommaClassPositions", (): void => {
         const actual = computeBoundedCommaClassPositions(position, jiNotationLevel)
 
         const expected = [
-            // |(       ~5.757802¢
-            {
-                id: 12 as Id<CommaClass>,
-                monzo: [10, -6, 1, -1] as Monzo<{ rational: true }>,
-            } as CommaClass,
-            // )|(      ~9.687960¢
-            {
-                id: 20 as Id<CommaClass>,
-                monzo: [7, -4, 0, 1, -1] as Monzo<{ rational: true }>,
-            } as CommaClass,
+            { monzo: [10, -6, 1, -1] as Monzo<{ rational: true }> } as Comma,           //  |(      ~5.757802¢
+            { monzo: [7, -4, 0, 1, -1] as Monzo<{ rational: true }> } as Comma,         // )|(      ~9.687960¢
         ]
 
         expect(actual).toEqual(expected)
@@ -32,11 +24,7 @@ describe("computeBoundedCommaClassPositions", (): void => {
         const actual = computeBoundedCommaClassPositions(position, jiNotationLevel)
 
         const expected = [
-            // )|\\     ~67.291062¢
-            {
-                id: 146 as Id<CommaClass>,
-                monzo: [-16, 11, 1, 0, 0, -1] as Monzo<{ rational: true }>,
-            } as CommaClass,
+            { monzo: [-16, 11, 1, 0, 0, -1] as Monzo<{ rational: true }> } as Comma,    // )|\\    ~67.291062¢
             undefined,
         ]
         expect(actual).toEqual(expected)

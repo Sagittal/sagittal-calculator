@@ -10,7 +10,7 @@ describe("average 2,3-free SoPFR", (): void => {
         const two3FreeSopfrs: Array<Sopfr<{ rough: 5 }>> =
             JI_NOTATION.map((commaClassId: Id<CommaClass>): Sopfr<{ rough: 5 }> => {
                 const commaClass = getCommaClass(commaClassId)
-                const two3FreeClass = compute23FreeClass(commaClass)
+                const two3FreeClass = compute23FreeClass(commaClass.pitch)
 
                 return computeRationalScamonSopfr(two3FreeClass)
             })

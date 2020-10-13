@@ -9,7 +9,7 @@ const computePositionCommaClassId = (position: Maybe<Scamon<{ rational: true }>>
     const commaClassId = JI_NOTATION.find((commaClassId: Id<CommaClass>): boolean => {
         const commaClass = getCommaClass(commaClassId)
 
-        return areScamonsEqual(commaClass, position)
+        return areScamonsEqual(commaClass.pitch, position)
     })
 
     if (!isUndefined(commaClassId)) {

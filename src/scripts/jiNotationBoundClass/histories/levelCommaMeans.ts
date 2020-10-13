@@ -27,7 +27,7 @@ const computeJiNotationLevelCommaMeans = (jiNotationLevel: JiNotationLevel): Com
             ].join(" ") as Name<CommaMean>
 
             return {
-                pitch: computeRationalScamonGeometricMean(commaClass, nextCommaClass),
+                pitch: computeRationalScamonGeometricMean(commaClass.pitch, nextCommaClass.pitch),
                 name,
             }
         })

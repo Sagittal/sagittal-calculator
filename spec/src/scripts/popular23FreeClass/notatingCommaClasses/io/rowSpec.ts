@@ -4,7 +4,7 @@ import { Row } from "../../../../../../src/general/io/table"
 import { Direction } from "../../../../../../src/general/math/numeric"
 import { Popularity, Votes } from "../../../../../../src/general/music/ji"
 import { N2D3P9 } from "../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
-import { CommaClass, SymbolSubset } from "../../../../../../src/sagittal/notations"
+import { CommaClass, FlaccoSubset } from "../../../../../../src/sagittal/notations"
 import {
     computePopular23FreeClassWithNotatingCommaClassesRow,
     NotatingCommaClassesProperties,
@@ -18,7 +18,7 @@ describe("computePopular23FreeClassWithNotatingCommaClassesRow", (): void => {
         ...two3FreeClassAnalysisFixture,
         name: "7/5₍₂,₃₎" as Name<Two3FreeClass>,
         rank: 4 as Rank<Popular23FreeClass & NotatingCommaClassesProperties>,
-        notatingCommaClassSmallestSymbolSubsetIndices: [1, 3] as Array<Index<SymbolSubset>>,
+        notatingCommaClassSmallestFlaccoSubsetIndices: [1, 3] as Array<Index<FlaccoSubset>>,
         notatingCommaClassIds: [20, 40] as Array<Id<CommaClass>>,
         n2d3p9: 2 as N2D3P9,
         votes: 7 as Votes,
@@ -37,7 +37,7 @@ describe("computePopular23FreeClassWithNotatingCommaClassesRow", (): void => {
             "7/5₍₂,₃₎",             // 2,3-free class name
             "  2.000",              // N2D3P9
             "    )|(     ./|  ",    // Notating comma classes
-            "1, 3",                 // Notating comma classes smallest symbol subset indices
+            "1, 3",                 // Notating comma classes smallest flacco subset indices
             "4",                    // Estimated rank
             "3",                    // Actual rank
             "7",                    // Votes
@@ -56,7 +56,7 @@ describe("computePopular23FreeClassWithNotatingCommaClassesRow", (): void => {
             "[/pre][latex]\\frac{7}{5}_{\\scriptsize{(2,3)}}[/latex][pre]",     // 2,3-free class name
             "  2.000",                                                          // N2D3P9
             "[/pre]:)|(: :.::/|:[pre]",                                         // Notating comma classes
-            "1, 3",                                                             // Notating comma classes smallest symbol subset indices
+            "1, 3",                                                             // Notating comma classes smallest flacco subset indices
             "4",                                                                // Estimated rank
             "3",                                                                // Actual rank
             "7",                                                                // Votes

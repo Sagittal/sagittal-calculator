@@ -8,13 +8,13 @@ import {
     getIntroducingJiNotationLevel,
     getMinaName,
     getRepresentativeSymbol,
-    getSmallestSymbolSubset,
+    getSmallestFlaccoSubset,
 } from "../../../sagittal"
 import { CommaClassInfo } from "./types"
 
 const computeCommaClassInfo = (commaClassId: Id<CommaClass>): CommaClassInfo => {
     const commaClass = getCommaClass(commaClassId)
-    const commaAnalysis = analyzeComma(commaClass)
+    const commaAnalysis = analyzeComma(commaClass.pitch)
 
     const symbol = getRepresentativeSymbol(commaClassId)
     const ascii = computeAsciiFromSymbol(symbol)
@@ -24,14 +24,14 @@ const computeCommaClassInfo = (commaClassId: Id<CommaClass>): CommaClassInfo => 
 
     const minaName = getMinaName(commaClassId)
 
-    const smallestSymbolSubset = getSmallestSymbolSubset(commaClassId)
+    const smallestFlaccoSubset = getSmallestFlaccoSubset(commaClass.representativeFlaccoId)
 
     return {
         id: commaClassId,
         representativeSymbol: {
             ascii,
             unicode,
-            smallestSymbolSubset,
+            smallestFlaccoSubset,
         },
         minaName,
         introducingJiNotationLevel,

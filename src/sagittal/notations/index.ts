@@ -1,3 +1,5 @@
+import { FLACCO_SUBSETS_SORTED_BY_SIZE } from "./flaccoSubsets"
+
 export { MAX_SINGLE_SHAFT_POSITION } from "./intervals"
 export {
     computeMaybeCommaClassId,
@@ -25,12 +27,12 @@ export {
 } from "./ji"
 export {
     CommaClass,
-    SymbolSubset,
+    FlaccoSubset,
     Flavor,
     SagittalSymbol,
 } from "./types"
-export { COMMA_CLASSES, UNISON_COMMA_CLASS} from "./commaClasses"
-export { SYMBOL_SUBSETS } from "./symbolSubsets"
+export { COMMA_CLASSES, UNISON_COMMA_CLASS } from "./commaClasses"
+export { FLACCO_SUBSETS, FLACCO_SUBSETS_SORTED_BY_SIZE } from "./flaccoSubsets"
 export { getCommaClass } from "./commaClass"
-export { getRepresentativeSymbol } from "./representativeSymbolAscii"
-export { getSmallestSymbolSubset } from "./smallestSymbolSubset"
+export { getRepresentativeSymbol } from "./representativeSymbol"
+export { getSmallestFlaccoSubset } from "./smallestFlaccoSubset"

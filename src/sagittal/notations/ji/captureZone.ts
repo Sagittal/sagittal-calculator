@@ -23,7 +23,7 @@ const computeCaptureZone = (
 
     const indexOfBoundClassJustAboveCommaAtThisLevel = jiNotationLevelBoundClasses
         .findIndex((jiNotationBoundClass: JiNotationBoundClass): boolean => {
-            return isScamonGreater(jiNotationBoundClass.pitch, commaClass)
+            return isScamonGreater(jiNotationBoundClass.pitch, commaClass.pitch)
         })
     const indexOfJiNotationBoundJustBelowCommaClassAtThisLevel = indexOfBoundClassJustAboveCommaAtThisLevel - 1
 

@@ -1,5 +1,5 @@
 import { Id, Name } from "../../../general"
-import { Ascii, CommaAnalysis, CommaClass, JiNotationLevel, Mina, SymbolSubset, Unicode } from "../../../sagittal"
+import { Ascii, CommaAnalysis, CommaClass, FlaccoSubset, JiNotationLevel, Mina, Unicode } from "../../../sagittal"
 
 // TODO: I really think there's no need for this to be separate from a BoundedCommaClassInfo
 //  We currently calculate everything but the distances in one place, and then spread the distances and this stuff 
@@ -11,7 +11,7 @@ type CommaClassInfo = {
     representativeSymbol: {
         ascii: Ascii,
         unicode: Unicode,
-        smallestSymbolSubset: SymbolSubset,
+        smallestFlaccoSubset: FlaccoSubset,
     }
     introducingJiNotationLevel: JiNotationLevel,
     minaName: Name<Mina>,

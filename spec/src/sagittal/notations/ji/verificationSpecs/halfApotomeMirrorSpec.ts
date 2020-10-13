@@ -14,7 +14,7 @@ describe("half-apotome mirror", (): void => {
     it("is the case that the commas in the JI notation are symmetrical about the half-apotome mirror", (): void => {
         const jiNotationCommaClasses = JI_NOTATION.map(getCommaClass)
         const firstCommaClassGreaterThanHalfApotomeMirrorIndex = jiNotationCommaClasses.findIndex(
-            (commaClass: CommaClass): boolean => isScamonGreater(commaClass, HALF_APOTOME),
+            (commaClass: CommaClass): boolean => isScamonGreater(commaClass.pitch, HALF_APOTOME),
         )
 
         let indexOffset = 0
@@ -25,8 +25,8 @@ describe("half-apotome mirror", (): void => {
             const commaClass = jiNotationCommaClasses[ index ]
             const mirroredCommaClass = jiNotationCommaClasses[ mirroredIndex ]
 
-            const actual = subtractScamons(commaClass, HALF_APOTOME)
-            const expected = subtractScamons(HALF_APOTOME, mirroredCommaClass)
+            const actual = subtractScamons(commaClass.pitch, HALF_APOTOME)
+            const expected = subtractScamons(HALF_APOTOME, mirroredCommaClass.pitch)
             expect(actual).toEqualPitch(expected)
 
             indexOffset = increment(indexOffset)

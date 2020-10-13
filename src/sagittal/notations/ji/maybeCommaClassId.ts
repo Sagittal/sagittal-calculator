@@ -7,7 +7,7 @@ const computeMaybeCommaClassId = (jiPitch: Scamon<{ rational: true }>): Maybe<Id
     JI_NOTATION.find((commaClassId: Id<CommaClass>): boolean => {
         const commaClass = getCommaClass(commaClassId)
 
-        return areRationalScamonsEqual(commaClass, jiPitch)
+        return areRationalScamonsEqual(commaClass.pitch, jiPitch)
     })
 
 export {

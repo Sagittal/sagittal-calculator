@@ -11,7 +11,7 @@ const computePopular23FreeClassWithNotatingCommaClassesRow = (
         n2d3p9,
         rank: estimatedRank,
         popularityRank: actualRank,
-        notatingCommaClassSmallestSymbolSubsetIndices,
+        notatingCommaClassSmallestFlaccoSubsetIndices,
         notatingCommaClassIds,
         votes,
     } = popular23FreeClassWithNotatingCommaClasses
@@ -22,7 +22,7 @@ const computePopular23FreeClassWithNotatingCommaClassesRow = (
         notatingCommaClassIds.map((notatingCommaClassId: Id<CommaClass>): Formatted<Glyph> => {
             return formatCommaClass(notatingCommaClassId)
         }).join(SPACE).replace(/\[pre] \[\/pre]/g, " "),
-        notatingCommaClassSmallestSymbolSubsetIndices.join(", "),
+        notatingCommaClassSmallestFlaccoSubsetIndices.join(", "),
         estimatedRank.toString(),
         isUndefined(actualRank) ? "-" : actualRank.toString(),
         votes.toString(),

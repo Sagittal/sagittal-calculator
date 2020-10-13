@@ -14,7 +14,7 @@ const MEDIUM_LEVEL_COMMA_CLASS_IDS = [
 const HIGH_LEVEL_COMMA_CLASS_IDS = sort([
     ...MEDIUM_LEVEL_COMMA_CLASS_IDS,
     7, 18, 25, 34, 36, 41, 52, 65,
-    // 65 is an exception; all other comma classes introduced in the Athenian symbol subset are in the Medium level
+    // 65 is an exception; all other comma classes introduced in the Athenian flacco subset are in the Medium level
     67, 76, 81, 86, 99, 106, 117, 122, 128, 139, 146,
 ]) as Array<Id<CommaClass>>
 

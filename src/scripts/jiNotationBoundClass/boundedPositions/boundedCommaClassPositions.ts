@@ -11,7 +11,7 @@ const computeBoundedCommaClassPositions = (
 
     const jiNotationLevelCommaClassPositions: Scamon[] = jiNotationLevelCommaClassIds
         .map((jiNotationLevelCommaClassId: Id<CommaClass>): Scamon => {
-            return getCommaClass(jiNotationLevelCommaClassId)
+            return getCommaClass(jiNotationLevelCommaClassId).pitch
         })
 
     return computeNeighborPositions(position, jiNotationLevelCommaClassPositions) as BoundedCommaClassPositions

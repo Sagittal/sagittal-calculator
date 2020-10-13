@@ -1,5 +1,11 @@
 import { Id, Index, Two3FreeClass } from "../../../general"
-import { CommaClass, getSmallestSymbolSubset, SymbolSubset, SYMBOL_SUBSETS } from "../../../sagittal"
+import {
+    CommaClass,
+    FLACCO_SUBSETS_SORTED_BY_SIZE,
+    FlaccoSubset,
+    getCommaClass,
+    getSmallestFlaccoSubset,
+} from "../../../sagittal"
 import { computeNotatingCommaClassIds } from "./notatingCommaClassIds"
 import { NotatingCommaClassesProperties } from "./types"
 
@@ -8,15 +14,17 @@ const computeNotatingCommaClassesProperties = (
 ): NotatingCommaClassesProperties => {
     const notatingCommaClassIds = computeNotatingCommaClassIds(two3FreeClass)
 
-    const smallestSymbolSubsetIndices = notatingCommaClassIds
-        .map((commaClassId: Id<CommaClass>): Index<SymbolSubset> => {
+    const smallestFlaccoSubsetIndices = notatingCommaClassIds
+        .map((commaClassId: Id<CommaClass>): Index<FlaccoSubset> => {
+            const flaccoId = getCommaClass(commaClassId).representativeFlaccoId
+
             // This used to not include Trojan, and the tables that have been shared on the forum reflect that.
-            return SYMBOL_SUBSETS.indexOf(getSmallestSymbolSubset(commaClassId)) as Index<SymbolSubset>
+            return FLACCO_SUBSETS_SORTED_BY_SIZE.indexOf(getSmallestFlaccoSubset(flaccoId)) as Index<FlaccoSubset>
         })
 
     return {
         notatingCommaClassIds,
-        notatingCommaClassSmallestSymbolSubsetIndices: smallestSymbolSubsetIndices,
+        notatingCommaClassSmallestFlaccoSubsetIndices: smallestFlaccoSubsetIndices,
     }
 }
 

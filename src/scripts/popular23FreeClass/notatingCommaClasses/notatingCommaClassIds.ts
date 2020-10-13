@@ -8,7 +8,7 @@ const computeNotatingCommaClassIds = ({ monzo }: Scamon<{ rational: true }>): Ar
 
     JI_NOTATION.forEach((commaClassId: Id<CommaClass>): void => {
         const commaClass = getCommaClass(commaClassId)
-        const commaClassTwo3FreeMonzo = computeRoughRationalMonzo(commaClass.monzo, TWO_3_FREE)
+        const commaClassTwo3FreeMonzo = computeRoughRationalMonzo(commaClass.pitch.monzo, TWO_3_FREE)
 
         if (
             areMonzosEqual(two3FreeRationalMonzo, commaClassTwo3FreeMonzo) ||

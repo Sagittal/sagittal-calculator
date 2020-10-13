@@ -22,7 +22,7 @@ import {
 } from "../../../../../../src/general"
 import { ApotomeSlope, Ascii, BoundType, CommaClass, Ina, N2D3P9, TINA } from "../../../../../../src/sagittal"
 import { Unicode } from "../../../../../../src/sagittal/io"
-import { SymbolSubset } from "../../../../../../src/sagittal/notations"
+import { FlaccoSubset } from "../../../../../../src/sagittal/notations"
 import { JiNotationBoundClass, JiNotationLevel, Mina } from "../../../../../../src/sagittal/notations/ji"
 import { MINA, ULTRINA } from "../../../../../../src/sagittal/notations/ji/intervals"
 import { extractJiNotationBoundClassIdentifiers } from "../../../../../../src/scripts/jiNotationBoundClass/io/terminal/boundClassIdentifiers"
@@ -55,7 +55,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         representativeSymbol: {
                             ascii: ".)/|" as Ascii,
                             unicode: "" as Unicode,
-                            smallestSymbolSubset: SymbolSubset.HERCULEAN,
+                            smallestFlaccoSubset: FlaccoSubset.HERCULEAN,
                         },
                         minaName: "47" as Name<Mina>,
                         commaAnalysis: {
@@ -77,10 +77,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             decimal: 1.01333333302 as Decimal<{ rational: true }>,
                             cents: 22.930587 as Cents,
                             name: "19/25C" as Name<Comma>,
-                            pitch: {
-                                id: 47 as Id<CommaClass>,
-                                monzo: [2, -1, -2, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                            } as CommaClass,
+                            pitch: { monzo: [2, -1, -2, 0, 0, 0, 0, 1] as Monzo<{ rational: true }> } as Comma,
                         },
                         // Not the best example b/c ID and mina name are the same up to this point
                         id: 47 as Id<CommaClass>,
@@ -92,7 +89,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         representativeSymbol: {
                             ascii: "'/|" as Ascii,
                             unicode: "" as Unicode,
-                            smallestSymbolSubset: SymbolSubset.HERCULEAN,
+                            smallestFlaccoSubset: FlaccoSubset.HERCULEAN,
                         },
                         minaName: "48" as Name<Mina>,
                         commaAnalysis: {
@@ -114,10 +111,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             decimal: 1.01364326455 as Decimal<{ rational: true }>,
                             cents: 23.460010 as Cents,
                             name: "3C" as Name<Comma>,
-                            pitch: {
-                                id: 48 as Id<CommaClass>,
-                                monzo: [-19, 12] as Monzo<{ rational: true }>,
-                            } as CommaClass,
+                            pitch: { monzo: [-19, 12] as Monzo<{ rational: true }> } as Comma,
                         },
                         id: 48 as Id<CommaClass>,
                     },
@@ -130,7 +124,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         representativeSymbol: {
                             ascii: ".)/|" as Ascii,
                             unicode: "" as Unicode,
-                            smallestSymbolSubset: SymbolSubset.HERCULEAN,
+                            smallestFlaccoSubset: FlaccoSubset.HERCULEAN,
                         },
                         minaName: "47" as Name<Mina>,
                         commaAnalysis: {
@@ -152,10 +146,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             decimal: 1.01333333302 as Decimal<{ rational: true }>,
                             cents: 22.930587 as Cents,
                             name: "19/25C" as Name<Comma>,
-                            pitch: {
-                                id: 47 as Id<CommaClass>,
-                                monzo: [2, -1, -2, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                            } as CommaClass,
+                            pitch: { monzo: [2, -1, -2, 0, 0, 0, 0, 1] as Monzo<{ rational: true }> } as Comma,
                         },
                         id: 47 as Id<CommaClass>,
                     },
@@ -166,7 +157,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         representativeSymbol: {
                             ascii: "'/|" as Ascii,
                             unicode: "" as Unicode,
-                            smallestSymbolSubset: SymbolSubset.HERCULEAN,
+                            smallestFlaccoSubset: FlaccoSubset.HERCULEAN,
                         },
                         minaName: "48" as Name<Mina>,
                         commaAnalysis: {
@@ -188,10 +179,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             decimal: 1.01364326455 as Decimal<{ rational: true }>,
                             cents: 23.460010 as Cents,
                             name: "3C" as Name<Comma>,
-                            pitch: {
-                                id: 48 as Id<CommaClass>,
-                                monzo: [-19, 12] as Monzo<{ rational: true }>,
-                            } as CommaClass,
+                            pitch: { monzo: [-19, 12] as Monzo<{ rational: true }> } as Comma,
                         },
                         id: 48 as Id<CommaClass>,
                     },
@@ -204,7 +192,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         representativeSymbol: {
                             ascii: ".)/|" as Ascii,
                             unicode: "" as Unicode,
-                            smallestSymbolSubset: SymbolSubset.HERCULEAN,
+                            smallestFlaccoSubset: FlaccoSubset.HERCULEAN,
                         },
                         minaName: "47" as Name<Mina>,
                         commaAnalysis: {
@@ -226,10 +214,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             decimal: 1.01333333302 as Decimal<{ rational: true }>,
                             cents: 22.930587 as Cents,
                             name: "19/25C" as Name<Comma>,
-                            pitch: {
-                                id: 47 as Id<CommaClass>,
-                                monzo: [2, -1, -2, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                            } as CommaClass,
+                            pitch: { monzo: [2, -1, -2, 0, 0, 0, 0, 1] as Monzo<{ rational: true }> } as Comma,
                         },
                         id: 47 as Id<CommaClass>,
                     },
@@ -240,7 +225,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         representativeSymbol: {
                             ascii: "'/|" as Ascii,
                             unicode: "" as Unicode,
-                            smallestSymbolSubset: SymbolSubset.HERCULEAN,
+                            smallestFlaccoSubset: FlaccoSubset.HERCULEAN,
                         },
                         minaName: "48" as Name<Mina>,
                         commaAnalysis: {
@@ -262,10 +247,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             decimal: 1.01364326455 as Decimal<{ rational: true }>,
                             cents: 23.460010 as Cents,
                             name: "3C" as Name<Comma>,
-                            pitch: {
-                                id: 48 as Id<CommaClass>,
-                                monzo: [-19, 12] as Monzo<{ rational: true }>,
-                            } as CommaClass,
+                            pitch: { monzo: [-19, 12] as Monzo<{ rational: true }> } as Comma,
                         },
                         id: 48 as Id<CommaClass>,
                     },

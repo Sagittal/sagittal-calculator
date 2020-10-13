@@ -24,7 +24,7 @@ const findCommasSettings = parseFindCommasSettings()
 
 JI_NOTATION.forEach((commaClassId: Id<CommaClass>): void => {
     const commaClass = getCommaClass(commaClassId)
-    const commaName = computeCommaName(commaClass)
+    const commaName = computeCommaName(commaClass.pitch)
 
     saveLog(`\n\n${formatCommaClass(commaClassId)} ${commaName}\n\n` as Io, LogTarget.ALL)
 

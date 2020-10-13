@@ -2,7 +2,7 @@ import { Apotome, Comma, Count, Direction, Id } from "../../general"
 import { Ascii, Unicode } from "../io"
 import { BoundClass } from "./ji"
 
-enum SymbolSubset {
+enum FlaccoSubset {
     SAGITTAL_COMPATIBLE = "sagittalCompatible",
     SPARTAN = "spartan",
     ATHENIAN = "athenian",
@@ -14,7 +14,11 @@ enum SymbolSubset {
 }
 
 // Apotome-inversion comma class (repeats in a mirrored pattern at the half-apotome)
-type CommaClass = Comma & { id: Id<CommaClass> }
+type CommaClass = {
+    pitch: Comma,
+    id: Id<CommaClass>,
+    representativeFlaccoId: Id<Flacco>,
+}
 
 /*
 type ElementProperties = {
@@ -68,7 +72,7 @@ enum Flavor {
 }
 
 export {
-    SymbolSubset,
+    FlaccoSubset,
     CommaClass,
     Flavor,
     Flacco,

@@ -16,7 +16,7 @@ describe("max AAS per JI notation level", (): void => {
                     jiNotationLevelCommaClassId: Id<CommaClass>,
                 ): Max<Abs<ApotomeSlope>> => {
                     const commaClass = getCommaClass(jiNotationLevelCommaClassId)
-                    const apotomeSlope = abs(computeApotomeSlope(commaClass))
+                    const apotomeSlope = abs(computeApotomeSlope(commaClass.pitch))
 
                     return apotomeSlope > jiNotationLevelMaxAas ?
                         apotomeSlope as Max<Abs<ApotomeSlope>> :

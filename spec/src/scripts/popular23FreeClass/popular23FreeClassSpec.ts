@@ -2,7 +2,7 @@ import { Cents, Direction, Id, Index, Monzo, Rank, Two3FreeClass } from "../../.
 import { Popularity, Votes } from "../../../../src/general/music"
 import { Two3FreeClassAnalysis } from "../../../../src/sagittal/ji/two3FreeClass"
 import { N2D3P9 } from "../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
-import { CommaClass, SymbolSubset } from "../../../../src/sagittal/notations"
+import { CommaClass, FlaccoSubset } from "../../../../src/sagittal/notations"
 import { popular23FreeClassesScriptGroupSettings } from "../../../../src/scripts/popular23FreeClass/globals"
 import { computePopular23FreeClass } from "../../../../src/scripts/popular23FreeClass/popular23FreeClass"
 import { Popular23FreeClass } from "../../../../src/scripts/popular23FreeClass/types"
@@ -25,7 +25,7 @@ describe("computePopular23FreeClass", (): void => {
             popularityRank: 2 as Rank<Popularity>,
             votes: 5371 as Votes,
             notatingCommaClassIds: [4, 44] as Array<Id<CommaClass>>,
-            notatingCommaClassSmallestSymbolSubsetIndices: [5, 1] as Array<Index<SymbolSubset>>,
+            notatingCommaClassSmallestFlaccoSubsetIndices: [5, 1] as Array<Index<FlaccoSubset>>,
         }
         expect(actual).toEqual(expected)
     })
