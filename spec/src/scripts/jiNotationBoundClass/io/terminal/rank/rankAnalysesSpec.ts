@@ -24,7 +24,7 @@ describe("formatRankAnalyses", (): void => {
             "\n\n" +
             "comma mean event was worst-ranked bound class event:\n\ttotal: 25 bounds\n\tbounds: 3, 13, 16, 18, 24, 31, 35, 40, 47, 49, 52, 65, 66, 74, 79, 80, 81, 85, 105, 109, 118, 120, 126, 135, 139".cyan +
             "\n\n" +
-            "size category bound class event was worst-ranked bound class event:\n\ttotal: 2 bounds\n\tbounds: 96, 148".green
+            "size category bound event was worst-ranked bound class event:\n\ttotal: 2 bounds\n\tbounds: 96, 148".green
 
         expect(actual).toEqual(expected)
     })
