@@ -4,7 +4,7 @@ import { Quotient } from "../../../../../../src/general/math/numeric/quotient"
 import { computeScamonFromMonzo, Scamon } from "../../../../../../src/general/math/numeric/scamon"
 
 describe("computeScamonFromMonzo", (): void => {
-    it("when given a rational monzo, returns a Rational scamon with that monzo as its monzo", (): void => {
+    it("when given a rational monzo, returns a rational scamon with that monzo as its monzo", (): void => {
         const monzo = [0, 0, -2, 2] as Monzo<{ rational: true }>
 
         const actual = computeScamonFromMonzo(monzo)

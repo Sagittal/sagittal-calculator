@@ -7,7 +7,7 @@ import { analyzePitch } from "../../../../helpers/src/general/music/analyzePitch
 import { PitchAnalysis } from "../../../../helpers/src/general/music/types"
 
 describe("computeInaMidpoints", (): void => {
-    it("works (e.g.) for the Medium JI notation level, only including midpoints below the max position", (): void => {
+    it("works (e.g.) for the Medium JI notation level, only including midpoints below or at the max position                ", (): void => {
         const jiNotationLevel = JiNotationLevel.MEDIUM
 
         const actual = computeInaMidpoints(jiNotationLevel)
@@ -88,20 +88,6 @@ describe("computeInaMidpoints", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [10.5, MEDIUM_EDA],
-                },
-            },
-            {
-                name: "11.5°21" as Name<InaMidpoint>,
-                pitch: {
-                    monzo: APOTOME.monzo,
-                    scaler: [11.5, MEDIUM_EDA],
-                },
-            },
-            {
-                name: "12.5°21" as Name<InaMidpoint>,
-                pitch: {
-                    monzo: APOTOME.monzo,
-                    scaler: [12.5, MEDIUM_EDA],
                 },
             },
         ] as InaMidpoint[]

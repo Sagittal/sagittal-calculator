@@ -26,7 +26,7 @@ describe("isRationalScamonSmooth", (): void => {
 })
 
 describe("computeRationalScamonSmoothness", (): void => {
-    it("returns the greatest prime factor (AKA prime limit) of the given Rational scamon", (): void => {
+    it("returns the greatest prime factor (AKA prime limit) of the given rational scamon", (): void => {
         const rationalScamon = { monzo: [2, 3, 0, 0, 4] } as Scamon<{ rational: true }>
 
         const actual = computeRationalScamonSmoothness(rationalScamon)

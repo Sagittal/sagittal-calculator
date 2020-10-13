@@ -1,5 +1,5 @@
 import { Io, Px, UNISON } from "../../../../general"
-import { HALF_APOTOME, JI_NOTATION_LEVELS, JiNotationLevel } from "../../../../sagittal"
+import { HALF_APOTOME, JiNotationLevel, JI_NOTATION_LEVELS } from "../../../../sagittal"
 import { JI_NOTATION_LEVEL_BOTTOMS } from "./levelHeights"
 import { computeX } from "./x"
 

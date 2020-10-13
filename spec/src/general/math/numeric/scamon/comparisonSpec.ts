@@ -1,3 +1,4 @@
+import { SQRT_SCALER } from "../../../../../../src/general/math/irrational/scamon"
 import { Monzo } from "../../../../../../src/general/math/numeric/monzo"
 import { Quotient } from "../../../../../../src/general/math/numeric/quotient"
 import {
@@ -8,9 +9,11 @@ import {
     isScamonLesserOrEqual,
     Scamon,
 } from "../../../../../../src/general/math/numeric/scamon"
+import { APOTOME } from "../../../../../../src/sagittal"
+import { MEDIUM_EDA } from "../../../../../../src/sagittal/notations/ji/levelEdas"
 
 describe("areScamonsEqual", (): void => {
-    describe("for Rational scamons", (): void => {
+    describe("for rational scamons", (): void => {
         it("returns true if the monzos match", (): void => {
             const scamonA = { monzo: [0, 0, 1, -1] } as Scamon<{ rational: true }>
             const scamonB = { monzo: [0, 0, 1, -1] } as Scamon<{ rational: true }>
@@ -86,7 +89,7 @@ describe("areScamonsEqual", (): void => {
         })
     })
 
-    describe("for a combination of a Rational scamon and a irrational scamon", (): void => {
+    describe("for a combination of a rational scamon and a irrational scamon", (): void => {
         it("returns true if they are equivalent", (): void => {
             const scamonA = {
                 monzo: [0, 0, 1, -1] as Monzo<{ rational: true }>,
@@ -145,7 +148,7 @@ describe("isScamonGreater", (): void => {
         expect(actual).toBeFalsy()
     })
 
-    it("example of a Rational scamon and a irrational scamon which are quite close", (): void => {
+    it("example of a rational scamon and a irrational scamon which are quite close", (): void => {
         const scamon = { monzo: [-7, -1, 1, 1, 1] } as Scamon<{ rational: true }>
         const otherScamon = { monzo: [317, -200], scaler: [1, 2] } as Scamon<{ rational: false }>
 

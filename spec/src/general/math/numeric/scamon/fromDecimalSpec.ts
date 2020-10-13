@@ -9,7 +9,7 @@ import {
 } from "../../../../../../src/general/math/numeric/scamon"
 
 describe("computeScamonFromDecimal", (): void => {
-    it("when given a rational decimal, returns a Rational scamon", (): void => {
+    it("when given a rational decimal, returns a rational scamon", (): void => {
         const rationalDecimal = 84 as Decimal<{ rational: true }>
 
         const actual = computeScamonFromDecimal(rationalDecimal)
@@ -32,7 +32,7 @@ describe("computeScamonFromDecimal", (): void => {
         expect(actual).toBeCloseToObject(expected)
     })
 
-    it("when given a decimal which is not identified as rational or irrational, but can be construed as rational, returns a Rational scamon", (): void => {
+    it("when given a decimal which is not identified as rational or irrational, but can be construed as rational, returns a rational scamon", (): void => {
         const decimal = 15.94323 as Decimal
 
         const actual = computeScamonFromDecimal(decimal)
@@ -45,7 +45,7 @@ describe("computeScamonFromDecimal", (): void => {
 })
 
 describe("computeScamonFromQuotient", (): void => {
-    it("when given a rational quotient, returns a Rational scamon", (): void => {
+    it("when given a rational quotient, returns a rational scamon", (): void => {
         const quotient = [4, 3] as Quotient<{ rational: true }>
 
         const actual = computeScamonFromQuotient(quotient)

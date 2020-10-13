@@ -3,7 +3,7 @@ import { Scamon } from "../../../../../../src/general/math/numeric/scamon"
 import { computeRationalScamonFromRationalMonzo } from "../../../../../../src/general/math/rational/scamon"
 
 describe("computeRationalScamonFromRationalMonzo", (): void => {
-    it("returns a Rational scamon with the rational monzo as its monzo", (): void => {
+    it("returns a rational scamon with the rational monzo as its monzo", (): void => {
         const rationalMonzo = [0, 0, -2, 2] as Monzo<{ rational: true }>
 
         const actual = computeRationalScamonFromRationalMonzo(rationalMonzo)

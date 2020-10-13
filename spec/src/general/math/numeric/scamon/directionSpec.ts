@@ -5,7 +5,7 @@ import { Quotient } from "../../../../../../src/general/math/numeric/quotient"
 import { isScamonSub, isScamonSuper, isScamonUnison, Scamon } from "../../../../../../src/general/math/numeric/scamon"
 
 describe("isScamonSub", (): void => {
-    describe("for Rational scamons", (): void => {
+    describe("for rational scamons", (): void => {
         it("returns true if the monzo is sub", (): void => {
             const scamon = { monzo: [-1] } as Scamon<{ rational: true }>
 
@@ -68,7 +68,7 @@ describe("isScamonSub", (): void => {
 })
 
 describe("isScamonSuper", (): void => {
-    describe("for Rational scamons", (): void => {
+    describe("for rational scamons", (): void => {
         it("returns false if the monzo is sub", (): void => {
             const scamon = { monzo: [-1] } as Scamon<{ rational: true }>
 
@@ -131,7 +131,7 @@ describe("isScamonSuper", (): void => {
 })
 
 describe("isScamonUnison", (): void => {
-    describe("for Rational scamons", (): void => {
+    describe("for rational scamons", (): void => {
         it("returns false if the monzo is sub", (): void => {
             const scamon = { monzo: [-1] } as Scamon<{ rational: true }>
 
