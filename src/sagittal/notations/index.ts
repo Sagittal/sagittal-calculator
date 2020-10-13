@@ -28,7 +28,7 @@ export {
     Flavor,
     SagittalSymbol,
 } from "./types"
-export { COMMA_CLASSES, UNISON_COMMA_CLASS } from "./commaClasses"
+export { COMMA_CLASSES } from "./commaClasses"
 export { FLACCO_SUBSETS, FLACCO_SUBSETS_SORTED_BY_SIZE } from "./flaccoSubsets"
 export { getCommaClass } from "./commaClass"
 export { getRepresentativeSymbol } from "./representativeSymbol"

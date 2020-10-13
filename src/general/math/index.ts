@@ -140,4 +140,4 @@ export {
     isRationalScamonSmooth,
     computeRationalQuotientFromRationalScamon,
 } from "./rational"
-export { SQRT_SCALER, computeIrrationalDecimalFromScamon } from "./irrational"
+export { HALF_SCALER, computeIrrationalDecimalFromScamon } from "./irrational"

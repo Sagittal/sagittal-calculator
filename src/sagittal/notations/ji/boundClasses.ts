@@ -1,6 +1,6 @@
 // tslint:disable max-line-length
 
-import { Id, Monzo, Name, Scamon, SQRT_SCALER } from "../../../general"
+import { HALF_SCALER, Id, Monzo, Name, PYTHAGOREAN_LIMMA, Scamon } from "../../../general"
 import { APOTOME } from "../../constants"
 import { SizeCategoryBound } from "../../ji"
 import { INSANE_EDA } from "./levelEdas"
@@ -502,7 +502,7 @@ const JI_NOTATION_BOUND_CLASSES: JiNotationBoundClass[] = [
         name: "`'/| ,,)/|" as Name<CommaMean>,
         pitch: {
             monzo: [-16, 0, 3, 2, 1] as Monzo<{ rational: true }>,
-            scaler: SQRT_SCALER,
+            scaler: HALF_SCALER,
         } as Scamon<{ rational: false }>,
         boundType: BoundType.COMMA_MEAN,
         jiNotationLevels: [JiNotationLevel.ULTRA, JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
@@ -532,7 +532,7 @@ const JI_NOTATION_BOUND_CLASSES: JiNotationBoundClass[] = [
         name: ")/| ,.|)" as Name<CommaMean>,
         pitch: {
             monzo: [-4, -1, -1, 0, 0, 1, 0, 1] as Monzo<{ rational: true }>,
-            scaler: SQRT_SCALER,
+            scaler: HALF_SCALER,
         } as Scamon<{ rational: false }>,
         boundType: BoundType.COMMA_MEAN,
         jiNotationLevels: [JiNotationLevel.ULTRA, JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
@@ -752,7 +752,7 @@ const JI_NOTATION_BOUND_CLASSES: JiNotationBoundClass[] = [
         name: "'(| ,~|)" as Name<CommaMean>,
         pitch: {
             monzo: [4, -5, 2, -2, 0, 0, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-            scaler: SQRT_SCALER,
+            scaler: HALF_SCALER,
         } as Scamon<{ rational: false }>,
         boundType: BoundType.COMMA_MEAN,
         jiNotationLevels: [JiNotationLevel.MEDIUM, JiNotationLevel.ULTRA, JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
@@ -822,7 +822,7 @@ const JI_NOTATION_BOUND_CLASSES: JiNotationBoundClass[] = [
         name: "/|~ ,,(|(" as Name<CommaMean>,
         pitch: {
             monzo: [-6, 3, -1, 1, 0, -1, 0, 0, 1] as Monzo<{ rational: true }>,
-            scaler: SQRT_SCALER,
+            scaler: HALF_SCALER,
         } as Scamon<{ rational: false }>,
         boundType: BoundType.COMMA_MEAN,
         jiNotationLevels: [JiNotationLevel.HIGH, JiNotationLevel.ULTRA, JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
@@ -971,8 +971,8 @@ const JI_NOTATION_BOUND_CLASSES: JiNotationBoundClass[] = [
         id: 96 as Id<JiNotationBoundClass>,
         name: "S|M" as Name<SizeCategoryBound>,
         pitch: {
-            monzo: [8, -5] as Monzo<{ rational: true }>,
-            scaler: SQRT_SCALER,
+            monzo: PYTHAGOREAN_LIMMA.monzo,
+            scaler: HALF_SCALER,
         } as Scamon<{ rational: false }>,
         boundType: BoundType.SIZE_CATEGORY_BOUND,
         jiNotationLevels: [JiNotationLevel.MEDIUM, JiNotationLevel.HIGH, JiNotationLevel.ULTRA, JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
@@ -981,7 +981,7 @@ const JI_NOTATION_BOUND_CLASSES: JiNotationBoundClass[] = [
         id: 97 as Id<JiNotationBoundClass>,
         name: "324.5°809" as Name<InaMidpoint>,
         pitch: {
-            monzo: APOTOME.monzo as Monzo<{ rational: true }>,
+            monzo: APOTOME.monzo,
             scaler: [324.5, INSANE_EDA],
         } as Scamon<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
@@ -1102,7 +1102,7 @@ const JI_NOTATION_BOUND_CLASSES: JiNotationBoundClass[] = [
         name: "`'/|) ./|\\" as Name<CommaMean>,
         pitch: {
             monzo: [-4, -4, 3, 0, 1] as Monzo<{ rational: true }>,
-            scaler: SQRT_SCALER,
+            scaler: HALF_SCALER,
         } as Scamon<{ rational: false }>,
         boundType: BoundType.COMMA_MEAN,
         jiNotationLevels: [JiNotationLevel.MEDIUM, JiNotationLevel.ULTRA, JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
@@ -1192,7 +1192,7 @@ const JI_NOTATION_BOUND_CLASSES: JiNotationBoundClass[] = [
         name: "`(/| '/|\\" as Name<CommaMean>,
         pitch: {
             monzo: [-15, 9, 1, 0, 1, 0, 0, 0, 0, 0, -1] as Monzo<{ rational: true }>,
-            scaler: SQRT_SCALER,
+            scaler: HALF_SCALER,
         } as Scamon<{ rational: false }>,
         boundType: BoundType.COMMA_MEAN,
         jiNotationLevels: [JiNotationLevel.ULTRA, JiNotationLevel.EXTREME, JiNotationLevel.INSANE],

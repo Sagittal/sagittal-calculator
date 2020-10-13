@@ -3,5 +3,5 @@ export {
     computeIrrationalScamonFromDecimal,
     computeIrrationalScamonFromMonzo,
     computeIrrationalScamonFromQuotient,
-    SQRT_SCALER,
+    HALF_SCALER,
 } from "./scamon"

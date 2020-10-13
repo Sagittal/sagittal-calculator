@@ -1,4 +1,4 @@
-import { Cents, computePitchFromCents, Monzo, Name, Scamon, SQRT_SCALER } from "../../../../../src/general"
+import { Cents, computePitchFromCents, Monzo, Name, Scamon, HALF_SCALER } from "../../../../../src/general"
 import { APOTOME } from "../../../../../src/sagittal"
 import { BoundClass, BoundType, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 import { HIGH_EDA, ULTRA_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"
@@ -113,7 +113,7 @@ describe("computeBoundClassEvents", (): void => {
                         name: "/| |)" as Name<BoundClass>,
                         pitch: {
                             monzo: [2, 2, -1, -1],
-                            scaler: SQRT_SCALER,
+                            scaler: HALF_SCALER,
                         } as Scamon<{ rational: false }>,
                     },
                 ]
@@ -134,7 +134,7 @@ describe("computeBoundClassEvents", (): void => {
                         name: ")/| |)" as Name<BoundClass>,
                         pitch: {
                             monzo: [-7, 5, -1, -1, 0, 0, 0, 1],
-                            scaler: SQRT_SCALER,
+                            scaler: HALF_SCALER,
                         } as Scamon<{ rational: false }>,
                     },
                 ]
@@ -155,7 +155,7 @@ describe("computeBoundClassEvents", (): void => {
                         name: ".|) |)" as Name<BoundClass>,
                         pitch: {
                             monzo: [27, -12, -1, -2],
-                            scaler: SQRT_SCALER,
+                            scaler: HALF_SCALER,
                         } as Scamon<{ rational: false }>,
                     },
                 ]
@@ -176,7 +176,7 @@ describe("computeBoundClassEvents", (): void => {
                         name: "`.|) ,,|)" as Name<BoundClass>,
                         pitch: {
                             monzo: [-10, 4, -1, 1, 2, -1],
-                            scaler: SQRT_SCALER,
+                            scaler: HALF_SCALER,
                         } as Scamon<{ rational: false }>,
                     },
                 ]
@@ -202,7 +202,7 @@ describe("computeBoundClassEvents", (): void => {
                         name: "|) )|)" as Name<BoundClass>,
                         pitch: {
                             monzo: [3, -1, 0, -2, 0, 0, 0, 1],
-                            scaler: SQRT_SCALER,
+                            scaler: HALF_SCALER,
                         } as Scamon<{ rational: false }>,
                     },
                 ]
@@ -229,7 +229,7 @@ describe("computeBoundClassEvents", (): void => {
                         name: "C|S" as Name<BoundClass>,
                         pitch: {
                             monzo: [27, -17] as Monzo<{ rational: true }>,
-                            scaler: SQRT_SCALER,
+                            scaler: HALF_SCALER,
                         } as Scamon<{ rational: false }>,
                     },
                 ]

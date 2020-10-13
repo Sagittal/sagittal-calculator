@@ -1,4 +1,4 @@
-import { Cents, computePitchFromCents, Monzo, Name, Scamon, SQRT_SCALER } from "../../../../../src/general"
+import { Cents, computePitchFromCents, Monzo, Name, Scamon, HALF_SCALER } from "../../../../../src/general"
 import { APOTOME } from "../../../../../src/sagittal"
 import { BoundClass, BoundType, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 import { HIGH_EDA, ULTRA_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"
@@ -49,7 +49,7 @@ describe("computeExtendedHistories", (): void => {
                     name: "'//| )//|" as Name<BoundClass>,
                     pitch: {
                         monzo: [4, -3, -1, 0, 0, 2, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
             ],
@@ -61,7 +61,7 @@ describe("computeExtendedHistories", (): void => {
                     name: "S|M" as Name<BoundClass>,
                     pitch: {
                         monzo: [8, -5] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
             ],

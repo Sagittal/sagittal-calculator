@@ -1,4 +1,4 @@
-import { Abs, Cents, Id, Monzo, Multiplier, Name, Scamon, SQRT_SCALER } from "../../../../../../src/general"
+import { Abs, Cents, Id, Monzo, Multiplier, Name, Scamon, HALF_SCALER } from "../../../../../../src/general"
 import { APOTOME, BoundType, CommaMean, InaMidpoint, SizeCategoryBound } from "../../../../../../src/sagittal"
 import { CommaClass } from "../../../../../../src/sagittal/notations"
 import { Ina, JiNotationBoundClass, JiNotationLevel } from "../../../../../../src/sagittal/notations/ji"
@@ -147,7 +147,7 @@ describe("computeJiNotationLevelBoundedCommaClassIdsWithDistances", (): void => 
         const jiNotationBoundClass: JiNotationBoundClass = {
             pitch: {
                 monzo: [-4, -1, -1, 0, 0, 1, 0, 1] as Monzo<{ rational: true }>,
-                scaler: SQRT_SCALER,
+                scaler: HALF_SCALER,
             } as Scamon<{ rational: false }>,
             jiNotationLevels: [JiNotationLevel.ULTRA, JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
             id: 52 as Id<JiNotationBoundClass>,

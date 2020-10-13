@@ -1,4 +1,4 @@
-import { Multiplier, Name, Scamon, SQRT_SCALER } from "../../../../../src/general"
+import { Multiplier, Name, Scamon, HALF_SCALER } from "../../../../../src/general"
 import { APOTOME } from "../../../../../src/sagittal"
 import { BoundClass, BoundType, JiNotationLevel, Tina } from "../../../../../src/sagittal/notations/ji"
 import { EXTREME_EDA, ULTRA_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"
@@ -17,7 +17,7 @@ describe("consolidateBoundClassHistories", (): void => {
             jiNotationLevel: JiNotationLevel.ULTRA,
             boundType: BoundType.COMMA_MEAN,
             name: "'/| )/|" as Name<BoundClass>,
-            pitch: { monzo: [], scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
+            pitch: { monzo: [], scaler: HALF_SCALER } as Scamon<{ rational: false }>,
             rank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
             exact: false,
         }
@@ -35,7 +35,7 @@ describe("consolidateBoundClassHistories", (): void => {
             jiNotationLevel: JiNotationLevel.EXTREME,
             boundType: BoundType.COMMA_MEAN,
             name: ",)/| )/|" as Name<BoundClass>,
-            pitch: { monzo: [], scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
+            pitch: { monzo: [], scaler: HALF_SCALER } as Scamon<{ rational: false }>,
             rank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
             exact: false,
         }
@@ -53,7 +53,7 @@ describe("consolidateBoundClassHistories", (): void => {
             jiNotationLevel: JiNotationLevel.EXTREME,
             boundType: BoundType.COMMA_MEAN,
             name: ",)/| )/|" as Name<BoundClass>,
-            pitch: { monzo: [], scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
+            pitch: { monzo: [], scaler: HALF_SCALER } as Scamon<{ rational: false }>,
             rank: RANKS[ BoundType.COMMA_MEAN ],
             exact: false,
         }
@@ -67,7 +67,7 @@ describe("consolidateBoundClassHistories", (): void => {
             rank: RANKS[ BoundType.COMMA_MEAN ],
             possible: true,
             tinaError: 0 as Multiplier<Tina>,
-            pitch: { monzo: [], scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
+            pitch: { monzo: [], scaler: HALF_SCALER } as Scamon<{ rational: false }>,
         }
         const boundClassHistoryAnalyses: BoundClassHistoryAnalysis[] = [
             {
@@ -79,7 +79,7 @@ describe("consolidateBoundClassHistories", (): void => {
                 rank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
                 possible: true,
                 tinaError: 0 as Multiplier<Tina>,
-                pitch: { monzo: [], scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
+                pitch: { monzo: [], scaler: HALF_SCALER } as Scamon<{ rational: false }>,
             },
             bestPossibleBoundClassHistoryAnalysis,
             {
@@ -91,7 +91,7 @@ describe("consolidateBoundClassHistories", (): void => {
                 rank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
                 possible: false,
                 tinaError: 3.05589400712 as Multiplier<Tina>,
-                pitch: { monzo: [], scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
+                pitch: { monzo: [], scaler: HALF_SCALER } as Scamon<{ rational: false }>,
             },
             {
                 ...boundClassHistoryAnalysisFixture,
@@ -101,7 +101,7 @@ describe("consolidateBoundClassHistories", (): void => {
                 rank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
                 possible: false,
                 tinaError: 2.26723955922 as Multiplier<Tina>,
-                pitch: { monzo: [], scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
+                pitch: { monzo: [], scaler: HALF_SCALER } as Scamon<{ rational: false }>,
             },
         ]
 

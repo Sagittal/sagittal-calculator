@@ -1,4 +1,4 @@
-import { Name, Scamon, SQRT_SCALER } from "../../../../../src/general"
+import { Name, Scamon, HALF_SCALER } from "../../../../../src/general"
 import { APOTOME } from "../../../../../src/sagittal"
 import { BoundClass, BoundType, JiNotationBoundClass, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 import { EXTREME_EDA, HIGH_EDA, MEDIUM_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"
@@ -23,7 +23,7 @@ describe("computeExtendedJiNotationLevelBoundClassHistories", (): void => {
             name: "|( )|(" as Name<BoundClass>,
             pitch: {
                 monzo: [],
-                scaler: SQRT_SCALER,
+                scaler: HALF_SCALER,
             } as Scamon<{ rational: false }>,
         }
         const histories: BoundClassHistory[] = [
@@ -68,7 +68,7 @@ describe("computeExtendedJiNotationLevelBoundClassHistories", (): void => {
                     jiNotationLevel: JiNotationLevel.HIGH,
                     boundType: BoundType.COMMA_MEAN,
                     name: "|( ~|" as Name<BoundClass>,
-                    pitch: { monzo: [3, 1, 1, -1, 0, 0, -1], scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
+                    pitch: { monzo: [3, 1, 1, -1, 0, 0, -1], scaler: HALF_SCALER } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -95,7 +95,7 @@ describe("computeExtendedJiNotationLevelBoundClassHistories", (): void => {
                     jiNotationLevel: JiNotationLevel.HIGH,
                     boundType: BoundType.COMMA_MEAN,
                     name: "|( ~|" as Name<BoundClass>,
-                    pitch: { monzo: [3, 1, 1, -1, 0, 0, -1], scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
+                    pitch: { monzo: [3, 1, 1, -1, 0, 0, -1], scaler: HALF_SCALER } as Scamon<{ rational: false }>,
                 },
             ],
         ]

@@ -199,7 +199,7 @@ export {
     halfScamon,
     computeScamonFromDecimal,
     Scamon,
-    SQRT_SCALER,
+    HALF_SCALER,
     computeRationalScamonCopfr,
     computeRationalScamonSopfr,
     computeScamonFromMonzo,
@@ -238,5 +238,12 @@ export {
     format23FreeClass,
     TWO_3_FREE,
     TWO_3_FREE_CLASS_SIGN,
+    PYTHAGOREAN_COMMA,
+    PYTHAGOREAN_LIMMA,
+    PYTHAGOREAN_SCHISMA,
+    PYTHAGOREAN_COMPLEX_KLEISMA,
+    PYTHAGOREAN_LARGE_DIESIS,
+    PYTHAGOREAN_WHOLE_TONE,
+    THIRTYONE_THREE_COMMA,
 } from "./music"
 export { Count, Ed, Extrema, Id, Index, Ms, Multiplier, Name, Step, Sum, Window, Of } from "./types"

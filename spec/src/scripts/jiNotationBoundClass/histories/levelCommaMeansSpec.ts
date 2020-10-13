@@ -1,4 +1,4 @@
-import { Cents, Decimal, Monzo, Name, Scamon, SQRT_SCALER } from "../../../../../src/general"
+import { Cents, Decimal, Monzo, Name, Scamon, HALF_SCALER } from "../../../../../src/general"
 import { CommaMean, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 import { computeJiNotationLevelCommaMeans } from "../../../../../src/scripts/jiNotationBoundClass/histories/levelCommaMeans"
 import { analyzePitch } from "../../../../helpers/src/general/music/analyzePitch"
@@ -14,70 +14,70 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                     name: "(|//|) |(" as Name<CommaMean>,
                     pitch: {
                         monzo: [10, -6, 1, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "|( )|(" as Name<CommaMean>,
                     pitch: {
                         monzo: [17, -10, 1, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ")|( ~|(" as Name<CommaMean>,
                     pitch: {
                         monzo: [-5, 1, 0, 1, -1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "~|( /|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-16, 9, -1, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "/| |)" as Name<CommaMean>,
                     pitch: {
                         monzo: [2, 2, -1, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "|) (|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-6, 6, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "(| (|(" as Name<CommaMean>,
                     pitch: {
                         monzo: [-14, 10, 1, 1, -2] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "(|( //|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-10, 10, -1, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "//| /|)" as Name<CommaMean>,
                     pitch: {
                         monzo: [-6, 10, -3, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "/|) /|\\" as Name<CommaMean>,
                     pitch: {
                         monzo: [-3, 3, -1, -1, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
             ]
@@ -92,182 +92,182 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                     name: "(|//|) )|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-9, 3, 0, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ")| |(" as Name<CommaMean>,
                     pitch: {
                         monzo: [1, -3, 1, -1, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "|( ~|" as Name<CommaMean>,
                     pitch: {
                         monzo: [3, 1, 1, -1, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "~| )|(" as Name<CommaMean>,
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ")|( )~|" as Name<CommaMean>,
                     pitch: {
                         monzo: [11, -2, 0, 1, -2, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ")~| ~|(" as Name<CommaMean>,
                     pitch: {
                         monzo: [-8, 7, 0, 0, -1, -1, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "~|( |~" as Name<CommaMean>,
                     pitch: {
                         monzo: [-7, -1, 0, 0, 0, 0, 1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "|~ ~~|" as Name<CommaMean>,
                     pitch: {
                         monzo: [4, -4, 0, -2, 1, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "~~| )|~" as Name<CommaMean>,
                     pitch: {
                         monzo: [-11, 11, 0, -2, 1, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ")|~ /|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-14, 13, -1, 0, 0, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "/| )/|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-17, 11, -2, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ")/| |)" as Name<CommaMean>,
                     pitch: {
                         monzo: [-7, 5, -1, -1, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "|) )|)" as Name<CommaMean>,
                     pitch: {
                         monzo: [3, -1, 0, -2, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ")|) |\\" as Name<CommaMean>,
                     pitch: {
                         monzo: [-4, -2, 1, -1, 1, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "|\\ (|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-13, 5, 1, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "(| ~|)" as Name<CommaMean>,
                     pitch: {
                         monzo: [-16, 7, 0, 3, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "~|) /|~" as Name<CommaMean>,
                     pitch: {
                         monzo: [-3, -3, -1, 2, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "/|~ (|(" as Name<CommaMean>,
                     pitch: {
                         monzo: [-1, 0, 0, 0, -1, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "(|( ~|\\" as Name<CommaMean>,
                     pitch: {
                         monzo: [-16, 8, 1, 0, -1, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "~|\\ //|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-22, 14, -2, 0, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "//| )//|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-3, 4, -3, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ")//| /|)" as Name<CommaMean>,
                     pitch: {
                         monzo: [7, -2, -2, -1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "/|) (|~" as Name<CommaMean>,
                     pitch: {
                         monzo: [6, 0, -1, -1, 1, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "(|~ /|\\" as Name<CommaMean>,
                     pitch: {
                         monzo: [-1, -1, 0, 0, 2, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "/|\\ (/|" as Name<CommaMean>,
                     pitch: {
                         monzo: [7, -3, 0, -2, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "(/| )/|\\" as Name<CommaMean>,
                     pitch: {
                         monzo: [9, 0, 1, -4] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
             ]
@@ -282,322 +282,322 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                     name: "(|//|) .)|" as Name<CommaMean>,
                     pitch: {
                         monzo: [6, -5, -1, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ".)| '|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-9, 3, 0, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "'| )|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-24, 11, 1, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ")| |(" as Name<CommaMean>,
                     pitch: {
                         monzo: [1, -3, 1, -1, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "|( .~|" as Name<CommaMean>,
                     pitch: {
                         monzo: [18, -7, 0, -1, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ".~| '|(" as Name<CommaMean>,
                     pitch: {
                         monzo: [3, 1, 1, -1, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "'|( ~|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-12, 9, 2, -1, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "~| )|(" as Name<CommaMean>,
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ")|( ')|(" as Name<CommaMean>,
                     pitch: {
                         monzo: [-1, 0, 1, 2, -2] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "')|( )~|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-4, 6, 1, 1, -2, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ")~| .~|(" as Name<CommaMean>,
                     pitch: {
                         monzo: [7, -1, -1, 0, -1, -1, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ".~|( ~|(" as Name<CommaMean>,
                     pitch: {
                         monzo: [-9, 2, -1, 0, 0, 0, 2] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "~|( |~" as Name<CommaMean>,
                     pitch: {
                         monzo: [-7, -1, 0, 0, 0, 0, 1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "|~ ~~|" as Name<CommaMean>,
                     pitch: {
                         monzo: [4, -4, 0, -2, 1, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "~~| ./|" as Name<CommaMean>,
                     pitch: {
                         monzo: [10, -2, -2, -2, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "./| )|~" as Name<CommaMean>,
                     pitch: {
                         monzo: [1, 5, -2, 0, 0, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ")|~ /|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-14, 13, -1, 0, 0, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "/| .)/|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-2, 3, -3, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ".)/| '/|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-17, 11, -2, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "'/| )/|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-32, 19, -1, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ")/| .|)" as Name<CommaMean>,
                     pitch: {
                         monzo: [8, -3, -2, -1, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ".|) |)" as Name<CommaMean>,
                     pitch: {
                         monzo: [27, -12, -1, -2] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "|) '|)" as Name<CommaMean>,
                     pitch: {
                         monzo: [-3, 4, 1, -2] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "'|) )|)" as Name<CommaMean>,
                     pitch: {
                         monzo: [-12, 7, 1, -2, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ")|) .(|" as Name<CommaMean>,
                     pitch: {
                         monzo: [0, 1, -1, 0, -1, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ".(| |\\" as Name<CommaMean>,
                     pitch: {
                         monzo: [2, -3, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "|\\ (|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-13, 5, 1, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "(| '(|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-11, 8, 2, -1, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "'(| ~|)" as Name<CommaMean>,
                     pitch: {
                         monzo: [-3, -1, 2] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "~|) .(|(" as Name<CommaMean>,
                     pitch: {
                         monzo: [9, -7, 0, 2, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ".(|( '~|)" as Name<CommaMean>,
                     pitch: {
                         monzo: [-6, 1, 1, 2, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "'~|) /|~" as Name<CommaMean>,
                     pitch: {
                         monzo: [-18, 5, 0, 2, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "/|~ (|(" as Name<CommaMean>,
                     pitch: {
                         monzo: [-1, 0, 0, 0, -1, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "(|( ~|\\" as Name<CommaMean>,
                     pitch: {
                         monzo: [-16, 8, 1, 0, -1, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "~|\\ .//|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-7, 6, -3, 0, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ".//| //|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-1, 8, -5] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "//| '//|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-9, 9, -2, 0, 0, 1, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "'//| )//|" as Name<CommaMean>,
                     pitch: {
                         monzo: [4, -3, -1, 0, 0, 2, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ")//| /|)" as Name<CommaMean>,
                     pitch: {
                         monzo: [7, -2, -2, -1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "/|) (|~" as Name<CommaMean>,
                     pitch: {
                         monzo: [6, 0, -1, -1, 1, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "(|~ '/|)" as Name<CommaMean>,
                     pitch: {
                         monzo: [-9, 8, 0, -1, 1, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "'/|) ./|\\" as Name<CommaMean>,
                     pitch: {
                         monzo: [-3, 3, -1, -1, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "./|\\ /|\\" as Name<CommaMean>,
                     pitch: {
                         monzo: [5, -6, -1, 0, 2] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "/|\\ (/|" as Name<CommaMean>,
                     pitch: {
                         monzo: [7, -3, 0, -2, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "(/| '/|\\" as Name<CommaMean>,
                     pitch: {
                         monzo: [-8, 5, 1, -2, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "'/|\\ )/|\\" as Name<CommaMean>,
                     pitch: {
                         monzo: [-23, 13, 2, -2, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
             ]
@@ -612,854 +612,854 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                     name: "(|//|) `|" as Name<CommaMean>,
                     pitch: {
                         monzo: [12, -2, -1, -1, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "`| ``|" as Name<CommaMean>,
                     pitch: {
                         monzo: [17, -5, 0, -2, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "``| .)|" as Name<CommaMean>,
                     pitch: {
                         monzo: [11, -8, 0, -1, -1, 1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ".)| '|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-9, 3, 0, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "'| `'|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-18, 14, 1, -1, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "`'| ,)|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-11, 16, -4, -2, 0, -1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",)| )|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-17, 13, -4, -1, 0, 0, 0, 2] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ")| `)|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-12, 5, -1, 2, -1, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "`)| ``)|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-10, 1, 0, 3] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "``)| ,,|(" as Name<CommaMean>,
                     pitch: {
                         monzo: [-2, -4, 1, 1, 2, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",,|( ,|(" as Name<CommaMean>,
                     pitch: {
                         monzo: [-6, 3, 0, 0, 0, -1, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",|( |(" as Name<CommaMean>,
                     pitch: {
                         monzo: [-1, 0, 1, -1, -1, 0, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "|( `|(" as Name<CommaMean>,
                     pitch: {
                         monzo: [15, -13, 0, 2] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "`|( .~|" as Name<CommaMean>,
                     pitch: {
                         monzo: [13, -8, -2, 3, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ".~| ,'|(" as Name<CommaMean>,
                     pitch: {
                         monzo: [4, 8, -3, -2, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",'|( '|(" as Name<CommaMean>,
                     pitch: {
                         monzo: [-9, 11, 0, -3] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "'|( ,~|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-15, 3, 2, 2] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",~| ~|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-17, 8, 0, 3, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "~| ,)|(" as Name<CommaMean>,
                     pitch: {
                         monzo: [-24, 9, 0, 0, 4, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",)|( )|(" as Name<CommaMean>,
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ")|( `)|(" as Name<CommaMean>,
                     pitch: {
                         monzo: [10, -11, 2, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "`)|( ``)|(" as Name<CommaMean>,
                     pitch: {
                         monzo: [-10, 0, 2, 2, 1, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "``)|( ,')|(" as Name<CommaMean>,
                     pitch: {
                         monzo: [8, 2, -2, -1, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",')|( ')|(" as Name<CommaMean>,
                     pitch: {
                         monzo: [13, -1, -1, -2, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "')|( )~|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-4, 6, 1, 1, -2, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ")~| .~|(" as Name<CommaMean>,
                     pitch: {
                         monzo: [7, -1, -1, 0, -1, -1, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ".~|( `.~|(" as Name<CommaMean>,
                     pitch: {
                         monzo: [12, -8, -1, 0, 1, 0, 1, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "`.~|( ,,~|(" as Name<CommaMean>,
                     pitch: {
                         monzo: [10, -3, -3, 1, 1, 0, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",,~|( ,~|(" as Name<CommaMean>,
                     pitch: {
                         monzo: [1, -3, -2, 3] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",~|( ~|(" as Name<CommaMean>,
                     pitch: {
                         monzo: [-12, 0, 1, 2, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "~|( `~|(" as Name<CommaMean>,
                     pitch: {
                         monzo: [-10, 1, 0, -1, 1, 1, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "`~|( ,,|~" as Name<CommaMean>,
                     pitch: {
                         monzo: [-12, 6, -2, 0, 1, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",,|~ ,|~" as Name<CommaMean>,
                     pitch: {
                         monzo: [-29, 13, 0, 3] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",|~ |~" as Name<CommaMean>,
                     pitch: {
                         monzo: [-10, -3, 2, 2, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "|~ `|~" as Name<CommaMean>,
                     pitch: {
                         monzo: [14, -7, 0, 0, 0, -2, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "`|~ ~~|" as Name<CommaMean>,
                     pitch: {
                         monzo: [8, 1, 0, -2, 1, -2] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "~~| `~~|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-9, 8, 0, -2, 2, 0, 0, 0, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "`~~| ``~~|" as Name<CommaMean>,
                     pitch: {
                         monzo: [5, -3, 0, -1, 1, 0, 1, 0, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "``~~| ,./|" as Name<CommaMean>,
                     pitch: {
                         monzo: [12, -11, -1, 0, 0, 1, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",./| ./|" as Name<CommaMean>,
                     pitch: {
                         monzo: [10, -6, -3, 1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "./| )|~" as Name<CommaMean>,
                     pitch: {
                         monzo: [1, 5, -2, 0, 0, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ")|~ ,,/|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-2, 9, 0, 0, -1, 0, 0, -1, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",,/| ,/|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-8, 6, 0, 1, -1, 1, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",/| /|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-20, 10, -1, 1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "/| `/|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-9, 1, 2, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "`/| ``/|" as Name<CommaMean>,
                     pitch: {
                         monzo: [2, -8, 5, 1, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "``/| .)/|" as Name<CommaMean>,
                     pitch: {
                         monzo: [9, -6, 0, 0, 0, -1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ".)/| '/|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-17, 11, -2, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "'/| `'/|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-39, 17, 4, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "`'/| ,,)/|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-16, 0, 3, 2, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",,)/| ,)/|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-4, -2, 2, 1, 1, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",)/| )/|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-21, 10, 2, 0, 0, -1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ")/| ,.|)" as Name<CommaMean>,
                     pitch: {
                         monzo: [-4, -1, -1, 0, 0, 1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",.|) .|)" as Name<CommaMean>,
                     pitch: {
                         monzo: [30, -18, -1, -1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ".|) `.|)" as Name<CommaMean>,
                     pitch: {
                         monzo: [10, -7, -1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "`.|) ,,|)" as Name<CommaMean>,
                     pitch: {
                         monzo: [-10, 4, -1, 1, 2, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",,|) ,|)" as Name<CommaMean>,
                     pitch: {
                         monzo: [-5, 1, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",|) |)" as Name<CommaMean>,
                     pitch: {
                         monzo: [0, -2, 1, -1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "|) `|)" as Name<CommaMean>,
                     pitch: {
                         monzo: [11, -11, 4, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "`|) ``|)" as Name<CommaMean>,
                     pitch: {
                         monzo: [-9, 0, 4, 0, 1, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "``|) ,'|)" as Name<CommaMean>,
                     pitch: {
                         monzo: [-35, 17, 2, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",'|) '|)" as Name<CommaMean>,
                     pitch: {
                         monzo: [-30, 14, 3, -1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "'|) `'|)" as Name<CommaMean>,
                     pitch: {
                         monzo: [-19, 5, 6, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "`'|) ,)|)" as Name<CommaMean>,
                     pitch: {
                         monzo: [-5, -6, 6, 0, -1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",)|) )|)" as Name<CommaMean>,
                     pitch: {
                         monzo: [2, -4, 1, -1, -1, 0, 1, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ")|) .(|" as Name<CommaMean>,
                     pitch: {
                         monzo: [0, 1, -1, 0, -1, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ".(| |\\" as Name<CommaMean>,
                     pitch: {
                         monzo: [2, -3, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "|\\ `|\\" as Name<CommaMean>,
                     pitch: {
                         monzo: [10, -8, 1, -1, 2, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "`|\\ ,(|" as Name<CommaMean>,
                     pitch: {
                         monzo: [7, -4, 3, -1, 1, -1, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",(| (|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-16, 9, 3, 1, -1, 0, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "(| `(|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-10, 7, 0, 1, -1, 1, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "`(| ``(|" as Name<CommaMean>,
                     pitch: {
                         monzo: [1, 0, -2, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "``(| ,'(|" as Name<CommaMean>,
                     pitch: {
                         monzo: [1, 3, -2, 1, 0, -1, 1, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",'(| '(|" as Name<CommaMean>,
                     pitch: {
                         monzo: [3, 2, 2, -1, 0, -1, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "'(| ,~|)" as Name<CommaMean>,
                     pitch: {
                         monzo: [4, -5, 2, -2, 0, 0, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",~|) ~|)" as Name<CommaMean>,
                     pitch: {
                         monzo: [-1, -6, 0, 2, 0, 0, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "~|) `~|)" as Name<CommaMean>,
                     pitch: {
                         monzo: [-20, 8, -1, 2, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "`~|) ,.(|(" as Name<CommaMean>,
                     pitch: {
                         monzo: [-26, 16, -1, 0, 1, 0, 1, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",.(|( .(|(" as Name<CommaMean>,
                     pitch: {
                         monzo: [3, 1, 0, 0, 0, 0, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ".(|( '~|)" as Name<CommaMean>,
                     pitch: {
                         monzo: [-6, 1, 1, 2, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "'~|) /|~" as Name<CommaMean>,
                     pitch: {
                         monzo: [-18, 5, 0, 2, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "/|~ ,,(|(" as Name<CommaMean>,
                     pitch: {
                         monzo: [-6, 3, -1, 1, 0, -1, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",,(|( ,(|(" as Name<CommaMean>,
                     pitch: {
                         monzo: [0, 1, 0, 1, 1, -1, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",(|( (|(" as Name<CommaMean>,
                     pitch: {
                         monzo: [5, -2, 1, 0, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "(|( `(|(" as Name<CommaMean>,
                     pitch: {
                         monzo: [8, 2, 1, -1, -2, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "`(|( ~|\\" as Name<CommaMean>,
                     pitch: {
                         monzo: [-4, 6, 0, -1, -1, -1, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "~|\\ ,.//|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-19, 8, -2, 1, 0, 1, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",.//| .//|" as Name<CommaMean>,
                     pitch: {
                         monzo: [2, 2, -5, 1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ".//| `.//|" as Name<CommaMean>,
                     pitch: {
                         monzo: [13, -7, -2, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "`.//| ,,//|" as Name<CommaMean>,
                     pitch: {
                         monzo: [0, -4, 1, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",,//| ,//|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-26, 13, -1, 0, 0, 1, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",//| //|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-28, 18, -3, 1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "//| `//|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-17, 9, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "`//| ``//|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-6, 0, 3, 1, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "``//| ,'//|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-8, 5, 1, 2, 0, -1, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",'//| '//|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-12, 7, 0, 2, 0, 1, -1, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "'//| ,,)//|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-1, 0, -2, 1, 1, 1, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",,)//| ,)//|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-12, 6, 0, 1, 1, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",)//| )//|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-7, 3, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ")//| `)//|" as Name<CommaMean>,
                     pitch: {
                         monzo: [22, -10, -3, -1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "`)//| ``)//|" as Name<CommaMean>,
                     pitch: {
                         monzo: [15, -8, -2, -1, 0, 0, 0, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "``)//| ,,/|)" as Name<CommaMean>,
                     pitch: {
                         monzo: [-5, 3, -2, 0, 1, -1, 0, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",,/|) ,/|)" as Name<CommaMean>,
                     pitch: {
                         monzo: [-13, 9, -2, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",/|) /|)" as Name<CommaMean>,
                     pitch: {
                         monzo: [-8, 6, -1, -1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "/|) `/|)" as Name<CommaMean>,
                     pitch: {
                         monzo: [3, -3, 2, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "`/|) (|~" as Name<CommaMean>,
                     pitch: {
                         monzo: [5, -7, 3, 0, 1, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "(|~ ,'/|)" as Name<CommaMean>,
                     pitch: {
                         monzo: [-21, 10, 1, 0, 1, 1, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",'/|) '/|)" as Name<CommaMean>,
                     pitch: {
                         monzo: [-38, 22, 1, -1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "'/|) `'/|)" as Name<CommaMean>,
                     pitch: {
                         monzo: [-27, 13, 4, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "`'/|) ./|\\" as Name<CommaMean>,
                     pitch: {
                         monzo: [-4, -4, 3, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "./|\\ `./|\\" as Name<CommaMean>,
                     pitch: {
                         monzo: [11, -8, -1, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "`./|\\ ,,/|\\" as Name<CommaMean>,
                     pitch: {
                         monzo: [8, -4, 1, 0, -1, 0, 1, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",,/|\\ ,/|\\" as Name<CommaMean>,
                     pitch: {
                         monzo: [6, 1, -1, 1, -1, 0, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",/|\\ /|\\" as Name<CommaMean>,
                     pitch: {
                         monzo: [-6, 5, -2, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "/|\\ `/|\\" as Name<CommaMean>,
                     pitch: {
                         monzo: [-19, 8, 1, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "`/|\\ ,(/|" as Name<CommaMean>,
                     pitch: {
                         monzo: [-14, 5, 2, -1, -1, 1, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",(/| (/|" as Name<CommaMean>,
                     pitch: {
                         monzo: [12, -6, 1, -3, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "(/| `(/|" as Name<CommaMean>,
                     pitch: {
                         monzo: [17, -4, 0, -2, 0, 0, 0, 0, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "`(/| '/|\\" as Name<CommaMean>,
                     pitch: {
                         monzo: [-15, 9, 1, 0, 1, 0, 0, 0, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "'/|\\ `'/|\\" as Name<CommaMean>,
                     pitch: {
                         monzo: [-28, 16, 1, -1, 2, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: "`'/|\\ ,)/|\\" as Name<CommaMean>,
                     pitch: {
                         monzo: [-14, 5, 1, 0, 1, -1, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
                     name: ",)/|\\ )/|\\" as Name<CommaMean>,
                     pitch: {
                         monzo: [-9, 2, 2, -1, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
             ]
@@ -1476,7 +1476,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [10, -6, 1, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [5, -3, 0.5, -0.5] as Monzo,
                     decimal: 1.001664 as Decimal,
@@ -1485,7 +1485,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [17, -10, 1, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [8.5, -5, 0.5, 0, -0.5] as Monzo,
                     decimal: 1.004470 as Decimal,
@@ -1494,7 +1494,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-5, 1, 0, 1, -1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-2.5, 0.5, 0, 0.5, -0.5, 0, 0.5] as Monzo,
                     decimal: 1.007077 as Decimal,
@@ -1503,7 +1503,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-16, 9, -1, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-8, 4.5, -0.5, 0, 0, 0, 0.5] as Monzo,
                     decimal: 1.010520 as Decimal,
@@ -1512,7 +1512,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [2, 2, -1, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [1, 1, -0.5, -0.5] as Monzo,
                     decimal: 1.014185 as Decimal,
@@ -1521,7 +1521,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-6, 6, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-3, 3, 0, 0, -0.5] as Monzo,
                     decimal: 1.017600 as Decimal,
@@ -1530,7 +1530,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-14, 10, 1, 1, -2] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-7, 5, 0.5, 0.5, -1] as Monzo,
                     decimal: 1.021027 as Decimal,
@@ -1539,7 +1539,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-10, 10, -1, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-5, 5, -0.5, 0, -0.5] as Monzo,
                     decimal: 1.023941 as Decimal,
@@ -1548,7 +1548,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-6, 10, -3, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-3, 5, -1.5, -0.5] as Monzo,
                     decimal: 1.026862 as Decimal,
@@ -1557,7 +1557,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-3, 3, -1, -1, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-1.5, 1.5, -0.5, -0.5, 0.5] as Monzo,
                     decimal: 1.029909 as Decimal,
@@ -1575,7 +1575,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-9, 3, 0, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-4.5, 1.5, 0, 0, 0, 0, 0, 0.5] as Monzo,
                     decimal: 1.000976 as Decimal,
@@ -1584,7 +1584,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [1, -3, 1, -1, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [0.5, -1.5, 0.5, -0.5, 0, 0, 0, 0.5] as Monzo,
                     decimal: 1.002642 as Decimal,
@@ -1593,7 +1593,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [3, 1, 1, -1, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [1.5, 0.5, 0.5, -0.5, 0, 0, -0.5] as Monzo,
                     decimal: 1.004192 as Decimal,
@@ -1602,7 +1602,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [0, 1.5, 0, 0.5, -0.5, 0, -0.5] as Monzo,
                     decimal: 1.005333 as Decimal,
@@ -1611,7 +1611,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [11, -2, 0, 1, -2, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [5.5, -1, 0, 0.5, -1, -0.5] as Monzo,
                     decimal: 1.006302 as Decimal,
@@ -1620,7 +1620,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-8, 7, 0, 0, -1, -1, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-4, 3.5, 0, 0, -0.5, -0.5, 0.5] as Monzo,
                     decimal: 1.007768 as Decimal,
@@ -1629,7 +1629,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-7, -1, 0, 0, 0, 0, 1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-3.5, -0.5, 0, 0, 0, 0, 0.5, 0, 0.5] as Monzo,
                     decimal: 1.009073 as Decimal,
@@ -1638,7 +1638,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [4, -4, 0, -2, 1, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [2, -2, 0, -1, 0.5, 0, 0, 0, 0.5] as Monzo,
                     decimal: 1.009903 as Decimal,
@@ -1647,7 +1647,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-11, 11, 0, -2, 1, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-5.5, 5.5, 0, -1, 0.5, 0, 0, -0.5] as Monzo,
                     decimal: 1.010935 as Decimal,
@@ -1656,7 +1656,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-14, 13, -1, 0, 0, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-7, 6.5, -0.5, 0, 0, 0, 0, -0.5] as Monzo,
                     decimal: 1.012083 as Decimal,
@@ -1665,7 +1665,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-17, 11, -2, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-8.5, 5.5, -1, 0, 0, 0, 0, 0.5] as Monzo,
                     decimal: 1.013488 as Decimal,
@@ -1674,7 +1674,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-7, 5, -1, -1, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-3.5, 2.5, -0.5, -0.5, 0, 0, 0, 0.5] as Monzo,
                     decimal: 1.015175 as Decimal,
@@ -1683,7 +1683,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [3, -1, 0, -2, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [1.5, -0.5, 0, -1, 0, 0, 0, 0.5] as Monzo,
                     decimal: 1.016864 as Decimal,
@@ -1692,7 +1692,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-4, -2, 1, -1, 1, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-2, -1, 0.5, -0.5, 0.5, 0, 0, 0.5] as Monzo,
                     decimal: 1.018187 as Decimal,
@@ -1701,7 +1701,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-13, 5, 1, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-6.5, 2.5, 0.5, 0.5] as Monzo,
                     decimal: 1.018924 as Decimal,
@@ -1710,7 +1710,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-16, 7, 0, 3, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-8, 3.5, 0, 1.5, -0.5] as Monzo,
                     decimal: 1.020082 as Decimal,
@@ -1719,7 +1719,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-3, -3, -1, 2, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-1.5, -1.5, -0.5, 1, 0, 0, 0, 0, 0.5] as Monzo,
                     decimal: 1.021527 as Decimal,
@@ -1728,7 +1728,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-1, 0, 0, 0, -1, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-0.5, 0, 0, 0, -0.5, 0, 0, 0, 0.5] as Monzo,
                     decimal: 1.022474 as Decimal,
@@ -1737,7 +1737,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-16, 8, 1, 0, -1, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-8, 4, 0.5, 0, -0.5, 0, 0, 0, 0.5] as Monzo,
                     decimal: 1.023051 as Decimal,
@@ -1746,7 +1746,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-22, 14, -2, 0, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-11, 7, -1, 0, 0, 0, 0, 0, 0.5] as Monzo,
                     decimal: 1.024265 as Decimal,
@@ -1755,7 +1755,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-3, 4, -3, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-1.5, 2, -1.5, 0, 0, 0.5] as Monzo,
                     decimal: 1.026157 as Decimal,
@@ -1764,7 +1764,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [7, -2, -2, -1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [3.5, -1, -1, -0.5, 0, 0.5] as Monzo,
                     decimal: 1.027865 as Decimal,
@@ -1773,7 +1773,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [6, 0, -1, -1, 1, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [3, 0, -0.5, -0.5, 0.5, 0, 0, -0.5] as Monzo,
                     decimal: 1.028905 as Decimal,
@@ -1782,7 +1782,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-1, -1, 0, 0, 2, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-0.5, -0.5, 0, 0, 1, 0, 0, -0.5] as Monzo,
                     decimal: 1.030244 as Decimal,
@@ -1791,7 +1791,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [7, -3, 0, -2, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [3.5, -1.5, 0, -1, 0.5] as Monzo,
                     decimal: 1.031623 as Decimal,
@@ -1800,7 +1800,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [9, 0, 1, -4] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [4.5, 0, 0.5, -2] as Monzo,
                     decimal: 1.032580 as Decimal,
@@ -1818,7 +1818,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [6, -5, -1, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [3, -2.5, -0.5, 0, 0, 0, 0, 0.5] as Monzo,
                     decimal: 1.000411 as Decimal,
@@ -1827,7 +1827,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-9, 3, 0, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-4.5, 1.5, 0, 0, 0, 0, 0, 0.5] as Monzo,
                     decimal: 1.000976 as Decimal,
@@ -1836,7 +1836,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-24, 11, 1, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-12, 5.5, 0.5, 0, 0, 0, 0, 0.5] as Monzo,
                     decimal: 1.001541 as Decimal,
@@ -1845,7 +1845,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [1, -3, 1, -1, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [0.5, -1.5, 0.5, -0.5, 0, 0, 0, 0.5] as Monzo,
                     decimal: 1.002642 as Decimal,
@@ -1854,7 +1854,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [18, -7, 0, -1, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [9, -3.5, 0, -0.5, 0, 0, -0.5] as Monzo,
                     decimal: 1.003626 as Decimal,
@@ -1863,7 +1863,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [3, 1, 1, -1, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [1.5, 0.5, 0.5, -0.5, 0, 0, -0.5] as Monzo,
                     decimal: 1.004192 as Decimal,
@@ -1872,7 +1872,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-12, 9, 2, -1, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-6, 4.5, 1, -0.5, 0, 0, -0.5] as Monzo,
                     decimal: 1.004759 as Decimal,
@@ -1881,7 +1881,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [0, 1.5, 0, 0.5, -0.5, 0, -0.5] as Monzo,
                     decimal: 1.005333 as Decimal,
@@ -1890,7 +1890,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-1, 0, 1, 2, -2] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-0.5, 0, 0.5, 1, -1] as Monzo,
                     decimal: 1.006179 as Decimal,
@@ -1899,7 +1899,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-4, 6, 1, 1, -2, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-2, 3, 0.5, 0.5, -1, -0.5] as Monzo,
                     decimal: 1.006870 as Decimal,
@@ -1908,7 +1908,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [7, -1, -1, 0, -1, -1, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [3.5, -0.5, -0.5, 0, -0.5, -0.5, 0.5] as Monzo,
                     decimal: 1.007200 as Decimal,
@@ -1917,7 +1917,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-9, 2, -1, 0, 0, 0, 2] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-4.5, 1, -0.5, 0, 0, 0, 1] as Monzo,
                     decimal: 1.007976 as Decimal,
@@ -1926,7 +1926,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-7, -1, 0, 0, 0, 0, 1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-3.5, -0.5, 0, 0, 0, 0, 0.5, 0, 0.5] as Monzo,
                     decimal: 1.009073 as Decimal,
@@ -1935,7 +1935,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [4, -4, 0, -2, 1, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [2, -2, 0, -1, 0.5, 0, 0, 0, 0.5] as Monzo,
                     decimal: 1.009903 as Decimal,
@@ -1944,7 +1944,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [10, -2, -2, -2, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [5, -1, -1, -1, 0.5] as Monzo,
                     decimal: 1.010780 as Decimal,
@@ -1953,7 +1953,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [1, 5, -2, 0, 0, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [0.5, 2.5, -1, 0, 0, 0, 0, -0.5] as Monzo,
                     decimal: 1.011512 as Decimal,
@@ -1962,7 +1962,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-14, 13, -1, 0, 0, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-7, 6.5, -0.5, 0, 0, 0, 0, -0.5] as Monzo,
                     decimal: 1.012083 as Decimal,
@@ -1971,7 +1971,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-2, 3, -3, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-1, 1.5, -1.5, 0, 0, 0, 0, 0.5] as Monzo,
                     decimal: 1.012916 as Decimal,
@@ -1980,7 +1980,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-17, 11, -2, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-8.5, 5.5, -1, 0, 0, 0, 0, 0.5] as Monzo,
                     decimal: 1.013488 as Decimal,
@@ -1989,7 +1989,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-32, 19, -1, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-16, 9.5, -0.5, 0, 0, 0, 0, 0.5] as Monzo,
                     decimal: 1.014060 as Decimal,
@@ -1998,7 +1998,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [8, -3, -2, -1, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [4, -1.5, -1, -0.5, 0, 0, 0, 0.5] as Monzo,
                     decimal: 1.014602 as Decimal,
@@ -2007,7 +2007,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [27, -12, -1, -2] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [13.5, -6, -0.5, -1] as Monzo,
                     decimal: 1.015299 as Decimal,
@@ -2016,7 +2016,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-3, 4, 1, -2] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-1.5, 2, 0.5, -1] as Monzo,
                     decimal: 1.016446 as Decimal,
@@ -2025,7 +2025,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-12, 7, 1, -2, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-6, 3.5, 0.5, -1, 0, 0, 0, 0.5] as Monzo,
                     decimal: 1.017438 as Decimal,
@@ -2034,7 +2034,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [0, 1, -1, 0, -1, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [0, 0.5, -0.5, 0, -0.5, 0, 0, 0.5] as Monzo,
                     decimal: 1.018019 as Decimal,
@@ -2043,7 +2043,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [2, -3, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [1, -1.5, 0, 0.5] as Monzo,
                     decimal: 1.018350 as Decimal,
@@ -2052,7 +2052,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-13, 5, 1, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-6.5, 2.5, 0.5, 0.5] as Monzo,
                     decimal: 1.018924 as Decimal,
@@ -2061,7 +2061,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-11, 8, 2, -1, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-5.5, 4, 1, -0.5, -0.5] as Monzo,
                     decimal: 1.019869 as Decimal,
@@ -2070,7 +2070,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-3, -1, 2] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-1.5, -0.5, 1] as Monzo,
                     decimal: 1.020620 as Decimal,
@@ -2079,7 +2079,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [9, -7, 0, 2, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [4.5, -3.5, 0, 1, -0.5] as Monzo,
                     decimal: 1.021203 as Decimal,
@@ -2088,7 +2088,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-6, 1, 1, 2, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-3, 0.5, 0.5, 1, -0.5] as Monzo,
                     decimal: 1.021779 as Decimal,
@@ -2097,7 +2097,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-18, 5, 0, 2, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-9, 2.5, 0, 1, 0, 0, 0, 0, 0.5] as Monzo,
                     decimal: 1.022104 as Decimal,
@@ -2106,7 +2106,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-1, 0, 0, 0, -1, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-0.5, 0, 0, 0, -0.5, 0, 0, 0, 0.5] as Monzo,
                     decimal: 1.022474 as Decimal,
@@ -2115,7 +2115,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-16, 8, 1, 0, -1, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-8, 4, 0.5, 0, -0.5, 0, 0, 0, 0.5] as Monzo,
                     decimal: 1.023051 as Decimal,
@@ -2124,7 +2124,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-7, 6, -3, 0, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-3.5, 3, -1.5, 0, 0, 0, 0, 0, 0.5] as Monzo,
                     decimal: 1.023688 as Decimal,
@@ -2133,7 +2133,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-1, 8, -5] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-0.5, 4, -2.5] as Monzo,
                     decimal: 1.024577 as Decimal,
@@ -2142,7 +2142,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-9, 9, -2, 0, 0, 1, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-4.5, 4.5, -1, 0, 0, 0.5, 0, -0.5] as Monzo,
                     decimal: 1.025735 as Decimal,
@@ -2151,7 +2151,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [4, -3, -1, 0, 0, 2, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [2, -1.5, -0.5, 0, 0, 1, 0, -0.5] as Monzo,
                     decimal: 1.026738 as Decimal,
@@ -2160,7 +2160,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [7, -2, -2, -1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [3.5, -1, -1, -0.5, 0, 0.5] as Monzo,
                     decimal: 1.027865 as Decimal,
@@ -2169,7 +2169,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [6, 0, -1, -1, 1, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [3, 0, -0.5, -0.5, 0.5, 0, 0, -0.5] as Monzo,
                     decimal: 1.028905 as Decimal,
@@ -2178,7 +2178,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-9, 8, 0, -1, 1, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-4.5, 4, 0, -0.5, 0.5, 0, 0, -0.5] as Monzo,
                     decimal: 1.029486 as Decimal,
@@ -2187,7 +2187,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-3, 3, -1, -1, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-1.5, 1.5, -0.5, -0.5, 0.5] as Monzo,
                     decimal: 1.029909 as Decimal,
@@ -2196,7 +2196,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [5, -6, -1, 0, 2] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [2.5, -3, -0.5, 0, 1] as Monzo,
                     decimal: 1.030668 as Decimal,
@@ -2205,7 +2205,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [7, -3, 0, -2, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [3.5, -1.5, 0, -1, 0.5] as Monzo,
                     decimal: 1.031623 as Decimal,
@@ -2214,7 +2214,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-8, 5, 1, -2, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-4, 2.5, 0.5, -1, 0.5] as Monzo,
                     decimal: 1.032206 as Decimal,
@@ -2223,7 +2223,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-23, 13, 2, -2, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-11.5, 6.5, 1, -1, 0.5] as Monzo,
                     decimal: 1.032788 as Decimal,
@@ -2241,7 +2241,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [12, -2, -1, -1, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [6, -1, -0.5, -0.5, 0, -0.5] as Monzo,
                     decimal: 1.000122 as Decimal,
@@ -2250,7 +2250,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [17, -5, 0, -2, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [8.5, -2.5, 0, -1, -0.5] as Monzo,
                     decimal: 1.000362 as Decimal,
@@ -2259,7 +2259,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [11, -8, 0, -1, -1, 1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [5.5, -4, 0, -0.5, -0.5, 0.5, 0, 0.5] as Monzo,
                     decimal: 1.000652 as Decimal,
@@ -2268,7 +2268,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-9, 3, 0, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-4.5, 1.5, 0, 0, 0, 0, 0, 0.5] as Monzo,
                     decimal: 1.000976 as Decimal,
@@ -2277,7 +2277,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-18, 14, 1, -1, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-9, 7, 0.5, -0.5, 0, -0.5] as Monzo,
                     decimal: 1.001251 as Decimal,
@@ -2286,7 +2286,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-11, 16, -4, -2, 0, -1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-5.5, 8, -2, -1, 0, -0.5, 0, 0.5] as Monzo,
                     decimal: 1.001548 as Decimal,
@@ -2295,7 +2295,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-17, 13, -4, -1, 0, 0, 0, 2] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-8.5, 6.5, -2, -0.5, 0, 0, 0, 1] as Monzo,
                     decimal: 1.001838 as Decimal,
@@ -2304,7 +2304,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-12, 5, -1, 2, -1, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-6, 2.5, -0.5, 1, -0.5, 0, 0, 0.5] as Monzo,
                     decimal: 1.002112 as Decimal,
@@ -2313,7 +2313,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-10, 1, 0, 3] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-5, 0.5, 0, 1.5] as Monzo,
                     decimal: 1.002438 as Decimal,
@@ -2322,7 +2322,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-2, -4, 1, 1, 2, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-1, -2, 0.5, 0.5, 1, -0.5] as Monzo,
                     decimal: 1.002726 as Decimal,
@@ -2331,7 +2331,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-6, 3, 0, 0, 0, -1, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-3, 1.5, 0, 0, 0, -0.5, 0, 0, 0, 0, 0.5] as Monzo,
                     decimal: 1.003000 as Decimal,
@@ -2340,7 +2340,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-1, 0, 1, -1, -1, 0, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-0.5, 0, 0.5, -0.5, -0.5, 0, 0, 0, 0, 0, 0.5] as Monzo,
                     decimal: 1.003241 as Decimal,
@@ -2349,7 +2349,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [15, -13, 0, 2] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [7.5, -6.5, 0, 1] as Monzo,
                     decimal: 1.003540 as Decimal,
@@ -2358,7 +2358,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [13, -8, -2, 3, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [6.5, -4, -1, 1.5, 0, 0, -0.5] as Monzo,
                     decimal: 1.003835 as Decimal,
@@ -2367,7 +2367,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [4, 8, -3, -2, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [2, 4, -1.5, -1, 0, 0, -0.5] as Monzo,
                     decimal: 1.004078 as Decimal,
@@ -2376,7 +2376,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-9, 11, 0, -3] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-4.5, 5.5, 0, -1.5] as Monzo,
                     decimal: 1.004349 as Decimal,
@@ -2385,7 +2385,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-15, 3, 2, 2] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-7.5, 1.5, 1, 1] as Monzo,
                     decimal: 1.004673 as Decimal,
@@ -2394,7 +2394,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-17, 8, 0, 3, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-8.5, 4, 0, 1.5, 0, 0, -0.5] as Monzo,
                     decimal: 1.004968 as Decimal,
@@ -2403,7 +2403,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-24, 9, 0, 0, 4, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-12, 4.5, 0, 0, 2, 0, -0.5] as Monzo,
                     decimal: 1.005186 as Decimal,
@@ -2412,7 +2412,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-5, -1, 0, 0.5, 1.5] as Monzo,
                     decimal: 1.005464 as Decimal,
@@ -2421,7 +2421,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [10, -11, 2, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [5, -5.5, 1, 0.5] as Monzo,
                     decimal: 1.005777 as Decimal,
@@ -2430,7 +2430,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-10, 0, 2, 2, 1, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-5, 0, 1, 1, 0.5, -0.5] as Monzo,
                     decimal: 1.006103 as Decimal,
@@ -2439,7 +2439,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [8, 2, -2, -1, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [4, 1, -1, -0.5, 0, -0.5] as Monzo,
                     decimal: 1.006353 as Decimal,
@@ -2448,7 +2448,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [13, -1, -1, -2, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [6.5, -0.5, -0.5, -1, -0.5] as Monzo,
                     decimal: 1.006595 as Decimal,
@@ -2457,7 +2457,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-4, 6, 1, 1, -2, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-2, 3, 0.5, 0.5, -1, -0.5] as Monzo,
                     decimal: 1.006870 as Decimal,
@@ -2466,7 +2466,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [7, -1, -1, 0, -1, -1, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [3.5, -0.5, -0.5, 0, -0.5, -0.5, 0.5] as Monzo,
                     decimal: 1.007200 as Decimal,
@@ -2475,7 +2475,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [12, -8, -1, 0, 1, 0, 1, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [6, -4, -0.5, 0, 0.5, 0, 0.5, 0, -0.5] as Monzo,
                     decimal: 1.007550 as Decimal,
@@ -2484,7 +2484,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [10, -3, -3, 1, 1, 0, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [5, -1.5, -1.5, 0.5, 0.5, 0, 0, 0, -0.5] as Monzo,
                     decimal: 1.007846 as Decimal,
@@ -2493,7 +2493,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [1, -3, -2, 3] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [0.5, -1.5, -1, 1.5] as Monzo,
                     decimal: 1.008115 as Decimal,
@@ -2502,7 +2502,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-12, 0, 1, 2, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-6, 0, 0.5, 1, 0, 0, 0.5] as Monzo,
                     decimal: 1.008387 as Decimal,
@@ -2511,7 +2511,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-10, 1, 0, -1, 1, 1, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-5, 0.5, 0, -0.5, 0.5, 0.5, 0.5] as Monzo,
                     decimal: 1.008681 as Decimal,
@@ -2520,7 +2520,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-12, 6, -2, 0, 1, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-6, 3, -1, 0, 0.5, 0.5] as Monzo,
                     decimal: 1.008978 as Decimal,
@@ -2529,7 +2529,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-29, 13, 0, 3] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-14.5, 6.5, 0, 1.5] as Monzo,
                     decimal: 1.009253 as Decimal,
@@ -2538,7 +2538,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-10, -3, 2, 2, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-5, -1.5, 1, 1, 0, 0, 0, 0, 0.5] as Monzo,
                     decimal: 1.009485 as Decimal,
@@ -2547,7 +2547,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [14, -7, 0, 0, 0, -2, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [7, -3.5, 0, 0, 0, -1, 0, 0, 0.5] as Monzo,
                     decimal: 1.009732 as Decimal,
@@ -2556,7 +2556,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [8, 1, 0, -2, 1, -2] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [4, 0.5, 0, -1, 0.5, -1] as Monzo,
                     decimal: 1.010032 as Decimal,
@@ -2565,7 +2565,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-9, 8, 0, -2, 2, 0, 0, 0, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-4.5, 4, 0, -1, 1, 0, 0, 0, 0, 0, -0.5] as Monzo,
                     decimal: 1.010331 as Decimal,
@@ -2574,7 +2574,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [5, -3, 0, -1, 1, 0, 1, 0, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [2.5, -1.5, 0, -0.5, 0.5, 0, 0.5, 0, 0, 0, -0.5] as Monzo,
                     decimal: 1.010611 as Decimal,
@@ -2583,7 +2583,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [12, -11, -1, 0, 0, 1, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [6, -5.5, -0.5, 0, 0, 0.5, 0.5] as Monzo,
                     decimal: 1.010937 as Decimal,
@@ -2592,7 +2592,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [10, -6, -3, 1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [5, -3, -1.5, 0.5, 0, 0.5] as Monzo,
                     decimal: 1.011234 as Decimal,
@@ -2601,7 +2601,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [1, 5, -2, 0, 0, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [0.5, 2.5, -1, 0, 0, 0, 0, -0.5] as Monzo,
                     decimal: 1.011512 as Decimal,
@@ -2610,7 +2610,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-2, 9, 0, 0, -1, 0, 0, -1, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-1, 4.5, 0, 0, -0.5, 0, 0, -0.5, -0.5] as Monzo,
                     decimal: 1.011762 as Decimal,
@@ -2619,7 +2619,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-8, 6, 0, 1, -1, 1, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-4, 3, 0, 0.5, -0.5, 0.5, 0, 0, -0.5] as Monzo,
                     decimal: 1.012055 as Decimal,
@@ -2628,7 +2628,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-20, 10, -1, 1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-10, 5, -0.5, 0.5, 0, 0.5] as Monzo,
                     decimal: 1.012376 as Decimal,
@@ -2637,7 +2637,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-9, 1, 2, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-4.5, 0.5, 1, 0.5] as Monzo,
                     decimal: 1.012615 as Decimal,
@@ -2646,7 +2646,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [2, -8, 5, 1, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [1, -4, 2.5, 0.5, 0, -0.5] as Monzo,
                     decimal: 1.012855 as Decimal,
@@ -2655,7 +2655,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [9, -6, 0, 0, 0, -1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [4.5, -3, 0, 0, 0, -0.5, 0, 0.5] as Monzo,
                     decimal: 1.013156 as Decimal,
@@ -2664,7 +2664,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-17, 11, -2, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-8.5, 5.5, -1, 0, 0, 0, 0, 0.5] as Monzo,
                     decimal: 1.013488 as Decimal,
@@ -2673,7 +2673,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-39, 17, 4, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-19.5, 8.5, 2, 0.5] as Monzo,
                     decimal: 1.013759 as Decimal,
@@ -2682,7 +2682,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-16, 0, 3, 2, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-8, 0, 1.5, 1, 0.5] as Monzo,
                     decimal: 1.013933 as Decimal,
@@ -2691,7 +2691,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-4, -2, 2, 1, 1, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-2, -1, 1, 0.5, 0.5, -0.5] as Monzo,
                     decimal: 1.014057 as Decimal,
@@ -2700,7 +2700,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-21, 10, 2, 0, 0, -1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-10.5, 5, 1, 0, 0, -0.5, 0, 0.5] as Monzo,
                     decimal: 1.014300 as Decimal,
@@ -2709,7 +2709,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-4, -1, -1, 0, 0, 1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-2, -0.5, -0.5, 0, 0, 0.5, 0, 0.5] as Monzo,
                     decimal: 1.014478 as Decimal,
@@ -2718,7 +2718,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [30, -18, -1, -1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [15, -9, -0.5, -0.5, 0, 0.5] as Monzo,
                     decimal: 1.014603 as Decimal,
@@ -2727,7 +2727,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [10, -7, -1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [5, -3.5, -0.5, 0, 0.5] as Monzo,
                     decimal: 1.014931 as Decimal,
@@ -2736,7 +2736,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-10, 4, -1, 1, 2, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-5, 2, -0.5, 0.5, 1, -0.5] as Monzo,
                     decimal: 1.015260 as Decimal,
@@ -2745,7 +2745,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-5, 1, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-2.5, 0.5, 0, 0, 0.5] as Monzo,
                     decimal: 1.015504 as Decimal,
@@ -2754,7 +2754,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [0, -2, 1, -1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [0, -1, 0.5, -0.5, 0, 0.5] as Monzo,
                     decimal: 1.015749 as Decimal,
@@ -2763,7 +2763,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [11, -11, 4, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [5.5, -5.5, 2, -0.5] as Monzo,
                     decimal: 1.015989 as Decimal,
@@ -2772,7 +2772,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-9, 0, 4, 0, 1, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-4.5, 0, 2, 0, 0.5, -0.5] as Monzo,
                     decimal: 1.016318 as Decimal,
@@ -2781,7 +2781,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-35, 17, 2, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-17.5, 8.5, 1, 0, 0.5] as Monzo,
                     decimal: 1.016651 as Decimal,
@@ -2790,7 +2790,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-30, 14, 3, -1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-15, 7, 1.5, -0.5, 0, 0.5] as Monzo,
                     decimal: 1.016895 as Decimal,
@@ -2799,7 +2799,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-19, 5, 6, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-9.5, 2.5, 3, -0.5] as Monzo,
                     decimal: 1.017136 as Decimal,
@@ -2808,7 +2808,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-5, -6, 6, 0, -1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-2.5, -3, 3, 0, -0.5, 0, 0.5] as Monzo,
                     decimal: 1.017417 as Decimal,
@@ -2817,7 +2817,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [2, -4, 1, -1, -1, 0, 1, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [1, -2, 0.5, -0.5, -0.5, 0, 0.5, 0.5] as Monzo,
                     decimal: 1.017720 as Decimal,
@@ -2826,7 +2826,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [0, 1, -1, 0, -1, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [0, 0.5, -0.5, 0, -0.5, 0, 0, 0.5] as Monzo,
                     decimal: 1.018019 as Decimal,
@@ -2835,7 +2835,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [2, -3, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [1, -1.5, 0, 0.5] as Monzo,
                     decimal: 1.018350 as Decimal,
@@ -2844,7 +2844,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [10, -8, 1, -1, 2, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [5, -4, 0.5, -0.5, 1, -0.5] as Monzo,
                     decimal: 1.018642 as Decimal,
@@ -2853,7 +2853,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [7, -4, 3, -1, 1, -1, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [3.5, -2, 1.5, -0.5, 0.5, -0.5, 0, 0, -0.5] as Monzo,
                     decimal: 1.018894 as Decimal,
@@ -2862,7 +2862,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-16, 9, 3, 1, -1, 0, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-8, 4.5, 1.5, 0.5, -0.5, 0, 0, 0, -0.5] as Monzo,
                     decimal: 1.019176 as Decimal,
@@ -2871,7 +2871,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-10, 7, 0, 1, -1, 1, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-5, 3.5, 0, 0.5, -0.5, 0.5, -0.5] as Monzo,
                     decimal: 1.019469 as Decimal,
@@ -2880,7 +2880,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [1, 0, -2, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [0.5, 0, -1, 0, 0, 0.5] as Monzo,
                     decimal: 1.019803 as Decimal,
@@ -2889,7 +2889,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [1, 3, -2, 1, 0, -1, 1, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [0.5, 1.5, -1, 0.5, 0, -0.5, 0.5, -0.5] as Monzo,
                     decimal: 1.020121 as Decimal,
@@ -2898,7 +2898,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [3, 2, 2, -1, 0, -1, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [1.5, 1, 1, -0.5, 0, -0.5, 0, -0.5] as Monzo,
                     decimal: 1.020325 as Decimal,
@@ -2907,7 +2907,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [4, -5, 2, -2, 0, 0, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [2, -2.5, 1, -1, 0, 0, 0, 0, 0, 0, 0.5] as Monzo,
                     decimal: 1.020492 as Decimal,
@@ -2916,7 +2916,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-1, -6, 0, 2, 0, 0, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-0.5, -3, 0, 1, 0, 0, 0, 0, 0, 0, 0.5] as Monzo,
                     decimal: 1.020704 as Decimal,
@@ -2925,7 +2925,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-20, 8, -1, 2, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-10, 4, -0.5, 1, 0, 0, 0.5] as Monzo,
                     decimal: 1.020992 as Decimal,
@@ -2934,7 +2934,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-26, 16, -1, 0, 1, 0, 1, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-13, 8, -0.5, 0, 0.5, 0, 0.5, 0, -0.5] as Monzo,
                     decimal: 1.021296 as Decimal,
@@ -2943,7 +2943,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [3, 1, 0, 0, 0, 0, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [1.5, 0.5, 0, 0, 0, 0, 0, 0, -0.5] as Monzo,
                     decimal: 1.021507 as Decimal,
@@ -2952,7 +2952,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-6, 1, 1, 2, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-3, 0.5, 0.5, 1, -0.5] as Monzo,
                     decimal: 1.021779 as Decimal,
@@ -2961,7 +2961,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-18, 5, 0, 2, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-9, 2.5, 0, 1, 0, 0, 0, 0, 0.5] as Monzo,
                     decimal: 1.022104 as Decimal,
@@ -2970,7 +2970,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-6, 3, -1, 1, 0, -1, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-3, 1.5, -0.5, 0.5, 0, -0.5, 0, 0, 0.5] as Monzo,
                     decimal: 1.022228 as Decimal,
@@ -2979,7 +2979,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [0, 1, 0, 1, 1, -1, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [0, 0.5, 0, 0.5, 0.5, -0.5, -0.5] as Monzo,
                     decimal: 1.022374 as Decimal,
@@ -2988,7 +2988,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [5, -2, 1, 0, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [2.5, -1, 0.5, 0, 0, 0, -0.5] as Monzo,
                     decimal: 1.022619 as Decimal,
@@ -2997,7 +2997,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [8, 2, 1, -1, -2, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [4, 1, 0.5, -0.5, -1, -0.5] as Monzo,
                     decimal: 1.022852 as Decimal,
@@ -3006,7 +3006,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-4, 6, 0, -1, -1, -1, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-2, 3, 0, -0.5, -0.5, -0.5, 0, 0, 0.5] as Monzo,
                     decimal: 1.023176 as Decimal,
@@ -3015,7 +3015,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-19, 8, -2, 1, 0, 1, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-9.5, 4, -1, 0.5, 0, 0.5, 0, 0, 0.5] as Monzo,
                     decimal: 1.023563 as Decimal,
@@ -3024,7 +3024,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [2, 2, -5, 1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [1, 1, -2.5, 0.5, 0, 0.5] as Monzo,
                     decimal: 1.023874 as Decimal,
@@ -3033,7 +3033,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [13, -7, -2, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [6.5, -3.5, -1, 0.5] as Monzo,
                     decimal: 1.024117 as Decimal,
@@ -3042,7 +3042,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [0, -4, 1, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [0, -2, 0.5, 0, 0, 0, 0.5] as Monzo,
                     decimal: 1.024393 as Decimal,
@@ -3051,7 +3051,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-26, 13, -1, 0, 0, 1, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-13, 6.5, -0.5, 0, 0, 0.5, 0.5] as Monzo,
                     decimal: 1.024729 as Decimal,
@@ -3060,7 +3060,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-28, 18, -3, 1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-14, 9, -1.5, 0.5, 0, 0.5] as Monzo,
                     decimal: 1.025031 as Decimal,
@@ -3069,7 +3069,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-17, 9, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-8.5, 4.5, 0, 0.5] as Monzo,
                     decimal: 1.025273 as Decimal,
@@ -3078,7 +3078,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-6, 0, 3, 1, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-3, 0, 1.5, 0.5, 0, -0.5] as Monzo,
                     decimal: 1.025515 as Decimal,
@@ -3087,7 +3087,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-8, 5, 1, 2, 0, -1, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-4, 2.5, 0.5, 1, 0, -0.5, -0.5] as Monzo,
                     decimal: 1.025817 as Decimal,
@@ -3096,7 +3096,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-12, 7, 0, 2, 0, 1, -1, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-6, 3.5, 0, 1, 0, 0.5, -0.5, -0.5] as Monzo,
                     decimal: 1.026154 as Decimal,
@@ -3105,7 +3105,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-1, 0, -2, 1, 1, 1, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-0.5, 0, -1, 0.5, 0.5, 0.5, 0, -0.5] as Monzo,
                     decimal: 1.026491 as Decimal,
@@ -3114,7 +3114,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-12, 6, 0, 1, 1, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-6, 3, 0, 0.5, 0.5, -0.5] as Monzo,
                     decimal: 1.026732 as Decimal,
@@ -3123,7 +3123,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-7, 3, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-3.5, 1.5, 0.5] as Monzo,
                     decimal: 1.026979 as Decimal,
@@ -3132,7 +3132,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [22, -10, -3, -1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [11, -5, -1.5, -0.5, 0, 0.5] as Monzo,
                     decimal: 1.027285 as Decimal,
@@ -3141,7 +3141,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [15, -8, -2, -1, 0, 0, 0, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [7.5, -4, -1, -0.5, 0, 0, 0, 0, 0, 0, 0, 0.5] as Monzo,
                     decimal: 1.027594 as Decimal,
@@ -3150,7 +3150,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-5, 3, -2, 0, 1, -1, 0, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-2.5, 1.5, -1, 0, 0.5, -0.5, 0, 0, 0, 0, 0, 0.5] as Monzo,
                     decimal: 1.027927 as Decimal,
@@ -3159,7 +3159,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-13, 9, -2, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-6.5, 4.5, -1, 0, 0.5] as Monzo,
                     decimal: 1.028198 as Decimal,
@@ -3168,7 +3168,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-8, 6, -1, -1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-4, 3, -0.5, -0.5, 0, 0.5] as Monzo,
                     decimal: 1.028445 as Decimal,
@@ -3177,7 +3177,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [3, -3, 2, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [1.5, -1.5, 1, -0.5] as Monzo,
                     decimal: 1.028688 as Decimal,
@@ -3186,7 +3186,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [5, -7, 3, 0, 1, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [2.5, -3.5, 1.5, 0, 0.5, 0, 0, -0.5] as Monzo,
                     decimal: 1.029023 as Decimal,
@@ -3195,7 +3195,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-21, 10, 1, 0, 1, 1, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-10.5, 5, 0.5, 0, 0.5, 0.5, 0, -0.5] as Monzo,
                     decimal: 1.029360 as Decimal,
@@ -3204,7 +3204,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-38, 22, 1, -1, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-19, 11, 0.5, -0.5, 0, 0.5] as Monzo,
                     decimal: 1.029607 as Decimal,
@@ -3213,7 +3213,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-27, 13, 4, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-13.5, 6.5, 2, -0.5] as Monzo,
                     decimal: 1.029850 as Decimal,
@@ -3222,7 +3222,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-4, -4, 3, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-2, -2, 1.5, 0, 0.5] as Monzo,
                     decimal: 1.030027 as Decimal,
@@ -3231,7 +3231,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [11, -8, -1, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [5.5, -4, -0.5, 0, 0, 0, 0.5] as Monzo,
                     decimal: 1.030194 as Decimal,
@@ -3240,7 +3240,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [8, -4, 1, 0, -1, 0, 1, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [4, -2, 0.5, 0, -0.5, 0, 0.5, 0, -0.5] as Monzo,
                     decimal: 1.030449 as Decimal,
@@ -3249,7 +3249,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [6, 1, -1, 1, -1, 0, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [3, 0.5, -0.5, 0.5, -0.5, 0, 0, 0, -0.5] as Monzo,
                     decimal: 1.030752 as Decimal,
@@ -3258,7 +3258,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-6, 5, -2, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-3, 2.5, -1, 0.5] as Monzo,
                     decimal: 1.031079 as Decimal,
@@ -3267,7 +3267,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-19, 8, 1, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-9.5, 4, 0.5, 0, 0, 0, 0.5] as Monzo,
                     decimal: 1.031358 as Decimal,
@@ -3276,7 +3276,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-14, 5, 2, -1, -1, 1, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-7, 2.5, 1, -0.5, -0.5, 0.5, 0.5] as Monzo,
                     decimal: 1.031606 as Decimal,
@@ -3285,7 +3285,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [12, -6, 1, -3, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [6, -3, 0.5, -1.5, 0, 0.5] as Monzo,
                     decimal: 1.031872 as Decimal,
@@ -3294,7 +3294,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [17, -4, 0, -2, 0, 0, 0, 0, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [8.5, -2, 0, -1, 0, 0, 0, 0, 0, 0, -0.5] as Monzo,
                     decimal: 1.032128 as Decimal,
@@ -3303,7 +3303,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-15, 9, 1, 0, 1, 0, 0, 0, 0, 0, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-7.5, 4.5, 0.5, 0, 0.5, 0, 0, 0, 0, 0, -0.5] as Monzo,
                     decimal: 1.032336 as Decimal,
@@ -3312,7 +3312,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-28, 16, 1, -1, 2, -1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-14, 8, 0.5, -0.5, 1, -0.5] as Monzo,
                     decimal: 1.032540 as Decimal,
@@ -3321,7 +3321,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-14, 5, 1, 0, 1, -1, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-7, 2.5, 0.5, 0, 0.5, -0.5, 0.5] as Monzo,
                     decimal: 1.032826 as Decimal,
@@ -3330,7 +3330,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     pitch: {
                         monzo: [-9, 2, 2, -1, 0, 0, 1] as Monzo<{ rational: true }>,
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                     monzo: [-4.5, 1, 1, -0.5, 0, 0, 0.5] as Monzo,
                     decimal: 1.033074 as Decimal,

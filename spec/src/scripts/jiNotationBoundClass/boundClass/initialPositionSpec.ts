@@ -1,4 +1,4 @@
-import { SQRT_SCALER } from "../../../../../src/general/math/irrational/scamon"
+import { HALF_SCALER } from "../../../../../src/general/math/irrational/scamon"
 import { Monzo } from "../../../../../src/general/math/numeric/monzo"
 import { Scamon } from "../../../../../src/general/math/numeric/scamon"
 import { Cents, computePitchFromCents } from "../../../../../src/general/music"
@@ -22,7 +22,7 @@ describe("computeInitialPosition", (): void => {
             // + [  -8   8  -2                         ⟩      //|
             // / 2 =
             monzo: [-22, 14, -2, 0, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-            scaler: SQRT_SCALER,
+            scaler: HALF_SCALER,
         } as Scamon<{ rational: false }>
         expect(actual).toEqual(expected)
     })

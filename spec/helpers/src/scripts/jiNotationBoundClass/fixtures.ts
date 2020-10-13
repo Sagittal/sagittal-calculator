@@ -10,7 +10,7 @@ import {
     Quotient,
     Rank,
     Scamon,
-    SQRT_SCALER,
+    HALF_SCALER,
     Sum,
     UNISON,
 } from "../../../../../src/general"
@@ -30,7 +30,7 @@ import { BoundClassEventAnalysis, BoundClassHistoryAnalysis, Score } from "../..
 import { RANKS } from "../../../../../src/scripts/jiNotationBoundClass/ranks"
 
 const boundClassEventFixture: BoundClassEvent = {
-    pitch: { monzo: IRRATIONAL_SCAMON_BASE_MONZO, scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
+    pitch: { monzo: IRRATIONAL_SCAMON_BASE_MONZO, scaler: HALF_SCALER } as Scamon<{ rational: false }>,
     boundType: "" as BoundType,
     jiNotationLevel: "" as JiNotationLevel,
     name: "" as Name<BoundClass>,
@@ -46,7 +46,7 @@ const boundClassEventAnalysisFixture: BoundClassEventAnalysis = {
 
 const boundClassHistoryAnalysisFixture: BoundClassHistoryAnalysis = {
     boundClassEventAnalyses: [],
-    pitch: { monzo: IRRATIONAL_SCAMON_BASE_MONZO, scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
+    pitch: { monzo: IRRATIONAL_SCAMON_BASE_MONZO, scaler: HALF_SCALER } as Scamon<{ rational: false }>,
     rank: 0 as Decimal<{ integer: true }> & Rank<BoundType>,
     score: 0 as Score,
     totalDistance: 0 as Sum<Abs<Cents>>,

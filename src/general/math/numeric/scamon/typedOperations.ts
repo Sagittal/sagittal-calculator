@@ -1,5 +1,5 @@
 import { Decimal, divide, Max, Min, multiply, NumericProperties } from "../../../math"
-import { computeIrrationalDecimalFromScamon, computeIrrationalScamonFromDecimal, SQRT_SCALER } from "../../irrational"
+import { computeIrrationalDecimalFromScamon, computeIrrationalScamonFromDecimal, HALF_SCALER } from "../../irrational"
 import { Scamon } from "./types"
 
 const addScamons = (scamonA: Scamon, scamonB: Scamon): Scamon<{ direction: undefined, rational: false }> =>
@@ -13,7 +13,7 @@ const subtractScamons = (fromScamon: Scamon, toScamon: Scamon): Scamon<{ directi
     ) as Scamon<{ direction: undefined, rational: false }>
 
 const halfScamon = <T extends NumericProperties>(scamon: Scamon<T>): Scamon<T & { rational: false }> =>
-    ({ ...scamon, scaler: SQRT_SCALER } as Scamon<T & { rational: false }>)
+    ({ ...scamon, scaler: HALF_SCALER } as Scamon<T & { rational: false }>)
 
 const maxScamon = (...scamons: Array<Scamon>): Max<Scamon> => {
     let maxDecimal = -Infinity as Decimal

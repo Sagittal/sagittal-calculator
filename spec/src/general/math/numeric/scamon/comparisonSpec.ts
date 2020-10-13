@@ -1,4 +1,4 @@
-import { SQRT_SCALER } from "../../../../../../src/general/math/irrational/scamon"
+import { HALF_SCALER } from "../../../../../../src/general/math/irrational/scamon"
 import { Monzo } from "../../../../../../src/general/math/numeric/monzo"
 import { Quotient } from "../../../../../../src/general/math/numeric/quotient"
 import {

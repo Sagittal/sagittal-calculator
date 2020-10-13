@@ -1,4 +1,4 @@
-import { Abs, Cents, Count, Id, Monzo, Multiplier, Name, Scamon, SQRT_SCALER, Sum } from "../../../../../src/general"
+import { Abs, Cents, Count, Id, Monzo, Multiplier, Name, Scamon, HALF_SCALER, Sum } from "../../../../../src/general"
 import { APOTOME } from "../../../../../src/sagittal"
 import {
     BoundClass,
@@ -25,7 +25,7 @@ describe("analyzeJiNotationBound", (): void => {
             name: ".)/| '/|" as Name<BoundClass>,
             pitch: {
                 monzo: [-17, 11, -2, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                scaler: SQRT_SCALER,
+                scaler: HALF_SCALER,
             } as Scamon<{ rational: false }>,
         },
         {
@@ -34,7 +34,7 @@ describe("analyzeJiNotationBound", (): void => {
             name: ".)/| '/|" as Name<BoundClass>,
             pitch: {
                 monzo: [-17, 11, -2, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                scaler: SQRT_SCALER,
+                scaler: HALF_SCALER,
             } as Scamon<{ rational: false }>,
         },
         {
@@ -55,7 +55,7 @@ describe("analyzeJiNotationBound", (): void => {
             name: ".)/| '/|" as Name<BoundClass>,
             pitch: {
                 monzo: [-17, 11, -2, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                scaler: SQRT_SCALER,
+                scaler: HALF_SCALER,
             } as Scamon<{ rational: false }>,
         },
         {
@@ -99,7 +99,7 @@ describe("analyzeJiNotationBound", (): void => {
             name: ".)/| '/|" as Name<BoundClass>,
             pitch: {
                 monzo: [-17, 11, -2, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                scaler: SQRT_SCALER,
+                scaler: HALF_SCALER,
             } as Scamon<{ rational: false }>,
             rank: RANKS[ BoundType.COMMA_MEAN ],
             distance: 0 as Abs<Cents>,
@@ -156,7 +156,7 @@ describe("analyzeJiNotationBound", (): void => {
             bestRank: RANKS[ BoundType.COMMA_MEAN ],
             initialPosition: {
                 monzo: [-17, 11, -2, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                scaler: SQRT_SCALER,
+                scaler: HALF_SCALER,
             } as Scamon<{ rational: false }>,
             initialPositionTinaDistance: -0.5613173198962398 as Multiplier<Tina>,
             possibleBoundClassHistoryCount: 2 as Count<BoundClassHistoryAnalysis>,
@@ -171,7 +171,7 @@ describe("analyzeJiNotationBound", (): void => {
                         name: ".)/| '/|" as Name<BoundClass>,
                         pitch: {
                             monzo: [-17, 11, -2, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                            scaler: SQRT_SCALER,
+                            scaler: HALF_SCALER,
                         } as Scamon<{ rational: false }>,
                         isPossibleBoundClassHistoryMember: true,
                         isBestPossibleBoundClassHistoryMember: true,
@@ -191,7 +191,7 @@ describe("analyzeJiNotationBound", (): void => {
                         name: ".)/| '/|" as Name<BoundClass>,
                         pitch: {
                             monzo: [-17, 11, -2, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
-                            scaler: SQRT_SCALER,
+                            scaler: HALF_SCALER,
                         } as Scamon<{ rational: false }>,
                         isPossibleBoundClassHistoryMember: true,
                         isBestPossibleBoundClassHistoryMember: false,

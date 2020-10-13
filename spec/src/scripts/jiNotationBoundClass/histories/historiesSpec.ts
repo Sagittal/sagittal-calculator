@@ -1,4 +1,4 @@
-import { Monzo, Name, Scamon, SQRT_SCALER } from "../../../../../src/general"
+import { Monzo, Name, Scamon, HALF_SCALER } from "../../../../../src/general"
 import { APOTOME } from "../../../../../src/sagittal"
 import { BoundClass, BoundType, JiNotationBoundClass, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 import { EXTREME_EDA, INSANE_EDA, MEDIUM_EDA, ULTRA_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"
@@ -210,7 +210,7 @@ describe("computeHistories", (): void => {
                     name: ",)|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
             ],
@@ -239,7 +239,7 @@ describe("computeHistories", (): void => {
                     name: ",)|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -277,7 +277,7 @@ describe("computeHistories", (): void => {
                     name: ",)|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -315,7 +315,7 @@ describe("computeHistories", (): void => {
                     name: ",)|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -353,7 +353,7 @@ describe("computeHistories", (): void => {
                     name: ",)|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -391,7 +391,7 @@ describe("computeHistories", (): void => {
                     name: ",)|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -400,7 +400,7 @@ describe("computeHistories", (): void => {
                     name: ",)|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
             ],
@@ -420,7 +420,7 @@ describe("computeHistories", (): void => {
                     name: "~| )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -458,7 +458,7 @@ describe("computeHistories", (): void => {
                     name: "~| )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -496,7 +496,7 @@ describe("computeHistories", (): void => {
                     name: "~| )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -534,7 +534,7 @@ describe("computeHistories", (): void => {
                     name: "~| )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -572,7 +572,7 @@ describe("computeHistories", (): void => {
                     name: "~| )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -590,7 +590,7 @@ describe("computeHistories", (): void => {
                     name: ",)|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
             ],
@@ -610,7 +610,7 @@ describe("computeHistories", (): void => {
                     name: "~| )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -619,7 +619,7 @@ describe("computeHistories", (): void => {
                     name: ",)|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -648,7 +648,7 @@ describe("computeHistories", (): void => {
                     name: "~| )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -657,7 +657,7 @@ describe("computeHistories", (): void => {
                     name: ",)|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -686,7 +686,7 @@ describe("computeHistories", (): void => {
                     name: "~| )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -695,7 +695,7 @@ describe("computeHistories", (): void => {
                     name: ",)|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -724,7 +724,7 @@ describe("computeHistories", (): void => {
                     name: "~| )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -733,7 +733,7 @@ describe("computeHistories", (): void => {
                     name: ",)|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -762,7 +762,7 @@ describe("computeHistories", (): void => {
                     name: "~| )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -771,7 +771,7 @@ describe("computeHistories", (): void => {
                     name: ",)|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -780,7 +780,7 @@ describe("computeHistories", (): void => {
                     name: ",)|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
             ],
@@ -791,7 +791,7 @@ describe("computeHistories", (): void => {
                     name: "|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -829,7 +829,7 @@ describe("computeHistories", (): void => {
                     name: "|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -867,7 +867,7 @@ describe("computeHistories", (): void => {
                     name: "|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -905,7 +905,7 @@ describe("computeHistories", (): void => {
                     name: "|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -943,7 +943,7 @@ describe("computeHistories", (): void => {
                     name: "|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -970,7 +970,7 @@ describe("computeHistories", (): void => {
                     name: ",)|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
             ],
@@ -981,7 +981,7 @@ describe("computeHistories", (): void => {
                     name: "|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -999,7 +999,7 @@ describe("computeHistories", (): void => {
                     name: ",)|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -1019,7 +1019,7 @@ describe("computeHistories", (): void => {
                     name: "|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -1037,7 +1037,7 @@ describe("computeHistories", (): void => {
                     name: ",)|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -1057,7 +1057,7 @@ describe("computeHistories", (): void => {
                     name: "|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -1075,7 +1075,7 @@ describe("computeHistories", (): void => {
                     name: ",)|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -1095,7 +1095,7 @@ describe("computeHistories", (): void => {
                     name: "|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -1113,7 +1113,7 @@ describe("computeHistories", (): void => {
                     name: ",)|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -1133,7 +1133,7 @@ describe("computeHistories", (): void => {
                     name: "|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -1151,7 +1151,7 @@ describe("computeHistories", (): void => {
                     name: ",)|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -1160,7 +1160,7 @@ describe("computeHistories", (): void => {
                     name: ",)|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
             ],
@@ -1171,7 +1171,7 @@ describe("computeHistories", (): void => {
                     name: "|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -1180,7 +1180,7 @@ describe("computeHistories", (): void => {
                     name: "~| )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -1209,7 +1209,7 @@ describe("computeHistories", (): void => {
                     name: "|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -1218,7 +1218,7 @@ describe("computeHistories", (): void => {
                     name: "~| )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -1247,7 +1247,7 @@ describe("computeHistories", (): void => {
                     name: "|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -1256,7 +1256,7 @@ describe("computeHistories", (): void => {
                     name: "~| )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -1285,7 +1285,7 @@ describe("computeHistories", (): void => {
                     name: "|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -1294,7 +1294,7 @@ describe("computeHistories", (): void => {
                     name: "~| )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -1323,7 +1323,7 @@ describe("computeHistories", (): void => {
                     name: "|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -1332,7 +1332,7 @@ describe("computeHistories", (): void => {
                     name: "~| )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -1350,7 +1350,7 @@ describe("computeHistories", (): void => {
                     name: ",)|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
             ],
@@ -1361,7 +1361,7 @@ describe("computeHistories", (): void => {
                     name: "|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -1370,7 +1370,7 @@ describe("computeHistories", (): void => {
                     name: "~| )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -1379,7 +1379,7 @@ describe("computeHistories", (): void => {
                     name: ",)|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -1399,7 +1399,7 @@ describe("computeHistories", (): void => {
                     name: "|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -1408,7 +1408,7 @@ describe("computeHistories", (): void => {
                     name: "~| )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -1417,7 +1417,7 @@ describe("computeHistories", (): void => {
                     name: ",)|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -1437,7 +1437,7 @@ describe("computeHistories", (): void => {
                     name: "|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -1446,7 +1446,7 @@ describe("computeHistories", (): void => {
                     name: "~| )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -1455,7 +1455,7 @@ describe("computeHistories", (): void => {
                     name: ",)|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -1475,7 +1475,7 @@ describe("computeHistories", (): void => {
                     name: "|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -1484,7 +1484,7 @@ describe("computeHistories", (): void => {
                     name: "~| )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -1493,7 +1493,7 @@ describe("computeHistories", (): void => {
                     name: ",)|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -1513,7 +1513,7 @@ describe("computeHistories", (): void => {
                     name: "|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [17, -10, 1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -1522,7 +1522,7 @@ describe("computeHistories", (): void => {
                     name: "~| )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [0, 3, 0, 1, -1, 0, -1],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -1531,7 +1531,7 @@ describe("computeHistories", (): void => {
                     name: ",)|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
                 {
@@ -1540,7 +1540,7 @@ describe("computeHistories", (): void => {
                     name: ",)|( )|(" as Name<BoundClass>,
                     pitch: {
                         monzo: [-10, -2, 0, 1, 3],
-                        scaler: SQRT_SCALER,
+                        scaler: HALF_SCALER,
                     } as Scamon<{ rational: false }>,
                 },
             ],
@@ -1638,7 +1638,7 @@ describe("computeHistories", (): void => {
                     jiNotationLevel: JiNotationLevel.INSANE,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<BoundClass>,
-                    pitch: { monzo: APOTOME.monzo, scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
+                    pitch: { monzo: APOTOME.monzo, scaler: HALF_SCALER } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -1652,7 +1652,7 @@ describe("computeHistories", (): void => {
                     jiNotationLevel: JiNotationLevel.EXTREME,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<BoundClass>,
-                    pitch: { monzo: APOTOME.monzo, scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
+                    pitch: { monzo: APOTOME.monzo, scaler: HALF_SCALER } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -1672,7 +1672,7 @@ describe("computeHistories", (): void => {
                     jiNotationLevel: JiNotationLevel.EXTREME,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<BoundClass>,
-                    pitch: { monzo: APOTOME.monzo, scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
+                    pitch: { monzo: APOTOME.monzo, scaler: HALF_SCALER } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -1692,7 +1692,7 @@ describe("computeHistories", (): void => {
                     jiNotationLevel: JiNotationLevel.EXTREME,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<BoundClass>,
-                    pitch: { monzo: APOTOME.monzo, scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
+                    pitch: { monzo: APOTOME.monzo, scaler: HALF_SCALER } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -1712,13 +1712,13 @@ describe("computeHistories", (): void => {
                     jiNotationLevel: JiNotationLevel.EXTREME,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<BoundClass>,
-                    pitch: { monzo: APOTOME.monzo, scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
+                    pitch: { monzo: APOTOME.monzo, scaler: HALF_SCALER } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<BoundClass>,
-                    pitch: { monzo: APOTOME.monzo, scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
+                    pitch: { monzo: APOTOME.monzo, scaler: HALF_SCALER } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -1726,7 +1726,7 @@ describe("computeHistories", (): void => {
                     jiNotationLevel: JiNotationLevel.MEDIUM,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<BoundClass>,
-                    pitch: { monzo: APOTOME.monzo, scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
+                    pitch: { monzo: APOTOME.monzo, scaler: HALF_SCALER } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -1746,7 +1746,7 @@ describe("computeHistories", (): void => {
                     jiNotationLevel: JiNotationLevel.MEDIUM,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<BoundClass>,
-                    pitch: { monzo: APOTOME.monzo, scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
+                    pitch: { monzo: APOTOME.monzo, scaler: HALF_SCALER } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -1766,7 +1766,7 @@ describe("computeHistories", (): void => {
                     jiNotationLevel: JiNotationLevel.MEDIUM,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<BoundClass>,
-                    pitch: { monzo: APOTOME.monzo, scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
+                    pitch: { monzo: APOTOME.monzo, scaler: HALF_SCALER } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -1786,7 +1786,7 @@ describe("computeHistories", (): void => {
                     jiNotationLevel: JiNotationLevel.MEDIUM,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<BoundClass>,
-                    pitch: { monzo: APOTOME.monzo, scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
+                    pitch: { monzo: APOTOME.monzo, scaler: HALF_SCALER } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -1798,7 +1798,7 @@ describe("computeHistories", (): void => {
                     jiNotationLevel: JiNotationLevel.INSANE,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<BoundClass>,
-                    pitch: { monzo: APOTOME.monzo, scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
+                    pitch: { monzo: APOTOME.monzo, scaler: HALF_SCALER } as Scamon<{ rational: false }>,
                 },
             ],
             [
@@ -1806,13 +1806,13 @@ describe("computeHistories", (): void => {
                     jiNotationLevel: JiNotationLevel.MEDIUM,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<BoundClass>,
-                    pitch: { monzo: APOTOME.monzo, scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
+                    pitch: { monzo: APOTOME.monzo, scaler: HALF_SCALER } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<BoundClass>,
-                    pitch: { monzo: APOTOME.monzo, scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
+                    pitch: { monzo: APOTOME.monzo, scaler: HALF_SCALER } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -1826,13 +1826,13 @@ describe("computeHistories", (): void => {
                     jiNotationLevel: JiNotationLevel.MEDIUM,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<BoundClass>,
-                    pitch: { monzo: APOTOME.monzo, scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
+                    pitch: { monzo: APOTOME.monzo, scaler: HALF_SCALER } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<BoundClass>,
-                    pitch: { monzo: APOTOME.monzo, scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
+                    pitch: { monzo: APOTOME.monzo, scaler: HALF_SCALER } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -1846,13 +1846,13 @@ describe("computeHistories", (): void => {
                     jiNotationLevel: JiNotationLevel.MEDIUM,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<BoundClass>,
-                    pitch: { monzo: APOTOME.monzo, scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
+                    pitch: { monzo: APOTOME.monzo, scaler: HALF_SCALER } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<BoundClass>,
-                    pitch: { monzo: APOTOME.monzo, scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
+                    pitch: { monzo: APOTOME.monzo, scaler: HALF_SCALER } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -1866,19 +1866,19 @@ describe("computeHistories", (): void => {
                     jiNotationLevel: JiNotationLevel.MEDIUM,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<BoundClass>,
-                    pitch: { monzo: APOTOME.monzo, scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
+                    pitch: { monzo: APOTOME.monzo, scaler: HALF_SCALER } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.EXTREME,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<BoundClass>,
-                    pitch: { monzo: APOTOME.monzo, scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
+                    pitch: { monzo: APOTOME.monzo, scaler: HALF_SCALER } as Scamon<{ rational: false }>,
                 },
                 {
                     jiNotationLevel: JiNotationLevel.INSANE,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<BoundClass>,
-                    pitch: { monzo: APOTOME.monzo, scaler: SQRT_SCALER } as Scamon<{ rational: false }>,
+                    pitch: { monzo: APOTOME.monzo, scaler: HALF_SCALER } as Scamon<{ rational: false }>,
                 },
             ],
         ]
