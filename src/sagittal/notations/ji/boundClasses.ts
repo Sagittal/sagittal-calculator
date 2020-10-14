@@ -1235,7 +1235,7 @@ const JI_NOTATION_BOUND_CLASSES: JiNotationBoundClass[] = [
             scaler: [404.5, INSANE_EDA],
         } as Scamon<{ rational: false }>,
         boundType: BoundType.INA_MIDPOINT,
-        // TODO: NotationCaptureZoneAccidental functionality - can wait until after primary comma usefulness check
+        // TODO: NotationCaptureZoneAccidental functionality
         //  Okay, I'm deciding to keep a bound across this whole thing, like the 0¢ boundary in the middle of
         //  The natural symbol's capture zone, same symbol on either side, that's okay. That's how it'll be in the
         //  High and Ultra notations where )/|\ actually spans across the half apotome. I'll just have to make sure that

@@ -7,7 +7,7 @@ bound  	lesser 	greater	extreme 	extreme 	medium 	high   	ultra  	extreme	      
 class  	mina   	mina   	comma   	comma   	level  	level  	level  	level  	overall	dstance	dstance	dstance	dstance	dstance	ina-dst	ina-dst	ina-dst	ina-dst	ina-dst	pos    	pos    	error  
 ID     	name   	name   	class   	class   	rank   	rank   	rank   	rank   	rank   	moved  	moved  	moved  	moved  	moved  	moved  	moved  	moved  	moved  	moved  	(¢)    	(¢)    	(tinas)
        	       	       	        	        	       	       	       	       	       	       	       	       	       	       	       	       	       	       	       	       	       	       
-  0    	       	  1    	        	    `|  	       	       	       	  1    	  1    	       	       	       	  0.033	  0.033	       	       	       	  0.236	  0.236	  0.211	  0.211	 -0.004
+  0    	  0    	  1    	 (|//|) 	    `|  	       	       	       	  1    	  1    	       	       	       	  0.033	  0.033	       	       	       	  0.236	  0.236	  0.211	  0.211	 -0.004
   1    	  1    	  2    	    `|  	   ``|  	       	       	       	  1    	  1    	       	       	       	  0.041	  0.041	       	       	       	  0.292	  0.292	  0.773	  0.628	  1.034
   2    	  2    	  3    	   ``|  	   .)|  	       	  1    	  1    	  1    	  1    	       	  0.229	  0.240	  0.025	  0.494	       	  0.117	  0.491	  0.180	  0.789	  1.194	  1.689	 -3.519
   3    	  3    	  4    	   .)|  	    '|  	       	       	  2    	  1    	  2    	       	       	  0.019	  0.049	  0.068	       	       	  0.038	  0.348	  0.386	  1.757	  1.689	  0.481

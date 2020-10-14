@@ -1,6 +1,6 @@
 // tslint:disable max-line-length
 
-// TODO: NotationCaptureZoneAccidental functionality - can wait until after primary comma usefulness check
+// TODO: NotationCaptureZoneAccidental functionality
 //  You can use this for it
 
 /*
