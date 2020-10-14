@@ -45,8 +45,8 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
             extremeLevelLesserBoundedCommaClass: ".)/|" as Ascii,
             extremeLevelGreaterBoundedCommaClass: "'/|" as Ascii,
             cents: 23.116419 as Cents as Cents,
-            boundedCommaClassAnalyses: {
-                id: 47 as Id<JiNotationBoundClass>,
+            boundedCommaClassInfoPairs: {
+                jiNotationBoundClassId: 47 as Id<JiNotationBoundClass>,
                 [ JiNotationLevel.ULTRA ]: [
                     {
                         introducingJiNotationLevel: JiNotationLevel.ULTRA,

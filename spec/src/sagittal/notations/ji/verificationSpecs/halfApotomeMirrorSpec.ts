@@ -1,6 +1,7 @@
 // tslint:disable max-line-length
 
-// TODO: Part of this test can be adapted to drive out the NotationCaptureZoneAccidental functionality
+// TODO: NotationCaptureZoneAccidental functionality
+//  You can use this for it
 
 /*
 import { increment } from "../../../../../../src/general/code"

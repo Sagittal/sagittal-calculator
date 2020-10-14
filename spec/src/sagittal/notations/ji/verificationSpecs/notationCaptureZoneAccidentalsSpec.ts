@@ -1,8 +1,5 @@
-// Todo: DEFER UNTIL AFTER RESOLVE CONVO WITH DAVE RE: CLASSES
-//  CONSTANTIZE EACH COMMA CLASS
-//  So they can have names, you don’t have to know their IDs
-//  As well as symbols, bounds maybe... anything that we have good names for
-//  And when you're done with that, e.g. you should go through and replace (|//|) references to like UNISON.ascii, etc.
+// TODO: NotationCaptureZoneAccidental functionality
+//  You can use this for it
 
 /*
 import { Apotome, Count, Direction, Id } from "../../general"

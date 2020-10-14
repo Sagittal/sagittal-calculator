@@ -1,4 +1,4 @@
-import { computeCentsFromPitch, Maybe } from "../../../../general"
+import { computeCentsFromPitch, isUndefined } from "../../../../general"
 import {
     Ascii,
     computeAsciiFromSymbol,
@@ -8,68 +8,46 @@ import {
     JiNotationBoundClass,
     JiNotationLevel,
 } from "../../../../sagittal"
-import { computeBoundedCommaClassAnalyses } from "./boundedCommaClassAnalyses"
-import { JI_NOTATION_LEVEL_BOUNDED_COMMA_CLASSES } from "./levelBoundedCommaClasses"
-import {
-    BoundedCommaClass,
-    BoundedCommaClassAnalyses,
-    BoundedCommaClassIdWithDistancesPair,
-    JiNotationBoundClassIdentifiers,
-    JiNotationBoundClassIdWithBoundedCommaClassIdsWithDistancesPairsByJiNotationLevel,
-} from "./types"
+import { computeBoundedCommaClassInfoPairs } from "./boundedCommaClassInfoPairs"
+import { BOUNDED_COMMA_CLASS_ID_PAIRS } from "./levelBoundedCommaClasses"
+import { BoundedCommaClassIdPairs, BoundedCommaClassInfoPairs, JiNotationBoundClassIdentifiers } from "./types"
 
 const extractJiNotationBoundClassIdentifiers = (
     { pitch, id }: JiNotationBoundClass,
 ): JiNotationBoundClassIdentifiers => {
-    const jiNotationBoundIdWithBoundedCommaClassIdWithDistancesPairsByJiNotationLevel =
-        JI_NOTATION_LEVEL_BOUNDED_COMMA_CLASSES.find(
-            (
-                jiNotationBoundIdWithBoundedCommaClassIdWithDistancesPairsByLevel:
-                    JiNotationBoundClassIdWithBoundedCommaClassIdsWithDistancesPairsByJiNotationLevel,
-            ): boolean => {
-                return jiNotationBoundIdWithBoundedCommaClassIdWithDistancesPairsByLevel.id === id
-            })
-    if (!jiNotationBoundIdWithBoundedCommaClassIdWithDistancesPairsByJiNotationLevel) {
-        throw new Error(`Could not find bounded comma classes for bound with ID ${id}`)
-    }
+    const boundedCommaClassIdPair = BOUNDED_COMMA_CLASS_ID_PAIRS.find(
+        (boundedCommaClassIdPairs: BoundedCommaClassIdPairs): boolean => {
+            return boundedCommaClassIdPairs.jiNotationBoundClassId === id
+        })
+    if (!boundedCommaClassIdPair) throw new Error(`Could not find bounded comma class ID pair for bound with ID ${id}`)
 
-    const boundedCommaClassAnalyses: BoundedCommaClassAnalyses =
-        computeBoundedCommaClassAnalyses(jiNotationBoundIdWithBoundedCommaClassIdWithDistancesPairsByJiNotationLevel)
+    const boundedCommaClassInfoPairs: BoundedCommaClassInfoPairs =
+        computeBoundedCommaClassInfoPairs(boundedCommaClassIdPair)
 
-    const [
-        extremeLevelLesserBoundedCommaClassIdWithDistance,
-        extremeLevelGreaterBoundedCommaClassIdWithDistance,
-    ]: BoundedCommaClassIdWithDistancesPair =
-        // tslint:disable-next-line max-line-length
-        jiNotationBoundIdWithBoundedCommaClassIdWithDistancesPairsByJiNotationLevel[ JiNotationLevel.EXTREME ] as BoundedCommaClassIdWithDistancesPair
+    const [extremeLevelLesserBoundedCommaClassId, extremeLevelGreaterBoundedCommaClassId] =
+        boundedCommaClassIdPair[ JiNotationLevel.EXTREME ]
 
-    const extremeLevelLesserBoundedCommaClass: Maybe<BoundedCommaClass> =
-        extremeLevelLesserBoundedCommaClassIdWithDistance && {
-            ...extremeLevelLesserBoundedCommaClassIdWithDistance,
-            ...getCommaClass(extremeLevelLesserBoundedCommaClassIdWithDistance.id),
-        } as BoundedCommaClass
+    const extremeLevelLesserBoundedCommaClass = !isUndefined(extremeLevelLesserBoundedCommaClassId) &&
+        getCommaClass(extremeLevelLesserBoundedCommaClassId)
     const formattedExtremeLevelLesserBoundedCommaClass = extremeLevelLesserBoundedCommaClass ?
         computeAsciiFromSymbol(getRepresentativeSymbol(extremeLevelLesserBoundedCommaClass.id)) :
         "" as Ascii
-    const lesserBoundedMinaName = extremeLevelLesserBoundedCommaClass &&
-        getMinaName(extremeLevelLesserBoundedCommaClass.id)
+    const lesserBoundedMinaName =
+        extremeLevelLesserBoundedCommaClass ? getMinaName(extremeLevelLesserBoundedCommaClass.id) : undefined
 
-    const extremeLevelGreaterBoundedCommaClass: Maybe<BoundedCommaClass> =
-        extremeLevelGreaterBoundedCommaClassIdWithDistance && {
-            ...extremeLevelGreaterBoundedCommaClassIdWithDistance,
-            ...getCommaClass(extremeLevelGreaterBoundedCommaClassIdWithDistance.id),
-        } as BoundedCommaClass
+    const extremeLevelGreaterBoundedCommaClass = !isUndefined(extremeLevelGreaterBoundedCommaClassId) &&
+        getCommaClass(extremeLevelGreaterBoundedCommaClassId)
     const formattedExtremeLevelGreaterBoundedCommaClass = extremeLevelGreaterBoundedCommaClass ?
         computeAsciiFromSymbol(getRepresentativeSymbol(extremeLevelGreaterBoundedCommaClass.id)) :
         "" as Ascii
-    const greaterBoundedMinaName = extremeLevelGreaterBoundedCommaClass &&
-        getMinaName(extremeLevelGreaterBoundedCommaClass.id)
+    const greaterBoundedMinaName =
+        extremeLevelGreaterBoundedCommaClass ? getMinaName(extremeLevelGreaterBoundedCommaClass.id) : undefined
 
     return {
         extremeLevelLesserBoundedCommaClass: formattedExtremeLevelLesserBoundedCommaClass,
         extremeLevelGreaterBoundedCommaClass: formattedExtremeLevelGreaterBoundedCommaClass,
         cents: computeCentsFromPitch(pitch),
-        boundedCommaClassAnalyses,
+        boundedCommaClassInfoPairs,
         lesserBoundedMinaName,
         greaterBoundedMinaName,
     }

@@ -44,10 +44,8 @@ interface Notation {
 
 // Ranges from -2 to 2 apotomes
 interface NotationCaptureZoneAccidental {
-    // TODO: If anything is a "primary comma", it's a "compute" from this + dir + apotome count
-    //  - also, okay, interesting, I guess we don't need this yet for any current script group? kinda surprising...
-    //  Almost feel like we *should* be using it, like we're getting around it somehow. like maybe all the work we do
-    //  To compute the bounded symbols could be circiumvrented if we actually built this ability to generate these?
+    // TODO: NotationCaptureZoneAccidental functionality
+    //  If anything is a "primary comma", it's a "compute" from this + dir + apotome count
     commaClassId: Id<CommaClass>,
     boundClassId: Id<BoundClass>,
     commaDirection: Direction,

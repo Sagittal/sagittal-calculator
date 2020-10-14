@@ -1,67 +1,59 @@
 import { Abs, Cents, Id, Maybe, Multiplier, Name } from "../../../../general"
 import {
     Ascii,
+    CommaAnalysis,
     CommaClass,
+    FlaccoSubset,
     Ina,
     JiNotationBoundClass,
     JiNotationLevel,
     Mina,
+    Unicode,
 } from "../../../../sagittal"
-import { CommaClassInfo } from "../types"
 
-// Shared
+// Building up to BoundedCommaClassIdPairs
 
-interface BoundedProperties {
+type BoundedCommaClassIdPair = [Maybe<Id<CommaClass>>, Maybe<Id<CommaClass>>]
+
+type BoundedCommaClassIdPairs =
+    { jiNotationBoundClassId: Id<JiNotationBoundClass> }
+    & Partial<Record<JiNotationLevel, BoundedCommaClassIdPair>>
+
+// Building up to JiNotationBoundClassIdentifiers
+
+interface BoundedCommaClassInfo {
+    id: Id<CommaClass>,
+    commaAnalysis: CommaAnalysis,
+    representativeSymbol: {
+        ascii: Ascii,
+        unicode: Unicode,
+        smallestFlaccoSubset: FlaccoSubset,
+    }
+    introducingJiNotationLevel: JiNotationLevel,
+    minaName: Name<Mina>,
     distance: Abs<Cents>,
     inaDistance: Multiplier<Ina>,
 }
 
-// Only used temporarily within a method
+type BoundedCommaClassInfoPair = [Maybe<BoundedCommaClassInfo>, Maybe<BoundedCommaClassInfo>]
 
-interface BoundedCommaClass extends CommaClass, BoundedProperties {
-}
-
-// Building up to JiNotationBoundIdentifiers
-
-interface BoundedCommaClassInfo extends CommaClassInfo, BoundedProperties {
-}
-
-type BoundedCommaClassInfoPair =
-    [Maybe<BoundedCommaClassInfo>, Maybe<BoundedCommaClassInfo>]
-
-type BoundedCommaClassAnalyses = { id: Id<JiNotationBoundClass> }
+type BoundedCommaClassInfoPairs =
+    { jiNotationBoundClassId: Id<JiNotationBoundClass> }
     & Partial<Record<JiNotationLevel, BoundedCommaClassInfoPair>>
 
 interface JiNotationBoundClassIdentifiers {
-    boundedCommaClassAnalyses: BoundedCommaClassAnalyses,
+    boundedCommaClassInfoPairs: BoundedCommaClassInfoPairs,
     extremeLevelGreaterBoundedCommaClass: Ascii,
     extremeLevelLesserBoundedCommaClass: Ascii,
-    greaterBoundedMinaName?: Name<Mina>,
-    lesserBoundedMinaName?: Name<Mina>,
+    greaterBoundedMinaName: Maybe<Name<Mina>>,
+    lesserBoundedMinaName: Maybe<Name<Mina>>,
     cents: Cents,
 }
 
-// Building up to JiNotationBoundIdWithBoundedCommaClassIdsWithDistancesPairsByJiNotationLevel
-
-interface BoundedCommaClassIdWithDistances extends BoundedProperties {
-    id: Id<CommaClass>,
-}
-
-type BoundedCommaClassIdWithDistancesPair = [
-    Maybe<BoundedCommaClassIdWithDistances>,
-    Maybe<BoundedCommaClassIdWithDistances>,
-]
-
-type JiNotationBoundClassIdWithBoundedCommaClassIdsWithDistancesPairsByJiNotationLevel =
-    { id: Id<JiNotationBoundClass> }
-    & Partial<Record<JiNotationLevel, BoundedCommaClassIdWithDistancesPair>>
-
 export {
-    BoundedCommaClass,
-    CommaClassInfo,
-    BoundedCommaClassAnalyses,
+    BoundedCommaClassInfo,
+    BoundedCommaClassInfoPairs,
     JiNotationBoundClassIdentifiers,
-    JiNotationBoundClassIdWithBoundedCommaClassIdsWithDistancesPairsByJiNotationLevel,
-    BoundedCommaClassIdWithDistancesPair,
-    BoundedCommaClassIdWithDistances,
+    BoundedCommaClassIdPairs,
+    BoundedCommaClassIdPair,
 }
