@@ -33,8 +33,9 @@ const JI_NOTATION_LEVELS_COMMA_MEANS: Record<JiNotationLevel, CommaMean[]> =
 const JI_NOTATION_LEVELS_SIZE_CATEGORY_BOUNDS: Record<JiNotationLevel, SizeCategoryBound[]> =
     computeBoundPositions(computeSizeCategoryBoundsUpToHalfApotome)
 
-// TODO: why aren't these actually JiNotationBoundClass[] ? hwat makes the difference?
-const JI_NOTATION_BOUND_CLASSES_BY_TYPE: Record<BoundType, Record<JiNotationLevel, BoundClass[]>> = {
+// These are not JiNotationBoundClass because that means they're actually in the notation;
+// These are all just potential bound classes for the notation from which to draw
+const BOUND_CLASSES_BY_TYPE: Record<BoundType, Record<JiNotationLevel, BoundClass[]>> = {
     [ BoundType.INA_MIDPOINT ]: INA_MIDPOINTS,
     [ BoundType.SIZE_CATEGORY_BOUND ]: JI_NOTATION_LEVELS_SIZE_CATEGORY_BOUNDS,
     [ BoundType.COMMA_MEAN ]: JI_NOTATION_LEVELS_COMMA_MEANS,
@@ -44,5 +45,5 @@ export {
     INA_MIDPOINTS,
     JI_NOTATION_LEVELS_COMMA_MEANS,
     JI_NOTATION_LEVELS_SIZE_CATEGORY_BOUNDS,
-    JI_NOTATION_BOUND_CLASSES_BY_TYPE,
+    BOUND_CLASSES_BY_TYPE,
 }
