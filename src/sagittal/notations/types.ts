@@ -44,7 +44,7 @@ interface Notation {
 
 // Ranges from -2 to 2 apotomes
 interface NotationCaptureZoneAccidental {
-    // TODO: NotationCaptureZoneAccidental functionality
+    // TODO: NotationCaptureZoneAccidental functionality - can wait until after primary comma usefulness check
     //  If anything is a "primary comma", it's a "compute" from this + dir + apotome count
     commaClassId: Id<CommaClass>,
     boundClassId: Id<BoundClass>,
