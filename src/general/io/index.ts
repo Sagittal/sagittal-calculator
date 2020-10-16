@@ -29,7 +29,7 @@ export {
     JustificationOption,
 } from "./table"
 export { sumTexts, join, split } from "./typedOperations"
-export { ColorMethod, Filename, HexColor, Io } from "./types"
+export { ColorMethod, Filename, HexColor, Io, Char } from "./types"
 export { Basis, computePx, Px, Scale } from "./image"
 export {
     alignFormattedDecimal,

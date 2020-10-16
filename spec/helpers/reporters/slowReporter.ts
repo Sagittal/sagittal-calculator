@@ -19,7 +19,8 @@ const slowReporter: jasmine.CustomReporter = {
         specTimes.push({ description: description, time: time })
 
         if (time >= WARN_THRESHOLD_MS) {
-            saveLog(`      took ${time}ms` as Io, LogTarget.SPEC)
+            // TODO: remove other "as Io" for `saveLog` calls, as well as similarly now unnecessary LogTarget.ALL's
+            saveLog(`      took ${time}ms`, LogTarget.SPEC)
         }
     },
 

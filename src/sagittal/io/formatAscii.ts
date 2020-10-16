@@ -1,8 +1,11 @@
 import { Formatted, shallowClone } from "../../general"
+import { PARENTHETICAL_CONVENTIONAL_NATURAL_ASCII } from "../constants"
 import { Ascii } from "./types"
 
 const formatAscii = (ascii: Ascii): Formatted<Ascii> => {
-    if (ascii === "(|//|)") return " (|//|) " as Formatted<Ascii>
+    if (ascii === PARENTHETICAL_CONVENTIONAL_NATURAL_ASCII) {
+        return ` ${PARENTHETICAL_CONVENTIONAL_NATURAL_ASCII} ` as Formatted<Ascii>
+    }
 
     const shaftIndex = ascii.indexOf("|")
 

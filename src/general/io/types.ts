@@ -8,7 +8,7 @@ type Filename = string & { _FileBrand: boolean }
 
 type Char = string & { _CharBrand: boolean }
 
-type Io = string & { _IOBrand: boolean }
+type Io = string & { _IOBrand?: boolean }
 
 type ColorMethod =
     "white" |

@@ -1,8 +1,9 @@
+import { PARENTHETICAL_CONVENTIONAL_NATURAL_SMILEY, PARENTHETICAL_CONVENTIONAL_NATURAL_SYMBOL } from "../constants"
 import { SagittalSymbol } from "../notations"
 import { Smiley } from "./types"
 
 const computeSmileyFromSymbol = (symbol: SagittalSymbol): Smiley => {
-    if (symbol === "(|//|)") return "(:h:)" as Smiley
+    if (symbol === PARENTHETICAL_CONVENTIONAL_NATURAL_SYMBOL) return PARENTHETICAL_CONVENTIONAL_NATURAL_SMILEY
 
     const withoutAccentsAndFixedSlashes = symbol
         .replace(/`/g, "")

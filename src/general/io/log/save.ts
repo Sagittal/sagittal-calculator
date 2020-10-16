@@ -5,7 +5,7 @@ import { targetColors } from "./colors"
 import { LogTarget, SaveLogOptions } from "./types"
 import { write } from "./write"
 
-const saveLog = (message: Io, target: LogTarget, options: SaveLogOptions = {}): void => {
+const saveLog = (message: Io, target: LogTarget = LogTarget.ALL, options: SaveLogOptions = {}): void => {
     const { useTargetColor = true, filenameOverride, writeOnly = false } = options
 
     if (ioSettings.logTargets[ LogTarget.NONE ]) {

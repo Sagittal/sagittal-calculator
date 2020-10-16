@@ -13,7 +13,7 @@ import { computeCommas, parseFindCommasSettings } from "../findCommas"
 import { jiPitchScriptGroupSettings } from "../globals"
 import { applySharedPitchCommandSetup } from "./shared"
 
-// Todo: FINALLY IMPLEMENT PRIMARY COMMA USEFULNESS CHECK
+// TODO: FINALLY IMPLEMENT PRIMARY COMMA USEFULNESS CHECK
 //  See: http://forum.sagittal.org/viewtopic.php?p=2432#p2432
 //  And: http://forum.sagittal.org/viewtopic.php?p=2419#p2419
 

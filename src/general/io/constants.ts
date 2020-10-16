@@ -9,12 +9,9 @@ const ANY_MONZO_CHARS = /[\[|>\]⟩]/
 const IDENTIFYING_COMMA_NAME_CHARS = /[unskCSMLA]/
 const ANY_CENTS_CHARS = /[c¢]/
 const ANY_QUOTIENT_CHARS = /[\/:]/
-const ANY_DECIMAL_CHARS = /[.]/
 
 const SUPERSCRIPT_NUMBERS: Char[] = ["⁰", "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹"] as Char[]
 const SUBSCRIPT_NUMBERS: Char[] = ["₀", "₁", "₂", "₃", "₄", "₅", "₆", "₇", "₈", "₉"] as Char[]
-
-const SUBSCRIPT_HYPHEN: Char = "₋" as Char
 
 const NEWLINE = "\n" as Io
 const SPACE = " " as Io
@@ -44,6 +41,4 @@ export {
     ANY_CENTS_CHARS,
     ANY_QUOTIENT_CHARS,
     INITIAL_IO_SETTINGS,
-    ANY_DECIMAL_CHARS,
-    SUBSCRIPT_HYPHEN,
 }

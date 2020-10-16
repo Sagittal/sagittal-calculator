@@ -1,6 +1,7 @@
 import { Accent, Flag, Shaft } from "./types"
 
-const BARE_SHAFT = "|" as Shaft
+const SHAFT_UP = "|" as Shaft
+const SHAFT_DOWN = "!" as Shaft
 
 const WING_UP = "`|" as Accent
 const WING_DOWN = ",|" as Accent
@@ -38,5 +39,6 @@ export {
     ARC_LEFT,
     BARB_LEFT,
     BARB_RIGHT,
-    BARE_SHAFT,
+    SHAFT_UP,
+    SHAFT_DOWN,
 }

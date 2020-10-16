@@ -28,7 +28,7 @@ describe("computeSymbolFromFlacco", (): void => {
     })
 
     it("works for a symbol with flags and accents on the right only", (): void => {
-        const flacco =  {
+        const flacco = {
             id: 128 as Id<Flacco>,
             combo: ["|\\", "|)"] as Array<Flag | Accent>,
         }
@@ -52,10 +52,10 @@ describe("computeSymbolFromFlacco", (): void => {
     })
 
     it("works for the natural symbol", (): void => {
-      const flacco = {
-          id: 0 as Id<Flacco>,
-          combo: [] as Array<Flag | Accent>,
-      }
+        const flacco = {
+            id: 0 as Id<Flacco>,
+            combo: [] as Array<Flag | Accent>,
+        }
 
         const actual = computeSymbolFromFlacco(flacco)
 

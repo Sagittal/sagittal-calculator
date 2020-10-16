@@ -100,6 +100,7 @@ export {
     parseDecimal,
     Justification,
     JustificationOption,
+    Char,
 } from "./io"
 export {
     abs,
