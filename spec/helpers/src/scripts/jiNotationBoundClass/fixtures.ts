@@ -26,7 +26,11 @@ import {
 import { JiNotationBoundClassAnalysis } from "../../../../../src/scripts/jiNotationBoundClass/boundClass"
 import { BoundClassEventConsolidation } from "../../../../../src/scripts/jiNotationBoundClass/consolidateHistories/types"
 import { BoundClassEvent } from "../../../../../src/scripts/jiNotationBoundClass/histories"
-import { BoundClassEventAnalysis, BoundClassHistoryAnalysis, Score } from "../../../../../src/scripts/jiNotationBoundClass/history"
+import {
+    BoundClassEventAnalysis,
+    BoundClassHistoryAnalysis,
+    Score,
+} from "../../../../../src/scripts/jiNotationBoundClass/history"
 import { RANKS } from "../../../../../src/scripts/jiNotationBoundClass/ranks"
 
 const boundClassEventFixture: BoundClassEvent = {

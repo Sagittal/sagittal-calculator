@@ -13,7 +13,7 @@ const formatSymbol = (
     switch (ioSettings.tableFormat) {
         case TableFormat.TERMINAL:
             const ascii = computeAsciiFromSymbol(symbol)
-            return align ? 
+            return align ?
                 formatAscii(ascii) :
                 ascii as string as Formatted<Ascii>
         case TableFormat.FORUM:

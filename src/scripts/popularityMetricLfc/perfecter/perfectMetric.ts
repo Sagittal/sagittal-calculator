@@ -1,4 +1,4 @@
-import { Decimal, Io, LogTarget, round, saveLog } from "../../../general"
+import { Decimal, LogTarget, round, saveLog } from "../../../general"
 import {
     nonRecursiveSearchScopeAndMaybeUpdateBestMetric,
     nonRecursiveSearchScopeAndMaybeUpdateBestMetricSync,
@@ -30,7 +30,7 @@ const computeSearchNextLocalMinArguments = (
     const indentation = computeIndentation(depth)
 
     const nextLocalMinima = computeLocalMinima(samples, sumsOfSquares, localMin)
-    saveLog(`${indentation}${metricTag} - ${nextLocalMinima.length} lcl min / ${samples.length} samples (${round(100 * nextLocalMinima.length / samples.length)}%)` as Io, LogTarget.PROGRESS)
+    saveLog(`${indentation}${metricTag} - ${nextLocalMinima.length} lcl min / ${samples.length} samples (${round(100 * nextLocalMinima.length / samples.length)}%)`, LogTarget.PROGRESS)
 
     const searchNextLocalMinOptions = {
         dynamicParameters,

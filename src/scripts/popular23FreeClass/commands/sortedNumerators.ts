@@ -5,7 +5,6 @@ import {
     Decimal,
     dividesEvenly,
     Filename,
-    Io,
     KeyPath,
     LogTarget,
     Numerator,
@@ -46,7 +45,7 @@ for (
 
     if (n2p / 9 > 5298.2) continue
 
-    saveLog(`${numerator}: ${n2p}` as Io, LogTarget.PROGRESS)
+    saveLog(`${numerator}: ${n2p}`, LogTarget.PROGRESS)
     n2Results.push({ numerator, gpf, n2 } as SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2)
     n2pResults.push({ numerator, gpf, n2p } as SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P)
 }
@@ -54,5 +53,5 @@ for (
 sort(n2Results, { by: "n2" as KeyPath })
 sort(n2pResults, { by: "n2p" as KeyPath })
 
-saveLog(stringify(n2Results, { multiline: true }) as Io, LogTarget.FINAL)
-saveLog(stringify(n2pResults, { multiline: true }) as Io, LogTarget.FINAL)
+saveLog(stringify(n2Results, { multiline: true }), LogTarget.FINAL)
+saveLog(stringify(n2pResults, { multiline: true }), LogTarget.FINAL)

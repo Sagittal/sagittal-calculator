@@ -1,7 +1,6 @@
 import {
     COMMA_POPULARITIES,
     Filename,
-    Io,
     isNumber,
     LogTarget,
     Name,
@@ -41,4 +40,4 @@ const noRottens = potentiallyRottenEntries.reduce(
     {} as Record<Name<Metric>, Metric>,
 )
 
-saveLog(stringify(noRottens, { multiline: true }) as Io, LogTarget.FINAL)
+saveLog(stringify(noRottens, { multiline: true }), LogTarget.FINAL)

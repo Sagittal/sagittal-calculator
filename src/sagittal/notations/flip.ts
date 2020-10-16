@@ -3,7 +3,7 @@ import { SHAFT_DOWN } from "./elements"
 import { SagittalSymbol } from "./types"
 
 const flipAccents = (symbol: SagittalSymbol): SagittalSymbol => {
-    return symbol     
+    return symbol
         .replace(/`/g, "_")
         .replace(/,/g, "`")
         .replace(/_/g, ",")
@@ -19,7 +19,7 @@ const flipBarbs = (symbol: SagittalSymbol): SagittalSymbol => {
         .replace(/_/g, "\\") as SagittalSymbol
 }
 
-const flipShafts  = (symbol: SagittalSymbol): SagittalSymbol => {
+const flipShafts = (symbol: SagittalSymbol): SagittalSymbol => {
     return symbol
         .replace(/\|/g, SHAFT_DOWN)
         .replace(/X/g, "Y") as SagittalSymbol

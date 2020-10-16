@@ -1,4 +1,3 @@
-import { HALF_SCALER } from "../../../../../../src/general/math/irrational/scamon"
 import { Monzo } from "../../../../../../src/general/math/numeric/monzo"
 import { Quotient } from "../../../../../../src/general/math/numeric/quotient"
 import {
@@ -9,8 +8,6 @@ import {
     isScamonLesserOrEqual,
     Scamon,
 } from "../../../../../../src/general/math/numeric/scamon"
-import { APOTOME } from "../../../../../../src/sagittal"
-import { MEDIUM_EDA } from "../../../../../../src/sagittal/notations/ji/levelEdas"
 
 describe("areScamonsEqual", (): void => {
     describe("for rational scamons", (): void => {

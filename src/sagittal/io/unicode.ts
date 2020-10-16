@@ -6,7 +6,7 @@ import { Unicode } from "./types"
 // This only works for Sagittal material, i.e. it does not contain unicode for the conventional sharp character, etc.
 
 const SYMBOL_TO_UNICODE_MAP: Record<RecordKey<SagittalSymbol>, Unicode> = {
-    [PARENTHETICAL_CONVENTIONAL_NATURAL_ASCII]: PARENTHETICAL_CONVENTIONAL_NATURAL_UNICODE,
+    [ PARENTHETICAL_CONVENTIONAL_NATURAL_ASCII ]: PARENTHETICAL_CONVENTIONAL_NATURAL_UNICODE,
     "`|": "" as Unicode,
     "``|": "" as Unicode,
     ".)|": "" as Unicode,
@@ -989,7 +989,7 @@ const SYMBOL_TO_UNICODE_MAP: Record<RecordKey<SagittalSymbol>, Unicode> = {
     "')Y(": "" as Unicode,
 }
 
-const computeUnicodeFromSymbol = (symbol: SagittalSymbol): Unicode => 
+const computeUnicodeFromSymbol = (symbol: SagittalSymbol): Unicode =>
     SYMBOL_TO_UNICODE_MAP[ symbol ]
 
 export {

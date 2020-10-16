@@ -1,4 +1,4 @@
-import { Filename, Io, LogTarget, Maybe, Name, saveLog, stringify } from "../../../../general"
+import { Filename, LogTarget, Maybe, Name, saveLog, stringify } from "../../../../general"
 import { Metric } from "../../bestMetric"
 import { PARAMETER_DYNAMISMS } from "../../perfecter"
 import { Parameter, ParameterValue, Submetric } from "../../sumOfSquares"
@@ -46,4 +46,4 @@ const guessedBackfilledSpreadDynamicParametersMetrics = metricsMissingSpreadDyna
     {} as Record<Name<Metric>, Metric>,
 )
 
-saveLog(stringify(guessedBackfilledSpreadDynamicParametersMetrics, { multiline: true }) as Io, LogTarget.FINAL)
+saveLog(stringify(guessedBackfilledSpreadDynamicParametersMetrics, { multiline: true }), LogTarget.FINAL)

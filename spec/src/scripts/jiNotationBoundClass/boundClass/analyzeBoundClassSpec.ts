@@ -13,7 +13,11 @@ import { analyzeJiNotationBoundClass } from "../../../../../src/scripts/jiNotati
 import * as jiNotationLevels from "../../../../../src/scripts/jiNotationBoundClass/boundClass/levels"
 import * as ranks from "../../../../../src/scripts/jiNotationBoundClass/boundClass/ranks"
 import { BoundClassHistory } from "../../../../../src/scripts/jiNotationBoundClass/histories"
-import { BoundClassEventAnalysis, BoundClassHistoryAnalysis, Score } from "../../../../../src/scripts/jiNotationBoundClass/history"
+import {
+    BoundClassEventAnalysis,
+    BoundClassHistoryAnalysis,
+    Score,
+} from "../../../../../src/scripts/jiNotationBoundClass/history"
 import { RANKS } from "../../../../../src/scripts/jiNotationBoundClass/ranks"
 import { jiNotationBoundClassFixture } from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 

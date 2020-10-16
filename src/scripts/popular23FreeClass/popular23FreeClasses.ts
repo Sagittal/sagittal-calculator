@@ -1,7 +1,6 @@
 import {
     DEFAULT_PRECISION,
     doForEachRationalMonzo,
-    Io,
     isMonzoSub,
     isUndefined,
     KeyPath,
@@ -32,7 +31,7 @@ const computeMaybeSuperPopular23FreeClass = (
         undefined
 
     if (!isUndefined(maybeSuperPopular23FreeClass)) {
-        saveLog(stringify(maybeSuperPopular23FreeClass) as Io, LogTarget.PROGRESS)
+        saveLog(stringify(maybeSuperPopular23FreeClass), LogTarget.PROGRESS)
 
         return maybeSuperPopular23FreeClass
     }
@@ -45,7 +44,7 @@ const computePopular23FreeClasses = (maxN2D3P9: Max<N2D3P9>): Array<Ranked<Popul
     if (popular23FreeClassesScriptGroupSettings.useKnown) {
         popular23FreeClasses = computeKnownPopular23FreeClasses()
     } else {
-        saveLog("About to calculate prime exponent extremas given max N2D3P9" as Io, LogTarget.PROGRESS)
+        saveLog("About to calculate prime exponent extremas given max N2D3P9", LogTarget.PROGRESS)
 
         const primeExponentExtremasGivenMaxN2D3P9 = computePrimeExponentExtremasGivenMaxN2D3P9(maxN2D3P9)
 

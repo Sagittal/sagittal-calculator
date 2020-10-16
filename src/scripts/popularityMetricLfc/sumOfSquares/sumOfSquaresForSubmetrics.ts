@@ -1,7 +1,6 @@
 import {
     Combination,
     COMMA_POPULARITIES,
-    Io,
     ioSettings,
     isNumber,
     LogTarget,
@@ -32,14 +31,14 @@ const computeSumOfSquaresForSubmetrics = (submetrics: Combination<Submetric>): S
 
     if (ioSettings.logTargets[ LogTarget.ALL ] || ioSettings.logTargets[ LogTarget.DETAILS ]) {
         rankedUnpopularities.forEach((rankedUnpopularity: Ranked<Unpopularity>): void => {
-            saveLog(stringify(rankedUnpopularity) as Io, LogTarget.DETAILS)
+            saveLog(stringify(rankedUnpopularity), LogTarget.DETAILS)
         })
     }
 
     const sumOfSquares =
         computeSumOfSquares(rankedUnpopularities, popularities, popularityMetricLfcScriptGroupSettings.z)
 
-    saveLog(`sum-of-squares ${sumOfSquares}` as Io, LogTarget.DETAILS)
+    saveLog(`sum-of-squares ${sumOfSquares}`, LogTarget.DETAILS)
 
     return sumOfSquares
 }

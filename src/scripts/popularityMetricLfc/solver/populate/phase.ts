@@ -51,7 +51,7 @@ const computeChunkCombinations = (
     let submetricChunkCombinations: Combinations<Chunk<Submetric>>
     if (memoizedSubmetricChunkCombinations[ chunkCountForSubmetrics ]) {
         submetricChunkCombinations = memoizedSubmetricChunkCombinations[ chunkCountForSubmetrics ]
-        saveLog(`used memoized submetric combinations (with repetitions)` as Io, LogTarget.SETUP)
+        saveLog(`used memoized submetric combinations (with repetitions)`, LogTarget.SETUP)
     } else {
         const submetricChunks = popularityMetricLfcScriptGroupSettings.noUseless ?
             NO_USELESS_SUBMETRIC_CHUNKS :
@@ -59,7 +59,7 @@ const computeChunkCombinations = (
         submetricChunkCombinations =
             computeCombinations(submetricChunks, chunkCountForSubmetrics, { withRepeatedElements: true })
         memoizedSubmetricChunkCombinations[ chunkCountForSubmetrics ] = submetricChunkCombinations
-        saveLog(`submetric combinations (with repetitions) computed: ${submetricChunkCombinations.length}; formula is ((${chunkCountForSubmetrics}+${submetricChunks.length}-1)!)/((${chunkCountForSubmetrics}!)((${submetricChunks.length}-1)!)) where ${submetricChunks.length} is the total of possible existing chunks and ${chunkCountForSubmetrics} is the count we are choosing at a time` as Io, LogTarget.SETUP)
+        saveLog(`submetric combinations (with repetitions) computed: ${submetricChunkCombinations.length}; formula is ((${chunkCountForSubmetrics}+${submetricChunks.length}-1)!)/((${chunkCountForSubmetrics}!)((${submetricChunks.length}-1)!)) where ${submetricChunks.length} is the total of possible existing chunks and ${chunkCountForSubmetrics} is the count we are choosing at a time`, LogTarget.SETUP)
     }
     submetricChunkCombinations.forEach((submetricChunkCombination: Combination<Chunk<Submetric>>): void => {
         submetricChunkCombination.unshift(ALL_BINS_SUBMETRIC_SCOPE)
@@ -68,7 +68,7 @@ const computeChunkCombinations = (
     let parameterChunkCombinations: Combinations<Chunk<Parameter>>
     if (memoizedParameterChunkCombinations[ chunkCountForParameters ]) {
         parameterChunkCombinations = memoizedParameterChunkCombinations[ chunkCountForParameters ]
-        saveLog(`used memoized parameter combinations (with repetitions)` as Io, LogTarget.SETUP)
+        saveLog(`used memoized parameter combinations (with repetitions)`, LogTarget.SETUP)
     } else {
         const parameterChunks = popularityMetricLfcScriptGroupSettings.noUseless ?
             NO_USELESS_PARAMETER_CHUNKS :
@@ -76,14 +76,14 @@ const computeChunkCombinations = (
         parameterChunkCombinations =
             computeCombinations(PARAMETER_CHUNKS, chunkCountForParameters, { withRepeatedElements: true })
         memoizedParameterChunkCombinations[ chunkCountForParameters ] = parameterChunkCombinations
-        saveLog(`parameter combinations (with repetitions) computed: ${parameterChunkCombinations.length}; formula is ((${chunkCountForParameters}+${parameterChunks.length}-1)!)/((${chunkCountForParameters}!)((${parameterChunks.length}-1)!)) where ${parameterChunks.length} is the total of possible existing chunks and ${chunkCountForParameters} is the count we are choosing at a time` as Io, LogTarget.SETUP)
+        saveLog(`parameter combinations (with repetitions) computed: ${parameterChunkCombinations.length}; formula is ((${chunkCountForParameters}+${parameterChunks.length}-1)!)/((${chunkCountForParameters}!)((${parameterChunks.length}-1)!)) where ${parameterChunks.length} is the total of possible existing chunks and ${chunkCountForParameters} is the count we are choosing at a time`, LogTarget.SETUP)
     }
 
     const exampleDistributions = computeDistributions(
         parameterChunkCombinations[ 0 ],
         count(submetricChunkCombinations[ 0 ]) as Count as Count<DistributionBin<Chunk<Parameter>>>,
     )
-    saveLog(`we find ${exampleDistributions.length} distributions of ${parameterChunkCombinations[ 0 ].length} parameter chunks across ${submetricChunkCombinations[ 0 ].length} bins (assignments to each of a combination of submetrics, plus an extra bin for parameters which will get applied to every submetric), which is how many more scopes should be contributed per each of the ${parameterChunkCombinations.length} parameter chunk combinations in this phase, and that times the ${submetricChunkCombinations.length} submetric chunk combinations in this phase, so expect ${exampleDistributions.length} * ${parameterChunkCombinations.length} * ${submetricChunkCombinations.length} = ${exampleDistributions.length * parameterChunkCombinations.length * submetricChunkCombinations.length} new scopes from this phase, so we should end with a total of ${(solverStatus.populatedScopeCount) + exampleDistributions.length * parameterChunkCombinations.length * submetricChunkCombinations.length}` as Io, LogTarget.SETUP)
+    saveLog(`we find ${exampleDistributions.length} distributions of ${parameterChunkCombinations[ 0 ].length} parameter chunks across ${submetricChunkCombinations[ 0 ].length} bins (assignments to each of a combination of submetrics, plus an extra bin for parameters which will get applied to every submetric), which is how many more scopes should be contributed per each of the ${parameterChunkCombinations.length} parameter chunk combinations in this phase, and that times the ${submetricChunkCombinations.length} submetric chunk combinations in this phase, so expect ${exampleDistributions.length} * ${parameterChunkCombinations.length} * ${submetricChunkCombinations.length} = ${exampleDistributions.length * parameterChunkCombinations.length * submetricChunkCombinations.length} new scopes from this phase, so we should end with a total of ${(solverStatus.populatedScopeCount) + exampleDistributions.length * parameterChunkCombinations.length * submetricChunkCombinations.length}`, LogTarget.SETUP)
 
     return { submetricChunkCombinations, parameterChunkCombinations }
 }
@@ -104,7 +104,7 @@ const populateScopesPhase = async (
         })
     }
 
-    saveLog(`finished phase ${1 + chunkCount - chunkCountForSubmetrics}/${chunkCount} of scope population ${formatSearchedAndPopulated()}` as Io, LogTarget.SETUP)
+    saveLog(`finished phase ${1 + chunkCount - chunkCountForSubmetrics}/${chunkCount} of scope population ${formatSearchedAndPopulated()}`, LogTarget.SETUP)
 }
 
 const populateScopesPhaseSync = (
@@ -123,7 +123,7 @@ const populateScopesPhaseSync = (
         })
     }
 
-    saveLog(`finished phase ${1 + chunkCount - chunkCountForSubmetrics}/${chunkCount} of scope population ${formatSearchedAndPopulated()}` as Io, LogTarget.SETUP)
+    saveLog(`finished phase ${1 + chunkCount - chunkCountForSubmetrics}/${chunkCount} of scope population ${formatSearchedAndPopulated()}`, LogTarget.SETUP)
 }
 
 export {

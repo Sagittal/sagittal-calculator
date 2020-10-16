@@ -9,7 +9,7 @@
 //  However, if you put a console log right after the work it does in populateScopes,
 //   It does seem to be interruptable in a good way, so that's a good sign.
 
-import { Io, LogTarget, saveLog } from "../../../general"
+import { LogTarget, saveLog } from "../../../general"
 import { solverStatus } from "../globals"
 import { formatSearchedAndPopulated } from "./io"
 import { populateScopes, populateScopesSync } from "./populate"
@@ -22,7 +22,7 @@ const populateAndSearchScopesAndPerfectMetrics = async (): Promise<void> => {
 
     await searchScopes()
 
-    saveLog(`\n\nFINAL STATUS ${formatSearchedAndPopulated()}` as Io, LogTarget.FINAL)
+    saveLog(`\n\nFINAL STATUS ${formatSearchedAndPopulated()}`, LogTarget.FINAL)
 }
 
 const populateAndSearchScopesAndPerfectMetricsSync = (): void => {
@@ -32,7 +32,7 @@ const populateAndSearchScopesAndPerfectMetricsSync = (): void => {
 
     searchScopesSync()
 
-    saveLog(`\n\nFINAL STATUS ${formatSearchedAndPopulated()}` as Io, LogTarget.FINAL)
+    saveLog(`\n\nFINAL STATUS ${formatSearchedAndPopulated()}`, LogTarget.FINAL)
 }
 
 export {

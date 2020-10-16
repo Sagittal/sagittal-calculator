@@ -1,4 +1,4 @@
-import { Io, LogTarget, saveLog, stringify, Window } from "../../../general"
+import { LogTarget, saveLog, stringify, Window } from "../../../general"
 import { computeDynamicParameterScope, Scope } from "../bestMetric"
 import { bestMetrics, popularityMetricLfcScriptGroupSettings } from "../globals"
 import {
@@ -35,9 +35,9 @@ const scope = [
 
 if (popularityMetricLfcScriptGroupSettings.sync) {
     recursiveSearchScopeAndMaybeUpdateBestMetricSync(scope, { onlyBetterThanSopfgtt: false })
-    saveLog(`\nbest metric: ${stringify(Object.fromEntries(bestMetrics))}` as Io, LogTarget.FINAL)
+    saveLog(`\nbest metric: ${stringify(Object.fromEntries(bestMetrics))}`, LogTarget.FINAL)
 } else {
     recursiveSearchScopeAndMaybeUpdateBestMetric(scope, { onlyBetterThanSopfgtt: false }).then((): void => {
-        saveLog(`\nbest metric: ${stringify(Object.fromEntries(bestMetrics))}` as Io, LogTarget.FINAL)
+        saveLog(`\nbest metric: ${stringify(Object.fromEntries(bestMetrics))}`, LogTarget.FINAL)
     })
 }

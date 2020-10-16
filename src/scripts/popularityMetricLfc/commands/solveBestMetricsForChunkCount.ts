@@ -19,7 +19,7 @@ applySharedPopularityMetricLfcCommandSetup({ defaultLogTargets })
 solverStatus.chunkCount = parseInteger(program.args[ 0 ] as Io) as Count<Chunk>
 
 const finalOutput = (): void => {
-    saveLog(`\n\nAND THE BEST METRICS WERE ${formatBestMetrics()}` as Io, LogTarget.FINAL)
+    saveLog(`\n\nAND THE BEST METRICS WERE ${formatBestMetrics()}`, LogTarget.FINAL)
 
     if (ioSettings.time) {
         saveLog(
@@ -27,12 +27,12 @@ const finalOutput = (): void => {
             LogTarget.FINAL,
         )
     }
-    saveLog(`MAX UNIT ${popularityMetricLfcScriptGroupSettings.maxUnit}` as Io, LogTarget.FINAL)
-    saveLog(`AVERAGE SAMPLES/SCOPE ${solverStatus.averageSamplesPerScope}` as Io, LogTarget.FINAL)
+    saveLog(`MAX UNIT ${popularityMetricLfcScriptGroupSettings.maxUnit}`, LogTarget.FINAL)
+    saveLog(`AVERAGE SAMPLES/SCOPE ${solverStatus.averageSamplesPerScope}`, LogTarget.FINAL)
     const originalOrNoUseless = popularityMetricLfcScriptGroupSettings.noUseless ? "NO USELESS" : "ORIGINAL"
-    saveLog(`PARAMETER SCOPES @ ${originalOrNoUseless} SETTINGS` as Io, LogTarget.FINAL)
-    saveLog(`Z ${popularityMetricLfcScriptGroupSettings.z}` as Io, LogTarget.FINAL)
-    saveLog(`ONLY TOP ${popularityMetricLfcScriptGroupSettings.onlyTop}` as Io, LogTarget.FINAL)
+    saveLog(`PARAMETER SCOPES @ ${originalOrNoUseless} SETTINGS`, LogTarget.FINAL)
+    saveLog(`Z ${popularityMetricLfcScriptGroupSettings.z}`, LogTarget.FINAL)
+    saveLog(`ONLY TOP ${popularityMetricLfcScriptGroupSettings.onlyTop}`, LogTarget.FINAL)
 }
 
 if (popularityMetricLfcScriptGroupSettings.sync) {

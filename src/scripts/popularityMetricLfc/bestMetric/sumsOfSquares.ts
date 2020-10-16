@@ -1,4 +1,4 @@
-import { BLANK, Index, Io, isUndefined, LogTarget, Maybe, Name, saveLog } from "../../../general"
+import { BLANK, Index, isUndefined, LogTarget, Maybe, Name, saveLog } from "../../../general"
 import { checkSubmetricsForInvalidParameterCombinations } from "../sumOfSquares"
 import { Sample } from "./scopeToSamples"
 import {
@@ -27,7 +27,7 @@ const computeNextOptions = (
     try {
         checkSubmetricsForInvalidParameterCombinations(samples[ 0 ].submetrics)
     } catch (e) {
-        saveLog(`Not searching scope due to invalid parameter combinations: ${e.message}` as Io, LogTarget.ERROR)
+        saveLog(`Not searching scope due to invalid parameter combinations: ${e.message}`, LogTarget.ERROR)
         return
     }
 

@@ -22,7 +22,7 @@ const analyzeJiNotationBoundClass = (
     const possibleBoundClassHistories = boundClassHistoryAnalyses
         .filter((boundClassHistoryAnalysis: BoundClassHistoryAnalysis): boolean => boundClassHistoryAnalysis.possible)
     const possibleBoundClassHistoryCount = count(possibleBoundClassHistories)
-    const bestPossibleBoundClassHistoryAnalysis = 
+    const bestPossibleBoundClassHistoryAnalysis =
         computeBestPossibleBoundClassHistoryAnalysis(possibleBoundClassHistories)
     if (isUndefined(bestPossibleBoundClassHistoryAnalysis)) {
         throw new Error(`Unable to find a best possible bound class history for bound class ${jiNotationBoundClass}`)
@@ -37,7 +37,7 @@ const analyzeJiNotationBoundClass = (
     updateRankAnalysis(bestRank, jiNotationBoundClass.id)
     updateJiNotationLevelAnalysis(bestPossibleBoundClassHistoryAnalysis)
 
-    const boundClassHistoryConsolidation = 
+    const boundClassHistoryConsolidation =
         consolidateBoundClassHistories(boundClassHistoryAnalyses, bestPossibleBoundClassHistoryAnalysis)
 
     return {

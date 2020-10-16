@@ -7,12 +7,12 @@ const apotomeShift = (symbol: SagittalSymbol): SagittalSymbol => {
     let apotomeShiftedSymbol = symbol
         .replace("|", "|||")
         .replace("||||", "X")
-    
+
     if (!apotomeShiftedSymbol.match(ANY_FLAG_CHAR)) {
         apotomeShiftedSymbol = apotomeShiftedSymbol
-            .replace("|||", "/||\\") 
+            .replace("|||", "/||\\")
     }
-    
+
     return apotomeShiftedSymbol as SagittalSymbol
 }
 

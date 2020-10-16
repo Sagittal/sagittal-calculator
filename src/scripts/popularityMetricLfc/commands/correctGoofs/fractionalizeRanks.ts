@@ -1,6 +1,5 @@
 import {
     COMMA_POPULARITIES,
-    Io,
     KeyPath,
     LogTarget,
     Popularity,
@@ -20,7 +19,7 @@ const fractionalizeRanks = (): void => {
         descending: true,
     })
 
-    saveLog(stringify(rankedPopularities, { multiline: true }) as Io, LogTarget.FINAL)
+    saveLog(stringify(rankedPopularities, { multiline: true }), LogTarget.FINAL)
 }
 
 fractionalizeRanks()

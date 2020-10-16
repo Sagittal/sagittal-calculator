@@ -1,7 +1,6 @@
 import {
     Extrema,
     Filename,
-    Io,
     isNumber,
     isUndefined,
     LogTarget,
@@ -16,7 +15,7 @@ import { Metric } from "../bestMetric"
 import { Parameter, ParameterValue, Submetric } from "../sumOfSquares"
 import { applySharedPopularityMetricLfcCommandSetup, load } from "./shared"
 
-applySharedPopularityMetricLfcCommandSetup({ defaultLogTargets: [LogTarget.ALL] })
+applySharedPopularityMetricLfcCommandSetup()
 
 const chunkCountResults = load("metrics" as Filename) as Record<Name<Metric>, Metric>
 
@@ -51,4 +50,4 @@ Object.values(Parameter).forEach((parameter: Parameter): void => {
     }
 })
 
-saveLog(stringify(parameterExtrema, { multiline: true }) as Io, LogTarget.FINAL)
+saveLog(stringify(parameterExtrema, { multiline: true }), LogTarget.FINAL)

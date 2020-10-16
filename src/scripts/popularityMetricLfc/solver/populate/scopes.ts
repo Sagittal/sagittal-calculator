@@ -1,4 +1,4 @@
-import { Count, Io, LogTarget, saveLog } from "../../../../general"
+import { Count, LogTarget, saveLog } from "../../../../general"
 import { solverStatus } from "../../globals"
 import { Submetric } from "../../sumOfSquares"
 import { formatSearchedAndPopulated } from "../io"
@@ -15,7 +15,7 @@ const populateScopes = async (): Promise<void> => {
         chunkCountForSubmetrics = chunkCountForSubmetrics - 1 as Count<Chunk<Submetric>>
     }
 
-    saveLog(`\n\nFINISHED POPULATING ${formatSearchedAndPopulated()}` as Io, LogTarget.SETUP)
+    saveLog(`\n\nFINISHED POPULATING ${formatSearchedAndPopulated()}`, LogTarget.SETUP)
 }
 
 const populateScopesSync = (): void => {
@@ -27,7 +27,7 @@ const populateScopesSync = (): void => {
         chunkCountForSubmetrics = chunkCountForSubmetrics - 1 as Count<Chunk<Submetric>>
     }
 
-    saveLog(`\n\nFINISHED POPULATING ${formatSearchedAndPopulated()}` as Io, LogTarget.SETUP)
+    saveLog(`\n\nFINISHED POPULATING ${formatSearchedAndPopulated()}`, LogTarget.SETUP)
 }
 
 export {

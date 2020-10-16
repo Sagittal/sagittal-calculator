@@ -1,4 +1,4 @@
-import { count, Count, Io, LogTarget, saveLog, stringify } from "../../../general"
+import { count, Count, LogTarget, saveLog, stringify } from "../../../general"
 import { Metric } from "../bestMetric"
 import { perfectMetric, perfectMetricSync } from "./metric"
 import { MetricTag } from "./types"
@@ -14,7 +14,7 @@ const setupForPerfectMetrics = (
 
     const { name, ...otherMetricToPerfectProperties } = metricToPerfect
 
-    saveLog(`\n\nabout to perfect ${metricTag} ${stringify(otherMetricToPerfectProperties)}` as Io, LogTarget.PROGRESS)
+    saveLog(`\n\nabout to perfect ${metricTag} ${stringify(otherMetricToPerfectProperties)}`, LogTarget.PROGRESS)
 
     return {
         metricToPerfect,
@@ -31,7 +31,7 @@ const perfectMetrics = async (
     const { metricToPerfect, totalToPerfect, metricTag } =
         setupForPerfectMetrics(bestMetricsValues, index, topLevelTotalToPerfect)
     await perfectMetric(metricToPerfect, { metricTag })
-    saveLog(`perfected ${metricTag}` as Io, LogTarget.PROGRESS)
+    saveLog(`perfected ${metricTag}`, LogTarget.PROGRESS)
 
     if (index === totalToPerfect - 1) {
         return
@@ -48,7 +48,7 @@ const perfectMetricsSync = (
     const { metricToPerfect, totalToPerfect, metricTag } =
         setupForPerfectMetrics(bestMetricsValues, index, topLevelTotalToPerfect)
     perfectMetricSync(metricToPerfect, { metricTag })
-    saveLog(`perfected ${metricTag}` as Io, LogTarget.PROGRESS)
+    saveLog(`perfected ${metricTag}`, LogTarget.PROGRESS)
 
     if (index === totalToPerfect - 1) {
         return

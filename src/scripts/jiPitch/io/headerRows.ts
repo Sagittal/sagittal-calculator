@@ -54,8 +54,8 @@ const compute23FreeClassHeaderRows = (): Array<Row<{ of: Two3FreeClassAnalysis, 
     splitColumnTitlesIntoRowsBySpaces(
         splitMonzoAndQuotientColumnTitles(
             excludeFields(TWO_3_FREE_CLASS_COLUMN_TITLES),
-            { recognizeNameTitleAsBeingFor23FreeClass: true }
-        )
+            { recognizeNameTitleAsBeingFor23FreeClass: true },
+        ),
     )
 
 const computeNotatingCommasHeaderRows =

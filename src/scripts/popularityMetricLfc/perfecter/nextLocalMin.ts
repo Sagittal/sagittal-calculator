@@ -1,4 +1,4 @@
-import { Decimal, doOnNextEventLoop, Io, LogTarget, Ms, saveLog } from "../../../general"
+import { Decimal, doOnNextEventLoop, LogTarget, Ms, saveLog } from "../../../general"
 import { Scope } from "../bestMetric"
 import { computeNextScope } from "./nextScope"
 import {
@@ -33,7 +33,7 @@ const computeRecursiveSearchScopeAndMaybeUpdateBestMetricArguments = (
     const nextDepth = depth + 1 as Decimal<{ integer: true }>
     const nextScope: Scope = computeNextScope(nextLocalMin.samplePoint, dynamicParameters, scope)
     const nextMetricTag = metricTag + `.${index + 1}/${(nextLocalMinima.length)}` as MetricTag
-    saveLog(`  ${indentation}${nextMetricTag} - depth ${nextDepth}` as Io, LogTarget.PROGRESS)
+    saveLog(`  ${indentation}${nextMetricTag} - depth ${nextDepth}`, LogTarget.PROGRESS)
     const recursiveSearchScopeAndMaybeUpdateBestMetricOptions = {
         depth: nextDepth,
         metricTag: nextMetricTag,
@@ -55,7 +55,7 @@ const searchNextLocalMin = async (nextLocalMin: LocalMin, options: SearchLocalMi
                 recursiveSearchScopeAndMaybeUpdateBestMetricOptions,
             )
         } catch (e) {
-            saveLog(`error when searching: ${e.message}` as Io, LogTarget.ERROR)
+            saveLog(`error when searching: ${e.message}`, LogTarget.ERROR)
         }
     }, options.index as Ms)
 }
@@ -70,7 +70,7 @@ const searchNextLocalMinSync = (nextLocalMin: LocalMin, options: SearchLocalMinO
             recursiveSearchScopeAndMaybeUpdateBestMetricOptions,
         )
     } catch (e) {
-        saveLog(`error when searching: ${e.message}` as Io, LogTarget.ERROR)
+        saveLog(`error when searching: ${e.message}`, LogTarget.ERROR)
     }
 }
 

@@ -19,7 +19,7 @@ popularityMetricLfcScriptGroupSettings.maxUnit = DEFAULT_MAX_UNIT_WHEN_PERFECTIN
 const bestMetricsToBePerfected = load("metrics" as Filename) as Record<Name<Metric>, Metric>
 
 const finalOutput = (): void => {
-    saveLog(`\n\nTHE PERFECTED METRICS ARE ${formatBestMetrics()}` as Io, LogTarget.FINAL)
+    saveLog(`\n\nTHE PERFECTED METRICS ARE ${formatBestMetrics()}`, LogTarget.FINAL)
 
     if (ioSettings.time) {
         saveLog(
@@ -27,9 +27,9 @@ const finalOutput = (): void => {
             LogTarget.FINAL,
         )
     }
-    saveLog(`MAX UNIT ${popularityMetricLfcScriptGroupSettings.maxUnit}` as Io, LogTarget.FINAL)
-    saveLog(`Z ${popularityMetricLfcScriptGroupSettings.z}` as Io, LogTarget.FINAL)
-    saveLog(`ONLY TOP ${popularityMetricLfcScriptGroupSettings.onlyTop}` as Io, LogTarget.FINAL)
+    saveLog(`MAX UNIT ${popularityMetricLfcScriptGroupSettings.maxUnit}`, LogTarget.FINAL)
+    saveLog(`Z ${popularityMetricLfcScriptGroupSettings.z}`, LogTarget.FINAL)
+    saveLog(`ONLY TOP ${popularityMetricLfcScriptGroupSettings.onlyTop}`, LogTarget.FINAL)
 }
 
 if (popularityMetricLfcScriptGroupSettings.sync) {

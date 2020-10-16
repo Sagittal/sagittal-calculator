@@ -56,7 +56,7 @@ const commaAnalysesSortedByTinaEntries = computeCommaAnalysesSortedByTinaEntries
 
 commaAnalysesSortedByTinaEntries.forEach(([tina, tinaCommaAnalyses]: [string, CommaAnalysis[]]): void => {
     if (isEmpty(tinaCommaAnalyses)) {
-        saveLog(`NO COMMAS given current constraints for tina ${tina}.` as Io, LogTarget.ERROR)
+        saveLog(`NO COMMAS given current constraints for tina ${tina}.`, LogTarget.ERROR)
     } else {
         saveLog(
             // tslint:disable-next-line max-line-length
@@ -67,11 +67,11 @@ commaAnalysesSortedByTinaEntries.forEach(([tina, tinaCommaAnalyses]: [string, Co
         const lateComma = computeLateComma(tinaCommaAnalyses)
 
         if (isUndefined(lateComma)) {
-            saveLog(`NO LATE COMMAS given current constraints for tina ${tina}.` as Io, LogTarget.ERROR)
+            saveLog(`NO LATE COMMAS given current constraints for tina ${tina}.`, LogTarget.ERROR)
         } else {
-            saveLog(`TINA ${tina}: ${stringify(lateComma)}` as Io, LogTarget.FINAL)
+            saveLog(`TINA ${tina}: ${stringify(lateComma)}`, LogTarget.FINAL)
         }
     }
 })
 
-if (ioSettings.time) saveLog(`\ntook ${time()}` as Io, LogTarget.FINAL)
+if (ioSettings.time) saveLog(`\ntook ${time()}`, LogTarget.FINAL)

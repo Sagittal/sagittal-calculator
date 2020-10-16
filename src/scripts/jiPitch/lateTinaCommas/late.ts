@@ -12,7 +12,7 @@ const isCommaLate = (comma: Comma): boolean => {
         return computeAte(notatingComma)
     })
 
-    saveLog(`ATE ${ate} vs. other notating comma ATEs ${ates}` as Io, LogTarget.PROGRESS)
+    saveLog(`ATE ${ate} vs. other notating comma ATEs ${ates}`, LogTarget.PROGRESS)
 
     const minimumAte = min(...ates)
 

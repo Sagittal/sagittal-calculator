@@ -11,7 +11,14 @@ import {
 import { multiply } from "../../../../../src/general/math"
 import { IRRATIONAL_SCAMON_BASE_MONZO } from "../../../../../src/general/math/irrational/scamon/constants"
 import { APOTOME } from "../../../../../src/sagittal"
-import { BoundType, Ina, JiNotationBoundClass, JiNotationLevel, Tina, TINA } from "../../../../../src/sagittal/notations/ji"
+import {
+    BoundType,
+    Ina,
+    JiNotationBoundClass,
+    JiNotationLevel,
+    Tina,
+    TINA,
+} from "../../../../../src/sagittal/notations/ji"
 import { EXTREME_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"
 import { computeInitialPosition } from "../../../../../src/scripts/jiNotationBoundClass/boundClass/initialPosition"
 import { BoundClassHistory } from "../../../../../src/scripts/jiNotationBoundClass/histories"

@@ -15,7 +15,7 @@ describe("computeExtendedHistories", (): void => {
         name: "16.5°47" as Name<BoundClass>,
         pitch: { monzo: APOTOME.monzo, scaler: [16.5, HIGH_EDA] } as Scamon<{ rational: false }>,
     }
-    
+
     beforeEach((): void => {
         boundClassHistory = [
             passedInBoundClassEvent,

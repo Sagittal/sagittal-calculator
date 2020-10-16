@@ -1,4 +1,4 @@
-import { Combination, Io, LogTarget, saveLog, stringify } from "../../../general"
+import { Combination, LogTarget, saveLog, stringify } from "../../../general"
 import { Metric, Scope, SubmetricScope } from "../bestMetric"
 import { Parameter, ParameterValue, Submetric } from "../sumOfSquares"
 import { PARAMETER_DYNAMISMS } from "./constants"
@@ -62,7 +62,7 @@ const perfectMetric = async (metric: Metric, options: PerfectMetricOptions): Pro
     try {
         await recursiveSearchScopeAndMaybeUpdateBestMetric(scope, options)
     } catch (error) {
-        saveLog(`error when perfecting scope ${stringify(scope)}: ${error}` as Io, LogTarget.ERROR)
+        saveLog(`error when perfecting scope ${stringify(scope)}: ${error}`, LogTarget.ERROR)
     }
 }
 
@@ -72,7 +72,7 @@ const perfectMetricSync = (metric: Metric, options: PerfectMetricOptions): void 
     try {
         recursiveSearchScopeAndMaybeUpdateBestMetricSync(scope, options)
     } catch (error) {
-        saveLog(`error when perfecting scope ${stringify(scope)}: ${error}` as Io, LogTarget.ERROR)
+        saveLog(`error when perfecting scope ${stringify(scope)}: ${error}`, LogTarget.ERROR)
     }
 }
 
