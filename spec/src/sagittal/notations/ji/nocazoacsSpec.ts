@@ -518,9 +518,6 @@ describe("computeNocazoacs", (): void => {
             // 70, 76, 81, 84, 86, 92, 99, 104, 106, 114, 117, 122,
             // 128, 131, 139, 141, 146,                                    // Extra 5, total 32
         ] as Array<Id<Flacco>>
-        // TODO: NOCAZOAC ayyyeeeee... okay I think what this amounts to is this: for )/|\ in the high and ultra levels
-        //  It will have two different primary commas, one for the bottom half of its mirrored zone, and one for the top
-        //  Which are apotome complements of each other. I may just have to hardcode a trick to handle that
 
         const notation: Notation = { commaClassIds, boundClassIds, flaccoIds }
 

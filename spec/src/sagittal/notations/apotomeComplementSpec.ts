@@ -55,6 +55,3 @@ describe("getApotomeComplement", (): void => {
         expect(actual).toBe(expected)
     })
 })
-
-// TODO: account for that major refactor last week which left a bunch of tests with out-of-date describes
-//  With a spec helper that will find missing const actual = [[thing]] paired with /$describe("[[thing]].../

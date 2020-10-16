@@ -41,7 +41,6 @@ const computeNocazoacs = (notation: Notation): NotationCaptureZoneAccidental[] =
 
     checkCommaClassIdsAgainstFlaccoIds(commaClassIds, flaccoIds)
 
-    // TODO: NOCAZOAC eventually want this method refined to have a single map rather than a series of forEach's
     const nocazoacs = [] as NotationCaptureZoneAccidental[]
 
     // Section 1a: upwards, from unison to half apotome

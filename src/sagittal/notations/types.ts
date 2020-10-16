@@ -83,6 +83,10 @@ interface Notation {
 //  While the accidentals would require all three and would basically have displaced the entire complexity of the
 //  Nocazoacs, except you'd only have to do it once, for the entirety of Sagittal. although again maybe it's just
 //  Hardcoded...?
+//  - If you continue with basically the current nocazoac method, though, reduce it to a single map, not many forEach's
+//  - Also, ayyyeeeee... okay I think what this amounts to is this: for )/|\ in the high and ultra levels
+//  It will have two different primary commas, one for the bottom half of its mirrored zone, and one for the top
+//  Which are apotome complements of each other. I may just have to hardcode a trick to handle that
 
 // Ranges from -2 to 2 apotomes
 interface NotationCaptureZoneAccidental {
