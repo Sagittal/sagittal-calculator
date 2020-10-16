@@ -10,7 +10,7 @@ import {
     NotationCaptureZoneAccidental,
 } from "../../../../../src/sagittal/notations/types"
 
-describe("computeNocazoac", (): void => {
+describe("computeNocazoacs", (): void => {
     it("works for the Medium level", (): void => {
         const commaClassIds = [
             0, 12, 20, 30, 44, 58, 70, 84, 92, 104, 114,        // Total 11
@@ -518,7 +518,7 @@ describe("computeNocazoac", (): void => {
             // 70, 76, 81, 84, 86, 92, 99, 104, 106, 114, 117, 122,
             // 128, 131, 139, 141, 146,                                    // Extra 5, total 32
         ] as Array<Id<Flacco>>
-        // TODO: ayyyyyeeeee... okay I think what this amounts to is this: for )/|\ in the high and ultra levels
+        // TODO: NOCAZOAC ayyyeeeee... okay I think what this amounts to is this: for )/|\ in the high and ultra levels
         //  It will have two different primary commas, one for the bottom half of its mirrored zone, and one for the top
         //  Which are apotome complements of each other. I may just have to hardcode a trick to handle that
 

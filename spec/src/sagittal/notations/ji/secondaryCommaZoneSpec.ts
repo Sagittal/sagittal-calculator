@@ -2,7 +2,7 @@ import { Cents, computeCentsFromPitch, Id } from "../../../../../src/general"
 import { CommaClass } from "../../../../../src/sagittal"
 import { computeSecondaryCommaZone } from "../../../../../src/sagittal/notations/ji"
 
-describe("secondaryCommaZone", (): void => {
+describe("computeSecondaryCommaZone", (): void => {
     it("returns the min and max cents of where secondary commas are represented by the given JI Notation comma class, i.e. its capture zone at its introducing JI notation level", (): void => {
         const commaClassId: Id<CommaClass> = 81 as Id<CommaClass>
 

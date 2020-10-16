@@ -21,7 +21,7 @@ import {
 import { RANKS } from "../../../../../src/scripts/jiNotationBoundClass/ranks"
 import { jiNotationBoundClassFixture } from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
-describe("analyzeJiNotationBound", (): void => {
+describe("analyzeJiNotationBoundClass", (): void => {
     const notBestHistory: BoundClassHistory = [
         {
             jiNotationLevel: JiNotationLevel.ULTRA,

@@ -1,7 +1,7 @@
 import { Io } from "../../../../src/general"
 import { removeColor } from "../../../../src/general/io"
 
-describe("remove color", (): void => {
+describe("removeColor", (): void => {
     it("removes color from text", (): void => {
         const text = "hello there".red as Io
 

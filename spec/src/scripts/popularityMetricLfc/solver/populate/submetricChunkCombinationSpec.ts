@@ -59,7 +59,6 @@ describe("populateScopesForSubmetricChunkCombination", (): void => {
             submetricChunkCombinationIndex,
             submetricChunkCombinationCount,
         })
-        const actual = scopesToSearch
 
         const expected = [
             // 1
@@ -326,6 +325,6 @@ describe("populateScopesForSubmetricChunkCombination", (): void => {
             ],
         ] as Combinations<Chunk>
 
-        expect(actual).toBeArrayWithDeepEqualContents(expected)
+        expect(scopesToSearch).toBeArrayWithDeepEqualContents(expected)
     })
 })

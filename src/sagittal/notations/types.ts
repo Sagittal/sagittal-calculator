@@ -42,7 +42,7 @@ interface Notation {
     flaccoIds: Array<Id<Flacco>>,
 }
 
-// Todo: modeling flaccos/symbols/elements
+// Todo: NOCAZOAC modeling flaccos/symbols/elements
 //  - there is certainly a more economical way to handle things than the current SYMBOL_TO_UNICODE_MAP
 //  Going from flacco to unicode instead... well not exactly... a core could map to a unicode, or a pair of accents...
 //  Which makes me think we should go from flacco to ascii too, and flacco to smiley, and never have a "symbol" type

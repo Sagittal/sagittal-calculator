@@ -1,5 +1,5 @@
 import { Decimal } from "../../../../../../src/general/math/numeric/decimal"
-import { Smoothness } from "../../../../../../src/general/math/rational"
+import { computeIntegerDecimalSmoothness, Smoothness } from "../../../../../../src/general/math/rational"
 import {
     computeRationalDecimalSmoothness,
     isIntegerDecimalSmooth,
@@ -49,7 +49,7 @@ describe("computeIntegerDecimalSmoothness", (): void => {
     it("returns the smoothness of the integer decimal", (): void => {
         const integerDecimal = 49 as Decimal<{ integer: true }>
 
-        const actual = computeRationalDecimalSmoothness(integerDecimal)
+        const actual = computeIntegerDecimalSmoothness(integerDecimal)
 
         const expected = 7 as Smoothness
         expect(actual).toBe(expected)
