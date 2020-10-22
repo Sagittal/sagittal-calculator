@@ -1,7 +1,10 @@
 import {FlagComboName, FLAG_COMBOS} from "../flacco"
 import {Aim, Core, CoreName, Shafts} from "./types"
 
-// Todo: these could be generated / tested, from the flaccos + apotome complement
+// Todo: FLACOMBO, SECTION, NOTATION GENERATION
+//  These could be generated / tested, from the flaccos + apotome complement
+//  Er, well, at least it seems like they could, except for the fact that the enum keys are totally unique
+//  Unless you had some way to assemble those... and maybe you wouldn't want to even if you could.
 const CORES: Record<CoreName, Core> = {
     [CoreName.RIGHT_SCROLL_UP]: {
         aim: Aim.UP,
