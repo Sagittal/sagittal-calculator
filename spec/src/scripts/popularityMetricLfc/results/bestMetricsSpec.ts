@@ -1,4 +1,7 @@
 import { Metric } from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
+// TODO: best metrics should just export one object with all of them on it,
+//  Rather than needing this "import * as" hack,
+//  And also not polluting the import space with stuff like "c"
 import * as bestMetrics from "../../../../../src/scripts/popularityMetricLfc/results/bestMetrics"
 import { computeSumOfSquaresForSubmetrics } from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 

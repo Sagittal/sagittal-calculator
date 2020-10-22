@@ -11,19 +11,19 @@ import {
     stringify,
     time,
 } from "../../../general"
-import { CommaAnalysis } from "../../../sagittal"
-import { computeCommas, FindCommasSettings, parseFindCommasSettings } from "../findCommas"
-import { jiPitchScriptGroupSettings } from "../globals"
-import { readFindCommasOptions } from "../io"
+import {CommaAnalysis} from "../../../sagittal"
+import {computeCommas, FindCommasSettings, parseFindCommasSettings} from "../findCommas"
+import {jiPitchScriptGroupSettings} from "../globals"
+import {readFindCommasOptions} from "../io"
 import {
     computeCommaAnalysesSortedByTinaEntries,
-    computeLateComma,
+    computeLateCommaAnalysis,
     INFINITE_2_3_FREE_COPFR,
     INFINITE_N2D3P9,
     TINA_COMMAS_LOWER_BOUND,
     TINA_COMMAS_UPPER_BOUND,
 } from "../lateTinaCommas"
-import { applySharedPitchCommandSetup } from "./shared"
+import {applySharedPitchCommandSetup} from "./shared"
 
 // Per http://forum.sagittal.org/viewtopic.php?p=2395#p2395
 
@@ -31,9 +31,9 @@ readFindCommasOptions()
 
 applySharedPitchCommandSetup()
 
-ioSettings.logTargets[ LogTarget.ERROR ] = true
+ioSettings.logTargets[LogTarget.ERROR] = true
 
-const MAX_POSSIBLE_2_3_FREE_SOPFR_WITHOUT_CRASHING = 127 as Max<Sopfr<{ rough: 5 }>>
+const MAX_POSSIBLE_2_3_FREE_SOPFR_WITHOUT_CRASHING = 127 as Max<Sopfr<{rough: 5}>>
 const MAX_POSSIBLE_PRIME_LIMIT_GIVEN_MAX_POSSIBLE_SOPFR =
     MAX_POSSIBLE_2_3_FREE_SOPFR_WITHOUT_CRASHING as Max<Max<Prime>>
 
@@ -64,12 +64,12 @@ commaAnalysesSortedByTinaEntries.forEach(([tina, tinaCommaAnalyses]: [string, Co
             LogTarget.PROGRESS,
         )
 
-        const lateComma = computeLateComma(tinaCommaAnalyses)
+        const lateCommaAnalysis = computeLateCommaAnalysis(tinaCommaAnalyses)
 
-        if (isUndefined(lateComma)) {
+        if (isUndefined(lateCommaAnalysis)) {
             saveLog(`NO LATE COMMAS given current constraints for tina ${tina}.`, LogTarget.ERROR)
         } else {
-            saveLog(`TINA ${tina}: ${stringify(lateComma)}`, LogTarget.FINAL)
+            saveLog(`TINA ${tina}: ${stringify(lateCommaAnalysis)}`, LogTarget.FINAL)
         }
     }
 })

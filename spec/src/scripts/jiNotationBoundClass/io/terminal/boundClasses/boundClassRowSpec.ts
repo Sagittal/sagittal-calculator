@@ -1,5 +1,12 @@
 import { Abs, Cents, computePitchFromCents, Id, Multiplier, Row, Sum } from "../../../../../../../src/general"
-import { BoundType, Ina, JiNotationBoundClass, JiNotationLevel, Tina } from "../../../../../../../src/sagittal"
+import {
+    BoundClass,
+    BoundType,
+    Ina,
+    JiNotationBoundClass,
+    JiNotationLevel,
+    Tina,
+} from "../../../../../../../src/sagittal"
 import { JiNotationBoundClassAnalysis } from "../../../../../../../src/scripts/jiNotationBoundClass/boundClass"
 import { computeJiNotationBoundClassRow } from "../../../../../../../src/scripts/jiNotationBoundClass/io/terminal/boundClasses/boundClassRow"
 import { RANKS } from "../../../../../../../src/scripts/jiNotationBoundClass/ranks"
@@ -15,7 +22,7 @@ describe("computeJiNotationBoundClassRow", (): void => {
         const jiNotationBoundClass: JiNotationBoundClass = {
             ...jiNotationBoundClassFixture,
             pitch: computePitchFromCents(5.447635 as Cents),
-            id: 10 as Id<JiNotationBoundClass>,
+            id: 10 as Id<BoundClass>,
         }
         const jiNotationBoundClassAnalysis: JiNotationBoundClassAnalysis = {
             ...jiNotationBoundClassAnalysisFixture,

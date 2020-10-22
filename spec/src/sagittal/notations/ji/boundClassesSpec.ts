@@ -11,16 +11,16 @@ import {
     Quotient,
     Scamon,
 } from "../../../../../src/general"
-import { APOTOME, JiNotationBoundClass, JI_NOTATION_BOUND_CLASSES, TINA } from "../../../../../src/sagittal"
-import { INSANE_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"
-import { analyzePitch } from "../../../../helpers/src/general/music/analyzePitch"
-import { PitchAnalysis } from "../../../../helpers/src/general/music/types"
+import {APOTOME, BoundClass, JiNotationBoundClass, JI_NOTATION_BOUND_CLASSES, TINA} from "../../../../../src/sagittal"
+import {INSANE_EDA} from "../../../../../src/sagittal/notations/ji/levelEdas"
+import {analyzePitch} from "../../../../helpers/src/general/music/analyzePitch"
+import {PitchAnalysis} from "../../../../helpers/src/general/music/types"
 
 describe("JI_NOTATION_BOUND_CLASSES", (): void => {
     it("almost every bound class in the JI notation is snapped to a half-tina", (): void => {
         let currentHalfTina = 0.5
 
-        const exceptionalJiNotationBoundIds: Array<Id<JiNotationBoundClass>> = [
+        const exceptionalJiNotationBoundIds: Array<Id<BoundClass>> = [
             49,     // Comma mean
             52,     // Comma mean
             74,     // Comma mean
@@ -31,7 +31,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
             126,    // Comma mean
             135,    // Comma mean
             148,    // Size category bound
-        ] as Array<Id<JiNotationBoundClass>>
+        ] as Array<Id<BoundClass>>
 
         JI_NOTATION_BOUND_CLASSES.forEach((jiNotationBoundClass: JiNotationBoundClass): void => {
             while (true) {
@@ -72,7 +72,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [1.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.000446 as Decimal,
@@ -84,7 +84,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [5.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.000690 as Decimal,
@@ -96,7 +96,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [8.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.001015 as Decimal,
@@ -108,7 +108,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [12.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.001258 as Decimal,
@@ -120,7 +120,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [15.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.001584 as Decimal,
@@ -132,7 +132,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [19.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.001828 as Decimal,
@@ -144,7 +144,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [22.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.002153 as Decimal,
@@ -156,7 +156,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [26.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.002397 as Decimal,
@@ -168,7 +168,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [29.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.002641 as Decimal,
@@ -180,7 +180,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [32.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.002967 as Decimal,
@@ -192,7 +192,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [36.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.003211 as Decimal,
@@ -204,7 +204,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [39.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.003537 as Decimal,
@@ -216,7 +216,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [43.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.003781 as Decimal,
@@ -228,7 +228,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [46.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.004107 as Decimal,
@@ -240,7 +240,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [50.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.004352 as Decimal,
@@ -252,7 +252,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [53.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.004678 as Decimal,
@@ -264,7 +264,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [57.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.004922 as Decimal,
@@ -276,7 +276,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [60.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.005249 as Decimal,
@@ -288,7 +288,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [64.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.005494 as Decimal,
@@ -300,7 +300,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [67.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.005820 as Decimal,
@@ -312,7 +312,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [71.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.006065 as Decimal,
@@ -324,7 +324,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [74.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.006392 as Decimal,
@@ -336,7 +336,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [78.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.006637 as Decimal,
@@ -348,7 +348,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [81.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.006964 as Decimal,
@@ -360,7 +360,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [85.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.007209 as Decimal,
@@ -372,7 +372,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [88.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.007536 as Decimal,
@@ -384,7 +384,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [92.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.007781 as Decimal,
@@ -396,7 +396,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [95.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.008027 as Decimal,
@@ -408,7 +408,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [98.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.008354 as Decimal,
@@ -420,7 +420,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [102.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.008600 as Decimal,
@@ -432,7 +432,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [105.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.008927 as Decimal,
@@ -444,7 +444,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [109.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.009173 as Decimal,
@@ -456,7 +456,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [112.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.009501 as Decimal,
@@ -468,7 +468,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [116.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.009747 as Decimal,
@@ -480,7 +480,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [119.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.010074 as Decimal,
@@ -492,7 +492,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [123.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.010320 as Decimal,
@@ -504,7 +504,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [126.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.010649 as Decimal,
@@ -516,7 +516,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [130.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.010895 as Decimal,
@@ -528,7 +528,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [133.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.011223 as Decimal,
@@ -540,7 +540,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [137.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.011469 as Decimal,
@@ -552,7 +552,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [140.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.011798 as Decimal,
@@ -564,7 +564,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [144.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.012044 as Decimal,
@@ -576,7 +576,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [147.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.012373 as Decimal,
@@ -588,7 +588,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [151.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.012619 as Decimal,
@@ -600,7 +600,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [154.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.012866 as Decimal,
@@ -612,7 +612,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [157.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.013195 as Decimal,
@@ -624,7 +624,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [161.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.013442 as Decimal,
@@ -636,7 +636,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [164.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.013771 as Decimal,
@@ -648,16 +648,16 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [168.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.013933 as Decimal,
                 cents: 23.955448 as Cents,
                 monzo: [-8, 0, 1.5, 1, 0.5] as Monzo,
                 pitch: {
-                    monzo: [-16, 0, 3, 2, 1] as Monzo<{ rational: true }>,
+                    monzo: [-16, 0, 3, 2, 1] as Monzo<{rational: true}>,
                     scaler: [1, 2] as Quotient,
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.014018 as Decimal,
@@ -669,7 +669,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [171.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.014347 as Decimal,
@@ -681,16 +681,16 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [175.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.014478 as Decimal,
                 cents: 24.885981 as Cents,
                 monzo: [-2, -0.5, -0.5, 0, 0, 0.5, 0, 0.5] as Monzo,
                 pitch: {
-                    monzo: [-4, -1, -1, 0, 0, 1, 0, 1] as Monzo<{ rational: true }>,
+                    monzo: [-4, -1, -1, 0, 0, 1, 0, 1] as Monzo<{rational: true}>,
                     scaler: [1, 2] as Quotient,
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.014594 as Decimal,
@@ -702,7 +702,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [178.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.014923 as Decimal,
@@ -714,7 +714,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [182.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.015171 as Decimal,
@@ -726,7 +726,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [185.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.015500 as Decimal,
@@ -738,7 +738,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [189.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.015748 as Decimal,
@@ -750,7 +750,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [192.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.016077 as Decimal,
@@ -762,7 +762,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [196.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.016325 as Decimal,
@@ -774,7 +774,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [199.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.016655 as Decimal,
@@ -786,7 +786,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [203.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.016902 as Decimal,
@@ -798,7 +798,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [206.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.017233 as Decimal,
@@ -810,7 +810,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [210.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.017480 as Decimal,
@@ -822,7 +822,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [213.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.017811 as Decimal,
@@ -834,7 +834,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [217.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.018059 as Decimal,
@@ -846,7 +846,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [220.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.018307 as Decimal,
@@ -858,7 +858,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [223.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.018637 as Decimal,
@@ -870,7 +870,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [227.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.018885 as Decimal,
@@ -882,7 +882,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [230.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.019216 as Decimal,
@@ -894,7 +894,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [234.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.019465 as Decimal,
@@ -906,7 +906,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [237.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.019796 as Decimal,
@@ -918,7 +918,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [241.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.020044 as Decimal,
@@ -930,7 +930,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [244.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.020375 as Decimal,
@@ -942,16 +942,16 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [248.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.020492 as Decimal,
                 cents: 35.118091 as Cents,
                 monzo: [2, -2.5, 1, -1, 0, 0, 0, 0, 0, 0, 0.5] as Monzo,
                 pitch: {
-                    monzo: [4, -5, 2, -2, 0, 0, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
+                    monzo: [4, -5, 2, -2, 0, 0, 0, 0, 0, 0, 1] as Monzo<{rational: true}>,
                     scaler: [1, 2] as Quotient,
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.020624 as Decimal,
@@ -963,7 +963,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [251.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.020955 as Decimal,
@@ -975,7 +975,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [255.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.021204 as Decimal,
@@ -987,7 +987,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [258.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.021535 as Decimal,
@@ -999,7 +999,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [262.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.021784 as Decimal,
@@ -1011,7 +1011,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [265.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.022116 as Decimal,
@@ -1023,16 +1023,16 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [269.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.022228 as Decimal,
                 cents: 38.061940 as Cents,
                 monzo: [-3, 1.5, -0.5, 0.5, 0, -0.5, 0, 0, 0.5] as Monzo,
                 pitch: {
-                    monzo: [-6, 3, -1, 1, 0, -1, 0, 0, 1] as Monzo<{ rational: true }>,
+                    monzo: [-6, 3, -1, 1, 0, -1, 0, 0, 1] as Monzo<{rational: true}>,
                     scaler: [1, 2] as Quotient,
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.022365 as Decimal,
@@ -1044,7 +1044,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [272.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.022697 as Decimal,
@@ -1056,7 +1056,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [276.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.022946 as Decimal,
@@ -1068,7 +1068,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [279.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.023195 as Decimal,
@@ -1080,7 +1080,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [282.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.023527 as Decimal,
@@ -1092,7 +1092,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [286.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.023777 as Decimal,
@@ -1104,7 +1104,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [289.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.024109 as Decimal,
@@ -1116,7 +1116,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [293.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.024359 as Decimal,
@@ -1128,7 +1128,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [296.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.024691 as Decimal,
@@ -1140,7 +1140,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [300.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.024941 as Decimal,
@@ -1152,7 +1152,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [303.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.025274 as Decimal,
@@ -1164,7 +1164,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [307.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.025523 as Decimal,
@@ -1176,7 +1176,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [310.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.025856 as Decimal,
@@ -1188,7 +1188,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [314.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.026106 as Decimal,
@@ -1200,16 +1200,16 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [317.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.026400 as Decimal,
                 cents: 45.112497 as Cents,
                 monzo: [4, -2.5] as Monzo,
                 pitch: {
-                    monzo: [8, -5] as Monzo<{ rational: true }>,
+                    monzo: [8, -5] as Monzo<{rational: true}>,
                     scaler: [1, 2] as Quotient,
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.026689 as Decimal,
@@ -1221,7 +1221,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [324.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.027023 as Decimal,
@@ -1233,7 +1233,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [328.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.027273 as Decimal,
@@ -1245,7 +1245,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [331.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.027606 as Decimal,
@@ -1257,7 +1257,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [335.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.027857 as Decimal,
@@ -1269,7 +1269,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [338.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.028190 as Decimal,
@@ -1281,7 +1281,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [342.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.028441 as Decimal,
@@ -1293,7 +1293,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [345.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.028691 as Decimal,
@@ -1305,7 +1305,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [348.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.029025 as Decimal,
@@ -1317,7 +1317,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [352.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.029276 as Decimal,
@@ -1329,7 +1329,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [355.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.029610 as Decimal,
@@ -1341,7 +1341,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [359.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.029861 as Decimal,
@@ -1353,16 +1353,16 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [362.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.030027 as Decimal,
                 cents: 51.219540 as Cents,
                 monzo: [-2, -2, 1.5, 0, 0.5] as Monzo,
                 pitch: {
-                    monzo: [-4, -4, 3, 0, 1] as Monzo<{ rational: true }>,
+                    monzo: [-4, -4, 3, 0, 1] as Monzo<{rational: true}>,
                     scaler: [1, 2] as Quotient,
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.030195 as Decimal,
@@ -1374,7 +1374,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [366.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.030446 as Decimal,
@@ -1386,7 +1386,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [369.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.030781 as Decimal,
@@ -1398,7 +1398,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [373.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.031032 as Decimal,
@@ -1410,7 +1410,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [376.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.031367 as Decimal,
@@ -1422,7 +1422,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [380.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.031618 as Decimal,
@@ -1434,7 +1434,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [383.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.031953 as Decimal,
@@ -1446,7 +1446,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [387.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.032204 as Decimal,
@@ -1458,16 +1458,16 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [390.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.032336 as Decimal,
                 cents: 55.095545 as Cents,
                 monzo: [-7.5, 4.5, 0.5, 0, 0.5, 0, 0, 0, 0, 0, -0.5] as Monzo,
                 pitch: {
-                    monzo: [-15, 9, 1, 0, 1, 0, 0, 0, 0, 0, -1] as Monzo<{ rational: true }>,
+                    monzo: [-15, 9, 1, 0, 1, 0, 0, 0, 0, 0, -1] as Monzo<{rational: true}>,
                     scaler: [1, 2] as Quotient,
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.032540 as Decimal,
@@ -1479,7 +1479,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [394.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.032791 as Decimal,
@@ -1491,7 +1491,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [397.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.033126 as Decimal,
@@ -1503,7 +1503,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [401.5, INSANE_EDA],
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
             {
                 decimal: 1.033378 as Decimal,
@@ -1515,7 +1515,7 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [404.5, INSANE_EDA],   // = 1/2
-                } as Scamon<{ rational: false }>,
+                } as Scamon<{rational: false}>,
             },
         ]
         expect(actual).toBeCloseToObject(expected)

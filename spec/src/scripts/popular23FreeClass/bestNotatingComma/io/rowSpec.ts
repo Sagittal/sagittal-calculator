@@ -1,13 +1,13 @@
-import { Direction, Id, Monzo, Name, Popularity, Row, Two3FreeClass, Votes } from "../../../../../../src/general"
-import { Rank, Ranked } from "../../../../../../src/general/code"
-import { IRRATIONAL_SCAMON_BASE_MONZO } from "../../../../../../src/general/math/irrational/scamon/constants"
-import { Cents } from "../../../../../../src/general/music"
-import { N2D3P9 } from "../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
-import { CommaClass } from "../../../../../../src/sagittal/notations"
-import { BestNotatingCommaProperties } from "../../../../../../src/scripts/popular23FreeClass/bestNotatingComma"
-import { computePopular23FreeClassWithBestNotatingCommaRow } from "../../../../../../src/scripts/popular23FreeClass/bestNotatingComma/io"
-import { Popular23FreeClass } from "../../../../../../src/scripts/popular23FreeClass/types"
-import { two3FreeClassAnalysisFixture } from "../../../../../helpers/src/scripts/jiPitch/fixtures"
+import {Direction, Id, Monzo, Name, Popularity, Row, Two3FreeClass, Votes} from "../../../../../../src/general"
+import {Rank, Ranked} from "../../../../../../src/general/code"
+import {IRRATIONAL_SCAMON_BASE_MONZO} from "../../../../../../src/general/math/irrational/scamon/constants"
+import {Cents} from "../../../../../../src/general/music"
+import {CommaClass} from "../../../../../../src/sagittal/ji"
+import {N2D3P9} from "../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
+import {BestNotatingCommaProperties} from "../../../../../../src/scripts/popular23FreeClass/bestNotatingComma"
+import {computePopular23FreeClassWithBestNotatingCommaRow} from "../../../../../../src/scripts/popular23FreeClass/bestNotatingComma/io"
+import {Popular23FreeClass} from "../../../../../../src/scripts/popular23FreeClass/types"
+import {two3FreeClassAnalysisFixture} from "../../../../../helpers/src/scripts/jiPitch/fixtures"
 
 describe("computePopular23FreeClassWithBestNotatingCommaRow", (): void => {
     it("works", (): void => {
@@ -23,7 +23,7 @@ describe("computePopular23FreeClassWithBestNotatingCommaRow", (): void => {
             votes: 7 as Votes,
             popularityRank: 3 as Rank<Popularity>,
             two3FreeClass: {
-                monzo: [0, 0, -1, 1] as Monzo<{ rational: true, rough: 5, direction: Direction.SUPER }>,
+                monzo: [0, 0, -1, 1] as Monzo<{rational: true, rough: 5, direction: Direction.SUPER}>,
             } as Two3FreeClass,
         }
 
@@ -35,7 +35,7 @@ describe("computePopular23FreeClassWithBestNotatingCommaRow", (): void => {
             "         5.000¢",  // Best notating comma cents
             "[   1 ⟩",          // Best notating comma monzo
             "   ,)|  ",         // Best notating comma maybe flacco
-        ] as Row<{ of: Popular23FreeClass & BestNotatingCommaProperties, header: true }>
+        ] as Row<{of: Popular23FreeClass & BestNotatingCommaProperties, header: true}>
         expect(actual).toEqual(expected)
     })
 })

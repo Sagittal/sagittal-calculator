@@ -19,7 +19,7 @@ const isCommaLate = (comma: Comma): boolean => {
     return ate === minimumAte as Exponent<Prime>
 }
 
-const computeLateComma = (tinaCommaAnalyses: CommaAnalysis[]): Maybe<CommaAnalysis> => {
+const computeLateCommaAnalysis = (tinaCommaAnalyses: CommaAnalysis[]): Maybe<CommaAnalysis> => {
     let index = 0
     let lateComma = undefined
     while (index < count(tinaCommaAnalyses)) {
@@ -41,5 +41,5 @@ const computeLateComma = (tinaCommaAnalyses: CommaAnalysis[]): Maybe<CommaAnalys
 
 export {
     isCommaLate,
-    computeLateComma,
+    computeLateCommaAnalysis,
 }

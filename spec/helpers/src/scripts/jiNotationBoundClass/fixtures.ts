@@ -18,11 +18,11 @@ import { IRRATIONAL_SCAMON_BASE_MONZO } from "../../../../../src/general/math/ir
 import {
     BoundClass,
     BoundType,
-    Ina,
+    Ina, JiNotationBound,
     JiNotationBoundClass,
     JiNotationLevel,
     Tina,
-} from "../../../../../src/sagittal/notations/ji"
+} from "../../../../../src/sagittal/notations"
 import { JiNotationBoundClassAnalysis } from "../../../../../src/scripts/jiNotationBoundClass/boundClass"
 import { BoundClassEventConsolidation } from "../../../../../src/scripts/jiNotationBoundClass/consolidateHistories/types"
 import { BoundClassEvent } from "../../../../../src/scripts/jiNotationBoundClass/histories"
@@ -37,7 +37,7 @@ const boundClassEventFixture: BoundClassEvent = {
     pitch: { monzo: IRRATIONAL_SCAMON_BASE_MONZO, scaler: HALF_SCALER } as Scamon<{ rational: false }>,
     boundType: "" as BoundType,
     jiNotationLevel: "" as JiNotationLevel,
-    name: "" as Name<BoundClass>,
+    name: "" as Name<JiNotationBound>,
 }
 
 const boundClassEventAnalysisFixture: BoundClassEventAnalysis = {
@@ -67,19 +67,19 @@ const boundClassEventConsolidationFixture: BoundClassEventConsolidation = {
     isBestPossibleBoundClassHistoryMember: false,
     rankOfBestRankedMemberHistory: 0 as Decimal<{ integer: true }> & Rank<BoundType>,
     rankOfBestRankedEventInAnyMemberHistory: 0 as Decimal<{ integer: true }> & Rank<BoundType>,
-    nextBoundClassEvents: [] as Array<Name<BoundClass>>,
+    nextBoundClassEvents: [] as Array<Name<JiNotationBound>>,
     exact: false,
 }
 
 const jiNotationBoundClassFixture: JiNotationBoundClass = {
-    id: 0 as Id<JiNotationBoundClass>,
+    id: 0 as Id<BoundClass>,
     jiNotationLevels: [],
     pitch: {
         monzo: EMPTY_MONZO,
         scaler: [1, 1] as Quotient,
     } as Scamon<{ rational: false }>,
     boundType: BoundType.INA_MIDPOINT,
-    name: "" as Name<BoundClass>,
+    name: "" as Name<JiNotationBound>,
 }
 
 const jiNotationBoundClassAnalysisFixture: JiNotationBoundClassAnalysis = {

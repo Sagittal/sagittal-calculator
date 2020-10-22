@@ -10,11 +10,11 @@ parseCommands(ScriptGroup.JI_NOTATION_BOUND_CLASS as Filename, [LogTarget.FINAL]
 
 ioSettings.scriptGroup = ScriptGroup.JI_NOTATION_BOUND_CLASS as Filename
 
-const jiNotationBoundClassId = program.args[ 0 ]
+const boundClassId = program.args[ 0 ]
 
-const jiNotationBoundClass = jiNotationBoundClassId && JI_NOTATION_BOUND_CLASSES.find(
+const jiNotationBoundClass = boundClassId && JI_NOTATION_BOUND_CLASSES.find(
     (jiNotationBoundClass: JiNotationBoundClass): boolean => {
-        return jiNotationBoundClass.id === parseInteger(jiNotationBoundClassId as Io)
+        return jiNotationBoundClass.id === parseInteger(boundClassId as Io)
     },
 )
 
@@ -25,5 +25,5 @@ if (jiNotationBoundClass) {
     const jiNotationBoundOutput: Io = formatJiNotationBoundClass(jiNotationBoundClassAnalysis, { jiNotationBoundClass })
     saveLog(jiNotationBoundOutput, LogTarget.FINAL)
 } else {
-    throw new Error(`Could not find JI notation bound class with ID ${jiNotationBoundClassId}`)
+    throw new Error(`Could not find JI notation bound class with ID ${boundClassId}`)
 }

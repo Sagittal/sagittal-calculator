@@ -1,9 +1,9 @@
 import { Name, Scamon } from "../../../general"
-import { BoundClass, BoundType, JiNotationLevel } from "../../../sagittal"
+import {BoundClass, BoundType, JiNotationBound, JiNotationLevel} from "../../../sagittal"
 
 interface BoundClassEvent {
     jiNotationLevel: JiNotationLevel,
-    name: Name<BoundClass>,
+    name: Name<JiNotationBound>,
     pitch: Scamon,
     boundType: BoundType,
 }

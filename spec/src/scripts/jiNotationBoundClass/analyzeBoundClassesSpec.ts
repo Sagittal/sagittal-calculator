@@ -1,15 +1,15 @@
-import { Name } from "../../../../src/general"
+import {Name} from "../../../../src/general"
 import {
-    BoundClass,
     BoundType,
+    JiNotationBound,
     JiNotationBoundClass,
     JiNotationLevel,
     JI_NOTATION_BOUND_CLASSES,
-} from "../../../../src/sagittal/notations/ji"
-import { analyzeJiNotationBoundClasses } from "../../../../src/scripts/jiNotationBoundClass/analyzeBoundClasses"
-import { JiNotationBoundClassAnalysis } from "../../../../src/scripts/jiNotationBoundClass/boundClass"
-import { BoundClassEventAnalysis } from "../../../../src/scripts/jiNotationBoundClass/history/events"
-import { onlyRunInCi } from "../../../helpers/onlyRunInCi"
+} from "../../../../src/sagittal/notations"
+import {analyzeJiNotationBoundClasses} from "../../../../src/scripts/jiNotationBoundClass/analyzeBoundClasses"
+import {JiNotationBoundClassAnalysis} from "../../../../src/scripts/jiNotationBoundClass/boundClass"
+import {BoundClassEventAnalysis} from "../../../../src/scripts/jiNotationBoundClass/history/events"
+import {onlyRunInCi} from "../../../helpers/onlyRunInCi"
 
 describe("analyzeJiNotationBoundClasses", (): void => {
     it("returns the same bound types as in the actual JI notation (with the Extreme level being the current highest)              ", (): void => {
@@ -36,7 +36,7 @@ describe("analyzeJiNotationBoundClasses", (): void => {
         onlyRunInCi()
 
         const actual = analyzeJiNotationBoundClasses()
-            .map((jiNotationBoundClassAnalysis: JiNotationBoundClassAnalysis): Name<BoundClass> => {
+            .map((jiNotationBoundClassAnalysis: JiNotationBoundClassAnalysis): Name<JiNotationBound> => {
                 const jiNotationLevelEventAnalysis =
                     jiNotationBoundClassAnalysis.bestPossibleBoundClassHistoryAnalysis.boundClassEventAnalyses
                         .find((boundClassEventAnalysis: BoundClassEventAnalysis): boolean => {
@@ -47,7 +47,7 @@ describe("analyzeJiNotationBoundClasses", (): void => {
             })
 
         const expected = JI_NOTATION_BOUND_CLASSES
-            .map((jiNotationBoundClass: JiNotationBoundClass): Name<BoundClass> => {
+            .map((jiNotationBoundClass: JiNotationBoundClass): Name<JiNotationBound> => {
                 return jiNotationBoundClass.name
             })
         expect(actual).toEqual(expected)

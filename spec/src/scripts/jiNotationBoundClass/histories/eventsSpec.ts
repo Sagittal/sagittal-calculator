@@ -1,13 +1,13 @@
-import { Cents, computePitchFromCents, HALF_SCALER, Monzo, Name, Scamon } from "../../../../../src/general"
-import { APOTOME } from "../../../../../src/sagittal"
-import { BoundClass, BoundType, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
-import { HIGH_EDA, ULTRA_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"
+import {Cents, computePitchFromCents, HALF_SCALER, Monzo, Name, Scamon} from "../../../../../src/general"
+import {APOTOME, JiNotationBound} from "../../../../../src/sagittal"
+import {BoundType, JiNotationLevel} from "../../../../../src/sagittal/notations"
+import {HIGH_EDA, ULTRA_EDA} from "../../../../../src/sagittal/notations/ji/levelEdas"
 import {
     BoundedCommaClassPositions,
     computeBoundedCommaClassPositions,
 } from "../../../../../src/scripts/jiNotationBoundClass/boundedPositions"
-import { BoundClassEvent } from "../../../../../src/scripts/jiNotationBoundClass/histories"
-import { computeBoundClassEvents } from "../../../../../src/scripts/jiNotationBoundClass/histories/events"
+import {BoundClassEvent} from "../../../../../src/scripts/jiNotationBoundClass/histories"
+import {computeBoundClassEvents} from "../../../../../src/scripts/jiNotationBoundClass/histories/events"
 
 describe("computeBoundClassEvents", (): void => {
     let jiNotationLevel: JiNotationLevel
@@ -32,8 +32,8 @@ describe("computeBoundClassEvents", (): void => {
                     {
                         jiNotationLevel: JiNotationLevel.ULTRA,
                         boundType: BoundType.INA_MIDPOINT,
-                        name: "2.5°58" as Name<BoundClass>,
-                        pitch: { monzo: APOTOME.monzo, scaler: [2.5, ULTRA_EDA] } as Scamon<{ rational: false }>,
+                        name: "2.5°58" as Name<JiNotationBound>,
+                        pitch: {monzo: APOTOME.monzo, scaler: [2.5, ULTRA_EDA]} as Scamon<{rational: false}>,
                     },
                 ]
                 expect(actual).toEqual(expected)
@@ -51,8 +51,8 @@ describe("computeBoundClassEvents", (): void => {
                     {
                         jiNotationLevel: JiNotationLevel.ULTRA,
                         boundType: BoundType.INA_MIDPOINT,
-                        name: "2.5°58" as Name<BoundClass>,
-                        pitch: { monzo: APOTOME.monzo, scaler: [2.5, ULTRA_EDA] } as Scamon<{ rational: false }>,
+                        name: "2.5°58" as Name<JiNotationBound>,
+                        pitch: {monzo: APOTOME.monzo, scaler: [2.5, ULTRA_EDA]} as Scamon<{rational: false}>,
                     },
                 ]
                 expect(actual).toEqual(expected)
@@ -69,14 +69,14 @@ describe("computeBoundClassEvents", (): void => {
                     {
                         jiNotationLevel: JiNotationLevel.HIGH,
                         boundType: BoundType.INA_MIDPOINT,
-                        name: "11.5°47" as Name<BoundClass>,
-                        pitch: { monzo: APOTOME.monzo, scaler: [11.5, HIGH_EDA] } as Scamon<{ rational: false }>,
+                        name: "11.5°47" as Name<JiNotationBound>,
+                        pitch: {monzo: APOTOME.monzo, scaler: [11.5, HIGH_EDA]} as Scamon<{rational: false}>,
                     },
                     {
                         jiNotationLevel: JiNotationLevel.HIGH,
                         boundType: BoundType.INA_MIDPOINT,
-                        name: "12.5°47" as Name<BoundClass>,
-                        pitch: { monzo: APOTOME.monzo, scaler: [12.5, HIGH_EDA] } as Scamon<{ rational: false }>,
+                        name: "12.5°47" as Name<JiNotationBound>,
+                        pitch: {monzo: APOTOME.monzo, scaler: [12.5, HIGH_EDA]} as Scamon<{rational: false}>,
                     },
                 ]
                 expect(actual).toEqual(expected)
@@ -110,11 +110,11 @@ describe("computeBoundClassEvents", (): void => {
                     {
                         jiNotationLevel: JiNotationLevel.MEDIUM,
                         boundType: BoundType.COMMA_MEAN,
-                        name: "/| |)" as Name<BoundClass>,
+                        name: "/| |)" as Name<JiNotationBound>,
                         pitch: {
                             monzo: [2, 2, -1, -1],
                             scaler: HALF_SCALER,
-                        } as Scamon<{ rational: false }>,
+                        } as Scamon<{rational: false}>,
                     },
                 ]
                 expect(actual).toEqual(expected)
@@ -131,11 +131,11 @@ describe("computeBoundClassEvents", (): void => {
                     {
                         jiNotationLevel: JiNotationLevel.HIGH,
                         boundType: BoundType.COMMA_MEAN,
-                        name: ")/| |)" as Name<BoundClass>,
+                        name: ")/| |)" as Name<JiNotationBound>,
                         pitch: {
                             monzo: [-7, 5, -1, -1, 0, 0, 0, 1],
                             scaler: HALF_SCALER,
-                        } as Scamon<{ rational: false }>,
+                        } as Scamon<{rational: false}>,
                     },
                 ]
                 expect(actual).toEqual(expected)
@@ -152,11 +152,11 @@ describe("computeBoundClassEvents", (): void => {
                     {
                         jiNotationLevel: JiNotationLevel.ULTRA,
                         boundType: BoundType.COMMA_MEAN,
-                        name: ".|) |)" as Name<BoundClass>,
+                        name: ".|) |)" as Name<JiNotationBound>,
                         pitch: {
                             monzo: [27, -12, -1, -2],
                             scaler: HALF_SCALER,
-                        } as Scamon<{ rational: false }>,
+                        } as Scamon<{rational: false}>,
                     },
                 ]
                 expect(actual).toEqual(expected)
@@ -173,11 +173,11 @@ describe("computeBoundClassEvents", (): void => {
                     {
                         jiNotationLevel: JiNotationLevel.EXTREME,
                         boundType: BoundType.COMMA_MEAN,
-                        name: "`.|) ,,|)" as Name<BoundClass>,
+                        name: "`.|) ,,|)" as Name<JiNotationBound>,
                         pitch: {
                             monzo: [-10, 4, -1, 1, 2, -1],
                             scaler: HALF_SCALER,
-                        } as Scamon<{ rational: false }>,
+                        } as Scamon<{rational: false}>,
                     },
                 ]
                 expect(actual).toEqual(expected)
@@ -199,11 +199,11 @@ describe("computeBoundClassEvents", (): void => {
                     {
                         jiNotationLevel: JiNotationLevel.HIGH,
                         boundType: BoundType.COMMA_MEAN,
-                        name: "|) )|)" as Name<BoundClass>,
+                        name: "|) )|)" as Name<JiNotationBound>,
                         pitch: {
                             monzo: [3, -1, 0, -2, 0, 0, 0, 1],
                             scaler: HALF_SCALER,
-                        } as Scamon<{ rational: false }>,
+                        } as Scamon<{rational: false}>,
                     },
                 ]
                 expect(actual).toEqual(expected)
@@ -226,11 +226,11 @@ describe("computeBoundClassEvents", (): void => {
                     {
                         jiNotationLevel: JiNotationLevel.MEDIUM,
                         boundType: BoundType.SIZE_CATEGORY_BOUND,
-                        name: "C|S" as Name<BoundClass>,
+                        name: "C|S" as Name<JiNotationBound>,
                         pitch: {
-                            monzo: [27, -17] as Monzo<{ rational: true }>,
+                            monzo: [27, -17] as Monzo<{rational: true}>,
                             scaler: HALF_SCALER,
-                        } as Scamon<{ rational: false }>,
+                        } as Scamon<{rational: false}>,
                     },
                 ]
                 expect(actual).toEqual(expected)

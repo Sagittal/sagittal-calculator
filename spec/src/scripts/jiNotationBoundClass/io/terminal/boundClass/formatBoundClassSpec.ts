@@ -1,5 +1,5 @@
 import { Cents, computePitchFromCents, Id, NEWLINE } from "../../../../../../../src/general"
-import { BoundType, JiNotationBoundClass } from "../../../../../../../src/sagittal/notations/ji"
+import {BoundClass, BoundType, JiNotationBoundClass} from "../../../../../../../src/sagittal/notations"
 import { JiNotationBoundClassAnalysis } from "../../../../../../../src/scripts/jiNotationBoundClass/boundClass"
 import { formatJiNotationBoundClass } from "../../../../../../../src/scripts/jiNotationBoundClass/io"
 import { RANKS } from "../../../../../../../src/scripts/jiNotationBoundClass/ranks"
@@ -13,7 +13,7 @@ describe("formatJiNotationBoundClass", (): void => {
         const jiNotationBoundClass: JiNotationBoundClass = {
             ...jiNotationBoundClassFixture,
             pitch: computePitchFromCents(5.447635 as Cents),
-            id: 10 as Id<JiNotationBoundClass>,
+            id: 10 as Id<BoundClass>,
         }
         const jiNotationBoundClassAnalysis: JiNotationBoundClassAnalysis = {
             ...jiNotationBoundClassAnalysisFixture,
@@ -28,7 +28,7 @@ describe("formatJiNotationBoundClass", (): void => {
             `    "extremeLevelGreaterBoundedCommaClass": ",|(",`,
             `    "cents": 5.44763,`,
             `    "boundedCommaClassInfoPairs": {`,
-            `        "jiNotationBoundClassId": 10,`,
+            `        "boundClassId": 10,`,
             `        "extreme": [`,
             `            {`,
             `                "id": 10,`,

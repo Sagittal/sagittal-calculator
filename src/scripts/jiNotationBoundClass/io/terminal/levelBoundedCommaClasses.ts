@@ -15,7 +15,7 @@ const computeJiNotationLevelBoundedCommaClassIds = (
             [ jiNotationLevel ]: computeBoundedCommaClassPositions(pitch, jiNotationLevel)
                 .map(computePositionCommaClassId),
         }),
-        { jiNotationBoundClassId: id },
+        { boundClassId: id },
     )
 
 const BOUNDED_COMMA_CLASS_ID_PAIRS: BoundedCommaClassIdPairs[] =

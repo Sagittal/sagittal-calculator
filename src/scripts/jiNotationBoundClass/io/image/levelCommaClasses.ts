@@ -1,4 +1,4 @@
-import { add, DEFAULT_PRECISION, Id, Io, Px, round, subtract } from "../../../../general"
+import {add, DEFAULT_PRECISION, Id, Io, Px, round, subtract} from "../../../../general"
 import {
     analyzeComma,
     CommaClass,
@@ -10,10 +10,10 @@ import {
     JiNotationLevel,
     JI_NOTATION_LEVELS_COMMA_CLASS_IDS,
 } from "../../../../sagittal"
-import { formatMinaName } from "../terminal"
-import { JI_NOTATION_LEVEL_CENTERS } from "./levelHeights"
-import { DOT_SIZE, MINA_OFFSET, SYMBOL_OFFSET } from "./sizes"
-import { computeX } from "./x"
+import {formatMinaName} from "../terminal"
+import {JI_NOTATION_LEVEL_CENTERS} from "./levelHeights"
+import {DOT_SIZE, MINA_OFFSET, SYMBOL_OFFSET} from "./sizes"
+import {computeX} from "./x"
 
 const visualizeJiNotationLevelCommaClasses = (): Io[] => {
     const jiNotationLevelCommaClassElements: Io[] = [] as Io[]
@@ -27,7 +27,7 @@ const visualizeJiNotationLevelCommaClasses = (): Io[] => {
             return
         }
 
-        const centerY: Px = round(JI_NOTATION_LEVEL_CENTERS[ jiNotationLevel ], DEFAULT_PRECISION)
+        const centerY: Px = round(JI_NOTATION_LEVEL_CENTERS[jiNotationLevel], DEFAULT_PRECISION)
         const dotY: Px = round(subtract(centerY, SYMBOL_OFFSET), DEFAULT_PRECISION)
         const symbolY: Px = round(add(centerY, SYMBOL_OFFSET), DEFAULT_PRECISION)
 

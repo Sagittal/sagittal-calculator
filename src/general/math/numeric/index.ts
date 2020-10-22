@@ -54,6 +54,8 @@ export {
     computeScamonFromMonzo,
     computeScamonFromQuotient,
     addScamons,
+    invertScamon,
+    multiplyScamon,
 } from "./scamon"
 export {
     Direction,

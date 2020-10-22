@@ -1,5 +1,6 @@
-import { Cents, Id, Name, NumericProperties, Scamon } from "../../../general"
-import { SizeCategoryBound } from "../../ji"
+import {Cents, CommaMean, Name, NumericProperties, Scamon} from "../../../general"
+import {SizeCategoryBound} from "../../ji"
+import {BoundClass} from "../types"
 
 enum BoundType {
     INA_MIDPOINT = "inaMidpoint",
@@ -7,13 +8,13 @@ enum BoundType {
     SIZE_CATEGORY_BOUND = "sizeCategoryBound",
 }
 
-type Tina = Cents & { _InaBrand: "Tina" }
-type Mina = Cents & { _InaBrand: "Mina" }
-type Ultrina = Cents & { _InaBrand: "Ultrina" }
-type Highina = Cents & { _InaBrand: "Highina" }
-type Medina = Cents & { _InaBrand: "Medina" }
+type Tina = Cents & {_InaBrand: "Tina"}
+type Mina = Cents & {_InaBrand: "Mina"}
+type Ultrina = Cents & {_InaBrand: "Ultrina"}
+type Highina = Cents & {_InaBrand: "Highina"}
+type Medina = Cents & {_InaBrand: "Medina"}
 
-type Ina = Cents & { _InaBrand: "Tina" | "Mina" | "Ultrina" | "Highina" | "Medina" }
+type Ina = Cents & {_InaBrand: "Tina" | "Mina" | "Ultrina" | "Highina" | "Medina"}
 
 enum JiNotationLevel {
     MEDIUM = "medium",          // Corresponds closely with Athenian flacco subset
@@ -23,23 +24,20 @@ enum JiNotationLevel {
     INSANE = "insane",          // Corresponds closely with Magrathean flacco subset
 }
 
-type CommaMean<T extends NumericProperties = {}> = {
-    name: Name<CommaMean>,
-    pitch: Scamon<T & { rational: false }>,
-}
-
 type InaMidpoint<T extends NumericProperties = {}> = {
     name: Name<InaMidpoint>,
-    pitch: Scamon<T & { rational: false }>,
+    pitch: Scamon<T & {rational: false}>,
 }
 
-type BoundClass<T extends NumericProperties = {}> = InaMidpoint<T> | CommaMean<T> | SizeCategoryBound<T>
+type JiNotationBound<T extends NumericProperties = {}> = InaMidpoint<T> | CommaMean<T> | SizeCategoryBound<T>
 
-type JiNotationBoundClass<T extends NumericProperties = {}> = BoundClass<T> & {
-    id: Id<JiNotationBoundClass>,
-    jiNotationLevels: JiNotationLevel[],
-    boundType: BoundType,
-}
+type JiNotationBoundClass<T extends NumericProperties = {}> =
+    JiNotationBound<T> &
+    BoundClass<T> &
+    {
+        jiNotationLevels: JiNotationLevel[],
+        boundType: BoundType,
+    }
 
 export {
     Tina,
@@ -48,10 +46,10 @@ export {
     Highina,
     Medina,
     JiNotationLevel,
+    JiNotationBound,
     JiNotationBoundClass,
     Ina,
     BoundType,
-    CommaMean,
     InaMidpoint,
     BoundClass,
 }

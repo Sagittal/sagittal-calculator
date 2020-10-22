@@ -1,5 +1,5 @@
 import { isScamonGreater, isScamonLesser, Name } from "../../../general"
-import { BoundClass, BoundType, JiNotationLevel } from "../../../sagittal"
+import {BoundClass, BoundType, JiNotationBound, JiNotationLevel} from "../../../sagittal"
 import { BoundedCommaClassPositions } from "../boundedPositions"
 import { BOUND_CLASSES_BY_TYPE } from "./bounds"
 import { BoundClassEvent } from "./types"
@@ -13,7 +13,7 @@ const computeBoundClassEvents = (
 
     const levelBoundClasses = BOUND_CLASSES_BY_TYPE[ boundType ][ jiNotationLevel ]
 
-    levelBoundClasses.forEach(({ pitch, name = "" as Name<BoundClass> }: BoundClass): void => {
+    levelBoundClasses.forEach(({ pitch, name = "" as Name<JiNotationBound> }: JiNotationBound): void => {
         if (
             (!lesserBoundedCommaClassPosition || isScamonGreater(pitch, lesserBoundedCommaClassPosition)) &&
             (!greaterBoundedCommaClassPosition || isScamonLesser(pitch, greaterBoundedCommaClassPosition))

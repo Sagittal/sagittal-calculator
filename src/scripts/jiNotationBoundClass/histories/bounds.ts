@@ -1,17 +1,17 @@
+import {CommaMean} from "../../../general"
 import {
-    BoundClass,
     BoundType,
-    CommaMean,
     InaMidpoint,
+    JiNotationBound,
     JiNotationLevel,
     JI_NOTATION_LEVELS,
     SizeCategoryBound,
 } from "../../../sagittal"
-import { computeInaMidpoints } from "./inaMidpoints"
-import { computeJiNotationLevelCommaMeans } from "./levelCommaMeans"
-import { computeSizeCategoryBoundsUpToHalfApotome } from "./sizeCategoryBounds"
+import {computeInaMidpoints} from "./inaMidpoints"
+import {computeJiNotationLevelCommaMeans} from "./levelCommaMeans"
+import {computeSizeCategoryBoundsUpToHalfApotome} from "./sizeCategoryBounds"
 
-const computeBoundPositions = <T extends BoundClass>(
+const computeBoundPositions = <T extends JiNotationBound>(
     computeLevelBoundPositions: (jiNotationLevel: JiNotationLevel) => T[],
 ): Record<JiNotationLevel, T[]> =>
     JI_NOTATION_LEVELS.reduce(
@@ -21,7 +21,7 @@ const computeBoundPositions = <T extends BoundClass>(
         ): Record<JiNotationLevel, T[]> =>
             ({
                 ...bounds,
-                [ jiNotationLevel ]: computeLevelBoundPositions(jiNotationLevel),
+                [jiNotationLevel]: computeLevelBoundPositions(jiNotationLevel),
             }),
         {} as Record<JiNotationLevel, T[]>,
     )
@@ -35,10 +35,10 @@ const JI_NOTATION_LEVELS_SIZE_CATEGORY_BOUNDS: Record<JiNotationLevel, SizeCateg
 
 // These are not JiNotationBoundClass because that means they're actually in the notation;
 // These are all just potential bound classes for the notation from which to draw
-const BOUND_CLASSES_BY_TYPE: Record<BoundType, Record<JiNotationLevel, BoundClass[]>> = {
-    [ BoundType.INA_MIDPOINT ]: INA_MIDPOINTS,
-    [ BoundType.SIZE_CATEGORY_BOUND ]: JI_NOTATION_LEVELS_SIZE_CATEGORY_BOUNDS,
-    [ BoundType.COMMA_MEAN ]: JI_NOTATION_LEVELS_COMMA_MEANS,
+const BOUND_CLASSES_BY_TYPE: Record<BoundType, Record<JiNotationLevel, JiNotationBound[]>> = {
+    [BoundType.INA_MIDPOINT]: INA_MIDPOINTS,
+    [BoundType.SIZE_CATEGORY_BOUND]: JI_NOTATION_LEVELS_SIZE_CATEGORY_BOUNDS,
+    [BoundType.COMMA_MEAN]: JI_NOTATION_LEVELS_COMMA_MEANS,
 }
 
 export {

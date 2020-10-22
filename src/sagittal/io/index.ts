@@ -1,8 +1,0 @@
-export { computeUnicodeFromSymbol } from "./unicode"
-export { computeAsciiFromSymbol } from "./ascii"
-export { computeSmileyFromSymbol } from "./smiley"
-export { formatCommaClass } from "./formatCommaClass"
-export { formatAscii } from "./formatAscii"
-export { Ascii, Unicode, Smiley, Glyph } from "./types"
-export { parsePitch } from "./parsePitch"
-export { formatSymbol } from "./formatSymbol"

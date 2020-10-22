@@ -1,22 +1,22 @@
-import { Name, Scamon } from "../../../../../src/general"
-import { APOTOME } from "../../../../../src/sagittal"
-import { BoundClass, BoundType } from "../../../../../src/sagittal/notations/ji"
-import { ULTRA_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"
-import { computeInitialEventConsolidation } from "../../../../../src/scripts/jiNotationBoundClass/consolidateHistories/initialEventConsolidation"
-import { BoundClassEventConsolidation } from "../../../../../src/scripts/jiNotationBoundClass/consolidateHistories/types"
-import { BoundClassEvent } from "../../../../../src/scripts/jiNotationBoundClass/histories"
-import { BoundClassEventAnalysis } from "../../../../../src/scripts/jiNotationBoundClass/history"
-import { RANKS } from "../../../../../src/scripts/jiNotationBoundClass/ranks"
-import { boundClassEventAnalysisFixture } from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
+import {Name, Scamon} from "../../../../../src/general"
+import {APOTOME, JiNotationBound} from "../../../../../src/sagittal"
+import {BoundType} from "../../../../../src/sagittal/notations"
+import {ULTRA_EDA} from "../../../../../src/sagittal/notations/ji/levelEdas"
+import {computeInitialEventConsolidation} from "../../../../../src/scripts/jiNotationBoundClass/consolidateHistories/initialEventConsolidation"
+import {BoundClassEventConsolidation} from "../../../../../src/scripts/jiNotationBoundClass/consolidateHistories/types"
+import {BoundClassEvent} from "../../../../../src/scripts/jiNotationBoundClass/histories"
+import {BoundClassEventAnalysis} from "../../../../../src/scripts/jiNotationBoundClass/history"
+import {RANKS} from "../../../../../src/scripts/jiNotationBoundClass/ranks"
+import {boundClassEventAnalysisFixture} from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
 describe("computeInitialEventConsolidation", (): void => {
     let actual: BoundClassEventConsolidation
     const boundClassEventAnalysis: BoundClassEventAnalysis = {
         ...boundClassEventAnalysisFixture,
         boundType: BoundType.INA_MIDPOINT,
-        name: "12.5°58" as Name<BoundClass>,
-        rank: RANKS[ BoundType.COMMA_MEAN ],
-        pitch: { monzo: APOTOME.monzo, scaler: [12.5, ULTRA_EDA] } as Scamon<{ rational: false }>,
+        name: "12.5°58" as Name<JiNotationBound>,
+        rank: RANKS[BoundType.COMMA_MEAN],
+        pitch: {monzo: APOTOME.monzo, scaler: [12.5, ULTRA_EDA]} as Scamon<{rational: false}>,
     }
 
     beforeEach((): void => {
@@ -24,8 +24,8 @@ describe("computeInitialEventConsolidation", (): void => {
     })
 
     it("initializes the rank related fields to the worst rank (so that there's nowhere to go but up when updating them with data from the bound class history analyses", (): void => {
-        expect(actual.rankOfBestRankedEventInAnyMemberHistory).toBe(RANKS[ BoundType.SIZE_CATEGORY_BOUND ])
-        expect(actual.rankOfBestRankedMemberHistory).toBe(RANKS[ BoundType.SIZE_CATEGORY_BOUND ])
+        expect(actual.rankOfBestRankedEventInAnyMemberHistory).toBe(RANKS[BoundType.SIZE_CATEGORY_BOUND])
+        expect(actual.rankOfBestRankedMemberHistory).toBe(RANKS[BoundType.SIZE_CATEGORY_BOUND])
     })
 
     it("strips off the rank that was created in the analyze step, replacing it with the rank measurements that are appropriate for the bound class history consolidation", (): void => {

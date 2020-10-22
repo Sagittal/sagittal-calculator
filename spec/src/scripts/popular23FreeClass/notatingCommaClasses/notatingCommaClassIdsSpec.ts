@@ -1,5 +1,5 @@
 import { Id, Scamon } from "../../../../../src/general"
-import { CommaClass } from "../../../../../src/sagittal/notations"
+import { CommaClass } from "../../../../../src/sagittal/ji"
 import { computeNotatingCommaClassIds } from "../../../../../src/scripts/popular23FreeClass/notatingCommaClasses/notatingCommaClassIds"
 
 describe("computeNotatingCommaClassIds", (): void => {

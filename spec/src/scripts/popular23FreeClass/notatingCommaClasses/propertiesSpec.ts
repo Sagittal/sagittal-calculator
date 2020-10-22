@@ -1,5 +1,6 @@
 import { Id, Index, Two3FreeClass } from "../../../../../src/general"
-import { CommaClass, FlaccoSubset } from "../../../../../src/sagittal/notations"
+import {FlaccoSubset} from "../../../../../src/sagittal/accidental"
+import {CommaClass} from "../../../../../src/sagittal/ji/comma"
 import {
     computeNotatingCommaClassesProperties,
     NotatingCommaClassesProperties,

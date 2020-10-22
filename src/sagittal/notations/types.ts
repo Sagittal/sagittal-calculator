@@ -1,38 +1,10 @@
-import { Apotome, Comma, Count, Direction, Id } from "../../general"
-import { Ascii, Unicode } from "../io"
-import { BoundClass } from "./ji"
+import {Apotome, Count, Direction, Id, NumericProperties, Scamon} from "../../general"
+import {Flacco} from "../accidental"
+import {CommaClass} from "../ji"
 
-enum FlaccoSubset {
-    SAGITTAL_COMPATIBLE = "sagittalCompatible",
-    SPARTAN = "spartan",
-    ATHENIAN = "athenian",
-    PROMETHEAN = "promethean",
-    HERCULEAN = "herculean",
-    OLYMPIAN = "olympian",
-    MAGRATHEAN = "magrathean",
-    TROJAN = "trojan",
-}
-
-// Apotome-inversion comma class (repeats in a mirrored pattern at the half apotome)
-interface CommaClass {
-    pitch: Comma,
-    id: Id<CommaClass>,
-    representativeFlaccoId: Id<Flacco>,
-}
-
-type Element = string & { _ElementBrand: boolean }
-type Flag = Element & { _FlagBrand: boolean }
-type Accent = Element & { _AccentBrand: boolean }
-type Shaft = Element & { _ShaftBrand: boolean }
-
-type SagittalSymbol = string & { _SymbolBrand: boolean }
-
-type Core = Flag[]
-
-// Flag and Accent Combination; basically a "symbol class" (see: http://forum.sagittal.org/viewtopic.php?p=2474#p2474)
-interface Flacco {
-    id: Id<Flacco>,
-    combo: Array<Flag | Accent>,
+type BoundClass<T extends NumericProperties = {}> = {
+    id: Id<BoundClass>,
+    pitch: Scamon<T & { rational: false }>,
 }
 
 // State of the art plans described here: http://forum.sagittal.org/viewtopic.php?p=2492#p2492
@@ -42,83 +14,86 @@ interface Notation {
     flaccoIds: Array<Id<Flacco>>,
 }
 
-// Todo: NOCAZOAC modeling flaccos/symbols/elements
-//  - there is certainly a more economical way to handle things than the current SYMBOL_TO_UNICODE_MAP
-//  Going from flacco to unicode instead... well not exactly... a core could map to a unicode, or a pair of accents...
-//  Which makes me think we should go from flacco to ascii too, and flacco to smiley, and never have a "symbol" type
-//  Although I'm not completely sure about that, because at least for now this is quite nice to have, since
-//  Nocazoacs contain all the finalized reps of symbols in each flavor, rather than an ID pointer to a Symbol which does
-//  - because these evo and revo keys don't specify that they are the ascii and the unicode for the entire accidental
-//  And not just a symbol, it leads to some awkward names in the `nocazoacs` module. Consider clarifying.
-//  - are all sagittal symbols up? is this a thing? e.g. apotomeShift currently assumes that, but that's all we need now
-//  And flipSymbol currently assumes it's always up too. apotomeShift further assumes it's single-shaft
-//  Maybe use Element combos, with ids, all valid symbols, wither up or down or what? So you actually look them up
-//  - also this "SagittalSymbol" type, I use it in places to represent incomplete symbols,
-//  Like when we split into accents and core for apotome complement computation
-//  So it doesn't represent a finalized symbol, but just symbol material, which is I guess a tier beyond Element
-//  Where Element represents flags with their shafts to indicate left/right, for instance
-//  So this is a kind of confusing concept I think and perhaps we should just stay in the realm of elements until it is
-//  Time to go to ASCII, Unicode, or Smiley. That might simplify a lot of the regexp stuff we're doing.
-//  - we might also make use of a type called Accidental, and that'd be more final than SagittalSymbol?
-//  And include conventionals potentially? but keep it mind that it could be unicode or ascii (or smiley i guess)
-//  In addition to being either Evo or Revo...unless it's Accidentals that map to unicode, asciii, or smiley
-//  - Or perhaps if it was the Accidental type which contained the evoAscii, revoAscii, evoUnicode, and revoUnicode
-//  Then that would clarify, and it would be a constant called VALID_ACCIDENTALS which would be the lookup with an ID
-//  So then the VALID_ACCIDENTALS could be hardcoded
-//  It wouldn't much make sense to have the nocazoacs test return a list of arbitrary `accidentalId`s though...
-//  I mean, it'd be nice for it to reduce a ton of the redundancy I'm finding there
-//  Maybe it should be one of those test types where I call an "analyze" method on it so in test I can just see the
-//  Whole darn thing spelled out and maintain that record of it, while the code can work in the abstract more
-//  But it is the case that I'm capable of generating all the unicodes and asciis in the accidental individually
-//  I'm not sure how I would have the nocazoac method find the thing, what would be the UUID? just the revo ascii?
-//  Or wait how about this... since you were populating that test so far by searching for the combination of
-//  { commaClass, commaDirection, apotomeCount } and then grabbing those evo/revo ascii/unicode
-//  What if all SEVEN of those things are on an accidental? like literally all a NotationalCaptureZoneAccidental brings
-//  To the table is pairing one of them's ID with a bound ID?
-//  So then the VALID_ACCIDENTALS table is just hardcoded, and all I have to do in nocazoacs is pair the bound ids with
-//  Accidental IDs... okay, I think we're on the right track, but would Accidental have ID? or address? because of the
-//  Mirroring effect, the desire for negative IDs... should maybe both the Accidental and the Nocazoac have the combo
-//  Of commaClassId, commaDirection, and apotomeCount, and use that as the link between them? But in that case, the
-//  Nocazoacs would only require the boundClassIds and commaClassIds arrays and would be a super dumb computation
-//  While the accidentals would require all three and would basically have displaced the entire complexity of the
-//  Nocazoacs, except you'd only have to do it once, for the entirety of Sagittal. although again maybe it's just
-//  Hardcoded...?
-//  - If you continue with basically the current nocazoac method, though, reduce it to a single map, not many forEach's
-//  - Also, ayyyeeeee... okay I think what this amounts to is this: for )/|\ in the high and ultra levels
-//  It will have two different primary commas, one for the bottom half of its mirrored zone, and one for the top
-//  Which are apotome complements of each other. I may just have to hardcode a trick to handle that
-
-// Ranges from -2 to 2 apotomes
-interface NotationCaptureZoneAccidental {
-    boundClassId: Id<BoundClass>,
-
-    commaClassId: Id<CommaClass>,       // This is the primary comma of the capture zone.
+// Todo: FLACOMBO, SECTION, NOTATION GENERATION
+//  If the thing only has one bound on it, then maybe the whole thing can be called a CaptureZone
+//  Even if it wasn’t just one side of the bounds, you could still have it be captureZone.zone
+//  And maybe whatever else is called CaptureZone just needs to get displaced because it’s not as important
+// Flacco + CommaClassId + BoundClassId combination = Fla + Com + Bo; ranges from -2 to 2 apotomes
+interface Flacombo {
+    flaccoId: Id<Flacco>,
+    commaClassId: Id<CommaClass>,
     commaDirection: Direction,
     apotomeCount: Count<Apotome>,
-
-    revoAscii: Ascii,
-    evoAscii: Ascii<Flavor.EVO>,
-    revoUnicode: Unicode,
-    evoUnicode: Unicode<Flavor.EVO>,
+    boundClassId: Id<BoundClass>,
 }
 
-enum Flavor {
-    EVO = "evo",
-    REVO = "revo",
+// Todo: FLACOMBO, SECTION, NOTATION GENERATION
+//  This whole AOR is kind of blurry between notation/ and accidental/ modules right now.
+//  Should all this stuff go into a flavor/ module?
+//  I think the section stuff should be pulled back into notations/
+
+// Todo: FLACOMBO, SECTION, NOTATION GENERATION
+//  And it might be nice if you didn’t need both a name and an object...
+//  How many places do you really use the name for short?
+enum SectionName {
+    D2C = "d2c",
+    D2B = "d2b",
+    D2A = "d2a",
+    D1C = "d1c",
+    D1B = "d1b",
+    D1A = "d1a",
+    U1A = "u1a",
+    U1B = "u1b",
+    U1C = "u1c",
+    U2A = "u2a",
+    U2B = "u2b",
+    U2C = "u2c",
+}
+
+// Todo: FLACOMBO, SECTION, NOTATION GENERATION
+//  Probably some improvement you could do around this w/r/t actual Aim, since they're basically the same...
+//  And this could be confusing bc in Evo, the Sagittal symbol will aim down... and the compatible doesn't have "aim".
+//  So maybe it was better when this was positive/negative? but then what would this part of the Section be called?
+enum AimSection {
+    U = "u",                // Up
+    D = "d",                // Down
+}
+
+enum ApotomeSection {
+    _1 = "1",               // Within 1 apotome of natural
+    _2 = "2",               // Between 1 and 2 apotomes of natural
+}
+
+// Todo: FLACOMBO, SECTION, NOTATION GENERATION
+//  I think you can simplify it down to binary here, too: ShaftSection ODD/EVEN where ODD = a/b and EVEN = c
+//  Even though in Evo you don't see the odd shaft count, I still somehow think it's acceptable.
+enum AccidentalSection {
+    A = "a",                // Shaft count: n,      Abs apotome count: m,       Comma direction: away from natural
+    B = "b",                // Shaft count: n,      Abs apotome count: m + 1,   Comma direction: toward natural
+    C = "c",                // Shaft count: n + 1,  Abs apotome count: m + 1,   Comma direction: toward natural
+}
+
+// Todo: FLACOMBO, SECTION, NOTATION GENERATION
+//  What if you just made all of these booleans? so it'd be... negative, second, even?
+
+// Todo: FLACOMBO, SECTION, NOTATION GENERATION
+//  How about a fourth property to section: comma super /sub? P/B
+//  Then maybe you don’t need apotome count or comma direction
+//  It’s just the three IDs input (bound, comma, flacco) and then this section thing
+
+interface Section {
+    aimSection: AimSection,
+    apotomeSection: ApotomeSection,
+    accidentalSection: AccidentalSection,
 }
 
 export {
-    FlaccoSubset,
-    CommaClass,
-    Flavor,
-    Flacco,
-    Flag,
-    Accent,
-    Shaft,
-    Element,
-    SagittalSymbol,
-    Core,
+    BoundClass,
     Notation,
-    NotationCaptureZoneAccidental,
-    // SymbolOptions,
+    Flacombo,
+    Section,
+    SectionName,
+    AimSection,
+    AccidentalSection,
+    ApotomeSection,
 }

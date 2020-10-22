@@ -51,6 +51,8 @@ export {
     computeScamonFromMonzo,
     computeScamonFromQuotient,
     addScamons,
+    invertScamon,
+    multiplyScamon,
 } from "./numeric"
 export { computeDistributions } from "./distributions"
 export { dividesEvenly } from "./dividesEvenly"

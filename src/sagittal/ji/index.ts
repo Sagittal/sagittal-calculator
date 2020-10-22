@@ -20,6 +20,11 @@ export {
     MAX_SIZE_CATEGORY_BOUND,
     ParsedCommaName,
     SizeCategoryBound,
+    CommaClass,
+    getCommaClass,
+    formatComma,
+    formatCommaClass,
+    getRepresentativeSymbol,
 } from "./comma"
 export { analyzeJiPitch, computeApotomeSlope, ApotomeSlope, JiPitchAnalysis, computeAte, computeAas } from "./pitch"
 export {

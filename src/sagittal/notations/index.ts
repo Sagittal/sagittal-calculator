@@ -20,16 +20,7 @@ export {
     BoundType,
     BoundClass,
     InaMidpoint,
-    CommaMean,
+    JiNotationBound,
 } from "./ji"
-export {
-    CommaClass,
-    FlaccoSubset,
-    Flavor,
-    SagittalSymbol,
-} from "./types"
-export { COMMA_CLASSES } from "./commaClasses"
-export { FLACCO_SUBSETS, FLACCO_SUBSETS_SORTED_BY_SIZE } from "./flaccoSubsets"
-export { getCommaClass } from "./commaClass"
-export { getRepresentativeSymbol } from "./representativeSymbol"
-export { getSmallestFlaccoSubset } from "./smallestFlaccoSubset"
+export {AccidentalSection, Flacombo, AimSection, ApotomeSection} from "./types"
+export {computeSection} from "./section"

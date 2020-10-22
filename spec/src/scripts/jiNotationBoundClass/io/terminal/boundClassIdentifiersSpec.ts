@@ -20,9 +20,18 @@ import {
     Sopfr,
     Two3FreeClass,
 } from "../../../../../../src/general"
-import { ApotomeSlope, Ascii, BoundType, CommaClass, Ina, N2D3P9, TINA } from "../../../../../../src/sagittal"
-import { Unicode } from "../../../../../../src/sagittal/io"
-import { FlaccoSubset } from "../../../../../../src/sagittal/notations"
+import {
+    ApotomeSlope,
+    Ascii,
+    BoundClass,
+    BoundType,
+    CommaClass,
+    Ina,
+    N2D3P9,
+    TINA,
+    Unicode,
+} from "../../../../../../src/sagittal"
+import { FlaccoSubset } from "../../../../../../src/sagittal/accidental"
 import { JiNotationBoundClass, JiNotationLevel, Mina } from "../../../../../../src/sagittal/notations/ji"
 import { MINA, ULTRINA } from "../../../../../../src/sagittal/notations/ji/intervals"
 import { extractJiNotationBoundClassIdentifiers } from "../../../../../../src/scripts/jiNotationBoundClass/io/terminal/boundClassIdentifiers"
@@ -34,7 +43,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
         ...jiNotationBoundClassFixture,
         pitch: computePitchFromCents(23.116419 as Cents),
         jiNotationLevels: [JiNotationLevel.ULTRA, JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
-        id: 47 as Id<JiNotationBoundClass>,
+        id: 47 as Id<BoundClass>,
         boundType: BoundType.INA_MIDPOINT,
     }
 
@@ -46,7 +55,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
             extremeLevelGreaterBoundedCommaClass: "'/|" as Ascii,
             cents: 23.116419 as Cents as Cents,
             boundedCommaClassInfoPairs: {
-                jiNotationBoundClassId: 47 as Id<JiNotationBoundClass>,
+                boundClassId: 47 as Id<BoundClass>,
                 [ JiNotationLevel.ULTRA ]: [
                     {
                         introducingJiNotationLevel: JiNotationLevel.ULTRA,

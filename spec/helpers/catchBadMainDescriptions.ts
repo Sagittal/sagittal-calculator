@@ -26,7 +26,7 @@ const catchBadMainDescriptions = (basePath: Filename): void => {
                     && !isUndefined(subjectDescription)
                     && subjectDescription !== subjectActual[ INDEX_OF_CAPTURED_GROUP ]
                 ) {
-                    console.warn(`Mismatched main description and subject in module ${filename}: description says ${subjectDescription} but actual is ${subjectActual[ INDEX_OF_CAPTURED_GROUP ]}`)
+                    throw new Error(`Mismatched main description and subject in module ${filename}: description says ${subjectDescription} but actual is ${subjectActual[ INDEX_OF_CAPTURED_GROUP ]}`)
                 }
             })
         }

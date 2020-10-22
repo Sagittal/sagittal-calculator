@@ -31,8 +31,6 @@ describe("computePrimeExponentExtremaGivenMaxN2D3P9", (): void => {
     })
 
     it("when mirrored is true, returns the denominator as the negative of the numerator", (): void => {
-
-
         const actual = computePrimeExponentExtremaGivenMaxN2D3P9(
             prime,
             maxN2D3P9,

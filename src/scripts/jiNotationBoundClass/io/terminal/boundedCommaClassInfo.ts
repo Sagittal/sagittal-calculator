@@ -1,6 +1,7 @@
-import { abs, Id, isUndefined, subtractPitch } from "../../../../general"
+import {abs, Id, isUndefined, subtractPitch} from "../../../../general"
 import {
     analyzeComma,
+    BoundClass,
     CommaClass,
     computeAsciiFromSymbol,
     computeUnicodeFromSymbol,
@@ -10,15 +11,14 @@ import {
     getRepresentativeSymbol,
     getSmallestFlaccoSubset,
     JiNotationBoundClass,
-    JiNotationLevel,
-    JI_NOTATION_BOUND_CLASSES,
+    JiNotationLevel, JI_NOTATION_BOUND_CLASSES,
 } from "../../../../sagittal"
-import { computeInaDistance } from "../../history"
-import { BoundedCommaClassInfo } from "./types"
+import {computeInaDistance} from "../../history"
+import {BoundedCommaClassInfo} from "./types"
 
 const computeBoundedCommaClassInfo = (
     commaClassId: Id<CommaClass>,
-    jiNotationBoundClassId: Id<JiNotationBoundClass>,
+    boundClassId: Id<BoundClass>,
     jiNotationLevel: JiNotationLevel,
 ): BoundedCommaClassInfo => {
     const commaClass = getCommaClass(commaClassId)
@@ -35,9 +35,9 @@ const computeBoundedCommaClassInfo = (
     const smallestFlaccoSubset = getSmallestFlaccoSubset(commaClass.representativeFlaccoId)
 
     const bound = JI_NOTATION_BOUND_CLASSES.find((jiNotationBoundClass: JiNotationBoundClass): boolean => {
-        return jiNotationBoundClass.id === jiNotationBoundClassId
+        return jiNotationBoundClass.id === boundClassId
     })
-    if (isUndefined(bound)) throw new Error(`JI notation bound class with ID ${jiNotationBoundClassId} not found.`)
+    if (isUndefined(bound)) throw new Error(`JI notation bound class with ID ${boundClassId} not found.`)
     const distance = abs(subtractPitch(bound.pitch, commaClass.pitch))
     const inaDistance = computeInaDistance(distance, jiNotationLevel)
 

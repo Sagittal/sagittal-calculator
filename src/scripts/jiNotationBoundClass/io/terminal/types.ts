@@ -1,6 +1,6 @@
 import { Abs, Cents, Id, Maybe, Multiplier, Name } from "../../../../general"
 import {
-    Ascii,
+    Ascii, BoundClass,
     CommaAnalysis,
     CommaClass,
     FlaccoSubset,
@@ -16,7 +16,7 @@ import {
 type BoundedCommaClassIdPair = [Maybe<Id<CommaClass>>, Maybe<Id<CommaClass>>]
 
 type BoundedCommaClassIdPairs =
-    { jiNotationBoundClassId: Id<JiNotationBoundClass> }
+    { boundClassId: Id<BoundClass> }
     & Partial<Record<JiNotationLevel, BoundedCommaClassIdPair>>
 
 // Building up to JiNotationBoundClassIdentifiers
@@ -38,7 +38,7 @@ interface BoundedCommaClassInfo {
 type BoundedCommaClassInfoPair = [Maybe<BoundedCommaClassInfo>, Maybe<BoundedCommaClassInfo>]
 
 type BoundedCommaClassInfoPairs =
-    { jiNotationBoundClassId: Id<JiNotationBoundClass> }
+    { boundClassId: Id<BoundClass> }
     & Partial<Record<JiNotationLevel, BoundedCommaClassInfoPair>>
 
 interface JiNotationBoundClassIdentifiers {

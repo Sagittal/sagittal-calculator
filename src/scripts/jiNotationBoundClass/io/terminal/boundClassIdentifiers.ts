@@ -1,4 +1,4 @@
-import { computeCentsFromPitch, isUndefined } from "../../../../general"
+import {computeCentsFromPitch, isUndefined} from "../../../../general"
 import {
     Ascii,
     computeAsciiFromSymbol,
@@ -8,16 +8,16 @@ import {
     JiNotationBoundClass,
     JiNotationLevel,
 } from "../../../../sagittal"
-import { computeBoundedCommaClassInfoPairs } from "./boundedCommaClassInfoPairs"
-import { BOUNDED_COMMA_CLASS_ID_PAIRS } from "./levelBoundedCommaClasses"
-import { BoundedCommaClassIdPairs, BoundedCommaClassInfoPairs, JiNotationBoundClassIdentifiers } from "./types"
+import {computeBoundedCommaClassInfoPairs} from "./boundedCommaClassInfoPairs"
+import {BOUNDED_COMMA_CLASS_ID_PAIRS} from "./levelBoundedCommaClasses"
+import {BoundedCommaClassIdPairs, BoundedCommaClassInfoPairs, JiNotationBoundClassIdentifiers} from "./types"
 
 const extractJiNotationBoundClassIdentifiers = (
-    { pitch, id }: JiNotationBoundClass,
+    {pitch, id}: JiNotationBoundClass,
 ): JiNotationBoundClassIdentifiers => {
     const boundedCommaClassIdPair = BOUNDED_COMMA_CLASS_ID_PAIRS.find(
         (boundedCommaClassIdPairs: BoundedCommaClassIdPairs): boolean => {
-            return boundedCommaClassIdPairs.jiNotationBoundClassId === id
+            return boundedCommaClassIdPairs.boundClassId === id
         })
     if (!boundedCommaClassIdPair) throw new Error(`Could not find bounded comma class ID pair for bound with ID ${id}`)
 
@@ -25,7 +25,7 @@ const extractJiNotationBoundClassIdentifiers = (
         computeBoundedCommaClassInfoPairs(boundedCommaClassIdPair)
 
     const [extremeLevelLesserBoundedCommaClassId, extremeLevelGreaterBoundedCommaClassId] =
-        boundedCommaClassIdPair[ JiNotationLevel.EXTREME ]
+        boundedCommaClassIdPair[JiNotationLevel.EXTREME]
 
     const extremeLevelLesserBoundedCommaClass = !isUndefined(extremeLevelLesserBoundedCommaClassId) &&
         getCommaClass(extremeLevelLesserBoundedCommaClassId)

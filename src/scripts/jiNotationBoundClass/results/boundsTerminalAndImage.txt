@@ -1708,8 +1708,8 @@ size category bound event was worst-ranked bound class event:
   <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="22606.24892" y="260" font-size="10px" font-family="Helvetica">S|M</text>  <text fill="#88ff88" text-anchor="middle" xml:space="preserve" x="22606.24892" y="260" font-size="10px" font-family="Helvetica">S|M</text>  <line stroke-dasharray="1" stroke="#88ff88" x1="28471.25151" x2="28471.25151" y1="10" y2="510" />
   <text stroke="white" stroke-width="0.45em" text-anchor="middle" xml:space="preserve" x="28471.25151" y="260" font-size="10px" font-family="Helvetica">M|L</text>  <text fill="#88ff88" text-anchor="middle" xml:space="preserve" x="28471.25151" y="260" font-size="10px" font-family="Helvetica">M|L</text>  <line stroke-dasharray="1" stroke="#88cccc" x1="1489.45055" x2="1489.45055" y1="435" y2="435"/>
   <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="1489.45055" y="435" font-size="6px" font-family="Helvetica">(|//|) |(</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="1489.45055" y="435" font-size="10px" font-family="Bravura">(♮)   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="1489.45055" y="435" font-size="10px" font-family="Bravura">(♮)   </text>
+  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="1489.45055" y="435" font-size="10px" font-family="Bravura">   </text>
+  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="1489.45055" y="435" font-size="10px" font-family="Bravura">   </text>
   <line stroke-dasharray="1" stroke="#88cccc" x1="3911.44071" x2="3911.44071" y1="435" y2="435"/>
   <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="3911.44071" y="435" font-size="6px" font-family="Helvetica">|( )|(</text>
   <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="3911.44071" y="435" font-size="10px" font-family="Bravura">   </text>
@@ -1748,8 +1748,8 @@ size category bound event was worst-ranked bound class event:
   <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="25560.83116" y="435" font-size="10px" font-family="Bravura">   </text>
   <line stroke-dasharray="1" stroke="#88cccc" x1="894.50468" x2="894.50468" y1="335" y2="335"/>
   <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="894.50468" y="335" font-size="6px" font-family="Helvetica">(|//|) )|</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="894.50468" y="335" font-size="10px" font-family="Bravura">(♮)   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="894.50468" y="335" font-size="10px" font-family="Bravura">(♮)   </text>
+  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="894.50468" y="335" font-size="10px" font-family="Bravura">   </text>
+  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="894.50468" y="335" font-size="10px" font-family="Bravura">   </text>
   <line stroke-dasharray="1" stroke="#88cccc" x1="2333.95523" x2="2333.95523" y1="335" y2="335"/>
   <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="2333.95523" y="335" font-size="6px" font-family="Helvetica">)| |(</text>
   <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="2333.95523" y="335" font-size="10px" font-family="Bravura">   </text>
@@ -1852,8 +1852,8 @@ size category bound event was worst-ranked bound class event:
   <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="27802.522" y="335" font-size="10px" font-family="Bravura">   </text>
   <line stroke-dasharray="1" stroke="#88cccc" x1="406.07449" x2="406.07449" y1="235" y2="235"/>
   <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="406.07449" y="235" font-size="6px" font-family="Helvetica">(|//|) .)|</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="406.07449" y="235" font-size="10px" font-family="Bravura">(♮)   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="406.07449" y="235" font-size="10px" font-family="Bravura">(♮)   </text>
+  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="406.07449" y="235" font-size="10px" font-family="Bravura">   </text>
+  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="406.07449" y="235" font-size="10px" font-family="Bravura">   </text>
   <line stroke-dasharray="1" stroke="#88cccc" x1="894.50468" x2="894.50468" y1="235" y2="235"/>
   <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="894.50468" y="235" font-size="6px" font-family="Helvetica">.)| '|</text>
   <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="894.50468" y="235" font-size="10px" font-family="Bravura">   </text>
@@ -2036,8 +2036,8 @@ size category bound event was worst-ranked bound class event:
   <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="27977.1421" y="235" font-size="10px" font-family="Bravura">   </text>
   <line stroke-dasharray="1" stroke="#88cccc" x1="155.67904" x2="155.67904" y1="135" y2="135"/>
   <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="155.67904" y="135" font-size="6px" font-family="Helvetica">(|//|) `|</text>
-  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="155.67904" y="135" font-size="10px" font-family="Bravura">(♮)   </text>
-  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="155.67904" y="135" font-size="10px" font-family="Bravura">(♮)   </text>
+  <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="155.67904" y="135" font-size="10px" font-family="Bravura">   </text>
+  <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="155.67904" y="135" font-size="10px" font-family="Bravura">   </text>
   <line stroke-dasharray="1" stroke="#88cccc" x1="363.81009" x2="363.81009" y1="135" y2="135"/>
   <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="363.81009" y="135" font-size="6px" font-family="Helvetica">`| ``|</text>
   <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="363.81009" y="135" font-size="10px" font-family="Bravura">   </text>
@@ -4282,7 +4282,7 @@ size category bound event was worst-ranked bound class event:
   <text fill="#6666ff" alignment-baseline="baseline" text-anchor="middle" x="28471.25151" y="35" font-size="6px" font-family="Helvetica">404.5°809</text>
   <circle stroke="black" cx="50" cy="450" r="1" />
   <text fill="white" text-anchor="middle" x="50" y="470" font-size="10px" font-family="Helvetica">(|//|)</text>
-  <text fill="black" text-anchor="middle" x="50" y="470" font-size="40px" font-family="Bravura">(♮)</text>
+  <text fill="black" text-anchor="middle" x="50" y="470" font-size="40px" font-family="Bravura"></text>
   <circle stroke="black" cx="2928.9011" cy="450" r="1" />
   <text fill="white" text-anchor="middle" x="2928.9011" y="470" font-size="10px" font-family="Helvetica">|(</text>
   <text fill="black" text-anchor="middle" x="2928.9011" y="470" font-size="40px" font-family="Bravura"></text>
@@ -4315,7 +4315,7 @@ size category bound event was worst-ranked bound class event:
   <text fill="black" text-anchor="middle" x="26686.47162" y="470" font-size="40px" font-family="Bravura"></text>
   <circle stroke="black" cx="50" cy="350" r="1" />
   <text fill="white" text-anchor="middle" x="50" y="370" font-size="10px" font-family="Helvetica">(|//|)</text>
-  <text fill="black" text-anchor="middle" x="50" y="370" font-size="40px" font-family="Bravura">(♮)</text>
+  <text fill="black" text-anchor="middle" x="50" y="370" font-size="40px" font-family="Bravura"></text>
   <circle stroke="black" cx="1739.00936" cy="350" r="1" />
   <text fill="white" text-anchor="middle" x="1739.00936" y="370" font-size="10px" font-family="Helvetica">)|</text>
   <text fill="black" text-anchor="middle" x="1739.00936" y="370" font-size="40px" font-family="Bravura"></text>
@@ -4396,7 +4396,7 @@ size category bound event was worst-ranked bound class event:
   <text fill="black" text-anchor="middle" x="28290.95219" y="370" font-size="40px" font-family="Bravura"></text>
   <circle stroke="black" cx="50" cy="250" r="1" />
   <text fill="white" text-anchor="middle" x="50" y="270" font-size="10px" font-family="Helvetica">(|//|)</text>
-  <text fill="black" text-anchor="middle" x="50" y="270" font-size="40px" font-family="Bravura">(♮)</text>
+  <text fill="black" text-anchor="middle" x="50" y="270" font-size="40px" font-family="Bravura"></text>
   <circle stroke="black" cx="762.14897" cy="250" r="1" />
   <text fill="white" text-anchor="middle" x="762.14897" y="270" font-size="10px" font-family="Helvetica">.)|</text>
   <text fill="black" text-anchor="middle" x="762.14897" y="270" font-size="40px" font-family="Bravura"></text>
@@ -4537,7 +4537,7 @@ size category bound event was worst-ranked bound class event:
   <text fill="black" text-anchor="middle" x="28290.95219" y="270" font-size="40px" font-family="Bravura"></text>
   <circle stroke="black" cx="50" cy="150" r="1" />
   <text fill="white" text-anchor="middle" x="50" y="170" font-size="10px" font-family="Helvetica">(|//|)</text>
-  <text fill="black" text-anchor="middle" x="50" y="170" font-size="40px" font-family="Bravura">(♮)</text>
+  <text fill="black" text-anchor="middle" x="50" y="170" font-size="40px" font-family="Bravura"></text>
   <text text-anchor="middle" x="50" y="140" font-size="10px" font-family="Bravura">  0</text>
   <circle stroke="black" cx="261.35808" cy="150" r="1" />
   <text fill="white" text-anchor="middle" x="261.35808" y="170" font-size="10px" font-family="Helvetica">`|</text>

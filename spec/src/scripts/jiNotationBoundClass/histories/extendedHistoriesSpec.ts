@@ -1,10 +1,10 @@
-import { Cents, computePitchFromCents, HALF_SCALER, Monzo, Name, Scamon } from "../../../../../src/general"
-import { APOTOME } from "../../../../../src/sagittal"
-import { BoundClass, BoundType, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
-import { HIGH_EDA, ULTRA_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"
-import { BoundClassEvent, BoundClassHistory } from "../../../../../src/scripts/jiNotationBoundClass/histories"
-import { computeExtendedHistories } from "../../../../../src/scripts/jiNotationBoundClass/histories/extendedHistories"
-import { jiNotationBoundClassFixture } from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
+import {Cents, computePitchFromCents, HALF_SCALER, Monzo, Name, Scamon} from "../../../../../src/general"
+import {APOTOME, JiNotationBound} from "../../../../../src/sagittal"
+import {BoundType, JiNotationLevel} from "../../../../../src/sagittal/notations"
+import {HIGH_EDA, ULTRA_EDA} from "../../../../../src/sagittal/notations/ji/levelEdas"
+import {BoundClassEvent, BoundClassHistory} from "../../../../../src/scripts/jiNotationBoundClass/histories"
+import {computeExtendedHistories} from "../../../../../src/scripts/jiNotationBoundClass/histories/extendedHistories"
+import {jiNotationBoundClassFixture} from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
 describe("computeExtendedHistories", (): void => {
     let boundClassHistory: BoundClassHistory
@@ -12,8 +12,8 @@ describe("computeExtendedHistories", (): void => {
     const passedInBoundClassEvent: BoundClassEvent = {
         jiNotationLevel: JiNotationLevel.HIGH,
         boundType: BoundType.INA_MIDPOINT,
-        name: "16.5°47" as Name<BoundClass>,
-        pitch: { monzo: APOTOME.monzo, scaler: [16.5, HIGH_EDA] } as Scamon<{ rational: false }>,
+        name: "16.5°47" as Name<JiNotationBound>,
+        pitch: {monzo: APOTOME.monzo, scaler: [16.5, HIGH_EDA]} as Scamon<{rational: false}>,
     }
 
     beforeEach((): void => {
@@ -37,8 +37,8 @@ describe("computeExtendedHistories", (): void => {
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
                     boundType: BoundType.INA_MIDPOINT,
-                    name: "23.5°58" as Name<BoundClass>,
-                    pitch: { monzo: APOTOME.monzo, scaler: [23.5, ULTRA_EDA] } as Scamon<{ rational: false }>,
+                    name: "23.5°58" as Name<JiNotationBound>,
+                    pitch: {monzo: APOTOME.monzo, scaler: [23.5, ULTRA_EDA]} as Scamon<{rational: false}>,
                 },
             ],
             [
@@ -46,11 +46,11 @@ describe("computeExtendedHistories", (): void => {
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
                     boundType: BoundType.COMMA_MEAN,
-                    name: "'//| )//|" as Name<BoundClass>,
+                    name: "'//| )//|" as Name<JiNotationBound>,
                     pitch: {
-                        monzo: [4, -3, -1, 0, 0, 2, 0, -1] as Monzo<{ rational: true }>,
+                        monzo: [4, -3, -1, 0, 0, 2, 0, -1] as Monzo<{rational: true}>,
                         scaler: HALF_SCALER,
-                    } as Scamon<{ rational: false }>,
+                    } as Scamon<{rational: false}>,
                 },
             ],
             [
@@ -58,11 +58,11 @@ describe("computeExtendedHistories", (): void => {
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
-                    name: "S|M" as Name<BoundClass>,
+                    name: "S|M" as Name<JiNotationBound>,
                     pitch: {
-                        monzo: [8, -5] as Monzo<{ rational: true }>,
+                        monzo: [8, -5] as Monzo<{rational: true}>,
                         scaler: HALF_SCALER,
-                    } as Scamon<{ rational: false }>,
+                    } as Scamon<{rational: false}>,
                 },
             ],
         ]

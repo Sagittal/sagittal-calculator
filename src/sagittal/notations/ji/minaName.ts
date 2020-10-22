@@ -1,5 +1,5 @@
 import { Id, Name, RecordKey } from "../../../general"
-import { CommaClass } from "../types"
+import { CommaClass } from "../../ji"
 import { Mina } from "./types"
 
 const EXTREME_NOTATION_MINAS: Record<RecordKey<Id<CommaClass>>, Name<Mina>> = {

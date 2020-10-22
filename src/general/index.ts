@@ -217,6 +217,8 @@ export {
     computeRationalScamonSmoothness,
     isRationalScamonSmooth,
     computeRationalQuotientFromRationalScamon,
+    invertScamon,
+    multiplyScamon,
 } from "./math"
 export {
     Cents,
@@ -246,5 +248,6 @@ export {
     PYTHAGOREAN_LARGE_DIESIS,
     PYTHAGOREAN_WHOLE_TONE,
     THIRTYONE_THREE_COMMA,
+    CommaMean,
 } from "./music"
 export { Count, Ed, Extrema, Id, Index, Ms, Multiplier, Name, Step, Sum, Window, Of } from "./types"

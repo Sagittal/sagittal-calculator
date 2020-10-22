@@ -1,10 +1,10 @@
-import { DEFAULT_PRECISION, Io, Px, round, subtract } from "../../../../general"
-import { CommaMean, computeUnicodeFromSymbol, JiNotationLevel, SagittalSymbol } from "../../../../sagittal"
-import { JI_NOTATION_LEVELS_COMMA_MEANS } from "../../histories"
-import { JI_NOTATION_LEVEL_CENTERS } from "./levelHeights"
-import { COMMA_MEAN_HEX_COLOR } from "./rankColors"
-import { DASH_SIZE, HALF_TICK_SIZE } from "./sizes"
-import { computeX } from "./x"
+import {CommaMean, DEFAULT_PRECISION, Io, Px, round, subtract} from "../../../../general"
+import {Ascii, computeUnicodeFromSymbol, JiNotationLevel, parseAscii} from "../../../../sagittal"
+import {JI_NOTATION_LEVELS_COMMA_MEANS} from "../../histories"
+import {JI_NOTATION_LEVEL_CENTERS} from "./levelHeights"
+import {COMMA_MEAN_HEX_COLOR} from "./rankColors"
+import {DASH_SIZE, HALF_TICK_SIZE} from "./sizes"
+import {computeX} from "./x"
 
 const visualizeJiNotationLevelCommaMeans = (): Io[] => {
     const jiNotationLevelCommaMeanElements: Io[] = [] as Io[]
@@ -24,7 +24,9 @@ const visualizeJiNotationLevelCommaMeans = (): Io[] => {
 
         jiNotationLevelCommaMeans.forEach(({ name, pitch }: CommaMean): void => {
             const formattedName = name?.split(" ")
-                .map((symbol: string): string => computeUnicodeFromSymbol(symbol as SagittalSymbol)).join("   ") || ""
+                .map((symbolString: string): string => {
+                    return computeUnicodeFromSymbol(parseAscii(symbolString as Ascii))
+                }).join("   ") || ""
             const positionX: Px = computeX(pitch)
 
             jiNotationLevelCommaMeanElements.push(`  <line stroke-dasharray="${DASH_SIZE}" stroke="${COMMA_MEAN_HEX_COLOR}" x1="${positionX}" x2="${positionX}" y1="${topY}" y2="${bottomY}"/>\n` as Io)

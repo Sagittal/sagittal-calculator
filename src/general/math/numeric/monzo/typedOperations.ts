@@ -1,6 +1,7 @@
-import { computeRange, computeTrimmedArray, shallowClone } from "../../../code"
-import { add, count, Decimal, Exponent, invertMonzo, max, Monzo, NumericProperties, Prime } from "../../../math"
-import { NumericPropertyTranslationForMonzosAndQuotientsToTheirTerms } from "../types"
+import {computeRange, computeTrimmedArray, shallowClone} from "../../../code"
+import {add, count, Decimal, Exponent, invertMonzo, max, Monzo, multiply, NumericProperties, Prime} from "../../../math"
+import {Multiplier} from "../../../types"
+import {NumericPropertyTranslationForMonzosAndQuotientsToTheirTerms} from "../types"
 
 const sumMonzos = <T extends NumericProperties>(...monzos: Array<Monzo<T>>): Monzo<T> => {
     const maxMonzoLength = max(...monzos.map(count))
@@ -8,7 +9,7 @@ const sumMonzos = <T extends NumericProperties>(...monzos: Array<Monzo<T>>): Mon
     const summedMonzos: Monzo = computeRange(maxMonzoLength).map((index: number): Exponent<Prime> => {
         return monzos.reduce(
             (totalPrimeExponent: Exponent<Prime>, monzo: Monzo): Exponent<Prime> => {
-                const primeExponent: Exponent<Prime> = monzo[ index ] || 0 as Exponent<Prime>
+                const primeExponent: Exponent<Prime> = monzo[index] || 0 as Exponent<Prime>
 
                 return add(totalPrimeExponent, primeExponent)
             },
@@ -26,15 +27,24 @@ const addMonzos = <T extends NumericProperties>(augendMonzo: Monzo<T>, addendMon
     }
 
     return computeTrimmedArray(monzoToMap.map((primeExponent: Exponent<Prime>, index: number): Exponent<Prime> => {
-        return addendMonzo[ index ] ? add(primeExponent, addendMonzo[ index ]) : primeExponent
+        return addendMonzo[index] ? add(primeExponent, addendMonzo[index]) : primeExponent
     })) as Monzo<T>
 }
 
 const subtractMonzos = <T extends NumericProperties>(minuendMonzo: Monzo<T>, subtrahendMonzo: Monzo<T>): Monzo<T> =>
     addMonzos(minuendMonzo, invertMonzo(subtrahendMonzo) as Monzo<T>)
 
+const multiplyMonzo = <T extends NumericProperties>(
+    monzo: Monzo<T>,
+    multiplier: Decimal<{integer: true}> & Multiplier
+): Monzo<T> =>
+    monzo.map((primeExponent: Exponent<Prime>): Exponent<Prime> => {
+        return multiply(primeExponent, multiplier as Decimal<{integer: true}> & Multiplier<Exponent<Prime>>)
+    }) as Monzo<T>
+
 export {
     sumMonzos,
     addMonzos,
     subtractMonzos,
+    multiplyMonzo,
 }

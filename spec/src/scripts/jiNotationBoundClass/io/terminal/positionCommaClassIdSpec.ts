@@ -1,5 +1,5 @@
 import { Id, Monzo, Scamon } from "../../../../../../src/general"
-import { CommaClass } from "../../../../../../src/sagittal/notations"
+import { CommaClass } from "../../../../../../src/sagittal/ji"
 import { computePositionCommaClassId } from "../../../../../../src/scripts/jiNotationBoundClass/io/terminal/positionCommaClassId"
 
 describe("computePositionCommaClassId", (): void => {

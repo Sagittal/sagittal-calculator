@@ -1,5 +1,6 @@
 import { Id } from "../../../../../src/general"
-import { CommaClass, JiNotationLevel } from "../../../../../src/sagittal/notations"
+import {CommaClass} from "../../../../../src/sagittal/ji/comma/class"
+import { JiNotationLevel } from "../../../../../src/sagittal/notations"
 import { getIntroducingJiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 
 describe("getIntroducingJiNotationLevel", (): void => {

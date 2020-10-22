@@ -1,5 +1,7 @@
-import { Monzo } from "../../../../../../src/general/math"
+import {Multiplier, multiplyScamon} from "../../../../../../src/general"
+import {Decimal, Monzo, Scamon} from "../../../../../../src/general/math"
 import { addMonzos, subtractMonzos, sumMonzos } from "../../../../../../src/general/math/numeric/monzo"
+import {multiplyMonzo} from "../../../../../../src/general/math/numeric/monzo/typedOperations"
 
 describe("sumMonzos", (): void => {
     it("sums each of the terms of all of the monzos", (): void => {
@@ -64,6 +66,18 @@ describe("subtractMonzos", (): void => {
         const actual = subtractMonzos(minuendMonzo, subtrahendMonzo)
 
         const expected = [3, 4, -3, -7, 2] as Monzo
+        expect(actual).toEqual(expected)
+    })
+})
+
+describe("multiplyMonzo", (): void => {
+    it("multiplies each prime exponent vector by the multiplier", (): void => {
+        const monzo = [0, 1, -3, 2] as Monzo<{rational: true}>
+        const multiplier = 5 as Decimal<{integer: true}> & Multiplier
+
+        const actual = multiplyMonzo(monzo, multiplier)
+
+        const expected = [0, 5, -15, 10] as Monzo<{rational: true}>
         expect(actual).toEqual(expected)
     })
 })

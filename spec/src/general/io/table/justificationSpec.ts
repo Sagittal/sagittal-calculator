@@ -1,8 +1,7 @@
-import { Count, Range, Table } from "../../../../../src/general"
-import { Io } from "../../../../../src/general/io"
-import { Justification } from "../../../../../src/general/io/table"
-import { computeColumnWidths, computeJustifiedCell } from "../../../../../src/general/io/table/justification"
-import { Char } from "../../../../../src/general/io/types"
+import {Count, Range, Table} from "../../../../../src/general"
+import {Char, Io} from "../../../../../src/general/io"
+import {Justification} from "../../../../../src/general/io/table"
+import {computeColumnWidths, computeJustifiedCell} from "../../../../../src/general/io/table/justification"
 
 describe("computeJustifiedCell", (): void => {
     it("adds space to justify cells", (): void => {
@@ -10,7 +9,7 @@ describe("computeJustifiedCell", (): void => {
 
         const actual = computeJustifiedCell(
             cell,
-            { columnWidth: 14 as Count<Char>, columnJustification: Justification.LEFT },
+            {columnWidth: 14 as Count<Char>, columnJustification: Justification.LEFT},
         )
 
         const expected = "  7           "
@@ -22,7 +21,7 @@ describe("computeJustifiedCell", (): void => {
 
         const actual = computeJustifiedCell(
             cell,
-            { columnWidth: 14 as Count<Char>, columnJustification: Justification.RIGHT },
+            {columnWidth: 14 as Count<Char>, columnJustification: Justification.RIGHT},
         )
 
         const expected = "         7    "
@@ -34,7 +33,7 @@ describe("computeJustifiedCell", (): void => {
 
         const actual = computeJustifiedCell(
             cell,
-            { columnWidth: 14 as Count<Char>, columnJustification: Justification.LEFT },
+            {columnWidth: 14 as Count<Char>, columnJustification: Justification.LEFT},
         )
 
         expect(actual).toBe(cell)

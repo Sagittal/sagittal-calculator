@@ -10,6 +10,6 @@ export { JI_NOTATION_LEVELS } from "./levels"
 export { JI_NOTATION_LEVELS_BOUND_CLASSES } from "./levelsBoundClasses"
 export { JI_NOTATION_LEVELS_COMMA_CLASS_IDS } from "./levelCommaClassIds"
 export {
-    JiNotationBoundClass, Ina, JiNotationLevel, Mina, Tina, BoundType, BoundClass, InaMidpoint, CommaMean,
+    JiNotationBoundClass, Ina, JiNotationLevel, Mina, Tina, BoundType, BoundClass, InaMidpoint, JiNotationBound,
 } from "./types"
 export { JI_NOTATION } from "./levelCommaClassIds"

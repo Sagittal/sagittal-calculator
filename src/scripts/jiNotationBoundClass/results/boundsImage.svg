@@ -2551,9 +2551,9 @@
     <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="1489.45055" y="435"
           font-size="6px" font-family="Helvetica">(|//|) |(</text>
     <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve"
-          x="1489.45055" y="435" font-size="10px" font-family="Bravura">(♮)   </text>
+          x="1489.45055" y="435" font-size="10px" font-family="Bravura">   </text>
     <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="1489.45055" y="435"
-          font-size="10px" font-family="Bravura">(♮)   </text>
+          font-size="10px" font-family="Bravura">   </text>
     <line stroke-dasharray="1" stroke="#88cccc" x1="3911.44071" x2="3911.44071" y1="435" y2="435"/>
     <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="3911.44071" y="435"
           font-size="6px" font-family="Helvetica">|( )|(</text>
@@ -2621,9 +2621,9 @@
     <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="894.50468" y="335"
           font-size="6px" font-family="Helvetica">(|//|) )|</text>
     <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve"
-          x="894.50468" y="335" font-size="10px" font-family="Bravura">(♮)   </text>
+          x="894.50468" y="335" font-size="10px" font-family="Bravura">   </text>
     <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="894.50468" y="335"
-          font-size="10px" font-family="Bravura">(♮)   </text>
+          font-size="10px" font-family="Bravura">   </text>
     <line stroke-dasharray="1" stroke="#88cccc" x1="2333.95523" x2="2333.95523" y1="335" y2="335"/>
     <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="2333.95523" y="335"
           font-size="6px" font-family="Helvetica">)| |(</text>
@@ -2803,9 +2803,9 @@
     <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="406.07449" y="235"
           font-size="6px" font-family="Helvetica">(|//|) .)|</text>
     <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve"
-          x="406.07449" y="235" font-size="10px" font-family="Bravura">(♮)   </text>
+          x="406.07449" y="235" font-size="10px" font-family="Bravura">   </text>
     <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="406.07449" y="235"
-          font-size="10px" font-family="Bravura">(♮)   </text>
+          font-size="10px" font-family="Bravura">   </text>
     <line stroke-dasharray="1" stroke="#88cccc" x1="894.50468" x2="894.50468" y1="235" y2="235"/>
     <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="894.50468" y="235"
           font-size="6px" font-family="Helvetica">.)| '|</text>
@@ -3125,9 +3125,9 @@
     <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="155.67904" y="135"
           font-size="6px" font-family="Helvetica">(|//|) `|</text>
     <text stroke="white" stroke-width="0.45em" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve"
-          x="155.67904" y="135" font-size="10px" font-family="Bravura">(♮)   </text>
+          x="155.67904" y="135" font-size="10px" font-family="Bravura">   </text>
     <text fill="#88cccc" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="155.67904" y="135"
-          font-size="10px" font-family="Bravura">(♮)   </text>
+          font-size="10px" font-family="Bravura">   </text>
     <line stroke-dasharray="1" stroke="#88cccc" x1="363.81009" x2="363.81009" y1="135" y2="135"/>
     <text fill="white" alignment-baseline="hanging" text-anchor="middle" xml:space="preserve" x="363.81009" y="135"
           font-size="6px" font-family="Helvetica">`| ``|</text>
@@ -8079,7 +8079,7 @@
     </text>
     <circle stroke="black" cx="50" cy="450" r="1"/>
     <text fill="white" text-anchor="middle" x="50" y="470" font-size="10px" font-family="Helvetica">(|//|)</text>
-    <text fill="black" text-anchor="middle" x="50" y="470" font-size="40px" font-family="Bravura">(♮)</text>
+    <text fill="black" text-anchor="middle" x="50" y="470" font-size="40px" font-family="Bravura"></text>
     <circle stroke="black" cx="2928.9011" cy="450" r="1"/>
     <text fill="white" text-anchor="middle" x="2928.9011" y="470" font-size="10px" font-family="Helvetica">|(</text>
     <text fill="black" text-anchor="middle" x="2928.9011" y="470" font-size="40px" font-family="Bravura"></text>
@@ -8112,7 +8112,7 @@
     <text fill="black" text-anchor="middle" x="26686.47162" y="470" font-size="40px" font-family="Bravura"></text>
     <circle stroke="black" cx="50" cy="350" r="1"/>
     <text fill="white" text-anchor="middle" x="50" y="370" font-size="10px" font-family="Helvetica">(|//|)</text>
-    <text fill="black" text-anchor="middle" x="50" y="370" font-size="40px" font-family="Bravura">(♮)</text>
+    <text fill="black" text-anchor="middle" x="50" y="370" font-size="40px" font-family="Bravura"></text>
     <circle stroke="black" cx="1739.00936" cy="350" r="1"/>
     <text fill="white" text-anchor="middle" x="1739.00936" y="370" font-size="10px" font-family="Helvetica">)|</text>
     <text fill="black" text-anchor="middle" x="1739.00936" y="370" font-size="40px" font-family="Bravura"></text>
@@ -8193,7 +8193,7 @@
     <text fill="black" text-anchor="middle" x="28290.95219" y="370" font-size="40px" font-family="Bravura"></text>
     <circle stroke="black" cx="50" cy="250" r="1"/>
     <text fill="white" text-anchor="middle" x="50" y="270" font-size="10px" font-family="Helvetica">(|//|)</text>
-    <text fill="black" text-anchor="middle" x="50" y="270" font-size="40px" font-family="Bravura">(♮)</text>
+    <text fill="black" text-anchor="middle" x="50" y="270" font-size="40px" font-family="Bravura"></text>
     <circle stroke="black" cx="762.14897" cy="250" r="1"/>
     <text fill="white" text-anchor="middle" x="762.14897" y="270" font-size="10px" font-family="Helvetica">.)|</text>
     <text fill="black" text-anchor="middle" x="762.14897" y="270" font-size="40px" font-family="Bravura"></text>
@@ -8334,7 +8334,7 @@
     <text fill="black" text-anchor="middle" x="28290.95219" y="270" font-size="40px" font-family="Bravura"></text>
     <circle stroke="black" cx="50" cy="150" r="1"/>
     <text fill="white" text-anchor="middle" x="50" y="170" font-size="10px" font-family="Helvetica">(|//|)</text>
-    <text fill="black" text-anchor="middle" x="50" y="170" font-size="40px" font-family="Bravura">(♮)</text>
+    <text fill="black" text-anchor="middle" x="50" y="170" font-size="40px" font-family="Bravura"></text>
     <text text-anchor="middle" x="50" y="140" font-size="10px" font-family="Bravura">0</text>
     <circle stroke="black" cx="261.35808" cy="150" r="1"/>
     <text fill="white" text-anchor="middle" x="261.35808" y="170" font-size="10px" font-family="Helvetica">`|</text>

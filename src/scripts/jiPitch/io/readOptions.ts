@@ -1,4 +1,4 @@
-import { program } from "commander"
+import {program} from "commander"
 import {
     Comma,
     CommandFlag,
@@ -11,7 +11,7 @@ import {
     Quotient,
     Scamon,
 } from "../../../general"
-import { computeCommaFromCommaNameQuotientAndSizeCategoryName, parseCommaName, parsePitch } from "../../../sagittal"
+import {computeCommaFromCommaNameQuotientAndSizeCategoryName, parseCommaName, parsePitch} from "../../../sagittal"
 
 const readJiPitchOptions = (): void => {
     program

@@ -5,3 +5,7 @@ import { ScriptGroup } from "../../src/scripts/types"
 const scriptGroup = ScriptGroup.SPEC as Filename
 ioSettings.scriptGroup = scriptGroup
 clearLogFiles(scriptGroup)
+
+beforeEach((): void => {
+    ioSettings.noWrite = true
+})

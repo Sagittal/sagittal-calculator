@@ -16,10 +16,9 @@ import {
     Quotient,
     TableFormat,
 } from "../../../../../../src/general"
-import { ApotomeSlope, CommaAnalysis } from "../../../../../../src/sagittal/ji"
-import { CommaClass } from "../../../../../../src/sagittal/notations"
-import { computeNotatingCommasOutput } from "../../../../../../src/scripts/jiPitch/io"
-import { commaAnalysisFixture, two3FreeClassAnalysisFixture } from "../../../../../helpers/src/scripts/jiPitch/fixtures"
+import {ApotomeSlope, CommaAnalysis, CommaClass} from "../../../../../../src/sagittal/ji"
+import {computeNotatingCommasOutput} from "../../../../../../src/scripts/jiPitch/io"
+import {commaAnalysisFixture, two3FreeClassAnalysisFixture} from "../../../../../helpers/src/scripts/jiPitch/fixtures"
 
 describe("computeNotatingCommasOutput", (): void => {
     const notatingCommaAnalyses: CommaAnalysis[] = [
@@ -27,22 +26,22 @@ describe("computeNotatingCommasOutput", (): void => {
             ...commaAnalysisFixture,
             name: "11M" as Name<Comma>,
             cents: 45.45 as Cents,
-            monzo: [0, 0, 1] as Monzo<{ rational: true }>,
-            quotient: [33, 32] as Quotient<{ rational: true }>,
+            monzo: [0, 0, 1] as Monzo<{rational: true}>,
+            quotient: [33, 32] as Quotient<{rational: true}>,
             apotomeSlope: -4 as ApotomeSlope,
             aas: 4 as Abs<ApotomeSlope>,
-            ate: 0 as Abs<Decimal<{ integer: true }> & Exponent<3 & Prime>>,
+            ate: 0 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
             two3FreeClassAnalysis: two3FreeClassAnalysisFixture,
         },
         {
             ...commaAnalysisFixture,
             name: "25/49M" as Name<Comma>,
             cents: 33.4 as Cents,
-            monzo: [1, 0, 2, -2] as Monzo<{ rational: true }>,
-            quotient: [50, 49] as Quotient<{ rational: true }>,
+            monzo: [1, 0, 2, -2] as Monzo<{rational: true}>,
+            quotient: [50, 49] as Quotient<{rational: true}>,
             apotomeSlope: -2.154 as ApotomeSlope,
             aas: 2.154 as Abs<ApotomeSlope>,
-            ate: 0 as Abs<Decimal<{ integer: true }> & Exponent<3 & Prime>>,
+            ate: 0 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
             two3FreeClassAnalysis: two3FreeClassAnalysisFixture,
         },
     ]

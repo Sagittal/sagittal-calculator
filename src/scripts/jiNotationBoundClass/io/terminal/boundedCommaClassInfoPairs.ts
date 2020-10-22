@@ -4,7 +4,7 @@ import { computeBoundedCommaClassInfo } from "./boundedCommaClassInfo"
 import { BoundedCommaClassIdPair, BoundedCommaClassIdPairs, BoundedCommaClassInfoPairs } from "./types"
 
 const computeBoundedCommaClassInfoPairs = (
-    { jiNotationBoundClassId, ...boundedCommaClassIdPairs }: BoundedCommaClassIdPairs,
+    { boundClassId, ...boundedCommaClassIdPairs }: BoundedCommaClassIdPairs,
 ): BoundedCommaClassInfoPairs => {
     return Object.entries(boundedCommaClassIdPairs).reduce(
         (
@@ -13,9 +13,9 @@ const computeBoundedCommaClassInfoPairs = (
         ): BoundedCommaClassInfoPairs => {
             const [first, second] = boundedCommaClassIdPair
             const firstBoundedCommaClassInfo = !isUndefined(first) &&
-                computeBoundedCommaClassInfo(first, jiNotationBoundClassId, jiNotationLevel as JiNotationLevel)
+                computeBoundedCommaClassInfo(first, boundClassId, jiNotationLevel as JiNotationLevel)
             const secondBoundedCommaClassInfo = !isUndefined(second) &&
-                computeBoundedCommaClassInfo(second, jiNotationBoundClassId, jiNotationLevel as JiNotationLevel)
+                computeBoundedCommaClassInfo(second, boundClassId, jiNotationLevel as JiNotationLevel)
 
             return {
                 ...boundedCommaClassInfoPairs,
@@ -26,7 +26,7 @@ const computeBoundedCommaClassInfoPairs = (
             }
         },
         {
-            jiNotationBoundClassId,
+            boundClassId,
         },
     )
 }
