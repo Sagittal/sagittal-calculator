@@ -6,9 +6,9 @@ import {
 import {computeEvoAccidentalFromFlacombo} from "../../../../../src/sagittal/accidental/flavor/evo"
 import {computeRevoAccidentalFromFlacombo} from "../../../../../src/sagittal/accidental/flavor/revo"
 import {Flacombo} from "../../../../../src/sagittal/notations"
-import {AccidentalAnalysis} from "./types"
+import {AccidentalExpectation} from "./types"
 
-const computeAccidentalAnalysisForFlacombo = (flacombo: Flacombo): AccidentalAnalysis => {
+const computeAccidentalExpectation = (flacombo: Flacombo): AccidentalExpectation => {
     const evoAccidental = computeEvoAccidentalFromFlacombo(flacombo)
     const evoUnicode = computeAccidentalUnicode(evoAccidental)
     const evoAscii = computeAccidentalAscii(evoAccidental)
@@ -35,5 +35,5 @@ const computeAccidentalAnalysisForFlacombo = (flacombo: Flacombo): AccidentalAna
 }
 
 export {
-    computeAccidentalAnalysisForFlacombo,
+    computeAccidentalExpectation,
 }

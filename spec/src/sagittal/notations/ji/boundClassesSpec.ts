@@ -13,8 +13,8 @@ import {
 } from "../../../../../src/general"
 import {APOTOME, BoundClass, JiNotationBoundClass, JI_NOTATION_BOUND_CLASSES, TINA} from "../../../../../src/sagittal"
 import {INSANE_EDA} from "../../../../../src/sagittal/notations/ji/levelEdas"
-import {analyzePitch} from "../../../../helpers/src/general/music/analyzePitch"
-import {PitchAnalysis} from "../../../../helpers/src/general/music/types"
+import {computePitchExpectation} from "../../../../helpers/src/general/music/pitchExpectation"
+import {PitchExpectation} from "../../../../helpers/src/general/music/types"
 
 describe("JI_NOTATION_BOUND_CLASSES", (): void => {
     it("almost every bound class in the JI notation is snapped to a half-tina", (): void => {
@@ -57,8 +57,8 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
     })
 
     it("the bound classes are in the correct positions", (): void => {
-        const actual = JI_NOTATION_BOUND_CLASSES.map((jiNotationBoundClass: JiNotationBoundClass): PitchAnalysis => {
-            return analyzePitch(jiNotationBoundClass.pitch)
+        const actual = JI_NOTATION_BOUND_CLASSES.map((jiNotationBoundClass: JiNotationBoundClass): PitchExpectation => {
+            return computePitchExpectation(jiNotationBoundClass.pitch)
         })
 
         const expected = [

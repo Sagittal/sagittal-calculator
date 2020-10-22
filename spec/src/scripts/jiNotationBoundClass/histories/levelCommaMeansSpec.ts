@@ -1,8 +1,8 @@
 import {Cents, CommaMean, Decimal, HALF_SCALER, Monzo, Name, Scamon} from "../../../../../src/general"
 import {JiNotationLevel} from "../../../../../src/sagittal/notations/ji"
 import {computeJiNotationLevelCommaMeans} from "../../../../../src/scripts/jiNotationBoundClass/histories/levelCommaMeans"
-import {analyzePitch} from "../../../../helpers/src/general/music/analyzePitch"
-import {PitchAnalysis} from "../../../../helpers/src/general/music/types"
+import {computePitchExpectation} from "../../../../helpers/src/general/music/pitchExpectation"
+import {PitchExpectation} from "../../../../helpers/src/general/music/types"
 
 describe("computeJiNotationLevelCommaMeans", (): void => {
     describe("naming", (): void => {
@@ -1470,7 +1470,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
     describe("it has the right values for the pitches", (): void => {
         it("works for the Medium level", (): void => {
             const actual = computeJiNotationLevelCommaMeans(JiNotationLevel.MEDIUM)
-                .map((levelCommaMean: CommaMean): PitchAnalysis => analyzePitch(levelCommaMean.pitch))
+                .map((levelCommaMean: CommaMean): PitchExpectation => computePitchExpectation(levelCommaMean.pitch))
 
             const expected = [
                 {
@@ -1569,7 +1569,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
 
         it("works for the High level", (): void => {
             const actual = computeJiNotationLevelCommaMeans(JiNotationLevel.HIGH)
-                .map((levelCommaMean: CommaMean): PitchAnalysis => analyzePitch(levelCommaMean.pitch))
+                .map((levelCommaMean: CommaMean): PitchExpectation => computePitchExpectation(levelCommaMean.pitch))
 
             const expected = [
                 {
@@ -1812,7 +1812,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
 
         it("works for the Ultra level", (): void => {
             const actual = computeJiNotationLevelCommaMeans(JiNotationLevel.ULTRA)
-                .map((levelCommaMean: CommaMean): PitchAnalysis => analyzePitch(levelCommaMean.pitch))
+                .map((levelCommaMean: CommaMean): PitchExpectation => computePitchExpectation(levelCommaMean.pitch))
 
             const expected = [
                 {
@@ -2235,7 +2235,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
 
         it("works for the Extreme level", (): void => {
             const actual = computeJiNotationLevelCommaMeans(JiNotationLevel.EXTREME)
-                .map((levelCommaMean: CommaMean): PitchAnalysis => analyzePitch(levelCommaMean.pitch))
+                .map((levelCommaMean: CommaMean): PitchExpectation => computePitchExpectation(levelCommaMean.pitch))
 
             const expected = [
                 {

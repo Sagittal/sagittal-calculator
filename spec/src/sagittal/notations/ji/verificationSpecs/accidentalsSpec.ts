@@ -3,18 +3,18 @@ import {Unicode} from "../../../../../../src/sagittal/accidental/io"
 import {Flacombo} from "../../../../../../src/sagittal/notations"
 import {computeFlacombos} from "../../../../../../src/sagittal/notations/flacombos"
 import {EXTREME_NOTATION} from "../../../../../../src/sagittal/notations/ji/notations"
-import {computeAccidentalAnalysisForFlacombo} from "../../../../../helpers/src/sagittal/accidental/accidentalAnalysisForFlacombo"
-import {AccidentalAnalysis} from "../../../../../helpers/src/sagittal/accidental/types"
+import {computeAccidentalExpectation} from "../../../../../helpers/src/sagittal/accidental/accidentalExpectation"
+import {AccidentalExpectation} from "../../../../../helpers/src/sagittal/accidental/types"
 
 describe("accidentals", (): void => {
     it("has the correct accidentals for Extreme", (): void => {
         const flacombos = computeFlacombos(EXTREME_NOTATION)
 
-        const accidentalAnalyses = flacombos.map((flacombo: Flacombo): AccidentalAnalysis => {
-            return computeAccidentalAnalysisForFlacombo(flacombo)
+        const accidentalExpectations = flacombos.map((flacombo: Flacombo): AccidentalExpectation => {
+            return computeAccidentalExpectation(flacombo)
         })
 
-        const expectedSectionD1A: AccidentalAnalysis[] = [
+        const expectedSectionD1A: AccidentalExpectation[] = [
             {
                 // Key: "n1a_000" as AccidentalKey,
                 revoAscii: "(|//|)" as Ascii<Flavor.REVO>,
@@ -877,7 +877,7 @@ describe("accidentals", (): void => {
                 evoUnicode: "" as Unicode<Flavor.EVO>,
             },
         ].reverse()
-        const expectedSectionD1B: AccidentalAnalysis[] = [
+        const expectedSectionD1B: AccidentalExpectation[] = [
             {
                 // Key: "n1b_122" as AccidentalKey,
                 revoAscii: ",)\\!/" as Ascii<Flavor.REVO>,
@@ -1061,7 +1061,7 @@ describe("accidentals", (): void => {
                 evoUnicode: "" as Unicode<Flavor.EVO>,
             },
         ].reverse()
-        const expectedSectionD1C: AccidentalAnalysis[] = [
+        const expectedSectionD1C: AccidentalExpectation[] = [
             {
                 // Key: "n1c_096" as AccidentalKey,
                 revoAscii: "')!!(" as Ascii<Flavor.REVO>,
@@ -1742,7 +1742,7 @@ describe("accidentals", (): void => {
                 evoUnicode: "" as Unicode<Flavor.EVO>,
             },
         ].reverse()
-        const expectedSectionD2A: AccidentalAnalysis[] = [
+        const expectedSectionD2A: AccidentalExpectation[] = [
             {
                 // Key: "n2a_000" as AccidentalKey,
                 revoAscii: "\\!!/" as Ascii<Flavor.REVO>,
@@ -2605,7 +2605,7 @@ describe("accidentals", (): void => {
                 evoUnicode: "" as Unicode<Flavor.EVO>,
             },
         ].reverse()
-        const expectedSectionD2B: AccidentalAnalysis[] = [
+        const expectedSectionD2B: AccidentalExpectation[] = [
             {
                 // Key: "n2b_122" as AccidentalKey,
                 revoAscii: ",)\\!!!/" as Ascii<Flavor.REVO>,
@@ -2789,7 +2789,7 @@ describe("accidentals", (): void => {
                 evoUnicode: "" as Unicode<Flavor.EVO>,
             },
         ].reverse()
-        const expectedSectionD2C: AccidentalAnalysis[] = [
+        const expectedSectionD2C: AccidentalExpectation[] = [
             {
                 // Key: "n2c_096" as AccidentalKey,
                 revoAscii: "')Y(" as Ascii<Flavor.REVO>,
@@ -3471,7 +3471,7 @@ describe("accidentals", (): void => {
             },
         ].reverse()
 
-        const expectedSectionU1A: AccidentalAnalysis[] = [
+        const expectedSectionU1A: AccidentalExpectation[] = [
             {
                 // Key: "p1a_000" as AccidentalKey,
                 revoAscii: "(|//|)" as Ascii<Flavor.REVO>,
@@ -4334,7 +4334,7 @@ describe("accidentals", (): void => {
                 evoUnicode: "" as Unicode<Flavor.EVO>,
             },
         ]
-        const expectedSectionU1B: AccidentalAnalysis[] = [
+        const expectedSectionU1B: AccidentalExpectation[] = [
             {
                 // Key: "p1b_122" as AccidentalKey,
                 revoAscii: "`)/|\\" as Ascii<Flavor.REVO>,
@@ -4518,7 +4518,7 @@ describe("accidentals", (): void => {
                 evoUnicode: "" as Unicode<Flavor.EVO>,
             },
         ]
-        const expectedSectionU1C: AccidentalAnalysis[] = [
+        const expectedSectionU1C: AccidentalExpectation[] = [
             {
                 // Key: "p1c_096" as AccidentalKey,
                 revoAscii: ".)||(" as Ascii<Flavor.REVO>,
@@ -5199,7 +5199,7 @@ describe("accidentals", (): void => {
                 evoUnicode: "" as Unicode<Flavor.EVO>,
             },
         ]
-        const expectedSectionU2A: AccidentalAnalysis[] = [
+        const expectedSectionU2A: AccidentalExpectation[] = [
             {
                 // Key: "p2a_000" as AccidentalKey,
                 revoAscii: "/||\\" as Ascii<Flavor.REVO>,
@@ -6062,7 +6062,7 @@ describe("accidentals", (): void => {
                 evoUnicode: "" as Unicode<Flavor.EVO>,
             },
         ]
-        const expectedSectionU2B: AccidentalAnalysis[] = [
+        const expectedSectionU2B: AccidentalExpectation[] = [
             {
                 // Key: "p2b_122" as AccidentalKey,
                 revoAscii: "`)/|||\\" as Ascii<Flavor.REVO>,
@@ -6246,7 +6246,7 @@ describe("accidentals", (): void => {
                 evoUnicode: "" as Unicode<Flavor.EVO>,
             },
         ]
-        const expectedSectionU2C: AccidentalAnalysis[] = [
+        const expectedSectionU2C: AccidentalExpectation[] = [
             {
                 // Key: "p2c_096" as AccidentalKey,
                 revoAscii: ".)X(" as Ascii<Flavor.REVO>,
@@ -6942,7 +6942,7 @@ describe("accidentals", (): void => {
             ...expectedSectionU2A,
             ...expectedSectionU2B,
             ...expectedSectionU2C,
-        ] as AccidentalAnalysis[]
-        expect(accidentalAnalyses).toEqual(expected)
+        ] as AccidentalExpectation[]
+        expect(accidentalExpectations).toEqual(expected)
     })
 })

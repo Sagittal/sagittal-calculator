@@ -2,17 +2,17 @@ import {Aim, Compatible, computeCoreUnicode, Core, CoreName} from "../../../../.
 import {Accent} from "../../../../../src/sagittal/accidental/flacco"
 import {
     computeAccentAscii,
-    computeCompatibleAscii,
-    computeCoreAscii,
     computeAccentSmiley,
-    computeCompatibleSmiley,
-    computeCoreSmiley,
     computeAccentUnicode,
+    computeCompatibleAscii,
+    computeCompatibleSmiley,
     computeCompatibleUnicode,
+    computeCoreAscii,
+    computeCoreSmiley,
 } from "../../../../../src/sagittal/accidental/io"
-import {GlyphAnalysis} from "./types"
+import {GlyphExpectation} from "./types"
 
-const analyzeCoreGlyph = ([name, core]: [CoreName, Core]): GlyphAnalysis =>
+const computeCoreGlyphExpectation = ([name, core]: [CoreName, Core]): GlyphExpectation =>
     ({
         name,
         ascii: computeCoreAscii(core),
@@ -20,7 +20,7 @@ const analyzeCoreGlyph = ([name, core]: [CoreName, Core]): GlyphAnalysis =>
         smiley: computeCoreSmiley(core),
     })
 
-const analyzeAccentGlyph = (accent: Accent, aim: Aim): GlyphAnalysis =>
+const computeAccentGlyphExpectation = (accent: Accent, aim: Aim): GlyphExpectation =>
     ({
         name: accent,
         ascii: computeAccentAscii(accent, aim),
@@ -28,7 +28,7 @@ const analyzeAccentGlyph = (accent: Accent, aim: Aim): GlyphAnalysis =>
         smiley: computeAccentSmiley(accent, aim),
     })
 
-const analyzeCompatibleGlyph = (compatible: Compatible): GlyphAnalysis =>
+const computeCompatibleGlyphExpectation = (compatible: Compatible): GlyphExpectation =>
     ({
         name: compatible,
         ascii: computeCompatibleAscii(compatible),
@@ -37,7 +37,7 @@ const analyzeCompatibleGlyph = (compatible: Compatible): GlyphAnalysis =>
     })
 
 export {
-    analyzeCoreGlyph,
-    analyzeAccentGlyph,
-    analyzeCompatibleGlyph,
+    computeCoreGlyphExpectation,
+    computeAccentGlyphExpectation,
+    computeCompatibleGlyphExpectation,
 }

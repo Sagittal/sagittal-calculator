@@ -3,8 +3,8 @@ import { APOTOME } from "../../../../../src/sagittal"
 import { InaMidpoint, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
 import { EXTREME_EDA, MEDIUM_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"
 import { computeInaMidpoints } from "../../../../../src/scripts/jiNotationBoundClass/histories/inaMidpoints"
-import { analyzePitch } from "../../../../helpers/src/general/music/analyzePitch"
-import { PitchAnalysis } from "../../../../helpers/src/general/music/types"
+import { computePitchExpectation } from "../../../../helpers/src/general/music/pitchExpectation"
+import { PitchExpectation } from "../../../../helpers/src/general/music/types"
 
 describe("computeInaMidpoints", (): void => {
     it("works (e.g.) for the Medium JI notation level, only including midpoints below or at the max position                ", (): void => {
@@ -97,8 +97,8 @@ describe("computeInaMidpoints", (): void => {
     it("has the correct positions (this time checking the whole thing, the EXTREME level)", (): void => {
         const jiNotationLevel = JiNotationLevel.EXTREME
 
-        const actual = computeInaMidpoints(jiNotationLevel).map((inaMidpoint: InaMidpoint): PitchAnalysis => {
-            return analyzePitch(inaMidpoint.pitch)
+        const actual = computeInaMidpoints(jiNotationLevel).map((inaMidpoint: InaMidpoint): PitchExpectation => {
+            return computePitchExpectation(inaMidpoint.pitch)
         })
 
         const expected = [
@@ -804,7 +804,7 @@ describe("computeInaMidpoints", (): void => {
                 cents: 56.84250302885589,
                 monzo: [-5.5, 3.5],
             },
-        ] as PitchAnalysis[]
+        ] as PitchExpectation[]
         expect(actual).toEqual(expected)
     })
 })

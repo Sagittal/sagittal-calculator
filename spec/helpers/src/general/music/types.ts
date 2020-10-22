@@ -1,7 +1,7 @@
 import { Decimal, Monzo, NumericProperties, Scamon } from "../../../../../src/general/math/numeric"
 import { Cents } from "../../../../../src/general/music"
 
-type PitchAnalysis<T extends NumericProperties = {}> = {
+type PitchExpectation<T extends NumericProperties = {}> = {
     pitch: Scamon<T>,
     cents: Cents,
     decimal: Decimal<T>,
@@ -9,5 +9,5 @@ type PitchAnalysis<T extends NumericProperties = {}> = {
 }
 
 export {
-    PitchAnalysis,
+    PitchExpectation,
 }
