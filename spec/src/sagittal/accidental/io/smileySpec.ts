@@ -4,7 +4,7 @@ import {computeAccidentalSmiley, computeSymbolSmiley} from "../../../../../src/s
 
 describe("computeSymbolSmiley", (): void => {
     it("converts a symbol to smiley code", (): void => {
-        const symbol: Symbol = {                                                          // `'|)
+        const symbol: Symbol = {                                                                        // `'|)
             accents: [Accent.WING_WITH, Accent.TICK_WITH],
             core: CORES[CoreName.RIGHT_ARC_UP],
         }
@@ -16,7 +16,7 @@ describe("computeSymbolSmiley", (): void => {
     })
 
     it("handles the space that needs to be inserted into //, per forum-specific limitations", (): void => {
-        const symbol: Symbol = {core: CORES[CoreName.LEFT_SCROLL_DOUBLE_LEFT_BARB_UP]}  // )//|
+        const symbol: Symbol = {core: CORES[CoreName.LEFT_SCROLL_DOUBLE_LEFT_BARB_UP]}                  // )//|
 
         const actual = computeSymbolSmiley(symbol)
 

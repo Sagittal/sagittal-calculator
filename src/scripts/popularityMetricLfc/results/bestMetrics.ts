@@ -933,7 +933,7 @@ const wBL1 = {
     ],
 }
 
-export {
+const bestMetrics = {
     sopfgtt,
 
     withPrimeLimit,
@@ -1011,4 +1011,8 @@ export {
     wabl,
 
     wBL1,
+}
+
+export {
+    bestMetrics,
 }

@@ -1,1 +1,1 @@
-export { sopfgtt } from "./bestMetrics"
+export { bestMetrics } from "./bestMetrics"

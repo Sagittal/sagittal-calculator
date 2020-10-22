@@ -1,7 +1,7 @@
-import { sopfgtt } from "../results"
+import { bestMetrics } from "../results"
 import { SumOfSquares } from "./types"
 
-const SUM_OF_SQUARES_TO_BEAT = sopfgtt.sumOfSquares as SumOfSquares
+const SUM_OF_SQUARES_TO_BEAT = bestMetrics.sopfgtt.sumOfSquares as SumOfSquares
 
 export {
     SUM_OF_SQUARES_TO_BEAT,
