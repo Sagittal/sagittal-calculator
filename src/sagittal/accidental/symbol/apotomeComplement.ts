@@ -1,26 +1,12 @@
 // tslint:disable max-line-length
 
 import {deepEquals, isUndefined, Maybe, stringify} from "../../../general"
-import {Accent} from "../flacco"
+import {Orientation, OrientedAccent} from "../flacco"
 import {CORES} from "./cores"
 import {Core, CoreName, Symbol} from "./types"
 
-const reorientAccent = (accent: Accent): Accent => {
-    switch (accent) {
-        case Accent.TICK_WITH:
-            return Accent.TICK_AGAINST
-        case Accent.TICK_AGAINST:
-            return Accent.TICK_WITH
-        case Accent.WING_WITH:
-            return Accent.WING_AGAINST
-        case Accent.WING_AGAINST:
-            return Accent.WING_WITH
-        case Accent.BIRD_WITH:
-            return Accent.BIRD_AGAINST
-        case Accent.BIRD_AGAINST:
-            return Accent.BIRD_WITH
-    }
-}
+const reorientAccent = (orientedAccent: OrientedAccent): OrientedAccent =>
+    ({ ...orientedAccent, orientation: orientedAccent.orientation === Orientation.WITH ? Orientation.AGAINST : Orientation.WITH })
 
 const APOTOME_COMPLEMENT_PAIRS: Array<[Core, Core]> = [
     [CORES[CoreName.BARE_SHAFT_UP], CORES[CoreName.DOUBLE_BARB_DOUBLE_UP]],                             //     |      /||\
@@ -84,11 +70,9 @@ const computeApotomeComplement = (symbol: Symbol): Symbol => {
         throw new Error(`Tried to compute apotome complement for symbol whose core is outside the 1st apotome section ${stringify(symbol)}`)
     }
 
-    if (!isUndefined(symbol.accents)) {
-        const flippedAccents = symbol.accents.map(reorientAccent)
-
+    if (!isUndefined(symbol.arm)) {
         return {
-            accents: flippedAccents,
+            arm: symbol.arm.map(reorientAccent),
             core: apotomeComplementCore,
         }
     }

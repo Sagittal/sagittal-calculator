@@ -1,15 +1,16 @@
-import {Accent} from "../../../../../src/sagittal/accidental/flacco"
+import {ARMS} from "../../../../../src/sagittal/accidental/flacco/arms"
+import {ArmName} from "../../../../../src/sagittal/accidental/flacco/types"
 import {Ascii, parseAscii} from "../../../../../src/sagittal/accidental/io"
 import {CoreName, CORES, Symbol} from "../../../../../src/sagittal/accidental/symbol"
 
 describe("parseAscii", (): void => {
-    it("parses a symbol correctly into its accents and core", (): void => {
+    it("parses a symbol correctly into its arm and core", (): void => {
         const ascii = ",'/|)" as Ascii
 
         const actual = parseAscii(ascii)
 
         const expected = {
-            accents: [Accent.WING_AGAINST, Accent.TICK_WITH],
+            arm: ARMS[ArmName.WING_AGAINST_TICK_WITH],
             core: CORES[CoreName.BARB_AND_ARC_UP],
         } as Symbol
         expect(actual).toEqual(expected)

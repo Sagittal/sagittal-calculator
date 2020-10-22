@@ -1,12 +1,13 @@
 import {
     Ascii,
     computeSymbolAscii,
+    computeSymbolFromFlacco,
     Flacco,
     FlaccoSubset,
     FLACCO_SUBSETS,
     Symbol,
 } from "../../../../../src/sagittal/accidental"
-import {computeSymbolFromFlacco, getFlacco} from "../../../../../src/sagittal/accidental/flacco"
+import {getFlacco} from "../../../../../src/sagittal/accidental/flacco"
 
 describe("FLACCO_SUBSETS", (): void => {
     const subject = (flaccoSubset: FlaccoSubset): Ascii[] => FLACCO_SUBSETS[flaccoSubset]

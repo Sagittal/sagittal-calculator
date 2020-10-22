@@ -1,12 +1,34 @@
 import {Id} from "../../../general"
 
 enum Accent {
-    TICK_WITH = "tickWith",
+    TICK = "tick",
+    WING = "wing",
+    BIRD = "bird",
+}
+
+enum Orientation {
+    WITH = "with",
+    AGAINST = "against",
+}
+
+type OrientedAccent = {
+    orientation: Orientation,
+    accent: Accent,
+}
+
+type Arm = Array<OrientedAccent>
+
+enum ArmName {
+    WING_AND_TICK_AGAINST = "tickAndWingAgainst",
     TICK_AGAINST = "tickAgainst",
-    WING_WITH = "wingWith",
-    WING_AGAINST = "wingAgainst",
-    BIRD_WITH = "birdWith",
+    WING_WITH_TICK_AGAINST = "tickAgainstWingWith",
     BIRD_AGAINST = "birdAgainst",
+    WING_AGAINST = "wingAgainst",
+    WING_WITH = "wingWith",
+    BIRD_WITH = "birdWith",
+    WING_AGAINST_TICK_WITH = "tickWithWingAgainst",
+    TICK_WITH = "tickWith",
+    WING_AND_TICK_WITH = "tickAndWingWith",
 }
 
 enum Flag {
@@ -14,6 +36,40 @@ enum Flag {
     SCROLL = "scroll",
     ARC = "arc",
     BOATHOOK = "boathook",
+}
+
+enum FlagComboName {
+    RIGHT_SCROLL = "rightScroll",
+    LEFT_BARB = "leftBarb",
+    RIGHT_ARC = "rightArc",
+    DOUBLE_LEFT_BARB = "doubleLeftBarb",
+    BARB_AND_ARC = "barbAndArc",
+    DOUBLE_BARB = "doubleBarb",
+    DOUBLE_ARC = "doubleArc",
+    ARC_AND_BARB = "arcAndBarb",
+    DOUBLE_SCROLL = "doubleScroll",
+    BOATHOOK_AND_SCROLL = "boathookAndScroll",
+    RIGHT_BARB = "rightBarb",
+    LEFT_ARC = "leftArc",
+    ARC_AND_SCROLL = "arcAndScroll",
+    RIGHT_BOATHOOK = "rightBoathook",
+    LEFT_SCROLL_AND_BARB = "leftScrollAndBarb",
+    BARB_AND_BOATHOOK = "barbAndBoathook",
+    LEFT_SCROLL = "leftScroll",
+    LEFT_BOATHOOK = "leftBoathook",
+    LEFT_SCROLL_AND_BOATHOOK = "leftScrollAndBoathook",
+    DOUBLE_LEFT_BOATHOOK = "doubleLeftBoathook",
+    SCROLL_AND_BOATHOOK = "scrollAndBoathook",
+    SCROLL_AND_ARC = "scrollAndArc",
+    BOATHOOK_AND_ARC = "boathookAndArc",
+    BOATHOOK_AND_BARB = "boathookAndBarb",
+    LEFT_SCROLL_DOUBLE_LEFT_BARB = "leftScrollDoubleLeftBarb",
+    ARC_AND_BOATHOOK = "arcAndBoathook",
+    LEFT_ARC_AND_BARB = "leftArcAndBarb",
+    LEFT_SCROLL_AND_DOUBLE_BARB = "leftScrollAndDoubleBarb",
+    RIGHT_BARB_AND_ARC = "rightBarbAndArc",
+    DOUBLE_RIGHT_BARB = "doubleRightBarb",
+    LEFT_SCROLL_DOUBLE_RIGHT_BARB = "leftScrollDoubleRightBarb",
 }
 
 interface FlagCombo {
@@ -29,7 +85,7 @@ interface FlagCombo {
 //  Do we have negative IDs? is it a "key", then? this is pretty much what we used in the Spreadsheet Calculator.
 //  Does this respect the principle of things expressing their existence minimally? do IDs go against that already? etc.
 interface Symbolic {
-    accents?: Accent[], // Tempted for AccentCombo { with, against } but then how could you tell their order?
+    arm?: Arm,
     core?: FlagCombo,
 }
 
@@ -83,5 +139,10 @@ export {
     Flag,
     Accent,
     FlagCombo,
+    FlagComboName,
     Symbolic,
+    Arm,
+    ArmName,
+    Orientation,
+    OrientedAccent,
 }

@@ -1,14 +1,14 @@
 import {Aim, Compatible, computeCoreUnicode, Core, CoreName} from "../../../../../src/sagittal/accidental"
-import {Accent} from "../../../../../src/sagittal/accidental/flacco"
+import {Accent, Orientation} from "../../../../../src/sagittal/accidental/flacco"
 import {
-    computeAccentAscii,
-    computeAccentSmiley,
-    computeAccentUnicode,
     computeCompatibleAscii,
     computeCompatibleSmiley,
     computeCompatibleUnicode,
     computeCoreAscii,
     computeCoreSmiley,
+    computeOrientedAccentAscii,
+    computeOrientedAccentSmiley,
+    computeOrientedAccentUnicode,
 } from "../../../../../src/sagittal/accidental/io"
 import {GlyphExpectation} from "./types"
 
@@ -20,12 +20,12 @@ const computeCoreGlyphExpectation = ([name, core]: [CoreName, Core]): GlyphExpec
         smiley: computeCoreSmiley(core),
     })
 
-const computeAccentGlyphExpectation = (accent: Accent, aim: Aim): GlyphExpectation =>
+const computeAccentGlyphExpectation = (accent: Accent, orientation: Orientation, aim: Aim): GlyphExpectation =>
     ({
         name: accent,
-        ascii: computeAccentAscii(accent, aim),
-        unicode: computeAccentUnicode(accent, aim),
-        smiley: computeAccentSmiley(accent, aim),
+        ascii: computeOrientedAccentAscii({accent, orientation}, aim),
+        unicode: computeOrientedAccentUnicode({accent, orientation}, aim),
+        smiley: computeOrientedAccentSmiley({accent, orientation}, aim),
     })
 
 const computeCompatibleGlyphExpectation = (compatible: Compatible): GlyphExpectation =>

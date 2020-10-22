@@ -9,12 +9,13 @@ import {
     Symbol,
     Unicode,
 } from "../../../../../src/sagittal/accidental"
-import {Accent} from "../../../../../src/sagittal/accidental/flacco"
+import {ARMS} from "../../../../../src/sagittal/accidental/flacco/arms"
+import {ArmName} from "../../../../../src/sagittal/accidental/flacco/types"
 
 describe("computeSymbolUnicode", (): void => {
     it("given a symbol, returns its unicode representation", (): void => {
         const symbol: Symbol = {                                // ``)|
-            accents: [Accent.BIRD_WITH],
+            arm: ARMS[ArmName.BIRD_WITH],
             core: CORES[CoreName.LEFT_SCROLL_UP],
         }
 

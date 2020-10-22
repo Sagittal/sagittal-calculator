@@ -4,12 +4,11 @@ export {
     FLACCO_SUBSETS,
     FLACCO_SUBSETS_SORTED_BY_SIZE,
     getSmallestFlaccoSubset,
-    computeSymbolFromFlacco,
     FLACCOS,
     Accent,
     Flag,
 } from "./flacco"
-export {Core, Symbol, CORES, CoreName, Aim} from "./symbol"
+export {Core, Symbol, CORES, CoreName, Aim, computeSymbolFromFlacco} from "./symbol"
 export {Accidental, Flavor, Compatible} from "./flavor"
 export {
     formatAscii,

@@ -1,7 +1,7 @@
 import {Maybe} from "../../../general"
 import {AccidentalSection, computeSection, Flacombo} from "../../notations"
-import {computeSymbolFromFlacco, getFlacco} from "../flacco"
-import {flipSymbol} from "../symbol"
+import {getFlacco} from "../flacco"
+import {computeSymbolFromFlacco, flipSymbol} from "../symbol"
 import {Accidental, Compatible, Flavor} from "./types"
 
 const computeEvoAccidentalFromFlacombo = (flacombo: Flacombo): Accidental<Flavor.EVO> => {

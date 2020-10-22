@@ -1,6 +1,6 @@
 import {AccidentalSection, AimSection, ApotomeSection, computeSection, Flacombo} from "../../notations"
-import {computeSymbolFromFlacco, getFlacco} from "../flacco"
-import {apotomeShift, computeApotomeComplement, flipSymbol} from "../symbol"
+import {getFlacco} from "../flacco"
+import {apotomeShift, computeApotomeComplement, computeSymbolFromFlacco, flipSymbol} from "../symbol"
 import {Accidental, Flavor} from "./types"
 
 const computeRevoAccidentalFromFlacombo = (flacombo: Flacombo): Accidental<Flavor.REVO> => {

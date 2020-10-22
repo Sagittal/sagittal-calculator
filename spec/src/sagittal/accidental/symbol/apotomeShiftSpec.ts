@@ -1,18 +1,19 @@
 import {CoreName, CORES, Symbol} from "../../../../../src/sagittal/accidental"
-import {Accent} from "../../../../../src/sagittal/accidental/flacco"
+import {ARMS} from "../../../../../src/sagittal/accidental/flacco/arms"
+import {ArmName} from "../../../../../src/sagittal/accidental/flacco/types"
 import {apotomeShift} from "../../../../../src/sagittal/accidental/symbol"
 
 describe("apotomeShift", (): void => {
     it("takes a symbol and shifts it by an apotome (adds 2 shafts)", (): void => {
         const symbol: Symbol = {                                                        // ,')|(
-            accents: [Accent.WING_AGAINST, Accent.TICK_WITH],
+            arm: ARMS[ArmName.WING_AGAINST_TICK_WITH],
             core: CORES[CoreName.DOUBLE_SCROLL_UP],
         }
 
         const actual = apotomeShift(symbol)
 
         const expected: Symbol = {                                                      // ,')|||(
-            accents: [Accent.WING_AGAINST, Accent.TICK_WITH],
+            arm: ARMS[ArmName.WING_AGAINST_TICK_WITH],
             core: CORES[CoreName.DOUBLE_SCROLL_TRIPLE_UP],
         }
         expect(actual).toEqual(expected)
@@ -27,16 +28,16 @@ describe("apotomeShift", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    it("works for a symbol which is a bare shaft with accents", (): void => {
+    it("works for a symbol which is a bare shaft with arm", (): void => {
         const symbol: Symbol = {                                                        // `|
-            accents: [Accent.WING_WITH],
+            arm: ARMS[ArmName.WING_WITH],
             core: CORES[CoreName.BARE_SHAFT_UP],
         }
 
         const actual = apotomeShift(symbol)
 
         const expected = {                                                              // `/||\
-            accents: [Accent.WING_WITH],
+            arm: ARMS[ArmName.WING_WITH],
             core: CORES[CoreName.DOUBLE_BARB_DOUBLE_UP],
         }
         expect(actual).toEqual(expected)

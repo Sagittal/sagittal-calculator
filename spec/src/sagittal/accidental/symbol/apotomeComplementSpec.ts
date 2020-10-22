@@ -1,5 +1,6 @@
 import {CoreName, CORES, Symbol} from "../../../../../src/sagittal/accidental"
-import {Accent} from "../../../../../src/sagittal/accidental/flacco"
+import {ARMS} from "../../../../../src/sagittal/accidental/flacco/arms"
+import {ArmName} from "../../../../../src/sagittal/accidental/flacco/types"
 import {computeApotomeComplement} from "../../../../../src/sagittal/accidental/symbol"
 
 describe("computeApotomeComplement", (): void => {
@@ -17,35 +18,35 @@ describe("computeApotomeComplement", (): void => {
 
         const actual = computeApotomeComplement(symbol)
 
-        const expected = { core: CORES[CoreName.BOATHOOK_AND_BARB_UP]}                          // ~|\\
+        const expected = {core: CORES[CoreName.BOATHOOK_AND_BARB_UP]}                          // ~|\\
         expect(actual).toEqual(expected)
     })
 
-    it("reorients the accents, so that they will cancel each other out", (): void => {
+    it("reorients the arm, so that they will cancel each other out", (): void => {
         const symbol: Symbol = {                                                                // ,'|(
-            accents: [Accent.WING_AGAINST, Accent.TICK_WITH],
+            arm: ARMS[ArmName.WING_AGAINST_TICK_WITH],
             core: CORES[CoreName.RIGHT_SCROLL_UP],
         }
 
         const actual = computeApotomeComplement(symbol)
 
         const expected = {                                                                      // `./||)
-            accents: [Accent.WING_WITH, Accent.TICK_AGAINST],
+            arm: ARMS[ArmName.WING_WITH_TICK_AGAINST],
             core: CORES[CoreName.BARB_AND_ARC_DOUBLE_UP],
         }
         expect(actual).toEqual(expected)
     })
 
-    it("can reorient accents the other way", (): void => {
+    it("can reorient arm the other way", (): void => {
         const symbol: Symbol = {                                                                // `./||)
-            accents: [Accent.WING_WITH, Accent.TICK_AGAINST],
+            arm: ARMS[ArmName.WING_WITH_TICK_AGAINST],
             core: CORES[CoreName.BARB_AND_ARC_DOUBLE_UP],
         }
 
         const actual = computeApotomeComplement(symbol)
 
         const expected = {                                                                      // ,'|(
-            accents: [Accent.WING_AGAINST, Accent.TICK_WITH],
+            arm: ARMS[ArmName.WING_AGAINST_TICK_WITH],
             core: CORES[CoreName.RIGHT_SCROLL_UP],
         }
         expect(actual).toEqual(expected)
@@ -62,18 +63,19 @@ describe("computeApotomeComplement", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    it("maps a bare shaft with accents to the apotome with flipped accents", (): void => {
+    it("maps a bare shaft with arm to the apotome with a reoriented arm", (): void => {
         const symbol: Symbol = {                                                                // `'|
-            accents: [Accent.WING_WITH, Accent.TICK_WITH],
+            arm: ARMS[ArmName.WING_AND_TICK_WITH],
             core: CORES[CoreName.BARE_SHAFT_UP],
         }
 
         const actual = computeApotomeComplement(symbol)
 
         const expected = {                                                                      // ,./||\\
-            accents: [Accent.WING_AGAINST, Accent.TICK_AGAINST],
+            arm: ARMS[ArmName.WING_AND_TICK_AGAINST],
             core: CORES[CoreName.DOUBLE_BARB_DOUBLE_UP],
         }
+
         expect(actual).toEqual(expected)
     })
 })

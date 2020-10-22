@@ -1,11 +1,12 @@
 import {Accidental, Compatible, CoreName, CORES, Flavor, Smiley, Symbol} from "../../../../../src/sagittal/accidental"
-import {Accent} from "../../../../../src/sagittal/accidental/flacco"
+import {ARMS} from "../../../../../src/sagittal/accidental/flacco/arms"
+import {ArmName} from "../../../../../src/sagittal/accidental/flacco/types"
 import {computeAccidentalSmiley, computeSymbolSmiley} from "../../../../../src/sagittal/accidental/io"
 
 describe("computeSymbolSmiley", (): void => {
     it("converts a symbol to smiley code", (): void => {
         const symbol: Symbol = {                                                                        // `'|)
-            accents: [Accent.WING_WITH, Accent.TICK_WITH],
+            arm: ARMS[ArmName.WING_AND_TICK_WITH],
             core: CORES[CoreName.RIGHT_ARC_UP],
         }
 
@@ -36,7 +37,7 @@ describe("computeSymbolSmiley", (): void => {
 
     it("does the correct thing with double ticks", (): void => {
         const symbol: Symbol = {                                                                        // ``|)
-            accents: [Accent.BIRD_WITH],
+            arm: ARMS[ArmName.BIRD_WITH],
             core: CORES[CoreName.RIGHT_ARC_UP],
         }
 
@@ -48,7 +49,7 @@ describe("computeSymbolSmiley", (): void => {
 
     it("does the correct thing with double down ticks", (): void => {
         const symbol: Symbol = {                                                                        // ,,|)
-            accents: [Accent.BIRD_AGAINST],
+            arm: ARMS[ArmName.BIRD_AGAINST],
             core: CORES[CoreName.RIGHT_ARC_UP],
         }
 

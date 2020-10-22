@@ -1,11 +1,11 @@
 import {deepEquals, isUndefined, join, stringify, sumTexts} from "../../../general"
-import {Accent} from "../flacco"
+import {Accent, Arm, Orientation, OrientedAccent} from "../flacco"
 import {Accidental, Compatible, Flavor} from "../flavor"
 import {Aim, Core, CoreName, CORES, Symbol} from "../symbol"
 import {BLANK_UNICODE, PARENTHETICAL_NATURAL_UNICODE} from "./constants"
 import {Unicode} from "./types"
 
-const CORE_UNICODE_EQUIVALENTS: Array<{core: Core,unicode: Unicode}> = [
+const CORE_UNICODE_EQUIVALENTS: Array<{core: Core, unicode: Unicode}> = [
     {core: CORES[CoreName.BARE_SHAFT_UP], unicode: "" as Unicode},
     {core: CORES[CoreName.BARE_SHAFT_DOWN], unicode: "" as Unicode},
     {core: CORES[CoreName.LEFT_SCROLL_UP], unicode: "" as Unicode},
@@ -218,15 +218,19 @@ const CORE_UNICODE_EQUIVALENTS: Array<{core: Core,unicode: Unicode}> = [
     {core: CORES[CoreName.DOUBLE_SCROLL_EX_DOWN], unicode: "" as Unicode},
 ]
 
-// TODO: I didn't scan over the previous commit carefully; push this up and then review it on GitHub
-
-const ACCENT_TO_AIM_TO_UNICODE_MAP: Record<Accent, Record<Aim, Unicode>> = {
-    [Accent.TICK_WITH]: {[Aim.UP]: "" as Unicode, [Aim.DOWN]: "" as Unicode},
-    [Accent.TICK_AGAINST]: {[Aim.UP]: "" as Unicode, [Aim.DOWN]: "" as Unicode},
-    [Accent.WING_WITH]: {[Aim.UP]: "" as Unicode, [Aim.DOWN]: "" as Unicode},
-    [Accent.WING_AGAINST]: {[Aim.UP]: "" as Unicode, [Aim.DOWN]: "" as Unicode},
-    [Accent.BIRD_WITH]: {[Aim.UP]: "" as Unicode, [Aim.DOWN]: "" as Unicode},
-    [Accent.BIRD_AGAINST]: {[Aim.UP]: "" as Unicode, [Aim.DOWN]: "" as Unicode},
+const ACCENT_TO_ORIENTATION_TO_AIM_TO_UNICODE_MAP: Record<Accent, Record<Orientation, Record<Aim, Unicode>>> = {
+    [Accent.TICK]: {
+        [Orientation.WITH]: {[Aim.UP]: "" as Unicode, [Aim.DOWN]: "" as Unicode},
+        [Orientation.AGAINST]: {[Aim.UP]: "" as Unicode, [Aim.DOWN]: "" as Unicode},
+    },
+    [Accent.WING]: {
+        [Orientation.WITH]: {[Aim.UP]: "" as Unicode, [Aim.DOWN]: "" as Unicode},
+        [Orientation.AGAINST]: {[Aim.UP]: "" as Unicode, [Aim.DOWN]: "" as Unicode},
+    },
+    [Accent.BIRD]: {
+        [Orientation.WITH]: {[Aim.UP]: "" as Unicode, [Aim.DOWN]: "" as Unicode},
+        [Orientation.AGAINST]: {[Aim.UP]: "" as Unicode, [Aim.DOWN]: "" as Unicode},
+    },
 }
 
 const COMPATIBLE_TO_UNICODE_MAP: Record<Compatible, Unicode> = {
@@ -257,28 +261,31 @@ const computeCoreUnicode = (core: Core): Unicode => {
 const computeCompatibleUnicode = (compatible: Compatible): Unicode =>
     COMPATIBLE_TO_UNICODE_MAP[compatible]
 
-const computeAccentUnicode = (accent: Accent, aim: Aim): Unicode =>
-    ACCENT_TO_AIM_TO_UNICODE_MAP[accent][aim]
+const computeOrientedAccentUnicode = ({accent, orientation}: OrientedAccent, aim: Aim): Unicode =>
+    ACCENT_TO_ORIENTATION_TO_AIM_TO_UNICODE_MAP[accent][orientation][aim]
 
-const computeSymbolUnicode = ({accents, core}: Symbol): Unicode => {
-    const accentsUnicode = isUndefined(accents) ?
+const computeSymbolUnicode = ({arm, core}: Symbol): Unicode => {
+    const armUnicode = isUndefined(arm) ?
         BLANK_UNICODE :
-        computeAccentsUnicode(accents, core?.aim as Aim)
+        computeArmUnicode(arm, core?.aim as Aim)
 
     const coreUnicode = isUndefined(core) ?
         PARENTHETICAL_NATURAL_UNICODE :
         computeCoreUnicode(core)
 
-    return sumTexts(accentsUnicode, coreUnicode)
+    return sumTexts(armUnicode, coreUnicode)
 }
 
-const computeAccentsUnicode = (accents: Accent[], aim: Aim): Unicode =>
-    join(accents.map((accent: Accent): Unicode => computeAccentUnicode(accent, aim)), BLANK_UNICODE)
+const computeArmUnicode = (arm: Arm, aim: Aim): Unicode =>
+    join(
+        arm.map((orientedAccent: OrientedAccent): Unicode => computeOrientedAccentUnicode(orientedAccent, aim)),
+        BLANK_UNICODE,
+    )
 
-const computeAccidentalUnicode = <T extends Flavor>({accents, core, compatible}: Accidental<T>): Unicode<T> => {
-    const accentsUnicode = isUndefined(accents) ?
+const computeAccidentalUnicode = <T extends Flavor>({arm, core, compatible}: Accidental<T>): Unicode<T> => {
+    const armUnicode = isUndefined(arm) ?
         BLANK_UNICODE :
-        computeAccentsUnicode(accents, core?.aim as Aim)
+        computeArmUnicode(arm, core?.aim as Aim)
 
     const coreUnicode = isUndefined(core) ?
         isUndefined(compatible) ? PARENTHETICAL_NATURAL_UNICODE : BLANK_UNICODE :
@@ -288,7 +295,7 @@ const computeAccidentalUnicode = <T extends Flavor>({accents, core, compatible}:
         BLANK_UNICODE :
         computeCompatibleUnicode(compatible)
 
-    return sumTexts(accentsUnicode, coreUnicode, compatibleUnicode) as Unicode<T>
+    return sumTexts(armUnicode, coreUnicode, compatibleUnicode) as Unicode<T>
 }
 
 export {
@@ -296,5 +303,5 @@ export {
     computeAccidentalUnicode,
     computeCompatibleUnicode,
     computeSymbolUnicode,
-    computeAccentUnicode,
+    computeOrientedAccentUnicode,
 }

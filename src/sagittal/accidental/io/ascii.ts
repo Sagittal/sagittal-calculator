@@ -1,5 +1,5 @@
 import {BLANK, isUndefined, join, sumTexts} from "../../../general"
-import {Accent, Flag} from "../flacco"
+import {Accent, Arm, Flag, Orientation, OrientedAccent} from "../flacco"
 import {Accidental, Compatible, Flavor} from "../flavor"
 import {Aim, Core, Shafts, Symbol} from "../symbol"
 import {BLANK_ASCII, PARENTHETICAL_NATURAL_ASCII} from "./constants"
@@ -26,13 +26,19 @@ const RIGHT_FLAG_TO_AIM_TO_ASCII_MAP: Record<Flag, Record<Aim, Ascii>> = {
     [Flag.BOATHOOK]: {[Aim.DOWN]: "~" as Ascii, [Aim.UP]: "~" as Ascii},
 }
 
-const ACCENT_TO_AIM_TO_ASCII_MAP: Record<Accent, Record<Aim, Ascii>> = {
-    [Accent.TICK_WITH]: {[Aim.UP]: "'" as Ascii, [Aim.DOWN]: "." as Ascii},
-    [Accent.TICK_AGAINST]: {[Aim.UP]: "." as Ascii, [Aim.DOWN]: "'" as Ascii},
-    [Accent.WING_WITH]: {[Aim.UP]: "`" as Ascii, [Aim.DOWN]: "," as Ascii},
-    [Accent.WING_AGAINST]: {[Aim.UP]: "," as Ascii, [Aim.DOWN]: "`" as Ascii},
-    [Accent.BIRD_WITH]: {[Aim.UP]: "``" as Ascii, [Aim.DOWN]: ",," as Ascii},
-    [Accent.BIRD_AGAINST]: {[Aim.UP]: ",," as Ascii, [Aim.DOWN]: "``" as Ascii},
+const ACCENT_TO_ORIENTATION_TO_AIM_TO_ASCII_MAP: Record<Accent, Record<Orientation, Record<Aim, Ascii>>> = {
+    [Accent.TICK]: {
+        [Orientation.WITH]: {[Aim.UP]: "'" as Ascii, [Aim.DOWN]: "." as Ascii},
+        [Orientation.AGAINST]: {[Aim.UP]: "." as Ascii, [Aim.DOWN]: "'" as Ascii},
+    },
+    [Accent.WING]: {
+        [Orientation.WITH]: {[Aim.UP]: "`" as Ascii, [Aim.DOWN]: "," as Ascii},
+        [Orientation.AGAINST]: {[Aim.UP]: "," as Ascii, [Aim.DOWN]: "`" as Ascii},
+    },
+    [Accent.BIRD]: {
+        [Orientation.WITH]: {[Aim.UP]: "``" as Ascii, [Aim.DOWN]: ",," as Ascii},
+        [Orientation.AGAINST]: {[Aim.UP]: ",," as Ascii, [Aim.DOWN]: "``" as Ascii},
+    },
 }
 
 const COMPATIBLE_TO_ASCII_MAP: Record<Compatible, Ascii> = {
@@ -49,7 +55,7 @@ const COMPATIBLE_TO_ASCII_MAP: Record<Compatible, Ascii> = {
     [Compatible.DOUBLE_FLAT]: "bb" as Ascii,
 }
 
-const computeCoreAscii = ({ aim, shafts, left, right }: Core): Ascii => {
+const computeCoreAscii = ({aim, shafts, left, right}: Core): Ascii => {
     const leftAscii = isUndefined(left) ?
         BLANK_ASCII :
         left.map((flag: Flag): Ascii => LEFT_FLAG_TO_AIM_TO_ASCII_MAP[flag][aim]).join(BLANK)
@@ -68,28 +74,31 @@ const computeCoreAscii = ({ aim, shafts, left, right }: Core): Ascii => {
 const computeCompatibleAscii = (compatible: Compatible): Ascii =>
     COMPATIBLE_TO_ASCII_MAP[compatible]
 
-const computeAccentAscii = (accent: Accent, aim: Aim): Ascii =>
-    ACCENT_TO_AIM_TO_ASCII_MAP[accent][aim]
+const computeOrientedAccentAscii = ({accent, orientation}: OrientedAccent, aim: Aim): Ascii =>
+    ACCENT_TO_ORIENTATION_TO_AIM_TO_ASCII_MAP[accent][orientation][aim]
 
-const computeSymbolAscii = ({ accents, core }: Symbol): Ascii => {
-    const accentsAscii = isUndefined(accents) ?
+const computeSymbolAscii = ({arm, core}: Symbol): Ascii => {
+    const armAscii = isUndefined(arm) ?
         BLANK_ASCII :
-        computeAccentsAscii(accents, core?.aim as Aim)
+        computeArmAscii(arm, core?.aim as Aim)
 
     const coreAscii = isUndefined(core) ?
         PARENTHETICAL_NATURAL_ASCII :
         computeCoreAscii(core)
 
-    return sumTexts(accentsAscii, coreAscii)
+    return sumTexts(armAscii, coreAscii)
 }
 
-const computeAccentsAscii = (accents: Accent[], aim: Aim): Ascii =>
-    join(accents.map((accent: Accent): Ascii => computeAccentAscii(accent, aim)), BLANK_ASCII)
+const computeArmAscii = (arm: Arm, aim: Aim): Ascii =>
+    join(
+        arm.map((orientedAccent: OrientedAccent): Ascii => computeOrientedAccentAscii(orientedAccent, aim)),
+        BLANK_ASCII,
+    )
 
-const computeAccidentalAscii = <T extends Flavor>({ accents, core, compatible }: Accidental<T>): Ascii<T> => {
-    const accentsAscii = isUndefined(accents) ?
+const computeAccidentalAscii = <T extends Flavor>({arm, core, compatible}: Accidental<T>): Ascii<T> => {
+    const armAscii = isUndefined(arm) ?
         BLANK_ASCII :
-        computeAccentsAscii(accents, core?.aim as Aim)
+        computeArmAscii(arm, core?.aim as Aim)
 
     const coreAscii = isUndefined(core) ?
         isUndefined(compatible) ? PARENTHETICAL_NATURAL_ASCII : BLANK_ASCII :
@@ -99,7 +108,7 @@ const computeAccidentalAscii = <T extends Flavor>({ accents, core, compatible }:
         BLANK_ASCII :
         computeCompatibleAscii(compatible)
 
-    return sumTexts(accentsAscii, coreAscii, compatibleAscii) as Ascii<T>
+    return sumTexts(armAscii, coreAscii, compatibleAscii) as Ascii<T>
 }
 
 export {
@@ -107,5 +116,5 @@ export {
     computeAccidentalAscii,
     computeSymbolAscii,
     computeCompatibleAscii,
-    computeAccentAscii,
+    computeOrientedAccentAscii,
 }

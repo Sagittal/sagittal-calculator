@@ -1,5 +1,5 @@
 import {BLANK, Char, Count, increment, isEmpty, shallowClone} from "../../../general"
-import {Accent, Flag} from "../flacco"
+import {Accent, Arm, Flag, Orientation} from "../flacco"
 import {ABSENCE_OF_A_SYMBOL, Aim, Shafts, Symbol} from "../symbol"
 import {PARENTHETICAL_NATURAL_ASCII} from "./constants"
 import {Ascii} from "./types"
@@ -15,31 +15,42 @@ const parseAscii = (ascii: Ascii): Symbol => {
 
     let shaftCount = 0 as Count
 
-    const accents = [] as Accent[]
+    const arm = [] as Arm
     const left = [] as Flag[]
     const right = [] as Flag[]
 
     let symbolText = shallowClone(ascii)
     if (symbolText.match("``")) {
-        accents.push(Accent.BIRD_WITH)
+        aim === Aim.UP ?
+            arm.push({accent: Accent.BIRD, orientation: Orientation.WITH}) :
+            arm.push({accent: Accent.BIRD, orientation: Orientation.AGAINST})
         symbolText = symbolText.replace("``", "") as Ascii
     }
     if (symbolText.match(",,")) {
-        accents.push(Accent.BIRD_AGAINST)
+        aim === Aim.UP ?
+            arm.push({accent: Accent.BIRD, orientation: Orientation.AGAINST}) :
+            arm.push({accent: Accent.BIRD, orientation: Orientation.WITH})
         symbolText = symbolText.replace(",,", "") as Ascii
     }
 
     const symbolChars = symbolText.split(BLANK) as Char[]
     symbolChars.forEach((symbolChar: Char): void => {
-        console.log("here's a char", symbolChar)
         if (symbolChar === "`") {
-            accents.push(Accent.WING_WITH)
+            aim === Aim.UP ?
+                arm.push({accent: Accent.WING, orientation: Orientation.WITH}) :
+                arm.push({accent: Accent.WING, orientation: Orientation.AGAINST})
         } else if (symbolChar === ",") {
-            accents.push(Accent.WING_AGAINST)
+            aim === Aim.UP ?
+                arm.push({accent: Accent.WING, orientation: Orientation.AGAINST}) :
+                arm.push({accent: Accent.WING, orientation: Orientation.WITH})
         } else if (symbolChar === "'") {
-            accents.push(Accent.TICK_WITH)
+            aim === Aim.UP ?
+                arm.push({accent: Accent.TICK, orientation: Orientation.WITH}) :
+                arm.push({accent: Accent.TICK, orientation: Orientation.AGAINST})
         } else if (symbolChar === ".") {
-            accents.push(Accent.TICK_AGAINST)
+            aim === Aim.UP ?
+                arm.push({accent: Accent.TICK, orientation: Orientation.AGAINST}) :
+                arm.push({accent: Accent.TICK, orientation: Orientation.WITH})
         } else if (symbolChar === "/") {
             aim === Aim.UP ?
                 left.push(Flag.BARB) :
@@ -77,7 +88,7 @@ const parseAscii = (ascii: Ascii): Symbol => {
                 Shafts.TRIPLE :
                 Shafts.EX
     symbol.core = {aim, shafts}
-    if (!isEmpty(accents)) symbol.accents = accents
+    if (!isEmpty(arm)) symbol.arm = arm
     if (!isEmpty(left)) symbol.core.left = left
     if (!isEmpty(right)) symbol.core.right = right
 
