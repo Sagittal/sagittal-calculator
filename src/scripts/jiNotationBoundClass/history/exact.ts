@@ -1,4 +1,4 @@
-import { BoundEventAnalysis } from "./events"
+import {BoundEventAnalysis} from "./events"
 
 const computeExact = (boundEventAnalyses: BoundEventAnalysis[]): boolean =>
     boundEventAnalyses

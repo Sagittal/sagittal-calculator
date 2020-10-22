@@ -1,6 +1,6 @@
-import { Io } from "../../../../../src/general/io"
-import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
-import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
+import {Io} from "../../../../../src/general/io"
+import {onlyRunInCi} from "../../../../helpers/onlyRunInCi"
+import {runCommandAndGetConsoleOutput} from "../../../../helpers/src/scripts/runCommand"
 
 describe("antivotes", (): void => {
     it("gives you the antivotes of a specific 2,3-free class for the submetric combination set in the file              ", (): void => {

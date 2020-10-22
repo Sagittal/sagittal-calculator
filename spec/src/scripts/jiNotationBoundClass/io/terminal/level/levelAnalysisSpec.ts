@@ -1,25 +1,25 @@
-import { Count, Decimal, NEWLINE } from "../../../../../../../src/general"
-import { Rank } from "../../../../../../../src/general/code"
-import { BoundType, JiNotationLevel } from "../../../../../../../src/sagittal/notations/ji"
+import {Count, Decimal, NEWLINE} from "../../../../../../../src/general"
+import {Rank} from "../../../../../../../src/general/code"
+import {BoundType, JiNotationLevel} from "../../../../../../../src/sagittal/notations/ji"
 import {
     jiNotationLevelsBestCumulativeHistoryRanks,
     jiNotationLevelsBestHistoryRanks,
 } from "../../../../../../../src/scripts/jiNotationBoundClass/globals"
-import { formatJiNotationLevelAnalysis } from "../../../../../../../src/scripts/jiNotationBoundClass/io/terminal/level/levelAnalysis"
-import { RANKS } from "../../../../../../../src/scripts/jiNotationBoundClass/ranks"
+import {formatJiNotationLevelAnalysis} from "../../../../../../../src/scripts/jiNotationBoundClass/io/terminal/level/levelAnalysis"
+import {RANKS} from "../../../../../../../src/scripts/jiNotationBoundClass/ranks"
 
 describe("formatJiNotationLevelAnalysis", (): void => {
     it("gives an explanation per JI notation level of what JI notation bound classes have what ranks there — both purely within the level, and though all levels up to that point", (): void => {
         const jiNotationLevel = JiNotationLevel.ULTRA
-        jiNotationLevelsBestHistoryRanks[ jiNotationLevel ] = {
-            [ RANKS[ BoundType.INA_MIDPOINT ] ]: 18 as Count<Decimal<{ integer: true }> & Rank<BoundType>>,
-            [ RANKS[ BoundType.COMMA_MEAN ] ]: 23 as Count<Decimal<{ integer: true }> & Rank<BoundType>>,
-            [ RANKS[ BoundType.SIZE_CATEGORY_BOUND ] ]: 13 as Count<Decimal<{ integer: true }> & Rank<BoundType>>,
+        jiNotationLevelsBestHistoryRanks[jiNotationLevel] = {
+            [RANKS[BoundType.INA_MIDPOINT]]: 18 as Count<Decimal<{integer: true}> & Rank<BoundType>>,
+            [RANKS[BoundType.COMMA_MEAN]]: 23 as Count<Decimal<{integer: true}> & Rank<BoundType>>,
+            [RANKS[BoundType.SIZE_CATEGORY_BOUND]]: 13 as Count<Decimal<{integer: true}> & Rank<BoundType>>,
         }
-        jiNotationLevelsBestCumulativeHistoryRanks[ jiNotationLevel ] = {
-            [ RANKS[ BoundType.INA_MIDPOINT ] ]: 18 as Count<Decimal<{ integer: true }> & Rank<BoundType>>,
-            [ RANKS[ BoundType.COMMA_MEAN ] ]: 17 as Count<Decimal<{ integer: true }> & Rank<BoundType>>,
-            [ RANKS[ BoundType.SIZE_CATEGORY_BOUND ] ]: 15 as Count<Decimal<{ integer: true }> & Rank<BoundType>>,
+        jiNotationLevelsBestCumulativeHistoryRanks[jiNotationLevel] = {
+            [RANKS[BoundType.INA_MIDPOINT]]: 18 as Count<Decimal<{integer: true}> & Rank<BoundType>>,
+            [RANKS[BoundType.COMMA_MEAN]]: 17 as Count<Decimal<{integer: true}> & Rank<BoundType>>,
+            [RANKS[BoundType.SIZE_CATEGORY_BOUND]]: 15 as Count<Decimal<{integer: true}> & Rank<BoundType>>,
         }
 
         const actual = formatJiNotationLevelAnalysis(jiNotationLevel)

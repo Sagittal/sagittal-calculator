@@ -7,10 +7,10 @@ import {
     PRIMES,
     ZERO_ONE_INDEX_DIFF,
 } from "../../../general"
-import { Two3FreePrimesToCheckOptions } from "./types"
+import {Two3FreePrimesToCheckOptions} from "./types"
 
 const compute23FreePrimesToCheck = (options: Two3FreePrimesToCheckOptions): Prime[] => {
-    const { maxPrimeLimit, max23FreeSopfr, primeExponentExtremasGivenMaxN2D3P9 } = options
+    const {maxPrimeLimit, max23FreeSopfr, primeExponentExtremasGivenMaxN2D3P9} = options
 
     if (
         isUndefined(maxPrimeLimit) &&

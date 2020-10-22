@@ -1,9 +1,9 @@
-import { Combinations, Name } from "../../general"
-import { Metric, Scope } from "./bestMetric"
-import { INITIAL_POPULARITY_METRIC_LFC_SCRIPT_GROUP_SETTINGS, INITIAL_SOLVER_STATUS } from "./constants"
-import { Chunk, SolverStatus } from "./solver"
-import { Parameter, Submetric } from "./sumOfSquares"
-import { PopularityMetricLfcScriptGroupSettings } from "./types"
+import {Combinations, Name} from "../../general"
+import {Metric, Scope} from "./bestMetric"
+import {INITIAL_POPULARITY_METRIC_LFC_SCRIPT_GROUP_SETTINGS, INITIAL_SOLVER_STATUS} from "./constants"
+import {Chunk, SolverStatus} from "./solver"
+import {Parameter, Submetric} from "./sumOfSquares"
+import {PopularityMetricLfcScriptGroupSettings} from "./types"
 
 const scopesToSearch: Scope[] = [] as unknown[] as Scope[]
 

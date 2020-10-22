@@ -1,2 +1,2 @@
-export { computeBoundedCommaClassPositions } from "./boundedCommaClassPositions"
-export { BoundedCommaClassPositions } from "./types"
+export {computeBoundedCommaClassPositions} from "./boundedCommaClassPositions"
+export {BoundedCommaClassPositions} from "./types"

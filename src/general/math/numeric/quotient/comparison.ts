@@ -1,7 +1,7 @@
-import { isCloseTo, MAX_JS_PRECISION, Precision } from "../../../code"
-import { areRationalQuotientsEqual, isQuotientRational } from "../../rational"
-import { computeDecimalFromQuotient } from "../decimal"
-import { Quotient } from "./types"
+import {isCloseTo, MAX_JS_PRECISION, Precision} from "../../../code"
+import {areRationalQuotientsEqual, isQuotientRational} from "../../rational"
+import {computeDecimalFromQuotient} from "../decimal"
+import {Quotient} from "./types"
 
 const areQuotientsEqual = (
     quotientA: Quotient,

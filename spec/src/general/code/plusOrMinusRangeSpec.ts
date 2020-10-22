@@ -1,9 +1,9 @@
-import { computePlusOrMinusRange } from "../../../../src/general/code"
-import { Decimal } from "../../../../src/general/math/numeric/decimal"
+import {computePlusOrMinusRange} from "../../../../src/general/code"
+import {Decimal} from "../../../../src/general/math/numeric/decimal"
 
 describe("computePlusOrMinusRange", (): void => {
     it("given an integer decimal, returns a range of integer decimals from its negation to itself, inclusive            ", (): void => {
-        const integerDecimal = 5 as Decimal<{ integer: true }>
+        const integerDecimal = 5 as Decimal<{integer: true}>
 
         const actual = computePlusOrMinusRange(integerDecimal)
 

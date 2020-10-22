@@ -1,11 +1,11 @@
-import { isCloseTo } from "./isCloseTo"
-import { isArray, isNumber, isObject, isUndefined } from "./typeGuards"
-import { Precision } from "./types"
+import {isCloseTo} from "./isCloseTo"
+import {isArray, isNumber, isObject, isUndefined} from "./typeGuards"
+import {Precision} from "./types"
 
 const deepEqualsArray = <T>(valueA: T[], valueB: T[], precision?: Precision): boolean =>
     isArray(valueA) &&
     valueA.length === valueB.length &&
-    valueB.every((el: T, index: number): boolean => deepEquals(el, valueA[ index ], precision))
+    valueB.every((el: T, index: number): boolean => deepEquals(el, valueA[index], precision))
 
 const deepEqualsObject = <T extends Record<string, unknown>>(
     valueA: T,
@@ -20,7 +20,7 @@ const deepEqualsObject = <T extends Record<string, unknown>>(
         equal = Object.keys(valueA).length === Object.keys(valueB).length &&
             Object.entries(valueB)
                 .every(([key, value]: [string, unknown]): boolean =>
-                    deepEquals(value, valueA[ key ], precision))
+                    deepEquals(value, valueA[key], precision))
     } else {
         equal = false
     }
@@ -40,7 +40,7 @@ const deepEquals = <T>(valueA: T, valueB: T, precision?: Precision): boolean => 
     } else if (isObject(valueA)) {
         equal = deepEqualsObject(
             valueB as T & Record<string, unknown>,
-            valueA as T & { [ index: string ]: unknown },
+            valueA as T & {[index: string]: unknown},
             precision,
         )
     }

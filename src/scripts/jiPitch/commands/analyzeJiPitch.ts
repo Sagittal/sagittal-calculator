@@ -1,8 +1,8 @@
-import { Id, LogTarget, Maybe, saveLog } from "../../../general"
-import { analyzeJiPitch, CommaAnalysis, CommaClass, computeMaybeCommaClassId } from "../../../sagittal"
-import { computeNotatingCommaAnalyses, parseJiPitch, parseNotatingCommasSettings } from "../analyzeJiPitch"
-import { compute23FreeClassOutput, computeJiPitchOutput, computeNotatingCommasOutput, readJiPitchOptions } from "../io"
-import { applySharedPitchCommandSetup } from "./shared"
+import {Id, LogTarget, Maybe, saveLog} from "../../../general"
+import {analyzeJiPitch, CommaAnalysis, CommaClass, computeMaybeCommaClassId} from "../../../sagittal"
+import {computeNotatingCommaAnalyses, parseJiPitch, parseNotatingCommasSettings} from "../analyzeJiPitch"
+import {compute23FreeClassOutput, computeJiPitchOutput, computeNotatingCommasOutput, readJiPitchOptions} from "../io"
+import {applySharedPitchCommandSetup} from "./shared"
 
 readJiPitchOptions()
 

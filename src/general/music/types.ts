@@ -1,11 +1,11 @@
-import { NumericProperties, Scamon } from "../math"
+import {NumericProperties, Scamon} from "../math"
 import {Extrema, Name} from "../types"
 
-type Cents = number & { _CentsBrand: boolean }
+type Cents = number & {_CentsBrand: boolean}
 
 type Zone<Of = void, T extends NumericProperties = {}> =
     Extrema<Scamon<T>>
-    & (Of extends void ? {} : { _ZoneOfBrand: Of })
+    & (Of extends void ? {} : {_ZoneOfBrand: Of})
 
 type CommaMean<T extends NumericProperties = {}> = {
     name: Name<CommaMean>,

@@ -1,6 +1,6 @@
-import { Name, sort } from "../../../general"
-import { Submetric } from "../sumOfSquares"
-import { Metric, Scope, SubmetricScope } from "./types"
+import {Name, sort} from "../../../general"
+import {Submetric} from "../sumOfSquares"
+import {Metric, Scope, SubmetricScope} from "./types"
 
 const computeMetricName = (scope: Scope): Name<Metric> => {
     const submetricNames = scope.map((submetricScope: SubmetricScope): Name<Submetric> => {

@@ -1,6 +1,6 @@
-import { Abs, Cents, Multiplier } from "../../../../../../src/general"
-import { Ina, JiNotationLevel } from "../../../../../../src/sagittal"
-import { computeInaDistance } from "../../../../../../src/scripts/jiNotationBoundClass/history"
+import {Abs, Cents, Multiplier} from "../../../../../../src/general"
+import {Ina, JiNotationLevel} from "../../../../../../src/sagittal"
+import {computeInaDistance} from "../../../../../../src/scripts/jiNotationBoundClass/history"
 
 describe("inaDistance", (): void => {
     it("returns the distance as a proportion of the size of the ina at that JI notation level", (): void => {

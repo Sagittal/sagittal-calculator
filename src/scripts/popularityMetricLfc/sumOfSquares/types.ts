@@ -1,6 +1,6 @@
-import { Index, Two3FreeClass } from "../../../general"
+import {Index, Two3FreeClass} from "../../../general"
 
-type Antivotes = number & { _AntivotesBrand: boolean }
+type Antivotes = number & {_AntivotesBrand: boolean}
 
 interface Unpopularity {
     antivotes: Antivotes,
@@ -71,38 +71,38 @@ enum Parameter {
 }
 
 type Submetric = Partial<{
-    [ Parameter.WEIGHT_AS_COEFFICIENT ]: ParameterValue,
-    [ Parameter.WEIGHT_AS_LOGARITHM_BASE ]: ParameterValue,
-    [ Parameter.WEIGHT_AS_POWER_EXPONENT ]: ParameterValue,
-    [ Parameter.WEIGHT_AS_POWER_BASE ]: ParameterValue,
-    [ Parameter.K_AS_COEFFICIENT ]: ParameterValue,
-    [ Parameter.K_AS_LOGARITHM_BASE ]: ParameterValue,
-    [ Parameter.K_AS_POWER_EXPONENT ]: ParameterValue,
-    [ Parameter.K_AS_POWER_BASE ]: ParameterValue,
-    [ Parameter.J_AS_COEFFICIENT ]: ParameterValue,
-    [ Parameter.J_AS_LOGARITHM_BASE ]: ParameterValue,
-    [ Parameter.J_AS_POWER_EXPONENT ]: ParameterValue,
-    [ Parameter.J_AS_POWER_BASE ]: ParameterValue,
-    [ Parameter.A_AS_COEFFICIENT ]: ParameterValue,
-    [ Parameter.A_AS_LOGARITHM_BASE ]: ParameterValue,
-    [ Parameter.A_AS_POWER_EXPONENT ]: ParameterValue,
-    [ Parameter.A_AS_POWER_BASE ]: ParameterValue,
-    [ Parameter.W ]: ParameterValue,
-    [ Parameter.B ]: ParameterValue,
-    [ Parameter.X ]: ParameterValue,
-    [ Parameter.U ]: ParameterValue,
-    [ Parameter.Y ]: ParameterValue,
-    [ Parameter.V ]: ParameterValue,
-    [ Parameter.USE_NUMINATOR ]: boolean,
-    [ Parameter.MODIFIED_COUNT ]: boolean,
-    [ Parameter.USE_PRIME_INDEX ]: boolean,
-    [ Parameter.WITHOUT_REPETITION ]: boolean,
-    [ Parameter.SUM ]: boolean,
-    [ Parameter.COUNT ]: boolean,
-    [ Parameter.MAX ]: boolean,
+    [Parameter.WEIGHT_AS_COEFFICIENT]: ParameterValue,
+    [Parameter.WEIGHT_AS_LOGARITHM_BASE]: ParameterValue,
+    [Parameter.WEIGHT_AS_POWER_EXPONENT]: ParameterValue,
+    [Parameter.WEIGHT_AS_POWER_BASE]: ParameterValue,
+    [Parameter.K_AS_COEFFICIENT]: ParameterValue,
+    [Parameter.K_AS_LOGARITHM_BASE]: ParameterValue,
+    [Parameter.K_AS_POWER_EXPONENT]: ParameterValue,
+    [Parameter.K_AS_POWER_BASE]: ParameterValue,
+    [Parameter.J_AS_COEFFICIENT]: ParameterValue,
+    [Parameter.J_AS_LOGARITHM_BASE]: ParameterValue,
+    [Parameter.J_AS_POWER_EXPONENT]: ParameterValue,
+    [Parameter.J_AS_POWER_BASE]: ParameterValue,
+    [Parameter.A_AS_COEFFICIENT]: ParameterValue,
+    [Parameter.A_AS_LOGARITHM_BASE]: ParameterValue,
+    [Parameter.A_AS_POWER_EXPONENT]: ParameterValue,
+    [Parameter.A_AS_POWER_BASE]: ParameterValue,
+    [Parameter.W]: ParameterValue,
+    [Parameter.B]: ParameterValue,
+    [Parameter.X]: ParameterValue,
+    [Parameter.U]: ParameterValue,
+    [Parameter.Y]: ParameterValue,
+    [Parameter.V]: ParameterValue,
+    [Parameter.USE_NUMINATOR]: boolean,
+    [Parameter.MODIFIED_COUNT]: boolean,
+    [Parameter.USE_PRIME_INDEX]: boolean,
+    [Parameter.WITHOUT_REPETITION]: boolean,
+    [Parameter.SUM]: boolean,
+    [Parameter.COUNT]: boolean,
+    [Parameter.MAX]: boolean,
 }>
 
-type ParameterValue = number & { _ParameterValueBrand: boolean }
+type ParameterValue = number & {_ParameterValueBrand: boolean}
 
 type WeightedAntivotesOptions = Partial<{
     logarithmBase: ParameterValue,

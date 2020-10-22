@@ -1,5 +1,5 @@
-import { computeDecimalFromQuotient, Decimal } from "../../../../../../src/general/math"
-import { Quotient } from "../../../../../../src/general/math/numeric/quotient"
+import {computeDecimalFromQuotient, Decimal} from "../../../../../../src/general/math"
+import {Quotient} from "../../../../../../src/general/math/numeric/quotient"
 
 describe("computeDecimalFromQuotient", (): void => {
     it("returns the decimal representation of the quotient", (): void => {

@@ -1,20 +1,20 @@
-import { indexOfFinalElement, Maybe } from "../../code"
-import { BLANK, NEWLINE } from "../constants"
-import { Formatted } from "../format"
-import { join, sumTexts } from "../typedOperations"
-import { Io } from "../types"
-import { computeColumnRange } from "./columnRange"
-import { DEFAULT_FORMAT_TABLE_OPTIONS } from "./constants"
-import { computeColumnWidths, computeJustifications, computeJustifiedCell } from "./justification"
-import { FormatTableOptions, Row, Table, TableForForumRowPartsOptions } from "./types"
+import {indexOfFinalElement, Maybe} from "../../code"
+import {BLANK, NEWLINE} from "../constants"
+import {Formatted} from "../format"
+import {join, sumTexts} from "../typedOperations"
+import {Io} from "../types"
+import {computeColumnRange} from "./columnRange"
+import {DEFAULT_FORMAT_TABLE_OPTIONS} from "./constants"
+import {computeColumnWidths, computeJustifications, computeJustifiedCell} from "./justification"
+import {FormatTableOptions, Row, Table, TableForForumRowPartsOptions} from "./types"
 
 const computeTableForForumRowParts = <T = unknown>(
-    { index, headerRowCount, colors }: TableForForumRowPartsOptions<T>,
-): { rowOpen: Io, rowClose: Io, separator: Io } => {
+    {index, headerRowCount, colors}: TableForForumRowPartsOptions<T>,
+): {rowOpen: Io, rowClose: Io, separator: Io} => {
     const cellTag: Io = index < headerRowCount ? "th" as Io : "td" as Io
 
-    const hiliteOpen: Io = colors ? colors[ index ] ? `[hilite=${colors[ index ]}]` as Io : BLANK as Io : BLANK
-    const hiliteClose: Io = colors ? colors[ index ] ? "[/hilite]" as Io : BLANK : BLANK
+    const hiliteOpen: Io = colors ? colors[index] ? `[hilite=${colors[index]}]` as Io : BLANK as Io : BLANK
+    const hiliteClose: Io = colors ? colors[index] ? "[/hilite]" as Io : BLANK : BLANK
 
     const cellOpen: Io = `[${cellTag}][pre]${hiliteOpen}` as Io
     const cellClose: Io = `${hiliteClose}[/pre][/${cellTag}]` as Io
@@ -24,7 +24,7 @@ const computeTableForForumRowParts = <T = unknown>(
 
     const separator: Io = `${cellClose}${cellOpen}` as Io
 
-    return { rowOpen, rowClose, separator }
+    return {rowOpen, rowClose, separator}
 }
 
 const formatTableForForum = <T = unknown>(table: Table<T>, options?: Partial<FormatTableOptions<T>>): Io => {
@@ -39,15 +39,15 @@ const formatTableForForum = <T = unknown>(table: Table<T>, options?: Partial<For
 
     const columnWidths = computeColumnWidths(table, columnRange)
 
-    const formattedRows: Io[] = table.map((row: Row<{ of: T }>, index: number): Io => {
-        const { rowOpen, rowClose, separator } = computeTableForForumRowParts({ index, headerRowCount, colors })
+    const formattedRows: Io[] = table.map((row: Row<{of: T}>, index: number): Io => {
+        const {rowOpen, rowClose, separator} = computeTableForForumRowParts({index, headerRowCount, colors})
 
         const rowText = row.reduce(
             (justifiedRow: Io, cell: Maybe<Formatted<T>>, cellIndex: number): Io => {
-                const columnWidth = columnWidths[ cellIndex ]
-                const columnJustification = justifications[ cellIndex ]
+                const columnWidth = columnWidths[cellIndex]
+                const columnJustification = justifications[cellIndex]
 
-                const justifiedCell: Io = computeJustifiedCell(cell, { columnWidth, columnJustification })
+                const justifiedCell: Io = computeJustifiedCell(cell, {columnWidth, columnJustification})
 
                 const maybeSeparator: Io = cellIndex === indexOfFinalElement(row) ? BLANK : separator
 

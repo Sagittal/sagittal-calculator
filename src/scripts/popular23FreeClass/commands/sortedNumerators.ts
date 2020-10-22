@@ -17,8 +17,8 @@ import {
     SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P,
     SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2,
 } from "../../../sagittal/ji/two3FreeClass/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities"
-import { computeN2 } from "../../../sagittal/ji/two3FreeClass/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/n2"
-import { ScriptGroup } from "../../types"
+import {computeN2} from "../../../sagittal/ji/two3FreeClass/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/n2"
+import {ScriptGroup} from "../../types"
 
 // Try out Dave's strategy for getting further along: http://forum.sagittal.org/viewtopic.php?p=2481#p2481
 
@@ -32,9 +32,9 @@ const n2Results: SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncl
     [] as unknown[] as SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2[]
 
 for (
-    let numerator = 5 as Numerator & Decimal<{ integer: true }>;
+    let numerator = 5 as Numerator & Decimal<{integer: true}>;
     numerator <= MAX_NUMERATOR;
-    numerator = numerator + 2 as Numerator & Decimal<{ integer: true }>
+    numerator = numerator + 2 as Numerator & Decimal<{integer: true}>
 ) {
     // 5, 7, _ 11, 13, _, 17, 19
     if (dividesEvenly(numerator, 3)) continue
@@ -46,12 +46,12 @@ for (
     if (n2p / 9 > 5298.2) continue
 
     saveLog(`${numerator}: ${n2p}`, LogTarget.PROGRESS)
-    n2Results.push({ numerator, gpf, n2 } as SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2)
-    n2pResults.push({ numerator, gpf, n2p } as SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P)
+    n2Results.push({numerator, gpf, n2} as SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2)
+    n2pResults.push({numerator, gpf, n2p} as SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P)
 }
 
-sort(n2Results, { by: "n2" as KeyPath })
-sort(n2pResults, { by: "n2p" as KeyPath })
+sort(n2Results, {by: "n2" as KeyPath})
+sort(n2pResults, {by: "n2p" as KeyPath})
 
-saveLog(stringify(n2Results, { multiline: true }), LogTarget.FINAL)
-saveLog(stringify(n2pResults, { multiline: true }), LogTarget.FINAL)
+saveLog(stringify(n2Results, {multiline: true}), LogTarget.FINAL)
+saveLog(stringify(n2pResults, {multiline: true}), LogTarget.FINAL)

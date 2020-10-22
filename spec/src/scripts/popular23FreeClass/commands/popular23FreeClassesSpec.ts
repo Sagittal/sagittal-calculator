@@ -1,8 +1,8 @@
 // tslint:disable max-line-length
 
-import { Filename, Io, readLines } from "../../../../../src/general/io"
-import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
-import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
+import {Filename, Io, readLines} from "../../../../../src/general/io"
+import {onlyRunInCi} from "../../../../helpers/onlyRunInCi"
+import {runCommandAndGetConsoleOutput} from "../../../../helpers/src/scripts/runCommand"
 
 describe("popular-2-3-free-classes", (): void => {
     it("gives you the list of the most popular 3,3-free classes, according to N2D3P9", (): void => {

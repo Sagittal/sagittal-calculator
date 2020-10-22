@@ -1,13 +1,13 @@
-import { isUndefined, Window } from "../../../../general"
-import { ParameterValue } from "../../sumOfSquares"
-import { DynamicParameterScope } from "../types"
-import { computeEqualDivision } from "./equalDivision"
-import { DynamicParameterScopeOptions } from "./types"
+import {isUndefined, Window} from "../../../../general"
+import {ParameterValue} from "../../sumOfSquares"
+import {DynamicParameterScope} from "../types"
+import {computeEqualDivision} from "./equalDivision"
+import {DynamicParameterScopeOptions} from "./types"
 
 const countDefinedOption = (option: unknown): number => isUndefined(option) ? 0 : 1
 
 const computeDynamicParameterScope = (options: DynamicParameterScopeOptions): DynamicParameterScope => {
-    const { max, min, center: centerOption, window: windowOption } = options
+    const {max, min, center: centerOption, window: windowOption} = options
     const definedOptionCount =
         countDefinedOption(max) +
         countDefinedOption(min) +
@@ -55,7 +55,7 @@ const computeDynamicParameterScope = (options: DynamicParameterScopeOptions): Dy
 
     ed = computeEqualDivision(window as Window<ParameterValue>)
 
-    return { center, window, ed }
+    return {center, window, ed}
 }
 
 export {

@@ -1,5 +1,5 @@
-import { Monzo } from "../../../../../../src/general/math/numeric/monzo"
-import { computeQuotientFromMonzo, Quotient } from "../../../../../../src/general/math/numeric/quotient"
+import {Monzo} from "../../../../../../src/general/math/numeric/monzo"
+import {computeQuotientFromMonzo, Quotient} from "../../../../../../src/general/math/numeric/quotient"
 
 describe("computeQuotientFromMonzo", (): void => {
     it("converts a monzo into a two-element array representing the numerator and denominator", (): void => {
@@ -22,7 +22,7 @@ describe("computeQuotientFromMonzo", (): void => {
     it("can disable this error if the exact value is not required", (): void => {
         const monzo = [0, 0, 6, 4, 2, 2, 0, 1, 1, 1] as Monzo
 
-        const actual = computeQuotientFromMonzo(monzo, { disableErrorBecauseExactValueNotRequired: true })
+        const actual = computeQuotientFromMonzo(monzo, {disableErrorBecauseExactValueNotRequired: true})
 
         const expected = [9722180859015624, 1] as Quotient
         expect(actual).toEqual(expected)
@@ -40,7 +40,7 @@ describe("computeQuotientFromMonzo", (): void => {
     it("another edge case?", (): void => {
         const monzo = [-53, 33.5] as Monzo
 
-        const actual = computeQuotientFromMonzo(monzo, { disableErrorBecauseExactValueNotRequired: true })
+        const actual = computeQuotientFromMonzo(monzo, {disableErrorBecauseExactValueNotRequired: true})
 
         const expected = [9628575343626794, 9007199254740992] as Quotient
         expect(actual).toBeCloseToArray(expected)

@@ -1,5 +1,5 @@
-import { computeAngle } from "../../../../src/general/math"
-import { Coordinates, Radians } from "../../../../src/general/math/types"
+import {computeAngle} from "../../../../src/general/math"
+import {Coordinates, Radians} from "../../../../src/general/math/types"
 
 describe("computeAngle", (): void => {
     it("works for a horizontal line", (): void => {

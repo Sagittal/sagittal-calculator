@@ -1,6 +1,6 @@
-import { count } from "../math"
-import { Count } from "../types"
-import { isObject } from "./typeGuards"
+import {count} from "../math"
+import {Count} from "../types"
+import {isObject} from "./typeGuards"
 
 const computeCardinality = (array: unknown[]): Array<Count> => {
     const cardinality = []
@@ -8,7 +8,7 @@ const computeCardinality = (array: unknown[]): Array<Count> => {
     let cursor = array
     while (isObject(cursor)) {
         cardinality.push(count(cursor))
-        cursor = cursor[ 0 ] as unknown[]
+        cursor = cursor[0] as unknown[]
     }
 
     return cardinality

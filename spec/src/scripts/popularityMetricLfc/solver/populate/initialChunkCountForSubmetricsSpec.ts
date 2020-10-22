@@ -1,8 +1,8 @@
-import { Count } from "../../../../../../src/general"
-import { popularityMetricLfcScriptGroupSettings } from "../../../../../../src/scripts/popularityMetricLfc/globals"
-import { Chunk } from "../../../../../../src/scripts/popularityMetricLfc/solver"
-import { computeInitialChunkCountForSubmetrics } from "../../../../../../src/scripts/popularityMetricLfc/solver/populate/initialChunkCountForSubmetrics"
-import { Submetric } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {Count} from "../../../../../../src/general"
+import {popularityMetricLfcScriptGroupSettings} from "../../../../../../src/scripts/popularityMetricLfc/globals"
+import {Chunk} from "../../../../../../src/scripts/popularityMetricLfc/solver"
+import {computeInitialChunkCountForSubmetrics} from "../../../../../../src/scripts/popularityMetricLfc/solver/populate/initialChunkCountForSubmetrics"
+import {Submetric} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
 describe("computeInitialChunkCountForSubmetrics", (): void => {
     describe("when all chunks are being used, including probably useless ones", (): void => {

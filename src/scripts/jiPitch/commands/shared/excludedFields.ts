@@ -1,6 +1,6 @@
-import { COMMA, Io, split } from "../../../../general"
-import { JI_PITCH_SCRIPT_GROUP_FIELDS } from "../../constants"
-import { FindCommasField, JiPitchScriptGroupField } from "../../types"
+import {COMMA, Io, split} from "../../../../general"
+import {JI_PITCH_SCRIPT_GROUP_FIELDS} from "../../constants"
+import {FindCommasField, JiPitchScriptGroupField} from "../../types"
 
 const parseExcludedFields = (excludedFieldsIo: Io): JiPitchScriptGroupField[] => {
     const excludedFields = split(excludedFieldsIo, COMMA)

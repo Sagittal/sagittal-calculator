@@ -1,2 +1,2 @@
-export { computeNotatingCommaAnalyses } from "./notatingCommaAnalyses"
-export { parseJiPitch, parseNotatingCommasSettings } from "./parse"
+export {computeNotatingCommaAnalyses} from "./notatingCommaAnalyses"
+export {parseJiPitch, parseNotatingCommasSettings} from "./parse"

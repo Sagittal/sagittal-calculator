@@ -1,30 +1,30 @@
-import { Combination } from "../../../../../src/general/math"
-import { SumOfSquares, SumsOfSquares } from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
-import { Sample, SamplePoint } from "../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
-import { computeLocalMinima } from "../../../../../src/scripts/popularityMetricLfc/perfecter/localMinima"
-import { LocalMin } from "../../../../../src/scripts/popularityMetricLfc/perfecter/types"
-import { Submetric } from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {Combination} from "../../../../../src/general/math"
+import {SumOfSquares, SumsOfSquares} from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
+import {Sample, SamplePoint} from "../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
+import {computeLocalMinima} from "../../../../../src/scripts/popularityMetricLfc/perfecter/localMinima"
+import {LocalMin} from "../../../../../src/scripts/popularityMetricLfc/perfecter/types"
+import {Submetric} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
 describe("computeLocalMinima", (): void => {
     const samples: Sample[] = [
-        { samplePoint: [0, 0, 0] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric> },
-        { samplePoint: [0, 0, 1] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric> },
-        { samplePoint: [0, 0, 2] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric> },
-        { samplePoint: [0, 1, 0] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric> },
-        { samplePoint: [0, 1, 1] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric> },
-        { samplePoint: [0, 1, 2] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric> },
-        { samplePoint: [1, 0, 0] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric> },
-        { samplePoint: [1, 0, 1] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric> },
-        { samplePoint: [1, 0, 2] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric> },
-        { samplePoint: [1, 1, 0] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric> },
-        { samplePoint: [1, 1, 1] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric> },
-        { samplePoint: [1, 1, 2] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric> },
-        { samplePoint: [2, 0, 0] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric> },
-        { samplePoint: [2, 0, 1] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric> },
-        { samplePoint: [2, 0, 2] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric> },
-        { samplePoint: [2, 1, 0] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric> },
-        { samplePoint: [2, 1, 1] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric> },
-        { samplePoint: [2, 1, 2] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric> },
+        {samplePoint: [0, 0, 0] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric>},
+        {samplePoint: [0, 0, 1] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric>},
+        {samplePoint: [0, 0, 2] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric>},
+        {samplePoint: [0, 1, 0] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric>},
+        {samplePoint: [0, 1, 1] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric>},
+        {samplePoint: [0, 1, 2] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric>},
+        {samplePoint: [1, 0, 0] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric>},
+        {samplePoint: [1, 0, 1] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric>},
+        {samplePoint: [1, 0, 2] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric>},
+        {samplePoint: [1, 1, 0] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric>},
+        {samplePoint: [1, 1, 1] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric>},
+        {samplePoint: [1, 1, 2] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric>},
+        {samplePoint: [2, 0, 0] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric>},
+        {samplePoint: [2, 0, 1] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric>},
+        {samplePoint: [2, 0, 2] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric>},
+        {samplePoint: [2, 1, 0] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric>},
+        {samplePoint: [2, 1, 1] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric>},
+        {samplePoint: [2, 1, 2] as SamplePoint, submetrics: [] as unknown[] as Combination<Submetric>},
     ]
 
     it("returns an empty array if all the values are the same", (): void => {
@@ -112,8 +112,8 @@ describe("computeLocalMinima", (): void => {
         const actual = computeLocalMinima(samples, sumsOfSquares)
 
         const expected = jasmine.arrayWithExactContents([
-            { sumOfSquares: 0.003 as SumOfSquares, samplePoint: [0, 1, 0], submetrics: [] },
-            { sumOfSquares: 0.002 as SumOfSquares, samplePoint: [1, 1, 2], submetrics: [] },
+            {sumOfSquares: 0.003 as SumOfSquares, samplePoint: [0, 1, 0], submetrics: []},
+            {sumOfSquares: 0.002 as SumOfSquares, samplePoint: [1, 1, 2], submetrics: []},
         ])
         expect(actual).toEqual(expected)
     })

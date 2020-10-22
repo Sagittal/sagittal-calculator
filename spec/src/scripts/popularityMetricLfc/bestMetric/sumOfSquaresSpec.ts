@@ -12,27 +12,27 @@ import {
     Two3FreeClass,
 } from "../../../../../src/general"
 import * as doOnNextEventLoop from "../../../../../src/general/code/doOnNextEventLoop"
-import { Combination } from "../../../../../src/general/math"
-import { Metric, Sample, SumsOfSquares } from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
-import { SamplePoint } from "../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
-import { computeSumOfSquaresAndMaybeUpdateBestMetric } from "../../../../../src/scripts/popularityMetricLfc/bestMetric/sumOfSquares"
-import { bestMetrics } from "../../../../../src/scripts/popularityMetricLfc/globals"
+import {Combination} from "../../../../../src/general/math"
+import {Metric, Sample, SumsOfSquares} from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
+import {SamplePoint} from "../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
+import {computeSumOfSquaresAndMaybeUpdateBestMetric} from "../../../../../src/scripts/popularityMetricLfc/bestMetric/sumOfSquares"
+import {bestMetrics} from "../../../../../src/scripts/popularityMetricLfc/globals"
 import {
     computeUnpopularities,
     Parameter,
     Submetric,
     Unpopularity,
 } from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
-import { Antivotes } from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares/types"
+import {Antivotes} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares/types"
 import * as unpopularities from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares/unpopularities"
 
 describe("computeSumOfSquaresAndMaybeUpdateBestMetric", (): void => {
     const sample = {
         samplePoint: [1, 0] as SamplePoint,
         submetrics: [{
-            [ Parameter.SUM ]: true,
-            [ Parameter.K_AS_POWER_EXPONENT ]: 1.469021,
-            [ Parameter.J_AS_POWER_EXPONENT ]: 1.367326,
+            [Parameter.SUM]: true,
+            [Parameter.K_AS_POWER_EXPONENT]: 1.469021,
+            [Parameter.J_AS_POWER_EXPONENT]: 1.367326,
         }] as Combination<Submetric>,
     }
     const metricName = "{jAsPowerExponent,kAsPowerExponent,sum}" as Name<Metric>
@@ -56,9 +56,9 @@ describe("computeSumOfSquaresAndMaybeUpdateBestMetric", (): void => {
         const expected = {
             sumOfSquares: 0.007969,
             submetrics: [{
-                [ Parameter.SUM ]: true,
-                [ Parameter.K_AS_POWER_EXPONENT ]: 1.469021,
-                [ Parameter.J_AS_POWER_EXPONENT ]: 1.367326,
+                [Parameter.SUM]: true,
+                [Parameter.K_AS_POWER_EXPONENT]: 1.469021,
+                [Parameter.J_AS_POWER_EXPONENT]: 1.367326,
             }] as Combination<Submetric>,
             name: metricName,
         } as Metric
@@ -66,14 +66,14 @@ describe("computeSumOfSquaresAndMaybeUpdateBestMetric", (): void => {
     })
 
     it("saves the spread dynamic parameters with the metric, if any", async (): Promise<void> => {
-        await computeSumOfSquaresAndMaybeUpdateBestMetric(sample, { ...options, spreadDynamicParameters })
+        await computeSumOfSquaresAndMaybeUpdateBestMetric(sample, {...options, spreadDynamicParameters})
 
         const expected = {
             sumOfSquares: 0.007969,
             submetrics: [{
-                [ Parameter.SUM ]: true,
-                [ Parameter.K_AS_POWER_EXPONENT ]: 1.469021,
-                [ Parameter.J_AS_POWER_EXPONENT ]: 1.367326,
+                [Parameter.SUM]: true,
+                [Parameter.K_AS_POWER_EXPONENT]: 1.469021,
+                [Parameter.J_AS_POWER_EXPONENT]: 1.367326,
             }] as Combination<Submetric>,
             name: metricName,
             spreadDynamicParameters,
@@ -103,21 +103,21 @@ describe("computeSumOfSquaresAndMaybeUpdateBestMetric", (): void => {
             {
                 antivotes: 0 as Antivotes,
                 two3FreeClass: {
-                    monzo: EMPTY_MONZO as Monzo<{ rational: true, rough: 5, direction: Direction.SUPER }>,
+                    monzo: EMPTY_MONZO as Monzo<{rational: true, rough: 5, direction: Direction.SUPER}>,
                 } as Two3FreeClass,
                 index: 0 as Index<Unpopularity>,
             },
             {
                 antivotes: NaN as Antivotes,
                 two3FreeClass: {
-                    monzo: [0, 0, 1] as Monzo<{ rational: true, rough: 5, direction: Direction.SUPER }>,
+                    monzo: [0, 0, 1] as Monzo<{rational: true, rough: 5, direction: Direction.SUPER}>,
                 } as Two3FreeClass,
                 index: 0 as Index<Unpopularity>,
             },
             {
                 antivotes: 8 as Antivotes,
                 two3FreeClass: {
-                    monzo: [0, 0, 0, 1] as Monzo<{ rational: true, rough: 5, direction: Direction.SUPER }>,
+                    monzo: [0, 0, 0, 1] as Monzo<{rational: true, rough: 5, direction: Direction.SUPER}>,
                 } as Two3FreeClass,
                 index: 0 as Index<Unpopularity>,
             },

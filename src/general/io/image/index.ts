@@ -1,2 +1,2 @@
-export { computePx } from "./scale"
-export { Basis, Px, Scale } from "./types"
+export {computePx} from "./scale"
+export {Basis, Px, Scale} from "./types"

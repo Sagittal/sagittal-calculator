@@ -1,9 +1,9 @@
-import { Maybe } from "../../../general"
-import { BoundEventAnalysis, BoundHistoryAnalysis } from "../history"
-import { ensureOneBestPossibleEventPerJiNotationLevel } from "./ensureOneBestPossibleEventPerLevel"
-import { computeInitialEventConsolidation } from "./initialEventConsolidation"
-import { BoundEventConsolidation, BoundHistoryConsolidation } from "./types"
-import { updateEventConsolidation } from "./updateEventConsolidation"
+import {Maybe} from "../../../general"
+import {BoundEventAnalysis, BoundHistoryAnalysis} from "../history"
+import {ensureOneBestPossibleEventPerJiNotationLevel} from "./ensureOneBestPossibleEventPerLevel"
+import {computeInitialEventConsolidation} from "./initialEventConsolidation"
+import {BoundEventConsolidation, BoundHistoryConsolidation} from "./types"
+import {updateEventConsolidation} from "./updateEventConsolidation"
 
 const consolidateBoundHistories = (
     boundHistoryAnalyses: BoundHistoryAnalysis[],
@@ -15,12 +15,12 @@ const consolidateBoundHistories = (
         boundHistoryAnalysis.boundEventAnalyses.forEach((
             boundEventAnalysis: BoundEventAnalysis, index: number,
         ): void => {
-            boundHistoryConsolidation[ boundEventAnalysis.jiNotationLevel ] =
-                boundHistoryConsolidation[ boundEventAnalysis.jiNotationLevel ] || []
+            boundHistoryConsolidation[boundEventAnalysis.jiNotationLevel] =
+                boundHistoryConsolidation[boundEventAnalysis.jiNotationLevel] || []
             const boundEventConsolidations: Maybe<BoundEventConsolidation[]> =
-                boundHistoryConsolidation[ boundEventAnalysis.jiNotationLevel ]
+                boundHistoryConsolidation[boundEventAnalysis.jiNotationLevel]
 
-            const nextBoundEventAnalysis = boundHistoryAnalysis.boundEventAnalyses[ index + 1 ]
+            const nextBoundEventAnalysis = boundHistoryAnalysis.boundEventAnalyses[index + 1]
 
             const matchingEventConsolidation: Maybe<BoundEventConsolidation> = boundEventConsolidations &&
                 boundEventConsolidations.find(

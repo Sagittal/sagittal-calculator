@@ -17,12 +17,12 @@ import {
     Sopfr,
     Two3FreeClass,
 } from "../../../../../../src/general"
-import { ApotomeSlope, CommaAnalysis, CommaClass } from "../../../../../../src/sagittal"
-import { N2D3P9 } from "../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
-import { jiPitchScriptGroupSettings } from "../../../../../../src/scripts/jiPitch/globals"
-import { computeNotatingCommasRow } from "../../../../../../src/scripts/jiPitch/io/row"
-import { NotatingCommasField } from "../../../../../../src/scripts/jiPitch/types"
-import { commaAnalysisFixture, two3FreeClassAnalysisFixture } from "../../../../../helpers/src/scripts/jiPitch/fixtures"
+import {ApotomeSlope, CommaAnalysis, CommaClass} from "../../../../../../src/sagittal"
+import {N2D3P9} from "../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
+import {jiPitchScriptGroupSettings} from "../../../../../../src/scripts/jiPitch/globals"
+import {computeNotatingCommasRow} from "../../../../../../src/scripts/jiPitch/io/row"
+import {NotatingCommasField} from "../../../../../../src/scripts/jiPitch/types"
+import {commaAnalysisFixture, two3FreeClassAnalysisFixture} from "../../../../../helpers/src/scripts/jiPitch/fixtures"
 
 describe("computeNotatingCommasRow", (): void => {
     // This comma is made up and internally inconsistent.
@@ -30,19 +30,19 @@ describe("computeNotatingCommasRow", (): void => {
         ...commaAnalysisFixture,
         name: "1/5C" as Name<Comma>,
         cents: 11.2 as Cents,
-        monzo: [0, -1, 1] as Monzo<{ rational: true }>,
-        quotient: [5, 4] as Quotient<{ rational: true }>,
+        monzo: [0, -1, 1] as Monzo<{rational: true}>,
+        quotient: [5, 4] as Quotient<{rational: true}>,
         apotomeSlope: 8.2 as ApotomeSlope,
         aas: 8.2 as Abs<ApotomeSlope>,
-        ate: 1 as Abs<Decimal<{ integer: true }> & Exponent<3 & Prime>>,
+        ate: 1 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
         two3FreeClassAnalysis: {
             ...two3FreeClassAnalysisFixture,
-            two3FreePrimeLimit: 14 as Max<Prime<{ rough: 5 }>>,
-            two3FreeCopfr: 1 as Copfr<{ rough: 5 }>,
-            two3FreeSopfr: 13 as Sopfr<{ rough: 5 }>,
+            two3FreePrimeLimit: 14 as Max<Prime<{rough: 5}>>,
+            two3FreeCopfr: 1 as Copfr<{rough: 5}>,
+            two3FreeSopfr: 13 as Sopfr<{rough: 5}>,
             n2d3p9: 18.4567 as N2D3P9,
             two3FreeClass: {
-                monzo: [0, 0, 1] as Monzo<{ rational: true, rough: 5, direction: Direction.SUPER }>,
+                monzo: [0, 0, 1] as Monzo<{rational: true, rough: 5, direction: Direction.SUPER}>,
             } as Two3FreeClass,
         },
     }
@@ -69,7 +69,7 @@ describe("computeNotatingCommasRow", (): void => {
             "  8.200",          // Apotome slope
             "  8.200",          // AAS
             "  1    ",          // ATE
-        ] as Row<{ of: CommaAnalysis }>
+        ] as Row<{of: CommaAnalysis}>
         expect(actual).toEqual(expected)
     })
 
@@ -87,7 +87,7 @@ describe("computeNotatingCommasRow", (): void => {
             "  8.200",          // Apotome slope
             "  8.200",          // AAS
             "  1    ",          // ATE
-        ] as Row<{ of: CommaAnalysis }>
+        ] as Row<{of: CommaAnalysis}>
         expect(actual).toEqual(expected)
     })
 
@@ -111,7 +111,7 @@ describe("computeNotatingCommasRow", (): void => {
             "  8.200",          // Apotome slope
             "  8.200",          // AAS
             "  1    ",          // ATE
-        ] as Row<{ of: CommaAnalysis }>
+        ] as Row<{of: CommaAnalysis}>
         expect(actual).toEqual(expected)
     })
 })

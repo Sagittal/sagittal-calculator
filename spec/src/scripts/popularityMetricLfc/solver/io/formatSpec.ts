@@ -1,11 +1,11 @@
-import { Name, NEWLINE } from "../../../../../../src/general"
-import { Io } from "../../../../../../src/general/io"
-import { Combination } from "../../../../../../src/general/math"
-import { Metric, SumOfSquares } from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
-import { bestMetrics } from "../../../../../../src/scripts/popularityMetricLfc/globals"
-import { formatBestMetrics } from "../../../../../../src/scripts/popularityMetricLfc/solver"
-import { formatPercentage } from "../../../../../../src/scripts/popularityMetricLfc/solver/io"
-import { Parameter, Submetric } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {Name, NEWLINE} from "../../../../../../src/general"
+import {Io} from "../../../../../../src/general/io"
+import {Combination} from "../../../../../../src/general/math"
+import {Metric, SumOfSquares} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
+import {bestMetrics} from "../../../../../../src/scripts/popularityMetricLfc/globals"
+import {formatBestMetrics} from "../../../../../../src/scripts/popularityMetricLfc/solver"
+import {formatPercentage} from "../../../../../../src/scripts/popularityMetricLfc/solver/io"
+import {Parameter, Submetric} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
 describe("formatBestMetrics", (): void => {
     it("sorts the best metrics by sum of squares, and formats them like how they look as enums", (): void => {
@@ -16,7 +16,7 @@ describe("formatBestMetrics", (): void => {
                 name: "" as Name<Metric>,
                 submetrics: [
                     {
-                        [ Parameter.SUM ]: true,
+                        [Parameter.SUM]: true,
                     },
                 ] as Combination<Submetric>,
             },
@@ -28,7 +28,7 @@ describe("formatBestMetrics", (): void => {
                 name: "" as Name<Metric>,
                 submetrics: [
                     {
-                        [ Parameter.COUNT ]: true,
+                        [Parameter.COUNT]: true,
                     },
                 ] as Combination<Submetric>,
             },
@@ -40,7 +40,7 @@ describe("formatBestMetrics", (): void => {
                 name: "" as Name<Metric>,
                 submetrics: [
                     {
-                        [ Parameter.MAX ]: true,
+                        [Parameter.MAX]: true,
                     },
                 ] as Combination<Submetric>,
             },

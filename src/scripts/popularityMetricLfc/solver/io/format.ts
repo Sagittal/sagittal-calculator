@@ -1,11 +1,11 @@
-import { Io, stringify } from "../../../../general"
-import { scopesToSearch, solverStatus } from "../../globals"
-import { computeSortedBestMetrics } from "./sort"
+import {Io, stringify} from "../../../../general"
+import {scopesToSearch, solverStatus} from "../../globals"
+import {computeSortedBestMetrics} from "./sort"
 
 const formatBestMetrics = (): Io => {
     const sortedBestMetrics = computeSortedBestMetrics()
 
-    return stringify(sortedBestMetrics, { multiline: true })
+    return stringify(sortedBestMetrics, {multiline: true})
         .replace(/\"sumOfSquares\"/g, "sumOfSquares")
         .replace(/\"submetrics\"/g, "submetrics")
         .replace(/\"name\"/g, "name")

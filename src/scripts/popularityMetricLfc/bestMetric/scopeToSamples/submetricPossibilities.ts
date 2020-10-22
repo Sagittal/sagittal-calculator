@@ -1,8 +1,8 @@
-import { Combination, computeExtensionBase, ExtensionBaseType, isEmpty, isObject } from "../../../../general"
-import { Parameter, ParameterValue } from "../../sumOfSquares"
-import { DynamicParameterScope, SubmetricScope } from "../types"
-import { computeParameterValues } from "./parameterValues"
-import { SubmetricPossibility } from "./types"
+import {Combination, computeExtensionBase, ExtensionBaseType, isEmpty, isObject} from "../../../../general"
+import {Parameter, ParameterValue} from "../../sumOfSquares"
+import {DynamicParameterScope, SubmetricScope} from "../types"
+import {computeParameterValues} from "./parameterValues"
+import {SubmetricPossibility} from "./types"
 
 const computeSubmetricPossibilities = (
     submetricScope: SubmetricScope = {} as SubmetricScope,
@@ -28,7 +28,7 @@ const computeSubmetricPossibilities = (
 
         submetricPossibilities.forEach((submetricPossibility: SubmetricPossibility): void => {
             values.forEach((value: ParameterValue): void => {
-                extendedSubmetricPossibilities.push({ ...submetricPossibility, [ parameter ]: value })
+                extendedSubmetricPossibilities.push({...submetricPossibility, [parameter]: value})
             })
         })
 

@@ -1,4 +1,4 @@
-import { Filename } from "../types"
+import {Filename} from "../types"
 
 enum LogTarget {
     ALL = "all",

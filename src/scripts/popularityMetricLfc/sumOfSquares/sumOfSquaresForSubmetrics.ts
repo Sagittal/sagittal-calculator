@@ -9,13 +9,13 @@ import {
     saveLog,
     stringify,
 } from "../../../general"
-import { SumOfSquares } from "../bestMetric"
-import { popularityMetricLfcScriptGroupSettings } from "../globals"
-import { checkSubmetricsForInvalidParameterValueCombinations } from "./checkParameterValues"
-import { addRankToUnpopularities } from "./rank"
-import { computeSumOfSquares } from "./sumOfSquares"
-import { Submetric, Unpopularity } from "./types"
-import { computeUnpopularities } from "./unpopularities"
+import {SumOfSquares} from "../bestMetric"
+import {popularityMetricLfcScriptGroupSettings} from "../globals"
+import {checkSubmetricsForInvalidParameterValueCombinations} from "./checkParameterValues"
+import {addRankToUnpopularities} from "./rank"
+import {computeSumOfSquares} from "./sumOfSquares"
+import {Submetric, Unpopularity} from "./types"
+import {computeUnpopularities} from "./unpopularities"
 
 const computeSumOfSquaresForSubmetrics = (submetrics: Combination<Submetric>): SumOfSquares => {
     checkSubmetricsForInvalidParameterValueCombinations(submetrics)
@@ -29,7 +29,7 @@ const computeSumOfSquaresForSubmetrics = (submetrics: Combination<Submetric>): S
     }
     const rankedUnpopularities = addRankToUnpopularities(unpopularities)
 
-    if (ioSettings.logTargets[ LogTarget.ALL ] || ioSettings.logTargets[ LogTarget.DETAILS ]) {
+    if (ioSettings.logTargets[LogTarget.ALL] || ioSettings.logTargets[LogTarget.DETAILS]) {
         rankedUnpopularities.forEach((rankedUnpopularity: Ranked<Unpopularity>): void => {
             saveLog(stringify(rankedUnpopularity), LogTarget.DETAILS)
         })

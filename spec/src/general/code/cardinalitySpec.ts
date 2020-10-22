@@ -1,5 +1,5 @@
-import { Count } from "../../../../src/general"
-import { computeCardinality } from "../../../../src/general/code"
+import {Count} from "../../../../src/general"
+import {computeCardinality} from "../../../../src/general/code"
 
 describe("computeCardinality", (): void => {
     it("returns the cardinality of an array", (): void => {

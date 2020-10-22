@@ -1,7 +1,7 @@
-import { Io, Px, UNISON } from "../../../../general"
-import { HALF_APOTOME, JiNotationLevel, JI_NOTATION_LEVELS } from "../../../../sagittal"
-import { JI_NOTATION_LEVEL_BOTTOMS } from "./levelHeights"
-import { computeX } from "./x"
+import {Io, Px, UNISON} from "../../../../general"
+import {HALF_APOTOME, JiNotationLevel, JI_NOTATION_LEVELS} from "../../../../sagittal"
+import {JI_NOTATION_LEVEL_BOTTOMS} from "./levelHeights"
+import {computeX} from "./x"
 
 const visualizeJiNotationLevels = (): Io[] => {
     const jiNotationLevelElements: Io[] = []
@@ -9,7 +9,7 @@ const visualizeJiNotationLevels = (): Io[] => {
     JI_NOTATION_LEVELS.forEach((jiNotationLevel: JiNotationLevel): void => {
         const leftEdgeX: Px = computeX(UNISON)
         const rightEdgeX: Px = computeX(HALF_APOTOME)
-        const jiNotationLevelY: Px = JI_NOTATION_LEVEL_BOTTOMS[ jiNotationLevel ]
+        const jiNotationLevelY: Px = JI_NOTATION_LEVEL_BOTTOMS[jiNotationLevel]
 
         jiNotationLevelElements.push(`  <line stroke="black" x1="${leftEdgeX}" x2="${rightEdgeX}" y1="${jiNotationLevelY}" y2="${jiNotationLevelY}"/>\n` as Io)
     })

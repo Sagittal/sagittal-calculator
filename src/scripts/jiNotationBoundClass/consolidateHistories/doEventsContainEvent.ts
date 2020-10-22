@@ -1,4 +1,4 @@
-import { BoundEvent } from "../histories"
+import {BoundEvent} from "../histories"
 
 const isBoundEventContained = <T extends BoundEvent, U extends BoundEvent>(
     boundEvents: T[],

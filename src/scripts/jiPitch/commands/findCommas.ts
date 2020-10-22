@@ -1,8 +1,8 @@
-import { Id, Io, LogTarget, Maybe, saveLog } from "../../../general"
-import { CommaAnalysis, CommaClass, computeMaybeCommaClassId } from "../../../sagittal"
-import { computeCommaAnalyses, parseFindCommasSettings } from "../findCommas"
-import { computeFindCommasOutput, readFindCommasOptions } from "../io"
-import { applySharedPitchCommandSetup } from "./shared"
+import {Id, Io, LogTarget, Maybe, saveLog} from "../../../general"
+import {CommaAnalysis, CommaClass, computeMaybeCommaClassId} from "../../../sagittal"
+import {computeCommaAnalyses, parseFindCommasSettings} from "../findCommas"
+import {computeFindCommasOutput, readFindCommasOptions} from "../io"
+import {applySharedPitchCommandSetup} from "./shared"
 
 readFindCommasOptions()
 

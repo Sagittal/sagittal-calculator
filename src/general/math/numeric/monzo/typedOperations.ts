@@ -36,7 +36,7 @@ const subtractMonzos = <T extends NumericProperties>(minuendMonzo: Monzo<T>, sub
 
 const multiplyMonzo = <T extends NumericProperties>(
     monzo: Monzo<T>,
-    multiplier: Decimal<{integer: true}> & Multiplier
+    multiplier: Decimal<{integer: true}> & Multiplier,
 ): Monzo<T> =>
     monzo.map((primeExponent: Exponent<Prime>): Exponent<Prime> => {
         return multiply(primeExponent, multiplier as Decimal<{integer: true}> & Multiplier<Exponent<Prime>>)

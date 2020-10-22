@@ -1,5 +1,5 @@
-import { DEFAULT_PRECISION, Precision } from "../../../../src/general/code"
-import { Base, Exponent, log, Power, round } from "../../../../src/general/math"
+import {DEFAULT_PRECISION, Precision} from "../../../../src/general/code"
+import {Base, Exponent, log, Power, round} from "../../../../src/general/math"
 
 describe("log", (): void => {
     it("returns the logarithm with the specified base of the power", (): void => {

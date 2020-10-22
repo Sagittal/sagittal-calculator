@@ -1,6 +1,6 @@
-import { Io } from "../../../../../src/general/io"
-import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
-import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
+import {Io} from "../../../../../src/general/io"
+import {onlyRunInCi} from "../../../../helpers/onlyRunInCi"
+import {runCommandAndGetConsoleOutput} from "../../../../helpers/src/scripts/runCommand"
 
 describe("find-commas", (): void => {
     it("finds commas, given the finding options", (): void => {

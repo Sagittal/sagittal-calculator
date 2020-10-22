@@ -1,6 +1,6 @@
-import { Multiplier, sum, Sum } from "../../../general"
-import { Ina } from "../../../sagittal"
-import { BoundEventAnalysis } from "./events"
+import {Multiplier, sum, Sum} from "../../../general"
+import {Ina} from "../../../sagittal"
+import {BoundEventAnalysis} from "./events"
 
 const computeBoundHistoryTotalInaDistance = (
     boundEventAnalyses: BoundEventAnalysis[],

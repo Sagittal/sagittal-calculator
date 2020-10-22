@@ -1,13 +1,13 @@
-import { computeTrimmedArray, increment, isUndefined, Maybe, shallowClone } from "../../../code"
-import { LogTarget, saveLog, stringify } from "../../../io"
-import { Extrema } from "../../../types"
-import { Decimal, Monzo, NumericProperties } from "../../numeric"
-import { Exponent } from "../../types"
-import { Prime } from "../types"
+import {computeTrimmedArray, increment, isUndefined, Maybe, shallowClone} from "../../../code"
+import {LogTarget, saveLog, stringify} from "../../../io"
+import {Extrema} from "../../../types"
+import {Decimal, Monzo, NumericProperties} from "../../numeric"
+import {Exponent} from "../../types"
+import {Prime} from "../types"
 
 const doForEachRationalMonzo = <T extends NumericProperties, U>(
-    primeExponentExtremas: Array<Extrema<Decimal<{ integer: true }> & Exponent<Prime>>>,
-    workFunction: (rationalMonzo: Monzo<T & { rational: true }>, ...args: any) => Maybe<U>,
+    primeExponentExtremas: Array<Extrema<Decimal<{integer: true}> & Exponent<Prime>>>,
+    workFunction: (rationalMonzo: Monzo<T & {rational: true}>, ...args: any) => Maybe<U>,
     ...args: any
 ): U[] => {
     saveLog(`prime exponent extremas: ${stringify(primeExponentExtremas)}`, LogTarget.PROGRESS)
@@ -21,22 +21,22 @@ const doForEachRationalMonzo = <T extends NumericProperties, U>(
 
     const initialMonzo = primeExponentExtremas.map(
         (
-            [minPrimeExponent, _]: Extrema<Decimal<{ integer: true }> & Exponent<Prime>>,
-        ): Decimal<{ integer: true }> & Exponent<Prime> => minPrimeExponent,
-    ) as Monzo<{ rational: true }>
+            [minPrimeExponent, _]: Extrema<Decimal<{integer: true}> & Exponent<Prime>>,
+        ): Decimal<{integer: true}> & Exponent<Prime> => minPrimeExponent,
+    ) as Monzo<{rational: true}>
     const finalMonzo = primeExponentExtremas.map(
         (
-            [_, maxPrimeExponent]: Extrema<Decimal<{ integer: true }> & Exponent<Prime>>,
-        ): Decimal<{ integer: true }> & Exponent<Prime> => maxPrimeExponent,
-    ) as Monzo<{ rational: true }>
+            [_, maxPrimeExponent]: Extrema<Decimal<{integer: true}> & Exponent<Prime>>,
+        ): Decimal<{integer: true}> & Exponent<Prime> => maxPrimeExponent,
+    ) as Monzo<{rational: true}>
 
-    let currentMonzo = shallowClone(initialMonzo) as Monzo<{ rational: true }>
+    let currentMonzo = shallowClone(initialMonzo) as Monzo<{rational: true}>
 
     const results = [] as U[]
     while (true) {
         // Do the work (trimming has the extra win of shallow cloning, disconnecting from this ticking process)
         const monzoForWork = computeTrimmedArray(currentMonzo)
-        const result = workFunction(monzoForWork as Monzo<T & { rational: true }>, ...args)
+        const result = workFunction(monzoForWork as Monzo<T & {rational: true}>, ...args)
         if (!isUndefined(result)) {
             results.push(result)
         }
@@ -50,7 +50,7 @@ const doForEachRationalMonzo = <T extends NumericProperties, U>(
         // Figure out which index is the first one which hasn't reached its max
         let indexToTick = 0
         // We have reached the max for this c for now (and haven't exceeded the end of the monzo)
-        while (indexToTick < currentMonzo.length && currentMonzo[ indexToTick ] === finalMonzo[ indexToTick ]) {
+        while (indexToTick < currentMonzo.length && currentMonzo[indexToTick] === finalMonzo[indexToTick]) {
             indexToTick = increment(indexToTick)
         }
 
@@ -62,13 +62,13 @@ const doForEachRationalMonzo = <T extends NumericProperties, U>(
         }
 
         // Otherwise increment the prime exponent at this not-yet-maxed index toward its max
-        currentMonzo[ indexToTick ] = increment(currentMonzo[ indexToTick ])
+        currentMonzo[indexToTick] = increment(currentMonzo[indexToTick])
 
         // And reset the prime exponent at every other index before this one to its min,
         // So we can repeat everything we've done so far but for this index being one higher than it was previously
         let i = 0
         while (i < indexToTick) {
-            currentMonzo[ i ] = initialMonzo[ i ]
+            currentMonzo[i] = initialMonzo[i]
             i = increment(i)
         }
     }

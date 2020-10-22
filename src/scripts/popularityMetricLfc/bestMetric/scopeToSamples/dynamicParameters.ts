@@ -1,8 +1,8 @@
-import { Index } from "../../../../general"
-import { Submetric } from "../../sumOfSquares"
-import { Scope, SubmetricScope } from "../types"
-import { computeSubmetricDynamicParameters } from "./submetricDynamicParameters"
-import { DynamicParameter } from "./types"
+import {Index} from "../../../../general"
+import {Submetric} from "../../sumOfSquares"
+import {Scope, SubmetricScope} from "../types"
+import {computeSubmetricDynamicParameters} from "./submetricDynamicParameters"
+import {DynamicParameter} from "./types"
 
 const computeDynamicParameters = (scope: Scope): DynamicParameter[] => {
     let dynamicParameters: DynamicParameter[] = []

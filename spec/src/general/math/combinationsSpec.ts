@@ -1,5 +1,5 @@
-import { Combinations, Count } from "../../../../src/general"
-import { computeCombinations } from "../../../../src/general/math"
+import {Combinations, Count} from "../../../../src/general"
+import {computeCombinations} from "../../../../src/general/math"
 
 describe("computeCombinations", (): void => {
     const set = ["a", "b", "c", "d"]
@@ -31,7 +31,7 @@ describe("computeCombinations", (): void => {
     it("works when with repeated elements is true", (): void => {
         const count = 2 as Count<string>
 
-        const actual = computeCombinations(set, count, { withRepeatedElements: true })
+        const actual = computeCombinations(set, count, {withRepeatedElements: true})
 
         const expected = [
             ["a", "a"],
@@ -53,6 +53,6 @@ describe("computeCombinations", (): void => {
         const set = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
         const count = 7 as Count<number>
 
-        computeCombinations(set, count, { withRepeatedElements: true })
+        computeCombinations(set, count, {withRepeatedElements: true})
     })
 })

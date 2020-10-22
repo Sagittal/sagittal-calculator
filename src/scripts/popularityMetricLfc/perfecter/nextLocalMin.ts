@@ -1,16 +1,11 @@
-import { Decimal, doOnNextEventLoop, LogTarget, Ms, saveLog } from "../../../general"
-import { Scope } from "../bestMetric"
-import { computeNextScope } from "./nextScope"
+import {Decimal, doOnNextEventLoop, LogTarget, Ms, saveLog} from "../../../general"
+import {Scope} from "../bestMetric"
+import {computeNextScope} from "./nextScope"
 import {
     recursiveSearchScopeAndMaybeUpdateBestMetric,
     recursiveSearchScopeAndMaybeUpdateBestMetricSync,
 } from "./perfectMetric"
-import {
-    LocalMin,
-    MetricTag,
-    RecursiveSearchScopeAndMaybeUpdateBestMetricOptions,
-    SearchLocalMinOptions,
-} from "./types"
+import {LocalMin, MetricTag, RecursiveSearchScopeAndMaybeUpdateBestMetricOptions, SearchLocalMinOptions} from "./types"
 
 const computeRecursiveSearchScopeAndMaybeUpdateBestMetricArguments = (
     nextLocalMin: LocalMin,
@@ -30,7 +25,7 @@ const computeRecursiveSearchScopeAndMaybeUpdateBestMetricArguments = (
         onlyBetterThanSopfgtt,
     } = options
 
-    const nextDepth = depth + 1 as Decimal<{ integer: true }>
+    const nextDepth = depth + 1 as Decimal<{integer: true}>
     const nextScope: Scope = computeNextScope(nextLocalMin.samplePoint, dynamicParameters, scope)
     const nextMetricTag = metricTag + `.${index + 1}/${(nextLocalMinima.length)}` as MetricTag
     saveLog(`  ${indentation}${nextMetricTag} - depth ${nextDepth}`, LogTarget.PROGRESS)
@@ -41,11 +36,11 @@ const computeRecursiveSearchScopeAndMaybeUpdateBestMetricArguments = (
         onlyBetterThanSopfgtt,
     }
 
-    return { nextScope, recursiveSearchScopeAndMaybeUpdateBestMetricOptions }
+    return {nextScope, recursiveSearchScopeAndMaybeUpdateBestMetricOptions}
 }
 
 const searchNextLocalMin = async (nextLocalMin: LocalMin, options: SearchLocalMinOptions): Promise<void> => {
-    const { nextScope, recursiveSearchScopeAndMaybeUpdateBestMetricOptions } =
+    const {nextScope, recursiveSearchScopeAndMaybeUpdateBestMetricOptions} =
         computeRecursiveSearchScopeAndMaybeUpdateBestMetricArguments(nextLocalMin, options)
 
     return doOnNextEventLoop(async (): Promise<void> => {
@@ -61,7 +56,7 @@ const searchNextLocalMin = async (nextLocalMin: LocalMin, options: SearchLocalMi
 }
 
 const searchNextLocalMinSync = (nextLocalMin: LocalMin, options: SearchLocalMinOptions): void => {
-    const { nextScope, recursiveSearchScopeAndMaybeUpdateBestMetricOptions } =
+    const {nextScope, recursiveSearchScopeAndMaybeUpdateBestMetricOptions} =
         computeRecursiveSearchScopeAndMaybeUpdateBestMetricArguments(nextLocalMin, options)
 
     try {

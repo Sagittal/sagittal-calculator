@@ -1,14 +1,14 @@
-import { Ed, Name, Window } from "../../../../../src/general"
-import { Combination } from "../../../../../src/general/math"
-import { Metric, Scope, SubmetricScope, SumOfSquares } from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
-import { recursiveSearchScopeAndMaybeUpdateBestMetric } from "../../../../../src/scripts/popularityMetricLfc/perfecter"
-import { perfectMetric } from "../../../../../src/scripts/popularityMetricLfc/perfecter/metric"
+import {Ed, Name, Window} from "../../../../../src/general"
+import {Combination} from "../../../../../src/general/math"
+import {Metric, Scope, SubmetricScope, SumOfSquares} from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
+import {recursiveSearchScopeAndMaybeUpdateBestMetric} from "../../../../../src/scripts/popularityMetricLfc/perfecter"
+import {perfectMetric} from "../../../../../src/scripts/popularityMetricLfc/perfecter/metric"
 import * as recursiveBestMetric from "../../../../../src/scripts/popularityMetricLfc/perfecter/perfectMetric"
-import { MetricTag } from "../../../../../src/scripts/popularityMetricLfc/perfecter/types"
-import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {MetricTag} from "../../../../../src/scripts/popularityMetricLfc/perfecter/types"
+import {Parameter, ParameterValue, Submetric} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
 describe("perfectMetric", (): void => {
-    const options = { metricTag: "1/16" as MetricTag }
+    const options = {metricTag: "1/16" as MetricTag}
 
     it("takes a best metric and then converts it back into a scope in order to perfect it recursively                     ", async (): Promise<void> => {
         const metric = {
@@ -16,8 +16,8 @@ describe("perfectMetric", (): void => {
             name: "" as Name<Metric>,
             submetrics: [
                 {
-                    [ Parameter.SUM ]: true,
-                    [ Parameter.K_AS_COEFFICIENT ]: 0.8,
+                    [Parameter.SUM]: true,
+                    [Parameter.K_AS_COEFFICIENT]: 0.8,
                 },
             ] as Combination<Submetric>,
         }
@@ -29,8 +29,8 @@ describe("perfectMetric", (): void => {
         const expectedScope: Scope = [
             {},
             {
-                [ Parameter.SUM ]: true,
-                [ Parameter.K_AS_COEFFICIENT ]: {
+                [Parameter.SUM]: true,
+                [Parameter.K_AS_COEFFICIENT]: {
                     center: 0.8 as ParameterValue,
                     window: 0.1 as Window<ParameterValue>,
                     ed: 3 as Ed<ParameterValue>,
@@ -50,12 +50,12 @@ describe("perfectMetric", (): void => {
             name: "" as Name<Metric>,
             submetrics: [
                 {
-                    [ Parameter.COUNT ]: true,
-                    [ Parameter.K_AS_COEFFICIENT ]: 0.8,
+                    [Parameter.COUNT]: true,
+                    [Parameter.K_AS_COEFFICIENT]: 0.8,
                 },
                 {
-                    [ Parameter.SUM ]: true,
-                    [ Parameter.K_AS_COEFFICIENT ]: 0.8,
+                    [Parameter.SUM]: true,
+                    [Parameter.K_AS_COEFFICIENT]: 0.8,
                 },
             ] as Combination<Submetric>,
             spreadDynamicParameters: [Parameter.K_AS_COEFFICIENT],
@@ -67,17 +67,17 @@ describe("perfectMetric", (): void => {
 
         const expectedScope: Scope = [
             {
-                [ Parameter.K_AS_COEFFICIENT ]: {
+                [Parameter.K_AS_COEFFICIENT]: {
                     center: 0.8 as ParameterValue,
                     window: 0.1 as Window<ParameterValue>,
                     ed: 3 as Ed<ParameterValue>,
                 },
             },
             {
-                [ Parameter.COUNT ]: true,
+                [Parameter.COUNT]: true,
             },
             {
-                [ Parameter.SUM ]: true,
+                [Parameter.SUM]: true,
             },
         ] as Combination<SubmetricScope>
 

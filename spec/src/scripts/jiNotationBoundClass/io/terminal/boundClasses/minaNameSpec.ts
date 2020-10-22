@@ -1,6 +1,6 @@
-import { Name } from "../../../../../../../src/general"
-import { Mina } from "../../../../../../../src/sagittal/notations/ji"
-import { formatMinaName } from "../../../../../../../src/scripts/jiNotationBoundClass/io/terminal/boundClasses"
+import {Name} from "../../../../../../../src/general"
+import {Mina} from "../../../../../../../src/sagittal/notations/ji"
+import {formatMinaName} from "../../../../../../../src/scripts/jiNotationBoundClass/io/terminal/boundClasses"
 
 describe("formatMinaName", (): void => {
     it("returns a whole number with no decimal positions for whole minas", (): void => {

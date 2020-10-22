@@ -1,8 +1,8 @@
-import { DEFAULT_PRECISION, Io, Px, round, subtract } from "../../../../general"
-import { JiNotationBoundClass, JiNotationLevel, JI_NOTATION_LEVELS_BOUND_CLASSES } from "../../../../sagittal"
-import { JI_NOTATION_LEVEL_BOTTOMS, JI_NOTATION_LEVEL_TOPS } from "./levelHeights"
-import { DASH_SIZE, SYMBOL_OFFSET } from "./sizes"
-import { computeX } from "./x"
+import {DEFAULT_PRECISION, Io, Px, round, subtract} from "../../../../general"
+import {JiNotationBoundClass, JiNotationLevel, JI_NOTATION_LEVELS_BOUND_CLASSES} from "../../../../sagittal"
+import {JI_NOTATION_LEVEL_BOTTOMS, JI_NOTATION_LEVEL_TOPS} from "./levelHeights"
+import {DASH_SIZE, SYMBOL_OFFSET} from "./sizes"
+import {computeX} from "./x"
 
 const visualizeJiNotationLevelBoundClasses = (): Io[] => {
     const jiNotationLevelBoundClassElements: Io[] = [] as Io[]
@@ -15,9 +15,9 @@ const visualizeJiNotationLevelBoundClasses = (): Io[] => {
                 return
             }
 
-            jiNotationLevelBoundClasses.forEach(({ pitch }: JiNotationBoundClass, index: number): void => {
-                const topY: Px = round(JI_NOTATION_LEVEL_TOPS[ jiNotationLevel ], DEFAULT_PRECISION)
-                const bottomY: Px = round(JI_NOTATION_LEVEL_BOTTOMS[ jiNotationLevel ], DEFAULT_PRECISION)
+            jiNotationLevelBoundClasses.forEach(({pitch}: JiNotationBoundClass, index: number): void => {
+                const topY: Px = round(JI_NOTATION_LEVEL_TOPS[jiNotationLevel], DEFAULT_PRECISION)
+                const bottomY: Px = round(JI_NOTATION_LEVEL_BOTTOMS[jiNotationLevel], DEFAULT_PRECISION)
                 const positionX: Px = computeX(pitch)
 
                 const textY: Px = round(subtract(topY, SYMBOL_OFFSET), DEFAULT_PRECISION)

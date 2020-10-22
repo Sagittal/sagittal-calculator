@@ -1,1 +1,1 @@
-export { computeJiNotationBoundClassesImage } from "./boundClasses"
+export {computeJiNotationBoundClassesImage} from "./boundClasses"

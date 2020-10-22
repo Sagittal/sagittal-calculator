@@ -1,7 +1,7 @@
-import { Ed, Window } from "../../../general"
-import { DynamicParameterScope } from "../bestMetric"
-import { popularityMetricLfcScriptGroupSettings } from "../globals"
-import { ParameterValue } from "../sumOfSquares"
+import {Ed, Window} from "../../../general"
+import {DynamicParameterScope} from "../bestMetric"
+import {popularityMetricLfcScriptGroupSettings} from "../globals"
+import {ParameterValue} from "../sumOfSquares"
 
 const computeDynamicParameterScopeForPerfecting = (parameterValue: ParameterValue): DynamicParameterScope => ({
     center: parameterValue,

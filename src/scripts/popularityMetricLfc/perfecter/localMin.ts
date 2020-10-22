@@ -1,6 +1,6 @@
-import { dig, isUndefined, Maybe, Obj } from "../../../general"
-import { SamplePoint, SumOfSquares, SumsOfSquares } from "../bestMetric"
-import { computeAdjacentSamplePoints } from "./adjacentSamplePoints"
+import {dig, isUndefined, Maybe, Obj} from "../../../general"
+import {SamplePoint, SumOfSquares, SumsOfSquares} from "../bestMetric"
+import {computeAdjacentSamplePoints} from "./adjacentSamplePoints"
 
 const getSumOfSquaresAtSamplePointIfLocalMin = (
     sumsOfSquares: SumsOfSquares,

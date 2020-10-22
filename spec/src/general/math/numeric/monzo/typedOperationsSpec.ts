@@ -1,6 +1,6 @@
-import {Multiplier, multiplyScamon} from "../../../../../../src/general"
-import {Decimal, Monzo, Scamon} from "../../../../../../src/general/math"
-import { addMonzos, subtractMonzos, sumMonzos } from "../../../../../../src/general/math/numeric/monzo"
+import {Multiplier} from "../../../../../../src/general"
+import {Decimal, Monzo} from "../../../../../../src/general/math"
+import {addMonzos, subtractMonzos, sumMonzos} from "../../../../../../src/general/math/numeric/monzo"
 import {multiplyMonzo} from "../../../../../../src/general/math/numeric/monzo/typedOperations"
 
 describe("sumMonzos", (): void => {

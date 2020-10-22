@@ -7,6 +7,18 @@ type BoundClass<T extends NumericProperties = {}> = {
     pitch: Scamon<T & { rational: false }>,
 }
 
+// Todo: FLACOMBO, SECTION, NOTATION GENERATION
+//  I really think you should be able to do this with only flaccoIds and boundClassIds
+//  And while it does make sense for commaClasses to point to flaccos (their representative flacco)
+//  It also makes sense that when you get a flacco, it comes with a comma, regardless whether its EDO tuning
+//  Because the symbol in-and-of-itself doesn't have a way of communicating what type of notation its in
+//  You just always get that implication of that JI underpinning
+//  (and it may be up to the EDO notation to temper whatever comma it gets back for that flacco)
+//  Okay, but if a flacco came with a comma class, it'd also have to say whether it was up or down, right?
+//  At which point a Flacco on its own has a lot of info
+//  And if Symbol extends it, then it would have that info as well. Maybe that's fine. It is after all just a reference
+//  To the comma, right? That's the minimal interface, while also trying to capture the inextricable link between
+//  The symbol and the comma?
 // State of the art plans described here: http://forum.sagittal.org/viewtopic.php?p=2492#p2492
 interface Notation {
     boundClassIds: Array<Id<BoundClass>>,
@@ -77,7 +89,7 @@ enum AccidentalSection {
 //  What if you just made all of these booleans? so it'd be... negative, second, even?
 
 // Todo: FLACOMBO, SECTION, NOTATION GENERATION
-//  How about a fourth property to section: comma super /sub? P/B
+//  How about a fourth property to section: comma super/sub? P/B
 //  Then maybe you don’t need apotome count or comma direction
 //  It’s just the three IDs input (bound, comma, flacco) and then this section thing
 

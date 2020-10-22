@@ -1,13 +1,13 @@
-import { isUndefined, Precision } from "../code"
-import { Addend, Count, Divisor, Multiplier, Product, Subtrahend, Sum } from "../types"
+import {isUndefined, Precision} from "../code"
+import {Addend, Count, Divisor, Multiplier, Product, Subtrahend, Sum} from "../types"
 import {
     ADDITIVE_IDENTITY,
     MULTIPLICATIVE_IDENTITY,
     VALUE_ABOVE_WHICH_ROUNDING_IMPLEMENTATION_BREAKS,
     VALUE_BELOW_WHICH_ROUNDING_IMPLEMENTATION_BREAKS,
 } from "./constants"
-import { Decimal } from "./numeric"
-import { Abs, Base, Exponent, Max, Min, Power } from "./types"
+import {Decimal} from "./numeric"
+import {Abs, Base, Exponent, Max, Min, Power} from "./types"
 
 const count = <T>(array: T[]): Count<T> => {
     return array.length as Count<T>
@@ -44,7 +44,7 @@ const negative = <T extends number>(number: T): T =>
 
 const round = <T extends number>(number: T, precision?: Precision): T => {
     if (isUndefined(precision)) {
-        return Math.round(number) as T & Decimal<{ integer: true }>
+        return Math.round(number) as T & Decimal<{integer: true}>
     }
 
     if (abs(number) > VALUE_ABOVE_WHICH_ROUNDING_IMPLEMENTATION_BREAKS) {

@@ -1,9 +1,9 @@
-import { isUndefined } from "../../../general"
-import { SUM_OF_SQUARES_TO_BEAT } from "./constants"
-import { Metric, ShouldUpdateBestMetricOptions, SumOfSquares } from "./types"
+import {isUndefined} from "../../../general"
+import {SUM_OF_SQUARES_TO_BEAT} from "./constants"
+import {Metric, ShouldUpdateBestMetricOptions, SumOfSquares} from "./types"
 
 const shouldUpdateBestMetric = (
-    { bestMetric, sumOfSquares, onlyBetterThanSopfgtt }: ShouldUpdateBestMetricOptions,
+    {bestMetric, sumOfSquares, onlyBetterThanSopfgtt}: ShouldUpdateBestMetricOptions,
 ): boolean => {
     return !isUndefined(sumOfSquares) &&
         (

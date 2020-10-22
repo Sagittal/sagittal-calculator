@@ -1,7 +1,7 @@
-import { Max, Prime } from "../../../../../../src/general/math"
-import { Scamon } from "../../../../../../src/general/math/numeric/scamon"
-import { Smoothness } from "../../../../../../src/general/math/rational"
-import { FIVE_SMOOTHNESS, THREE_SMOOTHNESS } from "../../../../../../src/general/math/rational/constants"
+import {Max, Prime} from "../../../../../../src/general/math"
+import {Scamon} from "../../../../../../src/general/math/numeric/scamon"
+import {Smoothness} from "../../../../../../src/general/math/rational"
+import {FIVE_SMOOTHNESS, THREE_SMOOTHNESS} from "../../../../../../src/general/math/rational/constants"
 import {
     computeRationalScamonSmoothness,
     isRationalScamonSmooth,
@@ -9,7 +9,7 @@ import {
 
 describe("isRationalScamonSmooth", (): void => {
     it("returns true if the scamon is n-smooth (within the n prime limit)", (): void => {
-        const rationalScamon = { monzo: [0, 0, 1] } as Scamon<{ rational: true }>
+        const rationalScamon = {monzo: [0, 0, 1]} as Scamon<{rational: true}>
 
         const actual = isRationalScamonSmooth(rationalScamon, FIVE_SMOOTHNESS)
 
@@ -17,7 +17,7 @@ describe("isRationalScamonSmooth", (): void => {
     })
 
     it("returns false if the scamon is not within the given prime limit", (): void => {
-        const rationalScamon = { monzo: [0, 0, 1] } as Scamon<{ rational: true }>
+        const rationalScamon = {monzo: [0, 0, 1]} as Scamon<{rational: true}>
 
         const actual = isRationalScamonSmooth(rationalScamon, THREE_SMOOTHNESS)
 
@@ -27,7 +27,7 @@ describe("isRationalScamonSmooth", (): void => {
 
 describe("computeRationalScamonSmoothness", (): void => {
     it("returns the greatest prime factor (AKA prime limit) of the given rational scamon", (): void => {
-        const rationalScamon = { monzo: [2, 3, 0, 0, 4] } as Scamon<{ rational: true }>
+        const rationalScamon = {monzo: [2, 3, 0, 0, 4]} as Scamon<{rational: true}>
 
         const actual = computeRationalScamonSmoothness(rationalScamon)
 
@@ -36,7 +36,7 @@ describe("computeRationalScamonSmoothness", (): void => {
     })
 
     it("works when its monzo has trailing zeroes", (): void => {
-        const rationalScamon = { monzo: [2, 3, 4, 0, 0] } as Scamon<{ rational: true }>
+        const rationalScamon = {monzo: [2, 3, 4, 0, 0]} as Scamon<{rational: true}>
 
         const actual = computeRationalScamonSmoothness(rationalScamon)
 
@@ -45,7 +45,7 @@ describe("computeRationalScamonSmoothness", (): void => {
     })
 
     it("works for those with an empty monzo", (): void => {
-        const rationalScamon = { monzo: [] as unknown[] } as Scamon<{ rational: true }>
+        const rationalScamon = {monzo: [] as unknown[]} as Scamon<{rational: true}>
 
         const actual = computeRationalScamonSmoothness(rationalScamon)
 

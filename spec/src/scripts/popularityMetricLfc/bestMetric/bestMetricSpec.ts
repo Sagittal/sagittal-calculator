@@ -1,5 +1,5 @@
-import { Combination, Count, Ed, Index, Mean, Name, Step, Window } from "../../../../../src/general"
-import { MeanType } from "../../../../../src/general/math"
+import {Combination, Count, Ed, Index, Mean, Name, Step, Window} from "../../../../../src/general"
+import {MeanType} from "../../../../../src/general/math"
 import {
     Metric,
     nonRecursiveSearchScopeAndMaybeUpdateBestMetric,
@@ -11,22 +11,22 @@ import {
     SumOfSquares,
     SumsOfSquares,
 } from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
-import { bestMetrics, metricNames, solverStatus } from "../../../../../src/scripts/popularityMetricLfc/globals"
-import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {bestMetrics, metricNames, solverStatus} from "../../../../../src/scripts/popularityMetricLfc/globals"
+import {Parameter, ParameterValue, Submetric} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
 describe("nonRecursiveSearchScopeAndMaybeUpdateBestMetric", (): void => {
     const scope = [
         {
-            [ Parameter.K_AS_COEFFICIENT ]: {
+            [Parameter.K_AS_COEFFICIENT]: {
                 center: 1 as ParameterValue,
                 window: 2 as Window<ParameterValue>,
                 ed: 2 as Ed<ParameterValue>,
             },
         },
         {
-            [ Parameter.SUM ]: true,
-            [ Parameter.A_AS_LOGARITHM_BASE ]: 2 as ParameterValue,
-            [ Parameter.J_AS_POWER_EXPONENT ]: {
+            [Parameter.SUM]: true,
+            [Parameter.A_AS_LOGARITHM_BASE]: 2 as ParameterValue,
+            [Parameter.J_AS_POWER_EXPONENT]: {
                 center: 3 as ParameterValue,
                 window: 1 as Window<ParameterValue>,
                 ed: 5 as Ed<ParameterValue>,
@@ -36,16 +36,16 @@ describe("nonRecursiveSearchScopeAndMaybeUpdateBestMetric", (): void => {
     const metricName = "{aAsLogarithmBase,jAsPowerExponent,sum},{kAsCoefficient}" as Name<Metric>
 
     it("updates the best metric (only better than SoPF>3 = false so that it will)", async (): Promise<void> => {
-        await nonRecursiveSearchScopeAndMaybeUpdateBestMetric(scope, { onlyBetterThanSopfgtt: false })
+        await nonRecursiveSearchScopeAndMaybeUpdateBestMetric(scope, {onlyBetterThanSopfgtt: false})
 
         expect(bestMetrics.get(metricName))
             .toEqual({
                 name: metricName,
                 submetrics: [{
-                    [ Parameter.SUM ]: true,
-                    [ Parameter.A_AS_LOGARITHM_BASE ]: 2,
-                    [ Parameter.J_AS_POWER_EXPONENT ]: 2.5,
-                    [ Parameter.K_AS_COEFFICIENT ]: 2,
+                    [Parameter.SUM]: true,
+                    [Parameter.A_AS_LOGARITHM_BASE]: 2,
+                    [Parameter.J_AS_POWER_EXPONENT]: 2.5,
+                    [Parameter.K_AS_COEFFICIENT]: 2,
                 }] as Combination<Submetric>,
                 sumOfSquares: 0.12122990586015835 as SumOfSquares,
                 spreadDynamicParameters: [Parameter.K_AS_COEFFICIENT],
@@ -81,14 +81,14 @@ describe("nonRecursiveSearchScopeAndMaybeUpdateBestMetric", (): void => {
 
     it("updates the average samples per scope", async (): Promise<void> => {
         solverStatus.sampleCount = 54 as Count<Sample>
-        solverStatus.averageSamplesPerScope = 10 as Mean<{ of: Count<Sample>, meanType: MeanType.ARITHMETIC }>
+        solverStatus.averageSamplesPerScope = 10 as Mean<{of: Count<Sample>, meanType: MeanType.ARITHMETIC}>
         solverStatus.populatedScopeCount = 7 as Count<Scope>
 
         await nonRecursiveSearchScopeAndMaybeUpdateBestMetric(scope)
 
         // (54 + 10 = 64) / 7 = 9.14285714286 -> round to 9
         expect(solverStatus.averageSamplesPerScope)
-            .toBe(9 as Mean<{ of: Count<Sample>, meanType: MeanType.ARITHMETIC }>)
+            .toBe(9 as Mean<{of: Count<Sample>, meanType: MeanType.ARITHMETIC}>)
     })
 
     it("computes the sums of squares and returns them, along with the dynamic parameters, samples computed from the scope, and the metric name", async (): Promise<void> => {
@@ -112,91 +112,91 @@ describe("nonRecursiveSearchScopeAndMaybeUpdateBestMetric", (): void => {
             samples: [
                 {
                     submetrics: [{
-                        [ Parameter.SUM ]: true,
-                        [ Parameter.A_AS_LOGARITHM_BASE ]: 2 as ParameterValue,
-                        [ Parameter.J_AS_POWER_EXPONENT ]: 2.5 as ParameterValue,
-                        [ Parameter.K_AS_COEFFICIENT ]: 0 as ParameterValue,
+                        [Parameter.SUM]: true,
+                        [Parameter.A_AS_LOGARITHM_BASE]: 2 as ParameterValue,
+                        [Parameter.J_AS_POWER_EXPONENT]: 2.5 as ParameterValue,
+                        [Parameter.K_AS_COEFFICIENT]: 0 as ParameterValue,
                     }] as Combination<Submetric>,
                     samplePoint: [0, 0] as SamplePoint,
                 },
                 {
                     submetrics: [{
-                        [ Parameter.SUM ]: true,
-                        [ Parameter.A_AS_LOGARITHM_BASE ]: 2 as ParameterValue,
-                        [ Parameter.J_AS_POWER_EXPONENT ]: 2.5 as ParameterValue,
-                        [ Parameter.K_AS_COEFFICIENT ]: 2 as ParameterValue,
+                        [Parameter.SUM]: true,
+                        [Parameter.A_AS_LOGARITHM_BASE]: 2 as ParameterValue,
+                        [Parameter.J_AS_POWER_EXPONENT]: 2.5 as ParameterValue,
+                        [Parameter.K_AS_COEFFICIENT]: 2 as ParameterValue,
                     }] as Combination<Submetric>,
                     samplePoint: [1, 0] as SamplePoint,
                 },
                 {
                     submetrics: [{
-                        [ Parameter.SUM ]: true,
-                        [ Parameter.A_AS_LOGARITHM_BASE ]: 2 as ParameterValue,
-                        [ Parameter.J_AS_POWER_EXPONENT ]: 2.75 as ParameterValue,
-                        [ Parameter.K_AS_COEFFICIENT ]: 0 as ParameterValue,
+                        [Parameter.SUM]: true,
+                        [Parameter.A_AS_LOGARITHM_BASE]: 2 as ParameterValue,
+                        [Parameter.J_AS_POWER_EXPONENT]: 2.75 as ParameterValue,
+                        [Parameter.K_AS_COEFFICIENT]: 0 as ParameterValue,
                     }] as Combination<Submetric>,
                     samplePoint: [0, 1] as SamplePoint,
                 },
                 {
                     submetrics: [{
-                        [ Parameter.SUM ]: true,
-                        [ Parameter.A_AS_LOGARITHM_BASE ]: 2 as ParameterValue,
-                        [ Parameter.J_AS_POWER_EXPONENT ]: 2.75 as ParameterValue,
-                        [ Parameter.K_AS_COEFFICIENT ]: 2 as ParameterValue,
+                        [Parameter.SUM]: true,
+                        [Parameter.A_AS_LOGARITHM_BASE]: 2 as ParameterValue,
+                        [Parameter.J_AS_POWER_EXPONENT]: 2.75 as ParameterValue,
+                        [Parameter.K_AS_COEFFICIENT]: 2 as ParameterValue,
                     }] as Combination<Submetric>,
                     samplePoint: [1, 1] as SamplePoint,
                 },
                 {
                     submetrics: [{
-                        [ Parameter.SUM ]: true,
-                        [ Parameter.A_AS_LOGARITHM_BASE ]: 2 as ParameterValue,
-                        [ Parameter.J_AS_POWER_EXPONENT ]: 3 as ParameterValue,
-                        [ Parameter.K_AS_COEFFICIENT ]: 0 as ParameterValue,
+                        [Parameter.SUM]: true,
+                        [Parameter.A_AS_LOGARITHM_BASE]: 2 as ParameterValue,
+                        [Parameter.J_AS_POWER_EXPONENT]: 3 as ParameterValue,
+                        [Parameter.K_AS_COEFFICIENT]: 0 as ParameterValue,
                     }] as Combination<Submetric>,
                     samplePoint: [0, 2] as SamplePoint,
                 },
                 {
                     submetrics: [{
-                        [ Parameter.SUM ]: true,
-                        [ Parameter.A_AS_LOGARITHM_BASE ]: 2 as ParameterValue,
-                        [ Parameter.J_AS_POWER_EXPONENT ]: 3 as ParameterValue,
-                        [ Parameter.K_AS_COEFFICIENT ]: 2 as ParameterValue,
+                        [Parameter.SUM]: true,
+                        [Parameter.A_AS_LOGARITHM_BASE]: 2 as ParameterValue,
+                        [Parameter.J_AS_POWER_EXPONENT]: 3 as ParameterValue,
+                        [Parameter.K_AS_COEFFICIENT]: 2 as ParameterValue,
                     }] as Combination<Submetric>,
                     samplePoint: [1, 2] as SamplePoint,
                 },
                 {
                     submetrics: [{
-                        [ Parameter.SUM ]: true,
-                        [ Parameter.A_AS_LOGARITHM_BASE ]: 2 as ParameterValue,
-                        [ Parameter.J_AS_POWER_EXPONENT ]: 3.25 as ParameterValue,
-                        [ Parameter.K_AS_COEFFICIENT ]: 0 as ParameterValue,
+                        [Parameter.SUM]: true,
+                        [Parameter.A_AS_LOGARITHM_BASE]: 2 as ParameterValue,
+                        [Parameter.J_AS_POWER_EXPONENT]: 3.25 as ParameterValue,
+                        [Parameter.K_AS_COEFFICIENT]: 0 as ParameterValue,
                     }] as Combination<Submetric>,
                     samplePoint: [0, 3] as SamplePoint,
                 },
                 {
                     submetrics: [{
-                        [ Parameter.SUM ]: true,
-                        [ Parameter.A_AS_LOGARITHM_BASE ]: 2 as ParameterValue,
-                        [ Parameter.J_AS_POWER_EXPONENT ]: 3.25 as ParameterValue,
-                        [ Parameter.K_AS_COEFFICIENT ]: 2 as ParameterValue,
+                        [Parameter.SUM]: true,
+                        [Parameter.A_AS_LOGARITHM_BASE]: 2 as ParameterValue,
+                        [Parameter.J_AS_POWER_EXPONENT]: 3.25 as ParameterValue,
+                        [Parameter.K_AS_COEFFICIENT]: 2 as ParameterValue,
                     }] as Combination<Submetric>,
                     samplePoint: [1, 3] as SamplePoint,
                 },
                 {
                     submetrics: [{
-                        [ Parameter.SUM ]: true,
-                        [ Parameter.A_AS_LOGARITHM_BASE ]: 2 as ParameterValue,
-                        [ Parameter.J_AS_POWER_EXPONENT ]: 3.5 as ParameterValue,
-                        [ Parameter.K_AS_COEFFICIENT ]: 0 as ParameterValue,
+                        [Parameter.SUM]: true,
+                        [Parameter.A_AS_LOGARITHM_BASE]: 2 as ParameterValue,
+                        [Parameter.J_AS_POWER_EXPONENT]: 3.5 as ParameterValue,
+                        [Parameter.K_AS_COEFFICIENT]: 0 as ParameterValue,
                     }] as Combination<Submetric>,
                     samplePoint: [0, 4] as SamplePoint,
                 },
                 {
                     submetrics: [{
-                        [ Parameter.SUM ]: true,
-                        [ Parameter.A_AS_LOGARITHM_BASE ]: 2 as ParameterValue,
-                        [ Parameter.J_AS_POWER_EXPONENT ]: 3.5 as ParameterValue,
-                        [ Parameter.K_AS_COEFFICIENT ]: 2 as ParameterValue,
+                        [Parameter.SUM]: true,
+                        [Parameter.A_AS_LOGARITHM_BASE]: 2 as ParameterValue,
+                        [Parameter.J_AS_POWER_EXPONENT]: 3.5 as ParameterValue,
+                        [Parameter.K_AS_COEFFICIENT]: 2 as ParameterValue,
                     }] as Combination<Submetric>,
                     samplePoint: [1, 4] as SamplePoint,
                 },

@@ -1,4 +1,4 @@
-export { computeIrrationalDecimalFromScamon } from "./decimal"
+export {computeIrrationalDecimalFromScamon} from "./decimal"
 export {
     computeIrrationalScamonFromDecimal,
     computeIrrationalScamonFromMonzo,

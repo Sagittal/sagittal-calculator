@@ -1,10 +1,10 @@
-import { program } from "commander"
-import { CommandFlag, Filename, ioSettings, LogTarget, parseCommands } from "../../../../general"
-import { ScriptGroup } from "../../../types"
-import { popularityMetricLfcScriptGroupSettings } from "../../globals"
+import {program} from "commander"
+import {CommandFlag, Filename, ioSettings, LogTarget, parseCommands} from "../../../../general"
+import {ScriptGroup} from "../../../types"
+import {popularityMetricLfcScriptGroupSettings} from "../../globals"
 
 const applySharedPopularityMetricLfcCommandSetup = (
-    { defaultLogTargets }: { defaultLogTargets?: LogTarget[] } = {},
+    {defaultLogTargets}: {defaultLogTargets?: LogTarget[]} = {},
 ): void => {
     ioSettings.scriptGroup = ScriptGroup.POPULARITY_METRIC_LFC as Filename
 

@@ -1,6 +1,6 @@
-import { Popularity, Ranked } from "../../../general"
-import { SumOfSquares } from "../bestMetric"
-import { Unpopularity } from "./types"
+import {Popularity, Ranked} from "../../../general"
+import {SumOfSquares} from "../bestMetric"
+import {Unpopularity} from "./types"
 
 const computeSumOfSquares = (
     rankedUnpopularities: Array<Ranked<Unpopularity>>,
@@ -9,7 +9,7 @@ const computeSumOfSquares = (
 ): SumOfSquares =>
     popularities.reduce(
         (sumOfSquares: SumOfSquares, popularity: Ranked<Popularity>, index: number): SumOfSquares => {
-            const rankedUnpopularity: Ranked<Unpopularity> = rankedUnpopularities[ index ]
+            const rankedUnpopularity: Ranked<Unpopularity> = rankedUnpopularities[index]
             const ourRank = rankedUnpopularity.rank
             const rank = popularity.rank
             const squaredRankDifference = (ourRank ** z - rank ** z) ** 2

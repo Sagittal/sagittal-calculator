@@ -1,4 +1,4 @@
-import { formatTime, Ms } from "../../../../src/general"
+import {formatTime, Ms} from "../../../../src/general"
 
 describe("formatTime", (): void => {
     it("formats ms to hours", (): void => {

@@ -1,11 +1,11 @@
-import { increment, Index, subtract } from "../../../general"
+import {increment, Index, subtract} from "../../../general"
 
 const computeNeighborPositionIndices = (position: number, sortedTargetPositions: number[]): [Index, Index] => {
     let index = 0 as Index
-    let target = sortedTargetPositions[ index ]
+    let target = sortedTargetPositions[index]
     while (target < position) {
         index = increment(index)
-        target = sortedTargetPositions[ index ]
+        target = sortedTargetPositions[index]
     }
 
     return [

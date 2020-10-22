@@ -1,10 +1,10 @@
-import { Monzo } from "../../../../../../src/general/math/numeric/monzo"
-import { isMonzoRational } from "../../../../../../src/general/math/rational/monzo"
-import { isMonzoInteger } from "../../../../../../src/general/math/rational/monzo/typeGuards"
+import {Monzo} from "../../../../../../src/general/math/numeric/monzo"
+import {isMonzoRational} from "../../../../../../src/general/math/rational/monzo"
+import {isMonzoInteger} from "../../../../../../src/general/math/rational/monzo/typeGuards"
 
 describe("isMonzoInteger", (): void => {
     it("returns true if every prime exponent is positive or zero", (): void => {
-        const candidateIntegerMonzo = [0, 2, 0, 1] as Monzo<{ rational: true }>
+        const candidateIntegerMonzo = [0, 2, 0, 1] as Monzo<{rational: true}>
 
         const actual = isMonzoInteger(candidateIntegerMonzo)
 
@@ -12,7 +12,7 @@ describe("isMonzoInteger", (): void => {
     })
 
     it("returns false if every prime exponent is negative or zero", (): void => {
-        const candidateIntegerMonzo = [-3, 0, -5] as Monzo<{ rational: true }>
+        const candidateIntegerMonzo = [-3, 0, -5] as Monzo<{rational: true}>
 
         const actual = isMonzoInteger(candidateIntegerMonzo)
 
@@ -20,7 +20,7 @@ describe("isMonzoInteger", (): void => {
     })
 
     it("returns false if the prime exponents are not all positive or zero or all negative or zero", (): void => {
-        const candidateIntegerMonzo = [-2, 0, 1] as Monzo<{ rational: true }>
+        const candidateIntegerMonzo = [-2, 0, 1] as Monzo<{rational: true}>
 
         const actual = isMonzoInteger(candidateIntegerMonzo)
 
@@ -28,7 +28,7 @@ describe("isMonzoInteger", (): void => {
     })
 
     it("returns false if any of the prime exponents are not integer decimals", (): void => {
-        const candidateIntegerMonzo = [0, 2.5, 0, 1] as Monzo<{ rational: true }>
+        const candidateIntegerMonzo = [0, 2.5, 0, 1] as Monzo<{rational: true}>
 
         const actual = isMonzoInteger(candidateIntegerMonzo)
 
@@ -38,7 +38,7 @@ describe("isMonzoInteger", (): void => {
 
 describe("isMonzoRational", (): void => {
     it("returns true if every prime exponent is an integer", (): void => {
-        const candidateRationalMonzo = [0, 2, 0, 1] as Monzo<{ rational: true }>
+        const candidateRationalMonzo = [0, 2, 0, 1] as Monzo<{rational: true}>
 
         const actual = isMonzoRational(candidateRationalMonzo)
 
@@ -46,7 +46,7 @@ describe("isMonzoRational", (): void => {
     })
 
     it("returns true if any prime exponent is not an integer", (): void => {
-        const candidateRationalMonzo = [2.5, 1.5, 0] as Monzo<{ rational: true }>
+        const candidateRationalMonzo = [2.5, 1.5, 0] as Monzo<{rational: true}>
 
         const actual = isMonzoRational(candidateRationalMonzo)
 

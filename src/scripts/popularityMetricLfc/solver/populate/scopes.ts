@@ -1,10 +1,10 @@
-import { Count, LogTarget, saveLog } from "../../../../general"
-import { solverStatus } from "../../globals"
-import { Submetric } from "../../sumOfSquares"
-import { formatSearchedAndPopulated } from "../io"
-import { Chunk } from "../types"
-import { computeInitialChunkCountForSubmetrics } from "./initialChunkCountForSubmetrics"
-import { populateScopesPhase, populateScopesPhaseSync } from "./phase"
+import {Count, LogTarget, saveLog} from "../../../../general"
+import {solverStatus} from "../../globals"
+import {Submetric} from "../../sumOfSquares"
+import {formatSearchedAndPopulated} from "../io"
+import {Chunk} from "../types"
+import {computeInitialChunkCountForSubmetrics} from "./initialChunkCountForSubmetrics"
+import {populateScopesPhase, populateScopesPhaseSync} from "./phase"
 
 const populateScopes = async (): Promise<void> => {
     const chunkCount = solverStatus.chunkCount

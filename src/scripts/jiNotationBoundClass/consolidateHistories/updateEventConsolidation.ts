@@ -1,5 +1,5 @@
-import { isBoundEventContained } from "./doEventsContainEvent"
-import { BoundEventConsolidation, UpdateEventConsolidationOptions } from "./types"
+import {isBoundEventContained} from "./doEventsContainEvent"
+import {BoundEventConsolidation, UpdateEventConsolidationOptions} from "./types"
 
 const updateEventConsolidation = (
     boundEventConsolidation: BoundEventConsolidation,

@@ -1,4 +1,4 @@
-import { Monzo } from "./types"
+import {Monzo} from "./types"
 
 const EMPTY_MONZO = [] as Monzo
 

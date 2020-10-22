@@ -1,5 +1,5 @@
-export { computeCombinations } from "./combinations"
-export { BASE_2, ADDITIVE_IDENTITY } from "./constants"
+export {computeCombinations} from "./combinations"
+export {BASE_2, ADDITIVE_IDENTITY} from "./constants"
 export {
     isQuotientSub,
     isQuotientSuper,
@@ -54,10 +54,10 @@ export {
     invertScamon,
     multiplyScamon,
 } from "./numeric"
-export { computeDistributions } from "./distributions"
-export { dividesEvenly } from "./dividesEvenly"
-export { computeAngle, radiansToDegrees } from "./angle"
-export { computeTriangularNumber } from "./triangularNumber"
+export {computeDistributions} from "./distributions"
+export {dividesEvenly} from "./dividesEvenly"
+export {computeAngle, radiansToDegrees} from "./angle"
+export {computeTriangularNumber} from "./triangularNumber"
 export {
     abs,
     count,
@@ -142,4 +142,4 @@ export {
     isRationalScamonSmooth,
     computeRationalQuotientFromRationalScamon,
 } from "./rational"
-export { HALF_SCALER, computeIrrationalDecimalFromScamon } from "./irrational"
+export {HALF_SCALER, computeIrrationalDecimalFromScamon} from "./irrational"

@@ -1,4 +1,4 @@
-import { isArray, isNumber, isObject } from "./typeGuards"
+import {isArray, isNumber, isObject} from "./typeGuards"
 
 const deepMap: {
     <T, U, V extends string | number | symbol>(
@@ -19,7 +19,7 @@ const deepMap: {
             (fnedObject: T, [key, value]: [string, T]): T => {
                 return {
                     ...fnedObject,
-                    [ key ]: deepMap(value, fn, ...args),
+                    [key]: deepMap(value, fn, ...args),
                 }
             },
             {} as T,

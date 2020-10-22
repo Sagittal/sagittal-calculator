@@ -1,9 +1,9 @@
-import { count, formatTable, Io, sumTexts, Table } from "../../../../general"
-import { JiPitchAnalysis } from "../../../../sagittal"
-import { computeJiPitchHeaderRows } from "../headerRows"
-import { computeJiPitchRow } from "../row"
-import { computeMaxMonzoLength, computeMonzoAndQuotientJustification } from "../splitMonzoAndQuotient"
-import { JI_PITCH_TITLE } from "../titles"
+import {count, formatTable, Io, sumTexts, Table} from "../../../../general"
+import {JiPitchAnalysis} from "../../../../sagittal"
+import {computeJiPitchHeaderRows} from "../headerRows"
+import {computeJiPitchRow} from "../row"
+import {computeMaxMonzoLength, computeMonzoAndQuotientJustification} from "../splitMonzoAndQuotient"
+import {JI_PITCH_TITLE} from "../titles"
 
 const computeJiPitchOutput = (
     jiPitchAnalysis: JiPitchAnalysis,
@@ -20,7 +20,7 @@ const computeJiPitchOutput = (
 
     return sumTexts(
         JI_PITCH_TITLE,
-        formatTable(jiPitchTable, { headerRowCount, justification }),
+        formatTable(jiPitchTable, {headerRowCount, justification}),
     )
 }
 

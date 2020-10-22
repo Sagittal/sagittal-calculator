@@ -1,9 +1,9 @@
 // tslint:disable max-line-length
 
 import * as cp from "child_process"
-import { Io } from "../../../../../src/general/io"
-import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
-import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
+import {Io} from "../../../../../src/general/io"
+import {onlyRunInCi} from "../../../../helpers/onlyRunInCi"
+import {runCommandAndGetConsoleOutput} from "../../../../helpers/src/scripts/runCommand"
 
 describe("analyze-ji-pitch", (): void => {
     const expected = [
@@ -75,7 +75,7 @@ describe("analyze-ji-pitch", (): void => {
         const command = "npm run analyze-ji-pitch" as Io
 
         expect((): void => {
-            cp.execSync(command, { stdio: [undefined, undefined, undefined] })
+            cp.execSync(command, {stdio: [undefined, undefined, undefined]})
         }).toThrowError(/Unable to parse JI pitch/)
     })
 

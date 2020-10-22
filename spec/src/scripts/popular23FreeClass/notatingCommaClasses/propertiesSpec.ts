@@ -1,4 +1,4 @@
-import { Id, Index, Two3FreeClass } from "../../../../../src/general"
+import {Id, Index, Two3FreeClass} from "../../../../../src/general"
 import {FlaccoSubset} from "../../../../../src/sagittal/accidental"
 import {CommaClass} from "../../../../../src/sagittal/ji/comma"
 import {
@@ -8,7 +8,7 @@ import {
 
 describe("computeNotatingCommaClassesProperties", (): void => {
     it("returns, for the given 2,3-free class, all notating comma class's IDs (if any), as well as the corresponding list of indices of the smallest flacco subsets these comma classes appear in", (): void => {
-        const two3FreeClass = { monzo: [0, 0, -1, 1] } as Two3FreeClass
+        const two3FreeClass = {monzo: [0, 0, -1, 1]} as Two3FreeClass
 
         const actual = computeNotatingCommaClassesProperties(two3FreeClass)
 

@@ -1,2 +1,2 @@
-export { computeJiNotationBoundClassesImage } from "./image"
-export { computeJiNotationBoundsOutput, formatJiNotationBoundClass } from "./terminal"
+export {computeJiNotationBoundClassesImage} from "./image"
+export {computeJiNotationBoundsOutput, formatJiNotationBoundClass} from "./terminal"

@@ -1,6 +1,6 @@
-import { Monzo, Step } from "../../../../../../src/general"
-import { computeMonzoMapping } from "../../../../../../src/general/math/numeric/monzo/mapping"
-import { Val } from "../../../../../../src/general/math/numeric/monzo/types"
+import {Monzo, Step} from "../../../../../../src/general"
+import {computeMonzoMapping} from "../../../../../../src/general/math/numeric/monzo/mapping"
+import {Val} from "../../../../../../src/general/math/numeric/monzo/types"
 
 describe("computeMonzoMapping", (): void => {
     it("given a val mapping, returns the number of steps that would represent the given monzo", (): void => {

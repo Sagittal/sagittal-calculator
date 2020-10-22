@@ -1,4 +1,4 @@
-import { cleanArray } from "../../../../src/general/code/cleanArray"
+import {cleanArray} from "../../../../src/general/code/cleanArray"
 
 describe("cleanArray", (): void => {
     it("removes all elements from the array", (): void => {

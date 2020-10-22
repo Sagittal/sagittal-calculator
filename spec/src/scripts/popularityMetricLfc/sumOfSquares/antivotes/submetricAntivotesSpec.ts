@@ -1,12 +1,12 @@
-import { Base, EMPTY_MONZO, log, Monzo } from "../../../../../../src/general/math"
-import { Parameter, ParameterValue, Submetric } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
-import { computeSubmetricAntivotes } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes/submetricAntivotes"
-import { Antivotes } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/types"
+import {Base, EMPTY_MONZO, log, Monzo} from "../../../../../../src/general/math"
+import {Parameter, ParameterValue, Submetric} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {computeSubmetricAntivotes} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes/submetricAntivotes"
+import {Antivotes} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/types"
 
 describe("computeSubmetricAntivotes", (): void => {
     let submetric: Submetric
 
-    const two3FreeNumberMonzo: Monzo<{ rational: true }> = [
+    const two3FreeNumberMonzo: Monzo<{rational: true}> = [
         0,                  // Prime 2,  prime index 1 (from the prime count function)
         0,                  // Prime 3,  prime index 2 (from the prime count function)
         0,                  // Prime 5,  prime index 3 (from the prime count function)
@@ -14,7 +14,7 @@ describe("computeSubmetricAntivotes", (): void => {
         1,                  // Prime 11, prime index 5 (from the prime count function)
         -1,                 // Prime 13, prime index 6 (from the prime count function)
         2,                  // Prime 17, prime index 7 (from the prime count function)
-    ] as Monzo<{ rational: true }>
+    ] as Monzo<{rational: true}>
 
     beforeEach((): void => {
         submetric = {}
@@ -22,7 +22,7 @@ describe("computeSubmetricAntivotes", (): void => {
 
     describe("default case: submetric type is soapfar (all other parameters tested here)", (): void => {
         beforeEach((): void => {
-            submetric[ Parameter.SUM ] = true
+            submetric[Parameter.SUM] = true
         })
 
         it("sums the abs values of the prime factors in the 2,3-free monzo", (): void => {
@@ -37,7 +37,7 @@ describe("computeSubmetricAntivotes", (): void => {
 
         it("when a as a coefficient is provided, multiplies the prime by it", (): void => {
             const aAsCoefficient = 0.56 as ParameterValue
-            submetric[ Parameter.A_AS_COEFFICIENT ] = aAsCoefficient
+            submetric[Parameter.A_AS_COEFFICIENT] = aAsCoefficient
 
             const actual = computeSubmetricAntivotes(two3FreeNumberMonzo, submetric)
 
@@ -50,7 +50,7 @@ describe("computeSubmetricAntivotes", (): void => {
 
         it("when a as a power exponent is provided, raises the prime to it", (): void => {
             const aAsPowerExponent = 0.56 as ParameterValue
-            submetric[ Parameter.A_AS_POWER_EXPONENT ] = aAsPowerExponent
+            submetric[Parameter.A_AS_POWER_EXPONENT] = aAsPowerExponent
 
             const actual = computeSubmetricAntivotes(two3FreeNumberMonzo, submetric)
 
@@ -63,7 +63,7 @@ describe("computeSubmetricAntivotes", (): void => {
 
         it("when a as a logarithm base is provided, takes the base a logarithm of it", (): void => {
             const aAsLogarithmBase = 0.56 as ParameterValue
-            submetric[ Parameter.A_AS_LOGARITHM_BASE ] = aAsLogarithmBase
+            submetric[Parameter.A_AS_LOGARITHM_BASE] = aAsLogarithmBase
 
             const actual = computeSubmetricAntivotes(two3FreeNumberMonzo, submetric)
 
@@ -76,7 +76,7 @@ describe("computeSubmetricAntivotes", (): void => {
 
         it("when a as a power base is provided, raises it to the prime", (): void => {
             const aAsPowerBase = 0.56 as ParameterValue
-            submetric[ Parameter.A_AS_POWER_BASE ] = aAsPowerBase
+            submetric[Parameter.A_AS_POWER_BASE] = aAsPowerBase
 
             const actual = computeSubmetricAntivotes(two3FreeNumberMonzo, submetric)
 
@@ -90,8 +90,8 @@ describe("computeSubmetricAntivotes", (): void => {
         it("when w is provided, adds a constant to each prime after applying the coefficient, exponent, or base              ", (): void => {
             const aAsCoefficient = 0.56 as ParameterValue
             const w = 0.22 as ParameterValue
-            submetric[ Parameter.A_AS_COEFFICIENT ] = aAsCoefficient
-            submetric[ Parameter.W ] = w
+            submetric[Parameter.A_AS_COEFFICIENT] = aAsCoefficient
+            submetric[Parameter.W] = w
 
             const actual = computeSubmetricAntivotes(two3FreeNumberMonzo, submetric)
 
@@ -106,9 +106,9 @@ describe("computeSubmetricAntivotes", (): void => {
             const aAsCoefficient = 0.56 as ParameterValue
             const w = 0.22 as ParameterValue
             const b = 0.34 as ParameterValue
-            submetric[ Parameter.A_AS_COEFFICIENT ] = aAsCoefficient
-            submetric[ Parameter.W ] = w
-            submetric[ Parameter.B ] = b
+            submetric[Parameter.A_AS_COEFFICIENT] = aAsCoefficient
+            submetric[Parameter.W] = w
+            submetric[Parameter.B] = b
 
             const actual = computeSubmetricAntivotes(two3FreeNumberMonzo, submetric)
 
@@ -122,8 +122,8 @@ describe("computeSubmetricAntivotes", (): void => {
         it("when x is provided, adds a constant to each prime before applying the coefficient, exponent, or base                ", (): void => {
             const aAsCoefficient = 0.56 as ParameterValue
             const x = -2.1 as ParameterValue
-            submetric[ Parameter.A_AS_COEFFICIENT ] = aAsCoefficient
-            submetric[ Parameter.X ] = x
+            submetric[Parameter.A_AS_COEFFICIENT] = aAsCoefficient
+            submetric[Parameter.X] = x
 
             const actual = computeSubmetricAntivotes(two3FreeNumberMonzo, submetric)
 
@@ -138,9 +138,9 @@ describe("computeSubmetricAntivotes", (): void => {
             const aAsCoefficient = 0.56 as ParameterValue
             const x = -2.1 as ParameterValue
             const u = -1.1 as ParameterValue
-            submetric[ Parameter.A_AS_COEFFICIENT ] = aAsCoefficient
-            submetric[ Parameter.X ] = x
-            submetric[ Parameter.U ] = u
+            submetric[Parameter.A_AS_COEFFICIENT] = aAsCoefficient
+            submetric[Parameter.X] = x
+            submetric[Parameter.U] = u
 
             const actual = computeSubmetricAntivotes(two3FreeNumberMonzo, submetric)
 
@@ -153,7 +153,7 @@ describe("computeSubmetricAntivotes", (): void => {
 
         it("when y is provided, raises the prime exponent to an exponent", (): void => {
             const y = 0.81 as ParameterValue
-            submetric[ Parameter.Y ] = y
+            submetric[Parameter.Y] = y
 
             const actual = computeSubmetricAntivotes(two3FreeNumberMonzo, submetric)
 
@@ -167,8 +167,8 @@ describe("computeSubmetricAntivotes", (): void => {
         it("when v is provided, raises the prime exponent to an exponent, but using v for d and y for n", (): void => {
             const y = 0.81 as ParameterValue
             const v = 0.44 as ParameterValue
-            submetric[ Parameter.Y ] = y
-            submetric[ Parameter.V ] = v
+            submetric[Parameter.Y] = y
+            submetric[Parameter.V] = v
 
             const actual = computeSubmetricAntivotes(two3FreeNumberMonzo, submetric)
 
@@ -180,8 +180,8 @@ describe("computeSubmetricAntivotes", (): void => {
         })
 
         it("when Dave's modified count is provided, counts 5's half as much as normal", (): void => {
-            submetric[ Parameter.MODIFIED_COUNT ] = true
-            const two3FreeNumberMonzo = [0, 0, 1, -1] as Monzo<{ rational: true }>
+            submetric[Parameter.MODIFIED_COUNT] = true
+            const two3FreeNumberMonzo = [0, 0, 1, -1] as Monzo<{rational: true}>
 
             const actual = computeSubmetricAntivotes(two3FreeNumberMonzo, submetric)
 
@@ -192,7 +192,7 @@ describe("computeSubmetricAntivotes", (): void => {
         })
 
         it("works for an empty monzo", (): void => {
-            const actual = computeSubmetricAntivotes(EMPTY_MONZO as Monzo<{ rational: true }>, submetric)
+            const actual = computeSubmetricAntivotes(EMPTY_MONZO as Monzo<{rational: true}>, submetric)
 
             const expected = 0 as Antivotes
             expect(actual).toBe(expected)
@@ -200,8 +200,8 @@ describe("computeSubmetricAntivotes", (): void => {
     })
 
     it("when the submetric type is soapf, sums the abs values of the unique prime factors in the 2,3-free monzo          ", (): void => {
-        submetric[ Parameter.SUM ] = true
-        submetric[ Parameter.WITHOUT_REPETITION ] = true
+        submetric[Parameter.SUM] = true
+        submetric[Parameter.WITHOUT_REPETITION] = true
 
         const actual = computeSubmetricAntivotes(two3FreeNumberMonzo, submetric)
 
@@ -213,8 +213,8 @@ describe("computeSubmetricAntivotes", (): void => {
     })
 
     it("when the submetric type is soapifar, sums the abs values of the prime factors in the 2,3-free monzo, mapped to the prime count function", (): void => {
-        submetric[ Parameter.SUM ] = true
-        submetric[ Parameter.USE_PRIME_INDEX ] = true
+        submetric[Parameter.SUM] = true
+        submetric[Parameter.USE_PRIME_INDEX] = true
 
         const actual = computeSubmetricAntivotes(two3FreeNumberMonzo, submetric)
 
@@ -226,9 +226,9 @@ describe("computeSubmetricAntivotes", (): void => {
     })
 
     it("when the submetric type is soapif, sums the abs values of the unique prime factors in the 2,3-free monzo, mapped to the prime count function", (): void => {
-        submetric[ Parameter.SUM ] = true
-        submetric[ Parameter.USE_PRIME_INDEX ] = true
-        submetric[ Parameter.WITHOUT_REPETITION ] = true
+        submetric[Parameter.SUM] = true
+        submetric[Parameter.USE_PRIME_INDEX] = true
+        submetric[Parameter.WITHOUT_REPETITION] = true
 
         const actual = computeSubmetricAntivotes(two3FreeNumberMonzo, submetric)
 
@@ -240,7 +240,7 @@ describe("computeSubmetricAntivotes", (): void => {
     })
 
     it("when the submetric type is coapfar, counts the prime factors in the 2,3-free monzo", (): void => {
-        submetric[ Parameter.COUNT ] = true
+        submetric[Parameter.COUNT] = true
 
         const actual = computeSubmetricAntivotes(two3FreeNumberMonzo, submetric)
 
@@ -252,8 +252,8 @@ describe("computeSubmetricAntivotes", (): void => {
     })
 
     it("when the submetric type is coapf, counts the unique prime factors in the 2,3-free monzo", (): void => {
-        submetric[ Parameter.COUNT ] = true
-        submetric[ Parameter.WITHOUT_REPETITION ] = true
+        submetric[Parameter.COUNT] = true
+        submetric[Parameter.WITHOUT_REPETITION] = true
 
         const actual = computeSubmetricAntivotes(two3FreeNumberMonzo, submetric)
 
@@ -265,8 +265,8 @@ describe("computeSubmetricAntivotes", (): void => {
     })
 
     it("when the submetric type is GPF, takes the max prime factor in the 2,3-free monzo", (): void => {
-        submetric[ Parameter.MAX ] = true
-        submetric[ Parameter.WITHOUT_REPETITION ] = true
+        submetric[Parameter.MAX] = true
+        submetric[Parameter.WITHOUT_REPETITION] = true
 
         const actual = computeSubmetricAntivotes(two3FreeNumberMonzo, submetric)
 
@@ -278,9 +278,9 @@ describe("computeSubmetricAntivotes", (): void => {
     })
 
     it("when the submetric type is GPIF, takes the max prime factor index in the 2,3-free monzo", (): void => {
-        submetric[ Parameter.MAX ] = true
-        submetric[ Parameter.WITHOUT_REPETITION ] = true
-        submetric[ Parameter.USE_PRIME_INDEX ] = true
+        submetric[Parameter.MAX] = true
+        submetric[Parameter.WITHOUT_REPETITION] = true
+        submetric[Parameter.USE_PRIME_INDEX] = true
 
         const actual = computeSubmetricAntivotes(two3FreeNumberMonzo, submetric)
 

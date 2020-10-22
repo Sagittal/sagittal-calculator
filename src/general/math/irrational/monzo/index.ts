@@ -1,1 +1,1 @@
-export { computeIrrationalMonzoFromScamon } from "./fromScamon"
+export {computeIrrationalMonzoFromScamon} from "./fromScamon"

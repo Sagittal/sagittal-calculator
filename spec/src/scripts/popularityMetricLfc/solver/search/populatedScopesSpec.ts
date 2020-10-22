@@ -1,13 +1,13 @@
-import { Count } from "../../../../../../src/general"
-import { Scope } from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
+import {Count} from "../../../../../../src/general"
+import {Scope} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import * as nonRecursiveBestMetric from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/bestMetric"
-import { scopesToSearch, solverStatus } from "../../../../../../src/scripts/popularityMetricLfc/globals"
-import { searchPopulatedScopes } from "../../../../../../src/scripts/popularityMetricLfc/solver/search/populatedScopes"
-import { Parameter } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {scopesToSearch, solverStatus} from "../../../../../../src/scripts/popularityMetricLfc/globals"
+import {searchPopulatedScopes} from "../../../../../../src/scripts/popularityMetricLfc/solver/search/populatedScopes"
+import {Parameter} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
 describe("searchPopulatedScopes", (): void => {
-    const scope = [{ [ Parameter.MAX ]: true }] as Scope
-    const otherScope = [{ [ Parameter.A_AS_COEFFICIENT ]: 2 }] as Scope
+    const scope = [{[Parameter.MAX]: true}] as Scope
+    const otherScope = [{[Parameter.A_AS_COEFFICIENT]: 2}] as Scope
 
     beforeEach((): void => {
         solverStatus.searchedScopeCount = 155 as Count<Scope>

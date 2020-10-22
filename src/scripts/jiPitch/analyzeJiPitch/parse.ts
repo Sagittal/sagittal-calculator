@@ -1,4 +1,4 @@
-import { program } from "commander"
+import {program} from "commander"
 import {
     Abs,
     computeRationalMonzoFromRationalDecimal,
@@ -12,13 +12,13 @@ import {
     Prime,
     Scamon,
 } from "../../../general"
-import { ApotomeSlope, computeAas, computeAte, JiPitchAnalysis, N2D3P9, parsePitch } from "../../../sagittal"
-import { FindCommasSettings, parseFindCommasSettings } from "../findCommas"
+import {ApotomeSlope, computeAas, computeAte, JiPitchAnalysis, N2D3P9, parsePitch} from "../../../sagittal"
+import {FindCommasSettings, parseFindCommasSettings} from "../findCommas"
 
-const parseJiPitch = (): Scamon<{ rational: true }> => {
-    const jiPitchText = program.args[ 0 ] as Io
+const parseJiPitch = (): Scamon<{rational: true}> => {
+    const jiPitchText = program.args[0] as Io
 
-    let jiPitch: Scamon<{ rational: true }>
+    let jiPitch: Scamon<{rational: true}>
     if (jiPitchText) {
         const pitch = parsePitch(jiPitchText)
 
@@ -30,13 +30,13 @@ const parseJiPitch = (): Scamon<{ rational: true }> => {
 
         // When provided via specific flags, they are pre-parsed (in readOptions.ts).
     } else if (program.monzo) {
-        jiPitch = { monzo: program.monzo } as Scamon<{ rational: true }>
+        jiPitch = {monzo: program.monzo} as Scamon<{rational: true}>
     } else if (program.quotient) {
-        jiPitch = { monzo: computeRationalMonzoFromRationalQuotient(program.quotient) } as Scamon<{ rational: true }>
+        jiPitch = {monzo: computeRationalMonzoFromRationalQuotient(program.quotient)} as Scamon<{rational: true}>
     } else if (program.commaName) {
         jiPitch = program.commaName
     } else if (program.integer) {
-        jiPitch = { monzo: computeRationalMonzoFromRationalDecimal(program.integer) } as Scamon<{ rational: true }>
+        jiPitch = {monzo: computeRationalMonzoFromRationalDecimal(program.integer)} as Scamon<{rational: true}>
     } else {
         throw new Error("Unable to parse JI pitch.")
     }
@@ -45,7 +45,7 @@ const parseJiPitch = (): Scamon<{ rational: true }> => {
 }
 
 const parseNotatingCommasSettings = (
-    { pitch, two3FreeClassAnalysis }: JiPitchAnalysis,
+    {pitch, two3FreeClassAnalysis}: JiPitchAnalysis,
 ): FindCommasSettings => {
     const findCommasSettings = parseFindCommasSettings()
 
@@ -56,7 +56,7 @@ const parseNotatingCommasSettings = (
 
     const ate = computeAte(pitch)
     if (ate > findCommasSettings.maxAte) {
-        findCommasSettings.maxAte = ate as Max<Abs<Decimal<{ integer: true }> & Exponent<3 & Prime>>>
+        findCommasSettings.maxAte = ate as Max<Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>>
     }
 
     const n2d3p9 = two3FreeClassAnalysis.n2d3p9

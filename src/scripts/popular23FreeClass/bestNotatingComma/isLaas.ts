@@ -1,5 +1,5 @@
-import { Comma, computeCentsFromPitch } from "../../../general"
-import { computeAas } from "../../../sagittal"
+import {Comma, computeCentsFromPitch} from "../../../general"
+import {computeAas} from "../../../sagittal"
 
 const isLaas = (notatingComma: Comma, bestNotatingComma: Comma): boolean => {
     const aas = computeAas(notatingComma)

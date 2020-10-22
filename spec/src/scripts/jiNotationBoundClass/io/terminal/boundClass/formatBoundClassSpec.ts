@@ -1,8 +1,8 @@
-import { Cents, computePitchFromCents, Id, NEWLINE } from "../../../../../../../src/general"
+import {Cents, computePitchFromCents, Id, NEWLINE} from "../../../../../../../src/general"
 import {BoundClass, BoundType, JiNotationBoundClass} from "../../../../../../../src/sagittal/notations"
-import { JiNotationBoundClassAnalysis } from "../../../../../../../src/scripts/jiNotationBoundClass/boundClass"
-import { formatJiNotationBoundClass } from "../../../../../../../src/scripts/jiNotationBoundClass/io"
-import { RANKS } from "../../../../../../../src/scripts/jiNotationBoundClass/ranks"
+import {JiNotationBoundClassAnalysis} from "../../../../../../../src/scripts/jiNotationBoundClass/boundClass"
+import {formatJiNotationBoundClass} from "../../../../../../../src/scripts/jiNotationBoundClass/io"
+import {RANKS} from "../../../../../../../src/scripts/jiNotationBoundClass/ranks"
 import {
     jiNotationBoundClassAnalysisFixture,
     jiNotationBoundClassFixture,
@@ -17,10 +17,10 @@ describe("formatJiNotationBoundClass", (): void => {
         }
         const jiNotationBoundClassAnalysis: JiNotationBoundClassAnalysis = {
             ...jiNotationBoundClassAnalysisFixture,
-            bestRank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
+            bestRank: RANKS[BoundType.SIZE_CATEGORY_BOUND],
         }
 
-        const actual = formatJiNotationBoundClass(jiNotationBoundClassAnalysis, { jiNotationBoundClass })
+        const actual = formatJiNotationBoundClass(jiNotationBoundClassAnalysis, {jiNotationBoundClass})
 
         const expected = [
             `{`,

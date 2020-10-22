@@ -1,6 +1,6 @@
-import { KeyPath, Popularity, rank, Ranked, RankStrategy } from "../../../../../../src/general"
-import { COMMA_POPULARITIES } from "../../../../../../src/general/music"
-import { onlyRunInCi } from "../../../../../helpers/onlyRunInCi"
+import {KeyPath, Popularity, rank, Ranked, RankStrategy} from "../../../../../../src/general"
+import {COMMA_POPULARITIES} from "../../../../../../src/general/music"
+import {onlyRunInCi} from "../../../../../helpers/onlyRunInCi"
 
 describe("COMMA_POPULARITIES", (): void => {
     it("the fractional ranks are correct", (): void => {

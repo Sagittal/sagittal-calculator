@@ -1,8 +1,8 @@
-import { Filename, LogTarget, Maybe, Name, saveLog, stringify } from "../../../../general"
-import { Metric } from "../../bestMetric"
-import { PARAMETER_DYNAMISMS } from "../../perfecter"
-import { Parameter, ParameterValue, Submetric } from "../../sumOfSquares"
-import { applySharedPopularityMetricLfcCommandSetup, load } from "../shared"
+import {Filename, LogTarget, Maybe, Name, saveLog, stringify} from "../../../../general"
+import {Metric} from "../../bestMetric"
+import {PARAMETER_DYNAMISMS} from "../../perfecter"
+import {Parameter, ParameterValue, Submetric} from "../../sumOfSquares"
+import {applySharedPopularityMetricLfcCommandSetup, load} from "../shared"
 
 applySharedPopularityMetricLfcCommandSetup()
 
@@ -25,25 +25,25 @@ const guessedBackfilledSpreadDynamicParametersMetrics = metricsMissingSpreadDyna
                 const [parameter, parameterValue] = submetricEntry as [Parameter, ParameterValue]
 
                 if (
-                    parameterValues[ parameter ] === parameterValue &&
+                    parameterValues[parameter] === parameterValue &&
                     (spreadDynamicParameters ? !spreadDynamicParameters.includes(parameter) : true) &&
-                    PARAMETER_DYNAMISMS[ parameter ]
+                    PARAMETER_DYNAMISMS[parameter]
                 ) {
                     spreadDynamicParameters = spreadDynamicParameters || []
                     spreadDynamicParameters.push(parameter)
                 }
-                if (!parameterValues[ parameter ]) {
-                    parameterValues[ parameter ] = parameterValue
+                if (!parameterValues[parameter]) {
+                    parameterValues[parameter] = parameterValue
                 }
             })
         })
 
         return {
             ...guessedBackfilledSpreadDynamicParametersMetrics,
-            [ metricName ]: spreadDynamicParameters ? { ...metric, spreadDynamicParameters } : metric,
+            [metricName]: spreadDynamicParameters ? {...metric, spreadDynamicParameters} : metric,
         }
     },
     {} as Record<Name<Metric>, Metric>,
 )
 
-saveLog(stringify(guessedBackfilledSpreadDynamicParametersMetrics, { multiline: true }), LogTarget.FINAL)
+saveLog(stringify(guessedBackfilledSpreadDynamicParametersMetrics, {multiline: true}), LogTarget.FINAL)

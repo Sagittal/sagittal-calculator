@@ -1,4 +1,4 @@
-import { computeExtensionBase, ExtensionBaseType } from "../../../../src/general/code"
+import {computeExtensionBase, ExtensionBaseType} from "../../../../src/general/code"
 
 describe("computeExtensionBase", (): void => {
     it("returns an empty array when array is asked for", (): void => {
@@ -34,7 +34,7 @@ describe("computeExtensionBase", (): void => {
     it("returns an empty object when object is asked for", (): void => {
         const extensionBaseType = ExtensionBaseType.OBJECT
 
-        const previousActual: { key: number } = computeExtensionBase(extensionBaseType) as { key: number }
+        const previousActual: {key: number} = computeExtensionBase(extensionBaseType) as {key: number}
         previousActual.key = 3
 
         const actual = computeExtensionBase(extensionBaseType)

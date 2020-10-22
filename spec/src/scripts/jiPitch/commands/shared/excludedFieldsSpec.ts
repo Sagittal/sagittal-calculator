@@ -1,6 +1,6 @@
-import { Io } from "../../../../../../src/general/io"
-import { parseExcludedFields } from "../../../../../../src/scripts/jiPitch/commands/shared/excludedFields"
-import { JiPitchField, NotatingCommasField } from "../../../../../../src/scripts/jiPitch/types"
+import {Io} from "../../../../../../src/general/io"
+import {parseExcludedFields} from "../../../../../../src/scripts/jiPitch/commands/shared/excludedFields"
+import {JiPitchField, NotatingCommasField} from "../../../../../../src/scripts/jiPitch/types"
 
 describe("excludedFields", (): void => {
     it("splits the fields by comma", (): void => {

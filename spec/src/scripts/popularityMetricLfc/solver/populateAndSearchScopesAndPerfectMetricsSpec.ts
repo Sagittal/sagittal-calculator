@@ -1,11 +1,11 @@
-import { Count, Ms, Name } from "../../../../../src/general"
-import { Metric } from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
-import { bestMetrics, solverStatus } from "../../../../../src/scripts/popularityMetricLfc/globals"
-import { Chunk, populateAndSearchScopesAndPerfectMetrics } from "../../../../../src/scripts/popularityMetricLfc/solver"
+import {Count, Ms, Name} from "../../../../../src/general"
+import {Metric} from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
+import {bestMetrics, solverStatus} from "../../../../../src/scripts/popularityMetricLfc/globals"
+import {Chunk, populateAndSearchScopesAndPerfectMetrics} from "../../../../../src/scripts/popularityMetricLfc/solver"
 import * as populate from "../../../../../src/scripts/popularityMetricLfc/solver/populate/scopes"
 import * as search from "../../../../../src/scripts/popularityMetricLfc/solver/search/scopes"
-import { adjustAsyncTimeoutForSpec } from "../../../../helpers/adjustAsyncTimeoutForSpec"
-import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
+import {adjustAsyncTimeoutForSpec} from "../../../../helpers/adjustAsyncTimeoutForSpec"
+import {onlyRunInCi} from "../../../../helpers/onlyRunInCi"
 
 describe("populateAndSearchScopesAndPerfectMetrics", (): void => {
     adjustAsyncTimeoutForSpec(10000 as Ms)
@@ -41,7 +41,7 @@ describe("populateAndSearchScopesAndPerfectMetrics", (): void => {
         expect(bestMetrics.get("{},{sum}" as Name<Metric>)).toBeCloseToObject({
             sumOfSquares: 0.014206,
             name: "{},{sum}",
-            submetrics: [{ sum: true }],
+            submetrics: [{sum: true}],
         } as Metric)
     })
 })

@@ -1,8 +1,8 @@
-import { DEFAULT_PRECISION } from "./constants"
-import { dig } from "./dig"
-import { isCloseTo } from "./isCloseTo"
-import { isNumber } from "./typeGuards"
-import { Precision, Sortable, SortOptions } from "./types"
+import {DEFAULT_PRECISION} from "./constants"
+import {dig} from "./dig"
+import {isCloseTo} from "./isCloseTo"
+import {isNumber} from "./typeGuards"
+import {Precision, Sortable, SortOptions} from "./types"
 
 const isNotClose = (a: number | string, b: number | string, precision: Precision = DEFAULT_PRECISION): boolean => {
     return isNumber(a) && isNumber(b) ?
@@ -10,7 +10,7 @@ const isNotClose = (a: number | string, b: number | string, precision: Precision
         : true
 }
 
-const sort = <T>(array: T[], { by, descending, precision }: SortOptions = {}): T[] => {
+const sort = <T>(array: T[], {by, descending, precision}: SortOptions = {}): T[] => {
     if (by) {
         (array as unknown[] as Sortable[])
             .sort((element: Sortable, nextElement: Sortable): number => {

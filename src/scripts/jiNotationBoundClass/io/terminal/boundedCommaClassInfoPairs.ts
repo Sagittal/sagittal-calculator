@@ -1,10 +1,10 @@
-import { isUndefined, Maybe } from "../../../../general"
-import { JiNotationLevel } from "../../../../sagittal"
-import { computeBoundedCommaClassInfo } from "./boundedCommaClassInfo"
-import { BoundedCommaClassIdPair, BoundedCommaClassIdPairs, BoundedCommaClassInfoPairs } from "./types"
+import {isUndefined, Maybe} from "../../../../general"
+import {JiNotationLevel} from "../../../../sagittal"
+import {computeBoundedCommaClassInfo} from "./boundedCommaClassInfo"
+import {BoundedCommaClassIdPair, BoundedCommaClassIdPairs, BoundedCommaClassInfoPairs} from "./types"
 
 const computeBoundedCommaClassInfoPairs = (
-    { boundClassId, ...boundedCommaClassIdPairs }: BoundedCommaClassIdPairs,
+    {boundClassId, ...boundedCommaClassIdPairs}: BoundedCommaClassIdPairs,
 ): BoundedCommaClassInfoPairs => {
     return Object.entries(boundedCommaClassIdPairs).reduce(
         (
@@ -19,7 +19,7 @@ const computeBoundedCommaClassInfoPairs = (
 
             return {
                 ...boundedCommaClassInfoPairs,
-                [ jiNotationLevel ]: [
+                [jiNotationLevel]: [
                     firstBoundedCommaClassInfo,
                     secondBoundedCommaClassInfo,
                 ],

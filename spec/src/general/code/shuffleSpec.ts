@@ -1,5 +1,5 @@
-import { deepClone } from "../../../../src/general"
-import { shuffle } from "../../../../src/general/code"
+import {deepClone} from "../../../../src/general"
+import {shuffle} from "../../../../src/general/code"
 
 describe("shuffle", (): void => {
     it("randomly changes the order of the elemnets in the array", (): void => {

@@ -1,2 +1,2 @@
-export { computeJiNotationBoundClassAnalysesOutput } from "./boundClassAnalysesTable"
-export { formatMinaName } from "./minaName"
+export {computeJiNotationBoundClassAnalysesOutput} from "./boundClassAnalysesTable"
+export {formatMinaName} from "./minaName"

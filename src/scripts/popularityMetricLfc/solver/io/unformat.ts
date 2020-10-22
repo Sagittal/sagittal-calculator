@@ -1,4 +1,4 @@
-import { Io } from "../../../../general"
+import {Io} from "../../../../general"
 
 const unformatParameters = (io: Io): Io => {
     return io

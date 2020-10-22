@@ -6,10 +6,10 @@ import {
     stringify,
     Two3FreeClass,
 } from "../../../../general"
-import { Antivotes, ParameterValue, Submetric } from "../types"
-import { maybeNuminatorSwap } from "./numinator"
-import { computeSubmetricAntivotes } from "./submetricAntivotes"
-import { computeWeightedAntivotes } from "./weightedAntivotes"
+import {Antivotes, ParameterValue, Submetric} from "../types"
+import {maybeNuminatorSwap} from "./numinator"
+import {computeSubmetricAntivotes} from "./submetricAntivotes"
+import {computeWeightedAntivotes} from "./weightedAntivotes"
 
 const compute23FreeClassSubmetricAntivotes = (
     two3FreeClass: Two3FreeClass,
@@ -40,7 +40,7 @@ const compute23FreeClassSubmetricAntivotes = (
     }
 
     const [numerator, denominator] = computeQuotientFromMonzo(two3FreeClass.monzo)
-    let { numeratorAntivotes, denominatorAntivotes } = maybeNuminatorSwap({
+    let {numeratorAntivotes, denominatorAntivotes} = maybeNuminatorSwap({
         useNuminator,
         numeratorAntivotes: computeSubmetricAntivotes(
             computeRationalMonzoFromRationalDecimal(numerator), submetric, QuotientPartType.NUMERATOR,
@@ -65,7 +65,7 @@ const compute23FreeClassSubmetricAntivotes = (
     })
 
     if (isNaN(numeratorAntivotes) || isNaN(denominatorAntivotes)) {
-        throw new Error(`You got NaN! in two3FreeClassSubmetricAntivotes ${two3FreeClass} ${stringify(submetric, { multiline: true })} ${numeratorAntivotes} ${denominatorAntivotes}`)
+        throw new Error(`You got NaN! in two3FreeClassSubmetricAntivotes ${two3FreeClass} ${stringify(submetric, {multiline: true})} ${numeratorAntivotes} ${denominatorAntivotes}`)
     }
 
     return numeratorAntivotes + denominatorAntivotes as Antivotes

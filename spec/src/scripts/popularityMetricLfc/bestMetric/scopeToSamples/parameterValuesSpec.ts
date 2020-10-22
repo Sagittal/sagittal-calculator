@@ -1,7 +1,7 @@
-import { Ed, integerDivide, Window } from "../../../../../../src/general"
-import { DynamicParameterScope } from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
-import { computeParameterValues } from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples/parameterValues"
-import { ParameterValue } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {Ed, integerDivide, Window} from "../../../../../../src/general"
+import {DynamicParameterScope} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
+import {computeParameterValues} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples/parameterValues"
+import {ParameterValue} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
 describe("computeParameterValues", (): void => {
     it("given a parameter scope (a center, a window, and a ED), will return a block of points to sample", (): void => {
@@ -22,8 +22,8 @@ describe("computeParameterValues", (): void => {
         ] as ParameterValue[]
         expect(actual).toEqual(expected)
         expect(actual.length).toBe(parameterScope.ed as number)
-        expect(actual[ actual.length - 1 ] - actual[ 0 ]).toBe(parameterScope.window as number)
-        expect(actual[ integerDivide(actual.length, 2) ] as number).toBe(parameterScope.center as number)
+        expect(actual[actual.length - 1] - actual[0]).toBe(parameterScope.window as number)
+        expect(actual[integerDivide(actual.length, 2)] as number).toBe(parameterScope.center as number)
     })
 
     it("works when the ED is even", (): void => {
@@ -43,11 +43,11 @@ describe("computeParameterValues", (): void => {
         ] as ParameterValue[]
         expect(actual).toBeCloseToArray(expected)
         expect(actual.length).toBe(parameterScope.ed as number)
-        expect(actual[ actual.length - 1 ] - actual[ 0 ]).toBe(parameterScope.window as number)
+        expect(actual[actual.length - 1] - actual[0]).toBe(parameterScope.window as number)
         expect(
             (
-                actual[ integerDivide(actual.length, 2) ] +
-                actual[ integerDivide(actual.length, 2) - 1 ]
+                actual[integerDivide(actual.length, 2)] +
+                actual[integerDivide(actual.length, 2) - 1]
             )
             /
             2,
@@ -67,7 +67,7 @@ describe("computeParameterValues", (): void => {
         ] as ParameterValue[]
         expect(actual).toEqual(expected)
         expect(actual.length).toBe(parameterScope.ed as number)
-        expect(actual[ integerDivide(actual.length, 2) ] as number).toBe(parameterScope.center as number)
+        expect(actual[integerDivide(actual.length, 2)] as number).toBe(parameterScope.center as number)
     })
 
     it("works when the ED is zero", (): void => {

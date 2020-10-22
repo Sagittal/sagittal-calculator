@@ -1,10 +1,10 @@
-import { Formatted, ioSettings, TableFormat } from "../../../../../../src/general/io"
-import { Two3FreeClass } from "../../../../../../src/general/music/ji/two3FreeClass"
-import { Two3FreeClassAnalysis } from "../../../../../../src/sagittal/ji/two3FreeClass"
-import { formatSplit23FreeClass } from "../../../../../../src/scripts/jiPitch/io/splitMonzoAndQuotient"
+import {Formatted, ioSettings, TableFormat} from "../../../../../../src/general/io"
+import {Two3FreeClass} from "../../../../../../src/general/music/ji/two3FreeClass"
+import {Two3FreeClassAnalysis} from "../../../../../../src/sagittal/ji/two3FreeClass"
+import {formatSplit23FreeClass} from "../../../../../../src/scripts/jiPitch/io/splitMonzoAndQuotient"
 
 describe("formatSplit23FreeClass", (): void => {
-    const two3FreeClass = { monzo: [0, 0, -1, 1] } as Two3FreeClass
+    const two3FreeClass = {monzo: [0, 0, -1, 1]} as Two3FreeClass
 
     it("splits the 2,3-free class into the numinator, vinculum, diminuator, and sign", (): void => {
         const actual = formatSplit23FreeClass(two3FreeClass)

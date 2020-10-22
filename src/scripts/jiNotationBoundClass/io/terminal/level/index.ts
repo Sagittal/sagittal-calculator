@@ -1,1 +1,1 @@
-export { formatJiNotationLevelAnalyses } from "./levelAnalyses"
+export {formatJiNotationLevelAnalyses} from "./levelAnalyses"

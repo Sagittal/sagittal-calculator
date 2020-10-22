@@ -1,8 +1,8 @@
-import { Multiplier } from "../../../../general"
-import { Ina } from "../../../../sagittal"
-import { BoundEvent, BoundHistory } from "../../histories"
-import { computeBoundEventDistance } from "./eventDistance"
-import { computeInaDistance } from "./inaDistance"
+import {Multiplier} from "../../../../general"
+import {Ina} from "../../../../sagittal"
+import {BoundEvent, BoundHistory} from "../../histories"
+import {computeBoundEventDistance} from "./eventDistance"
+import {computeInaDistance} from "./inaDistance"
 
 const computeBoundEventInaDistance = (
     boundEvent: BoundEvent,

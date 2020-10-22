@@ -1,9 +1,9 @@
-import { computeScamonFromDecimal, Max, Min, Scamon, Sopfr } from "../../../../../src/general/math"
-import { Comma } from "../../../../../src/general/music"
-import { computeCommas } from "../../../../../src/scripts/jiPitch/findCommas"
+import {computeScamonFromDecimal, Max, Min, Scamon, Sopfr} from "../../../../../src/general/math"
+import {Comma} from "../../../../../src/general/music"
+import {computeCommas} from "../../../../../src/scripts/jiPitch/findCommas"
 
 describe("computeCommas", (): void => {
-    const max23FreeSopfr = 7 as Max<Sopfr<{ rough: 5 }>>
+    const max23FreeSopfr = 7 as Max<Sopfr<{rough: 5}>>
 
     it("throws an error if the bounds are on the wrong side of each other, or equal", (): void => {
         expect((): void => {
@@ -59,12 +59,12 @@ describe("computeCommas", (): void => {
         const lowerBound = computeScamonFromDecimal(1.00870198379) as Min<Scamon>
         const upperBound = computeScamonFromDecimal(1.0174796921) as Max<Scamon>
 
-        const actual = computeCommas({ lowerBound, upperBound, max23FreeSopfr })
+        const actual = computeCommas({lowerBound, upperBound, max23FreeSopfr})
 
         const expected: Comma[] = [
-            { monzo: [-4, 4, -1] },
-            { monzo: [6, -2, 0, -1] },
-            { monzo: [-19, 12] },
+            {monzo: [-4, 4, -1]},
+            {monzo: [6, -2, 0, -1]},
+            {monzo: [-19, 12]},
         ] as Comma[]
         expect(actual).toEqual(expected)
     })

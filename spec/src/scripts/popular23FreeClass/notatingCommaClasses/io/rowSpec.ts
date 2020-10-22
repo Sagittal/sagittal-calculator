@@ -1,17 +1,17 @@
-import { Id, Index, ioSettings, Monzo, Name, Ranked, TableFormat, Two3FreeClass } from "../../../../../../src/general"
-import { Rank } from "../../../../../../src/general/code"
-import { Row } from "../../../../../../src/general/io/table"
-import { Direction } from "../../../../../../src/general/math/numeric"
-import { Popularity, Votes } from "../../../../../../src/general/music/ji"
+import {Id, Index, ioSettings, Monzo, Name, Ranked, TableFormat, Two3FreeClass} from "../../../../../../src/general"
+import {Rank} from "../../../../../../src/general/code"
+import {Row} from "../../../../../../src/general/io/table"
+import {Direction} from "../../../../../../src/general/math/numeric"
+import {Popularity, Votes} from "../../../../../../src/general/music/ji"
 import {FlaccoSubset} from "../../../../../../src/sagittal/accidental"
 import {CommaClass} from "../../../../../../src/sagittal/ji/comma"
-import { N2D3P9 } from "../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
+import {N2D3P9} from "../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
 import {
     computePopular23FreeClassWithNotatingCommaClassesRow,
     NotatingCommaClassesProperties,
 } from "../../../../../../src/scripts/popular23FreeClass/notatingCommaClasses"
-import { Popular23FreeClass } from "../../../../../../src/scripts/popular23FreeClass/types"
-import { two3FreeClassAnalysisFixture } from "../../../../../helpers/src/scripts/jiPitch/fixtures"
+import {Popular23FreeClass} from "../../../../../../src/scripts/popular23FreeClass/types"
+import {two3FreeClassAnalysisFixture} from "../../../../../helpers/src/scripts/jiPitch/fixtures"
 
 describe("computePopular23FreeClassWithNotatingCommaClassesRow", (): void => {
     const rankedPopular23FreeClassWithNotatingCommaClasses:
@@ -25,7 +25,7 @@ describe("computePopular23FreeClassWithNotatingCommaClassesRow", (): void => {
         votes: 7 as Votes,
         popularityRank: 3 as Rank<Popularity>,
         two3FreeClass: {
-            monzo: [0, 0, -1, 1] as Monzo<{ rational: true, rough: 5, direction: Direction.SUPER }>,
+            monzo: [0, 0, -1, 1] as Monzo<{rational: true, rough: 5, direction: Direction.SUPER}>,
         } as Two3FreeClass,
     }
 
@@ -42,7 +42,7 @@ describe("computePopular23FreeClassWithNotatingCommaClassesRow", (): void => {
             "4",                    // Estimated rank
             "3",                    // Actual rank
             "7",                    // Votes
-        ] as Row<{ of: Popular23FreeClass & NotatingCommaClassesProperties, header: true }>
+        ] as Row<{of: Popular23FreeClass & NotatingCommaClassesProperties, header: true}>
         expect(actual).toEqual(expected)
     })
 
@@ -61,7 +61,7 @@ describe("computePopular23FreeClassWithNotatingCommaClassesRow", (): void => {
             "4",                                                                // Estimated rank
             "3",                                                                // Actual rank
             "7",                                                                // Votes
-        ] as Row<{ of: Popular23FreeClass & NotatingCommaClassesProperties, header: true }>
+        ] as Row<{of: Popular23FreeClass & NotatingCommaClassesProperties, header: true}>
         expect(actual).toEqual(expected)
     })
 })

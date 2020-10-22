@@ -1,9 +1,9 @@
-import { Abs, Multiplier } from "../../../../../../../src/general"
-import { Formatted } from "../../../../../../../src/general/io"
-import { Cents } from "../../../../../../../src/general/music"
-import { Ina, JiNotationLevel } from "../../../../../../../src/sagittal/notations/ji"
-import { BoundHistoryAnalysis } from "../../../../../../../src/scripts/jiNotationBoundClass/history"
-import { extractJiNotationLevelDistances } from "../../../../../../../src/scripts/jiNotationBoundClass/io/terminal/boundClasses/levelDistances"
+import {Abs, Multiplier} from "../../../../../../../src/general"
+import {Formatted} from "../../../../../../../src/general/io"
+import {Cents} from "../../../../../../../src/general/music"
+import {Ina, JiNotationLevel} from "../../../../../../../src/sagittal/notations/ji"
+import {BoundHistoryAnalysis} from "../../../../../../../src/scripts/jiNotationBoundClass/history"
+import {extractJiNotationLevelDistances} from "../../../../../../../src/scripts/jiNotationBoundClass/io/terminal/boundClasses/levelDistances"
 import {
     boundEventAnalysisFixture,
     boundHistoryAnalysisFixture,
@@ -124,7 +124,7 @@ describe("extractJiNotationLevelDistances", (): void => {
                 ],
             }
 
-            const actual = extractJiNotationLevelDistances(boundHistoryAnalysis, { ina: true })
+            const actual = extractJiNotationLevelDistances(boundHistoryAnalysis, {ina: true})
 
             const expected = [
                 "  4.444",
@@ -162,7 +162,7 @@ describe("extractJiNotationLevelDistances", (): void => {
                 ],
             }
 
-            const actual = extractJiNotationLevelDistances(boundHistoryAnalysis, { ina: true })
+            const actual = extractJiNotationLevelDistances(boundHistoryAnalysis, {ina: true})
 
             const expected = [
                 "  4.444",

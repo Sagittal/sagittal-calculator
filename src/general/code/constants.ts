@@ -1,4 +1,4 @@
-import { Precision } from "./types"
+import {Precision} from "./types"
 
 const DEFAULT_PRECISION = 5 as Precision
 const MAX_JS_PRECISION = 15 as Precision

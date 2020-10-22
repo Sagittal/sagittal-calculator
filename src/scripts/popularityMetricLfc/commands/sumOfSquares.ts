@@ -1,8 +1,8 @@
-import { Combination, Filename, LogTarget, saveLog, stringify } from "../../../general"
-import { computeSumOfSquaresForSubmetrics, Submetric } from "../sumOfSquares"
-import { applySharedPopularityMetricLfcCommandSetup, load } from "./shared"
+import {Combination, Filename, LogTarget, saveLog, stringify} from "../../../general"
+import {computeSumOfSquaresForSubmetrics, Submetric} from "../sumOfSquares"
+import {applySharedPopularityMetricLfcCommandSetup, load} from "./shared"
 
-applySharedPopularityMetricLfcCommandSetup({ defaultLogTargets: [LogTarget.DETAILS] })
+applySharedPopularityMetricLfcCommandSetup({defaultLogTargets: [LogTarget.DETAILS]})
 
 const submetrics = load("submetrics" as Filename) as Combination<Submetric>
 

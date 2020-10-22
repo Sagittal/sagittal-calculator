@@ -1,6 +1,6 @@
-export { ioSettings } from "./globals"
-export { colorize } from "./colorize"
-export { CommandFlag, parseCommands } from "./command"
+export {ioSettings} from "./globals"
+export {colorize} from "./colorize"
+export {CommandFlag, parseCommands} from "./command"
 export {
     IDENTIFYING_COMMA_NAME_CHARS,
     ANY_MONZO_CHARS,
@@ -14,10 +14,10 @@ export {
     ANY_CENTS_CHARS,
     ANY_QUOTIENT_CHARS,
 } from "./constants"
-export { clearLogFiles, LogTarget, saveLog, setLogTargets } from "./log"
-export { parse23FreeClass, parseMonzo, parseQuotient, parseCents, parseInteger, parseDecimal } from "./parse"
-export { removeColor } from "./removeColor"
-export { stringify } from "./stringify"
+export {clearLogFiles, LogTarget, saveLog, setLogTargets} from "./log"
+export {parse23FreeClass, parseMonzo, parseQuotient, parseCents, parseInteger, parseDecimal} from "./parse"
+export {removeColor} from "./removeColor"
+export {stringify} from "./stringify"
 export {
     Column,
     formatTable,
@@ -28,9 +28,9 @@ export {
     Justification,
     JustificationOption,
 } from "./table"
-export { sumTexts, join, split } from "./typedOperations"
-export { ColorMethod, Filename, HexColor, Io, Char } from "./types"
-export { Basis, computePx, Px, Scale } from "./image"
+export {sumTexts, join, split} from "./typedOperations"
+export {ColorMethod, Filename, HexColor, Io, Char} from "./types"
+export {Basis, computePx, Px, Scale} from "./image"
 export {
     alignFormattedDecimal,
     formatIntegerDecimal,
@@ -42,5 +42,5 @@ export {
     Formatted,
     formatCents,
 } from "./format"
-export { time } from "./time"
-export { readLines } from "./lines"
+export {time} from "./time"
+export {readLines} from "./lines"

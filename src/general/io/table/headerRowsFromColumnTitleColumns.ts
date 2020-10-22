@@ -1,31 +1,31 @@
-import { BLANK, Column, count, Count, Formatted, max, Maybe, Row } from "../../../general"
+import {BLANK, Column, count, Count, Formatted, max, Maybe, Row} from "../../../general"
 
 const computeHeaderRowsFromColumnTitleColumns = <T>(
-    columnTitleColumns: Array<Column<{ of: T, header: true }>>,
-    { includeSpacerRow = false }: { includeSpacerRow?: boolean } = {},
-): Array<Row<{ of: T, header: true }>> => {
+    columnTitleColumns: Array<Column<{of: T, header: true}>>,
+    {includeSpacerRow = false}: {includeSpacerRow?: boolean} = {},
+): Array<Row<{of: T, header: true}>> => {
     const maxColumnTitleHeaderRowCount = max(
-        ...columnTitleColumns.map((columnTitleColumn: Column<{ of: T, header: true }>): Count<Maybe<Formatted<T>>> => {
+        ...columnTitleColumns.map((columnTitleColumn: Column<{of: T, header: true}>): Count<Maybe<Formatted<T>>> => {
             return count(columnTitleColumn)
         }),
     )
 
-    const rows: Array<Row<{ of: T, header: true }>> = [...Array(maxColumnTitleHeaderRowCount).keys()]
-        .map((_: number): Row<{ of: T, header: true }> => [] as unknown[] as Row<{ of: T, header: true }>)
+    const rows: Array<Row<{of: T, header: true}>> = [...Array(maxColumnTitleHeaderRowCount).keys()]
+        .map((_: number): Row<{of: T, header: true}> => [] as unknown[] as Row<{of: T, header: true}>)
 
-    columnTitleColumns.forEach((columnTitleColumn: Column<{ of: T, header: true }>): void => {
+    columnTitleColumns.forEach((columnTitleColumn: Column<{of: T, header: true}>): void => {
         while (columnTitleColumn.length < maxColumnTitleHeaderRowCount) {
             columnTitleColumn.unshift(BLANK as Formatted<T>)
         }
 
         columnTitleColumn.forEach((columnTitleCell: Maybe<Formatted<T>>, index: number): void => {
-            rows[ index ].push(columnTitleCell)
+            rows[index].push(columnTitleCell)
         })
     })
 
     if (includeSpacerRow) {
         rows.push([...Array(columnTitleColumns.length).keys()]
-            .map((_: number): string => "") as Row<{ of: T, header: true }>)
+            .map((_: number): string => "") as Row<{of: T, header: true}>)
     }
 
     return rows

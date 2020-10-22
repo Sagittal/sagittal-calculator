@@ -1,8 +1,8 @@
-import { Filename, Io, ioSettings, LogTarget, parseCommands, saveLog } from "../../../general"
-import { ScriptGroup } from "../../types"
-import { analyzeJiNotationBoundClasses } from "../analyzeBoundClasses"
-import { JiNotationBoundClassAnalysis } from "../boundClass"
-import { computeJiNotationBoundClassesImage, computeJiNotationBoundsOutput } from "../io"
+import {Filename, Io, ioSettings, LogTarget, parseCommands, saveLog} from "../../../general"
+import {ScriptGroup} from "../../types"
+import {analyzeJiNotationBoundClasses} from "../analyzeBoundClasses"
+import {JiNotationBoundClassAnalysis} from "../boundClass"
+import {computeJiNotationBoundClassesImage, computeJiNotationBoundsOutput} from "../io"
 
 parseCommands(ScriptGroup.JI_NOTATION_BOUND_CLASS as Filename, [LogTarget.FINAL])
 

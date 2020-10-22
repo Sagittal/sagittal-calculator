@@ -1,10 +1,10 @@
 // tslint:disable max-line-length
 
-import { JiNotationBoundClass, JI_NOTATION_BOUND_CLASSES } from "../../../../../../../src/sagittal/notations/ji"
-import { analyzeJiNotationBoundClass } from "../../../../../../../src/scripts/jiNotationBoundClass/boundClass"
-import { computeHistories } from "../../../../../../../src/scripts/jiNotationBoundClass/histories"
-import { formatRankAnalyses } from "../../../../../../../src/scripts/jiNotationBoundClass/io/terminal/rank"
-import { onlyRunInCi } from "../../../../../../helpers/onlyRunInCi"
+import {JiNotationBoundClass, JI_NOTATION_BOUND_CLASSES} from "../../../../../../../src/sagittal/notations/ji"
+import {analyzeJiNotationBoundClass} from "../../../../../../../src/scripts/jiNotationBoundClass/boundClass"
+import {computeHistories} from "../../../../../../../src/scripts/jiNotationBoundClass/histories"
+import {formatRankAnalyses} from "../../../../../../../src/scripts/jiNotationBoundClass/io/terminal/rank"
+import {onlyRunInCi} from "../../../../../../helpers/onlyRunInCi"
 
 describe("formatRankAnalyses", (): void => {
     it("gives the correct answer", (): void => {

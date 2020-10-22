@@ -1,7 +1,7 @@
-import { Ed, Step, Window } from "../../../types"
-import { Prime } from "../../rational"
-import { Exponent, Max } from "../../types"
-import { Decimal } from "../decimal"
+import {Ed, Step, Window} from "../../../types"
+import {Prime} from "../../rational"
+import {Exponent, Max} from "../../types"
+import {Decimal} from "../decimal"
 import {
     NumericProperties,
     NumericPropertyEffects,

@@ -1,34 +1,34 @@
-import { Combination, Decimal, Ed, Index, Io, Name, Step, Window } from "../../../../../src/general"
-import { Metric, Scope, SumOfSquares } from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
-import { SamplePoint } from "../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
-import { recursiveSearchScopeAndMaybeUpdateBestMetric } from "../../../../../src/scripts/popularityMetricLfc/perfecter"
+import {Combination, Decimal, Ed, Index, Io, Name, Step, Window} from "../../../../../src/general"
+import {Metric, Scope, SumOfSquares} from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
+import {SamplePoint} from "../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
+import {recursiveSearchScopeAndMaybeUpdateBestMetric} from "../../../../../src/scripts/popularityMetricLfc/perfecter"
 import * as nextLocalMin from "../../../../../src/scripts/popularityMetricLfc/perfecter/nextLocalMin"
-import { LocalMin, MetricTag } from "../../../../../src/scripts/popularityMetricLfc/perfecter/types"
-import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {LocalMin, MetricTag} from "../../../../../src/scripts/popularityMetricLfc/perfecter/types"
+import {Parameter, ParameterValue, Submetric} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
 describe("searchScopeAndMaybeUpdateBestMetric", (): void => {
     it("searches each local min", async (): Promise<void> => {
         const scope = [
             {},
             {
-                [ Parameter.SUM ]: true,
-                [ Parameter.A_AS_COEFFICIENT ]: {
+                [Parameter.SUM]: true,
+                [Parameter.A_AS_COEFFICIENT]: {
                     center: 2 as ParameterValue,
                     window: 2 as Window<ParameterValue>,
                     ed: 3 as Ed<ParameterValue>,
                 },
             },
             {
-                [ Parameter.COUNT ]: true,
-                [ Parameter.W ]: {
+                [Parameter.COUNT]: true,
+                [Parameter.W]: {
                     center: 1.5 as ParameterValue,
                     window: 2 as Window<ParameterValue>,
                     ed: 2 as Ed<ParameterValue>,
                 },
-                [ Parameter.A_AS_COEFFICIENT ]: 3.3 as ParameterValue,
+                [Parameter.A_AS_COEFFICIENT]: 3.3 as ParameterValue,
             },
         ] as Scope
-        const depth = 8 as Decimal<{ integer: true }>
+        const depth = 8 as Decimal<{integer: true}>
         const metricTag = "this is fun" as MetricTag
         const localMin = {
             sumOfSquares: 0.04 as SumOfSquares,
@@ -53,13 +53,13 @@ describe("searchScopeAndMaybeUpdateBestMetric", (): void => {
                 samplePoint: [1, 0] as SamplePoint,
                 submetrics: [
                     {
-                        [ Parameter.SUM ]: true,
-                        [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
+                        [Parameter.SUM]: true,
+                        [Parameter.A_AS_COEFFICIENT]: 2 as ParameterValue,
                     },
                     {
-                        [ Parameter.COUNT ]: true,
-                        [ Parameter.W ]: 0.5 as ParameterValue,
-                        [ Parameter.A_AS_COEFFICIENT ]: 3.3 as ParameterValue,
+                        [Parameter.COUNT]: true,
+                        [Parameter.W]: 0.5 as ParameterValue,
+                        [Parameter.A_AS_COEFFICIENT]: 3.3 as ParameterValue,
                     },
                 ] as Combination<Submetric>,
             },
@@ -68,13 +68,13 @@ describe("searchScopeAndMaybeUpdateBestMetric", (): void => {
                 samplePoint: [2, 1] as SamplePoint,
                 submetrics: [
                     {
-                        [ Parameter.SUM ]: true,
-                        [ Parameter.A_AS_COEFFICIENT ]: 3 as ParameterValue,
+                        [Parameter.SUM]: true,
+                        [Parameter.A_AS_COEFFICIENT]: 3 as ParameterValue,
                     },
                     {
-                        [ Parameter.COUNT ]: true,
-                        [ Parameter.W ]: 2.5 as ParameterValue,
-                        [ Parameter.A_AS_COEFFICIENT ]: 3.3 as ParameterValue,
+                        [Parameter.COUNT]: true,
+                        [Parameter.W]: 2.5 as ParameterValue,
+                        [Parameter.A_AS_COEFFICIENT]: 3.3 as ParameterValue,
                     },
                 ] as Combination<Submetric>,
             },
@@ -106,12 +106,12 @@ describe("searchScopeAndMaybeUpdateBestMetric", (): void => {
         }
 
         expect(nextLocalMin.searchNextLocalMin).toHaveBeenCalledWith(
-            expectedNextLocalMinima[ 0 ],
-            { ...expectedOptions, index: 0 },
+            expectedNextLocalMinima[0],
+            {...expectedOptions, index: 0},
         )
         expect(nextLocalMin.searchNextLocalMin).toHaveBeenCalledWith(
-            expectedNextLocalMinima[ 1 ],
-            { ...expectedOptions, index: 1 },
+            expectedNextLocalMinima[1],
+            {...expectedOptions, index: 1},
         )
     })
 })

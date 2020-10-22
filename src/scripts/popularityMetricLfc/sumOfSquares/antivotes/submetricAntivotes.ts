@@ -13,8 +13,8 @@ import {
     QuotientPartType,
     stringify,
 } from "../../../../general"
-import { Antivotes, ParameterValue, Submetric } from "../types"
-import { secondaryParameterOverride } from "./secondaryParameter"
+import {Antivotes, ParameterValue, Submetric} from "../types"
+import {secondaryParameterOverride} from "./secondaryParameter"
 
 // (sum or count)
 // Of (maybe adjusted) prime factors
@@ -22,7 +22,7 @@ import { secondaryParameterOverride } from "./secondaryParameter"
 // (maybe with (maybe adjusted) repetition)
 
 const computeSubmetricAntivotes = (
-    two3FreeRationalMonzo: Monzo<{ rational: true }>,
+    two3FreeRationalMonzo: Monzo<{rational: true}>,
     submetric: Submetric = {},
     quotientPartType?: QuotientPartType,
 ): Antivotes => {
@@ -52,14 +52,14 @@ const computeSubmetricAntivotes = (
     return two3FreeRationalMonzo.reduce(
         (
             monzoAntivotes: Antivotes,
-            primeExponent: Decimal<{ integer: true }> & Exponent<Prime>,
+            primeExponent: Decimal<{integer: true}> & Exponent<Prime>,
             index: number,
         ): Antivotes => {
             if (max && index < indexOfFinalElement(two3FreeRationalMonzo)) {
                 return 0 as Antivotes
             }
 
-            const prime = PRIMES[ index ]
+            const prime = PRIMES[index]
 
             let adjustedPrime
             let adjustedPrimeExponent
@@ -101,7 +101,7 @@ const computeSubmetricAntivotes = (
             }
 
             if (isNaN(primeExponentAntivotes)) {
-                throw new Error(`You got NaN! in submetricAntivotes ${two3FreeRationalMonzo} ${stringify(submetric, { multiline: true })}`)
+                throw new Error(`You got NaN! in submetricAntivotes ${two3FreeRationalMonzo} ${stringify(submetric, {multiline: true})}`)
             }
 
             return monzoAntivotes + primeExponentAntivotes as Antivotes

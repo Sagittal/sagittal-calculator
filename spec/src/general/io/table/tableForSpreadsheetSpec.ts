@@ -1,6 +1,6 @@
-import { Io, NEWLINE } from "../../../../../src/general/io"
-import { Table } from "../../../../../src/general/io/table"
-import { formatTableForSpreadsheet } from "../../../../../src/general/io/table/tableForSpreadsheet"
+import {Io, NEWLINE} from "../../../../../src/general/io"
+import {Table} from "../../../../../src/general/io/table"
+import {formatTableForSpreadsheet} from "../../../../../src/general/io/table/tableForSpreadsheet"
 
 describe("formatTableForSpreadsheet", (): void => {
     const table = [

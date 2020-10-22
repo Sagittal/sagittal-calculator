@@ -1,23 +1,23 @@
-import { Count, Sum } from "../../types"
-import { Decimal, NumericProperties, NumericPropertyEffects } from "../numeric"
+import {Count, Sum} from "../../types"
+import {Decimal, NumericProperties, NumericPropertyEffects} from "../numeric"
 
-type Prime<T extends NumericProperties = {}> = Decimal<T & { integer: true }> & { _PrimeBrand: "Prime" }
-type Roughness = Decimal<{ integer: true }> & { _RoughnessBrand: boolean }
-type Smoothness = Decimal<{ integer: true }> & { _SmoothnessBrand: boolean }
+type Prime<T extends NumericProperties = {}> = Decimal<T & {integer: true}> & {_PrimeBrand: "Prime"}
+type Roughness = Decimal<{integer: true}> & {_RoughnessBrand: boolean}
+type Smoothness = Decimal<{integer: true}> & {_SmoothnessBrand: boolean}
 
 type Sopfr<T extends NumericProperties = {}> =
     Sum<Prime>
-    & { _SopfrBrand: boolean }
+    & {_SopfrBrand: boolean}
     & NumericPropertyEffects<T>
 type Copfr<T extends NumericProperties = {}> =
     Count<Prime>
-    & { _CopfrBrand: boolean }
+    & {_CopfrBrand: boolean}
     & NumericPropertyEffects<T>
 
 type CommonFunction = (
-    decimalIntegerA: Decimal<{ integer: true }>,
-    decimalIntegerB: Decimal<{ integer: true }>,
-) => Decimal<{ integer: true }>
+    decimalIntegerA: Decimal<{integer: true}>,
+    decimalIntegerB: Decimal<{integer: true}>,
+) => Decimal<{integer: true}>
 
 type Primes =
     2 | 3 | 5 | 7 | 11 | 13 | 17 | 19 | 23 | 29 | 31 | 37 | 41 | 43 | 47 | 53 | 59 | 61 | 67 | 71 | 73 | 79 | 83 | 89

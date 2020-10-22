@@ -1,27 +1,27 @@
-import { Ed, Index, Step, Window } from "../../../../../../src/general"
-import { Scope } from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
-import { computeDynamicParameters } from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
-import { Parameter, ParameterValue, Submetric } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {Ed, Index, Step, Window} from "../../../../../../src/general"
+import {Scope} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
+import {computeDynamicParameters} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
+import {Parameter, ParameterValue, Submetric} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
 describe("computeDynamicParameters", (): void => {
     it("returns a flattened array of all the parameters that are dynamic -- flattened across all the submetrics, that is", (): void => {
         const scope: Scope = [
             {
-                [ Parameter.Y ]: {
+                [Parameter.Y]: {
                     center: 1.2 as ParameterValue,
                     window: 1 as Window<ParameterValue>,
                     ed: 3 as Ed<ParameterValue>,
                 },
-                [ Parameter.W ]: 4 as ParameterValue,
+                [Parameter.W]: 4 as ParameterValue,
             },
             {
-                [ Parameter.COUNT ]: true,
-                [ Parameter.Y ]: {
+                [Parameter.COUNT]: true,
+                [Parameter.Y]: {
                     center: 1.0 as ParameterValue,
                     window: 0.2 as Window<ParameterValue>,
                     ed: 2 as Ed<ParameterValue>,
                 },
-                [ Parameter.A_AS_COEFFICIENT ]: {
+                [Parameter.A_AS_COEFFICIENT]: {
                     center: 0.65 as ParameterValue,
                     window: 0.1 as Window<ParameterValue>,
                     ed: 2 as Ed<ParameterValue>,

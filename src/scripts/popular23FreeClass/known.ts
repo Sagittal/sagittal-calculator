@@ -1,7 +1,7 @@
-import { Filename, Io, parse23FreeClass, readLines, Two3FreeClass } from "../../general"
-import { analyze23FreeClass } from "../../sagittal"
-import { computePopular23FreeClass } from "./popular23FreeClass"
-import { Popular23FreeClass } from "./types"
+import {Filename, Io, parse23FreeClass, readLines, Two3FreeClass} from "../../general"
+import {analyze23FreeClass} from "../../sagittal"
+import {computePopular23FreeClass} from "./popular23FreeClass"
+import {Popular23FreeClass} from "./types"
 
 const computeKnownPopular23FreeClasses = (): Popular23FreeClass[] => {
     const knownPopular23FreeClasses =

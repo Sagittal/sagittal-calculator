@@ -1,39 +1,39 @@
-import { Count, Decimal, formatIntegerDecimal, Rank, RecordKey, Row } from "../../../../../general"
-import { BoundType, JiNotationLevel } from "../../../../../sagittal"
-import { jiNotationLevelsBestCumulativeHistoryRanks, jiNotationLevelsBestHistoryRanks } from "../../../globals"
-import { FORMATTED_RANKS } from "../rankNames"
+import {Count, Decimal, formatIntegerDecimal, Rank, RecordKey, Row} from "../../../../../general"
+import {BoundType, JiNotationLevel} from "../../../../../sagittal"
+import {jiNotationLevelsBestCumulativeHistoryRanks, jiNotationLevelsBestHistoryRanks} from "../../../globals"
+import {FORMATTED_RANKS} from "../rankNames"
 
-const computeJiNotationLevelAnalysisRows = (jiNotationLevel: JiNotationLevel): Array<Row<{ of: JiNotationLevel }>> => {
-    const rows = [] as Array<Row<{ of: JiNotationLevel }>>
+const computeJiNotationLevelAnalysisRows = (jiNotationLevel: JiNotationLevel): Array<Row<{of: JiNotationLevel}>> => {
+    const rows = [] as Array<Row<{of: JiNotationLevel}>>
 
     const jiNotationLevelsBestHistoryRanksEntries = Object.entries(
-        jiNotationLevelsBestHistoryRanks[ jiNotationLevel ],
+        jiNotationLevelsBestHistoryRanks[jiNotationLevel],
     ) as unknown[] as Array<[
-        RecordKey<Decimal<{ integer: true }> & Rank<BoundType>>,
-        Count<Decimal<{ integer: true }> & Rank<BoundType>>
+        RecordKey<Decimal<{integer: true}> & Rank<BoundType>>,
+        Count<Decimal<{integer: true}> & Rank<BoundType>>
     ]>
 
     jiNotationLevelsBestHistoryRanksEntries
         .forEach((
             [rank, bestHistoryRankCount]: [
-                RecordKey<Decimal<{ integer: true }> & Rank<BoundType>>,
-                Count<Decimal<{ integer: true }> & Rank<BoundType>>
+                RecordKey<Decimal<{integer: true}> & Rank<BoundType>>,
+                Count<Decimal<{integer: true}> & Rank<BoundType>>
             ],
         ): void => {
             let formattedBestHistoryRankCount = formatIntegerDecimal(
-                bestHistoryRankCount as Count<Decimal<{ integer: true }> & Rank<BoundType>>,
-                { align: true },
+                bestHistoryRankCount as Count<Decimal<{integer: true}> & Rank<BoundType>>,
+                {align: true},
             )
 
-            const bestCumulativeHistoryRankCount = jiNotationLevelsBestCumulativeHistoryRanks[ jiNotationLevel ][ rank ]
+            const bestCumulativeHistoryRankCount = jiNotationLevelsBestCumulativeHistoryRanks[jiNotationLevel][rank]
             let formattedBestCumulativeHistoryRankCount =
-                formatIntegerDecimal(bestCumulativeHistoryRankCount, { align: true })
+                formatIntegerDecimal(bestCumulativeHistoryRankCount, {align: true})
 
             const jiNotationLevelRankRow = [
-                FORMATTED_RANKS[ rank ],
+                FORMATTED_RANKS[rank],
                 formattedBestHistoryRankCount,
                 formattedBestCumulativeHistoryRankCount,
-            ] as Row as Row<{ of: JiNotationLevel }>
+            ] as Row as Row<{of: JiNotationLevel}>
 
             rows.push(jiNotationLevelRankRow)
         })

@@ -1,6 +1,6 @@
-import { Combination, Count, Index } from "../../../../general"
-import { Parameter, Submetric } from "../../sumOfSquares"
-import { Chunk } from "../types"
+import {Combination, Count, Index} from "../../../../general"
+import {Parameter, Submetric} from "../../sumOfSquares"
+import {Chunk} from "../types"
 
 interface PopulateScopesForSubmetricChunkCombinationOptions {
     parameterChunkCombinations: Array<Combination<Chunk<Parameter>>>,

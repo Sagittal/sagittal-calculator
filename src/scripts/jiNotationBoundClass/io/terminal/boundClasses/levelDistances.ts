@@ -1,10 +1,10 @@
-import { Abs, BLANK, Cents, formatDecimal, Formatted, indexOfFinalElement, Multiplier } from "../../../../../general"
-import { Ina, JiNotationLevel, JI_NOTATION_LEVELS } from "../../../../../sagittal"
-import { BoundEventAnalysis, BoundHistoryAnalysis } from "../../../history"
+import {Abs, BLANK, Cents, formatDecimal, Formatted, indexOfFinalElement, Multiplier} from "../../../../../general"
+import {Ina, JiNotationLevel, JI_NOTATION_LEVELS} from "../../../../../sagittal"
+import {BoundEventAnalysis, BoundHistoryAnalysis} from "../../../history"
 
 const extractJiNotationLevelDistances = (
     boundHistoryAnalysis: BoundHistoryAnalysis,
-    { ina = false }: { ina?: boolean } = {},
+    {ina = false}: {ina?: boolean} = {},
 ): Array<Formatted<Multiplier<Ina> | Abs<Cents>>> => {
     const boundEventAnalyses = boundHistoryAnalysis.boundEventAnalyses
 
@@ -18,11 +18,11 @@ const extractJiNotationLevelDistances = (
                 return BLANK as Formatted<Multiplier<Ina> | Abs<Cents>>
             }
             const jiNotationLevelEventAnalysis: BoundEventAnalysis =
-                boundEventAnalyses[ previousEventIndex + 1 ]
+                boundEventAnalyses[previousEventIndex + 1]
 
             return formatDecimal(
                 ina ? jiNotationLevelEventAnalysis.inaDistance : jiNotationLevelEventAnalysis.distance,
-                { align: true },
+                {align: true},
             ) as Formatted<Multiplier<Ina> | Abs<Cents>>
         })
 }

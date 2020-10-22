@@ -1,4 +1,4 @@
-import { Decimal } from "../math"
+import {Decimal} from "../math"
 
 type SortOptions = Partial<{
     by: KeyPath,
@@ -6,17 +6,17 @@ type SortOptions = Partial<{
     precision: Precision,
 }>
 
-type KeyPath = (number | string | Array<number | string>) & { _KeyPathBrand: boolean }
+type KeyPath = (number | string | Array<number | string>) & {_KeyPathBrand: boolean}
 
-type Obj = (Array<unknown> | Record<any, unknown>) & { [ index: string ]: unknown } & { [ index: number ]: unknown }
+type Obj = (Array<unknown> | Record<any, unknown>) & {[index: string]: unknown} & {[index: number]: unknown}
 
 type RecordKey<T> = T | (T extends number ? number : T extends string ? string : {})
 
-type Sortable = { [ index: string ]: number }
+type Sortable = {[index: string]: number}
 
-type Rank<T = void> = number & { _RankBrand: boolean } & (T extends void ? {} : { _RankOfBrand: T })
+type Rank<T = void> = number & {_RankBrand: boolean} & (T extends void ? {} : {_RankOfBrand: T})
 
-type Ranked<T> = T & { rank: Rank<T> }
+type Ranked<T> = T & {rank: Rank<T>}
 
 enum RankStrategy {
     FRACTIONAL = "fractional",
@@ -34,11 +34,11 @@ enum ExtensionBaseType {
     OBJECT = "object",
 }
 
-type Range<T = number> = Array<T> & { _RangeBrand: boolean }
+type Range<T = number> = Array<T> & {_RangeBrand: boolean}
 
 type Maybe<T> = T | undefined
 
-type Precision = Decimal<{ integer: true }> & { _PrecisionBrand: boolean }
+type Precision = Decimal<{integer: true}> & {_PrecisionBrand: boolean}
 
 export {
     SortOptions,

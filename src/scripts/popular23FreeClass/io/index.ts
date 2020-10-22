@@ -1,1 +1,1 @@
-export { computePopular23FreeClassesOutput } from "./popular23FreeClassesOutput"
+export {computePopular23FreeClassesOutput} from "./popular23FreeClassesOutput"

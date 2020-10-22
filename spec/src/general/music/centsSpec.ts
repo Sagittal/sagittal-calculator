@@ -1,14 +1,14 @@
-import { IRRATIONAL_SCAMON_BASE_MONZO } from "../../../../src/general/math/irrational/scamon/constants"
-import { Decimal } from "../../../../src/general/math/numeric/decimal"
-import { Scamon } from "../../../../src/general/math/numeric/scamon"
-import { Cents, computeCentsFromPitch, computePitchFromCents, dividePitch } from "../../../../src/general/music"
-import { APOTOME, HALF_APOTOME } from "../../../../src/sagittal"
+import {IRRATIONAL_SCAMON_BASE_MONZO} from "../../../../src/general/math/irrational/scamon/constants"
+import {Decimal} from "../../../../src/general/math/numeric/decimal"
+import {Scamon} from "../../../../src/general/math/numeric/scamon"
+import {Cents, computeCentsFromPitch, computePitchFromCents, dividePitch} from "../../../../src/general/music"
+import {APOTOME, HALF_APOTOME} from "../../../../src/sagittal"
 
 describe("dividePitch", (): void => {
     it("returns the proportion the part pitch is of the whole pitch", (): void => {
         const actual = dividePitch(HALF_APOTOME, APOTOME)
 
-        const expected = 0.5 as Decimal<{ rational: false }>
+        const expected = 0.5 as Decimal<{rational: false}>
         expect(actual).toBeCloseTo(expected)
     })
 })
@@ -22,7 +22,7 @@ describe("computePitchFromCents", (): void => {
         const expected = {
             monzo: IRRATIONAL_SCAMON_BASE_MONZO,
             scaler: [0.584963, 1],
-        } as Scamon<{ rational: false }>
+        } as Scamon<{rational: false}>
         expect(actual).toBeCloseToObject(expected)
     })
 
@@ -34,14 +34,14 @@ describe("computePitchFromCents", (): void => {
         const expected = {
             monzo: IRRATIONAL_SCAMON_BASE_MONZO,
             scaler: [0.5, 1],
-        } as Scamon<{ rational: false }>
+        } as Scamon<{rational: false}>
         expect(actual).toBeCloseToObject(expected)
     })
 })
 
 describe("computeCentsFromPitch", (): void => {
     it("returns the cents of a pitch with a monzo", (): void => {
-        const pitch = { monzo: [-1, 2, 0, -2, 1] } as Scamon<{ rational: true }>
+        const pitch = {monzo: [-1, 2, 0, -2, 1]} as Scamon<{rational: true}>
 
         const actual = computeCentsFromPitch(pitch)
 
@@ -50,7 +50,7 @@ describe("computeCentsFromPitch", (): void => {
     })
 
     it("works for pitches with monzos with really big 2 exponents", (): void => {
-        const pitch = { monzo: [317, -200] } as Scamon<{ rational: true }>
+        const pitch = {monzo: [317, -200]} as Scamon<{rational: true}>
 
         const actual = computeCentsFromPitch(pitch)
 
@@ -59,7 +59,7 @@ describe("computeCentsFromPitch", (): void => {
     })
 
     it("works for pitches with monzos that are greater than an octave", (): void => {
-        const pitch = { monzo: [0, 1] } as Scamon<{ rational: true }>
+        const pitch = {monzo: [0, 1]} as Scamon<{rational: true}>
 
         const actual = computeCentsFromPitch(pitch)
 
@@ -68,7 +68,7 @@ describe("computeCentsFromPitch", (): void => {
     })
 
     it("another example, negative", (): void => {
-        const pitch = { monzo: [2, 1, 0, 0, 0, -1] } as Scamon<{ rational: true }>
+        const pitch = {monzo: [2, 1, 0, 0, 0, -1]} as Scamon<{rational: true}>
 
         const actual = computeCentsFromPitch(pitch)
 

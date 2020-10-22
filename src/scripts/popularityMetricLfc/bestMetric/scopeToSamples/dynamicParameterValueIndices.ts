@@ -1,9 +1,9 @@
-import { Index } from "../../../../general"
-import { Parameter, ParameterValue } from "../../sumOfSquares"
-import { DynamicParameter, DynamicParameterValueIndicesOptions } from "./types"
+import {Index} from "../../../../general"
+import {Parameter, ParameterValue} from "../../sumOfSquares"
+import {DynamicParameter, DynamicParameterValueIndicesOptions} from "./types"
 
 const computeDynamicParameterValueIndices = (
-    { dynamicParameters, submetric, submetricIndex }: DynamicParameterValueIndicesOptions,
+    {dynamicParameters, submetric, submetricIndex}: DynamicParameterValueIndicesOptions,
 ): Array<Index<ParameterValue>> => {
     const dynamicParameterValueIndices: Array<Index<ParameterValue>> = []
 

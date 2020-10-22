@@ -1,13 +1,13 @@
-import { deepClone, shallowClone } from "../code"
-import { Count } from "../types"
-import { Decimal } from "./numeric"
-import { count } from "./typedOperations"
-import { Combination, Combinations } from "./types"
+import {deepClone, shallowClone} from "../code"
+import {Count} from "../types"
+import {Decimal} from "./numeric"
+import {count} from "./typedOperations"
+import {Combination, Combinations} from "./types"
 
 const computeCombinations = <T>(
     array: T[],
     comboCount: Count<T>,
-    { withRepeatedElements = false }: { withRepeatedElements?: boolean } = {},
+    {withRepeatedElements = false}: {withRepeatedElements?: boolean} = {},
 ): Combinations<T> => {
     if (withRepeatedElements) {
         return computeCombinationsWithRepetitions(array, comboCount)
@@ -19,7 +19,7 @@ const computeCombinations = <T>(
         return [] as unknown[] as Combinations<T>
     }
 
-    const computeRecursiveCombinations = (integerDecimal: Decimal<{ integer: true }>, combination: number[]): void => {
+    const computeRecursiveCombinations = (integerDecimal: Decimal<{integer: true}>, combination: number[]): void => {
         if (combination.length === comboCount) {
             combinations.push(shallowClone(combination))
 
@@ -30,17 +30,17 @@ const computeCombinations = <T>(
             return
         }
 
-        computeRecursiveCombinations(integerDecimal + 1 as Decimal<{ integer: true }>, combination)
+        computeRecursiveCombinations(integerDecimal + 1 as Decimal<{integer: true}>, combination)
         combination.push(integerDecimal)
-        computeRecursiveCombinations(integerDecimal + 1 as Decimal<{ integer: true }>, combination)
+        computeRecursiveCombinations(integerDecimal + 1 as Decimal<{integer: true}>, combination)
         combination.pop()
     }
 
-    computeRecursiveCombinations(1 as Decimal<{ integer: true }>, [])
+    computeRecursiveCombinations(1 as Decimal<{integer: true}>, [])
 
     return combinations.map((combination: number[]): Combination<T> => {
         return combination.map((index: number): T => {
-            return array[ index - 1 ] as T
+            return array[index - 1] as T
         }) as Combination<T>
     }) as Combinations<T>
 }
@@ -57,7 +57,7 @@ const computeCombinationsWithRepetitions = <T>(array: T[], comboCount: Count<T>)
             return
         }
         for (let index = start; index < array.length; ++index) {
-            data[ position ] = deepClone(array[ index ])
+            data[position] = deepClone(array[index])
             computeCombinationsWithRepetitionsRecursively(position + 1, index)
         }
     }

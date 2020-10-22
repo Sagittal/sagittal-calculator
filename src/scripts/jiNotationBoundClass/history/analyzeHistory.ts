@@ -1,18 +1,18 @@
-import { isCloseTo, Multiplier, Scamon, subtractPitch } from "../../../general"
-import { JiNotationBoundClass, Tina, TINA } from "../../../sagittal"
-import { BoundHistory } from "../histories"
-import { analyzeBoundEvents } from "./events"
-import { computeExact } from "./exact"
-import { computeBoundHistoryPosition } from "./historyPosition"
-import { computeBoundHistoryTotalDistance } from "./historyTotalDistance"
-import { computeBoundHistoryTotalInaDistance } from "./historyTotalInaDistance"
-import { computeRank } from "./rank"
-import { computeScore } from "./score"
-import { BoundHistoryAnalysis } from "./types"
+import {isCloseTo, Multiplier, Scamon, subtractPitch} from "../../../general"
+import {JiNotationBoundClass, Tina, TINA} from "../../../sagittal"
+import {BoundHistory} from "../histories"
+import {analyzeBoundEvents} from "./events"
+import {computeExact} from "./exact"
+import {computeBoundHistoryPosition} from "./historyPosition"
+import {computeBoundHistoryTotalDistance} from "./historyTotalDistance"
+import {computeBoundHistoryTotalInaDistance} from "./historyTotalInaDistance"
+import {computeRank} from "./rank"
+import {computeScore} from "./score"
+import {BoundHistoryAnalysis} from "./types"
 
 const analyzeHistory = (
     boundHistory: BoundHistory,
-    { pitch }: JiNotationBoundClass,
+    {pitch}: JiNotationBoundClass,
     initialPosition: Scamon,
 ): BoundHistoryAnalysis => {
     const position = computeBoundHistoryPosition(boundHistory)

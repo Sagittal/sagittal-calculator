@@ -1,6 +1,6 @@
-import { setAt } from "../../../general"
-import { SamplePoint } from "./scopeToSamples"
-import { SumOfSquares, SumsOfSquares } from "./types"
+import {setAt} from "../../../general"
+import {SamplePoint} from "./scopeToSamples"
+import {SumOfSquares, SumsOfSquares} from "./types"
 
 const setSumOfSquaresAtSamplePoint = (
     sumOfSquares: undefined | SumOfSquares,
@@ -11,7 +11,7 @@ const setSumOfSquaresAtSamplePoint = (
         sumsOfSquares as Record<number, SumsOfSquares | SumOfSquares>,
         samplePoint,
         sumOfSquares,
-        { parents: [] },
+        {parents: []},
     )
 }
 

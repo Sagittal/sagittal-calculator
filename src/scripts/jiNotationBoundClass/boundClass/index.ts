@@ -1,2 +1,2 @@
-export { analyzeJiNotationBoundClass } from "./analyzeBoundClass"
-export { JiNotationBoundClassAnalysis } from "./types"
+export {analyzeJiNotationBoundClass} from "./analyzeBoundClass"
+export {JiNotationBoundClassAnalysis} from "./types"

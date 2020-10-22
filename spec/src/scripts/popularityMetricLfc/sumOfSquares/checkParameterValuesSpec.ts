@@ -1,12 +1,12 @@
-import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
-import { checkSubmetricsForInvalidParameterValueCombinations } from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares/checkParameterValues"
+import {Parameter, ParameterValue, Submetric} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {checkSubmetricsForInvalidParameterValueCombinations} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares/checkParameterValues"
 
 describe("checkSubmetricsForInvalidParameterValueCombinations", (): void => {
     it("gives a good error when a is a base but it is 1", (): void => {
         const submetrics: Submetric[] = [
             {
-                [ Parameter.SUM ]: true,
-                [ Parameter.A_AS_LOGARITHM_BASE ]: 1 as ParameterValue,
+                [Parameter.SUM]: true,
+                [Parameter.A_AS_LOGARITHM_BASE]: 1 as ParameterValue,
             },
         ]
 
@@ -16,8 +16,8 @@ describe("checkSubmetricsForInvalidParameterValueCombinations", (): void => {
     it("gives a good error when a is a base but it is negative", (): void => {
         const submetrics = [
             {
-                [ Parameter.SUM ]: true,
-                [ Parameter.A_AS_LOGARITHM_BASE ]: -2.23 as ParameterValue,
+                [Parameter.SUM]: true,
+                [Parameter.A_AS_LOGARITHM_BASE]: -2.23 as ParameterValue,
             },
         ]
 
@@ -27,8 +27,8 @@ describe("checkSubmetricsForInvalidParameterValueCombinations", (): void => {
     it("gives a good error when j is a base but it is 1", (): void => {
         const submetrics: Submetric[] = [
             {
-                [ Parameter.SUM ]: true,
-                [ Parameter.J_AS_LOGARITHM_BASE ]: 1 as ParameterValue,
+                [Parameter.SUM]: true,
+                [Parameter.J_AS_LOGARITHM_BASE]: 1 as ParameterValue,
             },
         ]
 
@@ -38,8 +38,8 @@ describe("checkSubmetricsForInvalidParameterValueCombinations", (): void => {
     it("gives a good error when j is a base but it is negative", (): void => {
         const submetrics = [
             {
-                [ Parameter.SUM ]: true,
-                [ Parameter.J_AS_LOGARITHM_BASE ]: -2.23 as ParameterValue,
+                [Parameter.SUM]: true,
+                [Parameter.J_AS_LOGARITHM_BASE]: -2.23 as ParameterValue,
             },
         ]
 
@@ -49,8 +49,8 @@ describe("checkSubmetricsForInvalidParameterValueCombinations", (): void => {
     it("gives a good error when k is a base but it is 1", (): void => {
         const submetrics: Submetric[] = [
             {
-                [ Parameter.SUM ]: true,
-                [ Parameter.K_AS_LOGARITHM_BASE ]: 1 as ParameterValue,
+                [Parameter.SUM]: true,
+                [Parameter.K_AS_LOGARITHM_BASE]: 1 as ParameterValue,
             },
         ]
 
@@ -60,8 +60,8 @@ describe("checkSubmetricsForInvalidParameterValueCombinations", (): void => {
     it("gives a good error when k is a base but it is negative", (): void => {
         const submetrics = [
             {
-                [ Parameter.SUM ]: true,
-                [ Parameter.K_AS_LOGARITHM_BASE ]: -2.23 as ParameterValue,
+                [Parameter.SUM]: true,
+                [Parameter.K_AS_LOGARITHM_BASE]: -2.23 as ParameterValue,
             },
         ]
 
@@ -71,8 +71,8 @@ describe("checkSubmetricsForInvalidParameterValueCombinations", (): void => {
     it("gives a good error when weight is a base but it is 1", (): void => {
         const submetrics: Submetric[] = [
             {
-                [ Parameter.SUM ]: true,
-                [ Parameter.WEIGHT_AS_LOGARITHM_BASE ]: 1 as ParameterValue,
+                [Parameter.SUM]: true,
+                [Parameter.WEIGHT_AS_LOGARITHM_BASE]: 1 as ParameterValue,
             },
         ]
 
@@ -82,8 +82,8 @@ describe("checkSubmetricsForInvalidParameterValueCombinations", (): void => {
     it("gives a good error when weight is a base but it is negative", (): void => {
         const submetrics = [
             {
-                [ Parameter.SUM ]: true,
-                [ Parameter.WEIGHT_AS_LOGARITHM_BASE ]: -2.23 as ParameterValue,
+                [Parameter.SUM]: true,
+                [Parameter.WEIGHT_AS_LOGARITHM_BASE]: -2.23 as ParameterValue,
             },
         ]
 

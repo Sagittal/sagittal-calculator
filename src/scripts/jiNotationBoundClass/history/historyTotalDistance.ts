@@ -1,5 +1,5 @@
-import { Abs, Cents, sum, Sum } from "../../../general"
-import { BoundEventAnalysis } from "./events"
+import {Abs, Cents, sum, Sum} from "../../../general"
+import {BoundEventAnalysis} from "./events"
 
 const computeBoundHistoryTotalDistance = (boundEventAnalyses: BoundEventAnalysis[]): Sum<Abs<Cents>> => {
     const distances = boundEventAnalyses

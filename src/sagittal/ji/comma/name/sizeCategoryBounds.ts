@@ -14,12 +14,12 @@ import {
     Scamon,
     THIRTYONE_THREE_COMMA,
 } from "../../../../general"
-import { APOTOME } from "../../../constants"
-import { SizeCategoryBound } from "./types"
+import {APOTOME} from "../../../constants"
+import {SizeCategoryBound} from "./types"
 
 const u_n_SIZE_CATEGORY_BOUND = {
     name: "u|n" as Name<SizeCategoryBound>,
-    pitch: { monzo: EMPTY_MONZO } as Scamon<{ rational: false }>,
+    pitch: {monzo: EMPTY_MONZO} as Scamon<{rational: false}>,
 }
 const n_s_SIZE_CATEGORY_BOUND = {
     name: "n|s" as Name<SizeCategoryBound>,
@@ -60,9 +60,9 @@ const MS_LS_SIZE_CATEGORY_BOUND = {
 const LS_A_SIZE_CATEGORY_BOUND = {
     name: "LS|A" as Name<SizeCategoryBound>,
     pitch: {
-        monzo: [62, -39] as Monzo<{ rational: true }>,
+        monzo: [62, -39] as Monzo<{rational: true}>,
         scaler: HALF_SCALER,
-    } as Scamon<{ rational: false }>,
+    } as Scamon<{rational: false}>,
 }
 const SIZE_CATEGORY_BOUNDS: SizeCategoryBound[] = [
     u_n_SIZE_CATEGORY_BOUND,
@@ -79,79 +79,79 @@ const SIZE_CATEGORY_BOUNDS: SizeCategoryBound[] = [
     {
         name: "A|s+A" as Name<SizeCategoryBound>,                           // Apotome + 1.8075229327¢
         pitch: {
-            monzo: [-106, 67] as Monzo<{ rational: true }>,
+            monzo: [-106, 67] as Monzo<{rational: true}>,
             scaler: HALF_SCALER,
-        } as Scamon<{ rational: false }>,
+        } as Scamon<{rational: false}>,
     },
     {
         name: "s+A|k+A" as Name<SizeCategoryBound>,                         // Apotome + 4.4999134612584¢
         pitch: {
-            monzo: [295, -186] as Monzo<{ rational: true }>,
+            monzo: [295, -186] as Monzo<{rational: true}>,
             scaler: HALF_SCALER,
-        } as Scamon<{ rational: false }>,
+        } as Scamon<{rational: false}>,
     },
     {
         name: "k+A|C+A" as Name<SizeCategoryBound>,                         // Apotome + 11.7300051923244¢
         pitch: {
-            monzo: [-41, 26] as Monzo<{ rational: true }>,
+            monzo: [-41, 26] as Monzo<{rational: true}>,
             scaler: HALF_SCALER,
-        } as Scamon<{ rational: false }>,
+        } as Scamon<{rational: false}>,
     },
     {
         name: "C+A|S+A" as Name<SizeCategoryBound>,                         // Apotome + 33.382492644207¢
         pitch: {
-            monzo: [5, -3] as Monzo<{ rational: true }>,
+            monzo: [5, -3] as Monzo<{rational: true}>,
             scaler: HALF_SCALER,
-        } as Scamon<{ rational: false }>,
+        } as Scamon<{rational: false}>,
     },
     {
         name: "S+A|M+A" as Name<SizeCategoryBound>,                         // Apotome + 45.112497836531¢
         pitch: {
-            monzo: [-14, 9] as Monzo<{ rational: true }>,
+            monzo: [-14, 9] as Monzo<{rational: true}>,
             scaler: HALF_SCALER,
-        } as Scamon<{ rational: false }>,
+        } as Scamon<{rational: false}>,
     },
     {
         name: "M+A|L+A" as Name<SizeCategoryBound>,                         // Apotome + 56.842503028856¢
         pitch: {
-            monzo: [-33, 21] as Monzo<{ rational: true }>,
+            monzo: [-33, 21] as Monzo<{rational: true}>,
             scaler: HALF_SCALER,
-        } as Scamon<{ rational: false }>,
+        } as Scamon<{rational: false}>,
     },
     {
         name: "L+A|SS+A" as Name<SizeCategoryBound>,                        // Apotome + 68.572508221180¢
         pitch: {
-            monzo: [-52, 33] as Monzo<{ rational: true }>,
+            monzo: [-52, 33] as Monzo<{rational: true}>,
             scaler: HALF_SCALER,
-        } as Scamon<{ rational: false }>,
+        } as Scamon<{rational: false}>,
     },
     {
         name: "SS+A|MS+A" as Name<SizeCategoryBound>,                       // Apotome + 80.302513413505¢
         pitch: {
-            monzo: [-71, 45] as Monzo<{ rational: true }>,
+            monzo: [-71, 45] as Monzo<{rational: true}>,
             scaler: HALF_SCALER,
-        } as Scamon<{ rational: false }>,
+        } as Scamon<{rational: false}>,
     },
     {
         name: "MS+A|LS+A" as Name<SizeCategoryBound>,                       // Apotome + 101.95500086539¢
         pitch: {
-            monzo: [-25, 16] as Monzo<{ rational: true }>,
+            monzo: [-25, 16] as Monzo<{rational: true}>,
             scaler: HALF_SCALER,
-        } as Scamon<{ rational: false }>,
+        } as Scamon<{rational: false}>,
     },
     {
         name: "LS+A|A+A" as Name<SizeCategoryBound>,                        // Apotome + 111.87748312495¢
         pitch: {
-            monzo: [40, -25] as Monzo<{ rational: true }>,
+            monzo: [40, -25] as Monzo<{rational: true}>,
             scaler: HALF_SCALER,
-        } as Scamon<{ rational: false }>,
+        } as Scamon<{rational: false}>,
     },
     {
         name: "A+A|" as Name<SizeCategoryBound>,                            // Apotome + apotome
         pitch: {
-            monzo: [-44, 28] as Monzo<{ rational: true }>,
+            monzo: [-44, 28] as Monzo<{rational: true}>,
             scaler: HALF_SCALER,
-        } as Scamon<{ rational: false }>,
+        } as Scamon<{rational: false}>,
     },
 ]
 

@@ -1,5 +1,5 @@
-import { Io } from "../../../../../../src/general"
-import { unformatParameters } from "../../../../../../src/scripts/popularityMetricLfc/solver"
+import {Io} from "../../../../../../src/general"
+import {unformatParameters} from "../../../../../../src/scripts/popularityMetricLfc/solver"
 
 describe("unformatParameters", (): void => {
     it("converts parameter enum form back into JSON form, stripping trailing commas too", (): void => {

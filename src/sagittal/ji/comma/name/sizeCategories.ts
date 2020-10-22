@@ -1,5 +1,5 @@
-import { RecordKey } from "../../../../general"
-import { SizeCategory, SizeCategoryAbbreviation, SizeCategoryName } from "./types"
+import {RecordKey} from "../../../../general"
+import {SizeCategory, SizeCategoryAbbreviation, SizeCategoryName} from "./types"
 
 const SIZE_CATEGORIES: SizeCategory[] = Object.entries(SizeCategoryName)
     .map(([key, sizeCategoryName]: [string, SizeCategoryName]): SizeCategory => {
@@ -7,7 +7,7 @@ const SIZE_CATEGORIES: SizeCategory[] = Object.entries(SizeCategoryName)
             name: sizeCategoryName,
             abbreviation: (
                 SizeCategoryAbbreviation as Record<RecordKey<SizeCategoryName>, SizeCategoryAbbreviation>
-            )[ key ],
+            )[key],
         }
     })
 

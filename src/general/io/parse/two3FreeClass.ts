@@ -4,9 +4,9 @@ import {
     isQuotientRational,
     isQuotientSub,
 } from "../../math"
-import { Two3FreeClass } from "../../music"
-import { Io } from "../types"
-import { parseQuotient } from "./quotient"
+import {Two3FreeClass} from "../../music"
+import {Io} from "../types"
+import {parseQuotient} from "./quotient"
 
 const parse23FreeClass = (two3FreeClassIo: Io): Two3FreeClass => {
     const two3FreeQuotient = parseQuotient(two3FreeClassIo)

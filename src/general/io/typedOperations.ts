@@ -1,6 +1,6 @@
-import { Count } from "../types"
-import { BLANK } from "./constants"
-import { Char } from "./types"
+import {Count} from "../types"
+import {BLANK} from "./constants"
+import {Char} from "./types"
 
 const sumTexts = <T extends string>(...strings: T[]): T => {
     return join(strings, BLANK)

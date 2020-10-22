@@ -11,7 +11,8 @@ import {
     getRepresentativeSymbol,
     getSmallestFlaccoSubset,
     JiNotationBoundClass,
-    JiNotationLevel, JI_NOTATION_BOUND_CLASSES,
+    JiNotationLevel,
+    JI_NOTATION_BOUND_CLASSES,
 } from "../../../../sagittal"
 import {computeInaDistance} from "../../history"
 import {BoundedCommaClassInfo} from "./types"

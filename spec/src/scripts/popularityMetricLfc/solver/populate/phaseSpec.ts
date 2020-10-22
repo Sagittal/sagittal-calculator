@@ -1,19 +1,19 @@
-import { Combination, Combinations, computeCombinations, Count, Index } from "../../../../../../src/general"
+import {Combination, Combinations, computeCombinations, Count, Index} from "../../../../../../src/general"
 import * as combinations from "../../../../../../src/general/math/combinations"
 import {
     memoizedParameterChunkCombinations,
     memoizedSubmetricChunkCombinations,
 } from "../../../../../../src/scripts/popularityMetricLfc/globals"
-import { Chunk } from "../../../../../../src/scripts/popularityMetricLfc/solver"
+import {Chunk} from "../../../../../../src/scripts/popularityMetricLfc/solver"
 import {
     INITIAL_PARAMETER_SCOPES,
     PARAMETER_CHUNKS,
     SUBMETRIC_CHUNKS,
 } from "../../../../../../src/scripts/popularityMetricLfc/solver/populate/constants"
-import { populateScopesPhase } from "../../../../../../src/scripts/popularityMetricLfc/solver/populate/phase"
+import {populateScopesPhase} from "../../../../../../src/scripts/popularityMetricLfc/solver/populate/phase"
 import * as submetricChunkCombination
     from "../../../../../../src/scripts/popularityMetricLfc/solver/populate/submetricChunkCombination"
-import { Parameter, Submetric } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {Parameter, Submetric} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
 describe("populateScopesPhase", (): void => {
     const chunkCount = 5 as Count<Chunk>
@@ -21,26 +21,26 @@ describe("populateScopesPhase", (): void => {
     const expectedChunkCountForParameters = 2 as Count<Chunk<Parameter>>
     const submetricChunkCombinationA = [
         {
-            [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
+            [Parameter.SUM]: INITIAL_PARAMETER_SCOPES[Parameter.SUM],
         },
         {
-            [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
-            [ Parameter.COUNT ]: INITIAL_PARAMETER_SCOPES[ Parameter.COUNT ],
+            [Parameter.WITHOUT_REPETITION]: INITIAL_PARAMETER_SCOPES[Parameter.WITHOUT_REPETITION],
+            [Parameter.COUNT]: INITIAL_PARAMETER_SCOPES[Parameter.COUNT],
         },
     ] as unknown[] as Combination<Chunk<Submetric>>
     const submetricChunkCombinationB = [
         {
-            [ Parameter.SUM ]: INITIAL_PARAMETER_SCOPES[ Parameter.SUM ],
-            [ Parameter.WITHOUT_REPETITION ]: INITIAL_PARAMETER_SCOPES[ Parameter.WITHOUT_REPETITION ],
+            [Parameter.SUM]: INITIAL_PARAMETER_SCOPES[Parameter.SUM],
+            [Parameter.WITHOUT_REPETITION]: INITIAL_PARAMETER_SCOPES[Parameter.WITHOUT_REPETITION],
         },
     ] as unknown[] as Combination<Chunk<Submetric>>
     const parameterChunkCombination = [
         {
-            [ Parameter.A_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_COEFFICIENT ],
+            [Parameter.A_AS_COEFFICIENT]: INITIAL_PARAMETER_SCOPES[Parameter.A_AS_COEFFICIENT],
         },
         {
-            [ Parameter.A_AS_COEFFICIENT ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_COEFFICIENT ],
-            [ Parameter.A_AS_LOGARITHM_BASE ]: INITIAL_PARAMETER_SCOPES[ Parameter.A_AS_LOGARITHM_BASE ],
+            [Parameter.A_AS_COEFFICIENT]: INITIAL_PARAMETER_SCOPES[Parameter.A_AS_COEFFICIENT],
+            [Parameter.A_AS_LOGARITHM_BASE]: INITIAL_PARAMETER_SCOPES[Parameter.A_AS_LOGARITHM_BASE],
         },
     ] as unknown[] as Combination<Chunk<Parameter>>
     const submetricChunkCombinations =
@@ -55,26 +55,26 @@ describe("populateScopesPhase", (): void => {
     })
 
     it("calculates the correct combinations of parameters and submetrics and memoizes them                                    ", async (): Promise<void> => {
-        delete memoizedSubmetricChunkCombinations[ chunkCountForSubmetrics ]
-        delete memoizedParameterChunkCombinations[ expectedChunkCountForParameters ]
+        delete memoizedSubmetricChunkCombinations[chunkCountForSubmetrics]
+        delete memoizedParameterChunkCombinations[expectedChunkCountForParameters]
 
         await populateScopesPhase(chunkCount, chunkCountForSubmetrics)
 
         expect(combinations.computeCombinations).toHaveBeenCalledWith(
             SUBMETRIC_CHUNKS,
             chunkCountForSubmetrics,
-            { withRepeatedElements: true },
+            {withRepeatedElements: true},
         )
         expect(combinations.computeCombinations).toHaveBeenCalledWith(
             PARAMETER_CHUNKS,
             expectedChunkCountForParameters,
-            { withRepeatedElements: true },
+            {withRepeatedElements: true},
         )
     })
 
     it("uses the memoized chunk combinations when they are available", async (): Promise<void> => {
-        memoizedSubmetricChunkCombinations[ chunkCountForSubmetrics ] = submetricChunkCombinations
-        memoizedParameterChunkCombinations[ expectedChunkCountForParameters ] = parameterChunkCombinations
+        memoizedSubmetricChunkCombinations[chunkCountForSubmetrics] = submetricChunkCombinations
+        memoizedParameterChunkCombinations[expectedChunkCountForParameters] = parameterChunkCombinations
 
         await populateScopesPhase(chunkCount, chunkCountForSubmetrics)
 
@@ -109,10 +109,10 @@ describe("populateScopesPhase", (): void => {
 
     afterEach((): void => {
         expect(
-            memoizedSubmetricChunkCombinations[ chunkCountForSubmetrics ],
+            memoizedSubmetricChunkCombinations[chunkCountForSubmetrics],
         ).toEqual(submetricChunkCombinations)
         expect(
-            memoizedParameterChunkCombinations[ expectedChunkCountForParameters ],
+            memoizedParameterChunkCombinations[expectedChunkCountForParameters],
         ).toEqual(parameterChunkCombinations)
     })
 })

@@ -1,9 +1,9 @@
-import { Decimal, Max, Prime } from "../../../../../../src/general/math"
-import { computeRationalDecimalGpf } from "../../../../../../src/general/math/rational/decimal"
+import {Decimal, Max, Prime} from "../../../../../../src/general/math"
+import {computeRationalDecimalGpf} from "../../../../../../src/general/math/rational/decimal"
 
 describe("computeRationalDecimalGpf", (): void => {
     it("returns the greatest prime factor", (): void => {
-        const rationalDecimal = 6.5 as Decimal<{ rational: true }>  // 13 / 2
+        const rationalDecimal = 6.5 as Decimal<{rational: true}>  // 13 / 2
 
         const actual = computeRationalDecimalGpf(rationalDecimal)
 

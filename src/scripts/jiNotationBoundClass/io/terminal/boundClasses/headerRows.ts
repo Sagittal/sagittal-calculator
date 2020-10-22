@@ -1,5 +1,5 @@
-import { Io, Row, splitColumnTitlesIntoRowsBySpaces } from "../../../../../general"
-import { JiNotationBoundClassAnalysis } from "../../../boundClass"
+import {Io, Row, splitColumnTitlesIntoRowsBySpaces} from "../../../../../general"
+import {JiNotationBoundClassAnalysis} from "../../../boundClass"
 
 const BOUND_ANALYSES_COLUMN_TITLES: Io[] = [
     "bound class ID",
@@ -28,8 +28,8 @@ const BOUND_ANALYSES_COLUMN_TITLES: Io[] = [
 ] as Io[]
 
 const computeJiNotationBoundClassAnalysisHeaderRows =
-    (): Array<Row<{ of: JiNotationBoundClassAnalysis, header: true }>> =>
-        splitColumnTitlesIntoRowsBySpaces(BOUND_ANALYSES_COLUMN_TITLES, { includeSpacerRow: true })
+    (): Array<Row<{of: JiNotationBoundClassAnalysis, header: true}>> =>
+        splitColumnTitlesIntoRowsBySpaces(BOUND_ANALYSES_COLUMN_TITLES, {includeSpacerRow: true})
 
 export {
     computeJiNotationBoundClassAnalysisHeaderRows,

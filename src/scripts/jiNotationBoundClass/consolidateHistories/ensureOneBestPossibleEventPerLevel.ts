@@ -1,6 +1,6 @@
-import { isEmpty } from "../../../general"
-import { formatJiNotationLevel, JiNotationLevel } from "../../../sagittal"
-import { BoundEventConsolidation, BoundHistoryConsolidation } from "./types"
+import {isEmpty} from "../../../general"
+import {formatJiNotationLevel, JiNotationLevel} from "../../../sagittal"
+import {BoundEventConsolidation, BoundHistoryConsolidation} from "./types"
 
 const ensureOneBestPossibleEventPerJiNotationLevel = (
     boundHistoryConsolidation: BoundHistoryConsolidation,

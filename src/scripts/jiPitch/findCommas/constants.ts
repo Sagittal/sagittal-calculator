@@ -1,4 +1,4 @@
-import { Monzo } from "../../../general"
+import {Monzo} from "../../../general"
 import {
     DEFAULT_LOWER_BOUND,
     DEFAULT_MAX_2_3_FREE_COPFR,
@@ -9,7 +9,7 @@ import {
     DEFAULT_MAX_PRIME_LIMIT,
     DEFAULT_UPPER_BOUND,
 } from "../../../sagittal"
-import { FindCommasSettings } from "./types"
+import {FindCommasSettings} from "./types"
 
 const DEFAULT_FIND_COMMAS_SETTINGS: FindCommasSettings = {
     max23FreeSopfr: DEFAULT_MAX_2_3_FREE_SOPFR,
@@ -22,7 +22,7 @@ const DEFAULT_FIND_COMMAS_SETTINGS: FindCommasSettings = {
     maxAte: DEFAULT_MAX_ATE,
 }
 
-const TWO_3_FREE_MONZO_BASE = [0, 0] as Monzo<{ rational: true, rough: 5 }>
+const TWO_3_FREE_MONZO_BASE = [0, 0] as Monzo<{rational: true, rough: 5}>
 
 export {
     DEFAULT_FIND_COMMAS_SETTINGS,

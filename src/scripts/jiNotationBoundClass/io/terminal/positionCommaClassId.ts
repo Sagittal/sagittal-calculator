@@ -1,7 +1,7 @@
-import { areScamonsEqual, Id, isUndefined, Maybe, Scamon } from "../../../../general"
-import { CommaClass, getCommaClass, JI_NOTATION } from "../../../../sagittal"
+import {areScamonsEqual, Id, isUndefined, Maybe, Scamon} from "../../../../general"
+import {CommaClass, getCommaClass, JI_NOTATION} from "../../../../sagittal"
 
-const computePositionCommaClassId = (position: Maybe<Scamon<{ rational: true }>>): Maybe<Id<CommaClass>> => {
+const computePositionCommaClassId = (position: Maybe<Scamon<{rational: true}>>): Maybe<Id<CommaClass>> => {
     if (!position) {
         return undefined
     }

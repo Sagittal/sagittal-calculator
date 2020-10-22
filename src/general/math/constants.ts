@@ -1,4 +1,4 @@
-import { Base } from "./types"
+import {Base} from "./types"
 
 const BASE_2: Base = 2 as Base
 

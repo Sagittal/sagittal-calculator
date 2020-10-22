@@ -1,11 +1,11 @@
-import { BLANK, format23FreeClass, formatCents, formatMonzo, isUndefined, Ranked, Row } from "../../../../general"
-import { formatCommaClass } from "../../../../sagittal"
-import { Popular23FreeClass } from "../../types"
-import { BestNotatingCommaProperties } from "../types"
+import {BLANK, format23FreeClass, formatCents, formatMonzo, isUndefined, Ranked, Row} from "../../../../general"
+import {formatCommaClass} from "../../../../sagittal"
+import {Popular23FreeClass} from "../../types"
+import {BestNotatingCommaProperties} from "../types"
 
 const computePopular23FreeClassWithBestNotatingCommaRow = (
     rankedPopular23FreeClassWithBestNotatingComma: Ranked<Popular23FreeClass & BestNotatingCommaProperties>,
-): Row<{ of: Popular23FreeClass & BestNotatingCommaProperties, header: true }> => {
+): Row<{of: Popular23FreeClass & BestNotatingCommaProperties, header: true}> => {
     const {
         two3FreeClass,
         rank: estimatedRank,
@@ -17,12 +17,12 @@ const computePopular23FreeClassWithBestNotatingCommaRow = (
     return [
         format23FreeClass(two3FreeClass),
         estimatedRank.toString(),
-        formatCents(bestNotatingCommaCents, { align: true }),
+        formatCents(bestNotatingCommaCents, {align: true}),
         formatMonzo(bestNotatingCommaMonzo),
         isUndefined(bestNotatingCommaMaybeCommaClassId) ?
             BLANK :
             formatCommaClass(bestNotatingCommaMaybeCommaClassId),
-    ] as Row<{ of: Popular23FreeClass & BestNotatingCommaProperties, header: true }>
+    ] as Row<{of: Popular23FreeClass & BestNotatingCommaProperties, header: true}>
 }
 
 export {

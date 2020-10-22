@@ -1,6 +1,6 @@
-export { isQuotientSub, isQuotientSuper, isQuotientUnison, computeSubQuotient, invertQuotient } from "./direction"
-export { areQuotientsEqual } from "./comparison"
-export { computeQuotientFromMonzo } from "./fromMonzo"
+export {isQuotientSub, isQuotientSuper, isQuotientUnison, computeSubQuotient, invertQuotient} from "./direction"
+export {areQuotientsEqual} from "./comparison"
+export {computeQuotientFromMonzo} from "./fromMonzo"
 export {
     QuotientPartType,
     Quotient,
@@ -8,5 +8,5 @@ export {
     QuotientPart,
     Numerator,
 } from "./types"
-export { computeSuperQuotient } from "./direction"
-export { computeQuotientProduct } from "./typedOperations"
+export {computeSuperQuotient} from "./direction"
+export {computeQuotientProduct} from "./typedOperations"

@@ -1,4 +1,4 @@
-import { Abs, Cents, Id, Maybe, Multiplier, Name } from "../../../../general"
+import {Abs, Cents, Id, Maybe, Multiplier, Name} from "../../../../general"
 import {
     Ascii,
     BoundClass,
@@ -16,7 +16,7 @@ import {
 type BoundedCommaClassIdPair = [Maybe<Id<CommaClass>>, Maybe<Id<CommaClass>>]
 
 type BoundedCommaClassIdPairs =
-    { boundClassId: Id<BoundClass> }
+    {boundClassId: Id<BoundClass>}
     & Partial<Record<JiNotationLevel, BoundedCommaClassIdPair>>
 
 // Building up to JiNotationBoundClassIdentifiers
@@ -38,7 +38,7 @@ interface BoundedCommaClassInfo {
 type BoundedCommaClassInfoPair = [Maybe<BoundedCommaClassInfo>, Maybe<BoundedCommaClassInfo>]
 
 type BoundedCommaClassInfoPairs =
-    { boundClassId: Id<BoundClass> }
+    {boundClassId: Id<BoundClass>}
     & Partial<Record<JiNotationLevel, BoundedCommaClassInfoPair>>
 
 interface JiNotationBoundClassIdentifiers {

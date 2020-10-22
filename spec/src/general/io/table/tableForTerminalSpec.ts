@@ -1,8 +1,8 @@
 // tslint:disable max-line-length
 
-import { ColorMethod, Count, Io, NEWLINE, Row, Table } from "../../../../../src/general"
-import { Justification } from "../../../../../src/general/io/table"
-import { formatTableForTerminal } from "../../../../../src/general/io/table/tableForTerminal"
+import {ColorMethod, Count, Io, NEWLINE, Row, Table} from "../../../../../src/general"
+import {Justification} from "../../../../../src/general/io/table"
+import {formatTableForTerminal} from "../../../../../src/general/io/table/tableForTerminal"
 
 describe("formatTableForTerminal", (): void => {
     const table = [
@@ -22,7 +22,7 @@ describe("formatTableForTerminal", (): void => {
     })
 
     it("can justify all columns to the right", (): void => {
-        const actual = formatTableForTerminal(table, { justification: Justification.RIGHT })
+        const actual = formatTableForTerminal(table, {justification: Justification.RIGHT})
 
         const expected =
             "comma name\tprime limit\t2,3-free SoPFR\tcents\t  monzo\tquotient\tapotome slope".underline + NEWLINE +
@@ -32,7 +32,7 @@ describe("formatTableForTerminal", (): void => {
     })
 
     it("can center columns", (): void => {
-        const actual = formatTableForTerminal(table, { justification: Justification.CENTER })
+        const actual = formatTableForTerminal(table, {justification: Justification.CENTER})
 
         const expected =
             "comma name\tprime limit\t2,3-free SoPFR\tcents\t monzo \tquotient\tapotome slope".underline + NEWLINE +
@@ -50,7 +50,7 @@ describe("formatTableForTerminal", (): void => {
             Justification.RIGHT,
         ]
 
-        const actual = formatTableForTerminal(table, { justification })
+        const actual = formatTableForTerminal(table, {justification})
 
         const expected =
             "comma name\tprime limit\t2,3-free SoPFR\tcents\t  monzo\tquotient\tapotome slope".underline + NEWLINE +
@@ -66,7 +66,7 @@ describe("formatTableForTerminal", (): void => {
             "yellow",
         ]
 
-        const actual = formatTableForTerminal(table, { colors })
+        const actual = formatTableForTerminal(table, {colors})
 
         const expected =
             "comma name\tprime limit\t2,3-free SoPFR\tcents\tmonzo  \tquotient\tapotome slope".cyan.underline + NEWLINE +
@@ -83,7 +83,7 @@ describe("formatTableForTerminal", (): void => {
             ["25/49M", "7", "24", "33.4", "[0 0⟩", "50/49", "-59.333"],
         ] as Table<Io>
 
-        const actual = formatTableForTerminal(table, { headerRowCount: 2 as Count<Row<{ of: Io, header: true }>> })
+        const actual = formatTableForTerminal(table, {headerRowCount: 2 as Count<Row<{of: Io, header: true}>>})
 
         const expected =
             "comma \tprime\t2,3-free\t     \t       \t        \tapotome" + NEWLINE +

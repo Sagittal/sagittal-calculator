@@ -1,4 +1,4 @@
-import { Min, Prime, Roughness } from "../../../math"
+import {Min, Prime, Roughness} from "../../../math"
 
 const TWO_3_FREE = 5 as 5 & Min<Prime> & Roughness
 

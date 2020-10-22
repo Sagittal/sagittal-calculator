@@ -1,1 +1,1 @@
-export { formatRankAnalyses } from "./rankAnalyses"
+export {formatRankAnalyses} from "./rankAnalyses"

@@ -1,6 +1,6 @@
-import { Io } from "../../../../../src/general"
-import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
-import { runCommandAndGetConsoleOutput } from "../../../../helpers/src/scripts/runCommand"
+import {Io} from "../../../../../src/general"
+import {onlyRunInCi} from "../../../../helpers/onlyRunInCi"
+import {runCommandAndGetConsoleOutput} from "../../../../helpers/src/scripts/runCommand"
 
 describe("perfect-metric-from-scope", (): void => {
     const expected = [

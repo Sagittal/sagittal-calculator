@@ -1,7 +1,7 @@
 const merge = <T>(...objects: T[]): T =>
     objects.reduce(
         (mergedObjects: T, object: T): T =>
-            ({ ...mergedObjects, ...object }),
+            ({...mergedObjects, ...object}),
         {} as T,
     )
 

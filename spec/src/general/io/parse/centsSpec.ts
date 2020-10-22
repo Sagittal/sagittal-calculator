@@ -1,6 +1,6 @@
-import { Io } from "../../../../../src/general/io"
-import { parseCents } from "../../../../../src/general/io/parse"
-import { Cents } from "../../../../../src/general/music"
+import {Io} from "../../../../../src/general/io"
+import {parseCents} from "../../../../../src/general/io/parse"
+import {Cents} from "../../../../../src/general/music"
 
 describe("parseCents", (): void => {
     it("works when provided cents directly, with the cents symbol", (): void => {

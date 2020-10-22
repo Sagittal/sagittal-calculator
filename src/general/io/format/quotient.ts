@@ -1,11 +1,11 @@
-import { computeSuperQuotient, Quotient } from "../../math"
-import { ioSettings } from "../globals"
-import { TableFormat } from "../table"
-import { Formatted } from "./types"
+import {computeSuperQuotient, Quotient} from "../../math"
+import {ioSettings} from "../globals"
+import {TableFormat} from "../table"
+import {Formatted} from "./types"
 
 const formatQuotient = <T extends Quotient>(
     inputQuotient: T,
-    { directed = true, noLaTeXScaler = false }: { directed?: boolean, noLaTeXScaler?: boolean } = {},
+    {directed = true, noLaTeXScaler = false}: {directed?: boolean, noLaTeXScaler?: boolean} = {},
 ): Formatted<T> => {
     const [numerator, denominator] = directed ? inputQuotient : computeSuperQuotient(inputQuotient)
 

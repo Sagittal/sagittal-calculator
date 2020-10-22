@@ -1,6 +1,6 @@
-import { Max } from "../../general"
-import { N2D3P9 } from "../../sagittal"
-import { Popular23FreeClassesScriptGroupSettings } from "./types"
+import {Max} from "../../general"
+import {N2D3P9} from "../../sagittal"
+import {Popular23FreeClassesScriptGroupSettings} from "./types"
 
 const DEFAULT_MAX_N2D3P9_FOR_POPULAR_2_3_FREE_CLASSES = 136 as Max<N2D3P9>
 

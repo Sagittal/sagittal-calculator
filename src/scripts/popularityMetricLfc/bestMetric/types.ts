@@ -1,6 +1,6 @@
-import { Combination, Ed, Index, Io, Maybe, Name, Sum, Window } from "../../../general"
-import { Parameter, ParameterValue, Submetric } from "../sumOfSquares"
-import { DynamicParameter, Sample } from "./scopeToSamples"
+import {Combination, Ed, Index, Io, Maybe, Name, Sum, Window} from "../../../general"
+import {Parameter, ParameterValue, Submetric} from "../sumOfSquares"
+import {DynamicParameter, Sample} from "./scopeToSamples"
 
 interface Metric {
     spreadDynamicParameters?: Parameter[],
@@ -13,7 +13,7 @@ type ParameterScope = ParameterValue | boolean | DynamicParameterScope
 
 type ParameterScopes = Partial<Record<Parameter, ParameterScope>>
 
-type SubmetricScope = ParameterScopes & { _SubmetricScopeBrand: boolean }
+type SubmetricScope = ParameterScopes & {_SubmetricScopeBrand: boolean}
 
 type Scope = Combination<SubmetricScope>
 
@@ -25,7 +25,7 @@ type DynamicParameterScope = Partial<{
 
 type SquaredWeightedRankDifferences =
     number
-    & { _SquaredWeightedRankDifferencesBrand: boolean }
+    & {_SquaredWeightedRankDifferencesBrand: boolean}
 
 type SumOfSquares = Sum<SquaredWeightedRankDifferences>
 

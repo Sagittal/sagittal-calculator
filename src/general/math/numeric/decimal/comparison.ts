@@ -1,6 +1,6 @@
-import { isCloseTo, isUndefined, MAX_JS_PRECISION, Precision } from "../../../code"
-import { NumericProperties } from "../types"
-import { Decimal } from "./types"
+import {isCloseTo, isUndefined, MAX_JS_PRECISION, Precision} from "../../../code"
+import {NumericProperties} from "../types"
+import {Decimal} from "./types"
 
 const areDecimalsEqual = <T extends NumericProperties, U extends NumericProperties>(
     decimalA: Decimal<T>,

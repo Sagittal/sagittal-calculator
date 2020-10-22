@@ -35,7 +35,7 @@ const readJiPitchOptions = (): void => {
         .option(
             `-${CommandFlag.INTEGER}, --integer <integer>`,
             "integer",
-            (integerText: string): Decimal<{ integer: true }> => parseInteger(integerText as Io),
+            (integerText: string): Decimal<{integer: true}> => parseInteger(integerText as Io),
         )
 }
 

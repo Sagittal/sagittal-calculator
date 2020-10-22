@@ -1,7 +1,7 @@
-import { Io, join, NEWLINE, shallowClone, sumTexts } from "../../../../../general"
-import { JiNotationLevel, JI_NOTATION_LEVELS } from "../../../../../sagittal"
-import { LEVEL_ANALYSES_TITLE } from "../titles"
-import { formatJiNotationLevelAnalysis } from "./levelAnalysis"
+import {Io, join, NEWLINE, shallowClone, sumTexts} from "../../../../../general"
+import {JiNotationLevel, JI_NOTATION_LEVELS} from "../../../../../sagittal"
+import {LEVEL_ANALYSES_TITLE} from "../titles"
+import {formatJiNotationLevelAnalysis} from "./levelAnalysis"
 
 const formatJiNotationLevelAnalyses = (): Io => {
     const formattedJiNotationLevelAnalysis: Io[] = [] as Io[]

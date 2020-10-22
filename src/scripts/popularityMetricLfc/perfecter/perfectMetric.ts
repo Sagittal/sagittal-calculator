@@ -1,27 +1,22 @@
-import { Decimal, LogTarget, round, saveLog } from "../../../general"
+import {Decimal, LogTarget, round, saveLog} from "../../../general"
 import {
     nonRecursiveSearchScopeAndMaybeUpdateBestMetric,
     nonRecursiveSearchScopeAndMaybeUpdateBestMetricSync,
     Scope,
     SearchScopeResults,
 } from "../bestMetric"
-import { computeIndentation } from "./indentation"
-import { computeLocalMinima } from "./localMinima"
-import { searchNextLocalMin, searchNextLocalMinSync } from "./nextLocalMin"
-import {
-    LocalMin,
-    MetricTag,
-    RecursiveSearchScopeAndMaybeUpdateBestMetricOptions,
-    SearchLocalMinOptions,
-} from "./types"
+import {computeIndentation} from "./indentation"
+import {computeLocalMinima} from "./localMinima"
+import {searchNextLocalMin, searchNextLocalMinSync} from "./nextLocalMin"
+import {LocalMin, MetricTag, RecursiveSearchScopeAndMaybeUpdateBestMetricOptions, SearchLocalMinOptions} from "./types"
 
 const computeSearchNextLocalMinArguments = (
     scope: Scope,
     options: RecursiveSearchScopeAndMaybeUpdateBestMetricOptions = {},
-    { dynamicParameters, samples, sumsOfSquares, metricName }: SearchScopeResults,
-): { nextLocalMinima: LocalMin[], searchNextLocalMinOptions: SearchLocalMinOptions } => {
+    {dynamicParameters, samples, sumsOfSquares, metricName}: SearchScopeResults,
+): {nextLocalMinima: LocalMin[], searchNextLocalMinOptions: SearchLocalMinOptions} => {
     const {
-        depth = 0 as Decimal<{ integer: true }>,
+        depth = 0 as Decimal<{integer: true}>,
         metricTag = "" as MetricTag,
         localMin,
         onlyBetterThanSopfgtt = true,
@@ -44,7 +39,7 @@ const computeSearchNextLocalMinArguments = (
         metricName,
     }
 
-    return { nextLocalMinima, searchNextLocalMinOptions }
+    return {nextLocalMinima, searchNextLocalMinOptions}
 }
 
 const recursiveSearchScopeAndMaybeUpdateBestMetric = async (
@@ -53,15 +48,15 @@ const recursiveSearchScopeAndMaybeUpdateBestMetric = async (
 ): Promise<void> => {
     const searchScopeResults = await nonRecursiveSearchScopeAndMaybeUpdateBestMetric(
         scope,
-        { onlyBetterThanSopfgtt: options.onlyBetterThanSopfgtt },
+        {onlyBetterThanSopfgtt: options.onlyBetterThanSopfgtt},
     )
 
-    const { nextLocalMinima, searchNextLocalMinOptions } =
+    const {nextLocalMinima, searchNextLocalMinOptions} =
         computeSearchNextLocalMinArguments(scope, options, searchScopeResults)
 
     const nextLocalMinimaPromises: Array<Promise<void>> =
         nextLocalMinima.map((nextLocalMin: LocalMin, index: number): Promise<void> => {
-            return searchNextLocalMin(nextLocalMin, { ...searchNextLocalMinOptions, index })
+            return searchNextLocalMin(nextLocalMin, {...searchNextLocalMinOptions, index})
         })
     await Promise.all(nextLocalMinimaPromises)
 }
@@ -72,14 +67,14 @@ const recursiveSearchScopeAndMaybeUpdateBestMetricSync = (
 ): void => {
     const searchScopeResults = nonRecursiveSearchScopeAndMaybeUpdateBestMetricSync(
         scope,
-        { onlyBetterThanSopfgtt: options.onlyBetterThanSopfgtt },
+        {onlyBetterThanSopfgtt: options.onlyBetterThanSopfgtt},
     )
 
-    const { nextLocalMinima, searchNextLocalMinOptions } =
+    const {nextLocalMinima, searchNextLocalMinOptions} =
         computeSearchNextLocalMinArguments(scope, options, searchScopeResults)
 
     nextLocalMinima.forEach((nextLocalMin: LocalMin, index: number): void => {
-        searchNextLocalMinSync(nextLocalMin, { ...searchNextLocalMinOptions, index })
+        searchNextLocalMinSync(nextLocalMin, {...searchNextLocalMinOptions, index})
     })
 }
 

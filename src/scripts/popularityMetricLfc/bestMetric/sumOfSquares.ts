@@ -1,17 +1,17 @@
-import { doOnNextEventLoop, Io, LogTarget, Ms, saveLog, stringify } from "../../../general"
-import { bestMetrics } from "../globals"
-import { computeSumOfSquaresForSubmetrics } from "../sumOfSquares"
-import { Sample } from "./scopeToSamples"
-import { setSumOfSquaresAtSamplePoint } from "./setSumOfSquaresAtSamplePoint"
-import { shouldUpdateBestMetric } from "./shouldUpdate"
-import { Metric, SumOfSquaresAndMaybeUpdateBestMetricOptions } from "./types"
+import {doOnNextEventLoop, Io, LogTarget, Ms, saveLog, stringify} from "../../../general"
+import {bestMetrics} from "../globals"
+import {computeSumOfSquaresForSubmetrics} from "../sumOfSquares"
+import {Sample} from "./scopeToSamples"
+import {setSumOfSquaresAtSamplePoint} from "./setSumOfSquaresAtSamplePoint"
+import {shouldUpdateBestMetric} from "./shouldUpdate"
+import {Metric, SumOfSquaresAndMaybeUpdateBestMetricOptions} from "./types"
 
 const computeSumOfSquaresAndMaybeUpdateBestMetricSync = (
     sample: Sample,
     options: SumOfSquaresAndMaybeUpdateBestMetricOptions,
 ): void => {
-    const { submetrics, samplePoint } = sample
-    const { indentation, sumsOfSquares, onlyBetterThanSopfgtt, spreadDynamicParameters, metricName } = options
+    const {submetrics, samplePoint} = sample
+    const {indentation, sumsOfSquares, onlyBetterThanSopfgtt, spreadDynamicParameters, metricName} = options
 
     let sumOfSquares
     try {
@@ -23,11 +23,11 @@ const computeSumOfSquaresAndMaybeUpdateBestMetricSync = (
 
     const bestMetric = bestMetrics.get(metricName)
     if (
-        shouldUpdateBestMetric({ sumOfSquares, bestMetric, onlyBetterThanSopfgtt })
+        shouldUpdateBestMetric({sumOfSquares, bestMetric, onlyBetterThanSopfgtt})
     ) {
         const metric: Metric = spreadDynamicParameters ?
-            { sumOfSquares, submetrics, name: metricName, spreadDynamicParameters } :
-            { sumOfSquares, submetrics, name: metricName }
+            {sumOfSquares, submetrics, name: metricName, spreadDynamicParameters} :
+            {sumOfSquares, submetrics, name: metricName}
 
         bestMetrics.set(metricName, metric)
 

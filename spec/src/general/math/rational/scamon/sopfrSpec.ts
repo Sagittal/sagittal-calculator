@@ -1,10 +1,10 @@
-import { Scamon } from "../../../../../../src/general/math/numeric/scamon"
-import { Sopfr } from "../../../../../../src/general/math/rational"
-import { computeRationalScamonSopfr } from "../../../../../../src/general/math/rational/scamon"
+import {Scamon} from "../../../../../../src/general/math/numeric/scamon"
+import {Sopfr} from "../../../../../../src/general/math/rational"
+import {computeRationalScamonSopfr} from "../../../../../../src/general/math/rational/scamon"
 
 describe("computeRationalScamonSopfr", (): void => {
     it("sums the abs values of the prime factors (with repetition) in the monzo", (): void => {
-        const rationalScamon = { monzo: [5, 6, 0, 0, 1, -1, 2] } as Scamon<{ rational: true }>
+        const rationalScamon = {monzo: [5, 6, 0, 0, 1, -1, 2]} as Scamon<{rational: true}>
 
         const actual = computeRationalScamonSopfr(rationalScamon)
 
@@ -13,7 +13,7 @@ describe("computeRationalScamonSopfr", (): void => {
     })
 
     it("works for an empty monzo", (): void => {
-        const rationalScamon = { monzo: [] as unknown[] } as Scamon<{ rational: true }>
+        const rationalScamon = {monzo: [] as unknown[]} as Scamon<{rational: true}>
 
         const actual = computeRationalScamonSopfr(rationalScamon)
 

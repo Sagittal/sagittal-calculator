@@ -1,7 +1,7 @@
-import { Precision } from "../code"
-import { LogTargets } from "./log"
-import { TableFormat } from "./table"
-import { Char, Io, IoSettings } from "./types"
+import {Precision} from "../code"
+import {LogTargets} from "./log"
+import {TableFormat} from "./table"
+import {Char, Io, IoSettings} from "./types"
 
 const IO_PRECISION = 3 as Precision
 

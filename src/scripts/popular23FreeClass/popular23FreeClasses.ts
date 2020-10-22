@@ -15,11 +15,11 @@ import {
     stringify,
     Two3FreeClass,
 } from "../../general"
-import { computePrimeExponentExtremasGivenMaxN2D3P9, N2D3P9 } from "../../sagittal"
-import { popular23FreeClassesScriptGroupSettings } from "./globals"
-import { computeKnownPopular23FreeClasses } from "./known"
-import { computeMaybePopular23FreeClass } from "./maybe"
-import { Popular23FreeClass } from "./types"
+import {computePrimeExponentExtremasGivenMaxN2D3P9, N2D3P9} from "../../sagittal"
+import {popular23FreeClassesScriptGroupSettings} from "./globals"
+import {computeKnownPopular23FreeClasses} from "./known"
+import {computeMaybePopular23FreeClass} from "./maybe"
+import {Popular23FreeClass} from "./types"
 
 // "Super" as in "not sub", not as in "super popular!"
 const computeMaybeSuperPopular23FreeClass = (
@@ -27,7 +27,7 @@ const computeMaybeSuperPopular23FreeClass = (
     maxN2D3P9: Max<N2D3P9>,
 ): Maybe<Popular23FreeClass> => {
     const maybeSuperPopular23FreeClass = !isMonzoSub(two3FreeRationalMonzoForWork) ?
-        computeMaybePopular23FreeClass({ monzo: two3FreeRationalMonzoForWork } as Two3FreeClass, maxN2D3P9) :
+        computeMaybePopular23FreeClass({monzo: two3FreeRationalMonzoForWork} as Two3FreeClass, maxN2D3P9) :
         undefined
 
     if (!isUndefined(maybeSuperPopular23FreeClass)) {

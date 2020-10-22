@@ -9,7 +9,7 @@ export {
     PYTHAGOREAN_WHOLE_TONE,
     THIRTYONE_THREE_COMMA,
 } from "./constants"
-export { Comma, Apotome } from "./types"
+export {Comma, Apotome} from "./types"
 export {
     Popularity,
     Votes,

@@ -1,5 +1,5 @@
-import { Io, Row } from "../../../../../src/general/io"
-import { splitColumnTitlesIntoRowsBySpaces } from "../../../../../src/general/io/table"
+import {Io, Row} from "../../../../../src/general/io"
+import {splitColumnTitlesIntoRowsBySpaces} from "../../../../../src/general/io/table"
 
 describe("splitColumnTitlesIntoRowsBySpaces", (): void => {
     const titles: Io[] = [
@@ -18,12 +18,12 @@ describe("splitColumnTitlesIntoRowsBySpaces", (): void => {
             ["2,3-", "", "notating", "notating", "notating"],
             ["free", "N2D3P9", "comma", "comma", "comma"],
             ["class", "rank", "cents", "monzo", "symbol"],
-        ] as Array<Row<{ header: true }>>
+        ] as Array<Row<{header: true}>>
         expect(actual).toEqual(expected)
     })
 
     it("can include a spacer row", (): void => {
-        const actual = splitColumnTitlesIntoRowsBySpaces(titles, { includeSpacerRow: true })
+        const actual = splitColumnTitlesIntoRowsBySpaces(titles, {includeSpacerRow: true})
 
         const expected = [
             ["", "", "best", "best", "best"],
@@ -31,7 +31,7 @@ describe("splitColumnTitlesIntoRowsBySpaces", (): void => {
             ["free", "N2D3P9", "comma", "comma", "comma"],
             ["class", "rank", "cents", "monzo", "symbol"],
             ["", "", "", "", ""],
-        ] as Array<Row<{ header: true }>>
+        ] as Array<Row<{header: true}>>
         expect(actual).toEqual(expected)
     })
 })

@@ -1,12 +1,12 @@
-import { Cents } from "../../music"
-import { ioSettings } from "../globals"
-import { TableFormat } from "../table"
-import { formatDecimal } from "./decimal"
-import { Formatted } from "./types"
+import {Cents} from "../../music"
+import {ioSettings} from "../globals"
+import {TableFormat} from "../table"
+import {formatDecimal} from "./decimal"
+import {Formatted} from "./types"
 
 const formatCents = (
     cents: Cents,
-    options: { align?: boolean } = {},
+    options: {align?: boolean} = {},
 ): Formatted<Cents> => {
     let formattedCents = formatDecimal(cents, options)
 

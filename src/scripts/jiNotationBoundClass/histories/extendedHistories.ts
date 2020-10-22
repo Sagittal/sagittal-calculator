@@ -1,13 +1,13 @@
-import { computeExtensionBase, ExtensionBaseType } from "../../../general"
-import { BoundType, JiNotationBoundClass, JiNotationLevel } from "../../../sagittal"
-import { computeBoundedCommaClassPositions } from "../boundedPositions"
-import { computeBoundEvents } from "./events"
-import { BoundEvent, BoundHistory } from "./types"
+import {computeExtensionBase, ExtensionBaseType} from "../../../general"
+import {BoundType, JiNotationBoundClass, JiNotationLevel} from "../../../sagittal"
+import {computeBoundedCommaClassPositions} from "../boundedPositions"
+import {computeBoundEvents} from "./events"
+import {BoundEvent, BoundHistory} from "./types"
 
 const computeExtendedHistories = (
     boundHistory: BoundHistory,
     jiNotationLevel: JiNotationLevel,
-    { pitch }: JiNotationBoundClass,
+    {pitch}: JiNotationBoundClass,
 ): BoundHistory[] => {
     const extendedBoundHistories = computeExtensionBase(ExtensionBaseType.ARRAY) as BoundHistory[]
 

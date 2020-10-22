@@ -1,10 +1,10 @@
-import { Formatted, ioSettings } from "../../../../../../src/general/io"
-import { TableFormat } from "../../../../../../src/general/io/table"
-import { format23FreeClass, Two3FreeClass } from "../../../../../../src/general/music/ji/two3FreeClass"
+import {Formatted, ioSettings} from "../../../../../../src/general/io"
+import {TableFormat} from "../../../../../../src/general/io/table"
+import {format23FreeClass, Two3FreeClass} from "../../../../../../src/general/music/ji/two3FreeClass"
 
 describe("format23FreeClass", (): void => {
     it("gives the name of the 2,3-free class when formatting for the terminal", (): void => {
-        const two3FreeClass = { monzo: [0, 0, -1, 0, 1] } as Two3FreeClass
+        const two3FreeClass = {monzo: [0, 0, -1, 0, 1]} as Two3FreeClass
 
         ioSettings.tableFormat = TableFormat.TERMINAL
         const actual = format23FreeClass(two3FreeClass)
@@ -14,7 +14,7 @@ describe("format23FreeClass", (): void => {
     })
 
     it("same when formatting for spreadsheets", (): void => {
-        const two3FreeClass = { monzo: [0, 0, -1, 0, 1] } as Two3FreeClass
+        const two3FreeClass = {monzo: [0, 0, -1, 0, 1]} as Two3FreeClass
 
         ioSettings.tableFormat = TableFormat.SPREADSHEET
         const actual = format23FreeClass(two3FreeClass)
@@ -24,7 +24,7 @@ describe("format23FreeClass", (): void => {
     })
 
     it("uses the LaTeX bbCode when formatting for the forum, and needs to cancel the pre tags in order for it to display properly", (): void => {
-        const two3FreeClass = { monzo: [0, 0, -1, 0, 1] } as Two3FreeClass
+        const two3FreeClass = {monzo: [0, 0, -1, 0, 1]} as Two3FreeClass
 
         ioSettings.tableFormat = TableFormat.FORUM
         const actual = format23FreeClass(two3FreeClass)

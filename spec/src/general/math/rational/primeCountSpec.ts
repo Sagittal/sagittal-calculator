@@ -1,5 +1,5 @@
-import { Count, finalElement, log, PRIMES, round } from "../../../../../src/general"
-import { computePrimeCount, Prime } from "../../../../../src/general/math"
+import {Count, finalElement, log, PRIMES, round} from "../../../../../src/general"
+import {computePrimeCount, Prime} from "../../../../../src/general/math"
 
 describe("computePrimeCount", (): void => {
     it("is the π function, returning the count of primes less than or equal to a number", (): void => {

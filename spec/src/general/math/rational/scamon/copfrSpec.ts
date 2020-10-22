@@ -1,10 +1,10 @@
-import { Scamon } from "../../../../../../src/general/math/numeric/scamon"
-import { Copfr } from "../../../../../../src/general/math/rational"
-import { computeRationalScamonCopfr } from "../../../../../../src/general/math/rational/scamon"
+import {Scamon} from "../../../../../../src/general/math/numeric/scamon"
+import {Copfr} from "../../../../../../src/general/math/rational"
+import {computeRationalScamonCopfr} from "../../../../../../src/general/math/rational/scamon"
 
 describe("computeRationalScamonCopfr", (): void => {
     it("returns the count of prime factors (with repetition) in the monzo", (): void => {
-        const rationalScamon = { monzo: [5, 4, -3, -2, 5] } as Scamon<{ rational: true }>
+        const rationalScamon = {monzo: [5, 4, -3, -2, 5]} as Scamon<{rational: true}>
 
         const actual = computeRationalScamonCopfr(rationalScamon)
 

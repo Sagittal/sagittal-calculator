@@ -15,7 +15,7 @@ const splitMonzoAndQuotientColumnTitles = (
     {
         recognizeNameTitleAsBeingFor23FreeClass = false,
         maxMonzoLength = 0 as Max<Count<Exponent<Prime>>>,
-    }: { maxMonzoLength?: Max<Count<Exponent<Prime>>>, recognizeNameTitleAsBeingFor23FreeClass?: boolean },
+    }: {maxMonzoLength?: Max<Count<Exponent<Prime>>>, recognizeNameTitleAsBeingFor23FreeClass?: boolean},
 ): Io[] => {
     const adjustedColumnTitles = [] as Io[]
 

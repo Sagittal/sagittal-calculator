@@ -18,11 +18,11 @@ const visualizeJiNotationLevelCommaMeans = (): Io[] => {
             return
         }
 
-        const centerY: Px = round(JI_NOTATION_LEVEL_CENTERS[ jiNotationLevel ], DEFAULT_PRECISION)
+        const centerY: Px = round(JI_NOTATION_LEVEL_CENTERS[jiNotationLevel], DEFAULT_PRECISION)
         const topY: Px = round(subtract(centerY, HALF_TICK_SIZE), DEFAULT_PRECISION)
         const bottomY: Px = round(subtract(centerY, HALF_TICK_SIZE), DEFAULT_PRECISION)
 
-        jiNotationLevelCommaMeans.forEach(({ name, pitch }: CommaMean): void => {
+        jiNotationLevelCommaMeans.forEach(({name, pitch}: CommaMean): void => {
             const formattedName = name?.split(" ")
                 .map((symbolString: string): string => {
                     return computeSymbolUnicode(parseAscii(symbolString as Ascii))

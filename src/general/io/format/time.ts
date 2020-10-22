@@ -1,6 +1,6 @@
-import { floor, round } from "../../math"
-import { Ms } from "../../types"
-import { Formatted } from "./types"
+import {floor, round} from "../../math"
+import {Ms} from "../../types"
+import {Formatted} from "./types"
 
 const formatTime = (ms: Ms): Formatted<Ms> => {
     const milliseconds = round(ms % 1000)

@@ -1,4 +1,4 @@
-import { isCloseTo, MAX_JS_PRECISION, Precision } from "../../../../src/general/code"
+import {isCloseTo, MAX_JS_PRECISION, Precision} from "../../../../src/general/code"
 
 describe("isCloseTo", (): void => {
     it("returns true if the two values are very close", (): void => {

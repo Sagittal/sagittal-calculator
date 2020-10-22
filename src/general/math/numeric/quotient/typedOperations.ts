@@ -1,6 +1,6 @@
-import { multiply } from "../../typedOperations"
-import { NumericProperties } from "../types"
-import { Quotient } from "./types"
+import {multiply} from "../../typedOperations"
+import {NumericProperties} from "../types"
+import {Quotient} from "./types"
 
 const computeQuotientProduct = <T extends NumericProperties>(...quotients: Array<Quotient<T>>): Quotient<T> =>
     quotients.reduce(

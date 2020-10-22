@@ -1,6 +1,6 @@
-import { increment, LogTarget, saveLog } from "../../../../general"
-import { Scope } from "../../bestMetric"
-import { scopesToSearch, solverStatus } from "../../globals"
+import {increment, LogTarget, saveLog} from "../../../../general"
+import {Scope} from "../../bestMetric"
+import {scopesToSearch, solverStatus} from "../../globals"
 
 const populateScope = (scope: Scope): void => {
     scopesToSearch.push(scope)

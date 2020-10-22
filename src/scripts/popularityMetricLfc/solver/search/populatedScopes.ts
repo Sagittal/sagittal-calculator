@@ -1,11 +1,11 @@
-import { increment, LogTarget, saveLog } from "../../../../general"
+import {increment, LogTarget, saveLog} from "../../../../general"
 import {
     nonRecursiveSearchScopeAndMaybeUpdateBestMetric,
     nonRecursiveSearchScopeAndMaybeUpdateBestMetricSync,
     Scope,
 } from "../../bestMetric"
-import { scopesToSearch, solverStatus } from "../../globals"
-import { formatPercentage, formatSearchedAndPopulated } from "../io"
+import {scopesToSearch, solverStatus} from "../../globals"
+import {formatPercentage, formatSearchedAndPopulated} from "../io"
 
 const searchPopulatedScopes = async (): Promise<void> => {
     const scope = scopesToSearch.pop() as Scope

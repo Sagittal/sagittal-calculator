@@ -18,21 +18,21 @@ import {
 } from "../../../../general"
 
 const computeRationalMonzoInZone = (
-    twoFreeRationalMonzo: Monzo<{ rational: true, rough: 3 }>,
+    twoFreeRationalMonzo: Monzo<{rational: true, rough: 3}>,
     zone: Zone,
-): Maybe<Monzo<{ rational: true }>> => {
+): Maybe<Monzo<{rational: true}>> => {
     const [lowerBound, upperBound] = zone
 
     const rationalMonzoInZone = shallowClone(twoFreeRationalMonzo)
 
     if (!areMonzosEqual(rationalMonzoInZone, EMPTY_MONZO)) {
         while (isScamonGreater(computeScamonFromMonzo(rationalMonzoInZone), upperBound)) {
-            rationalMonzoInZone[ TWO_PRIME_INDEX ] = rationalMonzoInZone[ TWO_PRIME_INDEX ] - 1 as
-                Decimal<{ integer: true }> & Exponent<Prime>
+            rationalMonzoInZone[TWO_PRIME_INDEX] = rationalMonzoInZone[TWO_PRIME_INDEX] - 1 as
+                Decimal<{integer: true}> & Exponent<Prime>
         }
         while (isScamonLesser(computeScamonFromMonzo(rationalMonzoInZone), lowerBound)) {
-            rationalMonzoInZone[ TWO_PRIME_INDEX ] = rationalMonzoInZone[ TWO_PRIME_INDEX ] + 1 as
-                Decimal<{ integer: true }> & Exponent<Prime>
+            rationalMonzoInZone[TWO_PRIME_INDEX] = rationalMonzoInZone[TWO_PRIME_INDEX] + 1 as
+                Decimal<{integer: true}> & Exponent<Prime>
         }
     }
 

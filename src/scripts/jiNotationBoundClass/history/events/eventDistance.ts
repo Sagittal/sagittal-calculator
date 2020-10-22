@@ -1,5 +1,5 @@
-import { Abs, abs, Cents, subtractPitch } from "../../../../general"
-import { BoundEvent, BoundHistory } from "../../histories"
+import {Abs, abs, Cents, subtractPitch} from "../../../../general"
+import {BoundEvent, BoundHistory} from "../../histories"
 
 const computeBoundEventDistance = (
     boundEvent: BoundEvent,
@@ -9,7 +9,7 @@ const computeBoundEventDistance = (
     abs(
         index === 0 ?
             0 as Cents :
-            subtractPitch(boundHistory[ index - 1 ].pitch, boundEvent.pitch),
+            subtractPitch(boundHistory[index - 1].pitch, boundEvent.pitch),
     )
 
 export {

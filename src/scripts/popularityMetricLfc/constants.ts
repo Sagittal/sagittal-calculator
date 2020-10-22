@@ -1,8 +1,8 @@
-import { Count, Exponent, Max, Popularity, Rank, Step } from "../../general"
-import { Sample, Scope } from "./bestMetric"
-import { Chunk } from "./solver"
-import { ParameterValue, Unpopularity } from "./sumOfSquares"
-import { PopularityMetricLfcScriptGroupSettings } from "./types"
+import {Count, Exponent, Max, Popularity, Rank, Step} from "../../general"
+import {Sample, Scope} from "./bestMetric"
+import {Chunk} from "./solver"
+import {ParameterValue, Unpopularity} from "./sumOfSquares"
+import {PopularityMetricLfcScriptGroupSettings} from "./types"
 
 // "Zipf exponent"; Applied to the ranks before calculating sum-of-squares, in accordance with the data,
 // To capture how the ranks toward the top of the list are much more important to match

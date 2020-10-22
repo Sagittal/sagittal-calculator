@@ -1,8 +1,8 @@
-import { Ed, Index, Step, Window } from "../../../../../src/general"
-import { Scope } from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
-import { DynamicParameter, SamplePoint } from "../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
-import { computeNextScope } from "../../../../../src/scripts/popularityMetricLfc/perfecter/nextScope"
-import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {Ed, Index, Step, Window} from "../../../../../src/general"
+import {Scope} from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
+import {DynamicParameter, SamplePoint} from "../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
+import {computeNextScope} from "../../../../../src/scripts/popularityMetricLfc/perfecter/nextScope"
+import {Parameter, ParameterValue, Submetric} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
 describe("computeNextScope", (): void => {
     it("given a sample point (which has been identified as a local min) and the dynamic parameters, is able to tell you what the next scopes should be to delve deeper in that vicinity", (): void => {
@@ -29,7 +29,7 @@ describe("computeNextScope", (): void => {
         ]
         const scope: Scope = [
             {
-                [ Parameter.J_AS_COEFFICIENT ]: {
+                [Parameter.J_AS_COEFFICIENT]: {
                     center: 0.1 as ParameterValue,
                     window: 0.05 as Window<ParameterValue>,
                     ed: 5 as Ed<ParameterValue>,
@@ -37,20 +37,20 @@ describe("computeNextScope", (): void => {
                 // Haha... it just doesn't care what your previous ED was.
                 // Well, that's why I had the top-level script point to the same constant that this module uses,
                 // To generally prevent that.
-                [ Parameter.W ]: {
+                [Parameter.W]: {
                     center: 0 as ParameterValue,
                     window: 0.25 as Window<ParameterValue>,
                     ed: 5 as Ed<ParameterValue>,
                 },
-                [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
+                [Parameter.A_AS_COEFFICIENT]: 2 as ParameterValue,
             },
             {
-                [ Parameter.Y ]: {
+                [Parameter.Y]: {
                     center: 2.06 as ParameterValue,
                     window: 0.01 as Window<ParameterValue>,
                     ed: 5 as Ed<ParameterValue>,
                 },
-                [ Parameter.COUNT ]: true,
+                [Parameter.COUNT]: true,
             },
         ] as Scope
 
@@ -58,25 +58,25 @@ describe("computeNextScope", (): void => {
 
         const expected = [
             {
-                [ Parameter.J_AS_COEFFICIENT ]: {
+                [Parameter.J_AS_COEFFICIENT]: {
                     center: 0.1 as ParameterValue,
                     window: 0.066667 as Window<ParameterValue>,
                     ed: 2 as Ed<ParameterValue>,
                 },
-                [ Parameter.W ]: {
+                [Parameter.W]: {
                     center: 0 as ParameterValue,
                     window: 0.333333 as Window<ParameterValue>,
                     ed: 4 as Ed<ParameterValue>,
                 },
-                [ Parameter.A_AS_COEFFICIENT ]: 2 as ParameterValue,
+                [Parameter.A_AS_COEFFICIENT]: 2 as ParameterValue,
             },
             {
-                [ Parameter.Y ]: {
+                [Parameter.Y]: {
                     center: 2.06 as ParameterValue,
                     window: 0.013333 as Window<ParameterValue>,
                     ed: 2 as Ed<ParameterValue>,
                 },
-                [ Parameter.COUNT ]: true,
+                [Parameter.COUNT]: true,
             },
         ] as Scope
         expect(actual).toBeCloseToObject(expected)

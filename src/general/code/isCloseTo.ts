@@ -1,7 +1,7 @@
-import { abs, negative, round } from "../math"
-import { DEFAULT_PRECISION } from "./constants"
-import { isUndefined } from "./typeGuards"
-import { Maybe, Precision } from "./types"
+import {abs, negative, round} from "../math"
+import {DEFAULT_PRECISION} from "./constants"
+import {isUndefined} from "./typeGuards"
+import {Maybe, Precision} from "./types"
 
 const isCloseTo = (
     actual: Maybe<number>,

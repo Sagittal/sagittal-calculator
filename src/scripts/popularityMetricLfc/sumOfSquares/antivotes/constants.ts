@@ -1,4 +1,4 @@
-import { Precision } from "../../../../general"
+import {Precision} from "../../../../general"
 
 const ANTIVOTES_PRECISION = 9 as Precision
 

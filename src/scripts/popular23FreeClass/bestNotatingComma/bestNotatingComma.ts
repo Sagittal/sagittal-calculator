@@ -1,7 +1,7 @@
-import { Comma, isUndefined, Maybe } from "../../../general"
-import { popular23FreeClassesScriptGroupSettings } from "../globals"
-import { isLaas } from "./isLaas"
-import { isLate } from "./isLate"
+import {Comma, isUndefined, Maybe} from "../../../general"
+import {popular23FreeClassesScriptGroupSettings} from "../globals"
+import {isLaas} from "./isLaas"
+import {isLate} from "./isLate"
 
 const computeBestNotatingComma = (notatingCommas: Comma[]): Comma => {
     let bestNotatingComma: Maybe<Comma> = undefined

@@ -1,10 +1,10 @@
-import { Decimal } from "../../../../../../src/general/math/numeric/decimal"
-import { Sopfr } from "../../../../../../src/general/math/rational"
-import { computeRationalDecimalSopfr } from "../../../../../../src/general/math/rational/decimal/sopfr"
+import {Decimal} from "../../../../../../src/general/math/numeric/decimal"
+import {Sopfr} from "../../../../../../src/general/math/rational"
+import {computeRationalDecimalSopfr} from "../../../../../../src/general/math/rational/decimal/sopfr"
 
 describe("computeRationalDecimalSopfr", (): void => {
     it("returns the sum of prime factors with repetition for a rational decimal", (): void => {
-        const rationalDecimal = 3.4 as Decimal<{ rational: true }>
+        const rationalDecimal = 3.4 as Decimal<{rational: true}>
 
         const actual = computeRationalDecimalSopfr(rationalDecimal)
 
@@ -13,7 +13,7 @@ describe("computeRationalDecimalSopfr", (): void => {
     })
 
     it("returns the sum of prime factors with repetition for an integer decimal", (): void => {
-        const integerDecimal = 121 as Decimal<{ integer: true }>
+        const integerDecimal = 121 as Decimal<{integer: true}>
 
         const actual = computeRationalDecimalSopfr(integerDecimal)
 

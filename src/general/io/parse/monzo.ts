@@ -1,5 +1,5 @@
-import { Monzo } from "../../math"
-import { Io } from "../types"
+import {Monzo} from "../../math"
+import {Io} from "../types"
 
 const parseMonzo = (monzoIo: Io): Monzo => {
     const preparsedMonzoIo = monzoIo

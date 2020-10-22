@@ -7,10 +7,10 @@ export {
     THREE_SMOOTHNESS,
     TWO_PRIME_INDEX,
 } from "./constants"
-export { computePrimeCount, computeRoughnessIndex, computeSmoothnessIndex } from "./primeCount"
-export { PRIMES } from "./primes"
-export { computeGreatestCommonDivisor } from "./common"
-export { Copfr, Prime, Roughness, Sopfr, Smoothness, Primes } from "./types"
+export {computePrimeCount, computeRoughnessIndex, computeSmoothnessIndex} from "./primeCount"
+export {PRIMES} from "./primes"
+export {computeGreatestCommonDivisor} from "./common"
+export {Copfr, Prime, Roughness, Sopfr, Smoothness, Primes} from "./types"
 export {
     isDecimalInteger,
     isIntegerDecimalRough,

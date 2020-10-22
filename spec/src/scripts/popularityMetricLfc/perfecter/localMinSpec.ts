@@ -1,7 +1,7 @@
-import { SumOfSquares, SumsOfSquares } from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
-import { SamplePoint } from "../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
-import { setSumOfSquaresAtSamplePoint } from "../../../../../src/scripts/popularityMetricLfc/bestMetric/setSumOfSquaresAtSamplePoint"
-import { getSumOfSquaresAtSamplePointIfLocalMin } from "../../../../../src/scripts/popularityMetricLfc/perfecter/localMin"
+import {SumOfSquares, SumsOfSquares} from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
+import {SamplePoint} from "../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
+import {setSumOfSquaresAtSamplePoint} from "../../../../../src/scripts/popularityMetricLfc/bestMetric/setSumOfSquaresAtSamplePoint"
+import {getSumOfSquaresAtSamplePointIfLocalMin} from "../../../../../src/scripts/popularityMetricLfc/perfecter/localMin"
 
 describe("getSumOfSquaresAtSamplePointIfLocalMin", (): void => {
     let sumsOfSquares: SumsOfSquares

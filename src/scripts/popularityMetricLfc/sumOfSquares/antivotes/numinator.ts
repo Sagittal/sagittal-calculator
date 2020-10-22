@@ -1,10 +1,10 @@
-import { Antivotes } from "../types"
+import {Antivotes} from "../types"
 
 // Or "numenator" and "demonator" ?
 const maybeNuminatorSwap = (
-    options: { useNuminator: boolean, numeratorAntivotes: Antivotes, denominatorAntivotes: Antivotes },
-): { numeratorAntivotes: Antivotes, denominatorAntivotes: Antivotes } => {
-    const { useNuminator, numeratorAntivotes, denominatorAntivotes } = options
+    options: {useNuminator: boolean, numeratorAntivotes: Antivotes, denominatorAntivotes: Antivotes},
+): {numeratorAntivotes: Antivotes, denominatorAntivotes: Antivotes} => {
+    const {useNuminator, numeratorAntivotes, denominatorAntivotes} = options
 
     let numeratorAntivotesAfterMaybeNuminatorSwap = useNuminator ?
         numeratorAntivotes > denominatorAntivotes ?

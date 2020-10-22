@@ -1,11 +1,11 @@
-import { ioSettings, TableFormat } from "../../../../../../src/general/io"
-import { Formatted } from "../../../../../../src/general/io/format"
-import { Quotient } from "../../../../../../src/general/math/numeric/quotient"
-import { JiPitchAnalysis } from "../../../../../../src/sagittal/ji/pitch"
-import { formatSplitQuotient } from "../../../../../../src/scripts/jiPitch/io/splitMonzoAndQuotient"
+import {ioSettings, TableFormat} from "../../../../../../src/general/io"
+import {Formatted} from "../../../../../../src/general/io/format"
+import {Quotient} from "../../../../../../src/general/math/numeric/quotient"
+import {JiPitchAnalysis} from "../../../../../../src/sagittal/ji/pitch"
+import {formatSplitQuotient} from "../../../../../../src/scripts/jiPitch/io/splitMonzoAndQuotient"
 
 describe("formatSplitQuotient", (): void => {
-    const quotient = [7, 6] as Quotient<{ rational: true }>
+    const quotient = [7, 6] as Quotient<{rational: true}>
 
     it("splits the quotient into the numerator, vinculum, and denominator", (): void => {
         const actual = formatSplitQuotient(quotient)

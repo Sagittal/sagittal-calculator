@@ -1,13 +1,13 @@
-import { count, isUndefined, Multiplier, subtractPitch } from "../../../general"
-import { JiNotationBoundClass, Tina, TINA } from "../../../sagittal"
-import { consolidateBoundHistories } from "../consolidateHistories"
-import { BoundHistory } from "../histories"
-import { analyzeHistory, BoundHistoryAnalysis } from "../history"
-import { computeBestPossibleBoundHistoryAnalysis } from "./bestPossibleHistory"
-import { computeInitialPosition } from "./initialPosition"
-import { updateJiNotationLevelAnalysis } from "./levels"
-import { updateRankAnalysis } from "./ranks"
-import { JiNotationBoundClassAnalysis } from "./types"
+import {count, isUndefined, Multiplier, subtractPitch} from "../../../general"
+import {JiNotationBoundClass, Tina, TINA} from "../../../sagittal"
+import {consolidateBoundHistories} from "../consolidateHistories"
+import {BoundHistory} from "../histories"
+import {analyzeHistory, BoundHistoryAnalysis} from "../history"
+import {computeBestPossibleBoundHistoryAnalysis} from "./bestPossibleHistory"
+import {computeInitialPosition} from "./initialPosition"
+import {updateJiNotationLevelAnalysis} from "./levels"
+import {updateRankAnalysis} from "./ranks"
+import {JiNotationBoundClassAnalysis} from "./types"
 
 const analyzeJiNotationBoundClass = (
     boundHistories: BoundHistory[],

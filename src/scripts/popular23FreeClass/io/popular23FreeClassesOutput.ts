@@ -1,17 +1,17 @@
-import { Count, count, formatTable, Io, Max, Ranked, Row, sumTexts, Table } from "../../../general"
-import { N2D3P9 } from "../../../sagittal"
+import {Count, count, formatTable, Io, Max, Ranked, Row, sumTexts, Table} from "../../../general"
+import {N2D3P9} from "../../../sagittal"
 import {
     BestNotatingCommaProperties,
     computePopular23FreeClassWithBestNotatingCommaHeaderRows,
     computePopular23FreeClassWithBestNotatingCommaRow,
 } from "../bestNotatingComma"
-import { popular23FreeClassesScriptGroupSettings } from "../globals"
+import {popular23FreeClassesScriptGroupSettings} from "../globals"
 import {
     computePopular23FreeClassWithNotatingCommaClassesHeaderRows,
     computePopular23FreeClassWithNotatingCommaClassesRow,
     NotatingCommaClassesProperties,
 } from "../notatingCommaClasses"
-import { Popular23FreeClass } from "../types"
+import {Popular23FreeClass} from "../types"
 
 const computePopular23FreeClassesOutput = (
     popular23FreeClasses: Array<Ranked<Popular23FreeClass>>,
@@ -20,10 +20,10 @@ const computePopular23FreeClassesOutput = (
     const headerRows: Table<Popular23FreeClass> = popular23FreeClassesScriptGroupSettings.useBestNotatingCommas ?
         computePopular23FreeClassWithBestNotatingCommaHeaderRows() :
         computePopular23FreeClassWithNotatingCommaClassesHeaderRows()
-    const headerRowCount = count(headerRows) as Count<Row<{ of: Popular23FreeClass, header: true }>>
+    const headerRowCount = count(headerRows) as Count<Row<{of: Popular23FreeClass, header: true}>>
 
     const rows = popular23FreeClasses
-        .map((popular23FreeClass: Ranked<Popular23FreeClass>): Row<{ of: Popular23FreeClass }> => {
+        .map((popular23FreeClass: Ranked<Popular23FreeClass>): Row<{of: Popular23FreeClass}> => {
             if (popular23FreeClassesScriptGroupSettings.useBestNotatingCommas) {
                 return computePopular23FreeClassWithBestNotatingCommaRow(
                     popular23FreeClass as Ranked<Popular23FreeClass & BestNotatingCommaProperties>,
@@ -37,7 +37,7 @@ const computePopular23FreeClassesOutput = (
 
     const table = [...headerRows, ...rows]
 
-    const popular23FreeClassesOutput: Io = formatTable(table, { headerRowCount })
+    const popular23FreeClassesOutput: Io = formatTable(table, {headerRowCount})
 
     if (popular23FreeClassesScriptGroupSettings.useKnown) {
         return popular23FreeClassesOutput

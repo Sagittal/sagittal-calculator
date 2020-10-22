@@ -1,6 +1,6 @@
-import { shallowClone } from "./clone"
-import { ARRAY_EXTENSION_BASE, OBJECT_EXTENSION_BASE } from "./constants"
-import { ExtensionBaseType } from "./types"
+import {shallowClone} from "./clone"
+import {ARRAY_EXTENSION_BASE, OBJECT_EXTENSION_BASE} from "./constants"
+import {ExtensionBaseType} from "./types"
 
 const computeExtensionBase = (extensionBaseType: ExtensionBaseType): unknown[] | Object => {
     return extensionBaseType === ExtensionBaseType.ARRAY ?

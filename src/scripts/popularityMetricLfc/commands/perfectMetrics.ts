@@ -1,10 +1,10 @@
-import { Filename, Io, ioSettings, LogTarget, Name, saveLog, time } from "../../../general"
-import { Metric } from "../bestMetric"
-import { DEFAULT_MAX_UNIT_WHEN_PERFECTING } from "../constants"
-import { popularityMetricLfcScriptGroupSettings } from "../globals"
-import { perfectMetrics, perfectMetricsSync } from "../perfecter"
-import { formatBestMetrics } from "../solver"
-import { applySharedPopularityMetricLfcCommandSetup, load } from "./shared"
+import {Filename, Io, ioSettings, LogTarget, Name, saveLog, time} from "../../../general"
+import {Metric} from "../bestMetric"
+import {DEFAULT_MAX_UNIT_WHEN_PERFECTING} from "../constants"
+import {popularityMetricLfcScriptGroupSettings} from "../globals"
+import {perfectMetrics, perfectMetricsSync} from "../perfecter"
+import {formatBestMetrics} from "../solver"
+import {applySharedPopularityMetricLfcCommandSetup, load} from "./shared"
 
 const defaultLogTargets = [
     LogTarget.SETUP,
@@ -12,7 +12,7 @@ const defaultLogTargets = [
     LogTarget.RESULT,
     LogTarget.FINAL,
 ]
-applySharedPopularityMetricLfcCommandSetup({ defaultLogTargets })
+applySharedPopularityMetricLfcCommandSetup({defaultLogTargets})
 
 popularityMetricLfcScriptGroupSettings.maxUnit = DEFAULT_MAX_UNIT_WHEN_PERFECTING
 

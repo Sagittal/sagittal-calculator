@@ -1,32 +1,32 @@
-import { LogTarget, saveLog, stringify, Window } from "../../../general"
-import { computeDynamicParameterScope, Scope } from "../bestMetric"
-import { bestMetrics, popularityMetricLfcScriptGroupSettings } from "../globals"
+import {LogTarget, saveLog, stringify, Window} from "../../../general"
+import {computeDynamicParameterScope, Scope} from "../bestMetric"
+import {bestMetrics, popularityMetricLfcScriptGroupSettings} from "../globals"
 import {
     recursiveSearchScopeAndMaybeUpdateBestMetric,
     recursiveSearchScopeAndMaybeUpdateBestMetricSync,
 } from "../perfecter"
-import { Parameter, ParameterValue } from "../sumOfSquares"
-import { applySharedPopularityMetricLfcCommandSetup } from "./shared"
+import {Parameter, ParameterValue} from "../sumOfSquares"
+import {applySharedPopularityMetricLfcCommandSetup} from "./shared"
 
 applySharedPopularityMetricLfcCommandSetup()
 
 const scope = [
     {},
     {
-        [ Parameter.SUM ]: true,
-        [ Parameter.K_AS_COEFFICIENT ]: computeDynamicParameterScope({
+        [Parameter.SUM]: true,
+        [Parameter.K_AS_COEFFICIENT]: computeDynamicParameterScope({
             center: 1 as ParameterValue,
             window: 0.02 as Window<ParameterValue>,
         }),
-        [ Parameter.A_AS_LOGARITHM_BASE ]: computeDynamicParameterScope({
+        [Parameter.A_AS_LOGARITHM_BASE]: computeDynamicParameterScope({
             center: 2.00001 as ParameterValue,
             window: 0.02 as Window<ParameterValue>,
         }),
-        [ Parameter.Y ]: computeDynamicParameterScope({
+        [Parameter.Y]: computeDynamicParameterScope({
             center: 2 as ParameterValue,
             window: 0.04 as Window<ParameterValue>,
         }),
-        [ Parameter.W ]: computeDynamicParameterScope({
+        [Parameter.W]: computeDynamicParameterScope({
             center: -2.00001 as ParameterValue,
             window: 0.03 as Window<ParameterValue>,
         }),
@@ -34,10 +34,10 @@ const scope = [
 ] as Scope
 
 if (popularityMetricLfcScriptGroupSettings.sync) {
-    recursiveSearchScopeAndMaybeUpdateBestMetricSync(scope, { onlyBetterThanSopfgtt: false })
+    recursiveSearchScopeAndMaybeUpdateBestMetricSync(scope, {onlyBetterThanSopfgtt: false})
     saveLog(`\nbest metric: ${stringify(Object.fromEntries(bestMetrics))}`, LogTarget.FINAL)
 } else {
-    recursiveSearchScopeAndMaybeUpdateBestMetric(scope, { onlyBetterThanSopfgtt: false }).then((): void => {
+    recursiveSearchScopeAndMaybeUpdateBestMetric(scope, {onlyBetterThanSopfgtt: false}).then((): void => {
         saveLog(`\nbest metric: ${stringify(Object.fromEntries(bestMetrics))}`, LogTarget.FINAL)
     })
 }

@@ -7,11 +7,11 @@ import {
     Scamon,
     THREE_PRIME_INDEX,
 } from "../../../../general"
-import { computeApotomeSlope } from "../../pitch"
+import {computeApotomeSlope} from "../../pitch"
 
 // As reverse-engineered here: http://forum.sagittal.org/viewtopic.php?p=1659#p1659
 
-const computeSecorComplexity = (jiPitch: Scamon<{ rational: true }>): number => {
+const computeSecorComplexity = (jiPitch: Scamon<{rational: true}>): number => {
     const two3FreeClass = compute23FreeClass(jiPitch)
     const g = computeRationalScamonSopfr(two3FreeClass)
 
@@ -20,7 +20,7 @@ const computeSecorComplexity = (jiPitch: Scamon<{ rational: true }>): number => 
     const i = computeRationalDecimalCopfr(denominator)
     const j = abs(h - i)
 
-    const k = 2 ** (abs(jiPitch.monzo[ THREE_PRIME_INDEX ] || 0) - 8.5) * Math.log(g + 2)
+    const k = 2 ** (abs(jiPitch.monzo[THREE_PRIME_INDEX] || 0) - 8.5) * Math.log(g + 2)
 
     const l = 2 ** (abs(computeApotomeSlope(jiPitch)) - 8.5) * Math.log(g + 2)
 

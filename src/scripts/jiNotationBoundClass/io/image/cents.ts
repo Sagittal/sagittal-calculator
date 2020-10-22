@@ -9,9 +9,9 @@ import {
     Px,
     round,
 } from "../../../../general"
-import { HALF_APOTOME } from "../../../../sagittal"
-import { MARGIN, Y_SCALE } from "./sizes"
-import { computeX } from "./x"
+import {HALF_APOTOME} from "../../../../sagittal"
+import {MARGIN, Y_SCALE} from "./sizes"
+import {computeX} from "./x"
 
 const visualizeCents = (): Io[] => {
     const cents: Cents[] = [...Array(ceil(computeCentsFromPitch(HALF_APOTOME))).keys()] as Cents[]

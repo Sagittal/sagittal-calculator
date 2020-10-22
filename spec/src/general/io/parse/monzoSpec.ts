@@ -1,5 +1,5 @@
-import { Io, parseMonzo } from "../../../../../src/general/io"
-import { Monzo } from "../../../../../src/general/math"
+import {Io, parseMonzo} from "../../../../../src/general/io"
+import {Monzo} from "../../../../../src/general/math"
 
 describe("parseMonzo", (): void => {
     const expected = [3, 4, -5] as Monzo

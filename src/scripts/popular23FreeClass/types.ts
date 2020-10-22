@@ -1,7 +1,7 @@
-import { Popularity, Rank, Votes } from "../../general"
-import { Two3FreeClassAnalysis } from "../../sagittal"
-import { BestNotatingCommaProperties } from "./bestNotatingComma"
-import { NotatingCommaClassesProperties } from "./notatingCommaClasses"
+import {Popularity, Rank, Votes} from "../../general"
+import {Two3FreeClassAnalysis} from "../../sagittal"
+import {BestNotatingCommaProperties} from "./bestNotatingComma"
+import {NotatingCommaClassesProperties} from "./notatingCommaClasses"
 
 type SharedPopular23FreeClassProperties = Two3FreeClassAnalysis & {
     votes: Votes,

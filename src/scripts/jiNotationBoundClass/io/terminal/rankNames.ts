@@ -1,13 +1,13 @@
 // tslint:disable:max-line-length
 
-import { Decimal, Formatted, Rank, RecordKey } from "../../../../general"
-import { BoundType } from "../../../../sagittal"
-import { RANKS } from "../../ranks"
+import {Decimal, Formatted, Rank, RecordKey} from "../../../../general"
+import {BoundType} from "../../../../sagittal"
+import {RANKS} from "../../ranks"
 
-const FORMATTED_RANKS: Record<RecordKey<Decimal<{ integer: true }> & Rank<BoundType>>, Formatted<Decimal<{ integer: true }> & Rank<BoundType>>> = {
-    [ RANKS[ BoundType.INA_MIDPOINT ] ]: "ina midpoint" as Formatted<Decimal<{ integer: true }> & Rank<BoundType>>,
-    [ RANKS[ BoundType.COMMA_MEAN ] ]: "comma mean" as Formatted<Decimal<{ integer: true }> & Rank<BoundType>>,
-    [ RANKS[ BoundType.SIZE_CATEGORY_BOUND ] ]: "size category bound" as Formatted<Decimal<{ integer: true }> & Rank<BoundType>>,
+const FORMATTED_RANKS: Record<RecordKey<Decimal<{integer: true}> & Rank<BoundType>>, Formatted<Decimal<{integer: true}> & Rank<BoundType>>> = {
+    [RANKS[BoundType.INA_MIDPOINT]]: "ina midpoint" as Formatted<Decimal<{integer: true}> & Rank<BoundType>>,
+    [RANKS[BoundType.COMMA_MEAN]]: "comma mean" as Formatted<Decimal<{integer: true}> & Rank<BoundType>>,
+    [RANKS[BoundType.SIZE_CATEGORY_BOUND]]: "size category bound" as Formatted<Decimal<{integer: true}> & Rank<BoundType>>,
 }
 
 export {

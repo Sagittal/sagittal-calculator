@@ -1,11 +1,11 @@
 import "colors"
-import { program } from "commander"
-import { isUndefined, now } from "../../code"
-import { COMMA } from "../constants"
-import { ioSettings } from "../globals"
-import { clearLogFiles, LogTarget, setLogTargets } from "../log"
-import { Filename } from "../types"
-import { CommandFlag } from "./types"
+import {program} from "commander"
+import {isUndefined, now} from "../../code"
+import {COMMA} from "../constants"
+import {ioSettings} from "../globals"
+import {clearLogFiles, LogTarget, setLogTargets} from "../log"
+import {Filename} from "../types"
+import {CommandFlag} from "./types"
 
 const parseCommands = (scriptGroup: Filename, defaultLogTargets?: LogTarget[]): void => {
     program

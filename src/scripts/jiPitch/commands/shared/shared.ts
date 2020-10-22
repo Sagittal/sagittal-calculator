@@ -1,9 +1,9 @@
-import { program } from "commander"
-import { CommandFlag, Filename, Io, ioSettings, parseCommands } from "../../../../general"
-import { ScriptGroup } from "../../../types"
-import { jiPitchScriptGroupSettings } from "../../globals"
-import { JiPitchScriptGroupField } from "../../types"
-import { parseExcludedFields } from "./excludedFields"
+import {program} from "commander"
+import {CommandFlag, Filename, Io, ioSettings, parseCommands} from "../../../../general"
+import {ScriptGroup} from "../../../types"
+import {jiPitchScriptGroupSettings} from "../../globals"
+import {JiPitchScriptGroupField} from "../../types"
+import {parseExcludedFields} from "./excludedFields"
 
 const applySharedPitchCommandSetup = (): void => {
     ioSettings.scriptGroup = ScriptGroup.JI_PITCH as Filename

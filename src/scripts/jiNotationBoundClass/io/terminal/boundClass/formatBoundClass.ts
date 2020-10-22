@@ -9,16 +9,16 @@ import {
     stringify,
     sumTexts,
 } from "../../../../../general"
-import { JiNotationBoundClassAnalysis } from "../../../boundClass"
-import { extractJiNotationBoundClassIdentifiers } from "../boundClassIdentifiers"
-import { FormatJiNotationBoundOptions } from "./types"
+import {JiNotationBoundClassAnalysis} from "../../../boundClass"
+import {extractJiNotationBoundClassIdentifiers} from "../boundClassIdentifiers"
+import {FormatJiNotationBoundOptions} from "./types"
 
 const roundIfNumeric = (value: unknown, precision: Precision): unknown =>
     isNumber(value) ? round(value, precision) : value
 
 const formatJiNotationBoundClass = (
     jiNotationBoundClassAnalysis: JiNotationBoundClassAnalysis,
-    { jiNotationBoundClass }: FormatJiNotationBoundOptions,
+    {jiNotationBoundClass}: FormatJiNotationBoundOptions,
 ): Formatted<JiNotationBoundClassAnalysis> => {
     const jiNotationBoundIdentifiers = deepMap(
         extractJiNotationBoundClassIdentifiers(jiNotationBoundClass),
@@ -26,9 +26,9 @@ const formatJiNotationBoundClass = (
         DEFAULT_PRECISION,
     )
 
-    const formattedJiNotationBoundIdentifiers = stringify(jiNotationBoundIdentifiers, { multiline: true })
+    const formattedJiNotationBoundIdentifiers = stringify(jiNotationBoundIdentifiers, {multiline: true})
         .replace(/\\\\/g, "\\")
-    const formattedJiNotationBoundClassAnalysis = stringify(jiNotationBoundClassAnalysis, { multiline: true })
+    const formattedJiNotationBoundClassAnalysis = stringify(jiNotationBoundClassAnalysis, {multiline: true})
         .replace(/\\\\/g, "\\")
 
     return sumTexts(

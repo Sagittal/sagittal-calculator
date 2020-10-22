@@ -1,8 +1,8 @@
-import { Denominator, NumericProperties, Quotient, QuotientPart } from "../../math"
-import { BLANK, SUPERSCRIPT_NUMBERS } from "../constants"
-import { split } from "../typedOperations"
-import { Char, Io } from "../types"
-import { parseInteger } from "./decimal"
+import {Denominator, NumericProperties, Quotient, QuotientPart} from "../../math"
+import {BLANK, SUPERSCRIPT_NUMBERS} from "../constants"
+import {split} from "../typedOperations"
+import {Char, Io} from "../types"
+import {parseInteger} from "./decimal"
 
 const superscriptNumbers = SUPERSCRIPT_NUMBERS.join()
 

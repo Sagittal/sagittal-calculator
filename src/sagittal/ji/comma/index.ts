@@ -1,6 +1,6 @@
-export { analyzeComma } from "./analyzeComma"
-export { CommaClass, COMMA_CLASSES, getCommaClass, formatCommaClass, getRepresentativeSymbol } from "./class"
-export { CommaAnalysis } from "./types"
+export {analyzeComma} from "./analyzeComma"
+export {CommaClass, COMMA_CLASSES, getCommaClass, formatCommaClass, getRepresentativeSymbol} from "./class"
+export {CommaAnalysis} from "./types"
 export {
     CommasFrom23FreeMonzoOptions,
     computeNotatingCommas,

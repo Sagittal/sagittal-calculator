@@ -1,6 +1,6 @@
-import { Id, Monzo } from "../../../../../src/general"
-import { Cents, Two3FreeClass } from "../../../../../src/general/music"
-import { CommaClass } from "../../../../../src/sagittal/ji"
+import {Id, Monzo} from "../../../../../src/general"
+import {Cents, Two3FreeClass} from "../../../../../src/general/music"
+import {CommaClass} from "../../../../../src/sagittal/ji"
 import {
     BestNotatingCommaProperties,
     computeBestNotatingCommaProperties,
@@ -8,13 +8,13 @@ import {
 
 describe("computeBestNotatingCommaProperties", (): void => {
     it("returns, for the given 2,3-free class, the best notating comma's monzo, cents, and comma class ID (if any)            ", (): void => {
-        const two3FreeClass = { monzo: [0, 0, -1, 1] } as Two3FreeClass
+        const two3FreeClass = {monzo: [0, 0, -1, 1]} as Two3FreeClass
 
         const actual = computeBestNotatingCommaProperties(two3FreeClass)
 
         const expected: BestNotatingCommaProperties = {
             bestNotatingCommaCents: 29.217813 as Cents,
-            bestNotatingCommaMonzo: [-9, 6, 1, -1] as Monzo<{ rational: true }>,
+            bestNotatingCommaMonzo: [-9, 6, 1, -1] as Monzo<{rational: true}>,
             bestNotatingCommaMaybeCommaClassId: 62 as Id<CommaClass>,
         }
         expect(actual).toBeCloseToObject(expected)

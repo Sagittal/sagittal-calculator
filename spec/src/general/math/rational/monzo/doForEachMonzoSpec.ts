@@ -14,7 +14,7 @@ describe("doForEachRationalMonzo", (): void => {
         [-2, 1],
         [0, 1],
         [-1, 0],
-    ] as Array<Extrema<Decimal<{ integer: true }> & Exponent<Prime>>>
+    ] as Array<Extrema<Decimal<{integer: true}> & Exponent<Prime>>>
     const arg1 = "here I am"
     const arg2 = "here I am 2"
 
@@ -42,8 +42,8 @@ describe("doForEachRationalMonzo", (): void => {
     })
 
     it("returns an array of results from the work function", (): void => {
-        const workFunction = (monzo: Monzo<{ rational: true }>): Maybe<string> =>
-            monzo[ 0 ] === -1 ? stringify(monzo) : undefined
+        const workFunction = (monzo: Monzo<{rational: true}>): Maybe<string> =>
+            monzo[0] === -1 ? stringify(monzo) : undefined
 
         const actual = doForEachRationalMonzo(primeExponentExtremas, workFunction)
 

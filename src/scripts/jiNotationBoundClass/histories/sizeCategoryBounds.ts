@@ -1,5 +1,5 @@
-import { areScamonsEqual } from "../../../general"
-import { HALF_APOTOME, SizeCategoryBound, SIZE_CATEGORY_BOUNDS } from "../../../sagittal"
+import {areScamonsEqual} from "../../../general"
+import {HALF_APOTOME, SizeCategoryBound, SIZE_CATEGORY_BOUNDS} from "../../../sagittal"
 
 const computeSizeCategoryBoundsUpToHalfApotome = (): SizeCategoryBound[] =>
     SIZE_CATEGORY_BOUNDS.slice(

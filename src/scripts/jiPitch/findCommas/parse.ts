@@ -1,8 +1,8 @@
-import { program } from "commander"
-import { Abs, Decimal, Exponent, Max, Min, Prime, Scamon } from "../../../general"
-import { ApotomeSlope, N2D3P9 } from "../../../sagittal"
-import { DEFAULT_FIND_COMMAS_SETTINGS } from "./constants"
-import { FindCommasSettings } from "./types"
+import {program} from "commander"
+import {Abs, Decimal, Exponent, Max, Min, Prime, Scamon} from "../../../general"
+import {ApotomeSlope, N2D3P9} from "../../../sagittal"
+import {DEFAULT_FIND_COMMAS_SETTINGS} from "./constants"
+import {FindCommasSettings} from "./types"
 
 const parseFindCommasSettings = (
     defaultOverrides: Partial<FindCommasSettings> = {},
@@ -28,11 +28,11 @@ const parseFindCommasSettings = (
     const maxAas: Max<Abs<ApotomeSlope>> = program.maxAas ||
         defaultOverrides.maxAas ||
         DEFAULT_FIND_COMMAS_SETTINGS.maxAas
-    const maxAte: Max<Abs<Decimal<{ integer: true }> & Exponent<3 & Prime>>> = program.maxAte ||
+    const maxAte: Max<Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>> = program.maxAte ||
         defaultOverrides.maxAte ||
         DEFAULT_FIND_COMMAS_SETTINGS.maxAte
 
-    return { max23FreeSopfr, max23FreeCopfr, maxPrimeLimit, maxN2D3P9, lowerBound, upperBound, maxAas, maxAte }
+    return {max23FreeSopfr, max23FreeCopfr, maxPrimeLimit, maxN2D3P9, lowerBound, upperBound, maxAas, maxAte}
 }
 
 export {

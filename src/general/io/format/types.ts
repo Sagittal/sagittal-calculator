@@ -1,6 +1,6 @@
-import { Io } from "../types"
+import {Io} from "../types"
 
-type Formatted<T = unknown> = Io & { _FormattedBrand: T }
+type Formatted<T = unknown> = Io & {_FormattedBrand: T}
 
 export {
     Formatted,

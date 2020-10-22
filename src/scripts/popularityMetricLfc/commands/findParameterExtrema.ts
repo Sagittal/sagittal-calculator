@@ -11,9 +11,9 @@ import {
     saveLog,
     stringify,
 } from "../../../general"
-import { Metric } from "../bestMetric"
-import { Parameter, ParameterValue, Submetric } from "../sumOfSquares"
-import { applySharedPopularityMetricLfcCommandSetup, load } from "./shared"
+import {Metric} from "../bestMetric"
+import {Parameter, ParameterValue, Submetric} from "../sumOfSquares"
+import {applySharedPopularityMetricLfcCommandSetup, load} from "./shared"
 
 applySharedPopularityMetricLfcCommandSetup()
 
@@ -46,8 +46,8 @@ Object.values(Parameter).forEach((parameter: Parameter): void => {
     })
 
     if (!isUndefined(parameterMin) && !isUndefined(parameterMax)) {
-        parameterExtrema[ parameter ] = [parameterMin, parameterMax]
+        parameterExtrema[parameter] = [parameterMin, parameterMax]
     }
 })
 
-saveLog(stringify(parameterExtrema, { multiline: true }), LogTarget.FINAL)
+saveLog(stringify(parameterExtrema, {multiline: true}), LogTarget.FINAL)

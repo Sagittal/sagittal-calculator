@@ -1,8 +1,8 @@
-import { Abs, Cents, Decimal, Multiplier, Rank, Scamon, Sum } from "../../../general"
-import { BoundType, Ina, Tina } from "../../../sagittal"
-import { BoundEventAnalysis } from "./events"
+import {Abs, Cents, Decimal, Multiplier, Rank, Scamon, Sum} from "../../../general"
+import {BoundType, Ina, Tina} from "../../../sagittal"
+import {BoundEventAnalysis} from "./events"
 
-type Score = number & { _ScoreBrand: boolean }
+type Score = number & {_ScoreBrand: boolean}
 
 interface BoundHistoryAnalysis {
     totalDistance: Sum<Abs<Cents>>,
@@ -12,7 +12,7 @@ interface BoundHistoryAnalysis {
     initialPositionTinaDistance: Multiplier<Tina>,
     pitch: Scamon,
     possible: boolean,
-    rank: Decimal<{ integer: true }> & Rank<BoundType>,
+    rank: Decimal<{integer: true}> & Rank<BoundType>,
     score: Score,
     tinaError: Multiplier<Tina>,
 }

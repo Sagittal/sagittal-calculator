@@ -1,4 +1,4 @@
-import { program } from "commander"
+import {program} from "commander"
 import {
     CommandFlag,
     Filename,
@@ -11,11 +11,11 @@ import {
     sumTexts,
     time,
 } from "../../../general"
-import { ScriptGroup } from "../../types"
-import { DEFAULT_MAX_N2D3P9_FOR_POPULAR_2_3_FREE_CLASSES } from "../constants"
-import { popular23FreeClassesScriptGroupSettings } from "../globals"
-import { computePopular23FreeClassesOutput } from "../io"
-import { computePopular23FreeClasses } from "../popular23FreeClasses"
+import {ScriptGroup} from "../../types"
+import {DEFAULT_MAX_N2D3P9_FOR_POPULAR_2_3_FREE_CLASSES} from "../constants"
+import {popular23FreeClassesScriptGroupSettings} from "../globals"
+import {computePopular23FreeClassesOutput} from "../io"
+import {computePopular23FreeClasses} from "../popular23FreeClasses"
 
 ioSettings.scriptGroup = ScriptGroup.POPULAR_2_3_FREE_CLASSES as Filename
 

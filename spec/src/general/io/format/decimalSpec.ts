@@ -6,7 +6,7 @@ import {
     ioSettings,
     TableFormat,
 } from "../../../../../src/general/io"
-import { Decimal } from "../../../../../src/general/math/numeric/decimal"
+import {Decimal} from "../../../../../src/general/math/numeric/decimal"
 
 describe("alignFormattedDecimal", (): void => {
     it("shifts over numbers so that the decimal places align", (): void => {
@@ -31,17 +31,17 @@ describe("formatDecimal", (): void => {
     })
 
     it("supports aligning", (): void => {
-        expect(formatDecimal(12.340, { align: true })).toBe(" 12.340")
+        expect(formatDecimal(12.340, {align: true})).toBe(" 12.340")
     })
 
     it("does not align when formatting for a spreadsheet", (): void => {
         ioSettings.tableFormat = TableFormat.SPREADSHEET
-        expect(formatDecimal(12.340, { align: true })).toBe("12.340")
+        expect(formatDecimal(12.340, {align: true})).toBe("12.340")
     })
 })
 
 describe("formatIntegerDecimal", (): void => {
-    const integerDecimal = 1 as Decimal<{ integer: true }>
+    const integerDecimal = 1 as Decimal<{integer: true}>
 
     it("provides the same centering (3 digits, decimal point, 3 digits) as with formatted numbers", (): void => {
         const actual = formatIntegerDecimal(integerDecimal)
@@ -51,7 +51,7 @@ describe("formatIntegerDecimal", (): void => {
     })
 
     it("supports aligning (for tables)", (): void => {
-        const actual = formatIntegerDecimal(integerDecimal, { align: true })
+        const actual = formatIntegerDecimal(integerDecimal, {align: true})
 
         const expected = "  1    "
         expect(actual).toBe(expected)
@@ -60,7 +60,7 @@ describe("formatIntegerDecimal", (): void => {
     it("does not align when formatting for a spreadsheet", (): void => {
         ioSettings.tableFormat = TableFormat.SPREADSHEET
 
-        const actual = formatIntegerDecimal(integerDecimal, { align: true })
+        const actual = formatIntegerDecimal(integerDecimal, {align: true})
 
         const expected = "1"
         expect(actual).toBe(expected)

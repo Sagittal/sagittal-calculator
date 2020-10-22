@@ -1,4 +1,4 @@
-import { Decimal } from "../decimal"
+import {Decimal} from "../decimal"
 import {
     NumericProperties,
     NumericPropertyEffects,
@@ -6,11 +6,11 @@ import {
 } from "../types"
 
 type NumericPropertyTranslationForQuotientsToTheirQuotientParts<T extends NumericProperties = {}> =
-    (T extends { rough: number } ? { rough: T["rough"] } : {})
-    & (T extends { smooth: number } ? { smooth: T["smooth"] } : {})
+    (T extends {rough: number} ? {rough: T["rough"]} : {})
+    & (T extends {smooth: number} ? {smooth: T["smooth"]} : {})
 
-type Numerator = number & { _NumeratorBrand: boolean }
-type Denominator = number & { _DenominatorBrand: boolean }
+type Numerator = number & {_NumeratorBrand: boolean}
+type Denominator = number & {_DenominatorBrand: boolean}
 
 type Quotient<T extends NumericProperties = {}> = [
         Numerator & Decimal<NumericPropertyTranslationForQuotientsToTheirQuotientParts<T>

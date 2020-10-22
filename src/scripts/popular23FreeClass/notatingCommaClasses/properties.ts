@@ -1,4 +1,4 @@
-import { Id, Index, Two3FreeClass } from "../../../general"
+import {Id, Index, Two3FreeClass} from "../../../general"
 import {
     CommaClass,
     FlaccoSubset,
@@ -6,8 +6,8 @@ import {
     getCommaClass,
     getSmallestFlaccoSubset,
 } from "../../../sagittal"
-import { computeNotatingCommaClassIds } from "./notatingCommaClassIds"
-import { NotatingCommaClassesProperties } from "./types"
+import {computeNotatingCommaClassIds} from "./notatingCommaClassIds"
+import {NotatingCommaClassesProperties} from "./types"
 
 const computeNotatingCommaClassesProperties = (
     two3FreeClass: Two3FreeClass,

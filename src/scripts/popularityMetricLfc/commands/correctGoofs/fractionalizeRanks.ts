@@ -19,7 +19,7 @@ const fractionalizeRanks = (): void => {
         descending: true,
     })
 
-    saveLog(stringify(rankedPopularities, { multiline: true }), LogTarget.FINAL)
+    saveLog(stringify(rankedPopularities, {multiline: true}), LogTarget.FINAL)
 }
 
 fractionalizeRanks()

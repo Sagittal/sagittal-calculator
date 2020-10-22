@@ -1,1 +1,1 @@
-export { computeAntivotes } from "./antivotes"
+export {computeAntivotes} from "./antivotes"

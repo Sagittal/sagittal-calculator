@@ -1,5 +1,5 @@
-import { Formatted, IO_PRECISION, isUndefined, Maybe, Name, round } from "../../../../../general"
-import { Mina } from "../../../../../sagittal"
+import {Formatted, IO_PRECISION, isUndefined, Maybe, Name, round} from "../../../../../general"
+import {Mina} from "../../../../../sagittal"
 
 const formatMinaName = (mina: Maybe<Name<Mina>>): Formatted<Name<Mina>> => {
     if (isUndefined(mina)) {

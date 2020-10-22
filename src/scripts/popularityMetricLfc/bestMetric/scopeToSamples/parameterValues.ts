@@ -1,6 +1,6 @@
-import { Ed, Window } from "../../../../general"
-import { ParameterValue } from "../../sumOfSquares"
-import { DynamicParameterScope } from "../types"
+import {Ed, Window} from "../../../../general"
+import {ParameterValue} from "../../sumOfSquares"
+import {DynamicParameterScope} from "../types"
 
 const computeParameterValues = (parameterScope: DynamicParameterScope): ParameterValue[] => {
     const {

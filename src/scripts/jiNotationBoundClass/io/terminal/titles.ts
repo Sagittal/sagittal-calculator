@@ -1,4 +1,4 @@
-import { Io } from "../../../../general"
+import {Io} from "../../../../general"
 
 const JI_NOTATION_BOUND_CLASS_ANALYSES_TABLE_TITLE = "   ---   JI Notation Bound Class Analyses   ---   \n\n\n" as Io
 

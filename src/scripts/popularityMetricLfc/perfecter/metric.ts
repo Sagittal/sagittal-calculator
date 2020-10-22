@@ -1,13 +1,13 @@
-import { Combination, LogTarget, saveLog, stringify } from "../../../general"
-import { Metric, Scope, SubmetricScope } from "../bestMetric"
-import { Parameter, ParameterValue, Submetric } from "../sumOfSquares"
-import { PARAMETER_DYNAMISMS } from "./constants"
-import { computeDynamicParameterScopeForPerfecting } from "./dynamicParameterScope"
+import {Combination, LogTarget, saveLog, stringify} from "../../../general"
+import {Metric, Scope, SubmetricScope} from "../bestMetric"
+import {Parameter, ParameterValue, Submetric} from "../sumOfSquares"
+import {PARAMETER_DYNAMISMS} from "./constants"
+import {computeDynamicParameterScopeForPerfecting} from "./dynamicParameterScope"
 import {
     recursiveSearchScopeAndMaybeUpdateBestMetric,
     recursiveSearchScopeAndMaybeUpdateBestMetricSync,
 } from "./perfectMetric"
-import { PerfectMetricOptions } from "./types"
+import {PerfectMetricOptions} from "./types"
 
 const computeScopeFromMetric = (metric: Metric): Scope => {
     const spreadDynamicParameters = metric.spreadDynamicParameters
@@ -18,14 +18,14 @@ const computeScopeFromMetric = (metric: Metric): Scope => {
             (submetricScope: SubmetricScope, submetricEntry: [string, unknown]): SubmetricScope => {
                 const [parameter, parameterValue] = submetricEntry as [Parameter, ParameterValue]
                 if (spreadDynamicParameters && spreadDynamicParameters.includes(parameter)) {
-                    spreadDynamicParameterValues[ parameter ] = parameterValue
+                    spreadDynamicParameterValues[parameter] = parameterValue
 
                     return submetricScope
                 }
 
                 return {
                     ...submetricScope,
-                    [ parameter ]: PARAMETER_DYNAMISMS[ parameter ] ?
+                    [parameter]: PARAMETER_DYNAMISMS[parameter] ?
                         // Okay so it looks like we can either
                         //  Make this parameter dynamism something we check for the spread parameters too
                         //  Or we could just not identify them as spread parameters in the first place
@@ -46,8 +46,8 @@ const computeScopeFromMetric = (metric: Metric): Scope => {
     const allBinsSubmetricScope: SubmetricScope = {} as SubmetricScope
     if (spreadDynamicParameters) {
         spreadDynamicParameters.forEach((spreadDynamicParameter: Parameter): void => {
-            const spreadDynamicParameterValue = spreadDynamicParameterValues[ spreadDynamicParameter ] as ParameterValue
-            allBinsSubmetricScope[ spreadDynamicParameter ] =
+            const spreadDynamicParameterValue = spreadDynamicParameterValues[spreadDynamicParameter] as ParameterValue
+            allBinsSubmetricScope[spreadDynamicParameter] =
                 computeDynamicParameterScopeForPerfecting(spreadDynamicParameterValue)
         })
     }

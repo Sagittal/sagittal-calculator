@@ -1,11 +1,11 @@
-import { Count, Max } from "../../../../../../src/general"
-import { Row } from "../../../../../../src/general/io/table"
-import { Abs, Decimal, Exponent, Monzo, Prime, Quotient } from "../../../../../../src/general/math"
-import { Cents } from "../../../../../../src/general/music"
-import { ApotomeSlope, JiPitchAnalysis } from "../../../../../../src/sagittal/ji"
-import { jiPitchScriptGroupSettings } from "../../../../../../src/scripts/jiPitch/globals"
-import { computeJiPitchRow } from "../../../../../../src/scripts/jiPitch/io/row"
-import { JiPitchField } from "../../../../../../src/scripts/jiPitch/types"
+import {Count, Max} from "../../../../../../src/general"
+import {Row} from "../../../../../../src/general/io/table"
+import {Abs, Decimal, Exponent, Monzo, Prime, Quotient} from "../../../../../../src/general/math"
+import {Cents} from "../../../../../../src/general/music"
+import {ApotomeSlope, JiPitchAnalysis} from "../../../../../../src/sagittal/ji"
+import {jiPitchScriptGroupSettings} from "../../../../../../src/scripts/jiPitch/globals"
+import {computeJiPitchRow} from "../../../../../../src/scripts/jiPitch/io/row"
+import {JiPitchField} from "../../../../../../src/scripts/jiPitch/types"
 import {
     jiPitchAnalysisFixture,
     two3FreeClassAnalysisFixture,
@@ -15,11 +15,11 @@ describe("computeJiPitchRow", (): void => {
     const jiPitchAnalysis: JiPitchAnalysis = {
         ...jiPitchAnalysisFixture,
         cents: 11.2 as Cents,
-        monzo: [0, -1, 1] as Monzo<{ rational: true }>,
-        quotient: [5, 4] as Quotient<{ rational: true }>,
+        monzo: [0, -1, 1] as Monzo<{rational: true}>,
+        quotient: [5, 4] as Quotient<{rational: true}>,
         apotomeSlope: 8.2 as ApotomeSlope,
         aas: 8.2 as Abs<ApotomeSlope>,
-        ate: 1 as Abs<Decimal<{ integer: true }> & Exponent<3 & Prime>>,
+        ate: 1 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
         two3FreeClassAnalysis: two3FreeClassAnalysisFixture,
     }
     const maxMonzoLength = 5 as Max<Count<Exponent<Prime>>>
@@ -41,7 +41,7 @@ describe("computeJiPitchRow", (): void => {
             "  8.200",          // Apotome slope
             "  8.200",          // AAS
             "  1    ",          // ATE
-        ] as Row<{ of: JiPitchAnalysis, header: true }>
+        ] as Row<{of: JiPitchAnalysis, header: true}>
         expect(actual).toEqual(expected)
     })
 
@@ -60,7 +60,7 @@ describe("computeJiPitchRow", (): void => {
             "        11.200¢",  // Cents
             "  8.200",          // AAS
             "  1    ",          // ATE
-        ] as Row<{ of: JiPitchAnalysis, header: true }>
+        ] as Row<{of: JiPitchAnalysis, header: true}>
         expect(actual).toEqual(expected)
     })
 })

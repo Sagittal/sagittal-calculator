@@ -9,18 +9,18 @@ import {
     Prime,
     Row,
 } from "../../../../general"
-import { JiPitchAnalysis } from "../../../../sagittal"
-import { jiPitchScriptGroupSettings } from "../../globals"
-import { JiPitchField } from "../../types"
-import { formatSplitMonzo, formatSplitQuotient } from "../splitMonzoAndQuotient"
+import {JiPitchAnalysis} from "../../../../sagittal"
+import {jiPitchScriptGroupSettings} from "../../globals"
+import {JiPitchField} from "../../types"
+import {formatSplitMonzo, formatSplitQuotient} from "../splitMonzoAndQuotient"
 
 const computeJiPitchRow = (
     jiPitchAnalysis: JiPitchAnalysis,
     maxMonzoLength: Max<Count<Exponent<Prime>>>,
-): Row<{ of: JiPitchAnalysis }> => {
-    const { cents, monzo, quotient, apotomeSlope, aas, ate } = jiPitchAnalysis
+): Row<{of: JiPitchAnalysis}> => {
+    const {cents, monzo, quotient, apotomeSlope, aas, ate} = jiPitchAnalysis
 
-    const row = [] as unknown[] as Row<{ of: JiPitchAnalysis }>
+    const row = [] as unknown[] as Row<{of: JiPitchAnalysis}>
 
     if (!jiPitchScriptGroupSettings.excludedFields.includes(JiPitchField.QUOTIENT)) {
         row.push(...formatSplitQuotient(quotient))
@@ -29,16 +29,16 @@ const computeJiPitchRow = (
         row.push(...formatSplitMonzo(monzo, maxMonzoLength))
     }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(JiPitchField.CENTS)) {
-        row.push(formatCents(cents, { align: true }) as Formatted as Formatted<JiPitchAnalysis>)
+        row.push(formatCents(cents, {align: true}) as Formatted as Formatted<JiPitchAnalysis>)
     }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(JiPitchField.APOTOME_SLOPE)) {
-        row.push(formatDecimal(apotomeSlope, { align: true }) as Formatted as Formatted<JiPitchAnalysis>)
+        row.push(formatDecimal(apotomeSlope, {align: true}) as Formatted as Formatted<JiPitchAnalysis>)
     }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(JiPitchField.AAS)) {
-        row.push(formatDecimal(aas, { align: true }) as Formatted as Formatted<JiPitchAnalysis>)
+        row.push(formatDecimal(aas, {align: true}) as Formatted as Formatted<JiPitchAnalysis>)
     }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(JiPitchField.ATE)) {
-        row.push(formatIntegerDecimal(ate, { align: true }) as Formatted as Formatted<JiPitchAnalysis>)
+        row.push(formatIntegerDecimal(ate, {align: true}) as Formatted as Formatted<JiPitchAnalysis>)
     }
 
     return row

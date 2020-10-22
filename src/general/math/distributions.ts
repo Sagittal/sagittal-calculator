@@ -1,6 +1,6 @@
-import { deepClone } from "../code"
-import { Count } from "../types"
-import { Distribution, DistributionBin } from "./types"
+import {deepClone} from "../code"
+import {Count} from "../types"
+import {Distribution, DistributionBin} from "./types"
 
 const computeDistributions = <T>(array: T[], binCount: Count<DistributionBin<T>>): Array<Distribution<T>> => {
     const emptyDistribution: Distribution<T> = [...Array(binCount).keys()]
@@ -12,7 +12,7 @@ const computeDistributions = <T>(array: T[], binCount: Count<DistributionBin<T>>
         for (let index = 0; index < binCount; index++) {
             distributions.forEach((distribution: Distribution<T>): void => {
                 const extendedDistribution = deepClone(distribution)
-                extendedDistribution[ index ].push(deepClone(element))
+                extendedDistribution[index].push(deepClone(element))
                 extendedDistributions.push(extendedDistribution)
             })
         }

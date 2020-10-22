@@ -1,4 +1,4 @@
-import { computeTrimmedArray } from "../../../../src/general/code"
+import {computeTrimmedArray} from "../../../../src/general/code"
 
 describe("computeTrimmedArray", (): void => {
     it("removes trailing falsy elements from the monzo", (): void => {

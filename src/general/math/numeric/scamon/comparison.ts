@@ -1,7 +1,7 @@
-import { isUndefined, MAX_JS_PRECISION, Precision } from "../../../code"
-import { areDecimalsEqual, areMonzosEqual, areQuotientsEqual, NumericProperties } from "../../../math"
-import { computeIrrationalDecimalFromScamon } from "../../irrational"
-import { Scamon } from "./types"
+import {isUndefined, MAX_JS_PRECISION, Precision} from "../../../code"
+import {areDecimalsEqual, areMonzosEqual, areQuotientsEqual, NumericProperties} from "../../../math"
+import {computeIrrationalDecimalFromScamon} from "../../irrational"
+import {Scamon} from "./types"
 
 const areScamonsEqual = <T extends NumericProperties, U extends NumericProperties>(
     scamonA: Scamon<T>,

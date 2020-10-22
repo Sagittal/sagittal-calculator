@@ -1,9 +1,9 @@
-import { count, formatTable, Io, sumTexts, Table } from "../../../../general"
-import { Two3FreeClassAnalysis } from "../../../../sagittal"
-import { compute23FreeClassHeaderRows } from "../headerRows"
-import { compute23FreeClassRow } from "../row"
-import { computeMonzoAndQuotientJustification } from "../splitMonzoAndQuotient"
-import { TWO_3_FREE_CLASS_TITLE } from "../titles"
+import {count, formatTable, Io, sumTexts, Table} from "../../../../general"
+import {Two3FreeClassAnalysis} from "../../../../sagittal"
+import {compute23FreeClassHeaderRows} from "../headerRows"
+import {compute23FreeClassRow} from "../row"
+import {computeMonzoAndQuotientJustification} from "../splitMonzoAndQuotient"
+import {TWO_3_FREE_CLASS_TITLE} from "../titles"
 
 const compute23FreeClassOutput = (
     two3FreeClassAnalysis: Two3FreeClassAnalysis,
@@ -19,7 +19,7 @@ const compute23FreeClassOutput = (
 
     return sumTexts(
         TWO_3_FREE_CLASS_TITLE,
-        formatTable(two3FreeClassTable, { headerRowCount, justification }),
+        formatTable(two3FreeClassTable, {headerRowCount, justification}),
     )
 }
 

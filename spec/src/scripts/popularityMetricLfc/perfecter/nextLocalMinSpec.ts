@@ -1,22 +1,22 @@
-import { BLANK, Decimal, Index, Ms, Name, Step } from "../../../../../src/general"
+import {BLANK, Decimal, Index, Ms, Name, Step} from "../../../../../src/general"
 import * as doOnNextEventLoop from "../../../../../src/general/code/doOnNextEventLoop"
-import { Combination } from "../../../../../src/general/math"
-import { Metric, Scope, SumOfSquares } from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
-import { DynamicParameter, SamplePoint } from "../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
-import { metricNames } from "../../../../../src/scripts/popularityMetricLfc/globals"
-import { searchNextLocalMin } from "../../../../../src/scripts/popularityMetricLfc/perfecter/nextLocalMin"
+import {Combination} from "../../../../../src/general/math"
+import {Metric, Scope, SumOfSquares} from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
+import {DynamicParameter, SamplePoint} from "../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
+import {metricNames} from "../../../../../src/scripts/popularityMetricLfc/globals"
+import {searchNextLocalMin} from "../../../../../src/scripts/popularityMetricLfc/perfecter/nextLocalMin"
 import * as recursiveBestMetric from "../../../../../src/scripts/popularityMetricLfc/perfecter/perfectMetric"
-import { LocalMin, MetricTag } from "../../../../../src/scripts/popularityMetricLfc/perfecter/types"
-import { Parameter, ParameterValue, Submetric } from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {LocalMin, MetricTag} from "../../../../../src/scripts/popularityMetricLfc/perfecter/types"
+import {Parameter, ParameterValue, Submetric} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
 describe("searchNextLocalMin", (): void => {
     const nextLocalMin: LocalMin = {
         sumOfSquares: 0.006454 as SumOfSquares,
         samplePoint: [2, 0, 1] as unknown[] as SamplePoint,
         submetrics: [{
-            [ Parameter.K_AS_COEFFICIENT ]: 0.4,
-            [ Parameter.A_AS_COEFFICIENT ]: 2.1,
-            [ Parameter.W ]: 1.3,
+            [Parameter.K_AS_COEFFICIENT]: 0.4,
+            [Parameter.A_AS_COEFFICIENT]: 2.1,
+            [Parameter.W]: 1.3,
         }] as unknown[] as Combination<Submetric>,
     }
     const dynamicParameters: DynamicParameter[] = [
@@ -43,7 +43,7 @@ describe("searchNextLocalMin", (): void => {
     const index = 7
     const metricTag = "" as MetricTag
     const indentation = BLANK
-    const depth = 5 as Decimal<{ integer: true }>
+    const depth = 5 as Decimal<{integer: true}>
     const nextLocalMinima = [{}, {}, {}, {}, {}, {}, {}, {}, {}] as LocalMin[]
     const onlyBetterThanSopfgtt = true
     const metricName = "{aAsCoefficient,kAsCoefficient,w}" as Name<Metric>
@@ -111,13 +111,13 @@ describe("searchNextLocalMin", (): void => {
         expect(recursiveBestMetric.recursiveSearchScopeAndMaybeUpdateBestMetric).toHaveBeenCalledWith(
             [
                 {
-                    [ Parameter.K_AS_COEFFICIENT ]: { center: 0.5, window: 0.06666666666666667, ed: 2 },
-                    [ Parameter.A_AS_COEFFICIENT ]: { center: 1.1, window: 0.6666666666666666, ed: 7 },
-                    [ Parameter.W ]: { center: 1.4, window: 0.06666666666666667, ed: 2 },
+                    [Parameter.K_AS_COEFFICIENT]: {center: 0.5, window: 0.06666666666666667, ed: 2},
+                    [Parameter.A_AS_COEFFICIENT]: {center: 1.1, window: 0.6666666666666666, ed: 7},
+                    [Parameter.W]: {center: 1.4, window: 0.06666666666666667, ed: 2},
                 },
             ] as unknown[] as Scope,
             {
-                depth: 6 as Decimal<{ integer: true }>,
+                depth: 6 as Decimal<{integer: true}>,
                 metricTag: ".8/9" as MetricTag,
                 localMin: nextLocalMin,
                 onlyBetterThanSopfgtt,

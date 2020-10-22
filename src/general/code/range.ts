@@ -1,7 +1,7 @@
-import { Decimal } from "../math"
-import { isUndefined, Range } from "./index"
+import {Decimal} from "../math"
+import {isUndefined, Range} from "./index"
 
-const computeRange = <T extends Decimal<{ integer: true }>>(
+const computeRange = <T extends Decimal<{integer: true}>>(
     firstParameter: T,
     secondParameter?: T,
 ): Range<T> => {

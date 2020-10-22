@@ -18,13 +18,13 @@ import {
     SUPERSCRIPT_NUMBERS,
     THREE_SMOOTHNESS,
 } from "../../../../general"
-import { computeCommaNameQuotient } from "./commaNameQuotient"
-import { computeSizeCategory } from "./sizeCategory"
-import { isCommaSized } from "./typeGuards"
-import { CommaNameOptions, SizeCategoryAbbreviation, SizeCategoryName } from "./types"
+import {computeCommaNameQuotient} from "./commaNameQuotient"
+import {computeSizeCategory} from "./sizeCategory"
+import {isCommaSized} from "./typeGuards"
+import {CommaNameOptions, SizeCategoryAbbreviation, SizeCategoryName} from "./types"
 
 const primeFactorizeCommaNameQuotient = (
-    numeratorOrDenominator: QuotientPart & Decimal<{ integer: true }>,
+    numeratorOrDenominator: QuotientPart & Decimal<{integer: true}>,
 ): string => {
     if (numeratorOrDenominator === 1) return "1"
 
@@ -33,7 +33,7 @@ const primeFactorizeCommaNameQuotient = (
 
     integerMonzo.forEach(
         (
-            primeExponent: Decimal<{ integer: true }> & Exponent<Prime>,
+            primeExponent: Decimal<{integer: true}> & Exponent<Prime>,
             primeExponentIndex: number,
         ): void => {
             if (primeExponent === 0) {
@@ -41,11 +41,11 @@ const primeFactorizeCommaNameQuotient = (
             }
 
             if (primeExponent === 1) {
-                factorizedTerms.push(`${PRIMES[ primeExponentIndex ]}`)
+                factorizedTerms.push(`${PRIMES[primeExponentIndex]}`)
             }
 
             if (primeExponent > 1) {
-                factorizedTerms.push(`${PRIMES[ primeExponentIndex ]}${SUPERSCRIPT_NUMBERS[ primeExponent ]}`)
+                factorizedTerms.push(`${PRIMES[primeExponentIndex]}${SUPERSCRIPT_NUMBERS[primeExponent]}`)
             }
         },
     )
@@ -54,13 +54,13 @@ const primeFactorizeCommaNameQuotient = (
 }
 
 const formatCommaNameQuotient = (
-    rationalQuotient: Quotient<{ rational: true }>,
-    { factored }: { factored: boolean },
+    rationalQuotient: Quotient<{rational: true}>,
+    {factored}: {factored: boolean},
 ): string[] => {
     return factored ?
         rationalQuotient.map(primeFactorizeCommaNameQuotient) :
         rationalQuotient.map((
-            integerQuotientPart: QuotientPart & Decimal<{ integer: true }>,
+            integerQuotientPart: QuotientPart & Decimal<{integer: true}>,
         ): string => {
             return integerQuotientPart.toString()
         })
@@ -70,7 +70,7 @@ const formatCommaNameQuotient = (
 
 const computeCommaName = (
     comma: Comma,
-    { directed = true, factored = false, abbreviated = true }: CommaNameOptions = {},
+    {directed = true, factored = false, abbreviated = true}: CommaNameOptions = {},
 ): Name<Comma> => {
     if (!isCommaSized(comma)) {
         throw new Error(`Comma ${stringify(comma)} is outside of comma-sized range and cannot be named.`)
@@ -80,8 +80,8 @@ const computeCommaName = (
 
     const maybeDown = isRationalScamonSub(comma) ? " down" : ""
 
-    const superComma = computeSuperScamon(comma) as Comma<{ rational: true, direction: Direction.SUPER }>
-    const sizeCategory: SizeCategoryAbbreviation | SizeCategoryName = computeSizeCategory(superComma, { abbreviated })
+    const superComma = computeSuperScamon(comma) as Comma<{rational: true, direction: Direction.SUPER}>
+    const sizeCategory: SizeCategoryAbbreviation | SizeCategoryName = computeSizeCategory(superComma, {abbreviated})
 
     let formattedCommaNameQuotient
     if (isRationalScamonSmooth(comma, THREE_SMOOTHNESS) && !isRationalScamonUnison(comma)) {
@@ -90,16 +90,16 @@ const computeCommaName = (
         const commaNameQuotient = computeCommaNameQuotient(comma)
 
         if (directed) {
-            const stringifiedQuotient = formatCommaNameQuotient(commaNameQuotient, { factored })
+            const stringifiedQuotient = formatCommaNameQuotient(commaNameQuotient, {factored})
 
-            formattedCommaNameQuotient = stringifiedQuotient[ 1 ] === "1" ?
-                stringifiedQuotient[ 0 ] :
+            formattedCommaNameQuotient = stringifiedQuotient[1] === "1" ?
+                stringifiedQuotient[0] :
                 stringifiedQuotient.join("/")
         } else {
-            const stringifiedQuotient = formatCommaNameQuotient(computeSubQuotient(commaNameQuotient), { factored })
+            const stringifiedQuotient = formatCommaNameQuotient(computeSubQuotient(commaNameQuotient), {factored})
 
-            formattedCommaNameQuotient = stringifiedQuotient[ 0 ] === "1" ?
-                stringifiedQuotient[ 1 ] :
+            formattedCommaNameQuotient = stringifiedQuotient[0] === "1" ?
+                stringifiedQuotient[1] :
                 stringifiedQuotient.join(":")
         }
     }

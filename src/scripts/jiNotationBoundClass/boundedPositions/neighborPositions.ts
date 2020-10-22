@@ -1,6 +1,6 @@
-import { computeIrrationalDecimalFromScamon, NumericProperties, Scamon } from "../../../general"
-import { computeNeighborPositionIndices } from "./neighborPositionIndices"
-import { NeighborPositions } from "./types"
+import {computeIrrationalDecimalFromScamon, NumericProperties, Scamon} from "../../../general"
+import {computeNeighborPositionIndices} from "./neighborPositionIndices"
+import {NeighborPositions} from "./types"
 
 const computeNeighborPositions = <T extends NumericProperties>(
     position: Scamon,
@@ -12,8 +12,8 @@ const computeNeighborPositions = <T extends NumericProperties>(
     )
 
     return [
-        targetPositions[ lesserNeighborPositionIndex ],
-        targetPositions[ greaterNeighborPositionIndex ],
+        targetPositions[lesserNeighborPositionIndex],
+        targetPositions[greaterNeighborPositionIndex],
     ]
 }
 

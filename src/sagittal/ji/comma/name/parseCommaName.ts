@@ -1,13 +1,6 @@
-import {
-    computeLowestTermsRationalQuotient,
-    Io,
-    isUndefined,
-    Maybe,
-    parseQuotient,
-    Quotient,
-} from "../../../../general"
-import { SIZE_CATEGORIES } from "./sizeCategories"
-import { CommaNameQuotient, ParsedCommaName, SizeCategoryName } from "./types"
+import {computeLowestTermsRationalQuotient, Io, isUndefined, Maybe, parseQuotient, Quotient} from "../../../../general"
+import {SIZE_CATEGORIES} from "./sizeCategories"
+import {CommaNameQuotient, ParsedCommaName, SizeCategoryName} from "./types"
 
 const parseCommaName = (commaNameIo: Io): ParsedCommaName => {
     const two3FreePartOfCommaName = commaNameIo // *not* a 2,3-free class, becuase it's not necessarily super!!!
@@ -17,8 +10,8 @@ const parseCommaName = (commaNameIo: Io): ParsedCommaName => {
         .replace(/-/, "") as Io
 
     const commaNameQuotient: CommaNameQuotient = computeLowestTermsRationalQuotient(
-        parseQuotient(two3FreePartOfCommaName) as Quotient<{ rational: true, rough: 5 }>,
-    ) as Quotient<{ rational: true, rough: 5 }> as CommaNameQuotient
+        parseQuotient(two3FreePartOfCommaName) as Quotient<{rational: true, rough: 5}>,
+    ) as Quotient<{rational: true, rough: 5}> as CommaNameQuotient
 
     let sizeCategoryName: Maybe<SizeCategoryName> = undefined
 
@@ -35,7 +28,7 @@ const parseCommaName = (commaNameIo: Io): ParsedCommaName => {
         throw new Error(`No size category found for comma name ${commaNameIo}.`)
     }
 
-    return { commaNameQuotient, sizeCategoryName }
+    return {commaNameQuotient, sizeCategoryName}
 }
 
 export {

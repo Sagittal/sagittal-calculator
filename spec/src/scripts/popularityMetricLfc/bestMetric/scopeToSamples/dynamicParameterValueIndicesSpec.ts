@@ -1,7 +1,7 @@
-import { Index, Step } from "../../../../../../src/general"
-import { DynamicParameter } from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
-import { computeDynamicParameterValueIndices } from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples/dynamicParameterValueIndices"
-import { Parameter, ParameterValue, Submetric } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {Index, Step} from "../../../../../../src/general"
+import {DynamicParameter} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
+import {computeDynamicParameterValueIndices} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples/dynamicParameterValueIndices"
+import {Parameter, ParameterValue, Submetric} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
 describe("computeDynamicParameterValueIndices", (): void => {
     it("given the dynamic parameters and a submetric, returns an array of, in order, for each of the dynamic parameters, its index in the parameter points", (): void => {
@@ -33,8 +33,8 @@ describe("computeDynamicParameterValueIndices", (): void => {
             },
         ]
         const submetric: Submetric = {
-            [ Parameter.A_AS_COEFFICIENT ]: 0.69 as ParameterValue,
-            [ Parameter.Y ]: 1.1 as ParameterValue,
+            [Parameter.A_AS_COEFFICIENT]: 0.69 as ParameterValue,
+            [Parameter.Y]: 1.1 as ParameterValue,
         }
         const submetricIndex = 1 as Index<Submetric>
 

@@ -1,5 +1,5 @@
-import { Comma, computeCentsFromPitch } from "../../../general"
-import { computeAte } from "../../../sagittal"
+import {Comma, computeCentsFromPitch} from "../../../general"
+import {computeAte} from "../../../sagittal"
 
 const isLate = (notatingComma: Comma, bestNotatingComma: Comma): boolean => {
     const ate = computeAte(notatingComma)

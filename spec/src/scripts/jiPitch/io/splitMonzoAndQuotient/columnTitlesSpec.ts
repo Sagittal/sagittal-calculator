@@ -1,7 +1,7 @@
-import { Count, Exponent, ioSettings, Prime, TableFormat } from "../../../../../../src/general"
-import { Io } from "../../../../../../src/general/io"
-import { Max } from "../../../../../../src/general/math"
-import { splitMonzoAndQuotientColumnTitles } from "../../../../../../src/scripts/jiPitch/io/splitMonzoAndQuotient"
+import {Count, Exponent, ioSettings, Prime, TableFormat} from "../../../../../../src/general"
+import {Io} from "../../../../../../src/general/io"
+import {Max} from "../../../../../../src/general/math"
+import {splitMonzoAndQuotientColumnTitles} from "../../../../../../src/scripts/jiPitch/io/splitMonzoAndQuotient"
 
 describe("splitMonzoAndQuotientColumnTitles", (): void => {
     const columnTitles = [
@@ -13,7 +13,7 @@ describe("splitMonzoAndQuotientColumnTitles", (): void => {
     const maxMonzoLength = 3 as Max<Count<Exponent<Prime>>>
 
     it("expands the quotient and monzo headers to match the data", (): void => {
-        const actual = splitMonzoAndQuotientColumnTitles(columnTitles, { maxMonzoLength })
+        const actual = splitMonzoAndQuotientColumnTitles(columnTitles, {maxMonzoLength})
 
         const expected = [
             "quotient n",
@@ -32,7 +32,7 @@ describe("splitMonzoAndQuotientColumnTitles", (): void => {
 
     it("does not split up quotients on the forum (because there they get LaTeX formatted)", (): void => {
         ioSettings.tableFormat = TableFormat.FORUM
-        const actual = splitMonzoAndQuotientColumnTitles(columnTitles, { maxMonzoLength })
+        const actual = splitMonzoAndQuotientColumnTitles(columnTitles, {maxMonzoLength})
 
         const expected = [
             "quotient",
@@ -55,7 +55,7 @@ describe("splitMonzoAndQuotientColumnTitles", (): void => {
         ] as Io[]
 
         it("expands the 2,3-free class name headers to match the split up data", (): void => {
-            const actual = splitMonzoAndQuotientColumnTitles(columnTitles, { maxMonzoLength })
+            const actual = splitMonzoAndQuotientColumnTitles(columnTitles, {maxMonzoLength})
 
             const expected = [
                 "2,3-free prime limit",
@@ -70,14 +70,14 @@ describe("splitMonzoAndQuotientColumnTitles", (): void => {
 
         it("does not split up 2,3-free classes on the forum (because there they get LaTeX formatted)", (): void => {
             ioSettings.tableFormat = TableFormat.FORUM
-            const actual = splitMonzoAndQuotientColumnTitles(columnTitles, { maxMonzoLength })
+            const actual = splitMonzoAndQuotientColumnTitles(columnTitles, {maxMonzoLength})
 
             expect(actual).toEqual(columnTitles)
         })
 
         it("uses the LaTeX-formatted sign when for the forum yet splitting is still requested", (): void => {
             ioSettings.tableFormat = TableFormat.FORUM_WITH_SPLIT_QUOTIENTS
-            const actual = splitMonzoAndQuotientColumnTitles(columnTitles, { maxMonzoLength })
+            const actual = splitMonzoAndQuotientColumnTitles(columnTitles, {maxMonzoLength})
 
             const expected = [
                 "2,3-free prime limit",
@@ -102,7 +102,7 @@ describe("splitMonzoAndQuotientColumnTitles", (): void => {
         it("can recognize the 'name' title as being for a 2,3-free class and split it (can't simply always split 'name' because it is also used in the notating commas table for the comma name)", (): void => {
             const actual = splitMonzoAndQuotientColumnTitles(
                 columnTitles,
-                { maxMonzoLength, recognizeNameTitleAsBeingFor23FreeClass },
+                {maxMonzoLength, recognizeNameTitleAsBeingFor23FreeClass},
             )
 
             const expected = [

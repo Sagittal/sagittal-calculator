@@ -9,11 +9,11 @@
 //  However, if you put a console log right after the work it does in populateScopes,
 //   It does seem to be interruptable in a good way, so that's a good sign.
 
-import { LogTarget, saveLog } from "../../../general"
-import { solverStatus } from "../globals"
-import { formatSearchedAndPopulated } from "./io"
-import { populateScopes, populateScopesSync } from "./populate"
-import { searchScopes, searchScopesSync } from "./search"
+import {LogTarget, saveLog} from "../../../general"
+import {solverStatus} from "../globals"
+import {formatSearchedAndPopulated} from "./io"
+import {populateScopes, populateScopesSync} from "./populate"
+import {searchScopes, searchScopesSync} from "./search"
 
 const populateAndSearchScopesAndPerfectMetrics = async (): Promise<void> => {
     populateScopes().then((): void => {

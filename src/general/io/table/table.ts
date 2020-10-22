@@ -1,16 +1,16 @@
-import { computeDeepDistinct, Maybe } from "../../code"
-import { count } from "../../math"
-import { Count } from "../../types"
-import { Formatted } from "../format"
-import { ioSettings } from "../globals"
-import { Io } from "../types"
-import { formatTableForForum } from "./tableForForum"
-import { formatTableForSpreadsheet } from "./tableForSpreadsheet"
-import { formatTableForTerminal } from "./tableForTerminal"
-import { FormatTableOptions, Row, Table, TableFormat } from "./types"
+import {computeDeepDistinct, Maybe} from "../../code"
+import {count} from "../../math"
+import {Count} from "../../types"
+import {Formatted} from "../format"
+import {ioSettings} from "../globals"
+import {Io} from "../types"
+import {formatTableForForum} from "./tableForForum"
+import {formatTableForSpreadsheet} from "./tableForSpreadsheet"
+import {formatTableForTerminal} from "./tableForTerminal"
+import {FormatTableOptions, Row, Table, TableFormat} from "./types"
 
 const formatTable = <T = unknown>(table: Table<T>, options?: Partial<FormatTableOptions<T>>): Io => {
-    const rowLengths = table.map((row: Row<{ of: T }>): Count<Maybe<Formatted<T>>> => {
+    const rowLengths = table.map((row: Row<{of: T}>): Count<Maybe<Formatted<T>>> => {
         return count(row)
     })
     const distinctRowLengths = computeDeepDistinct(rowLengths)

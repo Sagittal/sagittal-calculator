@@ -1,6 +1,6 @@
-import { Combination, Index } from "../../../../general"
-import { ParameterValue, Submetric } from "../../sumOfSquares"
-import { computeDynamicParameterValueIndices } from "./dynamicParameterValueIndices"
+import {Combination, Index} from "../../../../general"
+import {ParameterValue, Submetric} from "../../sumOfSquares"
+import {computeDynamicParameterValueIndices} from "./dynamicParameterValueIndices"
 import {
     Sample,
     SamplePoint,
@@ -19,7 +19,7 @@ const spreadAllBinSubmetricsPossibilitiesAcrossSamples = (
 
     const allBinMergedSamples: Sample[] = []
 
-    samples.forEach(({ submetrics, samplePoint }: Sample): void => {
+    samples.forEach(({submetrics, samplePoint}: Sample): void => {
         allBinSubmetricPossibilities.forEach((allBinSubmetricPossibility: SubmetricPossibility): void => {
             const dynamicParameterValueIndices: Array<Index<ParameterValue>> = computeDynamicParameterValueIndices({
                 dynamicParameters,

@@ -9,10 +9,10 @@ import {
     saveLog,
     stringify,
 } from "../../../../general"
-import { Metric } from "../../bestMetric"
-import { popularityMetricLfcScriptGroupSettings } from "../../globals"
-import { computeUnpopularities, Unpopularity } from "../../sumOfSquares"
-import { applySharedPopularityMetricLfcCommandSetup, load } from "../shared"
+import {Metric} from "../../bestMetric"
+import {popularityMetricLfcScriptGroupSettings} from "../../globals"
+import {computeUnpopularities, Unpopularity} from "../../sumOfSquares"
+import {applySharedPopularityMetricLfcCommandSetup, load} from "../shared"
 
 applySharedPopularityMetricLfcCommandSetup()
 
@@ -34,10 +34,10 @@ const noRottens = potentiallyRottenEntries.reduce(
 
         return {
             ...noRottens,
-            [ potentiallyRottenName ]: potentiallyRottenMetric,
+            [potentiallyRottenName]: potentiallyRottenMetric,
         }
     },
     {} as Record<Name<Metric>, Metric>,
 )
 
-saveLog(stringify(noRottens, { multiline: true }), LogTarget.FINAL)
+saveLog(stringify(noRottens, {multiline: true}), LogTarget.FINAL)

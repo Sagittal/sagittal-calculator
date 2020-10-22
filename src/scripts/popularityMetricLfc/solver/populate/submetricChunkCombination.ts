@@ -13,12 +13,12 @@ import {
     merge,
     saveLog,
 } from "../../../../general"
-import { Scope, SubmetricScope } from "../../bestMetric"
-import { Parameter, Submetric } from "../../sumOfSquares"
-import { formatSearchedAndPopulated } from "../io"
-import { Chunk } from "../types"
-import { populateScope } from "./scope"
-import { PopulateScopesForSubmetricChunkCombinationOptions } from "./types"
+import {Scope, SubmetricScope} from "../../bestMetric"
+import {Parameter, Submetric} from "../../sumOfSquares"
+import {formatSearchedAndPopulated} from "../io"
+import {Chunk} from "../types"
+import {populateScope} from "./scope"
+import {PopulateScopesForSubmetricChunkCombinationOptions} from "./types"
 
 const computeNextPopulateScopesForSubmetricChunkCombinationOptions = (
     submetricChunkCombination: Combination<Chunk<Submetric>>,
@@ -34,7 +34,7 @@ const computeNextPopulateScopesForSubmetricChunkCombinationOptions = (
     saveLog(`populating scopes for submetric chunk combination ${submetricChunkCombinationIndex + 1}/${submetricChunkCombinationCount} with parameter chunk combination ${parameterChunkCombinationIndex + 1}/${parameterChunkCombinations.length} (${100 * parameterChunkCombinationIndex / parameterChunkCombinations.length}%) ${formatSearchedAndPopulated()}`, LogTarget.SETUP)
 
     const parameterChunkCombination: Combination<Chunk<Parameter>> =
-        parameterChunkCombinations[ parameterChunkCombinationIndex ]
+        parameterChunkCombinations[parameterChunkCombinationIndex]
 
     const parameterChunkCombinationDistributions: Array<Distribution<Chunk<Parameter>>> = computeDistributions(
         parameterChunkCombination,
@@ -46,7 +46,7 @@ const computeNextPopulateScopesForSubmetricChunkCombinationOptions = (
             const scope: Scope = submetricChunkCombination.map(
                 (submetricChunkBin: Chunk<Submetric>, index: number): SubmetricScope => {
                     const parametersDistributedToThisBin: Combination<Chunk<Parameter>> =
-                        parameterChunkCombinationDistribution[ index ]
+                        parameterChunkCombinationDistribution[index]
 
                     return merge(
                         submetricChunkBin as Chunk,

@@ -1,4 +1,4 @@
-import { Basis, Cents, computePx, Multiplier, multiply, Px, Scale } from "../../../../general"
+import {Basis, Cents, computePx, Multiplier, multiply, Px, Scale} from "../../../../general"
 
 const X_VS_Y_STRETCH: Multiplier<Scale<Cents>> = 5 as Multiplier<Scale<Cents>>
 

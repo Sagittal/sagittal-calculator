@@ -1,8 +1,8 @@
 // tslint:disable max-line-length
 
-import { Count, Io, NEWLINE, Row, Table } from "../../../../../src/general"
-import { Justification } from "../../../../../src/general/io/table"
-import { formatTableForForum } from "../../../../../src/general/io/table/tableForForum"
+import {Count, Io, NEWLINE, Row, Table} from "../../../../../src/general"
+import {Justification} from "../../../../../src/general/io/table"
+import {formatTableForForum} from "../../../../../src/general/io/table/tableForForum"
 
 describe("formatTableForForum", (): void => {
     it("formats a table to be posted on the Sagittal forum", (): void => {
@@ -31,7 +31,7 @@ describe("formatTableForForum", (): void => {
             ["25/49M", "7", "24", "33.4", "[0 0⟩", "50/49", "-59.333", "26.466"],
         ] as Table<Io>
 
-        const actual = formatTableForForum(table, { headerRowCount: 2 as Count<Row<{ of: string, header: true }>> })
+        const actual = formatTableForForum(table, {headerRowCount: 2 as Count<Row<{of: string, header: true}>>})
 
         let expected =
             "[table]" + NEWLINE +
@@ -51,7 +51,7 @@ describe("formatTableForForum", (): void => {
             ["25/49M", "7", "24", "33.4", "[0 0⟩", "50/49", "-59.333", "26.466"],
         ] as Table<Io>
 
-        const actual = formatTableForForum(table, { colors: ["yellow", "red", "blue", "cyan"] })
+        const actual = formatTableForForum(table, {colors: ["yellow", "red", "blue", "cyan"]})
 
         let expected =
             "[table]" + NEWLINE +
@@ -71,7 +71,7 @@ describe("formatTableForForum", (): void => {
             ["25/49M", "7", "24", "33.4", "[0 0⟩", "50/49", "-59.333", "26.466"],
         ] as Table<Io>
 
-        const actual = formatTableForForum(table, { justification: [Justification.RIGHT, Justification.CENTER] })
+        const actual = formatTableForForum(table, {justification: [Justification.RIGHT, Justification.CENTER]})
 
         let expected =
             "[table]" + NEWLINE +

@@ -1,22 +1,22 @@
-import { program } from "commander"
-import { Count, Io, ioSettings, LogTarget, parseInteger, saveLog, time } from "../../../general"
-import { popularityMetricLfcScriptGroupSettings, solverStatus } from "../globals"
+import {program} from "commander"
+import {Count, Io, ioSettings, LogTarget, parseInteger, saveLog, time} from "../../../general"
+import {popularityMetricLfcScriptGroupSettings, solverStatus} from "../globals"
 import {
     Chunk,
     formatBestMetrics,
     populateAndSearchScopesAndPerfectMetrics,
     populateAndSearchScopesAndPerfectMetricsSync,
 } from "../solver"
-import { applySharedPopularityMetricLfcCommandSetup } from "./shared"
+import {applySharedPopularityMetricLfcCommandSetup} from "./shared"
 
 const defaultLogTargets = [
     LogTarget.SETUP,
     LogTarget.PROGRESS,
     LogTarget.FINAL,
 ]
-applySharedPopularityMetricLfcCommandSetup({ defaultLogTargets })
+applySharedPopularityMetricLfcCommandSetup({defaultLogTargets})
 
-solverStatus.chunkCount = parseInteger(program.args[ 0 ] as Io) as Count<Chunk>
+solverStatus.chunkCount = parseInteger(program.args[0] as Io) as Count<Chunk>
 
 const finalOutput = (): void => {
     saveLog(`\n\nAND THE BEST METRICS WERE ${formatBestMetrics()}`, LogTarget.FINAL)
