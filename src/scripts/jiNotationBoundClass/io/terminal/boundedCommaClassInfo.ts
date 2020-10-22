@@ -3,8 +3,8 @@ import {
     analyzeComma,
     BoundClass,
     CommaClass,
-    computeAsciiFromSymbol,
-    computeUnicodeFromSymbol,
+    computeSymbolAscii,
+    computeSymbolUnicode,
     getCommaClass,
     getIntroducingJiNotationLevel,
     getMinaName,
@@ -25,8 +25,8 @@ const computeBoundedCommaClassInfo = (
     const commaAnalysis = analyzeComma(commaClass.pitch)
 
     const symbol = getRepresentativeSymbol(commaClassId)
-    const ascii = computeAsciiFromSymbol(symbol)
-    const unicode = computeUnicodeFromSymbol(symbol)
+    const ascii = computeSymbolAscii(symbol)
+    const unicode = computeSymbolUnicode(symbol)
 
     const introducingJiNotationLevel = getIntroducingJiNotationLevel(commaClassId)
 

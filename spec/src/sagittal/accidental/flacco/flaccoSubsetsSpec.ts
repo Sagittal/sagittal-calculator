@@ -1,6 +1,6 @@
 import {
     Ascii,
-    computeAsciiFromSymbol,
+    computeSymbolAscii,
     Flacco,
     FlaccoSubset,
     FLACCO_SUBSETS,
@@ -12,7 +12,7 @@ describe("FLACCO_SUBSETS", (): void => {
     const subject = (flaccoSubset: FlaccoSubset): Ascii[] => FLACCO_SUBSETS[flaccoSubset]
         .map(getFlacco)
         .map((flacco: Flacco): Symbol => computeSymbolFromFlacco(flacco))
-        .map((symbol: Symbol): Ascii => computeAsciiFromSymbol(symbol))
+        .map((symbol: Symbol): Ascii => computeSymbolAscii(symbol))
 
     it("has the correct flaccos in the Sagittal-compatibles subset", (): void => {
         const flaccoSubset = FlaccoSubset.COMPATIBLE

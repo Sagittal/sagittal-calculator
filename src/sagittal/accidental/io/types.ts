@@ -1,6 +1,5 @@
 import {Io, Maybe} from "../../../general"
 import {Flavor} from "../flavor"
-import {Aim, Element, Glyph} from "../symbol"
 
 type Ascii<T extends Maybe<Flavor> = undefined> =
     Io
@@ -15,21 +14,11 @@ type Smiley<T extends Maybe<Flavor> = undefined> =
     & {_SmileyBrand: boolean}
     & (T extends Flavor ? {_FlavorBrand: T} : {})
 
-interface GlyphUnicodeEquivalent {
-    glyph: Glyph,
-    unicode: Unicode
-}
-
-interface ElementAndAimAsciiEquivalent {
-    element: Element,
-    aim: Aim,
-    ascii: Ascii,
-}
+type Glyph<T extends Maybe<Flavor> = undefined> = Unicode<T> | Ascii<T> | Smiley<T>
 
 export {
     Ascii,
     Unicode,
     Smiley,
-    GlyphUnicodeEquivalent,
-    ElementAndAimAsciiEquivalent,
+    Glyph,
 }

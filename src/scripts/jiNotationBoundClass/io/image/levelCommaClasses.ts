@@ -2,8 +2,8 @@ import {add, DEFAULT_PRECISION, Id, Io, Px, round, subtract} from "../../../../g
 import {
     analyzeComma,
     CommaClass,
-    computeAsciiFromSymbol,
-    computeUnicodeFromSymbol,
+    computeSymbolAscii,
+    computeSymbolUnicode,
     getCommaClass,
     getMinaName,
     getRepresentativeSymbol,
@@ -35,8 +35,8 @@ const visualizeJiNotationLevelCommaClasses = (): Io[] => {
             const minaName = getMinaName(jiNotationLevelCommaClassId)
             const commaAnalysis = analyzeComma(getCommaClass(jiNotationLevelCommaClassId).pitch)
             const representativeSymbol = getRepresentativeSymbol(jiNotationLevelCommaClassId)
-            const ascii = computeAsciiFromSymbol(representativeSymbol)
-            const unicode = computeUnicodeFromSymbol(representativeSymbol)
+            const ascii = computeSymbolAscii(representativeSymbol)
+            const unicode = computeSymbolUnicode(representativeSymbol)
 
             const positionX: Px = computeX(commaAnalysis.pitch)
 

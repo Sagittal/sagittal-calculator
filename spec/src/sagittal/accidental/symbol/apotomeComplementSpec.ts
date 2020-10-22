@@ -1,64 +1,52 @@
-import {AccentName, ACCENT_GLYPHS, CoreName, CORE_GLYPHS, Symbol} from "../../../../../src/sagittal/accidental"
+import {CoreName, CORES, Symbol} from "../../../../../src/sagittal/accidental"
+import {Accent} from "../../../../../src/sagittal/accidental/flacco"
 import {computeApotomeComplement} from "../../../../../src/sagittal/accidental/symbol"
 
 describe("computeApotomeComplement", (): void => {
     it("returns the apotome complement of the given symbol", (): void => {
-        const symbol: Symbol = {core: CORE_GLYPHS[CoreName.LEFT_BARB_UP]}                           //  /|
+        const symbol: Symbol = {core: CORES[CoreName.LEFT_BARB_UP]}                             //  /|
 
         const actual = computeApotomeComplement(symbol)
 
-        const expected = {core: CORE_GLYPHS[CoreName.RIGHT_BARB_DOUBLE_UP]}                         // ||\\
+        const expected = {core: CORES[CoreName.RIGHT_BARB_DOUBLE_UP]}                           // ||\\
         expect(actual).toEqual(expected)
     })
 
     it("can go from a multi-shaft symbol to the single-shaft symbol", (): void => {
-        const symbol: Symbol = {core: CORE_GLYPHS[CoreName.LEFT_SCROLL_AND_BOATHOOK_DOUBLE_UP]}   // )~||
+        const symbol: Symbol = {core: CORES[CoreName.LEFT_SCROLL_AND_BOATHOOK_DOUBLE_UP]}       // )~||
 
         const actual = computeApotomeComplement(symbol)
 
-        const expected = {core: CORE_GLYPHS[CoreName.BOATHOOK_AND_BARB_UP]}                         // ~|\\
+        const expected = { core: CORES[CoreName.BOATHOOK_AND_BARB_UP]}                          // ~|\\
         expect(actual).toEqual(expected)
     })
 
-    it("is smart enough to flip the accents", (): void => {
+    it("reorients the accents, so that they will cancel each other out", (): void => {
         const symbol: Symbol = {                                                                // ,'|(
-            accents: [
-                ACCENT_GLYPHS[AccentName.WING_DOWN],
-                ACCENT_GLYPHS[AccentName.TICK_UP],
-            ],
-            core: CORE_GLYPHS[CoreName.RIGHT_SCROLL_UP],
+            accents: [Accent.WING_AGAINST, Accent.TICK_WITH],
+            core: CORES[CoreName.RIGHT_SCROLL_UP],
         }
 
         const actual = computeApotomeComplement(symbol)
 
         const expected = {                                                                      // `./||)
-            accents: [
-                ACCENT_GLYPHS[AccentName.WING_UP],
-                ACCENT_GLYPHS[AccentName.TICK_DOWN],
-            ],
-            core: CORE_GLYPHS[CoreName.BARB_AND_ARC_DOUBLE_UP],
+            accents: [Accent.WING_WITH, Accent.TICK_AGAINST],
+            core: CORES[CoreName.BARB_AND_ARC_DOUBLE_UP],
         }
         expect(actual).toEqual(expected)
     })
 
-    it("is smart enough to flip accents the other way", (): void => {
+    it("can reorient accents the other way", (): void => {
         const symbol: Symbol = {                                                                // `./||)
-            accents: [
-                ACCENT_GLYPHS[AccentName.WING_UP],
-                ACCENT_GLYPHS[AccentName.TICK_DOWN],
-            ],
-            core: CORE_GLYPHS[CoreName.BARB_AND_ARC_DOUBLE_UP],
+            accents: [Accent.WING_WITH, Accent.TICK_AGAINST],
+            core: CORES[CoreName.BARB_AND_ARC_DOUBLE_UP],
         }
-
 
         const actual = computeApotomeComplement(symbol)
 
         const expected = {                                                                      // ,'|(
-            accents: [
-                ACCENT_GLYPHS[AccentName.WING_DOWN],
-                ACCENT_GLYPHS[AccentName.TICK_UP],
-            ],
-            core: CORE_GLYPHS[CoreName.RIGHT_SCROLL_UP],
+            accents: [Accent.WING_AGAINST, Accent.TICK_WITH],
+            core: CORES[CoreName.RIGHT_SCROLL_UP],
         }
         expect(actual).toEqual(expected)
     })
@@ -69,28 +57,22 @@ describe("computeApotomeComplement", (): void => {
         const actual = computeApotomeComplement(symbol)
 
         const expected = {
-            core: CORE_GLYPHS[CoreName.DOUBLE_BARB_DOUBLE_UP],
+            core: CORES[CoreName.DOUBLE_BARB_DOUBLE_UP],
         }
         expect(actual).toEqual(expected)
     })
 
     it("maps a bare shaft with accents to the apotome with flipped accents", (): void => {
         const symbol: Symbol = {                                                                // `'|
-            accents: [
-                ACCENT_GLYPHS[AccentName.WING_UP],
-                ACCENT_GLYPHS[AccentName.TICK_UP],
-            ],
-            core: CORE_GLYPHS[CoreName.BARE_SHAFT_UP],
+            accents: [Accent.WING_WITH, Accent.TICK_WITH],
+            core: CORES[CoreName.BARE_SHAFT_UP],
         }
 
         const actual = computeApotomeComplement(symbol)
 
         const expected = {                                                                      // ,./||\\
-            accents: [
-                ACCENT_GLYPHS[AccentName.WING_DOWN],
-                ACCENT_GLYPHS[AccentName.TICK_DOWN],
-            ],
-            core: CORE_GLYPHS[CoreName.DOUBLE_BARB_DOUBLE_UP],
+            accents: [Accent.WING_AGAINST, Accent.TICK_AGAINST],
+            core: CORES[CoreName.DOUBLE_BARB_DOUBLE_UP],
         }
         expect(actual).toEqual(expected)
     })

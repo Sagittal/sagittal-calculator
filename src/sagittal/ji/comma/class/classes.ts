@@ -2,16 +2,6 @@ import {Id, PYTHAGOREAN_COMMA, UNISON} from "../../../../general"
 import {Flacco} from "../../../accidental"
 import {CommaClass} from "./types"
 
-// TODO: ID VS NAME
-//  Hey here's an idea... what if everywhere instead of ID we used names, so we could see what we were doing? e.g.
-/*
-const COMMA_CLASS_1_u = {
-    name: "1u" as Name<Comma>,
-    representativeFlaccoId: 0 as Id<Flacco>,
-    pitch: UNISON,
-}
- */
-
 const COMMA_CLASS_1_u = {
     id: 0 as Id<CommaClass>,
     representativeFlaccoId: 0 as Id<Flacco>,

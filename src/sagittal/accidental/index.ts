@@ -6,20 +6,23 @@ export {
     getSmallestFlaccoSubset,
     computeSymbolFromFlacco,
     FLACCOS,
+    Accent,
+    Flag,
 } from "./flacco"
-export {Symbol, ACCENT_GLYPHS, CORE_GLYPHS, Glyph, CoreName, AccentName, Aim, Element} from "./symbol"
+export {Core, Symbol, CORES, CoreName, Aim} from "./symbol"
 export {Accidental, Flavor, Compatible} from "./flavor"
 export {
     formatAscii,
     Ascii,
     Smiley,
     Unicode,
-    computeAsciiFromAccidental,
-    computeUnicodeFromAccidental,
-    computeUnicodeFromGlyph,
-    computeSmileyFromAccidental,
-    computeAsciiFromSymbol,
-    computeUnicodeFromSymbol,
+    computeAccidentalAscii,
+    computeAccidentalUnicode,
+    computeCoreUnicode,
+    computeAccidentalSmiley,
+    computeSymbolAscii,
+    computeSymbolUnicode,
     formatSymbol,
     parseAscii,
+    Glyph,
 } from "./io"

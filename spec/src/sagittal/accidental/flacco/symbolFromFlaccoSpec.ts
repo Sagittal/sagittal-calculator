@@ -1,23 +1,21 @@
 import {Id} from "../../../../../src/general"
-import {AccentName, ACCENT_GLYPHS, CoreName, CORE_GLYPHS, Flacco, Symbol} from "../../../../../src/sagittal/accidental"
+import {Aim, Flacco, Symbol} from "../../../../../src/sagittal/accidental"
 import {Accent, computeSymbolFromFlacco, Flag} from "../../../../../src/sagittal/accidental/flacco"
-import {ACCENT_COMBOS} from "../../../../../src/sagittal/accidental/flacco/accents"
-import {FLAG_COMBOS} from "../../../../../src/sagittal/accidental/flacco/flags"
-import {AccentCombo, FlagCombo} from "../../../../../src/sagittal/accidental/flacco/types"
-import {ABSENCE_OF_A_SYMBOL} from "../../../../../src/sagittal/accidental/symbol"
+import {Shafts} from "../../../../../src/sagittal/accidental/symbol"
 
 describe("computeSymbolFromFlacco", (): void => {
     it("takes a combo of flags and accents and returns the full Sagittal symbol", (): void => {
         const flacco = {
             id: 75 as Id<Flacco>,
-            combo: [...ACCENT_COMBOS[AccentCombo.WING_AGAINST], ...FLAG_COMBOS[FlagCombo.LEFT_BOATHOOK_RIGHT_ARC]],
+            accents: [Accent.WING_AGAINST],
+            core: {left: [Flag.BOATHOOK], right: [Flag.ARC]},
         }
 
         const actual = computeSymbolFromFlacco(flacco)
 
-        const expected: Symbol = {                                      // ,~|)
-            accents: [ACCENT_GLYPHS[AccentName.WING_DOWN]],
-            core: CORE_GLYPHS[CoreName.BOATHOOK_AND_ARC_UP],
+        const expected: Symbol = {                                                                       // ,~|)
+            accents: [Accent.WING_AGAINST],
+            core: {aim: Aim.UP, shafts: Shafts.SINGLE, left: [Flag.BOATHOOK], right: [Flag.ARC]},
         }
         expect(actual).toEqual(expected)
     })
@@ -25,14 +23,15 @@ describe("computeSymbolFromFlacco", (): void => {
     it("works for a symbol with an accent and flag on the left", (): void => {
         const flacco = {
             id: 74 as Id<Flacco>,
-            combo: [...ACCENT_COMBOS[AccentCombo.TICK_WITH], ...FLAG_COMBOS[FlagCombo.LEFT_ARC]],
+            accents: [Accent.TICK_WITH],
+            core: {left: [Flag.ARC]},
         }
 
         const actual = computeSymbolFromFlacco(flacco)
 
-        const expected: Symbol = {                                      // '(|
-            accents: [ACCENT_GLYPHS[AccentName.TICK_UP]],
-            core: CORE_GLYPHS[CoreName.LEFT_ARC_UP],
+        const expected: Symbol = {                                                                       // '(|
+            accents: [Accent.TICK_WITH],
+            core: {aim: Aim.UP, shafts: Shafts.SINGLE, left: [Flag.ARC]},
         }
         expect(actual).toEqual(expected)
     })
@@ -40,13 +39,13 @@ describe("computeSymbolFromFlacco", (): void => {
     it("works for a symbol with multiple flags on the right", (): void => {
         const flacco = {
             id: 128 as Id<Flacco>,
-            combo: [...FLAG_COMBOS[FlagCombo.RIGHT_BARB_AND_ARC]],
+            core: {right: [Flag.BARB, Flag.ARC]},
         }
 
         const actual = computeSymbolFromFlacco(flacco)
 
-        const expected: Symbol = {                                      // |\\)
-            core: CORE_GLYPHS[CoreName.RIGHT_BARB_AND_ARC_UP],
+        const expected: Symbol = {                                                                       // |\)
+            core: {aim: Aim.UP, shafts: Shafts.SINGLE, right: [Flag.BARB, Flag.ARC]},
         }
         expect(actual).toEqual(expected)
     })
@@ -54,13 +53,13 @@ describe("computeSymbolFromFlacco", (): void => {
     it("works for a symbol with multiple flags on the left", (): void => {
         const flacco = {
             id: 99 as Id<Flacco>,
-            combo: [...FLAG_COMBOS[FlagCombo.LEFT_SCROLL_AND_DOUBLE_LEFT_BARB]],
+            core: {left: [Flag.SCROLL, Flag.BARB, Flag.BARB]},
         }
 
         const actual = computeSymbolFromFlacco(flacco)
 
-        const expected: Symbol = {                                      // )//|
-            core: CORE_GLYPHS[CoreName.LEFT_SCROLL_DOUBLE_LEFT_BARB_UP],
+        const expected: Symbol = {                                                                       // )//|
+            core: {aim: Aim.UP, shafts: Shafts.SINGLE, left: [Flag.SCROLL, Flag.BARB, Flag.BARB]},
         }
         expect(actual).toEqual(expected)
     })
@@ -68,25 +67,24 @@ describe("computeSymbolFromFlacco", (): void => {
     it("works for the non-symbol, or absence of a symbol", (): void => {
         const flacco = {
             id: 0 as Id<Flacco>,
-            combo: [],
         }
 
         const actual = computeSymbolFromFlacco(flacco)
 
-        expect(actual).toEqual(ABSENCE_OF_A_SYMBOL)                     // (|//|)
+        expect(actual).toEqual({})                                                               // (|//|)
     })
 
     it("works for a symbol with only accents", (): void => {
         const flacco = {
             id: 1 as Id<Flacco>,
-            combo: [...ACCENT_COMBOS[AccentCombo.WING_WITH]],
+            accents: [Accent.WING_WITH],
         }
 
         const actual = computeSymbolFromFlacco(flacco)
 
-        const expected: Symbol = {                                      // `|
-            accents: [ACCENT_GLYPHS[AccentName.WING_UP]],
-            core: CORE_GLYPHS[CoreName.BARE_SHAFT_UP],
+        const expected: Symbol = {                                                                       // `|
+            accents: [Accent.WING_WITH],
+            core: {aim: Aim.UP, shafts: Shafts.SINGLE },
         }
         expect(actual).toEqual(expected)
     })

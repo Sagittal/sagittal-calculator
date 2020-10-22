@@ -38,21 +38,21 @@ export {
     formatCommaClass,
 } from "./ji"
 export {
-    Glyph,
     formatAscii,
     Ascii,
     Smiley,
     Unicode,
-    computeAsciiFromAccidental,
-    computeUnicodeFromAccidental,
-    computeUnicodeFromGlyph,
+    computeAccidentalAscii,
+    computeAccidentalUnicode,
+    computeCoreUnicode,
     FlaccoSubset,
     FLACCO_SUBSETS,
     FLACCO_SUBSETS_SORTED_BY_SIZE,
     getSmallestFlaccoSubset,
-    computeAsciiFromSymbol,
-    computeUnicodeFromSymbol,
+    computeSymbolAscii,
+    computeSymbolUnicode,
     parseAscii,
+    Glyph,
 } from "./accidental"
 export {
     computeMaybeCommaClassId,

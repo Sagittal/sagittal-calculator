@@ -6,6 +6,8 @@ enum Flavor {
     REVO = "revo",
 }
 
+// Went with "Compatible" over "Conventional" because some of these are arguably unconventional,
+// But they are all definitely Sagittal-compatible (and we try to drop assumed "Sagittal" whenever possible).
 enum Compatible {
     STEIN_SEMISHARP = "steinSemisharp",
     STEIN_SEMIFLAT = "steinSemiflat",

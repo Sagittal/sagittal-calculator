@@ -1,7 +1,7 @@
 import {
-    computeAsciiFromAccidental,
-    computeSmileyFromAccidental,
-    computeUnicodeFromAccidental,
+    computeAccidentalAscii,
+    computeAccidentalSmiley,
+    computeAccidentalUnicode,
 } from "../../../../../src/sagittal/accidental"
 import {computeEvoAccidentalFromFlacombo} from "../../../../../src/sagittal/accidental/flavor/evo"
 import {computeRevoAccidentalFromFlacombo} from "../../../../../src/sagittal/accidental/flavor/revo"
@@ -10,14 +10,14 @@ import {AccidentalAnalysis} from "./types"
 
 const computeAccidentalAnalysisForFlacombo = (flacombo: Flacombo): AccidentalAnalysis => {
     const evoAccidental = computeEvoAccidentalFromFlacombo(flacombo)
-    const evoUnicode = computeUnicodeFromAccidental(evoAccidental)
-    const evoAscii = computeAsciiFromAccidental(evoAccidental)
-    const evoSmiley = computeSmileyFromAccidental(evoAccidental)
+    const evoUnicode = computeAccidentalUnicode(evoAccidental)
+    const evoAscii = computeAccidentalAscii(evoAccidental)
+    const evoSmiley = computeAccidentalSmiley(evoAccidental)
 
     const revoAccidental = computeRevoAccidentalFromFlacombo(flacombo)
-    const revoUnicode = computeUnicodeFromAccidental(revoAccidental)
-    const revoAscii = computeAsciiFromAccidental(revoAccidental)
-    const revoSmiley = computeSmileyFromAccidental(revoAccidental)
+    const revoUnicode = computeAccidentalUnicode(revoAccidental)
+    const revoAscii = computeAccidentalAscii(revoAccidental)
+    const revoSmiley = computeAccidentalSmiley(revoAccidental)
 
     return {
         // Todo: BLOCKED ON FLACOMBO, SECTION, NOTATION GENERATION

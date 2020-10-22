@@ -1,12 +1,9 @@
 import {Formatted, Id} from "../../../../general"
-import {Ascii, formatSymbol, Smiley, Symbol, Unicode} from "../../../accidental"
+import {formatSymbol, Glyph, Symbol} from "../../../accidental"
 import {getRepresentativeSymbol} from "./representativeSymbol"
 import {CommaClass} from "./types"
 
-const formatCommaClass = (
-    commaClassId: Id<CommaClass>,
-    options: {align?: boolean} = {},
-): Formatted<Ascii | Unicode | Smiley> => {
+const formatCommaClass = (commaClassId: Id<CommaClass>, options: {align?: boolean} = {}): Formatted<Glyph> => {
     const representativeSymbol: Symbol = getRepresentativeSymbol(commaClassId)
 
     return formatSymbol(representativeSymbol, options)

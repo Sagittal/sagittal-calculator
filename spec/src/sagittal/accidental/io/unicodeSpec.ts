@@ -1,24 +1,24 @@
 import {
-    AccentName,
-    ACCENT_GLYPHS,
     Accidental,
     Compatible,
-    computeUnicodeFromAccidental,
-    computeUnicodeFromSymbol,
+    computeAccidentalUnicode,
+    computeSymbolUnicode,
     CoreName,
-    CORE_GLYPHS,
+    CORES,
     Flavor,
-    Symbol, Unicode,
+    Symbol,
+    Unicode,
 } from "../../../../../src/sagittal/accidental"
+import {Accent} from "../../../../../src/sagittal/accidental/flacco"
 
-describe("computeUnicodeFromSymbol", (): void => {
+describe("computeSymbolUnicode", (): void => {
     it("given a symbol, returns its unicode representation", (): void => {
         const symbol: Symbol = {                                // ``)|
-            accents: [ACCENT_GLYPHS[AccentName.BIRD_UP]],
-            core: CORE_GLYPHS[CoreName.LEFT_SCROLL_UP],
+            accents: [Accent.BIRD_WITH],
+            core: CORES[CoreName.LEFT_SCROLL_UP],
         }
 
-        const actual = computeUnicodeFromSymbol(symbol)
+        const actual = computeSymbolUnicode(symbol)
 
         const expected = "" as Unicode
         expect(actual).toBe(expected)
@@ -27,21 +27,21 @@ describe("computeUnicodeFromSymbol", (): void => {
     it("works for the absence of a symbol (the parenthetical natural)", (): void => {
         const symbol: Symbol = {}
 
-        const actual = computeUnicodeFromSymbol(symbol)
+        const actual = computeSymbolUnicode(symbol)
 
         const expected = "" as Unicode
         expect(actual).toBe(expected)
     })
 })
 
-describe("computeUnicodeFromAccidental", (): void => {
+describe("computeAccidentalUnicode", (): void => {
     it("works for accidentals with a Sagittal-compatible glyph", (): void => {
         const accidental: Accidental<Flavor.EVO> = {
-            core: CORE_GLYPHS[CoreName.RIGHT_ARC_DOWN],
+            core: CORES[CoreName.RIGHT_ARC_DOWN],
             compatible: Compatible.FLAT,
         } as Accidental<Flavor.EVO>
 
-        const actual = computeUnicodeFromAccidental(accidental)
+        const actual = computeAccidentalUnicode(accidental)
 
         const expected = "" as Unicode
         expect(actual).toBe(expected)
@@ -52,7 +52,7 @@ describe("computeUnicodeFromAccidental", (): void => {
             compatible: Compatible.DOUBLE_FLAT,
         } as Accidental<Flavor.EVO>
 
-        const actual = computeUnicodeFromAccidental(accidental)
+        const actual = computeAccidentalUnicode(accidental)
 
         const expected = "" as Unicode
         expect(actual).toBe(expected)

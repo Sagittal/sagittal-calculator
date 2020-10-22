@@ -1,14 +1,8 @@
-import {
-    AccentName,
-    Ascii,
-    Compatible,
-    CoreName,
-    Smiley,
-    Unicode,
-} from "../../../../../src/sagittal/accidental"
+import {Accent, Ascii, Compatible, CoreName, Smiley, Unicode} from "../../../../../src/sagittal/accidental"
 
+// TODO: Call these sorts of things Expectations, not Analyses
 interface GlyphAnalysis {
-    name: CoreName | AccentName | Compatible,
+    name: CoreName | Accent | Compatible,
     ascii: Ascii,
     unicode: Unicode,
     smiley: Smiley,

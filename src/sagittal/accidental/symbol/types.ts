@@ -2,34 +2,12 @@
 /* Element domain */
 /******************/
 
-enum Aim {
-    UP = "up",
-    DOWN = "down",
-}
+import {FlagCombo, Symbolic} from "../flacco"
 
-enum Element {
-    SHAFT = "shaft",
-    LEFT_BARB = "leftBarb",
-    RIGHT_BARB = "rightBarb",
-    LEFT_SCROLL = "leftScroll",
-    RIGHT_SCROLL = "rightScroll",
-    LEFT_ARC = "leftArc",
-    RIGHT_ARC = "rightArc",
-    LEFT_BOATHOOK = "leftBoathook",
-    RIGHT_BOATHOOK = "rightBoathook",
-    TICK = "tick",
-    WING = "wing",
-    BIRD = "bird",
-}
+/***************/
+/* Core domain */
+/***************/
 
-/****************/
-/* Glyph domain */
-/****************/
-
-// Todo: ELEMENT, GLYPH, FLACCO
-//  Consider renaming to CoreGlyph and AccentGlyph so it looks more like CORE_GLYPHS[CoreGlyph.MY_GLYPH] etc.
-//  And consider how else that might work.
-//  Like, it's kind of weird how Elements are simple enough to be the simple enum, while Glyphs are not. 
 enum CoreName {
     RIGHT_SCROLL_UP = "rightScrollUp",
     RIGHT_SCROLL_DOWN = "rightScrollDown",
@@ -243,40 +221,35 @@ enum CoreName {
     BARE_SHAFT_DOWN = "bareShaftDown",
 }
 
-enum AccentName {
-    TICK_UP = "tickUp",
-    TICK_DOWN = "tickDown",
-    WING_UP = "wingUp",
-    WING_DOWN = "wingDown",
-    BIRD_UP = "birdUp",
-    BIRD_DOWN = "birdDown",
+enum Aim {
+    UP = "up",
+    DOWN = "down",
 }
 
-enum GlyphType {
-    ACCENT = "accent",
-    CORE = "core",
+enum Shafts {
+    SINGLE = "single",
+    DOUBLE = "double",
+    TRIPLE = "triple",
+    EX = "ex",
 }
 
-type Glyph<T extends GlyphType = GlyphType> = {
+interface Core extends FlagCombo {
     aim: Aim,
-    elements: Element[]
-} & {_GlyphType: T}
+    shafts: Shafts,
+}
 
 /*****************/
 /* Symbol domain */
 /*****************/
 
-interface Symbol {
-    accents?: Array<Glyph<GlyphType.ACCENT>>,
-    core?: Glyph<GlyphType.CORE>,
+interface Symbol extends Symbolic {
+    core?: Core,
 }
 
 export {
-    Glyph,
+    Core,
     Aim,
-    Element,
     CoreName,
-    GlyphType,
-    AccentName,
     Symbol,
+    Shafts,
 }

@@ -1,25 +1,17 @@
+import {Aim, Ascii, Compatible, CoreName, CORES, Smiley, Unicode} from "../../../../../../src/sagittal/accidental"
+import {Accent} from "../../../../../../src/sagittal/accidental/flacco"
+import {Core} from "../../../../../../src/sagittal/accidental/symbol"
 import {
-    AccentName,
-    ACCENT_GLYPHS,
-    Ascii,
-    Compatible,
-    CoreName,
-    CORE_GLYPHS,
-    Glyph,
-    Smiley,
-    Unicode,
-} from "../../../../../src/sagittal/accidental"
-import {GlyphType} from "../../../../../src/sagittal/accidental/symbol"
-import {analyzeCompatible, analyzeGlyphEntry} from "../../../../helpers/src/sagittal/accidental/glyphAnalysis"
-import {GlyphAnalysis} from "../../../../helpers/src/sagittal/accidental/types"
+    analyzeAccentGlyph,
+    analyzeCompatibleGlyph,
+    analyzeCoreGlyph,
+} from "../../../../../helpers/src/sagittal/accidental/glyphAnalysis"
+import {GlyphAnalysis} from "../../../../../helpers/src/sagittal/accidental/types"
 
-describe("glyphEntries", (): void => {
+describe("glyphs", (): void => {
     it("has the correct core glyphs and computes their IO correctly", (): void => {
-        const coreGlyphEntries = Object.entries(CORE_GLYPHS) as Array<[CoreName, Glyph<GlyphType.CORE>]>
-        const coreGlyphEntryAnalyses = coreGlyphEntries
-            .map((coreGlyphEntry: [CoreName, Glyph<GlyphType.CORE>]): GlyphAnalysis =>
-                analyzeGlyphEntry(coreGlyphEntry))
-
+        const cores = Object.entries(CORES) as Array<[CoreName, Core]>
+        const coreGlyphAnalyses = cores.map((core: [CoreName, Core]): GlyphAnalysis => analyzeCoreGlyph(core))
 
         const expected: Array<GlyphAnalysis> = [
             {
@@ -1282,63 +1274,59 @@ describe("glyphEntries", (): void => {
                 ascii: "!" as Ascii,
                 smiley: ":!:" as Smiley,
             },
-
         ]
-        expect(coreGlyphEntryAnalyses).toEqual(expected)
+        expect(coreGlyphAnalyses).toEqual(expected)
     })
 
-    it("has the correct accent glyphs and computes their IO correctly", (): void => {
-        const accentGlyphEntries = Object.entries(ACCENT_GLYPHS) as Array<[CoreName, Glyph<GlyphType.ACCENT>]>
-        const accentGlyphEntryAnalyses = accentGlyphEntries
-            .map((accentGlyphEntry: [CoreName, Glyph<GlyphType.ACCENT>]): GlyphAnalysis =>
-                analyzeGlyphEntry(accentGlyphEntry))
+    it("has the correct accent glyphs and computes their IO correctly (assuming aim is up, since it's redundant to check both aims)", (): void => {
+        const accents = Object.values(Accent) as Accent[]
+        const accentGlyphAnalyses = accents.map((accent: Accent): GlyphAnalysis => analyzeAccentGlyph(accent, Aim.UP))
 
         const expected: Array<GlyphAnalysis> = [
             {
-                name: AccentName.TICK_UP,
+                name: Accent.TICK_WITH,
                 unicode: "" as Unicode,
                 ascii: "'" as Ascii,
                 smiley: ":':" as Smiley,
             },
             {
-                name: AccentName.TICK_DOWN,
+                name: Accent.TICK_AGAINST,
                 unicode: "" as Unicode,
                 ascii: "." as Ascii,
                 smiley: ":.:" as Smiley,
             },
             {
-                name: AccentName.WING_UP,
+                name: Accent.WING_WITH,
                 unicode: "" as Unicode,
                 ascii: "`" as Ascii,
                 smiley: ":`:" as Smiley,
             },
             {
-                name: AccentName.WING_DOWN,
+                name: Accent.WING_AGAINST,
                 unicode: "" as Unicode,
                 ascii: "," as Ascii,
                 smiley: ":,:" as Smiley,
             },
             {
-                name: AccentName.BIRD_UP,
+                name: Accent.BIRD_WITH,
                 unicode: "" as Unicode,
                 ascii: "``" as Ascii,
                 smiley: ":``:" as Smiley,
             },
             {
-                name: AccentName.BIRD_DOWN,
+                name: Accent.BIRD_AGAINST,
                 unicode: "" as Unicode,
                 ascii: ",," as Ascii,
                 smiley: ":,,:" as Smiley,
             },
         ]
-        expect(accentGlyphEntryAnalyses).toEqual(expected)
+        expect(accentGlyphAnalyses).toEqual(expected)
     })
 
     it("has the correct Sagittal-compatible glyphs and computes their IO correctly", (): void => {
         const compatibles = Object.values(Compatible) as Compatible[]
-        const compatibleAnalyses = compatibles
-            .map((compatible: Compatible): GlyphAnalysis =>
-                analyzeCompatible(compatible))
+        const compatibleGlyphAnalyses = compatibles
+            .map((compatible: Compatible): GlyphAnalysis => analyzeCompatibleGlyph(compatible))
 
         const expected: GlyphAnalysis[] = [
             {
@@ -1408,6 +1396,6 @@ describe("glyphEntries", (): void => {
                 smiley: ":bb:" as Smiley,
             },
         ]
-        expect(compatibleAnalyses).toEqual(expected)
+        expect(compatibleGlyphAnalyses).toEqual(expected)
     })
 })

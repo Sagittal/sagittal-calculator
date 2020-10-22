@@ -1,104 +1,58 @@
 import {Id} from "../../../general"
-import {Element} from "../symbol"
 
-enum Shape {
-    SHAFT = "shaft",
+enum Accent {
+    TICK_WITH = "tickWith",
+    TICK_AGAINST = "tickAgainst",
+    WING_WITH = "wingWith",
+    WING_AGAINST = "wingAgainst",
+    BIRD_WITH = "birdWith",
+    BIRD_AGAINST = "birdAgainst",
+}
+
+enum Flag {
     BARB = "barb",
     SCROLL = "scroll",
     ARC = "arc",
     BOATHOOK = "boathook",
-    TICK = "tick",
-    WING = "wing",
-    BIRD = "bird",
 }
 
-enum Orientation {
-    WITH = "with",
-    AGAINST = "against",
-}
-
-enum Side {
-    LEFT = "left",
-    RIGHT = "right",
-}
-
-type Flag = {
-    shape: Shape,
-    side: Side,
-}
-
-type Accent = {
-    shape: Shape,
-    orientation: Orientation,
-}
-
-enum FlagCombo {
-    LEFT_SCROLL = "leftScroll",
-    RIGHT_SCROLL = "rightScroll",
-    LEFT_BOATHOOK = "leftBoathook",
-    DOUBLE_SCROLL = "doubleScroll",
-    LEFT_SCROLL_AND_BOATHOOK = "leftScrollAndBoathook",
-    LEFT_BOATHOOK_RIGHT_SCROLL = "leftBoathookRightScroll",
-    RIGHT_BOATHOOK = "rightBoathook",
-    DOUBLE_LEFT_BOATHOOK = "doubleLeftBoathook",
-    LEFT_SCROLL_RIGHT_BOATHOOK = "leftScrollRightBoathook",
-    LEFT_BARB = "leftBarb",
-    LEFT_SCROLL_AND_BARB = "leftScrollAndBarb",
-    RIGHT_ARC = "rightArc",
-    LEFT_SCROLL_RIGHT_ARC = "leftScrollRightArc",
-    RIGHT_BARB = "rightBarb",
-    LEFT_ARC = "leftArc",
-    LEFT_BOATHOOK_RIGHT_ARC = "leftBoathookRightArc",
-    LEFT_BARB_RIGHT_BOATHOOK = "leftBarbRightBoathook",
-    LEFT_ARC_RIGHT_SCROLL = "leftArcRightScroll",
-    LEFT_BOATHOOK_RIGHT_BARB = "leftBoathookRightBarb",
-    DOUBLE_LEFT_BARB = "doubleLeftBarb",
-    LEFT_SCROLL_AND_DOUBLE_LEFT_BARB = "leftScrollAndDoubleLeftBarb",
-    LEFT_BARB_RIGHT_ARC = "leftBarbRightArc",
-    LEFT_ARC_RIGHT_BOATHOOK = "leftArcRightBoathook",
-    DOUBLE_BARB = "doubleBarb",
-    LEFT_ARC_AND_BARB = "leftArcAndBarb",
-    LEFT_SCROLL_AND_DOUBLE_BARB = "leftScrollAndDoubleBarb",
-    RIGHT_BARB_AND_ARC = "rightBarbAndArc",
-    DOUBLE_ARC = "doubleArc",
-    DOUBLE_RIGHT_BARB = "doubleRightBarb",
-    LEFT_ARC_RIGHT_BARB = "leftArcRightBarb",
-    LEFT_SCROLL_DOUBLE_RIGHT_BARB = "leftScrollDoubleRightBarb",
-}
-
-enum AccentCombo {
-    TICK_AGAINST = "fourMinasDown",
-    BIRD_AGAINST = "twoMinasDown",
-    WING_AGAINST = "oneMinaDown",
-    WING_WITH = "oneMinaUp",
-    BIRD_WITH = "twoMinasUp",
-    TICK_WITH = "fourMinasUp",
-    TICK_AND_WING_AGAINST = "fiveMinasDown",
-    TICK_AGAINST_WING_WITH = "threeMinasDown",
-    TICK_WITH_WING_AGAINST = "threeMinasUp",
-    TICK_AND_WING_WITH = "fiveMinasUp",
-}
-
-// Flag and Accent Combination; basically a "symbol class" (see: http://forum.sagittal.org/viewtopic.php?p=2474#p2474)
-interface Flacco {
-    // TODO: ID VS NAME
-    //  Yeah Flacco is totally one of those things which should go by name, not ID
-    //  Or perhaps maybe just more like we've got these records of Elements and Glyphs, right
-    //  But think about the fact that having the order in the form of the ID is actually quite handy sometimes...
-    id: Id<Flacco>,
-    // Todo: ELEMENT, GLYPH, FLACCO
-    //  Shouldn't this, by similar design principles as for the Symbol, just have flags: Flag[] and accent:
-    //  Accent[]? perhaps you could even consider having leftFlags and rightFlags in which case you wouldn't need Side
-    //  Although then why wouldn't Symbol split by left and right, and just have shaftCount?
-    //  Then we could start to imagine Symbol extending Flacco, just adding the aim and shaft count...
-    //  If you did do at least the first part of this suggested refactor, then in computeSymbolFromFlacco you could
-    //  Simplify the part where it decides whether or not to add the bare shaft.
-    combo: Array<Flag | Accent>,
+interface FlagCombo {
+    left?: Flag[],
+    right?: Flag[],
 }
 
 // Todo: FLACOMBO, SECTION, NOTATION GENERATION
-//  Maybe it really should be Symbol subset, or Glyph subset,
-//  Because some Flaccos cross over in the Revo notation, you know?
+//  I'm not quite ready for Symbol to have ID yet
+//  At that stage, you'd want a const SYMBOLS: Symbol[] and generate it and test it, and maybe apotome shift
+//  Apotome complement methods would only be used in test, becuase you'd be "get"ting the symbol, not computing it
+//  But we still need to wrangle with the problems of: do we +1000 for apotome shift? that works w/ Magrathean I think
+//  Do we have negative IDs? is it a "key", then? this is pretty much what we used in the Spreadsheet Calculator.
+//  Does this respect the principle of things expressing their existence minimally? do IDs go against that already? etc.
+interface Symbolic {
+    accents?: Accent[], // Tempted for AccentCombo { with, against } but then how could you tell their order?
+    core?: FlagCombo,
+}
+
+// Flag and Accent Combination; basically a "symbol class" (see: http://forum.sagittal.org/viewtopic.php?p=2474#p2474)
+interface Flacco extends Symbolic {
+    // TODO: ID VS NAME
+    //  Yeah Flacco is totally one of those things which should go by name, not ID
+    //  Or perhaps maybe just more like we've got the records of Core by CoreName, right
+    //  And probably also at some point Symbol by SymbolName...?
+    //  But think about the fact that having the order in the form of the ID is actually quite handy sometimes...
+    //  Anyway, the other example is CommaClass, like:
+    //  Hey here's an idea... what if everywhere instead of ID we used names, so we could see what we were doing? e.g.
+    //  Const COMMA_CLASS_1_u = {
+    //    Name: "1u" as Name<Comma>,
+    //    RepresentativeFlaccoId: 0 as Id<Flacco>,
+    //    Pitch: UNISON,
+    //  }
+    //  And I wonder if Class<> shouldn't also be a parameterized type since we use that so much now?
+    id: Id<Flacco>,
+}
+
+// Todo: FLACOMBO, SECTION, NOTATION GENERATION
+//  Maybe it really should be Symbol subset, because some Flaccos cross over in the Revo notation, you know?
 //  E.g. )||( is in Spartan multi-shaft, but no single-shaft right scroll
 //  Or is the problem only really solvable by that Flaccos only apply to the 1-shaft symbols,
 //  And multi-shaft symbols are just not even flag & accent combos??
@@ -123,20 +77,11 @@ enum FlaccoSubset {
     TROJAN = "trojan",
 }
 
-interface FlagOrAccentElementEquivalent {
-    flagOrAccent: Flag | Accent,
-    element: Element,
-}
-
 export {
     FlaccoSubset,
     Flacco,
     Flag,
     Accent,
-    Orientation,
-    FlagOrAccentElementEquivalent,
-    Side,
-    Shape,
     FlagCombo,
-    AccentCombo,
+    Symbolic,
 }

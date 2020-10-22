@@ -1,53 +1,38 @@
 import {BLANK, isUndefined, join, sumTexts} from "../../../general"
+import {Accent, Flag} from "../flacco"
 import {Accidental, Compatible, Flavor} from "../flavor"
-import {Aim, Element, Glyph, Symbol} from "../symbol"
+import {Aim, Core, Shafts, Symbol} from "../symbol"
 import {BLANK_ASCII, PARENTHETICAL_NATURAL_ASCII} from "./constants"
-import {Ascii, ElementAndAimAsciiEquivalent} from "./types"
+import {Ascii} from "./types"
 
-const ELEMENT_ASCII_EQUIVALENTS: ElementAndAimAsciiEquivalent[] = [
-    {element: Element.SHAFT, aim: Aim.UP, ascii: "|" as Ascii},
-    {element: Element.SHAFT, aim: Aim.DOWN, ascii: "!" as Ascii},
-    {element: Element.LEFT_BARB, aim: Aim.UP, ascii: "/" as Ascii},
-    {element: Element.LEFT_BARB, aim: Aim.DOWN, ascii: "\\" as Ascii},
-    {element: Element.RIGHT_BARB, aim: Aim.UP, ascii: "\\" as Ascii},
-    {element: Element.RIGHT_BARB, aim: Aim.DOWN, ascii: "/" as Ascii},
-    {element: Element.LEFT_SCROLL, aim: Aim.UP, ascii: ")" as Ascii},
-    {element: Element.LEFT_SCROLL, aim: Aim.DOWN, ascii: ")" as Ascii},
-    {element: Element.RIGHT_SCROLL, aim: Aim.UP, ascii: "(" as Ascii},
-    {element: Element.RIGHT_SCROLL, aim: Aim.DOWN, ascii: "(" as Ascii},
-    {element: Element.LEFT_ARC, aim: Aim.UP, ascii: "(" as Ascii},
-    {element: Element.LEFT_ARC, aim: Aim.DOWN, ascii: "(" as Ascii},
-    {element: Element.RIGHT_ARC, aim: Aim.UP, ascii: ")" as Ascii},
-    {element: Element.RIGHT_ARC, aim: Aim.DOWN, ascii: ")" as Ascii},
-    {element: Element.LEFT_BOATHOOK, aim: Aim.UP, ascii: "~" as Ascii},
-    {element: Element.LEFT_BOATHOOK, aim: Aim.DOWN, ascii: "~" as Ascii},
-    {element: Element.RIGHT_BOATHOOK, aim: Aim.UP, ascii: "~" as Ascii},
-    {element: Element.RIGHT_BOATHOOK, aim: Aim.DOWN, ascii: "~" as Ascii},
-    {element: Element.TICK, aim: Aim.UP, ascii: "'" as Ascii},
-    {element: Element.TICK, aim: Aim.DOWN, ascii: "." as Ascii},
-    {element: Element.WING, aim: Aim.UP, ascii: "`" as Ascii},
-    {element: Element.WING, aim: Aim.DOWN, ascii: "," as Ascii},
-    {element: Element.BIRD, aim: Aim.UP, ascii: "``" as Ascii},
-    {element: Element.BIRD, aim: Aim.DOWN, ascii: ",," as Ascii},
-]
+const SHAFTS_TO_AIM_TO_ASCII_MAP: Record<Shafts, Record<Aim, Ascii>> = {
+    [Shafts.SINGLE]: {[Aim.UP]: "|" as Ascii, [Aim.DOWN]: "!" as Ascii},
+    [Shafts.DOUBLE]: {[Aim.UP]: "||" as Ascii, [Aim.DOWN]: "!!" as Ascii},
+    [Shafts.TRIPLE]: {[Aim.UP]: "|||" as Ascii, [Aim.DOWN]: "!!!" as Ascii},
+    [Shafts.EX]: {[Aim.UP]: "X" as Ascii, [Aim.DOWN]: "Y" as Ascii},
+}
 
-const computeAsciiFromGlyph = (glyph: Glyph): Ascii => {
-    const ascii = glyph.elements.map((element: Element): Ascii => {
-        const maybeElementAsciiEquivalent = ELEMENT_ASCII_EQUIVALENTS
-            .find((elementAsciiEquivalent: ElementAndAimAsciiEquivalent): boolean => {
-                return elementAsciiEquivalent.element === element && elementAsciiEquivalent.aim === glyph.aim
-            })
+const LEFT_FLAG_TO_AIM_TO_ASCII_MAP: Record<Flag, Record<Aim, Ascii>> = {
+    [Flag.BARB]: {[Aim.UP]: "/" as Ascii, [Aim.DOWN]: "\\" as Ascii},
+    [Flag.ARC]: {[Aim.UP]: "(" as Ascii, [Aim.DOWN]: "(" as Ascii},
+    [Flag.SCROLL]: {[Aim.UP]: ")" as Ascii, [Aim.DOWN]: ")" as Ascii},
+    [Flag.BOATHOOK]: {[Aim.UP]: "~" as Ascii, [Aim.DOWN]: "~" as Ascii},
+}
 
-        if (isUndefined(maybeElementAsciiEquivalent)) {
-            throw new Error(`No ASCII found for element ${element}`)
-        }
+const RIGHT_FLAG_TO_AIM_TO_ASCII_MAP: Record<Flag, Record<Aim, Ascii>> = {
+    [Flag.BARB]: {[Aim.DOWN]: "/" as Ascii, [Aim.UP]: "\\" as Ascii},
+    [Flag.ARC]: {[Aim.DOWN]: ")" as Ascii, [Aim.UP]: ")" as Ascii},
+    [Flag.SCROLL]: {[Aim.DOWN]: "(" as Ascii, [Aim.UP]: "(" as Ascii},
+    [Flag.BOATHOOK]: {[Aim.DOWN]: "~" as Ascii, [Aim.UP]: "~" as Ascii},
+}
 
-        return maybeElementAsciiEquivalent.ascii
-    }).join(BLANK)
-
-    return ascii
-        .replace(/\|\|\|\|/, "X")
-        .replace(/!!!!/, "Y") as Ascii
+const ACCENT_TO_AIM_TO_ASCII_MAP: Record<Accent, Record<Aim, Ascii>> = {
+    [Accent.TICK_WITH]: {[Aim.UP]: "'" as Ascii, [Aim.DOWN]: "." as Ascii},
+    [Accent.TICK_AGAINST]: {[Aim.UP]: "." as Ascii, [Aim.DOWN]: "'" as Ascii},
+    [Accent.WING_WITH]: {[Aim.UP]: "`" as Ascii, [Aim.DOWN]: "," as Ascii},
+    [Accent.WING_AGAINST]: {[Aim.UP]: "," as Ascii, [Aim.DOWN]: "`" as Ascii},
+    [Accent.BIRD_WITH]: {[Aim.UP]: "``" as Ascii, [Aim.DOWN]: ",," as Ascii},
+    [Accent.BIRD_AGAINST]: {[Aim.UP]: ",," as Ascii, [Aim.DOWN]: "``" as Ascii},
 }
 
 const COMPATIBLE_TO_ASCII_MAP: Record<Compatible, Ascii> = {
@@ -64,41 +49,63 @@ const COMPATIBLE_TO_ASCII_MAP: Record<Compatible, Ascii> = {
     [Compatible.DOUBLE_FLAT]: "bb" as Ascii,
 }
 
-const computeAsciiFromCompatible = (compatible: Compatible): Ascii => {
-    return COMPATIBLE_TO_ASCII_MAP[compatible]
+const computeCoreAscii = ({ aim, shafts, left, right }: Core): Ascii => {
+    const leftAscii = isUndefined(left) ?
+        BLANK_ASCII :
+        left.map((flag: Flag): Ascii => LEFT_FLAG_TO_AIM_TO_ASCII_MAP[flag][aim]).join(BLANK)
+
+    const shaftsAscii = SHAFTS_TO_AIM_TO_ASCII_MAP[shafts][aim]
+
+    const rightAscii = isUndefined(right) ?
+        BLANK_ASCII :
+        right.map((flag: Flag): Ascii => RIGHT_FLAG_TO_AIM_TO_ASCII_MAP[flag][aim]).join(BLANK)
+
+    return sumTexts(leftAscii, shaftsAscii, rightAscii)
+        .replace(/\|\|\|\|/, "X")
+        .replace(/!!!!/, "Y") as Ascii
 }
 
-const computeAsciiFromSymbol = (symbol: Symbol): Ascii => {
-    const accentsAscii = isUndefined(symbol.accents) ?
-        BLANK_ASCII :
-        join(symbol.accents.map(computeAsciiFromGlyph), BLANK_ASCII)
+const computeCompatibleAscii = (compatible: Compatible): Ascii =>
+    COMPATIBLE_TO_ASCII_MAP[compatible]
 
-    const coreAscii = isUndefined(symbol.core) ?
+const computeAccentAscii = (accent: Accent, aim: Aim): Ascii =>
+    ACCENT_TO_AIM_TO_ASCII_MAP[accent][aim]
+
+const computeSymbolAscii = ({ accents, core }: Symbol): Ascii => {
+    const accentsAscii = isUndefined(accents) ?
+        BLANK_ASCII :
+        computeAccentsAscii(accents, core?.aim as Aim)
+
+    const coreAscii = isUndefined(core) ?
         PARENTHETICAL_NATURAL_ASCII :
-        computeAsciiFromGlyph(symbol.core)
+        computeCoreAscii(core)
 
     return sumTexts(accentsAscii, coreAscii)
 }
 
-const computeAsciiFromAccidental = <T extends Flavor>(accidental: Accidental<T>): Ascii<T> => {
-    const accentsAscii = isUndefined(accidental.accents) ?
-        BLANK_ASCII :
-        join(accidental.accents.map(computeAsciiFromGlyph), BLANK_ASCII)
+const computeAccentsAscii = (accents: Accent[], aim: Aim): Ascii =>
+    join(accents.map((accent: Accent): Ascii => computeAccentAscii(accent, aim)), BLANK_ASCII)
 
-    const coreAscii = isUndefined(accidental.core) ?
-        isUndefined(accidental.compatible) ? PARENTHETICAL_NATURAL_ASCII : BLANK_ASCII :
-        computeAsciiFromGlyph(accidental.core)
-
-    const compatibleAscii = isUndefined(accidental.compatible) ?
+const computeAccidentalAscii = <T extends Flavor>({ accents, core, compatible }: Accidental<T>): Ascii<T> => {
+    const accentsAscii = isUndefined(accents) ?
         BLANK_ASCII :
-        computeAsciiFromCompatible(accidental.compatible)
+        computeAccentsAscii(accents, core?.aim as Aim)
+
+    const coreAscii = isUndefined(core) ?
+        isUndefined(compatible) ? PARENTHETICAL_NATURAL_ASCII : BLANK_ASCII :
+        computeCoreAscii(core)
+
+    const compatibleAscii = isUndefined(compatible) ?
+        BLANK_ASCII :
+        computeCompatibleAscii(compatible)
 
     return sumTexts(accentsAscii, coreAscii, compatibleAscii) as Ascii<T>
 }
 
 export {
-    computeAsciiFromGlyph,
-    computeAsciiFromAccidental,
-    computeAsciiFromSymbol,
-    computeAsciiFromCompatible,
+    computeCoreAscii,
+    computeAccidentalAscii,
+    computeSymbolAscii,
+    computeCompatibleAscii,
+    computeAccentAscii,
 }

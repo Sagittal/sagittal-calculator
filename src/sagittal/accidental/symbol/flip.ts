@@ -1,21 +1,11 @@
-import {isUndefined} from "../../../general"
-import {Aim, Glyph, GlyphType, Symbol} from "./types"
-
-const flipAim = (aim: Aim): Aim =>
-    aim === Aim.DOWN ? Aim.UP : Aim.DOWN
-
-const flipGlyph = <T extends GlyphType>(glyph: Glyph<T>): Glyph<T> =>
-    ({...glyph, aim: flipAim(glyph.aim)})
+import {deepClone, isUndefined} from "../../../general"
+import {Aim, Symbol} from "./types"
 
 const flipSymbol = (symbol: Symbol): Symbol => {
-    const flippedSymbol = {} as Symbol
+    const flippedSymbol = deepClone(symbol)
 
-    if (!isUndefined(symbol.accents)) {
-        flippedSymbol.accents = symbol.accents.map(flipGlyph)
-    }
-
-    if (!isUndefined(symbol.core)) {
-        flippedSymbol.core = flipGlyph(symbol.core)
+    if (!isUndefined(flippedSymbol.core)) {
+        flippedSymbol.core.aim = flippedSymbol.core.aim === Aim.DOWN ? Aim.UP : Aim.DOWN
     }
 
     return flippedSymbol
@@ -23,5 +13,4 @@ const flipSymbol = (symbol: Symbol): Symbol => {
 
 export {
     flipSymbol,
-    flipGlyph,
 }

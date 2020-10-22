@@ -4,7 +4,7 @@ import {
     JiNotationBoundClass,
     JiNotationLevel,
     JI_NOTATION_LEVELS_BOUND_CLASSES, JI_NOTATION_LEVELS_COMMA_CLASS_IDS,
-} from "../../../../../src/sagittal/notations/ji"
+} from "../../../../../src/sagittal/notations"
 
 describe("JI_NOTATION_LEVELS_BOUND_CLASSES", (): void => {
     it("has the same number of bound classes per JI notation level as the comma class ids", (): void => {

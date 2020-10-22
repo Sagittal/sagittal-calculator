@@ -1,11 +1,12 @@
 import {isUndefined, join, sumTexts} from "../../../general"
+import {Accent} from "../flacco"
 import {Accidental, Compatible, Flavor} from "../flavor"
-import {Glyph, Symbol} from "../symbol"
-import {computeAsciiFromCompatible, computeAsciiFromGlyph} from "./ascii"
-import {BLANK_SMILEY, PARENTHETICAL_NATURAL_SMILEY} from "./constants"
+import {Aim, Core, Symbol} from "../symbol"
+import {computeAccentAscii, computeCompatibleAscii, computeCoreAscii} from "./ascii"
+import {BLANK_ASCII, BLANK_SMILEY, PARENTHETICAL_NATURAL_SMILEY} from "./constants"
 import {Ascii, Smiley} from "./types"
 
-const computeSmileyFromAscii = (ascii: Ascii): Smiley => {
+const convertAsciiToSmiley = (ascii: Ascii): Smiley => {
     const massagedAscii = ascii
         .replace("|//|", "h")
         .replace(/\/\//g, "/ /")
@@ -14,43 +15,50 @@ const computeSmileyFromAscii = (ascii: Ascii): Smiley => {
     return `:${massagedAscii}:` as Smiley
 }
 
-const computeSmileyFromGlyph = (glyph: Glyph): Smiley =>
-    computeSmileyFromAscii(computeAsciiFromGlyph(glyph))
+const computeCoreSmiley = (core: Core): Smiley =>
+    convertAsciiToSmiley(computeCoreAscii(core))
 
-const computeSmileyFromCompatible = (compatible: Compatible): Smiley =>
-    computeSmileyFromAscii(computeAsciiFromCompatible(compatible))
+const computeCompatibleSmiley = (compatible: Compatible): Smiley =>
+    convertAsciiToSmiley(computeCompatibleAscii(compatible))
 
-const computeSmileyFromSymbol = (symbol: Symbol): Smiley => {
-    const accentsSmiley = isUndefined(symbol.accents) ?
+const computeAccentSmiley = (accent: Accent, aim: Aim): Smiley =>
+    convertAsciiToSmiley(computeAccentAscii(accent, aim))
+
+const computeSymbolSmiley = ({accents, core}: Symbol): Smiley => {
+    const accentsSmiley = isUndefined(accents) ?
         BLANK_SMILEY :
-        join(symbol.accents.map(computeSmileyFromGlyph), BLANK_SMILEY)
+        computeAccentsSmiley(accents, core?.aim as Aim)
 
-    const coreSmiley = isUndefined(symbol.core) ?
+    const coreSmiley = isUndefined(core) ?
         PARENTHETICAL_NATURAL_SMILEY :
-        computeSmileyFromGlyph(symbol.core)
+        computeCoreSmiley(core)
 
     return sumTexts(accentsSmiley, coreSmiley)
 }
 
-const computeSmileyFromAccidental = <T extends Flavor>(accidental: Accidental<T>): Smiley<T> => {
-    const accentsSmiley = isUndefined(accidental.accents) ?
-        BLANK_SMILEY :
-        join(accidental.accents.map(computeSmileyFromGlyph), BLANK_SMILEY)
+const computeAccentsSmiley = (accents: Accent[], aim: Aim): Smiley =>
+    join(accents.map((accent: Accent): Smiley => computeAccentSmiley(accent, aim)), BLANK_ASCII)
 
-    const coreSmiley = isUndefined(accidental.core) ?
-        isUndefined(accidental.compatible) ? PARENTHETICAL_NATURAL_SMILEY : BLANK_SMILEY :
-        computeSmileyFromGlyph(accidental.core)
-
-    const compatibleSmiley = isUndefined(accidental.compatible) ?
+const computeAccidentalSmiley = <T extends Flavor>({accents, core, compatible}: Accidental<T>): Smiley<T> => {
+    const accentsSmiley = isUndefined(accents) ?
         BLANK_SMILEY :
-        computeSmileyFromCompatible(accidental.compatible)
+        computeAccentsSmiley(accents, core?.aim as Aim)
+
+    const coreSmiley = isUndefined(core) ?
+        isUndefined(compatible) ? PARENTHETICAL_NATURAL_SMILEY : BLANK_SMILEY :
+        computeCoreSmiley(core)
+
+    const compatibleSmiley = isUndefined(compatible) ?
+        BLANK_SMILEY :
+        computeCompatibleSmiley(compatible)
 
     return sumTexts(accentsSmiley, coreSmiley, compatibleSmiley) as Smiley<T>
 }
 
 export {
-    computeSmileyFromAccidental,
-    computeSmileyFromGlyph,
-    computeSmileyFromCompatible,
-    computeSmileyFromSymbol,
+    computeAccidentalSmiley,
+    computeCoreSmiley,
+    computeCompatibleSmiley,
+    computeSymbolSmiley,
+    computeAccentSmiley,
 }
