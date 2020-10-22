@@ -8,7 +8,7 @@ import {
 } from "../../../../src/sagittal/notations"
 import {analyzeJiNotationBoundClasses} from "../../../../src/scripts/jiNotationBoundClass/analyzeBoundClasses"
 import {JiNotationBoundClassAnalysis} from "../../../../src/scripts/jiNotationBoundClass/boundClass"
-import {BoundClassEventAnalysis} from "../../../../src/scripts/jiNotationBoundClass/history/events"
+import {BoundEventAnalysis} from "../../../../src/scripts/jiNotationBoundClass/history/events"
 import {onlyRunInCi} from "../../../helpers/onlyRunInCi"
 
 describe("analyzeJiNotationBoundClasses", (): void => {
@@ -18,9 +18,9 @@ describe("analyzeJiNotationBoundClasses", (): void => {
         const actual = analyzeJiNotationBoundClasses()
             .map((jiNotationBoundClassAnalysis: JiNotationBoundClassAnalysis): BoundType => {
                 const jiNotationLevelEventAnalysis =
-                    jiNotationBoundClassAnalysis.bestPossibleBoundClassHistoryAnalysis.boundClassEventAnalyses
-                        .find((boundClassEventAnalysis: BoundClassEventAnalysis): boolean => {
-                            return boundClassEventAnalysis.jiNotationLevel === JiNotationLevel.EXTREME
+                    jiNotationBoundClassAnalysis.bestPossibleBoundHistoryAnalysis.boundEventAnalyses
+                        .find((boundEventAnalysis: BoundEventAnalysis): boolean => {
+                            return boundEventAnalysis.jiNotationLevel === JiNotationLevel.EXTREME
                         })
 
                 return jiNotationLevelEventAnalysis!.boundType
@@ -38,9 +38,9 @@ describe("analyzeJiNotationBoundClasses", (): void => {
         const actual = analyzeJiNotationBoundClasses()
             .map((jiNotationBoundClassAnalysis: JiNotationBoundClassAnalysis): Name<JiNotationBound> => {
                 const jiNotationLevelEventAnalysis =
-                    jiNotationBoundClassAnalysis.bestPossibleBoundClassHistoryAnalysis.boundClassEventAnalyses
-                        .find((boundClassEventAnalysis: BoundClassEventAnalysis): boolean => {
-                            return boundClassEventAnalysis.jiNotationLevel === JiNotationLevel.INSANE
+                    jiNotationBoundClassAnalysis.bestPossibleBoundHistoryAnalysis.boundEventAnalyses
+                        .find((boundEventAnalysis: BoundEventAnalysis): boolean => {
+                            return boundEventAnalysis.jiNotationLevel === JiNotationLevel.INSANE
                         })
 
                 return jiNotationLevelEventAnalysis!.name

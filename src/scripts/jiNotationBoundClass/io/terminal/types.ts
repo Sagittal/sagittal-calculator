@@ -1,11 +1,11 @@
 import { Abs, Cents, Id, Maybe, Multiplier, Name } from "../../../../general"
 import {
-    Ascii, BoundClass,
+    Ascii,
+    BoundClass,
     CommaAnalysis,
     CommaClass,
     FlaccoSubset,
     Ina,
-    JiNotationBoundClass,
     JiNotationLevel,
     Mina,
     Unicode,

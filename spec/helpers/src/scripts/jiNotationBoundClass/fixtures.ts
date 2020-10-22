@@ -18,38 +18,39 @@ import { IRRATIONAL_SCAMON_BASE_MONZO } from "../../../../../src/general/math/ir
 import {
     BoundClass,
     BoundType,
-    Ina, JiNotationBound,
+    Ina,
+    JiNotationBound,
     JiNotationBoundClass,
     JiNotationLevel,
     Tina,
 } from "../../../../../src/sagittal/notations"
 import { JiNotationBoundClassAnalysis } from "../../../../../src/scripts/jiNotationBoundClass/boundClass"
-import { BoundClassEventConsolidation } from "../../../../../src/scripts/jiNotationBoundClass/consolidateHistories/types"
-import { BoundClassEvent } from "../../../../../src/scripts/jiNotationBoundClass/histories"
+import { BoundEventConsolidation } from "../../../../../src/scripts/jiNotationBoundClass/consolidateHistories/types"
+import { BoundEvent } from "../../../../../src/scripts/jiNotationBoundClass/histories"
 import {
-    BoundClassEventAnalysis,
-    BoundClassHistoryAnalysis,
+    BoundEventAnalysis,
+    BoundHistoryAnalysis,
     Score,
 } from "../../../../../src/scripts/jiNotationBoundClass/history"
 import { RANKS } from "../../../../../src/scripts/jiNotationBoundClass/ranks"
 
-const boundClassEventFixture: BoundClassEvent = {
+const boundEventFixture: BoundEvent = {
     pitch: { monzo: IRRATIONAL_SCAMON_BASE_MONZO, scaler: HALF_SCALER } as Scamon<{ rational: false }>,
     boundType: "" as BoundType,
     jiNotationLevel: "" as JiNotationLevel,
     name: "" as Name<JiNotationBound>,
 }
 
-const boundClassEventAnalysisFixture: BoundClassEventAnalysis = {
-    ...boundClassEventFixture,
+const boundEventAnalysisFixture: BoundEventAnalysis = {
+    ...boundEventFixture,
     distance: 0 as Abs<Cents>,
     inaDistance: 0 as Multiplier<Ina>,
     rank: 0 as Decimal<{ integer: true }> & Rank<BoundType>,
     exact: false,
 }
 
-const boundClassHistoryAnalysisFixture: BoundClassHistoryAnalysis = {
-    boundClassEventAnalyses: [],
+const boundHistoryAnalysisFixture: BoundHistoryAnalysis = {
+    boundEventAnalyses: [],
     pitch: { monzo: IRRATIONAL_SCAMON_BASE_MONZO, scaler: HALF_SCALER } as Scamon<{ rational: false }>,
     rank: 0 as Decimal<{ integer: true }> & Rank<BoundType>,
     score: 0 as Score,
@@ -61,13 +62,13 @@ const boundClassHistoryAnalysisFixture: BoundClassHistoryAnalysis = {
     initialPositionTinaDistance: 0 as Multiplier<Tina>,
 }
 
-const boundClassEventConsolidationFixture: BoundClassEventConsolidation = {
-    ...boundClassEventFixture,
-    isPossibleBoundClassHistoryMember: false,
-    isBestPossibleBoundClassHistoryMember: false,
+const boundEventConsolidationFixture: BoundEventConsolidation = {
+    ...boundEventFixture,
+    isPossibleBoundHistoryMember: false,
+    isBestPossibleBoundHistoryMember: false,
     rankOfBestRankedMemberHistory: 0 as Decimal<{ integer: true }> & Rank<BoundType>,
     rankOfBestRankedEventInAnyMemberHistory: 0 as Decimal<{ integer: true }> & Rank<BoundType>,
-    nextBoundClassEvents: [] as Array<Name<JiNotationBound>>,
+    nextBoundEvents: [] as Array<Name<JiNotationBound>>,
     exact: false,
 }
 
@@ -83,21 +84,21 @@ const jiNotationBoundClassFixture: JiNotationBoundClass = {
 }
 
 const jiNotationBoundClassAnalysisFixture: JiNotationBoundClassAnalysis = {
-    bestPossibleBoundClassHistoryAnalysis: boundClassHistoryAnalysisFixture,
+    bestPossibleBoundHistoryAnalysis: boundHistoryAnalysisFixture,
     bestRank: RANKS[ BoundType.INA_MIDPOINT ],
     initialPosition: UNISON,
     initialPositionTinaDistance: 0 as Multiplier<Tina>,
-    bestPossibleBoundClassHistoryTotalDistance: 0 as Sum<Abs<Cents>>,
-    bestPossibleBoundClassHistoryTotalInaDistance: 0 as Sum<Multiplier<Ina>>,
-    boundClassHistoryConsolidation: {},
-    possibleBoundClassHistoryCount: 0 as Count<BoundClassHistoryAnalysis>,
+    bestPossibleBoundHistoryTotalDistance: 0 as Sum<Abs<Cents>>,
+    bestPossibleBoundHistoryTotalInaDistance: 0 as Sum<Multiplier<Ina>>,
+    boundHistoryConsolidation: {},
+    possibleBoundHistoryCount: 0 as Count<BoundHistoryAnalysis>,
 }
 
 export {
-    boundClassEventFixture,
-    boundClassEventAnalysisFixture,
-    boundClassHistoryAnalysisFixture,
-    boundClassEventConsolidationFixture,
+    boundEventFixture,
+    boundEventAnalysisFixture,
+    boundHistoryAnalysisFixture,
+    boundEventConsolidationFixture,
     jiNotationBoundClassFixture,
     jiNotationBoundClassAnalysisFixture,
 }

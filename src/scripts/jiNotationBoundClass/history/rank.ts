@@ -1,17 +1,17 @@
 import { Decimal, Rank } from "../../../general"
 import { BoundType } from "../../../sagittal"
 import { RANKS } from "../ranks"
-import { BoundClassEventAnalysis } from "./events"
+import { BoundEventAnalysis } from "./events"
 
 const computeRank = (
-    boundClassEventAnalyses: BoundClassEventAnalysis[],
+    boundEventAnalyses: BoundEventAnalysis[],
 ): Decimal<{ integer: true }> & Rank<BoundType> =>
-    boundClassEventAnalyses.reduce(
+    boundEventAnalyses.reduce(
         (
             rank: Decimal<{ integer: true }> & Rank<BoundType>,
-            boundClassEventAnalysis: BoundClassEventAnalysis,
+            boundEventAnalysis: BoundEventAnalysis,
         ): Decimal<{ integer: true }> & Rank<BoundType> =>
-            rank > boundClassEventAnalysis.rank ? rank : boundClassEventAnalysis.rank,
+            rank > boundEventAnalysis.rank ? rank : boundEventAnalysis.rank,
         RANKS[ BoundType.INA_MIDPOINT ],
     )
 

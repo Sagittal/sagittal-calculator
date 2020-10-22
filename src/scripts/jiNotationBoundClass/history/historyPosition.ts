@@ -1,9 +1,9 @@
 import { finalElement, Scamon } from "../../../general"
-import { BoundClassHistory } from "../histories"
+import { BoundHistory } from "../histories"
 
-const computeBoundClassHistoryPosition = (boundClassHistory: BoundClassHistory): Scamon =>
-    finalElement(boundClassHistory).pitch
+const computeBoundHistoryPosition = (boundHistory: BoundHistory): Scamon =>
+    finalElement(boundHistory).pitch
 
 export {
-    computeBoundClassHistoryPosition,
+    computeBoundHistoryPosition,
 }

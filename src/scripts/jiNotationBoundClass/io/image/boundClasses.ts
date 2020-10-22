@@ -2,7 +2,7 @@ import * as fs from "fs"
 import { BLANK, Io, ioSettings, join } from "../../../../general"
 import { JiNotationBoundClassAnalysis } from "../../boundClass"
 import { visualizeCents } from "./cents"
-import { visualizeBoundClassEventAnalyses } from "./events"
+import { visualizeBoundEventAnalyses } from "./events"
 import { addFont } from "./font"
 import { visualizeInaMidpoints } from "./inaMidpoints"
 import { visualizeJiNotationLevelBoundClasses } from "./levelBoundClasses"
@@ -33,8 +33,8 @@ const computeJiNotationBoundClassesImage = (jiNotationBoundClassAnalysis: JiNota
 
     jiNotationBoundClassAnalysis.forEach((jiNotationBoundClassAnalysis: JiNotationBoundClassAnalysis): void => {
         elements = elements.concat(
-            visualizeBoundClassEventAnalyses(
-                jiNotationBoundClassAnalysis.bestPossibleBoundClassHistoryAnalysis.boundClassEventAnalyses,
+            visualizeBoundEventAnalyses(
+                jiNotationBoundClassAnalysis.bestPossibleBoundHistoryAnalysis.boundEventAnalyses,
             ),
         )
     })

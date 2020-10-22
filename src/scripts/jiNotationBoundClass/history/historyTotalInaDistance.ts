@@ -1,16 +1,16 @@
 import { Multiplier, sum, Sum } from "../../../general"
 import { Ina } from "../../../sagittal"
-import { BoundClassEventAnalysis } from "./events"
+import { BoundEventAnalysis } from "./events"
 
-const computeBoundClassHistoryTotalInaDistance = (
-    boundClassEventAnalyses: BoundClassEventAnalysis[],
+const computeBoundHistoryTotalInaDistance = (
+    boundEventAnalyses: BoundEventAnalysis[],
 ): Sum<Multiplier<Ina>> => {
-    const inaDistances = boundClassEventAnalyses
-        .map((boundClassEventAnalysis: BoundClassEventAnalysis): Multiplier<Ina> => boundClassEventAnalysis.inaDistance)
+    const inaDistances = boundEventAnalyses
+        .map((boundEventAnalysis: BoundEventAnalysis): Multiplier<Ina> => boundEventAnalysis.inaDistance)
 
     return sum(...inaDistances)
 }
 
 export {
-    computeBoundClassHistoryTotalInaDistance,
+    computeBoundHistoryTotalInaDistance,
 }

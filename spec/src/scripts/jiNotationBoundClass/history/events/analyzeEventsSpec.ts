@@ -3,31 +3,31 @@ import { Cents } from "../../../../../../src/general/music"
 import { APOTOME } from "../../../../../../src/sagittal"
 import { BoundType, Ina, JiNotationLevel } from "../../../../../../src/sagittal/notations/ji"
 import { EXTREME_EDA, HIGH_EDA, ULTRA_EDA } from "../../../../../../src/sagittal/notations/ji/levelEdas"
-import { BoundClassHistory } from "../../../../../../src/scripts/jiNotationBoundClass/histories"
-import { analyzeBoundClassEvents } from "../../../../../../src/scripts/jiNotationBoundClass/history/events"
+import { BoundHistory } from "../../../../../../src/scripts/jiNotationBoundClass/histories"
+import { analyzeBoundEvents } from "../../../../../../src/scripts/jiNotationBoundClass/history/events"
 import { RANKS } from "../../../../../../src/scripts/jiNotationBoundClass/ranks"
 import {
-    boundClassEventAnalysisFixture,
-    boundClassEventFixture,
+    boundEventAnalysisFixture,
+    boundEventFixture,
 } from "../../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
-describe("analyzeBoundClassEvents", (): void => {
+describe("analyzeBoundEvents", (): void => {
     it("adds some analysis properties to each event: rank, distance, and exact", (): void => {
-        const boundClassHistory: BoundClassHistory = [
+        const boundHistory: BoundHistory = [
             {
-                ...boundClassEventFixture,
+                ...boundEventFixture,
                 boundType: BoundType.INA_MIDPOINT,
                 jiNotationLevel: JiNotationLevel.HIGH,
                 pitch: { monzo: APOTOME.monzo, scaler: [27.5, HIGH_EDA] } as Scamon<{ rational: false }>,
             },
             {
-                ...boundClassEventFixture,
+                ...boundEventFixture,
                 boundType: BoundType.SIZE_CATEGORY_BOUND,
                 jiNotationLevel: JiNotationLevel.ULTRA,
                 pitch: { monzo: APOTOME.monzo, scaler: [33.5, ULTRA_EDA] } as Scamon<{ rational: false }>,
             },
             {
-                ...boundClassEventFixture,
+                ...boundEventFixture,
                 boundType: BoundType.COMMA_MEAN,
                 jiNotationLevel: JiNotationLevel.EXTREME,
                 pitch: { monzo: APOTOME.monzo, scaler: [135.5, EXTREME_EDA] } as Scamon<{ rational: false }>,
@@ -38,11 +38,11 @@ describe("analyzeBoundClassEvents", (): void => {
             scaler: [33.5, ULTRA_EDA],
         } as Scamon<{ rational: false }>
 
-        const actual = analyzeBoundClassEvents(boundClassHistory, actualJiNotationBoundPitch)
+        const actual = analyzeBoundEvents(boundHistory, actualJiNotationBoundPitch)
 
         const expected = [
             {
-                ...boundClassEventAnalysisFixture,
+                ...boundEventAnalysisFixture,
                 boundType: BoundType.INA_MIDPOINT,
                 jiNotationLevel: JiNotationLevel.HIGH,
                 pitch: { monzo: APOTOME.monzo, scaler: [27.5, HIGH_EDA] } as Scamon<{ rational: false }>,
@@ -52,7 +52,7 @@ describe("analyzeBoundClassEvents", (): void => {
                 inaDistance: 0 as Multiplier<Ina>,
             },
             {
-                ...boundClassEventAnalysisFixture,
+                ...boundEventAnalysisFixture,
                 boundType: BoundType.SIZE_CATEGORY_BOUND,
                 jiNotationLevel: JiNotationLevel.ULTRA,
                 pitch: { monzo: APOTOME.monzo, scaler: [33.5, ULTRA_EDA] } as Scamon<{ rational: false }>,
@@ -62,7 +62,7 @@ describe("analyzeBoundClassEvents", (): void => {
                 inaDistance: 0.436170 as Multiplier<Ina>,
             },
             {
-                ...boundClassEventAnalysisFixture,
+                ...boundEventAnalysisFixture,
                 boundType: BoundType.COMMA_MEAN,
                 jiNotationLevel: JiNotationLevel.EXTREME,
                 pitch: { monzo: APOTOME.monzo, scaler: [135.5, EXTREME_EDA] } as Scamon<{ rational: false }>,

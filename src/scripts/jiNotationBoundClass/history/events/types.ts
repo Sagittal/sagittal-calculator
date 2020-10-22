@@ -1,8 +1,8 @@
 import { Abs, Cents, Decimal, Multiplier, Rank } from "../../../../general"
 import { BoundType, Ina } from "../../../../sagittal"
-import { BoundClassEvent } from "../../histories"
+import { BoundEvent } from "../../histories"
 
-interface BoundClassEventAnalysis extends BoundClassEvent {
+interface BoundEventAnalysis extends BoundEvent {
     distance: Abs<Cents>,
     exact: boolean,
     inaDistance: Multiplier<Ina>,
@@ -10,5 +10,5 @@ interface BoundClassEventAnalysis extends BoundClassEvent {
 }
 
 export {
-    BoundClassEventAnalysis,
+    BoundEventAnalysis,
 }

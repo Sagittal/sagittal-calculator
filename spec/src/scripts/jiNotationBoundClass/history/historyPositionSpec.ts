@@ -1,29 +1,29 @@
 import { Scamon } from "../../../../../src/general/math/numeric/scamon"
 import { APOTOME } from "../../../../../src/sagittal"
 import { EXTREME_EDA, HIGH_EDA, ULTRA_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"
-import { BoundClassHistory } from "../../../../../src/scripts/jiNotationBoundClass/histories"
-import { computeBoundClassHistoryPosition } from "../../../../../src/scripts/jiNotationBoundClass/history/historyPosition"
-import { boundClassEventFixture } from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
+import { BoundHistory } from "../../../../../src/scripts/jiNotationBoundClass/histories"
+import { computeBoundHistoryPosition } from "../../../../../src/scripts/jiNotationBoundClass/history/historyPosition"
+import { boundEventFixture } from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
-describe("computeBoundClassHistoryPosition", (): void => {
+describe("computeBoundHistoryPosition", (): void => {
     it("returns the position of the bound class history's final bound class event", (): void => {
-        const boundClassHistory: BoundClassHistory = [
+        const boundHistory: BoundHistory = [
             {
-                ...boundClassEventFixture,
+                ...boundEventFixture,
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [27.5, HIGH_EDA],
                 } as Scamon<{ rational: false }>,    // Not yet...
             },
             {
-                ...boundClassEventFixture,
+                ...boundEventFixture,
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [33.5, ULTRA_EDA],
                 } as Scamon<{ rational: false }>,    // Almost there...
             },
             {
-                ...boundClassEventFixture,
+                ...boundEventFixture,
                 pitch: {
                     monzo: APOTOME.monzo,
                     scaler: [135.5, EXTREME_EDA],
@@ -31,7 +31,7 @@ describe("computeBoundClassHistoryPosition", (): void => {
             },
         ]
 
-        const actual = computeBoundClassHistoryPosition(boundClassHistory)
+        const actual = computeBoundHistoryPosition(boundHistory)
 
         const expected = {
             monzo: APOTOME.monzo,

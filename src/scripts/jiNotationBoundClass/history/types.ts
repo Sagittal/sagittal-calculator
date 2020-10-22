@@ -1,12 +1,12 @@
 import { Abs, Cents, Decimal, Multiplier, Rank, Scamon, Sum } from "../../../general"
 import { BoundType, Ina, Tina } from "../../../sagittal"
-import { BoundClassEventAnalysis } from "./events"
+import { BoundEventAnalysis } from "./events"
 
 type Score = number & { _ScoreBrand: boolean }
 
-interface BoundClassHistoryAnalysis {
+interface BoundHistoryAnalysis {
     totalDistance: Sum<Abs<Cents>>,
-    boundClassEventAnalyses: BoundClassEventAnalysis[],
+    boundEventAnalyses: BoundEventAnalysis[],
     exact: boolean,
     totalInaDistance: Sum<Multiplier<Ina>>,
     initialPositionTinaDistance: Multiplier<Tina>,
@@ -18,6 +18,6 @@ interface BoundClassHistoryAnalysis {
 }
 
 export {
-    BoundClassHistoryAnalysis,
+    BoundHistoryAnalysis,
     Score,
 }

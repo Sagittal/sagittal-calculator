@@ -2,13 +2,13 @@ import {HALF_SCALER, Name, Scamon} from "../../../../../src/general"
 import {APOTOME, JiNotationBound} from "../../../../../src/sagittal"
 import {BoundType, JiNotationBoundClass, JiNotationLevel} from "../../../../../src/sagittal/notations"
 import {EXTREME_EDA, HIGH_EDA, MEDIUM_EDA} from "../../../../../src/sagittal/notations/ji/levelEdas"
-import {BoundClassEvent, BoundClassHistory} from "../../../../../src/scripts/jiNotationBoundClass/histories"
-import {computeExtendedJiNotationLevelBoundClassHistories} from "../../../../../src/scripts/jiNotationBoundClass/histories/extendedLevelHistories"
+import {BoundEvent, BoundHistory} from "../../../../../src/scripts/jiNotationBoundClass/histories"
+import {computeExtendedJiNotationLevelBoundHistories} from "../../../../../src/scripts/jiNotationBoundClass/histories/extendedLevelHistories"
 import {jiNotationBoundClassFixture} from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
-describe("computeExtendedJiNotationLevelBoundClassHistories", (): void => {
+describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
     it("given the histories for a bound up to the current JI notation level, returns the histories extended for all possible events at this JI notation level", (): void => {
-        const historyPriorEventA: BoundClassEvent = {
+        const historyPriorEventA: BoundEvent = {
             jiNotationLevel: JiNotationLevel.MEDIUM,
             boundType: BoundType.INA_MIDPOINT,
             name: "1.5°21" as Name<JiNotationBound>,
@@ -17,7 +17,7 @@ describe("computeExtendedJiNotationLevelBoundClassHistories", (): void => {
                 scaler: [1.5, MEDIUM_EDA],
             } as Scamon<{rational: false}>,
         }
-        const historyPriorEventB: BoundClassEvent = {
+        const historyPriorEventB: BoundEvent = {
             jiNotationLevel: JiNotationLevel.MEDIUM,
             boundType: BoundType.COMMA_MEAN,
             name: "|( )|(" as Name<JiNotationBound>,
@@ -26,7 +26,7 @@ describe("computeExtendedJiNotationLevelBoundClassHistories", (): void => {
                 scaler: HALF_SCALER,
             } as Scamon<{rational: false}>,
         }
-        const histories: BoundClassHistory[] = [
+        const histories: BoundHistory[] = [
             [historyPriorEventA],
             [historyPriorEventB],
         ]
@@ -41,7 +41,7 @@ describe("computeExtendedJiNotationLevelBoundClassHistories", (): void => {
         }
 
         const actual =
-            computeExtendedJiNotationLevelBoundClassHistories(histories, jiNotationLevel, jiNotationBoundClass)
+            computeExtendedJiNotationLevelBoundHistories(histories, jiNotationLevel, jiNotationBoundClass)
 
         const expected = [
             [

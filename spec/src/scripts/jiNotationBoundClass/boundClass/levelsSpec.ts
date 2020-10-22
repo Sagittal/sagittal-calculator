@@ -5,21 +5,21 @@ import {
     jiNotationLevelsBestCumulativeHistoryRanks,
     jiNotationLevelsBestHistoryRanks,
 } from "../../../../../src/scripts/jiNotationBoundClass/globals"
-import { BoundClassHistoryAnalysis } from "../../../../../src/scripts/jiNotationBoundClass/history"
+import { BoundHistoryAnalysis } from "../../../../../src/scripts/jiNotationBoundClass/history"
 import { RANKS } from "../../../../../src/scripts/jiNotationBoundClass/ranks"
 import {
-    boundClassEventAnalysisFixture,
-    boundClassHistoryAnalysisFixture,
+    boundEventAnalysisFixture,
+    boundHistoryAnalysisFixture,
 } from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
 describe("updateJiNotationLevelAnalysis", (): void => {
     describe("jiNotationLevelsBestHistoryRanks", (): void => {
         it("initializes a rank at a JI notation level when it doesn't exist yet", (): void => {
-            const bestPossibleBoundClassHistory: BoundClassHistoryAnalysis = {
-                ...boundClassHistoryAnalysisFixture,
-                boundClassEventAnalyses: [
+            const bestPossibleBoundHistory: BoundHistoryAnalysis = {
+                ...boundHistoryAnalysisFixture,
+                boundEventAnalyses: [
                     {
-                        ...boundClassEventAnalysisFixture,
+                        ...boundEventAnalysisFixture,
                         jiNotationLevel: JiNotationLevel.MEDIUM,
                         rank: RANKS[ BoundType.INA_MIDPOINT ],
                     },
@@ -31,23 +31,23 @@ describe("updateJiNotationLevelAnalysis", (): void => {
             }
             expect(jiNotationLevelsBestHistoryRanks[ JiNotationLevel.MEDIUM ]).toBeUndefined()
 
-            updateJiNotationLevelAnalysis(bestPossibleBoundClassHistory)
+            updateJiNotationLevelAnalysis(bestPossibleBoundHistory)
 
             expect(jiNotationLevelsBestHistoryRanks[ JiNotationLevel.MEDIUM ][ RANKS[ BoundType.INA_MIDPOINT ] ])
                 .toBe(1 as Count<Decimal<{ integer: true }> & Rank<BoundType>>)
         })
 
         it("increments ranks at JI levels when they exist", (): void => {
-            const bestPossibleBoundClassHistory: BoundClassHistoryAnalysis = {
-                ...boundClassHistoryAnalysisFixture,
-                boundClassEventAnalyses: [
+            const bestPossibleBoundHistory: BoundHistoryAnalysis = {
+                ...boundHistoryAnalysisFixture,
+                boundEventAnalyses: [
                     {
-                        ...boundClassEventAnalysisFixture,
+                        ...boundEventAnalysisFixture,
                         jiNotationLevel: JiNotationLevel.MEDIUM,
                         rank: RANKS[ BoundType.INA_MIDPOINT ],
                     },
                     {
-                        ...boundClassEventAnalysisFixture,
+                        ...boundEventAnalysisFixture,
                         jiNotationLevel: JiNotationLevel.HIGH,
                         rank: RANKS[ BoundType.COMMA_MEAN ],
                     },
@@ -62,7 +62,7 @@ describe("updateJiNotationLevelAnalysis", (): void => {
                 [ RANKS[ BoundType.COMMA_MEAN ] ]: formerHighMean,
             }
 
-            updateJiNotationLevelAnalysis(bestPossibleBoundClassHistory)
+            updateJiNotationLevelAnalysis(bestPossibleBoundHistory)
 
             expect(jiNotationLevelsBestHistoryRanks[ JiNotationLevel.MEDIUM ][ RANKS[ BoundType.INA_MIDPOINT ] ])
                 .toBe(formerMediumIna + 1 as Count<Decimal<{ integer: true }> & Rank<BoundType>>)
@@ -73,26 +73,26 @@ describe("updateJiNotationLevelAnalysis", (): void => {
 
     describe("jiNotationLevelsBestCumulativeHistoryRanks", (): void => {
         it("increments ranks at JI levels", (): void => {
-            const bestPossibleBoundClassHistory: BoundClassHistoryAnalysis = {
-                ...boundClassHistoryAnalysisFixture,
-                boundClassEventAnalyses: [
+            const bestPossibleBoundHistory: BoundHistoryAnalysis = {
+                ...boundHistoryAnalysisFixture,
+                boundEventAnalyses: [
                     {
-                        ...boundClassEventAnalysisFixture,
+                        ...boundEventAnalysisFixture,
                         jiNotationLevel: JiNotationLevel.MEDIUM,
                         rank: RANKS[ BoundType.INA_MIDPOINT ],
                     },
                     {
-                        ...boundClassEventAnalysisFixture,
+                        ...boundEventAnalysisFixture,
                         jiNotationLevel: JiNotationLevel.HIGH,
                         rank: RANKS[ BoundType.COMMA_MEAN ],
                     },
                     {
-                        ...boundClassEventAnalysisFixture,
+                        ...boundEventAnalysisFixture,
                         jiNotationLevel: JiNotationLevel.ULTRA,
                         rank: RANKS[ BoundType.INA_MIDPOINT ],
                     },
                     {
-                        ...boundClassEventAnalysisFixture,
+                        ...boundEventAnalysisFixture,
                         jiNotationLevel: JiNotationLevel.EXTREME,
                         rank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
                     },
@@ -115,7 +115,7 @@ describe("updateJiNotationLevelAnalysis", (): void => {
                 delete jiNotationLevelsBestCumulativeHistoryRanks[ JiNotationLevel.EXTREME ]
             }
 
-            updateJiNotationLevelAnalysis(bestPossibleBoundClassHistory)
+            updateJiNotationLevelAnalysis(bestPossibleBoundHistory)
 
             expect(
                 jiNotationLevelsBestCumulativeHistoryRanks[ JiNotationLevel.MEDIUM ][ RANKS[ BoundType.INA_MIDPOINT ] ],

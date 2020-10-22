@@ -1,58 +1,58 @@
 import { Sum } from "../../../../../src/general"
 import { Abs } from "../../../../../src/general/math"
 import { Cents } from "../../../../../src/general/music"
-import { computeBestPossibleBoundClassHistoryAnalysis } from "../../../../../src/scripts/jiNotationBoundClass/boundClass/bestPossibleHistory"
-import { BoundClassHistoryAnalysis, Score } from "../../../../../src/scripts/jiNotationBoundClass/history"
-import { boundClassHistoryAnalysisFixture } from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
+import { computeBestPossibleBoundHistoryAnalysis } from "../../../../../src/scripts/jiNotationBoundClass/boundClass/bestPossibleHistory"
+import { BoundHistoryAnalysis, Score } from "../../../../../src/scripts/jiNotationBoundClass/history"
+import { boundHistoryAnalysisFixture } from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
-describe("computeBestPossibleBoundClassHistoryAnalysis", (): void => {
+describe("computeBestPossibleBoundHistoryAnalysis", (): void => {
     it("returns the bound class history with the best score (the not possible ones are all already filtered out)                ", (): void => {
-        const boundClassHistoryAnalyses: BoundClassHistoryAnalysis[] = [
+        const boundHistoryAnalyses: BoundHistoryAnalysis[] = [
             {
-                ...boundClassHistoryAnalysisFixture,
+                ...boundHistoryAnalysisFixture,
                 score: 3436643 as Score,
             },
             {
-                ...boundClassHistoryAnalysisFixture,
+                ...boundHistoryAnalysisFixture,
                 score: 245444 as Score,
             },
             {
-                ...boundClassHistoryAnalysisFixture,
+                ...boundHistoryAnalysisFixture,
                 score: 2422436 as Score,
             },
         ]
 
-        const actual = computeBestPossibleBoundClassHistoryAnalysis(boundClassHistoryAnalyses)
+        const actual = computeBestPossibleBoundHistoryAnalysis(boundHistoryAnalyses)
 
         const expected = {
-            ...boundClassHistoryAnalysisFixture,
+            ...boundHistoryAnalysisFixture,
             score: 245444 as Score,
         }
         expect(actual).toEqual(expected)
     })
 
     it("returns the best exact bound class history even if its score is not the best", (): void => {
-        const boundClassHistoryAnalyses = [
+        const boundHistoryAnalyses = [
             {
-                ...boundClassHistoryAnalysisFixture,
+                ...boundHistoryAnalysisFixture,
                 score: 3436643 as Score,
                 exact: true,
             },
             {
-                ...boundClassHistoryAnalysisFixture,
+                ...boundHistoryAnalysisFixture,
                 score: 45575474 as Score,
                 exact: true,
             },
             {
-                ...boundClassHistoryAnalysisFixture,
+                ...boundHistoryAnalysisFixture,
                 score: 245444 as Score,
             },
         ]
 
-        const actual = computeBestPossibleBoundClassHistoryAnalysis(boundClassHistoryAnalyses)
+        const actual = computeBestPossibleBoundHistoryAnalysis(boundHistoryAnalyses)
 
         const expected = {
-            ...boundClassHistoryAnalysisFixture,
+            ...boundHistoryAnalysisFixture,
             score: 3436643 as Score,
             exact: true,
         }
@@ -60,25 +60,25 @@ describe("computeBestPossibleBoundClassHistoryAnalysis", (): void => {
     })
 
     it("tie-breaks by distance", (): void => {
-        const boundClassHistoryAnalyses: BoundClassHistoryAnalysis[] = [
+        const boundHistoryAnalyses: BoundHistoryAnalysis[] = [
             {
-                ...boundClassHistoryAnalysisFixture,
+                ...boundHistoryAnalysisFixture,
                 score: 3436643 as Score,
                 totalDistance: 0.2 as Sum<Abs<Cents>>,
                 exact: true,
             },
             {
-                ...boundClassHistoryAnalysisFixture,
+                ...boundHistoryAnalysisFixture,
                 score: 3436643 as Score,
                 totalDistance: 0.1 as Sum<Abs<Cents>>,
                 exact: true,
             },
         ]
 
-        const actual = computeBestPossibleBoundClassHistoryAnalysis(boundClassHistoryAnalyses)
+        const actual = computeBestPossibleBoundHistoryAnalysis(boundHistoryAnalyses)
 
-        const expected: BoundClassHistoryAnalysis = {
-            ...boundClassHistoryAnalysisFixture,
+        const expected: BoundHistoryAnalysis = {
+            ...boundHistoryAnalysisFixture,
             score: 3436643 as Score,
             totalDistance: 0.1 as Sum<Abs<Cents>>,
             exact: true,

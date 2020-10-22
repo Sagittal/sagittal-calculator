@@ -11,8 +11,8 @@ import { JiNotationBoundClassAnalysis } from "../../../../../../../src/scripts/j
 import { computeJiNotationBoundClassRow } from "../../../../../../../src/scripts/jiNotationBoundClass/io/terminal/boundClasses/boundClassRow"
 import { RANKS } from "../../../../../../../src/scripts/jiNotationBoundClass/ranks"
 import {
-    boundClassEventAnalysisFixture,
-    boundClassHistoryAnalysisFixture,
+    boundEventAnalysisFixture,
+    boundHistoryAnalysisFixture,
     jiNotationBoundClassAnalysisFixture,
     jiNotationBoundClassFixture,
 } from "../../../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
@@ -26,25 +26,25 @@ describe("computeJiNotationBoundClassRow", (): void => {
         }
         const jiNotationBoundClassAnalysis: JiNotationBoundClassAnalysis = {
             ...jiNotationBoundClassAnalysisFixture,
-            bestPossibleBoundClassHistoryAnalysis: {
-                ...boundClassHistoryAnalysisFixture,
-                boundClassEventAnalyses: [
+            bestPossibleBoundHistoryAnalysis: {
+                ...boundHistoryAnalysisFixture,
+                boundEventAnalyses: [
                     {
-                        ...boundClassEventAnalysisFixture,
+                        ...boundEventAnalysisFixture,
                         jiNotationLevel: JiNotationLevel.ULTRA,
                         rank: RANKS[ BoundType.INA_MIDPOINT ],
                         distance: 0.000 as Abs<Cents>,
                         inaDistance: 0.000 as Multiplier<Ina>,
                     },
                     {
-                        ...boundClassEventAnalysisFixture,
+                        ...boundEventAnalysisFixture,
                         jiNotationLevel: JiNotationLevel.EXTREME,
                         rank: RANKS[ BoundType.INA_MIDPOINT ],
                         distance: 0.333 as Abs<Cents>,
                         inaDistance: 0.682 as Multiplier<Ina>,
                     },
                     {
-                        ...boundClassEventAnalysisFixture,
+                        ...boundEventAnalysisFixture,
                         jiNotationLevel: JiNotationLevel.INSANE,
                         rank: RANKS[ BoundType.COMMA_MEAN ],
                         distance: 0.022 as Abs<Cents>,
@@ -55,8 +55,8 @@ describe("computeJiNotationBoundClassRow", (): void => {
             bestRank: RANKS[ BoundType.COMMA_MEAN ],
             initialPosition: computePitchFromCents(5.48533 as Cents),
             initialPositionTinaDistance: 0.0393 as Multiplier<Tina>,
-            bestPossibleBoundClassHistoryTotalDistance: 0.355 as Sum<Abs<Cents>>,
-            bestPossibleBoundClassHistoryTotalInaDistance: 0.839 as Sum<Multiplier<Ina>>,
+            bestPossibleBoundHistoryTotalDistance: 0.355 as Sum<Abs<Cents>>,
+            bestPossibleBoundHistoryTotalInaDistance: 0.839 as Sum<Multiplier<Ina>>,
         }
 
         const actual = computeJiNotationBoundClassRow(jiNotationBoundClassAnalysis, { jiNotationBoundClass })

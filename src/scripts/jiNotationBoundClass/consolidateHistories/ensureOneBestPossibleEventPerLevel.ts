@@ -1,26 +1,26 @@
 import { isEmpty } from "../../../general"
 import { formatJiNotationLevel, JiNotationLevel } from "../../../sagittal"
-import { BoundClassEventConsolidation, BoundClassHistoryConsolidation } from "./types"
+import { BoundEventConsolidation, BoundHistoryConsolidation } from "./types"
 
 const ensureOneBestPossibleEventPerJiNotationLevel = (
-    boundClassHistoryConsolidation: BoundClassHistoryConsolidation,
+    boundHistoryConsolidation: BoundHistoryConsolidation,
 ): void => {
-    const boundClassHistoryConsolidationEntries =
-        Object.entries(boundClassHistoryConsolidation) as Array<[JiNotationLevel, BoundClassEventConsolidation[]]>
+    const boundHistoryConsolidationEntries =
+        Object.entries(boundHistoryConsolidation) as Array<[JiNotationLevel, BoundEventConsolidation[]]>
 
-    boundClassHistoryConsolidationEntries.forEach(
-        ([jiNotationLevel, boundClassEventConsolidations]: [JiNotationLevel, BoundClassEventConsolidation[]]): void => {
-            const bestPossibleBoundClassHistoryBoundClassEvents =
-                boundClassEventConsolidations.filter(
-                    (boundClassEventConsolidation: BoundClassEventConsolidation): boolean => {
-                        return boundClassEventConsolidation.isBestPossibleBoundClassHistoryMember
+    boundHistoryConsolidationEntries.forEach(
+        ([jiNotationLevel, boundEventConsolidations]: [JiNotationLevel, BoundEventConsolidation[]]): void => {
+            const bestPossibleBoundHistoryBoundEvents =
+                boundEventConsolidations.filter(
+                    (boundEventConsolidation: BoundEventConsolidation): boolean => {
+                        return boundEventConsolidation.isBestPossibleBoundHistoryMember
                     },
                 )
 
-            if (bestPossibleBoundClassHistoryBoundClassEvents.length > 1) {
+            if (bestPossibleBoundHistoryBoundEvents.length > 1) {
                 throw new Error(`Bound class history had at the ${formatJiNotationLevel(jiNotationLevel)} JI notation level more than one event marked as member of the best possible bound class history.`)
             }
-            if (isEmpty(bestPossibleBoundClassHistoryBoundClassEvents)) {
+            if (isEmpty(bestPossibleBoundHistoryBoundEvents)) {
                 throw new Error(`Bound class history had at the ${formatJiNotationLevel(jiNotationLevel)} JI notation level no event marked as member of the best possible bound class history.`)
             }
         },

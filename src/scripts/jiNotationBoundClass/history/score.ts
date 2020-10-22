@@ -2,19 +2,19 @@ import { BASE_2, decrement, Exponent, pow } from "../../../general"
 import { JI_NOTATION_LEVELS } from "../../../sagittal"
 import { RANKS } from "../ranks"
 import { computeBinaryScoreRepresentationIndex } from "./binaryScoreRepresentationCardinality"
-import { BoundClassEventAnalysis } from "./events"
+import { BoundEventAnalysis } from "./events"
 import { Score } from "./types"
 
-const computeScore = (boundClassEventAnalyses: BoundClassEventAnalysis[]): Score => {
+const computeScore = (boundEventAnalyses: BoundEventAnalysis[]): Score => {
     const binaryScoreRepresentationCardinality = Object.keys(RANKS).length * JI_NOTATION_LEVELS.length // 15
 
     const binaryScoreRepresentation = [...Array(binaryScoreRepresentationCardinality).keys()]
         .map((_: number): number => 0)
 
-    boundClassEventAnalyses.forEach((boundClassEventAnalysis: BoundClassEventAnalysis): void => {
+    boundEventAnalyses.forEach((boundEventAnalysis: BoundEventAnalysis): void => {
         const binaryScoreRepresentationIndex = computeBinaryScoreRepresentationIndex(
-            decrement(boundClassEventAnalysis.rank),
-            JI_NOTATION_LEVELS.indexOf(boundClassEventAnalysis.jiNotationLevel),
+            decrement(boundEventAnalysis.rank),
+            JI_NOTATION_LEVELS.indexOf(boundEventAnalysis.jiNotationLevel),
         )
 
         binaryScoreRepresentation[ binaryScoreRepresentationIndex ] += 1

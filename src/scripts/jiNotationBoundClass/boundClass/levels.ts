@@ -1,13 +1,13 @@
 import { Count, Decimal, increment, Rank } from "../../../general"
 import { BoundType } from "../../../sagittal"
 import { jiNotationLevelsBestCumulativeHistoryRanks, jiNotationLevelsBestHistoryRanks } from "../globals"
-import { BoundClassEventAnalysis, BoundClassHistoryAnalysis } from "../history"
+import { BoundEventAnalysis, BoundHistoryAnalysis } from "../history"
 
-const updateJiNotationLevelAnalysis = (bestPossibleBoundClassHistoryAnalysis: BoundClassHistoryAnalysis): void => {
+const updateJiNotationLevelAnalysis = (bestPossibleBoundHistoryAnalysis: BoundHistoryAnalysis): void => {
     let cumulativeRank = 0
-    bestPossibleBoundClassHistoryAnalysis.boundClassEventAnalyses
-        .forEach((boundClassEventAnalysis: BoundClassEventAnalysis): void => {
-            const { jiNotationLevel, rank } = boundClassEventAnalysis
+    bestPossibleBoundHistoryAnalysis.boundEventAnalyses
+        .forEach((boundEventAnalysis: BoundEventAnalysis): void => {
+            const { jiNotationLevel, rank } = boundEventAnalysis
 
             if (rank > cumulativeRank) {
                 cumulativeRank = rank

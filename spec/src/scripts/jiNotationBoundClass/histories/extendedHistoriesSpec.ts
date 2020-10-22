@@ -2,14 +2,14 @@ import {Cents, computePitchFromCents, HALF_SCALER, Monzo, Name, Scamon} from "..
 import {APOTOME, JiNotationBound} from "../../../../../src/sagittal"
 import {BoundType, JiNotationLevel} from "../../../../../src/sagittal/notations"
 import {HIGH_EDA, ULTRA_EDA} from "../../../../../src/sagittal/notations/ji/levelEdas"
-import {BoundClassEvent, BoundClassHistory} from "../../../../../src/scripts/jiNotationBoundClass/histories"
+import {BoundEvent, BoundHistory} from "../../../../../src/scripts/jiNotationBoundClass/histories"
 import {computeExtendedHistories} from "../../../../../src/scripts/jiNotationBoundClass/histories/extendedHistories"
 import {jiNotationBoundClassFixture} from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
 describe("computeExtendedHistories", (): void => {
-    let boundClassHistory: BoundClassHistory
+    let boundHistory: BoundHistory
 
-    const passedInBoundClassEvent: BoundClassEvent = {
+    const passedInBoundEvent: BoundEvent = {
         jiNotationLevel: JiNotationLevel.HIGH,
         boundType: BoundType.INA_MIDPOINT,
         name: "16.5°47" as Name<JiNotationBound>,
@@ -17,23 +17,23 @@ describe("computeExtendedHistories", (): void => {
     }
 
     beforeEach((): void => {
-        boundClassHistory = [
-            passedInBoundClassEvent,
+        boundHistory = [
+            passedInBoundEvent,
         ]
     })
 
     it("returns an array with potentially many elements: for each bound position of any bound type, a new bound class history which is like the passed-in history extended with a new event of snapping to that position, and its rank updated if necessary", (): void => {
         const actualJiNotationBoundDecimal = 45.4 as Cents
 
-        const actual = computeExtendedHistories(boundClassHistory, JiNotationLevel.ULTRA, {
+        const actual = computeExtendedHistories(boundHistory, JiNotationLevel.ULTRA, {
             ...jiNotationBoundClassFixture,
             pitch: computePitchFromCents(actualJiNotationBoundDecimal),
             jiNotationLevels: [JiNotationLevel.ULTRA, JiNotationLevel.EXTREME],
         })
 
-        const expected: BoundClassHistory[] = [
+        const expected: BoundHistory[] = [
             [
-                passedInBoundClassEvent,
+                passedInBoundEvent,
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
                     boundType: BoundType.INA_MIDPOINT,
@@ -42,7 +42,7 @@ describe("computeExtendedHistories", (): void => {
                 },
             ],
             [
-                passedInBoundClassEvent,
+                passedInBoundEvent,
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
                     boundType: BoundType.COMMA_MEAN,
@@ -54,7 +54,7 @@ describe("computeExtendedHistories", (): void => {
                 },
             ],
             [
-                passedInBoundClassEvent,
+                passedInBoundEvent,
                 {
                     jiNotationLevel: JiNotationLevel.ULTRA,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,

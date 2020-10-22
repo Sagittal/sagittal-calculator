@@ -1,43 +1,43 @@
 import { isEmpty, Maybe } from "../../../general"
-import { BoundClassHistoryAnalysis, Score } from "../history"
+import { BoundHistoryAnalysis, Score } from "../history"
 
-const computeBestPossibleBoundClassHistoryAnalysis = (
-    boundClassHistoryAnalyses: BoundClassHistoryAnalysis[],
-): Maybe<BoundClassHistoryAnalysis> => {
-    if (isEmpty(boundClassHistoryAnalyses)) return undefined
+const computeBestPossibleBoundHistoryAnalysis = (
+    boundHistoryAnalyses: BoundHistoryAnalysis[],
+): Maybe<BoundHistoryAnalysis> => {
+    if (isEmpty(boundHistoryAnalyses)) return undefined
 
-    let bestPossibleBoundClassHistoryAnalysis: BoundClassHistoryAnalysis =
-        { score: Infinity as Score } as BoundClassHistoryAnalysis
+    let bestPossibleBoundHistoryAnalysis: BoundHistoryAnalysis =
+        { score: Infinity as Score } as BoundHistoryAnalysis
 
-    const atLeastOneExactBoundClassHistory = boundClassHistoryAnalyses
-        .some((boundClassHistoryAnalysis: BoundClassHistoryAnalysis): boolean => !boundClassHistoryAnalysis.exact)
-    if (atLeastOneExactBoundClassHistory) {
-        const exactBoundClassHistoryAnalyses: BoundClassHistoryAnalysis[] = []
-        boundClassHistoryAnalyses.forEach((boundClassHistoryAnalysis: BoundClassHistoryAnalysis): void => {
-            if (boundClassHistoryAnalysis.exact) {
-                exactBoundClassHistoryAnalyses.push(boundClassHistoryAnalysis)
+    const atLeastOneExactBoundHistory = boundHistoryAnalyses
+        .some((boundHistoryAnalysis: BoundHistoryAnalysis): boolean => !boundHistoryAnalysis.exact)
+    if (atLeastOneExactBoundHistory) {
+        const exactBoundHistoryAnalyses: BoundHistoryAnalysis[] = []
+        boundHistoryAnalyses.forEach((boundHistoryAnalysis: BoundHistoryAnalysis): void => {
+            if (boundHistoryAnalysis.exact) {
+                exactBoundHistoryAnalyses.push(boundHistoryAnalysis)
             }
         })
-        if (exactBoundClassHistoryAnalyses.length) {
-            return computeBestPossibleBoundClassHistoryAnalysis(exactBoundClassHistoryAnalyses)
+        if (exactBoundHistoryAnalyses.length) {
+            return computeBestPossibleBoundHistoryAnalysis(exactBoundHistoryAnalyses)
         }
     }
 
-    boundClassHistoryAnalyses.forEach((boundClassHistoryAnalysis: BoundClassHistoryAnalysis): void => {
+    boundHistoryAnalyses.forEach((boundHistoryAnalysis: BoundHistoryAnalysis): void => {
         if (
-            boundClassHistoryAnalysis.score < bestPossibleBoundClassHistoryAnalysis.score ||
+            boundHistoryAnalysis.score < bestPossibleBoundHistoryAnalysis.score ||
             (
-                boundClassHistoryAnalysis.score === bestPossibleBoundClassHistoryAnalysis.score &&
-                boundClassHistoryAnalysis.totalDistance < bestPossibleBoundClassHistoryAnalysis.totalDistance
+                boundHistoryAnalysis.score === bestPossibleBoundHistoryAnalysis.score &&
+                boundHistoryAnalysis.totalDistance < bestPossibleBoundHistoryAnalysis.totalDistance
             )
         ) {
-            bestPossibleBoundClassHistoryAnalysis = boundClassHistoryAnalysis
+            bestPossibleBoundHistoryAnalysis = boundHistoryAnalysis
         }
     })
 
-    return bestPossibleBoundClassHistoryAnalysis
+    return bestPossibleBoundHistoryAnalysis
 }
 
 export {
-    computeBestPossibleBoundClassHistoryAnalysis,
+    computeBestPossibleBoundHistoryAnalysis,
 }

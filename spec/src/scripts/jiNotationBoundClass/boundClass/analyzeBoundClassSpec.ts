@@ -12,17 +12,17 @@ import {EXTREME_EDA, INSANE_EDA} from "../../../../../src/sagittal/notations/ji/
 import {analyzeJiNotationBoundClass} from "../../../../../src/scripts/jiNotationBoundClass/boundClass"
 import * as jiNotationLevels from "../../../../../src/scripts/jiNotationBoundClass/boundClass/levels"
 import * as ranks from "../../../../../src/scripts/jiNotationBoundClass/boundClass/ranks"
-import {BoundClassHistory} from "../../../../../src/scripts/jiNotationBoundClass/histories"
+import {BoundHistory} from "../../../../../src/scripts/jiNotationBoundClass/histories"
 import {
-    BoundClassEventAnalysis,
-    BoundClassHistoryAnalysis,
+    BoundEventAnalysis,
+    BoundHistoryAnalysis,
     Score,
 } from "../../../../../src/scripts/jiNotationBoundClass/history"
 import {RANKS} from "../../../../../src/scripts/jiNotationBoundClass/ranks"
 import {jiNotationBoundClassFixture} from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
 describe("analyzeJiNotationBoundClass", (): void => {
-    const notBestHistory: BoundClassHistory = [
+    const notBestHistory: BoundHistory = [
         {
             jiNotationLevel: JiNotationLevel.ULTRA,
             boundType: BoundType.COMMA_MEAN,
@@ -52,7 +52,7 @@ describe("analyzeJiNotationBoundClass", (): void => {
             // This one gets rank 4
         },
     ]
-    const bestHistory: BoundClassHistory = [
+    const bestHistory: BoundHistory = [
         {
             jiNotationLevel: JiNotationLevel.ULTRA,
             boundType: BoundType.COMMA_MEAN,
@@ -82,7 +82,7 @@ describe("analyzeJiNotationBoundClass", (): void => {
             // This one gets rank 1
         },
     ]
-    const histories: BoundClassHistory[] = [
+    const histories: BoundHistory[] = [
         notBestHistory,
         bestHistory,
     ]
@@ -96,7 +96,7 @@ describe("analyzeJiNotationBoundClass", (): void => {
         id: 47 as Id<BoundClass>,
         boundType: BoundType.INA_MIDPOINT,
     }
-    const expectedBestBoundClassHistoryBoundClassEventAnalyses: BoundClassEventAnalysis[] = [
+    const expectedBestBoundHistoryBoundEventAnalyses: BoundEventAnalysis[] = [
         {
             jiNotationLevel: JiNotationLevel.ULTRA,
             boundType: BoundType.COMMA_MEAN,
@@ -137,8 +137,8 @@ describe("analyzeJiNotationBoundClass", (): void => {
             exact: true,
         },
     ]
-    const expectedBestPossibleBoundClassHistoryAnalysis: BoundClassHistoryAnalysis = {
-        boundClassEventAnalyses: expectedBestBoundClassHistoryBoundClassEventAnalyses,
+    const expectedBestPossibleBoundHistoryAnalysis: BoundHistoryAnalysis = {
+        boundEventAnalyses: expectedBestBoundHistoryBoundEventAnalyses,
         pitch: {
             monzo: APOTOME.monzo,
             scaler: [164.5, INSANE_EDA],
@@ -163,11 +163,11 @@ describe("analyzeJiNotationBoundClass", (): void => {
                 scaler: HALF_SCALER,
             } as Scamon<{rational: false}>,
             initialPositionTinaDistance: -0.5613173198962398 as Multiplier<Tina>,
-            possibleBoundClassHistoryCount: 2 as Count<BoundClassHistoryAnalysis>,
-            bestPossibleBoundClassHistoryAnalysis: expectedBestPossibleBoundClassHistoryAnalysis,
-            bestPossibleBoundClassHistoryTotalDistance: 0.07887931138776594 as Sum<Abs<Cents>>,
-            bestPossibleBoundClassHistoryTotalInaDistance: 0.4641843423502595 as Sum<Multiplier<Ina>>,
-            boundClassHistoryConsolidation: {
+            possibleBoundHistoryCount: 2 as Count<BoundHistoryAnalysis>,
+            bestPossibleBoundHistoryAnalysis: expectedBestPossibleBoundHistoryAnalysis,
+            bestPossibleBoundHistoryTotalDistance: 0.07887931138776594 as Sum<Abs<Cents>>,
+            bestPossibleBoundHistoryTotalInaDistance: 0.4641843423502595 as Sum<Multiplier<Ina>>,
+            boundHistoryConsolidation: {
                 [JiNotationLevel.ULTRA]: [
                     {
                         jiNotationLevel: JiNotationLevel.ULTRA,
@@ -177,12 +177,12 @@ describe("analyzeJiNotationBoundClass", (): void => {
                             monzo: [-17, 11, -2, 0, 0, 0, 0, 1] as Monzo<{rational: true}>,
                             scaler: HALF_SCALER,
                         } as Scamon<{rational: false}>,
-                        isPossibleBoundClassHistoryMember: true,
-                        isBestPossibleBoundClassHistoryMember: true,
+                        isPossibleBoundHistoryMember: true,
+                        isBestPossibleBoundHistoryMember: true,
                         exact: false,
                         rankOfBestRankedEventInAnyMemberHistory: RANKS[BoundType.COMMA_MEAN],
                         rankOfBestRankedMemberHistory: RANKS[BoundType.COMMA_MEAN],
-                        nextBoundClassEvents: [
+                        nextBoundEvents: [
                             ".)/| '/|",
                             "47.5°233",
                         ] as Array<Name<JiNotationBound>>,
@@ -197,12 +197,12 @@ describe("analyzeJiNotationBoundClass", (): void => {
                             monzo: [-17, 11, -2, 0, 0, 0, 0, 1] as Monzo<{rational: true}>,
                             scaler: HALF_SCALER,
                         } as Scamon<{rational: false}>,
-                        isPossibleBoundClassHistoryMember: true,
-                        isBestPossibleBoundClassHistoryMember: false,
+                        isPossibleBoundHistoryMember: true,
+                        isBestPossibleBoundHistoryMember: false,
                         exact: false,
                         rankOfBestRankedEventInAnyMemberHistory: RANKS[BoundType.COMMA_MEAN],
                         rankOfBestRankedMemberHistory: RANKS[BoundType.COMMA_MEAN],
-                        nextBoundClassEvents: [
+                        nextBoundEvents: [
                             "164.5°809",
                         ] as Array<Name<JiNotationBound>>,
                     },
@@ -214,12 +214,12 @@ describe("analyzeJiNotationBoundClass", (): void => {
                             monzo: APOTOME.monzo,
                             scaler: [47.5, EXTREME_EDA],
                         } as Scamon<{rational: false}>,
-                        isPossibleBoundClassHistoryMember: true,
-                        isBestPossibleBoundClassHistoryMember: true,
+                        isPossibleBoundHistoryMember: true,
+                        isBestPossibleBoundHistoryMember: true,
                         exact: false,
                         rankOfBestRankedEventInAnyMemberHistory: RANKS[BoundType.INA_MIDPOINT],
                         rankOfBestRankedMemberHistory: RANKS[BoundType.COMMA_MEAN],
-                        nextBoundClassEvents: [
+                        nextBoundEvents: [
                             "164.5°809",
                         ] as Array<Name<JiNotationBound>>,
                     },
@@ -233,12 +233,12 @@ describe("analyzeJiNotationBoundClass", (): void => {
                             monzo: APOTOME.monzo,
                             scaler: [164.5, INSANE_EDA],
                         } as Scamon<{rational: false}>,
-                        isPossibleBoundClassHistoryMember: true,
-                        isBestPossibleBoundClassHistoryMember: true,
+                        isPossibleBoundHistoryMember: true,
+                        isBestPossibleBoundHistoryMember: true,
                         exact: true,
                         rankOfBestRankedEventInAnyMemberHistory: RANKS[BoundType.INA_MIDPOINT],
                         rankOfBestRankedMemberHistory: RANKS[BoundType.COMMA_MEAN],
-                        nextBoundClassEvents: [] as Array<Name<JiNotationBound>>,
+                        nextBoundEvents: [] as Array<Name<JiNotationBound>>,
                     },
                 ],
             },
@@ -261,6 +261,6 @@ describe("analyzeJiNotationBoundClass", (): void => {
         analyzeJiNotationBoundClass(histories, jiNotationBoundClass)
 
         expect(jiNotationLevels.updateJiNotationLevelAnalysis)
-            .toHaveBeenCalledWith(expectedBestPossibleBoundClassHistoryAnalysis)
+            .toHaveBeenCalledWith(expectedBestPossibleBoundHistoryAnalysis)
     })
 })

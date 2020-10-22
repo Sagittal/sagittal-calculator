@@ -1,20 +1,20 @@
 import { Decimal, Rank } from "../../../general"
 import { BoundType } from "../../../sagittal"
-import { BoundClassEventAnalysis } from "../history"
+import { BoundEventAnalysis } from "../history"
 import { RANKS } from "../ranks"
-import { BoundClassEventConsolidation } from "./types"
+import { BoundEventConsolidation } from "./types"
 
 const computeInitialEventConsolidation = (
-    boundClassEventAnalysis: BoundClassEventAnalysis,
-): BoundClassEventConsolidation => ({
-    jiNotationLevel: boundClassEventAnalysis.jiNotationLevel,
-    boundType: boundClassEventAnalysis.boundType,
-    name: boundClassEventAnalysis.name,
-    pitch: boundClassEventAnalysis.pitch,
-    exact: boundClassEventAnalysis.exact,
-    isPossibleBoundClassHistoryMember: false,
-    isBestPossibleBoundClassHistoryMember: false,
-    nextBoundClassEvents: [],
+    boundEventAnalysis: BoundEventAnalysis,
+): BoundEventConsolidation => ({
+    jiNotationLevel: boundEventAnalysis.jiNotationLevel,
+    boundType: boundEventAnalysis.boundType,
+    name: boundEventAnalysis.name,
+    pitch: boundEventAnalysis.pitch,
+    exact: boundEventAnalysis.exact,
+    isPossibleBoundHistoryMember: false,
+    isBestPossibleBoundHistoryMember: false,
+    nextBoundEvents: [],
     rankOfBestRankedMemberHistory: Object.keys(RANKS).length as Decimal<{ integer: true }> & Rank<BoundType>,
     rankOfBestRankedEventInAnyMemberHistory: Object.keys(RANKS).length as Decimal<{ integer: true }> & Rank<BoundType>,
 })

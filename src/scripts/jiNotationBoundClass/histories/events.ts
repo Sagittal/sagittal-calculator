@@ -1,30 +1,30 @@
-import { isScamonGreater, isScamonLesser, Name } from "../../../general"
-import {BoundClass, BoundType, JiNotationBound, JiNotationLevel} from "../../../sagittal"
-import { BoundedCommaClassPositions } from "../boundedPositions"
-import { BOUND_CLASSES_BY_TYPE } from "./bounds"
-import { BoundClassEvent } from "./types"
+import {isScamonGreater, isScamonLesser, Name} from "../../../general"
+import {BoundType, JiNotationBound, JiNotationLevel} from "../../../sagittal"
+import {BoundedCommaClassPositions} from "../boundedPositions"
+import {JI_NOTATION_BOUNDS_BY_TYPE} from "./bounds"
+import {BoundEvent} from "./types"
 
-const computeBoundClassEvents = (
+const computeBoundEvents = (
     jiNotationLevel: JiNotationLevel,
     [lesserBoundedCommaClassPosition, greaterBoundedCommaClassPosition]: BoundedCommaClassPositions,
     boundType: BoundType,
-): BoundClassEvent[] => {
-    const boundClassEvent: BoundClassEvent[] = []
+): BoundEvent[] => {
+    const boundEvent: BoundEvent[] = []
 
-    const levelBoundClasses = BOUND_CLASSES_BY_TYPE[ boundType ][ jiNotationLevel ]
+    const levelBounds = JI_NOTATION_BOUNDS_BY_TYPE[boundType][jiNotationLevel]
 
-    levelBoundClasses.forEach(({ pitch, name = "" as Name<JiNotationBound> }: JiNotationBound): void => {
+    levelBounds.forEach(({pitch, name = "" as Name<JiNotationBound>}: JiNotationBound): void => {
         if (
             (!lesserBoundedCommaClassPosition || isScamonGreater(pitch, lesserBoundedCommaClassPosition)) &&
             (!greaterBoundedCommaClassPosition || isScamonLesser(pitch, greaterBoundedCommaClassPosition))
         ) {
-            boundClassEvent.push({ jiNotationLevel, boundType, name, pitch })
+            boundEvent.push({jiNotationLevel, boundType, name, pitch})
         }
     })
 
-    return boundClassEvent
+    return boundEvent
 }
 
 export {
-    computeBoundClassEvents,
+    computeBoundEvents,
 }

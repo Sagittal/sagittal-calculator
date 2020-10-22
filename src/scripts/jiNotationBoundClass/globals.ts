@@ -2,9 +2,6 @@ import {Count, Decimal, Id, Rank, RecordKey} from "../../general"
 import {BoundClass, BoundType, JiNotationLevel} from "../../sagittal"
 import {RANKS} from "./ranks"
 
-// TODO: per the recent commit where Id<BoundClass> forced revisions in here, I'd like to audit the recent conversion
-//  Of everything from bound over to bound class, because a lot of it is now just JI Notation bound instead.
-
 const jiNotationLevelsBestHistoryRanks:
     Record<JiNotationLevel,
         Record<RecordKey<Decimal<{integer: true}> & Rank<BoundType>>,

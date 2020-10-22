@@ -1,19 +1,19 @@
 import { Multiplier } from "../../../../general"
 import { Ina } from "../../../../sagittal"
-import { BoundClassEvent, BoundClassHistory } from "../../histories"
-import { computeBoundClassEventDistance } from "./eventDistance"
+import { BoundEvent, BoundHistory } from "../../histories"
+import { computeBoundEventDistance } from "./eventDistance"
 import { computeInaDistance } from "./inaDistance"
 
-const computeBoundClassEventInaDistance = (
-    boundClassEvent: BoundClassEvent,
+const computeBoundEventInaDistance = (
+    boundEvent: BoundEvent,
     index: number,
-    boundClassHistory: BoundClassHistory,
+    boundHistory: BoundHistory,
 ): Multiplier<Ina> =>
     computeInaDistance(
-        computeBoundClassEventDistance(boundClassEvent, index, boundClassHistory),
-        boundClassEvent.jiNotationLevel,
+        computeBoundEventDistance(boundEvent, index, boundHistory),
+        boundEvent.jiNotationLevel,
     )
 
 export {
-    computeBoundClassEventInaDistance,
+    computeBoundEventInaDistance,
 }

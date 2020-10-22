@@ -6,10 +6,10 @@ import {
     BoundedCommaClassPositions,
     computeBoundedCommaClassPositions,
 } from "../../../../../src/scripts/jiNotationBoundClass/boundedPositions"
-import {BoundClassEvent} from "../../../../../src/scripts/jiNotationBoundClass/histories"
-import {computeBoundClassEvents} from "../../../../../src/scripts/jiNotationBoundClass/histories/events"
+import {BoundEvent} from "../../../../../src/scripts/jiNotationBoundClass/histories"
+import {computeBoundEvents} from "../../../../../src/scripts/jiNotationBoundClass/histories/events"
 
-describe("computeBoundClassEvents", (): void => {
+describe("computeBoundEvents", (): void => {
     let jiNotationLevel: JiNotationLevel
     let boundedCommaClassPositions: BoundedCommaClassPositions
     let boundType: BoundType
@@ -25,10 +25,10 @@ describe("computeBoundClassEvents", (): void => {
                 boundedCommaClassPositions =
                     computeBoundedCommaClassPositions(computePitchFromCents(4.5 as Cents), jiNotationLevel)
 
-                const actual: BoundClassEvent[] =
-                    computeBoundClassEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
+                const actual: BoundEvent[] =
+                    computeBoundEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
 
-                const expected: BoundClassEvent[] = [
+                const expected: BoundEvent[] = [
                     {
                         jiNotationLevel: JiNotationLevel.ULTRA,
                         boundType: BoundType.INA_MIDPOINT,
@@ -44,10 +44,10 @@ describe("computeBoundClassEvents", (): void => {
                 boundedCommaClassPositions =
                     computeBoundedCommaClassPositions(computePitchFromCents(4.5 as Cents), jiNotationLevel)
 
-                const actual: BoundClassEvent[] =
-                    computeBoundClassEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
+                const actual: BoundEvent[] =
+                    computeBoundEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
 
-                const expected: BoundClassEvent[] = [
+                const expected: BoundEvent[] = [
                     {
                         jiNotationLevel: JiNotationLevel.ULTRA,
                         boundType: BoundType.INA_MIDPOINT,
@@ -63,7 +63,7 @@ describe("computeBoundClassEvents", (): void => {
                 boundedCommaClassPositions =
                     computeBoundedCommaClassPositions(computePitchFromCents(28.0 as Cents), jiNotationLevel)
 
-                const actual = computeBoundClassEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
+                const actual = computeBoundEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
 
                 const expected = [
                     {
@@ -87,9 +87,9 @@ describe("computeBoundClassEvents", (): void => {
                 boundedCommaClassPositions =
                     computeBoundedCommaClassPositions(computePitchFromCents(6.05 as Cents), jiNotationLevel)
 
-                const actual = computeBoundClassEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
+                const actual = computeBoundEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
 
-                const expected = [] as BoundClassEvent[]
+                const expected = [] as BoundEvent[]
                 expect(actual).toEqual(expected)
             })
         })
@@ -104,7 +104,7 @@ describe("computeBoundClassEvents", (): void => {
                 boundedCommaClassPositions =
                     computeBoundedCommaClassPositions(computePitchFromCents(26.25 as Cents), jiNotationLevel)
 
-                const actual = computeBoundClassEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
+                const actual = computeBoundEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
 
                 const expected = [
                     {
@@ -125,7 +125,7 @@ describe("computeBoundClassEvents", (): void => {
                 boundedCommaClassPositions =
                     computeBoundedCommaClassPositions(computePitchFromCents(26.25 as Cents), jiNotationLevel)
 
-                const actual = computeBoundClassEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
+                const actual = computeBoundEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
 
                 const expected = [
                     {
@@ -146,7 +146,7 @@ describe("computeBoundClassEvents", (): void => {
                 boundedCommaClassPositions =
                     computeBoundedCommaClassPositions(computePitchFromCents(26.25 as Cents), jiNotationLevel)
 
-                const actual = computeBoundClassEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
+                const actual = computeBoundEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
 
                 const expected = [
                     {
@@ -167,7 +167,7 @@ describe("computeBoundClassEvents", (): void => {
                 boundedCommaClassPositions =
                     computeBoundedCommaClassPositions(computePitchFromCents(26.25 as Cents), jiNotationLevel)
 
-                const actual = computeBoundClassEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
+                const actual = computeBoundEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
 
                 const expected = [
                     {
@@ -193,7 +193,7 @@ describe("computeBoundClassEvents", (): void => {
                 boundedCommaClassPositions =
                     computeBoundedCommaClassPositions(computePitchFromCents(30.5 as Cents), jiNotationLevel)
 
-                const actual = computeBoundClassEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
+                const actual = computeBoundEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
 
                 const expected = [
                     {
@@ -220,7 +220,7 @@ describe("computeBoundClassEvents", (): void => {
                 boundedCommaClassPositions =
                     computeBoundedCommaClassPositions(computePitchFromCents(34.0 as Cents), jiNotationLevel)
 
-                const actual = computeBoundClassEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
+                const actual = computeBoundEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
 
                 const expected = [
                     {
@@ -241,9 +241,9 @@ describe("computeBoundClassEvents", (): void => {
                 boundedCommaClassPositions =
                     computeBoundedCommaClassPositions(computePitchFromCents(6.05 as Cents), jiNotationLevel)
 
-                const actual = computeBoundClassEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
+                const actual = computeBoundEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
 
-                const expected = [] as BoundClassEvent[]
+                const expected = [] as BoundEvent[]
                 expect(actual).toEqual(expected)
             })
         })

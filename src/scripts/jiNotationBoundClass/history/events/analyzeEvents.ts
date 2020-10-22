@@ -1,23 +1,23 @@
 import { areScamonsEqual, Scamon } from "../../../../general"
-import { BoundClassEvent, BoundClassHistory } from "../../histories"
+import { BoundEvent, BoundHistory } from "../../histories"
 import { RANKS } from "../../ranks"
-import { computeBoundClassEventDistance } from "./eventDistance"
-import { computeBoundClassEventInaDistance } from "./eventInaDistance"
-import { BoundClassEventAnalysis } from "./types"
+import { computeBoundEventDistance } from "./eventDistance"
+import { computeBoundEventInaDistance } from "./eventInaDistance"
+import { BoundEventAnalysis } from "./types"
 
-const analyzeBoundClassEvents = (
-    boundClassHistory: BoundClassHistory,
+const analyzeBoundEvents = (
+    boundHistory: BoundHistory,
     actualJiNotationBoundPitch: Scamon,
-): BoundClassEventAnalysis[] =>
-    boundClassHistory.map((boundClassEvent: BoundClassEvent, index: number): BoundClassEventAnalysis => {
-        const { pitch, boundType } = boundClassEvent
+): BoundEventAnalysis[] =>
+    boundHistory.map((boundEvent: BoundEvent, index: number): BoundEventAnalysis => {
+        const { pitch, boundType } = boundEvent
         const exact = areScamonsEqual(pitch, actualJiNotationBoundPitch)
         const rank = RANKS[ boundType ]
-        const distance = computeBoundClassEventDistance(boundClassEvent, index, boundClassHistory)
-        const inaDistance = computeBoundClassEventInaDistance(boundClassEvent, index, boundClassHistory)
+        const distance = computeBoundEventDistance(boundEvent, index, boundHistory)
+        const inaDistance = computeBoundEventInaDistance(boundEvent, index, boundHistory)
 
         return {
-            ...boundClassEvent,
+            ...boundEvent,
             rank,
             exact,
             distance,
@@ -26,5 +26,5 @@ const analyzeBoundClassEvents = (
     })
 
 export {
-    analyzeBoundClassEvents,
+    analyzeBoundEvents,
 }

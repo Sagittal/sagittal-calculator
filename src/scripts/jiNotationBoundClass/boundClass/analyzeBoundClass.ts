@@ -1,54 +1,54 @@
 import { count, isUndefined, Multiplier, subtractPitch } from "../../../general"
 import { JiNotationBoundClass, Tina, TINA } from "../../../sagittal"
-import { consolidateBoundClassHistories } from "../consolidateHistories"
-import { BoundClassHistory } from "../histories"
-import { analyzeHistory, BoundClassHistoryAnalysis } from "../history"
-import { computeBestPossibleBoundClassHistoryAnalysis } from "./bestPossibleHistory"
+import { consolidateBoundHistories } from "../consolidateHistories"
+import { BoundHistory } from "../histories"
+import { analyzeHistory, BoundHistoryAnalysis } from "../history"
+import { computeBestPossibleBoundHistoryAnalysis } from "./bestPossibleHistory"
 import { computeInitialPosition } from "./initialPosition"
 import { updateJiNotationLevelAnalysis } from "./levels"
 import { updateRankAnalysis } from "./ranks"
 import { JiNotationBoundClassAnalysis } from "./types"
 
 const analyzeJiNotationBoundClass = (
-    boundClassHistories: BoundClassHistory[],
+    boundHistories: BoundHistory[],
     jiNotationBoundClass: JiNotationBoundClass,
 ): JiNotationBoundClassAnalysis => {
     const initialPosition = computeInitialPosition(jiNotationBoundClass)
-    const boundClassHistoryAnalyses = boundClassHistories
-        .map((boundClassHistory: BoundClassHistory): BoundClassHistoryAnalysis => {
-            return analyzeHistory(boundClassHistory, jiNotationBoundClass, initialPosition)
+    const boundHistoryAnalyses = boundHistories
+        .map((boundHistory: BoundHistory): BoundHistoryAnalysis => {
+            return analyzeHistory(boundHistory, jiNotationBoundClass, initialPosition)
         })
 
-    const possibleBoundClassHistories = boundClassHistoryAnalyses
-        .filter((boundClassHistoryAnalysis: BoundClassHistoryAnalysis): boolean => boundClassHistoryAnalysis.possible)
-    const possibleBoundClassHistoryCount = count(possibleBoundClassHistories)
-    const bestPossibleBoundClassHistoryAnalysis =
-        computeBestPossibleBoundClassHistoryAnalysis(possibleBoundClassHistories)
-    if (isUndefined(bestPossibleBoundClassHistoryAnalysis)) {
+    const possibleBoundHistories = boundHistoryAnalyses
+        .filter((boundHistoryAnalysis: BoundHistoryAnalysis): boolean => boundHistoryAnalysis.possible)
+    const possibleBoundHistoryCount = count(possibleBoundHistories)
+    const bestPossibleBoundHistoryAnalysis =
+        computeBestPossibleBoundHistoryAnalysis(possibleBoundHistories)
+    if (isUndefined(bestPossibleBoundHistoryAnalysis)) {
         throw new Error(`Unable to find a best possible bound class history for bound class ${jiNotationBoundClass}`)
     }
-    const bestRank = bestPossibleBoundClassHistoryAnalysis.rank
-    const bestPossibleBoundClassHistoryTotalDistance = bestPossibleBoundClassHistoryAnalysis.totalDistance
-    const bestPossibleBoundClassHistoryTotalInaDistance = bestPossibleBoundClassHistoryAnalysis.totalInaDistance
+    const bestRank = bestPossibleBoundHistoryAnalysis.rank
+    const bestPossibleBoundHistoryTotalDistance = bestPossibleBoundHistoryAnalysis.totalDistance
+    const bestPossibleBoundHistoryTotalInaDistance = bestPossibleBoundHistoryAnalysis.totalInaDistance
 
     const initialPositionTinaDistance =
         subtractPitch(jiNotationBoundClass.pitch, initialPosition) / TINA as Multiplier<Tina>
 
     updateRankAnalysis(bestRank, jiNotationBoundClass.id)
-    updateJiNotationLevelAnalysis(bestPossibleBoundClassHistoryAnalysis)
+    updateJiNotationLevelAnalysis(bestPossibleBoundHistoryAnalysis)
 
-    const boundClassHistoryConsolidation =
-        consolidateBoundClassHistories(boundClassHistoryAnalyses, bestPossibleBoundClassHistoryAnalysis)
+    const boundHistoryConsolidation =
+        consolidateBoundHistories(boundHistoryAnalyses, bestPossibleBoundHistoryAnalysis)
 
     return {
         initialPosition,
-        possibleBoundClassHistoryCount,
-        bestPossibleBoundClassHistoryAnalysis,
+        possibleBoundHistoryCount,
+        bestPossibleBoundHistoryAnalysis,
         bestRank,
-        bestPossibleBoundClassHistoryTotalDistance,
-        bestPossibleBoundClassHistoryTotalInaDistance,
+        bestPossibleBoundHistoryTotalDistance,
+        bestPossibleBoundHistoryTotalInaDistance,
         initialPositionTinaDistance,
-        boundClassHistoryConsolidation,
+        boundHistoryConsolidation,
     }
 }
 

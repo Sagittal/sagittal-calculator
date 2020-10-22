@@ -1,28 +1,28 @@
 import { isCloseTo, Multiplier, Scamon, subtractPitch } from "../../../general"
 import { JiNotationBoundClass, Tina, TINA } from "../../../sagittal"
-import { BoundClassHistory } from "../histories"
-import { analyzeBoundClassEvents } from "./events"
+import { BoundHistory } from "../histories"
+import { analyzeBoundEvents } from "./events"
 import { computeExact } from "./exact"
-import { computeBoundClassHistoryPosition } from "./historyPosition"
-import { computeBoundClassHistoryTotalDistance } from "./historyTotalDistance"
-import { computeBoundClassHistoryTotalInaDistance } from "./historyTotalInaDistance"
+import { computeBoundHistoryPosition } from "./historyPosition"
+import { computeBoundHistoryTotalDistance } from "./historyTotalDistance"
+import { computeBoundHistoryTotalInaDistance } from "./historyTotalInaDistance"
 import { computeRank } from "./rank"
 import { computeScore } from "./score"
-import { BoundClassHistoryAnalysis } from "./types"
+import { BoundHistoryAnalysis } from "./types"
 
 const analyzeHistory = (
-    boundClassHistory: BoundClassHistory,
+    boundHistory: BoundHistory,
     { pitch }: JiNotationBoundClass,
     initialPosition: Scamon,
-): BoundClassHistoryAnalysis => {
-    const position = computeBoundClassHistoryPosition(boundClassHistory)
+): BoundHistoryAnalysis => {
+    const position = computeBoundHistoryPosition(boundHistory)
 
-    const boundClassEventAnalyses = analyzeBoundClassEvents(boundClassHistory, pitch)
-    const rank = computeRank(boundClassEventAnalyses)
-    const score = computeScore(boundClassEventAnalyses)
-    const exact = computeExact(boundClassEventAnalyses)
-    const totalDistance = computeBoundClassHistoryTotalDistance(boundClassEventAnalyses)
-    const totalInaDistance = computeBoundClassHistoryTotalInaDistance(boundClassEventAnalyses)
+    const boundEventAnalyses = analyzeBoundEvents(boundHistory, pitch)
+    const rank = computeRank(boundEventAnalyses)
+    const score = computeScore(boundEventAnalyses)
+    const exact = computeExact(boundEventAnalyses)
+    const totalDistance = computeBoundHistoryTotalDistance(boundEventAnalyses)
+    const totalInaDistance = computeBoundHistoryTotalInaDistance(boundEventAnalyses)
 
     const positionError = subtractPitch(position, pitch)
     const possible = isCloseTo(positionError, 0)
@@ -36,7 +36,7 @@ const analyzeHistory = (
     const initialPositionTinaDistance = initialPositionDistance / TINA as Multiplier<Tina>
 
     return {
-        boundClassEventAnalyses: boundClassEventAnalyses,
+        boundEventAnalyses: boundEventAnalyses,
         pitch: position,
         rank,
         score,

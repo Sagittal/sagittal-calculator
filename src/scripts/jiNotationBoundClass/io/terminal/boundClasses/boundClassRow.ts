@@ -23,11 +23,11 @@ const computeJiNotationBoundClassRow = (
     } = jiNotationBoundClassIdentifiers
     const {
         bestRank,
-        bestPossibleBoundClassHistoryAnalysis,
+        bestPossibleBoundHistoryAnalysis,
         initialPosition,
         initialPositionTinaDistance,
-        bestPossibleBoundClassHistoryTotalDistance,
-        bestPossibleBoundClassHistoryTotalInaDistance,
+        bestPossibleBoundHistoryTotalDistance,
+        bestPossibleBoundHistoryTotalInaDistance,
     } = jiNotationBoundClassAnalysis
 
     const [
@@ -35,21 +35,21 @@ const computeJiNotationBoundClassRow = (
         highLevelRank,
         ultraLevelRank,
         extremeLevelRank,
-    ] = extractJiNotationLevelRanks(bestPossibleBoundClassHistoryAnalysis)
+    ] = extractJiNotationLevelRanks(bestPossibleBoundHistoryAnalysis)
 
     const [
-        bestPossibleBoundClassHistoryMediumDistance,
-        bestPossibleBoundClassHistoryHighDistance,
-        bestPossibleBoundClassHistoryUltraDistance,
-        bestPossibleBoundClassHistoryExtremeDistance,
-    ] = extractJiNotationLevelDistances(bestPossibleBoundClassHistoryAnalysis)
+        bestPossibleBoundHistoryMediumDistance,
+        bestPossibleBoundHistoryHighDistance,
+        bestPossibleBoundHistoryUltraDistance,
+        bestPossibleBoundHistoryExtremeDistance,
+    ] = extractJiNotationLevelDistances(bestPossibleBoundHistoryAnalysis)
 
     const [
-        bestPossibleBoundClassHistoryMediumInaDistance,
-        bestPossibleBoundClassHistoryHighInaDistance,
-        bestPossibleBoundClassHistoryUltraInaDistance,
-        bestPossibleBoundClassHistoryExtremeInaDistance,
-    ] = extractJiNotationLevelDistances(bestPossibleBoundClassHistoryAnalysis, { ina: true })
+        bestPossibleBoundHistoryMediumInaDistance,
+        bestPossibleBoundHistoryHighInaDistance,
+        bestPossibleBoundHistoryUltraInaDistance,
+        bestPossibleBoundHistoryExtremeInaDistance,
+    ] = extractJiNotationLevelDistances(bestPossibleBoundHistoryAnalysis, { ina: true })
 
     jiNotationBoundClassRow = [
         formatIntegerDecimal(jiNotationBoundClass.id, { align: true }),
@@ -62,16 +62,16 @@ const computeJiNotationBoundClassRow = (
         ultraLevelRank,
         extremeLevelRank,
         formatIntegerDecimal(bestRank, { align: true }),
-        bestPossibleBoundClassHistoryMediumDistance,
-        bestPossibleBoundClassHistoryHighDistance,
-        bestPossibleBoundClassHistoryUltraDistance,
-        bestPossibleBoundClassHistoryExtremeDistance,
-        formatDecimal(bestPossibleBoundClassHistoryTotalDistance, { align: true }),
-        bestPossibleBoundClassHistoryMediumInaDistance,
-        bestPossibleBoundClassHistoryHighInaDistance,
-        bestPossibleBoundClassHistoryUltraInaDistance,
-        bestPossibleBoundClassHistoryExtremeInaDistance,
-        formatDecimal(bestPossibleBoundClassHistoryTotalInaDistance, { align: true }), // These are ¢ but b/c the header
+        bestPossibleBoundHistoryMediumDistance,
+        bestPossibleBoundHistoryHighDistance,
+        bestPossibleBoundHistoryUltraDistance,
+        bestPossibleBoundHistoryExtremeDistance,
+        formatDecimal(bestPossibleBoundHistoryTotalDistance, { align: true }),
+        bestPossibleBoundHistoryMediumInaDistance,
+        bestPossibleBoundHistoryHighInaDistance,
+        bestPossibleBoundHistoryUltraInaDistance,
+        bestPossibleBoundHistoryExtremeInaDistance,
+        formatDecimal(bestPossibleBoundHistoryTotalInaDistance, { align: true }), // These are ¢ but b/c the header
         formatDecimal(cents, { align: true }),                                    // Specifically states they are ¢
         formatDecimal(computeCentsFromPitch(initialPosition), { align: true }),   // And this is a very dense table
         formatDecimal(initialPositionTinaDistance, { align: true }),              // We're saving space and no ¢ symbols

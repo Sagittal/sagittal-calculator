@@ -1,40 +1,40 @@
-import { isBoundClassEventContained } from "./doEventsContainEvent"
-import { BoundClassEventConsolidation, UpdateEventConsolidationOptions } from "./types"
+import { isBoundEventContained } from "./doEventsContainEvent"
+import { BoundEventConsolidation, UpdateEventConsolidationOptions } from "./types"
 
 const updateEventConsolidation = (
-    boundClassEventConsolidation: BoundClassEventConsolidation,
+    boundEventConsolidation: BoundEventConsolidation,
     options: UpdateEventConsolidationOptions,
 ): void => {
     const {
-        nextBoundClassEventAnalysis,
-        boundClassHistoryAnalysis,
-        boundClassEventAnalysis,
-        bestPossibleBoundClassHistoryAnalysis,
+        nextBoundEventAnalysis,
+        boundHistoryAnalysis,
+        boundEventAnalysis,
+        bestPossibleBoundHistoryAnalysis,
     } = options
 
     if (
-        nextBoundClassEventAnalysis
-        && !boundClassEventConsolidation.nextBoundClassEvents.includes(nextBoundClassEventAnalysis.name)
+        nextBoundEventAnalysis
+        && !boundEventConsolidation.nextBoundEvents.includes(nextBoundEventAnalysis.name)
     ) {
-        boundClassEventConsolidation.nextBoundClassEvents.push(nextBoundClassEventAnalysis.name)
+        boundEventConsolidation.nextBoundEvents.push(nextBoundEventAnalysis.name)
     }
 
-    if (boundClassHistoryAnalysis.possible) {
-        boundClassEventConsolidation.isPossibleBoundClassHistoryMember = true
+    if (boundHistoryAnalysis.possible) {
+        boundEventConsolidation.isPossibleBoundHistoryMember = true
     }
     if (
-        isBoundClassEventContained(
-            bestPossibleBoundClassHistoryAnalysis.boundClassEventAnalyses,
-            boundClassEventConsolidation,
+        isBoundEventContained(
+            bestPossibleBoundHistoryAnalysis.boundEventAnalyses,
+            boundEventConsolidation,
         )
     ) {
-        boundClassEventConsolidation.isBestPossibleBoundClassHistoryMember = true
+        boundEventConsolidation.isBestPossibleBoundHistoryMember = true
     }
-    if (boundClassHistoryAnalysis.rank < boundClassEventConsolidation.rankOfBestRankedMemberHistory) {
-        boundClassEventConsolidation.rankOfBestRankedMemberHistory = boundClassHistoryAnalysis.rank
+    if (boundHistoryAnalysis.rank < boundEventConsolidation.rankOfBestRankedMemberHistory) {
+        boundEventConsolidation.rankOfBestRankedMemberHistory = boundHistoryAnalysis.rank
     }
-    if (boundClassEventAnalysis.rank < boundClassEventConsolidation.rankOfBestRankedEventInAnyMemberHistory) {
-        boundClassEventConsolidation.rankOfBestRankedEventInAnyMemberHistory = boundClassEventAnalysis.rank
+    if (boundEventAnalysis.rank < boundEventConsolidation.rankOfBestRankedEventInAnyMemberHistory) {
+        boundEventConsolidation.rankOfBestRankedEventInAnyMemberHistory = boundEventAnalysis.rank
     }
 }
 

@@ -1,26 +1,26 @@
 import { Cents, computePitchFromCents, Multiplier } from "../../../../../../src/general"
 import { Ina, JiNotationLevel } from "../../../../../../src/sagittal"
 import { HIGHINA } from "../../../../../../src/sagittal/notations/ji/intervals"
-import { computeBoundClassEventInaDistance } from "../../../../../../src/scripts/jiNotationBoundClass/history/events/eventInaDistance"
-import { boundClassEventFixture } from "../../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
+import { computeBoundEventInaDistance } from "../../../../../../src/scripts/jiNotationBoundClass/history/events/eventInaDistance"
+import { boundEventFixture } from "../../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
-describe("computeBoundClassEventInaDistance", (): void => {
+describe("computeBoundEventInaDistance", (): void => {
     it("returns the difference in position between the bound class event and the previous bound class event in the bound class history                  ", (): void => {
-        const boundClassEvent = {
-            ...boundClassEventFixture,
+        const boundEvent = {
+            ...boundEventFixture,
             pitch: computePitchFromCents(5 as Cents),
             jiNotationLevel: JiNotationLevel.HIGH,
         }
-        const boundClassHistory = [
+        const boundHistory = [
             {
-                ...boundClassEventFixture,
+                ...boundEventFixture,
                 pitch: computePitchFromCents(3 as Cents),
             },
-            boundClassEvent,
+            boundEvent,
         ]
         const index = 1
 
-        const actual = computeBoundClassEventInaDistance(boundClassEvent, index, boundClassHistory)
+        const actual = computeBoundEventInaDistance(boundEvent, index, boundHistory)
 
         const expected = 2 / HIGHINA as Multiplier<Ina>
         expect(actual).toBeCloseToTyped(expected)

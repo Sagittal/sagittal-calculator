@@ -1,17 +1,17 @@
 import { Abs, abs, Cents, subtractPitch } from "../../../../general"
-import { BoundClassEvent, BoundClassHistory } from "../../histories"
+import { BoundEvent, BoundHistory } from "../../histories"
 
-const computeBoundClassEventDistance = (
-    boundClassEvent: BoundClassEvent,
+const computeBoundEventDistance = (
+    boundEvent: BoundEvent,
     index: number,
-    boundClassHistory: BoundClassHistory,
+    boundHistory: BoundHistory,
 ): Abs<Cents> =>
     abs(
         index === 0 ?
             0 as Cents :
-            subtractPitch(boundClassHistory[ index - 1 ].pitch, boundClassEvent.pitch),
+            subtractPitch(boundHistory[ index - 1 ].pitch, boundEvent.pitch),
     )
 
 export {
-    computeBoundClassEventDistance,
+    computeBoundEventDistance,
 }

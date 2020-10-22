@@ -1,16 +1,16 @@
-import { Name, Scamon } from "../../../general"
-import {BoundClass, BoundType, JiNotationBound, JiNotationLevel} from "../../../sagittal"
+import {Name, Scamon} from "../../../general"
+import {BoundType, JiNotationBound, JiNotationLevel} from "../../../sagittal"
 
-interface BoundClassEvent {
+interface BoundEvent {
     jiNotationLevel: JiNotationLevel,
     name: Name<JiNotationBound>,
     pitch: Scamon,
     boundType: BoundType,
 }
 
-type BoundClassHistory = BoundClassEvent[]
+type BoundHistory = BoundEvent[]
 
 export {
-    BoundClassEvent,
-    BoundClassHistory,
+    BoundEvent,
+    BoundHistory,
 }

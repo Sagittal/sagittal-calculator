@@ -1,3 +1,3 @@
-export { BoundClassEventAnalysis, computeInaDistance } from "./events"
+export { BoundEventAnalysis, computeInaDistance } from "./events"
 export { analyzeHistory } from "./analyzeHistory"
-export { BoundClassHistoryAnalysis, Score } from "./types"
+export { BoundHistoryAnalysis, Score } from "./types"

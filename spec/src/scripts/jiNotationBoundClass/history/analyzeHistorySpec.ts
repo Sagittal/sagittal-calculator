@@ -21,12 +21,12 @@ import {
 } from "../../../../../src/sagittal/notations/ji"
 import { EXTREME_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"
 import { computeInitialPosition } from "../../../../../src/scripts/jiNotationBoundClass/boundClass/initialPosition"
-import { BoundClassHistory } from "../../../../../src/scripts/jiNotationBoundClass/histories"
+import { BoundHistory } from "../../../../../src/scripts/jiNotationBoundClass/histories"
 import { analyzeHistory } from "../../../../../src/scripts/jiNotationBoundClass/history"
 import { RANKS } from "../../../../../src/scripts/jiNotationBoundClass/ranks"
 import {
-    boundClassEventAnalysisFixture,
-    boundClassEventFixture,
+    boundEventAnalysisFixture,
+    boundEventFixture,
     jiNotationBoundClassFixture,
 } from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
@@ -35,7 +35,7 @@ describe("analyzeHistory", (): void => {
         monzo: APOTOME.monzo,
         scaler: [25.5, EXTREME_EDA],
     } as Scamon<{ rational: false }>
-    let boundClassHistory: BoundClassHistory
+    let boundHistory: BoundHistory
     let pitch: Scamon<{ rational: false }>
     let jiNotationBoundClass: JiNotationBoundClass
     let initialPosition
@@ -48,15 +48,15 @@ describe("analyzeHistory", (): void => {
                 scaler: [1, 2400] as Quotient,  // 2^(1/2400) = 0.5¢
             } as Scamon<{ rational: false }>,
         )
-        boundClassHistory = [
+        boundHistory = [
             {
-                ...boundClassEventFixture,
+                ...boundEventFixture,
                 pitch,
                 boundType: BoundType.INA_MIDPOINT,
                 jiNotationLevel: JiNotationLevel.EXTREME,
             },
             {
-                ...boundClassEventFixture,
+                ...boundEventFixture,
                 pitch,
                 boundType: BoundType.SIZE_CATEGORY_BOUND,
                 jiNotationLevel: JiNotationLevel.INSANE,
@@ -69,11 +69,11 @@ describe("analyzeHistory", (): void => {
         }
         initialPosition = computeInitialPosition(jiNotationBoundClass)
 
-        const actual = analyzeHistory(boundClassHistory, jiNotationBoundClass, initialPosition)
+        const actual = analyzeHistory(boundHistory, jiNotationBoundClass, initialPosition)
 
-        expect(actual.boundClassEventAnalyses).toEqual([
+        expect(actual.boundEventAnalyses).toEqual([
             {
-                ...boundClassEventAnalysisFixture,
+                ...boundEventAnalysisFixture,
                 pitch,
                 boundType: BoundType.INA_MIDPOINT,
                 rank: RANKS[ BoundType.INA_MIDPOINT ],
@@ -83,7 +83,7 @@ describe("analyzeHistory", (): void => {
                 jiNotationLevel: JiNotationLevel.EXTREME,
             },
             {
-                ...boundClassEventAnalysisFixture,
+                ...boundEventAnalysisFixture,
                 pitch,
                 boundType: BoundType.SIZE_CATEGORY_BOUND,
                 rank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
@@ -103,15 +103,15 @@ describe("analyzeHistory", (): void => {
     describe("when the bound class history's position matches the actual JI notation bound class position                    ", (): void => {
         it("returns the bound class history's events with their rank, plus true for the possible property and a 0 tina error           ", (): void => {
             pitch = actualJiNotationBoundPitch
-            boundClassHistory = [
+            boundHistory = [
                 {
-                    ...boundClassEventFixture,
+                    ...boundEventFixture,
                     pitch,
                     boundType: BoundType.INA_MIDPOINT,
                     jiNotationLevel: JiNotationLevel.EXTREME,
                 },
                 {
-                    ...boundClassEventFixture,
+                    ...boundEventFixture,
                     pitch,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -124,7 +124,7 @@ describe("analyzeHistory", (): void => {
             }
             initialPosition = computeInitialPosition(jiNotationBoundClass)
 
-            const actual = analyzeHistory(boundClassHistory, jiNotationBoundClass, initialPosition)
+            const actual = analyzeHistory(boundHistory, jiNotationBoundClass, initialPosition)
 
             expect(actual.possible).toBe(true)
             expect(actual.tinaError).toBeCloseToTyped(0 as Multiplier<Tina>)
@@ -138,14 +138,14 @@ describe("analyzeHistory", (): void => {
                 actualJiNotationBoundPitch,
                 computePitchFromCents(multiply(TINA, expectedTinaError)),
             )
-            boundClassHistory = [
+            boundHistory = [
                 {
-                    ...boundClassEventFixture,
+                    ...boundEventFixture,
                     boundType: BoundType.INA_MIDPOINT,
                     pitch,
                 },
                 {
-                    ...boundClassEventFixture,
+                    ...boundEventFixture,
                     pitch,
                     boundType: BoundType.COMMA_MEAN,
                 },
@@ -157,7 +157,7 @@ describe("analyzeHistory", (): void => {
             }
             initialPosition = computeInitialPosition(jiNotationBoundClass)
 
-            const actual = analyzeHistory(boundClassHistory, jiNotationBoundClass, initialPosition)
+            const actual = analyzeHistory(boundHistory, jiNotationBoundClass, initialPosition)
 
             expect(actual.possible).toBe(false)
             expect(actual.tinaError).toBeCloseToTyped(expectedTinaError)
@@ -169,15 +169,15 @@ describe("analyzeHistory", (): void => {
                 actualJiNotationBoundPitch,
                 computePitchFromCents(multiply(TINA, expectedTinaError)),
             )
-            boundClassHistory = [
+            boundHistory = [
                 {
-                    ...boundClassEventFixture,
+                    ...boundEventFixture,
                     boundType:
                     BoundType.INA_MIDPOINT,
                     pitch,
                 },
                 {
-                    ...boundClassEventFixture,
+                    ...boundEventFixture,
                     pitch,
                     boundType: BoundType.INA_MIDPOINT,
                     jiNotationLevel: JiNotationLevel.EXTREME,
@@ -190,7 +190,7 @@ describe("analyzeHistory", (): void => {
             }
             initialPosition = computeInitialPosition(jiNotationBoundClass)
 
-            const actual = analyzeHistory(boundClassHistory, jiNotationBoundClass, initialPosition)
+            const actual = analyzeHistory(boundHistory, jiNotationBoundClass, initialPosition)
 
             expect(actual.possible).toBe(false)
             expect(actual.tinaError).toBeCloseToTyped(expectedTinaError)
@@ -202,15 +202,15 @@ describe("analyzeHistory", (): void => {
                 actualJiNotationBoundPitch,
                 computePitchFromCents(multiply(TINA, expectedTinaError)),
             )
-            boundClassHistory = [
+            boundHistory = [
                 {
-                    ...boundClassEventFixture,
+                    ...boundEventFixture,
                     boundType: BoundType.INA_MIDPOINT,
                     pitch,
                     jiNotationLevel: JiNotationLevel.EXTREME,
                 },
                 {
-                    ...boundClassEventFixture,
+                    ...boundEventFixture,
                     pitch,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     jiNotationLevel: JiNotationLevel.INSANE,
@@ -223,7 +223,7 @@ describe("analyzeHistory", (): void => {
             }
             initialPosition = computeInitialPosition(jiNotationBoundClass)
 
-            const actual = analyzeHistory(boundClassHistory, jiNotationBoundClass, initialPosition)
+            const actual = analyzeHistory(boundHistory, jiNotationBoundClass, initialPosition)
 
             expect(actual.possible).toBe(false)
             expect(actual.tinaError).toBeCloseToTyped(expectedTinaError)
@@ -235,14 +235,14 @@ describe("analyzeHistory", (): void => {
                 actualJiNotationBoundPitch,
                 computePitchFromCents(multiply(TINA, expectedTinaError)),
             )
-            boundClassHistory = [
+            boundHistory = [
                 {
-                    ...boundClassEventFixture,
+                    ...boundEventFixture,
                     boundType: BoundType.INA_MIDPOINT,
                     pitch,
                 },
                 {
-                    ...boundClassEventFixture,
+                    ...boundEventFixture,
                     pitch,
                     boundType: BoundType.COMMA_MEAN,
                 },
@@ -254,7 +254,7 @@ describe("analyzeHistory", (): void => {
             }
             initialPosition = computeInitialPosition(jiNotationBoundClass)
 
-            const actual = analyzeHistory(boundClassHistory, jiNotationBoundClass, initialPosition)
+            const actual = analyzeHistory(boundHistory, jiNotationBoundClass, initialPosition)
 
             expect(actual.possible).toBe(false)
             expect(actual.tinaError).toBeCloseToTyped(expectedTinaError)
