@@ -38,6 +38,9 @@ const n2Results: SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncl
 let previousTime = now()
 let time
 let previousSuccessfulNumerator = 1
+
+let checkInPoint = 10000
+
 for (
     let numerator = 5 as Numerator & Decimal<{integer: true}>;
     numerator <= MAX_NUMERATOR;
@@ -45,6 +48,11 @@ for (
 ) {
     // 5, 7, _ 11, 13, _, 17, 19
     if (dividesEvenly(numerator, 3)) continue
+
+    if (numerator > checkInPoint) {
+        checkInPoint = checkInPoint + 10000
+        saveLog(`(past check-in point ${checkInPoint})`, LogTarget.PROGRESS)
+    }
 
     const n2 = computeN2(numerator)
     const gpf = computeRationalDecimalGpf(numerator)
@@ -59,14 +67,14 @@ for (
     const numeratorsChecked = (numerator - previousSuccessfulNumerator) / 3
     previousSuccessfulNumerator = numerator
 
-    const averageTimeSpentPerNumeratorSinceLastCheck = delta / numeratorsChecked
+    const averageTimeSpentPerNumeratorSincePreviousSuccess = delta / numeratorsChecked
     const numeratorsRemaining = (MAX_NUMERATOR - numerator) / 3
     const timeRemainingEstimate = formatTime(
-        numeratorsRemaining * averageTimeSpentPerNumeratorSinceLastCheck as Ms,
+        numeratorsRemaining * averageTimeSpentPerNumeratorSincePreviousSuccess as Ms,
         TimePrecision.M,
     )
 
-    saveLog(`${numerator}: ${n2p} (~${timeRemainingEstimate} remaining; avg/num since last check ${formatTime(averageTimeSpentPerNumeratorSinceLastCheck as Ms)})`, LogTarget.PROGRESS)
+    saveLog(`${numerator}: ${n2p} (~${timeRemainingEstimate} remaining; avg/num since previous success ${formatTime(averageTimeSpentPerNumeratorSincePreviousSuccess as Ms)})`, LogTarget.PROGRESS)
     n2Results.push({numerator, gpf, n2} as SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2)
     n2pResults.push({numerator, gpf, n2p} as SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P)
 }
