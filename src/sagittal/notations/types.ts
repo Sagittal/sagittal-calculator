@@ -19,6 +19,8 @@ type BoundClass<T extends NumericProperties = {}> = {
 //  And if Symbol extends it, then it would have that info as well. Maybe that's fine. It is after all just a reference
 //  To the comma, right? That's the minimal interface, while also trying to capture the inextricable link between
 //  The symbol and the comma?
+//  And this synthetisizes with the effort to get symbols by ID, so you have to do less representing of their entirety
+//  In test I think...
 // State of the art plans described here: http://forum.sagittal.org/viewtopic.php?p=2492#p2492
 interface Notation {
     boundClassIds: Array<Id<BoundClass>>,

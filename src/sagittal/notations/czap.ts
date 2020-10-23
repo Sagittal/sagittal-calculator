@@ -67,6 +67,7 @@
 //    Wait is that seriously all you need to know? feels a bit weird,
 //    Like maybe you should just go ahead and include the flacco id in the accidental key?
 //    Oor no, stick to your guns about that being weird in Revo?
+//    Although there's no such thing as accidental key anymore...
 //  "B" :
 //  CommaDirection === Direction.SUPER ?
 //      "A" :
