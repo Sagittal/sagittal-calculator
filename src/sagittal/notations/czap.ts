@@ -29,13 +29,6 @@
 // }
 //
 // Const computeCaptureZone = ({ boundClassId, commaDirection, apotomeCount }: CaptureZoneOptions): Zone => {
-       // Todo: FLACOMBO, SECTION, NOTATION GENERATION
-       //  Shite I just realized that you won't be able to get the full capture zone without info from other elements
-       //  That is, the single individual flacombo won't have all the necessary info... so maybe you really should just
-       //  Have more of a single "away-er" bound, relative to the nearest apotome? and if it's missing, that means it
-       //  Straddles it? whether that's an apotome midpoint or apotome multiple?
-       //  So that will mean more infrastructure/overhead/reasoning about the bounds, rather than it being cut and dry
-       //  As a Zone... but maybe better overall?
 //     Const bound = getBoundClass(boundClassId).pitch
 //     Const boundAlteration = commaDirection === Direction.SUPER ? bound : invertScamon(bound)
 //     Const apotomeBase = multiplyScamon(

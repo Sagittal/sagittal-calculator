@@ -2,9 +2,6 @@ import {Direction, Id, stringify} from "../../general"
 import {SECTIONS} from "./sections"
 import {Flacombo, Section, SectionName} from "./types"
 
-// Todo: BLOCKED ON FLACOMBO, SECTION, NOTATION GENERATION
-//  Test, but maybe wait until we have this whole area sorted out
-
 const computeSectionName = (flacombo: Flacombo): SectionName => {
     const {commaClassId, commaDirection, apotomeCount, flaccoId} = flacombo
 

@@ -24,7 +24,7 @@ const computeAccidentalExpectation = (flacombo: Flacombo): AccidentalExpectation
     }
 
     return {
-        // Todo: BLOCKED ON FLACOMBO, SECTION, NOTATION GENERATION
+        // Todo: BLOCKED ON FLACOMBO, SECTION, NOTATION GENERATION (JUST TESTING)
         //  I think we could put the flacombo on here, and/or the Section
         evo,
         revo,

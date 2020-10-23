@@ -24,6 +24,6 @@ describe("computeRevoAccidentalFromFlacombo", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    // Todo: BLOCKED ON FLACOMBO, SECTION, NOTATION GENERATION
+    // Todo: BLOCKED ON FLACOMBO, SECTION, NOTATION GENERATION (JUST TESTING)
     //  Add specs for the other 11 sections, but wait until sort it out (and make sure to update test descriptions)
 })

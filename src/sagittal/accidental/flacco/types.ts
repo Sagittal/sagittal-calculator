@@ -73,7 +73,7 @@ interface Head {
     right?: Flag[],
 }
 
-// Todo: FLACOMBO, SECTION, NOTATION GENERATION: SYMBOL CLASS (SUBSET) / FIRST SECTION
+// Todo: FLACOMBO, SECTION, NOTATION GENERATION: SYMBOL CLASS (SUBSET) / FIRST SECTION / QUESTIONS OF ID
 //  I'm not quite ready for Symbol to have ID yet
 //  At that stage, you'd want a const SYMBOLS: Symbol[] and generate it and test it, and maybe apotome shift
 //  Apotome complement methods would only be used in test, becuase you'd be "get"ting the symbol, not computing it
@@ -105,6 +105,21 @@ interface Head {
 //  Accents and Flags in the single-shaft does not necessarily translate to 2-shaft. I mean I guess we could have
 //  Something that was intermediate, that included anything from 1 to 2 shafts, and then this becomes intertwined with
 //  The questions of limiting the apotome shift and apotome complement methods to something *like* a section but not
+//  - And Yeah Flacco is totally one of those things which should go by name, not ID
+//  Or perhaps maybe just more like we've got the records of Core by CoreName, right
+//  And probably also at some point Symbol by SymbolName...?
+//  But think about the fact that having the order in the form of the ID is actually quite handy sometimes...
+//  Anyway, the other example is CommaClass, like:
+//  Hey here's an idea... what if everywhere instead of ID we used names, so we could see what we were doing? e.g.
+//  Const COMMA_CLASS_1_u = {
+//    Name: "1u" as Name<Comma>,
+//    RepresentativeFlaccoId: 0 as Id<Flacco>,
+//    Pitch: UNISON,
+//  }
+//  And I wonder if Class<> shouldn't also be a parameterized type since we use that so much now?
+//  In which case it would simply add an Id to a thing? and put the thing itself on a key called... object?
+//  I think you'd have to make it generic, like it couldn't put a custom key on there based on the type parameter...
+//  Or maybe we should just imagine a world without IDs at all...
 interface Symbolic {
     arm?: Arm,
     core?: Head,
@@ -112,19 +127,6 @@ interface Symbolic {
 
 // Flag and Accent Combination; basically a "symbol class" (see: http://forum.sagittal.org/viewtopic.php?p=2474#p2474)
 interface Flacco extends Symbolic {
-    // TODO: ID VS NAME
-    //  Yeah Flacco is totally one of those things which should go by name, not ID
-    //  Or perhaps maybe just more like we've got the records of Core by CoreName, right
-    //  And probably also at some point Symbol by SymbolName...?
-    //  But think about the fact that having the order in the form of the ID is actually quite handy sometimes...
-    //  Anyway, the other example is CommaClass, like:
-    //  Hey here's an idea... what if everywhere instead of ID we used names, so we could see what we were doing? e.g.
-    //  Const COMMA_CLASS_1_u = {
-    //    Name: "1u" as Name<Comma>,
-    //    RepresentativeFlaccoId: 0 as Id<Flacco>,
-    //    Pitch: UNISON,
-    //  }
-    //  And I wonder if Class<> shouldn't also be a parameterized type since we use that so much now?
     id: Id<Flacco>,
 }
 

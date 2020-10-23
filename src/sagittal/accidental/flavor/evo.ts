@@ -5,29 +5,8 @@ import {computeSymbolFromFlacco, flipSymbol} from "../symbol"
 import {Accidental, Compatible, Flavor} from "./types"
 
 const computeEvoAccidentalFromFlacombo = (flacombo: Flacombo): Accidental<Flavor.EVO> => {
-    // Todo: FLACOMBO, SECTION, NOTATION GENERATION: MINIMAL FLACOMBO SHAPE
-    //  Kind of crazy, it doesn't need commaClassId for evo at all... kind of makes me want to get rid of it in
-    //  Revo and just say whether it's in section B or whatever (I think at some point I may have been going the other
-    //  Way, i.e. trying to get rid of flaccoId instead of commaClassId but I thin this way makes more sense actually
-    //  - Later: wait no again, all you need to know is whether they equal
-    //  (This next bit extracted from a related chunk in czap.ts)
-    //  Wait is that seriously all you need to know? (whether flaccoId === commaClassId or not) It feels a bit weird,
-    //  Like maybe you should just go ahead and include the flacco id in the accidental key?
-    //  Oor no, stick to your guns about that being weird in Revo?
-    //  Although there's no such thing as accidental key anymore...
-
-    // Todo: FLACOMBO, SECTION, NOTATION GENERATION
-    //  If you simplify the section to shaft odd/even, I'm pretty sure you shouldn't need apotomeCount here anymore
-    //  Which would be good
-    //  Although I tried that one point, and I hadn't thought it through clearly enough
-    //  So clearly there's a difference between apotomeCount, which changes along with commas, and there are 5 zones
-    //  And apotomeSection, which also changes with commas, but is halfway offset, so there are only 4 zones
-
     const flacco = getFlacco(flacombo.flaccoId)
     let symbol = computeSymbolFromFlacco(flacco)
-    // Todo: FLACOMBO, SECTION, NOTATION GENERATION
-    //  Right. the fact that we're importing from notation/section here I think just speaks to the fact that it
-    //  Should be contained in the flacombo
     const section = computeSection(flacombo)
 
     symbol = section.accidentalSection === AccidentalSection.C ?

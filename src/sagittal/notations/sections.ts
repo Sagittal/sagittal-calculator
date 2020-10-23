@@ -1,7 +1,5 @@
 import {AccidentalSection, AimSection, ApotomeSection, Section, SectionName} from "./types"
 
-// Todo: BLOCKED ON FLACOMBO, SECTION, NOTATION GENERATION
-//  This could be generated. But wait until you sort this whole section out.
 const SECTIONS: Record<SectionName, Section> = {
     [SectionName.D2C]: {
         aimSection: AimSection.D,
