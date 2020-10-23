@@ -41,6 +41,7 @@ export {
     formatPitch,
     Formatted,
     formatCents,
+    TimePrecision,
 } from "./format"
 export {time} from "./time"
 export {readLines} from "./lines"

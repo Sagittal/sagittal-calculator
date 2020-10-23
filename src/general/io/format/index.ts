@@ -1,4 +1,4 @@
-export {Formatted} from "./types"
+export {Formatted, TimePrecision} from "./types"
 export {formatMonzo} from "./monzo"
 export {formatDecimal, formatIntegerDecimal, alignFormattedDecimal} from "./decimal"
 export {formatQuotient} from "./quotient"

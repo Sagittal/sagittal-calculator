@@ -5,13 +5,17 @@ import {
     Decimal,
     dividesEvenly,
     Filename,
+    formatTime,
     KeyPath,
     LogTarget,
+    Ms,
+    now,
     Numerator,
     parseCommands,
     saveLog,
     sort,
     stringify,
+    TimePrecision,
 } from "../../../general"
 import {
     SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P,
@@ -31,6 +35,9 @@ const n2pResults: SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIn
 const n2Results: SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2[] =
     [] as unknown[] as SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2[]
 
+let previousTime = now()
+let time
+let previousSuccessfulNumerator = 1
 for (
     let numerator = 5 as Numerator & Decimal<{integer: true}>;
     numerator <= MAX_NUMERATOR;
@@ -45,7 +52,21 @@ for (
 
     if (n2p / 9 > 5298.2) continue
 
-    saveLog(`${numerator}: ${n2p}`, LogTarget.PROGRESS)
+    time = now()
+    const delta = time - previousTime
+    previousTime = time
+
+    const numeratorsChecked = (numerator - previousSuccessfulNumerator) / 3
+    previousSuccessfulNumerator = numerator
+
+    const averageTimeSpentPerNumeratorSinceLastCheck = delta / numeratorsChecked
+    const numeratorsRemaining = (MAX_NUMERATOR - numerator) / 3
+    const timeRemainingEstimate = formatTime(
+        numeratorsRemaining * averageTimeSpentPerNumeratorSinceLastCheck as Ms,
+        TimePrecision.M,
+    )
+
+    saveLog(`${numerator}: ${n2p} (~${timeRemainingEstimate} remaining; avg/num since last check ${formatTime(averageTimeSpentPerNumeratorSinceLastCheck as Ms)})`, LogTarget.PROGRESS)
     n2Results.push({numerator, gpf, n2} as SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2)
     n2pResults.push({numerator, gpf, n2p} as SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P)
 }

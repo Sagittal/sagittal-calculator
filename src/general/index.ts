@@ -101,6 +101,7 @@ export {
     Justification,
     JustificationOption,
     Char,
+    TimePrecision,
 } from "./io"
 export {
     abs,
