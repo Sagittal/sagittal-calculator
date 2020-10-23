@@ -73,7 +73,7 @@ interface Head {
     right?: Flag[],
 }
 
-// Todo: FLACOMBO, SECTION, NOTATION GENERATION
+// Todo: FLACOMBO, SECTION, NOTATION GENERATION: SYMBOL CLASS (SUBSET) / FIRST SECTION
 //  I'm not quite ready for Symbol to have ID yet
 //  At that stage, you'd want a const SYMBOLS: Symbol[] and generate it and test it, and maybe apotome shift
 //  Apotome complement methods would only be used in test, becuase you'd be "get"ting the symbol, not computing it
@@ -90,6 +90,21 @@ interface Head {
 //  But this isn’t related to the minimum representation of a notation
 //  Though the generation of all valid symbols should be similar to the generation of the extreme JI notation...
 //  And if you do actually add SymbolClass, then address the comment introducing flacco below.
+//  - Maybe it really should be Symbol subset, not Flacco subset,
+//  Because some Flaccos cross over in the Revo notation, you know?
+//  E.g. )||( is in Spartan multi-shaft, but no single-shaft right scroll
+//  Or is the problem only really solvable by that Flaccos only apply to the 1-shaft symbols,
+//  And multi-shaft symbols are just not even flag & accent combos??
+//  I mean, you could solve it by just calling them symbol subsets, but then you have to include all the redundants...
+//  Or how about saying that notations have only comma subsets?
+//  Now this might be intertwined with the problem of whether a notation can be specified by ONLY one of
+//  A list of Flacco IDs or a list of CommaClass IDs
+//  Okay, well but actually, a symbol subset is meaningfully different than a flacco subset, because of like how
+//  Spartan contains )||( as I just said above, you know?
+//  In other words, we don't currently have captured anywhere an array of valid symbols, because the combinations of
+//  Accents and Flags in the single-shaft does not necessarily translate to 2-shaft. I mean I guess we could have
+//  Something that was intermediate, that included anything from 1 to 2 shafts, and then this becomes intertwined with
+//  The questions of limiting the apotome shift and apotome complement methods to something *like* a section but not
 interface Symbolic {
     arm?: Arm,
     core?: Head,
@@ -113,21 +128,6 @@ interface Flacco extends Symbolic {
     id: Id<Flacco>,
 }
 
-// Todo: FLACOMBO, SECTION, NOTATION GENERATION
-//  Maybe it really should be Symbol subset, because some Flaccos cross over in the Revo notation, you know?
-//  E.g. )||( is in Spartan multi-shaft, but no single-shaft right scroll
-//  Or is the problem only really solvable by that Flaccos only apply to the 1-shaft symbols,
-//  And multi-shaft symbols are just not even flag & accent combos??
-//  I mean, you could solve it by just calling them symbol subsets, but then you have to include all the redundants...
-//  Or how about saying that notations have only comma subsets?
-//  Now this might be intertwined with the problem of whether a notation can be specified by ONLY one of
-//  A list of Flacco IDs or a list of CommaClass IDs
-//  Okay, well but actually, a symbol subset is meaningfully different than a flacco subset, because of like how
-//  Spartan contains )||( as I just said above, you know?
-//  In other words, we don't currently have captured anywhere an array of valid symbols, because the combinations of
-//  Accents and Flags in the single-shaft does not necessarily translate to 2-shaft. I mean I guess we could have
-//  Something that was intermediate, that included anything from 1 to 2 shafts, and then this becomes intertwined with
-//  The questions of limiting the apotome shift and apotome complement methods to something *like* a section but not
 enum FlaccoSubset {
     COMPATIBLE = "compatible",
     SPARTAN = "spartan",

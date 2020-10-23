@@ -118,20 +118,6 @@ const APOTOME_COMPLEMENT_CORE_PAIRS: Array<[Core, Core]> = [
         getCore(HeadName.LEFT_SCROLL_AND_DOUBLE_BARB),
         getCore(HeadName.LEFT_SCROLL_AND_DOUBLE_BARB),
     ],                                                                      //   )/|\     )/|\   Z
-    // Todo: FLACOMBO, SECTION, NOTATION GENERATION
-    //  Wait, is apotome complementing really a Flacco-level operation???
-    //  No. it aallllmost is, in the middle it is, but then at the fringes its not (viewing the PDF chart)
-    //  The reason I was wondering, of course, was becuase this only works on BaseSymbols. well, it returns things
-    //  Which AREN'T base symbols possibly, since some things in here are 2-shafts.
-    //  I don't like the idea of supporting things outside the 0-1 apotome range, though. perhaps it should just throw
-    //  An error if given one in the -2, -1, or 2 apotome section.
-    //  - And I just keep thinking this over and over, how apotome complementing and apotome shifting both work best
-    //  With symbols in the section which is positive and w/in 1 apotome of natural. but I prefer for the concept of
-    //  "Section" to be specific to Accidental, not to Symbol, because as soon as it applies to symbol then things get
-    //  A little confusing w/ Evo because you can have an Accidental in one section whose symbol is in another section..
-    //  But again I don't think we want types to have "convenience" properties, things which can be unambiguously
-    //  Computed based on stuff that's already there. They should be the absolute minimum representation of the info
-    //  So how about add a method which just tells you whether the symbol is in the first section? section U1?
 ]
 
 const computeApotomeComplement = (symbol: Symbol): Symbol => {

@@ -19,8 +19,14 @@ type BoundClass<T extends NumericProperties = {}> = {
 //  And if Symbol extends it, then it would have that info as well. Maybe that's fine. It is after all just a reference
 //  To the comma, right? That's the minimal interface, while also trying to capture the inextricable link between
 //  The symbol and the comma?
-//  And this synthetisizes with the effort to get symbols by ID, so you have to do less representing of their entirety
+//  And this synthesizes with the effort to get symbols by ID, so you have to do less representing of their entirety
 //  In test I think...
+//  - So I kind of want to only need to supply stuff up to the half-apotome
+//  Which lends itself to only supplying the commas
+//  We don't really think of the notation as being defined by the commas... usually as defined by the symbols...
+//  Maybe we should just change that thinking though
+//  - Also, what if we did something like this: either commas could specify the OTHER bigger flacco too, if any
+//  Or the flacco could specify if it has a halfApotomeMirrorFlacco...
 // State of the art plans described here: http://forum.sagittal.org/viewtopic.php?p=2492#p2492
 interface Notation {
     boundClassIds: Array<Id<BoundClass>>,
