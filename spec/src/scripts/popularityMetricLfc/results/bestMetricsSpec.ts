@@ -1,5 +1,5 @@
 import {Metric} from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
-import {bestMetrics} from "../../../../../src/scripts/popularityMetricLfc/results/bestMetrics"
+import {bestMetrics} from "../../../../../src/scripts/popularityMetricLfc/results"
 import {computeSumOfSquaresForSubmetrics} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
 describe("best metrics", (): void => {

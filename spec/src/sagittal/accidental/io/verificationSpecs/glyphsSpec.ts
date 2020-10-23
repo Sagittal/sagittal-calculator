@@ -1,6 +1,6 @@
 import {isUndefined} from "../../../../../../src/general/code"
 import {Aim, Ascii, Compatible, Smiley, Unicode} from "../../../../../../src/sagittal/accidental"
-import {Accent, FlagComboName, Orientation} from "../../../../../../src/sagittal/accidental/flacco"
+import {Accent, HeadName, Orientation} from "../../../../../../src/sagittal/accidental/flacco"
 import {Shafts} from "../../../../../../src/sagittal/accidental/symbol"
 import {
     computeAccentGlyphExpectation,
@@ -13,10 +13,10 @@ describe("glyphs", (): void => {
     it("has the correct core glyphs and computes their IO correctly", (): void => {
         const coreGlyphExpectations = [] as GlyphExpectation[]
 
-        Object.values(FlagComboName).forEach((flagComboName: FlagComboName): void => {
+        Object.values(HeadName).forEach((headName: HeadName): void => {
             Object.values(Shafts).forEach((shafts: Shafts): void => {
                 Object.values(Aim).forEach((aim: Aim): void => {
-                    const coreGlyphExpectation = computeCoreGlyphExpectation(flagComboName, shafts, aim)
+                    const coreGlyphExpectation = computeCoreGlyphExpectation(headName, shafts, aim)
 
                     if (!isUndefined(coreGlyphExpectation)) coreGlyphExpectations.push(coreGlyphExpectation)
                 })

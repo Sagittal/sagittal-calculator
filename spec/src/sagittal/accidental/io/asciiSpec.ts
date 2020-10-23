@@ -8,16 +8,15 @@ import {
     Flavor,
     Symbol,
 } from "../../../../../src/sagittal/accidental"
-import {getArm} from "../../../../../src/sagittal/accidental/flacco/arms"
-import {ArmName, FlagComboName} from "../../../../../src/sagittal/accidental/flacco/types"
-import {Shafts} from "../../../../../src/sagittal/accidental/symbol"
-import {getCore} from "../../../../../src/sagittal/accidental/symbol/core"
+import {getArm} from "../../../../../src/sagittal/accidental/flacco/arm"
+import {ArmName, HeadName} from "../../../../../src/sagittal/accidental/flacco/types"
+import {getCore, Shafts} from "../../../../../src/sagittal/accidental/symbol"
 
 describe("computeSymbolAscii", (): void => {
     it("given a symbol, returns its ASCII representation", (): void => {
         const symbol: Symbol = {
             arm: getArm(ArmName.BIRD),
-            core: getCore(FlagComboName.LEFT_SCROLL),
+            core: getCore(HeadName.LEFT_SCROLL),
         }
 
         const actual = computeSymbolAscii(symbol)
@@ -27,7 +26,7 @@ describe("computeSymbolAscii", (): void => {
     })
 
     it("converts 4 shafts up into an ex up", (): void => {
-        const symbol: Symbol = {core: getCore(FlagComboName.LEFT_SCROLL_AND_BARB, Shafts.EX)}
+        const symbol: Symbol = {core: getCore(HeadName.LEFT_SCROLL_AND_BARB, Shafts.EX)}
 
         const actual = computeSymbolAscii(symbol)
 
@@ -36,7 +35,7 @@ describe("computeSymbolAscii", (): void => {
     })
 
     it("converts 4 shafts down into an ex down", (): void => {
-        const symbol: Symbol = {core: getCore(FlagComboName.ARC_AND_BOATHOOK, Shafts.EX, Aim.DOWN)}
+        const symbol: Symbol = {core: getCore(HeadName.ARC_AND_BOATHOOK, Shafts.EX, Aim.DOWN)}
 
         const actual = computeSymbolAscii(symbol)
 
@@ -58,7 +57,7 @@ describe("computeSymbolAscii", (): void => {
 describe("computeAccidentalAscii", (): void => {
     it("works for accidentals with a Sagittal-compatible glyph", (): void => {
         const accidental: Accidental<Flavor.EVO> = {
-            core: getCore(FlagComboName.LEFT_BARB),
+            core: getCore(HeadName.LEFT_BARB),
             compatible: Compatible.SHARP,
         } as Accidental<Flavor.EVO>
 

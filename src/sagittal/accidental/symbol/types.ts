@@ -1,4 +1,4 @@
-import {FlagCombo, Symbolic} from "../flacco"
+import {Head, Symbolic} from "../flacco"
 
 enum Aim {
     UP = "up",
@@ -12,7 +12,7 @@ enum Shafts {
     EX = "ex",
 }
 
-interface Core extends FlagCombo {
+interface Core extends Head {
     aim: Aim,
     shafts: Shafts,
 }

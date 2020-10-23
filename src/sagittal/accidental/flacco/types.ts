@@ -33,7 +33,7 @@ enum Flag {
     BOATHOOK = "boathook",
 }
 
-enum FlagComboName {
+enum HeadName {
     BARE_SHAFT = "bareShaft",
     RIGHT_SCROLL = "rightScroll",
     LEFT_BARB = "leftBarb",
@@ -68,7 +68,7 @@ enum FlagComboName {
     LEFT_SCROLL_DOUBLE_RIGHT_BARB = "leftScrollDoubleRightBarb",
 }
 
-interface FlagCombo {
+interface Head {
     left?: Flag[],
     right?: Flag[],
 }
@@ -82,7 +82,7 @@ interface FlagCombo {
 //  Does this respect the principle of things expressing their existence minimally? do IDs go against that already? etc.
 interface Symbolic {
     arm?: Arm,
-    core?: FlagCombo,
+    core?: Head,
 }
 
 // Flag and Accent Combination; basically a "symbol class" (see: http://forum.sagittal.org/viewtopic.php?p=2474#p2474)
@@ -134,8 +134,8 @@ export {
     Flacco,
     Flag,
     Accent,
-    FlagCombo,
-    FlagComboName,
+    Head,
+    HeadName,
     Symbolic,
     Arm,
     ArmName,

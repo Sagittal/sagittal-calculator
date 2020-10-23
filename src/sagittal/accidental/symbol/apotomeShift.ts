@@ -1,5 +1,5 @@
 import {deepEquals, isUndefined, stringify} from "../../../general"
-import {FlagComboName} from "../flacco"
+import {HeadName} from "../flacco"
 import {getCore} from "./core"
 import {Aim, Shafts, Symbol} from "./types"
 
@@ -11,8 +11,8 @@ const apotomeShift = (symbol: Symbol): Symbol => {
         throw new Error(`Do not shift symbols which are already in the 2nd apotome section ${stringify(symbol)}`)
     }
 
-    if (isUndefined(symbol.core) || deepEquals(symbol.core, getCore(FlagComboName.BARE_SHAFT))) {
-        return {...symbol, core: getCore(FlagComboName.DOUBLE_BARB, Shafts.DOUBLE)}
+    if (isUndefined(symbol.core) || deepEquals(symbol.core, getCore(HeadName.BARE_SHAFT))) {
+        return {...symbol, core: getCore(HeadName.DOUBLE_BARB, Shafts.DOUBLE)}
     }
 
     return {

@@ -1,5 +1,5 @@
 import {deepEquals, isUndefined, Maybe, stringify} from "../../../general"
-import {FlagComboName, OrientedAccent, reorient} from "../flacco"
+import {HeadName, OrientedAccent, reorient} from "../flacco"
 import {getCore} from "./core"
 import {Core, Shafts, Symbol} from "./types"
 
@@ -11,112 +11,112 @@ const reorientAccent = (orientedAccent: OrientedAccent): OrientedAccent =>
 
 const APOTOME_COMPLEMENT_CORE_PAIRS: Array<[Core, Core]> = [
     [
-        getCore(FlagComboName.BARE_SHAFT),
-        getCore(FlagComboName.DOUBLE_BARB, Shafts.DOUBLE),
+        getCore(HeadName.BARE_SHAFT),
+        getCore(HeadName.DOUBLE_BARB, Shafts.DOUBLE),
     ],                                                                      //     |      /||\
     [
-        getCore(FlagComboName.LEFT_SCROLL),
-        getCore(FlagComboName.ARC_AND_BOATHOOK, Shafts.DOUBLE),
+        getCore(HeadName.LEFT_SCROLL),
+        getCore(HeadName.ARC_AND_BOATHOOK, Shafts.DOUBLE),
     ],                                                                      //    )|      (||~   A W
     [
-        getCore(FlagComboName.RIGHT_SCROLL),
-        getCore(FlagComboName.BARB_AND_ARC, Shafts.DOUBLE),
+        getCore(HeadName.RIGHT_SCROLL),
+        getCore(HeadName.BARB_AND_ARC, Shafts.DOUBLE),
     ],                                                                      //     |(     /||)   B V
     [
-        getCore(FlagComboName.LEFT_BOATHOOK),
-        getCore(FlagComboName.LEFT_SCROLL_DOUBLE_LEFT_BARB, Shafts.DOUBLE),
+        getCore(HeadName.LEFT_BOATHOOK),
+        getCore(HeadName.LEFT_SCROLL_DOUBLE_LEFT_BARB, Shafts.DOUBLE),
     ],                                                                      //    ~|    )//||    C U
     [
-        getCore(FlagComboName.DOUBLE_SCROLL),
-        getCore(FlagComboName.DOUBLE_LEFT_BARB, Shafts.DOUBLE),
+        getCore(HeadName.DOUBLE_SCROLL),
+        getCore(HeadName.DOUBLE_LEFT_BARB, Shafts.DOUBLE),
     ],                                                                      //    )|(    //||    D T
     [
-        getCore(FlagComboName.LEFT_SCROLL_AND_BOATHOOK),
-        getCore(FlagComboName.BOATHOOK_AND_BARB, Shafts.DOUBLE),
+        getCore(HeadName.LEFT_SCROLL_AND_BOATHOOK),
+        getCore(HeadName.BOATHOOK_AND_BARB, Shafts.DOUBLE),
     ],                                                                      //   )~|      ~||\   E S
     [
-        getCore(FlagComboName.BOATHOOK_AND_SCROLL),
-        getCore(FlagComboName.ARC_AND_SCROLL, Shafts.DOUBLE),
+        getCore(HeadName.BOATHOOK_AND_SCROLL),
+        getCore(HeadName.ARC_AND_SCROLL, Shafts.DOUBLE),
     ],                                                                      //    ~|(     (||(   F R
     [
-        getCore(FlagComboName.RIGHT_BOATHOOK),
-        getCore(FlagComboName.BARB_AND_BOATHOOK, Shafts.DOUBLE),
+        getCore(HeadName.RIGHT_BOATHOOK),
+        getCore(HeadName.BARB_AND_BOATHOOK, Shafts.DOUBLE),
     ],                                                                      //     |~     /||~   G Q
     [
-        getCore(FlagComboName.DOUBLE_LEFT_BOATHOOK),
-        getCore(FlagComboName.BOATHOOK_AND_ARC, Shafts.DOUBLE),
+        getCore(HeadName.DOUBLE_LEFT_BOATHOOK),
+        getCore(HeadName.BOATHOOK_AND_ARC, Shafts.DOUBLE),
     ],                                                                      //   ~~|      ~||)   H P
     [
-        getCore(FlagComboName.SCROLL_AND_BOATHOOK),
-        getCore(FlagComboName.LEFT_ARC, Shafts.DOUBLE),
+        getCore(HeadName.SCROLL_AND_BOATHOOK),
+        getCore(HeadName.LEFT_ARC, Shafts.DOUBLE),
     ],                                                                      //    )|~     (||    I O
     [
-        getCore(FlagComboName.LEFT_BARB),
-        getCore(FlagComboName.RIGHT_BARB, Shafts.DOUBLE),
+        getCore(HeadName.LEFT_BARB),
+        getCore(HeadName.RIGHT_BARB, Shafts.DOUBLE),
     ],                                                                      //    /|       ||\   J N
     [
-        getCore(FlagComboName.LEFT_SCROLL_AND_BARB),
-        getCore(FlagComboName.SCROLL_AND_ARC, Shafts.DOUBLE),
+        getCore(HeadName.LEFT_SCROLL_AND_BARB),
+        getCore(HeadName.SCROLL_AND_ARC, Shafts.DOUBLE),
     ],                                                                      //   )/|      )||)   K M
     [
-        getCore(FlagComboName.RIGHT_ARC),
-        getCore(FlagComboName.RIGHT_ARC, Shafts.DOUBLE),
+        getCore(HeadName.RIGHT_ARC),
+        getCore(HeadName.RIGHT_ARC, Shafts.DOUBLE),
     ],                                                                      //     |)      ||)   L L
     [
-        getCore(FlagComboName.SCROLL_AND_ARC),
-        getCore(FlagComboName.LEFT_SCROLL_AND_BARB, Shafts.DOUBLE),
+        getCore(HeadName.SCROLL_AND_ARC),
+        getCore(HeadName.LEFT_SCROLL_AND_BARB, Shafts.DOUBLE),
     ],                                                                      //    )|)    )/||    M K
     [
-        getCore(FlagComboName.RIGHT_BARB),
-        getCore(FlagComboName.LEFT_BARB, Shafts.DOUBLE),
+        getCore(HeadName.RIGHT_BARB),
+        getCore(HeadName.LEFT_BARB, Shafts.DOUBLE),
     ],                                                                      //     |\     /||    N J
     [
-        getCore(FlagComboName.LEFT_ARC),
-        getCore(FlagComboName.SCROLL_AND_BOATHOOK, Shafts.DOUBLE),
+        getCore(HeadName.LEFT_ARC),
+        getCore(HeadName.SCROLL_AND_BOATHOOK, Shafts.DOUBLE),
     ],                                                                      //    (|      )||~   O I
     [
-        getCore(FlagComboName.BOATHOOK_AND_ARC),
-        getCore(FlagComboName.DOUBLE_LEFT_BOATHOOK, Shafts.DOUBLE),
+        getCore(HeadName.BOATHOOK_AND_ARC),
+        getCore(HeadName.DOUBLE_LEFT_BOATHOOK, Shafts.DOUBLE),
     ],                                                                      //    ~|)    ~~||    P H
     [
-        getCore(FlagComboName.BARB_AND_BOATHOOK),
-        getCore(FlagComboName.RIGHT_BOATHOOK, Shafts.DOUBLE),
+        getCore(HeadName.BARB_AND_BOATHOOK),
+        getCore(HeadName.RIGHT_BOATHOOK, Shafts.DOUBLE),
     ],                                                                      //    /|~      ||~   Q G
     [
-        getCore(FlagComboName.ARC_AND_SCROLL),
-        getCore(FlagComboName.BOATHOOK_AND_SCROLL, Shafts.DOUBLE),
+        getCore(HeadName.ARC_AND_SCROLL),
+        getCore(HeadName.BOATHOOK_AND_SCROLL, Shafts.DOUBLE),
     ],                                                                      //    (|(     ~||(   R F
     [
-        getCore(FlagComboName.BOATHOOK_AND_BARB),
-        getCore(FlagComboName.LEFT_SCROLL_AND_BOATHOOK, Shafts.DOUBLE),
+        getCore(HeadName.BOATHOOK_AND_BARB),
+        getCore(HeadName.LEFT_SCROLL_AND_BOATHOOK, Shafts.DOUBLE),
     ],                                                                      //    ~|\    )~||    S E
     [
-        getCore(FlagComboName.DOUBLE_LEFT_BARB),
-        getCore(FlagComboName.DOUBLE_SCROLL, Shafts.DOUBLE),
+        getCore(HeadName.DOUBLE_LEFT_BARB),
+        getCore(HeadName.DOUBLE_SCROLL, Shafts.DOUBLE),
     ],                                                                      //   //|      )||(   T D
     [
-        getCore(FlagComboName.LEFT_SCROLL_AND_DOUBLE_BARB),
-        getCore(FlagComboName.LEFT_SCROLL_DOUBLE_RIGHT_BARB),
+        getCore(HeadName.LEFT_SCROLL_AND_DOUBLE_BARB),
+        getCore(HeadName.LEFT_SCROLL_DOUBLE_RIGHT_BARB),
     ],                                                                      //  )//|       )|\\  U
     [
-        getCore(FlagComboName.BARB_AND_ARC),
-        getCore(FlagComboName.ARC_AND_BARB),
+        getCore(HeadName.BARB_AND_ARC),
+        getCore(HeadName.ARC_AND_BARB),
     ],                                                                      //    /|)      (|\   V
     [
-        getCore(FlagComboName.ARC_AND_BOATHOOK),
-        getCore(FlagComboName.DOUBLE_RIGHT_BARB),
+        getCore(HeadName.ARC_AND_BOATHOOK),
+        getCore(HeadName.DOUBLE_RIGHT_BARB),
     ],                                                                      //    (|~       |\\  W
     [
-        getCore(FlagComboName.DOUBLE_BARB),
-        getCore(FlagComboName.DOUBLE_ARC),
+        getCore(HeadName.DOUBLE_BARB),
+        getCore(HeadName.DOUBLE_ARC),
     ],                                                                      //    /|\      (|)   X
     [
-        getCore(FlagComboName.LEFT_ARC_AND_BARB),
-        getCore(FlagComboName.RIGHT_BARB_AND_ARC),
+        getCore(HeadName.LEFT_ARC_AND_BARB),
+        getCore(HeadName.RIGHT_BARB_AND_ARC),
     ],                                                                      //   (/|        |\)  Y
     [
-        getCore(FlagComboName.LEFT_SCROLL_AND_DOUBLE_BARB),
-        getCore(FlagComboName.LEFT_SCROLL_AND_DOUBLE_BARB),
+        getCore(HeadName.LEFT_SCROLL_AND_DOUBLE_BARB),
+        getCore(HeadName.LEFT_SCROLL_AND_DOUBLE_BARB),
     ],                                                                      //   )/|\     )/|\   Z
     // Todo: FLACOMBO, SECTION, NOTATION GENERATION
     //  Wait, is apotome complementing really a Flacco-level operation???
@@ -136,7 +136,7 @@ const APOTOME_COMPLEMENT_CORE_PAIRS: Array<[Core, Core]> = [
 
 const computeApotomeComplement = (symbol: Symbol): Symbol => {
     if (isUndefined(symbol.core)) {
-        return {core: getCore(FlagComboName.DOUBLE_BARB, Shafts.DOUBLE)}
+        return {core: getCore(HeadName.DOUBLE_BARB, Shafts.DOUBLE)}
     }
 
     let apotomeComplementCore: Maybe<Core> = undefined
