@@ -8,7 +8,7 @@ import {
 } from "../../../../../../src/general/math/rational/scamon"
 
 describe("subtractRationalScamons", (): void => {
-    it("works for two rational scamons, subtracting the from's monzo from the to's monzo", (): void => {
+    it("works for two rational scamons, subtracting the from-scamon's monzo from the to-scamon's monzo", (): void => {
         const fromRationalScamon = {monzo: [-1, 1]} as Scamon<{rational: true}>
         const toRationalScamon = {monzo: [-2, 0, 0, 1]} as Scamon<{rational: true}>
 

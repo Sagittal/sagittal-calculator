@@ -3,7 +3,7 @@ import {SIZE_CATEGORIES} from "./sizeCategories"
 import {CommaNameQuotient, ParsedCommaName, SizeCategoryName} from "./types"
 
 const parseCommaName = (commaNameIo: Io): ParsedCommaName => {
-    const two3FreePartOfCommaName = commaNameIo // *not* a 2,3-free class, becuase it's not necessarily super!!!
+    const two3FreePartOfCommaName = commaNameIo // *not* a 2,3-free class, because it's not necessarily super!!!
         .replace(/[a-zA-Z+\-]/g, "") as Io
     const sizeCategoryPartOfCommaName = commaNameIo
         .replace(two3FreePartOfCommaName, "")

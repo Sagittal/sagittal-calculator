@@ -7,7 +7,7 @@
 //   It doesn't matter that much if we get stuck on the searching side;
 //   The risk is getting stuck in the populating side and ending up with a giant object.
 //  However, if you put a console log right after the work it does in populateScopes,
-//   It does seem to be interruptable in a good way, so that's a good sign.
+//   It does seem to be able to be interrupted, in a good way, so that's a good sign.
 
 import {LogTarget, saveLog} from "../../../general"
 import {solverStatus} from "../globals"

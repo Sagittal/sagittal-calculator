@@ -420,7 +420,7 @@ describe("compute23FreeRationalMonzosToCheck", (): void => {
             }).toThrowError("The size of the primes must be constrained somehow.")
         })
 
-        it("fails when given none of the maxs", (): void => {
+        it("fails when given none of the maxes", (): void => {
             expect((): void => {
                 compute23FreeRationalMonzosToCheck()
             }).toThrowError("The primes must be constrained somehow.")

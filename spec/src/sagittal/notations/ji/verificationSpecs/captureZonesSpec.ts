@@ -97,7 +97,7 @@ describe("capture zones", (): void => {
             [{ decimal: 1.011798 }, { decimal: 1.013195 }], // [{ cents: 20.305912 }, { cents: 22.694843 }],
             [{ decimal: 1.013195 }, { decimal: 1.013442 }], // [{ cents: 22.694843 }, { cents: 23.116419 }],
             [{ decimal: 1.013442 }, { decimal: 1.013933 }], // [{ cents: 23.116419 }, { cents: 23.955448 }],
-            [{ decimal: 1.013933 }, { decimal: 1.014478 }], // [{ cents: 23.955448 }, { cents: 24.885981 }], // watchout
+            [{ decimal: 1.013933 }, { decimal: 1.014478 }], // [{ cents: 23.955448 }, { cents: 24.885981 }], // look out
             [{ decimal: 1.014478 }, { decimal: 1.015171 }], // [{ cents: 24.885981 }, { cents: 26.067451 }],
             [{ decimal: 1.015171 }, { decimal: 1.016655 }], // [{ cents: 26.067451 }, { cents: 28.596908 }],
             [{ decimal: 1.016655 }, { decimal: 1.017480 }], // [{ cents: 28.596908 }, { cents: 30.002161 }],

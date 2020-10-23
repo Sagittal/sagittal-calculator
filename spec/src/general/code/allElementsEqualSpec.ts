@@ -8,7 +8,7 @@ describe("all elements equal", (): void => {
         expect(allElementsEqual([{a: 3}, {a: 3}, {a: 3}, {a: 3}]))
             .toBe(true)
 
-        expect(allElementsEqual(["heyo", "heyo"]))
+        expect(allElementsEqual(["bean", "bean"]))
             .toBe(true)
 
         expect(allElementsEqual([1, 1, 1, 2, 1, 1]))

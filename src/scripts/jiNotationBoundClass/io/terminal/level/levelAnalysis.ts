@@ -10,12 +10,12 @@ const formatJiNotationLevelAnalysis = (jiNotationLevel: JiNotationLevel): Io => 
     const jiNotationLevelAnalysisRowColors = computeJiNotationLevelAnalysisRowColors(jiNotationLevel)
     jiNotationLevelAnalysisRowColors.unshift(undefined)
 
-    const jiNotaitonLevelAnalysisTable = [
+    const jiNotationLevelAnalysisTable = [
         jiNotationLevelAnalysisHeaderRow,
         ...jiNotationLevelAnalysisRows,
     ]
 
-    return formatTable(jiNotaitonLevelAnalysisTable, {colors: jiNotationLevelAnalysisRowColors})
+    return formatTable(jiNotationLevelAnalysisTable, {colors: jiNotationLevelAnalysisRowColors})
 }
 
 export {

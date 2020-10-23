@@ -3,7 +3,7 @@ import { N2D3P9 } from "../../../../../../../../../../src/sagittal/ji/two3FreeCl
 import { computeNumeratorPossibilitiesForDenominatorGivenMaxN2D3P9 } from "../../../../../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/numeratorPossibilities"
 
 describe("computeNumeratorPossibilitiesForDenominatorGivenMaxN2D3P9", (): void => {
-    it("returns the possibilities for the numerator (which will be used to calculate the possibilties for the denominator; hence starting at 7) given the max N2D3P9, along with their GPF", (): void => {
+    it("returns the possibilities for the numerator (which will be used to calculate the possibilities for the denominator; hence starting at 7) given the max N2D3P9, along with their GPF", (): void => {
         const maxN2D3P9 = 6 as Max<N2D3P9>
 
         const actual = computeNumeratorPossibilitiesForDenominatorGivenMaxN2D3P9(maxN2D3P9)

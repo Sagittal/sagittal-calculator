@@ -16,7 +16,7 @@ type Smiley<T extends Maybe<Flavor> = undefined> =
 
 // TODO: SAGISPEAK
 //  Eventually perhaps a fourth Glyph type?
-//  Then "Glyph" wouldn't work as well... but it would be a really similar process, n'est-ce pas?
+//  Then "Glyph" wouldn't work as well... but it would be a really similar process, no?
 
 type Glyph<T extends Maybe<Flavor> = undefined> = Unicode<T> | Ascii<T> | Smiley<T>
 

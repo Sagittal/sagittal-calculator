@@ -70,7 +70,7 @@ interface Flacombo {
 //  - Probably some improvement you could do around AimSection w/r/t actual Aim, since they're basically the same...
 //  And this could be confusing bc in Evo, the Sagittal symbol will aim down... and the compatible doesn't have "aim".
 //  So maybe it was better when this was positive/negative? but then what would this part of the Section be called?
-//  - And it might be nice if you didn’t need both a name and an object...
+//  - And it might be nice if you did not need both a name and an object...
 //  How many places do you really use the name for short?
 enum SectionName {
     D2C = "d2c",
@@ -107,7 +107,7 @@ interface Section {
 
 // Todo: FLACOMBO, SECTION, NOTATION GENERATION: POST-FLACOMBO SHAPE
 //  If the thing only has one bound on it, then maybe the whole thing can be called a CaptureZone
-//  Even if it wasn’t just one side of the bounds, you could still have it be captureZone.zone
+//  Even if it was not just one side of the bounds, you could still have it be captureZone.zone
 //  And maybe whatever else is called CaptureZone just needs to get displaced because it’s not as important
 //  - And shite I just realized that you won't be able to get the full capture zone without info from other elements
 //  That is, the single individual flacombo won't have all the necessary info... so maybe you really should just

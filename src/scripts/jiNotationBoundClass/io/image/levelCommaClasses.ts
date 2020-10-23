@@ -49,7 +49,7 @@ const visualizeJiNotationLevelCommaClasses = (): Io[] => {
             jiNotationLevelCommaClassElements.push(
                 `  <circle stroke="black" cx="${positionX}" cy="${dotY}" r="${DOT_SIZE}" />\n` as Io,
             )
-            jiNotationLevelCommaClassElements.push(`  <text fill="white" text-anchor="middle" x="${positionX}" y="${symbolY}" font-size="10px" font-family="Helvetica">${ascii}</text>\n` as Io) // For searchability by ascii
+            jiNotationLevelCommaClassElements.push(`  <text fill="white" text-anchor="middle" x="${positionX}" y="${symbolY}" font-size="10px" font-family="Helvetica">${ascii}</text>\n` as Io) // So they can be searched by ASCII
             jiNotationLevelCommaClassElements.push(`  <text fill="black" text-anchor="middle" x="${positionX}" y="${symbolY}" font-size="40px" font-family="Bravura">${adjustedUnicode}</text>\n` as Io)
 
             if (jiNotationLevel === JiNotationLevel.EXTREME) {

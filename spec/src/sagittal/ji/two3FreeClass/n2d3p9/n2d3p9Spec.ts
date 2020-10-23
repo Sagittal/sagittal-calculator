@@ -21,7 +21,7 @@ describe("computeN2D3P9", (): void => {
         expect(actual).toBeCloseToTyped(expected)
     })
 
-    it("yet another 'nother example", (): void => {
+    it("yet another another example", (): void => {
         const two3FreeClass = { monzo: [0, 0, 0, 0, -1, 0, 0, 0, 1] } as Two3FreeClass  // 23/11
 
         const actual = computeN2D3P9(two3FreeClass)

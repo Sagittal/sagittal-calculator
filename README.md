@@ -28,6 +28,6 @@ in the Jasmine run configuration template: `-r ts-node/register/transpile-only`.
 To set a new context for the run configuration, set a hotkey for `Run context configuration`.
 To re-run the existing configuration, set a hotkey for `Run`.
 
-The **DejaVu Sans Mono** font is recommended because it actually monospaces key characters such as "⟩" and subscript numbers.
-Then also set your fallback font to **Bravura** so the unicode characters for Sagittal symbols such as "" will display. 
+Use the **DejaVu Sans Mono** font because it makes key characters such as "⟩" and subscript numbers actually monospace.
+Then also set your fallback font to **Bravura**, so the unicode characters for Sagittal symbols such as "" will display. 
 You may need to uncheck "Only show monospaced fonts" to get Bravura to appear in the list.

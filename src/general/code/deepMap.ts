@@ -16,9 +16,9 @@ const deepMap: {
         return (value as T[]).map((element: T): T => deepMap(element, fn, ...args) as unknown as T) as unknown as T
     } else if (isObject(value)) {
         return (Object.entries(value) as Array<[string, T]>).reduce(
-            (fnedObject: T, [key, value]: [string, T]): T => {
+            (object: T, [key, value]: [string, T]): T => {
                 return {
-                    ...fnedObject,
+                    ...object,
                     [key]: deepMap(value, fn, ...args),
                 }
             },

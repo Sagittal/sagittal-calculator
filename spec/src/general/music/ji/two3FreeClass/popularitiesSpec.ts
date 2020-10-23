@@ -12,12 +12,12 @@ describe("COMMA_POPULARITIES", (): void => {
                 votes: popularity.votes,
             }))
 
-        const rerankedPopularities: Array<Ranked<Popularity>> = rank(unrankedPopularities, {
+        const reRankedPopularities: Array<Ranked<Popularity>> = rank(unrankedPopularities, {
             by: "votes" as KeyPath,
             strategy: RankStrategy.FRACTIONAL,
             descending: true,
         })
 
-        expect(rerankedPopularities).toEqual(COMMA_POPULARITIES)
+        expect(reRankedPopularities).toEqual(COMMA_POPULARITIES)
     })
 })

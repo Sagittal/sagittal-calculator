@@ -19,7 +19,7 @@ describe("parseQuotient", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    it("works for quotients which are implictly over 1", (): void => {
+    it("works for quotients which are implicitly over 1", (): void => {
         const quotientIo = "275" as Io
 
         const actual = parseQuotient(quotientIo)

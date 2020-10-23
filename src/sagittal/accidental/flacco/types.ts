@@ -76,7 +76,7 @@ interface Head {
 // Todo: FLACOMBO, SECTION, NOTATION GENERATION: SYMBOL CLASS (SUBSET) / FIRST SECTION / QUESTIONS OF ID
 //  I'm not quite ready for Symbol to have ID yet
 //  At that stage, you'd want a const SYMBOLS: Symbol[] and generate it and test it, and maybe apotome shift
-//  Apotome complement methods would only be used in test, becuase you'd be "get"ting the symbol, not computing it
+//  Apotome complement methods would only be used in test, because you'd be "get"ting the symbol, not computing it
 //  But we still need to wrangle with the problems of: do we +1000 for apotome shift? that works w/ Magrathean I think
 //  Do we have negative IDs? is it a "key", then? this is pretty much what we used in the Spreadsheet Calculator.
 //  Does this respect the principle of things expressing their existence minimally? do IDs go against that already? etc.
@@ -95,7 +95,7 @@ interface Head {
 //  E.g. )||( is in Spartan multi-shaft, but no single-shaft right scroll
 //  Or is the problem only really solvable by that Flaccos only apply to the 1-shaft symbols,
 //  And multi-shaft symbols are just not even flag & accent combos??
-//  I mean, you could solve it by just calling them symbol subsets, but then you have to include all the redundants...
+//  I mean, you could solve it by just calling them symbol subsets, but then you have to include all the redundancy...
 //  Or how about saying that notations have only comma subsets?
 //  Now this might be intertwined with the problem of whether a notation can be specified by ONLY one of
 //  A list of Flacco IDs or a list of CommaClass IDs
@@ -109,6 +109,11 @@ interface Head {
 //  Or perhaps maybe just more like we've got the records of Core by CoreName, right
 //  And probably also at some point Symbol by SymbolName...?
 //  But think about the fact that having the order in the form of the ID is actually quite handy sometimes...
+//  Although you could include the order # as part of the ID I suppose and then you'd still get the benefit of it
+//  As long as the name could still autocomplete
+//  Yeah I guess this is really the thing - who is all this for? What are we trying to ensure?
+//  That no one can put it into the code, like someone working on the code later? Or you can't input it from the app?
+//  Without an enum to limit possibilities, the ID # doesn't really limit anything
 //  Anyway, the other example is CommaClass, like:
 //  Hey here's an idea... what if everywhere instead of ID we used names, so we could see what we were doing? e.g.
 //  Const COMMA_CLASS_1_u = {
@@ -120,6 +125,8 @@ interface Head {
 //  In which case it would simply add an Id to a thing? and put the thing itself on a key called... object?
 //  I think you'd have to make it generic, like it couldn't put a custom key on there based on the type parameter...
 //  Or maybe we should just imagine a world without IDs at all...
+//  Like I say above, the ID doesn't really limit anything. An enum you used as a key on some object would, though.
+//  It should be a solvable problem for the bound IDs to still order them in the JI notation bound class analysis
 interface Symbolic {
     arm?: Arm,
     core?: Head,

@@ -135,7 +135,7 @@ const customMatchers: CustomMatcherFactories = {
             doAssertions((): void => {
                 assert(
                     actual.length === expected.length,
-                    message || `Expected actual's length to be ${expected.length}. It was ${actual.length} instead.` as Io,
+                    message || `Expected length to be ${expected.length}. It was ${actual.length} instead.` as Io,
                 )
 
                 arraysAreCloseUpThroughExpected(expected, actual, precision, negate, message)

@@ -43,7 +43,7 @@ describe("computeJustifiedCell", (): void => {
 describe("computeColumnWidths", (): void => {
     it("does not count cells which are for the forum and which have turned off monospacing in its computation              ", (): void => {
         const table = [
-            ["a", "ccc", "eeeee"],
+            ["a", "ccc", "apple"],
             ["dddd", "bb", "ccc"],
         ] as Table
 
@@ -55,7 +55,7 @@ describe("computeColumnWidths", (): void => {
 
     it("does not count cells which are for the forum and which have turned off monospacing in its computation              ", (): void => {
         const table = [
-            ["a", "", "lorde"],
+            ["a", "", "apple"],
             ["dddd", "bb", "[/pre][latex]\\frac{1}{1}[/latex][pre]"],
         ] as Table
 

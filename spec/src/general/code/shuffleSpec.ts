@@ -2,7 +2,7 @@ import {deepClone} from "../../../../src/general"
 import {shuffle} from "../../../../src/general/code"
 
 describe("shuffle", (): void => {
-    it("randomly changes the order of the elemnets in the array", (): void => {
+    it("randomly changes the order of the elements in the array", (): void => {
         const array = [...Array(50).keys()]
         const originalArray = deepClone(array)
 

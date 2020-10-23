@@ -32,7 +32,7 @@ const computeScopeFromMetric = (metric: Metric): Scope => {
                         //  And leave it up to right here to handle it
                         //  I mean they are literally spread, even if they can't change,
                         //  Which might be good to acknowledge if we ever change the bases not to be locked down
-                        //  Although then there's the problem of my guess backfiller misidentifying them
+                        //  Although then there's the problem of my guess backfill script misidentifying them
                         //  Maybe if you just change it to spreadDynamicParameters the problem is solved?
                         //  And we've gone with the latter.
                         computeDynamicParameterScopeForPerfecting(parameterValue) :
