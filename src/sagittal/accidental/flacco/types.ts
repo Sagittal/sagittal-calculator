@@ -80,6 +80,16 @@ interface Head {
 //  But we still need to wrangle with the problems of: do we +1000 for apotome shift? that works w/ Magrathean I think
 //  Do we have negative IDs? is it a "key", then? this is pretty much what we used in the Spreadsheet Calculator.
 //  Does this respect the principle of things expressing their existence minimally? do IDs go against that already? etc.
+//  A valid symbols array would answer the question of how the valid cores and valid arms together
+//  Symbol class could go up thru 2 shafts and copy to other 3 sections
+//  And this would be related to that "even supported" thing you just added
+//  (which should be better documented and there might be a few places you should add some more comments,
+//  If only of symbol ASCII, you know?)
+//  So apotome complement would go from symbol class to symbol class
+//  And the other two, shift and flip, go from symbol class to symbol
+//  But this isn’t related to the minimum representation of a notation
+//  Though the generation of all valid symbols should be similar to the generation of the extreme JI notation...
+//  And if you do actually add SymbolClass, then address the comment introducing flacco below.
 interface Symbolic {
     arm?: Arm,
     core?: Head,
