@@ -1,5 +1,7 @@
-import {Aim, Compatible, computeCoreUnicode, Core, CoreName} from "../../../../../src/sagittal/accidental"
-import {Accent, Orientation} from "../../../../../src/sagittal/accidental/flacco"
+import {Maybe} from "../../../../../src/general/code"
+import {camelCaseToConstantCase} from "../../../../../src/general/code/case"
+import {Aim, Compatible, computeCoreUnicode} from "../../../../../src/sagittal/accidental"
+import {Accent, FlagComboName, Orientation} from "../../../../../src/sagittal/accidental/flacco"
 import {
     computeCompatibleAscii,
     computeCompatibleSmiley,
@@ -10,15 +12,32 @@ import {
     computeOrientedAccentSmiley,
     computeOrientedAccentUnicode,
 } from "../../../../../src/sagittal/accidental/io"
+import {Shafts} from "../../../../../src/sagittal/accidental/symbol"
+import {getCore} from "../../../../../src/sagittal/accidental/symbol/core"
 import {GlyphExpectation} from "./types"
 
-const computeCoreGlyphExpectation = ([name, core]: [CoreName, Core]): GlyphExpectation =>
-    ({
-        name,
-        ascii: computeCoreAscii(core),
-        unicode: computeCoreUnicode(core),
-        smiley: computeCoreSmiley(core),
-    })
+const computeCoreGlyphExpectation = (
+    flagComboName: FlagComboName,
+    shafts: Shafts,
+    aim: Aim
+): Maybe<GlyphExpectation> => {
+    try {
+        const core = getCore(flagComboName, shafts, aim)
+
+        const nameArray = [camelCaseToConstantCase(flagComboName)] as string[]
+        if (shafts !== Shafts.SINGLE) nameArray.push(camelCaseToConstantCase(shafts))
+        nameArray.push(camelCaseToConstantCase(aim))
+
+        return {
+            name: nameArray.join("_"),
+            ascii: computeCoreAscii(core),
+            unicode: computeCoreUnicode(core),
+            smiley: computeCoreSmiley(core),
+        }
+    } catch (e) {
+        return undefined
+    }
+}
 
 const computeAccentGlyphExpectation = (accent: Accent, orientation: Orientation, aim: Aim): GlyphExpectation =>
     ({

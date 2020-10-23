@@ -1,13 +1,15 @@
-import {Accidental, Compatible, CoreName, CORES, Flavor, Smiley, Symbol} from "../../../../../src/sagittal/accidental"
-import {ARMS} from "../../../../../src/sagittal/accidental/flacco/arms"
-import {ArmName} from "../../../../../src/sagittal/accidental/flacco/types"
+import {Accidental, Aim, Compatible, Flavor, Smiley, Symbol} from "../../../../../src/sagittal/accidental"
+import {getArm} from "../../../../../src/sagittal/accidental/flacco/arms"
+import {ArmName, FlagComboName, Orientation} from "../../../../../src/sagittal/accidental/flacco/types"
 import {computeAccidentalSmiley, computeSymbolSmiley} from "../../../../../src/sagittal/accidental/io"
+import {Shafts} from "../../../../../src/sagittal/accidental/symbol"
+import {getCore} from "../../../../../src/sagittal/accidental/symbol/core"
 
 describe("computeSymbolSmiley", (): void => {
     it("converts a symbol to smiley code", (): void => {
-        const symbol: Symbol = {                                                                        // `'|)
-            arm: ARMS[ArmName.WING_AND_TICK_WITH],
-            core: CORES[CoreName.RIGHT_ARC_UP],
+        const symbol: Symbol = {                                                                            // `'|)
+            arm: getArm(ArmName.WING_AND_TICK),
+            core: getCore(FlagComboName.RIGHT_ARC),
         }
 
         const actual = computeSymbolSmiley(symbol)
@@ -17,7 +19,7 @@ describe("computeSymbolSmiley", (): void => {
     })
 
     it("handles the space that needs to be inserted into //, per forum-specific limitations", (): void => {
-        const symbol: Symbol = {core: CORES[CoreName.LEFT_SCROLL_DOUBLE_LEFT_BARB_UP]}                  // )//|
+        const symbol: Symbol = {core: getCore(FlagComboName.LEFT_SCROLL_DOUBLE_LEFT_BARB)}                  // )//|
 
         const actual = computeSymbolSmiley(symbol)
 
@@ -26,7 +28,7 @@ describe("computeSymbolSmiley", (): void => {
     })
 
     it("handles the space that needs to be inserted into \\\\, per forum-specific limitations", (): void => {
-        const symbol: Symbol = {core: CORES[CoreName.DOUBLE_RIGHT_BARB_UP]}                             // |\\
+        const symbol: Symbol = {core: getCore(FlagComboName.DOUBLE_RIGHT_BARB)}                             // |\\
 
 
         const actual = computeSymbolSmiley(symbol)
@@ -36,9 +38,9 @@ describe("computeSymbolSmiley", (): void => {
     })
 
     it("does the correct thing with double ticks", (): void => {
-        const symbol: Symbol = {                                                                        // ``|)
-            arm: ARMS[ArmName.BIRD_WITH],
-            core: CORES[CoreName.RIGHT_ARC_UP],
+        const symbol: Symbol = {                                                                            // ``|)
+            arm: getArm(ArmName.BIRD),
+            core: getCore(FlagComboName.RIGHT_ARC),
         }
 
         const actual = computeSymbolSmiley(symbol)
@@ -48,9 +50,9 @@ describe("computeSymbolSmiley", (): void => {
     })
 
     it("does the correct thing with double down ticks", (): void => {
-        const symbol: Symbol = {                                                                        // ,,|)
-            arm: ARMS[ArmName.BIRD_AGAINST],
-            core: CORES[CoreName.RIGHT_ARC_UP],
+        const symbol: Symbol = {                                                                            // ,,|)
+            arm: getArm(ArmName.BIRD, Orientation.AGAINST),
+            core: getCore(FlagComboName.RIGHT_ARC),
         }
 
         const actual = computeSymbolSmiley(symbol)
@@ -60,8 +62,8 @@ describe("computeSymbolSmiley", (): void => {
     })
 
     it("works for a symbol with four shafts", (): void => {
-        const symbol: Symbol = {                                                                        // )X(
-            core: CORES[CoreName.DOUBLE_SCROLL_EX_UP],
+        const symbol: Symbol = {                                                                            // )X(
+            core: getCore(FlagComboName.DOUBLE_SCROLL, Shafts.EX),
         }
 
         const actual = computeSymbolSmiley(symbol)
@@ -85,7 +87,7 @@ describe("computeSymbolSmiley", (): void => {
 describe("computeAccidentalSmiley", (): void => {
     it("works for an accidental with a Sagittal-compatible glyph", (): void => {
         const accidental: Accidental<Flavor.EVO> = {                                                    // )\!x
-            core: CORES[CoreName.LEFT_SCROLL_AND_BARB_DOWN],
+            core: getCore(FlagComboName.LEFT_SCROLL_AND_BARB, Shafts.SINGLE, Aim.DOWN),
             compatible: Compatible.DOUBLE_SHARP,
         } as Accidental<Flavor.EVO>
 

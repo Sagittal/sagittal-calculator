@@ -1,6 +1,7 @@
 import {deepEquals, isUndefined, stringify} from "../../../general"
-import {CORES} from "./cores"
-import {Aim, CoreName, Shafts, Symbol} from "./types"
+import {FlagComboName} from "../flacco"
+import {getCore} from "./core"
+import {Aim, Shafts, Symbol} from "./types"
 
 const apotomeShift = (symbol: Symbol): Symbol => {
     if (symbol.core?.aim === Aim.DOWN) {
@@ -10,8 +11,8 @@ const apotomeShift = (symbol: Symbol): Symbol => {
         throw new Error(`Do not shift symbols which are already in the 2nd apotome section ${stringify(symbol)}`)
     }
 
-    if (isUndefined(symbol.core) || deepEquals(symbol.core, CORES[CoreName.BARE_SHAFT_UP])) {
-        return {...symbol, core: CORES[CoreName.DOUBLE_BARB_DOUBLE_UP]}
+    if (isUndefined(symbol.core) || deepEquals(symbol.core, getCore(FlagComboName.BARE_SHAFT))) {
+        return {...symbol, core: getCore(FlagComboName.DOUBLE_BARB, Shafts.DOUBLE)}
     }
 
     return {

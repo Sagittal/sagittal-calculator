@@ -19,16 +19,11 @@ type OrientedAccent = {
 type Arm = Array<OrientedAccent>
 
 enum ArmName {
-    WING_AND_TICK_AGAINST = "tickAndWingAgainst",
-    TICK_AGAINST = "tickAgainst",
-    WING_WITH_TICK_AGAINST = "tickAgainstWingWith",
-    BIRD_AGAINST = "birdAgainst",
-    WING_AGAINST = "wingAgainst",
-    WING_WITH = "wingWith",
-    BIRD_WITH = "birdWith",
-    WING_AGAINST_TICK_WITH = "tickWithWingAgainst",
-    TICK_WITH = "tickWith",
-    WING_AND_TICK_WITH = "tickAndWingWith",
+    WING = "wing",
+    BIRD = "bird",
+    WING_FROM_TICK = "wingFromTick",
+    TICK = "tick",
+    WING_AND_TICK = "wingAndTick",
 }
 
 enum Flag {
@@ -39,6 +34,7 @@ enum Flag {
 }
 
 enum FlagComboName {
+    BARE_SHAFT = "bareShaft",
     RIGHT_SCROLL = "rightScroll",
     LEFT_BARB = "leftBarb",
     RIGHT_ARC = "rightArc",

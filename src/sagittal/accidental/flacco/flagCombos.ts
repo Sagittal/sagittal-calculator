@@ -1,6 +1,7 @@
 import {Flag, FlagCombo, FlagComboName} from "./types"
 
 const FLAG_COMBOS: Record<FlagComboName, FlagCombo> = {
+    [FlagComboName.BARE_SHAFT]: {},                                                                         //    |
     [FlagComboName.RIGHT_SCROLL]: {right: [Flag.SCROLL]},                                                   //    |(
     [FlagComboName.LEFT_BARB]: {left: [Flag.BARB]},                                                         //   /|
     [FlagComboName.RIGHT_ARC]: {right: [Flag.ARC]},                                                         //    |)

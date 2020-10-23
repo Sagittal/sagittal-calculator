@@ -1,7 +1,7 @@
-import {Accent, Ascii, Compatible, CoreName, Smiley, Unicode} from "../../../../../src/sagittal/accidental"
+import {Accent, Ascii, Compatible, Smiley, Unicode} from "../../../../../src/sagittal/accidental"
 
 interface GlyphExpectation {
-    name: CoreName | Accent | Compatible,
+    name: string | Accent | Compatible,
     ascii: Ascii,
     unicode: Unicode,
     smiley: Smiley,

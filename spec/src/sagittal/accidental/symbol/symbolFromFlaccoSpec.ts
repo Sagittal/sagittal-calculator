@@ -1,7 +1,7 @@
 import {Id} from "../../../../../src/general"
 import {Aim, computeSymbolFromFlacco, Flacco, Symbol} from "../../../../../src/sagittal/accidental"
-import {FlagComboName, FLAG_COMBOS} from "../../../../../src/sagittal/accidental/flacco"
-import {ARMS} from "../../../../../src/sagittal/accidental/flacco/arms"
+import {FlagComboName, FLAG_COMBOS, Orientation} from "../../../../../src/sagittal/accidental/flacco"
+import {getArm} from "../../../../../src/sagittal/accidental/flacco/arms"
 import {ArmName} from "../../../../../src/sagittal/accidental/flacco/types"
 import {Shafts} from "../../../../../src/sagittal/accidental/symbol"
 
@@ -9,14 +9,14 @@ describe("computeSymbolFromFlacco", (): void => {
     it("takes a combo of flags and arm and returns the full Sagittal symbol", (): void => {
         const flacco = {
             id: 75 as Id<Flacco>,
-            arm: ARMS[ArmName.WING_AGAINST],
+            arm: getArm(ArmName.WING, Orientation.AGAINST),
             core: FLAG_COMBOS[FlagComboName.BOATHOOK_AND_ARC],
         }
 
         const actual = computeSymbolFromFlacco(flacco)
 
         const expected: Symbol = {                                                                       // ,~|)
-            arm: ARMS[ArmName.WING_AGAINST],
+            arm: getArm(ArmName.WING, Orientation.AGAINST),
             core: {
                 aim: Aim.UP,
                 shafts: Shafts.SINGLE,
@@ -29,14 +29,14 @@ describe("computeSymbolFromFlacco", (): void => {
     it("works for a symbol with an accent and flag on the left", (): void => {
         const flacco = {
             id: 74 as Id<Flacco>,
-            arm: ARMS[ArmName.TICK_WITH],
+            arm: getArm(ArmName.TICK),
             core: FLAG_COMBOS[FlagComboName.LEFT_ARC],
         }
 
         const actual = computeSymbolFromFlacco(flacco)
 
         const expected: Symbol = {                                                                       // '(|
-            arm: ARMS[ArmName.TICK_WITH],
+            arm: getArm(ArmName.TICK),
             core: {
                 aim: Aim.UP,
                 shafts: Shafts.SINGLE,
@@ -95,13 +95,13 @@ describe("computeSymbolFromFlacco", (): void => {
     it("works for a symbol with only arm", (): void => {
         const flacco = {
             id: 1 as Id<Flacco>,
-            arm: ARMS[ArmName.WING_WITH],
+            arm: getArm(ArmName.WING),
         }
 
         const actual = computeSymbolFromFlacco(flacco)
 
         const expected: Symbol = {                                                                       // `|
-            arm: ARMS[ArmName.WING_WITH],
+            arm: getArm(ArmName.WING),
             core: {
                 aim: Aim.UP,
                 shafts: Shafts.SINGLE

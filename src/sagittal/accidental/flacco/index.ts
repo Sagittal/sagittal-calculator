@@ -4,5 +4,6 @@ export {
 export {FLACCO_SUBSETS, FLACCO_SUBSETS_SORTED_BY_SIZE} from "./flaccoSubsets"
 export {getSmallestFlaccoSubset} from "./smallestFlaccoSubset"
 export {getFlacco} from "./flacco"
+export {reorient} from "./reorient"
 export {FLACCOS} from "./flaccos"
 export {FLAG_COMBOS} from "./flagCombos"

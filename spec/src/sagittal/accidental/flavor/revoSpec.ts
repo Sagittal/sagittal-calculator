@@ -1,6 +1,8 @@
 import {Apotome, Count, Direction, Id} from "../../../../../src/general"
-import {Accidental, CoreName, CORES, Flacco, Flavor} from "../../../../../src/sagittal/accidental"
+import {Accidental, Flacco, Flavor} from "../../../../../src/sagittal/accidental"
+import {FlagComboName} from "../../../../../src/sagittal/accidental/flacco"
 import {computeRevoAccidentalFromFlacombo} from "../../../../../src/sagittal/accidental/flavor/revo"
+import {getCore} from "../../../../../src/sagittal/accidental/symbol/core"
 import {CommaClass} from "../../../../../src/sagittal/ji/comma"
 import {BoundClass} from "../../../../../src/sagittal/notations"
 
@@ -17,7 +19,7 @@ describe("computeRevoAccidentalFromFlacombo", (): void => {
         const actual = computeRevoAccidentalFromFlacombo(flacombo)
 
         const expected = {
-            core: CORES[CoreName.DOUBLE_LEFT_BARB_UP],
+            core: getCore(FlagComboName.DOUBLE_LEFT_BARB),
         } as Accidental<Flavor.REVO>
         expect(actual).toEqual(expected)
     })
