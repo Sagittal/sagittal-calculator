@@ -1,17 +1,15 @@
-import {Accent, Ascii, Compatible, Smiley, Unicode} from "../../../../../src/sagittal/accidental"
+import {Maybe} from "../../../../../src/general/code"
+import {Ascii, Flavor, Smiley, Unicode} from "../../../../../src/sagittal/accidental"
 
-interface GlyphExpectation {
-    name: string | Accent | Compatible,
-    ascii: Ascii,
-    unicode: Unicode,
-    smiley: Smiley,
+interface GlyphExpectation<T extends Maybe<Flavor> = undefined> {
+    ascii: Ascii<T>,
+    unicode: Unicode<T>,
+    smiley: Smiley<T>,
 }
 
 interface AccidentalExpectation {
-    evoAscii: Ascii,
-    revoAscii: Ascii,
-    evoUnicode: Unicode,
-    revoUnicode: Unicode,
+    evo: GlyphExpectation<Flavor.EVO>,
+    revo: GlyphExpectation<Flavor.REVO>,
 }
 
 export {

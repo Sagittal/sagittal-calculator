@@ -1,4 +1,5 @@
 import {isUndefined} from "../../../../../../src/general/code"
+import {camelCaseToConstantCase} from "../../../../../../src/general/code/case"
 import {Aim, Ascii, Compatible, Smiley, Unicode} from "../../../../../../src/sagittal/accidental"
 import {Accent, HeadName, Orientation} from "../../../../../../src/sagittal/accidental/flacco"
 import {Shafts} from "../../../../../../src/sagittal/accidental/symbol"
@@ -11,1415 +12,1219 @@ import {GlyphExpectation} from "../../../../../helpers/src/sagittal/accidental/t
 
 describe("glyphs", (): void => {
     it("has the correct core glyphs and computes their IO correctly", (): void => {
-        const coreGlyphExpectations = [] as GlyphExpectation[]
+        const coreGlyphExpectations: Record<string, GlyphExpectation> = {}
 
         Object.values(HeadName).forEach((headName: HeadName): void => {
             Object.values(Shafts).forEach((shafts: Shafts): void => {
                 Object.values(Aim).forEach((aim: Aim): void => {
                     const coreGlyphExpectation = computeCoreGlyphExpectation(headName, shafts, aim)
+                    const nameArray = [camelCaseToConstantCase(headName)] as string[]
+                    if (shafts !== Shafts.SINGLE) nameArray.push(camelCaseToConstantCase(shafts))
+                    nameArray.push(camelCaseToConstantCase(aim))
+                    const name = nameArray.join("_")
 
-                    if (!isUndefined(coreGlyphExpectation)) coreGlyphExpectations.push(coreGlyphExpectation)
+                    if (!isUndefined(coreGlyphExpectation)) coreGlyphExpectations[name] = coreGlyphExpectation
                 })
             })
         })
 
-        const expected: Array<GlyphExpectation> = [
-            {
-                name: "RIGHT_SCROLL_UP",
+        const expected: Record<string, GlyphExpectation> = {
+            RIGHT_SCROLL_UP: {
                 unicode: "" as Unicode,
                 ascii: "|(" as Ascii,
                 smiley: ":|(:" as Smiley,
             },
-            {
-                name: "RIGHT_SCROLL_DOWN",
+            RIGHT_SCROLL_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "!(" as Ascii,
                 smiley: ":!(:" as Smiley,
             },
-            {
-                name: "LEFT_BARB_UP",
+            LEFT_BARB_UP: {
                 unicode: "" as Unicode,
                 ascii: "/|" as Ascii,
                 smiley: ":/|:" as Smiley,
             },
-            {
-                name: "LEFT_BARB_DOWN",
+            LEFT_BARB_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "\\!" as Ascii,
                 smiley: ":\\!:" as Smiley,
             },
-            {
-                name: "RIGHT_ARC_UP",
+            RIGHT_ARC_UP: {
                 unicode: "" as Unicode,
                 ascii: "|)" as Ascii,
                 smiley: ":|):" as Smiley,
             },
-            {
-                name: "RIGHT_ARC_DOWN",
+            RIGHT_ARC_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "!)" as Ascii,
                 smiley: ":!):" as Smiley,
             },
-            {
-                name: "DOUBLE_LEFT_BARB_UP",
+            DOUBLE_LEFT_BARB_UP: {
                 unicode: "" as Unicode,
                 ascii: "//|" as Ascii,
                 smiley: ":/ /|:" as Smiley,
             },
-            {
-                name: "DOUBLE_LEFT_BARB_DOWN",
+            DOUBLE_LEFT_BARB_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "\\\\!" as Ascii,
                 smiley: ":\\ \\!:" as Smiley,
             },
-            {
-                name: "BARB_AND_ARC_UP",
+            BARB_AND_ARC_UP: {
                 unicode: "" as Unicode,
                 ascii: "/|)" as Ascii,
                 smiley: ":/|):" as Smiley,
             },
-            {
-                name: "BARB_AND_ARC_DOWN",
+            BARB_AND_ARC_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "\\!)" as Ascii,
                 smiley: ":\\!):" as Smiley,
             },
-            {
-                name: "DOUBLE_BARB_UP",
+            DOUBLE_BARB_UP: {
                 unicode: "" as Unicode,
                 ascii: "/|\\" as Ascii,
                 smiley: ":/|\\:" as Smiley,
             },
-            {
-                name: "DOUBLE_BARB_DOWN",
+            DOUBLE_BARB_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "\\!/" as Ascii,
                 smiley: ":\\!/:" as Smiley,
             },
-            {
-                name: "DOUBLE_ARC_UP",
+            DOUBLE_ARC_UP: {
                 unicode: "" as Unicode,
                 ascii: "(|)" as Ascii,
                 smiley: ":(|):" as Smiley,
             },
-            {
-                name: "DOUBLE_ARC_DOWN",
+            DOUBLE_ARC_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "(!)" as Ascii,
                 smiley: ":(!):" as Smiley,
             },
-            {
-                name: "ARC_AND_BARB_UP",
+            ARC_AND_BARB_UP: {
                 unicode: "" as Unicode,
                 ascii: "(|\\" as Ascii,
                 smiley: ":(|\\:" as Smiley,
             },
-            {
-                name: "ARC_AND_BARB_DOWN",
+            ARC_AND_BARB_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "(!/" as Ascii,
                 smiley: ":(!/:" as Smiley,
             },
-            {
-                name: "DOUBLE_SCROLL_DOUBLE_UP",
+            DOUBLE_SCROLL_DOUBLE_UP: {
                 unicode: "" as Unicode,
                 ascii: ")||(" as Ascii,
                 smiley: ":)||(:" as Smiley,
             },
-            {
-                name: "DOUBLE_SCROLL_DOUBLE_DOWN",
+            DOUBLE_SCROLL_DOUBLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: ")!!(" as Ascii,
                 smiley: ":)!!(:" as Smiley,
             },
-            {
-                name: "RIGHT_ARC_DOUBLE_UP",
+            RIGHT_ARC_DOUBLE_UP: {
                 unicode: "" as Unicode,
                 ascii: "||)" as Ascii,
                 smiley: ":||):" as Smiley,
             },
-            {
-                name: "RIGHT_ARC_DOUBLE_DOWN",
+            RIGHT_ARC_DOUBLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "!!)" as Ascii,
                 smiley: ":!!):" as Smiley,
             },
-            {
-                name: "RIGHT_BARB_DOUBLE_UP",
+            RIGHT_BARB_DOUBLE_UP: {
                 unicode: "" as Unicode,
                 ascii: "||\\" as Ascii,
                 smiley: ":||\\:" as Smiley,
             },
-            {
-                name: "RIGHT_BARB_DOUBLE_DOWN",
+            RIGHT_BARB_DOUBLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "!!/" as Ascii,
                 smiley: ":!!/:" as Smiley,
             },
-            {
-                name: "BARB_AND_ARC_DOUBLE_UP",
+            BARB_AND_ARC_DOUBLE_UP: {
                 unicode: "" as Unicode,
                 ascii: "/||)" as Ascii,
                 smiley: ":/||):" as Smiley,
             },
-            {
-                name: "BARB_AND_ARC_DOUBLE_DOWN",
+            BARB_AND_ARC_DOUBLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "\\!!)" as Ascii,
                 smiley: ":\\!!):" as Smiley,
             },
-            {
-                name: "DOUBLE_BARB_DOUBLE_UP",
+            DOUBLE_BARB_DOUBLE_UP: {
                 unicode: "" as Unicode,
                 ascii: "/||\\" as Ascii,
                 smiley: ":/||\\:" as Smiley,
             },
-            {
-                name: "DOUBLE_BARB_DOUBLE_DOWN",
+            DOUBLE_BARB_DOUBLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "\\!!/" as Ascii,
                 smiley: ":\\!!/:" as Smiley,
             },
-            {
-                name: "RIGHT_SCROLL_TRIPLE_UP",
+            RIGHT_SCROLL_TRIPLE_UP: {
                 unicode: "" as Unicode,
                 ascii: "|||(" as Ascii,
                 smiley: ":|||(:" as Smiley,
             },
-            {
-                name: "RIGHT_SCROLL_TRIPLE_DOWN",
+            RIGHT_SCROLL_TRIPLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "!!!(" as Ascii,
                 smiley: ":!!!(:" as Smiley,
             },
-            {
-                name: "LEFT_BARB_TRIPLE_UP",
+            LEFT_BARB_TRIPLE_UP: {
                 unicode: "" as Unicode,
                 ascii: "/|||" as Ascii,
                 smiley: ":/|||:" as Smiley,
             },
-            {
-                name: "LEFT_BARB_TRIPLE_DOWN",
+            LEFT_BARB_TRIPLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "\\!!!" as Ascii,
                 smiley: ":\\!!!:" as Smiley,
             },
-            {
-                name: "RIGHT_ARC_TRIPLE_UP",
+            RIGHT_ARC_TRIPLE_UP: {
                 unicode: "" as Unicode,
                 ascii: "|||)" as Ascii,
                 smiley: ":|||):" as Smiley,
             },
-            {
-                name: "RIGHT_ARC_TRIPLE_DOWN",
+            RIGHT_ARC_TRIPLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "!!!)" as Ascii,
                 smiley: ":!!!):" as Smiley,
             },
-            {
-                name: "DOUBLE_LEFT_BARB_TRIPLE_UP",
+            DOUBLE_LEFT_BARB_TRIPLE_UP: {
                 unicode: "" as Unicode,
                 ascii: "//|||" as Ascii,
                 smiley: ":/ /|||:" as Smiley,
             },
-            {
-                name: "DOUBLE_LEFT_BARB_TRIPLE_DOWN",
+            DOUBLE_LEFT_BARB_TRIPLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "\\\\!!!" as Ascii,
                 smiley: ":\\ \\!!!:" as Smiley,
             },
-            {
-                name: "BARB_AND_ARC_TRIPLE_UP",
+            BARB_AND_ARC_TRIPLE_UP: {
                 unicode: "" as Unicode,
                 ascii: "/|||)" as Ascii,
                 smiley: ":/|||):" as Smiley,
             },
-            {
-                name: "BARB_AND_ARC_TRIPLE_DOWN",
+            BARB_AND_ARC_TRIPLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "\\!!!)" as Ascii,
                 smiley: ":\\!!!):" as Smiley,
             },
-            {
-                name: "DOUBLE_BARB_TRIPLE_UP",
+            DOUBLE_BARB_TRIPLE_UP: {
                 unicode: "" as Unicode,
                 ascii: "/|||\\" as Ascii,
                 smiley: ":/|||\\:" as Smiley,
             },
-            {
-                name: "DOUBLE_BARB_TRIPLE_DOWN",
+            DOUBLE_BARB_TRIPLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "\\!!!/" as Ascii,
                 smiley: ":\\!!!/:" as Smiley,
             },
-            {
-                name: "DOUBLE_ARC_TRIPLE_UP",
+            DOUBLE_ARC_TRIPLE_UP: {
                 unicode: "" as Unicode,
                 ascii: "(|||)" as Ascii,
                 smiley: ":(|||):" as Smiley,
             },
-            {
-                name: "DOUBLE_ARC_TRIPLE_DOWN",
+            DOUBLE_ARC_TRIPLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "(!!!)" as Ascii,
                 smiley: ":(!!!):" as Smiley,
             },
-            {
-                name: "ARC_AND_BARB_TRIPLE_UP",
+            ARC_AND_BARB_TRIPLE_UP: {
                 unicode: "" as Unicode,
                 ascii: "(|||\\" as Ascii,
                 smiley: ":(|||\\:" as Smiley,
             },
-            {
-                name: "ARC_AND_BARB_TRIPLE_DOWN",
+            ARC_AND_BARB_TRIPLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "(!!!/" as Ascii,
                 smiley: ":(!!!/:" as Smiley,
             },
-            {
-                name: "DOUBLE_SCROLL_EX_UP",
+            DOUBLE_SCROLL_EX_UP: {
                 unicode: "" as Unicode,
                 ascii: ")X(" as Ascii,
                 smiley: ":)X(:" as Smiley,
             },
-            {
-                name: "DOUBLE_SCROLL_EX_DOWN",
+            DOUBLE_SCROLL_EX_DOWN: {
                 unicode: "" as Unicode,
                 ascii: ")Y(" as Ascii,
                 smiley: ":)Y(:" as Smiley,
             },
-            {
-                name: "RIGHT_ARC_EX_UP",
+            RIGHT_ARC_EX_UP: {
                 unicode: "" as Unicode,
                 ascii: "X)" as Ascii,
                 smiley: ":X):" as Smiley,
             },
-            {
-                name: "RIGHT_ARC_EX_DOWN",
+            RIGHT_ARC_EX_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "Y)" as Ascii,
                 smiley: ":Y):" as Smiley,
             },
-            {
-                name: "RIGHT_BARB_EX_UP",
+            RIGHT_BARB_EX_UP: {
                 unicode: "" as Unicode,
                 ascii: "X\\" as Ascii,
                 smiley: ":X\\:" as Smiley,
             },
-            {
-                name: "RIGHT_BARB_EX_DOWN",
+            RIGHT_BARB_EX_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "Y/" as Ascii,
                 smiley: ":Y/:" as Smiley,
             },
-            {
-                name: "BARB_AND_ARC_EX_UP",
+            BARB_AND_ARC_EX_UP: {
                 unicode: "" as Unicode,
                 ascii: "/X)" as Ascii,
                 smiley: ":/X):" as Smiley,
             },
-            {
-                name: "BARB_AND_ARC_EX_DOWN",
+            BARB_AND_ARC_EX_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "\\Y)" as Ascii,
                 smiley: ":\\Y):" as Smiley,
             },
-            {
-                name: "DOUBLE_BARB_EX_UP",
+            DOUBLE_BARB_EX_UP: {
                 unicode: "" as Unicode,
                 ascii: "/X\\" as Ascii,
                 smiley: ":/X\\:" as Smiley,
             },
-            {
-                name: "DOUBLE_BARB_EX_DOWN",
+            DOUBLE_BARB_EX_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "\\Y/" as Ascii,
                 smiley: ":\\Y/:" as Smiley,
             },
-            {
-                name: "DOUBLE_SCROLL_UP",
+            DOUBLE_SCROLL_UP: {
                 unicode: "" as Unicode,
                 ascii: ")|(" as Ascii,
                 smiley: ":)|(:" as Smiley,
             },
-            {
-                name: "DOUBLE_SCROLL_DOWN",
+            DOUBLE_SCROLL_DOWN: {
                 unicode: "" as Unicode,
                 ascii: ")!(" as Ascii,
                 smiley: ":)!(:" as Smiley,
             },
-            {
-                name: "BOATHOOK_AND_SCROLL_UP",
+            BOATHOOK_AND_SCROLL_UP: {
                 unicode: "" as Unicode,
                 ascii: "~|(" as Ascii,
                 smiley: ":~|(:" as Smiley,
             },
-            {
-                name: "BOATHOOK_AND_SCROLL_DOWN",
+            BOATHOOK_AND_SCROLL_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "~!(" as Ascii,
                 smiley: ":~!(:" as Smiley,
             },
-            {
-                name: "RIGHT_BARB_UP",
+            RIGHT_BARB_UP: {
                 unicode: "" as Unicode,
                 ascii: "|\\" as Ascii,
                 smiley: ":|\\:" as Smiley,
             },
-            {
-                name: "RIGHT_BARB_DOWN",
+            RIGHT_BARB_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "!/" as Ascii,
                 smiley: ":!/:" as Smiley,
             },
-            {
-                name: "LEFT_ARC_UP",
+            LEFT_ARC_UP: {
                 unicode: "" as Unicode,
                 ascii: "(|" as Ascii,
                 smiley: ":(|:" as Smiley,
             },
-            {
-                name: "LEFT_ARC_DOWN",
+            LEFT_ARC_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "(!" as Ascii,
                 smiley: ":(!:" as Smiley,
             },
-            {
-                name: "ARC_AND_SCROLL_UP",
+            ARC_AND_SCROLL_UP: {
                 unicode: "" as Unicode,
                 ascii: "(|(" as Ascii,
                 smiley: ":(|(:" as Smiley,
             },
-            {
-                name: "ARC_AND_SCROLL_DOWN",
+            ARC_AND_SCROLL_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "(!(" as Ascii,
                 smiley: ":(!(:" as Smiley,
             },
-            {
-                name: "BOATHOOK_AND_SCROLL_DOUBLE_UP",
+            BOATHOOK_AND_SCROLL_DOUBLE_UP: {
                 unicode: "" as Unicode,
                 ascii: "~||(" as Ascii,
                 smiley: ":~||(:" as Smiley,
             },
-            {
-                name: "BOATHOOK_AND_SCROLL_DOUBLE_DOWN",
+            BOATHOOK_AND_SCROLL_DOUBLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "~!!(" as Ascii,
                 smiley: ":~!!(:" as Smiley,
             },
-            {
-                name: "SCROLL_AND_BOATHOOK_DOUBLE_UP",
+            SCROLL_AND_BOATHOOK_DOUBLE_UP: {
                 unicode: "" as Unicode,
                 ascii: ")||~" as Ascii,
                 smiley: ":)||~:" as Smiley,
             },
-            {
-                name: "SCROLL_AND_BOATHOOK_DOUBLE_DOWN",
+            SCROLL_AND_BOATHOOK_DOUBLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: ")!!~" as Ascii,
                 smiley: ":)!!~:" as Smiley,
             },
-            {
-                name: "LEFT_BARB_DOUBLE_UP",
+            LEFT_BARB_DOUBLE_UP: {
                 unicode: "" as Unicode,
                 ascii: "/||" as Ascii,
                 smiley: ":/||:" as Smiley,
             },
-            {
-                name: "LEFT_BARB_DOUBLE_DOWN",
+            LEFT_BARB_DOUBLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "\\!!" as Ascii,
                 smiley: ":\\!!:" as Smiley,
             },
-            {
-                name: "ARC_AND_SCROLL_DOUBLE_UP",
+            ARC_AND_SCROLL_DOUBLE_UP: {
                 unicode: "" as Unicode,
                 ascii: "(||(" as Ascii,
                 smiley: ":(||(:" as Smiley,
             },
-            {
-                name: "ARC_AND_SCROLL_DOUBLE_DOWN",
+            ARC_AND_SCROLL_DOUBLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "(!!(" as Ascii,
                 smiley: ":(!!(:" as Smiley,
             },
-            {
-                name: "DOUBLE_LEFT_BARB_DOUBLE_UP",
+            DOUBLE_LEFT_BARB_DOUBLE_UP: {
                 unicode: "" as Unicode,
                 ascii: "//||" as Ascii,
                 smiley: ":/ /||:" as Smiley,
             },
-            {
-                name: "DOUBLE_LEFT_BARB_DOUBLE_DOWN",
+            DOUBLE_LEFT_BARB_DOUBLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "\\\\!!" as Ascii,
                 smiley: ":\\ \\!!:" as Smiley,
             },
-            {
-                name: "DOUBLE_SCROLL_TRIPLE_UP",
+            DOUBLE_SCROLL_TRIPLE_UP: {
                 unicode: "" as Unicode,
                 ascii: ")|||(" as Ascii,
                 smiley: ":)|||(:" as Smiley,
             },
-            {
-                name: "DOUBLE_SCROLL_TRIPLE_DOWN",
+            DOUBLE_SCROLL_TRIPLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: ")!!!(" as Ascii,
                 smiley: ":)!!!(:" as Smiley,
             },
-            {
-                name: "BOATHOOK_AND_SCROLL_TRIPLE_UP",
+            BOATHOOK_AND_SCROLL_TRIPLE_UP: {
                 unicode: "" as Unicode,
                 ascii: "~|||(" as Ascii,
                 smiley: ":~|||(:" as Smiley,
             },
-            {
-                name: "BOATHOOK_AND_SCROLL_TRIPLE_DOWN",
+            BOATHOOK_AND_SCROLL_TRIPLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "~!!!(" as Ascii,
                 smiley: ":~!!!(:" as Smiley,
             },
-            {
-                name: "RIGHT_BARB_TRIPLE_UP",
+            RIGHT_BARB_TRIPLE_UP: {
                 unicode: "" as Unicode,
                 ascii: "|||\\" as Ascii,
                 smiley: ":|||\\:" as Smiley,
             },
-            {
-                name: "RIGHT_BARB_TRIPLE_DOWN",
+            RIGHT_BARB_TRIPLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "!!!/" as Ascii,
                 smiley: ":!!!/:" as Smiley,
             },
-            {
-                name: "LEFT_ARC_TRIPLE_UP",
+            LEFT_ARC_TRIPLE_UP: {
                 unicode: "" as Unicode,
                 ascii: "(|||" as Ascii,
                 smiley: ":(|||:" as Smiley,
             },
-            {
-                name: "LEFT_ARC_TRIPLE_DOWN",
+            LEFT_ARC_TRIPLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "(!!!" as Ascii,
                 smiley: ":(!!!:" as Smiley,
             },
-            {
-                name: "ARC_AND_SCROLL_TRIPLE_UP",
+            ARC_AND_SCROLL_TRIPLE_UP: {
                 unicode: "" as Unicode,
                 ascii: "(|||(" as Ascii,
                 smiley: ":(|||(:" as Smiley,
             },
-            {
-                name: "ARC_AND_SCROLL_TRIPLE_DOWN",
+            ARC_AND_SCROLL_TRIPLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "(!!!(" as Ascii,
                 smiley: ":(!!!(:" as Smiley,
             },
-            {
-                name: "BOATHOOK_AND_SCROLL_EX_UP",
+            BOATHOOK_AND_SCROLL_EX_UP: {
                 unicode: "" as Unicode,
                 ascii: "~X(" as Ascii,
                 smiley: ":~X(:" as Smiley,
             },
-            {
-                name: "BOATHOOK_AND_SCROLL_EX_DOWN",
+            BOATHOOK_AND_SCROLL_EX_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "~Y(" as Ascii,
                 smiley: ":~Y(:" as Smiley,
             },
-            {
-                name: "SCROLL_AND_BOATHOOK_EX_UP",
+            SCROLL_AND_BOATHOOK_EX_UP: {
                 unicode: "" as Unicode,
                 ascii: ")X~" as Ascii,
                 smiley: ":)X~:" as Smiley,
             },
-            {
-                name: "SCROLL_AND_BOATHOOK_EX_DOWN",
+            SCROLL_AND_BOATHOOK_EX_DOWN: {
                 unicode: "" as Unicode,
                 ascii: ")Y~" as Ascii,
                 smiley: ":)Y~:" as Smiley,
             },
-            {
-                name: "LEFT_BARB_EX_UP",
+            LEFT_BARB_EX_UP: {
                 unicode: "" as Unicode,
                 ascii: "/X" as Ascii,
                 smiley: ":/X:" as Smiley,
             },
-            {
-                name: "LEFT_BARB_EX_DOWN",
+            LEFT_BARB_EX_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "\\Y" as Ascii,
                 smiley: ":\\Y:" as Smiley,
             },
-            {
-                name: "ARC_AND_SCROLL_EX_UP",
+            ARC_AND_SCROLL_EX_UP: {
                 unicode: "" as Unicode,
                 ascii: "(X(" as Ascii,
                 smiley: ":(X(:" as Smiley,
             },
-            {
-                name: "ARC_AND_SCROLL_EX_DOWN",
+            ARC_AND_SCROLL_EX_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "(Y(" as Ascii,
                 smiley: ":(Y(:" as Smiley,
             },
-            {
-                name: "DOUBLE_LEFT_BARB_EX_UP",
+            DOUBLE_LEFT_BARB_EX_UP: {
                 unicode: "" as Unicode,
                 ascii: "//X" as Ascii,
                 smiley: ":/ /X:" as Smiley,
             },
-            {
-                name: "DOUBLE_LEFT_BARB_EX_DOWN",
+            DOUBLE_LEFT_BARB_EX_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "\\\\Y" as Ascii,
                 smiley: ":\\ \\Y:" as Smiley,
             },
-            {
-                name: "RIGHT_BOATHOOK_UP",
+            RIGHT_BOATHOOK_UP: {
                 unicode: "" as Unicode,
                 ascii: "|~" as Ascii,
                 smiley: ":|~:" as Smiley,
             },
-            {
-                name: "RIGHT_BOATHOOK_DOWN",
+            RIGHT_BOATHOOK_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "!~" as Ascii,
                 smiley: ":!~:" as Smiley,
             },
-            {
-                name: "LEFT_SCROLL_AND_BARB_UP",
+            LEFT_SCROLL_AND_BARB_UP: {
                 unicode: "" as Unicode,
                 ascii: ")/|" as Ascii,
                 smiley: ":)/|:" as Smiley,
             },
-            {
-                name: "LEFT_SCROLL_AND_BARB_DOWN",
+            LEFT_SCROLL_AND_BARB_DOWN: {
                 unicode: "" as Unicode,
                 ascii: ")\\!" as Ascii,
                 smiley: ":)\\!:" as Smiley,
             },
-            {
-                name: "BARB_AND_BOATHOOK_UP",
+            BARB_AND_BOATHOOK_UP: {
                 unicode: "" as Unicode,
                 ascii: "/|~" as Ascii,
                 smiley: ":/|~:" as Smiley,
             },
-            {
-                name: "BARB_AND_BOATHOOK_DOWN",
+            BARB_AND_BOATHOOK_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "\\!~" as Ascii,
                 smiley: ":\\!~:" as Smiley,
             },
-            {
-                name: "RIGHT_BOATHOOK_DOUBLE_UP",
+            RIGHT_BOATHOOK_DOUBLE_UP: {
                 unicode: "" as Unicode,
                 ascii: "||~" as Ascii,
                 smiley: ":||~:" as Smiley,
             },
-            {
-                name: "RIGHT_BOATHOOK_DOUBLE_DOWN",
+            RIGHT_BOATHOOK_DOUBLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "!!~" as Ascii,
                 smiley: ":!!~:" as Smiley,
             },
-            {
-                name: "SCROLL_AND_ARC_DOUBLE_UP",
+            SCROLL_AND_ARC_DOUBLE_UP: {
                 unicode: "" as Unicode,
                 ascii: ")||)" as Ascii,
                 smiley: ":)||):" as Smiley,
             },
-            {
-                name: "SCROLL_AND_ARC_DOUBLE_DOWN",
+            SCROLL_AND_ARC_DOUBLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: ")!!)" as Ascii,
                 smiley: ":)!!):" as Smiley,
             },
-            {
-                name: "BARB_AND_BOATHOOK_DOUBLE_UP",
+            BARB_AND_BOATHOOK_DOUBLE_UP: {
                 unicode: "" as Unicode,
                 ascii: "/||~" as Ascii,
                 smiley: ":/||~:" as Smiley,
             },
-            {
-                name: "BARB_AND_BOATHOOK_DOUBLE_DOWN",
+            BARB_AND_BOATHOOK_DOUBLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "\\!!~" as Ascii,
                 smiley: ":\\!!~:" as Smiley,
             },
-            {
-                name: "RIGHT_BOATHOOK_TRIPLE_UP",
+            RIGHT_BOATHOOK_TRIPLE_UP: {
                 unicode: "" as Unicode,
                 ascii: "|||~" as Ascii,
                 smiley: ":|||~:" as Smiley,
             },
-            {
-                name: "RIGHT_BOATHOOK_TRIPLE_DOWN",
+            RIGHT_BOATHOOK_TRIPLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "!!!~" as Ascii,
                 smiley: ":!!!~:" as Smiley,
             },
-            {
-                name: "LEFT_SCROLL_AND_BARB_TRIPLE_UP",
+            LEFT_SCROLL_AND_BARB_TRIPLE_UP: {
                 unicode: "" as Unicode,
                 ascii: ")/|||" as Ascii,
                 smiley: ":)/|||:" as Smiley,
             },
-            {
-                name: "LEFT_SCROLL_AND_BARB_TRIPLE_DOWN",
+            LEFT_SCROLL_AND_BARB_TRIPLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: ")\\!!!" as Ascii,
                 smiley: ":)\\!!!:" as Smiley,
             },
-            {
-                name: "BARB_AND_BOATHOOK_TRIPLE_UP",
+            BARB_AND_BOATHOOK_TRIPLE_UP: {
                 unicode: "" as Unicode,
                 ascii: "/|||~" as Ascii,
                 smiley: ":/|||~:" as Smiley,
             },
-            {
-                name: "BARB_AND_BOATHOOK_TRIPLE_DOWN",
+            BARB_AND_BOATHOOK_TRIPLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "\\!!!~" as Ascii,
                 smiley: ":\\!!!~:" as Smiley,
             },
-            {
-                name: "RIGHT_BOATHOOK_EX_UP",
+            RIGHT_BOATHOOK_EX_UP: {
                 unicode: "" as Unicode,
                 ascii: "X~" as Ascii,
                 smiley: ":X~:" as Smiley,
             },
-            {
-                name: "RIGHT_BOATHOOK_EX_DOWN",
+            RIGHT_BOATHOOK_EX_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "Y~" as Ascii,
                 smiley: ":Y~:" as Smiley,
             },
-            {
-                name: "SCROLL_AND_ARC_EX_UP",
+            SCROLL_AND_ARC_EX_UP: {
                 unicode: "" as Unicode,
                 ascii: ")X)" as Ascii,
                 smiley: ":)X):" as Smiley,
             },
-            {
-                name: "SCROLL_AND_ARC_EX_DOWN",
+            SCROLL_AND_ARC_EX_DOWN: {
                 unicode: "" as Unicode,
                 ascii: ")Y)" as Ascii,
                 smiley: ":)Y):" as Smiley,
             },
-            {
-                name: "BARB_AND_BOATHOOK_EX_UP",
+            BARB_AND_BOATHOOK_EX_UP: {
                 unicode: "" as Unicode,
                 ascii: "/X~" as Ascii,
                 smiley: ":/X~:" as Smiley,
             },
-            {
-                name: "BARB_AND_BOATHOOK_EX_DOWN",
+            BARB_AND_BOATHOOK_EX_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "\\Y~" as Ascii,
                 smiley: ":\\Y~:" as Smiley,
             },
-            {
-                name: "LEFT_SCROLL_UP",
+            LEFT_SCROLL_UP: {
                 unicode: "" as Unicode,
                 ascii: ")|" as Ascii,
                 smiley: ":)|:" as Smiley,
             },
-            {
-                name: "LEFT_SCROLL_DOWN",
+            LEFT_SCROLL_DOWN: {
                 unicode: "" as Unicode,
                 ascii: ")!" as Ascii,
                 smiley: ":)!:" as Smiley,
             },
-            {
-                name: "LEFT_BOATHOOK_UP",
+            LEFT_BOATHOOK_UP: {
                 unicode: "" as Unicode,
                 ascii: "~|" as Ascii,
                 smiley: ":~|:" as Smiley,
             },
-            {
-                name: "LEFT_BOATHOOK_DOWN",
+            LEFT_BOATHOOK_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "~!" as Ascii,
                 smiley: ":~!:" as Smiley,
             },
-            {
-                name: "LEFT_SCROLL_AND_BOATHOOK_UP",
+            LEFT_SCROLL_AND_BOATHOOK_UP: {
                 unicode: "" as Unicode,
                 ascii: ")~|" as Ascii,
                 smiley: ":)~|:" as Smiley,
             },
-            {
-                name: "LEFT_SCROLL_AND_BOATHOOK_DOWN",
+            LEFT_SCROLL_AND_BOATHOOK_DOWN: {
                 unicode: "" as Unicode,
                 ascii: ")~!" as Ascii,
                 smiley: ":)~!:" as Smiley,
             },
-            {
-                name: "DOUBLE_LEFT_BOATHOOK_UP",
+            DOUBLE_LEFT_BOATHOOK_UP: {
                 unicode: "" as Unicode,
                 ascii: "~~|" as Ascii,
                 smiley: ":~~|:" as Smiley,
             },
-            {
-                name: "DOUBLE_LEFT_BOATHOOK_DOWN",
+            DOUBLE_LEFT_BOATHOOK_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "~~!" as Ascii,
                 smiley: ":~~!:" as Smiley,
             },
-            {
-                name: "SCROLL_AND_BOATHOOK_UP",
+            SCROLL_AND_BOATHOOK_UP: {
                 unicode: "" as Unicode,
                 ascii: ")|~" as Ascii,
                 smiley: ":)|~:" as Smiley,
             },
-            {
-                name: "SCROLL_AND_BOATHOOK_DOWN",
+            SCROLL_AND_BOATHOOK_DOWN: {
                 unicode: "" as Unicode,
                 ascii: ")!~" as Ascii,
                 smiley: ":)!~:" as Smiley,
             },
-            {
-                name: "SCROLL_AND_ARC_UP",
+            SCROLL_AND_ARC_UP: {
                 unicode: "" as Unicode,
                 ascii: ")|)" as Ascii,
                 smiley: ":)|):" as Smiley,
             },
-            {
-                name: "SCROLL_AND_ARC_DOWN",
+            SCROLL_AND_ARC_DOWN: {
                 unicode: "" as Unicode,
                 ascii: ")!)" as Ascii,
                 smiley: ":)!):" as Smiley,
             },
-            {
-                name: "BOATHOOK_AND_ARC_UP",
+            BOATHOOK_AND_ARC_UP: {
                 unicode: "" as Unicode,
                 ascii: "~|)" as Ascii,
                 smiley: ":~|):" as Smiley,
             },
-            {
-                name: "BOATHOOK_AND_ARC_DOWN",
+            BOATHOOK_AND_ARC_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "~!)" as Ascii,
                 smiley: ":~!):" as Smiley,
             },
-            {
-                name: "BOATHOOK_AND_BARB_UP",
+            BOATHOOK_AND_BARB_UP: {
                 unicode: "" as Unicode,
                 ascii: "~|\\" as Ascii,
                 smiley: ":~|\\:" as Smiley,
             },
-            {
-                name: "BOATHOOK_AND_BARB_DOWN",
+            BOATHOOK_AND_BARB_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "~!/" as Ascii,
                 smiley: ":~!/:" as Smiley,
             },
-            {
-                name: "LEFT_SCROLL_DOUBLE_LEFT_BARB_UP",
+            LEFT_SCROLL_DOUBLE_LEFT_BARB_UP: {
                 unicode: "" as Unicode,
                 ascii: ")//|" as Ascii,
                 smiley: ":)/ /|:" as Smiley,
             },
-            {
-                name: "LEFT_SCROLL_DOUBLE_LEFT_BARB_DOWN",
+            LEFT_SCROLL_DOUBLE_LEFT_BARB_DOWN: {
                 unicode: "" as Unicode,
                 ascii: ")\\\\!" as Ascii,
                 smiley: ":)\\ \\!:" as Smiley,
             },
-            {
-                name: "ARC_AND_BOATHOOK_UP",
+            ARC_AND_BOATHOOK_UP: {
                 unicode: "" as Unicode,
                 ascii: "(|~" as Ascii,
                 smiley: ":(|~:" as Smiley,
             },
-            {
-                name: "ARC_AND_BOATHOOK_DOWN",
+            ARC_AND_BOATHOOK_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "(!~" as Ascii,
                 smiley: ":(!~:" as Smiley,
             },
-            {
-                name: "LEFT_ARC_AND_BARB_UP",
+            LEFT_ARC_AND_BARB_UP: {
                 unicode: "" as Unicode,
                 ascii: "(/|" as Ascii,
                 smiley: ":(/|:" as Smiley,
             },
-            {
-                name: "LEFT_ARC_AND_BARB_DOWN",
+            LEFT_ARC_AND_BARB_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "(\\!" as Ascii,
                 smiley: ":(\\!:" as Smiley,
             },
-            {
-                name: "LEFT_SCROLL_AND_DOUBLE_BARB_UP",
+            LEFT_SCROLL_AND_DOUBLE_BARB_UP: {
                 unicode: "" as Unicode,
                 ascii: ")/|\\" as Ascii,
                 smiley: ":)/|\\:" as Smiley,
             },
-            {
-                name: "LEFT_SCROLL_AND_DOUBLE_BARB_DOWN",
+            LEFT_SCROLL_AND_DOUBLE_BARB_DOWN: {
                 unicode: "" as Unicode,
                 ascii: ")\\!/" as Ascii,
                 smiley: ":)\\!/:" as Smiley,
             },
-            {
-                name: "RIGHT_BARB_AND_ARC_UP",
+            RIGHT_BARB_AND_ARC_UP: {
                 unicode: "" as Unicode,
                 ascii: "|\\)" as Ascii,
                 smiley: ":|\\):" as Smiley,
             },
-            {
-                name: "RIGHT_BARB_AND_ARC_DOWN",
+            RIGHT_BARB_AND_ARC_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "!/)" as Ascii,
                 smiley: ":!/):" as Smiley,
             },
-            {
-                name: "DOUBLE_RIGHT_BARB_UP",
+            DOUBLE_RIGHT_BARB_UP: {
                 unicode: "" as Unicode,
                 ascii: "|\\\\" as Ascii,
                 smiley: ":|\\ \\:" as Smiley,
             },
-            {
-                name: "DOUBLE_RIGHT_BARB_DOWN",
+            DOUBLE_RIGHT_BARB_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "!//" as Ascii,
                 smiley: ":!/ /:" as Smiley,
             },
-            {
-                name: "LEFT_SCROLL_DOUBLE_RIGHT_BARB_UP",
+            LEFT_SCROLL_DOUBLE_RIGHT_BARB_UP: {
                 unicode: "" as Unicode,
                 ascii: ")|\\\\" as Ascii,
                 smiley: ":)|\\ \\:" as Smiley,
             },
-            {
-                name: "LEFT_SCROLL_DOUBLE_RIGHT_BARB_DOWN",
+            LEFT_SCROLL_DOUBLE_RIGHT_BARB_DOWN: {
                 unicode: "" as Unicode,
                 ascii: ")!//" as Ascii,
                 smiley: ":)!/ /:" as Smiley,
             },
-            {
-                name: "LEFT_SCROLL_AND_BOATHOOK_DOUBLE_UP",
+            LEFT_SCROLL_AND_BOATHOOK_DOUBLE_UP: {
                 unicode: "" as Unicode,
                 ascii: ")~||" as Ascii,
                 smiley: ":)~||:" as Smiley,
             },
-            {
-                name: "LEFT_SCROLL_AND_BOATHOOK_DOUBLE_DOWN",
+            LEFT_SCROLL_AND_BOATHOOK_DOUBLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: ")~!!" as Ascii,
                 smiley: ":)~!!:" as Smiley,
             },
-            {
-                name: "DOUBLE_LEFT_BOATHOOK_DOUBLE_UP",
+            DOUBLE_LEFT_BOATHOOK_DOUBLE_UP: {
                 unicode: "" as Unicode,
                 ascii: "~~||" as Ascii,
                 smiley: ":~~||:" as Smiley,
             },
-            {
-                name: "DOUBLE_LEFT_BOATHOOK_DOUBLE_DOWN",
+            DOUBLE_LEFT_BOATHOOK_DOUBLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "~~!!" as Ascii,
                 smiley: ":~~!!:" as Smiley,
             },
-            {
-                name: "LEFT_SCROLL_AND_BARB_DOUBLE_UP",
+            LEFT_SCROLL_AND_BARB_DOUBLE_UP: {
                 unicode: "" as Unicode,
                 ascii: ")/||" as Ascii,
                 smiley: ":)/||:" as Smiley,
             },
-            {
-                name: "LEFT_SCROLL_AND_BARB_DOUBLE_DOWN",
+            LEFT_SCROLL_AND_BARB_DOUBLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: ")\\!!" as Ascii,
                 smiley: ":)\\!!:" as Smiley,
             },
-            {
-                name: "LEFT_ARC_DOUBLE_UP",
+            LEFT_ARC_DOUBLE_UP: {
                 unicode: "" as Unicode,
                 ascii: "(||" as Ascii,
                 smiley: ":(||:" as Smiley,
             },
-            {
-                name: "LEFT_ARC_DOUBLE_DOWN",
+            LEFT_ARC_DOUBLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "(!!" as Ascii,
                 smiley: ":(!!:" as Smiley,
             },
-            {
-                name: "BOATHOOK_AND_ARC_DOUBLE_UP",
+            BOATHOOK_AND_ARC_DOUBLE_UP: {
                 unicode: "" as Unicode,
                 ascii: "~||)" as Ascii,
                 smiley: ":~||):" as Smiley,
             },
-            {
-                name: "BOATHOOK_AND_ARC_DOUBLE_DOWN",
+            BOATHOOK_AND_ARC_DOUBLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "~!!)" as Ascii,
                 smiley: ":~!!):" as Smiley,
             },
-            {
-                name: "BOATHOOK_AND_BARB_DOUBLE_UP",
+            BOATHOOK_AND_BARB_DOUBLE_UP: {
                 unicode: "" as Unicode,
                 ascii: "~||\\" as Ascii,
                 smiley: ":~||\\:" as Smiley,
             },
-            {
-                name: "BOATHOOK_AND_BARB_DOUBLE_DOWN",
+            BOATHOOK_AND_BARB_DOUBLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "~!!/" as Ascii,
                 smiley: ":~!!/:" as Smiley,
             },
-            {
-                name: "LEFT_SCROLL_DOUBLE_LEFT_BARB_DOUBLE_UP",
+            LEFT_SCROLL_DOUBLE_LEFT_BARB_DOUBLE_UP: {
                 unicode: "" as Unicode,
                 ascii: ")//||" as Ascii,
                 smiley: ":)/ /||:" as Smiley,
             },
-            {
-                name: "LEFT_SCROLL_DOUBLE_LEFT_BARB_DOUBLE_DOWN",
+            LEFT_SCROLL_DOUBLE_LEFT_BARB_DOUBLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: ")\\\\!!" as Ascii,
                 smiley: ":)\\ \\!!:" as Smiley,
             },
-            {
-                name: "ARC_AND_BOATHOOK_DOUBLE_UP",
+            ARC_AND_BOATHOOK_DOUBLE_UP: {
                 unicode: "" as Unicode,
                 ascii: "(||~" as Ascii,
                 smiley: ":(||~:" as Smiley,
             },
-            {
-                name: "ARC_AND_BOATHOOK_DOUBLE_DOWN",
+            ARC_AND_BOATHOOK_DOUBLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "(!!~" as Ascii,
                 smiley: ":(!!~:" as Smiley,
             },
-            {
-                name: "LEFT_SCROLL_TRIPLE_UP",
+            LEFT_SCROLL_TRIPLE_UP: {
                 unicode: "" as Unicode,
                 ascii: ")|||" as Ascii,
                 smiley: ":)|||:" as Smiley,
             },
-            {
-                name: "LEFT_SCROLL_TRIPLE_DOWN",
+            LEFT_SCROLL_TRIPLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: ")!!!" as Ascii,
                 smiley: ":)!!!:" as Smiley,
             },
-            {
-                name: "LEFT_BOATHOOK_TRIPLE_UP",
+            LEFT_BOATHOOK_TRIPLE_UP: {
                 unicode: "" as Unicode,
                 ascii: "~|||" as Ascii,
                 smiley: ":~|||:" as Smiley,
             },
-            {
-                name: "LEFT_BOATHOOK_TRIPLE_DOWN",
+            LEFT_BOATHOOK_TRIPLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "~!!!" as Ascii,
                 smiley: ":~!!!:" as Smiley,
             },
-            {
-                name: "LEFT_SCROLL_AND_BOATHOOK_TRIPLE_UP",
+            LEFT_SCROLL_AND_BOATHOOK_TRIPLE_UP: {
                 unicode: "" as Unicode,
                 ascii: ")~|||" as Ascii,
                 smiley: ":)~|||:" as Smiley,
             },
-            {
-                name: "LEFT_SCROLL_AND_BOATHOOK_TRIPLE_DOWN",
+            LEFT_SCROLL_AND_BOATHOOK_TRIPLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: ")~!!!" as Ascii,
                 smiley: ":)~!!!:" as Smiley,
             },
-            {
-                name: "DOUBLE_LEFT_BOATHOOK_TRIPLE_UP",
+            DOUBLE_LEFT_BOATHOOK_TRIPLE_UP: {
                 unicode: "" as Unicode,
                 ascii: "~~|||" as Ascii,
                 smiley: ":~~|||:" as Smiley,
             },
-            {
-                name: "DOUBLE_LEFT_BOATHOOK_TRIPLE_DOWN",
+            DOUBLE_LEFT_BOATHOOK_TRIPLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "~~!!!" as Ascii,
                 smiley: ":~~!!!:" as Smiley,
             },
-            {
-                name: "SCROLL_AND_BOATHOOK_TRIPLE_UP",
+            SCROLL_AND_BOATHOOK_TRIPLE_UP: {
                 unicode: "" as Unicode,
                 ascii: ")|||~" as Ascii,
                 smiley: ":)|||~:" as Smiley,
             },
-            {
-                name: "SCROLL_AND_BOATHOOK_TRIPLE_DOWN",
+            SCROLL_AND_BOATHOOK_TRIPLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: ")!!!~" as Ascii,
                 smiley: ":)!!!~:" as Smiley,
             },
-            {
-                name: "SCROLL_AND_ARC_TRIPLE_UP",
+            SCROLL_AND_ARC_TRIPLE_UP: {
                 unicode: "" as Unicode,
                 ascii: ")|||)" as Ascii,
                 smiley: ":)|||):" as Smiley,
             },
-            {
-                name: "SCROLL_AND_ARC_TRIPLE_DOWN",
+            SCROLL_AND_ARC_TRIPLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: ")!!!)" as Ascii,
                 smiley: ":)!!!):" as Smiley,
             },
-            {
-                name: "BOATHOOK_AND_ARC_TRIPLE_UP",
+            BOATHOOK_AND_ARC_TRIPLE_UP: {
                 unicode: "" as Unicode,
                 ascii: "~|||)" as Ascii,
                 smiley: ":~|||):" as Smiley,
             },
-            {
-                name: "BOATHOOK_AND_ARC_TRIPLE_DOWN",
+            BOATHOOK_AND_ARC_TRIPLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "~!!!)" as Ascii,
                 smiley: ":~!!!):" as Smiley,
             },
-            {
-                name: "BOATHOOK_AND_BARB_TRIPLE_UP",
+            BOATHOOK_AND_BARB_TRIPLE_UP: {
                 unicode: "" as Unicode,
                 ascii: "~|||\\" as Ascii,
                 smiley: ":~|||\\:" as Smiley,
             },
-            {
-                name: "BOATHOOK_AND_BARB_TRIPLE_DOWN",
+            BOATHOOK_AND_BARB_TRIPLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "~!!!/" as Ascii,
                 smiley: ":~!!!/:" as Smiley,
             },
-            {
-                name: "LEFT_SCROLL_DOUBLE_LEFT_BARB_TRIPLE_UP",
+            LEFT_SCROLL_DOUBLE_LEFT_BARB_TRIPLE_UP: {
                 unicode: "" as Unicode,
                 ascii: ")//|||" as Ascii,
                 smiley: ":)/ /|||:" as Smiley,
             },
-            {
-                name: "LEFT_SCROLL_DOUBLE_LEFT_BARB_TRIPLE_DOWN",
+            LEFT_SCROLL_DOUBLE_LEFT_BARB_TRIPLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: ")\\\\!!!" as Ascii,
                 smiley: ":)\\ \\!!!:" as Smiley,
             },
-            {
-                name: "ARC_AND_BOATHOOK_TRIPLE_UP",
+            ARC_AND_BOATHOOK_TRIPLE_UP: {
                 unicode: "" as Unicode,
                 ascii: "(|||~" as Ascii,
                 smiley: ":(|||~:" as Smiley,
             },
-            {
-                name: "ARC_AND_BOATHOOK_TRIPLE_DOWN",
+            ARC_AND_BOATHOOK_TRIPLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "(!!!~" as Ascii,
                 smiley: ":(!!!~:" as Smiley,
             },
-            {
-                name: "LEFT_ARC_AND_BARB_TRIPLE_UP",
+            LEFT_ARC_AND_BARB_TRIPLE_UP: {
                 unicode: "" as Unicode,
                 ascii: "(/|||" as Ascii,
                 smiley: ":(/|||:" as Smiley,
             },
-            {
-                name: "LEFT_ARC_AND_BARB_TRIPLE_DOWN",
+            LEFT_ARC_AND_BARB_TRIPLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "(\\!!!" as Ascii,
                 smiley: ":(\\!!!:" as Smiley,
             },
-            {
-                name: "LEFT_SCROLL_AND_DOUBLE_BARB_TRIPLE_UP",
+            LEFT_SCROLL_AND_DOUBLE_BARB_TRIPLE_UP: {
                 unicode: "" as Unicode,
                 ascii: ")/|||\\" as Ascii,
                 smiley: ":)/|||\\:" as Smiley,
             },
-            {
-                name: "LEFT_SCROLL_AND_DOUBLE_BARB_TRIPLE_DOWN",
+            LEFT_SCROLL_AND_DOUBLE_BARB_TRIPLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: ")\\!!!/" as Ascii,
                 smiley: ":)\\!!!/:" as Smiley,
             },
-            {
-                name: "RIGHT_BARB_AND_ARC_TRIPLE_UP",
+            RIGHT_BARB_AND_ARC_TRIPLE_UP: {
                 unicode: "" as Unicode,
                 ascii: "|||\\)" as Ascii,
                 smiley: ":|||\\):" as Smiley,
             },
-            {
-                name: "RIGHT_BARB_AND_ARC_TRIPLE_DOWN",
+            RIGHT_BARB_AND_ARC_TRIPLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "!!!/)" as Ascii,
                 smiley: ":!!!/):" as Smiley,
             },
-            {
-                name: "DOUBLE_RIGHT_BARB_TRIPLE_UP",
+            DOUBLE_RIGHT_BARB_TRIPLE_UP: {
                 unicode: "" as Unicode,
                 ascii: "|||\\\\" as Ascii,
                 smiley: ":|||\\ \\:" as Smiley,
             },
-            {
-                name: "DOUBLE_RIGHT_BARB_TRIPLE_DOWN",
+            DOUBLE_RIGHT_BARB_TRIPLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "!!!//" as Ascii,
                 smiley: ":!!!/ /:" as Smiley,
             },
-            {
-                name: "LEFT_SCROLL_DOUBLE_RIGHT_BARB_TRIPLE_UP",
+            LEFT_SCROLL_DOUBLE_RIGHT_BARB_TRIPLE_UP: {
                 unicode: "" as Unicode,
                 ascii: ")|||\\\\" as Ascii,
                 smiley: ":)|||\\ \\:" as Smiley,
             },
-            {
-                name: "LEFT_SCROLL_DOUBLE_RIGHT_BARB_TRIPLE_DOWN",
+            LEFT_SCROLL_DOUBLE_RIGHT_BARB_TRIPLE_DOWN: {
                 unicode: "" as Unicode,
                 ascii: ")!!!//" as Ascii,
                 smiley: ":)!!!/ /:" as Smiley,
             },
-            {
-                name: "LEFT_SCROLL_AND_BOATHOOK_EX_UP",
+            LEFT_SCROLL_AND_BOATHOOK_EX_UP: {
                 unicode: "" as Unicode,
                 ascii: ")~X" as Ascii,
                 smiley: ":)~X:" as Smiley,
             },
-            {
-                name: "LEFT_SCROLL_AND_BOATHOOK_EX_DOWN",
+            LEFT_SCROLL_AND_BOATHOOK_EX_DOWN: {
                 unicode: "" as Unicode,
                 ascii: ")~Y" as Ascii,
                 smiley: ":)~Y:" as Smiley,
             },
-            {
-                name: "DOUBLE_LEFT_BOATHOOK_EX_UP",
+            DOUBLE_LEFT_BOATHOOK_EX_UP: {
                 unicode: "" as Unicode,
                 ascii: "~~X" as Ascii,
                 smiley: ":~~X:" as Smiley,
             },
-            {
-                name: "DOUBLE_LEFT_BOATHOOK_EX_DOWN",
+            DOUBLE_LEFT_BOATHOOK_EX_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "~~Y" as Ascii,
                 smiley: ":~~Y:" as Smiley,
             },
-            {
-                name: "LEFT_SCROLL_AND_BARB_EX_UP",
+            LEFT_SCROLL_AND_BARB_EX_UP: {
                 unicode: "" as Unicode,
                 ascii: ")/X" as Ascii,
                 smiley: ":)/X:" as Smiley,
             },
-            {
-                name: "LEFT_SCROLL_AND_BARB_EX_DOWN",
+            LEFT_SCROLL_AND_BARB_EX_DOWN: {
                 unicode: "" as Unicode,
                 ascii: ")\\Y" as Ascii,
                 smiley: ":)\\Y:" as Smiley,
             },
-            {
-                name: "LEFT_ARC_EX_UP",
+            LEFT_ARC_EX_UP: {
                 unicode: "" as Unicode,
                 ascii: "(X" as Ascii,
                 smiley: ":(X:" as Smiley,
             },
-            {
-                name: "LEFT_ARC_EX_DOWN",
+            LEFT_ARC_EX_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "(Y" as Ascii,
                 smiley: ":(Y:" as Smiley,
             },
-            {
-                name: "BOATHOOK_AND_ARC_EX_UP",
+            BOATHOOK_AND_ARC_EX_UP: {
                 unicode: "" as Unicode,
                 ascii: "~X)" as Ascii,
                 smiley: ":~X):" as Smiley,
             },
-            {
-                name: "BOATHOOK_AND_ARC_EX_DOWN",
+            BOATHOOK_AND_ARC_EX_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "~Y)" as Ascii,
                 smiley: ":~Y):" as Smiley,
             },
-            {
-                name: "BOATHOOK_AND_BARB_EX_UP",
+            BOATHOOK_AND_BARB_EX_UP: {
                 unicode: "" as Unicode,
                 ascii: "~X\\" as Ascii,
                 smiley: ":~X\\:" as Smiley,
             },
-            {
-                name: "BOATHOOK_AND_BARB_EX_DOWN",
+            BOATHOOK_AND_BARB_EX_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "~Y/" as Ascii,
                 smiley: ":~Y/:" as Smiley,
             },
-            {
-                name: "LEFT_SCROLL_DOUBLE_LEFT_BARB_EX_UP",
+            LEFT_SCROLL_DOUBLE_LEFT_BARB_EX_UP: {
                 unicode: "" as Unicode,
                 ascii: ")//X" as Ascii,
                 smiley: ":)/ /X:" as Smiley,
             },
-            {
-                name: "LEFT_SCROLL_DOUBLE_LEFT_BARB_EX_DOWN",
+            LEFT_SCROLL_DOUBLE_LEFT_BARB_EX_DOWN: {
                 unicode: "" as Unicode,
                 ascii: ")\\\\Y" as Ascii,
                 smiley: ":)\\ \\Y:" as Smiley,
             },
-            {
-                name: "ARC_AND_BOATHOOK_EX_UP",
+            ARC_AND_BOATHOOK_EX_UP: {
                 unicode: "" as Unicode,
                 ascii: "(X~" as Ascii,
                 smiley: ":(X~:" as Smiley,
             },
-            {
-                name: "ARC_AND_BOATHOOK_EX_DOWN",
+            ARC_AND_BOATHOOK_EX_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "(Y~" as Ascii,
                 smiley: ":(Y~:" as Smiley,
             },
-            {
-                name: "BARE_SHAFT_UP",
+            BARE_SHAFT_UP: {
                 unicode: "" as Unicode,
                 ascii: "|" as Ascii,
                 smiley: ":|:" as Smiley,
             },
-            {
-                name: "BARE_SHAFT_DOWN",
+            BARE_SHAFT_DOWN: {
                 unicode: "" as Unicode,
                 ascii: "!" as Ascii,
                 smiley: ":!:" as Smiley,
             },
-        ]
-        expect(coreGlyphExpectations).toBeArrayWithDeepEqualContents(expected)
+        }
+        expect(coreGlyphExpectations).toEqual(expected)
     })
 
     it("has the correct accent glyphs and computes their IO correctly (when oriented with an upwards-aiming core)            ", (): void => {
         const accents = Object.values(Accent) as Accent[]
-        const accentGlyphExpectations = accents.map((accent: Accent): GlyphExpectation => {
-            return computeAccentGlyphExpectation(accent, Orientation.WITH, Aim.UP)
-        })
+        const accentGlyphExpectations = accents.reduce(
+            (
+                accentGlyphExpectations: Record<Accent, GlyphExpectation>,
+                accent: Accent
+            ): Record<Accent, GlyphExpectation> => {
+                return {
+                    ...accentGlyphExpectations,
+                    [accent]: computeAccentGlyphExpectation(accent, Orientation.WITH, Aim.UP)
+                }
+            },
+            {} as Record<Accent, GlyphExpectation>,
+        )
 
-        const expected: Array<GlyphExpectation> = [
-            {
-                name: Accent.TICK,
+        const expected: Record<Accent, GlyphExpectation> = {
+            [Accent.TICK]: {
                 unicode: "" as Unicode,
                 ascii: "'" as Ascii,
                 smiley: ":':" as Smiley,
             },
-            {
-                name: Accent.WING,
+            [Accent.WING]: {
                 unicode: "" as Unicode,
                 ascii: "`" as Ascii,
                 smiley: ":`:" as Smiley,
             },
-            {
-                name: Accent.BIRD,
+            [Accent.BIRD]: {
                 unicode: "" as Unicode,
                 ascii: "``" as Ascii,
                 smiley: ":``:" as Smiley,
             },
-        ]
+        }
         expect(accentGlyphExpectations).toEqual(expected)
     })
 
     it("has the correct accent glyphs and computes their IO correctly (when oriented with a downwards-aiming core)              ", (): void => {
         const accents = Object.values(Accent) as Accent[]
-        const accentGlyphExpectations = accents.map((accent: Accent): GlyphExpectation => {
-            return computeAccentGlyphExpectation(accent, Orientation.WITH, Aim.DOWN)
-        })
+        const accentGlyphExpectations = accents.reduce(
+            (
+                accentGlyphExpectations: Record<Accent, GlyphExpectation>,
+                accent: Accent
+            ): Record<Accent, GlyphExpectation> => {
+                return {
+                    ...accentGlyphExpectations,
+                    [accent]: computeAccentGlyphExpectation(accent, Orientation.WITH, Aim.DOWN)
+                }
+            },
+            {} as Record<Accent, GlyphExpectation>,
+        )
 
-        const expected: Array<GlyphExpectation> = [
-            {
-                name: Accent.TICK,
+        const expected: Record<Accent, GlyphExpectation> = {
+            [Accent.TICK]: {
                 unicode: "" as Unicode,
                 ascii: "." as Ascii,
                 smiley: ":.:" as Smiley,
             },
-            {
-                name: Accent.WING,
+            [Accent.WING]: {
                 unicode: "" as Unicode,
                 ascii: "," as Ascii,
                 smiley: ":,:" as Smiley,
             },
-            {
-                name: Accent.BIRD,
+            [Accent.BIRD]: {
                 unicode: "" as Unicode,
                 ascii: ",," as Ascii,
                 smiley: ":,,:" as Smiley,
             },
-        ]
+        }
         expect(accentGlyphExpectations).toEqual(expected)
     })
 
     it("has the correct Sagittal-compatible glyphs and computes their IO correctly", (): void => {
         const compatibles = Object.values(Compatible) as Compatible[]
-        const compatibleGlyphExpectations = compatibles.map((compatible: Compatible): GlyphExpectation => {
-            return computeCompatibleGlyphExpectation(compatible)
-        })
+        const compatibleGlyphExpectations = compatibles.reduce(
+            (
+                compatibleGlyphExpectations: Record<Compatible, GlyphExpectation>,
+                compatible: Compatible
+            ): Record<Compatible, GlyphExpectation> => {
+                return {
+                    ...compatibleGlyphExpectations,
+                    [compatible]: computeCompatibleGlyphExpectation(compatible)
+                }
+            },
+            {} as Record<Compatible, GlyphExpectation>,
+        )
 
-        const expected: GlyphExpectation[] = [
-            {
-                name: Compatible.STEIN_SEMISHARP,
+        const expected: Record<Compatible, GlyphExpectation> = {
+            [Compatible.STEIN_SEMISHARP]: {
                 unicode: "" as Unicode,
                 ascii: ">" as Ascii,
                 smiley: ":>:" as Smiley,
             },
-            {
-                name: Compatible.STEIN_SEMIFLAT,
+            [Compatible.STEIN_SEMIFLAT]: {
                 unicode: "" as Unicode,
                 ascii: "<" as Ascii,
                 smiley: ":<:" as Smiley,
             },
-            {
-                name: Compatible.STEIN_SESQUISHARP,
+            [Compatible.STEIN_SESQUISHARP]: {
                 unicode: "" as Unicode,
                 ascii: ">#" as Ascii,
                 smiley: ":>#:" as Smiley,
             },
-            {
-                name: Compatible.ZIMMERMANN_SESQUIFLAT,
+            [Compatible.ZIMMERMANN_SESQUIFLAT]: {
                 unicode: "" as Unicode,
                 ascii: "<b" as Ascii,
                 smiley: ":<b:" as Smiley,
             },
-            {
-                name: Compatible.WILSON_PLUS,
+            [Compatible.WILSON_PLUS]: {
                 unicode: "" as Unicode,
                 ascii: "+" as Ascii,
                 smiley: ":+:" as Smiley,
             },
-            {
-                name: Compatible.WILSON_MINUS,
+            [Compatible.WILSON_MINUS]: {
                 unicode: "" as Unicode,
                 ascii: "-" as Ascii,
                 smiley: ":-:" as Smiley,
             },
-            {
-                name: Compatible.NATURAL,
+            [Compatible.NATURAL]: {
                 unicode: "" as Unicode,
                 ascii: "|//|" as Ascii,
                 smiley: ":h:" as Smiley,
             },
-            {
-                name: Compatible.SHARP,
+            [Compatible.SHARP]: {
                 unicode: "" as Unicode,
                 ascii: "#" as Ascii,
                 smiley: ":#:" as Smiley,
             },
-            {
-                name: Compatible.FLAT,
+            [Compatible.FLAT]: {
                 unicode: "" as Unicode,
                 ascii: "b" as Ascii,
                 smiley: ":b:" as Smiley,
             },
-            {
-                name: Compatible.DOUBLE_SHARP,
+            [Compatible.DOUBLE_SHARP]: {
                 unicode: "" as Unicode,
                 ascii: "x" as Ascii,
                 smiley: ":x:" as Smiley,
             },
-            {
-                name: Compatible.DOUBLE_FLAT,
+            [Compatible.DOUBLE_FLAT]: {
                 unicode: "" as Unicode,
                 ascii: "bb" as Ascii,
                 smiley: ":bb:" as Smiley,
             },
-        ]
+        }
         expect(compatibleGlyphExpectations).toEqual(expected)
     })
 })
