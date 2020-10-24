@@ -85,7 +85,7 @@ sort(n2pResults, {by: "n2p" as KeyPath})
 // TODO: SORTED NUMERATORS
 //  Alright, this failed overnight because of this:
 //  Error: This integer 8368831 contains primes which are too big; remainder is 8368831
-//  So you'll need to add more primes to the list, say, up to 10 million
+//  So you'll need to add more primes to the list, say, up to 10 million (okay, done)
 //  And because the script has been designed to only sort and spit out output if it makes it to the very end, you'll
 //  Need to revise things here a little bit so it can work with the results thus far, since it got so close to finishing
 //  (Well, maybe it still had like 6 hours left, since it just keeps getting slower and slower as it goes higher).

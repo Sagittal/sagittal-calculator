@@ -264,7 +264,9 @@ const computeCompatibleUnicode = (compatible: Compatible): Unicode =>
 const computeOrientedAccentUnicode = ({accent, orientation}: OrientedAccent, aim: Aim): Unicode =>
     ACCENT_TO_ORIENTATION_TO_AIM_TO_UNICODE_MAP[accent][orientation][aim]
 
-// TODO: I feel like these methods should take the Flavor parameter and pass it on, just in case
+// Todo: FLAVOR / SYMBOL / SAGITTAL
+//  I feel like these methods should take the Flavor parameter and pass it on, just in case
+//  Although then, if Sagittal receives a Flavor, then the Flavor type moves out of the flavor/ module
 const computeSagittalUnicode = ({arm, core}: Sagittal): Unicode => {
     const armUnicode = isUndefined(arm) ?
         BLANK_UNICODE :
