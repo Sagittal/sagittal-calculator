@@ -1,4 +1,4 @@
-import {Accidental, Aim, Compatible, Flavor, Smiley, Sagittal} from "../../../../../src/sagittal/accidental"
+import {Accidental, Aim, Compatible, Flavor, Sagittal, Smiley} from "../../../../../src/sagittal/accidental"
 import {getArm} from "../../../../../src/sagittal/accidental/flacco/arm"
 import {ArmName, HeadName, Orientation} from "../../../../../src/sagittal/accidental/flacco/types"
 import {computeAccidentalSmiley, computeSagittalSmiley} from "../../../../../src/sagittal/accidental/io"

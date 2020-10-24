@@ -32,4 +32,14 @@ describe("format23FreeClass", (): void => {
         const expected = "[/pre][latex]\\frac{11}{5}_{\\scriptsize{(2,3)}}[/latex][pre]" as Formatted<Two3FreeClass>
         expect(actual).toBe(expected)
     })
+
+    it("can drop the denominator of 1 when formatting for the forum", (): void => {
+        const two3FreeClass = {monzo: [0, 0, 0, 1, 1]} as Two3FreeClass
+
+        ioSettings.tableFormat = TableFormat.FORUM
+        const actual = format23FreeClass(two3FreeClass)
+
+        const expected = "[/pre][latex]77_{\\scriptsize{(2,3)}}[/latex][pre]" as Formatted<Two3FreeClass>
+        expect(actual).toBe(expected)
+    })
 })

@@ -58,8 +58,8 @@ JI_NOTATION.forEach((commaClassId: Id<CommaClass>): void => {
 
     const commas = computeCommas({...jiPitchScriptGroupSettings, ...findCommasSettings, lowerBound, upperBound})
 
-    // let bestUsefulness = Infinity
-    // let bestComma = undefined
+    // Let bestUsefulness = Infinity
+    // Let bestComma = undefined
     commas.forEach((comma: Comma): void => {
         const name = computeCommaName(comma)
         const n2d3p9 = computeN2D3P9(compute23FreeClass(comma))
@@ -67,16 +67,16 @@ JI_NOTATION.forEach((commaClassId: Id<CommaClass>): void => {
         const ate = computeAte(comma)
         saveLog(stringify({name, n2d3p9, aas, ate}))
 
-        // const usefulness = log(n2d3p9, 2 as Base) + pow(ate - DATE, 2 as Exponent) + pow(aas - DAAS, 2 as Exponent)
-        // if (usefulness < bestUsefulness) {
-        //     bestUsefulness = usefulness
-        //     bestComma = comma
+        // Const usefulness = log(n2d3p9, 2 as Base) + pow(ate - DATE, 2 as Exponent) + pow(aas - DAAS, 2 as Exponent)
+        // If (usefulness < bestUsefulness) {
+        //     BestUsefulness = usefulness
+        //     BestComma = comma
         // }
     })
 
-    // if (isUndefined(bestComma)) {
-    //     saveLog("No best comma found.")
+    // If (isUndefined(bestComma)) {
+    //     SaveLog("No best comma found.")
     // } else {
-    //     saveLog(stringify(analyzeComma(bestComma), {multiline: true}))
+    //     SaveLog(stringify(analyzeComma(bestComma), {multiline: true}))
     // }
 })

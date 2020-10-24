@@ -11,16 +11,16 @@ describe("formatQuotient", (): void => {
         expect(actual).toBe(expected)
     })
 
-    it("it can show it undirected, with a colon", (): void => {
-        const quotient = [64, 65] as Quotient
+    it("it can show it undirected, with a colon, orienting it properly if it is sub", (): void => {
+        const quotient = [75, 77] as Quotient
 
         const actual = formatQuotient(quotient, {directed: false})
 
-        const expected = "64:65"
+        const expected = "75:77"
         expect(actual).toBe(expected)
     })
 
-    it("it can show it undirected, with a colon, and orients it properly", (): void => {
+    it("it can show it undirected, with a colon, orienting it properly if it is super", (): void => {
         const quotient = [77, 75] as Quotient
 
         const actual = formatQuotient(quotient, {directed: false})
@@ -46,6 +46,34 @@ describe("formatQuotient", (): void => {
         const actual = formatQuotient(quotient, {noLaTeXScaler: true})
 
         const expected = "77/75" as Formatted<Two3FreeClass>
+        expect(actual).toBe(expected)
+    })
+
+    it("drops the denominator when it is 1 and the quotient is directed", (): void => {
+        const quotient = [77, 1] as Quotient
+
+        const actual = formatQuotient(quotient)
+
+        const expected = "77"
+        expect(actual).toBe(expected)
+    })
+
+    it("does not drop a denominator of 1 when undirected", (): void => {
+        const quotient = [77, 1] as Quotient
+
+        const actual = formatQuotient(quotient, {directed: false})
+
+        const expected = "1:77"
+        expect(actual).toBe(expected)
+    })
+
+    it("can drop the denominator of 1 when formatting for the forum", (): void => {
+        const quotient = [77, 1] as Quotient
+
+        ioSettings.tableFormat = TableFormat.FORUM
+        const actual = formatQuotient(quotient)
+
+        const expected = "[/pre][latex]77[/latex][pre]" as Formatted<Two3FreeClass>
         expect(actual).toBe(expected)
     })
 })

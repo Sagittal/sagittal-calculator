@@ -4,7 +4,7 @@ import { computeN2D3P9, N2D3P9 } from "../../../../../../src/sagittal/ji/two3Fre
 
 describe("computeN2D3P9", (): void => {
     it("returns an approximate rank of the 2,3-free class's popularity", (): void => {
-        const two3FreeClass = { monzo: [0, 0, 1, 0, 1] } as Two3FreeClass // 55/1₍₂,₃₎
+        const two3FreeClass = { monzo: [0, 0, 1, 0, 1] } as Two3FreeClass // 55₍₂,₃₎
 
         const actual = computeN2D3P9(two3FreeClass)
 
@@ -13,7 +13,7 @@ describe("computeN2D3P9", (): void => {
     })
 
     it("yet another example", (): void => {
-        const two3FreeClass = { monzo: [0, 0, 2, 2] } as Two3FreeClass  // 1225/1₍₂,₃₎
+        const two3FreeClass = { monzo: [0, 0, 2, 2] } as Two3FreeClass  // 1225₍₂,₃₎
 
         const actual = computeN2D3P9(two3FreeClass)
 

@@ -106,7 +106,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             aas: 10.555481691145998 as Abs<ApotomeSlope>,
                             ate: 12 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
                             two3FreeClassAnalysis: {
-                                name: "1/1₍₂,₃₎" as Name<Two3FreeClass>,
+                                name: "1₍₂,₃₎" as Name<Two3FreeClass>,
                                 two3FreeCopfr: 0 as Copfr<{rough: 5}>,
                                 two3FreeSopfr: 0 as Sopfr<{rough: 5}>,
                                 two3FreePrimeLimit: 1 as Max<Prime<{rough: 5}>>,
@@ -174,7 +174,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             aas: 10.555481691145998 as Abs<ApotomeSlope>,
                             ate: 12 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
                             two3FreeClassAnalysis: {
-                                name: "1/1₍₂,₃₎" as Name<Two3FreeClass>,
+                                name: "1₍₂,₃₎" as Name<Two3FreeClass>,
                                 two3FreeCopfr: 0 as Copfr<{rough: 5}>,
                                 two3FreeSopfr: 0 as Sopfr<{rough: 5}>,
                                 two3FreePrimeLimit: 1 as Max<Prime<{rough: 5}>>,
@@ -242,7 +242,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             aas: 10.555481691145998 as Abs<ApotomeSlope>,
                             ate: 12 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
                             two3FreeClassAnalysis: {
-                                name: "1/1₍₂,₃₎" as Name<Two3FreeClass>,
+                                name: "1₍₂,₃₎" as Name<Two3FreeClass>,
                                 two3FreeCopfr: 0 as Copfr<{rough: 5}>,
                                 two3FreeSopfr: 0 as Sopfr<{rough: 5}>,
                                 two3FreePrimeLimit: 1 as Max<Prime<{rough: 5}>>,

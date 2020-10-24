@@ -21,4 +21,13 @@ describe("formatSplitQuotient", (): void => {
         const expected = ["[/pre][latex]\\frac{7}{6}[/latex][pre]"] as Array<Formatted<JiPitchAnalysis>>
         expect(actual).toEqual(expected)
     })
+
+    it("works for a quotient with a 1 denominator", (): void => {
+        const quotient = [7, 1] as Quotient<{rational: true}>
+
+        const actual = formatSplitQuotient(quotient)
+
+        const expected = ["7", "/", "1"] as Array<Formatted<JiPitchAnalysis>>
+        expect(actual).toEqual(expected)
+    })
 })

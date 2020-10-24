@@ -3,8 +3,6 @@ import {ioSettings} from "../globals"
 import {TableFormat} from "../table"
 import {Formatted} from "./types"
 
-// TODO: RATIO FORMAT
-//  When I have denominator 1, shouldn't format ratio drop it?
 const formatQuotient = <T extends Quotient>(
     inputQuotient: T,
     {directed = true, noLaTeXScaler = false}: {directed?: boolean, noLaTeXScaler?: boolean} = {},
@@ -13,7 +11,11 @@ const formatQuotient = <T extends Quotient>(
 
     return directed ?
         ioSettings.tableFormat === TableFormat.FORUM && !noLaTeXScaler ?
-            `[/pre][latex]\\frac{${numerator}}{${denominator}}[/latex][pre]` as Formatted<T> :
+            denominator === 1 ?
+                `[/pre][latex]${numerator}[/latex][pre]` as Formatted<T> :
+                `[/pre][latex]\\frac{${numerator}}{${denominator}}[/latex][pre]` as Formatted<T> :
+            denominator === 1 ?
+            `${numerator}` as Formatted<T> :
             `${numerator}/${denominator}` as Formatted<T> :
         `${denominator}:${numerator}` as Formatted<T>
 }

@@ -6,8 +6,11 @@ const formatSplitQuotient = (quotient: Quotient): Array<Formatted<JiPitchAnalysi
     if (ioSettings.tableFormat === TableFormat.FORUM) {
         return [formattedQuotient] as Array<Formatted> as Array<Formatted<JiPitchAnalysis>>
     } else {
-        const [formattedNumerator, formattedDenominator] =
+        let [formattedNumerator, formattedDenominator] =
             formattedQuotient.split("/") as Array<Formatted<JiPitchAnalysis>>
+
+        formattedDenominator = formattedDenominator || "1" as Formatted<JiPitchAnalysis>
+
         return [formattedNumerator, "/" as Formatted<JiPitchAnalysis>, formattedDenominator]
     }
 }

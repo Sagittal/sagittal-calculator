@@ -1,7 +1,7 @@
 import {getArm} from "../../../../../src/sagittal/accidental/flacco/arm"
 import {ArmName, HeadName} from "../../../../../src/sagittal/accidental/flacco/types"
 import {Ascii, parseAscii} from "../../../../../src/sagittal/accidental/io"
-import {Aim, getCore, Shafts, Sagittal} from "../../../../../src/sagittal/accidental/symbol"
+import {Aim, getCore, Sagittal, Shafts} from "../../../../../src/sagittal/accidental/symbol"
 
 describe("parseAscii", (): void => {
     it("parses a sagittal correctly into its arm and core", (): void => {
