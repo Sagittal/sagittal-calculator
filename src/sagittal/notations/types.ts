@@ -1,4 +1,4 @@
-import {Apotome, Count, Direction, Id, NumericProperties, Scamon} from "../../general"
+import {Id, NumericProperties, Scamon} from "../../general"
 import {Flacco} from "../accidental"
 import {CommaClass} from "../ji"
 
@@ -75,9 +75,15 @@ import {CommaClass} from "../ji"
 //  Or rather Symbol class should capture just either one or two shafts, and then Symbol goes to which Section you're in
 //  Whoa... but then don't we get into a place where we've got two different layers of shaft information, i.e.
 //  One layer whether it's odd or even, and another layer whether it's >2 or not? I'm a bit torn about this.
+//  And if by the time you got to a Symbol it already had its odd/even shaft, and what section it's in (shifted?)
+//  Alright so the symbol sets would go by symbol class, sure. But not the notations. They could still go by comma (and
+//  Bound) if we could ensure from comma we could get the unique stuff that happens to the bigger symbols). Well and
+//  Also don't forget about the EDO notations, for which you really want to go by symbol, because the commas aren't
+//  Fundamental to those. So you kind of want to go by visual/symbol/flacco/whatever, but you don't want the redundancy
+//  Of the bigger mirrored symbols.
 type BoundClass<T extends NumericProperties = {}> = {
     id: Id<BoundClass>,
-    pitch: Scamon<T & { rational: false }>,
+    pitch: Scamon<T & {rational: false}>,
 }
 
 // Todo: FLACOMBO, SECTION, NOTATION GENERATION 2: MINIMAL NOTATION SHAPE
@@ -124,19 +130,26 @@ interface Notation {
 //  And apotomeSection, which also changes with commas, but is halfway offset, so there are only 4 zones
 //  - And the fact that we're importing from notation/section here I think just speaks to the fact that it
 //  Should be contained in the flacombo, rather than needing to be computed from it
+//  Okay to make things more compatible with the "Section" concept discussed for Symbol, I'm going to convert from
+//  Using apotomeCount to just using shifted or not
+//  - Arghhh, it's kind of insane how intertwined all these steps are. I can't really just go from 1 to 5.
 // Flacco + CommaClassId + BoundClassId combination = Fla + Com + Bo; ranges from -2 to 2 apotomes
 interface Flacombo {
     flaccoId: Id<Flacco>,
+    negated: boolean,               // Above or below natural
+    shifted: boolean,               // In the 1st apotome section or the 2nd apotome section (absolute)
+    section: Section,
+
     commaClassId: Id<CommaClass>,
-    commaDirection: Direction,
-    apotomeCount: Count<Apotome>,
+
     boundClassId: Id<BoundClass>,
 }
 
 // Todo: FLACOMBO, SECTION, NOTATION GENERATION 4: MINIMAL SECTION SHAPE
 //  I think you can simplify it down to binary for AccidentalSection, too: ShaftSection ODD/EVEN ODD = a/b and EVEN = c
 //  Even though in Evo you don't see the odd shaft count, I still somehow think it's acceptable.
-//  What if you just made all of these booleans? so it'd be... negative, second, even? that would solve the Aim problem.
+//  What if you just made all of these booleans? so it'd be... flipped, shifted, even? that would solve the Aim problem.
+//  And the positive/negative problem.
 //  - Or about a fourth property to section: comma super/sub? P/B
 //  Then maybe you don’t need apotome count or comma direction
 //  It’s just the three IDs input (bound, comma, flacco) and then this section thing
@@ -145,37 +158,28 @@ interface Flacombo {
 //  So maybe it was better when this was positive/negative? but then what would this part of the Section be called?
 //  - And it might be nice if you did not need both a name and an object...
 //  How many places do you really use the name for short?
-enum SectionName {
-    D2C = "d2c",
-    D2B = "d2b",
-    D2A = "d2a",
-    D1C = "d1c",
-    D1B = "d1b",
-    D1A = "d1a",
-    U1A = "u1a",
-    U1B = "u1b",
-    U1C = "u1c",
-    U2A = "u2a",
-    U2B = "u2b",
-    U2C = "u2c",
-}
-enum AimSection {
-    U = "u",                // Up
-    D = "d",                // Down
-}
-enum ApotomeSection {
-    _1 = "1",               // Within 1 apotome of natural
-    _2 = "2",               // Between 1 and 2 apotomes of natural
-}
-enum AccidentalSection {
+//  Well okay here's the real reason not to keep the name enum... because there's no limiting of validity.
+//  It's simply every combination!
+//  - Okay, so the concept of state of "aim" has been effectively paired with the verb of "flip". I'm okay with that.
+//  Only thing that concerns me about that is that's so similar to direction and positive/negative super/sub.
+//  I think but it's because it's the visual side of things is why it got its own name right though yeah?
+//  - Would it be more helpful if the comma direction was a relative thing, i.e. away or toward natural?
+//  More like orientation. I might even use Orientation. Except again, like Aim, I feel like it's meant to be visual.
+//  - Also I feel like there's something to reducing the scope that "Section" is meant to encode.
+//  Like if it only captured the idea of one of four places,
+//  - OKay but Is it in the section where Revo flavor would have even shafts (mirrored must be true here)
+//  The fact that they're interconnected like that makes me rescind making them booleans. has to be 3-way enum.
+//  But if we flatten this into Flacombo, then THAT can be section. (I know I said elswhere the 4 places could be s
+//  Section, but maybe those don't even have name, or you know they are just flipped/shifted.
+//  Well... I don't like flipped because it's just for the symbol, which can be flipped within a non-flipped accidental
+//  Shifted is somehow okay because it only applies to revo symbols which revo is equivalent to accidentals in a way
+//  So you're already operating at that order... so maybe we just use positive/negative since it encompasses both
+//  Visual (aim/orientation) and pitch alteration (direction) type information?
+
+enum Section {
     A = "a",                // Shaft count: n,      Abs apotome count: m,       Comma direction: away from natural
     B = "b",                // Shaft count: n,      Abs apotome count: m + 1,   Comma direction: toward natural
     C = "c",                // Shaft count: n + 1,  Abs apotome count: m + 1,   Comma direction: toward natural
-}
-interface Section {
-    aimSection: AimSection,
-    apotomeSection: ApotomeSection,
-    accidentalSection: AccidentalSection,
 }
 
 // Todo: FLACOMBO, SECTION, NOTATION GENERATION 5: POST-FLACOMBO SHAPE
@@ -197,8 +201,4 @@ export {
     Notation,
     Flacombo,
     Section,
-    SectionName,
-    AimSection,
-    AccidentalSection,
-    ApotomeSection,
 }

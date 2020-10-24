@@ -1,16 +1,16 @@
-import {AccidentalSection, AimSection, ApotomeSection, computeSection, Flacombo} from "../../notations"
+import {Flacombo, Section} from "../../notations"
 import {getFlacco} from "../flacco"
 import {apotomeShift, computeApotomeComplement, computeSymbolFromFlacco, flipSymbol} from "../symbol"
 import {Accidental, Flavor} from "./types"
 
 const computeRevoAccidentalFromFlacombo = (flacombo: Flacombo): Accidental<Flavor.REVO> => {
-    const flacco = getFlacco(flacombo.flaccoId)
-    let symbol = computeSymbolFromFlacco(flacco)
-    const section = computeSection(flacombo)
+    const { flaccoId, section, shifted, negated } = flacombo
 
-    symbol = section.accidentalSection === AccidentalSection.C ? computeApotomeComplement(symbol) : symbol
-    symbol = section.apotomeSection === ApotomeSection._2 ? apotomeShift(symbol) : symbol
-    symbol = section.aimSection === AimSection.D ? flipSymbol(symbol) : symbol
+    const flacco = getFlacco(flaccoId)
+    let symbol = computeSymbolFromFlacco(flacco)
+    symbol = section === Section.C ? computeApotomeComplement(symbol) : symbol
+    symbol = shifted ? apotomeShift(symbol) : symbol
+    symbol = negated ? flipSymbol(symbol) : symbol
 
     return symbol as Accidental<Flavor.REVO>
 }

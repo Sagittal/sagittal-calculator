@@ -1,7 +1,7 @@
-import { Apotome, Count, count, Direction, Id, indexOfFinalElement, shallowClone } from "../../general"
+import {Apotome, Count, count, Direction, Id, indexOfFinalElement, shallowClone} from "../../general"
 import {Flacco} from "../accidental"
 import {BoundClass} from "./ji"
-import {Flacombo, Notation} from "./types"
+import {Flacombo, Notation, Section} from "./types"
 
 const computeFlacombos = (notation: Notation): Flacombo[] => {
     const { commaClassIds, boundClassIds, flaccoIds } = notation
@@ -19,16 +19,15 @@ const computeFlacombos = (notation: Notation): Flacombo[] => {
     // Section 1a: upwards, from unison to half apotome
     boundClassIds.forEach((boundClassId: Id<BoundClass>, boundCommaOrFlaccoIndex: number): void => {
         const commaClassId = commaClassIds[ boundCommaOrFlaccoIndex ]
-        const commaDirection = Direction.SUPER
-        const apotomeCount = 0 as Count<Apotome>
 
         const flaccoId = flaccoIds[ boundCommaOrFlaccoIndex ]
 
         flacombos.push({
             boundClassId,
             commaClassId,
-            commaDirection,
-            apotomeCount,
+            negated: false,
+            shifted: false,
+            section: Section.A,
             flaccoId,
         })
     })
@@ -41,14 +40,13 @@ const computeFlacombos = (notation: Notation): Flacombo[] => {
         const boundClassId = boundClassIds[ commaOrBoundClassIndex ]
 
         const commaClassId = commaClassIds[ commaOrBoundClassIndex ]
-        const commaDirection = Direction.SUB
-        const apotomeCount = 1 as Count<Apotome>
 
         flacombos.push({
             boundClassId,
             commaClassId,
-            commaDirection,
-            apotomeCount,
+            negated: false,
+            shifted: false,
+            section: Section.B,
             flaccoId,
         })
     })
@@ -61,16 +59,15 @@ const computeFlacombos = (notation: Notation): Flacombo[] => {
     reversedRemainingBoundClassIds.forEach((boundClassId: Id<BoundClass>, remainingBoundClassIndex: number): void => {
         const commaOrFlaccoIndex = finalRemainingBoundClassIndex - remainingBoundClassIndex
         const commaClassId = commaClassIds[ commaOrFlaccoIndex ]
-        const commaDirection = Direction.SUB
-        const apotomeCount = 1 as Count<Apotome>
 
         const flaccoId = flaccoIds[ commaOrFlaccoIndex ]
 
         flacombos.push({
             boundClassId,
             commaClassId,
-            commaDirection,
-            apotomeCount,
+            negated: false,
+            shifted: false,
+            section: Section.C,
             flaccoId,
         })
     })
@@ -78,16 +75,15 @@ const computeFlacombos = (notation: Notation): Flacombo[] => {
     // Section 2a: upwards, from apotome to apotome-and-a-half
     boundClassIds.forEach((boundClassId: Id<BoundClass>, boundCommaOrFlaccoIndex: number): void => {
         const commaClassId = commaClassIds[ boundCommaOrFlaccoIndex ]
-        const commaDirection = Direction.SUPER
-        const apotomeCount = 1 as Count<Apotome>
 
         const flaccoId = flaccoIds[ boundCommaOrFlaccoIndex ]
 
         flacombos.push({
             boundClassId,
             commaClassId,
-            commaDirection,
-            apotomeCount,
+            negated: false,
+            shifted: true,
+            section: Section.A,
             flaccoId,
         })
     })
@@ -104,8 +100,9 @@ const computeFlacombos = (notation: Notation): Flacombo[] => {
         flacombos.push({
             boundClassId,
             commaClassId,
-            commaDirection,
-            apotomeCount,
+            negated: false,
+            shifted: true,
+            section: Section.B,
             flaccoId,
         })
     })
@@ -114,16 +111,15 @@ const computeFlacombos = (notation: Notation): Flacombo[] => {
     reversedRemainingBoundClassIds.forEach((boundClassId: Id<BoundClass>, remainingBoundClassIndex: number): void => {
         const commaOrFlaccoIndex = finalRemainingBoundClassIndex - remainingBoundClassIndex
         const commaClassId = commaClassIds[ commaOrFlaccoIndex ]
-        const commaDirection = Direction.SUB
-        const apotomeCount = 2 as Count<Apotome>
 
         const flaccoId = flaccoIds[ commaOrFlaccoIndex ]
 
         flacombos.push({
             boundClassId,
             commaClassId,
-            commaDirection,
-            apotomeCount,
+            negated: false,
+            shifted: true,
+            section: Section.C,
             flaccoId,
         })
     })

@@ -1,30 +1,30 @@
-import {Maybe} from "../../../general"
-import {AccidentalSection, computeSection, Flacombo} from "../../notations"
+import {increment, Maybe, negative} from "../../../general"
+import {Flacombo, Section} from "../../notations"
 import {getFlacco} from "../flacco"
 import {computeSymbolFromFlacco, flipSymbol} from "../symbol"
 import {Accidental, Compatible, Flavor} from "./types"
 
 const computeEvoAccidentalFromFlacombo = (flacombo: Flacombo): Accidental<Flavor.EVO> => {
-    const flacco = getFlacco(flacombo.flaccoId)
-    let symbol = computeSymbolFromFlacco(flacco)
-    const section = computeSection(flacombo)
+    const { flaccoId, section, shifted, negated } = flacombo
 
-    symbol = section.accidentalSection === AccidentalSection.C ?
+    const flacco = getFlacco(flaccoId)
+    let symbol = computeSymbolFromFlacco(flacco)
+    symbol = section === Section.C ?
         flipSymbol(symbol) :
         symbol
 
-    let maybeAdjustedApotomeCount = section.accidentalSection === AccidentalSection.B ?
-        flacombo.apotomeCount > 0 ? flacombo.apotomeCount - 1 : flacombo.apotomeCount + 1 :
-        flacombo.apotomeCount
-
+    let apotomeCount = 0
+    if (section === Section.C) apotomeCount = increment(apotomeCount)
+    if (shifted) apotomeCount = increment(apotomeCount)
+    if (negated) apotomeCount = negative(apotomeCount)
     const compatible: Maybe<Compatible> =
-        maybeAdjustedApotomeCount === 1 ?
+        apotomeCount === 1 ?
             Compatible.SHARP :
-            maybeAdjustedApotomeCount === 2 ?
+            apotomeCount === 2 ?
                 Compatible.DOUBLE_SHARP :
-                maybeAdjustedApotomeCount === -1 ?
+                apotomeCount === -1 ?
                     Compatible.FLAT :
-                    maybeAdjustedApotomeCount === -2 ?
+                    apotomeCount === -2 ?
                         Compatible.DOUBLE_FLAT :
                         undefined
 

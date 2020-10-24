@@ -22,5 +22,4 @@ export {
     InaMidpoint,
     JiNotationBound,
 } from "./ji"
-export {AccidentalSection, Flacombo, AimSection, ApotomeSection} from "./types"
-export {computeSection} from "./section"
+export {Section, Flacombo} from "./types"

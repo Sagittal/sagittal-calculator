@@ -1,18 +1,19 @@
-import {Apotome, Count, Direction, Id} from "../../../../../src/general"
+import {Id} from "../../../../../src/general"
 import {Accidental, Flacco, Flavor} from "../../../../../src/sagittal/accidental"
 import {HeadName} from "../../../../../src/sagittal/accidental/flacco"
 import {computeRevoAccidentalFromFlacombo} from "../../../../../src/sagittal/accidental/flavor/revo"
 import {getCore} from "../../../../../src/sagittal/accidental/symbol"
 import {CommaClass} from "../../../../../src/sagittal/ji/comma"
-import {BoundClass} from "../../../../../src/sagittal/notations"
+import {BoundClass, Section} from "../../../../../src/sagittal/notations"
 
 describe("computeRevoAccidentalFromFlacombo", (): void => {
     it("works for section U1A", (): void => {
         const flacombo = {
             boundClassId: 92 as Id<BoundClass>,
             commaClassId: 92 as Id<CommaClass>,
-            commaDirection: Direction.SUPER,
-            apotomeCount: 0 as Count<Apotome>,
+            negated: false,
+            shifted: false,
+            section: Section.A,
             flaccoId: 92 as Id<Flacco>,
         }
 
