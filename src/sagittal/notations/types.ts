@@ -2,12 +2,85 @@ import {Apotome, Count, Direction, Id, NumericProperties, Scamon} from "../../ge
 import {Flacco} from "../accidental"
 import {CommaClass} from "../ji"
 
+// Todo: FLACOMBO, SECTION, NOTATION GENERATION 1: SYMBOL CLASS (SUBSET) / FIRST SECTION / ID/NAME QUESTIONS / GETTING
+//  I'm not quite ready for Symbol to have ID yet
+//  At that stage, you'd want a const SYMBOLS: Symbol[] and generate it and test it, and maybe apotome shift
+//  Apotome complement methods would only be used in test, because you'd be "get"ting the symbol, not computing it
+//  But we still need to wrangle with the problems of: do we +1000 for apotome shift? that works w/ Magrathean I think
+//  Do we have negative IDs? is it a "key", then? this is pretty much what we used in the Spreadsheet Calculator.
+//  Does this respect the principle of things expressing their existence minimally? do IDs go against that already? etc.
+//  A valid symbols array would answer the question of how the valid cores and valid arms together
+//  Symbol class could go up thru 2 shafts and copy to other 3 sections
+//  And this would be related to that "even supported" thing you just added
+//  (which should be better documented and there might be a few places you should add some more comments,
+//  If only of symbol ASCII, you know?)
+//  So apotome complement would go from symbol class to symbol class
+//  And the other two, shift and flip, go from symbol class to symbol
+//  But this isn’t related to the minimum representation of a notation
+//  Though the generation of all valid symbols should be similar to the generation of the extreme JI notation...
+//  And if you do actually add SymbolClass, then address the comment introducing flacco below.
+//  - Maybe it really should be Symbol subset, not Flacco subset,
+//  Because some Flaccos cross over in the Revo notation, you know?
+//  E.g. )||( is in Spartan multi-shaft, but no single-shaft right scroll
+//  Or is the problem only really solvable by that Flaccos only apply to the 1-shaft symbols,
+//  And multi-shaft symbols are just not even flag & accent combos??
+//  I mean, you could solve it by just calling them symbol subsets, but then you have to include all the redundancy...
+//  Or how about saying that notations have only comma subsets?
+//  Now this might be intertwined with the problem of whether a notation can be specified by ONLY one of
+//  A list of Flacco IDs or a list of CommaClass IDs
+//  Okay, well but actually, a symbol subset is meaningfully different than a flacco subset, because of like how
+//  Spartan contains )||( as I just said above, you know?
+//  In other words, we don't currently have captured anywhere an array of valid symbols, because the combinations of
+//  Accents and Flags in the single-shaft does not necessarily translate to 2-shaft. I mean I guess we could have
+//  Something that was intermediate, that included anything from 1 to 2 shafts, and then this becomes intertwined with
+//  The questions of limiting the apotome shift and apotome complement methods to something *like* a section but not
+//  - And Yeah Flacco is totally one of those things which should go by name, not ID
+//  Or perhaps maybe just more like we've got the records of Core by CoreName, right
+//  And probably also at some point Symbol by SymbolName...?
+//  But think about the fact that having the order in the form of the ID is actually quite handy sometimes...
+//  Although you could include the order # as part of the ID I suppose and then you'd still get the benefit of it
+//  As long as the name could still autocomplete
+//  Yeah I guess this is really the thing - who is all this for? What are we trying to ensure?
+//  That no one can put it into the code, like someone working on the code later? Or you can't input it from the app?
+//  Without an enum to limit possibilities, the ID # doesn't really limit anything
+//  Anyway, the other example is CommaClass, like:
+//  Hey here's an idea... what if everywhere instead of ID we used names, so we could see what we were doing? e.g.
+//  Const COMMA_CLASS_1_u = {
+//    Name: "1u" as Name<Comma>,
+//    RepresentativeFlaccoId: 0 as Id<Flacco>,
+//    Pitch: UNISON,
+//  }
+//  And I wonder if Class<> shouldn't also be a parameterized type since we use that so much now?
+//  In which case it would simply add an Id to a thing? and put the thing itself on a key called... object?
+//  I think you'd have to make it generic, like it couldn't put a custom key on there based on the type parameter...
+//  Or maybe we should just imagine a world without IDs at all...
+//  Like I say above, the ID doesn't really limit anything. An enum you used as a key on some object would, though.
+//  It should be a solvable problem for the bound IDs to still order them in the JI notation bound class analysis
+//  - Ah okay, here's an insight: maybe they still get IDs on them as a sort of INSTANCE brand
+//  So that you can't just go and manufacture whatever one you want, knowing the structure, but have to ask for one
+//  From the limited set of them. Okay, I like that.
+//  So then, how would we request a Symbol? like a Flacco? no okay Flacco currently you request it by ID.
+//  What I was thinking of was getArm, getHead, and getCore. so a symbol you'd need to pass it the same things you'd
+//  Pass for a core, (head, shafts, aim) but then also the arm.
+//  It's either that, or you pass it a Flacco name and then shafts and aim,
+//  So the flacco would consolidate the head & arm. I like that less because it's not respecting the principle of
+//  Minimum enums, of eliminating redundancy. But actually if you get really strict about that, then some of the
+//  Validity enums we've still got around: the ArmName, HeadName... should those not be broken down by the same logic?
+//  I feel like the answer is "no". But why? Is it just because they are *helpful* to have? I mean, the ...
+//  Or is it just good to *name things which are arbitrarily limited*? In which case we should name these symbol classes
+//  So there's actually two stages of validity that I should try to capture here.
+//  Flacco is the combo of valid head and valid arm. and so you should go ahead and get that there.
+//  Then Symbol should capture the valid combo of flacco, shafts, and aim (which is almost everything, just a bunch
+//  Cannot have even shafts)
+//  Or rather Symbol class should capture just either one or two shafts, and then Symbol goes to which Section you're in
+//  Whoa... but then don't we get into a place where we've got two different layers of shaft information, i.e.
+//  One layer whether it's odd or even, and another layer whether it's >2 or not? I'm a bit torn about this.
 type BoundClass<T extends NumericProperties = {}> = {
     id: Id<BoundClass>,
     pitch: Scamon<T & { rational: false }>,
 }
 
-// Todo: FLACOMBO, SECTION, NOTATION GENERATION: MINIMAL NOTATION SHAPE
+// Todo: FLACOMBO, SECTION, NOTATION GENERATION 2: MINIMAL NOTATION SHAPE
 //  I really think you should be able to do this with only flaccoIds and boundClassIds
 //  And while it does make sense for commaClasses to point to flaccos (their representative flacco)
 //  It also makes sense that when you get a flacco, it comes with a comma, regardless whether its EDO tuning
@@ -34,7 +107,7 @@ interface Notation {
     flaccoIds: Array<Id<Flacco>>,
 }
 
-// Todo: FLACOMBO, SECTION, NOTATION GENERATION: MINIMAL FLACOMBO SHAPE
+// Todo: FLACOMBO, SECTION, NOTATION GENERATION 3: MINIMAL FLACOMBO SHAPE
 //  Kind of crazy, it doesn't need commaClassId for evo at all... kind of makes me want to get rid of it in
 //  Revo and just say whether it's in section B or whatever (I think at some point I may have been going the other
 //  Way, i.e. trying to get rid of flaccoId instead of commaClassId but I thin this way makes more sense actually
@@ -60,7 +133,7 @@ interface Flacombo {
     boundClassId: Id<BoundClass>,
 }
 
-// Todo: FLACOMBO, SECTION, NOTATION GENERATION: MINIMAL SECTION SHAPE
+// Todo: FLACOMBO, SECTION, NOTATION GENERATION 4: MINIMAL SECTION SHAPE
 //  I think you can simplify it down to binary for AccidentalSection, too: ShaftSection ODD/EVEN ODD = a/b and EVEN = c
 //  Even though in Evo you don't see the odd shaft count, I still somehow think it's acceptable.
 //  What if you just made all of these booleans? so it'd be... negative, second, even? that would solve the Aim problem.
@@ -105,7 +178,7 @@ interface Section {
     accidentalSection: AccidentalSection,
 }
 
-// Todo: FLACOMBO, SECTION, NOTATION GENERATION: POST-FLACOMBO SHAPE
+// Todo: FLACOMBO, SECTION, NOTATION GENERATION 5: POST-FLACOMBO SHAPE
 //  If the thing only has one bound on it, then maybe the whole thing can be called a CaptureZone
 //  Even if it was not just one side of the bounds, you could still have it be captureZone.zone
 //  And maybe whatever else is called CaptureZone just needs to get displaced because it’s not as important

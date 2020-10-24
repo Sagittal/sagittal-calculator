@@ -73,60 +73,6 @@ interface Head {
     right?: Flag[],
 }
 
-// Todo: FLACOMBO, SECTION, NOTATION GENERATION: SYMBOL CLASS (SUBSET) / FIRST SECTION / QUESTIONS OF ID
-//  I'm not quite ready for Symbol to have ID yet
-//  At that stage, you'd want a const SYMBOLS: Symbol[] and generate it and test it, and maybe apotome shift
-//  Apotome complement methods would only be used in test, because you'd be "get"ting the symbol, not computing it
-//  But we still need to wrangle with the problems of: do we +1000 for apotome shift? that works w/ Magrathean I think
-//  Do we have negative IDs? is it a "key", then? this is pretty much what we used in the Spreadsheet Calculator.
-//  Does this respect the principle of things expressing their existence minimally? do IDs go against that already? etc.
-//  A valid symbols array would answer the question of how the valid cores and valid arms together
-//  Symbol class could go up thru 2 shafts and copy to other 3 sections
-//  And this would be related to that "even supported" thing you just added
-//  (which should be better documented and there might be a few places you should add some more comments,
-//  If only of symbol ASCII, you know?)
-//  So apotome complement would go from symbol class to symbol class
-//  And the other two, shift and flip, go from symbol class to symbol
-//  But this isn’t related to the minimum representation of a notation
-//  Though the generation of all valid symbols should be similar to the generation of the extreme JI notation...
-//  And if you do actually add SymbolClass, then address the comment introducing flacco below.
-//  - Maybe it really should be Symbol subset, not Flacco subset,
-//  Because some Flaccos cross over in the Revo notation, you know?
-//  E.g. )||( is in Spartan multi-shaft, but no single-shaft right scroll
-//  Or is the problem only really solvable by that Flaccos only apply to the 1-shaft symbols,
-//  And multi-shaft symbols are just not even flag & accent combos??
-//  I mean, you could solve it by just calling them symbol subsets, but then you have to include all the redundancy...
-//  Or how about saying that notations have only comma subsets?
-//  Now this might be intertwined with the problem of whether a notation can be specified by ONLY one of
-//  A list of Flacco IDs or a list of CommaClass IDs
-//  Okay, well but actually, a symbol subset is meaningfully different than a flacco subset, because of like how
-//  Spartan contains )||( as I just said above, you know?
-//  In other words, we don't currently have captured anywhere an array of valid symbols, because the combinations of
-//  Accents and Flags in the single-shaft does not necessarily translate to 2-shaft. I mean I guess we could have
-//  Something that was intermediate, that included anything from 1 to 2 shafts, and then this becomes intertwined with
-//  The questions of limiting the apotome shift and apotome complement methods to something *like* a section but not
-//  - And Yeah Flacco is totally one of those things which should go by name, not ID
-//  Or perhaps maybe just more like we've got the records of Core by CoreName, right
-//  And probably also at some point Symbol by SymbolName...?
-//  But think about the fact that having the order in the form of the ID is actually quite handy sometimes...
-//  Although you could include the order # as part of the ID I suppose and then you'd still get the benefit of it
-//  As long as the name could still autocomplete
-//  Yeah I guess this is really the thing - who is all this for? What are we trying to ensure?
-//  That no one can put it into the code, like someone working on the code later? Or you can't input it from the app?
-//  Without an enum to limit possibilities, the ID # doesn't really limit anything
-//  Anyway, the other example is CommaClass, like:
-//  Hey here's an idea... what if everywhere instead of ID we used names, so we could see what we were doing? e.g.
-//  Const COMMA_CLASS_1_u = {
-//    Name: "1u" as Name<Comma>,
-//    RepresentativeFlaccoId: 0 as Id<Flacco>,
-//    Pitch: UNISON,
-//  }
-//  And I wonder if Class<> shouldn't also be a parameterized type since we use that so much now?
-//  In which case it would simply add an Id to a thing? and put the thing itself on a key called... object?
-//  I think you'd have to make it generic, like it couldn't put a custom key on there based on the type parameter...
-//  Or maybe we should just imagine a world without IDs at all...
-//  Like I say above, the ID doesn't really limit anything. An enum you used as a key on some object would, though.
-//  It should be a solvable problem for the bound IDs to still order them in the JI notation bound class analysis
 interface Symbolic {
     arm?: Arm,
     core?: Head,
