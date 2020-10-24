@@ -1,8 +1,8 @@
 import {Id} from "../../../../src/general"
 import {Flacco} from "../../../../src/sagittal/accidental"
 import {CommaClass} from "../../../../src/sagittal/ji/comma"
-import {BoundClass, Flacombo, Section} from "../../../../src/sagittal/notations"
-import {computeFlacombos} from "../../../../src/sagittal/notations/flacombos"
+import {BoundClass, CaptureZone, Section} from "../../../../src/sagittal/notations"
+import {computeCaptureZones} from "../../../../src/sagittal/notations/captureZones"
 import {
     EXTREME_NOTATION,
     HIGH_NOTATION,
@@ -10,18 +10,18 @@ import {
     ULTRA_NOTATION,
 } from "../../../../src/sagittal/notations/ji/notations"
 
-describe("computeFlacombos", (): void => {
+describe("computeCaptureZones", (): void => {
     it("works for the Medium level", (): void => {
-        const actual = computeFlacombos(MEDIUM_NOTATION)
+        const actual = computeCaptureZones(MEDIUM_NOTATION)
 
-        const expectedSectionD1A: Flacombo[] = [].reverse()
-        const expectedSectionD1B: Flacombo[] = [].reverse()
-        const expectedSectionD1C: Flacombo[] = [].reverse()
-        const expectedSectionD2A: Flacombo[] = [].reverse()
-        const expectedSectionD2B: Flacombo[] = [].reverse()
-        const expectedSectionD2C: Flacombo[] = [].reverse()
+        const expectedN1A: CaptureZone[] = [].reverse()
+        const expectedN1B: CaptureZone[] = [].reverse()
+        const expectedN1C: CaptureZone[] = [].reverse()
+        const expectedN2A: CaptureZone[] = [].reverse()
+        const expectedN2B: CaptureZone[] = [].reverse()
+        const expectedN2C: CaptureZone[] = [].reverse()
 
-        const expectedSectionU1A: Flacombo[] = [
+        const expectedP1A: CaptureZone[] = [
             {
                 boundClassId: 5 as Id<BoundClass>,
                 commaClassId: 0 as Id<CommaClass>,
@@ -111,7 +111,7 @@ describe("computeFlacombos", (): void => {
                 flaccoId: 114 as Id<Flacco>,
             },
         ]
-        const expectedSectionU1B: Flacombo[] = [
+        const expectedP1B: CaptureZone[] = [
             {
                 boundClassId: 122 as Id<BoundClass>,
                 commaClassId: 114 as Id<CommaClass>,
@@ -129,7 +129,7 @@ describe("computeFlacombos", (): void => {
                 flaccoId: 141 as Id<Flacco>,
             },
         ]
-        const expectedSectionU1C: Flacombo[] = [
+        const expectedP1C: CaptureZone[] = [
             {
                 boundClassId: 96 as Id<BoundClass>,
                 commaClassId: 92 as Id<CommaClass>,
@@ -203,7 +203,7 @@ describe("computeFlacombos", (): void => {
                 flaccoId: 0 as Id<Flacco>,
             },
         ]
-        const expectedSectionU2A: Flacombo[] = [
+        const expectedP2A: CaptureZone[] = [
             {
                 boundClassId: 5 as Id<BoundClass>,
                 commaClassId: 0 as Id<CommaClass>,
@@ -293,7 +293,7 @@ describe("computeFlacombos", (): void => {
                 flaccoId: 114 as Id<Flacco>,
             },
         ]
-        const expectedSectionU2B: Flacombo[] = [
+        const expectedP2B: CaptureZone[] = [
             {
                 boundClassId: 122 as Id<BoundClass>,
                 commaClassId: 114 as Id<CommaClass>,
@@ -311,7 +311,7 @@ describe("computeFlacombos", (): void => {
                 flaccoId: 141 as Id<Flacco>,
             },
         ]
-        const expectedSectionU2C: Flacombo[] = [
+        const expectedP2C: CaptureZone[] = [
             {
                 boundClassId: 96 as Id<BoundClass>,
                 commaClassId: 92 as Id<CommaClass>,
@@ -387,99 +387,99 @@ describe("computeFlacombos", (): void => {
         ]
 
         const expected = [
-            // ...expectedSectionD2C,
-            // ...expectedSectionD2B,
-            // ...expectedSectionD2A,
-            // ...expectedSectionD1C,
-            // ...expectedSectionD1B,
-            // ...expectedSectionD1A,
+            // ...expectedN2C,
+            // ...expectedN2B,
+            // ...expectedN2A,
+            // ...expectedN1C,
+            // ...expectedN1B,
+            // ...expectedN1A,
 
-            ...expectedSectionU1A,
-            ...expectedSectionU1B,
-            ...expectedSectionU1C,
-            ...expectedSectionU2A,
-            ...expectedSectionU2B,
-            ...expectedSectionU2C,
-        ] as Flacombo[]
+            ...expectedP1A,
+            ...expectedP1B,
+            ...expectedP1C,
+            ...expectedP2A,
+            ...expectedP2B,
+            ...expectedP2C,
+        ] as CaptureZone[]
         expect(actual).toEqual(expected)
     })
 
     // tslint:disable-next-line:ban
     xit("works for the High level, which is of interest because involves the topmost capture zone being split in the manner that the apotome-centered zones are", (): void => {
-        const actual = computeFlacombos(HIGH_NOTATION)
+        const actual = computeCaptureZones(HIGH_NOTATION)
 
-        const expectedSectionD1A = [].reverse()
-        const expectedSectionD1B = [].reverse()
-        const expectedSectionD1C = [].reverse()
-        const expectedSectionD2A = [].reverse()
-        const expectedSectionD2B = [].reverse()
-        const expectedSectionD2C = [].reverse()
+        const expectedN1A = [].reverse()
+        const expectedN1B = [].reverse()
+        const expectedN1C = [].reverse()
+        const expectedN2A = [].reverse()
+        const expectedN2B = [].reverse()
+        const expectedN2C = [].reverse()
 
-        const expectedSectionU1A = [] as unknown[] as Flacombo[]
-        const expectedSectionU1B = [] as unknown[] as Flacombo[]
-        const expectedSectionU1C = [] as unknown[] as Flacombo[]
-        const expectedSectionU2A = [] as unknown[] as Flacombo[]
-        const expectedSectionU2B = [] as unknown[] as Flacombo[]
-        const expectedSectionU2C = [] as unknown[] as Flacombo[]
+        const expectedP1A = [] as unknown[] as CaptureZone[]
+        const expectedP1B = [] as unknown[] as CaptureZone[]
+        const expectedP1C = [] as unknown[] as CaptureZone[]
+        const expectedP2A = [] as unknown[] as CaptureZone[]
+        const expectedP2B = [] as unknown[] as CaptureZone[]
+        const expectedP2C = [] as unknown[] as CaptureZone[]
 
         const expected = [
-            // ...expectedSectionD2C,
-            // ...expectedSectionD2B,
-            // ...expectedSectionD2A,
-            // ...expectedSectionD1C,
-            // ...expectedSectionD1B,
-            // ...expectedSectionD1A,
+            // ...expectedN2C,
+            // ...expectedN2B,
+            // ...expectedN2A,
+            // ...expectedN1C,
+            // ...expectedN1B,
+            // ...expectedN1A,
 
-            ...expectedSectionU1A,
-            ...expectedSectionU1B,
-            ...expectedSectionU1C,
-            ...expectedSectionU2A,
-            ...expectedSectionU2B,
-            ...expectedSectionU2C,
-        ] as Flacombo[]
+            ...expectedP1A,
+            ...expectedP1B,
+            ...expectedP1C,
+            ...expectedP2A,
+            ...expectedP2B,
+            ...expectedP2C,
+        ] as CaptureZone[]
         expect(actual).toEqual(expected)
     })
 
     // tslint:disable-next-line:ban
     xit("works for the Ultra level, which is of interest for the same reason as the High level but also introduces accents", (): void => {
-        const actual = computeFlacombos(ULTRA_NOTATION)
+        const actual = computeCaptureZones(ULTRA_NOTATION)
 
-        const expectedSectionD1A = [].reverse()
-        const expectedSectionD1B = [].reverse()
-        const expectedSectionD1C = [].reverse()
-        const expectedSectionD2A = [].reverse()
-        const expectedSectionD2B = [].reverse()
-        const expectedSectionD2C = [].reverse()
+        const expectedN1A = [].reverse()
+        const expectedN1B = [].reverse()
+        const expectedN1C = [].reverse()
+        const expectedN2A = [].reverse()
+        const expectedN2B = [].reverse()
+        const expectedN2C = [].reverse()
 
-        const expectedSectionU1A = [] as unknown[] as Flacombo[]
-        const expectedSectionU1B = [] as unknown[] as Flacombo[]
-        const expectedSectionU1C = [] as unknown[] as Flacombo[]
-        const expectedSectionU2A = [] as unknown[] as Flacombo[]
-        const expectedSectionU2B = [] as unknown[] as Flacombo[]
-        const expectedSectionU2C = [] as unknown[] as Flacombo[]
+        const expectedP1A = [] as unknown[] as CaptureZone[]
+        const expectedP1B = [] as unknown[] as CaptureZone[]
+        const expectedP1C = [] as unknown[] as CaptureZone[]
+        const expectedP2A = [] as unknown[] as CaptureZone[]
+        const expectedP2B = [] as unknown[] as CaptureZone[]
+        const expectedP2C = [] as unknown[] as CaptureZone[]
 
         const expected = [
-            // ...expectedSectionD2C,
-            // ...expectedSectionD2B,
-            // ...expectedSectionD2A,
-            // ...expectedSectionD1C,
-            // ...expectedSectionD1B,
-            // ...expectedSectionD1A,
+            // ...expectedN2C,
+            // ...expectedN2B,
+            // ...expectedN2A,
+            // ...expectedN1C,
+            // ...expectedN1B,
+            // ...expectedN1A,
 
-            ...expectedSectionU1A,
-            ...expectedSectionU1B,
-            ...expectedSectionU1C,
-            ...expectedSectionU2A,
-            ...expectedSectionU2B,
-            ...expectedSectionU2C,
-        ] as Flacombo[]
+            ...expectedP1A,
+            ...expectedP1B,
+            ...expectedP1C,
+            ...expectedP2A,
+            ...expectedP2B,
+            ...expectedP2C,
+        ] as CaptureZone[]
         expect(actual).toEqual(expected)
     })
 
     it("works for the Extreme level, and here's the main explanation: it can assemble the ±2 apotome sized areas divided into capture zones each with an accidental, from the given half apotome of bound and comma classes plus the given up-to-L|SS-bound's worth (single shaft max) of flaccos (all by ID)", (): void => {
-        const actual = computeFlacombos(EXTREME_NOTATION)
+        const actual = computeCaptureZones(EXTREME_NOTATION)
 
-        const expectedSectionD1A = [
+        const expectedN1A = [
             {
                 boundClassId: 0 as Id<BoundClass>,
                 commaClassId: 0 as Id<CommaClass>,
@@ -1465,7 +1465,7 @@ describe("computeFlacombos", (): void => {
                 flaccoId: 122 as Id<Flacco>,
             },
         ].reverse()
-        const expectedSectionD1B = [
+        const expectedN1B = [
             {
                 boundClassId: 122 as Id<BoundClass>,
                 commaClassId: 122 as Id<CommaClass>,
@@ -1675,7 +1675,7 @@ describe("computeFlacombos", (): void => {
                 flaccoId: 148 as Id<Flacco>,
             },
         ].reverse()
-        const expectedSectionD1C = [
+        const expectedN1C = [
             {
                 boundClassId: 96 as Id<BoundClass>,
                 commaClassId: 96 as Id<CommaClass>,
@@ -2453,7 +2453,7 @@ describe("computeFlacombos", (): void => {
                 flaccoId: 0 as Id<Flacco>,
             },
         ].reverse()
-        const expectedSectionD2A = [
+        const expectedN2A = [
             {
                 boundClassId: 0 as Id<BoundClass>,
                 commaClassId: 0 as Id<CommaClass>,
@@ -3439,7 +3439,7 @@ describe("computeFlacombos", (): void => {
                 flaccoId: 122 as Id<Flacco>,
             },
         ].reverse()
-        const expectedSectionD2B = [
+        const expectedN2B = [
             {
                 boundClassId: 122 as Id<BoundClass>,
                 commaClassId: 122 as Id<CommaClass>,
@@ -3649,7 +3649,7 @@ describe("computeFlacombos", (): void => {
                 flaccoId: 148 as Id<Flacco>,
             },
         ].reverse()
-        const expectedSectionD2C = [
+        const expectedN2C = [
             {
                 boundClassId: 96 as Id<BoundClass>,
                 commaClassId: 96 as Id<CommaClass>,
@@ -4428,7 +4428,7 @@ describe("computeFlacombos", (): void => {
             },
         ].reverse()
 
-        const expectedSectionU1A = [
+        const expectedP1A = [
             {
                 boundClassId: 0 as Id<BoundClass>,
                 commaClassId: 0 as Id<CommaClass>,
@@ -5414,7 +5414,7 @@ describe("computeFlacombos", (): void => {
                 flaccoId: 122 as Id<Flacco>,
             },
         ]
-        const expectedSectionU1B = [
+        const expectedP1B = [
             {
                 boundClassId: 122 as Id<BoundClass>,
                 commaClassId: 122 as Id<CommaClass>,
@@ -5624,7 +5624,7 @@ describe("computeFlacombos", (): void => {
                 flaccoId: 148 as Id<Flacco>,
             },
         ]
-        const expectedSectionU1C = [
+        const expectedP1C = [
             {
                 boundClassId: 96 as Id<BoundClass>,
                 commaClassId: 96 as Id<CommaClass>,
@@ -6402,7 +6402,7 @@ describe("computeFlacombos", (): void => {
                 flaccoId: 0 as Id<Flacco>,
             },
         ]
-        const expectedSectionU2A = [
+        const expectedP2A = [
             {
                 boundClassId: 0 as Id<BoundClass>,
                 commaClassId: 0 as Id<CommaClass>,
@@ -7388,7 +7388,7 @@ describe("computeFlacombos", (): void => {
                 flaccoId: 122 as Id<Flacco>,
             },
         ]
-        const expectedSectionU2B = [
+        const expectedP2B = [
             {
                 boundClassId: 122 as Id<BoundClass>,
                 commaClassId: 122 as Id<CommaClass>,
@@ -7598,7 +7598,7 @@ describe("computeFlacombos", (): void => {
                 flaccoId: 148 as Id<Flacco>,
             },
         ]
-        const expectedSectionU2C = [
+        const expectedP2C = [
             {
                 boundClassId: 96 as Id<BoundClass>,
                 commaClassId: 96 as Id<CommaClass>,
@@ -8378,20 +8378,20 @@ describe("computeFlacombos", (): void => {
         ]
 
         const expected = [
-            // ...expectedSectionD2C,
-            // ...expectedSectionD2B,
-            // ...expectedSectionD2A,
-            // ...expectedSectionD1C,
-            // ...expectedSectionD1B,
-            // ...expectedSectionD1A,
+            // ...expectedN2C,
+            // ...expectedN2B,
+            // ...expectedN2A,
+            // ...expectedN1C,
+            // ...expectedN1B,
+            // ...expectedN1A,
 
-            ...expectedSectionU1A,
-            ...expectedSectionU1B,
-            ...expectedSectionU1C,
-            ...expectedSectionU2A,
-            ...expectedSectionU2B,
-            ...expectedSectionU2C,
-        ] as Flacombo[]
+            ...expectedP1A,
+            ...expectedP1B,
+            ...expectedP1C,
+            ...expectedP2A,
+            ...expectedP2B,
+            ...expectedP2C,
+        ] as CaptureZone[]
         expect(actual).toEqual(expected)
     })
 })

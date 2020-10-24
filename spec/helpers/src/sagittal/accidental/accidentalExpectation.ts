@@ -3,20 +3,20 @@ import {
     computeAccidentalSmiley,
     computeAccidentalUnicode,
 } from "../../../../../src/sagittal/accidental"
-import {computeEvoAccidentalFromFlacombo} from "../../../../../src/sagittal/accidental/flavor/evo"
-import {computeRevoAccidentalFromFlacombo} from "../../../../../src/sagittal/accidental/flavor/revo"
-import {Flacombo} from "../../../../../src/sagittal/notations"
+import {computeEvoAccidentalFromCaptureZone} from "../../../../../src/sagittal/accidental/flavor/evo"
+import {computeRevoAccidentalFromCaptureZone} from "../../../../../src/sagittal/accidental/flavor/revo"
+import {CaptureZone} from "../../../../../src/sagittal/notations"
 import {AccidentalExpectation} from "./types"
 
-const computeAccidentalExpectation = (flacombo: Flacombo): AccidentalExpectation => {
-    const evoAccidental = computeEvoAccidentalFromFlacombo(flacombo)
+const computeAccidentalExpectation = (captureZone: CaptureZone): AccidentalExpectation => {
+    const evoAccidental = computeEvoAccidentalFromCaptureZone(captureZone)
     const evo = {
         unicode: computeAccidentalUnicode(evoAccidental),
         ascii: computeAccidentalAscii(evoAccidental),
         smiley: computeAccidentalSmiley(evoAccidental),
     }
 
-    const revoAccidental = computeRevoAccidentalFromFlacombo(flacombo)
+    const revoAccidental = computeRevoAccidentalFromCaptureZone(captureZone)
     const revo = {
         unicode: computeAccidentalUnicode(revoAccidental),
         ascii: computeAccidentalAscii(revoAccidental),
@@ -25,7 +25,7 @@ const computeAccidentalExpectation = (flacombo: Flacombo): AccidentalExpectation
 
     return {
         // Todo: BLOCKED ON FLACOMBO, SECTION, NOTATION GENERATION (JUST TESTING)
-        //  I think we could put the flacombo on here, and/or the Section
+        //  I think we could put the captureZone on here, and/or the Section
         evo,
         revo,
     }

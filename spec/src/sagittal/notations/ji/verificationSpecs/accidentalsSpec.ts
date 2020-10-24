@@ -1,20 +1,51 @@
 import {Ascii, Flavor, Smiley} from "../../../../../../src/sagittal/accidental"
 import {Unicode} from "../../../../../../src/sagittal/accidental/io"
-import {Flacombo} from "../../../../../../src/sagittal/notations"
-import {computeFlacombos} from "../../../../../../src/sagittal/notations/flacombos"
+import {CaptureZone} from "../../../../../../src/sagittal/notations"
+import {computeCaptureZones} from "../../../../../../src/sagittal/notations/captureZones"
 import {EXTREME_NOTATION} from "../../../../../../src/sagittal/notations/ji/notations"
 import {computeAccidentalExpectation} from "../../../../../helpers/src/sagittal/accidental/accidentalExpectation"
 import {AccidentalExpectation} from "../../../../../helpers/src/sagittal/accidental/types"
 
+// Todo: So I could either imagine having totally separate specs for verifying the bounds & commas of the capture zones
+//  I think that kind of works, what with the actual captureZonesSpec checking everything but in proto-form
+//  Then this makes sure the actual stuff you can derive from each is correct, but the accidentals stuff only
+//  So the other ones would verify okay you got the right bound class ID fine, we know that from the captureZoneSpec
+//  But do you actually use that w/r/t natural, negated, shifted, section, etc. correctly
+//  And same for primary comma
+//  I'll just include the WIP for those methods here then
+/*
+// const computePrimaryComma = ({ commaClassId, commaDirection, apotomeCount }: PrimaryCommaOptions): Comma => {
+//     const comma = getCommaClass(commaClassId).pitch
+//     const commaticAlteration: Comma = commaDirection === Direction.SUPER ? comma : invertScamon(comma) as Comma
+//     const apotomeBase: Comma = multiplyScamon(
+//         APOTOME,
+//         apotomeCount as Decimal<{ integer: true }> as Decimal<{ integer: true }> & Multiplier,
+//     ) as Comma
+//
+//     return addScamons(apotomeBase, commaticAlteration) as Scamon as Comma
+// }
+//
+// const computeCaptureZone = ({ boundClassId, commaDirection, apotomeCount }: CaptureZoneOptions): Zone => {
+//     const bound = getBoundClass(boundClassId).pitch
+//     const boundAlteration = commaDirection === Direction.SUPER ? bound : invertScamon(bound)
+//     const apotomeBase = multiplyScamon(
+//         APOTOME,
+//         apotomeCount as Decimal<{ integer: true }> as Decimal<{ integer: true }> & Multiplier,
+//     ) as Comma
+//
+//     return addScamons(apotomeBase, boundAlteration)
+// }
+ */
+
 describe("accidentals", (): void => {
     it("has the correct accidentals for Extreme", (): void => {
-        const flacombos = computeFlacombos(EXTREME_NOTATION)
+        const captureZones = computeCaptureZones(EXTREME_NOTATION)
 
-        const accidentalExpectations = flacombos.map((flacombo: Flacombo): AccidentalExpectation => {
-            return computeAccidentalExpectation(flacombo)
+        const accidentalExpectations = captureZones.map((captureZone: CaptureZone): AccidentalExpectation => {
+            return computeAccidentalExpectation(captureZone)
         })
 
-        const expectedSectionD1A: AccidentalExpectation[] = [
+        const expectedN1A: AccidentalExpectation[] = [
             {
                 // Key: "n1a_000" as AccidentalKey,
                 revo: {
@@ -1615,7 +1646,7 @@ describe("accidentals", (): void => {
                 },
             },
         ].reverse()
-        const expectedSectionD1B: AccidentalExpectation[] = [
+        const expectedN1B: AccidentalExpectation[] = [
             {
                 // Key: "n1b_122" as AccidentalKey,
                 revo: {
@@ -1955,7 +1986,7 @@ describe("accidentals", (): void => {
                 },
             },
         ].reverse()
-        const expectedSectionD1C: AccidentalExpectation[] = [
+        const expectedN1C: AccidentalExpectation[] = [
             {
                 // Key: "n1c_096" as AccidentalKey,
                 revo: {
@@ -3218,7 +3249,7 @@ describe("accidentals", (): void => {
                 },
             },
         ].reverse()
-        const expectedSectionD2A: AccidentalExpectation[] = [
+        const expectedN2A: AccidentalExpectation[] = [
             {
                 // Key: "n2a_000" as AccidentalKey,
                 revo: {
@@ -4819,7 +4850,7 @@ describe("accidentals", (): void => {
                 },
             },
         ].reverse()
-        const expectedSectionD2B: AccidentalExpectation[] = [
+        const expectedN2B: AccidentalExpectation[] = [
             {
                 // Key: "n2b_122" as AccidentalKey,
                 revo: {
@@ -5159,7 +5190,7 @@ describe("accidentals", (): void => {
                 },
             },
         ].reverse()
-        const expectedSectionD2C: AccidentalExpectation[] = [
+        const expectedN2C: AccidentalExpectation[] = [
             {
                 // Key: "n2c_096" as AccidentalKey,
                 revo: {
@@ -6423,7 +6454,7 @@ describe("accidentals", (): void => {
             },
         ].reverse()
 
-        const expectedSectionU1A: AccidentalExpectation[] = [
+        const expectedP1A: AccidentalExpectation[] = [
             {
                 // Key: "p1a_000" as AccidentalKey,
                 revo: {
@@ -8024,7 +8055,7 @@ describe("accidentals", (): void => {
                 },
             },
         ]
-        const expectedSectionU1B: AccidentalExpectation[] = [
+        const expectedP1B: AccidentalExpectation[] = [
             {
                 // Key: "p1b_122" as AccidentalKey,
                 revo: {
@@ -8364,7 +8395,7 @@ describe("accidentals", (): void => {
                 },
             },
         ]
-        const expectedSectionU1C: AccidentalExpectation[] = [
+        const expectedP1C: AccidentalExpectation[] = [
             {
                 // Key: "p1c_096" as AccidentalKey,
                 revo: {
@@ -9627,7 +9658,7 @@ describe("accidentals", (): void => {
                 },
             },
         ]
-        const expectedSectionU2A: AccidentalExpectation[] = [
+        const expectedP2A: AccidentalExpectation[] = [
             {
                 // Key: "p2a_000" as AccidentalKey,
                 revo: {
@@ -11228,7 +11259,7 @@ describe("accidentals", (): void => {
                 },
             },
         ]
-        const expectedSectionU2B: AccidentalExpectation[] = [
+        const expectedP2B: AccidentalExpectation[] = [
             {
                 // Key: "p2b_122" as AccidentalKey,
                 revo: {
@@ -11568,7 +11599,7 @@ describe("accidentals", (): void => {
                 },
             },
         ]
-        const expectedSectionU2C: AccidentalExpectation[] = [
+        const expectedP2C: AccidentalExpectation[] = [
             {
                 // Key: "p2c_096" as AccidentalKey,
                 revo: {
@@ -12833,19 +12864,19 @@ describe("accidentals", (): void => {
         ]
 
         const expected = [
-            // ...expectedSectionD2C,
-            // ...expectedSectionD2B,
-            // ...expectedSectionD2A,
-            // ...expectedSectionD1C,
-            // ...expectedSectionD1B,
-            // ...expectedSectionD1A,
+            // ...expectedN2C,
+            // ...expectedN2B,
+            // ...expectedN2A,
+            // ...expectedN1C,
+            // ...expectedN1B,
+            // ...expectedN1A,
 
-            ...expectedSectionU1A,
-            ...expectedSectionU1B,
-            ...expectedSectionU1C,
-            ...expectedSectionU2A,
-            ...expectedSectionU2B,
-            ...expectedSectionU2C,
+            ...expectedP1A,
+            ...expectedP1B,
+            ...expectedP1C,
+            ...expectedP2A,
+            ...expectedP2B,
+            ...expectedP2C,
         ] as AccidentalExpectation[]
         expect(accidentalExpectations).toEqual(expected)
     })

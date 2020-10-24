@@ -2,7 +2,7 @@ import {Id, NumericProperties, Scamon} from "../../general"
 import {Flacco} from "../accidental"
 import {CommaClass} from "../ji"
 
-// Todo: FLACOMBO, SECTION, NOTATION GENERATION 1: SYMBOL CLASS (SUBSET) / FIRST SECTION / ID/NAME QUESTIONS / GETTING
+// Todo: FLACOMBO, SECTION, NOTATION GENERATION; SYMBOL CLASS (SUBSET) / FIRST SECTION / ID/NAME QUESTIONS / GETTING
 //  I'm not quite ready for Symbol to have ID yet
 //  At that stage, you'd want a const SYMBOLS: Symbol[] and generate it and test it, and maybe apotome shift
 //  Apotome complement methods would only be used in test, because you'd be "get"ting the symbol, not computing it
@@ -81,13 +81,16 @@ import {CommaClass} from "../ji"
 //  Also don't forget about the EDO notations, for which you really want to go by symbol, because the commas aren't
 //  Fundamental to those. So you kind of want to go by visual/symbol/flacco/whatever, but you don't want the redundancy
 //  Of the bigger mirrored symbols.
-type BoundClass<T extends NumericProperties = {}> = {
-    id: Id<BoundClass>,
-    pitch: Scamon<T & {rational: false}>,
-}
-
-// Todo: FLACOMBO, SECTION, NOTATION GENERATION 2: MINIMAL NOTATION SHAPE
-//  I really think you should be able to do this with only flaccoIds and boundClassIds
+//  Kind of crazy, evo accidental doesn't need commaClassId for evo at all... kind of makes me want to get rid of it in
+//  Revo and just say whether it's in section B or whatever (I think at some point I may have been going the other
+//  Way, i.e. trying to get rid of flaccoId instead of commaClassId but I thin this way makes more sense actually
+//  - Later: wait no again, all you need to know is whether they equal
+//  (This next bit extracted from a related chunk in czap.ts)
+//  Wait is that seriously all you need to know? (whether flaccoId === commaClassId or not) It feels a bit weird,
+//  Like maybe you should just go ahead and include the flacco id in the accidental key?
+//  Oor no, stick to your guns about that being weird in Revo?
+//  Although there's no such thing as accidental key anymore...
+//  - I really think you should be able to do this with only flaccoIds and boundClassIds
 //  And while it does make sense for commaClasses to point to flaccos (their representative flacco)
 //  It also makes sense that when you get a flacco, it comes with a comma, regardless whether its EDO tuning
 //  Because the symbol in-and-of-itself doesn't have a way of communicating what type of notation its in
@@ -106,6 +109,14 @@ type BoundClass<T extends NumericProperties = {}> = {
 //  Maybe we should just change that thinking though
 //  - Also, what if we did something like this: either commas could specify the OTHER bigger flacco too, if any
 //  Or the flacco could specify if it has a halfApotomeMirrorFlacco...
+//  Ah, holy moly, perhaps what we have in the CaptureZone right now, everything in that group apart from the bound and
+//  Comma, is a "symbol"? Well... but symbol is more the visual Sagittal thing. We know it could go Evo and have
+//  A compatible. So it's more like a... proto-accidental? I guess it's close to like an accidental key like we used to
+type BoundClass<T extends NumericProperties = {}> = {
+    id: Id<BoundClass>,
+    pitch: Scamon<T & {rational: false}>,
+}
+
 // State of the art plans described here: http://forum.sagittal.org/viewtopic.php?p=2492#p2492
 interface Notation {
     boundClassIds: Array<Id<BoundClass>>,
@@ -113,31 +124,17 @@ interface Notation {
     flaccoIds: Array<Id<Flacco>>,
 }
 
-// Todo: FLACOMBO, SECTION, NOTATION GENERATION 3: MINIMAL FLACOMBO SHAPE
-//  Kind of crazy, it doesn't need commaClassId for evo at all... kind of makes me want to get rid of it in
-//  Revo and just say whether it's in section B or whatever (I think at some point I may have been going the other
-//  Way, i.e. trying to get rid of flaccoId instead of commaClassId but I thin this way makes more sense actually
-//  - Later: wait no again, all you need to know is whether they equal
-//  (This next bit extracted from a related chunk in czap.ts)
-//  Wait is that seriously all you need to know? (whether flaccoId === commaClassId or not) It feels a bit weird,
-//  Like maybe you should just go ahead and include the flacco id in the accidental key?
-//  Oor no, stick to your guns about that being weird in Revo?
-//  Although there's no such thing as accidental key anymore...
-//  - If you simplify the section to shaft odd/even, I'm pretty sure you shouldn't need apotomeCount here anymore
-//  Which would be good
-//  Although I tried that one point, and I hadn't thought it through clearly enough
-//  So clearly there's a difference between apotomeCount, which changes along with commas, and there are 5 zones
-//  And apotomeSection, which also changes with commas, but is halfway offset, so there are only 4 zones
-//  - And the fact that we're importing from notation/section here I think just speaks to the fact that it
-//  Should be contained in the flacombo, rather than needing to be computed from it
-//  Okay to make things more compatible with the "Section" concept discussed for Symbol, I'm going to convert from
-//  Using apotomeCount to just using shifted or not
-//  - Arghhh, it's kind of insane how intertwined all these steps are. I can't really just go from 1 to 5.
 // Flacco + CommaClassId + BoundClassId combination = Fla + Com + Bo; ranges from -2 to 2 apotomes
-interface Flacombo {
+interface CaptureZone {
     flaccoId: Id<Flacco>,
     negated: boolean,               // Above or below natural
     shifted: boolean,               // In the 1st apotome section or the 2nd apotome section (absolute)
+    // Todo: alright, well, I had gone ahead and collapsed mirrored and even into section
+    //  Because of the fact that when even, you must be mirrored
+    //  And slightly because of the fact that "even" preferences Revo
+    //  However! there's a con to this (in addition to requiring an enum rather than all being nice booleans)
+    //  Which is that now some things will need to check... well you can just say !Section.A if you mean to get "even"
+    //  So actually maybe that's fine.
     section: Section,
 
     commaClassId: Id<CommaClass>,
@@ -145,60 +142,15 @@ interface Flacombo {
     boundClassId: Id<BoundClass>,
 }
 
-// Todo: FLACOMBO, SECTION, NOTATION GENERATION 4: MINIMAL SECTION SHAPE
-//  I think you can simplify it down to binary for AccidentalSection, too: ShaftSection ODD/EVEN ODD = a/b and EVEN = c
-//  Even though in Evo you don't see the odd shaft count, I still somehow think it's acceptable.
-//  What if you just made all of these booleans? so it'd be... flipped, shifted, even? that would solve the Aim problem.
-//  And the positive/negative problem.
-//  - Or about a fourth property to section: comma super/sub? P/B
-//  Then maybe you don’t need apotome count or comma direction
-//  It’s just the three IDs input (bound, comma, flacco) and then this section thing
-//  - Probably some improvement you could do around AimSection w/r/t actual Aim, since they're basically the same...
-//  And this could be confusing bc in Evo, the Sagittal symbol will aim down... and the compatible doesn't have "aim".
-//  So maybe it was better when this was positive/negative? but then what would this part of the Section be called?
-//  - And it might be nice if you did not need both a name and an object...
-//  How many places do you really use the name for short?
-//  Well okay here's the real reason not to keep the name enum... because there's no limiting of validity.
-//  It's simply every combination!
-//  - Okay, so the concept of state of "aim" has been effectively paired with the verb of "flip". I'm okay with that.
-//  Only thing that concerns me about that is that's so similar to direction and positive/negative super/sub.
-//  I think but it's because it's the visual side of things is why it got its own name right though yeah?
-//  - Would it be more helpful if the comma direction was a relative thing, i.e. away or toward natural?
-//  More like orientation. I might even use Orientation. Except again, like Aim, I feel like it's meant to be visual.
-//  - Also I feel like there's something to reducing the scope that "Section" is meant to encode.
-//  Like if it only captured the idea of one of four places,
-//  - OKay but Is it in the section where Revo flavor would have even shafts (mirrored must be true here)
-//  The fact that they're interconnected like that makes me rescind making them booleans. has to be 3-way enum.
-//  But if we flatten this into Flacombo, then THAT can be section. (I know I said elswhere the 4 places could be s
-//  Section, but maybe those don't even have name, or you know they are just flipped/shifted.
-//  Well... I don't like flipped because it's just for the symbol, which can be flipped within a non-flipped accidental
-//  Shifted is somehow okay because it only applies to revo symbols which revo is equivalent to accidentals in a way
-//  So you're already operating at that order... so maybe we just use positive/negative since it encompasses both
-//  Visual (aim/orientation) and pitch alteration (direction) type information?
-
 enum Section {
     A = "a",                // Shaft count: n,      Abs apotome count: m,       Comma direction: away from natural
     B = "b",                // Shaft count: n,      Abs apotome count: m + 1,   Comma direction: toward natural
     C = "c",                // Shaft count: n + 1,  Abs apotome count: m + 1,   Comma direction: toward natural
 }
 
-// Todo: FLACOMBO, SECTION, NOTATION GENERATION 5: POST-FLACOMBO SHAPE
-//  If the thing only has one bound on it, then maybe the whole thing can be called a CaptureZone
-//  Even if it was not just one side of the bounds, you could still have it be captureZone.zone
-//  And maybe whatever else is called CaptureZone just needs to get displaced because it’s not as important
-//  - And shite I just realized that you won't be able to get the full capture zone without info from other elements
-//  That is, the single individual flacombo won't have all the necessary info... so maybe you really should just
-//  Have more of a single "away-er" bound, relative to the nearest apotome? and if it's missing, that means it
-//  Straddles it? whether that's an apotome midpoint or apotome multiple?
-//  So that will mean more infrastructure/overhead/reasoning about the bounds, rather than it being cut and dry
-//  As a Zone... but maybe better overall?
-/*
-maybe something like a Czap, or maybe you make do with Flacombo / CaptureZone / Section
- */
-
 export {
     BoundClass,
     Notation,
-    Flacombo,
+    CaptureZone,
     Section,
 }

@@ -1,10 +1,10 @@
-import {Flacombo, Section} from "../../notations"
+import {CaptureZone, Section} from "../../notations"
 import {getFlacco} from "../flacco"
 import {apotomeShift, computeApotomeComplement, computeSymbolFromFlacco, flipSymbol} from "../symbol"
 import {Accidental, Flavor} from "./types"
 
-const computeRevoAccidentalFromFlacombo = (flacombo: Flacombo): Accidental<Flavor.REVO> => {
-    const { flaccoId, section, shifted, negated } = flacombo
+const computeRevoAccidentalFromCaptureZone = (captureZone: CaptureZone): Accidental<Flavor.REVO> => {
+    const { flaccoId, section, shifted, negated } = captureZone
 
     const flacco = getFlacco(flaccoId)
     let symbol = computeSymbolFromFlacco(flacco)
@@ -16,5 +16,5 @@ const computeRevoAccidentalFromFlacombo = (flacombo: Flacombo): Accidental<Flavo
 }
 
 export {
-    computeRevoAccidentalFromFlacombo,
+    computeRevoAccidentalFromCaptureZone,
 }

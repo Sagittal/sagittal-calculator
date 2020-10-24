@@ -1,17 +1,15 @@
 import {increment, Maybe, negative} from "../../../general"
-import {Flacombo, Section} from "../../notations"
+import {CaptureZone, Section} from "../../notations"
 import {getFlacco} from "../flacco"
 import {computeSymbolFromFlacco, flipSymbol} from "../symbol"
 import {Accidental, Compatible, Flavor} from "./types"
 
-const computeEvoAccidentalFromFlacombo = (flacombo: Flacombo): Accidental<Flavor.EVO> => {
-    const { flaccoId, section, shifted, negated } = flacombo
+const computeEvoAccidentalFromCaptureZone = (captureZone: CaptureZone): Accidental<Flavor.EVO> => {
+    const { flaccoId, section, shifted, negated } = captureZone
 
     const flacco = getFlacco(flaccoId)
     let symbol = computeSymbolFromFlacco(flacco)
-    symbol = section === Section.C ?
-        flipSymbol(symbol) :
-        symbol
+    symbol = section === Section.C ? flipSymbol(symbol) : symbol
 
     let apotomeCount = 0
     if (section === Section.C) apotomeCount = increment(apotomeCount)
@@ -32,5 +30,5 @@ const computeEvoAccidentalFromFlacombo = (flacombo: Flacombo): Accidental<Flavor
 }
 
 export {
-    computeEvoAccidentalFromFlacombo,
+    computeEvoAccidentalFromCaptureZone,
 }
