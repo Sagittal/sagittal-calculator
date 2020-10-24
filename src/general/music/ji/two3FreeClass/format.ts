@@ -3,6 +3,7 @@ import {computeQuotientFromMonzo} from "../../../math"
 import {compute23FreeClassName} from "./name"
 import {Two3FreeClass} from "./types"
 
+// TODO: Update two three free ratio format to use {} etc. per http://forum.sagittal.org/viewtopic.php?p=2556#p2556
 const format23FreeClass = (two3FreeClass: Two3FreeClass): Formatted<Two3FreeClass> => {
     const [numerator, denominator] = computeQuotientFromMonzo(
         two3FreeClass.monzo,

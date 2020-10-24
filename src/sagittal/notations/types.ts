@@ -135,6 +135,25 @@ interface CaptureZone {
     //  However! there's a con to this (in addition to requiring an enum rather than all being nice booleans)
     //  Which is that now some things will need to check... well you can just say !Section.A if you mean to get "even"
     //  So actually maybe that's fine.
+    //  Except that if we want to form a relationship between this and Accidental / Symbol Class, that only cares about
+    //  The even/odd part, not the mirrored part, so that's an argument to split it up again.
+    //  So I'm thinking now that the current Accidental is describing something closer to glyph/IO, right, as is Symbol
+    //  Although with Symbol and below it's unambiguous. It's only once you get to Accidental that it diverges.
+    //  So Accidental extends Symbol with compatible. but remember we might change symbol, so that instead of shafts
+    //  It has shifted and even, and negated instead of aim (or maybe at that point it's just aim). so are we actually
+    //  Finding that at the symbol level, by describing it in terms of shifted and even, we're kind of stepping away
+    //  From the glyph/IO thinking, and towards the abstract way, even if it doesn't make a difference?
+    //  That would also have the benefit of allowing it to know it had to be a Revo symbol the moment you go into even
+    //  Or shifted.
+    //  I think there's an opportunity to think of the way Symbol is defined now, with the literal shafts, which is nice
+    //  As the glyph/IO kind, and have accidental as the abstract one, which defines it in terms of even or shafted.
+    //  There's only a little hurdle in that then when you needed to IO many Evo accidentals, instead of that being one
+    //  Call to an ASCII/Unicode/Smiley thing, it'd need to convert it. but I guess that'd be the same layer that'd
+    //  Convert from even + shifted to 4-shafts in Revo's case, yeah?
+    //  So in this case a CaptureZone is actually just { boundClassId, commaClassId, accidental }
+    //  But kind of what I was getting at elsewhere, these getters, I think you still need them backed by a hardcoded
+    //  List of valids with IDs to prevent arbitrary construction of them..... maybe? Does that idea actually work?
+    //  Maybe that doesn't make sense.
     section: Section,
 
     commaClassId: Id<CommaClass>,
