@@ -82,5 +82,17 @@ for (
 sort(n2Results, {by: "n2" as KeyPath})
 sort(n2pResults, {by: "n2p" as KeyPath})
 
+// TODO: Alright, this failed overnight because of this:
+//  Error: This integer 8368831 contains primes which are too big; remainder is 8368831
+//  So you'll need to add more primes to the list, say, up to 10 million
+//  And because the script has been designed to only sort and spit out output if it makes it to the very end, you'll
+//  Need to revise things here a little bit so it can work with the results thus far, since it got so close to finishing
+//  (Well, maybe it still had like 6 hours left, since it just keeps getting slower and slower as it goes higher).
+//  Those results have been saved in `sortedNumeratorsPreCrash.txt`. I wouldn't recommend revising this script to
+//  Work other than to need to make it to the end in order to spit out final output, since, of course, you do need to
+//  Sort it, so it just doesn't make any sense to have it be able to cut off at any moment and that be okay. But you
+//  Will need to recalculate the n2 and n2p results for the numerators up to 8368831 which you already determined were
+//  The desired ones, and I think that the determination was the super expensive part and parsing those and computing
+//  N2 and N2P will be relatively speedy.
 saveLog(stringify(n2Results, {multiline: true}), LogTarget.FINAL)
 saveLog(stringify(n2pResults, {multiline: true}), LogTarget.FINAL)
