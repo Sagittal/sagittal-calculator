@@ -3,12 +3,12 @@ import {
     analyzeComma,
     BoundClass,
     CommaClass,
-    computeSymbolAscii,
-    computeSymbolUnicode,
+    computeSagittalAscii,
+    computeSagittalUnicode,
     getCommaClass,
     getIntroducingJiNotationLevel,
     getMinaName,
-    getRepresentativeSymbol,
+    getRepresentativeSagittal,
     getSmallestFlaccoSubset,
     JiNotationBoundClass,
     JiNotationLevel,
@@ -25,9 +25,9 @@ const computeBoundedCommaClassInfo = (
     const commaClass = getCommaClass(commaClassId)
     const commaAnalysis = analyzeComma(commaClass.pitch)
 
-    const symbol = getRepresentativeSymbol(commaClassId)
-    const ascii = computeSymbolAscii(symbol)
-    const unicode = computeSymbolUnicode(symbol)
+    const sagittal = getRepresentativeSagittal(commaClassId)
+    const ascii = computeSagittalAscii(sagittal)
+    const unicode = computeSagittalUnicode(sagittal)
 
     const introducingJiNotationLevel = getIntroducingJiNotationLevel(commaClassId)
 
@@ -44,7 +44,7 @@ const computeBoundedCommaClassInfo = (
 
     return {
         id: commaClassId,
-        representativeSymbol: {
+        representativeSagittal: {
             ascii,
             unicode,
             smallestFlaccoSubset,

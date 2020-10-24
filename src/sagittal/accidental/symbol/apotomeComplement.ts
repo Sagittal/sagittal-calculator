@@ -1,7 +1,7 @@
 import {deepEquals, isUndefined, Maybe, stringify} from "../../../general"
 import {HeadName, OrientedAccent, reorient} from "../flacco"
 import {getCore} from "./core"
-import {Core, Shafts, Symbol} from "./types"
+import {Core, Sagittal, Shafts} from "./types"
 
 const reorientAccent = (orientedAccent: OrientedAccent): OrientedAccent =>
     ({
@@ -120,8 +120,8 @@ const APOTOME_COMPLEMENT_CORE_PAIRS: Array<[Core, Core]> = [
     ],                                                                      //   )/|\     )/|\   Z
 ]
 
-const computeApotomeComplement = (symbol: Symbol): Symbol => {
-    if (isUndefined(symbol.core)) {
+const computeApotomeComplement = ({ arm, core }: Sagittal): Sagittal => {
+    if (isUndefined(core)) {
         return {core: getCore(HeadName.DOUBLE_BARB, Shafts.DOUBLE)}
     }
 
@@ -129,18 +129,18 @@ const computeApotomeComplement = (symbol: Symbol): Symbol => {
 
     APOTOME_COMPLEMENT_CORE_PAIRS.forEach(
         ([complementCoreA, complementCoreB]: [Core, Core]): void => {
-            if (deepEquals(symbol.core, complementCoreA)) apotomeComplementCore = complementCoreB
-            if (deepEquals(symbol.core, complementCoreB)) apotomeComplementCore = complementCoreA
+            if (deepEquals(core, complementCoreA)) apotomeComplementCore = complementCoreB
+            if (deepEquals(core, complementCoreB)) apotomeComplementCore = complementCoreA
         },
     )
 
     if (isUndefined(apotomeComplementCore)) {
-        throw new Error(`Tried to compute apotome complement for symbol whose core is outside the 1st apotome section ${stringify(symbol)}`)
+        throw new Error(`Tried to compute apotome complement for sagittal whose core is outside the 1st apotome section ${stringify(core)}`)
     }
 
-    if (!isUndefined(symbol.arm)) {
+    if (!isUndefined(arm)) {
         return {
-            arm: symbol.arm.map(reorientAccent),
+            arm: arm.map(reorientAccent),
             core: apotomeComplementCore,
         }
     }

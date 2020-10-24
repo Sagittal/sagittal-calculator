@@ -34,7 +34,7 @@ export {
     CommaClass,
     getCommaClass,
     formatComma,
-    getRepresentativeSymbol,
+    getRepresentativeSagittal,
     formatCommaClass,
 } from "./ji"
 export {
@@ -49,8 +49,8 @@ export {
     FLACCO_SUBSETS,
     FLACCO_SUBSETS_SORTED_BY_SIZE,
     getSmallestFlaccoSubset,
-    computeSymbolAscii,
-    computeSymbolUnicode,
+    computeSagittalAscii,
+    computeSagittalUnicode,
     parseAscii,
     Glyph,
 } from "./accidental"

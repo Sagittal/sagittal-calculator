@@ -82,7 +82,8 @@ for (
 sort(n2Results, {by: "n2" as KeyPath})
 sort(n2pResults, {by: "n2p" as KeyPath})
 
-// TODO: Alright, this failed overnight because of this:
+// TODO: SORTED NUMERATORS
+//  Alright, this failed overnight because of this:
 //  Error: This integer 8368831 contains primes which are too big; remainder is 8368831
 //  So you'll need to add more primes to the list, say, up to 10 million
 //  And because the script has been designed to only sort and spit out output if it makes it to the very end, you'll

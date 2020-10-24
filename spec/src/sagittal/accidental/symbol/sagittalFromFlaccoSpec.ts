@@ -1,11 +1,11 @@
 import {Id} from "../../../../../src/general"
-import {Aim, computeSymbolFromFlacco, Flacco, Symbol} from "../../../../../src/sagittal/accidental"
+import {Aim, computeSagittalFromFlacco, Flacco, Sagittal} from "../../../../../src/sagittal/accidental"
 import {getHead, HeadName, Orientation} from "../../../../../src/sagittal/accidental/flacco"
 import {getArm} from "../../../../../src/sagittal/accidental/flacco/arm"
 import {ArmName} from "../../../../../src/sagittal/accidental/flacco/types"
 import {Shafts} from "../../../../../src/sagittal/accidental/symbol"
 
-describe("computeSymbolFromFlacco", (): void => {
+describe("computeSagittalFromFlacco", (): void => {
     it("takes a combo of flags and arm and returns the full Sagittal symbol", (): void => {
         const flacco = {
             id: 75 as Id<Flacco>,
@@ -13,9 +13,9 @@ describe("computeSymbolFromFlacco", (): void => {
             core: getHead(HeadName.BOATHOOK_AND_ARC),
         }
 
-        const actual = computeSymbolFromFlacco(flacco)
+        const actual = computeSagittalFromFlacco(flacco)
 
-        const expected: Symbol = {                                                                       // ,~|)
+        const expected: Sagittal = {                                                                       // ,~|)
             arm: getArm(ArmName.WING, Orientation.AGAINST),
             core: {
                 aim: Aim.UP,
@@ -33,9 +33,9 @@ describe("computeSymbolFromFlacco", (): void => {
             core: getHead(HeadName.LEFT_ARC),
         }
 
-        const actual = computeSymbolFromFlacco(flacco)
+        const actual = computeSagittalFromFlacco(flacco)
 
-        const expected: Symbol = {                                                                       // '(|
+        const expected: Sagittal = {                                                                       // '(|
             arm: getArm(ArmName.TICK),
             core: {
                 aim: Aim.UP,
@@ -52,9 +52,9 @@ describe("computeSymbolFromFlacco", (): void => {
             core: getHead(HeadName.RIGHT_BARB_AND_ARC),
         }
 
-        const actual = computeSymbolFromFlacco(flacco)
+        const actual = computeSagittalFromFlacco(flacco)
 
-        const expected: Symbol = {                                                                       // |\)
+        const expected: Sagittal = {                                                                       // |\)
             core: {
                 aim: Aim.UP,
                 shafts: Shafts.SINGLE,
@@ -70,9 +70,9 @@ describe("computeSymbolFromFlacco", (): void => {
             core: getHead(HeadName.LEFT_SCROLL_DOUBLE_LEFT_BARB),
         }
 
-        const actual = computeSymbolFromFlacco(flacco)
+        const actual = computeSagittalFromFlacco(flacco)
 
-        const expected: Symbol = {                                                                        // )//|
+        const expected: Sagittal = {                                                                        // )//|
             core: {
                 aim: Aim.UP,
                 shafts: Shafts.SINGLE,
@@ -82,12 +82,12 @@ describe("computeSymbolFromFlacco", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    it("works for the non-symbol, or absence of a symbol", (): void => {
+    it("works for the null sagittal (the parenthetical natural)", (): void => {
         const flacco = {
             id: 0 as Id<Flacco>,
         }
 
-        const actual = computeSymbolFromFlacco(flacco)
+        const actual = computeSagittalFromFlacco(flacco)
 
         expect(actual).toEqual({})                                                               // (|//|)
     })
@@ -98,9 +98,9 @@ describe("computeSymbolFromFlacco", (): void => {
             arm: getArm(ArmName.WING),
         }
 
-        const actual = computeSymbolFromFlacco(flacco)
+        const actual = computeSagittalFromFlacco(flacco)
 
-        const expected: Symbol = {                                                                       // `|
+        const expected: Sagittal = {                                                                       // `|
             arm: getArm(ArmName.WING),
             core: {
                 aim: Aim.UP,

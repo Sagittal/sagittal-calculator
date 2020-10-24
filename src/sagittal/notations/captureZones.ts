@@ -32,7 +32,7 @@ const computeCaptureZones = (notation: Notation): CaptureZone[] => {
         })
     })
 
-    // P1B: upwards, from half apotome to max single-shaft symbol
+    // P1B: upwards, from half apotome to max single-shaft sagittal
     const finalCommaOrBoundClassIndex = indexOfFinalElement(commaClassIds)
     const extraFlaccoIds = flaccoIds.slice(boundClassCount)
     extraFlaccoIds.forEach((flaccoId: Id<Flacco>, extraFlaccoIndex: number): void => {
@@ -51,7 +51,7 @@ const computeCaptureZones = (notation: Notation): CaptureZone[] => {
         })
     })
 
-    // P1C: upwards, past max single-shaft symbol to apotome
+    // P1C: upwards, past max single-shaft sagittal to apotome
     const extraFlaccoCount = flaccoCount - boundClassCount
     const reversedRemainingBoundClassIds = shallowClone(boundClassIds).reverse().slice(extraFlaccoCount)
 
@@ -88,7 +88,7 @@ const computeCaptureZones = (notation: Notation): CaptureZone[] => {
         })
     })
 
-    // P2B: upwards, from apotome-and-a-half to max-triple-shaft-symbol
+    // P2B: upwards, from apotome-and-a-half to max-triple-shaft-sagittal
     extraFlaccoIds.forEach((flaccoId: Id<Flacco>, extraFlaccoIndex: number): void => {
         const commaOrBoundClassIndex = finalCommaOrBoundClassIndex - extraFlaccoIndex
         const boundClassId = boundClassIds[ commaOrBoundClassIndex ]
@@ -107,7 +107,7 @@ const computeCaptureZones = (notation: Notation): CaptureZone[] => {
         })
     })
 
-    // P2C: upwards, past max-triple-shaft-symbol to double-apotome
+    // P2C: upwards, past max-triple-shaft-sagittal to double-apotome
     reversedRemainingBoundClassIds.forEach((boundClassId: Id<BoundClass>, remainingBoundClassIndex: number): void => {
         const commaOrFlaccoIndex = finalRemainingBoundClassIndex - remainingBoundClassIndex
         const commaClassId = commaClassIds[ commaOrFlaccoIndex ]
@@ -125,11 +125,11 @@ const computeCaptureZones = (notation: Notation): CaptureZone[] => {
     })
 
     // N1a: upwards, from negative half apotome to unison
-    // N1B: upwards, from negative max single-shaft symbol to negative half apotome
-    // N1C: upwards, from negative apotome almost to negative max single-shaft symbol
+    // N1B: upwards, from negative max single-shaft sagittal to negative half apotome
+    // N1C: upwards, from negative apotome almost to negative max single-shaft sagittal
     // N2A: upwards, from negative apotome-and-a-half to negative apotome
-    // N2B: upwards, from negative max-triple-shaft-symbol to negative apotome-and-a-half
-    // N2C: upwards, from negative double apotome almost to negative max-triple-shaft-symbol
+    // N2B: upwards, from negative max-triple-shaft-sagittal to negative apotome-and-a-half
+    // N2C: upwards, from negative double apotome almost to negative max-triple-shaft-sagittal
 
     return captureZones
 }

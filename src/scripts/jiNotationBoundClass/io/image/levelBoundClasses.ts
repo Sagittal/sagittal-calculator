@@ -1,7 +1,7 @@
 import {DEFAULT_PRECISION, Io, Px, round, subtract} from "../../../../general"
 import {JiNotationBoundClass, JiNotationLevel, JI_NOTATION_LEVELS_BOUND_CLASSES} from "../../../../sagittal"
 import {JI_NOTATION_LEVEL_BOTTOMS, JI_NOTATION_LEVEL_TOPS} from "./levelHeights"
-import {DASH_SIZE, SYMBOL_OFFSET} from "./sizes"
+import {DASH_SIZE, SAGITTAL_OFFSET} from "./sizes"
 import {computeX} from "./x"
 
 const visualizeJiNotationLevelBoundClasses = (): Io[] => {
@@ -20,7 +20,7 @@ const visualizeJiNotationLevelBoundClasses = (): Io[] => {
                 const bottomY: Px = round(JI_NOTATION_LEVEL_BOTTOMS[jiNotationLevel], DEFAULT_PRECISION)
                 const positionX: Px = computeX(pitch)
 
-                const textY: Px = round(subtract(topY, SYMBOL_OFFSET), DEFAULT_PRECISION)
+                const textY: Px = round(subtract(topY, SAGITTAL_OFFSET), DEFAULT_PRECISION)
 
                 jiNotationLevelBoundClassElements.push(`  <line stroke-dasharray="${DASH_SIZE}" stroke="black" x1="${positionX}" x2="${positionX}" y1="${topY}" y2="${bottomY}" />\n` as Io)
 

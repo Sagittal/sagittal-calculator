@@ -15,7 +15,7 @@ const HALF_TICK_SIZE: Px = TICK_SIZE / 2 as Px
 const DOT_SIZE: Px = computePx(0.01 as Basis<Cents>, SCALE)
 const DASH_SIZE: Px = 1 as Px
 
-const SYMBOL_OFFSET: Px = computePx(0.1 as Basis<Cents>, Y_SCALE)
+const SAGITTAL_OFFSET: Px = computePx(0.1 as Basis<Cents>, Y_SCALE)
 const MINA_OFFSET: Px = computePx(0.3 as Basis<Cents>, Y_SCALE)
 
 export {
@@ -28,6 +28,6 @@ export {
     DOT_SIZE,
     DASH_SIZE,
     HALF_TICK_SIZE,
-    SYMBOL_OFFSET,
+    SAGITTAL_OFFSET,
     MINA_OFFSET,
 }

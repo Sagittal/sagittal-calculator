@@ -3,7 +3,8 @@ import {ioSettings} from "../globals"
 import {TableFormat} from "../table"
 import {Formatted} from "./types"
 
-// TODO: When I have denominator 1, shouldn't format ratio drop it?
+// TODO: RATIO FORMAT
+//  When I have denominator 1, shouldn't format ratio drop it?
 const formatQuotient = <T extends Quotient>(
     inputQuotient: T,
     {directed = true, noLaTeXScaler = false}: {directed?: boolean, noLaTeXScaler?: boolean} = {},

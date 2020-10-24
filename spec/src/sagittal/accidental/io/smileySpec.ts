@@ -1,81 +1,81 @@
-import {Accidental, Aim, Compatible, Flavor, Smiley, Symbol} from "../../../../../src/sagittal/accidental"
+import {Accidental, Aim, Compatible, Flavor, Smiley, Sagittal} from "../../../../../src/sagittal/accidental"
 import {getArm} from "../../../../../src/sagittal/accidental/flacco/arm"
 import {ArmName, HeadName, Orientation} from "../../../../../src/sagittal/accidental/flacco/types"
-import {computeAccidentalSmiley, computeSymbolSmiley} from "../../../../../src/sagittal/accidental/io"
+import {computeAccidentalSmiley, computeSagittalSmiley} from "../../../../../src/sagittal/accidental/io"
 import {getCore, Shafts} from "../../../../../src/sagittal/accidental/symbol"
 
-describe("computeSymbolSmiley", (): void => {
-    it("converts a symbol to smiley code", (): void => {
-        const symbol: Symbol = {                                                                            // `'|)
+describe("computeSagittalSmiley", (): void => {
+    it("converts a sagittal to smiley code", (): void => {
+        const sagittal: Sagittal = {                                                                            // `'|)
             arm: getArm(ArmName.WING_AND_TICK),
             core: getCore(HeadName.RIGHT_ARC),
         }
 
-        const actual = computeSymbolSmiley(symbol)
+        const actual = computeSagittalSmiley(sagittal)
 
         const expected = ":`::'::|):" as Smiley
         expect(actual).toBe(expected)
     })
 
     it("handles the space that needs to be inserted into //, per forum-specific limitations", (): void => {
-        const symbol: Symbol = {core: getCore(HeadName.LEFT_SCROLL_DOUBLE_LEFT_BARB)}                  // )//|
+        const sagittal: Sagittal = {core: getCore(HeadName.LEFT_SCROLL_DOUBLE_LEFT_BARB)}                  // )//|
 
-        const actual = computeSymbolSmiley(symbol)
+        const actual = computeSagittalSmiley(sagittal)
 
         const expected = ":)/ /|:" as Smiley
         expect(actual).toBe(expected)
     })
 
     it("handles the space that needs to be inserted into \\\\, per forum-specific limitations", (): void => {
-        const symbol: Symbol = {core: getCore(HeadName.DOUBLE_RIGHT_BARB)}                             // |\\
+        const sagittal: Sagittal = {core: getCore(HeadName.DOUBLE_RIGHT_BARB)}                             // |\\
 
 
-        const actual = computeSymbolSmiley(symbol)
+        const actual = computeSagittalSmiley(sagittal)
 
         const expected = ":|\\ \\:" as Smiley
         expect(actual).toBe(expected)
     })
 
     it("does the correct thing with double ticks", (): void => {
-        const symbol: Symbol = {                                                                            // ``|)
+        const sagittal: Sagittal = {                                                                            // ``|)
             arm: getArm(ArmName.BIRD),
             core: getCore(HeadName.RIGHT_ARC),
         }
 
-        const actual = computeSymbolSmiley(symbol)
+        const actual = computeSagittalSmiley(sagittal)
 
         const expected = ":``::|):" as Smiley
         expect(actual).toBe(expected)
     })
 
     it("does the correct thing with double down ticks", (): void => {
-        const symbol: Symbol = {                                                                            // ,,|)
+        const sagittal: Sagittal = {                                                                            // ,,|)
             arm: getArm(ArmName.BIRD, Orientation.AGAINST),
             core: getCore(HeadName.RIGHT_ARC),
         }
 
-        const actual = computeSymbolSmiley(symbol)
+        const actual = computeSagittalSmiley(sagittal)
 
         const expected = ":,,::|):" as Smiley
         expect(actual).toBe(expected)
     })
 
-    it("works for a symbol with four shafts", (): void => {
-        const symbol: Symbol = {                                                                            // )X(
+    it("works for a sagittal with four shafts", (): void => {
+        const sagittal: Sagittal = {                                                                            // )X(
             core: getCore(HeadName.DOUBLE_SCROLL, Shafts.EX),
         }
 
-        const actual = computeSymbolSmiley(symbol)
+        const actual = computeSagittalSmiley(sagittal)
 
         const expected = ":)X(:" as Smiley
         expect(actual).toBe(expected)
     })
 
 
-    it("works for the absence of a symbol (the parenthetical natural)", (): void => {
-        const symbol: Symbol = {}
+    it("works for the null sagittal (the parenthetical natural)", (): void => {
+        const sagittal: Sagittal = {}
 
-        const actual = computeSymbolSmiley(symbol)
+        const actual = computeSagittalSmiley(sagittal)
 
         const expected = "(:h:)" as Smiley
         expect(actual).toBe(expected)

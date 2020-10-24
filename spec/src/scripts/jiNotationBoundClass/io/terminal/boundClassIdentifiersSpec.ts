@@ -61,7 +61,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         introducingJiNotationLevel: JiNotationLevel.ULTRA,
                         distance: 23.1164196495597 - 22.9305875372457 as Abs<Cents>,
                         inaDistance: (23.1164196495597 - 22.9305875372457) / ULTRINA as Multiplier<Ina>,
-                        representativeSymbol: {
+                        representativeSagittal: {
                             ascii: ".)/|" as Ascii,
                             unicode: "" as Unicode,
                             smallestFlaccoSubset: FlaccoSubset.HERCULEAN,
@@ -95,7 +95,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         introducingJiNotationLevel: JiNotationLevel.ULTRA,
                         distance: 23.46001038464900 - 23.1164196495597 as Abs<Cents>,
                         inaDistance: (23.46001038464900 - 23.1164196495597) / ULTRINA as Multiplier<Ina>,
-                        representativeSymbol: {
+                        representativeSagittal: {
                             ascii: "'/|" as Ascii,
                             unicode: "" as Unicode,
                             smallestFlaccoSubset: FlaccoSubset.HERCULEAN,
@@ -130,7 +130,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         introducingJiNotationLevel: JiNotationLevel.ULTRA,
                         distance: 23.1164196495597 - 22.9305875372457 as Abs<Cents>,
                         inaDistance: (23.1164196495597 - 22.9305875372457) / MINA as Multiplier<Ina>,
-                        representativeSymbol: {
+                        representativeSagittal: {
                             ascii: ".)/|" as Ascii,
                             unicode: "" as Unicode,
                             smallestFlaccoSubset: FlaccoSubset.HERCULEAN,
@@ -163,7 +163,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         introducingJiNotationLevel: JiNotationLevel.ULTRA,
                         distance: 23.46001038464900 - 23.1164196495597 as Abs<Cents>,
                         inaDistance: (23.46001038464900 - 23.1164196495597) / MINA as Multiplier<Ina>,
-                        representativeSymbol: {
+                        representativeSagittal: {
                             ascii: "'/|" as Ascii,
                             unicode: "" as Unicode,
                             smallestFlaccoSubset: FlaccoSubset.HERCULEAN,
@@ -198,7 +198,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         introducingJiNotationLevel: JiNotationLevel.ULTRA,
                         distance: 23.1164196495597 - 22.9305875372457 as Abs<Cents>,
                         inaDistance: (23.1164196495597 - 22.9305875372457) / TINA as Multiplier<Ina>,
-                        representativeSymbol: {
+                        representativeSagittal: {
                             ascii: ".)/|" as Ascii,
                             unicode: "" as Unicode,
                             smallestFlaccoSubset: FlaccoSubset.HERCULEAN,
@@ -231,7 +231,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         introducingJiNotationLevel: JiNotationLevel.ULTRA,
                         distance: 23.46001038464900 - 23.1164196495597 as Abs<Cents>,
                         inaDistance: (23.46001038464900 - 23.1164196495597) / TINA as Multiplier<Ina>,
-                        representativeSymbol: {
+                        representativeSagittal: {
                             ascii: "'/|" as Ascii,
                             unicode: "" as Unicode,
                             smallestFlaccoSubset: FlaccoSubset.HERCULEAN,

@@ -17,13 +17,13 @@ interface Core extends Head {
     shafts: Shafts,
 }
 
-interface Symbol extends Symbolic {
+interface Sagittal extends Symbolic {
     core?: Core,
 }
 
 export {
     Core,
     Aim,
-    Symbol,
+    Sagittal,
     Shafts,
 }

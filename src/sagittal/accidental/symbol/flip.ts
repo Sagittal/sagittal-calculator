@@ -1,14 +1,16 @@
 import {deepClone, isUndefined} from "../../../general"
-import {Aim, Symbol} from "./types"
+import {Aim, Sagittal} from "./types"
 
-const flipSymbol = (symbol: Symbol): Symbol => {
-    const flippedSymbol = deepClone(symbol)
+const flipSagittal = (sagittal: Sagittal): Sagittal => {
+    const flippedSagittal = deepClone(sagittal)
 
-    if (!isUndefined(flippedSymbol.core)) flippedSymbol.core.aim = flippedSymbol.core.aim === Aim.UP ? Aim.DOWN : Aim.UP
+    if (!isUndefined(flippedSagittal.core)) {
+        flippedSagittal.core.aim = flippedSagittal.core.aim === Aim.UP ? Aim.DOWN : Aim.UP
+    }
 
-    return flippedSymbol
+    return flippedSagittal
 }
 
 export {
-    flipSymbol,
+    flipSagittal,
 }

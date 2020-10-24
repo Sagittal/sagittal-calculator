@@ -1,25 +1,25 @@
 export {
     computeCoreUnicode,
     computeAccidentalUnicode,
-    computeSymbolUnicode,
+    computeSagittalUnicode,
     computeCompatibleUnicode,
     computeOrientedAccentUnicode,
 } from "./unicode"
 export {
     computeCoreAscii,
     computeAccidentalAscii,
-    computeSymbolAscii,
+    computeSagittalAscii,
     computeCompatibleAscii,
     computeOrientedAccentAscii,
 } from "./ascii"
 export {
     computeCoreSmiley,
     computeAccidentalSmiley,
-    computeSymbolSmiley,
+    computeSagittalSmiley,
     computeCompatibleSmiley,
     computeOrientedAccentSmiley,
 } from "./smiley"
 export {formatAscii} from "./formatAscii"
 export {Ascii, Unicode, Smiley, Glyph} from "./types"
-export {formatSymbol} from "./formatSymbol"
+export {formatSagittal} from "./formatSagittal"
 export {parseAscii} from "./parse"

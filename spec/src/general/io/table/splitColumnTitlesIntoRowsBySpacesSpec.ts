@@ -7,7 +7,7 @@ describe("splitColumnTitlesIntoRowsBySpaces", (): void => {
         "N2D3P9 rank",
         "best notating comma cents",
         "best notating comma monzo",
-        "best notating comma symbol",
+        "best notating comma sagittal",
     ] as Io[]
 
     it("splits the column titles into rows by spaces", (): void => {
@@ -17,7 +17,7 @@ describe("splitColumnTitlesIntoRowsBySpaces", (): void => {
             ["", "", "best", "best", "best"],
             ["2,3-", "", "notating", "notating", "notating"],
             ["free", "N2D3P9", "comma", "comma", "comma"],
-            ["class", "rank", "cents", "monzo", "symbol"],
+            ["class", "rank", "cents", "monzo", "sagittal"],
         ] as Array<Row<{header: true}>>
         expect(actual).toEqual(expected)
     })
@@ -29,7 +29,7 @@ describe("splitColumnTitlesIntoRowsBySpaces", (): void => {
             ["", "", "best", "best", "best"],
             ["2,3-", "", "notating", "notating", "notating"],
             ["free", "N2D3P9", "comma", "comma", "comma"],
-            ["class", "rank", "cents", "monzo", "symbol"],
+            ["class", "rank", "cents", "monzo", "sagittal"],
             ["", "", "", "", ""],
         ] as Array<Row<{header: true}>>
         expect(actual).toEqual(expected)

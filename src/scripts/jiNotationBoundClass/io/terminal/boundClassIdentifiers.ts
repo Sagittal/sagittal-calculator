@@ -1,10 +1,10 @@
 import {computeCentsFromPitch, isUndefined} from "../../../../general"
 import {
     Ascii,
-    computeSymbolAscii,
+    computeSagittalAscii,
     getCommaClass,
     getMinaName,
-    getRepresentativeSymbol,
+    getRepresentativeSagittal,
     JiNotationBoundClass,
     JiNotationLevel,
 } from "../../../../sagittal"
@@ -30,7 +30,7 @@ const extractJiNotationBoundClassIdentifiers = (
     const extremeLevelLesserBoundedCommaClass = !isUndefined(extremeLevelLesserBoundedCommaClassId) &&
         getCommaClass(extremeLevelLesserBoundedCommaClassId)
     const formattedExtremeLevelLesserBoundedCommaClass = extremeLevelLesserBoundedCommaClass ?
-        computeSymbolAscii(getRepresentativeSymbol(extremeLevelLesserBoundedCommaClass.id)) :
+        computeSagittalAscii(getRepresentativeSagittal(extremeLevelLesserBoundedCommaClass.id)) :
         "" as Ascii
     const lesserBoundedMinaName =
         extremeLevelLesserBoundedCommaClass ? getMinaName(extremeLevelLesserBoundedCommaClass.id) : undefined
@@ -38,7 +38,7 @@ const extractJiNotationBoundClassIdentifiers = (
     const extremeLevelGreaterBoundedCommaClass = !isUndefined(extremeLevelGreaterBoundedCommaClassId) &&
         getCommaClass(extremeLevelGreaterBoundedCommaClassId)
     const formattedExtremeLevelGreaterBoundedCommaClass = extremeLevelGreaterBoundedCommaClass ?
-        computeSymbolAscii(getRepresentativeSymbol(extremeLevelGreaterBoundedCommaClass.id)) :
+        computeSagittalAscii(getRepresentativeSagittal(extremeLevelGreaterBoundedCommaClass.id)) :
         "" as Ascii
     const greaterBoundedMinaName =
         extremeLevelGreaterBoundedCommaClass ? getMinaName(extremeLevelGreaterBoundedCommaClass.id) : undefined

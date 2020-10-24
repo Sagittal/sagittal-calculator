@@ -1,7 +1,7 @@
 import {isUndefined, join, sumTexts} from "../../../general"
 import {Arm, OrientedAccent} from "../flacco"
 import {Accidental, Compatible, Flavor} from "../flavor"
-import {Aim, Core, Symbol} from "../symbol"
+import {Aim, Core, Sagittal} from "../symbol"
 import {computeCompatibleAscii, computeCoreAscii, computeOrientedAccentAscii} from "./ascii"
 import {BLANK_ASCII, BLANK_SMILEY, PARENTHETICAL_NATURAL_SMILEY} from "./constants"
 import {Ascii, Smiley} from "./types"
@@ -24,7 +24,7 @@ const computeCompatibleSmiley = (compatible: Compatible): Smiley =>
 const computeOrientedAccentSmiley = (orientedAccent: OrientedAccent, aim: Aim): Smiley =>
     convertAsciiToSmiley(computeOrientedAccentAscii(orientedAccent, aim))
 
-const computeSymbolSmiley = ({arm, core}: Symbol): Smiley => {
+const computeSagittalSmiley = ({arm, core}: Sagittal): Smiley => {
     const armSmiley = isUndefined(arm) ?
         BLANK_SMILEY :
         computeArmSmiley(arm, core?.aim as Aim)
@@ -62,6 +62,6 @@ export {
     computeAccidentalSmiley,
     computeCoreSmiley,
     computeCompatibleSmiley,
-    computeSymbolSmiley,
+    computeSagittalSmiley,
     computeOrientedAccentSmiley,
 }

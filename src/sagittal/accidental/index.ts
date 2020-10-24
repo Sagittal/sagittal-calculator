@@ -8,7 +8,7 @@ export {
     Accent,
     Flag,
 } from "./flacco"
-export {Core, Symbol, Aim, computeSymbolFromFlacco} from "./symbol"
+export {Core, Sagittal, Aim, computeSagittalFromFlacco} from "./symbol"
 export {Accidental, Flavor, Compatible} from "./flavor"
 export {
     formatAscii,
@@ -19,9 +19,9 @@ export {
     computeAccidentalUnicode,
     computeCoreUnicode,
     computeAccidentalSmiley,
-    computeSymbolAscii,
-    computeSymbolUnicode,
-    formatSymbol,
+    computeSagittalAscii,
+    computeSagittalUnicode,
+    formatSagittal,
     parseAscii,
     Glyph,
 } from "./io"

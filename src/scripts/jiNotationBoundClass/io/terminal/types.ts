@@ -24,7 +24,7 @@ type BoundedCommaClassIdPairs =
 interface BoundedCommaClassInfo {
     id: Id<CommaClass>,
     commaAnalysis: CommaAnalysis,
-    representativeSymbol: {
+    representativeSagittal: {
         ascii: Ascii,
         unicode: Unicode,
         smallestFlaccoSubset: FlaccoSubset,

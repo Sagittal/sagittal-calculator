@@ -6,7 +6,8 @@ import {EXTREME_NOTATION} from "../../../../../../src/sagittal/notations/ji/nota
 import {computeAccidentalExpectation} from "../../../../../helpers/src/sagittal/accidental/accidentalExpectation"
 import {AccidentalExpectation} from "../../../../../helpers/src/sagittal/accidental/types"
 
-// Todo: So I could either imagine having totally separate specs for verifying the bounds & commas of the capture zones
+// Todo: POST-NOTATION-GENERATION: ACCIDENTAL, PRIMARY COMMA, ZONE STUFF
+//  So I could either imagine having totally separate specs for verifying the bounds & commas of the capture zones
 //  I think that kind of works, what with the actual captureZonesSpec checking everything but in proto-form
 //  Then this makes sure the actual stuff you can derive from each is correct, but the accidentals stuff only
 //  So the other ones would verify okay you got the right bound class ID fine, we know that from the captureZoneSpec

@@ -4,50 +4,50 @@ import {
     Ascii,
     Compatible,
     computeAccidentalAscii,
-    computeSymbolAscii,
+    computeSagittalAscii,
     Flavor,
-    Symbol,
+    Sagittal,
 } from "../../../../../src/sagittal/accidental"
 import {getArm} from "../../../../../src/sagittal/accidental/flacco/arm"
 import {ArmName, HeadName} from "../../../../../src/sagittal/accidental/flacco/types"
 import {getCore, Shafts} from "../../../../../src/sagittal/accidental/symbol"
 
-describe("computeSymbolAscii", (): void => {
-    it("given a symbol, returns its ASCII representation", (): void => {
-        const symbol: Symbol = {
+describe("computeSagittalAscii", (): void => {
+    it("given a sagittal, returns its ASCII representation", (): void => {
+        const sagittal: Sagittal = {
             arm: getArm(ArmName.BIRD),
             core: getCore(HeadName.LEFT_SCROLL),
         }
 
-        const actual = computeSymbolAscii(symbol)
+        const actual = computeSagittalAscii(sagittal)
 
         const expected = "``)|" as Ascii
         expect(actual).toBe(expected)
     })
 
     it("converts 4 shafts up into an ex up", (): void => {
-        const symbol: Symbol = {core: getCore(HeadName.LEFT_SCROLL_AND_BARB, Shafts.EX)}
+        const sagittal: Sagittal = {core: getCore(HeadName.LEFT_SCROLL_AND_BARB, Shafts.EX)}
 
-        const actual = computeSymbolAscii(symbol)
+        const actual = computeSagittalAscii(sagittal)
 
         const expected = ")/X" as Ascii
         expect(actual).toBe(expected)
     })
 
     it("converts 4 shafts down into an ex down", (): void => {
-        const symbol: Symbol = {core: getCore(HeadName.ARC_AND_BOATHOOK, Shafts.EX, Aim.DOWN)}
+        const sagittal: Sagittal = {core: getCore(HeadName.ARC_AND_BOATHOOK, Shafts.EX, Aim.DOWN)}
 
-        const actual = computeSymbolAscii(symbol)
+        const actual = computeSagittalAscii(sagittal)
 
         const expected = "(Y~" as Ascii
         expect(actual).toBe(expected)
     })
 
 
-    it("works for the absence of a symbol (the parenthetical natural)", (): void => {
-        const symbol: Symbol = {}
+    it("works for the null sagittal (the parenthetical natural)", (): void => {
+        const sagittal: Sagittal = {}
 
-        const actual = computeSymbolAscii(symbol)
+        const actual = computeSagittalAscii(sagittal)
 
         const expected = "(|//|)" as Ascii
         expect(actual).toBe(expected)

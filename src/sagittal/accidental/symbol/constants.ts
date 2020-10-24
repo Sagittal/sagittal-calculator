@@ -1,7 +1,7 @@
-import {Symbol} from "./types"
+import {Sagittal} from "./types"
 
-const ABSENCE_OF_A_SYMBOL = {} as Symbol
+const NULL_SAGITTAL = {} as Sagittal
 
 export {
-    ABSENCE_OF_A_SYMBOL,
+    NULL_SAGITTAL,
 }

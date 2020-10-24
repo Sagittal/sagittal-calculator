@@ -1,19 +1,19 @@
 import {
     Ascii,
-    computeSymbolAscii,
-    computeSymbolFromFlacco,
+    computeSagittalAscii,
+    computeSagittalFromFlacco,
     Flacco,
     FlaccoSubset,
     FLACCO_SUBSETS,
-    Symbol,
+    Sagittal,
 } from "../../../../../src/sagittal/accidental"
 import {getFlacco} from "../../../../../src/sagittal/accidental/flacco"
 
 describe("FLACCO_SUBSETS", (): void => {
     const subject = (flaccoSubset: FlaccoSubset): Ascii[] => FLACCO_SUBSETS[flaccoSubset]
         .map(getFlacco)
-        .map((flacco: Flacco): Symbol => computeSymbolFromFlacco(flacco))
-        .map((symbol: Symbol): Ascii => computeSymbolAscii(symbol))
+        .map((flacco: Flacco): Sagittal => computeSagittalFromFlacco(flacco))
+        .map((sagittal: Sagittal): Ascii => computeSagittalAscii(sagittal))
 
     it("has the correct flaccos in the Sagittal-compatibles subset", (): void => {
         const flaccoSubset = FlaccoSubset.COMPATIBLE

@@ -1,25 +1,25 @@
 import {deepEquals, isUndefined, stringify} from "../../../general"
 import {HeadName} from "../flacco"
 import {getCore} from "./core"
-import {Aim, Shafts, Symbol} from "./types"
+import {Aim, Sagittal, Shafts} from "./types"
 
-const apotomeShift = (symbol: Symbol): Symbol => {
-    if (symbol.core?.aim === Aim.DOWN) {
-        throw new Error(`Do not shift symbols aiming down; tried to shift ${stringify(symbol)}`)
+const apotomeShift = (sagittal: Sagittal): Sagittal => {
+    if (sagittal.core?.aim === Aim.DOWN) {
+        throw new Error(`Do not shift symbols aiming down; tried to shift ${stringify(sagittal)}`)
     }
-    if (symbol.core?.shafts === Shafts.TRIPLE || symbol.core?.shafts === Shafts.EX) {
-        throw new Error(`Do not shift symbols which are already in the 2nd apotome section ${stringify(symbol)}`)
+    if (sagittal.core?.shafts === Shafts.TRIPLE || sagittal.core?.shafts === Shafts.EX) {
+        throw new Error(`Do not shift symbols which are already in the 2nd apotome section ${stringify(sagittal)}`)
     }
 
-    if (isUndefined(symbol.core) || deepEquals(symbol.core, getCore(HeadName.BARE_SHAFT))) {
-        return {...symbol, core: getCore(HeadName.DOUBLE_BARB, Shafts.DOUBLE)}
+    if (isUndefined(sagittal.core) || deepEquals(sagittal.core, getCore(HeadName.BARE_SHAFT))) {
+        return {...sagittal, core: getCore(HeadName.DOUBLE_BARB, Shafts.DOUBLE)}
     }
 
     return {
-        ...symbol,
+        ...sagittal,
         core: {
-            ...symbol.core,
-            shafts: symbol.core.shafts === Shafts.SINGLE ? Shafts.TRIPLE : Shafts.EX,
+            ...sagittal.core,
+            shafts: sagittal.core.shafts === Shafts.SINGLE ? Shafts.TRIPLE : Shafts.EX,
         },
     }
 }

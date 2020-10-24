@@ -3,32 +3,32 @@ import {
     Aim,
     Compatible,
     computeAccidentalUnicode,
-    computeSymbolUnicode,
+    computeSagittalUnicode,
     Flavor,
-    Symbol,
+    Sagittal,
     Unicode,
 } from "../../../../../src/sagittal/accidental"
 import {getArm} from "../../../../../src/sagittal/accidental/flacco/arm"
 import {ArmName, HeadName} from "../../../../../src/sagittal/accidental/flacco/types"
 import {getCore, Shafts} from "../../../../../src/sagittal/accidental/symbol"
 
-describe("computeSymbolUnicode", (): void => {
+describe("computeSagittalUnicode", (): void => {
     it("given a symbol, returns its unicode representation", (): void => {
-        const symbol: Symbol = {                                // ``)|
+        const sagittal: Sagittal = {                                // ``)|
             arm: getArm(ArmName.BIRD),
             core: getCore(HeadName.LEFT_SCROLL),
         }
 
-        const actual = computeSymbolUnicode(symbol)
+        const actual = computeSagittalUnicode(sagittal)
 
         const expected = "" as Unicode
         expect(actual).toBe(expected)
     })
 
-    it("works for the absence of a symbol (the parenthetical natural)", (): void => {
-        const symbol: Symbol = {}
+    it("works for the null sagittal (the parenthetical natural)", (): void => {
+        const sagittal: Sagittal = {}
 
-        const actual = computeSymbolUnicode(symbol)
+        const actual = computeSagittalUnicode(sagittal)
 
         const expected = "" as Unicode
         expect(actual).toBe(expected)

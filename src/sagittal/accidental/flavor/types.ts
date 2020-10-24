@@ -1,5 +1,5 @@
 import {Maybe} from "../../../general"
-import {Symbol} from "../symbol"
+import {Sagittal} from "../symbol"
 
 enum Flavor {
     EVO = "evo",
@@ -22,7 +22,7 @@ enum Compatible {
     DOUBLE_FLAT = "doubleFlat",
 }
 
-interface Accidental<T extends Flavor> extends Symbol {
+interface Accidental<T extends Flavor> extends Sagittal {
     compatible: Maybe<Compatible>,
     _FlavorBrand: T,
 }

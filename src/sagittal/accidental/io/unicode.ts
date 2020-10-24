@@ -1,7 +1,7 @@
 import {deepEquals, isUndefined, join, stringify, sumTexts} from "../../../general"
 import {Accent, Arm, HeadName, Orientation, OrientedAccent} from "../flacco"
 import {Accidental, Compatible, Flavor} from "../flavor"
-import {Aim, Core, getCore, Shafts, Symbol} from "../symbol"
+import {Aim, Core, getCore, Sagittal, Shafts} from "../symbol"
 import {BLANK_UNICODE, PARENTHETICAL_NATURAL_UNICODE} from "./constants"
 import {Unicode} from "./types"
 
@@ -264,7 +264,8 @@ const computeCompatibleUnicode = (compatible: Compatible): Unicode =>
 const computeOrientedAccentUnicode = ({accent, orientation}: OrientedAccent, aim: Aim): Unicode =>
     ACCENT_TO_ORIENTATION_TO_AIM_TO_UNICODE_MAP[accent][orientation][aim]
 
-const computeSymbolUnicode = ({arm, core}: Symbol): Unicode => {
+// TODO: I feel like these methods should take the Flavor parameter and pass it on, just in case
+const computeSagittalUnicode = ({arm, core}: Sagittal): Unicode => {
     const armUnicode = isUndefined(arm) ?
         BLANK_UNICODE :
         computeArmUnicode(arm, core?.aim as Aim)
@@ -302,6 +303,6 @@ export {
     computeCoreUnicode,
     computeAccidentalUnicode,
     computeCompatibleUnicode,
-    computeSymbolUnicode,
+    computeSagittalUnicode,
     computeOrientedAccentUnicode,
 }

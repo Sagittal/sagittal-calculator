@@ -3,14 +3,14 @@ import {Flacco} from "../accidental"
 import {CommaClass} from "../ji"
 
 // Todo: FLACOMBO, SECTION, NOTATION GENERATION; SYMBOL CLASS (SUBSET) / FIRST SECTION / ID/NAME QUESTIONS / GETTING
-//  I'm not quite ready for Symbol to have ID yet
-//  At that stage, you'd want a const SYMBOLS: Symbol[] and generate it and test it, and maybe apotome shift
+//  I'm not quite ready for Sagittal to have ID yet
+//  At that stage, you'd want a const SYMBOLS: Sagittal[] and generate it and test it, and maybe apotome shift
 //  Apotome complement methods would only be used in test, because you'd be "get"ting the symbol, not computing it
 //  But we still need to wrangle with the problems of: do we +1000 for apotome shift? that works w/ Magrathean I think
 //  Do we have negative IDs? is it a "key", then? this is pretty much what we used in the Spreadsheet Calculator.
 //  Does this respect the principle of things expressing their existence minimally? do IDs go against that already? etc.
 //  A valid symbols array would answer the question of how the valid cores and valid arms together
-//  Symbol class could go up thru 2 shafts and copy to other 3 sections
+//  Sagittal class could go up thru 2 shafts and copy to other 3 sections
 //  And this would be related to that "even supported" thing you just added
 //  (which should be better documented and there might be a few places you should add some more comments,
 //  If only of symbol ASCII, you know?)
@@ -19,7 +19,7 @@ import {CommaClass} from "../ji"
 //  But this isn’t related to the minimum representation of a notation
 //  Though the generation of all valid symbols should be similar to the generation of the extreme JI notation...
 //  And if you do actually add SymbolClass, then address the comment introducing flacco below.
-//  - Maybe it really should be Symbol subset, not Flacco subset,
+//  - Maybe it really should be Sagittal subset, not Flacco subset,
 //  Because some Flaccos cross over in the Revo notation, you know?
 //  E.g. )||( is in Spartan multi-shaft, but no single-shaft right scroll
 //  Or is the problem only really solvable by that Flaccos only apply to the 1-shaft symbols,
@@ -36,7 +36,7 @@ import {CommaClass} from "../ji"
 //  The questions of limiting the apotome shift and apotome complement methods to something *like* a section but not
 //  - And Yeah Flacco is totally one of those things which should go by name, not ID
 //  Or perhaps maybe just more like we've got the records of Core by CoreName, right
-//  And probably also at some point Symbol by SymbolName...?
+//  And probably also at some point Sagittal by SymbolName...?
 //  But think about the fact that having the order in the form of the ID is actually quite handy sometimes...
 //  Although you could include the order # as part of the ID I suppose and then you'd still get the benefit of it
 //  As long as the name could still autocomplete
@@ -59,7 +59,7 @@ import {CommaClass} from "../ji"
 //  - Ah okay, here's an insight: maybe they still get IDs on them as a sort of INSTANCE brand
 //  So that you can't just go and manufacture whatever one you want, knowing the structure, but have to ask for one
 //  From the limited set of them. Okay, I like that.
-//  So then, how would we request a Symbol? like a Flacco? no okay Flacco currently you request it by ID.
+//  So then, how would we request a Sagittal? like a Flacco? no okay Flacco currently you request it by ID.
 //  What I was thinking of was getArm, getHead, and getCore. so a symbol you'd need to pass it the same things you'd
 //  Pass for a core, (head, shafts, aim) but then also the arm.
 //  It's either that, or you pass it a Flacco name and then shafts and aim,
@@ -70,12 +70,13 @@ import {CommaClass} from "../ji"
 //  Or is it just good to *name things which are arbitrarily limited*? In which case we should name these symbol classes
 //  So there's actually two stages of validity that I should try to capture here.
 //  Flacco is the combo of valid head and valid arm. and so you should go ahead and get that there.
-//  Then Symbol should capture the valid combo of flacco, shafts, and aim (which is almost everything, just a bunch
+//  Then Sagittal should capture the valid combo of flacco, shafts, and aim (which is almost everything, just a bunch
 //  Cannot have even shafts)
-//  Or rather Symbol class should capture just either one or two shafts, and then Symbol goes to which Section you're in
+//  Or rather Sagittal class should capture just either one or two shafts,
+//  And then Sagittal goes to which Section you're in
 //  Whoa... but then don't we get into a place where we've got two different layers of shaft information, i.e.
 //  One layer whether it's odd or even, and another layer whether it's >2 or not? I'm a bit torn about this.
-//  And if by the time you got to a Symbol it already had its odd/even shaft, and what section it's in (shifted?)
+//  And if by the time you got to a Sagittal it already had its odd/even shaft, and what section it's in (shifted?)
 //  Alright so the symbol sets would go by symbol class, sure. But not the notations. They could still go by comma (and
 //  Bound) if we could ensure from comma we could get the unique stuff that happens to the bigger symbols). Well and
 //  Also don't forget about the EDO notations, for which you really want to go by symbol, because the commas aren't
@@ -98,7 +99,8 @@ import {CommaClass} from "../ji"
 //  (and it may be up to the EDO notation to temper whatever comma it gets back for that flacco)
 //  Okay, but if a flacco came with a comma class, it'd also have to say whether it was up or down, right?
 //  At which point a Flacco on its own has a lot of info
-//  And if Symbol extends it, then it would have that info as well. Maybe that's fine. It is after all just a reference
+//  And if Sagittal extends it, then it would have that info as well.
+//  Maybe that's fine. It is after all just a reference
 //  To the comma, right? That's the minimal interface, while also trying to capture the inextricable link between
 //  The symbol and the comma?
 //  And this synthesizes with the effort to get symbols by ID, so you have to do less representing of their entirety
@@ -112,6 +114,57 @@ import {CommaClass} from "../ji"
 //  Ah, holy moly, perhaps what we have in the CaptureZone right now, everything in that group apart from the bound and
 //  Comma, is a "symbol"? Well... but symbol is more the visual Sagittal thing. We know it could go Evo and have
 //  A compatible. So it's more like a... proto-accidental? I guess it's close to like an accidental key like we used to
+//  - Alright, well, I had gone ahead and collapsed mirrored and even into section
+//  Because of the fact that when even, you must be mirrored
+//  And slightly because of the fact that "even" preferences Revo
+//  However! there's a con to this (in addition to requiring an enum rather than all being nice booleans)
+//  Which is that now some things will need to check... well you can just say !Section.A if you mean to get "even"
+//  So actually maybe that's fine.
+//  Except that if we want to form a relationship between this and Accidental / Sagittal Class, that only cares about
+//  The even/odd part, not the mirrored part, so that's an argument to split it up again.
+//  So I'm thinking now that the current Accidental is describing something closer to glyph/IO, right, as is Sagittal
+//  Although with Sagittal and below it's unambiguous. It's only once you get to Accidental that it diverges.
+//  So Accidental extends Sagittal with compatible. but remember we might change symbol, so that instead of shafts
+//  It has shifted and even, and negated instead of aim (or maybe at that point it's just aim). so are we actually
+//  Finding that at the symbol level, by describing it in terms of shifted and even, we're kind of stepping away
+//  From the glyph/IO thinking, and towards the abstract way, even if it doesn't make a difference?
+//  That would also have the benefit of allowing it to know it had to be a Revo symbol the moment you go into even
+//  Or shifted.
+//  I think there's an opportunity to think of the way Sagittal is defined now, with the literal shafts, which is nice
+//  As the glyph/IO kind, and have accidental as the abstract one, which defines it in terms of even or shafted.
+//  There's only a little hurdle in that then when you needed to IO many Evo accidentals, instead of that being one
+//  Call to an ASCII/Unicode/Smiley thing, it'd need to convert it. but I guess that'd be the same layer that'd
+//  Convert from even + shifted to 4-shafts in Revo's case, yeah?
+//  So in this case a CaptureZone is actually just { boundClassId, commaClassId, accidental }
+//  But kind of what I was getting at elsewhere, these getters, I think you still need them backed by a hardcoded
+//  List of valids with IDs to prevent arbitrary construction of them..... maybe? Does that idea actually work?
+//  Maybe that doesn't make sense.
+//  - Is symbol class equivalence defined by them being apotome complements or same visual flacco? The name is ambiguous
+//  Maybe flacco class would be less so... But then it’s already supposed to *be* that, a "class" that is...
+//  - Maybe flacco does after all hold all the apotome shifting and complementing inside it
+//  Because it doesn’t go straight to visual symbol, it goes to abstract accidental
+//  So maybe the symbol type should go into Io?
+//  - And maybe rename even to complemented?
+//  Wait inside accidental is there any reason to know if you’re mirrored or not? Perhaps you can eliminate that from it
+//  Well maybe the capture zone still needs to know! Yeah that goes on the outside with bound and comma.
+//  - Might be cool if the JI notations could be expressed mostly in terms of the symbol subsets
+//  - So In computing capture zones you go from flacco to accidental
+//  (new abstract kind, w shifted negated and complemented)
+//  And then there’s a layer which converts an accidental to symbols / compatibles array
+//  (compatibles are now siblings of symbols, not glyphs) or perhaps it should split them up into not array
+//  But just an object with or without each, and call that a.........
+//  Well I want *that* to be accidental (in which case it could also just be the original accidental)
+//  Then each of those can get Unicode or smiley whatever called on it
+//  So symbol extends flacco but there’s this intermediate abstract type they go through
+//  - Alright so what’s this new abstract accidental type called... a Sagittal?
+//  It’s okay, by the way, that it has a flacco,
+//  But due to complementing the final symbol could not be the same flag and accent combo
+//  - Actually rename the existing symbol to Sagittal
+//  So then we’d still need a name for this abstract Accidental type
+//  - And generate the multi shaft symbol subsets from
+//  The existing flaccos you’re Using for the single shaft ones
+//  Just because they are generated by flaccos does not mean they can’t still be symbol subsets
+//  Maybe they should actually map over the flaccos and convert to symbols there
 type BoundClass<T extends NumericProperties = {}> = {
     id: Id<BoundClass>,
     pitch: Scamon<T & {rational: false}>,
@@ -129,31 +182,6 @@ interface CaptureZone {
     flaccoId: Id<Flacco>,
     negated: boolean,               // Above or below natural
     shifted: boolean,               // In the 1st apotome section or the 2nd apotome section (absolute)
-    // Todo: alright, well, I had gone ahead and collapsed mirrored and even into section
-    //  Because of the fact that when even, you must be mirrored
-    //  And slightly because of the fact that "even" preferences Revo
-    //  However! there's a con to this (in addition to requiring an enum rather than all being nice booleans)
-    //  Which is that now some things will need to check... well you can just say !Section.A if you mean to get "even"
-    //  So actually maybe that's fine.
-    //  Except that if we want to form a relationship between this and Accidental / Symbol Class, that only cares about
-    //  The even/odd part, not the mirrored part, so that's an argument to split it up again.
-    //  So I'm thinking now that the current Accidental is describing something closer to glyph/IO, right, as is Symbol
-    //  Although with Symbol and below it's unambiguous. It's only once you get to Accidental that it diverges.
-    //  So Accidental extends Symbol with compatible. but remember we might change symbol, so that instead of shafts
-    //  It has shifted and even, and negated instead of aim (or maybe at that point it's just aim). so are we actually
-    //  Finding that at the symbol level, by describing it in terms of shifted and even, we're kind of stepping away
-    //  From the glyph/IO thinking, and towards the abstract way, even if it doesn't make a difference?
-    //  That would also have the benefit of allowing it to know it had to be a Revo symbol the moment you go into even
-    //  Or shifted.
-    //  I think there's an opportunity to think of the way Symbol is defined now, with the literal shafts, which is nice
-    //  As the glyph/IO kind, and have accidental as the abstract one, which defines it in terms of even or shafted.
-    //  There's only a little hurdle in that then when you needed to IO many Evo accidentals, instead of that being one
-    //  Call to an ASCII/Unicode/Smiley thing, it'd need to convert it. but I guess that'd be the same layer that'd
-    //  Convert from even + shifted to 4-shafts in Revo's case, yeah?
-    //  So in this case a CaptureZone is actually just { boundClassId, commaClassId, accidental }
-    //  But kind of what I was getting at elsewhere, these getters, I think you still need them backed by a hardcoded
-    //  List of valids with IDs to prevent arbitrary construction of them..... maybe? Does that idea actually work?
-    //  Maybe that doesn't make sense.
     section: Section,
 
     commaClassId: Id<CommaClass>,

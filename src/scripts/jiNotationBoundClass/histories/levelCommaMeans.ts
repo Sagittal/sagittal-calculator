@@ -1,9 +1,9 @@
 import {CommaMean, computeRationalScamonGeometricMean, Id, indexOfFinalElement, Name} from "../../../general"
 import {
     CommaClass,
-    computeSymbolAscii,
+    computeSagittalAscii,
     getCommaClass,
-    getRepresentativeSymbol,
+    getRepresentativeSagittal,
     JiNotationLevel,
     JI_NOTATION_LEVELS_COMMA_CLASS_IDS,
 } from "../../../sagittal"
@@ -22,8 +22,8 @@ const computeJiNotationLevelCommaMeans = (jiNotationLevel: JiNotationLevel): Com
             const nextCommaClass = getCommaClass(nextCommaClassId)
 
             const name = [
-                computeSymbolAscii(getRepresentativeSymbol(commaClassId)),
-                computeSymbolAscii(getRepresentativeSymbol(nextCommaClassId)),
+                computeSagittalAscii(getRepresentativeSagittal(commaClassId)),
+                computeSagittalAscii(getRepresentativeSagittal(nextCommaClassId)),
             ].join(" ") as Name<CommaMean>
 
             return {

@@ -74,7 +74,7 @@ const computeJiNotationBoundClassRow = (
         formatDecimal(bestPossibleBoundHistoryTotalInaDistance, {align: true}), // These are ¢ but b/c the header
         formatDecimal(cents, {align: true}),                                    // Specifically states they are ¢
         formatDecimal(computeCentsFromPitch(initialPosition), {align: true}),   // And this is a very dense table
-        formatDecimal(initialPositionTinaDistance, {align: true}),              // We're saving space and no ¢ symbols
+        formatDecimal(initialPositionTinaDistance, {align: true}),              // We're saving space and no ¢ signs
     ] as Row as Row<{of: JiNotationBoundClassAnalysis}>
 
     return jiNotationBoundClassRow

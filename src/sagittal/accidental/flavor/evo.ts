@@ -1,15 +1,15 @@
 import {increment, Maybe, negative} from "../../../general"
 import {CaptureZone, Section} from "../../notations"
 import {getFlacco} from "../flacco"
-import {computeSymbolFromFlacco, flipSymbol} from "../symbol"
+import {computeSagittalFromFlacco, flipSagittal} from "../symbol"
 import {Accidental, Compatible, Flavor} from "./types"
 
 const computeEvoAccidentalFromCaptureZone = (captureZone: CaptureZone): Accidental<Flavor.EVO> => {
     const { flaccoId, section, shifted, negated } = captureZone
 
     const flacco = getFlacco(flaccoId)
-    let symbol = computeSymbolFromFlacco(flacco)
-    symbol = section === Section.C ? flipSymbol(symbol) : symbol
+    let sagittal = computeSagittalFromFlacco(flacco)
+    sagittal = section === Section.C ? flipSagittal(sagittal) : sagittal
 
     let apotomeCount = 0
     if (section === Section.C) apotomeCount = increment(apotomeCount)
@@ -26,7 +26,7 @@ const computeEvoAccidentalFromCaptureZone = (captureZone: CaptureZone): Accident
                         Compatible.DOUBLE_FLAT :
                         undefined
 
-    return {...symbol, compatible} as Accidental<Flavor.EVO>
+    return {...sagittal, compatible} as Accidental<Flavor.EVO>
 }
 
 export {
