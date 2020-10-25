@@ -6,6 +6,7 @@ import {
     dividesEvenly,
     Filename,
     formatTime,
+    ioSettings,
     KeyPath,
     LogTarget,
     Ms,
@@ -1041,13 +1042,16 @@ const ALREADY_FOUND_NUMERATORS: Array<Numerator & Decimal<{integer: true}>> = [
     1500625,
     1953125,
     2734375,
+    9765625,
 ] as Array<Numerator & Decimal<{integer: true}>>
 
-const ALREADY_SEARCHED_UP_TO_NUMERATOR = 8368831
+const ALREADY_SEARCHED_UP_TO_NUMERATOR = 9765625
 
 const MAX_NUMERATOR = 9765625
 
-parseCommands(ScriptGroup.POPULAR_2_3_FREE_CLASSES as Filename, [LogTarget.PROGRESS, LogTarget.FINAL])
+ioSettings.scriptGroup = ScriptGroup.POPULAR_2_3_FREE_CLASSES as Filename
+
+parseCommands(ScriptGroup.POPULAR_2_3_FREE_CLASSES as Filename)
 
 const n2pResults: SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P[] =
     [] as unknown[] as SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P[]
@@ -1071,7 +1075,7 @@ ALREADY_FOUND_NUMERATORS.forEach((numerator: Numerator & Decimal<{integer: true}
 })
 
 for (
-    let numerator = ALREADY_SEARCHED_UP_TO_NUMERATOR as Numerator & Decimal<{integer: true}>;
+    let numerator = ALREADY_SEARCHED_UP_TO_NUMERATOR + 2 as Numerator & Decimal<{integer: true}>;
     numerator <= MAX_NUMERATOR;
     numerator = numerator + 2 as Numerator & Decimal<{integer: true}>
 ) {
@@ -1113,3 +1117,6 @@ sort(n2pResults, {by: "n2p" as KeyPath})
 
 saveLog(stringify(n2Results, {multiline: true}), LogTarget.FINAL)
 saveLog(stringify(n2pResults, {multiline: true}), LogTarget.FINAL)
+
+// TODO: PLUG IN SORTED NUMERATORS
+//  Now you just have to remember where and how exactly to integrate the results from sortedNumerators.txt in!
