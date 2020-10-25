@@ -18,9 +18,11 @@ const formatSplit23FreeClass = (two3FreeClass: Two3FreeClass): Array<Formatted<T
         const sign = ioSettings.tableFormat === TableFormat.FORUM_WITH_SPLIT_QUOTIENTS ?
             "[/pre][latex]_{\\scriptsize{(2,3)}}[/latex][pre]" :
             TWO_3_FREE_CLASS_SIGN
-        const [formattedNuminator, formattedDiminuator] = formatted23FreeClass
+        let [formattedNuminator, formattedDiminuator] = formatted23FreeClass
             .replace(TWO_3_FREE_CLASS_SIGN, BLANK)
             .split("/")
+
+        formattedDiminuator = formattedDiminuator || "1" as Formatted<Two3FreeClassAnalysis>
 
         return [formattedNuminator, "/", formattedDiminuator, sign] as Array<Formatted<Two3FreeClassAnalysis>>
     }

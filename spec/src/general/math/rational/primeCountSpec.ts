@@ -31,6 +31,6 @@ describe("computePrimeCount", (): void => {
 
         expect((): void => {
             computePrimeCount(number)
-        }).toThrowError("Cannot compute exact prime count for numbers greater than 8368819, the largest prime currently recognized.")
+        }).toThrowError("Cannot compute exact prime count for numbers greater than 9999991, the largest prime currently recognized.")
     })
 })
