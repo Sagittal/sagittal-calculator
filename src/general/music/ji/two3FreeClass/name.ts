@@ -10,7 +10,7 @@ const compute23FreeClassName = (two3FreeClass: Two3FreeClass): Name<Two3FreeClas
         {disableErrorBecauseExactValueNotRequired: true},
     )
 
-    return `${formatQuotient(quotient)}${TWO_3_FREE_CLASS_SIGN}` as Name<Two3FreeClass>
+    return `{${formatQuotient(quotient)}}${TWO_3_FREE_CLASS_SIGN}` as Name<Two3FreeClass>
 }
 
 export {

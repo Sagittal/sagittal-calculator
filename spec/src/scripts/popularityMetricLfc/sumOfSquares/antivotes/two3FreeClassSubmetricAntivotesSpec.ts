@@ -22,7 +22,7 @@ describe("compute23FreeClassSubmetricAntivotes", (): void => {
 
     it("another example", (): void => {
         const kAsCoefficient = 0.46 as ParameterValue
-        const two3FreeClass = {monzo: [0, 0, 2, 0, -1]} as Two3FreeClass // 25/11₍₂,₃₎
+        const two3FreeClass = {monzo: [0, 0, 2, 0, -1]} as Two3FreeClass // {25/11}₂,₃
         const submetric = {kAsCoefficient, sum: true}
 
         const actual = compute23FreeClassSubmetricAntivotes(two3FreeClass, submetric)
@@ -47,7 +47,7 @@ describe("compute23FreeClassSubmetricAntivotes", (): void => {
 
     it("supports deciding the numinator and diminuator by which is the greater of the two", (): void => {
         const kAsCoefficient = 0.46 as ParameterValue
-        const two3FreeClass = {monzo: [0, 0, 2, 0, -1]} as Two3FreeClass // 25/11₍₂,₃₎
+        const two3FreeClass = {monzo: [0, 0, 2, 0, -1]} as Two3FreeClass // {25/11}₂,₃
         const useNuminator = true
         const submetric = {kAsCoefficient, useNuminator, sum: true}
 

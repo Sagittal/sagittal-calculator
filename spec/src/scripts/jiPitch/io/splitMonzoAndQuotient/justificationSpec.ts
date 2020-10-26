@@ -29,7 +29,7 @@ describe("computeMonzoAndQuotientJustification", (): void => {
         const headerRows = [
             ["2,3-free", "2,3-free", "", "", "", "2,3-free"],
             ["prime", "class", "", "", "", "class"],
-            ["limit", "n", "/", "d", "₍₂,₃₎", "CoPFR"],
+            ["limit", "n", "/", "d", "₂,₃", "CoPFR"],
         ] as Array<Row<{of: JiPitchAnalysis, header: true}>>
 
         const actual = computeMonzoAndQuotientJustification(headerRows)

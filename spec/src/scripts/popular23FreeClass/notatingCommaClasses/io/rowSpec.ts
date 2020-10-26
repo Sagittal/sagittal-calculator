@@ -17,7 +17,7 @@ describe("computePopular23FreeClassWithNotatingCommaClassesRow", (): void => {
     const rankedPopular23FreeClassWithNotatingCommaClasses:
         Ranked<Popular23FreeClass & NotatingCommaClassesProperties> = {
         ...two3FreeClassAnalysisFixture,
-        name: "7/5₍₂,₃₎" as Name<Two3FreeClass>,
+        name: "{7/5}₂,₃" as Name<Two3FreeClass>,
         rank: 4 as Rank<Popular23FreeClass & NotatingCommaClassesProperties>,
         notatingCommaClassSmallestFlaccoSubsetIndices: [1, 3] as Array<Index<FlaccoSubset>>,
         notatingCommaClassIds: [CommaClassId._7_11_k, CommaClassId._1_25_C],
@@ -35,7 +35,7 @@ describe("computePopular23FreeClassWithNotatingCommaClassesRow", (): void => {
         )
 
         const expected = [
-            "7/5₍₂,₃₎",             // 2,3-free class name
+            "{7/5}₂,₃",             // 2,3-free class name
             "  2.000",              // N2D3P9
             "    )|(     ./|  ",    // Notating comma classes
             "1, 3",                 // Notating comma classes smallest flacco subset indices
@@ -54,7 +54,7 @@ describe("computePopular23FreeClassWithNotatingCommaClassesRow", (): void => {
         )
 
         const expected = [
-            "[/pre][latex]\\frac{7}{5}_{\\scriptsize{(2,3)}}[/latex][pre]",     // 2,3-free class name
+            "[/pre][latex]\\{\\frac{7}{5}\\}_{\\scriptsize{2,3}}[/latex][pre]", // 2,3-free class name
             "  2.000",                                                          // N2D3P9
             "[/pre]:)|(: :.::/|:[pre]",                                         // Notating comma classes
             "1, 3",                                                             // Notating comma classes smallest flacco subset indices

@@ -34,7 +34,7 @@ describe("analyzeComma", (): void => {
             aas: 8.464345 as Abs<ApotomeSlope>,
             ate: 6 as Abs<Decimal<{ integer: true }> & Exponent<3 & Prime>>,
             two3FreeClassAnalysis: {
-                name: "2100875/11₍₂,₃₎" as Name<Two3FreeClass>,
+                name: "{2100875/11}₂,₃" as Name<Two3FreeClass>,
                 two3FreePrimeLimit: 11 as Max<Prime<{ rough: 5 }>>,
                 two3FreeCopfr: 9 as Copfr<{ rough: 5 }>,
                 two3FreeSopfr: 61 as Sopfr<{ rough: 5 }>,

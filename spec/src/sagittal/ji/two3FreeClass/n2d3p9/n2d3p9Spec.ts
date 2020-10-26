@@ -4,7 +4,7 @@ import { computeN2D3P9, N2D3P9 } from "../../../../../../src/sagittal/ji/two3Fre
 
 describe("computeN2D3P9", (): void => {
     it("returns an approximate rank of the 2,3-free class's popularity", (): void => {
-        const two3FreeClass = { monzo: [0, 0, 1, 0, 1] } as Two3FreeClass // 55₍₂,₃₎
+        const two3FreeClass = { monzo: [0, 0, 1, 0, 1] } as Two3FreeClass // {55}₂,₃
 
         const actual = computeN2D3P9(two3FreeClass)
 
@@ -13,7 +13,7 @@ describe("computeN2D3P9", (): void => {
     })
 
     it("yet another example", (): void => {
-        const two3FreeClass = { monzo: [0, 0, 2, 2] } as Two3FreeClass  // 1225₍₂,₃₎
+        const two3FreeClass = { monzo: [0, 0, 2, 2] } as Two3FreeClass  // {1225}₂,₃
 
         const actual = computeN2D3P9(two3FreeClass)
 
@@ -31,7 +31,7 @@ describe("computeN2D3P9", (): void => {
     })
 
     it("errors if given a malformed 2,3-free class, which is not actually 2,3-free", (): void => {
-        const two3FreeClass = { monzo: [-4, -1, 1, 0, 1] } as Two3FreeClass // 55/48₍₂,₃₎ # bad!!
+        const two3FreeClass = { monzo: [-4, -1, 1, 0, 1] } as Two3FreeClass // {55/48}₂,₃ # bad!!
 
         expect((): void => {
             computeN2D3P9(two3FreeClass)
@@ -40,7 +40,7 @@ describe("computeN2D3P9", (): void => {
     })
 
     it("errors if given a malformed 2,3-free class, for which the quotient is not super (n ≥ d)", (): void => {
-        const two3FreeClass = { monzo: [0, 0, 0, 0, -2] } as Two3FreeClass  // 1/121₍₂,₃₎  # bad!!
+        const two3FreeClass = { monzo: [0, 0, 0, 0, -2] } as Two3FreeClass  // {1/121}₂,₃  # bad!!
 
         expect((): void => {
             computeN2D3P9(two3FreeClass)

@@ -14,8 +14,8 @@ const format23FreeClass = (two3FreeClass: Two3FreeClass): Formatted<Two3FreeClas
 
     return ioSettings.tableFormat === TableFormat.FORUM ?
         denominator === 1 ?
-            `[/pre][latex]${numerator}_{\\scriptsize{(2,3)}}[/latex][pre]` as Formatted<Two3FreeClass> :
-            `[/pre][latex]\\frac{${numerator}}{${denominator}}_{\\scriptsize{(2,3)}}[/latex][pre]` as
+            `[/pre][latex]\\{${numerator}\\}_{\\scriptsize{2,3}}[/latex][pre]` as Formatted<Two3FreeClass> :
+            `[/pre][latex]\\{\\frac{${numerator}}{${denominator}}\\}_{\\scriptsize{2,3}}[/latex][pre]` as
                 Formatted<Two3FreeClass> :
         compute23FreeClassName(two3FreeClass) as string as Formatted<Two3FreeClass>
 }

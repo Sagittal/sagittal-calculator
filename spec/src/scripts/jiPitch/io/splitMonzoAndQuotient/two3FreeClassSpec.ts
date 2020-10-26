@@ -9,7 +9,7 @@ describe("formatSplit23FreeClass", (): void => {
     it("splits the 2,3-free class into the numinator, vinculum, diminuator, and sign", (): void => {
         const actual = formatSplit23FreeClass(two3FreeClass)
 
-        const expected = ["7", "/", "5", "₍₂,₃₎"] as Array<Formatted<Two3FreeClassAnalysis>>
+        const expected = ["7", "/", "5", "₂,₃"] as Array<Formatted<Two3FreeClassAnalysis>>
         expect(actual).toEqual(expected)
     })
 
@@ -18,7 +18,7 @@ describe("formatSplit23FreeClass", (): void => {
         const actual = formatSplit23FreeClass(two3FreeClass)
 
         const expected = [
-            "[/pre][latex]\\frac{7}{5}_{\\scriptsize{(2,3)}}[/latex][pre]",
+            "[/pre][latex]\\{\\frac{7}{5}\\}_{\\scriptsize{2,3}}[/latex][pre]",
         ] as Array<Formatted<Two3FreeClassAnalysis>>
         expect(actual).toEqual(expected)
 
@@ -32,7 +32,7 @@ describe("formatSplit23FreeClass", (): void => {
             "7",
             "/",
             "5",
-            "[/pre][latex]_{\\scriptsize{(2,3)}}[/latex][pre]",
+            "[/pre][latex]_{\\scriptsize{2,3}}[/latex][pre]",
         ] as Array<Formatted<Two3FreeClassAnalysis>>
         expect(actual).toEqual(expected)
     })
