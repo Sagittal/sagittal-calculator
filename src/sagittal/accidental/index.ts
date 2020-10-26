@@ -1,9 +1,5 @@
 export {
     Flacco,
-    FlaccoSubset,
-    FLACCO_SUBSETS,
-    FLACCO_SUBSETS_SORTED_BY_SIZE,
-    getSmallestFlaccoSubset,
     Accent,
     Flag,
     FlaccoId,
@@ -26,3 +22,7 @@ export {
     parseAscii,
     Glyph,
 } from "./io"
+// TODO: Quite likely the symbol class stuff should go into its own submodule. But we'll see how it goes
+export {SymbolSubset, SymbolClassId} from "./types"
+export {getSmallestSymbolSubset} from "./smallestSymbolSubset"
+export {SYMBOL_SUBSETS, SYMBOL_SUBSETS_SORTED_BY_SIZE} from "./symbolSubsets"

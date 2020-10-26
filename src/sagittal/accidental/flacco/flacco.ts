@@ -563,6 +563,9 @@ const FLACCOS: Record<FlaccoId, Flacco> = {
     },
 }
 
+// TODO: every time we getFlacco we immediately convert it to a sagittal. and so if we were going to change getFlacco
+//  To take instead of the ID the HeadId and ArmId and Orientation or whatever, (do we need a null arm?)
+//  Then maybe we should get rid of it altogether and just cut to the chase with a getAccidental which also takes flavor
 const getFlacco = (flaccoId: FlaccoId): Flacco =>
     FLACCOS[flaccoId]
 

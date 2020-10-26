@@ -30,7 +30,7 @@ import {
     TINA,
     Unicode,
 } from "../../../../../../src/sagittal"
-import {FlaccoSubset} from "../../../../../../src/sagittal/accidental"
+import {SymbolSubset} from "../../../../../../src/sagittal/accidental"
 import {JiNotationBoundClass, JiNotationLevel, Mina} from "../../../../../../src/sagittal/notations/ji"
 import {MINA, ULTRINA} from "../../../../../../src/sagittal/notations/ji/intervals"
 import {extractJiNotationBoundClassIdentifiers} from "../../../../../../src/scripts/jiNotationBoundClass/io/terminal/boundClassIdentifiers"
@@ -64,7 +64,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         representativeSagittal: {
                             ascii: ".)/|" as Ascii,
                             unicode: "" as Unicode,
-                            smallestFlaccoSubset: FlaccoSubset.HERCULEAN,
+                            smallestSymbolSubset: SymbolSubset.HERCULEAN,
                         },
                         minaName: "47" as Name<Mina>,
                         commaAnalysis: {
@@ -98,7 +98,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         representativeSagittal: {
                             ascii: "'/|" as Ascii,
                             unicode: "" as Unicode,
-                            smallestFlaccoSubset: FlaccoSubset.HERCULEAN,
+                            smallestSymbolSubset: SymbolSubset.HERCULEAN,
                         },
                         minaName: "48" as Name<Mina>,
                         commaAnalysis: {
@@ -133,7 +133,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         representativeSagittal: {
                             ascii: ".)/|" as Ascii,
                             unicode: "" as Unicode,
-                            smallestFlaccoSubset: FlaccoSubset.HERCULEAN,
+                            smallestSymbolSubset: SymbolSubset.HERCULEAN,
                         },
                         minaName: "47" as Name<Mina>,
                         commaAnalysis: {
@@ -166,7 +166,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         representativeSagittal: {
                             ascii: "'/|" as Ascii,
                             unicode: "" as Unicode,
-                            smallestFlaccoSubset: FlaccoSubset.HERCULEAN,
+                            smallestSymbolSubset: SymbolSubset.HERCULEAN,
                         },
                         minaName: "48" as Name<Mina>,
                         commaAnalysis: {
@@ -201,7 +201,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         representativeSagittal: {
                             ascii: ".)/|" as Ascii,
                             unicode: "" as Unicode,
-                            smallestFlaccoSubset: FlaccoSubset.HERCULEAN,
+                            smallestSymbolSubset: SymbolSubset.HERCULEAN,
                         },
                         minaName: "47" as Name<Mina>,
                         commaAnalysis: {
@@ -234,7 +234,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         representativeSagittal: {
                             ascii: "'/|" as Ascii,
                             unicode: "" as Unicode,
-                            smallestFlaccoSubset: FlaccoSubset.HERCULEAN,
+                            smallestSymbolSubset: SymbolSubset.HERCULEAN,
                         },
                         minaName: "48" as Name<Mina>,
                         commaAnalysis: {

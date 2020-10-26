@@ -1,14 +1,16 @@
-import {CaptureZone, Section} from "../../notations"
+import {CaptureZone} from "../../notations"
 import {getFlacco} from "../flacco"
 import {apotomeShift, computeApotomeComplement, computeSagittalFromFlacco, flipSagittal} from "../symbol"
+import {getSymbolClass} from "../symbolClass"
 import {Accidental, Flavor} from "./types"
 
 const computeRevoAccidentalFromCaptureZone = (captureZone: CaptureZone): Accidental<Flavor.REVO> => {
-    const { flaccoId, section, shifted, negated } = captureZone
+    const {symbolClassId, section: {shifted, mirrored, negated}} = captureZone
 
-    const flacco = getFlacco(flaccoId)
+    const symbolClass = getSymbolClass(symbolClassId)
+    const flacco = getFlacco(symbolClass.flaccoId)
     let sagittal = computeSagittalFromFlacco(flacco)
-    sagittal = section === Section.C ? computeApotomeComplement(sagittal) : sagittal
+    sagittal = mirrored ? computeApotomeComplement(sagittal) : sagittal
     sagittal = shifted ? apotomeShift(sagittal) : sagittal
     sagittal = negated ? flipSagittal(sagittal) : sagittal
 

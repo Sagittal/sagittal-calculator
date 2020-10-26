@@ -4,10 +4,10 @@ import {
     BoundClassId,
     CommaAnalysis,
     CommaClassId,
-    FlaccoSubset,
     Ina,
     JiNotationLevel,
     Mina,
+    SymbolSubset,
     Unicode,
 } from "../../../../sagittal"
 
@@ -27,7 +27,7 @@ interface BoundedCommaClassInfo {
     representativeSagittal: {
         ascii: Ascii,
         unicode: Unicode,
-        smallestFlaccoSubset: FlaccoSubset,
+        smallestSymbolSubset: SymbolSubset,
     }
     introducingJiNotationLevel: JiNotationLevel,
     minaName: Name<Mina>,

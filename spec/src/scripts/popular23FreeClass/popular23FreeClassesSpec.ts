@@ -15,7 +15,7 @@ import {
     Two3FreeClass,
     Votes,
 } from "../../../../src/general"
-import {FlaccoSubset} from "../../../../src/sagittal/accidental"
+import {SymbolSubset} from "../../../../src/sagittal/accidental"
 import {CommaClassId} from "../../../../src/sagittal/ji/comma/class"
 import {N2D3P9} from "../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
 import {popular23FreeClassesScriptGroupSettings} from "../../../../src/scripts/popular23FreeClass/globals"
@@ -41,8 +41,8 @@ describe("computePopular23FreeClasses", (): void => {
                 popularityRank: 1 as Rank<Popularity>,
                 votes: 7624 as Votes,
                 notatingCommaClassIds: [CommaClassId._1_u, CommaClassId._1_C],
-                notatingCommaClassSmallestFlaccoSubsetIndices:
-                    [0, 5] as Array<Index<FlaccoSubset>>,
+                notatingCommaClassSmallestSymbolSubsetIndices:
+                    [0, 5] as Array<Index<SymbolSubset>>,
                 rank: 1 as Rank<Popular23FreeClass>,
             },
             {
@@ -57,8 +57,8 @@ describe("computePopular23FreeClasses", (): void => {
                 popularityRank: 2 as Rank<Popularity>,
                 votes: 5371 as Votes,
                 notatingCommaClassIds: [CommaClassId._5_s, CommaClassId._1_5_C],
-                notatingCommaClassSmallestFlaccoSubsetIndices:
-                    [5, 1] as Array<Index<FlaccoSubset>>,
+                notatingCommaClassSmallestSymbolSubsetIndices:
+                    [5, 1] as Array<Index<SymbolSubset>>,
                 rank: 2 as Rank<Popular23FreeClass>,
             },
             {
@@ -73,8 +73,8 @@ describe("computePopular23FreeClasses", (): void => {
                 popularityRank: 3 as Rank<Popularity>,
                 votes: 3016 as Votes,
                 notatingCommaClassIds: [CommaClassId._1_7_C, CommaClassId._1_7_M],
-                notatingCommaClassSmallestFlaccoSubsetIndices:
-                    [1, 5] as Array<Index<FlaccoSubset>>,
+                notatingCommaClassSmallestSymbolSubsetIndices:
+                    [1, 5] as Array<Index<SymbolSubset>>,
                 rank: 3 as Rank<Popular23FreeClass>,
             },
             {
@@ -89,8 +89,8 @@ describe("computePopular23FreeClasses", (): void => {
                 popularityRank: 4 as Rank<Popularity>,
                 votes: 1610 as Votes,
                 notatingCommaClassIds: [CommaClassId._1_25_C, CommaClassId._1_25_S],
-                notatingCommaClassSmallestFlaccoSubsetIndices:
-                    [5, 1] as Array<Index<FlaccoSubset>>,
+                notatingCommaClassSmallestSymbolSubsetIndices:
+                    [5, 1] as Array<Index<SymbolSubset>>,
                 rank: 4 as Rank<Popular23FreeClass>,
             },
             {
@@ -105,8 +105,8 @@ describe("computePopular23FreeClasses", (): void => {
                 popularityRank: 5 as Rank<Popularity>,
                 votes: 1318 as Votes,
                 notatingCommaClassIds: [CommaClassId._5_7_k, CommaClassId._5_7_C],
-                notatingCommaClassSmallestFlaccoSubsetIndices:
-                    [1, 5] as Array<Index<FlaccoSubset>>,
+                notatingCommaClassSmallestSymbolSubsetIndices:
+                    [1, 5] as Array<Index<SymbolSubset>>,
                 rank: 5 as Rank<Popular23FreeClass>,
             },
         ] as Array<Ranked<Popular23FreeClass>>

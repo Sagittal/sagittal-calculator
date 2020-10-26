@@ -36,8 +36,8 @@ const HIGH_LEVEL_COMMA_CLASS_IDS: Array<[Index<CommaClassId>, CommaClassId]> = [
     [41 as Index<CommaClassId>, CommaClassId._1_19_C],
     [52 as Index<CommaClassId>, CommaClassId._19_5_C],
     [65 as Index<CommaClassId>, CommaClassId._19_7_C],
-    // 67 is an exception; all other comma classes whose representative flacco is introduced in the
-    // Athenian flacco subset are in the Medium level
+    // 67 is an exception; all other comma classes whose representative symbol is introduced in the
+    // Athenian symbol subset are in the Medium level
     [67 as Index<CommaClassId>, CommaClassId._55_C],
     [76 as Index<CommaClassId>, CommaClassId._49_S],
     [81 as Index<CommaClassId>, CommaClassId._23_5_S],

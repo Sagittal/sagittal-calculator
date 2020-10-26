@@ -17,11 +17,11 @@ type Medina = Cents & {_InaBrand: "Medina"}
 type Ina = Cents & {_InaBrand: "Tina" | "Mina" | "Ultrina" | "Highina" | "Medina"}
 
 enum JiNotationLevel {
-    MEDIUM = "medium",          // Corresponds closely with Athenian flacco subset
-    HIGH = "high",              // Corresponds closely with Promethean flacco subset
-    ULTRA = "ultra",            // Corresponds closely with Herculean flacco subset
-    EXTREME = "extreme",        // Corresponds closely with Olympian flacco subset
-    INSANE = "insane",          // Corresponds closely with Magrathean flacco subset
+    MEDIUM = "medium",          // Corresponds closely with Athenian symbol subset
+    HIGH = "high",              // Corresponds closely with Promethean symbol subset
+    ULTRA = "ultra",            // Corresponds closely with Herculean symbol subset
+    EXTREME = "extreme",        // Corresponds closely with Olympian symbol subset
+    INSANE = "insane",          // Corresponds closely with Magrathean symbol subset
 }
 
 type InaMidpoint<T extends NumericProperties = {}> = {

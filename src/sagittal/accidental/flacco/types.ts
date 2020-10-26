@@ -229,25 +229,16 @@ enum FlaccoId {
     BIRD_WITH_LEFT_SCROLL_DOUBLE_RIGHT_BARB = "birdWithLeftScrollDoubleRightBarb",
 }
 
-// Flag and Accent Combination; basically a "symbol class" (see: http://forum.sagittal.org/viewtopic.php?p=2474#p2474)
+// Flag and Accent Combination (see: http://forum.sagittal.org/viewtopic.php?p=2474#p2474)
 interface Flacco {
     arm?: Arm,
+    // TODO: Flatten core so that flacco doesn’t have a core but just left and right...
+    //  Because that's confusing for it to have a "core" but its type is "head".
+    //  Especially acceptable because arm is a single array with with/against handled within each of its elements
     core?: Head,
 }
 
-enum FlaccoSubset {
-    COMPATIBLE = "compatible",
-    SPARTAN = "spartan",
-    ATHENIAN = "athenian",
-    PROMETHEAN = "promethean",
-    HERCULEAN = "herculean",
-    OLYMPIAN = "olympian",
-    MAGRATHEAN = "magrathean",
-    TROJAN = "trojan",
-}
-
 export {
-    FlaccoSubset,
     Flacco,
     Flag,
     Accent,

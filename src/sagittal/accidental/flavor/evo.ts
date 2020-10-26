@@ -1,18 +1,27 @@
 import {increment, Maybe, negative} from "../../../general"
-import {CaptureZone, Section} from "../../notations"
+import {CaptureZone} from "../../notations"
 import {getFlacco} from "../flacco"
-import {computeSagittalFromFlacco, flipSagittal} from "../symbol"
+import {computeApotomeComplement, computeSagittalFromFlacco, flipSagittal, Shafts} from "../symbol"
+import {getSymbolClass} from "../symbolClass"
 import {Accidental, Compatible, Flavor} from "./types"
 
 const computeEvoAccidentalFromCaptureZone = (captureZone: CaptureZone): Accidental<Flavor.EVO> => {
-    const { flaccoId, section, shifted, negated } = captureZone
+    const { symbolClassId, section: { negated, mirrored, shifted } } = captureZone
 
-    const flacco = getFlacco(flaccoId)
+    const symbolClass = getSymbolClass(symbolClassId)
+    const flacco = getFlacco(symbolClass.flaccoId)
     let sagittal = computeSagittalFromFlacco(flacco)
-    sagittal = section === Section.C ? flipSagittal(sagittal) : sagittal
 
     let apotomeCount = 0
-    if (section === Section.C) apotomeCount = increment(apotomeCount)
+    if (mirrored) {
+        const apotomeComplement = computeApotomeComplement(sagittal)
+        if (apotomeComplement.core?.shafts === Shafts.DOUBLE) {
+            sagittal = flipSagittal(sagittal)
+            apotomeCount = increment(apotomeCount)
+        } else {
+            sagittal = apotomeComplement
+        }
+    }
     if (shifted) apotomeCount = increment(apotomeCount)
     if (negated) apotomeCount = negative(apotomeCount)
     const compatible: Maybe<Compatible> =

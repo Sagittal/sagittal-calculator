@@ -1,505 +1,505 @@
 import {Comma, PYTHAGOREAN_COMMA, UNISON} from "../../../../general"
-import {FlaccoId} from "../../../accidental"
+import {SymbolClassId} from "../../../accidental"
 import {CommaClass, CommaClassId} from "./types"
 
 const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
     /*0*/[CommaClassId._1_u]: {
-        representativeFlaccoId: FlaccoId.NULL,
+        representativeSymbolClassId: SymbolClassId.NULL,
         pitch: UNISON,
     },
     /*1*/[CommaClassId._1_455_n]: {
-        representativeFlaccoId: FlaccoId.WING,
+        representativeSymbolClassId: SymbolClassId.WING,
         pitch: {monzo: [12, -2, -1, -1, 0, -1]} as Comma,
     },
     /*2*/[CommaClassId._65_77_n]: {
-        representativeFlaccoId: FlaccoId.BIRD,
+        representativeSymbolClassId: SymbolClassId.BIRD,
         pitch: {monzo: [5, -3, 1, -1, -1, 1]} as Comma,
     },
     /*3*/[CommaClassId._19_5_n]: {
-        representativeFlaccoId: FlaccoId.TICK_AGAINST_LEFT_SCROLL,
+        representativeSymbolClassId: SymbolClassId.TICK_AGAINST_LEFT_SCROLL,
         pitch: {monzo: [6, -5, -1, 0, 0, 0, 0, 1]} as Comma,
     },
     /*4*/[CommaClassId._5_s]: {
-        representativeFlaccoId: FlaccoId.TICK,
+        representativeSymbolClassId: SymbolClassId.TICK,
         pitch: {monzo: [-15, 8, 1]} as Comma,
     },
     /*5*/[CommaClassId._1_91_s]: {
-        representativeFlaccoId: FlaccoId.WING_AND_TICK,
+        representativeSymbolClassId: SymbolClassId.WING_AND_TICK,
         pitch: {monzo: [-3, 6, 0, -1, 0, -1]} as Comma,
     },
     /*6*/[CommaClassId._19_4375_s]: {
-        representativeFlaccoId: FlaccoId.WING_AGAINST_LEFT_SCROLL,
+        representativeSymbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL,
         pitch: {monzo: [-8, 10, -4, -1, 0, 0, 0, 1]} as Comma,
     },
     /*7*/[CommaClassId._19_s]: {
-        representativeFlaccoId: FlaccoId.LEFT_SCROLL,
+        representativeSymbolClassId: SymbolClassId.LEFT_SCROLL,
         pitch: {monzo: [-9, 3, 0, 0, 0, 0, 0, 1]} as Comma,
     },
     /*8*/[CommaClassId._49_55_s]: {
-        representativeFlaccoId: FlaccoId.WING_WITH_LEFT_SCROLL,
+        representativeSymbolClassId: SymbolClassId.WING_WITH_LEFT_SCROLL,
         pitch: {monzo: [-3, 2, -1, 2, -1]} as Comma,
     },
     /*9*/[CommaClassId._385_k]: {
-        representativeFlaccoId: FlaccoId.BIRD_WITH_LEFT_SCROLL,
+        representativeSymbolClassId: SymbolClassId.BIRD_WITH_LEFT_SCROLL,
         pitch: {monzo: [-7, -1, 1, 1, 1]} as Comma,
     },
     /*10*/[CommaClassId._11_13_k]: {
-        representativeFlaccoId: FlaccoId.BIRD_AGAINST_RIGHT_SCROLL,
+        representativeSymbolClassId: SymbolClassId.BIRD_AGAINST_RIGHT_SCROLL,
         pitch: {monzo: [5, -3, 0, 0, 1, -1]} as Comma,
     },
     /*11*/[CommaClassId._31_11_k]: {
-        representativeFlaccoId: FlaccoId.WING_AGAINST_RIGHT_SCROLL,
+        representativeSymbolClassId: SymbolClassId.WING_AGAINST_RIGHT_SCROLL,
         pitch: {monzo: [-11, 6, 0, 0, -1, 0, 0, 0, 0, 0, 1]} as Comma,
     },
     /*12*/[CommaClassId._5_7_k]: {
-        representativeFlaccoId: FlaccoId.RIGHT_SCROLL,
+        representativeSymbolClassId: SymbolClassId.RIGHT_SCROLL,
         pitch: {monzo: [10, -6, 1, -1]} as Comma,
     },
     /*13*/[CommaClassId._5_343_k]: {
-        representativeFlaccoId: FlaccoId.WING_WITH_RIGHT_SCROLL,
+        representativeSymbolClassId: SymbolClassId.WING_WITH_RIGHT_SCROLL,
         pitch: {monzo: [5, -7, -1, 3]} as Comma,
     },
     /*14*/[CommaClassId._1_85_k]: {
-        representativeFlaccoId: FlaccoId.TICK_AGAINST_LEFT_BOATHOOK,
+        representativeSymbolClassId: SymbolClassId.TICK_AGAINST_LEFT_BOATHOOK,
         pitch: {monzo: [8, -1, -1, 0, 0, 0, -1]} as Comma,
     },
     /*15*/[CommaClassId._1_1225_k]: {
-        representativeFlaccoId: FlaccoId.WING_FROM_TICK_WITH_RIGHT_SCROLL,
+        representativeSymbolClassId: SymbolClassId.WING_FROM_TICK_WITH_RIGHT_SCROLL,
         pitch: {monzo: [-4, 9, -2, -2]} as Comma,
     },
     /*16*/[CommaClassId._25_7_k]: {
-        representativeFlaccoId: FlaccoId.TICK_WITH_RIGHT_SCROLL,
+        representativeSymbolClassId: SymbolClassId.TICK_WITH_RIGHT_SCROLL,
         pitch: {monzo: [-5, 2, 2, -1]} as Comma,
     },
     /*17*/[CommaClassId._343_k]: {
-        representativeFlaccoId: FlaccoId.WING_AGAINST_LEFT_BOATHOOK,
+        representativeSymbolClassId: SymbolClassId.WING_AGAINST_LEFT_BOATHOOK,
         pitch: {monzo: [-10, 1, 0, 3]} as Comma,
     },
     /*18*/[CommaClassId._1_17_k]: {
-        representativeFlaccoId: FlaccoId.LEFT_BOATHOOK,
+        representativeSymbolClassId: SymbolClassId.LEFT_BOATHOOK,
         pitch: {monzo: [-7, 7, 0, 0, 0, 0, -1]} as Comma,
     },
     /*19*/[CommaClassId._14641_k]: {
-        representativeFlaccoId: FlaccoId.WING_AGAINST_DOUBLE_SCROLL,
+        representativeSymbolClassId: SymbolClassId.WING_AGAINST_DOUBLE_SCROLL,
         pitch: {monzo: [-17, 2, 0, 0, 4]} as Comma,
     },
     /*20*/[CommaClassId._7_11_k]: {
-        representativeFlaccoId: FlaccoId.DOUBLE_SCROLL,
+        representativeSymbolClassId: SymbolClassId.DOUBLE_SCROLL,
         pitch: {monzo: [7, -4, 0, 1, -1]} as Comma,
     },
     /*21*/[CommaClassId._275_k]: {
-        representativeFlaccoId: FlaccoId.WING_WITH_DOUBLE_SCROLL,
+        representativeSymbolClassId: SymbolClassId.WING_WITH_DOUBLE_SCROLL,
         pitch: {monzo: [3, -7, 2, 0, 1]} as Comma,
     },
     /*22*/[CommaClassId._49_13_k]: {
-        representativeFlaccoId: FlaccoId.BIRD_WITH_DOUBLE_SCROLL,
+        representativeSymbolClassId: SymbolClassId.BIRD_WITH_DOUBLE_SCROLL,
         pitch: {monzo: [-13, 7, 0, 2, 0, -1]} as Comma,
     },
     /*23*/[CommaClassId._1_8575_k]: {
-        representativeFlaccoId: FlaccoId.WING_FROM_TICK_WITH_DOUBLE_SCROLL,
+        representativeSymbolClassId: SymbolClassId.WING_FROM_TICK_WITH_DOUBLE_SCROLL,
         pitch: {monzo: [21, -5, -2, -3]} as Comma,
     },
     /*24*/[CommaClassId._35_11_k]: {
-        representativeFlaccoId: FlaccoId.TICK_WITH_DOUBLE_SCROLL,
+        representativeSymbolClassId: SymbolClassId.TICK_WITH_DOUBLE_SCROLL,
         pitch: {monzo: [-8, 4, 1, 1, -1]} as Comma,
     },
     /*25*/[CommaClassId._1_143_C]: {
-        representativeFlaccoId: FlaccoId.LEFT_SCROLL_AND_BOATHOOK,
+        representativeSymbolClassId: SymbolClassId.LEFT_SCROLL_AND_BOATHOOK,
         pitch: {monzo: [4, 2, 0, 0, -1, -1]} as Comma,
     },
     /*26*/[CommaClassId._17_5_C]: {
-        representativeFlaccoId: FlaccoId.TICK_AGAINST_BOATHOOK_AND_SCROLL,
+        representativeSymbolClassId: SymbolClassId.TICK_AGAINST_BOATHOOK_AND_SCROLL,
         pitch: {monzo: [3, -3, -1, 0, 0, 0, 1]} as Comma,
     },
     /*27*/[CommaClassId._11_23_C]: {
-        representativeFlaccoId: FlaccoId.WING_FROM_TICK_AGAINST_BOATHOOK_AND_SCROLL,
+        representativeSymbolClassId: SymbolClassId.WING_FROM_TICK_AGAINST_BOATHOOK_AND_SCROLL,
         pitch: {monzo: [9, -5, 0, 0, 1, 0, 0, 0, -1]} as Comma,
     },
     /*28*/[CommaClassId._7_125_C]: {
-        representativeFlaccoId: FlaccoId.BIRD_AGAINST_BOATHOOK_AND_SCROLL,
+        representativeSymbolClassId: SymbolClassId.BIRD_AGAINST_BOATHOOK_AND_SCROLL,
         pitch: {monzo: [1, 2, -3, 1]} as Comma,
     },
     /*29*/[CommaClassId._245_C]: {
-        representativeFlaccoId: FlaccoId.WING_AGAINST_BOATHOOK_AND_SCROLL,
+        representativeSymbolClassId: SymbolClassId.WING_AGAINST_BOATHOOK_AND_SCROLL,
         pitch: {monzo: [0, -5, 1, 2]} as Comma,
     },
     /*30*/[CommaClassId._17_C]: {
-        representativeFlaccoId: FlaccoId.BOATHOOK_AND_SCROLL,
+        representativeSymbolClassId: SymbolClassId.BOATHOOK_AND_SCROLL,
         pitch: {monzo: [-12, 5, 0, 0, 0, 0, 1]} as Comma,
     },
     /*31*/[CommaClassId._143_7_C]: {
-        representativeFlaccoId: FlaccoId.WING_WITH_BOATHOOK_AND_SCROLL,
+        representativeSymbolClassId: SymbolClassId.WING_WITH_BOATHOOK_AND_SCROLL,
         pitch: {monzo: [2, -4, 0, -1, 1, 1]} as Comma,
     },
     /*32*/[CommaClassId._7_25_C]: {
-        representativeFlaccoId: FlaccoId.BIRD_AGAINST_RIGHT_BOATHOOK,
+        representativeSymbolClassId: SymbolClassId.BIRD_AGAINST_RIGHT_BOATHOOK,
         pitch: {monzo: [-14, 10, -2, 1]} as Comma,
     },
     /*33*/[CommaClassId._1225_C]: {
-        representativeFlaccoId: FlaccoId.WING_AGAINST_RIGHT_BOATHOOK,
+        representativeSymbolClassId: SymbolClassId.WING_AGAINST_RIGHT_BOATHOOK,
         pitch: {monzo: [-15, 3, 2, 2]} as Comma,
     },
     /*34*/[CommaClassId._23_C]: {
-        representativeFlaccoId: FlaccoId.RIGHT_BOATHOOK,
+        representativeSymbolClassId: SymbolClassId.RIGHT_BOATHOOK,
         pitch: {monzo: [5, -6, 0, 0, 0, 0, 0, 0, 1]} as Comma,
     },
     /*35*/[CommaClassId._1_169_C]: {
-        representativeFlaccoId: FlaccoId.WING_WITH_RIGHT_BOATHOOK,
+        representativeSymbolClassId: SymbolClassId.WING_WITH_RIGHT_BOATHOOK,
         pitch: {monzo: [9, -1, 0, 0, 0, -2]} as Comma,
     },
     /*36*/[CommaClassId._11_49_C]: {
-        representativeFlaccoId: FlaccoId.DOUBLE_LEFT_BOATHOOK,
+        representativeSymbolClassId: SymbolClassId.DOUBLE_LEFT_BOATHOOK,
         pitch: {monzo: [-1, 2, 0, -2, 1]} as Comma,
     },
     /*37*/[CommaClassId._11_31_C]: {
-        representativeFlaccoId: FlaccoId.WING_WITH_DOUBLE_LEFT_BOATHOOK,
+        representativeSymbolClassId: SymbolClassId.WING_WITH_DOUBLE_LEFT_BOATHOOK,
         pitch: {monzo: [-8, 6, 0, 0, 1, 0, 0, 0, 0, 0, -1]} as Comma,
     },
     /*38*/[CommaClassId._17_7_C]: {
-        representativeFlaccoId: FlaccoId.BIRD_WITH_DOUBLE_LEFT_BOATHOOK,
+        representativeSymbolClassId: SymbolClassId.BIRD_WITH_DOUBLE_LEFT_BOATHOOK,
         pitch: {monzo: [13, -9, 0, -1, 0, 0, 1]} as Comma,
     },
     /*39*/[CommaClassId._91_5_C]: {
-        representativeFlaccoId: FlaccoId.WING_AND_TICK_AGAINST_LEFT_BARB,
+        representativeSymbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_LEFT_BARB,
         pitch: {monzo: [-1, -2, -1, 1, 0, 1]} as Comma,
     },
     /*40*/[CommaClassId._1_25_C]: {
-        representativeFlaccoId: FlaccoId.TICK_AGAINST_LEFT_BARB,
+        representativeSymbolClassId: SymbolClassId.TICK_AGAINST_LEFT_BARB,
         pitch: {monzo: [11, -4, -2]} as Comma,
     },
     /*41*/[CommaClassId._1_19_C]: {
-        representativeFlaccoId: FlaccoId.SCROLL_AND_BOATHOOK,
+        representativeSymbolClassId: SymbolClassId.SCROLL_AND_BOATHOOK,
         pitch: {monzo: [-10, 9, 0, 0, 0, 0, 0, -1]} as Comma,
     },
     /*42*/[CommaClassId._1_253_C]: {
-        representativeFlaccoId: FlaccoId.BIRD_AGAINST_LEFT_BARB,
+        representativeSymbolClassId: SymbolClassId.BIRD_AGAINST_LEFT_BARB,
         pitch: {monzo: [8, 0, 0, 0, -1, 0, 0, 0, -1]} as Comma,
     },
     /*43*/[CommaClassId._91_C]: {
-        representativeFlaccoId: FlaccoId.WING_AGAINST_LEFT_BARB,
+        representativeSymbolClassId: SymbolClassId.WING_AGAINST_LEFT_BARB,
         pitch: {monzo: [-16, 6, 0, 1, 0, 1]} as Comma,
     },
     /*44*/[CommaClassId._1_5_C]: {
-        representativeFlaccoId: FlaccoId.LEFT_BARB,
+        representativeSymbolClassId: SymbolClassId.LEFT_BARB,
         pitch: {monzo: [-4, 4, -1]} as Comma,
     },
     /*45*/[CommaClassId._875_C]: {
-        representativeFlaccoId: FlaccoId.WING_WITH_LEFT_BARB,
+        representativeSymbolClassId: SymbolClassId.WING_WITH_LEFT_BARB,
         pitch: {monzo: [-5, -3, 3, 1]} as Comma,
     },
     /*46*/[CommaClassId._25_13_C]: {
-        representativeFlaccoId: FlaccoId.BIRD_WITH_LEFT_BARB,
+        representativeSymbolClassId: SymbolClassId.BIRD_WITH_LEFT_BARB,
         pitch: {monzo: [7, -5, 2, 0, 0, -1]} as Comma,
     },
     /*47*/[CommaClassId._19_25_C]: {
-        representativeFlaccoId: FlaccoId.TICK_AGAINST_LEFT_SCROLL_AND_BARB,
+        representativeSymbolClassId: SymbolClassId.TICK_AGAINST_LEFT_SCROLL_AND_BARB,
         pitch: {monzo: [2, -1, -2, 0, 0, 0, 0, 1]} as Comma,
     },
     /*48*/[CommaClassId._1_C]: {
-        representativeFlaccoId: FlaccoId.TICK_WITH_LEFT_BARB,
+        representativeSymbolClassId: SymbolClassId.TICK_WITH_LEFT_BARB,
         pitch: PYTHAGOREAN_COMMA,
     },
     /*49*/[CommaClassId._4375_C]: {
-        representativeFlaccoId: FlaccoId.WING_AND_TICK_WITH_LEFT_BARB,
+        representativeSymbolClassId: SymbolClassId.WING_AND_TICK_WITH_LEFT_BARB,
         pitch: {monzo: [-20, 5, 4, 1]} as Comma,
     },
     /*50*/[CommaClassId._77_5_C]: {
-        representativeFlaccoId: FlaccoId.BIRD_AGAINST_LEFT_SCROLL_AND_BARB,
+        representativeSymbolClassId: SymbolClassId.BIRD_AGAINST_LEFT_SCROLL_AND_BARB,
         pitch: {monzo: [4, -5, -1, 1, 1]} as Comma,
     },
     /*51*/[CommaClassId._125_13_C]: {
-        representativeFlaccoId: FlaccoId.WING_AGAINST_LEFT_SCROLL_AND_BARB,
+        representativeSymbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL_AND_BARB,
         pitch: {monzo: [-8, 3, 3, 0, 0, -1]} as Comma,
     },
     /*52*/[CommaClassId._19_5_C]: {                                                   // 1.01447753906
-        representativeFlaccoId: FlaccoId.LEFT_SCROLL_AND_BARB,
+        representativeSymbolClassId: SymbolClassId.LEFT_SCROLL_AND_BARB,
         pitch: {monzo: [-13, 7, -1, 0, 0, 0, 0, 1]} as Comma,
     },
     /*53*/[CommaClassId._13_C]: {                                                     // 1.01447950008
-        representativeFlaccoId: FlaccoId.WING_AND_TICK_AGAINST_RIGHT_ARC,
+        representativeSymbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_RIGHT_ARC,
         pitch: {monzo: [9, -8, 0, 0, 0, 1]} as Comma,
     },
     /*54*/[CommaClassId._1_35_C]: {
-        representativeFlaccoId: FlaccoId.TICK_AGAINST_RIGHT_ARC,
+        representativeSymbolClassId: SymbolClassId.TICK_AGAINST_RIGHT_ARC,
         pitch: {monzo: [21, -10, -1, -1]} as Comma,
     },
     /*55*/[CommaClassId._77_C]: {
-        representativeFlaccoId: FlaccoId.WING_FROM_TICK_AGAINST_RIGHT_ARC,
+        representativeSymbolClassId: SymbolClassId.WING_FROM_TICK_AGAINST_RIGHT_ARC,
         pitch: {monzo: [-11, 3, 0, 1, 1]} as Comma,
     },
     /*56*/[CommaClassId._11_65_C]: {
-        representativeFlaccoId: FlaccoId.BIRD_AGAINST_RIGHT_ARC,
+        representativeSymbolClassId: SymbolClassId.BIRD_AGAINST_RIGHT_ARC,
         pitch: {monzo: [1, 1, -1, 0, 1, -1]} as Comma,
     },
     /*57*/[CommaClassId._65_C]: {
-        representativeFlaccoId: FlaccoId.WING_AGAINST_RIGHT_ARC,
+        representativeSymbolClassId: SymbolClassId.WING_AGAINST_RIGHT_ARC,
         pitch: {monzo: [-6, 0, 1, 0, 0, 1]} as Comma,
     },
     /*58*/[CommaClassId._1_7_C]: {
-        representativeFlaccoId: FlaccoId.RIGHT_ARC,
+        representativeSymbolClassId: SymbolClassId.RIGHT_ARC,
         pitch: {monzo: [6, -2, 0, -1]} as Comma,
     },
     /*59*/[CommaClassId._625_C]: {
-        representativeFlaccoId: FlaccoId.WING_WITH_RIGHT_ARC,
+        representativeSymbolClassId: SymbolClassId.WING_WITH_RIGHT_ARC,
         pitch: {monzo: [5, -9, 4]} as Comma,
     },
     /*60*/[CommaClassId._11_13_C]: {
-        representativeFlaccoId: FlaccoId.BIRD_WITH_RIGHT_ARC,
+        representativeSymbolClassId: SymbolClassId.BIRD_WITH_RIGHT_ARC,
         pitch: {monzo: [-14, 9, 0, 0, 1, -1]} as Comma,
     },
     /*61*/[CommaClassId._325_C]: {
-        representativeFlaccoId: FlaccoId.WING_FROM_TICK_WITH_RIGHT_ARC,
+        representativeSymbolClassId: SymbolClassId.WING_FROM_TICK_WITH_RIGHT_ARC,
         pitch: {monzo: [-21, 8, 2, 0, 0, 1]} as Comma,
     },
     /*62*/[CommaClassId._5_7_C]: {
-        representativeFlaccoId: FlaccoId.TICK_WITH_RIGHT_ARC,
+        representativeSymbolClassId: SymbolClassId.TICK_WITH_RIGHT_ARC,
         pitch: {monzo: [-9, 6, 1, -1]} as Comma,
     },
     /*63*/[CommaClassId._3125_C]: {
-        representativeFlaccoId: FlaccoId.WING_AND_TICK_WITH_RIGHT_ARC,
+        representativeSymbolClassId: SymbolClassId.WING_AND_TICK_WITH_RIGHT_ARC,
         pitch: {monzo: [-10, -1, 5]} as Comma,
     },
     /*64*/[CommaClassId._85_11_C]: {
-        representativeFlaccoId: FlaccoId.WING_AGAINST_SCROLL_AND_ARC,
+        representativeSymbolClassId: SymbolClassId.WING_AGAINST_SCROLL_AND_ARC,
         pitch: {monzo: [5, -5, 1, 0, -1, 0, 1]} as Comma,
     },
     /*65*/[CommaClassId._19_7_C]: {
-        representativeFlaccoId: FlaccoId.SCROLL_AND_ARC,
+        representativeSymbolClassId: SymbolClassId.SCROLL_AND_ARC,
         pitch: {monzo: [-3, 1, 0, -1, 0, 0, 0, 1]} as Comma,
     },
     /*66*/[CommaClassId._7_55_C]: {
-        representativeFlaccoId: FlaccoId.TICK_AGAINST_LEFT_ARC,
+        representativeSymbolClassId: SymbolClassId.TICK_AGAINST_LEFT_ARC,
         pitch: {monzo: [3, 0, -1, 1, -1]} as Comma,
     },
     /*67*/[CommaClassId._55_C]: {
-        representativeFlaccoId: FlaccoId.RIGHT_BARB,
+        representativeSymbolClassId: SymbolClassId.RIGHT_BARB,
         pitch: {monzo: [-1, -3, 1, 0, 1]} as Comma,
     },
     /*68*/[CommaClassId._11_91_C]: {
-        representativeFlaccoId: FlaccoId.WING_WITH_RIGHT_BARB,
+        representativeSymbolClassId: SymbolClassId.WING_WITH_RIGHT_BARB,
         pitch: {monzo: [11, -5, 0, -1, 1, -1]} as Comma,
     },
     /*69*/[CommaClassId._125_23_C]: {
-        representativeFlaccoId: FlaccoId.WING_AGAINST_LEFT_ARC,
+        representativeSymbolClassId: SymbolClassId.WING_AGAINST_LEFT_ARC,
         pitch: {monzo: [-4, 1, 3, 0, 0, 0, 0, 0, -1]} as Comma,
     },
     /*70*/[CommaClassId._7_11_C]: {
-        representativeFlaccoId: FlaccoId.LEFT_ARC,
+        representativeSymbolClassId: SymbolClassId.LEFT_ARC,
         pitch: {monzo: [-12, 8, 0, 1, -1]} as Comma,
     },
     /*71*/[CommaClassId._13_17_S]: {
-        representativeFlaccoId: FlaccoId.WING_WITH_LEFT_ARC,
+        representativeSymbolClassId: SymbolClassId.WING_WITH_LEFT_ARC,
         pitch: {monzo: [2, -1, 0, 0, 0, 1, -1]} as Comma,
     },
     /*72*/[CommaClassId._17_25_S]: {
-        representativeFlaccoId: FlaccoId.BIRD_WITH_LEFT_ARC,
+        representativeSymbolClassId: SymbolClassId.BIRD_WITH_LEFT_ARC,
         pitch: {monzo: [-1, 1, -2, 0, 0, 0, 1]} as Comma,
     },
     /*73*/[CommaClassId._7_247_S]: {
-        representativeFlaccoId: FlaccoId.WING_FROM_TICK_WITH_LEFT_ARC,
+        representativeSymbolClassId: SymbolClassId.WING_FROM_TICK_WITH_LEFT_ARC,
         pitch: {monzo: [2, 2, 0, 1, 0, -1, 0, -1]} as Comma,
     },
     /*74*/[CommaClassId._25_49_S]: {
-        representativeFlaccoId: FlaccoId.TICK_WITH_LEFT_ARC,
+        representativeSymbolClassId: SymbolClassId.TICK_WITH_LEFT_ARC,
         pitch: {monzo: [1, 0, 2, -2]} as Comma,
     },
     /*75*/[CommaClassId._31_S]: {
-        representativeFlaccoId: FlaccoId.WING_AGAINST_BOATHOOK_AND_ARC,
+        representativeSymbolClassId: SymbolClassId.WING_AGAINST_BOATHOOK_AND_ARC,
         pitch: {monzo: [3, -5, 0, 0, 0, 0, 0, 0, 0, 0, 1]} as Comma,
     },
     /*76*/[CommaClassId._49_S]: {
-        representativeFlaccoId: FlaccoId.BOATHOOK_AND_ARC,
+        representativeSymbolClassId: SymbolClassId.BOATHOOK_AND_ARC,
         pitch: {monzo: [-4, -1, 0, 2]} as Comma,
     },
     /*77*/[CommaClassId._17_5_S]: {
-        representativeFlaccoId: FlaccoId.WING_WITH_BOATHOOK_AND_ARC,
+        representativeSymbolClassId: SymbolClassId.WING_WITH_BOATHOOK_AND_ARC,
         pitch: {monzo: [-16, 9, -1, 0, 0, 0, 1]} as Comma,
     },
     /*78*/[CommaClassId._11_23_S]: {
-        representativeFlaccoId: FlaccoId.WING_AND_TICK_AGAINST_ARC_AND_SCROLL,
+        representativeSymbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_ARC_AND_SCROLL,
         pitch: {monzo: [-10, 7, 0, 0, 1, 0, 0, 0, -1]} as Comma,
     },
     /*79*/[CommaClassId._1_11_S]: {
-        representativeFlaccoId: FlaccoId.TICK_AGAINST_ARC_AND_SCROLL,
+        representativeSymbolClassId: SymbolClassId.TICK_AGAINST_ARC_AND_SCROLL,
         pitch: {monzo: [13, -6, 0, 0, -1]} as Comma,
     },
     /*80*/[CommaClassId._245_S]: {
-        representativeFlaccoId: FlaccoId.TICK_WITH_BOATHOOK_AND_ARC,
+        representativeSymbolClassId: SymbolClassId.TICK_WITH_BOATHOOK_AND_ARC,
         pitch: {monzo: [-19, 7, 1, 2]} as Comma,
     },
     /*81*/[CommaClassId._23_5_S]: {
-        representativeFlaccoId: FlaccoId.BARB_AND_BOATHOOK,
+        representativeSymbolClassId: SymbolClassId.BARB_AND_BOATHOOK,
         pitch: {monzo: [1, -2, -1, 0, 0, 0, 0, 0, 1]} as Comma,
     },
     /*82*/[CommaClassId._7_13_S]: {
-        representativeFlaccoId: FlaccoId.BIRD_AGAINST_ARC_AND_SCROLL,
+        representativeSymbolClassId: SymbolClassId.BIRD_AGAINST_ARC_AND_SCROLL,
         pitch: {monzo: [-7, 5, 0, 1, 0, -1]} as Comma,
     },
     /*83*/[CommaClassId._11_17_S]: {
-        representativeFlaccoId: FlaccoId.WING_AGAINST_ARC_AND_SCROLL,
+        representativeSymbolClassId: SymbolClassId.WING_AGAINST_ARC_AND_SCROLL,
         pitch: {monzo: [7, -4, 0, 0, 1, 0, -1]} as Comma,
     },
     /*84*/[CommaClassId._5_11_S]: {
-        representativeFlaccoId: FlaccoId.ARC_AND_SCROLL,
+        representativeSymbolClassId: SymbolClassId.ARC_AND_SCROLL,
         pitch: {monzo: [-2, 2, 1, 0, -1]} as Comma,
     },
     /*85*/[CommaClassId._1_1001_S]: {
-        representativeFlaccoId: FlaccoId.WING_WITH_ARC_AND_SCROLL,
+        representativeSymbolClassId: SymbolClassId.WING_WITH_ARC_AND_SCROLL,
         pitch: {monzo: [10, 0, 0, -1, -1, -1]} as Comma,
     },
     /*86*/[CommaClassId._23_S]: {
-        representativeFlaccoId: FlaccoId.BOATHOOK_AND_BARB,
+        representativeSymbolClassId: SymbolClassId.BOATHOOK_AND_BARB,
         pitch: {monzo: [-14, 6, 0, 0, 0, 0, 0, 0, 1]} as Comma,
     },
     /*87*/[CommaClassId._91_25_S]: {
-        representativeFlaccoId: FlaccoId.WING_AND_TICK_AGAINST_DOUBLE_LEFT_BARB,
+        representativeSymbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_DOUBLE_LEFT_BARB,
         pitch: {monzo: [-5, 2, -2, 1, 0, 1]} as Comma,
     },
     /*88*/[CommaClassId._1_125_S]: {
-        representativeFlaccoId: FlaccoId.TICK_AGAINST_DOUBLE_LEFT_BARB,
+        representativeSymbolClassId: SymbolClassId.TICK_AGAINST_DOUBLE_LEFT_BARB,
         pitch: {monzo: [7, 0, -3]} as Comma,
     },
     /*89*/[CommaClassId._35_S]: {
-        representativeFlaccoId: FlaccoId.WING_FROM_TICK_AGAINST_DOUBLE_LEFT_BARB,
+        representativeSymbolClassId: SymbolClassId.WING_FROM_TICK_AGAINST_DOUBLE_LEFT_BARB,
         pitch: {monzo: [6, -7, 1, 1]} as Comma,
     },
     /*90*/[CommaClassId._17_7_S]: {
-        representativeFlaccoId: FlaccoId.BIRD_AGAINST_DOUBLE_LEFT_BARB,
+        representativeSymbolClassId: SymbolClassId.BIRD_AGAINST_DOUBLE_LEFT_BARB,
         pitch: {monzo: [-6, 3, 0, -1, 0, 0, 1]} as Comma,
     },
     /*91*/[CommaClassId._91_5_S]: {
-        representativeFlaccoId: FlaccoId.WING_AGAINST_DOUBLE_LEFT_BARB,
+        representativeSymbolClassId: SymbolClassId.WING_AGAINST_DOUBLE_LEFT_BARB,
         pitch: {monzo: [-20, 10, -1, 1, 0, 1]} as Comma,
     },
     /*92*/[CommaClassId._1_25_S]: {
-        representativeFlaccoId: FlaccoId.DOUBLE_LEFT_BARB,
+        representativeSymbolClassId: SymbolClassId.DOUBLE_LEFT_BARB,
         pitch: {monzo: [-8, 8, -2]} as Comma,
     },
     /*93*/[CommaClassId._175_S]: {
-        representativeFlaccoId: FlaccoId.WING_WITH_DOUBLE_LEFT_BARB,
+        representativeSymbolClassId: SymbolClassId.WING_WITH_DOUBLE_LEFT_BARB,
         pitch: {monzo: [-9, 1, 2, 1]} as Comma,
     },
     /*94*/[CommaClassId._5_13_S]: {
-        representativeFlaccoId: FlaccoId.BIRD_WITH_DOUBLE_LEFT_BARB,
+        representativeSymbolClassId: SymbolClassId.BIRD_WITH_DOUBLE_LEFT_BARB,
         pitch: {monzo: [3, -1, 1, 0, 0, -1]} as Comma,
     },
     /*95*/[CommaClassId._49_17_S]: {
-        representativeFlaccoId: FlaccoId.WING_FROM_TICK_WITH_DOUBLE_LEFT_BARB,
+        representativeSymbolClassId: SymbolClassId.WING_FROM_TICK_WITH_DOUBLE_LEFT_BARB,
         pitch: {monzo: [-11, 6, 0, 2, 0, 0, -1]} as Comma,
     },
     /*96*/[CommaClassId._13_19_S]: {
-        representativeFlaccoId: FlaccoId.TICK_WITH_DOUBLE_LEFT_BARB,
+        representativeSymbolClassId: SymbolClassId.TICK_WITH_DOUBLE_LEFT_BARB,
         pitch: {monzo: [-1, 1, 0, 0, 0, 1, 0, -1]} as Comma,
     },
     /*97*/[CommaClassId._77_25_M]: {
-        representativeFlaccoId: FlaccoId.BIRD_AGAINST_LEFT_SCROLL_DOUBLE_LEFT_BARB,
+        representativeSymbolClassId: SymbolClassId.BIRD_AGAINST_LEFT_SCROLL_DOUBLE_LEFT_BARB,
         pitch: {monzo: [0, -1, -2, 1, 1]} as Comma,
     },
     /*98*/[CommaClassId._25_13_M]: {
-        representativeFlaccoId: FlaccoId.WING_AGAINST_LEFT_SCROLL_DOUBLE_LEFT_BARB,
+        representativeSymbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL_DOUBLE_LEFT_BARB,
         pitch: {monzo: [-12, 7, 2, 0, 0, -1]} as Comma,
     },
     /*99*/[CommaClassId._13_5_M]: {
-        representativeFlaccoId: FlaccoId.LEFT_SCROLL_DOUBLE_LEFT_BARB,
+        representativeSymbolClassId: SymbolClassId.LEFT_SCROLL_DOUBLE_LEFT_BARB,
         pitch: {monzo: [5, -4, -1, 0, 0, 1]} as Comma,
     },
     /*100*/[CommaClassId._1_175_M]: {
-        representativeFlaccoId: FlaccoId.WING_WITH_LEFT_SCROLL_DOUBLE_LEFT_BARB,
+        representativeSymbolClassId: SymbolClassId.WING_WITH_LEFT_SCROLL_DOUBLE_LEFT_BARB,
         pitch: {monzo: [17, -6, -2, -1]} as Comma,
     },
     /*101*/[CommaClassId._37_M]: {
-        representativeFlaccoId: FlaccoId.BIRD_WITH_LEFT_SCROLL_DOUBLE_LEFT_BARB,
+        representativeSymbolClassId: SymbolClassId.BIRD_WITH_LEFT_SCROLL_DOUBLE_LEFT_BARB,
         pitch: {monzo: [-2, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]} as Comma,
     },
     /*102*/[CommaClassId._11_325_M]: {
-        representativeFlaccoId: FlaccoId.BIRD_AGAINST_BARB_AND_ARC,
+        representativeSymbolClassId: SymbolClassId.BIRD_AGAINST_BARB_AND_ARC,
         pitch: {monzo: [-3, 5, -2, 0, 1, -1]} as Comma,
     },
     /*103*/[CommaClassId._13_M]: {
-        representativeFlaccoId: FlaccoId.WING_AGAINST_BARB_AND_ARC,
+        representativeSymbolClassId: SymbolClassId.WING_AGAINST_BARB_AND_ARC,
         pitch: {monzo: [-10, 4, 0, 0, 0, 1]} as Comma,
     },
     /*104*/[CommaClassId._1_35_M]: {
-        representativeFlaccoId: FlaccoId.BARB_AND_ARC,
+        representativeSymbolClassId: SymbolClassId.BARB_AND_ARC,
         pitch: {monzo: [2, 2, -1, -1]} as Comma,
     },
     /*105*/[CommaClassId._125_M]: {
-        representativeFlaccoId: FlaccoId.WING_WITH_BARB_AND_ARC,
+        representativeSymbolClassId: SymbolClassId.WING_WITH_BARB_AND_ARC,
         pitch: {monzo: [1, -5, 3]} as Comma,
     },
     /*106*/[CommaClassId._11_19_M]: {
-        representativeFlaccoId: FlaccoId.ARC_AND_BOATHOOK,
+        representativeSymbolClassId: SymbolClassId.ARC_AND_BOATHOOK,
         pitch: {monzo: [4, -2, 0, 0, 1, 0, 0, -1]} as Comma,
     },
     /*107*/[CommaClassId._65_M]: {
-        representativeFlaccoId: FlaccoId.WING_FROM_TICK_WITH_BARB_AND_ARC,
+        representativeSymbolClassId: SymbolClassId.WING_FROM_TICK_WITH_BARB_AND_ARC,
         pitch: {monzo: [-25, 12, 1, 0, 0, 1]} as Comma,
     },
     /*108*/[CommaClassId._1_7_M]: {
-        representativeFlaccoId: FlaccoId.TICK_WITH_BARB_AND_ARC,
+        representativeSymbolClassId: SymbolClassId.TICK_WITH_BARB_AND_ARC,
         pitch: {monzo: [-13, 10, 0, -1]} as Comma,
     },
     /*109*/[CommaClassId._625_M]: {
-        representativeFlaccoId: FlaccoId.WING_AND_TICK_WITH_BARB_AND_ARC,
+        representativeSymbolClassId: SymbolClassId.WING_AND_TICK_WITH_BARB_AND_ARC,
         pitch: {monzo: [-14, 3, 4]} as Comma,
     },
     /*110*/[CommaClassId._11_5_M]: {
-        representativeFlaccoId: FlaccoId.TICK_AGAINST_DOUBLE_BARB,
+        representativeSymbolClassId: SymbolClassId.TICK_AGAINST_DOUBLE_BARB,
         pitch: {monzo: [10, -7, -1, 0, 1]} as Comma,
     },
     /*111*/[CommaClassId._17_11_M]: {
-        representativeFlaccoId: FlaccoId.WING_FROM_TICK_AGAINST_DOUBLE_BARB,
+        representativeSymbolClassId: SymbolClassId.WING_FROM_TICK_AGAINST_DOUBLE_BARB,
         pitch: {monzo: [1, -1, 0, 0, -1, 0, 1]} as Comma,
     },
     /*112*/[CommaClassId._5_23_M]: {
-        representativeFlaccoId: FlaccoId.BIRD_AGAINST_DOUBLE_BARB,
+        representativeSymbolClassId: SymbolClassId.BIRD_AGAINST_DOUBLE_BARB,
         pitch: {monzo: [7, -3, 1, 0, 0, 0, 0, 0, -1]} as Comma,
     },
     /*113*/[CommaClassId._7_275_M]: {
-        representativeFlaccoId: FlaccoId.WING_AGAINST_DOUBLE_BARB,
+        representativeSymbolClassId: SymbolClassId.WING_AGAINST_DOUBLE_BARB,
         pitch: {monzo: [-1, 4, -2, 1, -1]} as Comma,
     },
     /*114*/[CommaClassId._11_M]: {
-        representativeFlaccoId: FlaccoId.DOUBLE_BARB,
+        representativeSymbolClassId: SymbolClassId.DOUBLE_BARB,
         pitch: {monzo: [-5, 1, 0, 0, 1]} as Comma,
     },
     /*115*/[CommaClassId._85_11_M]: {
-        representativeFlaccoId: FlaccoId.WING_WITH_DOUBLE_BARB,
+        representativeSymbolClassId: SymbolClassId.WING_WITH_DOUBLE_BARB,
         pitch: {monzo: [-14, 7, 1, 0, -1, 0, 1]} as Comma,
     },
     /*116*/[CommaClassId._65_7_M]: {
-        representativeFlaccoId: FlaccoId.WING_AGAINST_LEFT_ARC_AND_BARB,
+        representativeSymbolClassId: SymbolClassId.WING_AGAINST_LEFT_ARC_AND_BARB,
         pitch: {monzo: [0, -2, 1, -1, 0, 1]} as Comma,
     },
     /*117*/[CommaClassId._1_49_M]: {
-        representativeFlaccoId: FlaccoId.LEFT_ARC_AND_BARB,
+        representativeSymbolClassId: SymbolClassId.LEFT_ARC_AND_BARB,
         pitch: {monzo: [12, -4, 0, -2]} as Comma,
     },
     /*118*/[CommaClassId._1_31_M]: {
-        representativeFlaccoId: FlaccoId.WING_WITH_LEFT_ARC_AND_BARB,
+        representativeSymbolClassId: SymbolClassId.WING_WITH_LEFT_ARC_AND_BARB,
         pitch: {monzo: [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1]} as Comma,
     },
     /*119*/[CommaClassId._55_M]: {
-        representativeFlaccoId: FlaccoId.TICK_WITH_DOUBLE_BARB,
+        representativeSymbolClassId: SymbolClassId.TICK_WITH_DOUBLE_BARB,
         pitch: {monzo: [-20, 9, 1, 0, 1]} as Comma,
     },
     /*120*/[CommaClassId._11_91_M]: {
-        representativeFlaccoId: FlaccoId.WING_AND_TICK_WITH_DOUBLE_BARB,
+        representativeSymbolClassId: SymbolClassId.WING_AND_TICK_WITH_DOUBLE_BARB,
         pitch: {monzo: [-8, 7, 0, -1, 1, -1]} as Comma,
     },
     /*121*/[CommaClassId._595_M]: {
-        representativeFlaccoId: FlaccoId.WING_AGAINST_LEFT_SCROLL_AND_DOUBLE_BARB,
+        representativeSymbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL_AND_DOUBLE_BARB,
         pitch: {monzo: [-6, -2, 1, 1, 0, 0, 1]} as Comma,
     },
     /*122*/[CommaClassId._5_49_M]: {
-        representativeFlaccoId: FlaccoId.LEFT_SCROLL_AND_DOUBLE_BARB,
+        representativeSymbolClassId: SymbolClassId.LEFT_SCROLL_AND_DOUBLE_BARB,
         pitch: {monzo: [-3, 4, 1, -2]} as Comma,
     },
 }
 
 const getCommaClass = (commaClassId: CommaClassId): CommaClass =>
     COMMA_CLASSES[commaClassId]
-    
+
 export {
     getCommaClass,
 }

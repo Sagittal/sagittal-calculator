@@ -1,6 +1,5 @@
-export {Flacco, FlaccoSubset, Accent, Flag, Head, Arm, Orientation, OrientedAccent, HeadId, FlaccoId} from "./types"
-export {FLACCO_SUBSETS, FLACCO_SUBSETS_SORTED_BY_SIZE} from "./flaccoSubsets"
-export {getSmallestFlaccoSubset} from "./smallestFlaccoSubset"
+export {Flacco, Accent, Flag, Head, Arm, Orientation, OrientedAccent, HeadId, FlaccoId, ArmId} from "./types"
 export {reorient} from "./reorient"
 export {getFlacco} from "./flacco"
 export {getHead} from "./head"
+export {getArm} from "./arm"

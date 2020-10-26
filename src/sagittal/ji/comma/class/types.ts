@@ -1,5 +1,5 @@
 import {Comma} from "../../../../general"
-import {FlaccoId} from "../../../accidental"
+import {SymbolClassId} from "../../../accidental"
 
 enum CommaClassId {
     _1_u = "_1_u",
@@ -130,7 +130,7 @@ enum CommaClassId {
 // Apotome-inversion comma class (repeats in a mirrored pattern at the half apotome)
 interface CommaClass {
     pitch: Comma,
-    representativeFlaccoId: FlaccoId,
+    representativeSymbolClassId: SymbolClassId,
 }
 
 export {

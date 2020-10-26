@@ -9,7 +9,7 @@ import {
     getIntroducingJiNotationLevel,
     getMinaName,
     getRepresentativeSagittal,
-    getSmallestFlaccoSubset,
+    getSmallestSymbolSubset,
     JiNotationLevel,
     JI_NOTATION_BOUND_CLASSES,
 } from "../../../../sagittal"
@@ -32,7 +32,7 @@ const computeBoundedCommaClassInfo = (
 
     const minaName = getMinaName(commaClassId)
 
-    const smallestFlaccoSubset = getSmallestFlaccoSubset(commaClass.representativeFlaccoId)
+    const smallestSymbolSubset = getSmallestSymbolSubset(commaClass.representativeSymbolClassId)
 
     const bound = JI_NOTATION_BOUND_CLASSES[boundClassId]
 
@@ -44,7 +44,7 @@ const computeBoundedCommaClassInfo = (
         representativeSagittal: {
             ascii,
             unicode,
-            smallestFlaccoSubset,
+            smallestSymbolSubset,
         },
         minaName,
         introducingJiNotationLevel,

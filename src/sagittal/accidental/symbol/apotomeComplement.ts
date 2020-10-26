@@ -1,5 +1,5 @@
 import {deepEquals, isUndefined, Maybe, stringify} from "../../../general"
-import {HeadId, OrientedAccent, reorient} from "../flacco"
+import {Arm, ArmId, getArm, HeadId, Orientation, OrientedAccent, reorient} from "../flacco"
 import {getCore} from "./core"
 import {Core, Sagittal, Shafts} from "./types"
 
@@ -95,7 +95,7 @@ const APOTOME_COMPLEMENT_CORE_PAIRS: Array<[Core, Core]> = [
         getCore(HeadId.DOUBLE_SCROLL, Shafts.DOUBLE),
     ],                                                                      //   //|      )||(   T D
     [
-        getCore(HeadId.LEFT_SCROLL_AND_DOUBLE_BARB),
+        getCore(HeadId.LEFT_SCROLL_DOUBLE_LEFT_BARB),
         getCore(HeadId.LEFT_SCROLL_DOUBLE_RIGHT_BARB),
     ],                                                                      //  )//|       )|\\  U
     [
@@ -120,7 +120,23 @@ const APOTOME_COMPLEMENT_CORE_PAIRS: Array<[Core, Core]> = [
     ],                                                                      //   )/|\     )/|\   Z
 ]
 
-const computeApotomeComplement = ({ arm, core }: Sagittal): Sagittal => {
+const computeMaybeArmForSelfComplementingCore = (maybeArm: Maybe<Arm>): Maybe<Arm> => {
+    if (deepEquals(maybeArm, getArm(ArmId.WING, Orientation.AGAINST))) {
+        return getArm(ArmId.BIRD)
+    } else if (deepEquals(maybeArm, undefined)) {
+        return getArm(ArmId.WING)
+    } else if (deepEquals(maybeArm, getArm(ArmId.WING))) {
+        return undefined
+    } else if (deepEquals(maybeArm, getArm(ArmId.BIRD))) {
+        return getArm(ArmId.WING, Orientation.AGAINST)
+    } else {
+        throw new Error(`Did not find arm for self-complementing core with arm ${maybeArm}.`)
+    }
+}
+
+// TODO: Just a thought - am I converting from these primitive IDs to the objects too soon? Like, can I wait until IO?
+
+const computeApotomeComplement = ({arm, core}: Sagittal): Sagittal => {
     if (isUndefined(core)) {
         return {core: getCore(HeadId.DOUBLE_BARB, Shafts.DOUBLE)}
     }
@@ -138,7 +154,18 @@ const computeApotomeComplement = ({ arm, core }: Sagittal): Sagittal => {
         throw new Error(`Tried to compute apotome complement for sagittal whose core is outside the 1st apotome section ${stringify(core)}`)
     }
 
-    if (!isUndefined(arm)) {
+    if (deepEquals(apotomeComplementCore, getCore(HeadId.LEFT_SCROLL_AND_DOUBLE_BARB))) {
+        const handledArm = computeMaybeArmForSelfComplementingCore(arm)
+
+        if (isUndefined(handledArm)) {
+            return {core: apotomeComplementCore}
+        }
+
+        return {
+            arm: handledArm,
+            core: apotomeComplementCore,
+        }
+    } else if (!isUndefined(arm)) {
         return {
             arm: arm.map(reorientAccent),
             core: apotomeComplementCore,
