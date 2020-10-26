@@ -1,4 +1,4 @@
-import {increment, Maybe, negative} from "../../../general"
+import {increment, isUndefined, Maybe, negative} from "../../../general"
 import {CaptureZone} from "../../notations"
 import {getFlacco} from "../flacco"
 import {computeApotomeComplement, computeSagittalFromFlacco, flipSagittal, Shafts} from "../symbol"
@@ -6,7 +6,7 @@ import {getSymbolClass} from "../symbolClass"
 import {Accidental, Compatible, Flavor} from "./types"
 
 const computeEvoAccidentalFromCaptureZone = (captureZone: CaptureZone): Accidental<Flavor.EVO> => {
-    const { symbolClassId, section: { negated, mirrored, shifted } } = captureZone
+    const {symbolClassId, section: {negated, mirrored, shifted}} = captureZone
 
     const symbolClass = getSymbolClass(symbolClassId)
     const flacco = getFlacco(symbolClass.flaccoId)
@@ -23,7 +23,10 @@ const computeEvoAccidentalFromCaptureZone = (captureZone: CaptureZone): Accident
         }
     }
     if (shifted) apotomeCount = increment(apotomeCount)
-    if (negated) apotomeCount = negative(apotomeCount)
+    if (negated) {
+        apotomeCount = negative(apotomeCount)
+        sagittal = flipSagittal(sagittal)
+    }
     const compatible: Maybe<Compatible> =
         apotomeCount === 1 ?
             Compatible.SHARP :
@@ -34,6 +37,10 @@ const computeEvoAccidentalFromCaptureZone = (captureZone: CaptureZone): Accident
                     apotomeCount === -2 ?
                         Compatible.DOUBLE_FLAT :
                         undefined
+
+    if (isUndefined(compatible)) {
+        return {...sagittal} as Accidental<Flavor.EVO>
+    }
 
     return {...sagittal, compatible} as Accidental<Flavor.EVO>
 }
