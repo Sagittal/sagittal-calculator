@@ -84,6 +84,33 @@ const arraysAreCloseUpThroughExpected = <T extends number>(expected: T[], actual
     })
 }
 
+const testStringAreEqualTrailingWhitespaceAgnostic = <T extends string>(actual: T, expected: T, negate?: boolean, message?: Io): void => {
+    const trimmedActual = actual.trim()
+    const trimmedExpected = expected.trim()
+    const stringAreEqualTrailingWhitespaceAgnostic: boolean = trimmedActual === trimmedExpected
+
+    if (negate) {
+        assert(
+            !stringAreEqualTrailingWhitespaceAgnostic,
+            message ||
+            `Expected ${trimmedActual} not to equal ${trimmedExpected} (trailing whitespace agnostic; has been trimmed).` as Io,
+        )
+    } else {
+        assert(
+            stringAreEqualTrailingWhitespaceAgnostic,
+            message || `Expected ${trimmedActual} to equal ${trimmedExpected} (trailing whitespace agnostic; has been trimmed).` as Io,
+        )
+    }
+}
+
+const arraysOfStringsAreEqualTrailingWhitespaceAgnostic = <T extends string>(expected: T[], actual: T[], precision: Precision, negate?: boolean, message?: Io): void => {
+    expected.forEach((expectedElement: T, index: number): void => {
+        const actualElement: T = actual[ index ]
+
+        testStringAreEqualTrailingWhitespaceAgnostic(actualElement, expectedElement, negate, message)
+    })
+}
+
 const eachExpectedElementIsCloseToSomeActualElement = <T>(expectedElements: T[], actual: T[], precision: Precision, message?: Io): void => {
     expectedElements.forEach((expectedElement: T): void => {
         assert(
@@ -128,6 +155,17 @@ const customMatchers: CustomMatcherFactories = {
         compare: <T extends number>(actual: T, expected: T, precision: Precision = DEFAULT_PRECISION, negate?: boolean, message?: Io): CustomMatcherResult =>
             doAssertions((): void => {
                 testIsCloseTo(actual, expected, precision, negate, message)
+            }),
+    }),
+    toEqualLines: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({
+        compare: <T extends string>(actual: T[], expected: T[], precision: Precision = DEFAULT_PRECISION, negate?: boolean, message?: Io): CustomMatcherResult =>
+            doAssertions((): void => {
+                assert(
+                    actual.length === expected.length,
+                    message || `Expected length to be ${expected.length}. It was ${actual.length} instead.` as Io,
+                )
+
+                arraysOfStringsAreEqualTrailingWhitespaceAgnostic(expected, actual, precision, negate, message)
             }),
     }),
     toBeCloseToArray: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({

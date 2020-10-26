@@ -1,12 +1,12 @@
-   ---   JI Notation Bound Class Analyses   ---   
+   ---   JI Notation Bound Class Analyses   ---
 
 
-       	       	       	        	        	       	       	       	       	       	       	       	       	       	       	       	       	       	       	       	actual 	initial	a.b.c. 
-       	       	       	lesser  	greater 	       	       	       	       	       	       	       	       	       	       	       	       	       	       	       	bound  	comma  	vs     
-bound  	lesser 	greater	extreme 	extreme 	medium 	high   	ultra  	extreme	       	medium 	high   	ultra  	extreme	overall	medium 	high   	ultra  	extreme	overall	class  	mean   	i.c.m. 
-class  	mina   	mina   	comma   	comma   	level  	level  	level  	level  	overall	dstance	dstance	dstance	dstance	dstance	ina-dst	ina-dst	ina-dst	ina-dst	ina-dst	pos    	pos    	error  
+       	       	       	        	        	       	       	       	       	       	       	       	       	       	       	       	       	       	       	       	actual 	initial	a.b.c.
+       	       	       	lesser  	greater 	       	       	       	       	       	       	       	       	       	       	       	       	       	       	       	bound  	comma  	vs
+bound  	lesser 	greater	extreme 	extreme 	medium 	high   	ultra  	extreme	       	medium 	high   	ultra  	extreme	overall	medium 	high   	ultra  	extreme	overall	class  	mean   	i.c.m.
+class  	mina   	mina   	comma   	comma   	level  	level  	level  	level  	overall	dstance	dstance	dstance	dstance	dstance	ina-dst	ina-dst	ina-dst	ina-dst	ina-dst	pos    	pos    	error
 ID     	name   	name   	class   	class   	rank   	rank   	rank   	rank   	rank   	moved  	moved  	moved  	moved  	moved  	moved  	moved  	moved  	moved  	moved  	(¢)    	(¢)    	(tinas)
-       	       	       	        	        	       	       	       	       	       	       	       	       	       	       	       	       	       	       	       	       	       	       
+
   0    	  0    	  1    	 (|//|) 	    `|  	       	       	       	  1    	  1    	       	       	       	  0.033	  0.033	       	       	       	  0.236	  0.236	  0.211	  0.211	 -0.004
   1    	  1    	  2    	    `|  	   ``|  	       	       	       	  1    	  1    	       	       	       	  0.041	  0.041	       	       	       	  0.292	  0.292	  0.773	  0.628	  1.034
   2    	  2    	  3    	   ``|  	   .)|  	       	  1    	  1    	  1    	  1    	       	  0.229	  0.240	  0.025	  0.494	       	  0.117	  0.491	  0.180	  0.789	  1.194	  1.689	 -3.519
@@ -132,30 +132,30 @@ ID     	name   	name   	class   	class   	rank   	rank   	rank   	rank   	rank  
 122    	116    	       	   )/|\ 	        	  1    	  1    	  3    	  1    	  3    	  0.000	  0.000	  0.000	  0.000	  0.000	  0.000	  0.000	  0.000	  0.000	  0.000	 56.843	 56.843	  0.000
 
 
-   ---   JI Notation Level Analyses   ---   
+   ---   JI Notation Level Analyses   ---
 
 
 Extreme            	here   	cumulative
-ina midpoint       	116    	 99       
-comma mean         	  6    	 22       
-size category bound	  1    	  2       
+ina midpoint       	116    	 99
+comma mean         	  6    	 22
+size category bound	  1    	  2
 
 Ultra              	here   	cumulative
-ina midpoint       	 28    	 24       
-comma mean         	 17    	 21       
-size category bound	  2    	  2       
+ina midpoint       	 28    	 24
+comma mean         	 17    	 21
+size category bound	  2    	  2
 
 High               	here   	cumulative
-ina midpoint       	 21    	 21       
-comma mean         	  5    	  5       
-size category bound	  1    	  1       
+ina midpoint       	 21    	 21
+comma mean         	  5    	  5
+size category bound	  1    	  1
 
 Medium             	here   	cumulative
-ina midpoint       	 10    	 10       
-size category bound	  1    	  1       
+ina midpoint       	 10    	 10
+size category bound	  1    	  1
 
 
-   ---   Rank Analyses   ---   
+   ---   Rank Analyses   ---
 
 
 ina midpoint event was worst-ranked bound class event:
