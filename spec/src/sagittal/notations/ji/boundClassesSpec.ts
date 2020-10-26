@@ -13,7 +13,9 @@ import {
 import {
     APOTOME,
     BoundClassId,
+    JiNotationBoundClass,
     JiNotationBoundClassEntry,
+    JI_NOTATION_BOUND_CLASSES,
     JI_NOTATION_BOUND_CLASS_ENTRIES,
     TINA,
 } from "../../../../../src/sagittal"
@@ -62,8 +64,8 @@ describe("JI_NOTATION_BOUND_CLASS_ENTRIES", (): void => {
     })
 
     it("the bound classes are in the correct positions", (): void => {
-        const pitchExpectations = JI_NOTATION_BOUND_CLASS_ENTRIES
-            .map(([_, jiNotationBoundClass]: JiNotationBoundClassEntry): PitchExpectation => {
+        const pitchExpectations = Object.values(JI_NOTATION_BOUND_CLASSES)
+            .map((jiNotationBoundClass: JiNotationBoundClass): PitchExpectation => {
                 return computePitchExpectation(jiNotationBoundClass.pitch)
             })
 

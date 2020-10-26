@@ -205,6 +205,8 @@ const TROJAN_FLACCO_SUBSET: Array<[Index<FlaccoId>, FlaccoId]> = [
     [141 as Index<FlaccoId>, FlaccoId.ARC_AND_BARB],
 ]
 
+// TODO: SIMPLIFY ID INDICES
+//  Probably some way to get the indices from the enums rather than separately specifying them like here and for commas
 const shapeUpIds = (ids: Array<[Index<FlaccoId>, FlaccoId]>): FlaccoId[] =>
     sort(ids, {by: 0 as KeyPath}).map(([_, id]: [Index<FlaccoId>, FlaccoId]): FlaccoId => id)
 

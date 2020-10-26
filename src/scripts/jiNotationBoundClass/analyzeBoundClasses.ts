@@ -1,13 +1,14 @@
-import {JiNotationBoundClassEntry, JI_NOTATION_BOUND_CLASS_ENTRIES} from "../../sagittal"
+import {Index} from "../../general"
+import {BoundClass, JiNotationBoundClass, JI_NOTATION_BOUND_CLASSES} from "../../sagittal"
 import {analyzeJiNotationBoundClass, JiNotationBoundClassAnalysis} from "./boundClass"
 import {computeHistories} from "./histories"
 
 const analyzeJiNotationBoundClasses = (): JiNotationBoundClassAnalysis[] =>
-    JI_NOTATION_BOUND_CLASS_ENTRIES.map(
-        ([boundClassId, jiNotationBoundClass]: JiNotationBoundClassEntry): JiNotationBoundClassAnalysis => {
+    Object.values(JI_NOTATION_BOUND_CLASSES).map(
+        (jiNotationBoundClass: JiNotationBoundClass, boundClassIndex: number): JiNotationBoundClassAnalysis => {
             const histories = computeHistories(jiNotationBoundClass)
 
-            return analyzeJiNotationBoundClass(histories, [boundClassId, jiNotationBoundClass])
+            return analyzeJiNotationBoundClass(histories, jiNotationBoundClass, boundClassIndex as Index<BoundClass>)
         },
     )
 

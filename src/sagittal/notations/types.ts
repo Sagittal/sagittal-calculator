@@ -38,7 +38,7 @@ import {CommaClassId} from "../ji"
 //  Or perhaps maybe just more like we've got the records of Core by CoreName, right
 //  And probably also at some point Sagittal by SymbolName...?
 //  But think about the fact that having the order in the form of the ID is actually quite handy sometimes...
-//  Although you could include the order # as part of the ID I suppose and then you'd still get the benefit of it
+//  Although you could include the order # as part of the ID I suppose and then you'd still get the bonus of it
 //  As long as the name could still autocomplete
 //  Yeah I guess this is really the thing - who is all this for? What are we trying to ensure?
 //  That no one can put it into the code, like someone working on the code later? Or you can't input it from the app?
@@ -128,7 +128,7 @@ import {CommaClassId} from "../ji"
 //  It has shifted and even, and negated instead of aim (or maybe at that point it's just aim). so are we actually
 //  Finding that at the symbol level, by describing it in terms of shifted and even, we're kind of stepping away
 //  From the glyph/IO thinking, and towards the abstract way, even if it doesn't make a difference?
-//  That would also have the benefit of allowing it to know it had to be a Revo symbol the moment you go into even
+//  That would also have the bonus of allowing it to know it had to be a Revo symbol the moment you go into even
 //  Or shifted.
 //  I think there's an opportunity to think of the way Sagittal is defined now, with the literal shafts, which is nice
 //  As the glyph/IO kind, and have accidental as the abstract one, which defines it in terms of even or shafted.
@@ -196,7 +196,7 @@ import {CommaClassId} from "../ji"
 //  And it’s the thing that has the flacco id and the comma id
 //  Or Sagittal class id I guess
 //  That way all of these classes follow the same mirroring shifting negating pattern
-//  - Is it really a comma class, or a Sagittal comma? or both? 
+//  - Is it really a comma class, or a Sagittal comma? or both?
 //  Well it's going to be comma class, bound class, and symbol class
 
 // State of the art plans described here: http://forum.sagittal.org/viewtopic.php?p=2492#p2492

@@ -1,5 +1,5 @@
-import {Count, Decimal, Rank, RecordKey} from "../../general"
-import {BoundClassId, BoundType, JiNotationLevel} from "../../sagittal"
+import {Count, Decimal, Index, Rank, RecordKey} from "../../general"
+import {BoundClass, BoundType, JiNotationLevel} from "../../sagittal"
 import {RANKS} from "./ranks"
 
 const jiNotationLevelsBestHistoryRanks:
@@ -31,7 +31,7 @@ const rankCounts: Record<RecordKey<Decimal<{integer: true}> & Rank<BoundType>>,
     JSON.parse(JSON.stringify(INITIAL_RANK_COUNTS))
 
 const rankBoundClassIndices:
-    Record<RecordKey<Decimal<{integer: true}> & Rank<BoundType>>, BoundClassId[]> =
+    Record<RecordKey<Decimal<{integer: true}> & Rank<BoundType>>, Array<Index<BoundClass>>> =
     JSON.parse(JSON.stringify(INITIAL_RANK_BOUND_INDICES))
 
 export {

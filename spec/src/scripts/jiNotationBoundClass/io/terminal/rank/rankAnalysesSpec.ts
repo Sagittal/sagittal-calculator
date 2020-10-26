@@ -1,9 +1,8 @@
 // tslint:disable max-line-length
 
-import {
-    JiNotationBoundClassEntry,
-    JI_NOTATION_BOUND_CLASS_ENTRIES,
-} from "../../../../../../../src/sagittal/notations/ji"
+import {Index} from "../../../../../../../src/general"
+import {BoundClass} from "../../../../../../../src/sagittal/bound"
+import {JiNotationBoundClass, JI_NOTATION_BOUND_CLASSES} from "../../../../../../../src/sagittal/notations/ji"
 import {analyzeJiNotationBoundClass} from "../../../../../../../src/scripts/jiNotationBoundClass/boundClass"
 import {computeHistories} from "../../../../../../../src/scripts/jiNotationBoundClass/histories"
 import {formatRankAnalyses} from "../../../../../../../src/scripts/jiNotationBoundClass/io/terminal/rank"
@@ -13,9 +12,9 @@ describe("formatRankAnalyses", (): void => {
     it("gives the correct answer", (): void => {
         onlyRunInCi()
 
-        JI_NOTATION_BOUND_CLASS_ENTRIES.map(([boundClassId, jiNotationBoundClass]: JiNotationBoundClassEntry): void => {
+        Object.values(JI_NOTATION_BOUND_CLASSES).map((jiNotationBoundClass: JiNotationBoundClass, boundClassIndex: number): void => {
             const histories = computeHistories(jiNotationBoundClass)
-            analyzeJiNotationBoundClass(histories, [boundClassId, jiNotationBoundClass])
+            analyzeJiNotationBoundClass(histories, jiNotationBoundClass, boundClassIndex as Index<BoundClass>)
         })
 
         const actual = formatRankAnalyses()

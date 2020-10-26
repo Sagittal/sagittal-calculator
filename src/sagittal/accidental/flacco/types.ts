@@ -8,6 +8,8 @@ enum Accent {
 //  Would this be better if it was just a boolean? drop "with" altogether and it's either "" or "against"
 //  Not sure if that has better synergy with the shifted/negated/mirrored booleans, or should be more like
 //  Left/right and up/down
+//  - Recursive against is okay; That is wings can be against ticks just as ticks against cores
+//  This is that crust layers conceptualization of Dave's popping up (as opposed to a mere dichotomy)
 enum Orientation {
     WITH = "with",
     AGAINST = "against",
