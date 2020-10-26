@@ -8,7 +8,6 @@ import {
     Decimal,
     Direction,
     Exponent,
-    Id,
     Io,
     ioSettings,
     Max,
@@ -21,7 +20,7 @@ import {
     TableFormat,
     Two3FreeClass,
 } from "../../../../../../src/general"
-import {ApotomeSlope, CommaAnalysis, CommaClass} from "../../../../../../src/sagittal"
+import {ApotomeSlope, CommaAnalysis, CommaClass, CommaClassId} from "../../../../../../src/sagittal"
 import {N2D3P9} from "../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
 import {computeFindCommasOutput} from "../../../../../../src/scripts/jiPitch/io"
 import {commaAnalysisFixture} from "../../../../../helpers/src/scripts/jiPitch/fixtures"
@@ -70,7 +69,7 @@ describe("computeFindCommasOutput", (): void => {
             },
         },
     ]
-    const maybeCommaClassIds = [114 as Id<CommaClass>, undefined]
+    const maybeCommaClassIds = [CommaClassId._11_M, undefined]
 
     it("changes column widths so that each cell in a column has the same width", (): void => {
         const actual = computeFindCommasOutput(commaAnalyses, maybeCommaClassIds)

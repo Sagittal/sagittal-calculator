@@ -1,5 +1,5 @@
 import {deepEquals, isUndefined, stringify} from "../../../general"
-import {HeadName} from "../flacco"
+import {HeadId} from "../flacco"
 import {getCore} from "./core"
 import {Aim, Sagittal, Shafts} from "./types"
 
@@ -11,8 +11,8 @@ const apotomeShift = (sagittal: Sagittal): Sagittal => {
         throw new Error(`Do not shift symbols which are already in the 2nd apotome section ${stringify(sagittal)}`)
     }
 
-    if (isUndefined(sagittal.core) || deepEquals(sagittal.core, getCore(HeadName.BARE_SHAFT))) {
-        return {...sagittal, core: getCore(HeadName.DOUBLE_BARB, Shafts.DOUBLE)}
+    if (isUndefined(sagittal.core) || deepEquals(sagittal.core, getCore(HeadId.BARE_SHAFT))) {
+        return {...sagittal, core: getCore(HeadId.DOUBLE_BARB, Shafts.DOUBLE)}
     }
 
     return {

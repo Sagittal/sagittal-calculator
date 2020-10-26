@@ -1,5 +1,5 @@
-import {Id, Scamon} from "../../../../../src/general"
-import {CommaClass} from "../../../../../src/sagittal/ji"
+import {Scamon} from "../../../../../src/general"
+import {CommaClassId} from "../../../../../src/sagittal/ji"
 import {computeNotatingCommaClassIds} from "../../../../../src/scripts/popular23FreeClass/notatingCommaClasses/notatingCommaClassIds"
 
 describe("computeNotatingCommaClassIds", (): void => {
@@ -9,9 +9,9 @@ describe("computeNotatingCommaClassIds", (): void => {
         const actual = computeNotatingCommaClassIds(jiPitch)
 
         const expected = [
-            79,     // 1/11S
-            114,    // 11M
-        ] as Array<Id<CommaClass>>
+            CommaClassId._1_11_S,
+            CommaClassId._11_M,
+        ]
         expect(actual).toEqual(expected)
     })
 
@@ -21,10 +21,10 @@ describe("computeNotatingCommaClassIds", (): void => {
         const actual = computeNotatingCommaClassIds(jiPitch)
 
         const expected = [
-            54,     // 1/35C
-            89,     // 35S
-            104,    // 1/35M
-        ] as Array<Id<CommaClass>>
+            CommaClassId._1_35_C,
+            CommaClassId._35_S,
+            CommaClassId._1_35_M,
+        ]
         expect(actual).toEqual(expected)
     })
 })

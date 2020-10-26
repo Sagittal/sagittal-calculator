@@ -1120,3 +1120,5 @@ saveLog(stringify(n2pResults, {multiline: true}), LogTarget.FINAL)
 
 // TODO: PLUG IN SORTED NUMERATORS
 //  Now you just have to remember where and how exactly to integrate the results from sortedNumerators.txt in!
+//  Well, Dave gave some thoughts.
+//  Here: http://forum.sagittal.org/viewtopic.php?p=2567&sid=115642b86211777e84e47f31fd4c0262#p2567

@@ -1,31 +1,31 @@
-import {getHead, HeadName} from "../flacco"
+import {getHead, HeadId} from "../flacco"
 import {Aim, Core, Shafts} from "./types"
 
 const HEADS_SUPPORTED_WITH_EVEN_SHAFTS = [
-    HeadName.LEFT_BARB,
-    HeadName.RIGHT_ARC,
-    HeadName.DOUBLE_LEFT_BARB,
-    HeadName.BARB_AND_ARC,
-    HeadName.DOUBLE_BARB,
-    HeadName.DOUBLE_SCROLL,
-    HeadName.BOATHOOK_AND_SCROLL,
-    HeadName.RIGHT_BARB,
-    HeadName.LEFT_ARC,
-    HeadName.ARC_AND_SCROLL,
-    HeadName.RIGHT_BOATHOOK,
-    HeadName.LEFT_SCROLL_AND_BARB,
-    HeadName.BARB_AND_BOATHOOK,
-    HeadName.LEFT_SCROLL_AND_BOATHOOK,
-    HeadName.DOUBLE_LEFT_BOATHOOK,
-    HeadName.SCROLL_AND_BOATHOOK,
-    HeadName.SCROLL_AND_ARC,
-    HeadName.BOATHOOK_AND_ARC,
-    HeadName.BOATHOOK_AND_BARB,
-    HeadName.LEFT_SCROLL_DOUBLE_LEFT_BARB,
-    HeadName.ARC_AND_BOATHOOK,
+    HeadId.LEFT_BARB,
+    HeadId.RIGHT_ARC,
+    HeadId.DOUBLE_LEFT_BARB,
+    HeadId.BARB_AND_ARC,
+    HeadId.DOUBLE_BARB,
+    HeadId.DOUBLE_SCROLL,
+    HeadId.BOATHOOK_AND_SCROLL,
+    HeadId.RIGHT_BARB,
+    HeadId.LEFT_ARC,
+    HeadId.ARC_AND_SCROLL,
+    HeadId.RIGHT_BOATHOOK,
+    HeadId.LEFT_SCROLL_AND_BARB,
+    HeadId.BARB_AND_BOATHOOK,
+    HeadId.LEFT_SCROLL_AND_BOATHOOK,
+    HeadId.DOUBLE_LEFT_BOATHOOK,
+    HeadId.SCROLL_AND_BOATHOOK,
+    HeadId.SCROLL_AND_ARC,
+    HeadId.BOATHOOK_AND_ARC,
+    HeadId.BOATHOOK_AND_BARB,
+    HeadId.LEFT_SCROLL_DOUBLE_LEFT_BARB,
+    HeadId.ARC_AND_BOATHOOK,
 ]
 
-const getCore = (headName: HeadName, shafts: Shafts = Shafts.SINGLE, aim: Aim = Aim.UP): Core => {
+const getCore = (headName: HeadId, shafts: Shafts = Shafts.SINGLE, aim: Aim = Aim.UP): Core => {
     if (
         (shafts === Shafts.DOUBLE || shafts === Shafts.EX)
         && !HEADS_SUPPORTED_WITH_EVEN_SHAFTS.includes(headName)
@@ -33,7 +33,7 @@ const getCore = (headName: HeadName, shafts: Shafts = Shafts.SINGLE, aim: Aim = 
         throw new Error(`A core with flag combo ${headName} does not exist for even shaft counts.`)
     }
 
-    if (headName === HeadName.BARE_SHAFT && shafts !== Shafts.SINGLE) {
+    if (headName === HeadId.BARE_SHAFT && shafts !== Shafts.SINGLE) {
         throw new Error(`Cannot have multiple bare shafts.`)
     }
 

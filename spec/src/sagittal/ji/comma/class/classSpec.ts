@@ -17,13 +17,29 @@ import {
     Sopfr,
     Two3FreeClass,
 } from "../../../../../../src/general"
-import {analyzeComma, CommaAnalysis, CommaClass} from "../../../../../../src/sagittal"
+import {analyzeComma, CommaAnalysis, CommaClass, CommaClassId, getCommaClass} from "../../../../../../src/sagittal"
+import {FlaccoId} from "../../../../../../src/sagittal/accidental/flacco"
 import {ApotomeSlope, N2D3P9} from "../../../../../../src/sagittal/ji"
-import {COMMA_CLASSES} from "../../../../../../src/sagittal/ji/comma/class"
 
-describe("COMMA_CLASSES", (): void => {
+describe("getCommaClass", (): void => {
+    it("given a comma class ID, returns the full comma class", (): void => {
+        const commaClassId = CommaClassId._77_C
+
+        const actual: CommaClass = getCommaClass(commaClassId)
+
+        const expected: CommaClass = {
+            representativeFlaccoId: FlaccoId.WING_FROM_TICK_AGAINST_RIGHT_ARC,
+            pitch: {monzo: [-11, 3, 0, 1, 1] as Monzo<{rational: true}>},
+        } as CommaClass
+        expect(actual).toEqual(expected)
+    })
+})
+
+describe("comma classes", (): void => {
     it("has all the correct commas", (): void => {
-        const actual = COMMA_CLASSES.map((commaClass: CommaClass): CommaAnalysis => analyzeComma(commaClass.pitch))
+        const commaAnalyses = Object.values(CommaClassId)
+            .map(getCommaClass)
+            .map((commaClass: CommaClass): CommaAnalysis => analyzeComma(commaClass.pitch))
 
         const expected = [
             {
@@ -2610,6 +2626,6 @@ describe("COMMA_CLASSES", (): void => {
                 pitch: {monzo: [-3, 4, 1, -2] as Monzo<{rational: true}>} as Comma,
             },
         ]
-        expect(actual).toBeCloseToObject(expected)
+        expect(commaAnalyses).toBeCloseToObject(expected)
     })
 })

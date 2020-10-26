@@ -1,10 +1,10 @@
-import {Cents, Id, Maybe, Monzo} from "../../../general"
-import {CommaClass} from "../../../sagittal"
+import {Cents, Maybe, Monzo} from "../../../general"
+import {CommaClassId} from "../../../sagittal"
 
 interface BestNotatingCommaProperties {
     bestNotatingCommaCents: Cents,
     bestNotatingCommaMonzo: Monzo<{rational: true}>,
-    bestNotatingCommaMaybeCommaClassId: Maybe<Id<CommaClass>>,
+    bestNotatingCommaMaybeCommaClassId: Maybe<CommaClassId>,
 }
 
 export {

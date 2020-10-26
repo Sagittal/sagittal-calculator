@@ -6,7 +6,6 @@ import {
     Comma,
     Decimal,
     Exponent,
-    Id,
     Io,
     ioSettings,
     Monzo,
@@ -16,7 +15,7 @@ import {
     Quotient,
     TableFormat,
 } from "../../../../../../src/general"
-import {ApotomeSlope, CommaAnalysis, CommaClass} from "../../../../../../src/sagittal/ji"
+import {ApotomeSlope, CommaAnalysis, CommaClass, CommaClassId} from "../../../../../../src/sagittal/ji"
 import {computeNotatingCommasOutput} from "../../../../../../src/scripts/jiPitch/io"
 import {commaAnalysisFixture, two3FreeClassAnalysisFixture} from "../../../../../helpers/src/scripts/jiPitch/fixtures"
 
@@ -45,7 +44,7 @@ describe("computeNotatingCommasOutput", (): void => {
             two3FreeClassAnalysis: two3FreeClassAnalysisFixture,
         },
     ]
-    const maybeCommaClassIds = [114 as Id<CommaClass>, undefined]
+    const maybeCommaClassIds = [CommaClassId._11_M, undefined]
 
     it("can format the notating commas for the terminal", (): void => {
         const actual = computeNotatingCommasOutput(notatingCommaAnalyses, maybeCommaClassIds)

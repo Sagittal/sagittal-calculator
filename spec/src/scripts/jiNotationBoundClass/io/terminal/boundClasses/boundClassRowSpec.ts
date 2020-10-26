@@ -1,6 +1,7 @@
-import {Abs, Cents, computePitchFromCents, Id, Multiplier, Row, Sum} from "../../../../../../../src/general"
+import {Abs, Cents, computePitchFromCents, Index, Multiplier, Row, Sum} from "../../../../../../../src/general"
 import {
     BoundClass,
+    BoundClassId,
     BoundType,
     Ina,
     JiNotationBoundClass,
@@ -22,8 +23,9 @@ describe("computeJiNotationBoundClassRow", (): void => {
         const jiNotationBoundClass: JiNotationBoundClass = {
             ...jiNotationBoundClassFixture,
             pitch: computePitchFromCents(5.447635 as Cents),
-            id: 10 as Id<BoundClass>,
         }
+        const boundClassId = BoundClassId.MINA_10
+        const boundClassIndex = 10 as Index<BoundClass>
         const jiNotationBoundClassAnalysis: JiNotationBoundClassAnalysis = {
             ...jiNotationBoundClassAnalysisFixture,
             bestPossibleBoundHistoryAnalysis: {
@@ -59,10 +61,14 @@ describe("computeJiNotationBoundClassRow", (): void => {
             bestPossibleBoundHistoryTotalInaDistance: 0.839 as Sum<Multiplier<Ina>>,
         }
 
-        const actual = computeJiNotationBoundClassRow(jiNotationBoundClassAnalysis, {jiNotationBoundClass})
+        const actual = computeJiNotationBoundClassRow(
+            jiNotationBoundClassAnalysis,
+            [boundClassId, jiNotationBoundClass],
+            boundClassIndex,
+        )
 
         const expected = [
-            " 10    ",          // Bound ID
+            " 10    ",          // Bound class index
             " 10",              // Lesser bounded mina name
             " 11",              // Greater bounded mina name
             "   ,,|( ",         // Extreme lesser bounded comma class

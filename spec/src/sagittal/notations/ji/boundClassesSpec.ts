@@ -4,62 +4,68 @@ import {
     computePitchFromCents,
     computeScamonFromDecimal,
     Decimal,
-    Id,
     isCloseTo,
     isScamonGreater,
     Monzo,
     Quotient,
     Scamon,
 } from "../../../../../src/general"
-import {APOTOME, BoundClass, JiNotationBoundClass, JI_NOTATION_BOUND_CLASSES, TINA} from "../../../../../src/sagittal"
+import {
+    APOTOME,
+    BoundClassId,
+    JiNotationBoundClassEntry,
+    JI_NOTATION_BOUND_CLASS_ENTRIES,
+    TINA,
+} from "../../../../../src/sagittal"
 import {INSANE_EDA} from "../../../../../src/sagittal/notations/ji/levelEdas"
 import {computePitchExpectation} from "../../../../helpers/src/general/music/pitchExpectation"
 import {PitchExpectation} from "../../../../helpers/src/general/music/types"
 
-describe("JI_NOTATION_BOUND_CLASSES", (): void => {
+describe("JI_NOTATION_BOUND_CLASS_ENTRIES", (): void => {
     it("almost every bound class in the JI notation is snapped to a half-tina", (): void => {
         let currentHalfTina = 0.5
 
-        const exceptionalJiNotationBoundIds: Array<Id<BoundClass>> = [
-            49,     // Comma mean
-            52,     // Comma mean
-            74,     // Comma mean
-            81,     // Comma mean
-            96,     // Size category bound
-            109,    // Comma mean
-            118,    // Comma mean
-            126,    // Comma mean
-            135,    // Comma mean
-            148,    // Size category bound
-        ] as Array<Id<BoundClass>>
+        const exceptionalJiNotationBoundIds: BoundClassId[] = [
+            BoundClassId.MINA_49,     // Comma mean
+            BoundClassId.MINA_51,     // Comma mean
+            BoundClassId.MINA_72,     // Comma mean
+            BoundClassId.MINA_78,     // Comma mean
+            BoundClassId.MINA_92,     // Size category bound
+            BoundClassId.MINA_105,    // Comma mean
+            BoundClassId.MINA_113,    // Comma mean
+        ] as BoundClassId[]
 
-        JI_NOTATION_BOUND_CLASSES.forEach((jiNotationBoundClass: JiNotationBoundClass): void => {
-            while (true) {
-                const currentHalfTinaCents: Cents = TINA * currentHalfTina as Cents
-                const currentHalfTinaPitch =
-                    computeIrrationalDecimalFromScamon(computePitchFromCents(currentHalfTinaCents))
+        JI_NOTATION_BOUND_CLASS_ENTRIES
+            .forEach(([boundClassId, {pitch}]: JiNotationBoundClassEntry): void => {
+                while (true) {
+                    const currentHalfTinaCents: Cents = TINA * currentHalfTina as Cents
+                    const currentHalfTinaPitch =
+                        computeIrrationalDecimalFromScamon(computePitchFromCents(currentHalfTinaCents))
 
-                if (isCloseTo(currentHalfTinaPitch, computeIrrationalDecimalFromScamon(jiNotationBoundClass.pitch))) {
-                    break
-                } else if (
-                    isScamonGreater(computeScamonFromDecimal(currentHalfTinaPitch), jiNotationBoundClass.pitch)
-                ) {
-                    if (!exceptionalJiNotationBoundIds.includes(jiNotationBoundClass.id)) {
-                        fail(`JI notation bound class ID ${jiNotationBoundClass.id} was not close to a half-tina, nor registered as an exceptional bound.`)
+                    if (
+                        isCloseTo(currentHalfTinaPitch, computeIrrationalDecimalFromScamon(pitch))
+                    ) {
+                        break
+                    } else if (
+                        isScamonGreater(computeScamonFromDecimal(currentHalfTinaPitch), pitch)
+                    ) {
+                        if (!exceptionalJiNotationBoundIds.includes(boundClassId)) {
+                            fail(`JI notation bound class ID ${boundClassId} was not close to a half-tina, nor registered as an exceptional bound.`)
+                        }
+
+                        break
                     }
 
-                    break
+                    currentHalfTina = currentHalfTina + 1
                 }
-
-                currentHalfTina = currentHalfTina + 1
-            }
-        })
+            })
     })
 
     it("the bound classes are in the correct positions", (): void => {
-        const actual = JI_NOTATION_BOUND_CLASSES.map((jiNotationBoundClass: JiNotationBoundClass): PitchExpectation => {
-            return computePitchExpectation(jiNotationBoundClass.pitch)
-        })
+        const pitchExpectations = JI_NOTATION_BOUND_CLASS_ENTRIES
+            .map(([_, jiNotationBoundClass]: JiNotationBoundClassEntry): PitchExpectation => {
+                return computePitchExpectation(jiNotationBoundClass.pitch)
+            })
 
         const expected = [
             {
@@ -1518,6 +1524,6 @@ describe("JI_NOTATION_BOUND_CLASSES", (): void => {
                 } as Scamon<{rational: false}>,
             },
         ]
-        expect(actual).toBeCloseToObject(expected)
+        expect(pitchExpectations).toBeCloseToObject(expected)
     })
 })

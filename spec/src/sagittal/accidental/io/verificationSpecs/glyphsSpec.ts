@@ -1,7 +1,7 @@
 import {isUndefined} from "../../../../../../src/general/code"
 import {camelCaseToConstantCase} from "../../../../../../src/general/code/case"
 import {Aim, Ascii, Compatible, Smiley, Unicode} from "../../../../../../src/sagittal/accidental"
-import {Accent, HeadName, Orientation} from "../../../../../../src/sagittal/accidental/flacco"
+import {Accent, HeadId, Orientation} from "../../../../../../src/sagittal/accidental/flacco"
 import {Shafts} from "../../../../../../src/sagittal/accidental/symbol"
 import {
     computeAccentGlyphExpectation,
@@ -14,7 +14,7 @@ describe("glyphs", (): void => {
     it("has the correct core glyphs and computes their IO correctly", (): void => {
         const coreGlyphExpectations: Record<string, GlyphExpectation> = {}
 
-        Object.values(HeadName).forEach((headName: HeadName): void => {
+        Object.values(HeadId).forEach((headName: HeadId): void => {
             Object.values(Shafts).forEach((shafts: Shafts): void => {
                 Object.values(Aim).forEach((aim: Aim): void => {
                     const coreGlyphExpectation = computeCoreGlyphExpectation(headName, shafts, aim)

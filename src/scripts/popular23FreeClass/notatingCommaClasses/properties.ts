@@ -1,6 +1,6 @@
-import {Id, Index, Two3FreeClass} from "../../../general"
+import {Index, Two3FreeClass} from "../../../general"
 import {
-    CommaClass,
+    CommaClassId,
     FlaccoSubset,
     FLACCO_SUBSETS_SORTED_BY_SIZE,
     getCommaClass,
@@ -15,7 +15,7 @@ const computeNotatingCommaClassesProperties = (
     const notatingCommaClassIds = computeNotatingCommaClassIds(two3FreeClass)
 
     const smallestFlaccoSubsetIndices = notatingCommaClassIds
-        .map((commaClassId: Id<CommaClass>): Index<FlaccoSubset> => {
+        .map((commaClassId: CommaClassId): Index<FlaccoSubset> => {
             const flaccoId = getCommaClass(commaClassId).representativeFlaccoId
 
             // This used to not include Trojan, and the tables that have been shared on the forum reflect that.

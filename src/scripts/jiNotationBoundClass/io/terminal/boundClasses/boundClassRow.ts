@@ -1,18 +1,18 @@
-import {computeCentsFromPitch, formatDecimal, formatIntegerDecimal, Row} from "../../../../../general"
-import {formatAscii} from "../../../../../sagittal"
+import {computeCentsFromPitch, formatDecimal, formatIntegerDecimal, Index, Row} from "../../../../../general"
+import {BoundClass, formatAscii, JiNotationBoundClassEntry} from "../../../../../sagittal"
 import {JiNotationBoundClassAnalysis} from "../../../boundClass"
 import {extractJiNotationBoundClassIdentifiers} from "../boundClassIdentifiers"
 import {extractJiNotationLevelDistances} from "./levelDistances"
 import {extractJiNotationLevelRanks} from "./levelRanks"
 import {formatMinaName} from "./minaName"
-import {JiNotationBoundClassRowOptions} from "./types"
 
 const computeJiNotationBoundClassRow = (
     jiNotationBoundClassAnalysis: JiNotationBoundClassAnalysis,
-    {jiNotationBoundClass}: JiNotationBoundClassRowOptions,
+    jiNotationBoundClassEntry: JiNotationBoundClassEntry,
+    boundClassIndex: Index<BoundClass>,
 ): Row<{of: JiNotationBoundClassAnalysis}> => {
     let jiNotationBoundClassRow: Row<{of: JiNotationBoundClassAnalysis}>
-    const jiNotationBoundClassIdentifiers = extractJiNotationBoundClassIdentifiers(jiNotationBoundClass)
+    const jiNotationBoundClassIdentifiers = extractJiNotationBoundClassIdentifiers(jiNotationBoundClassEntry)
 
     const {
         extremeLevelLesserBoundedCommaClass,
@@ -52,7 +52,7 @@ const computeJiNotationBoundClassRow = (
     ] = extractJiNotationLevelDistances(bestPossibleBoundHistoryAnalysis, {ina: true})
 
     jiNotationBoundClassRow = [
-        formatIntegerDecimal(jiNotationBoundClass.id, {align: true}),
+        formatIntegerDecimal(boundClassIndex, {align: true}),
         formatMinaName(lesserBoundedMinaName),
         formatMinaName(greaterBoundedMinaName),
         formatAscii(extremeLevelLesserBoundedCommaClass),

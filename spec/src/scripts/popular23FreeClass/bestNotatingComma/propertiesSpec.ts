@@ -1,6 +1,6 @@
-import {Id, Monzo} from "../../../../../src/general"
+import {Monzo} from "../../../../../src/general"
 import {Cents, Two3FreeClass} from "../../../../../src/general/music"
-import {CommaClass} from "../../../../../src/sagittal/ji"
+import {CommaClassId} from "../../../../../src/sagittal/ji"
 import {
     BestNotatingCommaProperties,
     computeBestNotatingCommaProperties,
@@ -15,7 +15,7 @@ describe("computeBestNotatingCommaProperties", (): void => {
         const expected: BestNotatingCommaProperties = {
             bestNotatingCommaCents: 29.217813 as Cents,
             bestNotatingCommaMonzo: [-9, 6, 1, -1] as Monzo<{rational: true}>,
-            bestNotatingCommaMaybeCommaClassId: 62 as Id<CommaClass>,
+            bestNotatingCommaMaybeCommaClassId: CommaClassId._5_7_C,
         }
         expect(actual).toBeCloseToObject(expected)
     })

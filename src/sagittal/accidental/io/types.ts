@@ -14,7 +14,7 @@ type Smiley<T extends Maybe<Flavor> = undefined> =
     & {_SmileyBrand: boolean}
     & (T extends Flavor ? {_FlavorBrand: T} : {})
 
-// TODO: SAGISPEAK
+// TODO: IMPLEMENT SAGISPEAK
 //  Eventually perhaps a fourth Glyph type?
 //  Then "Glyph" wouldn't work as well... but it would be a really similar process, no?
 //  Or it could just live in io/ without having to be a Glyph type, you know. That's allowed.

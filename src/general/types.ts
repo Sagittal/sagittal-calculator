@@ -4,8 +4,6 @@ import {Decimal, Max, Min, Quotient} from "./math"
 // Numeric types where parameter is not numeric
 type Index<T = void> =
     Decimal<{integer: true}> & {_IndexBrand: boolean} & (T extends void ? {} : {_IndexOfBrand: T})
-type Id<T = void> =
-    Decimal<{integer: true}> & {_IdBrand: boolean} & (T extends void ? {} : {_IdOfBrand: T})
 type Count<T = void> =
     Decimal<{integer: true}> & {_CountBrand: boolean} & (T extends void ? {} : {_CountOfBrand: T})
 
@@ -56,7 +54,6 @@ export {
     Index,
     Count,
     Sum,
-    Id,
     Window,
     Step,
     Ed,

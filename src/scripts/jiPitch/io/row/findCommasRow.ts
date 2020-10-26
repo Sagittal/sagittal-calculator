@@ -1,11 +1,11 @@
-import {Count, Exponent, Id, Max, Maybe, Prime, Row} from "../../../../general"
-import {CommaAnalysis, CommaClass} from "../../../../sagittal"
+import {Count, Exponent, Max, Maybe, Prime, Row} from "../../../../general"
+import {CommaAnalysis, CommaClassId} from "../../../../sagittal"
 import {computeNotatingCommasRow} from "./notatingCommasRow"
 import {compute23FreeClassRow} from "./two3FreeClassRow"
 
 const computeFindCommasRow = (
     commaAnalysis: CommaAnalysis,
-    maybeCommaClassId: Maybe<Id<CommaClass>>,
+    maybeCommaClassId: Maybe<CommaClassId>,
     maxMonzoLength: Max<Count<Exponent<Prime>>>,
 ): Row<{of: CommaAnalysis}> => {
 

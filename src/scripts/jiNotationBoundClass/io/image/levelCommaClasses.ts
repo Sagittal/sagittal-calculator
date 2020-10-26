@@ -1,7 +1,7 @@
-import {add, DEFAULT_PRECISION, Id, Io, Px, round, subtract} from "../../../../general"
+import {add, DEFAULT_PRECISION, Io, Px, round, subtract} from "../../../../general"
 import {
     analyzeComma,
-    CommaClass,
+    CommaClassId,
     computeSagittalAscii,
     computeSagittalUnicode,
     getCommaClass,
@@ -18,10 +18,10 @@ import {computeX} from "./x"
 const visualizeJiNotationLevelCommaClasses = (): Io[] => {
     const jiNotationLevelCommaClassElements: Io[] = [] as Io[]
 
-    const jiNotationLevelsCommaClassIdsEntries =
-        Object.entries(JI_NOTATION_LEVELS_COMMA_CLASS_IDS) as Array<[JiNotationLevel, Array<Id<CommaClass>>]>
+    const jiNotationLevelsCommaClassIdsEntries = 
+        Object.entries(JI_NOTATION_LEVELS_COMMA_CLASS_IDS) as Array<[JiNotationLevel, CommaClassId[]]>
     jiNotationLevelsCommaClassIdsEntries.forEach((
-        [jiNotationLevel, jiNotationLevelCommaClassIds]: [JiNotationLevel, Array<Id<CommaClass>>],
+        [jiNotationLevel, jiNotationLevelCommaClassIds]: [JiNotationLevel, CommaClassId[]],
     ): void => {
         if (jiNotationLevel === JiNotationLevel.INSANE) {
             return
@@ -31,7 +31,7 @@ const visualizeJiNotationLevelCommaClasses = (): Io[] => {
         const dotY: Px = round(subtract(centerY, SAGITTAL_OFFSET), DEFAULT_PRECISION)
         const sagittalY: Px = round(add(centerY, SAGITTAL_OFFSET), DEFAULT_PRECISION)
 
-        jiNotationLevelCommaClassIds.forEach((jiNotationLevelCommaClassId: Id<CommaClass>): void => {
+        jiNotationLevelCommaClassIds.forEach((jiNotationLevelCommaClassId: CommaClassId): void => {
             const minaName = getMinaName(jiNotationLevelCommaClassId)
             const commaAnalysis = analyzeComma(getCommaClass(jiNotationLevelCommaClassId).pitch)
             const representativeSagittal = getRepresentativeSagittal(jiNotationLevelCommaClassId)

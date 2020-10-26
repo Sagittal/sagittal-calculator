@@ -1,8 +1,8 @@
-import {Direction, Id, Monzo, Name, Popularity, Row, Two3FreeClass, Votes} from "../../../../../../src/general"
+import {Direction, Monzo, Name, Popularity, Row, Two3FreeClass, Votes} from "../../../../../../src/general"
 import {Rank, Ranked} from "../../../../../../src/general/code"
 import {IRRATIONAL_SCAMON_BASE_MONZO} from "../../../../../../src/general/math/irrational/scamon/constants"
 import {Cents} from "../../../../../../src/general/music"
-import {CommaClass} from "../../../../../../src/sagittal/ji"
+import {CommaClassId} from "../../../../../../src/sagittal/ji"
 import {N2D3P9} from "../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
 import {BestNotatingCommaProperties} from "../../../../../../src/scripts/popular23FreeClass/bestNotatingComma"
 import {computePopular23FreeClassWithBestNotatingCommaRow} from "../../../../../../src/scripts/popular23FreeClass/bestNotatingComma/io"
@@ -18,7 +18,7 @@ describe("computePopular23FreeClassWithBestNotatingCommaRow", (): void => {
             rank: 4 as Rank<Popular23FreeClass & BestNotatingCommaProperties>,
             bestNotatingCommaCents: 5 as Cents,
             bestNotatingCommaMonzo: IRRATIONAL_SCAMON_BASE_MONZO,
-            bestNotatingCommaMaybeCommaClassId: 6 as Id<CommaClass>,
+            bestNotatingCommaMaybeCommaClassId: CommaClassId._19_4375_s,
             n2d3p9: 2 as N2D3P9,
             votes: 7 as Votes,
             popularityRank: 3 as Rank<Popularity>,

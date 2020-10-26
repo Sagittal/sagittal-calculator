@@ -1,7 +1,7 @@
 import {DEFAULT_PRECISION} from "./constants"
 import {dig} from "./dig"
 import {isCloseTo} from "./isCloseTo"
-import {isNumber} from "./typeGuards"
+import {isNumber, isUndefined} from "./typeGuards"
 import {Precision, Sortable, SortOptions} from "./types"
 
 const isNotClose = (a: number | string, b: number | string, precision: Precision = DEFAULT_PRECISION): boolean => {
@@ -11,7 +11,7 @@ const isNotClose = (a: number | string, b: number | string, precision: Precision
 }
 
 const sort = <T>(array: T[], {by, descending, precision}: SortOptions = {}): T[] => {
-    if (by) {
+    if (!isUndefined(by)) {
         (array as unknown[] as Sortable[])
             .sort((element: Sortable, nextElement: Sortable): number => {
                 const nextSorter = dig(nextElement, by) as number | string

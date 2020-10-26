@@ -3,7 +3,7 @@ import {Multiplier} from "../../../types"
 import {computeIrrationalDecimalFromScamon, computeIrrationalScamonFromDecimal, HALF_SCALER} from "../../irrational"
 import {Scamon} from "./types"
 
-// TODO: NUMERIC BRAND STRUGGLES
+// TODO: RESOLVE NUMERIC BRAND STRUGGLES
 //  You can't easily add Commas; this doesn't handle passing through the Scamon's brand if it has one
 const addScamons = (scamonA: Scamon, scamonB: Scamon): Scamon<{direction: undefined, rational: false}> =>
     computeIrrationalScamonFromDecimal(

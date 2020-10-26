@@ -2,13 +2,13 @@ import {isUndefined} from "../../../general"
 import {Flacco} from "../flacco"
 import {Aim, NULL_SAGITTAL, Sagittal, Shafts} from "../symbol"
 
-const computeSagittalFromFlacco = ({id, ...symbolicProperties}: Flacco): Sagittal => {
-    if (isUndefined(symbolicProperties.arm) && isUndefined(symbolicProperties.core)) return NULL_SAGITTAL
+const computeSagittalFromFlacco = (flacco: Flacco): Sagittal => {
+    if (isUndefined(flacco.arm) && isUndefined(flacco.core)) return NULL_SAGITTAL
 
     return {
-        ...symbolicProperties,
+        ...flacco,
         core: {
-            ...symbolicProperties.core,
+            ...flacco.core,
             aim: Aim.UP,
             shafts: Shafts.SINGLE,
         },

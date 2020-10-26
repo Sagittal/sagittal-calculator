@@ -1,10 +1,10 @@
-import {Id, Index, ioSettings, Monzo, Name, Ranked, TableFormat, Two3FreeClass} from "../../../../../../src/general"
+import {Index, ioSettings, Monzo, Name, Ranked, TableFormat, Two3FreeClass} from "../../../../../../src/general"
 import {Rank} from "../../../../../../src/general/code"
 import {Row} from "../../../../../../src/general/io/table"
 import {Direction} from "../../../../../../src/general/math/numeric"
 import {Popularity, Votes} from "../../../../../../src/general/music/ji"
 import {FlaccoSubset} from "../../../../../../src/sagittal/accidental"
-import {CommaClass} from "../../../../../../src/sagittal/ji/comma"
+import {CommaClassId} from "../../../../../../src/sagittal/ji/comma/class"
 import {N2D3P9} from "../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
 import {
     computePopular23FreeClassWithNotatingCommaClassesRow,
@@ -20,7 +20,7 @@ describe("computePopular23FreeClassWithNotatingCommaClassesRow", (): void => {
         name: "7/5₍₂,₃₎" as Name<Two3FreeClass>,
         rank: 4 as Rank<Popular23FreeClass & NotatingCommaClassesProperties>,
         notatingCommaClassSmallestFlaccoSubsetIndices: [1, 3] as Array<Index<FlaccoSubset>>,
-        notatingCommaClassIds: [20, 40] as Array<Id<CommaClass>>,
+        notatingCommaClassIds: [CommaClassId._7_11_k, CommaClassId._1_25_C],
         n2d3p9: 2 as N2D3P9,
         votes: 7 as Votes,
         popularityRank: 3 as Rank<Popularity>,

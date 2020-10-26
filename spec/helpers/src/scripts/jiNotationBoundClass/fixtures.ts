@@ -5,7 +5,6 @@ import {
     Decimal,
     EMPTY_MONZO,
     HALF_SCALER,
-    Id,
     Multiplier,
     Name,
     Quotient,
@@ -14,9 +13,8 @@ import {
     Sum,
     UNISON,
 } from "../../../../../src/general"
-import { IRRATIONAL_SCAMON_BASE_MONZO } from "../../../../../src/general/math/irrational/scamon/constants"
+import {IRRATIONAL_SCAMON_BASE_MONZO} from "../../../../../src/general/math/irrational/scamon/constants"
 import {
-    BoundClass,
     BoundType,
     Ina,
     JiNotationBound,
@@ -24,18 +22,14 @@ import {
     JiNotationLevel,
     Tina,
 } from "../../../../../src/sagittal/notations"
-import { JiNotationBoundClassAnalysis } from "../../../../../src/scripts/jiNotationBoundClass/boundClass"
-import { BoundEventConsolidation } from "../../../../../src/scripts/jiNotationBoundClass/consolidateHistories/types"
-import { BoundEvent } from "../../../../../src/scripts/jiNotationBoundClass/histories"
-import {
-    BoundEventAnalysis,
-    BoundHistoryAnalysis,
-    Score,
-} from "../../../../../src/scripts/jiNotationBoundClass/history"
-import { RANKS } from "../../../../../src/scripts/jiNotationBoundClass/ranks"
+import {JiNotationBoundClassAnalysis} from "../../../../../src/scripts/jiNotationBoundClass/boundClass"
+import {BoundEventConsolidation} from "../../../../../src/scripts/jiNotationBoundClass/consolidateHistories/types"
+import {BoundEvent} from "../../../../../src/scripts/jiNotationBoundClass/histories"
+import {BoundEventAnalysis, BoundHistoryAnalysis, Score} from "../../../../../src/scripts/jiNotationBoundClass/history"
+import {RANKS} from "../../../../../src/scripts/jiNotationBoundClass/ranks"
 
 const boundEventFixture: BoundEvent = {
-    pitch: { monzo: IRRATIONAL_SCAMON_BASE_MONZO, scaler: HALF_SCALER } as Scamon<{ rational: false }>,
+    pitch: {monzo: IRRATIONAL_SCAMON_BASE_MONZO, scaler: HALF_SCALER} as Scamon<{rational: false}>,
     boundType: "" as BoundType,
     jiNotationLevel: "" as JiNotationLevel,
     name: "" as Name<JiNotationBound>,
@@ -45,14 +39,14 @@ const boundEventAnalysisFixture: BoundEventAnalysis = {
     ...boundEventFixture,
     distance: 0 as Abs<Cents>,
     inaDistance: 0 as Multiplier<Ina>,
-    rank: 0 as Decimal<{ integer: true }> & Rank<BoundType>,
+    rank: 0 as Decimal<{integer: true}> & Rank<BoundType>,
     exact: false,
 }
 
 const boundHistoryAnalysisFixture: BoundHistoryAnalysis = {
     boundEventAnalyses: [],
-    pitch: { monzo: IRRATIONAL_SCAMON_BASE_MONZO, scaler: HALF_SCALER } as Scamon<{ rational: false }>,
-    rank: 0 as Decimal<{ integer: true }> & Rank<BoundType>,
+    pitch: {monzo: IRRATIONAL_SCAMON_BASE_MONZO, scaler: HALF_SCALER} as Scamon<{rational: false}>,
+    rank: 0 as Decimal<{integer: true}> & Rank<BoundType>,
     score: 0 as Score,
     totalDistance: 0 as Sum<Abs<Cents>>,
     exact: false,
@@ -66,26 +60,25 @@ const boundEventConsolidationFixture: BoundEventConsolidation = {
     ...boundEventFixture,
     isPossibleBoundHistoryMember: false,
     isBestPossibleBoundHistoryMember: false,
-    rankOfBestRankedMemberHistory: 0 as Decimal<{ integer: true }> & Rank<BoundType>,
-    rankOfBestRankedEventInAnyMemberHistory: 0 as Decimal<{ integer: true }> & Rank<BoundType>,
+    rankOfBestRankedMemberHistory: 0 as Decimal<{integer: true}> & Rank<BoundType>,
+    rankOfBestRankedEventInAnyMemberHistory: 0 as Decimal<{integer: true}> & Rank<BoundType>,
     nextBoundEvents: [] as Array<Name<JiNotationBound>>,
     exact: false,
 }
 
 const jiNotationBoundClassFixture: JiNotationBoundClass = {
-    id: 0 as Id<BoundClass>,
     jiNotationLevels: [],
     pitch: {
         monzo: EMPTY_MONZO,
         scaler: [1, 1] as Quotient,
-    } as Scamon<{ rational: false }>,
+    } as Scamon<{rational: false}>,
     boundType: BoundType.INA_MIDPOINT,
     name: "" as Name<JiNotationBound>,
 }
 
 const jiNotationBoundClassAnalysisFixture: JiNotationBoundClassAnalysis = {
     bestPossibleBoundHistoryAnalysis: boundHistoryAnalysisFixture,
-    bestRank: RANKS[ BoundType.INA_MIDPOINT ],
+    bestRank: RANKS[BoundType.INA_MIDPOINT],
     initialPosition: UNISON,
     initialPositionTinaDistance: 0 as Multiplier<Tina>,
     bestPossibleBoundHistoryTotalDistance: 0 as Sum<Abs<Cents>>,

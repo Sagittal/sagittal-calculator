@@ -1,8 +1,8 @@
-import {Id, Io, ioSettings, TableFormat} from "../../../../../../src/general"
-import {CommaClass, formatCommaClass} from "../../../../../../src/sagittal/ji/comma/class"
+import {Io, ioSettings, TableFormat} from "../../../../../../src/general"
+import {CommaClassId, formatCommaClass} from "../../../../../../src/sagittal/ji/comma/class"
 
 describe("formatCommaClass", (): void => {
-    const commaClassId: Id<CommaClass> = 116 as Id<CommaClass>
+    const commaClassId = CommaClassId._65_7_M
 
     it("returns the comma class as its representative sagittal's long ASCII form by default (or configured for display on a terminal)", (): void => {
         const actual = formatCommaClass(commaClassId)
@@ -28,7 +28,7 @@ describe("formatCommaClass", (): void => {
     })
 
     it("does not align the parenthetical natural symbol in the same way - just centers it", (): void => {
-        const actual = formatCommaClass(0 as Id<CommaClass>)
+        const actual = formatCommaClass(CommaClassId._1_u)
 
         const expected = " (|//|) " as Io
         expect(actual).toBe(expected)

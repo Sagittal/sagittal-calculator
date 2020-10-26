@@ -1,6 +1,6 @@
-import {Comma, compute23FreeClass, Id, saveLog, stringify} from "../../../general"
+import {Comma, compute23FreeClass, saveLog, stringify} from "../../../general"
 import {
-    CommaClass,
+    CommaClassId,
     computeAas,
     computeAte,
     computeCommaName,
@@ -46,7 +46,7 @@ Can you build it into the code as:
 // Finally the constants t and s
 // What are these
 
-JI_NOTATION.forEach((commaClassId: Id<CommaClass>): void => {
+JI_NOTATION.forEach((commaClassId: CommaClassId): void => {
     const commaClass = getCommaClass(commaClassId)
     const commaName = computeCommaName(commaClass.pitch)
 

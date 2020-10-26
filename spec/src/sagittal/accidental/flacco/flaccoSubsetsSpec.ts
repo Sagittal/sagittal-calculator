@@ -57,7 +57,7 @@ describe("FLACCO_SUBSETS", (): void => {
         const actual: Ascii[] = subject(flaccoSubset)
 
         const expected = [
-            "~|(", ")/|", "/|", "(|", "|~", "|)", "|\\", "/|~", "/|)", "/|\\", "(|\\",
+            "~|(", "|~", "/|", ")/|", "|)", "|\\", "(|", "/|~", "/|)", "/|\\", "(|\\",
         ] as Ascii[]
         expect(actual.length).toEqual(11)
         expect(actual).toEqual(expected)

@@ -197,6 +197,8 @@ describe("popular-2-3-free-classes", (): void => {
         const actual = runCommandAndGetConsoleOutput(command)
 
         const expected = readLines("src/scripts/popular23FreeClass/results/popular23FreeClasses.txt" as Filename)
+        // TODO: NO MORE CI FAILURES DUE TO TRAILING WHITESPACE OR FORGETTING TO SWITCH IDE MODE
+        //  Maybe just a custom matcher which trims whitespace at end of lines, would save a lot of pain?
         expect(actual).toEqual(expected)
     })
 

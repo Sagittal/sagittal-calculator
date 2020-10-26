@@ -1,12 +1,12 @@
-import {BLANK, Count, Exponent, Id, Max, Maybe, Prime, Row} from "../../../../general"
-import {CommaAnalysis, CommaClass, formatCommaClass} from "../../../../sagittal"
+import {BLANK, Count, Exponent, Max, Maybe, Prime, Row} from "../../../../general"
+import {CommaAnalysis, CommaClassId, formatCommaClass} from "../../../../sagittal"
 import {jiPitchScriptGroupSettings} from "../../globals"
 import {NotatingCommasField} from "../../types"
 import {computeJiPitchRow} from "./jiPitchRow"
 
 const computeNotatingCommasRow = (
     commaAnalysis: CommaAnalysis,
-    maybeCommaClassId: Maybe<Id<CommaClass>>,
+    maybeCommaClassId: Maybe<CommaClassId>,
     maxMonzoLength: Max<Count<Exponent<Prime>>>,
 ): Row<{of: CommaAnalysis}> => {
     const row = []

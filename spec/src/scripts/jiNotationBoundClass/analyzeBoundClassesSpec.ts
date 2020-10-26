@@ -2,9 +2,9 @@ import {Name} from "../../../../src/general"
 import {
     BoundType,
     JiNotationBound,
-    JiNotationBoundClass,
+    JiNotationBoundClassEntry,
     JiNotationLevel,
-    JI_NOTATION_BOUND_CLASSES,
+    JI_NOTATION_BOUND_CLASS_ENTRIES,
 } from "../../../../src/sagittal/notations"
 import {analyzeJiNotationBoundClasses} from "../../../../src/scripts/jiNotationBoundClass/analyzeBoundClasses"
 import {JiNotationBoundClassAnalysis} from "../../../../src/scripts/jiNotationBoundClass/boundClass"
@@ -26,9 +26,10 @@ describe("analyzeJiNotationBoundClasses", (): void => {
                 return jiNotationLevelEventAnalysis!.boundType
             })
 
-        const expected = JI_NOTATION_BOUND_CLASSES.map((jiNotationBoundClass: JiNotationBoundClass): BoundType => {
-            return jiNotationBoundClass.boundType
-        })
+        const expected = JI_NOTATION_BOUND_CLASS_ENTRIES
+            .map(([_, jiNotationBoundClass]: JiNotationBoundClassEntry): BoundType => {
+                return jiNotationBoundClass.boundType
+            })
         expect(actual).toEqual(expected)
     })
 
@@ -46,8 +47,8 @@ describe("analyzeJiNotationBoundClasses", (): void => {
                 return jiNotationLevelEventAnalysis!.name
             })
 
-        const expected = JI_NOTATION_BOUND_CLASSES
-            .map((jiNotationBoundClass: JiNotationBoundClass): Name<JiNotationBound> => {
+        const expected = JI_NOTATION_BOUND_CLASS_ENTRIES
+            .map(([_, jiNotationBoundClass]: JiNotationBoundClassEntry): Name<JiNotationBound> => {
                 return jiNotationBoundClass.name
             })
         expect(actual).toEqual(expected)

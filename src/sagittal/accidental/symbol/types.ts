@@ -1,4 +1,4 @@
-import {Head, Symbolic} from "../flacco"
+import {Flacco, Head} from "../flacco"
 
 enum Aim {
     UP = "up",
@@ -17,7 +17,7 @@ interface Core extends Head {
     shafts: Shafts,
 }
 
-interface Sagittal extends Symbolic {
+interface Sagittal extends Flacco {
     core?: Core,
 }
 

@@ -1,5 +1,5 @@
-import {Id, isScamonGreater, isUndefined, Max, Maybe, Min, Scamon, UNISON, Zone} from "../../../general"
-import {CommaClass, formatCommaClass, getCommaClass} from "../../ji"
+import {isScamonGreater, isUndefined, Max, Maybe, Min, Scamon, UNISON, Zone} from "../../../general"
+import {CommaClass, CommaClassId, formatCommaClass, getCommaClass} from "../../ji"
 import {formatJiNotationLevel} from "./formatLevel"
 import {getIntroducingJiNotationLevel} from "./introducingJiNotationLevel"
 import {isWithinJiNotationLevel} from "./isWithinLevel"
@@ -7,7 +7,7 @@ import {JI_NOTATION_LEVELS_BOUND_CLASSES} from "./levelsBoundClasses"
 import {JiNotationBoundClass, JiNotationLevel} from "./types"
 
 const computeJiNotationCaptureZone = (
-    commaClassId: Id<CommaClass>,
+    commaClassId: CommaClassId,
     jiNotationLevel: JiNotationLevel = JiNotationLevel.EXTREME,
 ): Maybe<Zone> => {
     const jiNotationLevelBoundClasses = JI_NOTATION_LEVELS_BOUND_CLASSES[jiNotationLevel]

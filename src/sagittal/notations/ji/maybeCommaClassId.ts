@@ -1,9 +1,9 @@
-import {areRationalScamonsEqual, Id, Maybe, Scamon} from "../../../general"
-import {CommaClass, getCommaClass} from "../../ji"
+import {areRationalScamonsEqual, Maybe, Scamon} from "../../../general"
+import {CommaClassId, getCommaClass} from "../../ji"
 import {JI_NOTATION} from "./levelCommaClassIds"
 
-const computeMaybeCommaClassId = (jiPitch: Scamon<{rational: true}>): Maybe<Id<CommaClass>> =>
-    JI_NOTATION.find((commaClassId: Id<CommaClass>): boolean => {
+const computeMaybeCommaClassId = (jiPitch: Scamon<{rational: true}>): Maybe<CommaClassId> =>
+    JI_NOTATION.find((commaClassId: CommaClassId): boolean => {
         const commaClass = getCommaClass(commaClassId)
 
         return areRationalScamonsEqual(commaClass.pitch, jiPitch)

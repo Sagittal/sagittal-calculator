@@ -1,6 +1,6 @@
 import {Maybe} from "../../../../../src/general/code"
 import {Aim, Compatible, computeCoreUnicode} from "../../../../../src/sagittal/accidental"
-import {Accent, HeadName, Orientation} from "../../../../../src/sagittal/accidental/flacco"
+import {Accent, HeadId, Orientation} from "../../../../../src/sagittal/accidental/flacco"
 import {
     computeCompatibleAscii,
     computeCompatibleSmiley,
@@ -15,7 +15,7 @@ import {getCore, Shafts} from "../../../../../src/sagittal/accidental/symbol"
 import {GlyphExpectation} from "./types"
 
 const computeCoreGlyphExpectation = (
-    headName: HeadName,
+    headName: HeadId,
     shafts: Shafts,
     aim: Aim,
 ): Maybe<GlyphExpectation> => {

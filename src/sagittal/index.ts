@@ -36,6 +36,7 @@ export {
     formatComma,
     getRepresentativeSagittal,
     formatCommaClass,
+    CommaClassId,
 } from "./ji"
 export {
     formatAscii,
@@ -60,6 +61,7 @@ export {
     formatJiNotationLevel,
     Ina,
     INA_SIZES,
+    JI_NOTATION_BOUND_CLASS_ENTRIES,
     JI_NOTATION_BOUND_CLASSES,
     JiNotationLevel,
     JI_NOTATION_LEVEL_EDAS,
@@ -74,9 +76,10 @@ export {
     JI_NOTATION,
     computeSecondaryCommaZone,
     BoundType,
-    BoundClass,
     InaMidpoint,
     JiNotationBound,
+    JiNotationBoundClassEntry,
 } from "./notations"
+export {BoundClassId, BoundClass} from "./bound"
 export {APOTOME, HALF_APOTOME} from "./constants"
 export {parsePitch} from "./parsePitch"

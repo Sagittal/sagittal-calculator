@@ -9,14 +9,14 @@ import {
     Unicode,
 } from "../../../../../src/sagittal/accidental"
 import {getArm} from "../../../../../src/sagittal/accidental/flacco/arm"
-import {ArmName, HeadName} from "../../../../../src/sagittal/accidental/flacco/types"
+import {ArmId, HeadId} from "../../../../../src/sagittal/accidental/flacco/types"
 import {getCore, Shafts} from "../../../../../src/sagittal/accidental/symbol"
 
 describe("computeSagittalUnicode", (): void => {
     it("given a symbol, returns its unicode representation", (): void => {
         const sagittal: Sagittal = {                                // ``)|
-            arm: getArm(ArmName.BIRD),
-            core: getCore(HeadName.LEFT_SCROLL),
+            arm: getArm(ArmId.BIRD),
+            core: getCore(HeadId.LEFT_SCROLL),
         }
 
         const actual = computeSagittalUnicode(sagittal)
@@ -38,7 +38,7 @@ describe("computeSagittalUnicode", (): void => {
 describe("computeAccidentalUnicode", (): void => {
     it("works for accidentals with a Sagittal-compatible glyph", (): void => {
         const accidental: Accidental<Flavor.EVO> = {
-            core: getCore(HeadName.RIGHT_ARC, Shafts.SINGLE, Aim.DOWN),
+            core: getCore(HeadId.RIGHT_ARC, Shafts.SINGLE, Aim.DOWN),
             compatible: Compatible.FLAT,
         } as Accidental<Flavor.EVO>
 

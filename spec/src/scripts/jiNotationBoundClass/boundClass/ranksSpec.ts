@@ -1,15 +1,16 @@
-import {Count, Decimal, deepClone, Id, Rank} from "../../../../../src/general"
-import {BoundClass, BoundType} from "../../../../../src/sagittal/notations"
+import {Count, Decimal, deepClone, Rank} from "../../../../../src/general"
+import {BoundClassId} from "../../../../../src/sagittal/bound"
+import {BoundType} from "../../../../../src/sagittal/notations"
 import {updateRankAnalysis} from "../../../../../src/scripts/jiNotationBoundClass/boundClass/ranks"
 import {rankBoundClassIndices, rankCounts} from "../../../../../src/scripts/jiNotationBoundClass/globals"
 import {RANKS} from "../../../../../src/scripts/jiNotationBoundClass/ranks"
 
 describe("updateRankAnalysis", (): void => {
     const bestRank: Decimal<{integer: true}> & Rank<BoundType> = RANKS[BoundType.SIZE_CATEGORY_BOUND]
-    const boundClassId: Id<BoundClass> = 88 as Id<BoundClass>
+    const boundClassId = BoundClassId.MINA_84
 
     let previousRankAnalysis: number
-    let previousRankBoundClassIndices: Array<Id<BoundClass>>
+    let previousRankBoundClassIndices: BoundClassId[]
 
     beforeEach((): void => {
         previousRankAnalysis = rankCounts[bestRank]

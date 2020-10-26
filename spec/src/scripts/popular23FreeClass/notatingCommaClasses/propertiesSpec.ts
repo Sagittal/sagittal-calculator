@@ -1,6 +1,6 @@
-import {Id, Index, Two3FreeClass} from "../../../../../src/general"
+import {Index, Two3FreeClass} from "../../../../../src/general"
 import {FlaccoSubset} from "../../../../../src/sagittal/accidental"
-import {CommaClass} from "../../../../../src/sagittal/ji/comma"
+import {CommaClassId} from "../../../../../src/sagittal/ji/comma/class"
 import {
     computeNotatingCommaClassesProperties,
     NotatingCommaClassesProperties,
@@ -13,7 +13,7 @@ describe("computeNotatingCommaClassesProperties", (): void => {
         const actual = computeNotatingCommaClassesProperties(two3FreeClass)
 
         const expected: NotatingCommaClassesProperties = {
-            notatingCommaClassIds: [12, 62] as Array<Id<CommaClass>>,
+            notatingCommaClassIds: [CommaClassId._5_7_k, CommaClassId._5_7_C],
             notatingCommaClassSmallestFlaccoSubsetIndices: [1, 5] as Array<Index<FlaccoSubset>>,
         }
         expect(actual).toEqual(expected)

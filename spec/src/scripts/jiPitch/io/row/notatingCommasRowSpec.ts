@@ -7,7 +7,6 @@ import {
     Decimal,
     Direction,
     Exponent,
-    Id,
     Max,
     Monzo,
     Name,
@@ -17,7 +16,7 @@ import {
     Sopfr,
     Two3FreeClass,
 } from "../../../../../../src/general"
-import {ApotomeSlope, CommaAnalysis, CommaClass} from "../../../../../../src/sagittal"
+import {ApotomeSlope, CommaAnalysis, CommaClass, CommaClassId} from "../../../../../../src/sagittal"
 import {N2D3P9} from "../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
 import {jiPitchScriptGroupSettings} from "../../../../../../src/scripts/jiPitch/globals"
 import {computeNotatingCommasRow} from "../../../../../../src/scripts/jiPitch/io/row"
@@ -46,7 +45,7 @@ describe("computeNotatingCommasRow", (): void => {
             } as Two3FreeClass,
         },
     }
-    const commaClassId = 44 as Id<CommaClass>
+    const commaClassId = CommaClassId._1_5_C
     const maxMonzoLength = 5 as Max<Count<Exponent<Prime>>>
 
     it("takes the properties of the comma and puts them in order in a row", (): void => {

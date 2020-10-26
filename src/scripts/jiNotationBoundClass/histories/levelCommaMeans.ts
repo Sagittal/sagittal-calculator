@@ -1,6 +1,6 @@
-import {CommaMean, computeRationalScamonGeometricMean, Id, indexOfFinalElement, Name} from "../../../general"
+import {CommaMean, computeRationalScamonGeometricMean, indexOfFinalElement, Name} from "../../../general"
 import {
-    CommaClass,
+    CommaClassId,
     computeSagittalAscii,
     getCommaClass,
     getRepresentativeSagittal,
@@ -15,7 +15,7 @@ const computeJiNotationLevelCommaMeans = (jiNotationLevel: JiNotationLevel): Com
         jiNotationLevelCommaClassIds.slice(0, indexOfFinalElement(jiNotationLevelCommaClassIds))
 
     return jiNotationLevelCommaClassIdsExcludingTheFinalCommaClass
-        .map((commaClassId: Id<CommaClass>, index: number): CommaMean => {
+        .map((commaClassId: CommaClassId, index: number): CommaMean => {
             const nextCommaClassId = jiNotationLevelCommaClassIds[index + 1]
 
             const commaClass = getCommaClass(commaClassId)

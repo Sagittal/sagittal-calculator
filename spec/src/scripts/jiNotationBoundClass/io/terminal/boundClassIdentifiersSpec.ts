@@ -10,7 +10,6 @@ import {
     Direction,
     EMPTY_MONZO,
     Exponent,
-    Id,
     Max,
     Monzo,
     Multiplier,
@@ -23,9 +22,9 @@ import {
 import {
     ApotomeSlope,
     Ascii,
-    BoundClass,
+    BoundClassId,
     BoundType,
-    CommaClass,
+    CommaClassId,
     Ina,
     N2D3P9,
     TINA,
@@ -43,19 +42,20 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
         ...jiNotationBoundClassFixture,
         pitch: computePitchFromCents(23.116419 as Cents),
         jiNotationLevels: [JiNotationLevel.ULTRA, JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
-        id: 47 as Id<BoundClass>,
         boundType: BoundType.INA_MIDPOINT,
     }
+    const boundClassId = BoundClassId.MINA_47
 
     it("returns helpful identifying information about the bound", (): void => {
-        const actual: JiNotationBoundClassIdentifiers = extractJiNotationBoundClassIdentifiers(jiNotationBoundClass)
+        const actual: JiNotationBoundClassIdentifiers =
+            extractJiNotationBoundClassIdentifiers([boundClassId, jiNotationBoundClass])
 
         const expected: JiNotationBoundClassIdentifiers = {
             extremeLevelLesserBoundedCommaClass: ".)/|" as Ascii,
             extremeLevelGreaterBoundedCommaClass: "'/|" as Ascii,
             cents: 23.116419 as Cents as Cents,
             boundedCommaClassInfoPairs: {
-                boundClassId: 47 as Id<BoundClass>,
+                boundClassId,
                 [JiNotationLevel.ULTRA]: [
                     {
                         introducingJiNotationLevel: JiNotationLevel.ULTRA,
@@ -89,7 +89,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             pitch: {monzo: [2, -1, -2, 0, 0, 0, 0, 1] as Monzo<{rational: true}>} as Comma,
                         },
                         // Not the best example b/c ID and mina name are the same up to this point
-                        id: 47 as Id<CommaClass>,
+                        id: CommaClassId._19_25_C,
                     },
                     {
                         introducingJiNotationLevel: JiNotationLevel.ULTRA,
@@ -122,7 +122,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             name: "3C" as Name<Comma>,
                             pitch: {monzo: [-19, 12] as Monzo<{rational: true}>} as Comma,
                         },
-                        id: 48 as Id<CommaClass>,
+                        id: CommaClassId._1_C,
                     },
                 ],
                 [JiNotationLevel.EXTREME]: [
@@ -157,7 +157,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             name: "19/25C" as Name<Comma>,
                             pitch: {monzo: [2, -1, -2, 0, 0, 0, 0, 1] as Monzo<{rational: true}>} as Comma,
                         },
-                        id: 47 as Id<CommaClass>,
+                        id: CommaClassId._19_25_C,
                     },
                     {
                         introducingJiNotationLevel: JiNotationLevel.ULTRA,
@@ -190,7 +190,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             name: "3C" as Name<Comma>,
                             pitch: {monzo: [-19, 12] as Monzo<{rational: true}>} as Comma,
                         },
-                        id: 48 as Id<CommaClass>,
+                        id: CommaClassId._1_C,
                     },
                 ],
                 [JiNotationLevel.INSANE]: [
@@ -225,7 +225,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             name: "19/25C" as Name<Comma>,
                             pitch: {monzo: [2, -1, -2, 0, 0, 0, 0, 1] as Monzo<{rational: true}>} as Comma,
                         },
-                        id: 47 as Id<CommaClass>,
+                        id: CommaClassId._19_25_C,
                     },
                     {
                         introducingJiNotationLevel: JiNotationLevel.ULTRA,
@@ -258,7 +258,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             name: "3C" as Name<Comma>,
                             pitch: {monzo: [-19, 12] as Monzo<{rational: true}>} as Comma,
                         },
-                        id: 48 as Id<CommaClass>,
+                        id: CommaClassId._1_C,
                     },
                 ],
             },

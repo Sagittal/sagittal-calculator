@@ -1,5 +1,5 @@
 import {formatTime, Ms} from "../../../../src/general"
-import {TimePrecision} from "../../../../src/general/io/format/types"
+import {TimePrecision} from "../../../../src/general/io/format"
 
 describe("formatTime", (): void => {
     it("formats ms", (): void => {

@@ -1,15 +1,23 @@
-export { computeMaybeCommaClassId } from "./maybeCommaClassId"
-export { formatJiNotationLevel } from "./formatLevel"
-export { computeSecondaryCommaZone } from "./secondaryCommaZone"
-export { INA_SIZES, TINA } from "./intervals"
-export { JI_NOTATION_BOUND_CLASSES } from "./boundClasses"
-export { getMinaName } from "./minaName"
-export { getIntroducingJiNotationLevel } from "./introducingJiNotationLevel"
-export { JI_NOTATION_LEVEL_EDAS } from "./levelEdas"
-export { JI_NOTATION_LEVELS } from "./levels"
-export { JI_NOTATION_LEVELS_BOUND_CLASSES } from "./levelsBoundClasses"
-export { JI_NOTATION_LEVELS_COMMA_CLASS_IDS } from "./levelCommaClassIds"
+export {computeMaybeCommaClassId} from "./maybeCommaClassId"
+export {formatJiNotationLevel} from "./formatLevel"
+export {computeSecondaryCommaZone} from "./secondaryCommaZone"
+export {INA_SIZES, TINA} from "./intervals"
+export {JI_NOTATION_BOUND_CLASS_ENTRIES, JI_NOTATION_BOUND_CLASSES} from "./boundClasses"
+export {getMinaName} from "./minaName"
+export {getIntroducingJiNotationLevel} from "./introducingJiNotationLevel"
+export {JI_NOTATION_LEVEL_EDAS} from "./levelEdas"
+export {JI_NOTATION_LEVELS} from "./levels"
+export {JI_NOTATION_LEVELS_BOUND_CLASSES} from "./levelsBoundClasses"
+export {JI_NOTATION_LEVELS_COMMA_CLASS_IDS} from "./levelCommaClassIds"
 export {
-    JiNotationBoundClass, Ina, JiNotationLevel, Mina, Tina, BoundType, BoundClass, InaMidpoint, JiNotationBound,
+    JiNotationBoundClass,
+    Ina,
+    JiNotationLevel,
+    Mina,
+    Tina,
+    BoundType,
+    InaMidpoint,
+    JiNotationBound,
+    JiNotationBoundClassEntry,
 } from "./types"
-export { JI_NOTATION } from "./levelCommaClassIds"
+export {JI_NOTATION} from "./levelCommaClassIds"

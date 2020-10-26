@@ -1,5 +1,5 @@
-import {Id, Scamon} from "../../../general"
-import {CommaClass, getCommaClass, JiNotationLevel, JI_NOTATION_LEVELS_COMMA_CLASS_IDS} from "../../../sagittal"
+import {Scamon} from "../../../general"
+import {CommaClassId, getCommaClass, JiNotationLevel, JI_NOTATION_LEVELS_COMMA_CLASS_IDS} from "../../../sagittal"
 import {computeNeighborPositions} from "./neighborPositions"
 import {BoundedCommaClassPositions} from "./types"
 
@@ -7,10 +7,10 @@ const computeBoundedCommaClassPositions = (
     position: Scamon,
     jiNotationLevel: JiNotationLevel,
 ): BoundedCommaClassPositions => {
-    const jiNotationLevelCommaClassIds: Array<Id<CommaClass>> = JI_NOTATION_LEVELS_COMMA_CLASS_IDS[jiNotationLevel]
+    const jiNotationLevelCommaClassIds: CommaClassId[] = JI_NOTATION_LEVELS_COMMA_CLASS_IDS[jiNotationLevel]
 
     const jiNotationLevelCommaClassPositions: Scamon[] = jiNotationLevelCommaClassIds
-        .map((jiNotationLevelCommaClassId: Id<CommaClass>): Scamon => {
+        .map((jiNotationLevelCommaClassId: CommaClassId): Scamon => {
             return getCommaClass(jiNotationLevelCommaClassId).pitch
         })
 

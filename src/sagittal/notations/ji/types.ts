@@ -1,6 +1,6 @@
 import {Cents, CommaMean, Name, NumericProperties, Scamon} from "../../../general"
+import {BoundClass, BoundClassId} from "../../bound"
 import {SizeCategoryBound} from "../../ji"
-import {BoundClass} from "../types"
 
 enum BoundType {
     INA_MIDPOINT = "inaMidpoint",
@@ -31,6 +31,7 @@ type InaMidpoint<T extends NumericProperties = {}> = {
 
 type JiNotationBound<T extends NumericProperties = {}> = InaMidpoint<T> | CommaMean<T> | SizeCategoryBound<T>
 
+// TODO: JI NOTATION BOUND CLASS TYPE IS ... CONFUSING AND THEREFORE BAD. PLEASE IMPROVE SOMEHOW.
 type JiNotationBoundClass<T extends NumericProperties = {}> =
     JiNotationBound<T> &
     BoundClass<T> &
@@ -38,6 +39,8 @@ type JiNotationBoundClass<T extends NumericProperties = {}> =
         jiNotationLevels: JiNotationLevel[],
         boundType: BoundType,
     }
+
+type JiNotationBoundClassEntry = [BoundClassId, JiNotationBoundClass]
 
 export {
     Tina,
@@ -51,5 +54,5 @@ export {
     Ina,
     BoundType,
     InaMidpoint,
-    BoundClass,
+    JiNotationBoundClassEntry,
 }

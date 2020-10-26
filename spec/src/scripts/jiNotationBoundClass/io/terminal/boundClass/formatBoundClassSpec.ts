@@ -1,5 +1,6 @@
-import {Cents, computePitchFromCents, Id, NEWLINE} from "../../../../../../../src/general"
-import {BoundClass, BoundType, JiNotationBoundClass} from "../../../../../../../src/sagittal/notations"
+import {Cents, computePitchFromCents, NEWLINE} from "../../../../../../../src/general"
+import {BoundClassId} from "../../../../../../../src/sagittal/bound"
+import {BoundType, JiNotationBoundClass} from "../../../../../../../src/sagittal/notations"
 import {JiNotationBoundClassAnalysis} from "../../../../../../../src/scripts/jiNotationBoundClass/boundClass"
 import {formatJiNotationBoundClass} from "../../../../../../../src/scripts/jiNotationBoundClass/io"
 import {RANKS} from "../../../../../../../src/scripts/jiNotationBoundClass/ranks"
@@ -13,14 +14,14 @@ describe("formatJiNotationBoundClass", (): void => {
         const jiNotationBoundClass: JiNotationBoundClass = {
             ...jiNotationBoundClassFixture,
             pitch: computePitchFromCents(5.447635 as Cents),
-            id: 10 as Id<BoundClass>,
         }
+        const boundClassId = BoundClassId.MINA_10
         const jiNotationBoundClassAnalysis: JiNotationBoundClassAnalysis = {
             ...jiNotationBoundClassAnalysisFixture,
             bestRank: RANKS[BoundType.SIZE_CATEGORY_BOUND],
         }
 
-        const actual = formatJiNotationBoundClass(jiNotationBoundClassAnalysis, {jiNotationBoundClass})
+        const actual = formatJiNotationBoundClass(jiNotationBoundClassAnalysis, [boundClassId, jiNotationBoundClass])
 
         const expected = [
             `{`,
@@ -28,10 +29,10 @@ describe("formatJiNotationBoundClass", (): void => {
             `    "extremeLevelGreaterBoundedCommaClass": ",|(",`,
             `    "cents": 5.44763,`,
             `    "boundedCommaClassInfoPairs": {`,
-            `        "boundClassId": 10,`,
+            `        "boundClassId": "mina10",`,
             `        "extreme": [`,
             `            {`,
-            `                "id": 10,`,
+            `                "id": "_11_13_k",`,
             `                "representativeSagittal": {`,
             `                    "ascii": ",,|(",`,
             `                    "unicode": "",`,
@@ -90,7 +91,7 @@ describe("formatJiNotationBoundClass", (): void => {
             `                "inaDistance": 0.41789`,
             `            },`,
             `            {`,
-            `                "id": 11,`,
+            `                "id": "_31_11_k",`,
             `                "representativeSagittal": {`,
             `                    "ascii": ",|(",`,
             `                    "unicode": "",`,
@@ -166,7 +167,7 @@ describe("formatJiNotationBoundClass", (): void => {
             `        ],`,
             `        "insane": [`,
             `            {`,
-            `                "id": 10,`,
+            `                "id": "_11_13_k",`,
             `                "representativeSagittal": {`,
             `                    "ascii": ",,|(",`,
             `                    "unicode": "",`,
@@ -225,7 +226,7 @@ describe("formatJiNotationBoundClass", (): void => {
             `                "inaDistance": 1.45096`,
             `            },`,
             `            {`,
-            `                "id": 11,`,
+            `                "id": "_31_11_k",`,
             `                "representativeSagittal": {`,
             `                    "ascii": ",|(",`,
             `                    "unicode": "",`,

@@ -25,6 +25,7 @@ export {
     formatComma,
     formatCommaClass,
     getRepresentativeSagittal,
+    CommaClassId,
 } from "./comma"
 export { analyzeJiPitch, computeApotomeSlope, ApotomeSlope, JiPitchAnalysis, computeAte, computeAas } from "./pitch"
 export {

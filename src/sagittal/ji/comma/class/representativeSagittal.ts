@@ -1,11 +1,11 @@
-import {Id, isUndefined} from "../../../../general"
-import {computeSagittalFromFlacco, Flacco, FLACCOS, Sagittal} from "../../../accidental"
-import {getCommaClass} from "./get"
-import {CommaClass} from "./types"
+import {isUndefined} from "../../../../general"
+import {computeSagittalFromFlacco, getFlacco, Sagittal} from "../../../accidental"
+import {getCommaClass} from "./class"
+import {CommaClassId} from "./types"
 
-const getRepresentativeSagittal = (commaClassId: Id<CommaClass>): Sagittal => {
+const getRepresentativeSagittal = (commaClassId: CommaClassId): Sagittal => {
     const flaccoId = getCommaClass(commaClassId).representativeFlaccoId
-    const flacco = FLACCOS.find((flacco: Flacco): boolean => flacco.id === flaccoId)
+    const flacco = getFlacco(flaccoId)
 
     if (isUndefined(flacco)) {
         throw new Error(`Could not find representative sagittal for comma class ID ${commaClassId}.`)

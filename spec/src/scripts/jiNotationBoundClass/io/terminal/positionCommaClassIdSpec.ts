@@ -1,5 +1,5 @@
-import {Id, Monzo, Scamon} from "../../../../../../src/general"
-import {CommaClass} from "../../../../../../src/sagittal/ji"
+import {Monzo, Scamon} from "../../../../../../src/general"
+import {CommaClassId} from "../../../../../../src/sagittal/ji"
 import {computePositionCommaClassId} from "../../../../../../src/scripts/jiNotationBoundClass/io/terminal/positionCommaClassId"
 
 describe("computePositionCommaClassId", (): void => {
@@ -10,7 +10,7 @@ describe("computePositionCommaClassId", (): void => {
 
         const actual = computePositionCommaClassId(position)
 
-        const expected = 7 as Id<CommaClass>
+        const expected = CommaClassId._19_s
         expect(actual).toEqual(expected)
     })
 

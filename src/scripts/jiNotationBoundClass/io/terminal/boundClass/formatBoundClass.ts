@@ -9,19 +9,19 @@ import {
     stringify,
     sumTexts,
 } from "../../../../../general"
+import {JiNotationBoundClassEntry} from "../../../../../sagittal"
 import {JiNotationBoundClassAnalysis} from "../../../boundClass"
 import {extractJiNotationBoundClassIdentifiers} from "../boundClassIdentifiers"
-import {FormatJiNotationBoundOptions} from "./types"
 
 const roundIfNumeric = (value: unknown, precision: Precision): unknown =>
     isNumber(value) ? round(value, precision) : value
 
 const formatJiNotationBoundClass = (
     jiNotationBoundClassAnalysis: JiNotationBoundClassAnalysis,
-    {jiNotationBoundClass}: FormatJiNotationBoundOptions,
+    jiNotationBoundClassEntry: JiNotationBoundClassEntry,
 ): Formatted<JiNotationBoundClassAnalysis> => {
     const jiNotationBoundIdentifiers = deepMap(
-        extractJiNotationBoundClassIdentifiers(jiNotationBoundClass),
+        extractJiNotationBoundClassIdentifiers(jiNotationBoundClassEntry),
         roundIfNumeric,
         DEFAULT_PRECISION,
     )

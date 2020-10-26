@@ -4,6 +4,7 @@ export {
     formatJiNotationLevel,
     Ina,
     INA_SIZES,
+    JI_NOTATION_BOUND_CLASS_ENTRIES,
     JI_NOTATION_BOUND_CLASSES,
     JiNotationLevel,
     JI_NOTATION_LEVELS,
@@ -18,8 +19,8 @@ export {
     JI_NOTATION,
     computeSecondaryCommaZone,
     BoundType,
-    BoundClass,
     InaMidpoint,
     JiNotationBound,
+    JiNotationBoundClassEntry,
 } from "./ji"
 export {Section, CaptureZone} from "./types"

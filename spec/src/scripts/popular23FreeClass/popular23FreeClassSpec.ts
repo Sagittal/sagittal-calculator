@@ -1,7 +1,7 @@
-import {Cents, Direction, Id, Index, Monzo, Rank, Two3FreeClass} from "../../../../src/general"
+import {Cents, Direction, Index, Monzo, Rank, Two3FreeClass} from "../../../../src/general"
 import {Popularity, Votes} from "../../../../src/general/music"
 import {FlaccoSubset} from "../../../../src/sagittal/accidental"
-import {CommaClass} from "../../../../src/sagittal/ji/comma"
+import {CommaClassId} from "../../../../src/sagittal/ji/comma"
 import {Two3FreeClassAnalysis} from "../../../../src/sagittal/ji/two3FreeClass"
 import {N2D3P9} from "../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
 import {popular23FreeClassesScriptGroupSettings} from "../../../../src/scripts/popular23FreeClass/globals"
@@ -25,7 +25,7 @@ describe("computePopular23FreeClass", (): void => {
             ...two3FreeClassAnalysis,
             popularityRank: 2 as Rank<Popularity>,
             votes: 5371 as Votes,
-            notatingCommaClassIds: [4, 44] as Array<Id<CommaClass>>,
+            notatingCommaClassIds: [CommaClassId._5_s, CommaClassId._1_5_C],
             notatingCommaClassSmallestFlaccoSubsetIndices: [5, 1] as Array<Index<FlaccoSubset>>,
         }
         expect(actual).toEqual(expected)
@@ -41,7 +41,7 @@ describe("computePopular23FreeClass", (): void => {
             votes: 5371 as Votes,
             bestNotatingCommaCents: 21.506290 as Cents,
             bestNotatingCommaMonzo: [-4, 4, -1] as Monzo<{rational: true}>,
-            bestNotatingCommaMaybeCommaClassId: 44 as Id<CommaClass>,
+            bestNotatingCommaMaybeCommaClassId: CommaClassId._1_5_C,
         }
         expect(actual).toBeCloseToObject(expected)
     })
