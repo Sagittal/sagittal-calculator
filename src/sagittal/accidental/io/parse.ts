@@ -1,10 +1,10 @@
 import {BLANK, Char, Count, increment, isEmpty, shallowClone} from "../../../general"
 import {Accent, Arm, Flag, Orientation} from "../flacco"
-import {Aim, NULL_SAGITTAL, Sagittal, Shafts} from "../symbol"
+import {Aim, NullSagittal, NULL_SAGITTAL, Sagittal, Shafts} from "../symbol"
 import {PARENTHETICAL_NATURAL_ASCII} from "./constants"
 import {Ascii} from "./types"
 
-const parseAscii = (ascii: Ascii): Sagittal => {
+const parseAscii = (ascii: Ascii): Sagittal | NullSagittal => {
     if (ascii === PARENTHETICAL_NATURAL_ASCII) return NULL_SAGITTAL
 
     const aim = ascii.match(/[Y!]/g) ? Aim.DOWN : Aim.UP
@@ -80,17 +80,17 @@ const parseAscii = (ascii: Ascii): Sagittal => {
         }
     })
 
-    const shafts = shaftCount === 1 ?
+    sagittal.aim = aim
+    sagittal.shafts = shaftCount === 1 ?
         Shafts.SINGLE :
         shaftCount === 2 ?
             Shafts.DOUBLE :
             shaftCount === 3 ?
                 Shafts.TRIPLE :
                 Shafts.EX
-    sagittal.core = {aim, shafts}
     if (!isEmpty(arm)) sagittal.arm = arm
-    if (!isEmpty(left)) sagittal.core.left = left
-    if (!isEmpty(right)) sagittal.core.right = right
+    if (!isEmpty(left)) sagittal.left = left
+    if (!isEmpty(right)) sagittal.right = right
 
     return sagittal
 }

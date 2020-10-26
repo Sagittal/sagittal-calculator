@@ -1,11 +1,14 @@
 import {deepClone, isUndefined} from "../../../general"
-import {Aim, Sagittal} from "./types"
+import {isSagittal} from "./typeGuards"
+import {Aim, NullSagittal, Sagittal} from "./types"
 
-const flipSagittal = (sagittal: Sagittal): Sagittal => {
+const flipSagittal = (sagittal: NullSagittal | Sagittal): NullSagittal | Sagittal => {
+    if (!isSagittal(sagittal)) return sagittal
+
     const flippedSagittal = deepClone(sagittal)
 
-    if (!isUndefined(flippedSagittal.core)) {
-        flippedSagittal.core.aim = flippedSagittal.core.aim === Aim.UP ? Aim.DOWN : Aim.UP
+    if (!isUndefined(flippedSagittal.aim)) {
+        flippedSagittal.aim = flippedSagittal.aim === Aim.UP ? Aim.DOWN : Aim.UP
     }
 
     return flippedSagittal

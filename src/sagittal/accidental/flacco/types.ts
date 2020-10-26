@@ -230,12 +230,8 @@ enum FlaccoId {
 }
 
 // Flag and Accent Combination (see: http://forum.sagittal.org/viewtopic.php?p=2474#p2474)
-interface Flacco {
+interface Flacco extends Head {
     arm?: Arm,
-    // TODO: Flatten core so that flacco doesn’t have a core but just left and right...
-    //  Because that's confusing for it to have a "core" but its type is "head".
-    //  Especially acceptable because arm is a single array with with/against handled within each of its elements
-    core?: Head,
 }
 
 export {

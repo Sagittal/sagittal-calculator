@@ -1,7 +1,7 @@
 import {BLANK, isUndefined, join, sumTexts} from "../../../general"
 import {Accent, Arm, Flag, Orientation, OrientedAccent} from "../flacco"
 import {Accidental, Compatible, Flavor} from "../flavor"
-import {Aim, Core, Sagittal, Shafts} from "../symbol"
+import {Aim, Core, isSagittal, NullSagittal, Sagittal, Shafts} from "../symbol"
 import {BLANK_ASCII, PARENTHETICAL_NATURAL_ASCII} from "./constants"
 import {Ascii} from "./types"
 
@@ -77,14 +77,12 @@ const computeCompatibleAscii = (compatible: Compatible): Ascii =>
 const computeOrientedAccentAscii = ({accent, orientation}: OrientedAccent, aim: Aim): Ascii =>
     ACCENT_TO_ORIENTATION_TO_AIM_TO_ASCII_MAP[accent][orientation][aim]
 
-const computeSagittalAscii = ({arm, core}: Sagittal): Ascii => {
-    const armAscii = isUndefined(arm) ?
-        BLANK_ASCII :
-        computeArmAscii(arm, core?.aim as Aim)
+const computeSagittalAscii = (sagittal: Sagittal | NullSagittal): Ascii => {
+    if (!isSagittal(sagittal)) return PARENTHETICAL_NATURAL_ASCII
+    const {arm, ...core} = sagittal
 
-    const coreAscii = isUndefined(core) ?
-        PARENTHETICAL_NATURAL_ASCII :
-        computeCoreAscii(core)
+    const armAscii = isUndefined(arm) ? BLANK_ASCII : computeArmAscii(arm, core.aim)
+    const coreAscii = computeCoreAscii(core)
 
     return sumTexts(armAscii, coreAscii)
 }
@@ -95,12 +93,14 @@ const computeArmAscii = (arm: Arm, aim: Aim): Ascii =>
         BLANK_ASCII,
     )
 
-const computeAccidentalAscii = <T extends Flavor>({arm, core, compatible}: Accidental<T>): Ascii<T> => {
+const computeAccidentalAscii = <T extends Flavor>({compatible, ...sagittal}: Accidental<T>): Ascii<T> => {
+    const {arm, ...core} = sagittal
+
     const armAscii = isUndefined(arm) ?
         BLANK_ASCII :
-        computeArmAscii(arm, core?.aim as Aim)
+        computeArmAscii(arm, core.aim)
 
-    const coreAscii = isUndefined(core) ?
+    const coreAscii = !isSagittal(sagittal) ?
         isUndefined(compatible) ? PARENTHETICAL_NATURAL_ASCII : BLANK_ASCII :
         computeCoreAscii(core)
 

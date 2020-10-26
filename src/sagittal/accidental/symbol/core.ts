@@ -1,7 +1,8 @@
 import {getHead, HeadId} from "../flacco"
 import {Aim, Core, Shafts} from "./types"
 
-// TODO: If this "core" goes the way of being more related to io/glyph stuff only, in the symbol class refactor
+// TODO: SYMBOL VS SAGITTAL; GLYPH TYPES
+//  If this "core" goes the way of being more related to io/glyph stuff only, in the symbol class refactor
 //  Then maybe it will still make sense to have this const. But if there's some way to base this off the information
 //  We've already established w/r/t apotome complements, that would be ideal
 const HEADS_SUPPORTED_WITH_EVEN_SHAFTS = [
@@ -28,7 +29,8 @@ const HEADS_SUPPORTED_WITH_EVEN_SHAFTS = [
     HeadId.ARC_AND_BOATHOOK,
 ]
 
-// TODO: might be a few places you should add some more comments of symbol ASCII
+// TODO: MORE ASCII COMMENTS
+//  There might be a few places you should add some more comments of symbol ASCII
 
 const getCore = (headName: HeadId, shafts: Shafts = Shafts.SINGLE, aim: Aim = Aim.UP): Core => {
     if (

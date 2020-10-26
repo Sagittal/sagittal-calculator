@@ -1,4 +1,4 @@
-import {Flacco, Head} from "../flacco"
+import {Flacco} from "../flacco"
 
 enum Aim {
     UP = "up",
@@ -12,18 +12,19 @@ enum Shafts {
     EX = "ex",
 }
 
-interface Core extends Head {
+interface Sagittal extends Flacco {
     aim: Aim,
     shafts: Shafts,
 }
 
-interface Sagittal extends Flacco {
-    core?: Core,
-}
+interface NullSagittal {}
+
+type Core = Omit<Sagittal, "arm">
 
 export {
     Core,
     Aim,
     Sagittal,
+    NullSagittal,
     Shafts,
 }

@@ -60,7 +60,8 @@ type excludedOptions =
     | typeof BIRD_WITH_LEFT_SCROLL_DOUBLE_RIGHT_BARB
 type SymbolClassId = Exclude<FlaccoId, excludedOptions>
 
-// TODO: We way want to replace getRepresentativeSagittal called off a comma class with
+// TODO: SYMBOL VS SAGITTAL; GLYPH TYPES
+//  We way want to replace getRepresentativeSagittal called off a comma class with
 //  The places which have a comma class might actually want a symbol class in the first place?
 interface SymbolClass {
     flaccoId: FlaccoId,

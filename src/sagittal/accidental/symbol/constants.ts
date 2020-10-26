@@ -1,6 +1,6 @@
-import {Sagittal} from "./types"
+import {NullSagittal} from "./types"
 
-const NULL_SAGITTAL = {} as Sagittal
+const NULL_SAGITTAL = {} as NullSagittal
 
 export {
     NULL_SAGITTAL,

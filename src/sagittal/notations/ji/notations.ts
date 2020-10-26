@@ -2,7 +2,9 @@ import {SymbolClassId} from "../../accidental"
 import {BoundClassId} from "../../bound"
 import {Notation} from "../types"
 
-// TODO: Might be nice to test that the commas which used to be here are the commas for the symbols still/now here
+// TODO: TEST WHAT IS LESS OBVIOUS NOW IN THE POST SYMBOL CLASS WORLD
+//  Might be nice to test that the commas which used to be here are the commas for the symbols still/now here
+//  And/or the full set of flaccos you get, at which point delete the commented out extra Flacco IDs here
 
 const MEDIUM_NOTATION: Notation = {
     boundClassIds: [                    // Total 11

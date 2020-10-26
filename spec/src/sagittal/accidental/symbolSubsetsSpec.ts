@@ -3,23 +3,22 @@ import {
     computeSagittalAscii,
     computeSagittalFromFlacco,
     Flacco,
+    NullSagittal,
     Sagittal,
     SymbolSubset,
     SYMBOL_SUBSETS,
 } from "../../../../src/sagittal/accidental"
 import {getFlacco} from "../../../../src/sagittal/accidental/flacco"
 
-// TODO: These tests are all failing until we fix the issue of it actually generating all the symbols
-//  (mirrored, shifted, negated) and then filtering for single-shaft and multi-shaft
 // tslint:disable-next-line ban
 xdescribe("SYMBOL_SUBSETS", (): void => {
     const subject = (symbolSubset: SymbolSubset): Ascii[] => SYMBOL_SUBSETS[symbolSubset]
-        // TODO: This feels circuitous... but then I think we're probably going to have something basically the same
-        //  As computing Revo accidental but for computing a sagittal from a symbol class id along with
-        //  Complemented, negated, shifted (which maybe should go back to being Section???)
+        // TODO: SHOULD WE REALLY GO FROM SYMBOL TO FLACCO TO SAGITTAL? MAYBE SO...?
+        //  This feels circuitous... but then I think we're probably going to have something basically the same
+        //  As computing Revo Accidental but for computing a sagittal from a SymbolClassId + Section
         .map(getFlacco)
-        .map((flacco: Flacco): Sagittal => computeSagittalFromFlacco(flacco))
-        .map((sagittal: Sagittal): Ascii => computeSagittalAscii(sagittal))
+        .map((flacco: Flacco): NullSagittal | Sagittal => computeSagittalFromFlacco(flacco))
+        .map((sagittal: NullSagittal | Sagittal): Ascii => computeSagittalAscii(sagittal))
 
     it("has the correct single-shaft symbols in the Sagittal-compatibles subset", (): void => {
         const symbolSubset = SymbolSubset.COMPATIBLE

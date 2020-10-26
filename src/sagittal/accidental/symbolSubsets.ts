@@ -211,8 +211,10 @@ const TROJAN_SYMBOL_SUBSET: Array<[Index<SymbolClassId>, SymbolClassId]> = [
 const shapeUpIds = (ids: Array<[Index<SymbolClassId>, SymbolClassId]>): SymbolClassId[] =>
     sort(ids, {by: 0 as KeyPath}).map(([_, id]: [Index<SymbolClassId>, SymbolClassId]): SymbolClassId => id)
 
-// TODO: These won't truly be symbol subsets until you map across them and include every complement, shift, and negation
+// TODO: TRULY SYMBOL SUBSETS, NOT JUST SYMBOL CLASS SUBSETS
+//  These won't truly be symbol subsets until you map across them and include every complement, shift, and negation
 //  And you could separate the single-shaft ones from multi-shaft ones with filters
+//  These tests are all failing until we fix that issue
 const SYMBOL_SUBSETS: Record<SymbolSubset, Array<SymbolClassId>> = {
     [SymbolSubset.COMPATIBLE]: shapeUpIds(SAGITTAL_COMPATIBLE_SYMBOL_SUBSET),
     [SymbolSubset.SPARTAN]: shapeUpIds(SPARTAN_SYMBOL_SUBSET),

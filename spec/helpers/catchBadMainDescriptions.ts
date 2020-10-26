@@ -33,4 +33,7 @@ const catchBadMainDescriptions = (basePath: Filename): void => {
     }
 }
 
+// Another reason to disable these except on CI is that if you use fdescribe in a spec with multiple
+// Top-level describes, it will report a problem because it doesn't recognize fdescribe to reset what it's matching
+// Already have this to-do in Asana somewhere though.
 catchBadMainDescriptions("spec/src" as Filename)

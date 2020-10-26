@@ -1,7 +1,7 @@
 import {deepEquals, isUndefined, join, stringify, sumTexts} from "../../../general"
 import {Accent, Arm, HeadId, Orientation, OrientedAccent} from "../flacco"
 import {Accidental, Compatible, Flavor} from "../flavor"
-import {Aim, Core, getCore, Sagittal, Shafts} from "../symbol"
+import {Aim, Core, getCore, isSagittal, NullSagittal, Sagittal, Shafts} from "../symbol"
 import {BLANK_UNICODE, PARENTHETICAL_NATURAL_UNICODE} from "./constants"
 import {Unicode} from "./types"
 
@@ -264,17 +264,15 @@ const computeCompatibleUnicode = (compatible: Compatible): Unicode =>
 const computeOrientedAccentUnicode = ({accent, orientation}: OrientedAccent, aim: Aim): Unicode =>
     ACCENT_TO_ORIENTATION_TO_AIM_TO_UNICODE_MAP[accent][orientation][aim]
 
-// Todo: FLAVOR / SYMBOL / SAGITTAL
+// TODO: SYMBOL VS SAGITTAL; GLYPH TYPES
 //  I feel like these methods should take the Flavor parameter and pass it on, just in case
 //  Although then, if Sagittal receives a Flavor, then the Flavor type moves out of the flavor/ module
-const computeSagittalUnicode = ({arm, core}: Sagittal): Unicode => {
-    const armUnicode = isUndefined(arm) ?
-        BLANK_UNICODE :
-        computeArmUnicode(arm, core?.aim as Aim)
+const computeSagittalUnicode = (sagittal: NullSagittal | Sagittal): Unicode => {
+    if (!isSagittal(sagittal)) return PARENTHETICAL_NATURAL_UNICODE
+    const {arm, ...core} = sagittal
 
-    const coreUnicode = isUndefined(core) ?
-        PARENTHETICAL_NATURAL_UNICODE :
-        computeCoreUnicode(core)
+    const armUnicode = isUndefined(arm) ? BLANK_UNICODE : computeArmUnicode(arm, core.aim)
+    const coreUnicode = computeCoreUnicode(core)
 
     return sumTexts(armUnicode, coreUnicode)
 }
@@ -285,12 +283,14 @@ const computeArmUnicode = (arm: Arm, aim: Aim): Unicode =>
         BLANK_UNICODE,
     )
 
-const computeAccidentalUnicode = <T extends Flavor>({arm, core, compatible}: Accidental<T>): Unicode<T> => {
+const computeAccidentalUnicode = <T extends Flavor>({compatible, ...sagittal}: Accidental<T>): Unicode<T> => {
+    const {arm, ...core} = sagittal
+    
     const armUnicode = isUndefined(arm) ?
         BLANK_UNICODE :
-        computeArmUnicode(arm, core?.aim as Aim)
+        computeArmUnicode(arm, core.aim)
 
-    const coreUnicode = isUndefined(core) ?
+    const coreUnicode = !isSagittal(sagittal) ?
         isUndefined(compatible) ? PARENTHETICAL_NATURAL_UNICODE : BLANK_UNICODE :
         computeCoreUnicode(core)
 

@@ -1,7 +1,8 @@
 import {deepEquals, isUndefined, Maybe, stringify} from "../../../general"
 import {Arm, ArmId, getArm, HeadId, Orientation, OrientedAccent, reorient} from "../flacco"
 import {getCore} from "./core"
-import {Core, Sagittal, Shafts} from "./types"
+import {isSagittal} from "./typeGuards"
+import {Core, NullSagittal, Sagittal, Shafts} from "./types"
 
 const reorientAccent = (orientedAccent: OrientedAccent): OrientedAccent =>
     ({
@@ -134,12 +135,16 @@ const computeMaybeArmForSelfComplementingCore = (maybeArm: Maybe<Arm>): Maybe<Ar
     }
 }
 
-// TODO: Just a thought - am I converting from these primitive IDs to the objects too soon? Like, can I wait until IO?
+// TODO: SYMBOL VS SAGITTAL; GLYPH TYPES
+//  Just a thought - am I converting from these primitive IDs to the objects too soon? Like, can I wait until IO?
 
-const computeApotomeComplement = ({arm, core}: Sagittal): Sagittal => {
-    if (isUndefined(core)) {
-        return {core: getCore(HeadId.DOUBLE_BARB, Shafts.DOUBLE)}
+const computeApotomeComplement = (sagittal: NullSagittal | Sagittal): Sagittal => {
+    // TODO: APOTOME COMPLEMENT EDGE CASE
+    //  Although actually, if there's no arm and it's a double barb, shouldn't it return the NullSagittal?
+    if (!isSagittal(sagittal)) {
+        return {...getCore(HeadId.DOUBLE_BARB, Shafts.DOUBLE)}
     }
+    const {arm, ...core} = sagittal
 
     let apotomeComplementCore: Maybe<Core> = undefined
 
@@ -158,22 +163,22 @@ const computeApotomeComplement = ({arm, core}: Sagittal): Sagittal => {
         const handledArm = computeMaybeArmForSelfComplementingCore(arm)
 
         if (isUndefined(handledArm)) {
-            return {core: apotomeComplementCore}
+            return {...apotomeComplementCore as Core}
         }
 
         return {
             arm: handledArm,
-            core: apotomeComplementCore,
+            ...apotomeComplementCore as Core,
         }
     } else if (!isUndefined(arm)) {
         return {
             arm: arm.map(reorientAccent),
-            core: apotomeComplementCore,
+            ...apotomeComplementCore as Core,
         }
     }
 
     return {
-        core: apotomeComplementCore,
+        ...apotomeComplementCore as Core,
     }
 }
 

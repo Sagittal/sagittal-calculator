@@ -8,15 +8,14 @@ import {
     Flavor,
     Sagittal,
 } from "../../../../../src/sagittal/accidental"
-import {getArm} from "../../../../../src/sagittal/accidental/flacco/arm"
-import {ArmId, HeadId} from "../../../../../src/sagittal/accidental/flacco/types"
-import {getCore, Shafts} from "../../../../../src/sagittal/accidental/symbol"
+import {ArmId, getArm, HeadId} from "../../../../../src/sagittal/accidental/flacco"
+import {getCore, NullSagittal, Shafts} from "../../../../../src/sagittal/accidental/symbol"
 
 describe("computeSagittalAscii", (): void => {
     it("given a sagittal, returns its ASCII representation", (): void => {
         const sagittal: Sagittal = {
             arm: getArm(ArmId.BIRD),
-            core: getCore(HeadId.LEFT_SCROLL),
+            ...getCore(HeadId.LEFT_SCROLL),
         }
 
         const actual = computeSagittalAscii(sagittal)
@@ -26,7 +25,7 @@ describe("computeSagittalAscii", (): void => {
     })
 
     it("converts 4 shafts up into an ex up", (): void => {
-        const sagittal: Sagittal = {core: getCore(HeadId.LEFT_SCROLL_AND_BARB, Shafts.EX)}
+        const sagittal: Sagittal = {...getCore(HeadId.LEFT_SCROLL_AND_BARB, Shafts.EX)}
 
         const actual = computeSagittalAscii(sagittal)
 
@@ -35,7 +34,7 @@ describe("computeSagittalAscii", (): void => {
     })
 
     it("converts 4 shafts down into an ex down", (): void => {
-        const sagittal: Sagittal = {core: getCore(HeadId.ARC_AND_BOATHOOK, Shafts.EX, Aim.DOWN)}
+        const sagittal: Sagittal = {...getCore(HeadId.ARC_AND_BOATHOOK, Shafts.EX, Aim.DOWN)}
 
         const actual = computeSagittalAscii(sagittal)
 
@@ -45,7 +44,7 @@ describe("computeSagittalAscii", (): void => {
 
 
     it("works for the null sagittal (the parenthetical natural)", (): void => {
-        const sagittal: Sagittal = {}
+        const sagittal: NullSagittal = {}
 
         const actual = computeSagittalAscii(sagittal)
 
@@ -57,7 +56,7 @@ describe("computeSagittalAscii", (): void => {
 describe("computeAccidentalAscii", (): void => {
     it("works for accidentals with a Sagittal-compatible glyph", (): void => {
         const accidental: Accidental<Flavor.EVO> = {
-            core: getCore(HeadId.LEFT_BARB),
+            ...getCore(HeadId.LEFT_BARB),
             compatible: Compatible.SHARP,
         } as Accidental<Flavor.EVO>
 

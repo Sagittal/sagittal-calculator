@@ -20,7 +20,7 @@ describe("computeRevoAccidentalFromCaptureZone", (): void => {
         const actual = computeRevoAccidentalFromCaptureZone(captureZone)
 
         const expected = {
-            core: getCore(HeadId.DOUBLE_LEFT_BARB),
+            ...getCore(HeadId.DOUBLE_LEFT_BARB),
         } as Accidental<Flavor.REVO>
         expect(actual).toEqual(expected)
     })

@@ -5,7 +5,7 @@ export {
     FlaccoId,
     getFlacco,
 } from "./flacco"
-export {Core, Sagittal, Aim, computeSagittalFromFlacco} from "./symbol"
+export {Core, Sagittal, Aim, computeSagittalFromFlacco, NullSagittal} from "./symbol"
 export {Accidental, Flavor, Compatible} from "./flavor"
 export {
     formatAscii,
@@ -22,7 +22,8 @@ export {
     parseAscii,
     Glyph,
 } from "./io"
-// TODO: Quite likely the symbol class stuff should go into its own submodule. But we'll see how it goes
+// TODO: SYMBOL VS SAGITTAL; GLYPH TYPES
+//  Quite likely the symbol class stuff should go into its own submodule. But we'll see how it goes
 export {SymbolSubset, SymbolClassId} from "./types"
 export {getSmallestSymbolSubset} from "./smallestSymbolSubset"
 export {SYMBOL_SUBSETS, SYMBOL_SUBSETS_SORTED_BY_SIZE} from "./symbolSubsets"

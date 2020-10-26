@@ -1,12 +1,15 @@
 import {Formatted, ioSettings, TableFormat} from "../../../general"
-import {Sagittal} from "../symbol"
+import {NullSagittal, Sagittal} from "../symbol"
 import {computeSagittalAscii} from "./ascii"
 import {formatAscii} from "./formatAscii"
 import {computeSagittalSmiley} from "./smiley"
 import {Ascii, Glyph, Smiley, Unicode} from "./types"
 import {computeSagittalUnicode} from "./unicode"
 
-const formatSagittal = (sagittal: Sagittal, { align = true }: { align?: boolean } = {}): Formatted<Glyph> => {
+const formatSagittal = (
+    sagittal: NullSagittal | Sagittal,
+    {align = true}: {align?: boolean} = {},
+): Formatted<Glyph> => {
     switch (ioSettings.tableFormat) {
         case TableFormat.TERMINAL:
             const ascii = computeSagittalAscii(sagittal)

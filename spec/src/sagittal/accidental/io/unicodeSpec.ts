@@ -8,15 +8,14 @@ import {
     Sagittal,
     Unicode,
 } from "../../../../../src/sagittal/accidental"
-import {getArm} from "../../../../../src/sagittal/accidental/flacco/arm"
-import {ArmId, HeadId} from "../../../../../src/sagittal/accidental/flacco/types"
-import {getCore, Shafts} from "../../../../../src/sagittal/accidental/symbol"
+import {ArmId, getArm, HeadId} from "../../../../../src/sagittal/accidental/flacco"
+import {getCore, NullSagittal, Shafts} from "../../../../../src/sagittal/accidental/symbol"
 
 describe("computeSagittalUnicode", (): void => {
     it("given a symbol, returns its unicode representation", (): void => {
         const sagittal: Sagittal = {                                // ``)|
             arm: getArm(ArmId.BIRD),
-            core: getCore(HeadId.LEFT_SCROLL),
+            ...getCore(HeadId.LEFT_SCROLL),
         }
 
         const actual = computeSagittalUnicode(sagittal)
@@ -26,7 +25,7 @@ describe("computeSagittalUnicode", (): void => {
     })
 
     it("works for the null sagittal (the parenthetical natural)", (): void => {
-        const sagittal: Sagittal = {}
+        const sagittal: NullSagittal = {}
 
         const actual = computeSagittalUnicode(sagittal)
 
@@ -38,7 +37,7 @@ describe("computeSagittalUnicode", (): void => {
 describe("computeAccidentalUnicode", (): void => {
     it("works for accidentals with a Sagittal-compatible glyph", (): void => {
         const accidental: Accidental<Flavor.EVO> = {
-            core: getCore(HeadId.RIGHT_ARC, Shafts.SINGLE, Aim.DOWN),
+            ...getCore(HeadId.RIGHT_ARC, Shafts.SINGLE, Aim.DOWN),
             compatible: Compatible.FLAT,
         } as Accidental<Flavor.EVO>
 
