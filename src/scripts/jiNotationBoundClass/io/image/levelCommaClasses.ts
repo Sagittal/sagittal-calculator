@@ -18,7 +18,7 @@ import {computeX} from "./x"
 const visualizeJiNotationLevelCommaClasses = (): Io[] => {
     const jiNotationLevelCommaClassElements: Io[] = [] as Io[]
 
-    const jiNotationLevelsCommaClassIdsEntries = 
+    const jiNotationLevelsCommaClassIdsEntries =
         Object.entries(JI_NOTATION_LEVELS_COMMA_CLASS_IDS) as Array<[JiNotationLevel, CommaClassId[]]>
     jiNotationLevelsCommaClassIdsEntries.forEach((
         [jiNotationLevel, jiNotationLevelCommaClassIds]: [JiNotationLevel, CommaClassId[]],

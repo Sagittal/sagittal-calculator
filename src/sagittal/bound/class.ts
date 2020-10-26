@@ -743,8 +743,6 @@ const BOUND_CLASSES: Record<BoundClassId, BoundClass> = {
     },
 }
 
-// TODO: CONSISTENT "GET" NAMING
-//  It'd be great if all "get" functions (as opposed to "compute"s) were from constant-cased const's
 const getBoundClass = (boundClassId: BoundClassId): BoundClass =>
     BOUND_CLASSES[boundClassId]
 

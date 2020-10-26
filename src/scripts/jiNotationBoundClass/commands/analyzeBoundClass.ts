@@ -22,7 +22,8 @@ ioSettings.scriptGroup = ScriptGroup.JI_NOTATION_BOUND_CLASS as Filename
 
 const boundClassIndex = program.args[0]
 
-// TODO: may want to consider having this thing not care about bound class *index* and just rework output to go by
+// TODO: STOP USING BOUND CLASS INDEX
+//  May want to consider having this thing not care about bound class *index* and just rework output to go by
 //  The bound id; only reason I can think *not* to do that is that it might assume some of the things it's verifying?
 //  Except not really, because we're not really moving the bounds by amounts greater than *minas*
 if (isUndefined(boundClassIndex)) {
