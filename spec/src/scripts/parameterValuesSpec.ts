@@ -1,16 +1,16 @@
 import {Ed, integerDivide, Window} from "../../../src/general"
 import {computeParameterValues} from "../../../src/scripts/parameterValues"
-import {DynamicParameterScope, ParameterValue} from "../../../src/scripts/types"
+import {DynamicParameterScope, Parameter} from "../../../src/scripts/types"
 
 describe("computeParameterValues", (): void => {
     it("given a parameter scope (a center, a window, and a ED), will return a block of points to sample", (): void => {
         const parameterScope: DynamicParameterScope = {
-            center: 1 as ParameterValue,
-            window: 0.5 as Window<ParameterValue>,
-            ed: 5 as Ed<ParameterValue>,
+            center: 1 as Parameter,
+            window: 0.5 as Window<Parameter>,
+            ed: 5 as Ed<Parameter>,
         }
 
-        const actual: ParameterValue[] = computeParameterValues(parameterScope)
+        const actual: Parameter[] = computeParameterValues(parameterScope)
 
         const expected = [
             0.75,
@@ -18,7 +18,7 @@ describe("computeParameterValues", (): void => {
             1.0,
             1.125,
             1.25,
-        ] as ParameterValue[]
+        ] as Parameter[]
         expect(actual).toEqual(expected)
         expect(actual.length).toBe(parameterScope.ed as number)
         expect(actual[actual.length - 1] - actual[0]).toBe(parameterScope.window as number)
@@ -27,9 +27,9 @@ describe("computeParameterValues", (): void => {
 
     it("works when the ED is even", (): void => {
         const parameterScope: DynamicParameterScope = {
-            center: 5 as ParameterValue,
-            window: 1 as Window<ParameterValue>,
-            ed: 4 as Ed<ParameterValue>,
+            center: 5 as Parameter,
+            window: 1 as Window<Parameter>,
+            ed: 4 as Ed<Parameter>,
         }
 
         const actual = computeParameterValues(parameterScope)
@@ -39,7 +39,7 @@ describe("computeParameterValues", (): void => {
             4.833333,
             5.166666,
             5.5,
-        ] as ParameterValue[]
+        ] as Parameter[]
         expect(actual).toBeCloseToArray(expected)
         expect(actual.length).toBe(parameterScope.ed as number)
         expect(actual[actual.length - 1] - actual[0]).toBe(parameterScope.window as number)
@@ -55,15 +55,15 @@ describe("computeParameterValues", (): void => {
 
     it("works when the ED is one", (): void => {
         const parameterScope: DynamicParameterScope = {
-            center: 5 as ParameterValue,
-            ed: 1 as Ed<ParameterValue>,
+            center: 5 as Parameter,
+            ed: 1 as Ed<Parameter>,
         }
 
         const actual = computeParameterValues(parameterScope)
 
         const expected = [
             5,
-        ] as ParameterValue[]
+        ] as Parameter[]
         expect(actual).toEqual(expected)
         expect(actual.length).toBe(parameterScope.ed as number)
         expect(actual[integerDivide(actual.length, 2)] as number).toBe(parameterScope.center as number)
@@ -71,12 +71,12 @@ describe("computeParameterValues", (): void => {
 
     it("works when the ED is zero", (): void => {
         const parameterScope: DynamicParameterScope = {
-            ed: 0 as Ed<ParameterValue>,
+            ed: 0 as Ed<Parameter>,
         }
 
         const actual = computeParameterValues(parameterScope)
 
-        const expected: ParameterValue[] = []
+        const expected: Parameter[] = []
         expect(actual).toEqual(expected)
         expect(actual.length).toBe(parameterScope.ed as number)
     })

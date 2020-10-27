@@ -2,9 +2,9 @@ import {Index, Two3FreeClass} from "../../../general"
 import {
     CommaClassId,
     getCommaClass,
-    getSmallestSymbolSubset,
-    SymbolSubset,
-    SYMBOL_SUBSETS_SORTED_BY_SIZE,
+    getSmallestSymbolSubsetId,
+    SIZE_SORTED_SYMBOL_SUBSET_IDS,
+    SymbolSubsetId,
 } from "../../../sagittal"
 import {computeNotatingCommaClassIds} from "./notatingCommaClassIds"
 import {NotatingCommaClassesProperties} from "./types"
@@ -15,11 +15,11 @@ const computeNotatingCommaClassesProperties = (
     const notatingCommaClassIds = computeNotatingCommaClassIds(two3FreeClass)
 
     const smallestSymbolSubsetIndices = notatingCommaClassIds
-        .map((commaClassId: CommaClassId): Index<SymbolSubset> => {
+        .map((commaClassId: CommaClassId): Index<SymbolSubsetId> => {
             const flaccoId = getCommaClass(commaClassId).representativeSymbolClassId
 
             // This used to not include Trojan, and the tables that have been shared on the forum reflect that.
-            return SYMBOL_SUBSETS_SORTED_BY_SIZE.indexOf(getSmallestSymbolSubset(flaccoId)) as Index<SymbolSubset>
+            return SIZE_SORTED_SYMBOL_SUBSET_IDS.indexOf(getSmallestSymbolSubsetId(flaccoId)) as Index<SymbolSubsetId>
         })
 
     return {

@@ -1,11 +1,11 @@
 import {Scamon} from "../../../general"
-import {CommaClassId, getCommaClass, JiNotationLevel, JI_NOTATION_LEVELS_COMMA_CLASS_IDS} from "../../../sagittal"
+import {CommaClassId, getCommaClass, JiNotationLevelId, JI_NOTATION_LEVELS_COMMA_CLASS_IDS} from "../../../sagittal"
 import {computeNeighborPositions} from "./neighborPositions"
 import {BoundedCommaClassPositions} from "./types"
 
 const computeBoundedCommaClassPositions = (
     position: Scamon,
-    jiNotationLevel: JiNotationLevel,
+    jiNotationLevel: JiNotationLevelId,
 ): BoundedCommaClassPositions => {
     const jiNotationLevelCommaClassIds: CommaClassId[] = JI_NOTATION_LEVELS_COMMA_CLASS_IDS[jiNotationLevel]
 

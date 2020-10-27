@@ -7,7 +7,7 @@ import {
     getCommaClass,
     getMinaName,
     getRepresentativeSagittal,
-    JiNotationLevel,
+    JiNotationLevelId,
     JI_NOTATION_LEVELS_COMMA_CLASS_IDS,
 } from "../../../../sagittal"
 import {formatMinaName} from "../terminal"
@@ -19,11 +19,11 @@ const visualizeJiNotationLevelCommaClasses = (): Io[] => {
     const jiNotationLevelCommaClassElements: Io[] = [] as Io[]
 
     const jiNotationLevelsCommaClassIdsEntries =
-        Object.entries(JI_NOTATION_LEVELS_COMMA_CLASS_IDS) as Array<[JiNotationLevel, CommaClassId[]]>
+        Object.entries(JI_NOTATION_LEVELS_COMMA_CLASS_IDS) as Array<[JiNotationLevelId, CommaClassId[]]>
     jiNotationLevelsCommaClassIdsEntries.forEach((
-        [jiNotationLevel, jiNotationLevelCommaClassIds]: [JiNotationLevel, CommaClassId[]],
+        [jiNotationLevel, jiNotationLevelCommaClassIds]: [JiNotationLevelId, CommaClassId[]],
     ): void => {
-        if (jiNotationLevel === JiNotationLevel.INSANE) {
+        if (jiNotationLevel === JiNotationLevelId.INSANE) {
             return
         }
 
@@ -52,7 +52,7 @@ const visualizeJiNotationLevelCommaClasses = (): Io[] => {
             jiNotationLevelCommaClassElements.push(`  <text fill="white" text-anchor="middle" x="${positionX}" y="${sagittalY}" font-size="10px" font-family="Helvetica">${ascii}</text>\n` as Io) // So they can be searched by ASCII
             jiNotationLevelCommaClassElements.push(`  <text fill="black" text-anchor="middle" x="${positionX}" y="${sagittalY}" font-size="40px" font-family="Bravura">${adjustedUnicode}</text>\n` as Io)
 
-            if (jiNotationLevel === JiNotationLevel.EXTREME) {
+            if (jiNotationLevel === JiNotationLevelId.EXTREME) {
                 const minaY: Px = round(subtract(sagittalY, MINA_OFFSET), DEFAULT_PRECISION)
                 jiNotationLevelCommaClassElements.push(`  <text text-anchor="middle" x="${positionX}" y="${minaY}" font-size="10px" font-family="Bravura">${formatMinaName(minaName)}</text>\n` as Io)
             }

@@ -14,7 +14,7 @@ import {
     saveLog,
 } from "../../../../general"
 import {Scope, SubmetricScope} from "../../bestMetric"
-import {Parameter, Submetric} from "../../sumOfSquares"
+import {PopularityParameterId, Submetric} from "../../sumOfSquares"
 import {formatSearchedAndPopulated} from "../io"
 import {Chunk} from "../types"
 import {populateScope} from "./scope"
@@ -33,19 +33,20 @@ const computeNextPopulateScopesForSubmetricChunkCombinationOptions = (
 
     saveLog(`populating scopes for submetric chunk combination ${submetricChunkCombinationIndex + 1}/${submetricChunkCombinationCount} with parameter chunk combination ${parameterChunkCombinationIndex + 1}/${parameterChunkCombinations.length} (${100 * parameterChunkCombinationIndex / parameterChunkCombinations.length}%) ${formatSearchedAndPopulated()}`, LogTarget.SETUP)
 
-    const parameterChunkCombination: Combination<Chunk<Parameter>> =
+    const parameterChunkCombination: Combination<Chunk<PopularityParameterId>> =
         parameterChunkCombinations[parameterChunkCombinationIndex]
 
-    const parameterChunkCombinationDistributions: Array<Distribution<Chunk<Parameter>>> = computeDistributions(
-        parameterChunkCombination,
-        count(submetricChunkCombination) as Count as Count<DistributionBin<Chunk<Parameter>>>,
-    )
+    const parameterChunkCombinationDistributions: Array<Distribution<Chunk<PopularityParameterId>>> =
+        computeDistributions(
+            parameterChunkCombination,
+            count(submetricChunkCombination) as Count as Count<DistributionBin<Chunk<PopularityParameterId>>>,
+        )
 
     parameterChunkCombinationDistributions.forEach(
-        (parameterChunkCombinationDistribution: Distribution<Chunk<Parameter>>): void => {
+        (parameterChunkCombinationDistribution: Distribution<Chunk<PopularityParameterId>>): void => {
             const scope: Scope = submetricChunkCombination.map(
                 (submetricChunkBin: Chunk<Submetric>, index: number): SubmetricScope => {
-                    const parametersDistributedToThisBin: Combination<Chunk<Parameter>> =
+                    const parametersDistributedToThisBin: Combination<Chunk<PopularityParameterId>> =
                         parameterChunkCombinationDistribution[index]
 
                     return merge(
@@ -62,7 +63,7 @@ const computeNextPopulateScopesForSubmetricChunkCombinationOptions = (
     return {
         parameterChunkCombinations,
         parameterChunkCombinationIndex:
-            increment(parameterChunkCombinationIndex as Index<Combination<Chunk<Parameter>>>),
+            increment(parameterChunkCombinationIndex as Index<Combination<Chunk<PopularityParameterId>>>),
         submetricChunkCombinationIndex,
         submetricChunkCombinationCount,
     }

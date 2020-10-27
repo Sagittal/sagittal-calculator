@@ -6,52 +6,52 @@ import {
     SamplePoint,
     SubmetricPossibility,
 } from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples/types"
-import {Parameter, Submetric} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
-import {ParameterValue} from "../../../../../../src/scripts/types"
+import {PopularityParameterId, Submetric} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {Parameter} from "../../../../../../src/scripts/types"
 
 describe("combineSubmetricsPossibilitiesIntoSamples", (): void => {
     it("takes the list of possible values for each submetric individually, and returns a list of every possible combination of them, along with its corresponding sample point, which is then all together called a Sample; it also takes the zeroth submetric scope (the all bins one) and spreads it across every submetric", (): void => {
         // Submetric zero has two possibilities
         const submetricZeroPossibilityA = {
-            [Parameter.K_AS_COEFFICIENT]: 0.33 as ParameterValue,
+            [PopularityParameterId.K_AS_COEFFICIENT]: 0.33 as Parameter,
         } as SubmetricPossibility
         const submetricZeroPossibilityB = {
-            [Parameter.K_AS_COEFFICIENT]: 0.45 as ParameterValue,
+            [PopularityParameterId.K_AS_COEFFICIENT]: 0.45 as Parameter,
         } as SubmetricPossibility
 
         // Submetric one has three possibilities
         const submetricAPossibilityA: SubmetricPossibility = {
-            [Parameter.A_AS_COEFFICIENT]: 0.5 as ParameterValue,
-            [Parameter.Y]: 1.5 as ParameterValue,
-            [Parameter.COUNT]: true,
+            [PopularityParameterId.A_AS_COEFFICIENT]: 0.5 as Parameter,
+            [PopularityParameterId.Y]: 1.5 as Parameter,
+            [PopularityParameterId.COUNT]: true,
         } as SubmetricPossibility
         const submetricAPossibilityB: SubmetricPossibility = {
-            [Parameter.A_AS_COEFFICIENT]: 0.5 as ParameterValue,
-            [Parameter.Y]: 1.2 as ParameterValue,
-            [Parameter.COUNT]: true,
+            [PopularityParameterId.A_AS_COEFFICIENT]: 0.5 as Parameter,
+            [PopularityParameterId.Y]: 1.2 as Parameter,
+            [PopularityParameterId.COUNT]: true,
         } as SubmetricPossibility
         const submetricAPossibilityC: SubmetricPossibility = {
-            [Parameter.A_AS_COEFFICIENT]: 0.5 as ParameterValue,
-            [Parameter.Y]: 0.9 as ParameterValue,
-            [Parameter.COUNT]: true,
+            [PopularityParameterId.A_AS_COEFFICIENT]: 0.5 as Parameter,
+            [PopularityParameterId.Y]: 0.9 as Parameter,
+            [PopularityParameterId.COUNT]: true,
         } as SubmetricPossibility
 
         // Submetric two has four possibilities (2x2: 2 for y, 2 for a)
         const submetricBPossibilityA: SubmetricPossibility = {
-            [Parameter.Y]: 0.9 as ParameterValue,
-            [Parameter.A_AS_COEFFICIENT]: 0.7 as ParameterValue,
+            [PopularityParameterId.Y]: 0.9 as Parameter,
+            [PopularityParameterId.A_AS_COEFFICIENT]: 0.7 as Parameter,
         } as SubmetricPossibility
         const submetricBPossibilityB: SubmetricPossibility = {
-            [Parameter.Y]: 1.1 as ParameterValue,
-            [Parameter.A_AS_COEFFICIENT]: 0.7 as ParameterValue,
+            [PopularityParameterId.Y]: 1.1 as Parameter,
+            [PopularityParameterId.A_AS_COEFFICIENT]: 0.7 as Parameter,
         } as SubmetricPossibility
         const submetricBPossibilityC: SubmetricPossibility = {
-            [Parameter.Y]: 0.9 as ParameterValue,
-            [Parameter.A_AS_COEFFICIENT]: 0.6 as ParameterValue,
+            [PopularityParameterId.Y]: 0.9 as Parameter,
+            [PopularityParameterId.A_AS_COEFFICIENT]: 0.6 as Parameter,
         } as SubmetricPossibility
         const submetricBPossibilityD: SubmetricPossibility = {
-            [Parameter.Y]: 1.1 as ParameterValue,
-            [Parameter.A_AS_COEFFICIENT]: 0.6 as ParameterValue,
+            [PopularityParameterId.Y]: 1.1 as Parameter,
+            [PopularityParameterId.A_AS_COEFFICIENT]: 0.6 as Parameter,
         } as SubmetricPossibility
 
         // Now remember: submetric zero is the "all bins" one, so that's why there's actually only two submetrics
@@ -79,17 +79,17 @@ describe("combineSubmetricsPossibilitiesIntoSamples", (): void => {
             // Submetric zero had 2 possibilities, both variants of a single dynamic parameter
             {
                 submetricIndex: 0 as Index<Submetric>,
-                parameter: Parameter.K_AS_COEFFICIENT,
-                values: [0.33, 0.45] as ParameterValue[],       // Here's the two possibilities
-                unit: 0.12 as Step<ParameterValue>,
+                parameter: PopularityParameterId.K_AS_COEFFICIENT,
+                values: [0.33, 0.45] as Parameter[],       // Here's the two possibilities
+                unit: 0.12 as Step<Parameter>,
             },
 
             // Submetric one had 3 possibilities, all variants of a single dynamic parameter
             {
                 submetricIndex: 1 as Index<Submetric>,
-                parameter: Parameter.Y,
-                values: [1.5, 1.2, 0.9] as ParameterValue[],    // Here's the three possibilities
-                unit: 0 as Step<ParameterValue>,
+                parameter: PopularityParameterId.Y,
+                values: [1.5, 1.2, 0.9] as Parameter[],    // Here's the three possibilities
+                unit: 0 as Step<Parameter>,
             },
 
             // Submetric two had 4 possibilities, combinations of 2 dynamic parameters each with 2 possibilities
@@ -97,15 +97,15 @@ describe("combineSubmetricsPossibilitiesIntoSamples", (): void => {
             // Y is shared with submetric one -- but that's perfectly okay)
             {
                 submetricIndex: 2 as Index<Submetric>,
-                parameter: Parameter.Y,
-                values: [0.9, 1.1] as ParameterValue[],        // Here's the first of two sets of two possibilities
-                unit: 0 as Step<ParameterValue>,
+                parameter: PopularityParameterId.Y,
+                values: [0.9, 1.1] as Parameter[],        // Here's the first of two sets of two possibilities
+                unit: 0 as Step<Parameter>,
             },
             {
                 submetricIndex: 2 as Index<Submetric>,
-                parameter: Parameter.A_AS_COEFFICIENT,
-                values: [0.7, 0.6] as ParameterValue[],        // Here's the second of two sets of two possibilities
-                unit: 0 as Step<ParameterValue>,
+                parameter: PopularityParameterId.A_AS_COEFFICIENT,
+                values: [0.7, 0.6] as Parameter[],        // Here's the second of two sets of two possibilities
+                unit: 0 as Step<Parameter>,
             },
         ]
 

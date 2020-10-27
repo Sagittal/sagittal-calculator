@@ -1,5 +1,5 @@
 import {Index, Two3FreeClass} from "../../../../../src/general"
-import {CommaClassId, SymbolSubset} from "../../../../../src/sagittal/notation"
+import {CommaClassId, SymbolSubsetId} from "../../../../../src/sagittal/notation"
 import {
     computeNotatingCommaClassesProperties,
     NotatingCommaClassesProperties,
@@ -13,7 +13,7 @@ describe("computeNotatingCommaClassesProperties", (): void => {
 
         const expected: NotatingCommaClassesProperties = {
             notatingCommaClassIds: [CommaClassId._5_7_k, CommaClassId._5_7_C],
-            notatingCommaClassSmallestSymbolSubsetIndices: [1, 5] as Array<Index<SymbolSubset>>,
+            notatingCommaClassSmallestSymbolSubsetIndices: [1, 5] as Array<Index<SymbolSubsetId>>,
         }
         expect(actual).toEqual(expected)
     })

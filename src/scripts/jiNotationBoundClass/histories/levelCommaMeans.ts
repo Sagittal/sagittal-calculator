@@ -4,11 +4,11 @@ import {
     computeSagittalAscii,
     getCommaClass,
     getRepresentativeSagittal,
-    JiNotationLevel,
+    JiNotationLevelId,
     JI_NOTATION_LEVELS_COMMA_CLASS_IDS,
 } from "../../../sagittal"
 
-const computeJiNotationLevelCommaMeans = (jiNotationLevel: JiNotationLevel): CommaMean[] => {
+const computeJiNotationLevelCommaMeans = (jiNotationLevel: JiNotationLevelId): CommaMean[] => {
     const jiNotationLevelCommaClassIds = JI_NOTATION_LEVELS_COMMA_CLASS_IDS[jiNotationLevel]
 
     const jiNotationLevelCommaClassIdsExcludingTheFinalCommaClass =

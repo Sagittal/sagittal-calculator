@@ -12,7 +12,7 @@ export {JI_NOTATION_LEVELS_COMMA_CLASS_IDS} from "./levelCommaClassIds"
 export {
     JiNotationBoundClass,
     Ina,
-    JiNotationLevel,
+    JiNotationLevelId,
     Mina,
     Tina,
     BoundType,

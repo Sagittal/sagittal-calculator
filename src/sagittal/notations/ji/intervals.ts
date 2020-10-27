@@ -2,7 +2,7 @@ import { Apotome, Cents, computeCentsFromPitch, Ed, reciprocal } from "../../../
 import { APOTOME } from "../../constants"
 import { EXTREME_EDA, HIGH_EDA, INSANE_EDA, JI_NOTATION_LEVEL_EDAS, MEDIUM_EDA, ULTRA_EDA } from "./levelEdas"
 import { JI_NOTATION_LEVELS } from "./levels"
-import { Highina, JiNotationLevel, Medina, Mina, Tina, Ultrina } from "./types"
+import { Highina, JiNotationLevelId, Medina, Mina, Tina, Ultrina } from "./types"
 
 const TINA: Tina = reciprocal(INSANE_EDA) * computeCentsFromPitch(APOTOME) as Tina              // 0.14052534741¢
 const MINA: Mina = reciprocal(EXTREME_EDA) * computeCentsFromPitch(APOTOME) as Mina             // 0.48791848093¢
@@ -10,17 +10,17 @@ const ULTRINA: Ultrina = reciprocal(ULTRA_EDA) * computeCentsFromPitch(APOTOME) 
 const HIGHINA: Highina = reciprocal(HIGH_EDA) * computeCentsFromPitch(APOTOME) as Highina       // 2.41882991613¢
 const MEDINA: Medina = reciprocal(MEDIUM_EDA) * computeCentsFromPitch(APOTOME) as Medina        // 5.41357171705¢
 
-const INA_SIZES: Record<JiNotationLevel, Cents> = JI_NOTATION_LEVEL_EDAS.reduce(
+const INA_SIZES: Record<JiNotationLevelId, Cents> = JI_NOTATION_LEVEL_EDAS.reduce(
     (
-        jiNotationLevelEdaStepSizes: Record<JiNotationLevel, Cents>,
+        jiNotationLevelEdaStepSizes: Record<JiNotationLevelId, Cents>,
         jiNotationLevelEda: Ed<Apotome>,
         index: number,
-    ): Record<JiNotationLevel, Cents> =>
+    ): Record<JiNotationLevelId, Cents> =>
         ({
             ...jiNotationLevelEdaStepSizes,
             [ JI_NOTATION_LEVELS[ index ] ]: computeCentsFromPitch((APOTOME)) / jiNotationLevelEda,
         }),
-    {} as Record<JiNotationLevel, Cents>,
+    {} as Record<JiNotationLevelId, Cents>,
 )
 
 export {

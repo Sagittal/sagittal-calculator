@@ -1,23 +1,23 @@
 import {Index} from "../../../../general"
-import {ParameterValue} from "../../../types"
-import {Parameter} from "../../sumOfSquares"
+import {Parameter} from "../../../types"
+import {PopularityParameterId} from "../../sumOfSquares"
 import {DynamicParameter, DynamicParameterValueIndicesOptions} from "./types"
 
 const computeDynamicParameterValueIndices = (
     {dynamicParameters, submetric, submetricIndex}: DynamicParameterValueIndicesOptions,
-): Array<Index<ParameterValue>> => {
-    const dynamicParameterValueIndices: Array<Index<ParameterValue>> = []
+): Array<Index<Parameter>> => {
+    const dynamicParameterValueIndices: Array<Index<Parameter>> = []
 
     dynamicParameters.forEach((dynamicParameter: DynamicParameter): void => {
         if (dynamicParameter.submetricIndex !== submetricIndex) {
             return
         }
 
-        const submetricEntries = Object.entries(submetric) as Array<[Parameter, ParameterValue]>
-        submetricEntries.forEach(([parameter, dynamicParameterValue]: [Parameter, ParameterValue]): void => {
+        const submetricEntries = Object.entries(submetric) as Array<[PopularityParameterId, Parameter]>
+        submetricEntries.forEach(([parameter, dynamicParameterValue]: [PopularityParameterId, Parameter]): void => {
             if (dynamicParameter.parameter === parameter) {
-                const dynamicParameterValueIndex: Index<ParameterValue> =
-                    dynamicParameter.values.indexOf(dynamicParameterValue) as Index<ParameterValue>
+                const dynamicParameterValueIndex: Index<Parameter> =
+                    dynamicParameter.values.indexOf(dynamicParameterValue) as Index<Parameter>
                 dynamicParameterValueIndices.push(dynamicParameterValueIndex)
             }
         })

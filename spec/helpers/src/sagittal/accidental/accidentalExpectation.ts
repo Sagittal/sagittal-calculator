@@ -24,8 +24,6 @@ const computeAccidentalExpectation = (captureZone: CaptureZone): AccidentalExpec
     }
 
     return {
-        // Todo: BLOCKED ON FLACOMBO, SECTION, NOTATION GENERATION (JUST TESTING)
-        //  I think we could put the captureZone on here, and/or the Section
         evo,
         revo,
     }

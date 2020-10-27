@@ -1,14 +1,14 @@
 import {Abs, abs, Max} from "../../../../../../src/general"
 import {CommaClassId, getCommaClass} from "../../../../../../src/sagittal"
 import {ApotomeSlope, computeApotomeSlope} from "../../../../../../src/sagittal/ji/pitch"
-import {JiNotationLevel, JI_NOTATION_LEVELS_COMMA_CLASS_IDS} from "../../../../../../src/sagittal/notations/ji"
+import {JiNotationLevelId, JI_NOTATION_LEVELS_COMMA_CLASS_IDS} from "../../../../../../src/sagittal/notations/ji"
 
 describe("max AAS per JI notation level", (): void => {
     it("increases a bit at each JI notation level", (): void => {
-        const entries = Object.entries(JI_NOTATION_LEVELS_COMMA_CLASS_IDS) as Array<[JiNotationLevel, CommaClassId[]]>
+        const entries = Object.entries(JI_NOTATION_LEVELS_COMMA_CLASS_IDS) as Array<[JiNotationLevelId, CommaClassId[]]>
         const actual = entries.map((
-            [jiNotationLevel, jiNotationLevelCommaClassIds]: [JiNotationLevel, CommaClassId[]],
-        ): Partial<Record<JiNotationLevel, ApotomeSlope>> => {
+            [jiNotationLevel, jiNotationLevelCommaClassIds]: [JiNotationLevelId, CommaClassId[]],
+        ): Partial<Record<JiNotationLevelId, ApotomeSlope>> => {
             const jiNotationLevelMaxAas: Max<Abs<ApotomeSlope>> = jiNotationLevelCommaClassIds.reduce(
                 (
                     jiNotationLevelMaxAas: Max<Abs<ApotomeSlope>>,
@@ -27,12 +27,12 @@ describe("max AAS per JI notation level", (): void => {
             return {[jiNotationLevel]: jiNotationLevelMaxAas}
         })
 
-        const expected: Array<Partial<Record<JiNotationLevel, Max<ApotomeSlope>>>> = [
-            {[JiNotationLevel.MEDIUM]: 6.354529 as Max<ApotomeSlope>},
-            {[JiNotationLevel.HIGH]: 7.763479 as Max<ApotomeSlope>},
-            {[JiNotationLevel.ULTRA]: 11.558452 as Max<ApotomeSlope>},
-            {[JiNotationLevel.EXTREME]: 11.558452 as Max<ApotomeSlope>},
-            {[JiNotationLevel.INSANE]: 11.558452 as Max<ApotomeSlope>},
+        const expected: Array<Partial<Record<JiNotationLevelId, Max<ApotomeSlope>>>> = [
+            {[JiNotationLevelId.MEDIUM]: 6.354529 as Max<ApotomeSlope>},
+            {[JiNotationLevelId.HIGH]: 7.763479 as Max<ApotomeSlope>},
+            {[JiNotationLevelId.ULTRA]: 11.558452 as Max<ApotomeSlope>},
+            {[JiNotationLevelId.EXTREME]: 11.558452 as Max<ApotomeSlope>},
+            {[JiNotationLevelId.INSANE]: 11.558452 as Max<ApotomeSlope>},
         ]
         expect(actual).toBeCloseToObject(expected)
     })

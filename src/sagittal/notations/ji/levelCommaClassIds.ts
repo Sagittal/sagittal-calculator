@@ -1,6 +1,6 @@
 import {finalElement, Index, KeyPath, sort} from "../../../general"
 import {CommaClassId} from "../../notation"
-import {JiNotationLevel} from "./types"
+import {JiNotationLevelId} from "./types"
 
 // TODO: JI NOTATION, AFTER NOTATION GENERATION
 //  So... this whole module should be supplanted once the notation generation is mature? Or it could become a test?
@@ -159,12 +159,12 @@ const INSANE_LEVEL_COMMA_CLASS_IDS = sort([
 const shapeUpIds = (ids: Array<[Index<CommaClassId>, CommaClassId]>): CommaClassId[] =>
     sort(ids, {by: 0 as KeyPath}).map(([_, id]: [Index<CommaClassId>, CommaClassId]): CommaClassId => id)
 
-const JI_NOTATION_LEVELS_COMMA_CLASS_IDS: Record<JiNotationLevel, CommaClassId[]> = {
-    [JiNotationLevel.MEDIUM]: shapeUpIds(MEDIUM_LEVEL_COMMA_CLASS_IDS),
-    [JiNotationLevel.HIGH]: shapeUpIds(HIGH_LEVEL_COMMA_CLASS_IDS),
-    [JiNotationLevel.ULTRA]: shapeUpIds(ULTRA_LEVEL_COMMA_CLASS_IDS),
-    [JiNotationLevel.EXTREME]: shapeUpIds(EXTREME_LEVEL_COMMA_CLASS_IDS),
-    [JiNotationLevel.INSANE]: shapeUpIds(INSANE_LEVEL_COMMA_CLASS_IDS),
+const JI_NOTATION_LEVELS_COMMA_CLASS_IDS: Record<JiNotationLevelId, CommaClassId[]> = {
+    [JiNotationLevelId.MEDIUM]: shapeUpIds(MEDIUM_LEVEL_COMMA_CLASS_IDS),
+    [JiNotationLevelId.HIGH]: shapeUpIds(HIGH_LEVEL_COMMA_CLASS_IDS),
+    [JiNotationLevelId.ULTRA]: shapeUpIds(ULTRA_LEVEL_COMMA_CLASS_IDS),
+    [JiNotationLevelId.EXTREME]: shapeUpIds(EXTREME_LEVEL_COMMA_CLASS_IDS),
+    [JiNotationLevelId.INSANE]: shapeUpIds(INSANE_LEVEL_COMMA_CLASS_IDS),
 }
 
 const JI_NOTATION = finalElement(Object.values(JI_NOTATION_LEVELS_COMMA_CLASS_IDS))

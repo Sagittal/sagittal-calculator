@@ -5,7 +5,7 @@ import {Metric, SumOfSquares} from "../../../../../../src/scripts/popularityMetr
 import {bestMetrics} from "../../../../../../src/scripts/popularityMetricLfc/globals"
 import {formatBestMetrics} from "../../../../../../src/scripts/popularityMetricLfc/solver"
 import {formatPercentage} from "../../../../../../src/scripts/popularityMetricLfc/solver/io"
-import {Parameter, Submetric} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {PopularityParameterId, Submetric} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
 describe("formatBestMetrics", (): void => {
     it("sorts the best metrics by sum of squares, and formats them like how they look as enums", (): void => {
@@ -16,7 +16,7 @@ describe("formatBestMetrics", (): void => {
                 name: "" as Name<Metric>,
                 submetrics: [
                     {
-                        [Parameter.SUM]: true,
+                        [PopularityParameterId.SUM]: true,
                     },
                 ] as Combination<Submetric>,
             },
@@ -28,7 +28,7 @@ describe("formatBestMetrics", (): void => {
                 name: "" as Name<Metric>,
                 submetrics: [
                     {
-                        [Parameter.COUNT]: true,
+                        [PopularityParameterId.COUNT]: true,
                     },
                 ] as Combination<Submetric>,
             },
@@ -40,7 +40,7 @@ describe("formatBestMetrics", (): void => {
                 name: "" as Name<Metric>,
                 submetrics: [
                     {
-                        [Parameter.MAX]: true,
+                        [PopularityParameterId.MAX]: true,
                     },
                 ] as Combination<Submetric>,
             },
@@ -55,7 +55,7 @@ describe("formatBestMetrics", (): void => {
             `        name: "",` + NEWLINE +
             `        submetrics: [` + NEWLINE +
             `            {` + NEWLINE +
-            `                [ Parameter.MAX ]: true` + NEWLINE +
+            `                [ PopularityParameterId.MAX ]: true` + NEWLINE +
             `            }` + NEWLINE +
             `        ]` + NEWLINE +
             `    },` + NEWLINE +
@@ -64,7 +64,7 @@ describe("formatBestMetrics", (): void => {
             `        name: "",` + NEWLINE +
             `        submetrics: [` + NEWLINE +
             `            {` + NEWLINE +
-            `                [ Parameter.SUM ]: true` + NEWLINE +
+            `                [ PopularityParameterId.SUM ]: true` + NEWLINE +
             `            }` + NEWLINE +
             `        ]` + NEWLINE +
             `    },` + NEWLINE +
@@ -73,7 +73,7 @@ describe("formatBestMetrics", (): void => {
             `        name: "",` + NEWLINE +
             `        submetrics: [` + NEWLINE +
             `            {` + NEWLINE +
-            `                [ Parameter.COUNT ]: true` + NEWLINE +
+            `                [ PopularityParameterId.COUNT ]: true` + NEWLINE +
             `            }` + NEWLINE +
             `        ]` + NEWLINE +
             `    }` + NEWLINE +

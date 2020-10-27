@@ -10,16 +10,16 @@ enum ScriptGroup {
     SPEC = "spec",
 }
 
-type ParameterValue = number & {_ParameterValueBrand: boolean}
+type Parameter = number & {_ParameterValueBrand: boolean}
 
 type DynamicParameterScope = Partial<{
-    center: ParameterValue,
-    ed: Ed<ParameterValue>,
-    window: Window<ParameterValue>,
+    center: Parameter,
+    ed: Ed<Parameter>,
+    window: Window<Parameter>,
 }>
 
 export {
     ScriptGroup,
-    ParameterValue,
+    Parameter,
     DynamicParameterScope,
 }

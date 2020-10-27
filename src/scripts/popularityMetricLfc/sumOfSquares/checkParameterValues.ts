@@ -1,13 +1,13 @@
 import {isNumber, stringify} from "../../../general"
-import {Parameter, Submetric} from "./types"
+import {PopularityParameterId, Submetric} from "./types"
 
 const checkSubmetricsForInvalidParameterValueCombinations = (submetrics: Submetric[]): void => {
     submetrics.forEach((submetric: Submetric): void => {
         const {
-            [Parameter.A_AS_LOGARITHM_BASE]: aAsLogarithmBase,
-            [Parameter.J_AS_LOGARITHM_BASE]: jAsLogarithmBase,
-            [Parameter.K_AS_LOGARITHM_BASE]: kAsLogarithmBase,
-            [Parameter.WEIGHT_AS_LOGARITHM_BASE]: weightAsLogarithmBase,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: aAsLogarithmBase,
+            [PopularityParameterId.J_AS_LOGARITHM_BASE]: jAsLogarithmBase,
+            [PopularityParameterId.K_AS_LOGARITHM_BASE]: kAsLogarithmBase,
+            [PopularityParameterId.WEIGHT_AS_LOGARITHM_BASE]: weightAsLogarithmBase,
         } = submetric
 
         if (aAsLogarithmBase === 1) {

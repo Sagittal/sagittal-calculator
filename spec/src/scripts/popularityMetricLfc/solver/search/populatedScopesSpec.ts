@@ -3,11 +3,11 @@ import {Scope} from "../../../../../../src/scripts/popularityMetricLfc/bestMetri
 import * as nonRecursiveBestMetric from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/bestMetric"
 import {scopesToSearch, solverStatus} from "../../../../../../src/scripts/popularityMetricLfc/globals"
 import {searchPopulatedScopes} from "../../../../../../src/scripts/popularityMetricLfc/solver/search/populatedScopes"
-import {Parameter} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {PopularityParameterId} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
 describe("searchPopulatedScopes", (): void => {
-    const scope = [{[Parameter.MAX]: true}] as Scope
-    const otherScope = [{[Parameter.A_AS_COEFFICIENT]: 2}] as Scope
+    const scope = [{[PopularityParameterId.MAX]: true}] as Scope
+    const otherScope = [{[PopularityParameterId.A_AS_COEFFICIENT]: 2}] as Scope
 
     beforeEach((): void => {
         solverStatus.searchedScopeCount = 155 as Count<Scope>

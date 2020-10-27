@@ -13,39 +13,48 @@ import {
 import {populateScopesPhase} from "../../../../../../src/scripts/popularityMetricLfc/solver/populate/phase"
 import * as submetricChunkCombination
     from "../../../../../../src/scripts/popularityMetricLfc/solver/populate/submetricChunkCombination"
-import {Parameter, Submetric} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {PopularityParameterId, Submetric} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
 describe("populateScopesPhase", (): void => {
     const chunkCount = 5 as Count<Chunk>
     const chunkCountForSubmetrics = 3 as Count<Chunk<Submetric>>
-    const expectedChunkCountForParameters = 2 as Count<Chunk<Parameter>>
+    const expectedChunkCountForParameters = 2 as Count<Chunk<PopularityParameterId>>
     const submetricChunkCombinationA = [
         {
-            [Parameter.SUM]: INITIAL_PARAMETER_SCOPES[Parameter.SUM],
+            [PopularityParameterId.SUM]:
+                INITIAL_PARAMETER_SCOPES[PopularityParameterId.SUM],
         },
         {
-            [Parameter.WITHOUT_REPETITION]: INITIAL_PARAMETER_SCOPES[Parameter.WITHOUT_REPETITION],
-            [Parameter.COUNT]: INITIAL_PARAMETER_SCOPES[Parameter.COUNT],
+            [PopularityParameterId.WITHOUT_REPETITION]:
+                INITIAL_PARAMETER_SCOPES[PopularityParameterId.WITHOUT_REPETITION],
+            [PopularityParameterId.COUNT]:
+                INITIAL_PARAMETER_SCOPES[PopularityParameterId.COUNT],
         },
     ] as unknown[] as Combination<Chunk<Submetric>>
     const submetricChunkCombinationB = [
         {
-            [Parameter.SUM]: INITIAL_PARAMETER_SCOPES[Parameter.SUM],
-            [Parameter.WITHOUT_REPETITION]: INITIAL_PARAMETER_SCOPES[Parameter.WITHOUT_REPETITION],
+            [PopularityParameterId.SUM]:
+                INITIAL_PARAMETER_SCOPES[PopularityParameterId.SUM],
+            [PopularityParameterId.WITHOUT_REPETITION]:
+                INITIAL_PARAMETER_SCOPES[PopularityParameterId.WITHOUT_REPETITION],
         },
     ] as unknown[] as Combination<Chunk<Submetric>>
     const parameterChunkCombination = [
         {
-            [Parameter.A_AS_COEFFICIENT]: INITIAL_PARAMETER_SCOPES[Parameter.A_AS_COEFFICIENT],
+            [PopularityParameterId.A_AS_COEFFICIENT]:
+                INITIAL_PARAMETER_SCOPES[PopularityParameterId.A_AS_COEFFICIENT],
         },
         {
-            [Parameter.A_AS_COEFFICIENT]: INITIAL_PARAMETER_SCOPES[Parameter.A_AS_COEFFICIENT],
-            [Parameter.A_AS_LOGARITHM_BASE]: INITIAL_PARAMETER_SCOPES[Parameter.A_AS_LOGARITHM_BASE],
+            [PopularityParameterId.A_AS_COEFFICIENT]:
+                INITIAL_PARAMETER_SCOPES[PopularityParameterId.A_AS_COEFFICIENT],
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]:
+                INITIAL_PARAMETER_SCOPES[PopularityParameterId.A_AS_LOGARITHM_BASE],
         },
-    ] as unknown[] as Combination<Chunk<Parameter>>
-    const submetricChunkCombinations =
-        [submetricChunkCombinationA, submetricChunkCombinationB] as unknown[] as Combinations<Chunk<Submetric>>
-    const parameterChunkCombinations = [parameterChunkCombination] as unknown[] as Combinations<Chunk<Parameter>>
+    ] as unknown[] as Combination<Chunk<PopularityParameterId>>
+    const submetricChunkCombinations = [submetricChunkCombinationA, submetricChunkCombinationB] as unknown[] as
+        Combinations<Chunk<Submetric>>
+    const parameterChunkCombinations = [parameterChunkCombination] as unknown[] as
+        Combinations<Chunk<PopularityParameterId>>
 
     beforeEach((): void => {
         spyOn(combinations, "computeCombinations").and.returnValues(
@@ -91,7 +100,7 @@ describe("populateScopesPhase", (): void => {
             submetricChunkCombinationA,
             {
                 parameterChunkCombinations,
-                parameterChunkCombinationIndex: 0 as Index<Combination<Chunk<Parameter>>>,
+                parameterChunkCombinationIndex: 0 as Index<Combination<Chunk<PopularityParameterId>>>,
                 submetricChunkCombinationIndex: 0 as Index<Combination<Chunk<Submetric>>>,
                 submetricChunkCombinationCount: 2 as Count<Combination<Chunk<Submetric>>>,
             },
@@ -100,7 +109,7 @@ describe("populateScopesPhase", (): void => {
             submetricChunkCombinationB,
             {
                 parameterChunkCombinations,
-                parameterChunkCombinationIndex: 0 as Index<Combination<Chunk<Parameter>>>,
+                parameterChunkCombinationIndex: 0 as Index<Combination<Chunk<PopularityParameterId>>>,
                 submetricChunkCombinationIndex: 1 as Index<Combination<Chunk<Submetric>>>,
                 submetricChunkCombinationCount: 2 as Count<Combination<Chunk<Submetric>>>,
             },

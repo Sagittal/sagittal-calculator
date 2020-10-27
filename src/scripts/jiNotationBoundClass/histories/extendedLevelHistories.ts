@@ -1,11 +1,11 @@
 import {computeExtensionBase, ExtensionBaseType} from "../../../general"
-import {JiNotationBoundClass, JiNotationLevel} from "../../../sagittal"
+import {JiNotationBoundClass, JiNotationLevelId} from "../../../sagittal"
 import {computeExtendedHistories} from "./extendedHistories"
 import {BoundHistory} from "./types"
 
 const computeExtendedJiNotationLevelBoundHistories = (
     boundHistories: BoundHistory[],
-    jiNotationLevel: JiNotationLevel,
+    jiNotationLevel: JiNotationLevelId,
     jiNotationBoundClass: JiNotationBoundClass,
 ): BoundHistory[] => {
     let extendedJiNotationLevelBoundHistories: BoundHistory[] =

@@ -1,18 +1,18 @@
 import {Combination, Index, Io, Maybe, Name, Sum} from "../../../general"
-import {DynamicParameterScope, ParameterValue} from "../../types"
-import {Parameter, Submetric} from "../sumOfSquares"
+import {DynamicParameterScope, Parameter} from "../../types"
+import {PopularityParameterId, Submetric} from "../sumOfSquares"
 import {DynamicParameter, Sample} from "./scopeToSamples"
 
 interface Metric {
-    spreadDynamicParameters?: Parameter[],
+    spreadDynamicParameters?: PopularityParameterId[],
     name: Name<Metric>,
     submetrics: Combination<Submetric>,
     sumOfSquares?: SumOfSquares,
 }
 
-type ParameterScope = ParameterValue | boolean | DynamicParameterScope
+type ParameterScope = Parameter | boolean | DynamicParameterScope
 
-type ParameterScopes = Partial<Record<Parameter, ParameterScope>>
+type ParameterScopes = Partial<Record<PopularityParameterId, ParameterScope>>
 
 type SubmetricScope = ParameterScopes & {_SubmetricScopeBrand: boolean}
 
@@ -32,7 +32,7 @@ type NonRecursiveSearchScopeAndMaybeUpdateBestMetricOptions = Partial<{
 }>
 
 interface SumOrSumsOfSquaresOptions extends NonRecursiveSearchScopeAndMaybeUpdateBestMetricOptions {
-    spreadDynamicParameters?: Parameter[],
+    spreadDynamicParameters?: PopularityParameterId[],
     metricName: Name<Metric>,
 }
 

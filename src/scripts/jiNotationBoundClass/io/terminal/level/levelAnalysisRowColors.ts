@@ -1,9 +1,9 @@
 import {ColorMethod, Maybe} from "../../../../../general"
-import {JiNotationLevel} from "../../../../../sagittal"
+import {JiNotationLevelId} from "../../../../../sagittal"
 import {jiNotationLevelsBestHistoryRanks} from "../../../globals"
 import {RANK_COLOR_METHODS} from "../rankColors"
 
-const computeJiNotationLevelAnalysisRowColors = (jiNotationLevel: JiNotationLevel): Array<Maybe<ColorMethod>> => {
+const computeJiNotationLevelAnalysisRowColors = (jiNotationLevel: JiNotationLevelId): Array<Maybe<ColorMethod>> => {
     const colors = [] as ColorMethod[]
 
     const jiNotationLevelsBestHistoryRanksValues =

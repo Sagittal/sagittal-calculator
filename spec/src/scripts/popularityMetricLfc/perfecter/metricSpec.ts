@@ -5,8 +5,8 @@ import {recursiveSearchScopeAndMaybeUpdateBestMetric} from "../../../../../src/s
 import {perfectMetric} from "../../../../../src/scripts/popularityMetricLfc/perfecter/metric"
 import * as recursiveBestMetric from "../../../../../src/scripts/popularityMetricLfc/perfecter/perfectMetric"
 import {MetricTag} from "../../../../../src/scripts/popularityMetricLfc/perfecter/types"
-import {Parameter, Submetric} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
-import {ParameterValue} from "../../../../../src/scripts/types"
+import {PopularityParameterId, Submetric} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {Parameter} from "../../../../../src/scripts/types"
 
 describe("perfectMetric", (): void => {
     const options = {metricTag: "1/16" as MetricTag}
@@ -17,8 +17,8 @@ describe("perfectMetric", (): void => {
             name: "" as Name<Metric>,
             submetrics: [
                 {
-                    [Parameter.SUM]: true,
-                    [Parameter.K_AS_COEFFICIENT]: 0.8,
+                    [PopularityParameterId.SUM]: true,
+                    [PopularityParameterId.K_AS_COEFFICIENT]: 0.8,
                 },
             ] as Combination<Submetric>,
         }
@@ -30,11 +30,11 @@ describe("perfectMetric", (): void => {
         const expectedScope: Scope = [
             {},
             {
-                [Parameter.SUM]: true,
-                [Parameter.K_AS_COEFFICIENT]: {
-                    center: 0.8 as ParameterValue,
-                    window: 0.1 as Window<ParameterValue>,
-                    ed: 3 as Ed<ParameterValue>,
+                [PopularityParameterId.SUM]: true,
+                [PopularityParameterId.K_AS_COEFFICIENT]: {
+                    center: 0.8 as Parameter,
+                    window: 0.1 as Window<Parameter>,
+                    ed: 3 as Ed<Parameter>,
                 },
             },
         ] as Combination<SubmetricScope>
@@ -51,15 +51,15 @@ describe("perfectMetric", (): void => {
             name: "" as Name<Metric>,
             submetrics: [
                 {
-                    [Parameter.COUNT]: true,
-                    [Parameter.K_AS_COEFFICIENT]: 0.8,
+                    [PopularityParameterId.COUNT]: true,
+                    [PopularityParameterId.K_AS_COEFFICIENT]: 0.8,
                 },
                 {
-                    [Parameter.SUM]: true,
-                    [Parameter.K_AS_COEFFICIENT]: 0.8,
+                    [PopularityParameterId.SUM]: true,
+                    [PopularityParameterId.K_AS_COEFFICIENT]: 0.8,
                 },
             ] as Combination<Submetric>,
-            spreadDynamicParameters: [Parameter.K_AS_COEFFICIENT],
+            spreadDynamicParameters: [PopularityParameterId.K_AS_COEFFICIENT],
         }
 
         spyOn(recursiveBestMetric, "recursiveSearchScopeAndMaybeUpdateBestMetric")
@@ -68,17 +68,17 @@ describe("perfectMetric", (): void => {
 
         const expectedScope: Scope = [
             {
-                [Parameter.K_AS_COEFFICIENT]: {
-                    center: 0.8 as ParameterValue,
-                    window: 0.1 as Window<ParameterValue>,
-                    ed: 3 as Ed<ParameterValue>,
+                [PopularityParameterId.K_AS_COEFFICIENT]: {
+                    center: 0.8 as Parameter,
+                    window: 0.1 as Window<Parameter>,
+                    ed: 3 as Ed<Parameter>,
                 },
             },
             {
-                [Parameter.COUNT]: true,
+                [PopularityParameterId.COUNT]: true,
             },
             {
-                [Parameter.SUM]: true,
+                [PopularityParameterId.SUM]: true,
             },
         ] as Combination<SubmetricScope>
 

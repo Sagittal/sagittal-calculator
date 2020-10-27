@@ -1,17 +1,17 @@
 import {Count, Decimal, Index, Rank, RecordKey} from "../../general"
-import {BoundClass, BoundType, JiNotationLevel} from "../../sagittal"
+import {BoundClass, BoundType, JiNotationLevelId} from "../../sagittal"
 import {RANKS} from "./ranks"
 
 const jiNotationLevelsBestHistoryRanks:
-    Record<JiNotationLevel,
+    Record<JiNotationLevelId,
         Record<RecordKey<Decimal<{integer: true}> & Rank<BoundType>>,
             Count<Decimal<{integer: true}> & Rank<BoundType>>>> =
-    {} as Record<JiNotationLevel, Record<number, Count<Decimal<{integer: true}> & Rank<BoundType>>>>
+    {} as Record<JiNotationLevelId, Record<number, Count<Decimal<{integer: true}> & Rank<BoundType>>>>
 const jiNotationLevelsBestCumulativeHistoryRanks:
-    Record<JiNotationLevel,
+    Record<JiNotationLevelId,
         Record<RecordKey<Decimal<{integer: true}> & Rank<BoundType>>,
             Count<Decimal<{integer: true}> & Rank<BoundType>>>> =
-    {} as Record<JiNotationLevel, Record<number, Count<Decimal<{integer: true}> & Rank<BoundType>>>>
+    {} as Record<JiNotationLevelId, Record<number, Count<Decimal<{integer: true}> & Rank<BoundType>>>>
 
 // I would prefer these to live in a constants file but that caused a circular dependency problem
 const INITIAL_RANK_COUNTS = {

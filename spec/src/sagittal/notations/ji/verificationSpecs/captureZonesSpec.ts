@@ -1,13 +1,13 @@
 import {computeIrrationalDecimalFromScamon, Decimal, Extrema, Maybe, Zone} from "../../../../../../src/general"
 import {CommaClassId, JI_NOTATION_LEVELS_COMMA_CLASS_IDS} from "../../../../../../src/sagittal"
-import {JiNotationLevel} from "../../../../../../src/sagittal/notations/ji"
+import {JiNotationLevelId} from "../../../../../../src/sagittal/notations/ji"
 import {computeJiNotationCaptureZone} from "../../../../../../src/sagittal/notations/ji/captureZone"
 
 describe("capture zones", (): void => {
     it("Medium JI notation level capture zones check out", (): void => {
-        const actual = JI_NOTATION_LEVELS_COMMA_CLASS_IDS[JiNotationLevel.MEDIUM]
+        const actual = JI_NOTATION_LEVELS_COMMA_CLASS_IDS[JiNotationLevelId.MEDIUM]
             .map((mediumLevelCommaClassId: CommaClassId): Maybe<Zone> => {
-                return computeJiNotationCaptureZone(mediumLevelCommaClassId, JiNotationLevel.MEDIUM)
+                return computeJiNotationCaptureZone(mediumLevelCommaClassId, JiNotationLevelId.MEDIUM)
             })
 
         const expected = [
@@ -30,9 +30,9 @@ describe("capture zones", (): void => {
     })
 
     it("High JI notation level capture zones check out", (): void => {
-        const actual = JI_NOTATION_LEVELS_COMMA_CLASS_IDS[JiNotationLevel.HIGH]
+        const actual = JI_NOTATION_LEVELS_COMMA_CLASS_IDS[JiNotationLevelId.HIGH]
             .map((highLevelCommaClassId: CommaClassId): Maybe<Zone> => {
-                return computeJiNotationCaptureZone(highLevelCommaClassId, JiNotationLevel.HIGH)
+                return computeJiNotationCaptureZone(highLevelCommaClassId, JiNotationLevelId.HIGH)
             })
 
         const expected = [
@@ -71,9 +71,9 @@ describe("capture zones", (): void => {
     })
 
     it("Ultra JI notation level capture zones check out", (): void => {
-        const actual = JI_NOTATION_LEVELS_COMMA_CLASS_IDS[JiNotationLevel.ULTRA]
+        const actual = JI_NOTATION_LEVELS_COMMA_CLASS_IDS[JiNotationLevelId.ULTRA]
             .map((ultraLevelCommaClassId: CommaClassId): Maybe<Zone> => {
-                return computeJiNotationCaptureZone(ultraLevelCommaClassId, JiNotationLevel.ULTRA)
+                return computeJiNotationCaptureZone(ultraLevelCommaClassId, JiNotationLevelId.ULTRA)
             })
 
         const expected = [
@@ -132,9 +132,9 @@ describe("capture zones", (): void => {
     })
 
     it("Extreme JI notation level capture zones check out", (): void => {
-        const actual = JI_NOTATION_LEVELS_COMMA_CLASS_IDS[JiNotationLevel.EXTREME]
+        const actual = JI_NOTATION_LEVELS_COMMA_CLASS_IDS[JiNotationLevelId.EXTREME]
             .map((extremeLevelCommaClassId: CommaClassId): Maybe<Zone> => {
-                return computeJiNotationCaptureZone(extremeLevelCommaClassId, JiNotationLevel.EXTREME)
+                return computeJiNotationCaptureZone(extremeLevelCommaClassId, JiNotationLevelId.EXTREME)
             })
 
         const expected = [

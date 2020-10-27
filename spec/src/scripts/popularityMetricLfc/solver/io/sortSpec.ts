@@ -2,7 +2,7 @@ import {Combination, Name, stringify} from "../../../../../../src/general"
 import {Metric, SumOfSquares} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {bestMetrics} from "../../../../../../src/scripts/popularityMetricLfc/globals"
 import {computeSortedBestMetrics} from "../../../../../../src/scripts/popularityMetricLfc/solver"
-import {Parameter, Submetric} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {PopularityParameterId, Submetric} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
 describe("computeSortedBestMetrics", (): void => {
     it("sorts the best metrics by sum of squares", (): void => {
@@ -13,7 +13,7 @@ describe("computeSortedBestMetrics", (): void => {
                 name: "" as Name<Metric>,
                 submetrics: [
                     {
-                        [Parameter.SUM]: true,
+                        [PopularityParameterId.SUM]: true,
                     },
                 ] as Combination<Submetric>,
             },
@@ -25,7 +25,7 @@ describe("computeSortedBestMetrics", (): void => {
                 name: "" as Name<Metric>,
                 submetrics: [
                     {
-                        [Parameter.COUNT]: true,
+                        [PopularityParameterId.COUNT]: true,
                     },
                 ] as Combination<Submetric>,
             },
@@ -37,7 +37,7 @@ describe("computeSortedBestMetrics", (): void => {
                 name: "" as Name<Metric>,
                 submetrics: [
                     {
-                        [Parameter.MAX]: true,
+                        [PopularityParameterId.MAX]: true,
                     },
                 ] as Combination<Submetric>,
             },
@@ -51,7 +51,7 @@ describe("computeSortedBestMetrics", (): void => {
                 name: "",
                 submetrics: [
                     {
-                        [Parameter.MAX]: true,
+                        [PopularityParameterId.MAX]: true,
                     },
                 ] as Combination<Submetric>,
             },
@@ -60,7 +60,7 @@ describe("computeSortedBestMetrics", (): void => {
                 name: "",
                 submetrics: [
                     {
-                        [Parameter.SUM]: true,
+                        [PopularityParameterId.SUM]: true,
                     },
                 ] as Combination<Submetric>,
             },
@@ -69,7 +69,7 @@ describe("computeSortedBestMetrics", (): void => {
                 name: "",
                 submetrics: [
                     {
-                        [Parameter.COUNT]: true,
+                        [PopularityParameterId.COUNT]: true,
                     },
                 ] as Combination<Submetric>,
             },

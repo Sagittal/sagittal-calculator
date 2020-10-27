@@ -1,10 +1,10 @@
 import {Base, isUndefined, log} from "../../../../general"
-import {ParameterValue} from "../../../types"
+import {Parameter} from "../../../types"
 import {Antivotes, WeightedAntivotesOptions} from "../types"
 
 const computeWeightedAntivotes = (antivotes: Antivotes, options: WeightedAntivotesOptions): Antivotes => {
     const {
-        coefficient = 1 as ParameterValue,
+        coefficient = 1 as Parameter,
         logarithmBase,
         powerExponent,
         powerBase,

@@ -1,6 +1,6 @@
 import {Count, Decimal, NEWLINE} from "../../../../../../../src/general"
 import {Rank} from "../../../../../../../src/general/code"
-import {BoundType, JiNotationLevel} from "../../../../../../../src/sagittal/notations/ji"
+import {BoundType, JiNotationLevelId} from "../../../../../../../src/sagittal/notations/ji"
 import {
     jiNotationLevelsBestCumulativeHistoryRanks,
     jiNotationLevelsBestHistoryRanks,
@@ -10,7 +10,7 @@ import {RANKS} from "../../../../../../../src/scripts/jiNotationBoundClass/ranks
 
 describe("formatJiNotationLevelAnalysis", (): void => {
     it("gives an explanation per JI notation level of what JI notation bound classes have what ranks there — both purely within the level, and though all levels up to that point", (): void => {
-        const jiNotationLevel = JiNotationLevel.ULTRA
+        const jiNotationLevel = JiNotationLevelId.ULTRA
         jiNotationLevelsBestHistoryRanks[jiNotationLevel] = {
             [RANKS[BoundType.INA_MIDPOINT]]: 18 as Count<Decimal<{integer: true}> & Rank<BoundType>>,
             [RANKS[BoundType.COMMA_MEAN]]: 23 as Count<Decimal<{integer: true}> & Rank<BoundType>>,

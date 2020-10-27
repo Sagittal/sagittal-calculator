@@ -3,12 +3,12 @@ import {
     APOTOME,
     HALF_APOTOME,
     InaMidpoint,
-    JiNotationLevel,
+    JiNotationLevelId,
     JI_NOTATION_LEVELS,
     JI_NOTATION_LEVEL_EDAS,
 } from "../../../sagittal"
 
-const computeInaMidpoints = (jiNotationLevel: JiNotationLevel): InaMidpoint[] => {
+const computeInaMidpoints = (jiNotationLevel: JiNotationLevelId): InaMidpoint[] => {
     const eda = JI_NOTATION_LEVEL_EDAS[JI_NOTATION_LEVELS.indexOf(jiNotationLevel)]
 
     const inaMidpoints = [...Array(eda).keys()].map((degree: number): Maybe<InaMidpoint> => {

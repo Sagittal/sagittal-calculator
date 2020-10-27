@@ -1,7 +1,7 @@
 import {Combination, LogTarget, saveLog, stringify} from "../../../general"
-import {ParameterValue} from "../../types"
+import {Parameter} from "../../types"
 import {Metric, Scope, SubmetricScope} from "../bestMetric"
-import {Parameter, Submetric} from "../sumOfSquares"
+import {PopularityParameterId, Submetric} from "../sumOfSquares"
 import {PARAMETER_DYNAMISMS} from "./constants"
 import {computeDynamicParameterScopeForPerfecting} from "./dynamicParameterScope"
 import {
@@ -12,12 +12,12 @@ import {PerfectMetricOptions} from "./types"
 
 const computeScopeFromMetric = (metric: Metric): Scope => {
     const spreadDynamicParameters = metric.spreadDynamicParameters
-    const spreadDynamicParameterValues: Partial<Record<Parameter, ParameterValue>> = {}
+    const spreadDynamicParameterValues: Partial<Record<PopularityParameterId, Parameter>> = {}
 
     const scope: Scope = metric.submetrics.map((submetric: Submetric): SubmetricScope => {
         return Object.entries(submetric).reduce(
             (submetricScope: SubmetricScope, submetricEntry: [string, unknown]): SubmetricScope => {
-                const [parameter, parameterValue] = submetricEntry as [Parameter, ParameterValue]
+                const [parameter, parameterValue] = submetricEntry as [PopularityParameterId, Parameter]
                 if (spreadDynamicParameters && spreadDynamicParameters.includes(parameter)) {
                     spreadDynamicParameterValues[parameter] = parameterValue
 
@@ -46,8 +46,8 @@ const computeScopeFromMetric = (metric: Metric): Scope => {
 
     const allBinsSubmetricScope: SubmetricScope = {} as SubmetricScope
     if (spreadDynamicParameters) {
-        spreadDynamicParameters.forEach((spreadDynamicParameter: Parameter): void => {
-            const spreadDynamicParameterValue = spreadDynamicParameterValues[spreadDynamicParameter] as ParameterValue
+        spreadDynamicParameters.forEach((spreadDynamicParameter: PopularityParameterId): void => {
+            const spreadDynamicParameterValue = spreadDynamicParameterValues[spreadDynamicParameter] as Parameter
             allBinsSubmetricScope[spreadDynamicParameter] =
                 computeDynamicParameterScopeForPerfecting(spreadDynamicParameterValue)
         })

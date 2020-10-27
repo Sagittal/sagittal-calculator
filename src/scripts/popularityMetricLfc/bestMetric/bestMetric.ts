@@ -1,6 +1,6 @@
 import {add, count, Count, Io, LogTarget, Maybe, Mean, MeanType, Name, round, saveLog} from "../../../general"
 import {metricNames, solverStatus} from "../globals"
-import {Parameter} from "../sumOfSquares"
+import {PopularityParameterId} from "../sumOfSquares"
 import {computeMetricName} from "./metricName"
 import {computeDynamicParameters, computeSamples, DynamicParameter, Sample} from "./scopeToSamples"
 import {computeSpreadDynamicParameters} from "./spreadDynamicParameters"
@@ -15,7 +15,7 @@ const setupForNonRecursiveSearch = (
 ): {
     dynamicParameters: DynamicParameter[],
     samples: Sample[],
-    spreadDynamicParameters: Maybe<Parameter[]>,
+    spreadDynamicParameters: Maybe<PopularityParameterId[]>,
     metricName: Name<Metric>
 } => {
     const metricName = computeMetricName(scope)

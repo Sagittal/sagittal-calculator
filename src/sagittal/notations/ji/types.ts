@@ -16,7 +16,7 @@ type Medina = Cents & {_InaBrand: "Medina"}
 
 type Ina = Cents & {_InaBrand: "Tina" | "Mina" | "Ultrina" | "Highina" | "Medina"}
 
-enum JiNotationLevel {
+enum JiNotationLevelId {
     MEDIUM = "medium",          // Corresponds closely with Athenian symbol subset
     HIGH = "high",              // Corresponds closely with Promethean symbol subset
     ULTRA = "ultra",            // Corresponds closely with Herculean symbol subset
@@ -36,7 +36,7 @@ type JiNotationBoundClass<T extends NumericProperties = {}> =
     JiNotationBound<T> &
     BoundClass<T> &
     {
-        jiNotationLevels: JiNotationLevel[],
+        jiNotationLevels: JiNotationLevelId[],
         boundType: BoundType,
     }
 
@@ -48,7 +48,7 @@ export {
     Ultrina,
     Highina,
     Medina,
-    JiNotationLevel,
+    JiNotationLevelId,
     JiNotationBound,
     JiNotationBoundClass,
     Ina,

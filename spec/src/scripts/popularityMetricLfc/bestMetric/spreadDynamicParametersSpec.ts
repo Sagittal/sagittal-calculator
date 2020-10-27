@@ -1,26 +1,26 @@
 import {Combination, Ed, Window} from "../../../../../src/general"
 import {SubmetricScope} from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {computeSpreadDynamicParameters} from "../../../../../src/scripts/popularityMetricLfc/bestMetric/spreadDynamicParameters"
-import {Parameter} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
-import {ParameterValue} from "../../../../../src/scripts/types"
+import {PopularityParameterId} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {Parameter} from "../../../../../src/scripts/types"
 
 describe("computeSpreadDynamicParameters", (): void => {
     it("given a scope returns a list of the dynamic parameters which are on the all-bins (first) submetric scope           ", (): void => {
         const scope = [
             {
-                [Parameter.K_AS_COEFFICIENT]: {
-                    center: 1 as ParameterValue,
-                    window: 2 as Window<ParameterValue>,
-                    ed: 2 as Ed<ParameterValue>,
+                [PopularityParameterId.K_AS_COEFFICIENT]: {
+                    center: 1 as Parameter,
+                    window: 2 as Window<Parameter>,
+                    ed: 2 as Ed<Parameter>,
                 },
             },
             {
-                [Parameter.SUM]: true,
-                [Parameter.A_AS_LOGARITHM_BASE]: 2 as ParameterValue,
-                [Parameter.J_AS_POWER_EXPONENT]: {
-                    center: 3 as ParameterValue,
-                    window: 1 as Window<ParameterValue>,
-                    ed: 5 as Ed<ParameterValue>,
+                [PopularityParameterId.SUM]: true,
+                [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2 as Parameter,
+                [PopularityParameterId.J_AS_POWER_EXPONENT]: {
+                    center: 3 as Parameter,
+                    window: 1 as Window<Parameter>,
+                    ed: 5 as Ed<Parameter>,
                 },
             },
         ] as Combination<SubmetricScope>
@@ -28,7 +28,7 @@ describe("computeSpreadDynamicParameters", (): void => {
         const actual = computeSpreadDynamicParameters(scope)
 
         const expected = [
-            Parameter.K_AS_COEFFICIENT,
+            PopularityParameterId.K_AS_COEFFICIENT,
         ]
         expect(actual).toEqual(expected)
     })
@@ -37,12 +37,12 @@ describe("computeSpreadDynamicParameters", (): void => {
         const scope = [
             {},
             {
-                [Parameter.SUM]: true,
-                [Parameter.A_AS_LOGARITHM_BASE]: 2 as ParameterValue,
-                [Parameter.J_AS_POWER_EXPONENT]: {
-                    center: 3 as ParameterValue,
-                    window: 1 as Window<ParameterValue>,
-                    ed: 5 as Ed<ParameterValue>,
+                [PopularityParameterId.SUM]: true,
+                [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2 as Parameter,
+                [PopularityParameterId.J_AS_POWER_EXPONENT]: {
+                    center: 3 as Parameter,
+                    window: 1 as Window<Parameter>,
+                    ed: 5 as Ed<Parameter>,
                 },
             },
         ] as Combination<SubmetricScope>
@@ -55,20 +55,20 @@ describe("computeSpreadDynamicParameters", (): void => {
     it("ignores non-dynamic parameters (such as the boolean ones and the logarithm bases which are locked down to 2)            ", (): void => {
         const scope = [
             {
-                [Parameter.K_AS_COEFFICIENT]: {
-                    center: 1 as ParameterValue,
-                    window: 2 as Window<ParameterValue>,
-                    ed: 2 as Ed<ParameterValue>,
+                [PopularityParameterId.K_AS_COEFFICIENT]: {
+                    center: 1 as Parameter,
+                    window: 2 as Window<Parameter>,
+                    ed: 2 as Ed<Parameter>,
                 },
-                [Parameter.J_AS_LOGARITHM_BASE]: 2 as ParameterValue,
+                [PopularityParameterId.J_AS_LOGARITHM_BASE]: 2 as Parameter,
             },
             {
-                [Parameter.SUM]: true,
-                [Parameter.A_AS_LOGARITHM_BASE]: 2 as ParameterValue,
-                [Parameter.J_AS_POWER_EXPONENT]: {
-                    center: 3 as ParameterValue,
-                    window: 1 as Window<ParameterValue>,
-                    ed: 5 as Ed<ParameterValue>,
+                [PopularityParameterId.SUM]: true,
+                [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2 as Parameter,
+                [PopularityParameterId.J_AS_POWER_EXPONENT]: {
+                    center: 3 as Parameter,
+                    window: 1 as Window<Parameter>,
+                    ed: 5 as Ed<Parameter>,
                 },
             },
         ] as Combination<SubmetricScope>
@@ -76,7 +76,7 @@ describe("computeSpreadDynamicParameters", (): void => {
         const actual = computeSpreadDynamicParameters(scope)
 
         const expected = [
-            Parameter.K_AS_COEFFICIENT,
+            PopularityParameterId.K_AS_COEFFICIENT,
         ]
         expect(actual).toEqual(expected)
     })

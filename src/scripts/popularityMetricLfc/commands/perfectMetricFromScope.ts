@@ -1,12 +1,12 @@
 import {LogTarget, saveLog, stringify, Window} from "../../../general"
-import {ParameterValue} from "../../types"
+import {Parameter} from "../../types"
 import {computeDynamicParameterScope, Scope} from "../bestMetric"
 import {bestMetrics, popularityMetricLfcScriptGroupSettings} from "../globals"
 import {
     recursiveSearchScopeAndMaybeUpdateBestMetric,
     recursiveSearchScopeAndMaybeUpdateBestMetricSync,
 } from "../perfecter"
-import {Parameter} from "../sumOfSquares"
+import {PopularityParameterId} from "../sumOfSquares"
 import {applySharedPopularityMetricLfcCommandSetup} from "./shared"
 
 applySharedPopularityMetricLfcCommandSetup()
@@ -14,22 +14,22 @@ applySharedPopularityMetricLfcCommandSetup()
 const scope = [
     {},
     {
-        [Parameter.SUM]: true,
-        [Parameter.K_AS_COEFFICIENT]: computeDynamicParameterScope({
-            center: 1 as ParameterValue,
-            window: 0.02 as Window<ParameterValue>,
+        [PopularityParameterId.SUM]: true,
+        [PopularityParameterId.K_AS_COEFFICIENT]: computeDynamicParameterScope({
+            center: 1 as Parameter,
+            window: 0.02 as Window<Parameter>,
         }),
-        [Parameter.A_AS_LOGARITHM_BASE]: computeDynamicParameterScope({
-            center: 2.00001 as ParameterValue,
-            window: 0.02 as Window<ParameterValue>,
+        [PopularityParameterId.A_AS_LOGARITHM_BASE]: computeDynamicParameterScope({
+            center: 2.00001 as Parameter,
+            window: 0.02 as Window<Parameter>,
         }),
-        [Parameter.Y]: computeDynamicParameterScope({
-            center: 2 as ParameterValue,
-            window: 0.04 as Window<ParameterValue>,
+        [PopularityParameterId.Y]: computeDynamicParameterScope({
+            center: 2 as Parameter,
+            window: 0.04 as Window<Parameter>,
         }),
-        [Parameter.W]: computeDynamicParameterScope({
-            center: -2.00001 as ParameterValue,
-            window: 0.03 as Window<ParameterValue>,
+        [PopularityParameterId.W]: computeDynamicParameterScope({
+            center: -2.00001 as Parameter,
+            window: 0.03 as Window<Parameter>,
         }),
     },
 ] as Scope

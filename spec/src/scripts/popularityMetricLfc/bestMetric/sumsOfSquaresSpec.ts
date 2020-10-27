@@ -3,8 +3,8 @@ import {Metric, SumOfSquares, SumsOfSquares} from "../../../../../src/scripts/po
 import {SamplePoint} from "../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
 import {computeSumsOfSquaresAndMaybeUpdateBestMetric} from "../../../../../src/scripts/popularityMetricLfc/bestMetric/sumsOfSquares"
 import {bestMetrics} from "../../../../../src/scripts/popularityMetricLfc/globals"
-import {Parameter, Submetric} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
-import {ParameterValue} from "../../../../../src/scripts/types"
+import {PopularityParameterId, Submetric} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {Parameter} from "../../../../../src/scripts/types"
 
 describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", (): void => {
     const metricName = "{aAsCoefficient,sum,w}" as Name<Metric>
@@ -12,33 +12,33 @@ describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", (): void => {
         {
             samplePoint: [0, 0] as SamplePoint,
             submetrics: [{
-                [Parameter.SUM]: true,
-                [Parameter.A_AS_COEFFICIENT]: 1 as ParameterValue,
-                [Parameter.W]: 0.5 as ParameterValue,
+                [PopularityParameterId.SUM]: true,
+                [PopularityParameterId.A_AS_COEFFICIENT]: 1 as Parameter,
+                [PopularityParameterId.W]: 0.5 as Parameter,
             }] as Combination<Submetric>,
         },
         {
             samplePoint: [0, 1] as SamplePoint,
             submetrics: [{
-                [Parameter.SUM]: true,
-                [Parameter.A_AS_COEFFICIENT]: 2 as ParameterValue,
-                [Parameter.W]: 0.5 as ParameterValue,
+                [PopularityParameterId.SUM]: true,
+                [PopularityParameterId.A_AS_COEFFICIENT]: 2 as Parameter,
+                [PopularityParameterId.W]: 0.5 as Parameter,
             }] as Combination<Submetric>,
         },
         {
             samplePoint: [1, 0] as SamplePoint,
             submetrics: [{
-                [Parameter.SUM]: true,
-                [Parameter.A_AS_COEFFICIENT]: 1 as ParameterValue,
-                [Parameter.W]: 1.5 as ParameterValue,
+                [PopularityParameterId.SUM]: true,
+                [PopularityParameterId.A_AS_COEFFICIENT]: 1 as Parameter,
+                [PopularityParameterId.W]: 1.5 as Parameter,
             }] as Combination<Submetric>,
         },
         {
             samplePoint: [1, 1] as SamplePoint,
             submetrics: [{
-                [Parameter.SUM]: true,
-                [Parameter.A_AS_COEFFICIENT]: 2 as ParameterValue,
-                [Parameter.W]: 1.5 as ParameterValue,
+                [PopularityParameterId.SUM]: true,
+                [PopularityParameterId.A_AS_COEFFICIENT]: 2 as Parameter,
+                [PopularityParameterId.W]: 1.5 as Parameter,
             }] as Combination<Submetric>,
         },
     ]
@@ -66,9 +66,9 @@ describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", (): void => {
                 sumOfSquares: 0.014000 as SumOfSquares,
                 name: "" as Name<Metric>,
                 submetrics: [{
-                    [Parameter.SUM]: true,
-                    [Parameter.A_AS_COEFFICIENT]: 2 as ParameterValue,
-                    [Parameter.W]: 1.5 as ParameterValue,
+                    [PopularityParameterId.SUM]: true,
+                    [PopularityParameterId.A_AS_COEFFICIENT]: 2 as Parameter,
+                    [PopularityParameterId.W]: 1.5 as Parameter,
                 }] as Combination<Submetric>,
             },
         )
@@ -79,9 +79,9 @@ describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", (): void => {
             sumOfSquares: 0.013983 as SumOfSquares,
             name: "{aAsCoefficient,sum,w}" as Name<Metric>,
             submetrics: [{
-                [Parameter.SUM]: true,
-                [Parameter.A_AS_COEFFICIENT]: 2 as ParameterValue,
-                [Parameter.W]: 1.5 as ParameterValue,
+                [PopularityParameterId.SUM]: true,
+                [PopularityParameterId.A_AS_COEFFICIENT]: 2 as Parameter,
+                [PopularityParameterId.W]: 1.5 as Parameter,
             }] as Combination<Submetric>,
         }
         expect(bestMetrics.get(metricName)).toBeCloseToObject(expected)
@@ -92,9 +92,9 @@ describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", (): void => {
             sumOfSquares: 0.012000 as SumOfSquares,
             name: "" as Name<Metric>,
             submetrics: [{
-                [Parameter.SUM]: true,
-                [Parameter.A_AS_COEFFICIENT]: 2 as ParameterValue,
-                [Parameter.W]: 1.5 as ParameterValue,
+                [PopularityParameterId.SUM]: true,
+                [PopularityParameterId.A_AS_COEFFICIENT]: 2 as Parameter,
+                [PopularityParameterId.W]: 1.5 as Parameter,
             }] as Combination<Submetric>,
         }
         bestMetrics.set(metricName, bestMetric)
@@ -109,9 +109,9 @@ describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", (): void => {
             sumOfSquares: 0.012000 as SumOfSquares,
             name: "" as Name<Metric>,
             submetrics: [{
-                [Parameter.SUM]: true,
-                [Parameter.A_AS_COEFFICIENT]: 2 as ParameterValue,
-                [Parameter.W]: 1.5 as ParameterValue,
+                [PopularityParameterId.SUM]: true,
+                [PopularityParameterId.A_AS_COEFFICIENT]: 2 as Parameter,
+                [PopularityParameterId.W]: 1.5 as Parameter,
             }] as Combination<Submetric>,
         }
         bestMetrics.set(metricName, bestMetric)
@@ -120,18 +120,18 @@ describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", (): void => {
             {
                 samplePoint: [0, 0] as SamplePoint,
                 submetrics: [{
-                    [Parameter.SUM]: true,
+                    [PopularityParameterId.SUM]: true,
                     // Invalid because it doesn't make sense to use weight on a metric with only a single submetric
-                    [Parameter.WEIGHT_AS_COEFFICIENT]: 1 as ParameterValue,
-                    [Parameter.W]: 0.5 as ParameterValue,
+                    [PopularityParameterId.WEIGHT_AS_COEFFICIENT]: 1 as Parameter,
+                    [PopularityParameterId.W]: 0.5 as Parameter,
                 }] as Combination<Submetric>,
             },
             {
                 samplePoint: [0, 1] as SamplePoint,
                 submetrics: [{
-                    [Parameter.SUM]: true,
-                    [Parameter.WEIGHT_AS_COEFFICIENT]: 0 as ParameterValue,
-                    [Parameter.W]: 0.5 as ParameterValue,
+                    [PopularityParameterId.SUM]: true,
+                    [PopularityParameterId.WEIGHT_AS_COEFFICIENT]: 0 as Parameter,
+                    [PopularityParameterId.W]: 0.5 as Parameter,
                 }] as Combination<Submetric>,
             },
         ]

@@ -1,5 +1,5 @@
 import {isUndefined, Maybe} from "../../../../general"
-import {JiNotationLevel} from "../../../../sagittal"
+import {JiNotationLevelId} from "../../../../sagittal"
 import {computeBoundedCommaClassInfo} from "./boundedCommaClassInfo"
 import {BoundedCommaClassIdPair, BoundedCommaClassIdPairs, BoundedCommaClassInfoPairs} from "./types"
 
@@ -13,9 +13,9 @@ const computeBoundedCommaClassInfoPairs = (
         ): BoundedCommaClassInfoPairs => {
             const [first, second] = boundedCommaClassIdPair
             const firstBoundedCommaClassInfo = !isUndefined(first) &&
-                computeBoundedCommaClassInfo(first, boundClassId, jiNotationLevel as JiNotationLevel)
+                computeBoundedCommaClassInfo(first, boundClassId, jiNotationLevel as JiNotationLevelId)
             const secondBoundedCommaClassInfo = !isUndefined(second) &&
-                computeBoundedCommaClassInfo(second, boundClassId, jiNotationLevel as JiNotationLevel)
+                computeBoundedCommaClassInfo(second, boundClassId, jiNotationLevel as JiNotationLevelId)
 
             return {
                 ...boundedCommaClassInfoPairs,

@@ -2,8 +2,8 @@ import {Ed, Index, Step, Window} from "../../../../../src/general"
 import {Scope} from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {DynamicParameter, SamplePoint} from "../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
 import {computeNextScope} from "../../../../../src/scripts/popularityMetricLfc/perfecter/nextScope"
-import {Parameter, Submetric} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
-import {ParameterValue} from "../../../../../src/scripts/types"
+import {PopularityParameterId, Submetric} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {Parameter} from "../../../../../src/scripts/types"
 
 describe("computeNextScope", (): void => {
     it("given a sample point (which has been identified as a local min) and the dynamic parameters, is able to tell you what the next scopes should be to delve deeper in that vicinity", (): void => {
@@ -11,47 +11,47 @@ describe("computeNextScope", (): void => {
         const dynamicParameters: DynamicParameter[] = [
             {
                 submetricIndex: 0 as Index<Submetric>,
-                parameter: Parameter.J_AS_COEFFICIENT,
-                values: [0, 0.1, 0.2, 0.3, 0.4, 0.5] as ParameterValue[],
-                unit: 0.1 as Step<ParameterValue>,
+                parameter: PopularityParameterId.J_AS_COEFFICIENT,
+                values: [0, 0.1, 0.2, 0.3, 0.4, 0.5] as Parameter[],
+                unit: 0.1 as Step<Parameter>,
             },
             {
                 submetricIndex: 0 as Index<Submetric>,
-                parameter: Parameter.W,
-                values: [0, 0.5, 1] as ParameterValue[],
-                unit: 0.5 as Step<ParameterValue>,
+                parameter: PopularityParameterId.W,
+                values: [0, 0.5, 1] as Parameter[],
+                unit: 0.5 as Step<Parameter>,
             },
             {
                 submetricIndex: 1 as Index<Submetric>,
-                parameter: Parameter.Y,
-                values: [2, 2.02, 2.04, 2.06, 2.08, 2.1] as ParameterValue[],
-                unit: 0.02 as Step<ParameterValue>,
+                parameter: PopularityParameterId.Y,
+                values: [2, 2.02, 2.04, 2.06, 2.08, 2.1] as Parameter[],
+                unit: 0.02 as Step<Parameter>,
             },
         ]
         const scope: Scope = [
             {
-                [Parameter.J_AS_COEFFICIENT]: {
-                    center: 0.1 as ParameterValue,
-                    window: 0.05 as Window<ParameterValue>,
-                    ed: 5 as Ed<ParameterValue>,
+                [PopularityParameterId.J_AS_COEFFICIENT]: {
+                    center: 0.1 as Parameter,
+                    window: 0.05 as Window<Parameter>,
+                    ed: 5 as Ed<Parameter>,
                 },
                 // Haha... it just doesn't care what your previous ED was.
                 // Well, that's why I had the top-level script point to the same constant that this module uses,
                 // To generally prevent that.
-                [Parameter.W]: {
-                    center: 0 as ParameterValue,
-                    window: 0.25 as Window<ParameterValue>,
-                    ed: 5 as Ed<ParameterValue>,
+                [PopularityParameterId.W]: {
+                    center: 0 as Parameter,
+                    window: 0.25 as Window<Parameter>,
+                    ed: 5 as Ed<Parameter>,
                 },
-                [Parameter.A_AS_COEFFICIENT]: 2 as ParameterValue,
+                [PopularityParameterId.A_AS_COEFFICIENT]: 2 as Parameter,
             },
             {
-                [Parameter.Y]: {
-                    center: 2.06 as ParameterValue,
-                    window: 0.01 as Window<ParameterValue>,
-                    ed: 5 as Ed<ParameterValue>,
+                [PopularityParameterId.Y]: {
+                    center: 2.06 as Parameter,
+                    window: 0.01 as Window<Parameter>,
+                    ed: 5 as Ed<Parameter>,
                 },
-                [Parameter.COUNT]: true,
+                [PopularityParameterId.COUNT]: true,
             },
         ] as Scope
 
@@ -59,25 +59,25 @@ describe("computeNextScope", (): void => {
 
         const expected = [
             {
-                [Parameter.J_AS_COEFFICIENT]: {
-                    center: 0.1 as ParameterValue,
-                    window: 0.066667 as Window<ParameterValue>,
-                    ed: 2 as Ed<ParameterValue>,
+                [PopularityParameterId.J_AS_COEFFICIENT]: {
+                    center: 0.1 as Parameter,
+                    window: 0.066667 as Window<Parameter>,
+                    ed: 2 as Ed<Parameter>,
                 },
-                [Parameter.W]: {
-                    center: 0 as ParameterValue,
-                    window: 0.333333 as Window<ParameterValue>,
-                    ed: 4 as Ed<ParameterValue>,
+                [PopularityParameterId.W]: {
+                    center: 0 as Parameter,
+                    window: 0.333333 as Window<Parameter>,
+                    ed: 4 as Ed<Parameter>,
                 },
-                [Parameter.A_AS_COEFFICIENT]: 2 as ParameterValue,
+                [PopularityParameterId.A_AS_COEFFICIENT]: 2 as Parameter,
             },
             {
-                [Parameter.Y]: {
-                    center: 2.06 as ParameterValue,
-                    window: 0.013333 as Window<ParameterValue>,
-                    ed: 2 as Ed<ParameterValue>,
+                [PopularityParameterId.Y]: {
+                    center: 2.06 as Parameter,
+                    window: 0.013333 as Window<Parameter>,
+                    ed: 2 as Ed<Parameter>,
                 },
-                [Parameter.COUNT]: true,
+                [PopularityParameterId.COUNT]: true,
             },
         ] as Scope
         expect(actual).toBeCloseToObject(expected)

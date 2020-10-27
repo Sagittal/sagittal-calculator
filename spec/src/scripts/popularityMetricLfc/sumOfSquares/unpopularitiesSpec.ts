@@ -2,11 +2,11 @@ import {Combination, Index, Popularity, Rank, Ranked, Two3FreeClass} from "../..
 import {Votes} from "../../../../../src/general/music"
 import {
     computeUnpopularities,
-    Parameter,
+    PopularityParameterId,
     Submetric,
 } from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 import {Antivotes, Unpopularity} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares/types"
-import {ParameterValue} from "../../../../../src/scripts/types"
+import {Parameter} from "../../../../../src/scripts/types"
 
 describe("computeUnpopularities", (): void => {
     it("given a list of actual popularities and submetric combinations, returns our estimated unpopularities, which have antivotes instead of votes", (): void => {
@@ -29,13 +29,13 @@ describe("computeUnpopularities", (): void => {
         ]
         const submetrics: Combination<Submetric> = [
             {
-                [Parameter.SUM]: true,
-                [Parameter.WEIGHT_AS_COEFFICIENT]: 0 as ParameterValue,
+                [PopularityParameterId.SUM]: true,
+                [PopularityParameterId.WEIGHT_AS_COEFFICIENT]: 0 as Parameter,
             },
             {
-                [Parameter.COUNT]: true,
-                [Parameter.WITHOUT_REPETITION]: true,
-                [Parameter.WEIGHT_AS_COEFFICIENT]: 1 as ParameterValue,
+                [PopularityParameterId.COUNT]: true,
+                [PopularityParameterId.WITHOUT_REPETITION]: true,
+                [PopularityParameterId.WEIGHT_AS_COEFFICIENT]: 1 as Parameter,
             },
         ] as Combination<Submetric>
 

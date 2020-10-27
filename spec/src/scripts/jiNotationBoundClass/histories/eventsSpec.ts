@@ -1,6 +1,6 @@
 import {Cents, computePitchFromCents, HALF_SCALER, Monzo, Name, Scamon} from "../../../../../src/general"
 import {APOTOME, JiNotationBound} from "../../../../../src/sagittal"
-import {BoundType, JiNotationLevel} from "../../../../../src/sagittal/notations"
+import {BoundType, JiNotationLevelId} from "../../../../../src/sagittal/notations"
 import {HIGH_EDA, ULTRA_EDA} from "../../../../../src/sagittal/notations/ji/levelEdas"
 import {
     BoundedCommaClassPositions,
@@ -10,7 +10,7 @@ import {BoundEvent} from "../../../../../src/scripts/jiNotationBoundClass/histor
 import {computeBoundEvents} from "../../../../../src/scripts/jiNotationBoundClass/histories/events"
 
 describe("computeBoundEvents", (): void => {
-    let jiNotationLevel: JiNotationLevel
+    let jiNotationLevel: JiNotationLevelId
     let boundedCommaClassPositions: BoundedCommaClassPositions
     let boundType: BoundType
 
@@ -21,7 +21,7 @@ describe("computeBoundEvents", (): void => {
             })
 
             it("works when only one ina midpoint is between the bounded comma class positions", (): void => {
-                jiNotationLevel = JiNotationLevel.ULTRA
+                jiNotationLevel = JiNotationLevelId.ULTRA
                 boundedCommaClassPositions =
                     computeBoundedCommaClassPositions(computePitchFromCents(4.5 as Cents), jiNotationLevel)
 
@@ -30,7 +30,7 @@ describe("computeBoundEvents", (): void => {
 
                 const expected: BoundEvent[] = [
                     {
-                        jiNotationLevel: JiNotationLevel.ULTRA,
+                        jiNotationLevel: JiNotationLevelId.ULTRA,
                         boundType: BoundType.INA_MIDPOINT,
                         name: "2.5°58" as Name<JiNotationBound>,
                         pitch: {monzo: APOTOME.monzo, scaler: [2.5, ULTRA_EDA]} as Scamon<{rational: false}>,
@@ -40,7 +40,7 @@ describe("computeBoundEvents", (): void => {
             })
 
             it("works when only one ina midpoint is between the bounded comma class positions, even if it is not within a half-ina            ", (): void => {
-                jiNotationLevel = JiNotationLevel.ULTRA
+                jiNotationLevel = JiNotationLevelId.ULTRA
                 boundedCommaClassPositions =
                     computeBoundedCommaClassPositions(computePitchFromCents(4.5 as Cents), jiNotationLevel)
 
@@ -49,7 +49,7 @@ describe("computeBoundEvents", (): void => {
 
                 const expected: BoundEvent[] = [
                     {
-                        jiNotationLevel: JiNotationLevel.ULTRA,
+                        jiNotationLevel: JiNotationLevelId.ULTRA,
                         boundType: BoundType.INA_MIDPOINT,
                         name: "2.5°58" as Name<JiNotationBound>,
                         pitch: {monzo: APOTOME.monzo, scaler: [2.5, ULTRA_EDA]} as Scamon<{rational: false}>,
@@ -59,7 +59,7 @@ describe("computeBoundEvents", (): void => {
             })
 
             it("works when multiple INA_MIDPOINT midpoints are between the bounded comma class positions", (): void => {
-                jiNotationLevel = JiNotationLevel.HIGH
+                jiNotationLevel = JiNotationLevelId.HIGH
                 boundedCommaClassPositions =
                     computeBoundedCommaClassPositions(computePitchFromCents(28.0 as Cents), jiNotationLevel)
 
@@ -67,13 +67,13 @@ describe("computeBoundEvents", (): void => {
 
                 const expected = [
                     {
-                        jiNotationLevel: JiNotationLevel.HIGH,
+                        jiNotationLevel: JiNotationLevelId.HIGH,
                         boundType: BoundType.INA_MIDPOINT,
                         name: "11.5°47" as Name<JiNotationBound>,
                         pitch: {monzo: APOTOME.monzo, scaler: [11.5, HIGH_EDA]} as Scamon<{rational: false}>,
                     },
                     {
-                        jiNotationLevel: JiNotationLevel.HIGH,
+                        jiNotationLevel: JiNotationLevelId.HIGH,
                         boundType: BoundType.INA_MIDPOINT,
                         name: "12.5°47" as Name<JiNotationBound>,
                         pitch: {monzo: APOTOME.monzo, scaler: [12.5, HIGH_EDA]} as Scamon<{rational: false}>,
@@ -83,7 +83,7 @@ describe("computeBoundEvents", (): void => {
             })
 
             it("returns an empty array if there are no INA_MIDPOINT midpoints between the position's bounded comma class positions            ", (): void => {
-                jiNotationLevel = JiNotationLevel.ULTRA
+                jiNotationLevel = JiNotationLevelId.ULTRA
                 boundedCommaClassPositions =
                     computeBoundedCommaClassPositions(computePitchFromCents(6.05 as Cents), jiNotationLevel)
 
@@ -100,7 +100,7 @@ describe("computeBoundEvents", (): void => {
             })
 
             it("works at the Medium JI notation level", (): void => {
-                jiNotationLevel = JiNotationLevel.MEDIUM
+                jiNotationLevel = JiNotationLevelId.MEDIUM
                 boundedCommaClassPositions =
                     computeBoundedCommaClassPositions(computePitchFromCents(26.25 as Cents), jiNotationLevel)
 
@@ -108,7 +108,7 @@ describe("computeBoundEvents", (): void => {
 
                 const expected = [
                     {
-                        jiNotationLevel: JiNotationLevel.MEDIUM,
+                        jiNotationLevel: JiNotationLevelId.MEDIUM,
                         boundType: BoundType.COMMA_MEAN,
                         name: "/| |)" as Name<JiNotationBound>,
                         pitch: {
@@ -121,7 +121,7 @@ describe("computeBoundEvents", (): void => {
             })
 
             it("works at the High JI notation level", (): void => {
-                jiNotationLevel = JiNotationLevel.HIGH
+                jiNotationLevel = JiNotationLevelId.HIGH
                 boundedCommaClassPositions =
                     computeBoundedCommaClassPositions(computePitchFromCents(26.25 as Cents), jiNotationLevel)
 
@@ -129,7 +129,7 @@ describe("computeBoundEvents", (): void => {
 
                 const expected = [
                     {
-                        jiNotationLevel: JiNotationLevel.HIGH,
+                        jiNotationLevel: JiNotationLevelId.HIGH,
                         boundType: BoundType.COMMA_MEAN,
                         name: ")/| |)" as Name<JiNotationBound>,
                         pitch: {
@@ -142,7 +142,7 @@ describe("computeBoundEvents", (): void => {
             })
 
             it("works at the Ultra JI notation level", (): void => {
-                jiNotationLevel = JiNotationLevel.ULTRA
+                jiNotationLevel = JiNotationLevelId.ULTRA
                 boundedCommaClassPositions =
                     computeBoundedCommaClassPositions(computePitchFromCents(26.25 as Cents), jiNotationLevel)
 
@@ -150,7 +150,7 @@ describe("computeBoundEvents", (): void => {
 
                 const expected = [
                     {
-                        jiNotationLevel: JiNotationLevel.ULTRA,
+                        jiNotationLevel: JiNotationLevelId.ULTRA,
                         boundType: BoundType.COMMA_MEAN,
                         name: ".|) |)" as Name<JiNotationBound>,
                         pitch: {
@@ -163,7 +163,7 @@ describe("computeBoundEvents", (): void => {
             })
 
             it("works at the Extreme JI notation level", (): void => {
-                jiNotationLevel = JiNotationLevel.EXTREME
+                jiNotationLevel = JiNotationLevelId.EXTREME
                 boundedCommaClassPositions =
                     computeBoundedCommaClassPositions(computePitchFromCents(26.25 as Cents), jiNotationLevel)
 
@@ -171,7 +171,7 @@ describe("computeBoundEvents", (): void => {
 
                 const expected = [
                     {
-                        jiNotationLevel: JiNotationLevel.EXTREME,
+                        jiNotationLevel: JiNotationLevelId.EXTREME,
                         boundType: BoundType.COMMA_MEAN,
                         name: "`.|) ,,|)" as Name<JiNotationBound>,
                         pitch: {
@@ -189,7 +189,7 @@ describe("computeBoundEvents", (): void => {
                 // However, )|) is at 30.985839,
                 // So the 30.5 position is between it and |), not between it and |\
 
-                jiNotationLevel = JiNotationLevel.HIGH
+                jiNotationLevel = JiNotationLevelId.HIGH
                 boundedCommaClassPositions =
                     computeBoundedCommaClassPositions(computePitchFromCents(30.5 as Cents), jiNotationLevel)
 
@@ -197,7 +197,7 @@ describe("computeBoundEvents", (): void => {
 
                 const expected = [
                     {
-                        jiNotationLevel: JiNotationLevel.HIGH,
+                        jiNotationLevel: JiNotationLevelId.HIGH,
                         boundType: BoundType.COMMA_MEAN,
                         name: "|) )|)" as Name<JiNotationBound>,
                         pitch: {
@@ -216,7 +216,7 @@ describe("computeBoundEvents", (): void => {
             })
 
             it("returns one event for each size category bound between the position's bounded comma class positions         ", (): void => {
-                jiNotationLevel = JiNotationLevel.MEDIUM
+                jiNotationLevel = JiNotationLevelId.MEDIUM
                 boundedCommaClassPositions =
                     computeBoundedCommaClassPositions(computePitchFromCents(34.0 as Cents), jiNotationLevel)
 
@@ -224,7 +224,7 @@ describe("computeBoundEvents", (): void => {
 
                 const expected = [
                     {
-                        jiNotationLevel: JiNotationLevel.MEDIUM,
+                        jiNotationLevel: JiNotationLevelId.MEDIUM,
                         boundType: BoundType.SIZE_CATEGORY_BOUND,
                         name: "C|S" as Name<JiNotationBound>,
                         pitch: {
@@ -237,7 +237,7 @@ describe("computeBoundEvents", (): void => {
             })
 
             it("returns an empty array if there are no size category bounds between the position's bounded comma class positions         ", (): void => {
-                jiNotationLevel = JiNotationLevel.ULTRA
+                jiNotationLevel = JiNotationLevelId.ULTRA
                 boundedCommaClassPositions =
                     computeBoundedCommaClassPositions(computePitchFromCents(6.05 as Cents), jiNotationLevel)
 

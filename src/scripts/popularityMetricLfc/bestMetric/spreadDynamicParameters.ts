@@ -1,18 +1,18 @@
 import {Maybe} from "../../../general"
 import {PARAMETER_DYNAMISMS} from "../perfecter"
-import {Parameter} from "../sumOfSquares"
+import {PopularityParameterId} from "../sumOfSquares"
 import {Scope, SubmetricScope} from "./types"
 
-const computeSpreadDynamicParameters = (scope: Scope): Maybe<Parameter[]> => {
+const computeSpreadDynamicParameters = (scope: Scope): Maybe<PopularityParameterId[]> => {
     const allBinsSubmetricScope: SubmetricScope = scope[0]
 
-    const spreadParameters: Parameter[] = Object.keys(allBinsSubmetricScope) as Parameter[]
+    const spreadParameters: PopularityParameterId[] = Object.keys(allBinsSubmetricScope) as PopularityParameterId[]
 
-    const spreadDynamicParameters = spreadParameters.filter((spreadParameter: Parameter): boolean => {
+    const spreadDynamicParameters = spreadParameters.filter((spreadParameter: PopularityParameterId): boolean => {
         return PARAMETER_DYNAMISMS[spreadParameter]
     })
 
-    return spreadDynamicParameters.length ? spreadDynamicParameters as Parameter[] : undefined
+    return spreadDynamicParameters.length ? spreadDynamicParameters as PopularityParameterId[] : undefined
 }
 
 export {

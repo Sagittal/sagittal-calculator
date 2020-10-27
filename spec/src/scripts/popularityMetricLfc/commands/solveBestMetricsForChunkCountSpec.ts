@@ -46,7 +46,7 @@ describe("solve-best-metrics-for-chunk-count", (): void => {
         `        sumOfSquares: 0.014206086754420309,`,
         `        submetrics: [`,
         `            {`,
-        `                [ Parameter.SUM ]: true`,
+        `                [ PopularityParameterId.SUM ]: true`,
         `            }`,
         `        ],`,
         `        name: "{},{sum}"`,

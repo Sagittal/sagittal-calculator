@@ -1,5 +1,5 @@
 import { Cents, computePitchFromCents, Multiplier } from "../../../../../../src/general"
-import { Ina, JiNotationLevel } from "../../../../../../src/sagittal"
+import { Ina, JiNotationLevelId } from "../../../../../../src/sagittal"
 import { HIGHINA } from "../../../../../../src/sagittal/notations/ji/intervals"
 import { computeBoundEventInaDistance } from "../../../../../../src/scripts/jiNotationBoundClass/history/events/eventInaDistance"
 import { boundEventFixture } from "../../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
@@ -9,7 +9,7 @@ describe("computeBoundEventInaDistance", (): void => {
         const boundEvent = {
             ...boundEventFixture,
             pitch: computePitchFromCents(5 as Cents),
-            jiNotationLevel: JiNotationLevel.HIGH,
+            jiNotationLevel: JiNotationLevelId.HIGH,
         }
         const boundHistory = [
             {

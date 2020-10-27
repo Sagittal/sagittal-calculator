@@ -1,5 +1,5 @@
 import {Name} from "../../../../../src/general"
-import {BoundType, JiNotationBound, JiNotationLevel} from "../../../../../src/sagittal/notations"
+import {BoundType, JiNotationBound, JiNotationLevelId} from "../../../../../src/sagittal/notations"
 import {isBoundEventContained} from "../../../../../src/scripts/jiNotationBoundClass/consolidateHistories/doEventsContainEvent"
 import {BoundEventAnalysis} from "../../../../../src/scripts/jiNotationBoundClass/history"
 import {RANKS} from "../../../../../src/scripts/jiNotationBoundClass/ranks"
@@ -11,14 +11,14 @@ describe("isBoundEventContained", (): void => {
             {
                 ...boundEventAnalysisFixture,
                 name: "someName" as Name<JiNotationBound>,
-                jiNotationLevel: "someLevel" as JiNotationLevel,
+                jiNotationLevel: "someLevel" as JiNotationLevelId,
                 rank: RANKS[BoundType.COMMA_MEAN],
             },
         ]
         const targetBoundEvent = {
             ...boundEventAnalysisFixture,
             name: "someName" as Name<JiNotationBound>,
-            jiNotationLevel: "someLevel" as JiNotationLevel,
+            jiNotationLevel: "someLevel" as JiNotationLevelId,
             rank: RANKS[BoundType.SIZE_CATEGORY_BOUND],
         }
 
@@ -32,14 +32,14 @@ describe("isBoundEventContained", (): void => {
             {
                 ...boundEventAnalysisFixture,
                 name: "someName" as Name<JiNotationBound>,
-                jiNotationLevel: "someLevel" as JiNotationLevel,
+                jiNotationLevel: "someLevel" as JiNotationLevelId,
                 rank: RANKS[BoundType.COMMA_MEAN],
             },
         ]
         const targetBoundEvent = {
             ...boundEventAnalysisFixture,
             name: "someName" as Name<JiNotationBound>,
-            jiNotationLevel: "otherLevel" as JiNotationLevel,
+            jiNotationLevel: "otherLevel" as JiNotationLevelId,
             rank: RANKS[BoundType.SIZE_CATEGORY_BOUND],
         }
 
@@ -53,14 +53,14 @@ describe("isBoundEventContained", (): void => {
             {
                 ...boundEventAnalysisFixture,
                 name: "someName" as Name<JiNotationBound>,
-                jiNotationLevel: "someLevel" as JiNotationLevel,
+                jiNotationLevel: "someLevel" as JiNotationLevelId,
                 rank: RANKS[BoundType.COMMA_MEAN],
             },
         ]
         const targetBoundEvent = {
             ...boundEventAnalysisFixture,
             name: "otherName" as Name<JiNotationBound>,
-            jiNotationLevel: "someLevel" as JiNotationLevel,
+            jiNotationLevel: "someLevel" as JiNotationLevelId,
             rank: RANKS[BoundType.SIZE_CATEGORY_BOUND],
         }
 
@@ -74,14 +74,14 @@ describe("isBoundEventContained", (): void => {
             {
                 ...boundEventAnalysisFixture,
                 name: "someName" as Name<JiNotationBound>,
-                jiNotationLevel: "someLevel" as JiNotationLevel,
+                jiNotationLevel: "someLevel" as JiNotationLevelId,
                 rank: RANKS[BoundType.COMMA_MEAN],
             },
         ]
         const targetBoundEvent = {
             ...boundEventAnalysisFixture,
             name: "otherName" as Name<JiNotationBound>,
-            jiNotationLevel: "otherLevel" as JiNotationLevel,
+            jiNotationLevel: "otherLevel" as JiNotationLevelId,
             rank: RANKS[BoundType.COMMA_MEAN],
         }
 

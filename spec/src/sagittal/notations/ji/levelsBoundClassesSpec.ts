@@ -1,6 +1,6 @@
 import {BoundClassId} from "../../../../../src/sagittal/notation"
 import {
-    JiNotationLevel,
+    JiNotationLevelId,
     JI_NOTATION_LEVELS_BOUND_CLASSES,
     JI_NOTATION_LEVELS_COMMA_CLASS_IDS,
 } from "../../../../../src/sagittal/notations"
@@ -8,18 +8,18 @@ import {getJiNotationBoundClass} from "../../../../../src/sagittal/notations/ji/
 
 describe("JI_NOTATION_LEVELS_BOUND_CLASSES", (): void => {
     it("has the same number of bound classes per JI notation level as the comma class ids", (): void => {
-        expect(JI_NOTATION_LEVELS_BOUND_CLASSES[JiNotationLevel.MEDIUM].length)
-            .toBe(JI_NOTATION_LEVELS_COMMA_CLASS_IDS[JiNotationLevel.MEDIUM].length)      // 11
-        expect(JI_NOTATION_LEVELS_BOUND_CLASSES[JiNotationLevel.HIGH].length)
-            .toBe(JI_NOTATION_LEVELS_COMMA_CLASS_IDS[JiNotationLevel.HIGH].length)        // 27
-        expect(JI_NOTATION_LEVELS_BOUND_CLASSES[JiNotationLevel.ULTRA].length)
-            .toBe(JI_NOTATION_LEVELS_COMMA_CLASS_IDS[JiNotationLevel.ULTRA].length)       // 47
-        expect(JI_NOTATION_LEVELS_BOUND_CLASSES[JiNotationLevel.EXTREME].length)
-            .toBe(JI_NOTATION_LEVELS_COMMA_CLASS_IDS[JiNotationLevel.EXTREME].length)     // 123
+        expect(JI_NOTATION_LEVELS_BOUND_CLASSES[JiNotationLevelId.MEDIUM].length)
+            .toBe(JI_NOTATION_LEVELS_COMMA_CLASS_IDS[JiNotationLevelId.MEDIUM].length)      // 11
+        expect(JI_NOTATION_LEVELS_BOUND_CLASSES[JiNotationLevelId.HIGH].length)
+            .toBe(JI_NOTATION_LEVELS_COMMA_CLASS_IDS[JiNotationLevelId.HIGH].length)        // 27
+        expect(JI_NOTATION_LEVELS_BOUND_CLASSES[JiNotationLevelId.ULTRA].length)
+            .toBe(JI_NOTATION_LEVELS_COMMA_CLASS_IDS[JiNotationLevelId.ULTRA].length)       // 47
+        expect(JI_NOTATION_LEVELS_BOUND_CLASSES[JiNotationLevelId.EXTREME].length)
+            .toBe(JI_NOTATION_LEVELS_COMMA_CLASS_IDS[JiNotationLevelId.EXTREME].length)     // 123
     })
 
     it("gives the correct bound class IDs for the Medium level", (): void => {
-        const actual = JI_NOTATION_LEVELS_BOUND_CLASSES[JiNotationLevel.MEDIUM]
+        const actual = JI_NOTATION_LEVELS_BOUND_CLASSES[JiNotationLevelId.MEDIUM]
 
         const expected = [
             BoundClassId.MINA_5,
@@ -38,7 +38,7 @@ describe("JI_NOTATION_LEVELS_BOUND_CLASSES", (): void => {
     })
 
     it("gives the correct bound IDs for the High level", (): void => {
-        const actual = JI_NOTATION_LEVELS_BOUND_CLASSES[JiNotationLevel.HIGH]
+        const actual = JI_NOTATION_LEVELS_BOUND_CLASSES[JiNotationLevelId.HIGH]
 
         const expected = [
             BoundClassId.MINA_2,
@@ -73,7 +73,7 @@ describe("JI_NOTATION_LEVELS_BOUND_CLASSES", (): void => {
     })
 
     it("gives the correct bound IDs for the Ultra level", (): void => {
-        const actual = JI_NOTATION_LEVELS_BOUND_CLASSES[JiNotationLevel.ULTRA]
+        const actual = JI_NOTATION_LEVELS_BOUND_CLASSES[JiNotationLevelId.ULTRA]
 
         const expected = [
             BoundClassId.MINA_2,
@@ -128,7 +128,7 @@ describe("JI_NOTATION_LEVELS_BOUND_CLASSES", (): void => {
     })
 
     it("gives the correct bound IDs for the Extreme level (all of them)", (): void => {
-        const actual = JI_NOTATION_LEVELS_BOUND_CLASSES[JiNotationLevel.EXTREME]
+        const actual = JI_NOTATION_LEVELS_BOUND_CLASSES[JiNotationLevelId.EXTREME]
 
         const expected = [
             BoundClassId.MINA_0,

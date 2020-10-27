@@ -1,13 +1,13 @@
 import {Io, join, NEWLINE, shallowClone, sumTexts} from "../../../../../general"
-import {JiNotationLevel, JI_NOTATION_LEVELS} from "../../../../../sagittal"
+import {JiNotationLevelId, JI_NOTATION_LEVELS} from "../../../../../sagittal"
 import {LEVEL_ANALYSES_TITLE} from "../titles"
 import {formatJiNotationLevelAnalysis} from "./levelAnalysis"
 
 const formatJiNotationLevelAnalyses = (): Io => {
     const formattedJiNotationLevelAnalysis: Io[] = [] as Io[]
 
-    shallowClone(JI_NOTATION_LEVELS).reverse().forEach((jiNotationLevel: JiNotationLevel): void => {
-        if (jiNotationLevel === JiNotationLevel.INSANE) {
+    shallowClone(JI_NOTATION_LEVELS).reverse().forEach((jiNotationLevel: JiNotationLevelId): void => {
+        if (jiNotationLevel === JiNotationLevelId.INSANE) {
             return
         }
 

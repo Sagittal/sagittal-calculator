@@ -7,11 +7,11 @@ import {
     Sagittal,
 } from "../../../../src/sagittal/accidental"
 import {getFlacco} from "../../../../src/sagittal/accidental/flacco"
-import {SymbolSubset, SYMBOL_SUBSETS} from "../../../../src/sagittal/notation"
+import {SymbolSubsetId, SYMBOL_SUBSETS} from "../../../../src/sagittal/notation"
 
 // tslint:disable-next-line ban
 xdescribe("SYMBOL_SUBSETS", (): void => {
-    const subject = (symbolSubset: SymbolSubset): Ascii[] => SYMBOL_SUBSETS[symbolSubset]
+    const subject = (symbolSubsetId: SymbolSubsetId): Ascii[] => SYMBOL_SUBSETS[symbolSubsetId]
         // TODO: SHOULD WE REALLY GO FROM SYMBOL TO FLACCO TO SAGITTAL? MAYBE SO...?
         //  This feels circuitous... but then I think we're probably going to have something basically the same
         //  As computing Revo Accidental but for computing a sagittal from a SymbolClassId + Section
@@ -20,9 +20,9 @@ xdescribe("SYMBOL_SUBSETS", (): void => {
         .map((sagittal: NullSagittal | Sagittal): Ascii => computeSagittalAscii(sagittal))
 
     it("has the correct single-shaft symbols in the Sagittal-compatibles subset", (): void => {
-        const symbolSubset = SymbolSubset.COMPATIBLE
+        const symbolSubsetId = SymbolSubsetId.COMPATIBLE
 
-        const actual: Ascii[] = subject(symbolSubset)
+        const actual: Ascii[] = subject(symbolSubsetId)
 
         const expected = [
             "(|//|)",
@@ -32,9 +32,9 @@ xdescribe("SYMBOL_SUBSETS", (): void => {
     })
 
     it("has the correct single-shaft symbols in the Spartan subset", (): void => {
-        const symbolSubset = SymbolSubset.SPARTAN
+        const symbolSubsetId = SymbolSubsetId.SPARTAN
 
-        const actual: Ascii[] = subject(symbolSubset)
+        const actual: Ascii[] = subject(symbolSubsetId)
 
         const expected = [
             "|(", "/|", "|)", "//|", "/|)", "/|\\", "(|)", "(|\\",
@@ -44,9 +44,9 @@ xdescribe("SYMBOL_SUBSETS", (): void => {
     })
 
     it("has the correct single-shaft symbols in the Athenian subset", (): void => {
-        const symbolSubset = SymbolSubset.ATHENIAN
+        const symbolSubsetId = SymbolSubsetId.ATHENIAN
 
-        const actual: Ascii[] = subject(symbolSubset)
+        const actual: Ascii[] = subject(symbolSubsetId)
 
         const expected = [
             "|(", ")|(", "~|(", "/|", "|)", "|\\", "(|", "(|(", "//|", "/|)", "/|\\", "(|)", "(|\\",
@@ -56,9 +56,9 @@ xdescribe("SYMBOL_SUBSETS", (): void => {
     })
 
     it("has the correct single-shaft symbols in the Trojan subset", (): void => {
-        const symbolSubset = SymbolSubset.TROJAN
+        const symbolSubsetId = SymbolSubsetId.TROJAN
 
-        const actual: Ascii[] = subject(symbolSubset)
+        const actual: Ascii[] = subject(symbolSubsetId)
 
         const expected = [
             "~|(", "|~", "/|", ")/|", "|)", "|\\", "(|", "/|~", "/|)", "/|\\", "(|\\",
@@ -68,9 +68,9 @@ xdescribe("SYMBOL_SUBSETS", (): void => {
     })
 
     it("has the correct single-shaft symbols in the Promethean subset", (): void => {
-        const symbolSubset = SymbolSubset.PROMETHEAN
+        const symbolSubsetId = SymbolSubsetId.PROMETHEAN
 
-        const actual: Ascii[] = subject(symbolSubset)
+        const actual: Ascii[] = subject(symbolSubsetId)
 
         const expected = [
             ")|", "|(", "~|", ")|(", ")~|", "~|(", "|~", "~~|", ")|~", "/|", ")/|", "|)", ")|)", "|\\", "(|",
@@ -82,9 +82,9 @@ xdescribe("SYMBOL_SUBSETS", (): void => {
     })
 
     it("has the correct single-shaft symbols in the Herculean subset", (): void => {
-        const symbolSubset = SymbolSubset.HERCULEAN
+        const symbolSubsetId = SymbolSubsetId.HERCULEAN
 
-        const actual: Ascii[] = subject(symbolSubset)
+        const actual: Ascii[] = subject(symbolSubsetId)
 
         const expected = [
             ".)|", "'|", ")|", "|(", ".~|", "'|(", "~|", ")|(", "')|(", ")~|", ".~|(", "~|(", "|~", "~~|", "./|",
@@ -97,9 +97,9 @@ xdescribe("SYMBOL_SUBSETS", (): void => {
     })
 
     it("has the correct single-shaft symbols in the Olympian subset", (): void => {
-        const symbolSubset = SymbolSubset.OLYMPIAN
+        const symbolSubsetId = SymbolSubsetId.OLYMPIAN
 
-        const actual: Ascii[] = subject(symbolSubset)
+        const actual: Ascii[] = subject(symbolSubsetId)
 
         const expected = [
             "`|", "``|", ".)|", "'|", "`'|", ",)|", ")|", "`)|", "``)|", ",,|(", ",|(", "|(", "`|(", ".~|", ",'|(",

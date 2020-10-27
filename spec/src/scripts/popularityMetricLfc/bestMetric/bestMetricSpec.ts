@@ -12,25 +12,25 @@ import {
     SumsOfSquares,
 } from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {bestMetrics, metricNames, solverStatus} from "../../../../../src/scripts/popularityMetricLfc/globals"
-import {Parameter, Submetric} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
-import {ParameterValue} from "../../../../../src/scripts/types"
+import {PopularityParameterId, Submetric} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {Parameter} from "../../../../../src/scripts/types"
 
 describe("nonRecursiveSearchScopeAndMaybeUpdateBestMetric", (): void => {
     const scope = [
         {
-            [Parameter.K_AS_COEFFICIENT]: {
-                center: 1 as ParameterValue,
-                window: 2 as Window<ParameterValue>,
-                ed: 2 as Ed<ParameterValue>,
+            [PopularityParameterId.K_AS_COEFFICIENT]: {
+                center: 1 as Parameter,
+                window: 2 as Window<Parameter>,
+                ed: 2 as Ed<Parameter>,
             },
         },
         {
-            [Parameter.SUM]: true,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2 as ParameterValue,
-            [Parameter.J_AS_POWER_EXPONENT]: {
-                center: 3 as ParameterValue,
-                window: 1 as Window<ParameterValue>,
-                ed: 5 as Ed<ParameterValue>,
+            [PopularityParameterId.SUM]: true,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2 as Parameter,
+            [PopularityParameterId.J_AS_POWER_EXPONENT]: {
+                center: 3 as Parameter,
+                window: 1 as Window<Parameter>,
+                ed: 5 as Ed<Parameter>,
             },
         },
     ] as Combination<SubmetricScope>
@@ -43,13 +43,13 @@ describe("nonRecursiveSearchScopeAndMaybeUpdateBestMetric", (): void => {
             .toEqual({
                 name: metricName,
                 submetrics: [{
-                    [Parameter.SUM]: true,
-                    [Parameter.A_AS_LOGARITHM_BASE]: 2,
-                    [Parameter.J_AS_POWER_EXPONENT]: 2.5,
-                    [Parameter.K_AS_COEFFICIENT]: 2,
+                    [PopularityParameterId.SUM]: true,
+                    [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
+                    [PopularityParameterId.J_AS_POWER_EXPONENT]: 2.5,
+                    [PopularityParameterId.K_AS_COEFFICIENT]: 2,
                 }] as Combination<Submetric>,
                 sumOfSquares: 0.12122990586015835 as SumOfSquares,
-                spreadDynamicParameters: [Parameter.K_AS_COEFFICIENT],
+                spreadDynamicParameters: [PopularityParameterId.K_AS_COEFFICIENT],
             })
     })
 
@@ -99,105 +99,105 @@ describe("nonRecursiveSearchScopeAndMaybeUpdateBestMetric", (): void => {
             dynamicParameters: [
                 {
                     submetricIndex: 0 as Index<Submetric>,
-                    parameter: Parameter.K_AS_COEFFICIENT,
-                    values: [0, 2] as ParameterValue[],
-                    unit: 2 as Step<ParameterValue>,
+                    parameter: PopularityParameterId.K_AS_COEFFICIENT,
+                    values: [0, 2] as Parameter[],
+                    unit: 2 as Step<Parameter>,
                 },
                 {
                     submetricIndex: 1 as Index<Submetric>,
-                    parameter: Parameter.J_AS_POWER_EXPONENT,
-                    values: [2.5, 2.75, 3, 3.25, 3.5] as ParameterValue[],
-                    unit: 0.25 as Step<ParameterValue>,
+                    parameter: PopularityParameterId.J_AS_POWER_EXPONENT,
+                    values: [2.5, 2.75, 3, 3.25, 3.5] as Parameter[],
+                    unit: 0.25 as Step<Parameter>,
                 },
             ],
             samples: [
                 {
                     submetrics: [{
-                        [Parameter.SUM]: true,
-                        [Parameter.A_AS_LOGARITHM_BASE]: 2 as ParameterValue,
-                        [Parameter.J_AS_POWER_EXPONENT]: 2.5 as ParameterValue,
-                        [Parameter.K_AS_COEFFICIENT]: 0 as ParameterValue,
+                        [PopularityParameterId.SUM]: true,
+                        [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2 as Parameter,
+                        [PopularityParameterId.J_AS_POWER_EXPONENT]: 2.5 as Parameter,
+                        [PopularityParameterId.K_AS_COEFFICIENT]: 0 as Parameter,
                     }] as Combination<Submetric>,
                     samplePoint: [0, 0] as SamplePoint,
                 },
                 {
                     submetrics: [{
-                        [Parameter.SUM]: true,
-                        [Parameter.A_AS_LOGARITHM_BASE]: 2 as ParameterValue,
-                        [Parameter.J_AS_POWER_EXPONENT]: 2.5 as ParameterValue,
-                        [Parameter.K_AS_COEFFICIENT]: 2 as ParameterValue,
+                        [PopularityParameterId.SUM]: true,
+                        [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2 as Parameter,
+                        [PopularityParameterId.J_AS_POWER_EXPONENT]: 2.5 as Parameter,
+                        [PopularityParameterId.K_AS_COEFFICIENT]: 2 as Parameter,
                     }] as Combination<Submetric>,
                     samplePoint: [1, 0] as SamplePoint,
                 },
                 {
                     submetrics: [{
-                        [Parameter.SUM]: true,
-                        [Parameter.A_AS_LOGARITHM_BASE]: 2 as ParameterValue,
-                        [Parameter.J_AS_POWER_EXPONENT]: 2.75 as ParameterValue,
-                        [Parameter.K_AS_COEFFICIENT]: 0 as ParameterValue,
+                        [PopularityParameterId.SUM]: true,
+                        [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2 as Parameter,
+                        [PopularityParameterId.J_AS_POWER_EXPONENT]: 2.75 as Parameter,
+                        [PopularityParameterId.K_AS_COEFFICIENT]: 0 as Parameter,
                     }] as Combination<Submetric>,
                     samplePoint: [0, 1] as SamplePoint,
                 },
                 {
                     submetrics: [{
-                        [Parameter.SUM]: true,
-                        [Parameter.A_AS_LOGARITHM_BASE]: 2 as ParameterValue,
-                        [Parameter.J_AS_POWER_EXPONENT]: 2.75 as ParameterValue,
-                        [Parameter.K_AS_COEFFICIENT]: 2 as ParameterValue,
+                        [PopularityParameterId.SUM]: true,
+                        [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2 as Parameter,
+                        [PopularityParameterId.J_AS_POWER_EXPONENT]: 2.75 as Parameter,
+                        [PopularityParameterId.K_AS_COEFFICIENT]: 2 as Parameter,
                     }] as Combination<Submetric>,
                     samplePoint: [1, 1] as SamplePoint,
                 },
                 {
                     submetrics: [{
-                        [Parameter.SUM]: true,
-                        [Parameter.A_AS_LOGARITHM_BASE]: 2 as ParameterValue,
-                        [Parameter.J_AS_POWER_EXPONENT]: 3 as ParameterValue,
-                        [Parameter.K_AS_COEFFICIENT]: 0 as ParameterValue,
+                        [PopularityParameterId.SUM]: true,
+                        [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2 as Parameter,
+                        [PopularityParameterId.J_AS_POWER_EXPONENT]: 3 as Parameter,
+                        [PopularityParameterId.K_AS_COEFFICIENT]: 0 as Parameter,
                     }] as Combination<Submetric>,
                     samplePoint: [0, 2] as SamplePoint,
                 },
                 {
                     submetrics: [{
-                        [Parameter.SUM]: true,
-                        [Parameter.A_AS_LOGARITHM_BASE]: 2 as ParameterValue,
-                        [Parameter.J_AS_POWER_EXPONENT]: 3 as ParameterValue,
-                        [Parameter.K_AS_COEFFICIENT]: 2 as ParameterValue,
+                        [PopularityParameterId.SUM]: true,
+                        [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2 as Parameter,
+                        [PopularityParameterId.J_AS_POWER_EXPONENT]: 3 as Parameter,
+                        [PopularityParameterId.K_AS_COEFFICIENT]: 2 as Parameter,
                     }] as Combination<Submetric>,
                     samplePoint: [1, 2] as SamplePoint,
                 },
                 {
                     submetrics: [{
-                        [Parameter.SUM]: true,
-                        [Parameter.A_AS_LOGARITHM_BASE]: 2 as ParameterValue,
-                        [Parameter.J_AS_POWER_EXPONENT]: 3.25 as ParameterValue,
-                        [Parameter.K_AS_COEFFICIENT]: 0 as ParameterValue,
+                        [PopularityParameterId.SUM]: true,
+                        [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2 as Parameter,
+                        [PopularityParameterId.J_AS_POWER_EXPONENT]: 3.25 as Parameter,
+                        [PopularityParameterId.K_AS_COEFFICIENT]: 0 as Parameter,
                     }] as Combination<Submetric>,
                     samplePoint: [0, 3] as SamplePoint,
                 },
                 {
                     submetrics: [{
-                        [Parameter.SUM]: true,
-                        [Parameter.A_AS_LOGARITHM_BASE]: 2 as ParameterValue,
-                        [Parameter.J_AS_POWER_EXPONENT]: 3.25 as ParameterValue,
-                        [Parameter.K_AS_COEFFICIENT]: 2 as ParameterValue,
+                        [PopularityParameterId.SUM]: true,
+                        [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2 as Parameter,
+                        [PopularityParameterId.J_AS_POWER_EXPONENT]: 3.25 as Parameter,
+                        [PopularityParameterId.K_AS_COEFFICIENT]: 2 as Parameter,
                     }] as Combination<Submetric>,
                     samplePoint: [1, 3] as SamplePoint,
                 },
                 {
                     submetrics: [{
-                        [Parameter.SUM]: true,
-                        [Parameter.A_AS_LOGARITHM_BASE]: 2 as ParameterValue,
-                        [Parameter.J_AS_POWER_EXPONENT]: 3.5 as ParameterValue,
-                        [Parameter.K_AS_COEFFICIENT]: 0 as ParameterValue,
+                        [PopularityParameterId.SUM]: true,
+                        [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2 as Parameter,
+                        [PopularityParameterId.J_AS_POWER_EXPONENT]: 3.5 as Parameter,
+                        [PopularityParameterId.K_AS_COEFFICIENT]: 0 as Parameter,
                     }] as Combination<Submetric>,
                     samplePoint: [0, 4] as SamplePoint,
                 },
                 {
                     submetrics: [{
-                        [Parameter.SUM]: true,
-                        [Parameter.A_AS_LOGARITHM_BASE]: 2 as ParameterValue,
-                        [Parameter.J_AS_POWER_EXPONENT]: 3.5 as ParameterValue,
-                        [Parameter.K_AS_COEFFICIENT]: 2 as ParameterValue,
+                        [PopularityParameterId.SUM]: true,
+                        [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2 as Parameter,
+                        [PopularityParameterId.J_AS_POWER_EXPONENT]: 3.5 as Parameter,
+                        [PopularityParameterId.K_AS_COEFFICIENT]: 2 as Parameter,
                     }] as Combination<Submetric>,
                     samplePoint: [1, 4] as SamplePoint,
                 },

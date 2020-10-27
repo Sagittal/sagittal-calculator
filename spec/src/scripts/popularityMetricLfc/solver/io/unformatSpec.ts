@@ -6,8 +6,8 @@ describe("unformatParameters", (): void => {
         const text = `
         [
             {
-                [ Parameter.SUM ]: true,
-                [ Parameter.K_AS_COEFFICIENT ]: 0.038 as ParameterValue,
+                [ PopularityParameterId.SUM ]: true,
+                [ PopularityParameterId.K_AS_COEFFICIENT ]: 0.038 as ParameterValue,
             },
         ]
         ` as Io
@@ -32,8 +32,8 @@ describe("unformatParameters", (): void => {
                 sumOfSquares: 0.014206086754420309,
                 submetrics: [
                     {
-                        [ Parameter.SUM ]: true,
-                        [ Parameter.USE_NUMINATOR ]: true
+                        [ PopularityParameterId.SUM ]: true,
+                        [ PopularityParameterId.USE_NUMINATOR ]: true
                     }
                 ],
                 name: "{},{sum,useNuminator}",

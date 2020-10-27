@@ -15,7 +15,7 @@ import {
     BoundType,
     Ina,
     JiNotationBoundClass,
-    JiNotationLevel,
+    JiNotationLevelId,
     Tina,
     TINA,
 } from "../../../../../src/sagittal/notations/ji"
@@ -53,19 +53,19 @@ describe("analyzeHistory", (): void => {
                 ...boundEventFixture,
                 pitch,
                 boundType: BoundType.INA_MIDPOINT,
-                jiNotationLevel: JiNotationLevel.EXTREME,
+                jiNotationLevel: JiNotationLevelId.EXTREME,
             },
             {
                 ...boundEventFixture,
                 pitch,
                 boundType: BoundType.SIZE_CATEGORY_BOUND,
-                jiNotationLevel: JiNotationLevel.INSANE,
+                jiNotationLevel: JiNotationLevelId.INSANE,
             },
         ]
         jiNotationBoundClass = {
             ...jiNotationBoundClassFixture,
             pitch: actualJiNotationBoundPitch,
-            jiNotationLevels: [JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
+            jiNotationLevels: [JiNotationLevelId.EXTREME, JiNotationLevelId.INSANE],
         }
         initialPosition = computeInitialPosition(jiNotationBoundClass)
 
@@ -80,7 +80,7 @@ describe("analyzeHistory", (): void => {
                 exact: false,
                 distance: 0 as Abs<Cents>,
                 inaDistance: 0 as Multiplier<Ina>,
-                jiNotationLevel: JiNotationLevel.EXTREME,
+                jiNotationLevel: JiNotationLevelId.EXTREME,
             },
             {
                 ...boundEventAnalysisFixture,
@@ -90,7 +90,7 @@ describe("analyzeHistory", (): void => {
                 exact: false,
                 distance: 0 as Abs<Cents>,
                 inaDistance: 0 as Multiplier<Ina>,
-                jiNotationLevel: JiNotationLevel.INSANE,
+                jiNotationLevel: JiNotationLevelId.INSANE,
             },
         ])
         expect(actual.pitch).toEqual(pitch)
@@ -108,19 +108,19 @@ describe("analyzeHistory", (): void => {
                     ...boundEventFixture,
                     pitch,
                     boundType: BoundType.INA_MIDPOINT,
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                 },
                 {
                     ...boundEventFixture,
                     pitch,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                 },
             ]
             jiNotationBoundClass = {
                 ...jiNotationBoundClassFixture,
                 pitch: actualJiNotationBoundPitch,
-                jiNotationLevels: [JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
+                jiNotationLevels: [JiNotationLevelId.EXTREME, JiNotationLevelId.INSANE],
             }
             initialPosition = computeInitialPosition(jiNotationBoundClass)
 
@@ -153,7 +153,7 @@ describe("analyzeHistory", (): void => {
             jiNotationBoundClass = {
                 ...jiNotationBoundClassFixture,
                 pitch: actualJiNotationBoundPitch,
-                jiNotationLevels: [JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
+                jiNotationLevels: [JiNotationLevelId.EXTREME, JiNotationLevelId.INSANE],
             }
             initialPosition = computeInitialPosition(jiNotationBoundClass)
 
@@ -180,13 +180,13 @@ describe("analyzeHistory", (): void => {
                     ...boundEventFixture,
                     pitch,
                     boundType: BoundType.INA_MIDPOINT,
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                 },
             ]
             jiNotationBoundClass = {
                 ...jiNotationBoundClassFixture,
                 pitch: actualJiNotationBoundPitch,
-                jiNotationLevels: [JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
+                jiNotationLevels: [JiNotationLevelId.EXTREME, JiNotationLevelId.INSANE],
             }
             initialPosition = computeInitialPosition(jiNotationBoundClass)
 
@@ -207,19 +207,19 @@ describe("analyzeHistory", (): void => {
                     ...boundEventFixture,
                     boundType: BoundType.INA_MIDPOINT,
                     pitch,
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                 },
                 {
                     ...boundEventFixture,
                     pitch,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                 },
             ]
             jiNotationBoundClass = {
                 ...jiNotationBoundClassFixture,
                 pitch: actualJiNotationBoundPitch,
-                jiNotationLevels: [JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
+                jiNotationLevels: [JiNotationLevelId.EXTREME, JiNotationLevelId.INSANE],
             }
             initialPosition = computeInitialPosition(jiNotationBoundClass)
 
@@ -250,7 +250,7 @@ describe("analyzeHistory", (): void => {
             jiNotationBoundClass = {
                 ...jiNotationBoundClassFixture,
                 pitch: actualJiNotationBoundPitch,
-                jiNotationLevels: [JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
+                jiNotationLevels: [JiNotationLevelId.EXTREME, JiNotationLevelId.INSANE],
             }
             initialPosition = computeInitialPosition(jiNotationBoundClass)
 

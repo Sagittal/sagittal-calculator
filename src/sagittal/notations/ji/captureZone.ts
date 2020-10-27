@@ -4,13 +4,13 @@ import {formatJiNotationLevel} from "./formatLevel"
 import {getIntroducingJiNotationLevel} from "./introducingJiNotationLevel"
 import {isWithinJiNotationLevel} from "./isWithinLevel"
 import {JI_NOTATION_LEVELS_BOUND_CLASSES} from "./levelsBoundClasses"
-import {JiNotationBoundClass, JiNotationLevel} from "./types"
+import {JiNotationBoundClass, JiNotationLevelId} from "./types"
 
 // TODO: This should be another example of a module that should be outmoded post notation generation?
 
 const computeJiNotationCaptureZone = (
     commaClassId: CommaClassId,
-    jiNotationLevel: JiNotationLevel = JiNotationLevel.EXTREME,
+    jiNotationLevel: JiNotationLevelId = JiNotationLevelId.EXTREME,
 ): Maybe<Zone> => {
     const jiNotationLevelBoundClasses = JI_NOTATION_LEVELS_BOUND_CLASSES[jiNotationLevel]
 

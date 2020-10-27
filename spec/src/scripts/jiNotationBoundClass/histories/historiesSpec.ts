@@ -1,6 +1,6 @@
 import {HALF_SCALER, Monzo, Name, Scamon} from "../../../../../src/general"
 import {APOTOME, JiNotationBound} from "../../../../../src/sagittal"
-import {BoundType, JiNotationBoundClass, JiNotationLevel} from "../../../../../src/sagittal/notations"
+import {BoundType, JiNotationBoundClass, JiNotationLevelId} from "../../../../../src/sagittal/notations"
 import {EXTREME_EDA, INSANE_EDA, MEDIUM_EDA, ULTRA_EDA} from "../../../../../src/sagittal/notations/ji/levelEdas"
 import {computeHistories} from "../../../../../src/scripts/jiNotationBoundClass/histories"
 import {jiNotationBoundClassFixture} from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
@@ -14,10 +14,10 @@ describe("computeHistories", (): void => {
                 scaler: [67.5, INSANE_EDA],
             } as Scamon<{rational: false}>,
             jiNotationLevels: [
-                JiNotationLevel.MEDIUM,
-                JiNotationLevel.ULTRA,
-                JiNotationLevel.EXTREME,
-                JiNotationLevel.INSANE,
+                JiNotationLevelId.MEDIUM,
+                JiNotationLevelId.ULTRA,
+                JiNotationLevelId.EXTREME,
+                JiNotationLevelId.INSANE,
             ],
         }
 
@@ -26,7 +26,7 @@ describe("computeHistories", (): void => {
         const expected = [
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "1.5°21" as Name<JiNotationBound>,
                     pitch: {
@@ -35,7 +35,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "4.5°58" as Name<JiNotationBound>,
                     pitch: {
@@ -44,7 +44,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "19.5°233" as Name<JiNotationBound>,
                     pitch: {
@@ -53,7 +53,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "65.5°809" as Name<JiNotationBound>,
                     pitch: {
@@ -64,7 +64,7 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "1.5°21" as Name<JiNotationBound>,
                     pitch: {
@@ -73,7 +73,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "4.5°58" as Name<JiNotationBound>,
                     pitch: {
@@ -82,7 +82,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "19.5°233" as Name<JiNotationBound>,
                     pitch: {
@@ -91,7 +91,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "66.5°809" as Name<JiNotationBound>,
                     pitch: {
@@ -102,7 +102,7 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "1.5°21" as Name<JiNotationBound>,
                     pitch: {
@@ -111,7 +111,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "4.5°58" as Name<JiNotationBound>,
                     pitch: {
@@ -120,7 +120,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "19.5°233" as Name<JiNotationBound>,
                     pitch: {
@@ -129,7 +129,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "67.5°809" as Name<JiNotationBound>,
                     pitch: {
@@ -140,7 +140,7 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "1.5°21" as Name<JiNotationBound>,
                     pitch: {
@@ -149,7 +149,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "4.5°58" as Name<JiNotationBound>,
                     pitch: {
@@ -158,7 +158,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "19.5°233" as Name<JiNotationBound>,
                     pitch: {
@@ -167,7 +167,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "68.5°809" as Name<JiNotationBound>,
                     pitch: {
@@ -178,7 +178,7 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "1.5°21" as Name<JiNotationBound>,
                     pitch: {
@@ -187,7 +187,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "4.5°58" as Name<JiNotationBound>,
                     pitch: {
@@ -196,7 +196,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "19.5°233" as Name<JiNotationBound>,
                     pitch: {
@@ -205,7 +205,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.COMMA_MEAN,
                     name: ",)|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -216,7 +216,7 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "1.5°21" as Name<JiNotationBound>,
                     pitch: {
@@ -225,7 +225,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "4.5°58" as Name<JiNotationBound>,
                     pitch: {
@@ -234,7 +234,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.COMMA_MEAN,
                     name: ",)|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -243,7 +243,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "65.5°809" as Name<JiNotationBound>,
                     pitch: {
@@ -254,7 +254,7 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "1.5°21" as Name<JiNotationBound>,
                     pitch: {
@@ -263,7 +263,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "4.5°58" as Name<JiNotationBound>,
                     pitch: {
@@ -272,7 +272,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.COMMA_MEAN,
                     name: ",)|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -281,7 +281,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "66.5°809" as Name<JiNotationBound>,
                     pitch: {
@@ -292,7 +292,7 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "1.5°21" as Name<JiNotationBound>,
                     pitch: {
@@ -301,7 +301,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "4.5°58" as Name<JiNotationBound>,
                     pitch: {
@@ -310,7 +310,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.COMMA_MEAN,
                     name: ",)|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -319,7 +319,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "67.5°809" as Name<JiNotationBound>,
                     pitch: {
@@ -330,7 +330,7 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "1.5°21" as Name<JiNotationBound>,
                     pitch: {
@@ -339,7 +339,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "4.5°58" as Name<JiNotationBound>,
                     pitch: {
@@ -348,7 +348,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.COMMA_MEAN,
                     name: ",)|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -357,7 +357,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "68.5°809" as Name<JiNotationBound>,
                     pitch: {
@@ -368,7 +368,7 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "1.5°21" as Name<JiNotationBound>,
                     pitch: {
@@ -377,7 +377,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "4.5°58" as Name<JiNotationBound>,
                     pitch: {
@@ -386,7 +386,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.COMMA_MEAN,
                     name: ",)|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -395,7 +395,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.COMMA_MEAN,
                     name: ",)|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -406,7 +406,7 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "1.5°21" as Name<JiNotationBound>,
                     pitch: {
@@ -415,7 +415,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.COMMA_MEAN,
                     name: "~| )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -424,7 +424,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "19.5°233" as Name<JiNotationBound>,
                     pitch: {
@@ -433,7 +433,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "65.5°809" as Name<JiNotationBound>,
                     pitch: {
@@ -444,7 +444,7 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "1.5°21" as Name<JiNotationBound>,
                     pitch: {
@@ -453,7 +453,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.COMMA_MEAN,
                     name: "~| )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -462,7 +462,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "19.5°233" as Name<JiNotationBound>,
                     pitch: {
@@ -471,7 +471,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "66.5°809" as Name<JiNotationBound>,
                     pitch: {
@@ -482,7 +482,7 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "1.5°21" as Name<JiNotationBound>,
                     pitch: {
@@ -491,7 +491,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.COMMA_MEAN,
                     name: "~| )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -500,7 +500,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "19.5°233" as Name<JiNotationBound>,
                     pitch: {
@@ -509,7 +509,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "67.5°809" as Name<JiNotationBound>,
                     pitch: {
@@ -520,7 +520,7 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "1.5°21" as Name<JiNotationBound>,
                     pitch: {
@@ -529,7 +529,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.COMMA_MEAN,
                     name: "~| )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -538,7 +538,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "19.5°233" as Name<JiNotationBound>,
                     pitch: {
@@ -547,7 +547,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "68.5°809" as Name<JiNotationBound>,
                     pitch: {
@@ -558,7 +558,7 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "1.5°21" as Name<JiNotationBound>,
                     pitch: {
@@ -567,7 +567,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.COMMA_MEAN,
                     name: "~| )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -576,7 +576,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "19.5°233" as Name<JiNotationBound>,
                     pitch: {
@@ -585,7 +585,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.COMMA_MEAN,
                     name: ",)|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -596,7 +596,7 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "1.5°21" as Name<JiNotationBound>,
                     pitch: {
@@ -605,7 +605,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.COMMA_MEAN,
                     name: "~| )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -614,7 +614,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.COMMA_MEAN,
                     name: ",)|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -623,7 +623,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "65.5°809" as Name<JiNotationBound>,
                     pitch: {
@@ -634,7 +634,7 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "1.5°21" as Name<JiNotationBound>,
                     pitch: {
@@ -643,7 +643,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.COMMA_MEAN,
                     name: "~| )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -652,7 +652,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.COMMA_MEAN,
                     name: ",)|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -661,7 +661,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "66.5°809" as Name<JiNotationBound>,
                     pitch: {
@@ -672,7 +672,7 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "1.5°21" as Name<JiNotationBound>,
                     pitch: {
@@ -681,7 +681,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.COMMA_MEAN,
                     name: "~| )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -690,7 +690,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.COMMA_MEAN,
                     name: ",)|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -699,7 +699,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "67.5°809" as Name<JiNotationBound>,
                     pitch: {
@@ -710,7 +710,7 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "1.5°21" as Name<JiNotationBound>,
                     pitch: {
@@ -719,7 +719,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.COMMA_MEAN,
                     name: "~| )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -728,7 +728,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.COMMA_MEAN,
                     name: ",)|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -737,7 +737,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "68.5°809" as Name<JiNotationBound>,
                     pitch: {
@@ -748,7 +748,7 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "1.5°21" as Name<JiNotationBound>,
                     pitch: {
@@ -757,7 +757,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.COMMA_MEAN,
                     name: "~| )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -766,7 +766,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.COMMA_MEAN,
                     name: ",)|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -775,7 +775,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.COMMA_MEAN,
                     name: ",)|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -786,7 +786,7 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.COMMA_MEAN,
                     name: "|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -795,7 +795,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "4.5°58" as Name<JiNotationBound>,
                     pitch: {
@@ -804,7 +804,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "19.5°233" as Name<JiNotationBound>,
                     pitch: {
@@ -813,7 +813,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "65.5°809" as Name<JiNotationBound>,
                     pitch: {
@@ -824,7 +824,7 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.COMMA_MEAN,
                     name: "|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -833,7 +833,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "4.5°58" as Name<JiNotationBound>,
                     pitch: {
@@ -842,7 +842,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "19.5°233" as Name<JiNotationBound>,
                     pitch: {
@@ -851,7 +851,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "66.5°809" as Name<JiNotationBound>,
                     pitch: {
@@ -862,7 +862,7 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.COMMA_MEAN,
                     name: "|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -871,7 +871,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "4.5°58" as Name<JiNotationBound>,
                     pitch: {
@@ -880,7 +880,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "19.5°233" as Name<JiNotationBound>,
                     pitch: {
@@ -889,7 +889,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "67.5°809" as Name<JiNotationBound>,
                     pitch: {
@@ -900,7 +900,7 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.COMMA_MEAN,
                     name: "|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -909,7 +909,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "4.5°58" as Name<JiNotationBound>,
                     pitch: {
@@ -918,7 +918,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "19.5°233" as Name<JiNotationBound>,
                     pitch: {
@@ -927,7 +927,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "68.5°809" as Name<JiNotationBound>,
                     pitch: {
@@ -938,7 +938,7 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.COMMA_MEAN,
                     name: "|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -947,7 +947,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "4.5°58" as Name<JiNotationBound>,
                     pitch: {
@@ -956,7 +956,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "19.5°233" as Name<JiNotationBound>,
                     pitch: {
@@ -965,7 +965,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.COMMA_MEAN,
                     name: ",)|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -976,7 +976,7 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.COMMA_MEAN,
                     name: "|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -985,7 +985,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "4.5°58" as Name<JiNotationBound>,
                     pitch: {
@@ -994,7 +994,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.COMMA_MEAN,
                     name: ",)|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -1003,7 +1003,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "65.5°809" as Name<JiNotationBound>,
                     pitch: {
@@ -1014,7 +1014,7 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.COMMA_MEAN,
                     name: "|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -1023,7 +1023,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "4.5°58" as Name<JiNotationBound>,
                     pitch: {
@@ -1032,7 +1032,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.COMMA_MEAN,
                     name: ",)|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -1041,7 +1041,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "66.5°809" as Name<JiNotationBound>,
                     pitch: {
@@ -1052,7 +1052,7 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.COMMA_MEAN,
                     name: "|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -1061,7 +1061,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "4.5°58" as Name<JiNotationBound>,
                     pitch: {
@@ -1070,7 +1070,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.COMMA_MEAN,
                     name: ",)|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -1079,7 +1079,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "67.5°809" as Name<JiNotationBound>,
                     pitch: {
@@ -1090,7 +1090,7 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.COMMA_MEAN,
                     name: "|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -1099,7 +1099,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "4.5°58" as Name<JiNotationBound>,
                     pitch: {
@@ -1108,7 +1108,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.COMMA_MEAN,
                     name: ",)|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -1117,7 +1117,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "68.5°809" as Name<JiNotationBound>,
                     pitch: {
@@ -1128,7 +1128,7 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.COMMA_MEAN,
                     name: "|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -1137,7 +1137,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "4.5°58" as Name<JiNotationBound>,
                     pitch: {
@@ -1146,7 +1146,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.COMMA_MEAN,
                     name: ",)|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -1155,7 +1155,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.COMMA_MEAN,
                     name: ",)|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -1166,7 +1166,7 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.COMMA_MEAN,
                     name: "|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -1175,7 +1175,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.COMMA_MEAN,
                     name: "~| )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -1184,7 +1184,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "19.5°233" as Name<JiNotationBound>,
                     pitch: {
@@ -1193,7 +1193,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "65.5°809" as Name<JiNotationBound>,
                     pitch: {
@@ -1204,7 +1204,7 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.COMMA_MEAN,
                     name: "|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -1213,7 +1213,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.COMMA_MEAN,
                     name: "~| )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -1222,7 +1222,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "19.5°233" as Name<JiNotationBound>,
                     pitch: {
@@ -1231,7 +1231,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "66.5°809" as Name<JiNotationBound>,
                     pitch: {
@@ -1242,7 +1242,7 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.COMMA_MEAN,
                     name: "|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -1251,7 +1251,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.COMMA_MEAN,
                     name: "~| )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -1260,7 +1260,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "19.5°233" as Name<JiNotationBound>,
                     pitch: {
@@ -1269,7 +1269,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "67.5°809" as Name<JiNotationBound>,
                     pitch: {
@@ -1280,7 +1280,7 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.COMMA_MEAN,
                     name: "|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -1289,7 +1289,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.COMMA_MEAN,
                     name: "~| )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -1298,7 +1298,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "19.5°233" as Name<JiNotationBound>,
                     pitch: {
@@ -1307,7 +1307,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "68.5°809" as Name<JiNotationBound>,
                     pitch: {
@@ -1318,7 +1318,7 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.COMMA_MEAN,
                     name: "|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -1327,7 +1327,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.COMMA_MEAN,
                     name: "~| )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -1336,7 +1336,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "19.5°233" as Name<JiNotationBound>,
                     pitch: {
@@ -1345,7 +1345,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.COMMA_MEAN,
                     name: ",)|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -1356,7 +1356,7 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.COMMA_MEAN,
                     name: "|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -1365,7 +1365,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.COMMA_MEAN,
                     name: "~| )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -1374,7 +1374,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.COMMA_MEAN,
                     name: ",)|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -1383,7 +1383,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "65.5°809" as Name<JiNotationBound>,
                     pitch: {
@@ -1394,7 +1394,7 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.COMMA_MEAN,
                     name: "|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -1403,7 +1403,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.COMMA_MEAN,
                     name: "~| )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -1412,7 +1412,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.COMMA_MEAN,
                     name: ",)|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -1421,7 +1421,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "66.5°809" as Name<JiNotationBound>,
                     pitch: {
@@ -1432,7 +1432,7 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.COMMA_MEAN,
                     name: "|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -1441,7 +1441,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.COMMA_MEAN,
                     name: "~| )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -1450,7 +1450,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.COMMA_MEAN,
                     name: ",)|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -1459,7 +1459,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "67.5°809" as Name<JiNotationBound>,
                     pitch: {
@@ -1470,7 +1470,7 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.COMMA_MEAN,
                     name: "|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -1479,7 +1479,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.COMMA_MEAN,
                     name: "~| )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -1488,7 +1488,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.COMMA_MEAN,
                     name: ",)|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -1497,7 +1497,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "68.5°809" as Name<JiNotationBound>,
                     pitch: {
@@ -1508,7 +1508,7 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.COMMA_MEAN,
                     name: "|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -1517,7 +1517,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.COMMA_MEAN,
                     name: "~| )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -1526,7 +1526,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.COMMA_MEAN,
                     name: ",)|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -1535,7 +1535,7 @@ describe("computeHistories", (): void => {
                     } as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.COMMA_MEAN,
                     name: ",)|( )|(" as Name<JiNotationBound>,
                     pitch: {
@@ -1555,7 +1555,7 @@ describe("computeHistories", (): void => {
                 monzo: APOTOME.monzo as Monzo<{rational: true}>,
                 scaler: [404.5, INSANE_EDA],
             } as Scamon<{rational: false}>,
-            jiNotationLevels: [JiNotationLevel.MEDIUM, JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
+            jiNotationLevels: [JiNotationLevelId.MEDIUM, JiNotationLevelId.EXTREME, JiNotationLevelId.INSANE],
         }
 
         const actual = computeHistories(jiNotationBoundClass)
@@ -1563,19 +1563,19 @@ describe("computeHistories", (): void => {
         const expected = [
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "10.5°21" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: [10.5, 21]} as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "116.5°233" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: [116.5, 233]} as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "402.5°809" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: [402.5, 809]} as Scamon<{rational: false}>,
@@ -1583,19 +1583,19 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "10.5°21" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: [10.5, 21]} as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "116.5°233" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: [116.5, 233]} as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "403.5°809" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: [403.5, 809]} as Scamon<{rational: false}>,
@@ -1603,19 +1603,19 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "10.5°21" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: [10.5, 21]} as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "116.5°233" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: [116.5, 233]} as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "404.5°809" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: [404.5, 809]} as Scamon<{rational: false}>,
@@ -1623,19 +1623,19 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "10.5°21" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: [10.5, 21]} as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "116.5°233" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: [116.5, 233]} as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: HALF_SCALER} as Scamon<{rational: false}>,
@@ -1643,19 +1643,19 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "10.5°21" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: [10.5, 21]} as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: HALF_SCALER} as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "402.5°809" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: [402.5, 809]} as Scamon<{rational: false}>,
@@ -1663,19 +1663,19 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "10.5°21" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: [10.5, 21]} as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: HALF_SCALER} as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "403.5°809" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: [403.5, 809]} as Scamon<{rational: false}>,
@@ -1683,19 +1683,19 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "10.5°21" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: [10.5, 21]} as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: HALF_SCALER} as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "404.5°809" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: [404.5, 809]} as Scamon<{rational: false}>,
@@ -1703,19 +1703,19 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "10.5°21" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: [10.5, 21]} as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: HALF_SCALER} as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: HALF_SCALER} as Scamon<{rational: false}>,
@@ -1723,19 +1723,19 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: HALF_SCALER} as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "116.5°233" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: [116.5, 233]} as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "402.5°809" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: [402.5, 809]} as Scamon<{rational: false}>,
@@ -1743,19 +1743,19 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: HALF_SCALER} as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "116.5°233" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: [116.5, 233]} as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "403.5°809" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: [403.5, 809]} as Scamon<{rational: false}>,
@@ -1763,19 +1763,19 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: HALF_SCALER} as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "116.5°233" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: [116.5, 233]} as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "404.5°809" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: [404.5, 809]} as Scamon<{rational: false}>,
@@ -1783,19 +1783,19 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: HALF_SCALER} as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "116.5°233" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: [116.5, 233]} as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: HALF_SCALER} as Scamon<{rational: false}>,
@@ -1803,19 +1803,19 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: HALF_SCALER} as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: HALF_SCALER} as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "402.5°809" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: [402.5, 809]} as Scamon<{rational: false}>,
@@ -1823,19 +1823,19 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: HALF_SCALER} as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: HALF_SCALER} as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "403.5°809" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: [403.5, 809]} as Scamon<{rational: false}>,
@@ -1843,19 +1843,19 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: HALF_SCALER} as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: HALF_SCALER} as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "404.5°809" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: [404.5, 809]} as Scamon<{rational: false}>,
@@ -1863,19 +1863,19 @@ describe("computeHistories", (): void => {
             ],
             [
                 {
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: HALF_SCALER} as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: HALF_SCALER} as Scamon<{rational: false}>,
                 },
                 {
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
                     pitch: {monzo: APOTOME.monzo, scaler: HALF_SCALER} as Scamon<{rational: false}>,

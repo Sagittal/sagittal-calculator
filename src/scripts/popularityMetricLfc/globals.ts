@@ -2,7 +2,7 @@ import {Combinations, Name} from "../../general"
 import {Metric, Scope} from "./bestMetric"
 import {INITIAL_POPULARITY_METRIC_LFC_SCRIPT_GROUP_SETTINGS, INITIAL_SOLVER_STATUS} from "./constants"
 import {Chunk, SolverStatus} from "./solver"
-import {Parameter, Submetric} from "./sumOfSquares"
+import {PopularityParameterId, Submetric} from "./sumOfSquares"
 import {PopularityMetricLfcScriptGroupSettings} from "./types"
 
 const scopesToSearch: Scope[] = [] as unknown[] as Scope[]
@@ -14,7 +14,7 @@ const bestMetrics: Map<Name<Metric>, Metric> = new Map()
 const metricNames: Array<Name<Metric>> = []
 
 const memoizedSubmetricChunkCombinations: Array<Combinations<Chunk<Submetric>>> = []
-const memoizedParameterChunkCombinations: Array<Combinations<Chunk<Parameter>>> = []
+const memoizedParameterChunkCombinations: Array<Combinations<Chunk<PopularityParameterId>>> = []
 
 const popularityMetricLfcScriptGroupSettings: PopularityMetricLfcScriptGroupSettings =
     JSON.parse(JSON.stringify(INITIAL_POPULARITY_METRIC_LFC_SCRIPT_GROUP_SETTINGS))

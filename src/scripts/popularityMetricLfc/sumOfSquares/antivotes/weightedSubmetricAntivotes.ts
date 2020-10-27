@@ -1,5 +1,5 @@
 import {stringify, Two3FreeClass} from "../../../../general"
-import {ParameterValue} from "../../../types"
+import {Parameter} from "../../../types"
 import {Antivotes, Submetric} from "../types"
 import {compute23FreeClassSubmetricAntivotes} from "./two3FreeClassSubmetricAntivotes"
 import {computeWeightedAntivotes} from "./weightedAntivotes"
@@ -9,7 +9,7 @@ const computeWeightedSubmetricAntivotes = (
     submetric: Submetric = {},
 ): Antivotes => {
     const {
-        weightAsCoefficient = 1 as ParameterValue,
+        weightAsCoefficient = 1 as Parameter,
         weightAsLogarithmBase,
         weightAsPowerExponent,
         weightAsPowerBase,

@@ -1,10 +1,10 @@
 import {Exponent, Prime, QuotientPartType} from "../../../../../../src/general/math"
 import {secondaryParameterOverride} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes/secondaryParameter"
-import {ParameterValue} from "../../../../../../src/scripts/types"
+import {Parameter} from "../../../../../../src/scripts/types"
 
 describe("secondaryParameterOverride", (): void => {
-    const denominatorSpecificParameter = 5 as ParameterValue
-    const parameter = 3 as ParameterValue
+    const denominatorSpecificParameter = 5 as Parameter
+    const parameter = 3 as Parameter
 
     it("returns the parameter when the prime exponent is positive (it is in the numerator)", (): void => {
         const primeExponent = 2 as Exponent<Prime>

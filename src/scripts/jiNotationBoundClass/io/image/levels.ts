@@ -1,12 +1,12 @@
 import {Io, Px, UNISON} from "../../../../general"
-import {HALF_APOTOME, JiNotationLevel, JI_NOTATION_LEVELS} from "../../../../sagittal"
+import {HALF_APOTOME, JiNotationLevelId, JI_NOTATION_LEVELS} from "../../../../sagittal"
 import {JI_NOTATION_LEVEL_BOTTOMS} from "./levelHeights"
 import {computeX} from "./x"
 
 const visualizeJiNotationLevels = (): Io[] => {
     const jiNotationLevelElements: Io[] = []
 
-    JI_NOTATION_LEVELS.forEach((jiNotationLevel: JiNotationLevel): void => {
+    JI_NOTATION_LEVELS.forEach((jiNotationLevel: JiNotationLevelId): void => {
         const leftEdgeX: Px = computeX(UNISON)
         const rightEdgeX: Px = computeX(HALF_APOTOME)
         const jiNotationLevelY: Px = JI_NOTATION_LEVEL_BOTTOMS[jiNotationLevel]

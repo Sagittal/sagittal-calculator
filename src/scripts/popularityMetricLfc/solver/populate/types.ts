@@ -1,10 +1,10 @@
 import {Combination, Count, Index} from "../../../../general"
-import {Parameter, Submetric} from "../../sumOfSquares"
+import {PopularityParameterId, Submetric} from "../../sumOfSquares"
 import {Chunk} from "../types"
 
 interface PopulateScopesForSubmetricChunkCombinationOptions {
-    parameterChunkCombinations: Array<Combination<Chunk<Parameter>>>,
-    parameterChunkCombinationIndex: Index<Combination<Chunk<Parameter>>>,
+    parameterChunkCombinations: Array<Combination<Chunk<PopularityParameterId>>>,
+    parameterChunkCombinationIndex: Index<Combination<Chunk<PopularityParameterId>>>,
     submetricChunkCombinationIndex: Index<Combination<Chunk<Submetric>>>,
     submetricChunkCombinationCount: Count<Combination<Chunk<Submetric>>>
 }

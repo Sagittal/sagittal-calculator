@@ -13,7 +13,7 @@ import {
     QuotientPartType,
     stringify,
 } from "../../../../general"
-import {ParameterValue} from "../../../types"
+import {Parameter} from "../../../types"
 import {Antivotes, Submetric} from "../types"
 import {secondaryParameterOverride} from "./secondaryParameter"
 
@@ -28,15 +28,15 @@ const computeSubmetricAntivotes = (
     quotientPartType?: QuotientPartType,
 ): Antivotes => {
     const {
-        aAsCoefficient = 1 as ParameterValue,
+        aAsCoefficient = 1 as Parameter,
         aAsPowerExponent,
         aAsLogarithmBase,
         aAsPowerBase,
-        w = 0 as ParameterValue,
+        w = 0 as Parameter,
         b,
-        x = 0 as ParameterValue,
+        x = 0 as Parameter,
         u,
-        y = 1 as ParameterValue,
+        y = 1 as Parameter,
         v,
         usePrimeIndex = false,
         sum = false,

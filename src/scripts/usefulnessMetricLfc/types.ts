@@ -1,8 +1,8 @@
 import {Abs, Decimal, Exponent, Prime} from "../../general"
 import {ApotomeSlope, N2D3P9} from "../../sagittal"
-import {ParameterValue} from "../types"
+import {Parameter} from "../types"
 
-type UsefulnessParameterSet = Partial<Record<UsefulnessParameterId, ParameterValue>>
+type UsefulnessParameterSet = Partial<Record<UsefulnessParameterId, Parameter>>
 
 type Usefulness = number & { _UsefulnessBrand: boolean }
 

@@ -9,8 +9,8 @@ import {
     getIntroducingJiNotationLevel,
     getMinaName,
     getRepresentativeSagittal,
-    getSmallestSymbolSubset,
-    JiNotationLevel,
+    getSmallestSymbolSubsetId,
+    JiNotationLevelId,
     JI_NOTATION_BOUND_CLASSES,
 } from "../../../../sagittal"
 import {computeInaDistance} from "../../history"
@@ -19,7 +19,7 @@ import {BoundedCommaClassInfo} from "./types"
 const computeBoundedCommaClassInfo = (
     commaClassId: CommaClassId,
     boundClassId: BoundClassId,
-    jiNotationLevel: JiNotationLevel,
+    jiNotationLevel: JiNotationLevelId,
 ): BoundedCommaClassInfo => {
     const commaClass = getCommaClass(commaClassId)
     const commaAnalysis = analyzeComma(commaClass.pitch)
@@ -32,7 +32,7 @@ const computeBoundedCommaClassInfo = (
 
     const minaName = getMinaName(commaClassId)
 
-    const smallestSymbolSubset = getSmallestSymbolSubset(commaClass.representativeSymbolClassId)
+    const smallestSymbolSubsetId = getSmallestSymbolSubsetId(commaClass.representativeSymbolClassId)
 
     const bound = JI_NOTATION_BOUND_CLASSES[boundClassId]
 
@@ -44,7 +44,7 @@ const computeBoundedCommaClassInfo = (
         representativeSagittal: {
             ascii,
             unicode,
-            smallestSymbolSubset,
+            smallestSymbolSubsetId,
         },
         minaName,
         introducingJiNotationLevel,

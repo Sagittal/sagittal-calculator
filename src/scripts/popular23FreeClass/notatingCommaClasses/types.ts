@@ -1,8 +1,8 @@
 import {Index} from "../../../general"
-import {CommaClassId, SymbolSubset} from "../../../sagittal"
+import {CommaClassId, SymbolSubsetId} from "../../../sagittal"
 
 interface NotatingCommaClassesProperties {
-    notatingCommaClassSmallestSymbolSubsetIndices: Array<Index<SymbolSubset>>,
+    notatingCommaClassSmallestSymbolSubsetIndices: Array<Index<SymbolSubsetId>>,
     notatingCommaClassIds: CommaClassId[],
 }
 

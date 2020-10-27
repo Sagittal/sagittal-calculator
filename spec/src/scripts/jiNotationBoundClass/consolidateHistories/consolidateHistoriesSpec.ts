@@ -1,6 +1,6 @@
 import {HALF_SCALER, Multiplier, Name, Scamon} from "../../../../../src/general"
 import {APOTOME, JiNotationBound} from "../../../../../src/sagittal"
-import {BoundType, JiNotationLevel, Tina} from "../../../../../src/sagittal/notations"
+import {BoundType, JiNotationLevelId, Tina} from "../../../../../src/sagittal/notations"
 import {EXTREME_EDA, ULTRA_EDA} from "../../../../../src/sagittal/notations/ji/levelEdas"
 import {consolidateBoundHistories} from "../../../../../src/scripts/jiNotationBoundClass/consolidateHistories"
 import {
@@ -17,7 +17,7 @@ describe("consolidateBoundHistories", (): void => {
     it("consolidates bound histories to collapse redundancies per JI notation level and show which bound class events can lead into which events in the next JI notation level, and which ones are members of histories that are possible, and what the best rank is in any event that becomes part of this consolidation, and what the best rank of any bound class history this bound class event is a member of is, and membership in the best possible bound class history", (): void => {
         const boundEventAnalysisAGoesToEventCAndD: BoundEventAnalysis = {
             ...boundEventAnalysisFixture,
-            jiNotationLevel: JiNotationLevel.ULTRA,
+            jiNotationLevel: JiNotationLevelId.ULTRA,
             boundType: BoundType.COMMA_MEAN,
             name: "'/| )/|" as Name<JiNotationBound>,
             pitch: {monzo: [], scaler: HALF_SCALER} as Scamon<{rational: false}>,
@@ -26,7 +26,7 @@ describe("consolidateBoundHistories", (): void => {
         }
         const boundEventAnalysisBGoesToEventC: BoundEventAnalysis = {
             ...boundEventAnalysisFixture,
-            jiNotationLevel: JiNotationLevel.ULTRA,
+            jiNotationLevel: JiNotationLevelId.ULTRA,
             boundType: BoundType.INA_MIDPOINT,
             name: "12.5°58" as Name<JiNotationBound>,
             pitch: {monzo: APOTOME.monzo, scaler: [12.5, ULTRA_EDA]} as Scamon<{rational: false}>,
@@ -35,7 +35,7 @@ describe("consolidateBoundHistories", (): void => {
         }
         const boundEventAnalysisC: BoundEventAnalysis = {
             ...boundEventAnalysisFixture,
-            jiNotationLevel: JiNotationLevel.EXTREME,
+            jiNotationLevel: JiNotationLevelId.EXTREME,
             boundType: BoundType.COMMA_MEAN,
             name: ",)/| )/|" as Name<JiNotationBound>,
             pitch: {monzo: [], scaler: HALF_SCALER} as Scamon<{rational: false}>,
@@ -44,7 +44,7 @@ describe("consolidateBoundHistories", (): void => {
         }
         const boundEventAnalysisD: BoundEventAnalysis = {
             ...boundEventAnalysisFixture,
-            jiNotationLevel: JiNotationLevel.EXTREME,
+            jiNotationLevel: JiNotationLevelId.EXTREME,
             boundType: BoundType.INA_MIDPOINT,
             name: "50.5°233" as Name<JiNotationBound>,
             pitch: {monzo: APOTOME.monzo, scaler: [50.5, EXTREME_EDA]} as Scamon<{rational: false}>,
@@ -53,7 +53,7 @@ describe("consolidateBoundHistories", (): void => {
         }
         const boundEventAnalysisCButWithBetterRank: BoundEventAnalysis = {
             ...boundEventAnalysisFixture,
-            jiNotationLevel: JiNotationLevel.EXTREME,
+            jiNotationLevel: JiNotationLevelId.EXTREME,
             boundType: BoundType.COMMA_MEAN,
             name: ",)/| )/|" as Name<JiNotationBound>,
             pitch: {monzo: [], scaler: HALF_SCALER} as Scamon<{rational: false}>,
@@ -111,7 +111,7 @@ describe("consolidateBoundHistories", (): void => {
         const actual = consolidateBoundHistories(boundHistoryAnalyses, bestPossibleBoundHistoryAnalysis)
 
         const expected = {
-            [JiNotationLevel.ULTRA]: [
+            [JiNotationLevelId.ULTRA]: [
                 {
                     boundType: boundEventAnalysisAGoesToEventCAndD.boundType,
                     jiNotationLevel: boundEventAnalysisAGoesToEventCAndD.jiNotationLevel,
@@ -142,7 +142,7 @@ describe("consolidateBoundHistories", (): void => {
                     ] as Array<Name<JiNotationBound>>,
                 },
             ],
-            [JiNotationLevel.EXTREME]: [
+            [JiNotationLevelId.EXTREME]: [
                 {
                     boundType: boundEventAnalysisC.boundType,
                     jiNotationLevel: boundEventAnalysisC.jiNotationLevel,

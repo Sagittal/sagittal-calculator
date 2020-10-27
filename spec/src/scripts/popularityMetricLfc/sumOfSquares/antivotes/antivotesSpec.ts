@@ -1,11 +1,11 @@
 import {Combination, Monzo} from "../../../../../../src/general/math"
 import {Two3FreeClass} from "../../../../../../src/general/music"
-import {Parameter, Submetric} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {PopularityParameterId, Submetric} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 import {computeAntivotes} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes"
 import {ANTIVOTES_PRECISION} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes/constants"
 import {computeSubmetricAntivotes} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes/submetricAntivotes"
 import {Antivotes} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/types"
-import {ParameterValue} from "../../../../../../src/scripts/types"
+import {Parameter} from "../../../../../../src/scripts/types"
 
 describe("computeAntivotes", (): void => {
     it("when k = 1 (default), and two 2,3-free classes have the same SoPFR, but one has its primes all lopsided on one side, they still get ranked the same", (): void => {
@@ -13,8 +13,8 @@ describe("computeAntivotes", (): void => {
         const lopsided23FreeClass = {monzo: [0, 0, 0, 1, 1]} as Two3FreeClass
         const submetrics: Combination<Submetric> = [
             {
-                [Parameter.SUM]: true,
-                [Parameter.K_AS_COEFFICIENT]: 1 as ParameterValue,
+                [PopularityParameterId.SUM]: true,
+                [PopularityParameterId.K_AS_COEFFICIENT]: 1 as Parameter,
             },
         ] as Combination<Submetric>
 
@@ -29,8 +29,8 @@ describe("computeAntivotes", (): void => {
         const lopsided23FreeClass = {monzo: [0, 0, 0, 1, 1]} as Two3FreeClass
         const submetrics: Combination<Submetric> = [
             {
-                [Parameter.SUM]: true,
-                [Parameter.K_AS_COEFFICIENT]: 0.9 as ParameterValue,
+                [PopularityParameterId.SUM]: true,
+                [PopularityParameterId.K_AS_COEFFICIENT]: 0.9 as Parameter,
             },
         ] as Combination<Submetric>
 
@@ -44,12 +44,12 @@ describe("computeAntivotes", (): void => {
         const two3FreeClass = {monzo: [0, 0, 0, 1, 1]} as Two3FreeClass
         const submetrics = [
             {
-                [Parameter.SUM]: true,
-                [Parameter.WEIGHT_AS_COEFFICIENT]: 0.5 as ParameterValue,
+                [PopularityParameterId.SUM]: true,
+                [PopularityParameterId.WEIGHT_AS_COEFFICIENT]: 0.5 as Parameter,
             },
             {
-                [Parameter.SUM]: true,
-                [Parameter.WEIGHT_AS_COEFFICIENT]: 0.3 as ParameterValue,
+                [PopularityParameterId.SUM]: true,
+                [PopularityParameterId.WEIGHT_AS_COEFFICIENT]: 0.3 as Parameter,
             },
         ] as Combination<Submetric>
 
@@ -58,11 +58,11 @@ describe("computeAntivotes", (): void => {
         const expected =
             0.5 * computeSubmetricAntivotes(
                 [0, 0, 0, 1, 1] as Monzo<{rational: true}>,
-                {[Parameter.SUM]: true},
+                {[PopularityParameterId.SUM]: true},
             ) as Antivotes +
             0.3 * computeSubmetricAntivotes(
                 [0, 0, 0, 1, 1] as Monzo<{rational: true}>,
-                {[Parameter.SUM]: true},
+                {[PopularityParameterId.SUM]: true},
             ) as Antivotes
         expect(actual).toBeCloseToTyped(expected, ANTIVOTES_PRECISION)
     })
@@ -70,13 +70,13 @@ describe("computeAntivotes", (): void => {
     it("should not return NaN", (): void => {
         const submetrics = [
             {
-                [Parameter.SUM]: true,
-                [Parameter.WEIGHT_AS_COEFFICIENT]: 1 as ParameterValue,
-                [Parameter.K_AS_COEFFICIENT]: 0 as ParameterValue,
-                [Parameter.A_AS_LOGARITHM_BASE]: 2 as ParameterValue,
-                [Parameter.W]: -6 as ParameterValue,
-                [Parameter.X]: -2 as ParameterValue,
-                [Parameter.Y]: 0.142857 as ParameterValue,
+                [PopularityParameterId.SUM]: true,
+                [PopularityParameterId.WEIGHT_AS_COEFFICIENT]: 1 as Parameter,
+                [PopularityParameterId.K_AS_COEFFICIENT]: 0 as Parameter,
+                [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2 as Parameter,
+                [PopularityParameterId.W]: -6 as Parameter,
+                [PopularityParameterId.X]: -2 as Parameter,
+                [PopularityParameterId.Y]: 0.142857 as Parameter,
             },
         ] as Combination<Submetric>
         const two3FreeClass = {monzo: [0, 0, 1]} as Two3FreeClass
@@ -89,9 +89,9 @@ describe("computeAntivotes", (): void => {
     it("antivotes precision should round results to billionths", (): void => {
         const submetrics = [
             {
-                [Parameter.SUM]: true,
-                [Parameter.A_AS_LOGARITHM_BASE]: 2 as ParameterValue,
-                [Parameter.W]: -2 as ParameterValue,
+                [PopularityParameterId.SUM]: true,
+                [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2 as Parameter,
+                [PopularityParameterId.W]: -2 as Parameter,
             },
         ] as Combination<Submetric>
         const two3FreeClass = {monzo: [0, 0, 1]} as Two3FreeClass

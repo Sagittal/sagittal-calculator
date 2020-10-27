@@ -1,6 +1,6 @@
 import {Combination} from "../../../general"
 import {SumOfSquares} from "../bestMetric"
-import {Parameter, Submetric} from "../sumOfSquares"
+import {PopularityParameterId, Submetric} from "../sumOfSquares"
 
 // ALL VALUES Z -1, ONLY TOP 80
 
@@ -10,7 +10,7 @@ const sopfgtt = {
     name: "{sum}",
     submetrics: [
         {
-            [Parameter.SUM]: true,
+            [PopularityParameterId.SUM]: true,
         },
     ] as Combination<Submetric>,
 }
@@ -25,18 +25,18 @@ const withPrimeLimit = {
     name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,y},{max,useNuminator,weightAsCoefficient,withoutRepetition}",
     submetrics: [
         {
-            [Parameter.K_AS_COEFFICIENT]: 0.638243216,
-            [Parameter.A_AS_LOGARITHM_BASE]: 3.956349187,
-            [Parameter.W]: -0.619217685,
-            [Parameter.Y]: 0.883788532,
-            [Parameter.USE_NUMINATOR]: true,
-            [Parameter.SUM]: true,
+            [PopularityParameterId.K_AS_COEFFICIENT]: 0.638243216,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 3.956349187,
+            [PopularityParameterId.W]: -0.619217685,
+            [PopularityParameterId.Y]: 0.883788532,
+            [PopularityParameterId.USE_NUMINATOR]: true,
+            [PopularityParameterId.SUM]: true,
         },
         {
-            [Parameter.MAX]: true,
-            [Parameter.WITHOUT_REPETITION]: true,
-            [Parameter.WEIGHT_AS_COEFFICIENT]: 0.020609268,
-            [Parameter.USE_NUMINATOR]: true,
+            [PopularityParameterId.MAX]: true,
+            [PopularityParameterId.WITHOUT_REPETITION]: true,
+            [PopularityParameterId.WEIGHT_AS_COEFFICIENT]: 0.020609268,
+            [PopularityParameterId.USE_NUMINATOR]: true,
         },
     ],
 }
@@ -51,17 +51,17 @@ const lowestEver = {
     name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,y},{count,useNuminator,weightAsCoefficient}",
     submetrics: [
         {
-            [Parameter.K_AS_COEFFICIENT]: 0.038,
-            [Parameter.A_AS_LOGARITHM_BASE]: 1.994,
-            [Parameter.Y]: 0.455,
-            [Parameter.W]: -2.08,
-            [Parameter.USE_NUMINATOR]: true,
-            [Parameter.SUM]: true,
+            [PopularityParameterId.K_AS_COEFFICIENT]: 0.038,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 1.994,
+            [PopularityParameterId.Y]: 0.455,
+            [PopularityParameterId.W]: -2.08,
+            [PopularityParameterId.USE_NUMINATOR]: true,
+            [PopularityParameterId.SUM]: true,
         },
         {
-            [Parameter.COUNT]: true,
-            [Parameter.WEIGHT_AS_COEFFICIENT]: 0.577,
-            [Parameter.USE_NUMINATOR]: true,
+            [PopularityParameterId.COUNT]: true,
+            [PopularityParameterId.WEIGHT_AS_COEFFICIENT]: 0.577,
+            [PopularityParameterId.USE_NUMINATOR]: true,
         },
     ],
 }
@@ -77,17 +77,17 @@ const likeLowestEverButWithZeroK = {
     name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,y},{count,useNuminator,weightAsCoefficient}",
     submetrics: [
         {
-            [Parameter.K_AS_COEFFICIENT]: 0,
-            [Parameter.A_AS_LOGARITHM_BASE]: 1.753,
-            [Parameter.Y]: 0.473,
-            [Parameter.W]: -2.62,
-            [Parameter.USE_NUMINATOR]: true,
-            [Parameter.SUM]: true,
+            [PopularityParameterId.K_AS_COEFFICIENT]: 0,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 1.753,
+            [PopularityParameterId.Y]: 0.473,
+            [PopularityParameterId.W]: -2.62,
+            [PopularityParameterId.USE_NUMINATOR]: true,
+            [PopularityParameterId.SUM]: true,
         },
         {
-            [Parameter.COUNT]: true,
-            [Parameter.WEIGHT_AS_COEFFICIENT]: 0.723,
-            [Parameter.USE_NUMINATOR]: true,
+            [PopularityParameterId.COUNT]: true,
+            [PopularityParameterId.WEIGHT_AS_COEFFICIENT]: 0.723,
+            [PopularityParameterId.USE_NUMINATOR]: true,
         },
     ],
 }
@@ -97,12 +97,12 @@ const likeLowestEverButWithZeroC = {
     name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,y}",
     submetrics: [
         {
-            [Parameter.K_AS_COEFFICIENT]: 0.635,
-            [Parameter.A_AS_LOGARITHM_BASE]: 1.43,
-            [Parameter.Y]: 0.85,
-            [Parameter.W]: -2.77,
-            [Parameter.USE_NUMINATOR]: true,
-            [Parameter.SUM]: true,
+            [PopularityParameterId.K_AS_COEFFICIENT]: 0.635,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 1.43,
+            [PopularityParameterId.Y]: 0.85,
+            [PopularityParameterId.W]: -2.77,
+            [PopularityParameterId.USE_NUMINATOR]: true,
+            [PopularityParameterId.SUM]: true,
         },
     ],
 }
@@ -117,18 +117,18 @@ const notTwoChunkByCurrentDefinitionMcopfr = {
     name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,y},{count,jAsCoefficient,modifiedCount,useNuminator}",
     submetrics: [
         {
-            [Parameter.K_AS_COEFFICIENT]: 0,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2,
-            [Parameter.W]: -1.453,
-            [Parameter.Y]: 0.863,
-            [Parameter.USE_NUMINATOR]: true,
-            [Parameter.SUM]: true,
+            [PopularityParameterId.K_AS_COEFFICIENT]: 0,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
+            [PopularityParameterId.W]: -1.453,
+            [PopularityParameterId.Y]: 0.863,
+            [PopularityParameterId.USE_NUMINATOR]: true,
+            [PopularityParameterId.SUM]: true,
         },
         {
-            [Parameter.J_AS_COEFFICIENT]: 0,
-            [Parameter.COUNT]: true,
-            [Parameter.MODIFIED_COUNT]: true,
-            [Parameter.USE_NUMINATOR]: true,
+            [PopularityParameterId.J_AS_COEFFICIENT]: 0,
+            [PopularityParameterId.COUNT]: true,
+            [PopularityParameterId.MODIFIED_COUNT]: true,
+            [PopularityParameterId.USE_NUMINATOR]: true,
         },
     ],
 }
@@ -143,19 +143,19 @@ const notThreeChunkByCurrentDefinitionMcopfr = {
     name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,y},{count,jAsCoefficient,modifiedCount,useNuminator,y}",
     submetrics: [
         {
-            [Parameter.K_AS_COEFFICIENT]: 0,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2,
-            [Parameter.W]: -1.431,
-            [Parameter.Y]: 0.851,
-            [Parameter.USE_NUMINATOR]: true,
-            [Parameter.SUM]: true,
+            [PopularityParameterId.K_AS_COEFFICIENT]: 0,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
+            [PopularityParameterId.W]: -1.431,
+            [PopularityParameterId.Y]: 0.851,
+            [PopularityParameterId.USE_NUMINATOR]: true,
+            [PopularityParameterId.SUM]: true,
         },
         {
-            [Parameter.J_AS_COEFFICIENT]: 0,
-            [Parameter.COUNT]: true,
-            [Parameter.MODIFIED_COUNT]: true,
-            [Parameter.Y]: 1.332,
-            [Parameter.USE_NUMINATOR]: true,
+            [PopularityParameterId.J_AS_COEFFICIENT]: 0,
+            [PopularityParameterId.COUNT]: true,
+            [PopularityParameterId.MODIFIED_COUNT]: true,
+            [PopularityParameterId.Y]: 1.332,
+            [PopularityParameterId.USE_NUMINATOR]: true,
         },
     ],
 }
@@ -176,19 +176,19 @@ const notFourChunkByCurrentDefinitionMcopfr = {
     name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,y},{count,jAsCoefficient,modifiedCount,useNuminator,y}",
     submetrics: [
         {
-            [Parameter.K_AS_COEFFICIENT]: 0,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2,
-            [Parameter.W]: -1.44,
-            [Parameter.Y]: 0.86,
-            [Parameter.USE_NUMINATOR]: true,
-            [Parameter.SUM]: true,
+            [PopularityParameterId.K_AS_COEFFICIENT]: 0,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
+            [PopularityParameterId.W]: -1.44,
+            [PopularityParameterId.Y]: 0.86,
+            [PopularityParameterId.USE_NUMINATOR]: true,
+            [PopularityParameterId.SUM]: true,
         },
         {
-            [Parameter.J_AS_COEFFICIENT]: 0,
-            [Parameter.COUNT]: true,
-            [Parameter.MODIFIED_COUNT]: true,
-            [Parameter.Y]: 1.331,
-            [Parameter.USE_NUMINATOR]: true,
+            [PopularityParameterId.J_AS_COEFFICIENT]: 0,
+            [PopularityParameterId.COUNT]: true,
+            [PopularityParameterId.MODIFIED_COUNT]: true,
+            [PopularityParameterId.Y]: 1.331,
+            [PopularityParameterId.USE_NUMINATOR]: true,
         },
     ],
 }
@@ -204,13 +204,13 @@ const oneSubmetricSevenChunk = {
     name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,x,y}",
     submetrics: [
         {
-            [Parameter.K_AS_COEFFICIENT]: 0.6328571428571429,
-            [Parameter.A_AS_LOGARITHM_BASE]: 1.5728571428571425,
-            [Parameter.W]: -3.0571428571428574,
-            [Parameter.Y]: 0.8571428571428571,
-            [Parameter.X]: 1.607142857142857,
-            [Parameter.USE_NUMINATOR]: true,
-            [Parameter.SUM]: true,
+            [PopularityParameterId.K_AS_COEFFICIENT]: 0.6328571428571429,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 1.5728571428571425,
+            [PopularityParameterId.W]: -3.0571428571428574,
+            [PopularityParameterId.Y]: 0.8571428571428571,
+            [PopularityParameterId.X]: 1.607142857142857,
+            [PopularityParameterId.USE_NUMINATOR]: true,
+            [PopularityParameterId.SUM]: true,
         },
     ],
 }
@@ -220,12 +220,12 @@ const oneSubmetricSixChunk = {
     name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,y}",
     submetrics: [
         {
-            [Parameter.K_AS_COEFFICIENT]: 0.6,
-            [Parameter.A_AS_LOGARITHM_BASE]: 3,
-            [Parameter.W]: -1,
-            [Parameter.Y]: 0.8766666666666667,
-            [Parameter.USE_NUMINATOR]: true,
-            [Parameter.SUM]: true,
+            [PopularityParameterId.K_AS_COEFFICIENT]: 0.6,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 3,
+            [PopularityParameterId.W]: -1,
+            [PopularityParameterId.Y]: 0.8766666666666667,
+            [PopularityParameterId.USE_NUMINATOR]: true,
+            [PopularityParameterId.SUM]: true,
         },
     ],
 }
@@ -240,17 +240,17 @@ const almostLowestEverButWithExactA = {
     name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,y},{count,useNuminator,weightAsCoefficient}",
     submetrics: [
         {
-            [Parameter.K_AS_COEFFICIENT]: 0.038,
-            [Parameter.Y]: 0.455,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2,
-            [Parameter.W]: -2.09,
-            [Parameter.USE_NUMINATOR]: true,
-            [Parameter.SUM]: true,
+            [PopularityParameterId.K_AS_COEFFICIENT]: 0.038,
+            [PopularityParameterId.Y]: 0.455,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
+            [PopularityParameterId.W]: -2.09,
+            [PopularityParameterId.USE_NUMINATOR]: true,
+            [PopularityParameterId.SUM]: true,
         },
         {
-            [Parameter.COUNT]: true,
-            [Parameter.WEIGHT_AS_COEFFICIENT]: 0.579,
-            [Parameter.USE_NUMINATOR]: true,
+            [PopularityParameterId.COUNT]: true,
+            [PopularityParameterId.WEIGHT_AS_COEFFICIENT]: 0.579,
+            [PopularityParameterId.USE_NUMINATOR]: true,
         },
     ],
 }
@@ -265,17 +265,17 @@ const lessFragileMin = {
     name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,y},{count,useNuminator,weightAsCoefficient}",
     submetrics: [
         {
-            [Parameter.K_AS_COEFFICIENT]: 0.213895488,
-            [Parameter.Y]: 0.642099097,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2,
-            [Parameter.W]: -2.048657352,
-            [Parameter.USE_NUMINATOR]: true,
-            [Parameter.SUM]: true,
+            [PopularityParameterId.K_AS_COEFFICIENT]: 0.213895488,
+            [PopularityParameterId.Y]: 0.642099097,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
+            [PopularityParameterId.W]: -2.048657352,
+            [PopularityParameterId.USE_NUMINATOR]: true,
+            [PopularityParameterId.SUM]: true,
         },
         {
-            [Parameter.COUNT]: true,
-            [Parameter.WEIGHT_AS_COEFFICIENT]: 0.551650547,
-            [Parameter.USE_NUMINATOR]: true,
+            [PopularityParameterId.COUNT]: true,
+            [PopularityParameterId.WEIGHT_AS_COEFFICIENT]: 0.551650547,
+            [PopularityParameterId.USE_NUMINATOR]: true,
         },
     ],
 }
@@ -290,12 +290,12 @@ const sanityCheck = {
     name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,y}",
     submetrics: [
         {
-            [Parameter.K_AS_COEFFICIENT]: 0.632,
-            [Parameter.Y]: 0.858,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2,
-            [Parameter.W]: -1.415,
-            [Parameter.USE_NUMINATOR]: true,
-            [Parameter.SUM]: true,
+            [PopularityParameterId.K_AS_COEFFICIENT]: 0.632,
+            [PopularityParameterId.Y]: 0.858,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
+            [PopularityParameterId.W]: -1.415,
+            [PopularityParameterId.USE_NUMINATOR]: true,
+            [PopularityParameterId.SUM]: true,
         },
     ],
 }
@@ -310,17 +310,17 @@ const cwyks = {
     name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,y},{count,useNuminator,weightAsCoefficient}",
     submetrics: [
         {
-            [Parameter.K_AS_COEFFICIENT]: 0.1796875,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2.0234375,
-            [Parameter.Y]: 0.4921875,
-            [Parameter.W]: -1.986328125,
-            [Parameter.USE_NUMINATOR]: true,
-            [Parameter.SUM]: true,
+            [PopularityParameterId.K_AS_COEFFICIENT]: 0.1796875,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2.0234375,
+            [PopularityParameterId.Y]: 0.4921875,
+            [PopularityParameterId.W]: -1.986328125,
+            [PopularityParameterId.USE_NUMINATOR]: true,
+            [PopularityParameterId.SUM]: true,
         },
         {
-            [Parameter.COUNT]: true,
-            [Parameter.WEIGHT_AS_COEFFICIENT]: 0.5615234375,
-            [Parameter.USE_NUMINATOR]: true,
+            [PopularityParameterId.COUNT]: true,
+            [PopularityParameterId.WEIGHT_AS_COEFFICIENT]: 0.5615234375,
+            [PopularityParameterId.USE_NUMINATOR]: true,
         },
     ],
 }
@@ -335,8 +335,8 @@ const k = {
     name: "{kAsCoefficient,sum}",
     submetrics: [
         {
-            [Parameter.K_AS_COEFFICIENT]: 0.7901234567901236,
-            [Parameter.SUM]: true,
+            [PopularityParameterId.K_AS_COEFFICIENT]: 0.7901234567901236,
+            [PopularityParameterId.SUM]: true,
         },
     ],
 }
@@ -345,11 +345,11 @@ const firstAttemptAtLowestThreeChunk = {
     name: "{count,kAsCoefficient},{sum}",
     submetrics: [
         {
-            [Parameter.SUM]: true,
+            [PopularityParameterId.SUM]: true,
         },
         {
-            [Parameter.COUNT]: true,
-            [Parameter.K_AS_COEFFICIENT]: -1.11111111111111111,
+            [PopularityParameterId.COUNT]: true,
+            [PopularityParameterId.K_AS_COEFFICIENT]: -1.11111111111111111,
         },
     ],
 }
@@ -364,11 +364,11 @@ const maybeMin = {
     name: "{aAsLogarithmBase,b,sum,w,y}",
     submetrics: [
         {
-            [Parameter.SUM]: true,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2,
-            [Parameter.Y]: 0.839,
-            [Parameter.W]: -1.465,
-            [Parameter.B]: -1.867,
+            [PopularityParameterId.SUM]: true,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
+            [PopularityParameterId.Y]: 0.839,
+            [PopularityParameterId.W]: -1.465,
+            [PopularityParameterId.B]: -1.867,
         },
     ],
 }
@@ -383,13 +383,13 @@ const bAndU = {
     name: "{aAsLogarithmBase,b,sum,u,w,x,y}",
     submetrics: [
         {
-            [Parameter.A_AS_LOGARITHM_BASE]: 2,
-            [Parameter.Y]: 0.861,
-            [Parameter.W]: -2.656,
-            [Parameter.B]: -2.829,
-            [Parameter.X]: 4.471,
-            [Parameter.U]: 3.850,
-            [Parameter.SUM]: true,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
+            [PopularityParameterId.Y]: 0.861,
+            [PopularityParameterId.W]: -2.656,
+            [PopularityParameterId.B]: -2.829,
+            [PopularityParameterId.X]: 4.471,
+            [PopularityParameterId.U]: 3.850,
+            [PopularityParameterId.SUM]: true,
         },
     ],
 }
@@ -402,11 +402,11 @@ const improvedMaybeMin = {
     name: "{aAsLogarithmBase,b,sum,w,y}",
     submetrics: [
         {
-            [Parameter.SUM]: true,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2,
-            [Parameter.Y]: 0.8568,
-            [Parameter.W]: -1.4457,
-            [Parameter.B]: -1.8630,
+            [PopularityParameterId.SUM]: true,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
+            [PopularityParameterId.Y]: 0.8568,
+            [PopularityParameterId.W]: -1.4457,
+            [PopularityParameterId.B]: -1.8630,
         },
     ],
 }
@@ -421,15 +421,15 @@ const improvedFourParamSixChunk = {
     name: "{aAsLogarithmBase,jAsCoefficient,kAsCoefficient,sum},{kAsCoefficient,sum,y}",
     submetrics: [
         {
-            [Parameter.SUM]: true,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2,
-            [Parameter.J_AS_COEFFICIENT]: 0.6385,
-            [Parameter.K_AS_COEFFICIENT]: -1.6518,
+            [PopularityParameterId.SUM]: true,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
+            [PopularityParameterId.J_AS_COEFFICIENT]: 0.6385,
+            [PopularityParameterId.K_AS_COEFFICIENT]: -1.6518,
         },
         {
-            [Parameter.SUM]: true,
-            [Parameter.Y]: 0.8023,
-            [Parameter.K_AS_COEFFICIENT]: 1.5289,
+            [PopularityParameterId.SUM]: true,
+            [PopularityParameterId.Y]: 0.8023,
+            [PopularityParameterId.K_AS_COEFFICIENT]: 1.5289,
         },
     ],
 }
@@ -444,14 +444,14 @@ const improvedFourParamFiveChunk = {
     name: "{aAsLogarithmBase,jAsCoefficient,kAsCoefficient,sum},{sum,y}",
     submetrics: [
         {
-            [Parameter.SUM]: true,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2,
-            [Parameter.J_AS_COEFFICIENT]: 0.6845,
-            [Parameter.K_AS_COEFFICIENT]: -0.3909,
+            [PopularityParameterId.SUM]: true,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
+            [PopularityParameterId.J_AS_COEFFICIENT]: 0.6845,
+            [PopularityParameterId.K_AS_COEFFICIENT]: -0.3909,
         },
         {
-            [Parameter.SUM]: true,
-            [Parameter.Y]: 0.8006,
+            [PopularityParameterId.SUM]: true,
+            [PopularityParameterId.Y]: 0.8006,
         },
     ],
 }
@@ -466,8 +466,8 @@ const j = {
     name: "{jAsPowerExponent,sum}",
     submetrics: [
         {
-            [Parameter.J_AS_POWER_EXPONENT]: 1.0954773869346734,
-            [Parameter.SUM]: true,
+            [PopularityParameterId.J_AS_POWER_EXPONENT]: 1.0954773869346734,
+            [PopularityParameterId.SUM]: true,
         },
     ],
 }
@@ -476,9 +476,9 @@ const secondAttemptAtLowestThreeChunk = {
     name: "{jAsCoefficient,sum,y}",
     submetrics: [
         {
-            [Parameter.Y]: 0.96661101836394,
-            [Parameter.J_AS_COEFFICIENT]: 1.407035175879397,
-            [Parameter.SUM]: true,
+            [PopularityParameterId.Y]: 0.96661101836394,
+            [PopularityParameterId.J_AS_COEFFICIENT]: 1.407035175879397,
+            [PopularityParameterId.SUM]: true,
         },
     ],
 }
@@ -491,14 +491,14 @@ const hyg = {
     name: "{aAsLogarithmBase,jAsCoefficient,kAsCoefficient,sum},{sum,y}",
     submetrics: [
         {
-            [Parameter.SUM]: true,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2,
-            [Parameter.J_AS_COEFFICIENT]: 0.692773045,
-            [Parameter.K_AS_COEFFICIENT]: -0.245303445,
+            [PopularityParameterId.SUM]: true,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
+            [PopularityParameterId.J_AS_COEFFICIENT]: 0.692773045,
+            [PopularityParameterId.K_AS_COEFFICIENT]: -0.245303445,
         },
         {
-            [Parameter.SUM]: true,
-            [Parameter.Y]: 0.827031908,
+            [PopularityParameterId.SUM]: true,
+            [PopularityParameterId.Y]: 0.827031908,
         },
     ],
 }
@@ -513,11 +513,11 @@ const wyb = {
     name: "{aAsLogarithmBase,b,sum,w,y}",
     submetrics: [
         {
-            [Parameter.SUM]: true,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2,
-            [Parameter.Y]: 0.865618551,
-            [Parameter.W]: -1.472615144,
-            [Parameter.B]: -2.02634047,
+            [PopularityParameterId.SUM]: true,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
+            [PopularityParameterId.Y]: 0.865618551,
+            [PopularityParameterId.W]: -1.472615144,
+            [PopularityParameterId.B]: -2.02634047,
         },
     ],
 }
@@ -526,11 +526,11 @@ const wyk = {
     name: "{aAsLogarithmBase,kAsCoefficient,sum,w,y}",
     submetrics: [
         {
-            [Parameter.SUM]: true,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2,
-            [Parameter.Y]: 0.861239895,
-            [Parameter.W]: -1.448663086,
-            [Parameter.K_AS_COEFFICIENT]: 0.683944325,
+            [PopularityParameterId.SUM]: true,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
+            [PopularityParameterId.Y]: 0.861239895,
+            [PopularityParameterId.W]: -1.448663086,
+            [PopularityParameterId.K_AS_COEFFICIENT]: 0.683944325,
         },
     ],
 }
@@ -545,15 +545,15 @@ const cwyk = {
     name: "{aAsLogarithmBase,kAsCoefficient,sum,y},{count,weightAsCoefficient}",
     submetrics: [
         {
-            [Parameter.SUM]: true,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2,
-            [Parameter.K_AS_COEFFICIENT]: 0.74710179,
-            [Parameter.W]: -1.09913086,
-            [Parameter.Y]: 0.903870452,
+            [PopularityParameterId.SUM]: true,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
+            [PopularityParameterId.K_AS_COEFFICIENT]: 0.74710179,
+            [PopularityParameterId.W]: -1.09913086,
+            [PopularityParameterId.Y]: 0.903870452,
         },
         {
-            [Parameter.COUNT]: true,
-            [Parameter.WEIGHT_AS_COEFFICIENT]: -0.352088418,
+            [PopularityParameterId.COUNT]: true,
+            [PopularityParameterId.WEIGHT_AS_COEFFICIENT]: -0.352088418,
         },
     ],
 }
@@ -568,12 +568,12 @@ const wyks = {
     name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,y}",
     submetrics: [
         {
-            [Parameter.SUM]: true,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2,
-            [Parameter.Y]: 0.86461511,
-            [Parameter.W]: -1.481526766,
-            [Parameter.USE_NUMINATOR]: true,
-            [Parameter.K_AS_COEFFICIENT]: 0.581696884,
+            [PopularityParameterId.SUM]: true,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
+            [PopularityParameterId.Y]: 0.86461511,
+            [PopularityParameterId.W]: -1.481526766,
+            [PopularityParameterId.USE_NUMINATOR]: true,
+            [PopularityParameterId.K_AS_COEFFICIENT]: 0.581696884,
         },
     ],
 }
@@ -588,13 +588,13 @@ const xwyks = {
     name: "{aAsLogarithmBase,kAsCoefficient,sum,useNuminator,w,x,y}",
     submetrics: [
         {
-            [Parameter.SUM]: true,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2,
-            [Parameter.K_AS_COEFFICIENT]: 0.612396631,
-            [Parameter.W]: -1.94655685,
-            [Parameter.Y]: 0.843016878,
-            [Parameter.X]: 1.51639317,
-            [Parameter.USE_NUMINATOR]: true,
+            [PopularityParameterId.SUM]: true,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
+            [PopularityParameterId.K_AS_COEFFICIENT]: 0.612396631,
+            [PopularityParameterId.W]: -1.94655685,
+            [PopularityParameterId.Y]: 0.843016878,
+            [PopularityParameterId.X]: 1.51639317,
+            [PopularityParameterId.USE_NUMINATOR]: true,
         },
     ],
 }
@@ -609,10 +609,10 @@ const wb = {
     name: "{aAsLogarithmBase,b,sum,w}",
     submetrics: [
         {
-            [Parameter.SUM]: true,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2,
-            [Parameter.W]: -1.645808649,
-            [Parameter.B]: -2.043765116,
+            [PopularityParameterId.SUM]: true,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
+            [PopularityParameterId.W]: -1.645808649,
+            [PopularityParameterId.B]: -2.043765116,
         },
     ],
 }
@@ -627,13 +627,13 @@ const laj = {
     name: "{aAsLogarithmBase,jAsCoefficient,sum},{max,withoutRepetition}",
     submetrics: [
         {
-            [Parameter.WITHOUT_REPETITION]: true,
-            [Parameter.MAX]: true,
+            [PopularityParameterId.WITHOUT_REPETITION]: true,
+            [PopularityParameterId.MAX]: true,
         },
         {
-            [Parameter.SUM]: true,
-            [Parameter.A_AS_LOGARITHM_BASE]: 1.3333333333333333,
-            [Parameter.J_AS_COEFFICIENT]: 1.3,
+            [PopularityParameterId.SUM]: true,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 1.3333333333333333,
+            [PopularityParameterId.J_AS_COEFFICIENT]: 1.3,
         },
     ],
 }
@@ -648,14 +648,14 @@ const kl = {
     name: "{aAsLogarithmBase,kAsCoefficient,sum},{max,weightAsCoefficient,withoutRepetition}",
     submetrics: [
         {
-            [Parameter.WEIGHT_AS_COEFFICIENT]: 0.319583198,
-            [Parameter.WITHOUT_REPETITION]: true,
-            [Parameter.MAX]: true,
+            [PopularityParameterId.WEIGHT_AS_COEFFICIENT]: 0.319583198,
+            [PopularityParameterId.WITHOUT_REPETITION]: true,
+            [PopularityParameterId.MAX]: true,
         },
         {
-            [Parameter.SUM]: true,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2,
-            [Parameter.K_AS_COEFFICIENT]: 0.722866218,
+            [PopularityParameterId.SUM]: true,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
+            [PopularityParameterId.K_AS_COEFFICIENT]: 0.722866218,
         },
     ],
 }
@@ -670,9 +670,9 @@ const c = {
     name: "{b,sum,w}",
     submetrics: [
         {
-            [Parameter.SUM]: true,
-            [Parameter.W]: 0,
-            [Parameter.B]: -1.75,
+            [PopularityParameterId.SUM]: true,
+            [PopularityParameterId.W]: 0,
+            [PopularityParameterId.B]: -1.75,
         },
     ],
 }
@@ -687,10 +687,10 @@ const ak = {
     name: "{aAsLogarithmBase,aAsPowerExponent,kAsCoefficient,sum}",
     submetrics: [
         {
-            [Parameter.SUM]: true,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2,
-            [Parameter.K_AS_COEFFICIENT]: 0.7981481481481482,
-            [Parameter.A_AS_POWER_EXPONENT]: 2.0717827997489016,
+            [PopularityParameterId.SUM]: true,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
+            [PopularityParameterId.K_AS_COEFFICIENT]: 0.7981481481481482,
+            [PopularityParameterId.A_AS_POWER_EXPONENT]: 2.0717827997489016,
         },
     ],
 }
@@ -699,9 +699,9 @@ const kj = {
     name: "{jAsPowerExponent,kAsPowerExponent,sum}",
     submetrics: [
         {
-            [Parameter.SUM]: true,
-            [Parameter.K_AS_POWER_EXPONENT]: 1.4690207156308848,
-            [Parameter.J_AS_POWER_EXPONENT]: 1.3673258003766477,
+            [PopularityParameterId.SUM]: true,
+            [PopularityParameterId.K_AS_POWER_EXPONENT]: 1.4690207156308848,
+            [PopularityParameterId.J_AS_POWER_EXPONENT]: 1.3673258003766477,
         },
     ],
 }
@@ -710,19 +710,19 @@ const lak = {
     name: "{aAsLogarithmBase,aAsPowerExponent,sum,u,x}",
     submetrics: [
         {
-            [Parameter.WITHOUT_REPETITION]: true,
-            [Parameter.MAX]: true,
-            [Parameter.A_AS_POWER_EXPONENT]: 0.6165725047080979,
+            [PopularityParameterId.WITHOUT_REPETITION]: true,
+            [PopularityParameterId.MAX]: true,
+            [PopularityParameterId.A_AS_POWER_EXPONENT]: 0.6165725047080979,
         },
         {
-            [Parameter.SUM]: true,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2,
-            [Parameter.K_AS_POWER_EXPONENT]: 0.5242937853107347,
-            [Parameter.A_AS_POWER_EXPONENT]: 0.6165725047080979,
+            [PopularityParameterId.SUM]: true,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
+            [PopularityParameterId.K_AS_POWER_EXPONENT]: 0.5242937853107347,
+            [PopularityParameterId.A_AS_POWER_EXPONENT]: 0.6165725047080979,
         },
     ],
     spreadDynamicParameters: [
-        Parameter.A_AS_POWER_EXPONENT,
+        PopularityParameterId.A_AS_POWER_EXPONENT,
     ],
 }
 const wab = {
@@ -730,11 +730,11 @@ const wab = {
     name: "{aAsLogarithmBase,aAsPowerExponent,b,sum,w}",
     submetrics: [
         {
-            [Parameter.SUM]: true,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2,
-            [Parameter.A_AS_POWER_EXPONENT]: 2.0791902071563086,
-            [Parameter.W]: -0.22090395480226008,
-            [Parameter.B]: -1.9497175141242935,
+            [PopularityParameterId.SUM]: true,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
+            [PopularityParameterId.A_AS_POWER_EXPONENT]: 2.0791902071563086,
+            [PopularityParameterId.W]: -0.22090395480226008,
+            [PopularityParameterId.B]: -1.9497175141242935,
         },
     ],
 }
@@ -743,11 +743,11 @@ const aux = {
     name: "{aAsLogarithmBase,aAsPowerExponent,kAsPowerExponent,sum},{aAsPowerExponent,max,withoutRepetition}",
     submetrics: [
         {
-            [Parameter.SUM]: true,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2,
-            [Parameter.U]: -1.5128478761247126,
-            [Parameter.A_AS_POWER_EXPONENT]: 1.9713224523958988,
-            [Parameter.X]: -0.4582444025946853,
+            [PopularityParameterId.SUM]: true,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
+            [PopularityParameterId.U]: -1.5128478761247126,
+            [PopularityParameterId.A_AS_POWER_EXPONENT]: 1.9713224523958988,
+            [PopularityParameterId.X]: -0.4582444025946853,
         },
     ],
 }
@@ -762,15 +762,15 @@ const wbl1 = {
     name: "{aAsLogarithmBase,b,sum,w},{aAsLogarithmBase,max,withoutRepetition}",
     submetrics: [
         {
-            [Parameter.WITHOUT_REPETITION]: true,
-            [Parameter.MAX]: true,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2,
+            [PopularityParameterId.WITHOUT_REPETITION]: true,
+            [PopularityParameterId.MAX]: true,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
         },
         {
-            [Parameter.SUM]: true,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2,
-            [Parameter.W]: -0.944786887715889,
-            [Parameter.B]: -1.561335378,
+            [PopularityParameterId.SUM]: true,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
+            [PopularityParameterId.W]: -0.944786887715889,
+            [PopularityParameterId.B]: -1.561335378,
         },
     ],
 }
@@ -785,16 +785,16 @@ const wybl1 = {
     name: "{aAsLogarithmBase,b,sum,w,y},{aAsLogarithmBase,max,withoutRepetition}",
     submetrics: [
         {
-            [Parameter.WITHOUT_REPETITION]: true,
-            [Parameter.MAX]: true,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2,
+            [PopularityParameterId.WITHOUT_REPETITION]: true,
+            [PopularityParameterId.MAX]: true,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
         },
         {
-            [Parameter.SUM]: true,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2,
-            [Parameter.W]: -0.6722238433719913,
-            [Parameter.B]: -1.4491200586108,
-            [Parameter.Y]: 0.8749588677477244,
+            [PopularityParameterId.SUM]: true,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
+            [PopularityParameterId.W]: -0.6722238433719913,
+            [PopularityParameterId.B]: -1.4491200586108,
+            [PopularityParameterId.Y]: 0.8749588677477244,
         },
     ],
 }
@@ -809,16 +809,16 @@ const wbl = {
     name: "{aAsLogarithmBase,b,sum,w},{aAsLogarithmBase,max,weightAsCoefficient,withoutRepetition}",
     submetrics: [
         {
-            [Parameter.WITHOUT_REPETITION]: true,
-            [Parameter.MAX]: true,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2,
-            [Parameter.WEIGHT_AS_COEFFICIENT]: 1.39696749,
+            [PopularityParameterId.WITHOUT_REPETITION]: true,
+            [PopularityParameterId.MAX]: true,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
+            [PopularityParameterId.WEIGHT_AS_COEFFICIENT]: 1.39696749,
         },
         {
-            [Parameter.SUM]: true,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2,
-            [Parameter.W]: -0.676337296,
-            [Parameter.B]: -1.344110019,
+            [PopularityParameterId.SUM]: true,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
+            [PopularityParameterId.W]: -0.676337296,
+            [PopularityParameterId.B]: -1.344110019,
         },
     ],
 }
@@ -827,17 +827,17 @@ const wybl = {
     name: "{aAsLogarithmBase,b,sum,w,y},{aAsLogarithmBase,max,weightAsCoefficient,withoutRepetition}",
     submetrics: [
         {
-            [Parameter.WITHOUT_REPETITION]: true,
-            [Parameter.MAX]: true,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2,
-            [Parameter.WEIGHT_AS_COEFFICIENT]: 1.273854435,
+            [PopularityParameterId.WITHOUT_REPETITION]: true,
+            [PopularityParameterId.MAX]: true,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
+            [PopularityParameterId.WEIGHT_AS_COEFFICIENT]: 1.273854435,
         },
         {
-            [Parameter.SUM]: true,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2,
-            [Parameter.W]: -0.52569965,
-            [Parameter.B]: -1.406498345,
-            [Parameter.Y]: 0.91746922,
+            [PopularityParameterId.SUM]: true,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
+            [PopularityParameterId.W]: -0.52569965,
+            [PopularityParameterId.B]: -1.406498345,
+            [PopularityParameterId.Y]: 0.91746922,
         },
     ],
 }
@@ -852,17 +852,17 @@ const waybl = {
     name: "{aAsLogarithmBase,aAsPowerExponent,b,sum,w,y},{aAsLogarithmBase,max,weightAsCoefficient,withoutRepetition}",
     submetrics: [
         {
-            [Parameter.WEIGHT_AS_COEFFICIENT]: 0.24501362468135826,
-            [Parameter.WITHOUT_REPETITION]: true,
-            [Parameter.MAX]: true,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2,
+            [PopularityParameterId.WEIGHT_AS_COEFFICIENT]: 0.24501362468135826,
+            [PopularityParameterId.WITHOUT_REPETITION]: true,
+            [PopularityParameterId.MAX]: true,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
         }, {
-            [Parameter.SUM]: true,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2,
-            [Parameter.W]: -0.9657624622268728,
-            [Parameter.B]: -1.1139840255018962,
-            [Parameter.Y]: 0.9045075315289748,
-            [Parameter.A_AS_POWER_EXPONENT]: 0.27731911914963275,
+            [PopularityParameterId.SUM]: true,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
+            [PopularityParameterId.W]: -0.9657624622268728,
+            [PopularityParameterId.B]: -1.1139840255018962,
+            [PopularityParameterId.Y]: 0.9045075315289748,
+            [PopularityParameterId.A_AS_POWER_EXPONENT]: 0.27731911914963275,
         },
     ],
 }
@@ -877,16 +877,16 @@ const wabl1 = {
     name: "{aAsLogarithmBase,aAsPowerExponent,b,sum,w},{aAsLogarithmBase,max,withoutRepetition}",
     submetrics: [
         {
-            [Parameter.WITHOUT_REPETITION]: true,
-            [Parameter.MAX]: true,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2,
+            [PopularityParameterId.WITHOUT_REPETITION]: true,
+            [PopularityParameterId.MAX]: true,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
         },
         {
-            [Parameter.SUM]: true,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2,
-            [Parameter.A_AS_POWER_EXPONENT]: 0.7954545454545454,
-            [Parameter.W]: -0.8362010291300304,
-            [Parameter.B]: -1.311335378,
+            [PopularityParameterId.SUM]: true,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
+            [PopularityParameterId.A_AS_POWER_EXPONENT]: 0.7954545454545454,
+            [PopularityParameterId.W]: -0.8362010291300304,
+            [PopularityParameterId.B]: -1.311335378,
         },
     ],
 }
@@ -895,17 +895,17 @@ const wabl = {
     name: "{aAsLogarithmBase,aAsPowerExponent,b,sum,w},{aAsLogarithmBase,max,weightAsCoefficient,withoutRepetition}",
     submetrics: [
         {
-            [Parameter.WITHOUT_REPETITION]: true,
-            [Parameter.MAX]: true,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2,
-            [Parameter.WEIGHT_AS_COEFFICIENT]: 0.8665946155658091,
+            [PopularityParameterId.WITHOUT_REPETITION]: true,
+            [PopularityParameterId.MAX]: true,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
+            [PopularityParameterId.WEIGHT_AS_COEFFICIENT]: 0.8665946155658091,
         },
         {
-            [Parameter.SUM]: true,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2,
-            [Parameter.A_AS_POWER_EXPONENT]: 0.7313013537293375,
-            [Parameter.W]: -0.8796464573491212,
-            [Parameter.B]: -1.2979574284080588,
+            [PopularityParameterId.SUM]: true,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
+            [PopularityParameterId.A_AS_POWER_EXPONENT]: 0.7313013537293375,
+            [PopularityParameterId.W]: -0.8796464573491212,
+            [PopularityParameterId.B]: -1.2979574284080588,
         },
     ],
 }
@@ -920,15 +920,15 @@ const wBL1 = {
     name: "{aAsLogarithmBase,b,sum,w},{aAsLogarithmBase,max,withoutRepetition}",
     submetrics: [
         {
-            [Parameter.WITHOUT_REPETITION]: true,
-            [Parameter.MAX]: true,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2,
+            [PopularityParameterId.WITHOUT_REPETITION]: true,
+            [PopularityParameterId.MAX]: true,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
         },
         {
-            [Parameter.SUM]: true,
-            [Parameter.A_AS_LOGARITHM_BASE]: 2,
-            [Parameter.W]: -1,
-            [Parameter.B]: -1.58496250072,
+            [PopularityParameterId.SUM]: true,
+            [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2,
+            [PopularityParameterId.W]: -1,
+            [PopularityParameterId.B]: -1.58496250072,
         },
     ],
 }

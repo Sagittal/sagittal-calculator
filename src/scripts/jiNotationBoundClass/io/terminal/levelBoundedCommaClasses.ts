@@ -1,4 +1,4 @@
-import {JiNotationBoundClassEntry, JiNotationLevel, JI_NOTATION_BOUND_CLASS_ENTRIES} from "../../../../sagittal"
+import {JiNotationBoundClassEntry, JiNotationLevelId, JI_NOTATION_BOUND_CLASS_ENTRIES} from "../../../../sagittal"
 import {computeBoundedCommaClassPositions} from "../../boundedPositions"
 import {computePositionCommaClassId} from "./positionCommaClassId"
 import {BoundedCommaClassIdPairs} from "./types"
@@ -9,7 +9,7 @@ const computeJiNotationLevelBoundedCommaClassIds = (
     jiNotationLevels.reduce(
         (
             boundedCommaClassIdPairs: BoundedCommaClassIdPairs,
-            jiNotationLevel: JiNotationLevel,
+            jiNotationLevel: JiNotationLevelId,
         ): BoundedCommaClassIdPairs => ({
             ...boundedCommaClassIdPairs,
             [jiNotationLevel]: computeBoundedCommaClassPositions(pitch, jiNotationLevel)

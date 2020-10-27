@@ -1,7 +1,7 @@
 import {Abs, Multiplier} from "../../../../../../../src/general"
 import {Formatted} from "../../../../../../../src/general/io"
 import {Cents} from "../../../../../../../src/general/music"
-import {Ina, JiNotationLevel} from "../../../../../../../src/sagittal/notations/ji"
+import {Ina, JiNotationLevelId} from "../../../../../../../src/sagittal/notations/ji"
 import {BoundHistoryAnalysis} from "../../../../../../../src/scripts/jiNotationBoundClass/history"
 import {extractJiNotationLevelDistances} from "../../../../../../../src/scripts/jiNotationBoundClass/io/terminal/boundClasses/levelDistances"
 import {
@@ -16,27 +16,27 @@ describe("extractJiNotationLevelDistances", (): void => {
             boundEventAnalyses: [
                 {
                     ...boundEventAnalysisFixture,
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     distance: 0.000000 as Abs<Cents>,
                 },
                 {
                     ...boundEventAnalysisFixture,
-                    jiNotationLevel: JiNotationLevel.HIGH,
+                    jiNotationLevel: JiNotationLevelId.HIGH,
                     distance: 4.444444 as Abs<Cents>,
                 },
                 {
                     ...boundEventAnalysisFixture,
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                     distance: 3.333333 as Abs<Cents>,
                 },
                 {
                     ...boundEventAnalysisFixture,
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     distance: 2.222222 as Abs<Cents>,
                 },
                 {
                     ...boundEventAnalysisFixture,
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     distance: 1.111111 as Abs<Cents>,
                 },
             ],
@@ -59,22 +59,22 @@ describe("extractJiNotationLevelDistances", (): void => {
             boundEventAnalyses: [
                 {
                     ...boundEventAnalysisFixture,
-                    jiNotationLevel: JiNotationLevel.MEDIUM,
+                    jiNotationLevel: JiNotationLevelId.MEDIUM,
                     distance: 0.000000 as Abs<Cents>,
                 },
                 {
                     ...boundEventAnalysisFixture,
-                    jiNotationLevel: JiNotationLevel.HIGH,
+                    jiNotationLevel: JiNotationLevelId.HIGH,
                     distance: 4.444444 as Abs<Cents>,
                 },
                 {
                     ...boundEventAnalysisFixture,
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                     distance: 2.222222 as Abs<Cents>,
                 },
                 {
                     ...boundEventAnalysisFixture,
-                    jiNotationLevel: JiNotationLevel.INSANE,
+                    jiNotationLevel: JiNotationLevelId.INSANE,
                     distance: 1.111111 as Abs<Cents>,
                 },
             ],
@@ -98,27 +98,27 @@ describe("extractJiNotationLevelDistances", (): void => {
                 boundEventAnalyses: [
                     {
                         ...boundEventAnalysisFixture,
-                        jiNotationLevel: JiNotationLevel.MEDIUM,
+                        jiNotationLevel: JiNotationLevelId.MEDIUM,
                         inaDistance: 0.000000 as Multiplier<Ina>,
                     },
                     {
                         ...boundEventAnalysisFixture,
-                        jiNotationLevel: JiNotationLevel.HIGH,
+                        jiNotationLevel: JiNotationLevelId.HIGH,
                         inaDistance: 4.444444 as Multiplier<Ina>,
                     },
                     {
                         ...boundEventAnalysisFixture,
-                        jiNotationLevel: JiNotationLevel.ULTRA,
+                        jiNotationLevel: JiNotationLevelId.ULTRA,
                         inaDistance: 3.333333 as Multiplier<Ina>,
                     },
                     {
                         ...boundEventAnalysisFixture,
-                        jiNotationLevel: JiNotationLevel.EXTREME,
+                        jiNotationLevel: JiNotationLevelId.EXTREME,
                         inaDistance: 2.222222 as Multiplier<Ina>,
                     },
                     {
                         ...boundEventAnalysisFixture,
-                        jiNotationLevel: JiNotationLevel.INSANE,
+                        jiNotationLevel: JiNotationLevelId.INSANE,
                         inaDistance: 1.111111 as Multiplier<Ina>,
                     },
                 ],
@@ -141,22 +141,22 @@ describe("extractJiNotationLevelDistances", (): void => {
                 boundEventAnalyses: [
                     {
                         ...boundEventAnalysisFixture,
-                        jiNotationLevel: JiNotationLevel.MEDIUM,
+                        jiNotationLevel: JiNotationLevelId.MEDIUM,
                         inaDistance: 0.000000 as Multiplier<Ina>,
                     },
                     {
                         ...boundEventAnalysisFixture,
-                        jiNotationLevel: JiNotationLevel.HIGH,
+                        jiNotationLevel: JiNotationLevelId.HIGH,
                         inaDistance: 4.444444 as Multiplier<Ina>,
                     },
                     {
                         ...boundEventAnalysisFixture,
-                        jiNotationLevel: JiNotationLevel.EXTREME,
+                        jiNotationLevel: JiNotationLevelId.EXTREME,
                         inaDistance: 2.222222 as Multiplier<Ina>,
                     },
                     {
                         ...boundEventAnalysisFixture,
-                        jiNotationLevel: JiNotationLevel.INSANE,
+                        jiNotationLevel: JiNotationLevelId.INSANE,
                         inaDistance: 1.111111 as Multiplier<Ina>,
                     },
                 ],

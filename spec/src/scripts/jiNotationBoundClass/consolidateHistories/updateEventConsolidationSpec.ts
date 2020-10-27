@@ -1,5 +1,5 @@
 import {Name} from "../../../../../src/general"
-import {BoundType, JiNotationBound, JiNotationLevel} from "../../../../../src/sagittal/notations"
+import {BoundType, JiNotationBound, JiNotationLevelId} from "../../../../../src/sagittal/notations"
 import {BoundEventConsolidation} from "../../../../../src/scripts/jiNotationBoundClass/consolidateHistories/types"
 import {updateEventConsolidation} from "../../../../../src/scripts/jiNotationBoundClass/consolidateHistories/updateEventConsolidation"
 import {
@@ -149,14 +149,14 @@ describe("updateEventConsolidation", (): void => {
                 ...boundEventConsolidationFixture,
                 isBestPossibleBoundHistoryMember: true,
                 name: "eventName" as Name<JiNotationBound>,
-                jiNotationLevel: JiNotationLevel.ULTRA,
+                jiNotationLevel: JiNotationLevelId.ULTRA,
             }
             bestPossibleBoundHistoryAnalysis = {
                 ...boundHistoryAnalysisFixture,
                 boundEventAnalyses: [{
                     ...boundEventAnalysisFixture,
                     name: "eventName" as Name<JiNotationBound>,
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                 }],
             }
 
@@ -181,7 +181,7 @@ describe("updateEventConsolidation", (): void => {
                 boundEventAnalyses: [{
                     ...boundEventAnalysisFixture,
                     name: "eventName" as Name<JiNotationBound>,
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                 }],
             }
 
@@ -200,14 +200,14 @@ describe("updateEventConsolidation", (): void => {
                 ...boundEventConsolidationFixture,
                 isBestPossibleBoundHistoryMember: false,
                 name: "eventName" as Name<JiNotationBound>,
-                jiNotationLevel: JiNotationLevel.ULTRA,
+                jiNotationLevel: JiNotationLevelId.ULTRA,
             }
             bestPossibleBoundHistoryAnalysis = {
                 ...boundHistoryAnalysisFixture,
                 boundEventAnalyses: [{
                     ...boundEventAnalysisFixture,
                     name: "eventName" as Name<JiNotationBound>,
-                    jiNotationLevel: JiNotationLevel.ULTRA,
+                    jiNotationLevel: JiNotationLevelId.ULTRA,
                 }],
             }
 
@@ -226,14 +226,14 @@ describe("updateEventConsolidation", (): void => {
                 ...boundEventConsolidationFixture,
                 isBestPossibleBoundHistoryMember: false,
                 name: "eventName" as Name<JiNotationBound>,
-                jiNotationLevel: JiNotationLevel.ULTRA,
+                jiNotationLevel: JiNotationLevelId.ULTRA,
             }
             bestPossibleBoundHistoryAnalysis = {
                 ...boundHistoryAnalysisFixture,
                 boundEventAnalyses: [{
                     ...boundEventAnalysisFixture,
                     name: "eventName" as Name<JiNotationBound>,
-                    jiNotationLevel: JiNotationLevel.EXTREME,
+                    jiNotationLevel: JiNotationLevelId.EXTREME,
                 }],
             }
 

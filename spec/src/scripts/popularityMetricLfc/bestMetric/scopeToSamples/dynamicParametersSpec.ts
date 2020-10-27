@@ -1,31 +1,31 @@
 import {Ed, Index, Step, Window} from "../../../../../../src/general"
 import {Scope} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {computeDynamicParameters} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
-import {Parameter, Submetric} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
-import {ParameterValue} from "../../../../../../src/scripts/types"
+import {PopularityParameterId, Submetric} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {Parameter} from "../../../../../../src/scripts/types"
 
 describe("computeDynamicParameters", (): void => {
     it("returns a flattened array of all the parameters that are dynamic -- flattened across all the submetrics, that is", (): void => {
         const scope: Scope = [
             {
-                [Parameter.Y]: {
-                    center: 1.2 as ParameterValue,
-                    window: 1 as Window<ParameterValue>,
-                    ed: 3 as Ed<ParameterValue>,
+                [PopularityParameterId.Y]: {
+                    center: 1.2 as Parameter,
+                    window: 1 as Window<Parameter>,
+                    ed: 3 as Ed<Parameter>,
                 },
-                [Parameter.W]: 4 as ParameterValue,
+                [PopularityParameterId.W]: 4 as Parameter,
             },
             {
-                [Parameter.COUNT]: true,
-                [Parameter.Y]: {
-                    center: 1.0 as ParameterValue,
-                    window: 0.2 as Window<ParameterValue>,
-                    ed: 2 as Ed<ParameterValue>,
+                [PopularityParameterId.COUNT]: true,
+                [PopularityParameterId.Y]: {
+                    center: 1.0 as Parameter,
+                    window: 0.2 as Window<Parameter>,
+                    ed: 2 as Ed<Parameter>,
                 },
-                [Parameter.A_AS_COEFFICIENT]: {
-                    center: 0.65 as ParameterValue,
-                    window: 0.1 as Window<ParameterValue>,
-                    ed: 2 as Ed<ParameterValue>,
+                [PopularityParameterId.A_AS_COEFFICIENT]: {
+                    center: 0.65 as Parameter,
+                    window: 0.1 as Window<Parameter>,
+                    ed: 2 as Ed<Parameter>,
                 },
             },
         ] as Scope
@@ -35,21 +35,21 @@ describe("computeDynamicParameters", (): void => {
         const expected = [
             {
                 submetricIndex: 0 as Index<Submetric>,
-                parameter: Parameter.Y,
-                values: [0.7, 1.2, 1.7] as ParameterValue[],
-                unit: 0.5 as Step<ParameterValue>,
+                parameter: PopularityParameterId.Y,
+                values: [0.7, 1.2, 1.7] as Parameter[],
+                unit: 0.5 as Step<Parameter>,
             },
             {
                 submetricIndex: 1 as Index<Submetric>,
-                parameter: Parameter.Y,
-                values: [0.9, 1.1] as ParameterValue[],
-                unit: 0.2 as Step<ParameterValue>,
+                parameter: PopularityParameterId.Y,
+                values: [0.9, 1.1] as Parameter[],
+                unit: 0.2 as Step<Parameter>,
             },
             {
                 submetricIndex: 1 as Index<Submetric>,
-                parameter: Parameter.A_AS_COEFFICIENT,
-                values: [0.6, 0.7] as ParameterValue[],
-                unit: 0.1 as Step<ParameterValue>,
+                parameter: PopularityParameterId.A_AS_COEFFICIENT,
+                values: [0.6, 0.7] as Parameter[],
+                unit: 0.1 as Step<Parameter>,
             },
         ]
         expect(actual).toEqual(expected)

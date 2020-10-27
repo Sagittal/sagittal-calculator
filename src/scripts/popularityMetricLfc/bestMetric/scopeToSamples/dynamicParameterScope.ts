@@ -1,5 +1,5 @@
 import {isUndefined, Window} from "../../../../general"
-import {DynamicParameterScope, ParameterValue} from "../../../types"
+import {DynamicParameterScope, Parameter} from "../../../types"
 import {computeEqualDivision} from "./equalDivision"
 import {DynamicParameterScopeOptions} from "./types"
 
@@ -23,27 +23,27 @@ const computeDynamicParameterScope = (options: DynamicParameterScopeOptions): Dy
     let ed
 
     if (!isUndefined(max) && !isUndefined(min)) {
-        window = max - min as Window<ParameterValue>
-        center = min + window / 2 as ParameterValue
+        window = max - min as Window<Parameter>
+        center = min + window / 2 as Parameter
     }
 
     if (!isUndefined(max) && !isUndefined(windowOption)) {
         window = windowOption
-        center = max - windowOption / 2 as ParameterValue
+        center = max - windowOption / 2 as Parameter
     }
 
     if (!isUndefined(max) && !isUndefined(centerOption)) {
-        window = (max - centerOption) * 2 as Window<ParameterValue>
+        window = (max - centerOption) * 2 as Window<Parameter>
         center = centerOption
     }
 
     if (!isUndefined(min) && !isUndefined(windowOption)) {
         window = windowOption
-        center = min + windowOption / 2 as ParameterValue
+        center = min + windowOption / 2 as Parameter
     }
 
     if (!isUndefined(min) && !isUndefined(centerOption)) {
-        window = (centerOption - min) * 2 as Window<ParameterValue>
+        window = (centerOption - min) * 2 as Window<Parameter>
         center = centerOption
     }
 
@@ -52,7 +52,7 @@ const computeDynamicParameterScope = (options: DynamicParameterScopeOptions): Dy
         center = centerOption
     }
 
-    ed = computeEqualDivision(window as Window<ParameterValue>)
+    ed = computeEqualDivision(window as Window<Parameter>)
 
     return {center, window, ed}
 }

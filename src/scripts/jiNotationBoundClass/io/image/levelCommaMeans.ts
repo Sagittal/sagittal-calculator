@@ -1,5 +1,5 @@
 import {CommaMean, DEFAULT_PRECISION, Io, Px, round, subtract} from "../../../../general"
-import {Ascii, computeSagittalUnicode, JiNotationLevel, parseAscii} from "../../../../sagittal"
+import {Ascii, computeSagittalUnicode, JiNotationLevelId, parseAscii} from "../../../../sagittal"
 import {JI_NOTATION_LEVELS_COMMA_MEANS} from "../../histories"
 import {JI_NOTATION_LEVEL_CENTERS} from "./levelHeights"
 import {COMMA_MEAN_HEX_COLOR} from "./rankColors"
@@ -10,11 +10,11 @@ const visualizeJiNotationLevelCommaMeans = (): Io[] => {
     const jiNotationLevelCommaMeanElements: Io[] = [] as Io[]
 
     const jiNotationLevelCommaMeansEntries =
-        Object.entries(JI_NOTATION_LEVELS_COMMA_MEANS) as Array<[JiNotationLevel, CommaMean[]]>
+        Object.entries(JI_NOTATION_LEVELS_COMMA_MEANS) as Array<[JiNotationLevelId, CommaMean[]]>
     jiNotationLevelCommaMeansEntries.forEach((
-        [jiNotationLevel, jiNotationLevelCommaMeans]: [JiNotationLevel, CommaMean[]],
+        [jiNotationLevel, jiNotationLevelCommaMeans]: [JiNotationLevelId, CommaMean[]],
     ): void => {
-        if (jiNotationLevel === JiNotationLevel.INSANE) {
+        if (jiNotationLevel === JiNotationLevelId.INSANE) {
             return
         }
 

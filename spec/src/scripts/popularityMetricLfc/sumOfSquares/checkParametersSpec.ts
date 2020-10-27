@@ -1,15 +1,15 @@
 import {
     checkSubmetricsForInvalidParameterCombinations,
-    Parameter,
+    PopularityParameterId,
     Submetric,
 } from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
-import {ParameterValue} from "../../../../../src/scripts/types"
+import {Parameter} from "../../../../../src/scripts/types"
 
 describe("checkSubmetricsForInvalidParameterCombinations", (): void => {
     it("gives a good error when none of sum, count, or max are provided", (): void => {
         const submetrics: Submetric[] = [
             {
-                [Parameter.A_AS_COEFFICIENT]: 2 as ParameterValue,
+                [PopularityParameterId.A_AS_COEFFICIENT]: 2 as Parameter,
             },
         ]
 
@@ -19,8 +19,8 @@ describe("checkSubmetricsForInvalidParameterCombinations", (): void => {
     it("gives a good error when more than one of sum, count, or max are provided", (): void => {
         const submetrics: Submetric[] = [
             {
-                [Parameter.SUM]: true,
-                [Parameter.COUNT]: true,
+                [PopularityParameterId.SUM]: true,
+                [PopularityParameterId.COUNT]: true,
             },
         ]
 
@@ -31,9 +31,9 @@ describe("checkSubmetricsForInvalidParameterCombinations", (): void => {
         it("gives a good error when a is tried to be used both as a logarithm base and a power base", (): void => {
             const submetrics = [
                 {
-                    [Parameter.SUM]: true,
-                    [Parameter.A_AS_LOGARITHM_BASE]: 2 as ParameterValue,
-                    [Parameter.A_AS_POWER_BASE]: 2 as ParameterValue,
+                    [PopularityParameterId.SUM]: true,
+                    [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2 as Parameter,
+                    [PopularityParameterId.A_AS_POWER_BASE]: 2 as Parameter,
                 },
             ]
 
@@ -43,9 +43,9 @@ describe("checkSubmetricsForInvalidParameterCombinations", (): void => {
         it("gives a good error when j is tried to be used both as a logarithm base and a power base", (): void => {
             const submetrics = [
                 {
-                    [Parameter.SUM]: true,
-                    [Parameter.J_AS_LOGARITHM_BASE]: 2 as ParameterValue,
-                    [Parameter.J_AS_POWER_BASE]: 2 as ParameterValue,
+                    [PopularityParameterId.SUM]: true,
+                    [PopularityParameterId.J_AS_LOGARITHM_BASE]: 2 as Parameter,
+                    [PopularityParameterId.J_AS_POWER_BASE]: 2 as Parameter,
                 },
             ]
 
@@ -55,9 +55,9 @@ describe("checkSubmetricsForInvalidParameterCombinations", (): void => {
         it("gives a good error when k is tried to be used both as a logarithm base and a power base", (): void => {
             const submetrics = [
                 {
-                    [Parameter.SUM]: true,
-                    [Parameter.K_AS_LOGARITHM_BASE]: 2 as ParameterValue,
-                    [Parameter.K_AS_POWER_BASE]: 2 as ParameterValue,
+                    [PopularityParameterId.SUM]: true,
+                    [PopularityParameterId.K_AS_LOGARITHM_BASE]: 2 as Parameter,
+                    [PopularityParameterId.K_AS_POWER_BASE]: 2 as Parameter,
                 },
             ]
 
@@ -67,12 +67,12 @@ describe("checkSubmetricsForInvalidParameterCombinations", (): void => {
         it("gives a good error when weight is tried to be used both as a logarithm base and a power base", (): void => {
             const submetrics = [
                 {
-                    [Parameter.COUNT]: true,
+                    [PopularityParameterId.COUNT]: true,
                 },
                 {
-                    [Parameter.SUM]: true,
-                    [Parameter.WEIGHT_AS_LOGARITHM_BASE]: 2 as ParameterValue,
-                    [Parameter.WEIGHT_AS_POWER_BASE]: 2 as ParameterValue,
+                    [PopularityParameterId.SUM]: true,
+                    [PopularityParameterId.WEIGHT_AS_LOGARITHM_BASE]: 2 as Parameter,
+                    [PopularityParameterId.WEIGHT_AS_POWER_BASE]: 2 as Parameter,
                 },
             ]
 
@@ -84,9 +84,9 @@ describe("checkSubmetricsForInvalidParameterCombinations", (): void => {
         it("gives a good error when both j and k are included on the same submetric as coefficients (because you could always forever increase/decrease them together to get the same result)", (): void => {
             const submetrics = [
                 {
-                    [Parameter.SUM]: true,
-                    [Parameter.J_AS_COEFFICIENT]: 2 as ParameterValue,
-                    [Parameter.K_AS_COEFFICIENT]: 2 as ParameterValue,
+                    [PopularityParameterId.SUM]: true,
+                    [PopularityParameterId.J_AS_COEFFICIENT]: 2 as Parameter,
+                    [PopularityParameterId.K_AS_COEFFICIENT]: 2 as Parameter,
                 },
             ]
 
@@ -98,8 +98,8 @@ describe("checkSubmetricsForInvalidParameterCombinations", (): void => {
         it("gives a good error when b is provided but not w, since b is a denominator-specific alteration of w          ", (): void => {
             const submetrics = [
                 {
-                    [Parameter.SUM]: true,
-                    [Parameter.B]: 2 as ParameterValue,
+                    [PopularityParameterId.SUM]: true,
+                    [PopularityParameterId.B]: 2 as Parameter,
                 },
             ]
 
@@ -109,8 +109,8 @@ describe("checkSubmetricsForInvalidParameterCombinations", (): void => {
         it("gives a good error when u is provided but not x, since u is a denominator-specific alteration of x            ", (): void => {
             const submetrics = [
                 {
-                    [Parameter.SUM]: true,
-                    [Parameter.U]: 2 as ParameterValue,
+                    [PopularityParameterId.SUM]: true,
+                    [PopularityParameterId.U]: 2 as Parameter,
                 },
             ]
 
@@ -120,8 +120,8 @@ describe("checkSubmetricsForInvalidParameterCombinations", (): void => {
         it("gives a good error when v is provided but not y, since v is a denominator-specific alteration of y          ", (): void => {
             const submetrics = [
                 {
-                    [Parameter.SUM]: true,
-                    [Parameter.V]: 2 as ParameterValue,
+                    [PopularityParameterId.SUM]: true,
+                    [PopularityParameterId.V]: 2 as Parameter,
                 },
             ]
 
@@ -133,7 +133,7 @@ describe("checkSubmetricsForInvalidParameterCombinations", (): void => {
         it("gives a good error when a power exponent weight is provided but there's only one submetric", (): void => {
             const submetrics: Submetric[] = [
                 {
-                    [Parameter.WEIGHT_AS_POWER_EXPONENT]: 2 as ParameterValue,
+                    [PopularityParameterId.WEIGHT_AS_POWER_EXPONENT]: 2 as Parameter,
                 },
             ]
 
@@ -143,7 +143,7 @@ describe("checkSubmetricsForInvalidParameterCombinations", (): void => {
         it("gives a good error when a logarithm base weight is provided but there's only one submetric", (): void => {
             const submetrics: Submetric[] = [
                 {
-                    [Parameter.WEIGHT_AS_LOGARITHM_BASE]: 2 as ParameterValue,
+                    [PopularityParameterId.WEIGHT_AS_LOGARITHM_BASE]: 2 as Parameter,
                 },
             ]
 
@@ -153,7 +153,7 @@ describe("checkSubmetricsForInvalidParameterCombinations", (): void => {
         it("gives a good error when a power base weight is provided but there's only one submetric", (): void => {
             const submetrics: Submetric[] = [
                 {
-                    [Parameter.WEIGHT_AS_POWER_BASE]: 2 as ParameterValue,
+                    [PopularityParameterId.WEIGHT_AS_POWER_BASE]: 2 as Parameter,
                 },
             ]
 
@@ -163,7 +163,7 @@ describe("checkSubmetricsForInvalidParameterCombinations", (): void => {
         it("gives a good error when a coefficient weight is provided but there's only one submetric", (): void => {
             const submetrics: Submetric[] = [
                 {
-                    [Parameter.WEIGHT_AS_COEFFICIENT]: 2 as ParameterValue,
+                    [PopularityParameterId.WEIGHT_AS_COEFFICIENT]: 2 as Parameter,
                 },
             ]
 
@@ -174,12 +174,12 @@ describe("checkSubmetricsForInvalidParameterCombinations", (): void => {
     it("gives a good error for metrics with duplicate submetrics", (): void => {
         const submetrics: Submetric[] = [
             {
-                [Parameter.SUM]: true,
-                [Parameter.A_AS_POWER_BASE]: 2 as ParameterValue,
+                [PopularityParameterId.SUM]: true,
+                [PopularityParameterId.A_AS_POWER_BASE]: 2 as Parameter,
             },
             {
-                [Parameter.SUM]: true,
-                [Parameter.A_AS_POWER_BASE]: 2 as ParameterValue,
+                [PopularityParameterId.SUM]: true,
+                [PopularityParameterId.A_AS_POWER_BASE]: 2 as Parameter,
             },
         ]
 

@@ -26,11 +26,12 @@ import {
     BoundType,
     CommaClassId,
     Ina,
-    N2D3P9, SymbolSubset,
+    N2D3P9,
+    SymbolSubsetId,
     TINA,
     Unicode,
 } from "../../../../../../src/sagittal"
-import {JiNotationBoundClass, JiNotationLevel, Mina} from "../../../../../../src/sagittal/notations/ji"
+import {JiNotationBoundClass, JiNotationLevelId, Mina} from "../../../../../../src/sagittal/notations/ji"
 import {MINA, ULTRINA} from "../../../../../../src/sagittal/notations/ji/intervals"
 import {extractJiNotationBoundClassIdentifiers} from "../../../../../../src/scripts/jiNotationBoundClass/io/terminal/boundClassIdentifiers"
 import {JiNotationBoundClassIdentifiers} from "../../../../../../src/scripts/jiNotationBoundClass/io/terminal/types"
@@ -40,7 +41,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
     const jiNotationBoundClass: JiNotationBoundClass = {
         ...jiNotationBoundClassFixture,
         pitch: computePitchFromCents(23.116419 as Cents),
-        jiNotationLevels: [JiNotationLevel.ULTRA, JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
+        jiNotationLevels: [JiNotationLevelId.ULTRA, JiNotationLevelId.EXTREME, JiNotationLevelId.INSANE],
         boundType: BoundType.INA_MIDPOINT,
     }
     const boundClassId = BoundClassId.MINA_47
@@ -55,15 +56,15 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
             cents: 23.116419 as Cents as Cents,
             boundedCommaClassInfoPairs: {
                 boundClassId,
-                [JiNotationLevel.ULTRA]: [
+                [JiNotationLevelId.ULTRA]: [
                     {
-                        introducingJiNotationLevel: JiNotationLevel.ULTRA,
+                        introducingJiNotationLevel: JiNotationLevelId.ULTRA,
                         distance: 23.1164196495597 - 22.9305875372457 as Abs<Cents>,
                         inaDistance: (23.1164196495597 - 22.9305875372457) / ULTRINA as Multiplier<Ina>,
                         representativeSagittal: {
                             ascii: ".)/|" as Ascii,
                             unicode: "" as Unicode,
-                            smallestSymbolSubset: SymbolSubset.HERCULEAN,
+                            smallestSymbolSubsetId: SymbolSubsetId.HERCULEAN,
                         },
                         minaName: "47" as Name<Mina>,
                         commaAnalysis: {
@@ -91,13 +92,13 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         id: CommaClassId._19_25_C,
                     },
                     {
-                        introducingJiNotationLevel: JiNotationLevel.ULTRA,
+                        introducingJiNotationLevel: JiNotationLevelId.ULTRA,
                         distance: 23.46001038464900 - 23.1164196495597 as Abs<Cents>,
                         inaDistance: (23.46001038464900 - 23.1164196495597) / ULTRINA as Multiplier<Ina>,
                         representativeSagittal: {
                             ascii: "'/|" as Ascii,
                             unicode: "" as Unicode,
-                            smallestSymbolSubset: SymbolSubset.HERCULEAN,
+                            smallestSymbolSubsetId: SymbolSubsetId.HERCULEAN,
                         },
                         minaName: "48" as Name<Mina>,
                         commaAnalysis: {
@@ -124,15 +125,15 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         id: CommaClassId._1_C,
                     },
                 ],
-                [JiNotationLevel.EXTREME]: [
+                [JiNotationLevelId.EXTREME]: [
                     {
-                        introducingJiNotationLevel: JiNotationLevel.ULTRA,
+                        introducingJiNotationLevel: JiNotationLevelId.ULTRA,
                         distance: 23.1164196495597 - 22.9305875372457 as Abs<Cents>,
                         inaDistance: (23.1164196495597 - 22.9305875372457) / MINA as Multiplier<Ina>,
                         representativeSagittal: {
                             ascii: ".)/|" as Ascii,
                             unicode: "" as Unicode,
-                            smallestSymbolSubset: SymbolSubset.HERCULEAN,
+                            smallestSymbolSubsetId: SymbolSubsetId.HERCULEAN,
                         },
                         minaName: "47" as Name<Mina>,
                         commaAnalysis: {
@@ -159,13 +160,13 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         id: CommaClassId._19_25_C,
                     },
                     {
-                        introducingJiNotationLevel: JiNotationLevel.ULTRA,
+                        introducingJiNotationLevel: JiNotationLevelId.ULTRA,
                         distance: 23.46001038464900 - 23.1164196495597 as Abs<Cents>,
                         inaDistance: (23.46001038464900 - 23.1164196495597) / MINA as Multiplier<Ina>,
                         representativeSagittal: {
                             ascii: "'/|" as Ascii,
                             unicode: "" as Unicode,
-                            smallestSymbolSubset: SymbolSubset.HERCULEAN,
+                            smallestSymbolSubsetId: SymbolSubsetId.HERCULEAN,
                         },
                         minaName: "48" as Name<Mina>,
                         commaAnalysis: {
@@ -192,15 +193,15 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         id: CommaClassId._1_C,
                     },
                 ],
-                [JiNotationLevel.INSANE]: [
+                [JiNotationLevelId.INSANE]: [
                     {
-                        introducingJiNotationLevel: JiNotationLevel.ULTRA,
+                        introducingJiNotationLevel: JiNotationLevelId.ULTRA,
                         distance: 23.1164196495597 - 22.9305875372457 as Abs<Cents>,
                         inaDistance: (23.1164196495597 - 22.9305875372457) / TINA as Multiplier<Ina>,
                         representativeSagittal: {
                             ascii: ".)/|" as Ascii,
                             unicode: "" as Unicode,
-                            smallestSymbolSubset: SymbolSubset.HERCULEAN,
+                            smallestSymbolSubsetId: SymbolSubsetId.HERCULEAN,
                         },
                         minaName: "47" as Name<Mina>,
                         commaAnalysis: {
@@ -227,13 +228,13 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         id: CommaClassId._19_25_C,
                     },
                     {
-                        introducingJiNotationLevel: JiNotationLevel.ULTRA,
+                        introducingJiNotationLevel: JiNotationLevelId.ULTRA,
                         distance: 23.46001038464900 - 23.1164196495597 as Abs<Cents>,
                         inaDistance: (23.46001038464900 - 23.1164196495597) / TINA as Multiplier<Ina>,
                         representativeSagittal: {
                             ascii: "'/|" as Ascii,
                             unicode: "" as Unicode,
-                            smallestSymbolSubset: SymbolSubset.HERCULEAN,
+                            smallestSymbolSubsetId: SymbolSubsetId.HERCULEAN,
                         },
                         minaName: "48" as Name<Mina>,
                         commaAnalysis: {

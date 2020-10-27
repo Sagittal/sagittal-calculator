@@ -19,7 +19,7 @@ import {computeSumOfSquaresAndMaybeUpdateBestMetric} from "../../../../../src/sc
 import {bestMetrics} from "../../../../../src/scripts/popularityMetricLfc/globals"
 import {
     computeUnpopularities,
-    Parameter,
+    PopularityParameterId,
     Submetric,
     Unpopularity,
 } from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
@@ -30,16 +30,16 @@ describe("computeSumOfSquaresAndMaybeUpdateBestMetric", (): void => {
     const sample = {
         samplePoint: [1, 0] as SamplePoint,
         submetrics: [{
-            [Parameter.SUM]: true,
-            [Parameter.K_AS_POWER_EXPONENT]: 1.469021,
-            [Parameter.J_AS_POWER_EXPONENT]: 1.367326,
+            [PopularityParameterId.SUM]: true,
+            [PopularityParameterId.K_AS_POWER_EXPONENT]: 1.469021,
+            [PopularityParameterId.J_AS_POWER_EXPONENT]: 1.367326,
         }] as Combination<Submetric>,
     }
     const metricName = "{jAsPowerExponent,kAsPowerExponent,sum}" as Name<Metric>
     const indentation = BLANK
     const onlyBetterThanSopfgtt = true
     const sumsOfSquares = [] as SumsOfSquares
-    const spreadDynamicParameters = [Parameter.A_AS_LOGARITHM_BASE]
+    const spreadDynamicParameters = [PopularityParameterId.A_AS_LOGARITHM_BASE]
     const index = 3 as Index<Sample>
 
     const options = {
@@ -56,9 +56,9 @@ describe("computeSumOfSquaresAndMaybeUpdateBestMetric", (): void => {
         const expected = {
             sumOfSquares: 0.007969,
             submetrics: [{
-                [Parameter.SUM]: true,
-                [Parameter.K_AS_POWER_EXPONENT]: 1.469021,
-                [Parameter.J_AS_POWER_EXPONENT]: 1.367326,
+                [PopularityParameterId.SUM]: true,
+                [PopularityParameterId.K_AS_POWER_EXPONENT]: 1.469021,
+                [PopularityParameterId.J_AS_POWER_EXPONENT]: 1.367326,
             }] as Combination<Submetric>,
             name: metricName,
         } as Metric
@@ -71,9 +71,9 @@ describe("computeSumOfSquaresAndMaybeUpdateBestMetric", (): void => {
         const expected = {
             sumOfSquares: 0.007969,
             submetrics: [{
-                [Parameter.SUM]: true,
-                [Parameter.K_AS_POWER_EXPONENT]: 1.469021,
-                [Parameter.J_AS_POWER_EXPONENT]: 1.367326,
+                [PopularityParameterId.SUM]: true,
+                [PopularityParameterId.K_AS_POWER_EXPONENT]: 1.469021,
+                [PopularityParameterId.J_AS_POWER_EXPONENT]: 1.367326,
             }] as Combination<Submetric>,
             name: metricName,
             spreadDynamicParameters,

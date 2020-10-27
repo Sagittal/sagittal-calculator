@@ -1,6 +1,6 @@
 import {Combination, Index, KeyPath, Max, Min, Step, Window} from "../../../../general"
-import {ParameterValue} from "../../../types"
-import {Parameter, Submetric} from "../../sumOfSquares"
+import {Parameter} from "../../../types"
+import {PopularityParameterId, Submetric} from "../../sumOfSquares"
 
 interface DynamicParameterValueIndicesOptions {
     dynamicParameters: DynamicParameter[],
@@ -9,15 +9,15 @@ interface DynamicParameterValueIndicesOptions {
 }
 
 interface DynamicParameter {
-    parameter: Parameter,
+    parameter: PopularityParameterId,
     submetricIndex: Index<Submetric>,
-    unit: Step<ParameterValue>,
-    values: ParameterValue[],
+    unit: Step<Parameter>,
+    values: Parameter[],
 }
 
 type SubmetricPossibility = Submetric & {_SubmetricPossibilityBrand: boolean}
 
-type SamplePoint = KeyPath & Array<Index<ParameterValue>>
+type SamplePoint = KeyPath & Array<Index<Parameter>>
 
 interface Sample {
     samplePoint: SamplePoint,
@@ -25,10 +25,10 @@ interface Sample {
 }
 
 type DynamicParameterScopeOptions = Partial<{
-    max: Max<ParameterValue>,
-    min: Min<ParameterValue>,
-    window: Window<ParameterValue>,
-    center: ParameterValue,
+    max: Max<Parameter>,
+    min: Min<Parameter>,
+    window: Window<Parameter>,
+    center: Parameter,
 }>
 
 interface CombineSubmetricsPossibilitiesIntoSamplesOptions {

@@ -11,24 +11,24 @@ import {
     saveLog,
     stringify,
 } from "../../../general"
-import {ParameterValue} from "../../types"
+import {Parameter} from "../../types"
 import {Metric} from "../bestMetric"
-import {Parameter, Submetric} from "../sumOfSquares"
+import {PopularityParameterId, Submetric} from "../sumOfSquares"
 import {applySharedPopularityMetricLfcCommandSetup, load} from "./shared"
 
 applySharedPopularityMetricLfcCommandSetup()
 
 const chunkCountResults = load("metrics" as Filename) as Record<Name<Metric>, Metric>
 
-const parameterExtrema = {} as Record<string, Extrema<ParameterValue>>
+const parameterExtrema = {} as Record<string, Extrema<Parameter>>
 
-Object.values(Parameter).forEach((parameter: Parameter): void => {
+Object.values(PopularityParameterId).forEach((parameter: PopularityParameterId): void => {
     if (parameter.includes("Base")) {
         return
     }
 
-    let parameterMin: Maybe<Min<ParameterValue>> = undefined
-    let parameterMax: Maybe<Max<ParameterValue>> = undefined
+    let parameterMin: Maybe<Min<Parameter>> = undefined
+    let parameterMax: Maybe<Max<Parameter>> = undefined
 
     const chunkCountResultsValues = Object.values(chunkCountResults) as Metric[]
     chunkCountResultsValues.forEach((chunkCountResult: Metric): void => {
@@ -36,10 +36,10 @@ Object.values(Parameter).forEach((parameter: Parameter): void => {
             Object.entries(submetric).forEach(([parameterName, parameterValue]: [string, unknown]): void => {
                 if (parameterName === parameter && isNumber(parameterValue)) {
                     if (isUndefined(parameterMin) || parameterValue < parameterMin) {
-                        parameterMin = parameterValue as Min<ParameterValue>
+                        parameterMin = parameterValue as Min<Parameter>
                     }
                     if (isUndefined(parameterMax) || parameterValue > parameterMax) {
-                        parameterMax = parameterValue as Max<ParameterValue>
+                        parameterMax = parameterValue as Max<Parameter>
                     }
                 }
             })

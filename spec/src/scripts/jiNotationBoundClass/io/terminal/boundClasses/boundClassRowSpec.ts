@@ -5,7 +5,7 @@ import {
     BoundType,
     Ina,
     JiNotationBoundClass,
-    JiNotationLevel,
+    JiNotationLevelId,
     Tina,
 } from "../../../../../../../src/sagittal"
 import {JiNotationBoundClassAnalysis} from "../../../../../../../src/scripts/jiNotationBoundClass/boundClass"
@@ -33,21 +33,21 @@ describe("computeJiNotationBoundClassRow", (): void => {
                 boundEventAnalyses: [
                     {
                         ...boundEventAnalysisFixture,
-                        jiNotationLevel: JiNotationLevel.ULTRA,
+                        jiNotationLevel: JiNotationLevelId.ULTRA,
                         rank: RANKS[BoundType.INA_MIDPOINT],
                         distance: 0.000 as Abs<Cents>,
                         inaDistance: 0.000 as Multiplier<Ina>,
                     },
                     {
                         ...boundEventAnalysisFixture,
-                        jiNotationLevel: JiNotationLevel.EXTREME,
+                        jiNotationLevel: JiNotationLevelId.EXTREME,
                         rank: RANKS[BoundType.INA_MIDPOINT],
                         distance: 0.333 as Abs<Cents>,
                         inaDistance: 0.682 as Multiplier<Ina>,
                     },
                     {
                         ...boundEventAnalysisFixture,
-                        jiNotationLevel: JiNotationLevel.INSANE,
+                        jiNotationLevel: JiNotationLevelId.INSANE,
                         rank: RANKS[BoundType.COMMA_MEAN],
                         distance: 0.022 as Abs<Cents>,
                         inaDistance: 0.157 as Multiplier<Ina>,

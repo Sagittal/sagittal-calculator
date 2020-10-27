@@ -1,5 +1,5 @@
 import {Index, Two3FreeClass} from "../../../general"
-import {ParameterValue} from "../../types"
+import {Parameter} from "../../types"
 
 type Antivotes = number & {_AntivotesBrand: boolean}
 
@@ -9,8 +9,7 @@ interface Unpopularity {
     index: Index<Unpopularity>,
 }
 
-// TODO: should this be ParameterId ? are there other enums which would get a clarity benefit from the -Id suffix?
-enum Parameter {
+enum PopularityParameterId {
     // Coefficient used for submetric
     WEIGHT_AS_COEFFICIENT = "weightAsCoefficient",
     // Logarithm base used for submetric
@@ -73,48 +72,48 @@ enum Parameter {
 }
 
 type Submetric = Partial<{
-    [Parameter.WEIGHT_AS_COEFFICIENT]: ParameterValue,
-    [Parameter.WEIGHT_AS_LOGARITHM_BASE]: ParameterValue,
-    [Parameter.WEIGHT_AS_POWER_EXPONENT]: ParameterValue,
-    [Parameter.WEIGHT_AS_POWER_BASE]: ParameterValue,
-    [Parameter.K_AS_COEFFICIENT]: ParameterValue,
-    [Parameter.K_AS_LOGARITHM_BASE]: ParameterValue,
-    [Parameter.K_AS_POWER_EXPONENT]: ParameterValue,
-    [Parameter.K_AS_POWER_BASE]: ParameterValue,
-    [Parameter.J_AS_COEFFICIENT]: ParameterValue,
-    [Parameter.J_AS_LOGARITHM_BASE]: ParameterValue,
-    [Parameter.J_AS_POWER_EXPONENT]: ParameterValue,
-    [Parameter.J_AS_POWER_BASE]: ParameterValue,
-    [Parameter.A_AS_COEFFICIENT]: ParameterValue,
-    [Parameter.A_AS_LOGARITHM_BASE]: ParameterValue,
-    [Parameter.A_AS_POWER_EXPONENT]: ParameterValue,
-    [Parameter.A_AS_POWER_BASE]: ParameterValue,
-    [Parameter.W]: ParameterValue,
-    [Parameter.B]: ParameterValue,
-    [Parameter.X]: ParameterValue,
-    [Parameter.U]: ParameterValue,
-    [Parameter.Y]: ParameterValue,
-    [Parameter.V]: ParameterValue,
-    [Parameter.USE_NUMINATOR]: boolean,
-    [Parameter.MODIFIED_COUNT]: boolean,
-    [Parameter.USE_PRIME_INDEX]: boolean,
-    [Parameter.WITHOUT_REPETITION]: boolean,
-    [Parameter.SUM]: boolean,
-    [Parameter.COUNT]: boolean,
-    [Parameter.MAX]: boolean,
+    [PopularityParameterId.WEIGHT_AS_COEFFICIENT]: Parameter,
+    [PopularityParameterId.WEIGHT_AS_LOGARITHM_BASE]: Parameter,
+    [PopularityParameterId.WEIGHT_AS_POWER_EXPONENT]: Parameter,
+    [PopularityParameterId.WEIGHT_AS_POWER_BASE]: Parameter,
+    [PopularityParameterId.K_AS_COEFFICIENT]: Parameter,
+    [PopularityParameterId.K_AS_LOGARITHM_BASE]: Parameter,
+    [PopularityParameterId.K_AS_POWER_EXPONENT]: Parameter,
+    [PopularityParameterId.K_AS_POWER_BASE]: Parameter,
+    [PopularityParameterId.J_AS_COEFFICIENT]: Parameter,
+    [PopularityParameterId.J_AS_LOGARITHM_BASE]: Parameter,
+    [PopularityParameterId.J_AS_POWER_EXPONENT]: Parameter,
+    [PopularityParameterId.J_AS_POWER_BASE]: Parameter,
+    [PopularityParameterId.A_AS_COEFFICIENT]: Parameter,
+    [PopularityParameterId.A_AS_LOGARITHM_BASE]: Parameter,
+    [PopularityParameterId.A_AS_POWER_EXPONENT]: Parameter,
+    [PopularityParameterId.A_AS_POWER_BASE]: Parameter,
+    [PopularityParameterId.W]: Parameter,
+    [PopularityParameterId.B]: Parameter,
+    [PopularityParameterId.X]: Parameter,
+    [PopularityParameterId.U]: Parameter,
+    [PopularityParameterId.Y]: Parameter,
+    [PopularityParameterId.V]: Parameter,
+    [PopularityParameterId.USE_NUMINATOR]: boolean,
+    [PopularityParameterId.MODIFIED_COUNT]: boolean,
+    [PopularityParameterId.USE_PRIME_INDEX]: boolean,
+    [PopularityParameterId.WITHOUT_REPETITION]: boolean,
+    [PopularityParameterId.SUM]: boolean,
+    [PopularityParameterId.COUNT]: boolean,
+    [PopularityParameterId.MAX]: boolean,
 }>
 
 type WeightedAntivotesOptions = Partial<{
-    logarithmBase: ParameterValue,
-    powerExponent: ParameterValue
-    powerBase: ParameterValue,
-    coefficient: ParameterValue,
+    logarithmBase: Parameter,
+    powerExponent: Parameter
+    powerBase: Parameter,
+    coefficient: Parameter,
 }>
 
 export {
     Unpopularity,
     Antivotes,
-    Parameter,
+    PopularityParameterId,
     Submetric,
     WeightedAntivotesOptions,
 }

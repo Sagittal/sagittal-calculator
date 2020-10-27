@@ -3,13 +3,13 @@ import {cleanArray} from "../../../../../../src/general/code/cleanArray"
 import {Scope} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {scopesToSearch, solverStatus} from "../../../../../../src/scripts/popularityMetricLfc/globals"
 import {populateScope} from "../../../../../../src/scripts/popularityMetricLfc/solver/populate/scope"
-import {Parameter} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {PopularityParameterId} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
 describe("populateScope", (): void => {
     it("adds the scope to the stack and increments the count of the total ever populated", (): void => {
-        const scope: Scope = [{[Parameter.SUM]: true}] as Scope
+        const scope: Scope = [{[PopularityParameterId.SUM]: true}] as Scope
 
-        const alreadyPopulatedScope: Scope = [{[Parameter.COUNT]: true}] as Scope
+        const alreadyPopulatedScope: Scope = [{[PopularityParameterId.COUNT]: true}] as Scope
         cleanArray(scopesToSearch)
         scopesToSearch.push(alreadyPopulatedScope)
         solverStatus.populatedScopeCount = 5 as Count<Scope>

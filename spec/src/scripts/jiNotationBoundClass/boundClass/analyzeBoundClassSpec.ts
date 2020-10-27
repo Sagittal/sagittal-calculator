@@ -4,7 +4,7 @@ import {
     BoundType,
     Ina,
     JiNotationBoundClass,
-    JiNotationLevel,
+    JiNotationLevelId,
     Tina,
 } from "../../../../../src/sagittal/notations"
 import {EXTREME_EDA, INSANE_EDA} from "../../../../../src/sagittal/notations/ji/levelEdas"
@@ -23,7 +23,7 @@ import {jiNotationBoundClassFixture} from "../../../../helpers/src/scripts/jiNot
 describe("analyzeJiNotationBoundClass", (): void => {
     const notBestHistory: BoundHistory = [
         {
-            jiNotationLevel: JiNotationLevel.ULTRA,
+            jiNotationLevel: JiNotationLevelId.ULTRA,
             boundType: BoundType.COMMA_MEAN,
             name: ".)/| '/|" as Name<JiNotationBound>,
             pitch: {
@@ -32,7 +32,7 @@ describe("analyzeJiNotationBoundClass", (): void => {
             } as Scamon<{rational: false}>,
         },
         {
-            jiNotationLevel: JiNotationLevel.EXTREME,
+            jiNotationLevel: JiNotationLevelId.EXTREME,
             boundType: BoundType.COMMA_MEAN,
             name: ".)/| '/|" as Name<JiNotationBound>,
             pitch: {
@@ -41,7 +41,7 @@ describe("analyzeJiNotationBoundClass", (): void => {
             } as Scamon<{rational: false}>,
         },
         {
-            jiNotationLevel: JiNotationLevel.INSANE,
+            jiNotationLevel: JiNotationLevelId.INSANE,
             boundType: BoundType.INA_MIDPOINT,
             name: "164.5°809" as Name<JiNotationBound>,
             pitch: {
@@ -53,7 +53,7 @@ describe("analyzeJiNotationBoundClass", (): void => {
     ]
     const bestHistory: BoundHistory = [
         {
-            jiNotationLevel: JiNotationLevel.ULTRA,
+            jiNotationLevel: JiNotationLevelId.ULTRA,
             boundType: BoundType.COMMA_MEAN,
             name: ".)/| '/|" as Name<JiNotationBound>,
             pitch: {
@@ -62,7 +62,7 @@ describe("analyzeJiNotationBoundClass", (): void => {
             } as Scamon<{rational: false}>,
         },
         {
-            jiNotationLevel: JiNotationLevel.EXTREME,
+            jiNotationLevel: JiNotationLevelId.EXTREME,
             boundType: BoundType.INA_MIDPOINT,
             name: "47.5°233" as Name<JiNotationBound>,
             pitch: {
@@ -71,7 +71,7 @@ describe("analyzeJiNotationBoundClass", (): void => {
             } as Scamon<{rational: false}>,
         },
         {
-            jiNotationLevel: JiNotationLevel.INSANE,
+            jiNotationLevel: JiNotationLevelId.INSANE,
             boundType: BoundType.INA_MIDPOINT,
             name: "164.5°809" as Name<JiNotationBound>,
             pitch: {
@@ -91,13 +91,13 @@ describe("analyzeJiNotationBoundClass", (): void => {
             monzo: APOTOME.monzo,
             scaler: [164.5, INSANE_EDA],
         } as Scamon<{rational: false}>,
-        jiNotationLevels: [JiNotationLevel.ULTRA, JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
+        jiNotationLevels: [JiNotationLevelId.ULTRA, JiNotationLevelId.EXTREME, JiNotationLevelId.INSANE],
         boundType: BoundType.INA_MIDPOINT,
     }
     const boundClassIndex = 47 as Index<BoundClass>
     const expectedBestBoundHistoryBoundEventAnalyses: BoundEventAnalysis[] = [
         {
-            jiNotationLevel: JiNotationLevel.ULTRA,
+            jiNotationLevel: JiNotationLevelId.ULTRA,
             boundType: BoundType.COMMA_MEAN,
             name: ".)/| '/|" as Name<JiNotationBound>,
             pitch: {
@@ -110,7 +110,7 @@ describe("analyzeJiNotationBoundClass", (): void => {
             exact: false,
         },
         {
-            jiNotationLevel: JiNotationLevel.EXTREME,
+            jiNotationLevel: JiNotationLevelId.EXTREME,
             boundType: BoundType.INA_MIDPOINT,
             name: "47.5°233" as Name<JiNotationBound>,
             pitch: {
@@ -123,7 +123,7 @@ describe("analyzeJiNotationBoundClass", (): void => {
             exact: false,
         },
         {
-            jiNotationLevel: JiNotationLevel.INSANE,
+            jiNotationLevel: JiNotationLevelId.INSANE,
             boundType: BoundType.INA_MIDPOINT,
             name: "164.5°809" as Name<JiNotationBound>,
             pitch: {
@@ -167,9 +167,9 @@ describe("analyzeJiNotationBoundClass", (): void => {
             bestPossibleBoundHistoryTotalDistance: 0.07887931138776594 as Sum<Abs<Cents>>,
             bestPossibleBoundHistoryTotalInaDistance: 0.4641843423502595 as Sum<Multiplier<Ina>>,
             boundHistoryConsolidation: {
-                [JiNotationLevel.ULTRA]: [
+                [JiNotationLevelId.ULTRA]: [
                     {
-                        jiNotationLevel: JiNotationLevel.ULTRA,
+                        jiNotationLevel: JiNotationLevelId.ULTRA,
                         boundType: BoundType.COMMA_MEAN,
                         name: ".)/| '/|" as Name<JiNotationBound>,
                         pitch: {
@@ -187,9 +187,9 @@ describe("analyzeJiNotationBoundClass", (): void => {
                         ] as Array<Name<JiNotationBound>>,
                     },
                 ],
-                [JiNotationLevel.EXTREME]: [
+                [JiNotationLevelId.EXTREME]: [
                     {
-                        jiNotationLevel: JiNotationLevel.EXTREME,
+                        jiNotationLevel: JiNotationLevelId.EXTREME,
                         boundType: BoundType.COMMA_MEAN,
                         name: ".)/| '/|" as Name<JiNotationBound>,
                         pitch: {
@@ -206,7 +206,7 @@ describe("analyzeJiNotationBoundClass", (): void => {
                         ] as Array<Name<JiNotationBound>>,
                     },
                     {
-                        jiNotationLevel: JiNotationLevel.EXTREME,
+                        jiNotationLevel: JiNotationLevelId.EXTREME,
                         boundType: BoundType.INA_MIDPOINT,
                         name: "47.5°233" as Name<JiNotationBound>,
                         pitch: {
@@ -223,9 +223,9 @@ describe("analyzeJiNotationBoundClass", (): void => {
                         ] as Array<Name<JiNotationBound>>,
                     },
                 ],
-                [JiNotationLevel.INSANE]: [
+                [JiNotationLevelId.INSANE]: [
                     {
-                        jiNotationLevel: JiNotationLevel.INSANE,
+                        jiNotationLevel: JiNotationLevelId.INSANE,
                         boundType: BoundType.INA_MIDPOINT,
                         name: "164.5°809" as Name<JiNotationBound>,
                         pitch: {

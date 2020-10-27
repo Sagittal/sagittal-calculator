@@ -1,15 +1,15 @@
 import {add, Basis, Cents, computePx, DEFAULT_PRECISION, Multiplier, multiply, Px, round} from "../../../../general"
-import {JiNotationLevel, JI_NOTATION_LEVELS} from "../../../../sagittal"
+import {JiNotationLevelId, JI_NOTATION_LEVELS} from "../../../../sagittal"
 import {computeReversedJiNotationLevelIndex} from "./reversedLevelIndex"
 import {LEVEL_HEIGHT, MARGIN, Y_SCALE} from "./sizes"
 
-const computeJiNotationLevelHeights = (withinLevelHeight: Multiplier<Basis<Cents>>): Record<JiNotationLevel, Px> =>
+const computeJiNotationLevelHeights = (withinLevelHeight: Multiplier<Basis<Cents>>): Record<JiNotationLevelId, Px> =>
     JI_NOTATION_LEVELS.reduce(
         (
-            jiNotationLevelTops: Record<JiNotationLevel, Px>,
-            jiNotationLevel: JiNotationLevel,
+            jiNotationLevelTops: Record<JiNotationLevelId, Px>,
+            jiNotationLevel: JiNotationLevelId,
             jiNotationLevelIndex: number,
-        ): Record<JiNotationLevel, Px> => {
+        ): Record<JiNotationLevelId, Px> => {
             const jiNotationLevelHeight: Multiplier<Basis<Cents>> =
                 add(computeReversedJiNotationLevelIndex(jiNotationLevelIndex), withinLevelHeight)
 
@@ -29,16 +29,16 @@ const computeJiNotationLevelHeights = (withinLevelHeight: Multiplier<Basis<Cents
                 ),
             }
         },
-        {} as Record<JiNotationLevel, Px>,
+        {} as Record<JiNotationLevelId, Px>,
     )
 
-const JI_NOTATION_LEVEL_TOPS: Record<JiNotationLevel, Px> =
+const JI_NOTATION_LEVEL_TOPS: Record<JiNotationLevelId, Px> =
     computeJiNotationLevelHeights(0 as Multiplier<Basis<Cents>>)
 
-const JI_NOTATION_LEVEL_CENTERS: Record<JiNotationLevel, Px> =
+const JI_NOTATION_LEVEL_CENTERS: Record<JiNotationLevelId, Px> =
     computeJiNotationLevelHeights(0.5 as Multiplier<Basis<Cents>>)
 
-const JI_NOTATION_LEVEL_BOTTOMS: Record<JiNotationLevel, Px> =
+const JI_NOTATION_LEVEL_BOTTOMS: Record<JiNotationLevelId, Px> =
     computeJiNotationLevelHeights(1 as Multiplier<Basis<Cents>>)
 
 export {

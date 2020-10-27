@@ -1,15 +1,15 @@
 import {Index, KeyPath, sort} from "../../general"
-import {SymbolClassId, SymbolSubset} from "./types"
+import {SymbolClassId, SymbolSubsetId} from "./types"
 
-const SYMBOL_SUBSETS_SORTED_BY_SIZE: SymbolSubset[] = [
-    SymbolSubset.COMPATIBLE,
-    SymbolSubset.SPARTAN,
-    SymbolSubset.ATHENIAN,
-    SymbolSubset.TROJAN,
-    SymbolSubset.PROMETHEAN,
-    SymbolSubset.HERCULEAN,
-    SymbolSubset.OLYMPIAN,
-    SymbolSubset.MAGRATHEAN,
+const SIZE_SORTED_SYMBOL_SUBSET_IDS: SymbolSubsetId[] = [
+    SymbolSubsetId.COMPATIBLE,
+    SymbolSubsetId.SPARTAN,
+    SymbolSubsetId.ATHENIAN,
+    SymbolSubsetId.TROJAN,
+    SymbolSubsetId.PROMETHEAN,
+    SymbolSubsetId.HERCULEAN,
+    SymbolSubsetId.OLYMPIAN,
+    SymbolSubsetId.MAGRATHEAN,
 ]
 
 const SAGITTAL_COMPATIBLE_SYMBOL_SUBSET: Array<[Index<SymbolClassId>, SymbolClassId]> = [
@@ -215,18 +215,18 @@ const shapeUpIds = (ids: Array<[Index<SymbolClassId>, SymbolClassId]>): SymbolCl
 //  These won't truly be symbol subsets until you map across them and include every complement, shift, and negation
 //  And you could separate the single-shaft ones from multi-shaft ones with filters
 //  These tests are all failing until we fix that issue
-const SYMBOL_SUBSETS: Record<SymbolSubset, Array<SymbolClassId>> = {
-    [SymbolSubset.COMPATIBLE]: shapeUpIds(SAGITTAL_COMPATIBLE_SYMBOL_SUBSET),
-    [SymbolSubset.SPARTAN]: shapeUpIds(SPARTAN_SYMBOL_SUBSET),
-    [SymbolSubset.ATHENIAN]: shapeUpIds(ATHENIAN_SYMBOL_SUBSET),
-    [SymbolSubset.TROJAN]: shapeUpIds(TROJAN_SYMBOL_SUBSET),
-    [SymbolSubset.PROMETHEAN]: shapeUpIds(PROMETHEAN_SYMBOL_SUBSET),
-    [SymbolSubset.HERCULEAN]: shapeUpIds(HERCULEAN_SYMBOL_SUBSET),
-    [SymbolSubset.OLYMPIAN]: shapeUpIds(OLYMPIAN_SYMBOL_SUBSET),
-    [SymbolSubset.MAGRATHEAN]: shapeUpIds(MAGRATHEAN_SYMBOL_SUBSET),
+const SYMBOL_SUBSETS: Record<SymbolSubsetId, Array<SymbolClassId>> = {
+    [SymbolSubsetId.COMPATIBLE]: shapeUpIds(SAGITTAL_COMPATIBLE_SYMBOL_SUBSET),
+    [SymbolSubsetId.SPARTAN]: shapeUpIds(SPARTAN_SYMBOL_SUBSET),
+    [SymbolSubsetId.ATHENIAN]: shapeUpIds(ATHENIAN_SYMBOL_SUBSET),
+    [SymbolSubsetId.TROJAN]: shapeUpIds(TROJAN_SYMBOL_SUBSET),
+    [SymbolSubsetId.PROMETHEAN]: shapeUpIds(PROMETHEAN_SYMBOL_SUBSET),
+    [SymbolSubsetId.HERCULEAN]: shapeUpIds(HERCULEAN_SYMBOL_SUBSET),
+    [SymbolSubsetId.OLYMPIAN]: shapeUpIds(OLYMPIAN_SYMBOL_SUBSET),
+    [SymbolSubsetId.MAGRATHEAN]: shapeUpIds(MAGRATHEAN_SYMBOL_SUBSET),
 }
 
 export {
     SYMBOL_SUBSETS,
-    SYMBOL_SUBSETS_SORTED_BY_SIZE,
+    SIZE_SORTED_SYMBOL_SUBSET_IDS,
 }

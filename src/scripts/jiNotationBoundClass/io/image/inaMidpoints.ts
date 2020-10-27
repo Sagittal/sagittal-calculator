@@ -1,5 +1,5 @@
 import {add, DEFAULT_PRECISION, Io, Px, round, subtract} from "../../../../general"
-import {InaMidpoint, JiNotationLevel} from "../../../../sagittal"
+import {InaMidpoint, JiNotationLevelId} from "../../../../sagittal"
 import {INA_MIDPOINTS} from "../../histories"
 import {JI_NOTATION_LEVEL_CENTERS} from "./levelHeights"
 import {INA_MIDPOINT_HEX_COLOR} from "./rankColors"
@@ -9,8 +9,8 @@ import {computeX} from "./x"
 const visualizeInaMidpoints = (): Io[] => {
     const inaMidpointElements: Io[] = [] as Io[]
 
-    const inaMidpointEntries = Object.entries(INA_MIDPOINTS) as Array<[JiNotationLevel, InaMidpoint[]]>
-    inaMidpointEntries.forEach(([jiNotationLevel, inaMidpoints]: [JiNotationLevel, InaMidpoint[]]): void => {
+    const inaMidpointEntries = Object.entries(INA_MIDPOINTS) as Array<[JiNotationLevelId, InaMidpoint[]]>
+    inaMidpointEntries.forEach(([jiNotationLevel, inaMidpoints]: [JiNotationLevelId, InaMidpoint[]]): void => {
         const centerY: Px = round(JI_NOTATION_LEVEL_CENTERS[jiNotationLevel], DEFAULT_PRECISION)
         const topY: Px = round(subtract(centerY, HALF_TICK_SIZE), DEFAULT_PRECISION)
         const bottomY: Px = round(add(centerY, HALF_TICK_SIZE), DEFAULT_PRECISION)

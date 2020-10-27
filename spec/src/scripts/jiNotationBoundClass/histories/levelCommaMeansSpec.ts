@@ -1,5 +1,5 @@
 import {Cents, CommaMean, Decimal, HALF_SCALER, Monzo, Name, Scamon} from "../../../../../src/general"
-import {JiNotationLevel} from "../../../../../src/sagittal/notations/ji"
+import {JiNotationLevelId} from "../../../../../src/sagittal/notations/ji"
 import {computeJiNotationLevelCommaMeans} from "../../../../../src/scripts/jiNotationBoundClass/histories/levelCommaMeans"
 import {computePitchExpectation} from "../../../../helpers/src/general/music/pitchExpectation"
 import {PitchExpectation} from "../../../../helpers/src/general/music/types"
@@ -7,7 +7,7 @@ import {PitchExpectation} from "../../../../helpers/src/general/music/types"
 describe("computeJiNotationLevelCommaMeans", (): void => {
     describe("naming", (): void => {
         it("returns the comma means for the Medium level, named by the bounded commas' symbols", (): void => {
-            const actual = computeJiNotationLevelCommaMeans(JiNotationLevel.MEDIUM)
+            const actual = computeJiNotationLevelCommaMeans(JiNotationLevelId.MEDIUM)
 
             const expected = [
                 {
@@ -85,7 +85,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
         })
 
         it("returns the comma means for the High level, named by the bounded commas' symbols", (): void => {
-            const actual = computeJiNotationLevelCommaMeans(JiNotationLevel.HIGH)
+            const actual = computeJiNotationLevelCommaMeans(JiNotationLevelId.HIGH)
 
             const expected = [
                 {
@@ -275,7 +275,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
         })
 
         it("returns the comma means for the Ultra level, named by the bounded commas' symbols", (): void => {
-            const actual = computeJiNotationLevelCommaMeans(JiNotationLevel.ULTRA)
+            const actual = computeJiNotationLevelCommaMeans(JiNotationLevelId.ULTRA)
 
             const expected = [
                 {
@@ -605,7 +605,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
         })
 
         it("returns the comma means for the Extreme level, named by the bounded commas' symbols", (): void => {
-            const actual = computeJiNotationLevelCommaMeans(JiNotationLevel.EXTREME)
+            const actual = computeJiNotationLevelCommaMeans(JiNotationLevelId.EXTREME)
 
             const expected = [
                 {
@@ -1469,7 +1469,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
 
     describe("it has the right values for the pitches", (): void => {
         it("works for the Medium level", (): void => {
-            const actual = computeJiNotationLevelCommaMeans(JiNotationLevel.MEDIUM)
+            const actual = computeJiNotationLevelCommaMeans(JiNotationLevelId.MEDIUM)
                 .map((levelCommaMean: CommaMean): PitchExpectation => computePitchExpectation(levelCommaMean.pitch))
 
             const expected = [
@@ -1568,7 +1568,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
         })
 
         it("works for the High level", (): void => {
-            const actual = computeJiNotationLevelCommaMeans(JiNotationLevel.HIGH)
+            const actual = computeJiNotationLevelCommaMeans(JiNotationLevelId.HIGH)
                 .map((levelCommaMean: CommaMean): PitchExpectation => computePitchExpectation(levelCommaMean.pitch))
 
             const expected = [
@@ -1811,7 +1811,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
         })
 
         it("works for the Ultra level", (): void => {
-            const actual = computeJiNotationLevelCommaMeans(JiNotationLevel.ULTRA)
+            const actual = computeJiNotationLevelCommaMeans(JiNotationLevelId.ULTRA)
                 .map((levelCommaMean: CommaMean): PitchExpectation => computePitchExpectation(levelCommaMean.pitch))
 
             const expected = [
@@ -2234,7 +2234,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
         })
 
         it("works for the Extreme level", (): void => {
-            const actual = computeJiNotationLevelCommaMeans(JiNotationLevel.EXTREME)
+            const actual = computeJiNotationLevelCommaMeans(JiNotationLevelId.EXTREME)
                 .map((levelCommaMean: CommaMean): PitchExpectation => computePitchExpectation(levelCommaMean.pitch))
 
             const expected = [

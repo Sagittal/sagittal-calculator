@@ -8,7 +8,7 @@ import {
     radiansToDegrees,
     round,
 } from "../../../../general"
-import {JiNotationLevel} from "../../../../sagittal"
+import {JiNotationLevelId} from "../../../../sagittal"
 import {BoundEventAnalysis} from "../../history"
 import {JI_NOTATION_LEVEL_BOTTOMS, JI_NOTATION_LEVEL_CENTERS} from "./levelHeights"
 import {RANK_HEX_COLORS} from "./rankColors"
@@ -28,7 +28,7 @@ const visualizeBoundEventAnalyses = (boundEventAnalyses: BoundEventAnalysis[]): 
     )
 
     boundEventAnalyses.forEach(({jiNotationLevel, pitch}: BoundEventAnalysis, index: number): void => {
-        if (jiNotationLevel === JiNotationLevel.INSANE) {
+        if (jiNotationLevel === JiNotationLevelId.INSANE) {
             return
         }
 

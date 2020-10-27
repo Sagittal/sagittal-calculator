@@ -1,6 +1,6 @@
 import { Name } from "../../../../../src/general"
 import { APOTOME } from "../../../../../src/sagittal"
-import { InaMidpoint, JiNotationLevel } from "../../../../../src/sagittal/notations/ji"
+import { InaMidpoint, JiNotationLevelId } from "../../../../../src/sagittal/notations/ji"
 import { EXTREME_EDA, MEDIUM_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"
 import { computeInaMidpoints } from "../../../../../src/scripts/jiNotationBoundClass/histories/inaMidpoints"
 import { computePitchExpectation } from "../../../../helpers/src/general/music/pitchExpectation"
@@ -8,7 +8,7 @@ import { PitchExpectation } from "../../../../helpers/src/general/music/types"
 
 describe("computeInaMidpoints", (): void => {
     it("works (e.g.) for the Medium JI notation level, only including midpoints below or at the max position                ", (): void => {
-        const jiNotationLevel = JiNotationLevel.MEDIUM
+        const jiNotationLevel = JiNotationLevelId.MEDIUM
 
         const actual = computeInaMidpoints(jiNotationLevel)
 
@@ -95,7 +95,7 @@ describe("computeInaMidpoints", (): void => {
     })
 
     it("has the correct positions (this time checking the whole thing, the EXTREME level)", (): void => {
-        const jiNotationLevel = JiNotationLevel.EXTREME
+        const jiNotationLevel = JiNotationLevelId.EXTREME
 
         const actual = computeInaMidpoints(jiNotationLevel).map((inaMidpoint: InaMidpoint): PitchExpectation => {
             return computePitchExpectation(inaMidpoint.pitch)

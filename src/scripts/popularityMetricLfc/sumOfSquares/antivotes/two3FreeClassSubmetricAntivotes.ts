@@ -6,7 +6,7 @@ import {
     stringify,
     Two3FreeClass,
 } from "../../../../general"
-import {ParameterValue} from "../../../types"
+import {Parameter} from "../../../types"
 import {Antivotes, Submetric} from "../types"
 import {maybeNuminatorSwap} from "./numinator"
 import {computeSubmetricAntivotes} from "./submetricAntivotes"
@@ -18,8 +18,8 @@ const compute23FreeClassSubmetricAntivotes = (
 ): Antivotes => {
     const {
         useNuminator = false,
-        kAsCoefficient = 1 as ParameterValue,
-        jAsCoefficient = 1 as ParameterValue,
+        kAsCoefficient = 1 as Parameter,
+        jAsCoefficient = 1 as Parameter,
         jAsLogarithmBase,
         jAsPowerExponent,
         jAsPowerBase,

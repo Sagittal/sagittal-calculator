@@ -1,13 +1,13 @@
 import {CommaClassId} from "../../../../../src/sagittal/notation"
-import {JiNotationLevel} from "../../../../../src/sagittal/notations"
+import {JiNotationLevelId} from "../../../../../src/sagittal/notations"
 import {getIntroducingJiNotationLevel} from "../../../../../src/sagittal/notations/ji"
 
 describe("getIntroducingJiNotationLevel", (): void => {
     it("returns the lowest JI notation level which includes the given comma class id", (): void => {
-        expect(getIntroducingJiNotationLevel(CommaClassId._5_7_k)).toBe(JiNotationLevel.MEDIUM)
-        expect(getIntroducingJiNotationLevel(CommaClassId._11_49_C)).toBe(JiNotationLevel.HIGH)
-        expect(getIntroducingJiNotationLevel(CommaClassId._55_M)).toBe(JiNotationLevel.ULTRA)
-        expect(getIntroducingJiNotationLevel(CommaClassId._11_13_C)).toBe(JiNotationLevel.EXTREME)
+        expect(getIntroducingJiNotationLevel(CommaClassId._5_7_k)).toBe(JiNotationLevelId.MEDIUM)
+        expect(getIntroducingJiNotationLevel(CommaClassId._11_49_C)).toBe(JiNotationLevelId.HIGH)
+        expect(getIntroducingJiNotationLevel(CommaClassId._55_M)).toBe(JiNotationLevelId.ULTRA)
+        expect(getIntroducingJiNotationLevel(CommaClassId._11_13_C)).toBe(JiNotationLevelId.EXTREME)
     })
 
     // TODO: UNTIL PRIME FACTOR NOTATION INTRODUCES AN EXAMPLE COMMA CLASS

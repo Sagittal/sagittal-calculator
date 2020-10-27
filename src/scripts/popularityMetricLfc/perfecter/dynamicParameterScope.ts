@@ -1,11 +1,11 @@
 import {Ed, Window} from "../../../general"
-import {DynamicParameterScope, ParameterValue} from "../../types"
+import {DynamicParameterScope, Parameter} from "../../types"
 import {popularityMetricLfcScriptGroupSettings} from "../globals"
 
-const computeDynamicParameterScopeForPerfecting = (parameterValue: ParameterValue): DynamicParameterScope => ({
+const computeDynamicParameterScopeForPerfecting = (parameterValue: Parameter): DynamicParameterScope => ({
     center: parameterValue,
-    window: popularityMetricLfcScriptGroupSettings.maxUnit as number as Window<ParameterValue>,
-    ed: 3 as Ed<ParameterValue>,
+    window: popularityMetricLfcScriptGroupSettings.maxUnit as number as Window<Parameter>,
+    ed: 3 as Ed<Parameter>,
 })
 
 export {

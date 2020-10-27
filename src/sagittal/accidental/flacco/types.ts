@@ -30,6 +30,9 @@ enum ArmId {
     WING_AND_TICK = "wingAndTick",
 }
 
+// TODO: Oof. Can't decide whether to make this FlagId. FlagId would be more consistent with the others of its ilk.
+//  However, unlike its ilk, it's so simple, its ID itself can stand for it. No object to point to.
+//  So there'd be no Flag if this was FlagId...
 enum Flag {
     BARB = "barb",
     SCROLL = "scroll",

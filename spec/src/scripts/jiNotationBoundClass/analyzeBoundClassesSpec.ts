@@ -3,7 +3,7 @@ import {
     BoundType,
     JiNotationBound,
     JiNotationBoundClass,
-    JiNotationLevel,
+    JiNotationLevelId,
     JI_NOTATION_BOUND_CLASSES,
 } from "../../../../src/sagittal/notations"
 import {analyzeJiNotationBoundClasses} from "../../../../src/scripts/jiNotationBoundClass/analyzeBoundClasses"
@@ -20,7 +20,7 @@ describe("analyzeJiNotationBoundClasses", (): void => {
                 const jiNotationLevelEventAnalysis =
                     jiNotationBoundClassAnalysis.bestPossibleBoundHistoryAnalysis.boundEventAnalyses
                         .find((boundEventAnalysis: BoundEventAnalysis): boolean => {
-                            return boundEventAnalysis.jiNotationLevel === JiNotationLevel.EXTREME
+                            return boundEventAnalysis.jiNotationLevel === JiNotationLevelId.EXTREME
                         })
 
                 return jiNotationLevelEventAnalysis!.boundType
@@ -41,7 +41,7 @@ describe("analyzeJiNotationBoundClasses", (): void => {
                 const jiNotationLevelEventAnalysis =
                     jiNotationBoundClassAnalysis.bestPossibleBoundHistoryAnalysis.boundEventAnalyses
                         .find((boundEventAnalysis: BoundEventAnalysis): boolean => {
-                            return boundEventAnalysis.jiNotationLevel === JiNotationLevel.INSANE
+                            return boundEventAnalysis.jiNotationLevel === JiNotationLevelId.INSANE
                         })
 
                 return jiNotationLevelEventAnalysis!.name

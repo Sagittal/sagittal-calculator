@@ -1,8 +1,8 @@
 import {Filename, LogTarget, Maybe, Name, saveLog, stringify} from "../../../../general"
-import {ParameterValue} from "../../../types"
+import {Parameter} from "../../../types"
 import {Metric} from "../../bestMetric"
 import {PARAMETER_DYNAMISMS} from "../../perfecter"
-import {Parameter, Submetric} from "../../sumOfSquares"
+import {PopularityParameterId, Submetric} from "../../sumOfSquares"
 import {applySharedPopularityMetricLfcCommandSetup, load} from "../shared"
 
 applySharedPopularityMetricLfcCommandSetup()
@@ -17,13 +17,13 @@ const guessedBackfilledSpreadDynamicParametersMetrics = metricsMissingSpreadDyna
             Record<Name<Metric>, Metric>, metricEntry: [Name<Metric>, Metric],
     ): Record<Name<Metric>, Metric> => {
         const [metricName, metric] = metricEntry
-        const parameterValues: Partial<Record<Parameter, ParameterValue>> = {}
+        const parameterValues: Partial<Record<PopularityParameterId, Parameter>> = {}
 
-        let spreadDynamicParameters: Maybe<Parameter[]> = undefined
+        let spreadDynamicParameters: Maybe<PopularityParameterId[]> = undefined
 
         metric.submetrics.forEach((submetric: Submetric): void => {
-            Object.entries(submetric).forEach((submetricEntry: [string, Maybe<ParameterValue | boolean>]): void => {
-                const [parameter, parameterValue] = submetricEntry as [Parameter, ParameterValue]
+            Object.entries(submetric).forEach((submetricEntry: [string, Maybe<Parameter | boolean>]): void => {
+                const [parameter, parameterValue] = submetricEntry as [PopularityParameterId, Parameter]
 
                 if (
                     parameterValues[parameter] === parameterValue &&

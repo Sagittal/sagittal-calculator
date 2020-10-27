@@ -1,10 +1,12 @@
 import {Count, Decimal, formatIntegerDecimal, Rank, RecordKey, Row} from "../../../../../general"
-import {BoundType, JiNotationLevel} from "../../../../../sagittal"
+import {BoundType, JiNotationLevelId} from "../../../../../sagittal"
 import {jiNotationLevelsBestCumulativeHistoryRanks, jiNotationLevelsBestHistoryRanks} from "../../../globals"
 import {FORMATTED_RANKS} from "../rankNames"
 
-const computeJiNotationLevelAnalysisRows = (jiNotationLevel: JiNotationLevel): Array<Row<{of: JiNotationLevel}>> => {
-    const rows = [] as Array<Row<{of: JiNotationLevel}>>
+const computeJiNotationLevelAnalysisRows = (
+    jiNotationLevel: JiNotationLevelId,
+): Array<Row<{of: JiNotationLevelId}>> => {
+    const rows = [] as Array<Row<{of: JiNotationLevelId}>>
 
     const jiNotationLevelsBestHistoryRanksEntries = Object.entries(
         jiNotationLevelsBestHistoryRanks[jiNotationLevel],
@@ -33,7 +35,7 @@ const computeJiNotationLevelAnalysisRows = (jiNotationLevel: JiNotationLevel): A
                 FORMATTED_RANKS[rank],
                 formattedBestHistoryRankCount,
                 formattedBestCumulativeHistoryRankCount,
-            ] as Row as Row<{of: JiNotationLevel}>
+            ] as Row as Row<{of: JiNotationLevelId}>
 
             rows.push(jiNotationLevelRankRow)
         })

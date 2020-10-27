@@ -1,6 +1,6 @@
 import {CommaMean, HALF_SCALER, Monzo, Name, Scamon} from "../../../../../../src/general"
 import {APOTOME, BoundClassId, BoundType, CommaClassId, InaMidpoint} from "../../../../../../src/sagittal"
-import {JiNotationBoundClass, JiNotationLevel} from "../../../../../../src/sagittal/notations/ji"
+import {JiNotationBoundClass, JiNotationLevelId} from "../../../../../../src/sagittal/notations/ji"
 import {INSANE_EDA} from "../../../../../../src/sagittal/notations/ji/levelEdas"
 import {computeJiNotationLevelBoundedCommaClassIds} from "../../../../../../src/scripts/jiNotationBoundClass/io/terminal/levelBoundedCommaClasses"
 import {BoundedCommaClassIdPairs} from "../../../../../../src/scripts/jiNotationBoundClass/io/terminal/types"
@@ -12,7 +12,7 @@ describe("computeJiNotationLevelBoundedCommaClassIds", (): void => {
                 monzo: APOTOME.monzo,
                 scaler: [175.5, INSANE_EDA],
             } as Scamon<{rational: false}>,
-            jiNotationLevels: [JiNotationLevel.MEDIUM, JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
+            jiNotationLevels: [JiNotationLevelId.MEDIUM, JiNotationLevelId.EXTREME, JiNotationLevelId.INSANE],
             name: "175.5°809" as Name<InaMidpoint>,
             boundType: BoundType.INA_MIDPOINT,
         }
@@ -22,9 +22,9 @@ describe("computeJiNotationLevelBoundedCommaClassIds", (): void => {
 
         const expected: BoundedCommaClassIdPairs = {
             boundClassId,
-            [JiNotationLevel.MEDIUM]: [CommaClassId._1_5_C, CommaClassId._1_7_C],
-            [JiNotationLevel.EXTREME]: [CommaClassId._125_13_C, CommaClassId._19_5_C],
-            [JiNotationLevel.INSANE]: [CommaClassId._125_13_C, CommaClassId._19_5_C],
+            [JiNotationLevelId.MEDIUM]: [CommaClassId._1_5_C, CommaClassId._1_7_C],
+            [JiNotationLevelId.EXTREME]: [CommaClassId._125_13_C, CommaClassId._19_5_C],
+            [JiNotationLevelId.INSANE]: [CommaClassId._125_13_C, CommaClassId._19_5_C],
         }
         expect(actual).toBeCloseToObject(expected)
     })
@@ -35,7 +35,7 @@ describe("computeJiNotationLevelBoundedCommaClassIds", (): void => {
                 monzo: APOTOME.monzo as Monzo<{rational: true}>,
                 scaler: [404.5, INSANE_EDA],
             } as Scamon<{rational: false}>,
-            jiNotationLevels: [JiNotationLevel.MEDIUM, JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
+            jiNotationLevels: [JiNotationLevelId.MEDIUM, JiNotationLevelId.EXTREME, JiNotationLevelId.INSANE],
             name: "404.5°809" as Name<InaMidpoint>,
             boundType: BoundType.INA_MIDPOINT,
         }
@@ -45,9 +45,9 @@ describe("computeJiNotationLevelBoundedCommaClassIds", (): void => {
 
         const expected: BoundedCommaClassIdPairs = {
             boundClassId: BoundClassId.MINA_116,
-            [JiNotationLevel.MEDIUM]: [CommaClassId._11_M, undefined],
-            [JiNotationLevel.EXTREME]: [CommaClassId._5_49_M, undefined],
-            [JiNotationLevel.INSANE]: [CommaClassId._5_49_M, undefined],
+            [JiNotationLevelId.MEDIUM]: [CommaClassId._11_M, undefined],
+            [JiNotationLevelId.EXTREME]: [CommaClassId._5_49_M, undefined],
+            [JiNotationLevelId.INSANE]: [CommaClassId._5_49_M, undefined],
         }
         expect(actual).toBeCloseToObject(expected)
     })
@@ -58,7 +58,7 @@ describe("computeJiNotationLevelBoundedCommaClassIds", (): void => {
                 monzo: APOTOME.monzo,
                 scaler: [1.5, INSANE_EDA],
             } as Scamon<{rational: false}>,
-            jiNotationLevels: [JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
+            jiNotationLevels: [JiNotationLevelId.EXTREME, JiNotationLevelId.INSANE],
             name: "1.5°809" as Name<InaMidpoint>,
             boundType: BoundType.INA_MIDPOINT,
         }
@@ -68,8 +68,8 @@ describe("computeJiNotationLevelBoundedCommaClassIds", (): void => {
 
         const expected: BoundedCommaClassIdPairs = {
             boundClassId: BoundClassId.MINA_0,
-            [JiNotationLevel.EXTREME]: [CommaClassId._1_u, CommaClassId._1_455_n],
-            [JiNotationLevel.INSANE]: [CommaClassId._1_u, CommaClassId._1_455_n],
+            [JiNotationLevelId.EXTREME]: [CommaClassId._1_u, CommaClassId._1_455_n],
+            [JiNotationLevelId.INSANE]: [CommaClassId._1_u, CommaClassId._1_455_n],
         }
         expect(actual).toBeCloseToObject(expected)
     })
@@ -80,7 +80,7 @@ describe("computeJiNotationLevelBoundedCommaClassIds", (): void => {
                 monzo: [-4, -1, -1, 0, 0, 1, 0, 1] as Monzo<{rational: true}>,
                 scaler: HALF_SCALER,
             } as Scamon<{rational: false}>,
-            jiNotationLevels: [JiNotationLevel.ULTRA, JiNotationLevel.EXTREME, JiNotationLevel.INSANE],
+            jiNotationLevels: [JiNotationLevelId.ULTRA, JiNotationLevelId.EXTREME, JiNotationLevelId.INSANE],
             name: ")/| ,.|)" as Name<CommaMean>,
             boundType: BoundType.COMMA_MEAN,
         }
@@ -90,9 +90,9 @@ describe("computeJiNotationLevelBoundedCommaClassIds", (): void => {
 
         const expected: BoundedCommaClassIdPairs = {
             boundClassId: BoundClassId.MINA_51,
-            [JiNotationLevel.ULTRA]: [CommaClassId._19_5_C, CommaClassId._1_35_C],
-            [JiNotationLevel.EXTREME]: [CommaClassId._19_5_C, CommaClassId._13_C],
-            [JiNotationLevel.INSANE]: [CommaClassId._19_5_C, CommaClassId._13_C],
+            [JiNotationLevelId.ULTRA]: [CommaClassId._19_5_C, CommaClassId._1_35_C],
+            [JiNotationLevelId.EXTREME]: [CommaClassId._19_5_C, CommaClassId._13_C],
+            [JiNotationLevelId.INSANE]: [CommaClassId._19_5_C, CommaClassId._13_C],
         }
         expect(actual).toBeCloseToObject(expected)
     })

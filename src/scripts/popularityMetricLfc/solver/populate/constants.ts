@@ -1,200 +1,202 @@
+// tslint:disable max-line-length
+
 import {Maybe, Window} from "../../../../general"
-import {ParameterValue} from "../../../types"
+import {Parameter} from "../../../types"
 import {computeDynamicParameterScope, ParameterScope, ParameterScopes} from "../../bestMetric"
-import {Parameter, Submetric} from "../../sumOfSquares"
+import {PopularityParameterId, Submetric} from "../../sumOfSquares"
 import {Chunk} from "../types"
 
 // AKA: when included in the solver's generated scopes, what should they be scoped to
 const NO_USELESS_INITIAL_PARAMETER_SCOPES: ParameterScopes = {
-    [Parameter.WEIGHT_AS_POWER_EXPONENT]: computeDynamicParameterScope({
-        center: 0.875 as ParameterValue,
-        window: 1.75 as Window<ParameterValue>,
+    [PopularityParameterId.WEIGHT_AS_POWER_EXPONENT]: computeDynamicParameterScope({
+        center: 0.875 as Parameter,
+        window: 1.75 as Window<Parameter>,
     }),
-    [Parameter.K_AS_COEFFICIENT]: computeDynamicParameterScope({
-        center: 0.5 as ParameterValue,
-        window: 1 as Window<ParameterValue>,
+    [PopularityParameterId.K_AS_COEFFICIENT]: computeDynamicParameterScope({
+        center: 0.5 as Parameter,
+        window: 1 as Window<Parameter>,
     }),
-    [Parameter.K_AS_POWER_EXPONENT]: computeDynamicParameterScope({
-        center: 1.375 as ParameterValue,
-        window: 2.25 as Window<ParameterValue>,
+    [PopularityParameterId.K_AS_POWER_EXPONENT]: computeDynamicParameterScope({
+        center: 1.375 as Parameter,
+        window: 2.25 as Window<Parameter>,
     }),
-    [Parameter.J_AS_POWER_EXPONENT]: computeDynamicParameterScope({
-        center: 1.125 as ParameterValue,
-        window: 1.25 as Window<ParameterValue>,
+    [PopularityParameterId.J_AS_POWER_EXPONENT]: computeDynamicParameterScope({
+        center: 1.125 as Parameter,
+        window: 1.25 as Window<Parameter>,
     }),
     // Per forum discussion, lock it down http://forum.sagittal.org/viewtopic.php?p=2113#p2113
-    [Parameter.A_AS_LOGARITHM_BASE]: 2 as ParameterValue,
-    [Parameter.A_AS_POWER_EXPONENT]: computeDynamicParameterScope({
-        center: 1.25 as ParameterValue,
-        window: 2.5 as Window<ParameterValue>,
+    [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2 as Parameter,
+    [PopularityParameterId.A_AS_POWER_EXPONENT]: computeDynamicParameterScope({
+        center: 1.25 as Parameter,
+        window: 2.5 as Window<Parameter>,
     }),
-    [Parameter.W]: computeDynamicParameterScope({
-        center: -0.25 as ParameterValue,
-        window: 5.5 as Window<ParameterValue>,
+    [PopularityParameterId.W]: computeDynamicParameterScope({
+        center: -0.25 as Parameter,
+        window: 5.5 as Window<Parameter>,
     }),
-    [Parameter.B]: computeDynamicParameterScope({
-        center: -2.625 as ParameterValue,
-        window: 2.75 as Window<ParameterValue>,
+    [PopularityParameterId.B]: computeDynamicParameterScope({
+        center: -2.625 as Parameter,
+        window: 2.75 as Window<Parameter>,
     }),
-    [Parameter.X]: computeDynamicParameterScope({
-        center: -0.375 as ParameterValue,
-        window: 5.25 as Window<ParameterValue>,
+    [PopularityParameterId.X]: computeDynamicParameterScope({
+        center: -0.375 as Parameter,
+        window: 5.25 as Window<Parameter>,
     }),
-    [Parameter.U]: computeDynamicParameterScope({
-        center: -1.375 as ParameterValue,
-        window: 5.25 as Window<ParameterValue>,
+    [PopularityParameterId.U]: computeDynamicParameterScope({
+        center: -1.375 as Parameter,
+        window: 5.25 as Window<Parameter>,
     }),
-    [Parameter.Y]: computeDynamicParameterScope({
-        center: 0.875 as ParameterValue,
-        window: 0.75 as Window<ParameterValue>,
+    [PopularityParameterId.Y]: computeDynamicParameterScope({
+        center: 0.875 as Parameter,
+        window: 0.75 as Window<Parameter>,
     }),
-    [Parameter.V]: computeDynamicParameterScope({
-        center: 0.875 as ParameterValue,
-        window: 0.75 as Window<ParameterValue>,
+    [PopularityParameterId.V]: computeDynamicParameterScope({
+        center: 0.875 as Parameter,
+        window: 0.75 as Window<Parameter>,
     }),
-    [Parameter.SUM]: true,
-    [Parameter.COUNT]: true,
-    [Parameter.MAX]: true,
-    [Parameter.WITHOUT_REPETITION]: true,
+    [PopularityParameterId.SUM]: true,
+    [PopularityParameterId.COUNT]: true,
+    [PopularityParameterId.MAX]: true,
+    [PopularityParameterId.WITHOUT_REPETITION]: true,
 }
 
 const INITIAL_PARAMETER_SCOPES: ParameterScopes = {
-    [Parameter.WEIGHT_AS_COEFFICIENT]: computeDynamicParameterScope({
-        center: 0.5 as ParameterValue,
-        window: 1 as Window<ParameterValue>,
+    [PopularityParameterId.WEIGHT_AS_COEFFICIENT]: computeDynamicParameterScope({
+        center: 0.5 as Parameter,
+        window: 1 as Window<Parameter>,
     }),
-    [Parameter.WEIGHT_AS_LOGARITHM_BASE]: 2 as ParameterValue,
-    [Parameter.WEIGHT_AS_POWER_EXPONENT]: computeDynamicParameterScope({
-        center: 0 as ParameterValue,
-        window: 6 as Window<ParameterValue>,
+    [PopularityParameterId.WEIGHT_AS_LOGARITHM_BASE]: 2 as Parameter,
+    [PopularityParameterId.WEIGHT_AS_POWER_EXPONENT]: computeDynamicParameterScope({
+        center: 0 as Parameter,
+        window: 6 as Window<Parameter>,
     }),
-    [Parameter.WEIGHT_AS_POWER_BASE]: 2 as ParameterValue,
-    [Parameter.K_AS_COEFFICIENT]: computeDynamicParameterScope({
-        center: 0.5 as ParameterValue,
-        window: 1 as Window<ParameterValue>,
+    [PopularityParameterId.WEIGHT_AS_POWER_BASE]: 2 as Parameter,
+    [PopularityParameterId.K_AS_COEFFICIENT]: computeDynamicParameterScope({
+        center: 0.5 as Parameter,
+        window: 1 as Window<Parameter>,
     }),
-    [Parameter.K_AS_LOGARITHM_BASE]: 2 as ParameterValue,
-    [Parameter.K_AS_POWER_EXPONENT]: computeDynamicParameterScope({
-        center: 0 as ParameterValue,
-        window: 6 as Window<ParameterValue>,
+    [PopularityParameterId.K_AS_LOGARITHM_BASE]: 2 as Parameter,
+    [PopularityParameterId.K_AS_POWER_EXPONENT]: computeDynamicParameterScope({
+        center: 0 as Parameter,
+        window: 6 as Window<Parameter>,
     }),
-    [Parameter.K_AS_POWER_BASE]: 2 as ParameterValue,
-    [Parameter.J_AS_COEFFICIENT]: computeDynamicParameterScope({
-        center: 0.5 as ParameterValue,
-        window: 1 as Window<ParameterValue>,
+    [PopularityParameterId.K_AS_POWER_BASE]: 2 as Parameter,
+    [PopularityParameterId.J_AS_COEFFICIENT]: computeDynamicParameterScope({
+        center: 0.5 as Parameter,
+        window: 1 as Window<Parameter>,
     }),
-    [Parameter.J_AS_LOGARITHM_BASE]: 2 as ParameterValue,
-    [Parameter.J_AS_POWER_EXPONENT]: computeDynamicParameterScope({
-        center: 0 as ParameterValue,
-        window: 6 as Window<ParameterValue>,
+    [PopularityParameterId.J_AS_LOGARITHM_BASE]: 2 as Parameter,
+    [PopularityParameterId.J_AS_POWER_EXPONENT]: computeDynamicParameterScope({
+        center: 0 as Parameter,
+        window: 6 as Window<Parameter>,
     }),
-    [Parameter.J_AS_POWER_BASE]: 2 as ParameterValue,
-    [Parameter.A_AS_COEFFICIENT]: computeDynamicParameterScope({
-        center: 0.5 as ParameterValue,
-        window: 1 as Window<ParameterValue>,
+    [PopularityParameterId.J_AS_POWER_BASE]: 2 as Parameter,
+    [PopularityParameterId.A_AS_COEFFICIENT]: computeDynamicParameterScope({
+        center: 0.5 as Parameter,
+        window: 1 as Window<Parameter>,
     }),
-    [Parameter.A_AS_LOGARITHM_BASE]: 2 as ParameterValue,
-    [Parameter.A_AS_POWER_EXPONENT]: computeDynamicParameterScope({
-        center: 0 as ParameterValue,
-        window: 6 as Window<ParameterValue>,
+    [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2 as Parameter,
+    [PopularityParameterId.A_AS_POWER_EXPONENT]: computeDynamicParameterScope({
+        center: 0 as Parameter,
+        window: 6 as Window<Parameter>,
     }),
-    [Parameter.A_AS_POWER_BASE]: 2 as ParameterValue,
-    [Parameter.W]: computeDynamicParameterScope({
-        center: 0 as ParameterValue,
-        window: 6 as Window<ParameterValue>,
+    [PopularityParameterId.A_AS_POWER_BASE]: 2 as Parameter,
+    [PopularityParameterId.W]: computeDynamicParameterScope({
+        center: 0 as Parameter,
+        window: 6 as Window<Parameter>,
     }),
-    [Parameter.B]: computeDynamicParameterScope({
-        center: 0 as ParameterValue,
-        window: 6 as Window<ParameterValue>,
+    [PopularityParameterId.B]: computeDynamicParameterScope({
+        center: 0 as Parameter,
+        window: 6 as Window<Parameter>,
     }),
-    [Parameter.X]: computeDynamicParameterScope({
-        center: 0 as ParameterValue,
-        window: 6 as Window<ParameterValue>,
+    [PopularityParameterId.X]: computeDynamicParameterScope({
+        center: 0 as Parameter,
+        window: 6 as Window<Parameter>,
     }),
-    [Parameter.U]: computeDynamicParameterScope({
-        center: 0 as ParameterValue,
-        window: 6 as Window<ParameterValue>,
+    [PopularityParameterId.U]: computeDynamicParameterScope({
+        center: 0 as Parameter,
+        window: 6 as Window<Parameter>,
     }),
-    [Parameter.Y]: computeDynamicParameterScope({
-        center: 0 as ParameterValue,
-        window: 6 as Window<ParameterValue>,
+    [PopularityParameterId.Y]: computeDynamicParameterScope({
+        center: 0 as Parameter,
+        window: 6 as Window<Parameter>,
     }),
-    [Parameter.V]: computeDynamicParameterScope({
-        center: 0 as ParameterValue,
-        window: 6 as Window<ParameterValue>,
+    [PopularityParameterId.V]: computeDynamicParameterScope({
+        center: 0 as Parameter,
+        window: 6 as Window<Parameter>,
     }),
-    [Parameter.USE_NUMINATOR]: true,
-    [Parameter.MODIFIED_COUNT]: true,
-    [Parameter.USE_PRIME_INDEX]: true,
-    [Parameter.SUM]: true,
-    [Parameter.COUNT]: true,
-    [Parameter.MAX]: true,
-    [Parameter.WITHOUT_REPETITION]: true,
+    [PopularityParameterId.USE_NUMINATOR]: true,
+    [PopularityParameterId.MODIFIED_COUNT]: true,
+    [PopularityParameterId.USE_PRIME_INDEX]: true,
+    [PopularityParameterId.SUM]: true,
+    [PopularityParameterId.COUNT]: true,
+    [PopularityParameterId.MAX]: true,
+    [PopularityParameterId.WITHOUT_REPETITION]: true,
 }
 
 const NO_USELESS_SUBMETRIC_CHUNKS: Array<Chunk<Submetric>> = [
     { // SOAPFAR
-        [Parameter.SUM]: NO_USELESS_INITIAL_PARAMETER_SCOPES[Parameter.SUM],
+        [PopularityParameterId.SUM]: NO_USELESS_INITIAL_PARAMETER_SCOPES[PopularityParameterId.SUM],
     },
     { // SOAPF
-        [Parameter.SUM]: NO_USELESS_INITIAL_PARAMETER_SCOPES[Parameter.SUM],
-        [Parameter.WITHOUT_REPETITION]: NO_USELESS_INITIAL_PARAMETER_SCOPES[Parameter.WITHOUT_REPETITION],
+        [PopularityParameterId.SUM]: NO_USELESS_INITIAL_PARAMETER_SCOPES[PopularityParameterId.SUM],
+        [PopularityParameterId.WITHOUT_REPETITION]: NO_USELESS_INITIAL_PARAMETER_SCOPES[PopularityParameterId.WITHOUT_REPETITION],
     },
     { // GPF
-        [Parameter.WITHOUT_REPETITION]: NO_USELESS_INITIAL_PARAMETER_SCOPES[Parameter.WITHOUT_REPETITION],
-        [Parameter.MAX]: NO_USELESS_INITIAL_PARAMETER_SCOPES[Parameter.MAX],
+        [PopularityParameterId.WITHOUT_REPETITION]: NO_USELESS_INITIAL_PARAMETER_SCOPES[PopularityParameterId.WITHOUT_REPETITION],
+        [PopularityParameterId.MAX]: NO_USELESS_INITIAL_PARAMETER_SCOPES[PopularityParameterId.MAX],
     },
     { // LOG BASE A OF N http://forum.sagittal.org/viewtopic.php?p=2076#p2076
-        [Parameter.SUM]: NO_USELESS_INITIAL_PARAMETER_SCOPES[Parameter.SUM],
-        [Parameter.A_AS_LOGARITHM_BASE]: NO_USELESS_INITIAL_PARAMETER_SCOPES[Parameter.A_AS_LOGARITHM_BASE],
+        [PopularityParameterId.SUM]: NO_USELESS_INITIAL_PARAMETER_SCOPES[PopularityParameterId.SUM],
+        [PopularityParameterId.A_AS_LOGARITHM_BASE]: NO_USELESS_INITIAL_PARAMETER_SCOPES[PopularityParameterId.A_AS_LOGARITHM_BASE],
     },
 ] as Array<Chunk<Submetric>>
 
 const SUBMETRIC_CHUNKS: Array<Chunk<Submetric>> = [
     { // SOAPFAR
-        [Parameter.SUM]: INITIAL_PARAMETER_SCOPES[Parameter.SUM],
+        [PopularityParameterId.SUM]: INITIAL_PARAMETER_SCOPES[PopularityParameterId.SUM],
     },
     { // SOAPF
-        [Parameter.SUM]: INITIAL_PARAMETER_SCOPES[Parameter.SUM],
-        [Parameter.WITHOUT_REPETITION]: INITIAL_PARAMETER_SCOPES[Parameter.WITHOUT_REPETITION],
+        [PopularityParameterId.SUM]: INITIAL_PARAMETER_SCOPES[PopularityParameterId.SUM],
+        [PopularityParameterId.WITHOUT_REPETITION]: INITIAL_PARAMETER_SCOPES[PopularityParameterId.WITHOUT_REPETITION],
     },
     { // COAPFAR
-        [Parameter.COUNT]: INITIAL_PARAMETER_SCOPES[Parameter.COUNT],
+        [PopularityParameterId.COUNT]: INITIAL_PARAMETER_SCOPES[PopularityParameterId.COUNT],
     },
     { // COAPF
-        [Parameter.WITHOUT_REPETITION]: INITIAL_PARAMETER_SCOPES[Parameter.WITHOUT_REPETITION],
-        [Parameter.COUNT]: INITIAL_PARAMETER_SCOPES[Parameter.COUNT],
+        [PopularityParameterId.WITHOUT_REPETITION]: INITIAL_PARAMETER_SCOPES[PopularityParameterId.WITHOUT_REPETITION],
+        [PopularityParameterId.COUNT]: INITIAL_PARAMETER_SCOPES[PopularityParameterId.COUNT],
     },
     { // GPF
-        [Parameter.WITHOUT_REPETITION]: INITIAL_PARAMETER_SCOPES[Parameter.WITHOUT_REPETITION],
-        [Parameter.MAX]: INITIAL_PARAMETER_SCOPES[Parameter.MAX],
+        [PopularityParameterId.WITHOUT_REPETITION]: INITIAL_PARAMETER_SCOPES[PopularityParameterId.WITHOUT_REPETITION],
+        [PopularityParameterId.MAX]: INITIAL_PARAMETER_SCOPES[PopularityParameterId.MAX],
     },
     { // LOG BASE A OF N http://forum.sagittal.org/viewtopic.php?p=2076#p2076
-        [Parameter.SUM]: INITIAL_PARAMETER_SCOPES[Parameter.SUM],
-        [Parameter.A_AS_LOGARITHM_BASE]: INITIAL_PARAMETER_SCOPES[Parameter.A_AS_LOGARITHM_BASE],
+        [PopularityParameterId.SUM]: INITIAL_PARAMETER_SCOPES[PopularityParameterId.SUM],
+        [PopularityParameterId.A_AS_LOGARITHM_BASE]: INITIAL_PARAMETER_SCOPES[PopularityParameterId.A_AS_LOGARITHM_BASE],
     },
 ] as Array<Chunk<Submetric>>
 
-const SUBMETRIC_PARAMETERS = [Parameter.SUM, Parameter.COUNT, Parameter.MAX, Parameter.WITHOUT_REPETITION]
+const SUBMETRIC_PARAMETERS = [PopularityParameterId.SUM, PopularityParameterId.COUNT, PopularityParameterId.MAX, PopularityParameterId.WITHOUT_REPETITION]
 
-const NO_USELESS_PARAMETER_CHUNKS: Array<Chunk<Parameter>> = Object.entries(NO_USELESS_INITIAL_PARAMETER_SCOPES)
+const NO_USELESS_PARAMETER_CHUNKS: Array<Chunk<PopularityParameterId>> = Object.entries(NO_USELESS_INITIAL_PARAMETER_SCOPES)
     .filter(([parameter]: [string, Maybe<ParameterScope>]): boolean => {
-        return !SUBMETRIC_PARAMETERS.includes(parameter as Parameter)
+        return !SUBMETRIC_PARAMETERS.includes(parameter as PopularityParameterId)
     })
-    .map(([parameter, initialParameterScope]: [string, Maybe<ParameterScope>]): Chunk<Parameter> => {
+    .map(([parameter, initialParameterScope]: [string, Maybe<ParameterScope>]): Chunk<PopularityParameterId> => {
         return {
             [parameter]: initialParameterScope,
-        } as Chunk<Parameter>
+        } as Chunk<PopularityParameterId>
     })
 
-const PARAMETER_CHUNKS: Array<Chunk<Parameter>> = Object.entries(INITIAL_PARAMETER_SCOPES)
+const PARAMETER_CHUNKS: Array<Chunk<PopularityParameterId>> = Object.entries(INITIAL_PARAMETER_SCOPES)
     .filter(([parameter]: [string, Maybe<ParameterScope>]): boolean => {
-        return !SUBMETRIC_PARAMETERS.includes(parameter as Parameter)
+        return !SUBMETRIC_PARAMETERS.includes(parameter as PopularityParameterId)
     })
-    .map(([parameter, initialParameterScope]: [string, Maybe<ParameterScope>]): Chunk<Parameter> => {
+    .map(([parameter, initialParameterScope]: [string, Maybe<ParameterScope>]): Chunk<PopularityParameterId> => {
         return {
             [parameter]: initialParameterScope,
-        } as Chunk<Parameter>
+        } as Chunk<PopularityParameterId>
     })
 
 const ALL_BINS_SUBMETRIC_SCOPE: Chunk<Submetric> = {} as Chunk<Submetric>

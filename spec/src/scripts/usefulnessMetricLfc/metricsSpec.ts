@@ -1,7 +1,7 @@
 import {Abs, Decimal, Exponent, Prime} from "../../../../src/general/math"
 import {ApotomeSlope} from "../../../../src/sagittal/ji/pitch"
 import {N2D3P9} from "../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
-import {ParameterValue} from "../../../../src/scripts/types"
+import {Parameter} from "../../../../src/scripts/types"
 import {USEFULNESS_METRICS_WITH_PARAMETERS} from "../../../../src/scripts/usefulnessMetricLfc/metrics"
 import {UsefulnessMetricId} from "../../../../src/scripts/usefulnessMetricLfc/types"
 
@@ -9,13 +9,13 @@ describe("usefulnessMetric", (): void => {
     const n2d3p9 = 10 as N2D3P9
     const aas = 5 as Abs<ApotomeSlope>
     const ate = 3.3 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>
-    const a = 0.6 as ParameterValue
-    const b = 1.5 as ParameterValue
-    const c = 1.4 as ParameterValue
-    const sE = 0.1 as ParameterValue
-    const sP = 0.1 as ParameterValue
-    const tE = 0.05 as ParameterValue
-    const tP = 0.05 as ParameterValue
+    const a = 0.6 as Parameter
+    const b = 1.5 as Parameter
+    const c = 1.4 as Parameter
+    const sE = 0.1 as Parameter
+    const sP = 0.1 as Parameter
+    const tE = 0.05 as Parameter
+    const tP = 0.05 as Parameter
 
     it("lee", (): void => {
         const usefulnessMetric = USEFULNESS_METRICS_WITH_PARAMETERS[UsefulnessMetricId.LEE][0]

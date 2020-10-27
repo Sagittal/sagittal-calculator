@@ -1,15 +1,15 @@
 import {JI_NOTATION_BOUND_CLASSES} from "./boundClasses"
 import {JI_NOTATION_LEVELS} from "./levels"
-import {JiNotationBoundClass, JiNotationLevel} from "./types"
+import {JiNotationBoundClass, JiNotationLevelId} from "./types"
 
 // TODO: JI NOTATION, AFTER NOTATION GENERATION
 //  Here's an example of a thing I want to become outmoded after notation generation
 
-const JI_NOTATION_LEVELS_BOUND_CLASSES: Record<JiNotationLevel, JiNotationBoundClass[]> = JI_NOTATION_LEVELS.reduce(
+const JI_NOTATION_LEVELS_BOUND_CLASSES: Record<JiNotationLevelId, JiNotationBoundClass[]> = JI_NOTATION_LEVELS.reduce(
     (
-        jiNotationLevelBoundClasses: Record<JiNotationLevel, JiNotationBoundClass[]>,
-        jiNotationLevel: JiNotationLevel,
-    ): Record<JiNotationLevel, JiNotationBoundClass[]> =>
+        jiNotationLevelBoundClasses: Record<JiNotationLevelId, JiNotationBoundClass[]>,
+        jiNotationLevel: JiNotationLevelId,
+    ): Record<JiNotationLevelId, JiNotationBoundClass[]> =>
         ({
             ...jiNotationLevelBoundClasses,
             [jiNotationLevel]: Object.values(JI_NOTATION_BOUND_CLASSES).filter(
@@ -18,7 +18,7 @@ const JI_NOTATION_LEVELS_BOUND_CLASSES: Record<JiNotationLevel, JiNotationBoundC
                 },
             ),
         }),
-    {} as Record<JiNotationLevel, JiNotationBoundClass[]>,
+    {} as Record<JiNotationLevelId, JiNotationBoundClass[]>,
 )
 
 export {

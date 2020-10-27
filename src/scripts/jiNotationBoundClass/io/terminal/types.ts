@@ -5,9 +5,9 @@ import {
     CommaAnalysis,
     CommaClassId,
     Ina,
-    JiNotationLevel,
+    JiNotationLevelId,
     Mina,
-    SymbolSubset,
+    SymbolSubsetId,
     Unicode,
 } from "../../../../sagittal"
 
@@ -17,7 +17,7 @@ type BoundedCommaClassIdPair = [Maybe<CommaClassId>, Maybe<CommaClassId>]
 
 type BoundedCommaClassIdPairs =
     {boundClassId: BoundClassId}
-    & Partial<Record<JiNotationLevel, BoundedCommaClassIdPair>>
+    & Partial<Record<JiNotationLevelId, BoundedCommaClassIdPair>>
 
 // Building up to JiNotationBoundClassIdentifiers
 
@@ -27,9 +27,9 @@ interface BoundedCommaClassInfo {
     representativeSagittal: {
         ascii: Ascii,
         unicode: Unicode,
-        smallestSymbolSubset: SymbolSubset,
+        smallestSymbolSubsetId: SymbolSubsetId,
     }
-    introducingJiNotationLevel: JiNotationLevel,
+    introducingJiNotationLevel: JiNotationLevelId,
     minaName: Name<Mina>,
     distance: Abs<Cents>,
     inaDistance: Multiplier<Ina>,
@@ -39,7 +39,7 @@ type BoundedCommaClassInfoPair = [Maybe<BoundedCommaClassInfo>, Maybe<BoundedCom
 
 type BoundedCommaClassInfoPairs =
     {boundClassId: BoundClassId}
-    & Partial<Record<JiNotationLevel, BoundedCommaClassInfoPair>>
+    & Partial<Record<JiNotationLevelId, BoundedCommaClassInfoPair>>
 
 interface JiNotationBoundClassIdentifiers {
     boundedCommaClassInfoPairs: BoundedCommaClassInfoPairs,

@@ -1,8 +1,8 @@
-import {SYMBOL_SUBSETS, SYMBOL_SUBSETS_SORTED_BY_SIZE} from "./symbolSubsets"
-import {SymbolClassId, SymbolSubset} from "./types"
+import {SIZE_SORTED_SYMBOL_SUBSET_IDS, SYMBOL_SUBSETS} from "./symbolSubsets"
+import {SymbolClassId, SymbolSubsetId} from "./types"
 
-const getSmallestSymbolSubset = (symbolClassId: SymbolClassId): SymbolSubset => {
-    for (const symbolSubset of SYMBOL_SUBSETS_SORTED_BY_SIZE) {
+const getSmallestSymbolSubsetId = (symbolClassId: SymbolClassId): SymbolSubsetId => {
+    for (const symbolSubset of SIZE_SORTED_SYMBOL_SUBSET_IDS) {
         if (SYMBOL_SUBSETS[symbolSubset].includes(symbolClassId)) {
             return symbolSubset
         }
@@ -12,5 +12,5 @@ const getSmallestSymbolSubset = (symbolClassId: SymbolClassId): SymbolSubset => 
 }
 
 export {
-    getSmallestSymbolSubset,
+    getSmallestSymbolSubsetId,
 }

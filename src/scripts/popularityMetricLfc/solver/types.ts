@@ -1,8 +1,9 @@
 import {Count, Mean} from "../../../general"
 import {Sample, Scope, SubmetricScope} from "../bestMetric"
-import {Parameter, Submetric} from "../sumOfSquares"
+import {PopularityParameterId, Submetric} from "../sumOfSquares"
 
-type Chunk<T extends Parameter | Submetric = Parameter | Submetric> = SubmetricScope & {_ChunkOfBrand: T}
+type Chunk<T extends PopularityParameterId | Submetric = PopularityParameterId | Submetric> =
+    SubmetricScope & {_ChunkOfBrand: T}
 
 interface SolverStatus {
     chunkCount: Count<Chunk>,

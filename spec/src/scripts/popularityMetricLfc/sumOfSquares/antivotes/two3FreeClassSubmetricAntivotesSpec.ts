@@ -3,11 +3,11 @@ import {Two3FreeClass} from "../../../../../../src/general/music"
 import {computeSubmetricAntivotes} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes/submetricAntivotes"
 import {compute23FreeClassSubmetricAntivotes} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes/two3FreeClassSubmetricAntivotes"
 import {Antivotes} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/types"
-import {ParameterValue} from "../../../../../../src/scripts/types"
+import {Parameter} from "../../../../../../src/scripts/types"
 
 describe("compute23FreeClassSubmetricAntivotes", (): void => {
     it("splits the 2,3-free class into numerator and denominator, computes their submetric antivotes separately, then adjusts the denominator by k", (): void => {
-        const kAsCoefficient = 0.46 as ParameterValue
+        const kAsCoefficient = 0.46 as Parameter
         const two3FreeClass = {monzo: [0, 0, 0, -1, 1]} as Two3FreeClass
         const submetric = {kAsCoefficient, sum: true}
 
@@ -21,7 +21,7 @@ describe("compute23FreeClassSubmetricAntivotes", (): void => {
     })
 
     it("another example", (): void => {
-        const kAsCoefficient = 0.46 as ParameterValue
+        const kAsCoefficient = 0.46 as Parameter
         const two3FreeClass = {monzo: [0, 0, 2, 0, -1]} as Two3FreeClass // {25/11}₂,₃
         const submetric = {kAsCoefficient, sum: true}
 
@@ -46,7 +46,7 @@ describe("compute23FreeClassSubmetricAntivotes", (): void => {
     })
 
     it("supports deciding the numinator and diminuator by which is the greater of the two", (): void => {
-        const kAsCoefficient = 0.46 as ParameterValue
+        const kAsCoefficient = 0.46 as Parameter
         const two3FreeClass = {monzo: [0, 0, 2, 0, -1]} as Two3FreeClass // {25/11}₂,₃
         const useNuminator = true
         const submetric = {kAsCoefficient, useNuminator, sum: true}
@@ -60,7 +60,7 @@ describe("compute23FreeClassSubmetricAntivotes", (): void => {
     })
 
     it("works when k = 0 (and j = 1) therefore it only looks at the numerator", (): void => {
-        const kAsCoefficient = 0 as ParameterValue
+        const kAsCoefficient = 0 as Parameter
         const two3FreeClass = {monzo: [0, 0, 1, -1]} as Two3FreeClass
         const submetric = {kAsCoefficient, sum: true}
 
@@ -72,7 +72,7 @@ describe("compute23FreeClassSubmetricAntivotes", (): void => {
     })
 
     it("works when j = 0 (and k = 1) therefore it only looks at the denominator", (): void => {
-        const jAsCoefficient = 0 as ParameterValue
+        const jAsCoefficient = 0 as Parameter
         const two3FreeClass = {monzo: [0, 0, 1, -1]} as Two3FreeClass
         const submetric = {jAsCoefficient, sum: true}
 
@@ -84,7 +84,7 @@ describe("compute23FreeClassSubmetricAntivotes", (): void => {
     })
 
     it("works when k is a logarithm base", (): void => {
-        const kAsLogarithmBase = 2 as ParameterValue
+        const kAsLogarithmBase = 2 as Parameter
         const two3FreeClass = {monzo: [0, 0, 1, -1]} as Two3FreeClass
         const submetric = {kAsLogarithmBase, sum: true}
 
@@ -100,7 +100,7 @@ describe("compute23FreeClassSubmetricAntivotes", (): void => {
     })
 
     it("works when k is a power exponent", (): void => {
-        const kAsPowerExponent = 2 as ParameterValue
+        const kAsPowerExponent = 2 as Parameter
         const two3FreeClass = {monzo: [0, 0, 1, -1]} as Two3FreeClass
         const submetric = {kAsPowerExponent, sum: true}
 
@@ -113,7 +113,7 @@ describe("compute23FreeClassSubmetricAntivotes", (): void => {
     })
 
     it("works when k is a power base", (): void => {
-        const kAsPowerBase = 2 as ParameterValue
+        const kAsPowerBase = 2 as Parameter
         const two3FreeClass = {monzo: [0, 0, 1, -1]} as Two3FreeClass
         const submetric = {kAsPowerBase, sum: true}
 
@@ -126,7 +126,7 @@ describe("compute23FreeClassSubmetricAntivotes", (): void => {
     })
 
     it("works when j is a logarithm base", (): void => {
-        const jAsLogarithmBase = 2 as ParameterValue
+        const jAsLogarithmBase = 2 as Parameter
         const two3FreeClass = {monzo: [0, 0, 1, -1]} as Two3FreeClass
         const submetric = {jAsLogarithmBase, sum: true}
 
@@ -144,7 +144,7 @@ describe("compute23FreeClassSubmetricAntivotes", (): void => {
     })
 
     it("works when j is a power exponent", (): void => {
-        const jAsPowerExponent = 2 as ParameterValue
+        const jAsPowerExponent = 2 as Parameter
         const two3FreeClass = {monzo: [0, 0, 1, -1]} as Two3FreeClass
         const submetric = {jAsPowerExponent, sum: true}
 
@@ -157,7 +157,7 @@ describe("compute23FreeClassSubmetricAntivotes", (): void => {
     })
 
     it("works when j is a power base", (): void => {
-        const jAsPowerBase = 2 as ParameterValue
+        const jAsPowerBase = 2 as Parameter
         const two3FreeClass = {monzo: [0, 0, 1, -1]} as Two3FreeClass
         const submetric = {jAsPowerBase, sum: true}
 

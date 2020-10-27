@@ -1,15 +1,15 @@
 import {isEmpty} from "../../../general"
-import {formatJiNotationLevel, JiNotationLevel} from "../../../sagittal"
+import {formatJiNotationLevel, JiNotationLevelId} from "../../../sagittal"
 import {BoundEventConsolidation, BoundHistoryConsolidation} from "./types"
 
 const ensureOneBestPossibleEventPerJiNotationLevel = (
     boundHistoryConsolidation: BoundHistoryConsolidation,
 ): void => {
     const boundHistoryConsolidationEntries =
-        Object.entries(boundHistoryConsolidation) as Array<[JiNotationLevel, BoundEventConsolidation[]]>
+        Object.entries(boundHistoryConsolidation) as Array<[JiNotationLevelId, BoundEventConsolidation[]]>
 
     boundHistoryConsolidationEntries.forEach(
-        ([jiNotationLevel, boundEventConsolidations]: [JiNotationLevel, BoundEventConsolidation[]]): void => {
+        ([jiNotationLevel, boundEventConsolidations]: [JiNotationLevelId, BoundEventConsolidation[]]): void => {
             const bestPossibleBoundHistoryBoundEvents =
                 boundEventConsolidations.filter(
                     (boundEventConsolidation: BoundEventConsolidation): boolean => {

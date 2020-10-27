@@ -19,7 +19,7 @@ import {
     Ina,
     JiNotationBound,
     JiNotationBoundClass,
-    JiNotationLevel,
+    JiNotationLevelId,
     Tina,
 } from "../../../../../src/sagittal/notations"
 import {JiNotationBoundClassAnalysis} from "../../../../../src/scripts/jiNotationBoundClass/boundClass"
@@ -31,7 +31,7 @@ import {RANKS} from "../../../../../src/scripts/jiNotationBoundClass/ranks"
 const boundEventFixture: BoundEvent = {
     pitch: {monzo: IRRATIONAL_SCAMON_BASE_MONZO, scaler: HALF_SCALER} as Scamon<{rational: false}>,
     boundType: "" as BoundType,
-    jiNotationLevel: "" as JiNotationLevel,
+    jiNotationLevel: "" as JiNotationLevelId,
     name: "" as Name<JiNotationBound>,
 }
 

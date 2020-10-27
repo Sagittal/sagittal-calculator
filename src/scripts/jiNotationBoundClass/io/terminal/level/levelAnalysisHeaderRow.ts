@@ -1,8 +1,8 @@
 import {Row} from "../../../../../general"
-import {formatJiNotationLevel, JiNotationLevel} from "../../../../../sagittal"
+import {formatJiNotationLevel, JiNotationLevelId} from "../../../../../sagittal"
 
-const computeJiNotationLevelAnalysisHeaderRow = (jiNotationLevel: JiNotationLevel): Row<{of: JiNotationLevel}> =>
-    [formatJiNotationLevel(jiNotationLevel), "here", "cumulative"] as Row<{of: JiNotationLevel}>
+const computeJiNotationLevelAnalysisHeaderRow = (jiNotationLevel: JiNotationLevelId): Row<{of: JiNotationLevelId}> =>
+    [formatJiNotationLevel(jiNotationLevel), "here", "cumulative"] as Row<{of: JiNotationLevelId}>
 
 export {
     computeJiNotationLevelAnalysisHeaderRow,

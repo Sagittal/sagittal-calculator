@@ -18,7 +18,7 @@ import {
     popularityMetricLfcScriptGroupSettings,
     solverStatus,
 } from "../../globals"
-import {Parameter, Submetric} from "../../sumOfSquares"
+import {PopularityParameterId, Submetric} from "../../sumOfSquares"
 import {formatSearchedAndPopulated} from "../io"
 import {Chunk} from "../types"
 import {
@@ -38,10 +38,10 @@ const computeChunkCombinations = (
     chunkCountForSubmetrics: Count<Chunk<Submetric>>,
 ): {
     submetricChunkCombinations: Combinations<Chunk<Submetric>>,
-    parameterChunkCombinations: Combinations<Chunk<Parameter>>
+    parameterChunkCombinations: Combinations<Chunk<PopularityParameterId>>
 } => {
-    const chunkCountForParameters: Count<Chunk<Parameter>> =
-        subtract(chunkCount, chunkCountForSubmetrics) as Count<Chunk<Parameter>>
+    const chunkCountForParameters: Count<Chunk<PopularityParameterId>> =
+        subtract(chunkCount, chunkCountForSubmetrics) as Count<Chunk<PopularityParameterId>>
 
     saveLog(
         `computing scopes: phase ${1 + chunkCount - chunkCountForSubmetrics}/${chunkCount}` as Io,
@@ -65,7 +65,7 @@ const computeChunkCombinations = (
         submetricChunkCombination.unshift(ALL_BINS_SUBMETRIC_SCOPE)
     })
 
-    let parameterChunkCombinations: Combinations<Chunk<Parameter>>
+    let parameterChunkCombinations: Combinations<Chunk<PopularityParameterId>>
     if (memoizedParameterChunkCombinations[chunkCountForParameters]) {
         parameterChunkCombinations = memoizedParameterChunkCombinations[chunkCountForParameters]
         saveLog(`used memoized parameter combinations (with repetitions)`, LogTarget.SETUP)
@@ -81,7 +81,7 @@ const computeChunkCombinations = (
 
     const exampleDistributions = computeDistributions(
         parameterChunkCombinations[0],
-        count(submetricChunkCombinations[0]) as Count as Count<DistributionBin<Chunk<Parameter>>>,
+        count(submetricChunkCombinations[0]) as Count as Count<DistributionBin<Chunk<PopularityParameterId>>>,
     )
     saveLog(`we find ${exampleDistributions.length} distributions of ${parameterChunkCombinations[0].length} parameter chunks across ${submetricChunkCombinations[0].length} bins (assignments to each of a combination of submetrics, plus an extra bin for parameters which will get applied to every submetric), which is how many more scopes should be contributed per each of the ${parameterChunkCombinations.length} parameter chunk combinations in this phase, and that times the ${submetricChunkCombinations.length} submetric chunk combinations in this phase, so expect ${exampleDistributions.length} * ${parameterChunkCombinations.length} * ${submetricChunkCombinations.length} = ${exampleDistributions.length * parameterChunkCombinations.length * submetricChunkCombinations.length} new scopes from this phase, so we should end with a total of ${(solverStatus.populatedScopeCount) + exampleDistributions.length * parameterChunkCombinations.length * submetricChunkCombinations.length}`, LogTarget.SETUP)
 
@@ -98,7 +98,7 @@ const populateScopesPhase = async (
     for (const [submetricChunkCombinationIndex, submetricChunkCombination] of submetricChunkCombinations.entries()) {
         await populateScopesForSubmetricChunkCombination(submetricChunkCombination, {
             parameterChunkCombinations,
-            parameterChunkCombinationIndex: 0 as Index<Combination<Chunk<Parameter>>>,
+            parameterChunkCombinationIndex: 0 as Index<Combination<Chunk<PopularityParameterId>>>,
             submetricChunkCombinationIndex: submetricChunkCombinationIndex as Index<Combination<Chunk<Submetric>>>,
             submetricChunkCombinationCount: count(submetricChunkCombinations),
         })
@@ -117,7 +117,7 @@ const populateScopesPhaseSync = (
     for (const [submetricChunkCombinationIndex, submetricChunkCombination] of submetricChunkCombinations.entries()) {
         populateScopesForSubmetricChunkCombinationSync(submetricChunkCombination, {
             parameterChunkCombinations,
-            parameterChunkCombinationIndex: 0 as Index<Combination<Chunk<Parameter>>>,
+            parameterChunkCombinationIndex: 0 as Index<Combination<Chunk<PopularityParameterId>>>,
             submetricChunkCombinationIndex: submetricChunkCombinationIndex as Index<Combination<Chunk<Submetric>>>,
             submetricChunkCombinationCount: count(submetricChunkCombinations),
         })

@@ -1,11 +1,11 @@
 import {isScamonGreater, isScamonLesser, Name} from "../../../general"
-import {BoundType, JiNotationBound, JiNotationLevel} from "../../../sagittal"
+import {BoundType, JiNotationBound, JiNotationLevelId} from "../../../sagittal"
 import {BoundedCommaClassPositions} from "../boundedPositions"
 import {JI_NOTATION_BOUNDS_BY_TYPE} from "./bounds"
 import {BoundEvent} from "./types"
 
 const computeBoundEvents = (
-    jiNotationLevel: JiNotationLevel,
+    jiNotationLevel: JiNotationLevelId,
     [lesserBoundedCommaClassPosition, greaterBoundedCommaClassPosition]: BoundedCommaClassPositions,
     boundType: BoundType,
 ): BoundEvent[] => {

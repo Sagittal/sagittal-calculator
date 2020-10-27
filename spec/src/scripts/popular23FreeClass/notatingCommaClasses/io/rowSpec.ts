@@ -4,7 +4,7 @@ import {Row} from "../../../../../../src/general/io/table"
 import {Direction} from "../../../../../../src/general/math/numeric"
 import {Popularity, Votes} from "../../../../../../src/general/music/ji"
 import {N2D3P9} from "../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
-import {CommaClassId, SymbolSubset} from "../../../../../../src/sagittal/notation"
+import {CommaClassId, SymbolSubsetId} from "../../../../../../src/sagittal/notation"
 import {
     computePopular23FreeClassWithNotatingCommaClassesRow,
     NotatingCommaClassesProperties,
@@ -18,7 +18,7 @@ describe("computePopular23FreeClassWithNotatingCommaClassesRow", (): void => {
         ...two3FreeClassAnalysisFixture,
         name: "{7/5}₂,₃" as Name<Two3FreeClass>,
         rank: 4 as Rank<Popular23FreeClass & NotatingCommaClassesProperties>,
-        notatingCommaClassSmallestSymbolSubsetIndices: [1, 3] as Array<Index<SymbolSubset>>,
+        notatingCommaClassSmallestSymbolSubsetIndices: [1, 3] as Array<Index<SymbolSubsetId>>,
         notatingCommaClassIds: [CommaClassId._7_11_k, CommaClassId._1_25_C],
         n2d3p9: 2 as N2D3P9,
         votes: 7 as Votes,
