@@ -1,5 +1,5 @@
 import {finalElement, Index, KeyPath, sort} from "../../../general"
-import {CommaClassId} from "../../ji"
+import {CommaClassId} from "../../notation"
 import {JiNotationLevel} from "./types"
 
 // TODO: JI NOTATION, AFTER NOTATION GENERATION

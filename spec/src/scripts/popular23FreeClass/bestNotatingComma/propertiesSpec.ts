@@ -1,6 +1,6 @@
 import {Monzo} from "../../../../../src/general"
 import {Cents, Two3FreeClass} from "../../../../../src/general/music"
-import {CommaClassId} from "../../../../../src/sagittal/ji"
+import {CommaClassId} from "../../../../../src/sagittal/notation"
 import {
     BestNotatingCommaProperties,
     computeBestNotatingCommaProperties,

@@ -1,7 +1,6 @@
-import {CaptureZone} from "../../notations"
+import {CaptureZone, getSymbolClass} from "../../notation"
 import {getFlacco} from "../flacco"
-import {apotomeShift, computeApotomeComplement, computeSagittalFromFlacco, flipSagittal} from "../symbol"
-import {getSymbolClass} from "../symbolClass"
+import {apotomeShift, computeApotomeComplement, computeSagittalFromFlacco, flipSagittal} from "../sagittal"
 import {Accidental, Flavor} from "./types"
 
 const computeRevoAccidentalFromCaptureZone = (captureZone: CaptureZone): Accidental<Flavor.REVO> => {

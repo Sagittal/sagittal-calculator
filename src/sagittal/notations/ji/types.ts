@@ -1,6 +1,6 @@
 import {Cents, CommaMean, Name, NumericProperties, Scamon} from "../../../general"
-import {BoundClass, BoundClassId} from "../../bound"
 import {SizeCategoryBound} from "../../ji"
+import {BoundClass, BoundClassId} from "../../notation"
 
 enum BoundType {
     INA_MIDPOINT = "inaMidpoint",

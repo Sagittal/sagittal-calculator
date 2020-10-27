@@ -1,5 +1,5 @@
 import {areRationalScamonsEqual, Maybe, Scamon} from "../../../general"
-import {CommaClassId, getCommaClass} from "../../ji"
+import {CommaClassId, getCommaClass} from "../../notation"
 import {JI_NOTATION} from "./levelCommaClassIds"
 
 const computeMaybeCommaClassId = (jiPitch: Scamon<{rational: true}>): Maybe<CommaClassId> =>

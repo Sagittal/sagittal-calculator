@@ -3,17 +3,17 @@ import {DynamicParameterScope, ParameterValue} from "../types"
 import {computePossibilities} from "./possibilities"
 import {UsefulnessParameterId, UsefulnessParameterSet} from "./types"
 
-// const SE_OR_TE_WHEN_DAAS_OR_DATE_IS_9 = 0.00195 as ParameterValue
+// Const SE_OR_TE_WHEN_DAAS_OR_DATE_IS_9 = 0.00195 as ParameterValue
 //
-// const EXPERIMENTAL_USEFULNESS_PARAMTER_SCOPES = [
+// Const EXPERIMENTAL_USEFULNESS_PARAMTER_SCOPES = [
 //     {
-//         a: 0.5 as ParameterValue,
-//         b: 2 as ParameterValue,
-//         c: 2 as ParameterValue,
-//         sE: 0.001883679 as ParameterValue, // SE_OR_TE_WHEN_DAAS_OR_DATE_IS_9,
-//         tE: 0.001088841 as ParameterValue, // SE_OR_TE_WHEN_DAAS_OR_DATE_IS_9,
-//         sP: 0.5 as ParameterValue,
-//         tP: 0.5 as ParameterValue,
+//         A: 0.5 as ParameterValue,
+//         B: 2 as ParameterValue,
+//         C: 2 as ParameterValue,
+//         SE: 0.001883679 as ParameterValue, // SE_OR_TE_WHEN_DAAS_OR_DATE_IS_9,
+//         TE: 0.001088841 as ParameterValue, // SE_OR_TE_WHEN_DAAS_OR_DATE_IS_9,
+//         SP: 0.5 as ParameterValue,
+//         TP: 0.5 as ParameterValue,
 //     },
 // ]
 
@@ -72,7 +72,7 @@ const computeUsefulnessParameterSets = (usefulnessParameterIds: UsefulnessParame
         {} as Record<UsefulnessParameterId, DynamicParameterScope>,
     )
 
-    // return EXPERIMENTAL_USEFULNESS_PARAMTER_SCOPES
+    // Return EXPERIMENTAL_USEFULNESS_PARAMTER_SCOPES
 
     return computePossibilities(scope)
 }

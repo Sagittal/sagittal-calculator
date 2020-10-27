@@ -1,5 +1,5 @@
 import {Cents, computeCentsFromPitch} from "../../../../../src/general"
-import {CommaClassId} from "../../../../../src/sagittal/ji/comma/class"
+import {CommaClassId} from "../../../../../src/sagittal/notation"
 import {JiNotationLevel} from "../../../../../src/sagittal/notations/ji"
 import {computeJiNotationCaptureZone} from "../../../../../src/sagittal/notations/ji/captureZone"
 

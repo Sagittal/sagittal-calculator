@@ -1,10 +1,12 @@
 import {isScamonGreater, isUndefined, Max, Maybe, Min, Scamon, UNISON, Zone} from "../../../general"
-import {CommaClass, CommaClassId, formatCommaClass, getCommaClass} from "../../ji"
+import {CommaClass, CommaClassId, formatCommaClass, getCommaClass} from "../../notation"
 import {formatJiNotationLevel} from "./formatLevel"
 import {getIntroducingJiNotationLevel} from "./introducingJiNotationLevel"
 import {isWithinJiNotationLevel} from "./isWithinLevel"
 import {JI_NOTATION_LEVELS_BOUND_CLASSES} from "./levelsBoundClasses"
 import {JiNotationBoundClass, JiNotationLevel} from "./types"
+
+// TODO: This should be another example of a module that should be outmoded post notation generation?
 
 const computeJiNotationCaptureZone = (
     commaClassId: CommaClassId,

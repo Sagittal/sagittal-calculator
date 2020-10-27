@@ -1,5 +1,5 @@
 import {Cents, computeCentsFromPitch} from "../../../../../src/general"
-import {CommaClassId} from "../../../../../src/sagittal/ji/comma/class"
+import {CommaClassId} from "../../../../../src/sagittal/notation"
 import {computeSecondaryCommaZone} from "../../../../../src/sagittal/notations/ji"
 
 describe("computeSecondaryCommaZone", (): void => {

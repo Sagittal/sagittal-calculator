@@ -1,5 +1,5 @@
 import {Zone} from "../../../general"
-import {CommaClass, CommaClassId} from "../../ji"
+import {CommaClass, CommaClassId} from "../../notation"
 import {computeJiNotationCaptureZone} from "./captureZone"
 import {getIntroducingJiNotationLevel} from "./introducingJiNotationLevel"
 

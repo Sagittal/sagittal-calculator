@@ -10,8 +10,8 @@ import {
     computeOrientedAccentAscii,
     computeOrientedAccentSmiley,
     computeOrientedAccentUnicode,
-} from "../../../../../src/sagittal/accidental/io"
-import {getCore, Shafts} from "../../../../../src/sagittal/accidental/symbol"
+} from "../../../../../src/sagittal/accidental/glyph"
+import {getCore, Shafts} from "../../../../../src/sagittal/accidental/sagittal"
 import {GlyphExpectation} from "./types"
 
 const computeCoreGlyphExpectation = (

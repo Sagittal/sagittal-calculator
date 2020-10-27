@@ -23,4 +23,3 @@ export {
     JiNotationBound,
     JiNotationBoundClassEntry,
 } from "./ji"
-export {Section, CaptureZone} from "./types"

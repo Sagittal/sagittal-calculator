@@ -1,4 +1,4 @@
-import {CommaClassId} from "../../ji"
+import {CommaClassId} from "../../notation"
 import {JI_NOTATION_LEVELS_COMMA_CLASS_IDS} from "./levelCommaClassIds"
 import {JI_NOTATION_LEVELS} from "./levels"
 import {JiNotationLevel} from "./types"

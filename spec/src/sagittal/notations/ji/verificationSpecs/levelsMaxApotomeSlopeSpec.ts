@@ -1,6 +1,5 @@
 import {Abs, abs, Max} from "../../../../../../src/general"
-import {getCommaClass} from "../../../../../../src/sagittal"
-import {CommaClassId} from "../../../../../../src/sagittal/ji/comma/class"
+import {CommaClassId, getCommaClass} from "../../../../../../src/sagittal"
 import {ApotomeSlope, computeApotomeSlope} from "../../../../../../src/sagittal/ji/pitch"
 import {JiNotationLevel, JI_NOTATION_LEVELS_COMMA_CLASS_IDS} from "../../../../../../src/sagittal/notations/ji"
 

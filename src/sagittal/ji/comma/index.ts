@@ -1,5 +1,4 @@
 export {analyzeComma} from "./analyzeComma"
-export {CommaClass, getCommaClass, formatCommaClass, getRepresentativeSagittal, CommaClassId} from "./class"
 export {CommaAnalysis} from "./types"
 export {
     CommasFrom23FreeMonzoOptions,

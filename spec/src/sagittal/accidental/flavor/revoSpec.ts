@@ -1,9 +1,8 @@
-import {Accidental, Aim, Flavor, SymbolClassId} from "../../../../../src/sagittal/accidental"
+import {Accidental, Aim, Flavor} from "../../../../../src/sagittal/accidental"
 import {HeadId} from "../../../../../src/sagittal/accidental/flacco"
 import {computeRevoAccidentalFromCaptureZone} from "../../../../../src/sagittal/accidental/flavor/revo"
-import {getCore, Shafts} from "../../../../../src/sagittal/accidental/symbol"
-import {BoundClassId} from "../../../../../src/sagittal/bound"
-import {CaptureZone} from "../../../../../src/sagittal/notations"
+import {getCore, Shafts} from "../../../../../src/sagittal/accidental/sagittal"
+import {BoundClassId, CaptureZone, SymbolClassId} from "../../../../../src/sagittal/notation"
 import {
     SECTION_N1A,
     SECTION_N1T,
@@ -13,7 +12,7 @@ import {
     SECTION_P1T,
     SECTION_P2A,
     SECTION_P2T,
-} from "../../../../../src/sagittal/notations/sections"
+} from "../../../../../src/sagittal/notation/sections"
 
 describe("computeRevoAccidentalFromCaptureZone", (): void => {
     it("works for section P1A", (): void => {

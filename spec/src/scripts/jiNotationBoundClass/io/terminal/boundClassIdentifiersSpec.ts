@@ -26,11 +26,10 @@ import {
     BoundType,
     CommaClassId,
     Ina,
-    N2D3P9,
+    N2D3P9, SymbolSubset,
     TINA,
     Unicode,
 } from "../../../../../../src/sagittal"
-import {SymbolSubset} from "../../../../../../src/sagittal/accidental"
 import {JiNotationBoundClass, JiNotationLevel, Mina} from "../../../../../../src/sagittal/notations/ji"
 import {MINA, ULTRINA} from "../../../../../../src/sagittal/notations/ji/intervals"
 import {extractJiNotationBoundClassIdentifiers} from "../../../../../../src/scripts/jiNotationBoundClass/io/terminal/boundClassIdentifiers"

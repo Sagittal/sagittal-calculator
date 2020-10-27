@@ -1,6 +1,5 @@
 import {Index, Two3FreeClass} from "../../../../../src/general"
-import {SymbolSubset} from "../../../../../src/sagittal/accidental"
-import {CommaClassId} from "../../../../../src/sagittal/ji/comma/class"
+import {CommaClassId, SymbolSubset} from "../../../../../src/sagittal/notation"
 import {
     computeNotatingCommaClassesProperties,
     NotatingCommaClassesProperties,

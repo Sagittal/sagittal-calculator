@@ -1,7 +1,7 @@
 // tslint:disable max-line-length
 
 import {CommaMean, Name} from "../../../general"
-import {BoundClassId, getBoundClass} from "../../bound"
+import {BoundClassId, getBoundClass} from "../../notation"
 import {SizeCategoryBound} from "../../ji"
 import {BoundType, InaMidpoint, JiNotationBoundClass, JiNotationBoundClassEntry, JiNotationLevel} from "./types"
 

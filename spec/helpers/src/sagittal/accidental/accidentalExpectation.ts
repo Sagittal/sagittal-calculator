@@ -5,7 +5,7 @@ import {
 } from "../../../../../src/sagittal/accidental"
 import {computeEvoAccidentalFromCaptureZone} from "../../../../../src/sagittal/accidental/flavor/evo"
 import {computeRevoAccidentalFromCaptureZone} from "../../../../../src/sagittal/accidental/flavor/revo"
-import {CaptureZone} from "../../../../../src/sagittal/notations"
+import {CaptureZone} from "../../../../../src/sagittal/notation"
 import {AccidentalExpectation} from "./types"
 
 const computeAccidentalExpectation = (captureZone: CaptureZone): AccidentalExpectation => {

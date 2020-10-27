@@ -31,12 +31,7 @@ export {
     computeAte,
     computeAas,
     analyze23FreeClass,
-    CommaClass,
-    getCommaClass,
     formatComma,
-    getRepresentativeSagittal,
-    formatCommaClass,
-    CommaClassId,
 } from "./ji"
 export {
     formatAscii,
@@ -46,10 +41,6 @@ export {
     computeAccidentalAscii,
     computeAccidentalUnicode,
     computeCoreUnicode,
-    SymbolSubset,
-    SYMBOL_SUBSETS,
-    SYMBOL_SUBSETS_SORTED_BY_SIZE,
-    getSmallestSymbolSubset,
     computeSagittalAscii,
     computeSagittalUnicode,
     parseAscii,
@@ -80,6 +71,18 @@ export {
     JiNotationBound,
     JiNotationBoundClassEntry,
 } from "./notations"
-export {BoundClassId, BoundClass} from "./bound"
+export {
+    BoundClassId,
+    BoundClass,
+    SymbolSubset,
+    SYMBOL_SUBSETS,
+    SYMBOL_SUBSETS_SORTED_BY_SIZE,
+    getSmallestSymbolSubset,
+    CommaClass,
+    getCommaClass,
+    getRepresentativeSagittal,
+    formatCommaClass,
+    CommaClassId,
+} from "./notation"
 export {APOTOME, HALF_APOTOME} from "./constants"
 export {parsePitch} from "./parsePitch"

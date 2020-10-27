@@ -1,5 +1,5 @@
 import {Maybe} from "../../../general"
-import {Sagittal} from "../symbol"
+import {Sagittal} from "../sagittal"
 
 enum Flavor {
     EVO = "evo",

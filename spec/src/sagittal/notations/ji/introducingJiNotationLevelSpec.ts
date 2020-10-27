@@ -1,6 +1,6 @@
-import {CommaClassId} from "../../../../../src/sagittal/ji/comma/class"
-import { JiNotationLevel } from "../../../../../src/sagittal/notations"
-import { getIntroducingJiNotationLevel } from "../../../../../src/sagittal/notations/ji"
+import {CommaClassId} from "../../../../../src/sagittal/notation"
+import {JiNotationLevel} from "../../../../../src/sagittal/notations"
+import {getIntroducingJiNotationLevel} from "../../../../../src/sagittal/notations/ji"
 
 describe("getIntroducingJiNotationLevel", (): void => {
     it("returns the lowest JI notation level which includes the given comma class id", (): void => {

@@ -1,6 +1,4 @@
-import {SymbolClassId} from "../../accidental"
-import {BoundClassId} from "../../bound"
-import {Notation} from "../types"
+import {BoundClassId, Notation, SymbolClassId} from "../../notation"
 
 // TODO: TEST WHAT IS LESS OBVIOUS NOW IN THE POST SYMBOL CLASS WORLD
 //  Might be nice to test that the commas which used to be here are the commas for the symbols still/now here

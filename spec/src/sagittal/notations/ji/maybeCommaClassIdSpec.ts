@@ -1,5 +1,5 @@
 import {Comma} from "../../../../../src/general/music/ji"
-import {CommaClassId} from "../../../../../src/sagittal/ji/comma/class"
+import {CommaClassId} from "../../../../../src/sagittal/notation"
 import {computeMaybeCommaClassId} from "../../../../../src/sagittal/notations/ji"
 
 describe("computeMaybeCommaClassId", (): void => {

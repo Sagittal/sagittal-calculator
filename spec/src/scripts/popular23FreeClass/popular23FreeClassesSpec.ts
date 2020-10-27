@@ -15,9 +15,8 @@ import {
     Two3FreeClass,
     Votes,
 } from "../../../../src/general"
-import {SymbolSubset} from "../../../../src/sagittal/accidental"
-import {CommaClassId} from "../../../../src/sagittal/ji/comma/class"
 import {N2D3P9} from "../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
+import {CommaClassId, SymbolSubset} from "../../../../src/sagittal/notation"
 import {popular23FreeClassesScriptGroupSettings} from "../../../../src/scripts/popular23FreeClass/globals"
 import {computePopular23FreeClasses} from "../../../../src/scripts/popular23FreeClass/popular23FreeClasses"
 import {Popular23FreeClass} from "../../../../src/scripts/popular23FreeClass/types"

@@ -1,10 +1,10 @@
 import {increment, isUndefined, Maybe, negative} from "../../../general"
-import {CaptureZone} from "../../notations"
+import {CaptureZone, getSymbolClass} from "../../notation"
 import {getFlacco} from "../flacco"
-import {computeApotomeComplement, computeSagittalFromFlacco, flipSagittal, Shafts} from "../symbol"
-import {getSymbolClass} from "../symbolClass"
+import {computeApotomeComplement, computeSagittalFromFlacco, flipSagittal, Shafts} from "../sagittal"
 import {Accidental, Compatible, Flavor} from "./types"
 
+// TODO: perhaps these should just be called with the symbolClassId and the section.
 const computeEvoAccidentalFromCaptureZone = (captureZone: CaptureZone): Accidental<Flavor.EVO> => {
     const {symbolClassId, section: {negated, mirrored, shifted}} = captureZone
 

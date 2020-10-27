@@ -1,4 +1,4 @@
-import {BoundClassId} from "../../../../../src/sagittal/bound"
+import {BoundClassId} from "../../../../../src/sagittal/notation"
 import {
     JiNotationLevel,
     JI_NOTATION_LEVELS_BOUND_CLASSES,

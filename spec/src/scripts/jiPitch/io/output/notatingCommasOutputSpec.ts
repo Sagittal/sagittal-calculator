@@ -15,7 +15,8 @@ import {
     Quotient,
     TableFormat,
 } from "../../../../../../src/general"
-import {ApotomeSlope, CommaAnalysis, CommaClass, CommaClassId} from "../../../../../../src/sagittal/ji"
+import {ApotomeSlope, CommaAnalysis} from "../../../../../../src/sagittal/ji"
+import {CommaClassId} from "../../../../../../src/sagittal/notation"
 import {computeNotatingCommasOutput} from "../../../../../../src/scripts/jiPitch/io"
 import {commaAnalysisFixture, two3FreeClassAnalysisFixture} from "../../../../../helpers/src/scripts/jiPitch/fixtures"
 
