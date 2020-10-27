@@ -1,5 +1,5 @@
 export {computeAntivotes} from "./antivotes"
 export {checkSubmetricsForInvalidParameterCombinations} from "./checkParameters"
 export {computeSumOfSquaresForSubmetrics} from "./sumOfSquaresForSubmetrics"
-export {Parameter, ParameterValue, Submetric, Unpopularity} from "./types"
+export {Parameter, Submetric, Unpopularity} from "./types"
 export {computeUnpopularities} from "./unpopularities"

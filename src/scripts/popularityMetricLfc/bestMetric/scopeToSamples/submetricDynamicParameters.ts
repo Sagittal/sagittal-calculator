@@ -1,7 +1,8 @@
 import {Index, isObject, Step} from "../../../../general"
-import {Parameter, ParameterValue, Submetric} from "../../sumOfSquares"
-import {DynamicParameterScope, SubmetricScope} from "../types"
-import {computeParameterValues} from "./parameterValues"
+import {computeParameterValues} from "../../../parameterValues"
+import {DynamicParameterScope, ParameterValue} from "../../../types"
+import {Parameter, Submetric} from "../../sumOfSquares"
+import {SubmetricScope} from "../types"
 import {DynamicParameter} from "./types"
 
 const computeSubmetricDynamicParameters = (

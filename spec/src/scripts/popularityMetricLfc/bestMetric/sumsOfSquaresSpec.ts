@@ -3,7 +3,8 @@ import {Metric, SumOfSquares, SumsOfSquares} from "../../../../../src/scripts/po
 import {SamplePoint} from "../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
 import {computeSumsOfSquaresAndMaybeUpdateBestMetric} from "../../../../../src/scripts/popularityMetricLfc/bestMetric/sumsOfSquares"
 import {bestMetrics} from "../../../../../src/scripts/popularityMetricLfc/globals"
-import {Parameter, ParameterValue, Submetric} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {Parameter, Submetric} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {ParameterValue} from "../../../../../src/scripts/types"
 
 describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", (): void => {
     const metricName = "{aAsCoefficient,sum,w}" as Name<Metric>

@@ -1,11 +1,12 @@
 import {LogTarget, saveLog, stringify, Window} from "../../../general"
+import {ParameterValue} from "../../types"
 import {computeDynamicParameterScope, Scope} from "../bestMetric"
 import {bestMetrics, popularityMetricLfcScriptGroupSettings} from "../globals"
 import {
     recursiveSearchScopeAndMaybeUpdateBestMetric,
     recursiveSearchScopeAndMaybeUpdateBestMetricSync,
 } from "../perfecter"
-import {Parameter, ParameterValue} from "../sumOfSquares"
+import {Parameter} from "../sumOfSquares"
 import {applySharedPopularityMetricLfcCommandSetup} from "./shared"
 
 applySharedPopularityMetricLfcCommandSetup()

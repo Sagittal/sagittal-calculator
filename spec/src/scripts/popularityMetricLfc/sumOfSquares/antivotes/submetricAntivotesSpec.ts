@@ -1,7 +1,8 @@
 import {Base, EMPTY_MONZO, log, Monzo} from "../../../../../../src/general/math"
-import {Parameter, ParameterValue, Submetric} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {Parameter, Submetric} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 import {computeSubmetricAntivotes} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes/submetricAntivotes"
 import {Antivotes} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/types"
+import {ParameterValue} from "../../../../../../src/scripts/types"
 
 describe("computeSubmetricAntivotes", (): void => {
     let submetric: Submetric

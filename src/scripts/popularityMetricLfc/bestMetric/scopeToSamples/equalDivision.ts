@@ -1,6 +1,6 @@
 import {ceil, Ed, Window} from "../../../../general"
+import {ParameterValue} from "../../../types"
 import {popularityMetricLfcScriptGroupSettings} from "../../globals"
-import {ParameterValue} from "../../sumOfSquares"
 
 const computeEqualDivision = (window: Window<ParameterValue>): Ed<ParameterValue> => {
     const maxUnit = popularityMetricLfcScriptGroupSettings.maxUnit

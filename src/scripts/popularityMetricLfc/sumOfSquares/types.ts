@@ -1,4 +1,5 @@
 import {Index, Two3FreeClass} from "../../../general"
+import {ParameterValue} from "../../types"
 
 type Antivotes = number & {_AntivotesBrand: boolean}
 
@@ -8,6 +9,7 @@ interface Unpopularity {
     index: Index<Unpopularity>,
 }
 
+// TODO: should this be ParameterId ? are there other enums which would get a clarity benefit from the -Id suffix?
 enum Parameter {
     // Coefficient used for submetric
     WEIGHT_AS_COEFFICIENT = "weightAsCoefficient",
@@ -102,8 +104,6 @@ type Submetric = Partial<{
     [Parameter.MAX]: boolean,
 }>
 
-type ParameterValue = number & {_ParameterValueBrand: boolean}
-
 type WeightedAntivotesOptions = Partial<{
     logarithmBase: ParameterValue,
     powerExponent: ParameterValue
@@ -115,7 +115,6 @@ export {
     Unpopularity,
     Antivotes,
     Parameter,
-    ParameterValue,
     Submetric,
     WeightedAntivotesOptions,
 }

@@ -4,7 +4,8 @@ import {
     computeDynamicParameters,
     computeSamples,
 } from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
-import {Parameter, ParameterValue} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {Parameter} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {ParameterValue} from "../../../../../../src/scripts/types"
 
 describe("computeSamples", (): void => {
     it("given some submetric scopes, will return all combinations of submetrics to check", (): void => {

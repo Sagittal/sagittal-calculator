@@ -3,10 +3,10 @@ import {Votes} from "../../../../../src/general/music"
 import {
     computeUnpopularities,
     Parameter,
-    ParameterValue,
     Submetric,
 } from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 import {Antivotes, Unpopularity} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares/types"
+import {ParameterValue} from "../../../../../src/scripts/types"
 
 describe("computeUnpopularities", (): void => {
     it("given a list of actual popularities and submetric combinations, returns our estimated unpopularities, which have antivotes instead of votes", (): void => {

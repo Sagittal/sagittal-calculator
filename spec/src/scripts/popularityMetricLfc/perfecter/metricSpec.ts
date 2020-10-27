@@ -5,7 +5,8 @@ import {recursiveSearchScopeAndMaybeUpdateBestMetric} from "../../../../../src/s
 import {perfectMetric} from "../../../../../src/scripts/popularityMetricLfc/perfecter/metric"
 import * as recursiveBestMetric from "../../../../../src/scripts/popularityMetricLfc/perfecter/perfectMetric"
 import {MetricTag} from "../../../../../src/scripts/popularityMetricLfc/perfecter/types"
-import {Parameter, ParameterValue, Submetric} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {Parameter, Submetric} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {ParameterValue} from "../../../../../src/scripts/types"
 
 describe("perfectMetric", (): void => {
     const options = {metricTag: "1/16" as MetricTag}

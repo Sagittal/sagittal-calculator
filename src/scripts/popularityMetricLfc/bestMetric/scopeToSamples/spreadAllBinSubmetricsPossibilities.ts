@@ -1,5 +1,6 @@
 import {Combination, Index} from "../../../../general"
-import {ParameterValue, Submetric} from "../../sumOfSquares"
+import {ParameterValue} from "../../../types"
+import {Submetric} from "../../sumOfSquares"
 import {computeDynamicParameterValueIndices} from "./dynamicParameterValueIndices"
 import {
     Sample,

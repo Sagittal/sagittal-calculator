@@ -1,6 +1,6 @@
 import {Index, shallowClone} from "../../../general"
+import {ParameterValue} from "../../types"
 import {SamplePoint} from "../bestMetric"
-import {ParameterValue} from "../sumOfSquares"
 
 const computeAdjacentSamplePoints = (samplePoint: SamplePoint): SamplePoint[] => {
     const adjacentSamplePoints: SamplePoint[] = []

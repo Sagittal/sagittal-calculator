@@ -3,9 +3,9 @@ import {SumOfSquares} from "../../../../../src/scripts/popularityMetricLfc/bestM
 import {
     computeSumOfSquaresForSubmetrics,
     Parameter,
-    ParameterValue,
     Submetric,
 } from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {ParameterValue} from "../../../../../src/scripts/types"
 
 describe("computeSumOfSquaresForSubmetrics", (): void => {
     it("returns the sum-of-squares for a given submetric combination", (): void => {

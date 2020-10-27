@@ -1,9 +1,9 @@
 import {
     checkSubmetricsForInvalidParameterCombinations,
     Parameter,
-    ParameterValue,
     Submetric,
 } from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {ParameterValue} from "../../../../../src/scripts/types"
 
 describe("checkSubmetricsForInvalidParameterCombinations", (): void => {
     it("gives a good error when none of sum, count, or max are provided", (): void => {

@@ -1,9 +1,9 @@
 import {BASE_2, log, Monzo, Power} from "../../../../../../src/general/math"
 import {Two3FreeClass} from "../../../../../../src/general/music"
-import {ParameterValue} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 import {computeSubmetricAntivotes} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes/submetricAntivotes"
 import {compute23FreeClassSubmetricAntivotes} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes/two3FreeClassSubmetricAntivotes"
 import {Antivotes} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/types"
+import {ParameterValue} from "../../../../../../src/scripts/types"
 
 describe("compute23FreeClassSubmetricAntivotes", (): void => {
     it("splits the 2,3-free class into numerator and denominator, computes their submetric antivotes separately, then adjusts the denominator by k", (): void => {

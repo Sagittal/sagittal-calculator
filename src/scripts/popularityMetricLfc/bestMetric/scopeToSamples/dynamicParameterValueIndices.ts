@@ -1,5 +1,6 @@
 import {Index} from "../../../../general"
-import {Parameter, ParameterValue} from "../../sumOfSquares"
+import {ParameterValue} from "../../../types"
+import {Parameter} from "../../sumOfSquares"
 import {DynamicParameter, DynamicParameterValueIndicesOptions} from "./types"
 
 const computeDynamicParameterValueIndices = (

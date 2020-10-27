@@ -13,7 +13,8 @@ import {
     QuotientPartType,
     stringify,
 } from "../../../../general"
-import {Antivotes, ParameterValue, Submetric} from "../types"
+import {ParameterValue} from "../../../types"
+import {Antivotes, Submetric} from "../types"
 import {secondaryParameterOverride} from "./secondaryParameter"
 
 // (sum or count)

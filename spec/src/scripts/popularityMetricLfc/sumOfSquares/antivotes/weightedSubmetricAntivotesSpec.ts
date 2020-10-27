@@ -1,10 +1,11 @@
 import {log, Two3FreeClass} from "../../../../../../src/general"
 import {BASE_2, Power} from "../../../../../../src/general/math"
-import {Parameter, ParameterValue} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {Parameter} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 import * as two3FreeClassSubmetricAntivotes
     from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes/two3FreeClassSubmetricAntivotes"
 import {computeWeightedSubmetricAntivotes} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes/weightedSubmetricAntivotes"
 import {Antivotes} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/types"
+import {ParameterValue} from "../../../../../../src/scripts/types"
 
 describe("computeWeightedSubmetricAntivotes", (): void => {
     const two3FreeClass = {monzo: [-1, 1, 1, -1]} as Two3FreeClass

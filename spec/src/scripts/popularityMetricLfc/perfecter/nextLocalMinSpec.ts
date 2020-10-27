@@ -7,7 +7,8 @@ import {metricNames} from "../../../../../src/scripts/popularityMetricLfc/global
 import {searchNextLocalMin} from "../../../../../src/scripts/popularityMetricLfc/perfecter/nextLocalMin"
 import * as recursiveBestMetric from "../../../../../src/scripts/popularityMetricLfc/perfecter/perfectMetric"
 import {LocalMin, MetricTag} from "../../../../../src/scripts/popularityMetricLfc/perfecter/types"
-import {Parameter, ParameterValue, Submetric} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {Parameter, Submetric} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {ParameterValue} from "../../../../../src/scripts/types"
 
 describe("searchNextLocalMin", (): void => {
     const nextLocalMin: LocalMin = {

@@ -1,5 +1,6 @@
 import {Count, Exponent, Max, Popularity, Rank, Step} from "../../general"
-import {ParameterValue, Unpopularity} from "./sumOfSquares"
+import {ParameterValue} from "../types"
+import {Unpopularity} from "./sumOfSquares"
 
 interface PopularityMetricLfcScriptGroupSettings {
     z: Exponent<Rank<Popularity | Unpopularity>>,

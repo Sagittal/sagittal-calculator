@@ -1,5 +1,6 @@
 import {Combination, Index, KeyPath, Max, Min, Step, Window} from "../../../../general"
-import {Parameter, ParameterValue, Submetric} from "../../sumOfSquares"
+import {ParameterValue} from "../../../types"
+import {Parameter, Submetric} from "../../sumOfSquares"
 
 interface DynamicParameterValueIndicesOptions {
     dynamicParameters: DynamicParameter[],

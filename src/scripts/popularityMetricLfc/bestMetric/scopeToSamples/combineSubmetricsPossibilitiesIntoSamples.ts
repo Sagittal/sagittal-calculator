@@ -1,5 +1,6 @@
 import {Combination, computeExtensionBase, ExtensionBaseType, Index} from "../../../../general"
-import {ParameterValue, Submetric} from "../../sumOfSquares"
+import {ParameterValue} from "../../../types"
+import {Submetric} from "../../sumOfSquares"
 import {computeDynamicParameterValueIndices} from "./dynamicParameterValueIndices"
 import {spreadAllBinSubmetricsPossibilitiesAcrossSamples} from "./spreadAllBinSubmetricsPossibilities"
 import {CombineSubmetricsPossibilitiesIntoSamplesOptions, Sample, SamplePoint, SubmetricPossibility} from "./types"

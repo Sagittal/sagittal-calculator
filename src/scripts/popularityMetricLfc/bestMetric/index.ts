@@ -3,7 +3,6 @@ export {
 } from "./bestMetric"
 export {computeDynamicParameterScope, DynamicParameter, Sample, SamplePoint} from "./scopeToSamples"
 export {
-    DynamicParameterScope,
     Metric,
     ParameterScope,
     ParameterScopes,

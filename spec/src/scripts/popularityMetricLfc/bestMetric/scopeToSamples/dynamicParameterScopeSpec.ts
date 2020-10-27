@@ -1,7 +1,6 @@
 import {Ed, Max, Min, Window} from "../../../../../../src/general"
-import {DynamicParameterScope} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {computeDynamicParameterScope} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
-import {ParameterValue} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {DynamicParameterScope, ParameterValue} from "../../../../../../src/scripts/types"
 
 describe("computeDynamicParameterScope", (): void => {
     const expectedDynamicParameterScope: DynamicParameterScope = {

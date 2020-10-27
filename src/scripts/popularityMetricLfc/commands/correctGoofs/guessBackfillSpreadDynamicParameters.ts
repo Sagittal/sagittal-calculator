@@ -1,7 +1,8 @@
 import {Filename, LogTarget, Maybe, Name, saveLog, stringify} from "../../../../general"
+import {ParameterValue} from "../../../types"
 import {Metric} from "../../bestMetric"
 import {PARAMETER_DYNAMISMS} from "../../perfecter"
-import {Parameter, ParameterValue, Submetric} from "../../sumOfSquares"
+import {Parameter, Submetric} from "../../sumOfSquares"
 import {applySharedPopularityMetricLfcCommandSetup, load} from "../shared"
 
 applySharedPopularityMetricLfcCommandSetup()

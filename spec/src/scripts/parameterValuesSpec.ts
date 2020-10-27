@@ -1,7 +1,6 @@
-import {Ed, integerDivide, Window} from "../../../../../../src/general"
-import {DynamicParameterScope} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
-import {computeParameterValues} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples/parameterValues"
-import {ParameterValue} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {Ed, integerDivide, Window} from "../../../src/general"
+import {computeParameterValues} from "../../../src/scripts/parameterValues"
+import {DynamicParameterScope, ParameterValue} from "../../../src/scripts/types"
 
 describe("computeParameterValues", (): void => {
     it("given a parameter scope (a center, a window, and a ED), will return a block of points to sample", (): void => {

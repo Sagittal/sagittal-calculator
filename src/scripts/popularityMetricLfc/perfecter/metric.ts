@@ -1,6 +1,7 @@
 import {Combination, LogTarget, saveLog, stringify} from "../../../general"
+import {ParameterValue} from "../../types"
 import {Metric, Scope, SubmetricScope} from "../bestMetric"
-import {Parameter, ParameterValue, Submetric} from "../sumOfSquares"
+import {Parameter, Submetric} from "../sumOfSquares"
 import {PARAMETER_DYNAMISMS} from "./constants"
 import {computeDynamicParameterScopeForPerfecting} from "./dynamicParameterScope"
 import {

@@ -1,0 +1,150 @@
+// tslint:disable max-line-length
+
+import {Combination} from "../../../../src/general/math"
+import {ParameterValue} from "../../../../src/scripts/types"
+import {computeUsefulnessParameterSets} from "../../../../src/scripts/usefulnessMetricLfc/parameters"
+import {UsefulnessParameterId} from "../../../../src/scripts/usefulnessMetricLfc/types"
+
+describe("computeUsefulnessParameterSets", (): void => {
+    it("for each parameter ID, includes its range of possible values in the set", (): void => {
+        const usefulnessParameterIds = [UsefulnessParameterId.SE, UsefulnessParameterId.TE]
+
+        const actual = computeUsefulnessParameterSets(usefulnessParameterIds)
+
+        const expected = [
+            {[UsefulnessParameterId.SE]: 0.0010 as ParameterValue, [UsefulnessParameterId.TE]: 0.0010 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0012 as ParameterValue, [UsefulnessParameterId.TE]: 0.0010 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0014 as ParameterValue, [UsefulnessParameterId.TE]: 0.0010 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0016 as ParameterValue, [UsefulnessParameterId.TE]: 0.0010 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0018 as ParameterValue, [UsefulnessParameterId.TE]: 0.0010 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0020 as ParameterValue, [UsefulnessParameterId.TE]: 0.0010 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0022 as ParameterValue, [UsefulnessParameterId.TE]: 0.0010 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0024 as ParameterValue, [UsefulnessParameterId.TE]: 0.0010 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0026 as ParameterValue, [UsefulnessParameterId.TE]: 0.0010 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0028 as ParameterValue, [UsefulnessParameterId.TE]: 0.0010 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0030 as ParameterValue, [UsefulnessParameterId.TE]: 0.0010 as ParameterValue},
+
+            {[UsefulnessParameterId.SE]: 0.0010 as ParameterValue, [UsefulnessParameterId.TE]: 0.0012 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0012 as ParameterValue, [UsefulnessParameterId.TE]: 0.0012 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0014 as ParameterValue, [UsefulnessParameterId.TE]: 0.0012 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0016 as ParameterValue, [UsefulnessParameterId.TE]: 0.0012 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0018 as ParameterValue, [UsefulnessParameterId.TE]: 0.0012 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0020 as ParameterValue, [UsefulnessParameterId.TE]: 0.0012 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0022 as ParameterValue, [UsefulnessParameterId.TE]: 0.0012 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0024 as ParameterValue, [UsefulnessParameterId.TE]: 0.0012 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0026 as ParameterValue, [UsefulnessParameterId.TE]: 0.0012 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0028 as ParameterValue, [UsefulnessParameterId.TE]: 0.0012 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0030 as ParameterValue, [UsefulnessParameterId.TE]: 0.0012 as ParameterValue},
+
+            {[UsefulnessParameterId.SE]: 0.0010 as ParameterValue, [UsefulnessParameterId.TE]: 0.0014 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0012 as ParameterValue, [UsefulnessParameterId.TE]: 0.0014 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0014 as ParameterValue, [UsefulnessParameterId.TE]: 0.0014 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0016 as ParameterValue, [UsefulnessParameterId.TE]: 0.0014 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0018 as ParameterValue, [UsefulnessParameterId.TE]: 0.0014 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0020 as ParameterValue, [UsefulnessParameterId.TE]: 0.0014 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0022 as ParameterValue, [UsefulnessParameterId.TE]: 0.0014 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0024 as ParameterValue, [UsefulnessParameterId.TE]: 0.0014 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0026 as ParameterValue, [UsefulnessParameterId.TE]: 0.0014 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0028 as ParameterValue, [UsefulnessParameterId.TE]: 0.0014 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0030 as ParameterValue, [UsefulnessParameterId.TE]: 0.0014 as ParameterValue},
+
+            {[UsefulnessParameterId.SE]: 0.0010 as ParameterValue, [UsefulnessParameterId.TE]: 0.0016 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0012 as ParameterValue, [UsefulnessParameterId.TE]: 0.0016 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0014 as ParameterValue, [UsefulnessParameterId.TE]: 0.0016 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0016 as ParameterValue, [UsefulnessParameterId.TE]: 0.0016 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0018 as ParameterValue, [UsefulnessParameterId.TE]: 0.0016 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0020 as ParameterValue, [UsefulnessParameterId.TE]: 0.0016 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0022 as ParameterValue, [UsefulnessParameterId.TE]: 0.0016 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0024 as ParameterValue, [UsefulnessParameterId.TE]: 0.0016 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0026 as ParameterValue, [UsefulnessParameterId.TE]: 0.0016 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0028 as ParameterValue, [UsefulnessParameterId.TE]: 0.0016 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0030 as ParameterValue, [UsefulnessParameterId.TE]: 0.0016 as ParameterValue},
+
+            {[UsefulnessParameterId.SE]: 0.0010 as ParameterValue, [UsefulnessParameterId.TE]: 0.0018 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0012 as ParameterValue, [UsefulnessParameterId.TE]: 0.0018 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0014 as ParameterValue, [UsefulnessParameterId.TE]: 0.0018 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0016 as ParameterValue, [UsefulnessParameterId.TE]: 0.0018 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0018 as ParameterValue, [UsefulnessParameterId.TE]: 0.0018 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0020 as ParameterValue, [UsefulnessParameterId.TE]: 0.0018 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0022 as ParameterValue, [UsefulnessParameterId.TE]: 0.0018 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0024 as ParameterValue, [UsefulnessParameterId.TE]: 0.0018 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0026 as ParameterValue, [UsefulnessParameterId.TE]: 0.0018 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0028 as ParameterValue, [UsefulnessParameterId.TE]: 0.0018 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0030 as ParameterValue, [UsefulnessParameterId.TE]: 0.0018 as ParameterValue},
+
+            {[UsefulnessParameterId.SE]: 0.0010 as ParameterValue, [UsefulnessParameterId.TE]: 0.0020 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0012 as ParameterValue, [UsefulnessParameterId.TE]: 0.0020 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0014 as ParameterValue, [UsefulnessParameterId.TE]: 0.0020 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0016 as ParameterValue, [UsefulnessParameterId.TE]: 0.0020 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0018 as ParameterValue, [UsefulnessParameterId.TE]: 0.0020 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0020 as ParameterValue, [UsefulnessParameterId.TE]: 0.0020 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0022 as ParameterValue, [UsefulnessParameterId.TE]: 0.0020 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0024 as ParameterValue, [UsefulnessParameterId.TE]: 0.0020 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0026 as ParameterValue, [UsefulnessParameterId.TE]: 0.0020 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0028 as ParameterValue, [UsefulnessParameterId.TE]: 0.0020 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0030 as ParameterValue, [UsefulnessParameterId.TE]: 0.0020 as ParameterValue},
+
+            {[UsefulnessParameterId.SE]: 0.0010 as ParameterValue, [UsefulnessParameterId.TE]: 0.0022 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0012 as ParameterValue, [UsefulnessParameterId.TE]: 0.0022 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0014 as ParameterValue, [UsefulnessParameterId.TE]: 0.0022 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0016 as ParameterValue, [UsefulnessParameterId.TE]: 0.0022 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0018 as ParameterValue, [UsefulnessParameterId.TE]: 0.0022 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0020 as ParameterValue, [UsefulnessParameterId.TE]: 0.0022 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0022 as ParameterValue, [UsefulnessParameterId.TE]: 0.0022 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0024 as ParameterValue, [UsefulnessParameterId.TE]: 0.0022 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0026 as ParameterValue, [UsefulnessParameterId.TE]: 0.0022 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0028 as ParameterValue, [UsefulnessParameterId.TE]: 0.0022 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0030 as ParameterValue, [UsefulnessParameterId.TE]: 0.0022 as ParameterValue},
+
+            {[UsefulnessParameterId.SE]: 0.0010 as ParameterValue, [UsefulnessParameterId.TE]: 0.0024 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0012 as ParameterValue, [UsefulnessParameterId.TE]: 0.0024 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0014 as ParameterValue, [UsefulnessParameterId.TE]: 0.0024 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0016 as ParameterValue, [UsefulnessParameterId.TE]: 0.0024 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0018 as ParameterValue, [UsefulnessParameterId.TE]: 0.0024 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0020 as ParameterValue, [UsefulnessParameterId.TE]: 0.0024 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0022 as ParameterValue, [UsefulnessParameterId.TE]: 0.0024 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0024 as ParameterValue, [UsefulnessParameterId.TE]: 0.0024 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0026 as ParameterValue, [UsefulnessParameterId.TE]: 0.0024 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0028 as ParameterValue, [UsefulnessParameterId.TE]: 0.0024 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0030 as ParameterValue, [UsefulnessParameterId.TE]: 0.0024 as ParameterValue},
+
+            {[UsefulnessParameterId.SE]: 0.0010 as ParameterValue, [UsefulnessParameterId.TE]: 0.0026 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0012 as ParameterValue, [UsefulnessParameterId.TE]: 0.0026 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0014 as ParameterValue, [UsefulnessParameterId.TE]: 0.0026 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0016 as ParameterValue, [UsefulnessParameterId.TE]: 0.0026 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0018 as ParameterValue, [UsefulnessParameterId.TE]: 0.0026 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0020 as ParameterValue, [UsefulnessParameterId.TE]: 0.0026 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0022 as ParameterValue, [UsefulnessParameterId.TE]: 0.0026 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0024 as ParameterValue, [UsefulnessParameterId.TE]: 0.0026 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0026 as ParameterValue, [UsefulnessParameterId.TE]: 0.0026 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0028 as ParameterValue, [UsefulnessParameterId.TE]: 0.0026 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0030 as ParameterValue, [UsefulnessParameterId.TE]: 0.0026 as ParameterValue},
+
+            {[UsefulnessParameterId.SE]: 0.0010 as ParameterValue, [UsefulnessParameterId.TE]: 0.0028 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0012 as ParameterValue, [UsefulnessParameterId.TE]: 0.0028 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0014 as ParameterValue, [UsefulnessParameterId.TE]: 0.0028 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0016 as ParameterValue, [UsefulnessParameterId.TE]: 0.0028 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0018 as ParameterValue, [UsefulnessParameterId.TE]: 0.0028 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0020 as ParameterValue, [UsefulnessParameterId.TE]: 0.0028 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0022 as ParameterValue, [UsefulnessParameterId.TE]: 0.0028 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0024 as ParameterValue, [UsefulnessParameterId.TE]: 0.0028 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0026 as ParameterValue, [UsefulnessParameterId.TE]: 0.0028 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0028 as ParameterValue, [UsefulnessParameterId.TE]: 0.0028 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0030 as ParameterValue, [UsefulnessParameterId.TE]: 0.0028 as ParameterValue},
+
+            {[UsefulnessParameterId.SE]: 0.0010 as ParameterValue, [UsefulnessParameterId.TE]: 0.0030 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0012 as ParameterValue, [UsefulnessParameterId.TE]: 0.0030 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0014 as ParameterValue, [UsefulnessParameterId.TE]: 0.0030 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0016 as ParameterValue, [UsefulnessParameterId.TE]: 0.0030 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0018 as ParameterValue, [UsefulnessParameterId.TE]: 0.0030 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0020 as ParameterValue, [UsefulnessParameterId.TE]: 0.0030 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0022 as ParameterValue, [UsefulnessParameterId.TE]: 0.0030 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0024 as ParameterValue, [UsefulnessParameterId.TE]: 0.0030 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0026 as ParameterValue, [UsefulnessParameterId.TE]: 0.0030 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0028 as ParameterValue, [UsefulnessParameterId.TE]: 0.0030 as ParameterValue},
+            {[UsefulnessParameterId.SE]: 0.0030 as ParameterValue, [UsefulnessParameterId.TE]: 0.0030 as ParameterValue},
+        ] as Combination<Partial<Record<UsefulnessParameterId, ParameterValue>>>
+
+        expect(actual).toBeArrayWithDeepCloseContents(expected)
+    })
+})

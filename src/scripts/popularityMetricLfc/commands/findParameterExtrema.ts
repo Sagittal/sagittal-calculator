@@ -11,8 +11,9 @@ import {
     saveLog,
     stringify,
 } from "../../../general"
+import {ParameterValue} from "../../types"
 import {Metric} from "../bestMetric"
-import {Parameter, ParameterValue, Submetric} from "../sumOfSquares"
+import {Parameter, Submetric} from "../sumOfSquares"
 import {applySharedPopularityMetricLfcCommandSetup, load} from "./shared"
 
 applySharedPopularityMetricLfcCommandSetup()

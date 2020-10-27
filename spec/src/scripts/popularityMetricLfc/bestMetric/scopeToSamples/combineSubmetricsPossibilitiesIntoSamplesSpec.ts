@@ -6,7 +6,8 @@ import {
     SamplePoint,
     SubmetricPossibility,
 } from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples/types"
-import {Parameter, ParameterValue, Submetric} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {Parameter, Submetric} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {ParameterValue} from "../../../../../../src/scripts/types"
 
 describe("combineSubmetricsPossibilitiesIntoSamples", (): void => {
     it("takes the list of possible values for each submetric individually, and returns a list of every possible combination of them, along with its corresponding sample point, which is then all together called a Sample; it also takes the zeroth submetric scope (the all bins one) and spreads it across every submetric", (): void => {

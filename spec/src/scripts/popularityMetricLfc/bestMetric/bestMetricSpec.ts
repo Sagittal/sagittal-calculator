@@ -12,7 +12,8 @@ import {
     SumsOfSquares,
 } from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {bestMetrics, metricNames, solverStatus} from "../../../../../src/scripts/popularityMetricLfc/globals"
-import {Parameter, ParameterValue, Submetric} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {Parameter, Submetric} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {ParameterValue} from "../../../../../src/scripts/types"
 
 describe("nonRecursiveSearchScopeAndMaybeUpdateBestMetric", (): void => {
     const scope = [

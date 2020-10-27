@@ -1,6 +1,6 @@
 import {Exponent, Prime, QuotientPartType} from "../../../../../../src/general/math"
-import {ParameterValue} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 import {secondaryParameterOverride} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes/secondaryParameter"
+import {ParameterValue} from "../../../../../../src/scripts/types"
 
 describe("secondaryParameterOverride", (): void => {
     const denominatorSpecificParameter = 5 as ParameterValue

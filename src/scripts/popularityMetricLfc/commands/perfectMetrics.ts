@@ -21,12 +21,7 @@ const bestMetricsToBePerfected = load("metrics" as Filename) as Record<Name<Metr
 const finalOutput = (): void => {
     saveLog(`\n\nTHE PERFECTED METRICS ARE ${formatBestMetrics()}`, LogTarget.FINAL)
 
-    if (ioSettings.time) {
-        saveLog(
-            `\n\nPERFECTING METRICS TOOK ${time()}` as Io,
-            LogTarget.FINAL,
-        )
-    }
+    if (ioSettings.time) saveLog(`\n\nPERFECTING METRICS TOOK ${time()}`, LogTarget.FINAL)
     saveLog(`MAX UNIT ${popularityMetricLfcScriptGroupSettings.maxUnit}`, LogTarget.FINAL)
     saveLog(`Z ${popularityMetricLfcScriptGroupSettings.z}`, LogTarget.FINAL)
     saveLog(`ONLY TOP ${popularityMetricLfcScriptGroupSettings.onlyTop}`, LogTarget.FINAL)

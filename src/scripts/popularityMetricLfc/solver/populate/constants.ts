@@ -1,6 +1,7 @@
 import {Maybe, Window} from "../../../../general"
+import {ParameterValue} from "../../../types"
 import {computeDynamicParameterScope, ParameterScope, ParameterScopes} from "../../bestMetric"
-import {Parameter, ParameterValue, Submetric} from "../../sumOfSquares"
+import {Parameter, Submetric} from "../../sumOfSquares"
 import {Chunk} from "../types"
 
 // AKA: when included in the solver's generated scopes, what should they be scoped to

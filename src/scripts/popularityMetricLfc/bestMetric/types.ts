@@ -1,5 +1,6 @@
-import {Combination, Ed, Index, Io, Maybe, Name, Sum, Window} from "../../../general"
-import {Parameter, ParameterValue, Submetric} from "../sumOfSquares"
+import {Combination, Index, Io, Maybe, Name, Sum} from "../../../general"
+import {DynamicParameterScope, ParameterValue} from "../../types"
+import {Parameter, Submetric} from "../sumOfSquares"
 import {DynamicParameter, Sample} from "./scopeToSamples"
 
 interface Metric {
@@ -16,12 +17,6 @@ type ParameterScopes = Partial<Record<Parameter, ParameterScope>>
 type SubmetricScope = ParameterScopes & {_SubmetricScopeBrand: boolean}
 
 type Scope = Combination<SubmetricScope>
-
-type DynamicParameterScope = Partial<{
-    center: ParameterValue,
-    ed: Ed<ParameterValue>,
-    window: Window<ParameterValue>,
-}>
 
 type SquaredWeightedRankDifferences =
     number
@@ -67,7 +62,6 @@ export {
     Metric,
     Scope,
     SubmetricScope,
-    DynamicParameterScope,
     SumOfSquares,
     SumOfSquaresAndMaybeUpdateBestMetricOptions,
     SumOrSumsOfSquaresOptions,

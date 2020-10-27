@@ -6,7 +6,8 @@ import {
     stringify,
     Two3FreeClass,
 } from "../../../../general"
-import {Antivotes, ParameterValue, Submetric} from "../types"
+import {ParameterValue} from "../../../types"
+import {Antivotes, Submetric} from "../types"
 import {maybeNuminatorSwap} from "./numinator"
 import {computeSubmetricAntivotes} from "./submetricAntivotes"
 import {computeWeightedAntivotes} from "./weightedAntivotes"

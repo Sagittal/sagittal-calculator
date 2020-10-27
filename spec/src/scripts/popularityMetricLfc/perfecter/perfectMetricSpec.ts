@@ -4,7 +4,8 @@ import {SamplePoint} from "../../../../../src/scripts/popularityMetricLfc/bestMe
 import {recursiveSearchScopeAndMaybeUpdateBestMetric} from "../../../../../src/scripts/popularityMetricLfc/perfecter"
 import * as nextLocalMin from "../../../../../src/scripts/popularityMetricLfc/perfecter/nextLocalMin"
 import {LocalMin, MetricTag} from "../../../../../src/scripts/popularityMetricLfc/perfecter/types"
-import {Parameter, ParameterValue, Submetric} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {Parameter, Submetric} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {ParameterValue} from "../../../../../src/scripts/types"
 
 describe("searchScopeAndMaybeUpdateBestMetric", (): void => {
     it("searches each local min", async (): Promise<void> => {

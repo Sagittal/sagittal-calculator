@@ -1,5 +1,6 @@
 import {stringify, Two3FreeClass} from "../../../../general"
-import {Antivotes, ParameterValue, Submetric} from "../types"
+import {ParameterValue} from "../../../types"
+import {Antivotes, Submetric} from "../types"
 import {compute23FreeClassSubmetricAntivotes} from "./two3FreeClassSubmetricAntivotes"
 import {computeWeightedAntivotes} from "./weightedAntivotes"
 

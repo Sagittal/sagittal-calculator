@@ -1,10 +1,11 @@
 import {Combination, Monzo} from "../../../../../../src/general/math"
 import {Two3FreeClass} from "../../../../../../src/general/music"
-import {Parameter, ParameterValue, Submetric} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {Parameter, Submetric} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 import {computeAntivotes} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes"
 import {ANTIVOTES_PRECISION} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes/constants"
 import {computeSubmetricAntivotes} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes/submetricAntivotes"
 import {Antivotes} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/types"
+import {ParameterValue} from "../../../../../../src/scripts/types"
 
 describe("computeAntivotes", (): void => {
     it("when k = 1 (default), and two 2,3-free classes have the same SoPFR, but one has its primes all lopsided on one side, they still get ranked the same", (): void => {

@@ -1,6 +1,5 @@
 import {isUndefined, Window} from "../../../../general"
-import {ParameterValue} from "../../sumOfSquares"
-import {DynamicParameterScope} from "../types"
+import {DynamicParameterScope, ParameterValue} from "../../../types"
 import {computeEqualDivision} from "./equalDivision"
 import {DynamicParameterScopeOptions} from "./types"
 

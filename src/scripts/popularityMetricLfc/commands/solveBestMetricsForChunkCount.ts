@@ -22,10 +22,7 @@ const finalOutput = (): void => {
     saveLog(`\n\nAND THE BEST METRICS WERE ${formatBestMetrics()}`, LogTarget.FINAL)
 
     if (ioSettings.time) {
-        saveLog(
-            `\n\nFINDING BEST METRICS TOOK ${time()}` as Io,
-            LogTarget.FINAL,
-        )
+        saveLog(`\n\nFINDING BEST METRICS TOOK ${time()}`, LogTarget.FINAL)
     }
     saveLog(`MAX UNIT ${popularityMetricLfcScriptGroupSettings.maxUnit}`, LogTarget.FINAL)
     saveLog(`AVERAGE SAMPLES/SCOPE ${solverStatus.averageSamplesPerScope}`, LogTarget.FINAL)

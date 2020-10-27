@@ -1,7 +1,8 @@
 import {Combination, computeExtensionBase, ExtensionBaseType, isEmpty, isObject} from "../../../../general"
-import {Parameter, ParameterValue} from "../../sumOfSquares"
-import {DynamicParameterScope, SubmetricScope} from "../types"
-import {computeParameterValues} from "./parameterValues"
+import {computeParameterValues} from "../../../parameterValues"
+import {DynamicParameterScope, ParameterValue} from "../../../types"
+import {Parameter} from "../../sumOfSquares"
+import {SubmetricScope} from "../types"
 import {SubmetricPossibility} from "./types"
 
 const computeSubmetricPossibilities = (
