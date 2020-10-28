@@ -1,6 +1,7 @@
-import {Ed, Window} from "../../../../../../src/general"
+import {Combination, Ed, Window} from "../../../../../../src/general"
 import {SubmetricScope} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {computeSubmetricPossibilities} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples/submetricPossibilities"
+import {SubmetricPossibility} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples/types"
 import {PopularityParameterId} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 import {Parameter} from "../../../../../../src/scripts/types"
 
@@ -21,8 +22,7 @@ describe("computeSubmetricPossibilities", (): void => {
 
         const actual = computeSubmetricPossibilities(submetricScope)
 
-        // TODO: Wait a second, shouldn't these "arrayWithExactContents" all have been replaced by my custom matchers?
-        const expected = jasmine.arrayWithExactContents([
+        const expected = [
             {[PopularityParameterId.A_AS_COEFFICIENT]: 0.75, [PopularityParameterId.W]: 0.6},
             {[PopularityParameterId.A_AS_COEFFICIENT]: 0.875, [PopularityParameterId.W]: 0.6},
             {[PopularityParameterId.A_AS_COEFFICIENT]: 1.0, [PopularityParameterId.W]: 0.6},
@@ -38,8 +38,8 @@ describe("computeSubmetricPossibilities", (): void => {
             {[PopularityParameterId.A_AS_COEFFICIENT]: 1.0, [PopularityParameterId.W]: 0.8},
             {[PopularityParameterId.A_AS_COEFFICIENT]: 1.125, [PopularityParameterId.W]: 0.8},
             {[PopularityParameterId.A_AS_COEFFICIENT]: 1.25, [PopularityParameterId.W]: 0.8},
-        ])
-        expect(actual).toEqual(expected)
+        ] as Combination<SubmetricPossibility>
+        expect(actual).toBeArrayWithDeepEqualContents(expected)
     })
 
     it("leaves a parameter out if it has a 0 ED", (): void => {
@@ -58,14 +58,14 @@ describe("computeSubmetricPossibilities", (): void => {
 
         const actual = computeSubmetricPossibilities(submetricScope)
 
-        const expected = jasmine.arrayWithExactContents([
+        const expected = [
             {[PopularityParameterId.A_AS_COEFFICIENT]: 0.75},
             {[PopularityParameterId.A_AS_COEFFICIENT]: 0.875},
             {[PopularityParameterId.A_AS_COEFFICIENT]: 1.0},
             {[PopularityParameterId.A_AS_COEFFICIENT]: 1.125},
             {[PopularityParameterId.A_AS_COEFFICIENT]: 1.25},
-        ])
-        expect(actual).toEqual(expected)
+        ] as Combination<SubmetricPossibility>
+        expect(actual).toBeArrayWithDeepEqualContents(expected)
     })
 
     it("works when provided a flat value", (): void => {
@@ -80,13 +80,13 @@ describe("computeSubmetricPossibilities", (): void => {
 
         const actual = computeSubmetricPossibilities(submetricScopes)
 
-        const expected = jasmine.arrayWithExactContents([
+        const expected = [
             {[PopularityParameterId.A_AS_COEFFICIENT]: 0.75, [PopularityParameterId.W]: 0.7},
             {[PopularityParameterId.A_AS_COEFFICIENT]: 0.875, [PopularityParameterId.W]: 0.7},
             {[PopularityParameterId.A_AS_COEFFICIENT]: 1.0, [PopularityParameterId.W]: 0.7},
             {[PopularityParameterId.A_AS_COEFFICIENT]: 1.125, [PopularityParameterId.W]: 0.7},
             {[PopularityParameterId.A_AS_COEFFICIENT]: 1.25, [PopularityParameterId.W]: 0.7},
-        ])
-        expect(actual).toEqual(expected)
+        ] as Combination<SubmetricPossibility>
+        expect(actual).toBeArrayWithDeepEqualContents(expected)
     })
 })

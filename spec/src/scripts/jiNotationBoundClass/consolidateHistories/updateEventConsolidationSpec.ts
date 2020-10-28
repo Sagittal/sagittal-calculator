@@ -40,8 +40,8 @@ describe("updateEventConsolidation", (): void => {
                 bestPossibleBoundHistoryAnalysis,
             })
 
-            expect(boundEventConsolidation.nextBoundEvents)
-                .toEqual(["2.5°58"] as Array<Name<JiNotationBound>>)
+            const expected = ["2.5°58"] as Array<Name<JiNotationBound>>
+            expect(boundEventConsolidation.nextBoundEvents).toBeArrayWithDeepEqualContents(expected)
         })
 
         it("when there is a next event analysis, it adds its name to the next events", (): void => {
@@ -58,8 +58,8 @@ describe("updateEventConsolidation", (): void => {
                 bestPossibleBoundHistoryAnalysis,
             })
 
-            expect(boundEventConsolidation.nextBoundEvents)
-                .toEqual(jasmine.arrayWithExactContents(["2.5°58", ".)/| '/|"]))
+            const expected = ["2.5°58", ".)/| '/|"] as Array<Name<JiNotationBound>>
+            expect(boundEventConsolidation.nextBoundEvents).toBeArrayWithDeepEqualContents(expected)
         })
 
         it("when there is a next event analysis, but an event with that name has already been updated into this event consolidation, the next events stays the same", (): void => {
@@ -76,8 +76,8 @@ describe("updateEventConsolidation", (): void => {
                 bestPossibleBoundHistoryAnalysis,
             })
 
-            expect(boundEventConsolidation.nextBoundEvents)
-                .toEqual(jasmine.arrayWithExactContents(["2.5°58"]))
+            const expected = ["2.5°58"] as Array<Name<JiNotationBound>>
+            expect(boundEventConsolidation.nextBoundEvents).toBeArrayWithDeepEqualContents(expected)
         })
     })
 

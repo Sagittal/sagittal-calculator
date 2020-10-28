@@ -111,11 +111,19 @@ describe("computeLocalMinima", (): void => {
 
         const actual = computeLocalMinima(samples, sumsOfSquares)
 
-        const expected = jasmine.arrayWithExactContents([
-            {sumOfSquares: 0.003 as SumOfSquares, samplePoint: [0, 1, 0], submetrics: []},
-            {sumOfSquares: 0.002 as SumOfSquares, samplePoint: [1, 1, 2], submetrics: []},
-        ])
-        expect(actual).toEqual(expected)
+        const expected = [
+            {
+                sumOfSquares: 0.003 as SumOfSquares,
+                samplePoint: [0, 1, 0] as SamplePoint,
+                submetrics: [] as unknown[] as Combination<Submetric>,
+            },
+            {
+                sumOfSquares: 0.002 as SumOfSquares,
+                samplePoint: [1, 1, 2] as SamplePoint,
+                submetrics: [] as unknown[] as Combination<Submetric>,
+            },
+        ] as LocalMin[]
+        expect(actual).toBeArrayWithDeepEqualContents(expected)
     })
 
     it("does not include results if the sum of squares is not appreciably less than the current local min               ", (): void => {

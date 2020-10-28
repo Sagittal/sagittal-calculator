@@ -1,5 +1,5 @@
 import {Ed, Window} from "../../../../../../src/general"
-import {Scope} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
+import {Sample, Scope} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {
     computeDynamicParameters,
     computeSamples,
@@ -37,7 +37,7 @@ describe("computeSamples", (): void => {
 
         const actual = computeSamples({scope, dynamicParameters})
 
-        const expected = jasmine.arrayWithExactContents([
+        const expected = [
             {
                 submetrics: [
                     {
@@ -206,8 +206,8 @@ describe("computeSamples", (): void => {
                 ],
                 samplePoint: [2, 1, 1],
             },
-        ])
-        expect(actual).toEqual(expected)
+        ] as Sample[]
+        expect(actual).toBeArrayWithDeepEqualContents(expected)
     })
 
     it("supports providing more than one submetric with the same submetric type", (): void => {
@@ -236,7 +236,7 @@ describe("computeSamples", (): void => {
 
         const actual = computeSamples({scope, dynamicParameters})
 
-        const expected = jasmine.arrayWithExactContents([
+        const expected = [
             {
                 submetrics: [
                     {
@@ -297,7 +297,7 @@ describe("computeSamples", (): void => {
                 ],
                 samplePoint: [1, 1],
             },
-        ])
-        expect(actual).toEqual(expected)
+        ] as Sample[]
+        expect(actual).toBeArrayWithDeepEqualContents(expected)
     })
 })

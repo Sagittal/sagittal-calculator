@@ -1,5 +1,5 @@
 import {Ed, Index, Window} from "../../../../../../src/general"
-import {SubmetricScope} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
+import {DynamicParameter, SubmetricScope} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {computeSubmetricDynamicParameters} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples/submetricDynamicParameters"
 import {PopularityParameterId, Submetric} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 import {Parameter} from "../../../../../../src/scripts/types"
@@ -23,7 +23,7 @@ describe("computeSubmetricDynamicParameters", (): void => {
 
         const actual = computeSubmetricDynamicParameters(submetricScope, submetricIndex)
 
-        const expected = jasmine.arrayWithExactContents([
+        const expected = [
             {
                 submetricIndex,
                 parameter: PopularityParameterId.A_AS_COEFFICIENT,
@@ -31,8 +31,8 @@ describe("computeSubmetricDynamicParameters", (): void => {
                 unit: 0.125,
             },
             {submetricIndex, parameter: PopularityParameterId.W, values: [0.6, 0.7, 0.8], unit: 0.1},
-        ])
-        expect(actual).toEqual(expected)
+        ] as DynamicParameter[]
+        expect(actual).toBeArrayWithDeepEqualContents(expected)
     })
 
     it("leaves a parameter out if it has a 0 ED", (): void => {
@@ -51,15 +51,15 @@ describe("computeSubmetricDynamicParameters", (): void => {
 
         const actual = computeSubmetricDynamicParameters(submetricScope, submetricIndex)
 
-        const expected = jasmine.arrayWithExactContents([
+        const expected = [
             {
                 submetricIndex,
                 parameter: PopularityParameterId.A_AS_COEFFICIENT,
                 values: [0.75, 0.875, 1.0, 1.125, 1.25],
                 unit: 0.125,
             },
-        ])
-        expect(actual).toEqual(expected)
+        ] as DynamicParameter[]
+        expect(actual).toBeArrayWithDeepEqualContents(expected)
     })
 
     it("works when provided a flat value", (): void => {
@@ -74,14 +74,14 @@ describe("computeSubmetricDynamicParameters", (): void => {
 
         const actual = computeSubmetricDynamicParameters(submetricScope, submetricIndex)
 
-        const expected = jasmine.arrayWithExactContents([
+        const expected = [
             {
                 submetricIndex,
                 parameter: PopularityParameterId.A_AS_COEFFICIENT,
                 values: [0.75, 0.875, 1.0, 1.125, 1.25],
                 unit: 0.125,
             },
-        ])
-        expect(actual).toEqual(expected)
+        ] as DynamicParameter[]
+        expect(actual).toBeArrayWithDeepEqualContents(expected)
     })
 })

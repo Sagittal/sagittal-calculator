@@ -54,7 +54,7 @@ describe("computeCommasFrom23FreeRationalMonzo", (): void => {
                 maxAas: lowMaxAas,
             })
 
-            expect(resultWithLowMaxAas).toEqual(jasmine.arrayWithExactContents([]))
+            expect(resultWithLowMaxAas).toEqual([])
         })
     })
 

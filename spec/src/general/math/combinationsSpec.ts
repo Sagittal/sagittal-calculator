@@ -8,15 +8,15 @@ describe("computeCombinations", (): void => {
 
         const actual = computeCombinations(set, count)
 
-        const expected: jasmine.ArrayContaining<string[]> = jasmine.arrayWithExactContents([
+        const expected = [
             ["a", "b"],
             ["a", "c"],
             ["a", "d"],
             ["b", "c"],
             ["b", "d"],
             ["c", "d"],
-        ])
-        expect(actual).toEqual(expected)
+        ] as Combinations<string>
+        expect(actual).toBeSameCombinationsAs(expected)
     })
 
     it("when count is zero, returns an empty array", (): void => {
@@ -25,7 +25,7 @@ describe("computeCombinations", (): void => {
         const actual = computeCombinations(set, count)
 
         const expected: Combinations<string> = [] as unknown[] as Combinations<string>
-        expect(actual).toEqual(expected)
+        expect(actual).toBeSameCombinationsAs(expected)
     })
 
     it("works when with repeated elements is true", (): void => {
@@ -45,7 +45,6 @@ describe("computeCombinations", (): void => {
             ["c", "d"],
             ["d", "d"],
         ] as Combinations<string>
-
         expect(actual).toBeSameCombinationsAs(expected)
     })
 

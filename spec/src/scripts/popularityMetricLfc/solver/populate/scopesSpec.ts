@@ -22,10 +22,10 @@ describe("populateScopes", (): void => {
         await populateScopes()
 
         // Count: 6
-        expect(scopesToSearch).toEqual(
-            jasmine.arrayWithExactContents(SUBMETRIC_CHUNKS.map((chunk: Chunk<Submetric>): Scope => {
+        expect(scopesToSearch).toBeArrayWithDeepEqualContents(
+            SUBMETRIC_CHUNKS.map((chunk: Chunk<Submetric>): Scope => {
                 return [{}, chunk] as Scope
-            })),
+            }),
         )
     })
 

@@ -1,4 +1,4 @@
-import {Copfr, Max, Prime, Sopfr} from "../../../../../src/general"
+import {Copfr, Max, Monzo, Prime, Sopfr} from "../../../../../src/general"
 import {N2D3P9} from "../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
 import {compute23FreeRationalMonzosToCheck} from "../../../../../src/scripts/jiPitch/findCommas/two3FreeMonzosToCheck"
 
@@ -16,7 +16,7 @@ describe("compute23FreeRationalMonzosToCheck", (): void => {
             maxN2D3P9,
         })
 
-        const expected = jasmine.arrayWithExactContents([
+        const expected = [
             [0, 0, -2],
             [0, 0, -1, -1],
             [0, 0, -1],
@@ -28,8 +28,8 @@ describe("compute23FreeRationalMonzosToCheck", (): void => {
             [0, 0, 1],
             [0, 0, 1, 1],
             [0, 0, 2],
-        ])
-        expect(actual).toEqual(expected)
+        ] as Array<Monzo<{rational: true, rough: 5}>>
+        expect(actual).toBeArrayWithDeepEqualContents(expected)
     })
 
     describe("3 of 4", (): void => {
@@ -44,7 +44,7 @@ describe("compute23FreeRationalMonzosToCheck", (): void => {
                 max23FreeCopfr,
             })
 
-            const expected = jasmine.arrayWithExactContents([
+            const expected = [
                 [0, 0, -2],
                 [0, 0, -1, -1],
                 [0, 0, -1],
@@ -58,8 +58,8 @@ describe("compute23FreeRationalMonzosToCheck", (): void => {
                 [0, 0, 1],
                 [0, 0, 1, 1],
                 [0, 0, 2],
-            ])
-            expect(actual).toEqual(expected)
+            ] as Array<Monzo<{rational: true, rough: 5}>>
+            expect(actual).toBeArrayWithDeepEqualContents(expected)
         })
 
         it("returns the list of 2,3-free monzos to check, given a max prime limit, a max N2D3P9, and a max 2,3-free CoPFR", (): void => {
@@ -73,7 +73,7 @@ describe("compute23FreeRationalMonzosToCheck", (): void => {
                 max23FreeCopfr,
             })
 
-            const expected = jasmine.arrayWithExactContents([
+            const expected = [
                 [0, 0, -2],
                 [0, 0, -1, -1],
                 [0, 0, -1],
@@ -85,8 +85,8 @@ describe("compute23FreeRationalMonzosToCheck", (): void => {
                 [0, 0, 1],
                 [0, 0, 1, 1],
                 [0, 0, 2],
-            ])
-            expect(actual).toEqual(expected)
+            ] as Array<Monzo<{rational: true, rough: 5}>>
+            expect(actual).toBeArrayWithDeepEqualContents(expected)
         })
 
         it("returns the list of 2,3-free monzos to check, given a max 2,3-free SoPFR, a max N2D3P9, and a max 2,3-free CoPFR", (): void => {
@@ -100,7 +100,7 @@ describe("compute23FreeRationalMonzosToCheck", (): void => {
                 max23FreeCopfr,
             })
 
-            const expected = jasmine.arrayWithExactContents([
+            const expected = [
                 [0, 0, -2],
                 [0, 0, -1, -1],
                 [0, 0, -1],
@@ -112,8 +112,8 @@ describe("compute23FreeRationalMonzosToCheck", (): void => {
                 [0, 0, 1],
                 [0, 0, 1, 1],
                 [0, 0, 2],
-            ])
-            expect(actual).toEqual(expected)
+            ] as Array<Monzo<{rational: true, rough: 5}>>
+            expect(actual).toBeArrayWithDeepEqualContents(expected)
         })
 
         it("returns the list of 2,3-free monzos to check, given a max prime limit, a max N2D3P9, and a max 2,3-free SoPFR", (): void => {
@@ -127,7 +127,7 @@ describe("compute23FreeRationalMonzosToCheck", (): void => {
                 maxN2D3P9,
             })
 
-            const expected = jasmine.arrayWithExactContents([
+            const expected = [
                 [0, 0, -2],
                 [0, 0, -1, -1],
                 [0, 0, -1],
@@ -139,8 +139,8 @@ describe("compute23FreeRationalMonzosToCheck", (): void => {
                 [0, 0, 1],
                 [0, 0, 1, 1],
                 [0, 0, 2],
-            ])
-            expect(actual).toEqual(expected)
+            ] as Array<Monzo<{rational: true, rough: 5}>>
+            expect(actual).toBeArrayWithDeepEqualContents(expected)
         })
     })
 
@@ -151,7 +151,7 @@ describe("compute23FreeRationalMonzosToCheck", (): void => {
 
             const actual = compute23FreeRationalMonzosToCheck({maxPrimeLimit, max23FreeSopfr})
 
-            const expected = jasmine.arrayWithExactContents([
+            const expected = [
                 [0, 0, -3],
                 [0, 0, -2],
                 [0, 0, -1, -1],
@@ -167,8 +167,8 @@ describe("compute23FreeRationalMonzosToCheck", (): void => {
                 [0, 0, 1, 1],
                 [0, 0, 2],
                 [0, 0, 3],
-            ])
-            expect(actual).toEqual(expected)
+            ] as Array<Monzo<{rational: true, rough: 5}>>
+            expect(actual).toBeArrayWithDeepEqualContents(expected)
         })
 
         it("returns the list of 2,3-free monzos to check, given a max prime limit and a max N2D3P9", (): void => {
@@ -177,7 +177,7 @@ describe("compute23FreeRationalMonzosToCheck", (): void => {
 
             const actual = compute23FreeRationalMonzosToCheck({maxPrimeLimit, maxN2D3P9})
 
-            const expected = jasmine.arrayWithExactContents([
+            const expected = [
                 [0, 0, -2, -1],
                 [0, 0, -2],
                 [0, 0, -2, 1],
@@ -193,8 +193,8 @@ describe("compute23FreeRationalMonzosToCheck", (): void => {
                 [0, 0, 2, -1],
                 [0, 0, 2],
                 [0, 0, 2, 1],
-            ])
-            expect(actual).toEqual(expected)
+            ] as Array<Monzo<{rational: true, rough: 5}>>
+            expect(actual).toBeArrayWithDeepEqualContents(expected)
         })
 
         it("returns the list of 2,3-free monzos to check, given a max prime limit and a max 2,3-free CoPFR               ", (): void => {
@@ -203,7 +203,7 @@ describe("compute23FreeRationalMonzosToCheck", (): void => {
 
             const actual = compute23FreeRationalMonzosToCheck({maxPrimeLimit, max23FreeCopfr})
 
-            const expected = jasmine.arrayWithExactContents([
+            const expected = [
                 [0, 0, -3],
                 [0, 0, -2, -1],
                 [0, 0, -2],
@@ -229,8 +229,8 @@ describe("compute23FreeRationalMonzosToCheck", (): void => {
                 [0, 0, 2],
                 [0, 0, 2, 1],
                 [0, 0, 3],
-            ])
-            expect(actual).toEqual(expected)
+            ] as Array<Monzo<{rational: true, rough: 5}>>
+            expect(actual).toBeArrayWithDeepEqualContents(expected)
         })
 
         it("returns the list of 2,3-free monzos to check, given a max 2,3-free SoPFR and a max 2,3-free CoPFR                   ", (): void => {
@@ -239,7 +239,7 @@ describe("compute23FreeRationalMonzosToCheck", (): void => {
 
             const actual = compute23FreeRationalMonzosToCheck({max23FreeSopfr, max23FreeCopfr})
 
-            const expected = jasmine.arrayWithExactContents([
+            const expected = [
                 [0, 0, -3],
                 [0, 0, -2, -1],
                 [0, 0, -2],
@@ -287,8 +287,8 @@ describe("compute23FreeRationalMonzosToCheck", (): void => {
                 [0, 0, 2],
                 [0, 0, 2, 1],
                 [0, 0, 3],
-            ])
-            expect(actual).toEqual(expected)
+            ] as Array<Monzo<{rational: true, rough: 5}>>
+            expect(actual).toBeArrayWithDeepEqualContents(expected)
         })
 
         it("returns the list of 2,3-free monzos to check, given a max N2D3P9 and a max 2,3-free CoPFR", (): void => {
@@ -297,7 +297,7 @@ describe("compute23FreeRationalMonzosToCheck", (): void => {
 
             const actual = compute23FreeRationalMonzosToCheck({maxN2D3P9, max23FreeCopfr})
 
-            const expected = jasmine.arrayWithExactContents([
+            const expected = [
                 [0, 0, -2],
                 [0, 0, -1, -1],
                 [0, 0, -1, 0, -1],
@@ -320,8 +320,8 @@ describe("compute23FreeRationalMonzosToCheck", (): void => {
                 [0, 0, 1, 0, 1],
                 [0, 0, 1, 1],
                 [0, 0, 2],
-            ])
-            expect(actual).toEqual(expected)
+            ] as Array<Monzo<{rational: true, rough: 5}>>
+            expect(actual).toBeArrayWithDeepEqualContents(expected)
         })
 
         it("returns the list of 2,3-free monzos to check, given a max N2D3P9 and a max 2,3-free SoPFR", (): void => {
@@ -330,7 +330,7 @@ describe("compute23FreeRationalMonzosToCheck", (): void => {
 
             const actual = compute23FreeRationalMonzosToCheck({maxN2D3P9, max23FreeSopfr})
 
-            const expected = jasmine.arrayWithExactContents([
+            const expected = [
                 [0, 0, -2],
                 [0, 0, -1, -1],
                 [0, 0, -1],
@@ -342,8 +342,8 @@ describe("compute23FreeRationalMonzosToCheck", (): void => {
                 [0, 0, 1],
                 [0, 0, 1, 1],
                 [0, 0, 2],
-            ])
-            expect(actual).toEqual(expected)
+            ] as Array<Monzo<{rational: true, rough: 5}>>
+            expect(actual).toBeArrayWithDeepEqualContents(expected)
         })
     })
 
@@ -353,7 +353,7 @@ describe("compute23FreeRationalMonzosToCheck", (): void => {
 
             const actual = compute23FreeRationalMonzosToCheck({max23FreeSopfr})
 
-            const expected = jasmine.arrayWithExactContents([
+            const expected = [
                 [0, 0, -3],
                 [0, 0, -2],
                 [0, 0, -1, -1],
@@ -373,8 +373,8 @@ describe("compute23FreeRationalMonzosToCheck", (): void => {
                 [0, 0, 1, 1],
                 [0, 0, 2],
                 [0, 0, 3],
-            ])
-            expect(actual).toEqual(expected)
+            ] as Array<Monzo<{rational: true, rough: 5}>>
+            expect(actual).toBeArrayWithDeepEqualContents(expected)
         })
 
         it("returns the list of 2,3-free monzos to check, given only a max N2D3P9", (): void => {
@@ -382,7 +382,7 @@ describe("compute23FreeRationalMonzosToCheck", (): void => {
 
             const actual = compute23FreeRationalMonzosToCheck({maxN2D3P9})
 
-            const expected = jasmine.arrayWithExactContents([
+            const expected = [
                 [0, 0, -2, -1],
                 [0, 0, -2],
                 [0, 0, -2, 1],
@@ -398,8 +398,8 @@ describe("compute23FreeRationalMonzosToCheck", (): void => {
                 [0, 0, 2, -1],
                 [0, 0, 2],
                 [0, 0, 2, 1],
-            ])
-            expect(actual).toEqual(expected)
+            ] as Array<Monzo<{rational: true, rough: 5}>>
+            expect(actual).toBeArrayWithDeepEqualContents(expected)
         })
     })
 
