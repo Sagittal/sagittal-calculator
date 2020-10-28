@@ -4,7 +4,10 @@ import {Parameter} from "../types"
 
 type UsefulnessParameterSet = Partial<Record<UsefulnessParameterId, Parameter>>
 
+// TODO: driving me nuts that a low score is better, but too much at once to change this to Unusefulness
 type Usefulness = number & { _UsefulnessBrand: boolean }
+
+type SquaredDistanceOfUsefulness = number & { _SquaredDistanceOfUsefulnessBrand: boolean }
 
 type UsefulnessMetric = (
     n2d3p9: N2D3P9,
@@ -40,4 +43,5 @@ export {
     UsefulnessParameterSet,
     UsefulnessMetricId,
     UsefulnessParameterId,
+    SquaredDistanceOfUsefulness,
 }

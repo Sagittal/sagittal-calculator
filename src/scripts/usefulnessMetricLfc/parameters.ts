@@ -17,7 +17,7 @@ import {UsefulnessParameterId, UsefulnessParameterSet} from "./types"
 //     },
 // ]
 
-const USEFULNESS_SEARCH_ED = 11 as Ed<Parameter> // Actually do 101
+const USEFULNESS_SEARCH_ED = 11 as Ed<Parameter>
 
 const USEFULNESS_PARAMETER_SCOPES: Record<UsefulnessParameterId, DynamicParameterScope> = {
     [UsefulnessParameterId.A]: {
