@@ -3,6 +3,7 @@
 enum CommandFlag {
     MAX_2_3_FREE_SOPFR = "+",
     MAX_2_3_FREE_COPFR = "#",
+    BOOLEAN_MODE = "0",
     EXCLUDED_FIELDS = "1",
     SYNC = "2",
     MAX_ATE = "3",

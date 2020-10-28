@@ -7,13 +7,13 @@ import {UsefulnessParameterId, UsefulnessParameterSet} from "./types"
 //
 // Const EXPERIMENTAL_USEFULNESS_PARAMETER_SCOPES = [
 //     {
-//         A: 0.5 as Parameter,
-//         B: 2 as Parameter,
-//         C: 2 as Parameter,
-//         SE: 0.001883679 as Parameter, // SE_OR_TE_WHEN_DAAS_OR_DATE_IS_9,
-//         TE: 0.001088841 as Parameter, // SE_OR_TE_WHEN_DAAS_OR_DATE_IS_9,
-//         SP: 0.5 as Parameter,
-//         TP: 0.5 as Parameter,
+//         [UsefulnessParameterId.A]: 1 as Parameter,
+//         [UsefulnessParameterId.B]: 1.37 as Parameter,
+//         [UsefulnessParameterId.C]: 1 as Parameter,
+//         [UsefulnessParameterId.SE]: 1 as Parameter, // SE_OR_TE_WHEN_DAAS_OR_DATE_IS_9,
+//         [UsefulnessParameterId.TE]: 0.00069053396 as Parameter, // SE_OR_TE_WHEN_DAAS_OR_DATE_IS_9,
+//         [UsefulnessParameterId.SP]: 1/12 as Parameter,
+//         [UsefulnessParameterId.TP]: 1 as Parameter,
 //     },
 // ]
 
