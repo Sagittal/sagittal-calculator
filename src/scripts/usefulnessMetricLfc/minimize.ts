@@ -8,12 +8,12 @@ import {UsefulnessMetric, UsefulnessMetricId, UsefulnessParameterId, UsefulnessP
 const logUsefulnessParameterSetsForUsefulnessMetricMinimizingSumOfSquares = (
     [
         usefulnessMetricId,
-        [usefulnessMetric, usefulnessParameterIds],
-    ]: [UsefulnessMetricId, [UsefulnessMetric, UsefulnessParameterId[]]],
+        {metric, parameters},
+    ]: [UsefulnessMetricId, {metric: UsefulnessMetric, parameters: UsefulnessParameterId[]}],
 ): void => {
     saveLog(`\nRUNNING FOR USEFULNESS METRIC ${usefulnessMetricId}`, LogTarget.PROGRESS)
 
-    const usefulnessParameterSets = computeUsefulnessParameterSets(usefulnessParameterIds)
+    const usefulnessParameterSets = computeUsefulnessParameterSets(parameters)
     const countUsefulnessParameterSets = count(usefulnessParameterSets)
 
     let minSumOfSquares = Infinity
@@ -28,7 +28,7 @@ const logUsefulnessParameterSetsForUsefulnessMetricMinimizingSumOfSquares = (
         SECONDARY_COMMA_ZONE_COMMAS_ENTRIES.forEach((secondaryCommaZoneCommasEntry: [CommaClassId, Comma[]]): void => {
             const squaredDistanceFromMostUsefulCommaInZone = computeCommasSquaredDistanceFromMostUsefulCommaInZone(
                 secondaryCommaZoneCommasEntry,
-                usefulnessMetric,
+                metric,
                 usefulnessParameterSet,
             )
 

@@ -18,7 +18,7 @@ describe("usefulnessMetric", (): void => {
     const tP = 0.05 as Parameter
 
     it("lee", (): void => {
-        const usefulnessMetric = USEFULNESS_METRICS_WITH_PARAMETERS[UsefulnessMetricId.LEE][0]
+        const usefulnessMetric = USEFULNESS_METRICS_WITH_PARAMETERS[UsefulnessMetricId.LEE].metric
 
         const actual = usefulnessMetric(n2d3p9, aas, ate, {a, b, c, sE, tE, sP, tP})
 
@@ -27,7 +27,7 @@ describe("usefulnessMetric", (): void => {
     })
 
     it("ree", (): void => {
-        const usefulnessMetric = USEFULNESS_METRICS_WITH_PARAMETERS[UsefulnessMetricId.REE][0]
+        const usefulnessMetric = USEFULNESS_METRICS_WITH_PARAMETERS[UsefulnessMetricId.REE].metric
 
         const actual = usefulnessMetric(n2d3p9, aas, ate, {a, b, c, sE, tE, sP, tP})
 
@@ -36,7 +36,7 @@ describe("usefulnessMetric", (): void => {
     })
 
     it("lpe", (): void => {
-        const usefulnessMetric = USEFULNESS_METRICS_WITH_PARAMETERS[UsefulnessMetricId.LPE][0]
+        const usefulnessMetric = USEFULNESS_METRICS_WITH_PARAMETERS[UsefulnessMetricId.LPE].metric
 
         const actual = usefulnessMetric(n2d3p9, aas, ate, {a, b, c, sE, tE, sP, tP})
 
@@ -45,7 +45,7 @@ describe("usefulnessMetric", (): void => {
     })
 
     it("rpe", (): void => {
-        const usefulnessMetric = USEFULNESS_METRICS_WITH_PARAMETERS[UsefulnessMetricId.RPE][0]
+        const usefulnessMetric = USEFULNESS_METRICS_WITH_PARAMETERS[UsefulnessMetricId.RPE].metric
 
         const actual = usefulnessMetric(n2d3p9, aas, ate, {a, b, c, sE, tE, sP, tP})
 
@@ -54,7 +54,7 @@ describe("usefulnessMetric", (): void => {
     })
 
     it("lep", (): void => {
-        const usefulnessMetric = USEFULNESS_METRICS_WITH_PARAMETERS[UsefulnessMetricId.LEP][0]
+        const usefulnessMetric = USEFULNESS_METRICS_WITH_PARAMETERS[UsefulnessMetricId.LEP].metric
 
         const actual = usefulnessMetric(n2d3p9, aas, ate, {a, b, c, sE, tE, sP, tP})
 
@@ -63,7 +63,7 @@ describe("usefulnessMetric", (): void => {
     })
 
     it("rep", (): void => {
-        const usefulnessMetric = USEFULNESS_METRICS_WITH_PARAMETERS[UsefulnessMetricId.REP][0]
+        const usefulnessMetric = USEFULNESS_METRICS_WITH_PARAMETERS[UsefulnessMetricId.REP].metric
 
         const actual = usefulnessMetric(n2d3p9, aas, ate, {a, b, c, sE, tE, sP, tP})
 
@@ -72,7 +72,7 @@ describe("usefulnessMetric", (): void => {
     })
 
     it("lpp", (): void => {
-        const usefulnessMetric = USEFULNESS_METRICS_WITH_PARAMETERS[UsefulnessMetricId.LPP][0]
+        const usefulnessMetric = USEFULNESS_METRICS_WITH_PARAMETERS[UsefulnessMetricId.LPP].metric
 
         const actual = usefulnessMetric(n2d3p9, aas, ate, {a, b, c, sE, tE, sP, tP})
 
@@ -81,7 +81,7 @@ describe("usefulnessMetric", (): void => {
     })
 
     it("rpp", (): void => {
-        const usefulnessMetric = USEFULNESS_METRICS_WITH_PARAMETERS[UsefulnessMetricId.RPP][0]
+        const usefulnessMetric = USEFULNESS_METRICS_WITH_PARAMETERS[UsefulnessMetricId.RPP].metric
 
         const actual = usefulnessMetric(n2d3p9, aas, ate, {a, b, c, sE, tE, sP, tP})
 

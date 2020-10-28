@@ -10,7 +10,7 @@ parseCommands(ScriptGroup.USEFULNESS_METRIC_LFC as Filename, [LogTarget.PROGRESS
 
 const usefulnessMetricsWithParametersEntries = Object.entries(
     USEFULNESS_METRICS_WITH_PARAMETERS,
-) as Array<[UsefulnessMetricId, [UsefulnessMetric, UsefulnessParameterId[]]]>
+) as Array<[UsefulnessMetricId, { metric: UsefulnessMetric, parameters: UsefulnessParameterId[]}]>
 usefulnessMetricsWithParametersEntries.forEach(
     logUsefulnessParameterSetsForUsefulnessMetricMinimizingSumOfSquares,
 )

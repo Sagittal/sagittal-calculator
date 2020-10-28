@@ -21,8 +21,7 @@ describe("computeCommasSquaredDistanceFromMostUsefulCommaInZone", (): void => {
             {monzo: [-21, 13, 2, 0, 0, 0, 0, -1]},
             {monzo: [-1, -7, 4, 1]},
         ] as Comma[]
-        // Todo: by the way, uncool about this [0] thing, fix it
-        const usefulnessMetric = USEFULNESS_METRICS_WITH_PARAMETERS[UsefulnessMetricId.LEE][0]
+        const usefulnessMetric = USEFULNESS_METRICS_WITH_PARAMETERS[UsefulnessMetricId.LEE].metric
         const usefulnessParameterSet = {
             [UsefulnessParameterId.SE]: 0.00195 as Parameter,
             [UsefulnessParameterId.TE]: 0.00195 as Parameter,
@@ -50,7 +49,7 @@ describe("computeCommasSquaredDistanceFromMostUsefulCommaInZone", (): void => {
             {monzo: [1, -2, 0, 1, 1, 0, -1]},
             {monzo: [-14, 5, 2, -1, 0, 0, 0, 1]},
         ] as Comma[]
-        const usefulnessMetric = USEFULNESS_METRICS_WITH_PARAMETERS[UsefulnessMetricId.LEE][0]
+        const usefulnessMetric = USEFULNESS_METRICS_WITH_PARAMETERS[UsefulnessMetricId.LEE].metric
         const usefulnessParameterSet = {
             [UsefulnessParameterId.SE]: 0.00195 as Parameter,
             [UsefulnessParameterId.TE]: 0.00195 as Parameter,
