@@ -1,7 +1,7 @@
 import {isUndefined} from "../../../../../../src/general/code"
 import {camelCaseToConstantCase} from "../../../../../../src/general/code/case"
 import {Aim, Ascii, Compatible, Smiley, Unicode} from "../../../../../../src/sagittal/accidental"
-import {Accent, HeadId, Orientation} from "../../../../../../src/sagittal/accidental/flacco"
+import {AccentId, HeadId} from "../../../../../../src/sagittal/accidental/flacco"
 import {Shafts} from "../../../../../../src/sagittal/accidental/sagittal"
 import {
     computeAccentGlyphExpectation,
@@ -1084,32 +1084,32 @@ describe("glyphs", (): void => {
     })
 
     it("has the correct accent glyphs and computes their IO correctly (when oriented with an upwards-aiming core)            ", (): void => {
-        const accents = Object.values(Accent) as Accent[]
-        const accentGlyphExpectations = accents.reduce(
+        const accentIds = Object.values(AccentId) as AccentId[]
+        const accentGlyphExpectations = accentIds.reduce(
             (
-                accentGlyphExpectations: Record<Accent, GlyphExpectation>,
-                accent: Accent
-            ): Record<Accent, GlyphExpectation> => {
+                accentGlyphExpectations: Record<AccentId, GlyphExpectation>,
+                accentId: AccentId
+            ): Record<AccentId, GlyphExpectation> => {
                 return {
                     ...accentGlyphExpectations,
-                    [accent]: computeAccentGlyphExpectation(accent, Orientation.WITH, Aim.UP)
+                    [accentId]: computeAccentGlyphExpectation(accentId)
                 }
             },
-            {} as Record<Accent, GlyphExpectation>,
+            {} as Record<AccentId, GlyphExpectation>,
         )
 
-        const expected: Record<Accent, GlyphExpectation> = {
-            [Accent.TICK]: {
+        const expected: Record<AccentId, GlyphExpectation> = {
+            [AccentId.TICK]: {
                 unicode: "" as Unicode,
                 ascii: "'" as Ascii,
                 smiley: ":':" as Smiley,
             },
-            [Accent.WING]: {
+            [AccentId.WING]: {
                 unicode: "" as Unicode,
                 ascii: "`" as Ascii,
                 smiley: ":`:" as Smiley,
             },
-            [Accent.BIRD]: {
+            [AccentId.BIRD]: {
                 unicode: "" as Unicode,
                 ascii: "``" as Ascii,
                 smiley: ":``:" as Smiley,
@@ -1119,32 +1119,32 @@ describe("glyphs", (): void => {
     })
 
     it("has the correct accent glyphs and computes their IO correctly (when oriented with a downwards-aiming core)              ", (): void => {
-        const accents = Object.values(Accent) as Accent[]
-        const accentGlyphExpectations = accents.reduce(
+        const accentIds = Object.values(AccentId) as AccentId[]
+        const accentGlyphExpectations = accentIds.reduce(
             (
-                accentGlyphExpectations: Record<Accent, GlyphExpectation>,
-                accent: Accent
-            ): Record<Accent, GlyphExpectation> => {
+                accentGlyphExpectations: Record<AccentId, GlyphExpectation>,
+                accentId: AccentId
+            ): Record<AccentId, GlyphExpectation> => {
                 return {
                     ...accentGlyphExpectations,
-                    [accent]: computeAccentGlyphExpectation(accent, Orientation.WITH, Aim.DOWN)
+                    [accentId]: computeAccentGlyphExpectation(accentId, undefined, Aim.DOWN)
                 }
             },
-            {} as Record<Accent, GlyphExpectation>,
+            {} as Record<AccentId, GlyphExpectation>,
         )
 
-        const expected: Record<Accent, GlyphExpectation> = {
-            [Accent.TICK]: {
+        const expected: Record<AccentId, GlyphExpectation> = {
+            [AccentId.TICK]: {
                 unicode: "" as Unicode,
                 ascii: "." as Ascii,
                 smiley: ":.:" as Smiley,
             },
-            [Accent.WING]: {
+            [AccentId.WING]: {
                 unicode: "" as Unicode,
                 ascii: "," as Ascii,
                 smiley: ":,:" as Smiley,
             },
-            [Accent.BIRD]: {
+            [AccentId.BIRD]: {
                 unicode: "" as Unicode,
                 ascii: ",," as Ascii,
                 smiley: ":,,:" as Smiley,

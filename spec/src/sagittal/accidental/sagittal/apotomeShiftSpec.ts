@@ -5,14 +5,14 @@ import {apotomeShift, getCore, Shafts} from "../../../../../src/sagittal/acciden
 describe("apotomeShift", (): void => {
     it("takes a symbol and shifts it by an apotome (adds 2 shafts)", (): void => {
         const sagittal: Sagittal = {                                                                    // ,')|(
-            arm: getArm(ArmId.WING_FROM_TICK),
+            arm: getArm(ArmId.WING_AGAINST_TICK),
             ...getCore(HeadId.DOUBLE_SCROLL),
         }
 
         const actual = apotomeShift(sagittal)
 
         const expected: Sagittal = {                                                                  // ,')|||(
-            arm: getArm(ArmId.WING_FROM_TICK),
+            arm: getArm(ArmId.WING_AGAINST_TICK),
             ...getCore(HeadId.DOUBLE_SCROLL, Shafts.TRIPLE),
         }
         expect(actual).toEqual(expected)

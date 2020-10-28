@@ -7,8 +7,8 @@ describe("getSmallestSymbolSubsetId", (): void => {
         expect(getSmallestSymbolSubsetId(SymbolClassId.BOATHOOK_AND_SCROLL)).toBe(SymbolSubsetId.ATHENIAN)
         expect(getSmallestSymbolSubsetId(SymbolClassId.LEFT_SCROLL_AND_BARB)).toBe(SymbolSubsetId.TROJAN)
         expect(getSmallestSymbolSubsetId(SymbolClassId.SCROLL_AND_ARC)).toBe(SymbolSubsetId.PROMETHEAN)
-        expect(getSmallestSymbolSubsetId(SymbolClassId.TICK_WITH_RIGHT_ARC)).toBe(SymbolSubsetId.HERCULEAN)
-        expect(getSmallestSymbolSubsetId(SymbolClassId.BIRD_WITH_RIGHT_ARC)).toBe(SymbolSubsetId.OLYMPIAN)
+        expect(getSmallestSymbolSubsetId(SymbolClassId.TICK_AND_RIGHT_ARC)).toBe(SymbolSubsetId.HERCULEAN)
+        expect(getSmallestSymbolSubsetId(SymbolClassId.BIRD_AND_RIGHT_ARC)).toBe(SymbolSubsetId.OLYMPIAN)
     })
 
     it("throws an error if the flacco ID is not a member of a symbol subset", (): void => {

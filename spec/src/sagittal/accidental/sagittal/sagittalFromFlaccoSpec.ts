@@ -1,18 +1,18 @@
 import {Aim, computeSagittalFromFlacco, Flacco, Sagittal} from "../../../../../src/sagittal/accidental"
-import {ArmId, getArm, getHead, HeadId, Orientation} from "../../../../../src/sagittal/accidental/flacco"
+import {ArmId, getArm, getHead, HeadId} from "../../../../../src/sagittal/accidental/flacco"
 import {Shafts} from "../../../../../src/sagittal/accidental/sagittal"
 
 describe("computeSagittalFromFlacco", (): void => {
     it("takes a combo of flags and arm and returns the full Sagittal symbol", (): void => {
         const flacco: Flacco = {
-            arm: getArm(ArmId.WING, Orientation.AGAINST),
+            arm: getArm(ArmId.WING, { against: true }),
             ...getHead(HeadId.BOATHOOK_AND_ARC),
         }
 
         const actual = computeSagittalFromFlacco(flacco)
 
         const expected: Sagittal = {                                                                       // ,~|)
-            arm: getArm(ArmId.WING, Orientation.AGAINST),
+            arm: getArm(ArmId.WING, { against: true }),
             aim: Aim.UP,
             shafts: Shafts.SINGLE,
             ...getHead(HeadId.BOATHOOK_AND_ARC),

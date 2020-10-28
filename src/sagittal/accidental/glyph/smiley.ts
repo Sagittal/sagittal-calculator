@@ -1,8 +1,8 @@
 import {isUndefined, join, sumTexts} from "../../../general"
-import {Arm, OrientedAccent} from "../flacco"
+import {Accent, Arm} from "../flacco"
 import {Accidental, Compatible, Flavor} from "../flavor"
 import {Aim, Core, isSagittal, NullSagittal, Sagittal} from "../sagittal"
-import {computeCompatibleAscii, computeCoreAscii, computeOrientedAccentAscii} from "./ascii"
+import {computeAccentAscii, computeCompatibleAscii, computeCoreAscii} from "./ascii"
 import {BLANK_ASCII, BLANK_SMILEY, PARENTHETICAL_NATURAL_SMILEY} from "./constants"
 import {Ascii, Smiley} from "./types"
 
@@ -21,8 +21,8 @@ const computeCoreSmiley = (core: Core): Smiley =>
 const computeCompatibleSmiley = (compatible: Compatible): Smiley =>
     convertAsciiToSmiley(computeCompatibleAscii(compatible))
 
-const computeOrientedAccentSmiley = (orientedAccent: OrientedAccent, aim: Aim): Smiley =>
-    convertAsciiToSmiley(computeOrientedAccentAscii(orientedAccent, aim))
+const computeAccentSmiley = (accent: Accent, aim: Aim): Smiley =>
+    convertAsciiToSmiley(computeAccentAscii(accent, aim))
 
 const computeSagittalSmiley = (sagittal: NullSagittal | Sagittal): Smiley => {
     if (!isSagittal(sagittal)) return PARENTHETICAL_NATURAL_SMILEY
@@ -36,7 +36,7 @@ const computeSagittalSmiley = (sagittal: NullSagittal | Sagittal): Smiley => {
 
 const computeArmSmiley = (arm: Arm, aim: Aim): Smiley =>
     join(
-        arm.map((orientedAccent: OrientedAccent): Smiley => computeOrientedAccentSmiley(orientedAccent, aim)),
+        arm.map((accent: Accent): Smiley => computeAccentSmiley(accent, aim)),
         BLANK_ASCII,
     )
 
@@ -63,5 +63,5 @@ export {
     computeCoreSmiley,
     computeCompatibleSmiley,
     computeSagittalSmiley,
-    computeOrientedAccentSmiley,
+    computeAccentSmiley,
 }

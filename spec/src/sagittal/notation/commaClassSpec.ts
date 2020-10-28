@@ -28,7 +28,7 @@ describe("getCommaClass", (): void => {
         const actual: CommaClass = getCommaClass(commaClassId)
 
         const expected: CommaClass = {
-            representativeSymbolClassId: FlaccoId.WING_FROM_TICK_AGAINST_RIGHT_ARC,
+            representativeSymbolClassId: FlaccoId.WING_AGAINST_TICK_AGAINST_RIGHT_ARC,
             pitch: {monzo: [-11, 3, 0, 1, 1] as Monzo<{rational: true}>},
         } as CommaClass
         expect(actual).toEqual(expected)

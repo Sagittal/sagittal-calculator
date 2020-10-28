@@ -1,5 +1,4 @@
-export {Flacco, Accent, Flag, Head, Arm, Orientation, OrientedAccent, HeadId, FlaccoId, ArmId} from "./types"
-export {reorient} from "./reorient"
+export {Flacco, AccentId, FlagId, Head, Arm, Accent, HeadId, FlaccoId, ArmId} from "./types"
 export {getFlacco} from "./flacco"
 export {getHead} from "./head"
 export {getArm} from "./arm"

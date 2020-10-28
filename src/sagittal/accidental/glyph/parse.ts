@@ -1,5 +1,5 @@
 import {BLANK, Char, Count, increment, isEmpty, shallowClone} from "../../../general"
-import {Accent, Arm, Flag, Orientation} from "../flacco"
+import {AccentId, Arm, FlagId} from "../flacco"
 import {Aim, NullSagittal, NULL_SAGITTAL, Sagittal, Shafts} from "../sagittal"
 import {PARENTHETICAL_NATURAL_ASCII} from "./constants"
 import {Ascii} from "./types"
@@ -16,20 +16,20 @@ const parseAscii = (ascii: Ascii): Sagittal | NullSagittal => {
     let shaftCount = 0 as Count
 
     const arm = [] as Arm
-    const left = [] as Flag[]
-    const right = [] as Flag[]
+    const left = [] as FlagId[]
+    const right = [] as FlagId[]
 
     let sagittalText = shallowClone(ascii)
     if (sagittalText.match("``")) {
         aim === Aim.UP ?
-            arm.push({accent: Accent.BIRD, orientation: Orientation.WITH}) :
-            arm.push({accent: Accent.BIRD, orientation: Orientation.AGAINST})
+            arm.push({id: AccentId.BIRD}) :
+            arm.push({id: AccentId.BIRD, against: true})
         sagittalText = sagittalText.replace("``", "") as Ascii
     }
     if (sagittalText.match(",,")) {
         aim === Aim.UP ?
-            arm.push({accent: Accent.BIRD, orientation: Orientation.AGAINST}) :
-            arm.push({accent: Accent.BIRD, orientation: Orientation.WITH})
+            arm.push({id: AccentId.BIRD, against: true}) :
+            arm.push({id: AccentId.BIRD})
         sagittalText = sagittalText.replace(",,", "") as Ascii
     }
 
@@ -37,40 +37,40 @@ const parseAscii = (ascii: Ascii): Sagittal | NullSagittal => {
     sagittalChars.forEach((sagittalChar: Char): void => {
         if (sagittalChar === "`") {
             aim === Aim.UP ?
-                arm.push({accent: Accent.WING, orientation: Orientation.WITH}) :
-                arm.push({accent: Accent.WING, orientation: Orientation.AGAINST})
+                arm.push({id: AccentId.WING}) :
+                arm.push({id: AccentId.WING, against: true})
         } else if (sagittalChar === ",") {
             aim === Aim.UP ?
-                arm.push({accent: Accent.WING, orientation: Orientation.AGAINST}) :
-                arm.push({accent: Accent.WING, orientation: Orientation.WITH})
+                arm.push({id: AccentId.WING, against: true}) :
+                arm.push({id: AccentId.WING})
         } else if (sagittalChar === "'") {
             aim === Aim.UP ?
-                arm.push({accent: Accent.TICK, orientation: Orientation.WITH}) :
-                arm.push({accent: Accent.TICK, orientation: Orientation.AGAINST})
+                arm.push({id: AccentId.TICK}) :
+                arm.push({id: AccentId.TICK, against: true})
         } else if (sagittalChar === ".") {
             aim === Aim.UP ?
-                arm.push({accent: Accent.TICK, orientation: Orientation.AGAINST}) :
-                arm.push({accent: Accent.TICK, orientation: Orientation.WITH})
+                arm.push({id: AccentId.TICK, against: true}) :
+                arm.push({id: AccentId.TICK})
         } else if (sagittalChar === "/") {
             aim === Aim.UP ?
-                left.push(Flag.BARB) :
-                right.push(Flag.BARB)
+                left.push(FlagId.BARB) :
+                right.push(FlagId.BARB)
         } else if (sagittalChar === "\\") {
             aim === Aim.UP ?
-                right.push(Flag.BARB) :
-                left.push(Flag.BARB)
+                right.push(FlagId.BARB) :
+                left.push(FlagId.BARB)
         } else if (sagittalChar === ")") {
             aim === Aim.UP ?
-                pastShaft ? right.push(Flag.ARC) : left.push(Flag.SCROLL) :
-                pastShaft ? right.push(Flag.SCROLL) : left.push(Flag.ARC)
+                pastShaft ? right.push(FlagId.ARC) : left.push(FlagId.SCROLL) :
+                pastShaft ? right.push(FlagId.SCROLL) : left.push(FlagId.ARC)
         } else if (sagittalChar === "(") {
             aim === Aim.UP ?
-                pastShaft ? right.push(Flag.SCROLL) : left.push(Flag.ARC) :
-                pastShaft ? right.push(Flag.ARC) : left.push(Flag.SCROLL)
+                pastShaft ? right.push(FlagId.SCROLL) : left.push(FlagId.ARC) :
+                pastShaft ? right.push(FlagId.ARC) : left.push(FlagId.SCROLL)
         } else if (sagittalChar === "~") {
             pastShaft ?
-                right.push(Flag.BOATHOOK) :
-                left.push(Flag.BOATHOOK)
+                right.push(FlagId.BOATHOOK) :
+                left.push(FlagId.BOATHOOK)
         } else if (sagittalChar === "!" || sagittalChar === "|") {
             pastShaft = true
             shaftCount = increment(shaftCount)

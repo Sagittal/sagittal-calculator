@@ -1,32 +1,27 @@
-import {reorient} from "./reorient"
-import {Accent, Arm, ArmId, Orientation} from "./types"
+import {AccentId, Arm, ArmId} from "./types"
 
-const getArm = (armId: ArmId, orientation: Orientation = Orientation.WITH): Arm => {
+const getArm = (armId: ArmId, {against}: {against?: boolean} = {}): Arm => {
     switch (armId) {
-        case ArmId.WING:
-            return [
-                {accent: Accent.WING, orientation},                                     //  `|
-            ]
-        case ArmId.BIRD:
-            return [
-                {accent: Accent.BIRD, orientation},                                     // ``|
-            ]
-        // Yes, it's slightly discomforting that we're using "from" here for what is basically a meta-orientation; i.e.
-        // The tick is oriented relative to the core as per normal, however the wing is oriented relative to the tick.
-        case ArmId.WING_FROM_TICK:
-            return [
-                {accent: Accent.WING, orientation: reorient(orientation)},              // ,'|
-                {accent: Accent.TICK, orientation},
-            ]
-        case ArmId.TICK:
-            return [
-                {accent: Accent.TICK, orientation},                                     //  '|
-            ]
-        case ArmId.WING_AND_TICK:
-            return [
-                {accent: Accent.WING, orientation},                                     // `'|
-                {accent: Accent.TICK, orientation},
-            ]
+        case ArmId.WING:                                                        //  `|
+            return against ?
+                [{id: AccentId.WING, against}] :
+                [{id: AccentId.WING}]
+        case ArmId.BIRD:                                                        // ``|
+            return against ?
+                [{id: AccentId.BIRD, against}] :
+                [{id: AccentId.BIRD}]
+        case ArmId.WING_AGAINST_TICK:                                           // ,'|
+            return against ?
+                [{id: AccentId.WING}, {id: AccentId.TICK, against }] :
+                [{id: AccentId.WING, against: true }, {id: AccentId.TICK}]
+        case ArmId.TICK:                                                        //  '|
+            return against ?
+                [{id: AccentId.TICK, against}] :
+                [{id: AccentId.TICK}]
+        case ArmId.WING_AND_TICK:                                               // `'|
+            return against ?
+                [{id: AccentId.WING, against}, {id: AccentId.TICK, against}] :
+                [{id: AccentId.WING}, {id: AccentId.TICK}]
     }
 }
 

@@ -1,20 +1,24 @@
 import {Maybe} from "../../../../../src/general/code"
 import {Aim, Compatible, computeCoreUnicode} from "../../../../../src/sagittal/accidental"
-import {Accent, HeadId, Orientation} from "../../../../../src/sagittal/accidental/flacco"
+import {AccentId, HeadId} from "../../../../../src/sagittal/accidental/flacco"
 import {
+    computeAccentAscii,
+    computeAccentSmiley,
+    computeAccentUnicode,
     computeCompatibleAscii,
     computeCompatibleSmiley,
     computeCompatibleUnicode,
     computeCoreAscii,
     computeCoreSmiley,
-    computeOrientedAccentAscii,
-    computeOrientedAccentSmiley,
-    computeOrientedAccentUnicode,
 } from "../../../../../src/sagittal/accidental/glyph"
 import {getCore, Shafts} from "../../../../../src/sagittal/accidental/sagittal"
 import {GlyphExpectation} from "./types"
 
-const computeCoreGlyphExpectation = (headId: HeadId, shafts: Shafts, aim: Aim): Maybe<GlyphExpectation> => {
+const computeCoreGlyphExpectation = (
+    headId: HeadId,
+    shafts: Shafts = Shafts.SINGLE,
+    aim: Aim = Aim.UP,
+): Maybe<GlyphExpectation> => {
     try {
         const core = getCore(headId, shafts, aim)
 
@@ -28,11 +32,15 @@ const computeCoreGlyphExpectation = (headId: HeadId, shafts: Shafts, aim: Aim): 
     }
 }
 
-const computeAccentGlyphExpectation = (accent: Accent, orientation: Orientation, aim: Aim): GlyphExpectation =>
+const computeAccentGlyphExpectation = (
+    accentId: AccentId,
+    {against = false}: {against?: boolean} = {},
+    aim: Aim = Aim.UP,
+): GlyphExpectation =>
     ({
-        ascii: computeOrientedAccentAscii({accent, orientation}, aim),
-        unicode: computeOrientedAccentUnicode({accent, orientation}, aim),
-        smiley: computeOrientedAccentSmiley({accent, orientation}, aim),
+        ascii: computeAccentAscii({id: accentId, against}, aim),
+        unicode: computeAccentUnicode({id: accentId, against}, aim),
+        smiley: computeAccentSmiley({id: accentId, against}, aim),
     })
 
 const computeCompatibleGlyphExpectation = (compatible: Compatible): GlyphExpectation =>

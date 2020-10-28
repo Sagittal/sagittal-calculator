@@ -9,7 +9,7 @@ describe("parseAscii", (): void => {
         const actual = parseAscii(ascii)
 
         const expected = {
-            arm: getArm(ArmId.WING_FROM_TICK),
+            arm: getArm(ArmId.WING_AGAINST_TICK),
             ...getCore(HeadId.BARB_AND_ARC),
         } as Sagittal
         expect(actual).toEqual(expected)

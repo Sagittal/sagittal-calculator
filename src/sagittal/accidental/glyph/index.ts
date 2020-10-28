@@ -3,21 +3,21 @@ export {
     computeAccidentalUnicode,
     computeSagittalUnicode,
     computeCompatibleUnicode,
-    computeOrientedAccentUnicode,
+    computeAccentUnicode,
 } from "./unicode"
 export {
     computeCoreAscii,
     computeAccidentalAscii,
     computeSagittalAscii,
     computeCompatibleAscii,
-    computeOrientedAccentAscii,
+    computeAccentAscii,
 } from "./ascii"
 export {
     computeCoreSmiley,
     computeAccidentalSmiley,
     computeSagittalSmiley,
     computeCompatibleSmiley,
-    computeOrientedAccentSmiley,
+    computeAccentSmiley,
 } from "./smiley"
 export {formatAscii} from "./formatAscii"
 export {Ascii, Unicode, Smiley, Glyph} from "./types"

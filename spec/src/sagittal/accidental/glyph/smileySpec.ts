@@ -1,5 +1,5 @@
 import {Accidental, Aim, Compatible, Flavor, Sagittal, Smiley} from "../../../../../src/sagittal/accidental"
-import {ArmId, getArm, HeadId, Orientation} from "../../../../../src/sagittal/accidental/flacco"
+import {ArmId, getArm, HeadId} from "../../../../../src/sagittal/accidental/flacco"
 import {computeAccidentalSmiley, computeSagittalSmiley} from "../../../../../src/sagittal/accidental/glyph"
 import {getCore, NullSagittal, Shafts} from "../../../../../src/sagittal/accidental/sagittal"
 
@@ -49,7 +49,7 @@ describe("computeSagittalSmiley", (): void => {
 
     it("does the correct thing with double down ticks", (): void => {
         const sagittal: Sagittal = {                                                                            // ,,|)
-            arm: getArm(ArmId.BIRD, Orientation.AGAINST),
+            arm: getArm(ArmId.BIRD, { against: true }),
             ...getCore(HeadId.RIGHT_ARC),
         }
 

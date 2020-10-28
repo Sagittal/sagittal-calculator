@@ -35,12 +35,12 @@ const SYMBOL_CLASSES: Partial<Record<FlaccoId, SymbolClass>> = {
         flaccoId: FlaccoId.LEFT_SCROLL,
         commaClassId: CommaClassId._19_s,
     },
-    [SymbolClassId.WING_WITH_LEFT_SCROLL]: {
-        flaccoId: FlaccoId.WING_WITH_LEFT_SCROLL,
+    [SymbolClassId.WING_AND_LEFT_SCROLL]: {
+        flaccoId: FlaccoId.WING_AND_LEFT_SCROLL,
         commaClassId: CommaClassId._49_55_s,
     },
-    [SymbolClassId.BIRD_WITH_LEFT_SCROLL]: {
-        flaccoId: FlaccoId.BIRD_WITH_LEFT_SCROLL,
+    [SymbolClassId.BIRD_AND_LEFT_SCROLL]: {
+        flaccoId: FlaccoId.BIRD_AND_LEFT_SCROLL,
         commaClassId: CommaClassId._385_k,
     },
     [SymbolClassId.BIRD_AGAINST_RIGHT_SCROLL]: {
@@ -55,20 +55,20 @@ const SYMBOL_CLASSES: Partial<Record<FlaccoId, SymbolClass>> = {
         flaccoId: FlaccoId.RIGHT_SCROLL,
         commaClassId: CommaClassId._5_7_k,
     },
-    [SymbolClassId.WING_WITH_RIGHT_SCROLL]: {
-        flaccoId: FlaccoId.WING_WITH_RIGHT_SCROLL,
+    [SymbolClassId.WING_AND_RIGHT_SCROLL]: {
+        flaccoId: FlaccoId.WING_AND_RIGHT_SCROLL,
         commaClassId: CommaClassId._5_343_k,
     },
     [SymbolClassId.TICK_AGAINST_LEFT_BOATHOOK]: {
         flaccoId: FlaccoId.TICK_AGAINST_LEFT_BOATHOOK,
         commaClassId: CommaClassId._1_85_k,
     },
-    [SymbolClassId.WING_FROM_TICK_WITH_RIGHT_SCROLL]: {
-        flaccoId: FlaccoId.WING_FROM_TICK_WITH_RIGHT_SCROLL,
+    [SymbolClassId.WING_AGAINST_TICK_AND_RIGHT_SCROLL]: {
+        flaccoId: FlaccoId.WING_AGAINST_TICK_AND_RIGHT_SCROLL,
         commaClassId: CommaClassId._1_1225_k,
     },
-    [SymbolClassId.TICK_WITH_RIGHT_SCROLL]: {
-        flaccoId: FlaccoId.TICK_WITH_RIGHT_SCROLL,
+    [SymbolClassId.TICK_AND_RIGHT_SCROLL]: {
+        flaccoId: FlaccoId.TICK_AND_RIGHT_SCROLL,
         commaClassId: CommaClassId._25_7_k,
     },
     [SymbolClassId.WING_AGAINST_LEFT_BOATHOOK]: {
@@ -87,20 +87,20 @@ const SYMBOL_CLASSES: Partial<Record<FlaccoId, SymbolClass>> = {
         flaccoId: FlaccoId.DOUBLE_SCROLL,
         commaClassId: CommaClassId._7_11_k,
     },
-    [SymbolClassId.WING_WITH_DOUBLE_SCROLL]: {
-        flaccoId: FlaccoId.WING_WITH_DOUBLE_SCROLL,
+    [SymbolClassId.WING_AND_DOUBLE_SCROLL]: {
+        flaccoId: FlaccoId.WING_AND_DOUBLE_SCROLL,
         commaClassId: CommaClassId._275_k,
     },
-    [SymbolClassId.BIRD_WITH_DOUBLE_SCROLL]: {
-        flaccoId: FlaccoId.BIRD_WITH_DOUBLE_SCROLL,
+    [SymbolClassId.BIRD_AND_DOUBLE_SCROLL]: {
+        flaccoId: FlaccoId.BIRD_AND_DOUBLE_SCROLL,
         commaClassId: CommaClassId._49_13_k,
     },
-    [SymbolClassId.WING_FROM_TICK_WITH_DOUBLE_SCROLL]: {
-        flaccoId: FlaccoId.WING_FROM_TICK_WITH_DOUBLE_SCROLL,
+    [SymbolClassId.WING_AGAINST_TICK_AND_DOUBLE_SCROLL]: {
+        flaccoId: FlaccoId.WING_AGAINST_TICK_AND_DOUBLE_SCROLL,
         commaClassId: CommaClassId._1_8575_k,
     },
-    [SymbolClassId.TICK_WITH_DOUBLE_SCROLL]: {
-        flaccoId: FlaccoId.TICK_WITH_DOUBLE_SCROLL,
+    [SymbolClassId.TICK_AND_DOUBLE_SCROLL]: {
+        flaccoId: FlaccoId.TICK_AND_DOUBLE_SCROLL,
         commaClassId: CommaClassId._35_11_k,
     },
     [SymbolClassId.LEFT_SCROLL_AND_BOATHOOK]: {
@@ -111,8 +111,8 @@ const SYMBOL_CLASSES: Partial<Record<FlaccoId, SymbolClass>> = {
         flaccoId: FlaccoId.TICK_AGAINST_BOATHOOK_AND_SCROLL,
         commaClassId: CommaClassId._17_5_C,
     },
-    [SymbolClassId.WING_FROM_TICK_AGAINST_BOATHOOK_AND_SCROLL]: {
-        flaccoId: FlaccoId.WING_FROM_TICK_AGAINST_BOATHOOK_AND_SCROLL,
+    [SymbolClassId.WING_AGAINST_TICK_AGAINST_BOATHOOK_AND_SCROLL]: {
+        flaccoId: FlaccoId.WING_AGAINST_TICK_AGAINST_BOATHOOK_AND_SCROLL,
         commaClassId: CommaClassId._11_23_C,
     },
     [SymbolClassId.BIRD_AGAINST_BOATHOOK_AND_SCROLL]: {
@@ -127,8 +127,8 @@ const SYMBOL_CLASSES: Partial<Record<FlaccoId, SymbolClass>> = {
         flaccoId: FlaccoId.BOATHOOK_AND_SCROLL,
         commaClassId: CommaClassId._17_C,
     },
-    [SymbolClassId.WING_WITH_BOATHOOK_AND_SCROLL]: {
-        flaccoId: FlaccoId.WING_WITH_BOATHOOK_AND_SCROLL,
+    [SymbolClassId.WING_BOATHOOK_AND_SCROLL]: {
+        flaccoId: FlaccoId.WING_BOATHOOK_AND_SCROLL,
         commaClassId: CommaClassId._143_7_C,
     },
     [SymbolClassId.BIRD_AGAINST_RIGHT_BOATHOOK]: {
@@ -143,20 +143,20 @@ const SYMBOL_CLASSES: Partial<Record<FlaccoId, SymbolClass>> = {
         flaccoId: FlaccoId.RIGHT_BOATHOOK,
         commaClassId: CommaClassId._23_C,
     },
-    [SymbolClassId.WING_WITH_RIGHT_BOATHOOK]: {
-        flaccoId: FlaccoId.WING_WITH_RIGHT_BOATHOOK,
+    [SymbolClassId.WING_AND_RIGHT_BOATHOOK]: {
+        flaccoId: FlaccoId.WING_AND_RIGHT_BOATHOOK,
         commaClassId: CommaClassId._1_169_C,
     },
     [SymbolClassId.DOUBLE_LEFT_BOATHOOK]: {
         flaccoId: FlaccoId.DOUBLE_LEFT_BOATHOOK,
         commaClassId: CommaClassId._11_49_C,
     },
-    [SymbolClassId.WING_WITH_DOUBLE_LEFT_BOATHOOK]: {
-        flaccoId: FlaccoId.WING_WITH_DOUBLE_LEFT_BOATHOOK,
+    [SymbolClassId.WING_AND_DOUBLE_LEFT_BOATHOOK]: {
+        flaccoId: FlaccoId.WING_AND_DOUBLE_LEFT_BOATHOOK,
         commaClassId: CommaClassId._11_31_C,
     },
-    [SymbolClassId.BIRD_WITH_DOUBLE_LEFT_BOATHOOK]: {
-        flaccoId: FlaccoId.BIRD_WITH_DOUBLE_LEFT_BOATHOOK,
+    [SymbolClassId.BIRD_AND_DOUBLE_LEFT_BOATHOOK]: {
+        flaccoId: FlaccoId.BIRD_AND_DOUBLE_LEFT_BOATHOOK,
         commaClassId: CommaClassId._17_7_C,
     },
     [SymbolClassId.WING_AND_TICK_AGAINST_LEFT_BARB]: {
@@ -183,24 +183,24 @@ const SYMBOL_CLASSES: Partial<Record<FlaccoId, SymbolClass>> = {
         flaccoId: FlaccoId.LEFT_BARB,
         commaClassId: CommaClassId._1_5_C,
     },
-    [SymbolClassId.WING_WITH_LEFT_BARB]: {
-        flaccoId: FlaccoId.WING_WITH_LEFT_BARB,
+    [SymbolClassId.WING_AND_LEFT_BARB]: {
+        flaccoId: FlaccoId.WING_AND_LEFT_BARB,
         commaClassId: CommaClassId._875_C,
     },
-    [SymbolClassId.BIRD_WITH_LEFT_BARB]: {
-        flaccoId: FlaccoId.BIRD_WITH_LEFT_BARB,
+    [SymbolClassId.BIRD_AND_LEFT_BARB]: {
+        flaccoId: FlaccoId.BIRD_AND_LEFT_BARB,
         commaClassId: CommaClassId._25_13_C,
     },
     [SymbolClassId.TICK_AGAINST_LEFT_SCROLL_AND_BARB]: {
         flaccoId: FlaccoId.TICK_AGAINST_LEFT_SCROLL_AND_BARB,
         commaClassId: CommaClassId._19_25_C,
     },
-    [SymbolClassId.TICK_WITH_LEFT_BARB]: {
-        flaccoId: FlaccoId.TICK_WITH_LEFT_BARB,
+    [SymbolClassId.TICK_AND_LEFT_BARB]: {
+        flaccoId: FlaccoId.TICK_AND_LEFT_BARB,
         commaClassId: CommaClassId._1_C,
     },
-    [SymbolClassId.WING_AND_TICK_WITH_LEFT_BARB]: {
-        flaccoId: FlaccoId.WING_AND_TICK_WITH_LEFT_BARB,
+    [SymbolClassId.WING_TICK_AND_LEFT_BARB]: {
+        flaccoId: FlaccoId.WING_TICK_AND_LEFT_BARB,
         commaClassId: CommaClassId._4375_C,
     },
     [SymbolClassId.BIRD_AGAINST_LEFT_SCROLL_AND_BARB]: {
@@ -223,8 +223,8 @@ const SYMBOL_CLASSES: Partial<Record<FlaccoId, SymbolClass>> = {
         flaccoId: FlaccoId.TICK_AGAINST_RIGHT_ARC,
         commaClassId: CommaClassId._1_35_C,
     },
-    [SymbolClassId.WING_FROM_TICK_AGAINST_RIGHT_ARC]: {
-        flaccoId: FlaccoId.WING_FROM_TICK_AGAINST_RIGHT_ARC,
+    [SymbolClassId.WING_AGAINST_TICK_AGAINST_RIGHT_ARC]: {
+        flaccoId: FlaccoId.WING_AGAINST_TICK_AGAINST_RIGHT_ARC,
         commaClassId: CommaClassId._77_C,
     },
     [SymbolClassId.BIRD_AGAINST_RIGHT_ARC]: {
@@ -239,24 +239,24 @@ const SYMBOL_CLASSES: Partial<Record<FlaccoId, SymbolClass>> = {
         flaccoId: FlaccoId.RIGHT_ARC,
         commaClassId: CommaClassId._1_7_C,
     },
-    [SymbolClassId.WING_WITH_RIGHT_ARC]: {
-        flaccoId: FlaccoId.WING_WITH_RIGHT_ARC,
+    [SymbolClassId.WING_AND_RIGHT_ARC]: {
+        flaccoId: FlaccoId.WING_AND_RIGHT_ARC,
         commaClassId: CommaClassId._625_C,
     },
-    [SymbolClassId.BIRD_WITH_RIGHT_ARC]: {
-        flaccoId: FlaccoId.BIRD_WITH_RIGHT_ARC,
+    [SymbolClassId.BIRD_AND_RIGHT_ARC]: {
+        flaccoId: FlaccoId.BIRD_AND_RIGHT_ARC,
         commaClassId: CommaClassId._11_13_C,
     },
-    [SymbolClassId.WING_FROM_TICK_WITH_RIGHT_ARC]: {
-        flaccoId: FlaccoId.WING_FROM_TICK_WITH_RIGHT_ARC,
+    [SymbolClassId.WING_AGAINST_TICK_AND_RIGHT_ARC]: {
+        flaccoId: FlaccoId.WING_AGAINST_TICK_AND_RIGHT_ARC,
         commaClassId: CommaClassId._325_C,
     },
-    [SymbolClassId.TICK_WITH_RIGHT_ARC]: {
-        flaccoId: FlaccoId.TICK_WITH_RIGHT_ARC,
+    [SymbolClassId.TICK_AND_RIGHT_ARC]: {
+        flaccoId: FlaccoId.TICK_AND_RIGHT_ARC,
         commaClassId: CommaClassId._5_7_C,
     },
-    [SymbolClassId.WING_AND_TICK_WITH_RIGHT_ARC]: {
-        flaccoId: FlaccoId.WING_AND_TICK_WITH_RIGHT_ARC,
+    [SymbolClassId.WING_TICK_AND_RIGHT_ARC]: {
+        flaccoId: FlaccoId.WING_TICK_AND_RIGHT_ARC,
         commaClassId: CommaClassId._3125_C,
     },
     [SymbolClassId.WING_AGAINST_SCROLL_AND_ARC]: {
@@ -275,8 +275,8 @@ const SYMBOL_CLASSES: Partial<Record<FlaccoId, SymbolClass>> = {
         flaccoId: FlaccoId.RIGHT_BARB,
         commaClassId: CommaClassId._55_C,
     },
-    [SymbolClassId.WING_WITH_RIGHT_BARB]: {
-        flaccoId: FlaccoId.WING_WITH_RIGHT_BARB,
+    [SymbolClassId.WING_AND_RIGHT_BARB]: {
+        flaccoId: FlaccoId.WING_AND_RIGHT_BARB,
         commaClassId: CommaClassId._11_91_C,
     },
     [SymbolClassId.WING_AGAINST_LEFT_ARC]: {
@@ -287,20 +287,20 @@ const SYMBOL_CLASSES: Partial<Record<FlaccoId, SymbolClass>> = {
         flaccoId: FlaccoId.LEFT_ARC,
         commaClassId: CommaClassId._7_11_C,
     },
-    [SymbolClassId.WING_WITH_LEFT_ARC]: {
-        flaccoId: FlaccoId.WING_WITH_LEFT_ARC,
+    [SymbolClassId.WING_AND_LEFT_ARC]: {
+        flaccoId: FlaccoId.WING_AND_LEFT_ARC,
         commaClassId: CommaClassId._13_17_S,
     },
-    [SymbolClassId.BIRD_WITH_LEFT_ARC]: {
-        flaccoId: FlaccoId.BIRD_WITH_LEFT_ARC,
+    [SymbolClassId.BIRD_AND_LEFT_ARC]: {
+        flaccoId: FlaccoId.BIRD_AND_LEFT_ARC,
         commaClassId: CommaClassId._17_25_S,
     },
-    [SymbolClassId.WING_FROM_TICK_WITH_LEFT_ARC]: {
-        flaccoId: FlaccoId.WING_FROM_TICK_WITH_LEFT_ARC,
+    [SymbolClassId.WING_AGAINST_TICK_AND_LEFT_ARC]: {
+        flaccoId: FlaccoId.WING_AGAINST_TICK_AND_LEFT_ARC,
         commaClassId: CommaClassId._7_247_S,
     },
-    [SymbolClassId.TICK_WITH_LEFT_ARC]: {
-        flaccoId: FlaccoId.TICK_WITH_LEFT_ARC,
+    [SymbolClassId.TICK_AND_LEFT_ARC]: {
+        flaccoId: FlaccoId.TICK_AND_LEFT_ARC,
         commaClassId: CommaClassId._25_49_S,
     },
     [SymbolClassId.WING_AGAINST_BOATHOOK_AND_ARC]: {
@@ -311,8 +311,8 @@ const SYMBOL_CLASSES: Partial<Record<FlaccoId, SymbolClass>> = {
         flaccoId: FlaccoId.BOATHOOK_AND_ARC,
         commaClassId: CommaClassId._49_S,
     },
-    [SymbolClassId.WING_WITH_BOATHOOK_AND_ARC]: {
-        flaccoId: FlaccoId.WING_WITH_BOATHOOK_AND_ARC,
+    [SymbolClassId.WING_BOATHOOK_AND_ARC]: {
+        flaccoId: FlaccoId.WING_BOATHOOK_AND_ARC,
         commaClassId: CommaClassId._17_5_S,
     },
     [SymbolClassId.WING_AND_TICK_AGAINST_ARC_AND_SCROLL]: {
@@ -323,8 +323,8 @@ const SYMBOL_CLASSES: Partial<Record<FlaccoId, SymbolClass>> = {
         flaccoId: FlaccoId.TICK_AGAINST_ARC_AND_SCROLL,
         commaClassId: CommaClassId._1_11_S,
     },
-    [SymbolClassId.TICK_WITH_BOATHOOK_AND_ARC]: {
-        flaccoId: FlaccoId.TICK_WITH_BOATHOOK_AND_ARC,
+    [SymbolClassId.TICK_BOATHOOK_AND_ARC]: {
+        flaccoId: FlaccoId.TICK_BOATHOOK_AND_ARC,
         commaClassId: CommaClassId._245_S,
     },
     [SymbolClassId.BARB_AND_BOATHOOK]: {
@@ -343,8 +343,8 @@ const SYMBOL_CLASSES: Partial<Record<FlaccoId, SymbolClass>> = {
         flaccoId: FlaccoId.ARC_AND_SCROLL,
         commaClassId: CommaClassId._5_11_S,
     },
-    [SymbolClassId.WING_WITH_ARC_AND_SCROLL]: {
-        flaccoId: FlaccoId.WING_WITH_ARC_AND_SCROLL,
+    [SymbolClassId.WING_ARC_AND_SCROLL]: {
+        flaccoId: FlaccoId.WING_ARC_AND_SCROLL,
         commaClassId: CommaClassId._1_1001_S,
     },
     [SymbolClassId.BOATHOOK_AND_BARB]: {
@@ -359,8 +359,8 @@ const SYMBOL_CLASSES: Partial<Record<FlaccoId, SymbolClass>> = {
         flaccoId: FlaccoId.TICK_AGAINST_DOUBLE_LEFT_BARB,
         commaClassId: CommaClassId._1_125_S,
     },
-    [SymbolClassId.WING_FROM_TICK_AGAINST_DOUBLE_LEFT_BARB]: {
-        flaccoId: FlaccoId.WING_FROM_TICK_AGAINST_DOUBLE_LEFT_BARB,
+    [SymbolClassId.WING_AGAINST_TICK_AGAINST_DOUBLE_LEFT_BARB]: {
+        flaccoId: FlaccoId.WING_AGAINST_TICK_AGAINST_DOUBLE_LEFT_BARB,
         commaClassId: CommaClassId._35_S,
     },
     [SymbolClassId.BIRD_AGAINST_DOUBLE_LEFT_BARB]: {
@@ -375,20 +375,20 @@ const SYMBOL_CLASSES: Partial<Record<FlaccoId, SymbolClass>> = {
         flaccoId: FlaccoId.DOUBLE_LEFT_BARB,
         commaClassId: CommaClassId._1_25_S,
     },
-    [SymbolClassId.WING_WITH_DOUBLE_LEFT_BARB]: {
-        flaccoId: FlaccoId.WING_WITH_DOUBLE_LEFT_BARB,
+    [SymbolClassId.WING_AND_DOUBLE_LEFT_BARB]: {
+        flaccoId: FlaccoId.WING_AND_DOUBLE_LEFT_BARB,
         commaClassId: CommaClassId._175_S,
     },
-    [SymbolClassId.BIRD_WITH_DOUBLE_LEFT_BARB]: {
-        flaccoId: FlaccoId.BIRD_WITH_DOUBLE_LEFT_BARB,
+    [SymbolClassId.BIRD_AND_DOUBLE_LEFT_BARB]: {
+        flaccoId: FlaccoId.BIRD_AND_DOUBLE_LEFT_BARB,
         commaClassId: CommaClassId._5_13_S,
     },
-    [SymbolClassId.WING_FROM_TICK_WITH_DOUBLE_LEFT_BARB]: {
-        flaccoId: FlaccoId.WING_FROM_TICK_WITH_DOUBLE_LEFT_BARB,
+    [SymbolClassId.WING_AGAINST_TICK_AND_DOUBLE_LEFT_BARB]: {
+        flaccoId: FlaccoId.WING_AGAINST_TICK_AND_DOUBLE_LEFT_BARB,
         commaClassId: CommaClassId._49_17_S,
     },
-    [SymbolClassId.TICK_WITH_DOUBLE_LEFT_BARB]: {
-        flaccoId: FlaccoId.TICK_WITH_DOUBLE_LEFT_BARB,
+    [SymbolClassId.TICK_AND_DOUBLE_LEFT_BARB]: {
+        flaccoId: FlaccoId.TICK_AND_DOUBLE_LEFT_BARB,
         commaClassId: CommaClassId._13_19_S,
     },
     [SymbolClassId.BIRD_AGAINST_LEFT_SCROLL_DOUBLE_LEFT_BARB]: {
@@ -403,12 +403,12 @@ const SYMBOL_CLASSES: Partial<Record<FlaccoId, SymbolClass>> = {
         flaccoId: FlaccoId.LEFT_SCROLL_DOUBLE_LEFT_BARB,
         commaClassId: CommaClassId._13_5_M,
     },
-    [SymbolClassId.WING_WITH_LEFT_SCROLL_DOUBLE_LEFT_BARB]: {
-        flaccoId: FlaccoId.WING_WITH_LEFT_SCROLL_DOUBLE_LEFT_BARB,
+    [SymbolClassId.WING_AND_LEFT_SCROLL_DOUBLE_LEFT_BARB]: {
+        flaccoId: FlaccoId.WING_AND_LEFT_SCROLL_DOUBLE_LEFT_BARB,
         commaClassId: CommaClassId._1_175_M,
     },
-    [SymbolClassId.BIRD_WITH_LEFT_SCROLL_DOUBLE_LEFT_BARB]: {
-        flaccoId: FlaccoId.BIRD_WITH_LEFT_SCROLL_DOUBLE_LEFT_BARB,
+    [SymbolClassId.BIRD_AND_LEFT_SCROLL_DOUBLE_LEFT_BARB]: {
+        flaccoId: FlaccoId.BIRD_AND_LEFT_SCROLL_DOUBLE_LEFT_BARB,
         commaClassId: CommaClassId._37_M,
     },
     [SymbolClassId.BIRD_AGAINST_BARB_AND_ARC]: {
@@ -423,32 +423,32 @@ const SYMBOL_CLASSES: Partial<Record<FlaccoId, SymbolClass>> = {
         flaccoId: FlaccoId.BARB_AND_ARC,
         commaClassId: CommaClassId._1_35_M,
     },
-    [SymbolClassId.WING_WITH_BARB_AND_ARC]: {
-        flaccoId: FlaccoId.WING_WITH_BARB_AND_ARC,
+    [SymbolClassId.WING_BARB_AND_ARC]: {
+        flaccoId: FlaccoId.WING_BARB_AND_ARC,
         commaClassId: CommaClassId._125_M,
     },
     [SymbolClassId.ARC_AND_BOATHOOK]: {
         flaccoId: FlaccoId.ARC_AND_BOATHOOK,
         commaClassId: CommaClassId._11_19_M,
     },
-    [SymbolClassId.WING_FROM_TICK_WITH_BARB_AND_ARC]: {
-        flaccoId: FlaccoId.WING_FROM_TICK_WITH_BARB_AND_ARC,
+    [SymbolClassId.WING_AGAINST_TICK_BARB_AND_ARC]: {
+        flaccoId: FlaccoId.WING_AGAINST_TICK_BARB_AND_ARC,
         commaClassId: CommaClassId._65_M,
     },
-    [SymbolClassId.TICK_WITH_BARB_AND_ARC]: {
-        flaccoId: FlaccoId.TICK_WITH_BARB_AND_ARC,
+    [SymbolClassId.TICK_BARB_AND_ARC]: {
+        flaccoId: FlaccoId.TICK_BARB_AND_ARC,
         commaClassId: CommaClassId._1_7_M,
     },
-    [SymbolClassId.WING_AND_TICK_WITH_BARB_AND_ARC]: {
-        flaccoId: FlaccoId.WING_AND_TICK_WITH_BARB_AND_ARC,
+    [SymbolClassId.WING_TICK_BARB_AND_ARC]: {
+        flaccoId: FlaccoId.WING_TICK_BARB_AND_ARC,
         commaClassId: CommaClassId._625_M,
     },
     [SymbolClassId.TICK_AGAINST_DOUBLE_BARB]: {
         flaccoId: FlaccoId.TICK_AGAINST_DOUBLE_BARB,
         commaClassId: CommaClassId._11_5_M,
     },
-    [SymbolClassId.WING_FROM_TICK_AGAINST_DOUBLE_BARB]: {
-        flaccoId: FlaccoId.WING_FROM_TICK_AGAINST_DOUBLE_BARB,
+    [SymbolClassId.WING_AGAINST_TICK_AGAINST_DOUBLE_BARB]: {
+        flaccoId: FlaccoId.WING_AGAINST_TICK_AGAINST_DOUBLE_BARB,
         commaClassId: CommaClassId._17_11_M,
     },
     [SymbolClassId.BIRD_AGAINST_DOUBLE_BARB]: {
@@ -463,8 +463,8 @@ const SYMBOL_CLASSES: Partial<Record<FlaccoId, SymbolClass>> = {
         flaccoId: FlaccoId.DOUBLE_BARB,
         commaClassId: CommaClassId._11_M,
     },
-    [SymbolClassId.WING_WITH_DOUBLE_BARB]: {
-        flaccoId: FlaccoId.WING_WITH_DOUBLE_BARB,
+    [SymbolClassId.WING_AND_DOUBLE_BARB]: {
+        flaccoId: FlaccoId.WING_AND_DOUBLE_BARB,
         commaClassId: CommaClassId._85_11_M,
     },
     [SymbolClassId.WING_AGAINST_LEFT_ARC_AND_BARB]: {
@@ -475,16 +475,16 @@ const SYMBOL_CLASSES: Partial<Record<FlaccoId, SymbolClass>> = {
         flaccoId: FlaccoId.LEFT_ARC_AND_BARB,
         commaClassId: CommaClassId._1_49_M,
     },
-    [SymbolClassId.WING_WITH_LEFT_ARC_AND_BARB]: {
-        flaccoId: FlaccoId.WING_WITH_LEFT_ARC_AND_BARB,
+    [SymbolClassId.WING_AND_LEFT_ARC_AND_BARB]: {
+        flaccoId: FlaccoId.WING_AND_LEFT_ARC_AND_BARB,
         commaClassId: CommaClassId._1_31_M,
     },
-    [SymbolClassId.TICK_WITH_DOUBLE_BARB]: {
-        flaccoId: FlaccoId.TICK_WITH_DOUBLE_BARB,
+    [SymbolClassId.TICK_AND_DOUBLE_BARB]: {
+        flaccoId: FlaccoId.TICK_AND_DOUBLE_BARB,
         commaClassId: CommaClassId._55_M,
     },
-    [SymbolClassId.WING_AND_TICK_WITH_DOUBLE_BARB]: {
-        flaccoId: FlaccoId.WING_AND_TICK_WITH_DOUBLE_BARB,
+    [SymbolClassId.WING_TICK_AND_DOUBLE_BARB]: {
+        flaccoId: FlaccoId.WING_TICK_AND_DOUBLE_BARB,
         commaClassId: CommaClassId._11_91_M,
     },
     [SymbolClassId.WING_AGAINST_LEFT_SCROLL_AND_DOUBLE_BARB]: {

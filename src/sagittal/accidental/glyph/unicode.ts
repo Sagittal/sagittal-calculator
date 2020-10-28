@@ -1,5 +1,5 @@
 import {deepEquals, isUndefined, join, stringify, sumTexts} from "../../../general"
-import {Accent, Arm, HeadId, Orientation, OrientedAccent} from "../flacco"
+import {Accent, AccentId, Arm, HeadId} from "../flacco"
 import {Accidental, Compatible, Flavor} from "../flavor"
 import {Aim, Core, getCore, isSagittal, NullSagittal, Sagittal, Shafts} from "../sagittal"
 import {BLANK_UNICODE, PARENTHETICAL_NATURAL_UNICODE} from "./constants"
@@ -218,19 +218,16 @@ const CORE_UNICODE_EQUIVALENTS: Array<{core: Core, unicode: Unicode}> = [
     {core: getCore(HeadId.DOUBLE_SCROLL, Shafts.EX, Aim.DOWN), unicode: "" as Unicode},
 ]
 
-const ACCENT_TO_ORIENTATION_TO_AIM_TO_UNICODE_MAP: Record<Accent, Record<Orientation, Record<Aim, Unicode>>> = {
-    [Accent.TICK]: {
-        [Orientation.WITH]: {[Aim.UP]: "" as Unicode, [Aim.DOWN]: "" as Unicode},
-        [Orientation.AGAINST]: {[Aim.UP]: "" as Unicode, [Aim.DOWN]: "" as Unicode},
-    },
-    [Accent.WING]: {
-        [Orientation.WITH]: {[Aim.UP]: "" as Unicode, [Aim.DOWN]: "" as Unicode},
-        [Orientation.AGAINST]: {[Aim.UP]: "" as Unicode, [Aim.DOWN]: "" as Unicode},
-    },
-    [Accent.BIRD]: {
-        [Orientation.WITH]: {[Aim.UP]: "" as Unicode, [Aim.DOWN]: "" as Unicode},
-        [Orientation.AGAINST]: {[Aim.UP]: "" as Unicode, [Aim.DOWN]: "" as Unicode},
-    },
+const ACCENT_TO_AIM_TO_UNICODE_MAP: Record<AccentId, Record<Aim, Unicode>> = {
+    [AccentId.TICK]: {[Aim.UP]: "" as Unicode, [Aim.DOWN]: "" as Unicode},
+    [AccentId.WING]: {[Aim.UP]: "" as Unicode, [Aim.DOWN]: "" as Unicode},
+    [AccentId.BIRD]: {[Aim.UP]: "" as Unicode, [Aim.DOWN]: "" as Unicode},
+}
+
+const AGAINST_ACCENT_TO_AIM_TO_UNICODE_MAP: Record<AccentId, Record<Aim, Unicode>> = {
+    [AccentId.TICK]: {[Aim.UP]: "" as Unicode, [Aim.DOWN]: "" as Unicode},
+    [AccentId.WING]: {[Aim.UP]: "" as Unicode, [Aim.DOWN]: "" as Unicode},
+    [AccentId.BIRD]: {[Aim.UP]: "" as Unicode, [Aim.DOWN]: "" as Unicode},
 }
 
 const COMPATIBLE_TO_UNICODE_MAP: Record<Compatible, Unicode> = {
@@ -261,8 +258,8 @@ const computeCoreUnicode = (core: Core): Unicode => {
 const computeCompatibleUnicode = (compatible: Compatible): Unicode =>
     COMPATIBLE_TO_UNICODE_MAP[compatible]
 
-const computeOrientedAccentUnicode = ({accent, orientation}: OrientedAccent, aim: Aim): Unicode =>
-    ACCENT_TO_ORIENTATION_TO_AIM_TO_UNICODE_MAP[accent][orientation][aim]
+const computeAccentUnicode = ({id, against}: Accent, aim: Aim): Unicode =>
+    against ? AGAINST_ACCENT_TO_AIM_TO_UNICODE_MAP[id][aim] : ACCENT_TO_AIM_TO_UNICODE_MAP[id][aim]
 
 // TODO: SYMBOL VS SAGITTAL; GLYPH TYPES
 //  I feel like these methods should take the Flavor parameter and pass it on, just in case
@@ -279,7 +276,7 @@ const computeSagittalUnicode = (sagittal: NullSagittal | Sagittal): Unicode => {
 
 const computeArmUnicode = (arm: Arm, aim: Aim): Unicode =>
     join(
-        arm.map((orientedAccent: OrientedAccent): Unicode => computeOrientedAccentUnicode(orientedAccent, aim)),
+        arm.map((accent: Accent): Unicode => computeAccentUnicode(accent, aim)),
         BLANK_UNICODE,
     )
 
@@ -306,5 +303,5 @@ export {
     computeAccidentalUnicode,
     computeCompatibleUnicode,
     computeSagittalUnicode,
-    computeOrientedAccentUnicode,
+    computeAccentUnicode,
 }

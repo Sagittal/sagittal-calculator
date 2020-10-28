@@ -1,7 +1,7 @@
 export {
     Flacco,
-    Accent,
-    Flag,
+    AccentId,
+    FlagId,
     FlaccoId,
     getFlacco,
 } from "./flacco"
