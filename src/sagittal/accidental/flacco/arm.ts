@@ -1,8 +1,8 @@
 import {reorient} from "./reorient"
 import {Accent, Arm, ArmId, Orientation} from "./types"
 
-const getArm = (armName: ArmId, orientation: Orientation = Orientation.WITH): Arm => {
-    switch (armName) {
+const getArm = (armId: ArmId, orientation: Orientation = Orientation.WITH): Arm => {
+    switch (armId) {
         case ArmId.WING:
             return [
                 {accent: Accent.WING, orientation},                                     //  `|

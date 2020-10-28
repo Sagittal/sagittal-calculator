@@ -14,11 +14,11 @@ describe("glyphs", (): void => {
     it("has the correct core glyphs and computes their IO correctly", (): void => {
         const coreGlyphExpectations: Record<string, GlyphExpectation> = {}
 
-        Object.values(HeadId).forEach((headName: HeadId): void => {
+        Object.values(HeadId).forEach((headId: HeadId): void => {
             Object.values(Shafts).forEach((shafts: Shafts): void => {
                 Object.values(Aim).forEach((aim: Aim): void => {
-                    const coreGlyphExpectation = computeCoreGlyphExpectation(headName, shafts, aim)
-                    const nameArray = [camelCaseToConstantCase(headName)] as string[]
+                    const coreGlyphExpectation = computeCoreGlyphExpectation(headId, shafts, aim)
+                    const nameArray = [camelCaseToConstantCase(headId)] as string[]
                     if (shafts !== Shafts.SINGLE) nameArray.push(camelCaseToConstantCase(shafts))
                     nameArray.push(camelCaseToConstantCase(aim))
                     const name = nameArray.join("_")

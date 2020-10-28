@@ -14,13 +14,9 @@ import {
 import {getCore, Shafts} from "../../../../../src/sagittal/accidental/sagittal"
 import {GlyphExpectation} from "./types"
 
-const computeCoreGlyphExpectation = (
-    headName: HeadId,
-    shafts: Shafts,
-    aim: Aim,
-): Maybe<GlyphExpectation> => {
+const computeCoreGlyphExpectation = (headId: HeadId, shafts: Shafts, aim: Aim): Maybe<GlyphExpectation> => {
     try {
-        const core = getCore(headName, shafts, aim)
+        const core = getCore(headId, shafts, aim)
 
         return {
             ascii: computeCoreAscii(core),

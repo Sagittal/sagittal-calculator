@@ -35,8 +35,8 @@ const HEADS: Record<HeadId, Head> = {
     [HeadId.LEFT_SCROLL_DOUBLE_RIGHT_BARB]: {left: [Flag.SCROLL], right: [Flag.BARB, Flag.BARB]},    //   )|\\
 }
 
-const getHead = (headName: HeadId): Head =>
-    HEADS[headName]
+const getHead = (headId: HeadId): Head =>
+    HEADS[headId]
 
 export {
     getHead,
