@@ -4,20 +4,20 @@ import {computeApotomeComplement, getCore, Shafts} from "../../../../../src/sagi
 
 describe("computeApotomeComplement", (): void => {
     it("returns the apotome complement of the given symbol", (): void => {
-        const sagittal: Sagittal = {...getCore(HeadId.LEFT_BARB)}                                    //  /|
+        const sagittal: Sagittal = {...getCore(HeadId.LEFT_BARB)}                                       //  /|
 
         const actual = computeApotomeComplement(sagittal)
 
-        const expected = {...getCore(HeadId.RIGHT_BARB, Shafts.DOUBLE)}                              // ||\\
+        const expected = {...getCore(HeadId.RIGHT_BARB, Shafts.DOUBLE)}                                 // ||\\
         expect(actual).toEqual(expected)
     })
 
     it("can go from a multi-shaft symbol to the single-shaft symbol", (): void => {
-        const sagittal: Sagittal = {...getCore(HeadId.LEFT_SCROLL_AND_BOATHOOK, Shafts.DOUBLE)}      // )~||
+        const sagittal: Sagittal = {...getCore(HeadId.LEFT_SCROLL_AND_BOATHOOK, Shafts.DOUBLE)}         // )~||
 
         const actual = computeApotomeComplement(sagittal)
 
-        const expected = {...getCore(HeadId.BOATHOOK_AND_BARB)}                                      // ~|\\
+        const expected = {...getCore(HeadId.BOATHOOK_AND_BARB)}                                         // ~|\\
         expect(actual).toEqual(expected)
     })
 
