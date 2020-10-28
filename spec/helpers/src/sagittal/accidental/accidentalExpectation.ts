@@ -8,15 +8,15 @@ import {computeRevoAccidentalFromCaptureZone} from "../../../../../src/sagittal/
 import {CaptureZone} from "../../../../../src/sagittal/notation"
 import {AccidentalExpectation} from "./types"
 
-const computeAccidentalExpectation = (captureZone: CaptureZone): AccidentalExpectation => {
-    const evoAccidental = computeEvoAccidentalFromCaptureZone(captureZone)
+const computeAccidentalExpectation = ({ symbolClassId, section }: CaptureZone): AccidentalExpectation => {
+    const evoAccidental = computeEvoAccidentalFromCaptureZone(symbolClassId, section)
     const evo = {
         unicode: computeAccidentalUnicode(evoAccidental),
         ascii: computeAccidentalAscii(evoAccidental),
         smiley: computeAccidentalSmiley(evoAccidental),
     }
 
-    const revoAccidental = computeRevoAccidentalFromCaptureZone(captureZone)
+    const revoAccidental = computeRevoAccidentalFromCaptureZone(symbolClassId, section)
     const revo = {
         unicode: computeAccidentalUnicode(revoAccidental),
         ascii: computeAccidentalAscii(revoAccidental),

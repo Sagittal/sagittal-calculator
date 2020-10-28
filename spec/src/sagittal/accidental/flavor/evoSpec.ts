@@ -2,7 +2,7 @@ import {Accidental, Aim, Compatible, Flavor} from "../../../../../src/sagittal/a
 import {HeadId} from "../../../../../src/sagittal/accidental/flacco"
 import {computeEvoAccidentalFromCaptureZone} from "../../../../../src/sagittal/accidental/flavor/evo"
 import {getCore, Shafts} from "../../../../../src/sagittal/accidental/sagittal"
-import {BoundClassId, CaptureZone, SymbolClassId} from "../../../../../src/sagittal/notation"
+import {SymbolClassId} from "../../../../../src/sagittal/notation"
 import {
     SECTION_N1A,
     SECTION_N1T,
@@ -16,13 +16,9 @@ import {
 
 describe("computeEvoAccidentalFromCaptureZone", (): void => {
     it("works for section P1A", (): void => {
-        const captureZone: CaptureZone = {
-            boundClassId: BoundClassId.MINA_88,
-            section: SECTION_P1A,
-            symbolClassId: SymbolClassId.DOUBLE_LEFT_BARB,
-        }
+        const symbolClassId = SymbolClassId.DOUBLE_LEFT_BARB
 
-        const actual = computeEvoAccidentalFromCaptureZone(captureZone)
+        const actual = computeEvoAccidentalFromCaptureZone(symbolClassId, SECTION_P1A)
 
         const expected = {
             ...getCore(HeadId.DOUBLE_LEFT_BARB),
@@ -31,13 +27,9 @@ describe("computeEvoAccidentalFromCaptureZone", (): void => {
     })
 
     it("works for section P1T, in the area with a downward symbol accompanied by a conventional sharp", (): void => {
-        const captureZone: CaptureZone = {
-            boundClassId: BoundClassId.MINA_88,
-            section: SECTION_P1T,
-            symbolClassId: SymbolClassId.DOUBLE_LEFT_BARB,
-        }
+        const symbolClassId = SymbolClassId.DOUBLE_LEFT_BARB
 
-        const actual = computeEvoAccidentalFromCaptureZone(captureZone)
+        const actual = computeEvoAccidentalFromCaptureZone(symbolClassId, SECTION_P1T)
 
         const expected = {
             ...getCore(HeadId.DOUBLE_LEFT_BARB, Shafts.SINGLE, Aim.DOWN),
@@ -47,13 +39,9 @@ describe("computeEvoAccidentalFromCaptureZone", (): void => {
     })
 
     it("works for section P1T, in the area where a single-shafted symbol results", (): void => {
-        const captureZone: CaptureZone = {
-            boundClassId: BoundClassId.MINA_110,
-            section: SECTION_P1T,
-            symbolClassId: SymbolClassId.DOUBLE_BARB,
-        }
+        const symbolClassId = SymbolClassId.DOUBLE_BARB
 
-        const actual = computeEvoAccidentalFromCaptureZone(captureZone)
+        const actual = computeEvoAccidentalFromCaptureZone(symbolClassId, SECTION_P1T)
 
         const expected = {
             ...getCore(HeadId.DOUBLE_ARC),
@@ -62,13 +50,9 @@ describe("computeEvoAccidentalFromCaptureZone", (): void => {
     })
 
     it("works for section P2A", (): void => {
-        const captureZone: CaptureZone = {
-            boundClassId: BoundClassId.MINA_88,
-            section: SECTION_P2A,
-            symbolClassId: SymbolClassId.DOUBLE_LEFT_BARB,
-        }
+        const symbolClassId = SymbolClassId.DOUBLE_LEFT_BARB
 
-        const actual = computeEvoAccidentalFromCaptureZone(captureZone)
+        const actual = computeEvoAccidentalFromCaptureZone(symbolClassId, SECTION_P2A)
 
         const expected = {
             ...getCore(HeadId.DOUBLE_LEFT_BARB),
@@ -78,13 +62,9 @@ describe("computeEvoAccidentalFromCaptureZone", (): void => {
     })
 
     it("works for section P2T, in the area with a downward symbol and by a conventional double sharp", (): void => {
-        const captureZone: CaptureZone = {
-            boundClassId: BoundClassId.MINA_88,
-            section: SECTION_P2T,
-            symbolClassId: SymbolClassId.DOUBLE_LEFT_BARB,
-        }
+        const symbolClassId = SymbolClassId.DOUBLE_LEFT_BARB
 
-        const actual = computeEvoAccidentalFromCaptureZone(captureZone)
+        const actual = computeEvoAccidentalFromCaptureZone(symbolClassId, SECTION_P2T)
 
         const expected = {
             ...getCore(HeadId.DOUBLE_LEFT_BARB, Shafts.SINGLE, Aim.DOWN),
@@ -94,13 +74,9 @@ describe("computeEvoAccidentalFromCaptureZone", (): void => {
     })
 
     it("works for section P2T, in the area with a symbol and a conventional sharp", (): void => {
-        const captureZone: CaptureZone = {
-            boundClassId: BoundClassId.MINA_110,
-            section: SECTION_P2T,
-            symbolClassId: SymbolClassId.DOUBLE_BARB,
-        }
+        const symbolClassId = SymbolClassId.DOUBLE_BARB
 
-        const actual = computeEvoAccidentalFromCaptureZone(captureZone)
+        const actual = computeEvoAccidentalFromCaptureZone(symbolClassId, SECTION_P2T)
 
         const expected = {
             ...getCore(HeadId.DOUBLE_ARC),
@@ -110,13 +86,9 @@ describe("computeEvoAccidentalFromCaptureZone", (): void => {
     })
 
     it("works for section N1A", (): void => {
-        const captureZone: CaptureZone = {
-            boundClassId: BoundClassId.MINA_88,
-            section: SECTION_N1A,
-            symbolClassId: SymbolClassId.DOUBLE_LEFT_BARB,
-        }
+        const symbolClassId = SymbolClassId.DOUBLE_LEFT_BARB
 
-        const actual = computeEvoAccidentalFromCaptureZone(captureZone)
+        const actual = computeEvoAccidentalFromCaptureZone(symbolClassId, SECTION_N1A)
 
         const expected = {
             ...getCore(HeadId.DOUBLE_LEFT_BARB, Shafts.SINGLE, Aim.DOWN),
@@ -125,13 +97,9 @@ describe("computeEvoAccidentalFromCaptureZone", (): void => {
     })
 
     it("works for section N1T, in the area where an upward symbol accompanied by a flat results", (): void => {
-        const captureZone: CaptureZone = {
-            boundClassId: BoundClassId.MINA_88,
-            section: SECTION_N1T,
-            symbolClassId: SymbolClassId.DOUBLE_LEFT_BARB,
-        }
+        const symbolClassId = SymbolClassId.DOUBLE_LEFT_BARB
 
-        const actual = computeEvoAccidentalFromCaptureZone(captureZone)
+        const actual = computeEvoAccidentalFromCaptureZone(symbolClassId, SECTION_N1T)
 
         const expected = {
             ...getCore(HeadId.DOUBLE_LEFT_BARB),
@@ -141,13 +109,9 @@ describe("computeEvoAccidentalFromCaptureZone", (): void => {
     })
 
     it("works for section N1T, in the area where a single-shafted symbol results", (): void => {
-        const captureZone: CaptureZone = {
-            boundClassId: BoundClassId.MINA_110,
-            section: SECTION_N1T,
-            symbolClassId: SymbolClassId.DOUBLE_BARB,
-        }
+        const symbolClassId = SymbolClassId.DOUBLE_BARB
 
-        const actual = computeEvoAccidentalFromCaptureZone(captureZone)
+        const actual = computeEvoAccidentalFromCaptureZone(symbolClassId, SECTION_N1T)
 
         const expected = {
             ...getCore(HeadId.DOUBLE_ARC, Shafts.SINGLE, Aim.DOWN),
@@ -156,13 +120,9 @@ describe("computeEvoAccidentalFromCaptureZone", (): void => {
     })
 
     it("works for section N2A", (): void => {
-        const captureZone: CaptureZone = {
-            boundClassId: BoundClassId.MINA_88,
-            section: SECTION_N2A,
-            symbolClassId: SymbolClassId.DOUBLE_LEFT_BARB,
-        }
+        const symbolClassId = SymbolClassId.DOUBLE_LEFT_BARB
 
-        const actual = computeEvoAccidentalFromCaptureZone(captureZone)
+        const actual = computeEvoAccidentalFromCaptureZone(symbolClassId, SECTION_N2A)
 
         const expected = {
             ...getCore(HeadId.DOUBLE_LEFT_BARB, Shafts.SINGLE, Aim.DOWN),
@@ -172,13 +132,9 @@ describe("computeEvoAccidentalFromCaptureZone", (): void => {
     })
 
     it("works for section N2T, in the area where an upward symbol accompanied by a double flat results", (): void => {
-        const captureZone: CaptureZone = {
-            boundClassId: BoundClassId.MINA_88,
-            section: SECTION_N2T,
-            symbolClassId: SymbolClassId.DOUBLE_LEFT_BARB,
-        }
+        const symbolClassId = SymbolClassId.DOUBLE_LEFT_BARB
 
-        const actual = computeEvoAccidentalFromCaptureZone(captureZone)
+        const actual = computeEvoAccidentalFromCaptureZone(symbolClassId, SECTION_N2T)
 
         const expected = {
             ...getCore(HeadId.DOUBLE_LEFT_BARB),
@@ -188,13 +144,9 @@ describe("computeEvoAccidentalFromCaptureZone", (): void => {
     })
 
     it("works for section N2T, in the area where a downward symbol accompanied by a conventional flat results               ", (): void => {
-        const captureZone: CaptureZone = {
-            boundClassId: BoundClassId.MINA_110,
-            section: SECTION_N2T,
-            symbolClassId: SymbolClassId.DOUBLE_BARB,
-        }
+        const symbolClassId = SymbolClassId.DOUBLE_BARB
 
-        const actual = computeEvoAccidentalFromCaptureZone(captureZone)
+        const actual = computeEvoAccidentalFromCaptureZone(symbolClassId, SECTION_N2T)
 
         const expected = {
             ...getCore(HeadId.DOUBLE_ARC, Shafts.SINGLE, Aim.DOWN),

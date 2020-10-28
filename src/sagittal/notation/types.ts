@@ -348,7 +348,8 @@ interface SymbolClass {
     commaClassId: CommaClassId,
 }
 
-// TODO: So I made this into SymbolSubsetId which I think is right but there's not literally a SymbolSubset type yet
+// TODO: SYMBOL SUBSETS
+//  So I made this into SymbolSubsetId which I think is right but there's not literally a SymbolSubset type yet
 //  Which would be an array of SymbolClassIds I suppose?
 enum SymbolSubsetId {
     COMPATIBLE = "compatible",

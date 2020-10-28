@@ -2,7 +2,7 @@ import {Accidental, Aim, Flavor} from "../../../../../src/sagittal/accidental"
 import {HeadId} from "../../../../../src/sagittal/accidental/flacco"
 import {computeRevoAccidentalFromCaptureZone} from "../../../../../src/sagittal/accidental/flavor/revo"
 import {getCore, Shafts} from "../../../../../src/sagittal/accidental/sagittal"
-import {BoundClassId, CaptureZone, SymbolClassId} from "../../../../../src/sagittal/notation"
+import {SymbolClassId} from "../../../../../src/sagittal/notation"
 import {
     SECTION_N1A,
     SECTION_N1T,
@@ -16,13 +16,9 @@ import {
 
 describe("computeRevoAccidentalFromCaptureZone", (): void => {
     it("works for section P1A", (): void => {
-        const captureZone: CaptureZone = {
-            boundClassId: BoundClassId.MINA_88,
-            section: SECTION_P1A,
-            symbolClassId: SymbolClassId.DOUBLE_LEFT_BARB,
-        }
+        const symbolClassId = SymbolClassId.DOUBLE_LEFT_BARB
 
-        const actual = computeRevoAccidentalFromCaptureZone(captureZone)
+        const actual = computeRevoAccidentalFromCaptureZone(symbolClassId, SECTION_P1A)
 
         const expected = {
             ...getCore(HeadId.DOUBLE_LEFT_BARB),
@@ -31,13 +27,9 @@ describe("computeRevoAccidentalFromCaptureZone", (): void => {
     })
 
     it("works for section P1T, in the area where a double-shafted symbol results", (): void => {
-        const captureZone: CaptureZone = {
-            boundClassId: BoundClassId.MINA_88,
-            section: SECTION_P1T,
-            symbolClassId: SymbolClassId.DOUBLE_LEFT_BARB,
-        }
+        const symbolClassId = SymbolClassId.DOUBLE_LEFT_BARB
 
-        const actual = computeRevoAccidentalFromCaptureZone(captureZone)
+        const actual = computeRevoAccidentalFromCaptureZone(symbolClassId, SECTION_P1T)
 
         const expected = {
             ...getCore(HeadId.DOUBLE_SCROLL, Shafts.DOUBLE),
@@ -46,13 +38,9 @@ describe("computeRevoAccidentalFromCaptureZone", (): void => {
     })
 
     it("works for section P1T, in the area where a single-shafted symbol results", (): void => {
-        const captureZone: CaptureZone = {
-            boundClassId: BoundClassId.MINA_110,
-            section: SECTION_P1T,
-            symbolClassId: SymbolClassId.DOUBLE_BARB,
-        }
+        const symbolClassId = SymbolClassId.DOUBLE_BARB
 
-        const actual = computeRevoAccidentalFromCaptureZone(captureZone)
+        const actual = computeRevoAccidentalFromCaptureZone(symbolClassId, SECTION_P1T)
 
         const expected = {
             ...getCore(HeadId.DOUBLE_ARC),
@@ -61,13 +49,9 @@ describe("computeRevoAccidentalFromCaptureZone", (): void => {
     })
 
     it("works for section P2A", (): void => {
-        const captureZone: CaptureZone = {
-            boundClassId: BoundClassId.MINA_88,
-            section: SECTION_P2A,
-            symbolClassId: SymbolClassId.DOUBLE_LEFT_BARB,
-        }
+        const symbolClassId = SymbolClassId.DOUBLE_LEFT_BARB
 
-        const actual = computeRevoAccidentalFromCaptureZone(captureZone)
+        const actual = computeRevoAccidentalFromCaptureZone(symbolClassId, SECTION_P2A)
 
         const expected = {
             ...getCore(HeadId.DOUBLE_LEFT_BARB, Shafts.TRIPLE),
@@ -76,13 +60,9 @@ describe("computeRevoAccidentalFromCaptureZone", (): void => {
     })
 
     it("works for section P2T, in the area where an ex-shafted symbol results", (): void => {
-        const captureZone: CaptureZone = {
-            boundClassId: BoundClassId.MINA_88,
-            section: SECTION_P2T,
-            symbolClassId: SymbolClassId.DOUBLE_LEFT_BARB,
-        }
+        const symbolClassId = SymbolClassId.DOUBLE_LEFT_BARB
 
-        const actual = computeRevoAccidentalFromCaptureZone(captureZone)
+        const actual = computeRevoAccidentalFromCaptureZone(symbolClassId, SECTION_P2T)
 
         const expected = {
             ...getCore(HeadId.DOUBLE_SCROLL, Shafts.EX),
@@ -91,13 +71,9 @@ describe("computeRevoAccidentalFromCaptureZone", (): void => {
     })
 
     it("works for section P2T, in the area where a triple-shafted symbol results", (): void => {
-        const captureZone: CaptureZone = {
-            boundClassId: BoundClassId.MINA_110,
-            section: SECTION_P2T,
-            symbolClassId: SymbolClassId.DOUBLE_BARB,
-        }
+        const symbolClassId = SymbolClassId.DOUBLE_BARB
 
-        const actual = computeRevoAccidentalFromCaptureZone(captureZone)
+        const actual = computeRevoAccidentalFromCaptureZone(symbolClassId, SECTION_P2T)
 
         const expected = {
             ...getCore(HeadId.DOUBLE_ARC, Shafts.TRIPLE),
@@ -106,13 +82,9 @@ describe("computeRevoAccidentalFromCaptureZone", (): void => {
     })
 
     it("works for section N1A", (): void => {
-        const captureZone: CaptureZone = {
-            boundClassId: BoundClassId.MINA_88,
-            section: SECTION_N1A,
-            symbolClassId: SymbolClassId.DOUBLE_LEFT_BARB,
-        }
+        const symbolClassId = SymbolClassId.DOUBLE_LEFT_BARB
 
-        const actual = computeRevoAccidentalFromCaptureZone(captureZone)
+        const actual = computeRevoAccidentalFromCaptureZone(symbolClassId, SECTION_N1A)
 
         const expected = {
             ...getCore(HeadId.DOUBLE_LEFT_BARB, Shafts.SINGLE, Aim.DOWN),
@@ -121,13 +93,9 @@ describe("computeRevoAccidentalFromCaptureZone", (): void => {
     })
 
     it("works for section N1T, in the area where a double-shafted symbol results", (): void => {
-        const captureZone: CaptureZone = {
-            boundClassId: BoundClassId.MINA_88,
-            section: SECTION_N1T,
-            symbolClassId: SymbolClassId.DOUBLE_LEFT_BARB,
-        }
+        const symbolClassId = SymbolClassId.DOUBLE_LEFT_BARB
 
-        const actual = computeRevoAccidentalFromCaptureZone(captureZone)
+        const actual = computeRevoAccidentalFromCaptureZone(symbolClassId, SECTION_N1T)
 
         const expected = {
             ...getCore(HeadId.DOUBLE_SCROLL, Shafts.DOUBLE, Aim.DOWN),
@@ -136,13 +104,9 @@ describe("computeRevoAccidentalFromCaptureZone", (): void => {
     })
 
     it("works for section N1T, in the area where a single-shafted symbol results", (): void => {
-        const captureZone: CaptureZone = {
-            boundClassId: BoundClassId.MINA_110,
-            section: SECTION_N1T,
-            symbolClassId: SymbolClassId.DOUBLE_BARB,
-        }
+        const symbolClassId = SymbolClassId.DOUBLE_BARB
 
-        const actual = computeRevoAccidentalFromCaptureZone(captureZone)
+        const actual = computeRevoAccidentalFromCaptureZone(symbolClassId, SECTION_N1T)
 
         const expected = {
             ...getCore(HeadId.DOUBLE_ARC, Shafts.SINGLE, Aim.DOWN),
@@ -151,13 +115,9 @@ describe("computeRevoAccidentalFromCaptureZone", (): void => {
     })
 
     it("works for section N2A", (): void => {
-        const captureZone: CaptureZone = {
-            boundClassId: BoundClassId.MINA_88,
-            section: SECTION_N2A,
-            symbolClassId: SymbolClassId.DOUBLE_LEFT_BARB,
-        }
+        const symbolClassId = SymbolClassId.DOUBLE_LEFT_BARB
 
-        const actual = computeRevoAccidentalFromCaptureZone(captureZone)
+        const actual = computeRevoAccidentalFromCaptureZone(symbolClassId, SECTION_N2A)
 
         const expected = {
             ...getCore(HeadId.DOUBLE_LEFT_BARB, Shafts.TRIPLE, Aim.DOWN),
@@ -166,13 +126,9 @@ describe("computeRevoAccidentalFromCaptureZone", (): void => {
     })
 
     it("works for section N2T, in the area where an ex-shafted symbol results", (): void => {
-        const captureZone: CaptureZone = {
-            boundClassId: BoundClassId.MINA_88,
-            section: SECTION_N2T,
-            symbolClassId: SymbolClassId.DOUBLE_LEFT_BARB,
-        }
+        const symbolClassId = SymbolClassId.DOUBLE_LEFT_BARB
 
-        const actual = computeRevoAccidentalFromCaptureZone(captureZone)
+        const actual = computeRevoAccidentalFromCaptureZone(symbolClassId, SECTION_N2T)
 
         const expected = {
             ...getCore(HeadId.DOUBLE_SCROLL, Shafts.EX, Aim.DOWN),
@@ -181,13 +137,9 @@ describe("computeRevoAccidentalFromCaptureZone", (): void => {
     })
 
     it("works for section N2T, in the area where a triple-shafted symbol results", (): void => {
-        const captureZone: CaptureZone = {
-            boundClassId: BoundClassId.MINA_110,
-            section: SECTION_N2T,
-            symbolClassId: SymbolClassId.DOUBLE_BARB,
-        }
+        const symbolClassId = SymbolClassId.DOUBLE_BARB
 
-        const actual = computeRevoAccidentalFromCaptureZone(captureZone)
+        const actual = computeRevoAccidentalFromCaptureZone(symbolClassId, SECTION_N2T)
 
         const expected = {
             ...getCore(HeadId.DOUBLE_ARC, Shafts.TRIPLE, Aim.DOWN),
