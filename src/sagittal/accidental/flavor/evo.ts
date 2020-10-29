@@ -12,7 +12,7 @@ const computeEvoAccidentalFromCaptureZone = (
     let apotomeCount = 0
     if (mirrored) {
         const apotomeComplement = computeApotomeComplement(sagittal)
-        if (apotomeComplement.shafts === Shafts.DOUBLE) {
+        if (!isUndefined(apotomeComplement) && apotomeComplement.shafts === Shafts.DOUBLE) {
             sagittal = flipSagittal(sagittal)
             apotomeCount = increment(apotomeCount)
         } else {

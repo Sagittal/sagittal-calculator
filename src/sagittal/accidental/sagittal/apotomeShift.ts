@@ -1,15 +1,15 @@
 import {deepEquals, isUndefined, Maybe, stringify} from "../../../general"
 import {HeadId} from "../flacco"
-import {getCore} from "./core"
+import {APOTOME_CORE, getCore} from "./core"
 import {Sagittal, Shafts} from "./types"
 
 const apotomeShift = (sagittal: Maybe<Sagittal>): Sagittal => {
     if (isUndefined(sagittal)) {
-        return getCore(HeadId.DOUBLE_BARB, {shafts: Shafts.DOUBLE})
+        return APOTOME_CORE
     }
     const {arm, ...core} = sagittal
     if (deepEquals(core, getCore(HeadId.BARE_SHAFT))) {
-        return {...sagittal, ...getCore(HeadId.DOUBLE_BARB, {shafts: Shafts.DOUBLE})}
+        return {...sagittal, ...APOTOME_CORE}
     }
 
     if (core.down) {

@@ -1,4 +1,4 @@
-import {deepEquals, isUndefined} from "../../../general"
+import {deepEquals, isUndefined, Maybe} from "../../../general"
 import {Flacco, FLACCOS, getArm, getHead, HeadId} from "../flacco"
 import {computeApotomeComplement} from "./apotomeComplement"
 import {getCore} from "./core"
@@ -12,15 +12,14 @@ const checkSagittalValidity = (sagittal: Sagittal, options: Required<GetSagittal
     const {shafts, armId, against, headId} = options
 
     const adjustedSagittalForCheckingFlaccoValidity: Sagittal = shafts === Shafts.DOUBLE || shafts === Shafts.EX ?
-        // TODO: search for other DOUBLE_BARB exceptional cases and try to make sense of it;
-        //  This module probably needs more testing to make sure you can't request stuff beyond ex-shafted edge, etc.
-        //  Cuz like this logic is starting to get crazy town. Way more complex than I expected. But then again we are
-        //  Basically here setting up a totally parallel mechanism to how it's accomplished by going from a flacco
-        //  To a symbol and then apotome shifting...
-        (shafts === Shafts.DOUBLE && headId === HeadId.DOUBLE_BARB && !against) ?
-            {...sagittal, ...getHead(HeadId.BARE_SHAFT)} :
-            computeApotomeComplement({...sagittal, down: false, shafts: Shafts.DOUBLE}) :
-        sagittal
+            // TODO: This module needs more testing to make sure you can't request stuff beyond ex-shafted edge, etc.
+            //  Cuz this logic is starting to get crazy town. Way more complex than I expected. But then again we are
+            //  Basically here setting up a totally parallel mechanism to how it's accomplished by going from a flacco
+            //  To a symbol and then apotome shifting...
+            (shafts === Shafts.DOUBLE && headId === HeadId.DOUBLE_BARB && !against) ?
+                {...sagittal, ...getHead(HeadId.BARE_SHAFT)} :
+                computeApotomeComplement({...sagittal, down: false, shafts: Shafts.DOUBLE}) as Sagittal :
+            sagittal
     const {down: discardDown, shafts: discardShafts, ...flacco} = adjustedSagittalForCheckingFlaccoValidity
     if (!isFlaccoValid(flacco)) {
         throw new Error(`Attempted to get invalid sagittal: ${armId} ${against ? "against" : "and"} ${headId} with ${shafts}-shaft`)

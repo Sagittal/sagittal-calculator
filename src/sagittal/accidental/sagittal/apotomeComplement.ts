@@ -1,6 +1,6 @@
 import {deepEquals, isUndefined, Maybe, stringify} from "../../../general"
 import {Accent, Arm, ArmId, getArm, HeadId} from "../flacco"
-import {getCore} from "./core"
+import {APOTOME_CORE, getCore} from "./core"
 import {Core, Sagittal, Shafts} from "./types"
 
 const reorientAccent = ({against, id}: Accent): Accent =>
@@ -9,7 +9,7 @@ const reorientAccent = ({against, id}: Accent): Accent =>
 const APOTOME_COMPLEMENT_CORE_PAIRS: Array<[Core, Core]> = [
     [
         getCore(HeadId.BARE_SHAFT),
-        getCore(HeadId.DOUBLE_BARB, {shafts: Shafts.DOUBLE}),
+        APOTOME_CORE,
     ],                                                                      //     |      /||\
     [
         getCore(HeadId.LEFT_SCROLL),
@@ -134,13 +134,15 @@ const computeMaybeArmForSelfComplementingCore = (maybeArm: Maybe<Arm>): Maybe<Ar
 // TODO: SYMBOL VS SAGITTAL; GLYPH TYPES
 //  Just a thought - am I converting from these primitive IDs to the objects too soon? Like, can I wait until IO?
 
-const computeApotomeComplement = (sagittal: Maybe<Sagittal>): Sagittal => {
-    // TODO: APOTOME COMPLEMENT EDGE CASE
-    //  Although actually, if there's no arm and it's a double barb, shouldn't it return a null sagittal?
+const computeApotomeComplement = (sagittal: Maybe<Sagittal>): Maybe<Sagittal> => {
     if (isUndefined(sagittal)) {
-        return {...getCore(HeadId.DOUBLE_BARB, {shafts: Shafts.DOUBLE})}
+        return APOTOME_CORE
     }
     const {arm, down, ...core} = sagittal
+
+    if (isUndefined(arm) && deepEquals(core, getCore(HeadId.DOUBLE_BARB, { shafts: Shafts.DOUBLE }))) {
+        return undefined
+    }
 
     let apotomeComplementCore: Maybe<Core> = undefined
 

@@ -58,6 +58,15 @@ describe("computeApotomeComplement", (): void => {
         expect(actual).toEqual(expected)
     })
 
+    it("works for the apotome, mapping it to the null sagittal (the parenthetical natural", (): void => {
+        const sagittal = getSagittal({headId: HeadId.DOUBLE_BARB, shafts: Shafts.DOUBLE})
+
+        const actual = computeApotomeComplement(sagittal)
+
+        const expected = undefined
+        expect(actual).toEqual(expected)
+    })
+
     it("maps a bare shaft with arm to the apotome with a reoriented arm", (): void => {
         const sagittal = getSagittal({armId: ArmId.WING_AND_TICK, headId: HeadId.BARE_SHAFT})         // `'|
 

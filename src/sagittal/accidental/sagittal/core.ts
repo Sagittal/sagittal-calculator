@@ -49,6 +49,9 @@ const getCore = (
     return down ? {down, shafts, ...getHead(headId)} : {shafts, ...getHead(headId)}
 }
 
+const APOTOME_CORE = getCore(HeadId.DOUBLE_BARB, { shafts: Shafts.DOUBLE })
+
 export {
     getCore,
+    APOTOME_CORE,
 }
