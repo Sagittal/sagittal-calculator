@@ -11,6 +11,8 @@ import {
 } from "./sections"
 import {BoundClassId, CaptureZone, Notation} from "./types"
 
+// TODO: would be nice to consolidate this down to one loop or something
+//  I used to have a to-do for this but maybe it got lost in the chaos that was getting this generally correct
 const computeCaptureZones = (notation: Notation): CaptureZone[] => {
     const {boundClassIds, symbolClassIds} = notation
 
