@@ -1,6 +1,5 @@
 import {
     Accidental,
-    Aim,
     Compatible,
     computeAccidentalUnicode,
     computeSagittalUnicode,
@@ -34,7 +33,7 @@ describe("computeSagittalUnicode", (): void => {
 describe("computeAccidentalUnicode", (): void => {
     it("works for accidentals with a Sagittal-compatible glyph", (): void => {
         const accidental: Accidental<Flavor.EVO> = {
-            ...getSagittal({headId: HeadId.RIGHT_ARC, aim: Aim.DOWN}),
+            ...getSagittal({headId: HeadId.RIGHT_ARC, down: true}),
             compatible: Compatible.FLAT,
         } as Accidental<Flavor.EVO>
 

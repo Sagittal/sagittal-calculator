@@ -2,7 +2,7 @@ import {deepEquals, isUndefined} from "../../../general"
 import {Flacco, FLACCOS, getArm, getHead, HeadId} from "../flacco"
 import {computeApotomeComplement} from "./apotomeComplement"
 import {getCore} from "./core"
-import {Aim, GetSagittalOptions, Sagittal, Shafts} from "./types"
+import {GetSagittalOptions, Sagittal, Shafts} from "./types"
 
 const isFlaccoValid = (flacco: Flacco): boolean =>
     !!Object.values(FLACCOS).find((validFlacco: Flacco): boolean =>
@@ -19,18 +19,18 @@ const checkSagittalValidity = (sagittal: Sagittal, options: Required<GetSagittal
         //  To a symbol and then apotome shifting...
         (shafts === Shafts.DOUBLE && headId === HeadId.DOUBLE_BARB && !against) ?
             {...sagittal, ...getHead(HeadId.BARE_SHAFT)} :
-            computeApotomeComplement({...sagittal, aim: Aim.UP, shafts: Shafts.DOUBLE}) :
+            computeApotomeComplement({...sagittal, down: false, shafts: Shafts.DOUBLE}) :
         sagittal
-    const {aim: discardAim, shafts: discardShafts, ...flacco} = adjustedSagittalForCheckingFlaccoValidity
+    const {down: discardDown, shafts: discardShafts, ...flacco} = adjustedSagittalForCheckingFlaccoValidity
     if (!isFlaccoValid(flacco)) {
         throw new Error(`Attempted to get invalid sagittal: ${armId} ${against ? "against" : "and"} ${headId} with ${shafts}-shaft`)
     }
 }
 
 const getSagittal = (options?: GetSagittalOptions): Sagittal => {
-    const {armId, against = false, headId = HeadId.BARE_SHAFT, shafts = Shafts.SINGLE, aim = Aim.UP} = options || {}
+    const {armId, against = false, headId = HeadId.BARE_SHAFT, shafts = Shafts.SINGLE, down = false} = options || {}
 
-    const core = getCore(headId, shafts, aim)
+    const core = getCore(headId, {shafts, down})
 
     if (isUndefined(armId)) {
         if (headId === HeadId.BARE_SHAFT) {
@@ -43,7 +43,7 @@ const getSagittal = (options?: GetSagittalOptions): Sagittal => {
     const arm = getArm(armId, {against})
     const sagittal = {arm, ...core}
 
-    checkSagittalValidity(sagittal, {armId, against, headId, shafts, aim})
+    checkSagittalValidity(sagittal, {armId, against, headId, shafts, down})
 
     return sagittal
 }

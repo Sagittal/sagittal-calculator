@@ -10,87 +10,87 @@ const reorientAccent = ({against, id}: Accent): Accent =>
 const APOTOME_COMPLEMENT_CORE_PAIRS: Array<[Core, Core]> = [
     [
         getCore(HeadId.BARE_SHAFT),
-        getCore(HeadId.DOUBLE_BARB, Shafts.DOUBLE),
+        getCore(HeadId.DOUBLE_BARB, {shafts: Shafts.DOUBLE}),
     ],                                                                      //     |      /||\
     [
         getCore(HeadId.LEFT_SCROLL),
-        getCore(HeadId.ARC_AND_BOATHOOK, Shafts.DOUBLE),
+        getCore(HeadId.ARC_AND_BOATHOOK, {shafts: Shafts.DOUBLE}),
     ],                                                                      //    )|      (||~   A W
     [
         getCore(HeadId.RIGHT_SCROLL),
-        getCore(HeadId.BARB_AND_ARC, Shafts.DOUBLE),
+        getCore(HeadId.BARB_AND_ARC, {shafts: Shafts.DOUBLE}),
     ],                                                                      //     |(     /||)   B V
     [
         getCore(HeadId.LEFT_BOATHOOK),
-        getCore(HeadId.LEFT_SCROLL_DOUBLE_LEFT_BARB, Shafts.DOUBLE),
+        getCore(HeadId.LEFT_SCROLL_DOUBLE_LEFT_BARB, {shafts: Shafts.DOUBLE}),
     ],                                                                      //    ~|    )//||    C U
     [
         getCore(HeadId.DOUBLE_SCROLL),
-        getCore(HeadId.DOUBLE_LEFT_BARB, Shafts.DOUBLE),
+        getCore(HeadId.DOUBLE_LEFT_BARB, {shafts: Shafts.DOUBLE}),
     ],                                                                      //    )|(    //||    D T
     [
         getCore(HeadId.LEFT_SCROLL_AND_BOATHOOK),
-        getCore(HeadId.BOATHOOK_AND_BARB, Shafts.DOUBLE),
+        getCore(HeadId.BOATHOOK_AND_BARB, {shafts: Shafts.DOUBLE}),
     ],                                                                      //   )~|      ~||\   E S
     [
         getCore(HeadId.BOATHOOK_AND_SCROLL),
-        getCore(HeadId.ARC_AND_SCROLL, Shafts.DOUBLE),
+        getCore(HeadId.ARC_AND_SCROLL, {shafts: Shafts.DOUBLE}),
     ],                                                                      //    ~|(     (||(   F R
     [
         getCore(HeadId.RIGHT_BOATHOOK),
-        getCore(HeadId.BARB_AND_BOATHOOK, Shafts.DOUBLE),
+        getCore(HeadId.BARB_AND_BOATHOOK, {shafts: Shafts.DOUBLE}),
     ],                                                                      //     |~     /||~   G Q
     [
         getCore(HeadId.DOUBLE_LEFT_BOATHOOK),
-        getCore(HeadId.BOATHOOK_AND_ARC, Shafts.DOUBLE),
+        getCore(HeadId.BOATHOOK_AND_ARC, {shafts: Shafts.DOUBLE}),
     ],                                                                      //   ~~|      ~||)   H P
     [
         getCore(HeadId.SCROLL_AND_BOATHOOK),
-        getCore(HeadId.LEFT_ARC, Shafts.DOUBLE),
+        getCore(HeadId.LEFT_ARC, {shafts: Shafts.DOUBLE}),
     ],                                                                      //    )|~     (||    I O
     [
         getCore(HeadId.LEFT_BARB),
-        getCore(HeadId.RIGHT_BARB, Shafts.DOUBLE),
+        getCore(HeadId.RIGHT_BARB, {shafts: Shafts.DOUBLE}),
     ],                                                                      //    /|       ||\   J N
     [
         getCore(HeadId.LEFT_SCROLL_AND_BARB),
-        getCore(HeadId.SCROLL_AND_ARC, Shafts.DOUBLE),
+        getCore(HeadId.SCROLL_AND_ARC, {shafts: Shafts.DOUBLE}),
     ],                                                                      //   )/|      )||)   K M
     [
         getCore(HeadId.RIGHT_ARC),
-        getCore(HeadId.RIGHT_ARC, Shafts.DOUBLE),
+        getCore(HeadId.RIGHT_ARC, {shafts: Shafts.DOUBLE}),
     ],                                                                      //     |)      ||)   L L
     [
         getCore(HeadId.SCROLL_AND_ARC),
-        getCore(HeadId.LEFT_SCROLL_AND_BARB, Shafts.DOUBLE),
+        getCore(HeadId.LEFT_SCROLL_AND_BARB, {shafts: Shafts.DOUBLE}),
     ],                                                                      //    )|)    )/||    M K
     [
         getCore(HeadId.RIGHT_BARB),
-        getCore(HeadId.LEFT_BARB, Shafts.DOUBLE),
+        getCore(HeadId.LEFT_BARB, {shafts: Shafts.DOUBLE}),
     ],                                                                      //     |\     /||    N J
     [
         getCore(HeadId.LEFT_ARC),
-        getCore(HeadId.SCROLL_AND_BOATHOOK, Shafts.DOUBLE),
+        getCore(HeadId.SCROLL_AND_BOATHOOK, {shafts: Shafts.DOUBLE}),
     ],                                                                      //    (|      )||~   O I
     [
         getCore(HeadId.BOATHOOK_AND_ARC),
-        getCore(HeadId.DOUBLE_LEFT_BOATHOOK, Shafts.DOUBLE),
+        getCore(HeadId.DOUBLE_LEFT_BOATHOOK, {shafts: Shafts.DOUBLE}),
     ],                                                                      //    ~|)    ~~||    P H
     [
         getCore(HeadId.BARB_AND_BOATHOOK),
-        getCore(HeadId.RIGHT_BOATHOOK, Shafts.DOUBLE),
+        getCore(HeadId.RIGHT_BOATHOOK, {shafts: Shafts.DOUBLE}),
     ],                                                                      //    /|~      ||~   Q G
     [
         getCore(HeadId.ARC_AND_SCROLL),
-        getCore(HeadId.BOATHOOK_AND_SCROLL, Shafts.DOUBLE),
+        getCore(HeadId.BOATHOOK_AND_SCROLL, {shafts: Shafts.DOUBLE}),
     ],                                                                      //    (|(     ~||(   R F
     [
         getCore(HeadId.BOATHOOK_AND_BARB),
-        getCore(HeadId.LEFT_SCROLL_AND_BOATHOOK, Shafts.DOUBLE),
+        getCore(HeadId.LEFT_SCROLL_AND_BOATHOOK, {shafts: Shafts.DOUBLE}),
     ],                                                                      //    ~|\    )~||    S E
     [
         getCore(HeadId.DOUBLE_LEFT_BARB),
-        getCore(HeadId.DOUBLE_SCROLL, Shafts.DOUBLE),
+        getCore(HeadId.DOUBLE_SCROLL, {shafts: Shafts.DOUBLE}),
     ],                                                                      //   //|      )||(   T D
     [
         getCore(HeadId.LEFT_SCROLL_DOUBLE_LEFT_BARB),
@@ -139,9 +139,9 @@ const computeApotomeComplement = (sagittal: NullSagittal | Sagittal): Sagittal =
     // TODO: APOTOME COMPLEMENT EDGE CASE
     //  Although actually, if there's no arm and it's a double barb, shouldn't it return the NullSagittal?
     if (!isSagittal(sagittal)) {
-        return {...getCore(HeadId.DOUBLE_BARB, Shafts.DOUBLE)}
+        return {...getCore(HeadId.DOUBLE_BARB, {shafts: Shafts.DOUBLE})}
     }
-    const {arm, ...core} = sagittal
+    const {arm, down, ...core} = sagittal
 
     let apotomeComplementCore: Maybe<Core> = undefined
 

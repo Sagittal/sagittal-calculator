@@ -1,5 +1,5 @@
 import {Maybe} from "../../../../../src/general/code"
-import {Aim, Compatible, computeCoreUnicode} from "../../../../../src/sagittal/accidental"
+import {Compatible, computeCoreUnicode} from "../../../../../src/sagittal/accidental"
 import {AccentId, HeadId} from "../../../../../src/sagittal/accidental/flacco"
 import {
     computeAccentAscii,
@@ -16,11 +16,10 @@ import {GlyphExpectation} from "./types"
 
 const computeCoreGlyphExpectation = (
     headId: HeadId,
-    shafts: Shafts = Shafts.SINGLE,
-    aim: Aim = Aim.UP,
+    {shafts = Shafts.SINGLE, down = false}: {shafts?: Shafts, down?: boolean} = {},
 ): Maybe<GlyphExpectation> => {
     try {
-        const core = getCore(headId, shafts, aim)
+        const core = getCore(headId, {shafts, down})
 
         return {
             ascii: computeCoreAscii(core),
@@ -35,12 +34,11 @@ const computeCoreGlyphExpectation = (
 const computeAccentGlyphExpectation = (
     accentId: AccentId,
     {against = false}: {against?: boolean} = {},
-    aim: Aim = Aim.UP,
 ): GlyphExpectation =>
     ({
-        ascii: computeAccentAscii({id: accentId, against}, aim),
-        unicode: computeAccentUnicode({id: accentId, against}, aim),
-        smiley: computeAccentSmiley({id: accentId, against}, aim),
+        ascii: computeAccentAscii({id: accentId, against}),
+        unicode: computeAccentUnicode({id: accentId, against}),
+        smiley: computeAccentSmiley({id: accentId, against}),
     })
 
 const computeCompatibleGlyphExpectation = (compatible: Compatible): GlyphExpectation =>

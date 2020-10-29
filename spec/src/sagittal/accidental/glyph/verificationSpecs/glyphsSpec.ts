@@ -1,6 +1,6 @@
 import {isUndefined} from "../../../../../../src/general/code"
 import {camelCaseToConstantCase} from "../../../../../../src/general/code/case"
-import {Aim, Ascii, Compatible, Smiley, Unicode} from "../../../../../../src/sagittal/accidental"
+import {Ascii, Compatible, Smiley, Unicode} from "../../../../../../src/sagittal/accidental"
 import {AccentId, HeadId} from "../../../../../../src/sagittal/accidental/flacco"
 import {Shafts} from "../../../../../../src/sagittal/accidental/sagittal"
 import {
@@ -16,11 +16,11 @@ describe("glyphs", (): void => {
 
         Object.values(HeadId).forEach((headId: HeadId): void => {
             Object.values(Shafts).forEach((shafts: Shafts): void => {
-                Object.values(Aim).forEach((aim: Aim): void => {
-                    const coreGlyphExpectation = computeCoreGlyphExpectation(headId, shafts, aim)
+                [false, true].forEach((down: boolean): void => {
+                    const coreGlyphExpectation = computeCoreGlyphExpectation(headId, {shafts, down})
                     const nameArray = [camelCaseToConstantCase(headId)] as string[]
                     if (shafts !== Shafts.SINGLE) nameArray.push(camelCaseToConstantCase(shafts))
-                    nameArray.push(camelCaseToConstantCase(aim))
+                    if (down) nameArray.push("DOWN")
                     const name = nameArray.join("_")
 
                     if (!isUndefined(coreGlyphExpectation)) coreGlyphExpectations[name] = coreGlyphExpectation
@@ -29,7 +29,7 @@ describe("glyphs", (): void => {
         })
 
         const expected: Record<string, GlyphExpectation> = {
-            RIGHT_SCROLL_UP: {
+            RIGHT_SCROLL: {
                 unicode: "" as Unicode,
                 ascii: "|(" as Ascii,
                 smiley: ":|(:" as Smiley,
@@ -39,7 +39,7 @@ describe("glyphs", (): void => {
                 ascii: "!(" as Ascii,
                 smiley: ":!(:" as Smiley,
             },
-            LEFT_BARB_UP: {
+            LEFT_BARB: {
                 unicode: "" as Unicode,
                 ascii: "/|" as Ascii,
                 smiley: ":/|:" as Smiley,
@@ -49,7 +49,7 @@ describe("glyphs", (): void => {
                 ascii: "\\!" as Ascii,
                 smiley: ":\\!:" as Smiley,
             },
-            RIGHT_ARC_UP: {
+            RIGHT_ARC: {
                 unicode: "" as Unicode,
                 ascii: "|)" as Ascii,
                 smiley: ":|):" as Smiley,
@@ -59,7 +59,7 @@ describe("glyphs", (): void => {
                 ascii: "!)" as Ascii,
                 smiley: ":!):" as Smiley,
             },
-            DOUBLE_LEFT_BARB_UP: {
+            DOUBLE_LEFT_BARB: {
                 unicode: "" as Unicode,
                 ascii: "//|" as Ascii,
                 smiley: ":/ /|:" as Smiley,
@@ -69,7 +69,7 @@ describe("glyphs", (): void => {
                 ascii: "\\\\!" as Ascii,
                 smiley: ":\\ \\!:" as Smiley,
             },
-            BARB_AND_ARC_UP: {
+            BARB_AND_ARC: {
                 unicode: "" as Unicode,
                 ascii: "/|)" as Ascii,
                 smiley: ":/|):" as Smiley,
@@ -79,7 +79,7 @@ describe("glyphs", (): void => {
                 ascii: "\\!)" as Ascii,
                 smiley: ":\\!):" as Smiley,
             },
-            DOUBLE_BARB_UP: {
+            DOUBLE_BARB: {
                 unicode: "" as Unicode,
                 ascii: "/|\\" as Ascii,
                 smiley: ":/|\\:" as Smiley,
@@ -89,7 +89,7 @@ describe("glyphs", (): void => {
                 ascii: "\\!/" as Ascii,
                 smiley: ":\\!/:" as Smiley,
             },
-            DOUBLE_ARC_UP: {
+            DOUBLE_ARC: {
                 unicode: "" as Unicode,
                 ascii: "(|)" as Ascii,
                 smiley: ":(|):" as Smiley,
@@ -99,7 +99,7 @@ describe("glyphs", (): void => {
                 ascii: "(!)" as Ascii,
                 smiley: ":(!):" as Smiley,
             },
-            ARC_AND_BARB_UP: {
+            ARC_AND_BARB: {
                 unicode: "" as Unicode,
                 ascii: "(|\\" as Ascii,
                 smiley: ":(|\\:" as Smiley,
@@ -109,7 +109,7 @@ describe("glyphs", (): void => {
                 ascii: "(!/" as Ascii,
                 smiley: ":(!/:" as Smiley,
             },
-            DOUBLE_SCROLL_DOUBLE_UP: {
+            DOUBLE_SCROLL_DOUBLE: {
                 unicode: "" as Unicode,
                 ascii: ")||(" as Ascii,
                 smiley: ":)||(:" as Smiley,
@@ -119,7 +119,7 @@ describe("glyphs", (): void => {
                 ascii: ")!!(" as Ascii,
                 smiley: ":)!!(:" as Smiley,
             },
-            RIGHT_ARC_DOUBLE_UP: {
+            RIGHT_ARC_DOUBLE: {
                 unicode: "" as Unicode,
                 ascii: "||)" as Ascii,
                 smiley: ":||):" as Smiley,
@@ -129,7 +129,7 @@ describe("glyphs", (): void => {
                 ascii: "!!)" as Ascii,
                 smiley: ":!!):" as Smiley,
             },
-            RIGHT_BARB_DOUBLE_UP: {
+            RIGHT_BARB_DOUBLE: {
                 unicode: "" as Unicode,
                 ascii: "||\\" as Ascii,
                 smiley: ":||\\:" as Smiley,
@@ -139,7 +139,7 @@ describe("glyphs", (): void => {
                 ascii: "!!/" as Ascii,
                 smiley: ":!!/:" as Smiley,
             },
-            BARB_AND_ARC_DOUBLE_UP: {
+            BARB_AND_ARC_DOUBLE: {
                 unicode: "" as Unicode,
                 ascii: "/||)" as Ascii,
                 smiley: ":/||):" as Smiley,
@@ -149,7 +149,7 @@ describe("glyphs", (): void => {
                 ascii: "\\!!)" as Ascii,
                 smiley: ":\\!!):" as Smiley,
             },
-            DOUBLE_BARB_DOUBLE_UP: {
+            DOUBLE_BARB_DOUBLE: {
                 unicode: "" as Unicode,
                 ascii: "/||\\" as Ascii,
                 smiley: ":/||\\:" as Smiley,
@@ -159,7 +159,7 @@ describe("glyphs", (): void => {
                 ascii: "\\!!/" as Ascii,
                 smiley: ":\\!!/:" as Smiley,
             },
-            RIGHT_SCROLL_TRIPLE_UP: {
+            RIGHT_SCROLL_TRIPLE: {
                 unicode: "" as Unicode,
                 ascii: "|||(" as Ascii,
                 smiley: ":|||(:" as Smiley,
@@ -169,7 +169,7 @@ describe("glyphs", (): void => {
                 ascii: "!!!(" as Ascii,
                 smiley: ":!!!(:" as Smiley,
             },
-            LEFT_BARB_TRIPLE_UP: {
+            LEFT_BARB_TRIPLE: {
                 unicode: "" as Unicode,
                 ascii: "/|||" as Ascii,
                 smiley: ":/|||:" as Smiley,
@@ -179,7 +179,7 @@ describe("glyphs", (): void => {
                 ascii: "\\!!!" as Ascii,
                 smiley: ":\\!!!:" as Smiley,
             },
-            RIGHT_ARC_TRIPLE_UP: {
+            RIGHT_ARC_TRIPLE: {
                 unicode: "" as Unicode,
                 ascii: "|||)" as Ascii,
                 smiley: ":|||):" as Smiley,
@@ -189,7 +189,7 @@ describe("glyphs", (): void => {
                 ascii: "!!!)" as Ascii,
                 smiley: ":!!!):" as Smiley,
             },
-            DOUBLE_LEFT_BARB_TRIPLE_UP: {
+            DOUBLE_LEFT_BARB_TRIPLE: {
                 unicode: "" as Unicode,
                 ascii: "//|||" as Ascii,
                 smiley: ":/ /|||:" as Smiley,
@@ -199,7 +199,7 @@ describe("glyphs", (): void => {
                 ascii: "\\\\!!!" as Ascii,
                 smiley: ":\\ \\!!!:" as Smiley,
             },
-            BARB_AND_ARC_TRIPLE_UP: {
+            BARB_AND_ARC_TRIPLE: {
                 unicode: "" as Unicode,
                 ascii: "/|||)" as Ascii,
                 smiley: ":/|||):" as Smiley,
@@ -209,7 +209,7 @@ describe("glyphs", (): void => {
                 ascii: "\\!!!)" as Ascii,
                 smiley: ":\\!!!):" as Smiley,
             },
-            DOUBLE_BARB_TRIPLE_UP: {
+            DOUBLE_BARB_TRIPLE: {
                 unicode: "" as Unicode,
                 ascii: "/|||\\" as Ascii,
                 smiley: ":/|||\\:" as Smiley,
@@ -219,7 +219,7 @@ describe("glyphs", (): void => {
                 ascii: "\\!!!/" as Ascii,
                 smiley: ":\\!!!/:" as Smiley,
             },
-            DOUBLE_ARC_TRIPLE_UP: {
+            DOUBLE_ARC_TRIPLE: {
                 unicode: "" as Unicode,
                 ascii: "(|||)" as Ascii,
                 smiley: ":(|||):" as Smiley,
@@ -229,7 +229,7 @@ describe("glyphs", (): void => {
                 ascii: "(!!!)" as Ascii,
                 smiley: ":(!!!):" as Smiley,
             },
-            ARC_AND_BARB_TRIPLE_UP: {
+            ARC_AND_BARB_TRIPLE: {
                 unicode: "" as Unicode,
                 ascii: "(|||\\" as Ascii,
                 smiley: ":(|||\\:" as Smiley,
@@ -239,7 +239,7 @@ describe("glyphs", (): void => {
                 ascii: "(!!!/" as Ascii,
                 smiley: ":(!!!/:" as Smiley,
             },
-            DOUBLE_SCROLL_EX_UP: {
+            DOUBLE_SCROLL_EX: {
                 unicode: "" as Unicode,
                 ascii: ")X(" as Ascii,
                 smiley: ":)X(:" as Smiley,
@@ -249,7 +249,7 @@ describe("glyphs", (): void => {
                 ascii: ")Y(" as Ascii,
                 smiley: ":)Y(:" as Smiley,
             },
-            RIGHT_ARC_EX_UP: {
+            RIGHT_ARC_EX: {
                 unicode: "" as Unicode,
                 ascii: "X)" as Ascii,
                 smiley: ":X):" as Smiley,
@@ -259,7 +259,7 @@ describe("glyphs", (): void => {
                 ascii: "Y)" as Ascii,
                 smiley: ":Y):" as Smiley,
             },
-            RIGHT_BARB_EX_UP: {
+            RIGHT_BARB_EX: {
                 unicode: "" as Unicode,
                 ascii: "X\\" as Ascii,
                 smiley: ":X\\:" as Smiley,
@@ -269,7 +269,7 @@ describe("glyphs", (): void => {
                 ascii: "Y/" as Ascii,
                 smiley: ":Y/:" as Smiley,
             },
-            BARB_AND_ARC_EX_UP: {
+            BARB_AND_ARC_EX: {
                 unicode: "" as Unicode,
                 ascii: "/X)" as Ascii,
                 smiley: ":/X):" as Smiley,
@@ -279,7 +279,7 @@ describe("glyphs", (): void => {
                 ascii: "\\Y)" as Ascii,
                 smiley: ":\\Y):" as Smiley,
             },
-            DOUBLE_BARB_EX_UP: {
+            DOUBLE_BARB_EX: {
                 unicode: "" as Unicode,
                 ascii: "/X\\" as Ascii,
                 smiley: ":/X\\:" as Smiley,
@@ -289,7 +289,7 @@ describe("glyphs", (): void => {
                 ascii: "\\Y/" as Ascii,
                 smiley: ":\\Y/:" as Smiley,
             },
-            DOUBLE_SCROLL_UP: {
+            DOUBLE_SCROLL: {
                 unicode: "" as Unicode,
                 ascii: ")|(" as Ascii,
                 smiley: ":)|(:" as Smiley,
@@ -299,7 +299,7 @@ describe("glyphs", (): void => {
                 ascii: ")!(" as Ascii,
                 smiley: ":)!(:" as Smiley,
             },
-            BOATHOOK_AND_SCROLL_UP: {
+            BOATHOOK_AND_SCROLL: {
                 unicode: "" as Unicode,
                 ascii: "~|(" as Ascii,
                 smiley: ":~|(:" as Smiley,
@@ -309,7 +309,7 @@ describe("glyphs", (): void => {
                 ascii: "~!(" as Ascii,
                 smiley: ":~!(:" as Smiley,
             },
-            RIGHT_BARB_UP: {
+            RIGHT_BARB: {
                 unicode: "" as Unicode,
                 ascii: "|\\" as Ascii,
                 smiley: ":|\\:" as Smiley,
@@ -319,7 +319,7 @@ describe("glyphs", (): void => {
                 ascii: "!/" as Ascii,
                 smiley: ":!/:" as Smiley,
             },
-            LEFT_ARC_UP: {
+            LEFT_ARC: {
                 unicode: "" as Unicode,
                 ascii: "(|" as Ascii,
                 smiley: ":(|:" as Smiley,
@@ -329,7 +329,7 @@ describe("glyphs", (): void => {
                 ascii: "(!" as Ascii,
                 smiley: ":(!:" as Smiley,
             },
-            ARC_AND_SCROLL_UP: {
+            ARC_AND_SCROLL: {
                 unicode: "" as Unicode,
                 ascii: "(|(" as Ascii,
                 smiley: ":(|(:" as Smiley,
@@ -339,7 +339,7 @@ describe("glyphs", (): void => {
                 ascii: "(!(" as Ascii,
                 smiley: ":(!(:" as Smiley,
             },
-            BOATHOOK_AND_SCROLL_DOUBLE_UP: {
+            BOATHOOK_AND_SCROLL_DOUBLE: {
                 unicode: "" as Unicode,
                 ascii: "~||(" as Ascii,
                 smiley: ":~||(:" as Smiley,
@@ -349,7 +349,7 @@ describe("glyphs", (): void => {
                 ascii: "~!!(" as Ascii,
                 smiley: ":~!!(:" as Smiley,
             },
-            SCROLL_AND_BOATHOOK_DOUBLE_UP: {
+            SCROLL_AND_BOATHOOK_DOUBLE: {
                 unicode: "" as Unicode,
                 ascii: ")||~" as Ascii,
                 smiley: ":)||~:" as Smiley,
@@ -359,7 +359,7 @@ describe("glyphs", (): void => {
                 ascii: ")!!~" as Ascii,
                 smiley: ":)!!~:" as Smiley,
             },
-            LEFT_BARB_DOUBLE_UP: {
+            LEFT_BARB_DOUBLE: {
                 unicode: "" as Unicode,
                 ascii: "/||" as Ascii,
                 smiley: ":/||:" as Smiley,
@@ -369,7 +369,7 @@ describe("glyphs", (): void => {
                 ascii: "\\!!" as Ascii,
                 smiley: ":\\!!:" as Smiley,
             },
-            ARC_AND_SCROLL_DOUBLE_UP: {
+            ARC_AND_SCROLL_DOUBLE: {
                 unicode: "" as Unicode,
                 ascii: "(||(" as Ascii,
                 smiley: ":(||(:" as Smiley,
@@ -379,7 +379,7 @@ describe("glyphs", (): void => {
                 ascii: "(!!(" as Ascii,
                 smiley: ":(!!(:" as Smiley,
             },
-            DOUBLE_LEFT_BARB_DOUBLE_UP: {
+            DOUBLE_LEFT_BARB_DOUBLE: {
                 unicode: "" as Unicode,
                 ascii: "//||" as Ascii,
                 smiley: ":/ /||:" as Smiley,
@@ -389,7 +389,7 @@ describe("glyphs", (): void => {
                 ascii: "\\\\!!" as Ascii,
                 smiley: ":\\ \\!!:" as Smiley,
             },
-            DOUBLE_SCROLL_TRIPLE_UP: {
+            DOUBLE_SCROLL_TRIPLE: {
                 unicode: "" as Unicode,
                 ascii: ")|||(" as Ascii,
                 smiley: ":)|||(:" as Smiley,
@@ -399,7 +399,7 @@ describe("glyphs", (): void => {
                 ascii: ")!!!(" as Ascii,
                 smiley: ":)!!!(:" as Smiley,
             },
-            BOATHOOK_AND_SCROLL_TRIPLE_UP: {
+            BOATHOOK_AND_SCROLL_TRIPLE: {
                 unicode: "" as Unicode,
                 ascii: "~|||(" as Ascii,
                 smiley: ":~|||(:" as Smiley,
@@ -409,7 +409,7 @@ describe("glyphs", (): void => {
                 ascii: "~!!!(" as Ascii,
                 smiley: ":~!!!(:" as Smiley,
             },
-            RIGHT_BARB_TRIPLE_UP: {
+            RIGHT_BARB_TRIPLE: {
                 unicode: "" as Unicode,
                 ascii: "|||\\" as Ascii,
                 smiley: ":|||\\:" as Smiley,
@@ -419,7 +419,7 @@ describe("glyphs", (): void => {
                 ascii: "!!!/" as Ascii,
                 smiley: ":!!!/:" as Smiley,
             },
-            LEFT_ARC_TRIPLE_UP: {
+            LEFT_ARC_TRIPLE: {
                 unicode: "" as Unicode,
                 ascii: "(|||" as Ascii,
                 smiley: ":(|||:" as Smiley,
@@ -429,7 +429,7 @@ describe("glyphs", (): void => {
                 ascii: "(!!!" as Ascii,
                 smiley: ":(!!!:" as Smiley,
             },
-            ARC_AND_SCROLL_TRIPLE_UP: {
+            ARC_AND_SCROLL_TRIPLE: {
                 unicode: "" as Unicode,
                 ascii: "(|||(" as Ascii,
                 smiley: ":(|||(:" as Smiley,
@@ -439,7 +439,7 @@ describe("glyphs", (): void => {
                 ascii: "(!!!(" as Ascii,
                 smiley: ":(!!!(:" as Smiley,
             },
-            BOATHOOK_AND_SCROLL_EX_UP: {
+            BOATHOOK_AND_SCROLL_EX: {
                 unicode: "" as Unicode,
                 ascii: "~X(" as Ascii,
                 smiley: ":~X(:" as Smiley,
@@ -449,7 +449,7 @@ describe("glyphs", (): void => {
                 ascii: "~Y(" as Ascii,
                 smiley: ":~Y(:" as Smiley,
             },
-            SCROLL_AND_BOATHOOK_EX_UP: {
+            SCROLL_AND_BOATHOOK_EX: {
                 unicode: "" as Unicode,
                 ascii: ")X~" as Ascii,
                 smiley: ":)X~:" as Smiley,
@@ -459,7 +459,7 @@ describe("glyphs", (): void => {
                 ascii: ")Y~" as Ascii,
                 smiley: ":)Y~:" as Smiley,
             },
-            LEFT_BARB_EX_UP: {
+            LEFT_BARB_EX: {
                 unicode: "" as Unicode,
                 ascii: "/X" as Ascii,
                 smiley: ":/X:" as Smiley,
@@ -469,7 +469,7 @@ describe("glyphs", (): void => {
                 ascii: "\\Y" as Ascii,
                 smiley: ":\\Y:" as Smiley,
             },
-            ARC_AND_SCROLL_EX_UP: {
+            ARC_AND_SCROLL_EX: {
                 unicode: "" as Unicode,
                 ascii: "(X(" as Ascii,
                 smiley: ":(X(:" as Smiley,
@@ -479,7 +479,7 @@ describe("glyphs", (): void => {
                 ascii: "(Y(" as Ascii,
                 smiley: ":(Y(:" as Smiley,
             },
-            DOUBLE_LEFT_BARB_EX_UP: {
+            DOUBLE_LEFT_BARB_EX: {
                 unicode: "" as Unicode,
                 ascii: "//X" as Ascii,
                 smiley: ":/ /X:" as Smiley,
@@ -489,7 +489,7 @@ describe("glyphs", (): void => {
                 ascii: "\\\\Y" as Ascii,
                 smiley: ":\\ \\Y:" as Smiley,
             },
-            RIGHT_BOATHOOK_UP: {
+            RIGHT_BOATHOOK: {
                 unicode: "" as Unicode,
                 ascii: "|~" as Ascii,
                 smiley: ":|~:" as Smiley,
@@ -499,7 +499,7 @@ describe("glyphs", (): void => {
                 ascii: "!~" as Ascii,
                 smiley: ":!~:" as Smiley,
             },
-            LEFT_SCROLL_AND_BARB_UP: {
+            LEFT_SCROLL_AND_BARB: {
                 unicode: "" as Unicode,
                 ascii: ")/|" as Ascii,
                 smiley: ":)/|:" as Smiley,
@@ -509,7 +509,7 @@ describe("glyphs", (): void => {
                 ascii: ")\\!" as Ascii,
                 smiley: ":)\\!:" as Smiley,
             },
-            BARB_AND_BOATHOOK_UP: {
+            BARB_AND_BOATHOOK: {
                 unicode: "" as Unicode,
                 ascii: "/|~" as Ascii,
                 smiley: ":/|~:" as Smiley,
@@ -519,7 +519,7 @@ describe("glyphs", (): void => {
                 ascii: "\\!~" as Ascii,
                 smiley: ":\\!~:" as Smiley,
             },
-            RIGHT_BOATHOOK_DOUBLE_UP: {
+            RIGHT_BOATHOOK_DOUBLE: {
                 unicode: "" as Unicode,
                 ascii: "||~" as Ascii,
                 smiley: ":||~:" as Smiley,
@@ -529,7 +529,7 @@ describe("glyphs", (): void => {
                 ascii: "!!~" as Ascii,
                 smiley: ":!!~:" as Smiley,
             },
-            SCROLL_AND_ARC_DOUBLE_UP: {
+            SCROLL_AND_ARC_DOUBLE: {
                 unicode: "" as Unicode,
                 ascii: ")||)" as Ascii,
                 smiley: ":)||):" as Smiley,
@@ -539,7 +539,7 @@ describe("glyphs", (): void => {
                 ascii: ")!!)" as Ascii,
                 smiley: ":)!!):" as Smiley,
             },
-            BARB_AND_BOATHOOK_DOUBLE_UP: {
+            BARB_AND_BOATHOOK_DOUBLE: {
                 unicode: "" as Unicode,
                 ascii: "/||~" as Ascii,
                 smiley: ":/||~:" as Smiley,
@@ -549,7 +549,7 @@ describe("glyphs", (): void => {
                 ascii: "\\!!~" as Ascii,
                 smiley: ":\\!!~:" as Smiley,
             },
-            RIGHT_BOATHOOK_TRIPLE_UP: {
+            RIGHT_BOATHOOK_TRIPLE: {
                 unicode: "" as Unicode,
                 ascii: "|||~" as Ascii,
                 smiley: ":|||~:" as Smiley,
@@ -559,7 +559,7 @@ describe("glyphs", (): void => {
                 ascii: "!!!~" as Ascii,
                 smiley: ":!!!~:" as Smiley,
             },
-            LEFT_SCROLL_AND_BARB_TRIPLE_UP: {
+            LEFT_SCROLL_AND_BARB_TRIPLE: {
                 unicode: "" as Unicode,
                 ascii: ")/|||" as Ascii,
                 smiley: ":)/|||:" as Smiley,
@@ -569,7 +569,7 @@ describe("glyphs", (): void => {
                 ascii: ")\\!!!" as Ascii,
                 smiley: ":)\\!!!:" as Smiley,
             },
-            BARB_AND_BOATHOOK_TRIPLE_UP: {
+            BARB_AND_BOATHOOK_TRIPLE: {
                 unicode: "" as Unicode,
                 ascii: "/|||~" as Ascii,
                 smiley: ":/|||~:" as Smiley,
@@ -579,7 +579,7 @@ describe("glyphs", (): void => {
                 ascii: "\\!!!~" as Ascii,
                 smiley: ":\\!!!~:" as Smiley,
             },
-            RIGHT_BOATHOOK_EX_UP: {
+            RIGHT_BOATHOOK_EX: {
                 unicode: "" as Unicode,
                 ascii: "X~" as Ascii,
                 smiley: ":X~:" as Smiley,
@@ -589,7 +589,7 @@ describe("glyphs", (): void => {
                 ascii: "Y~" as Ascii,
                 smiley: ":Y~:" as Smiley,
             },
-            SCROLL_AND_ARC_EX_UP: {
+            SCROLL_AND_ARC_EX: {
                 unicode: "" as Unicode,
                 ascii: ")X)" as Ascii,
                 smiley: ":)X):" as Smiley,
@@ -599,7 +599,7 @@ describe("glyphs", (): void => {
                 ascii: ")Y)" as Ascii,
                 smiley: ":)Y):" as Smiley,
             },
-            BARB_AND_BOATHOOK_EX_UP: {
+            BARB_AND_BOATHOOK_EX: {
                 unicode: "" as Unicode,
                 ascii: "/X~" as Ascii,
                 smiley: ":/X~:" as Smiley,
@@ -609,7 +609,7 @@ describe("glyphs", (): void => {
                 ascii: "\\Y~" as Ascii,
                 smiley: ":\\Y~:" as Smiley,
             },
-            LEFT_SCROLL_UP: {
+            LEFT_SCROLL: {
                 unicode: "" as Unicode,
                 ascii: ")|" as Ascii,
                 smiley: ":)|:" as Smiley,
@@ -619,7 +619,7 @@ describe("glyphs", (): void => {
                 ascii: ")!" as Ascii,
                 smiley: ":)!:" as Smiley,
             },
-            LEFT_BOATHOOK_UP: {
+            LEFT_BOATHOOK: {
                 unicode: "" as Unicode,
                 ascii: "~|" as Ascii,
                 smiley: ":~|:" as Smiley,
@@ -629,7 +629,7 @@ describe("glyphs", (): void => {
                 ascii: "~!" as Ascii,
                 smiley: ":~!:" as Smiley,
             },
-            LEFT_SCROLL_AND_BOATHOOK_UP: {
+            LEFT_SCROLL_AND_BOATHOOK: {
                 unicode: "" as Unicode,
                 ascii: ")~|" as Ascii,
                 smiley: ":)~|:" as Smiley,
@@ -639,7 +639,7 @@ describe("glyphs", (): void => {
                 ascii: ")~!" as Ascii,
                 smiley: ":)~!:" as Smiley,
             },
-            DOUBLE_LEFT_BOATHOOK_UP: {
+            DOUBLE_LEFT_BOATHOOK: {
                 unicode: "" as Unicode,
                 ascii: "~~|" as Ascii,
                 smiley: ":~~|:" as Smiley,
@@ -649,7 +649,7 @@ describe("glyphs", (): void => {
                 ascii: "~~!" as Ascii,
                 smiley: ":~~!:" as Smiley,
             },
-            SCROLL_AND_BOATHOOK_UP: {
+            SCROLL_AND_BOATHOOK: {
                 unicode: "" as Unicode,
                 ascii: ")|~" as Ascii,
                 smiley: ":)|~:" as Smiley,
@@ -659,7 +659,7 @@ describe("glyphs", (): void => {
                 ascii: ")!~" as Ascii,
                 smiley: ":)!~:" as Smiley,
             },
-            SCROLL_AND_ARC_UP: {
+            SCROLL_AND_ARC: {
                 unicode: "" as Unicode,
                 ascii: ")|)" as Ascii,
                 smiley: ":)|):" as Smiley,
@@ -669,7 +669,7 @@ describe("glyphs", (): void => {
                 ascii: ")!)" as Ascii,
                 smiley: ":)!):" as Smiley,
             },
-            BOATHOOK_AND_ARC_UP: {
+            BOATHOOK_AND_ARC: {
                 unicode: "" as Unicode,
                 ascii: "~|)" as Ascii,
                 smiley: ":~|):" as Smiley,
@@ -679,7 +679,7 @@ describe("glyphs", (): void => {
                 ascii: "~!)" as Ascii,
                 smiley: ":~!):" as Smiley,
             },
-            BOATHOOK_AND_BARB_UP: {
+            BOATHOOK_AND_BARB: {
                 unicode: "" as Unicode,
                 ascii: "~|\\" as Ascii,
                 smiley: ":~|\\:" as Smiley,
@@ -689,7 +689,7 @@ describe("glyphs", (): void => {
                 ascii: "~!/" as Ascii,
                 smiley: ":~!/:" as Smiley,
             },
-            LEFT_SCROLL_DOUBLE_LEFT_BARB_UP: {
+            LEFT_SCROLL_DOUBLE_LEFT_BARB: {
                 unicode: "" as Unicode,
                 ascii: ")//|" as Ascii,
                 smiley: ":)/ /|:" as Smiley,
@@ -699,7 +699,7 @@ describe("glyphs", (): void => {
                 ascii: ")\\\\!" as Ascii,
                 smiley: ":)\\ \\!:" as Smiley,
             },
-            ARC_AND_BOATHOOK_UP: {
+            ARC_AND_BOATHOOK: {
                 unicode: "" as Unicode,
                 ascii: "(|~" as Ascii,
                 smiley: ":(|~:" as Smiley,
@@ -709,7 +709,7 @@ describe("glyphs", (): void => {
                 ascii: "(!~" as Ascii,
                 smiley: ":(!~:" as Smiley,
             },
-            LEFT_ARC_AND_BARB_UP: {
+            LEFT_ARC_AND_BARB: {
                 unicode: "" as Unicode,
                 ascii: "(/|" as Ascii,
                 smiley: ":(/|:" as Smiley,
@@ -719,7 +719,7 @@ describe("glyphs", (): void => {
                 ascii: "(\\!" as Ascii,
                 smiley: ":(\\!:" as Smiley,
             },
-            LEFT_SCROLL_AND_DOUBLE_BARB_UP: {
+            LEFT_SCROLL_AND_DOUBLE_BARB: {
                 unicode: "" as Unicode,
                 ascii: ")/|\\" as Ascii,
                 smiley: ":)/|\\:" as Smiley,
@@ -729,7 +729,7 @@ describe("glyphs", (): void => {
                 ascii: ")\\!/" as Ascii,
                 smiley: ":)\\!/:" as Smiley,
             },
-            RIGHT_BARB_AND_ARC_UP: {
+            RIGHT_BARB_AND_ARC: {
                 unicode: "" as Unicode,
                 ascii: "|\\)" as Ascii,
                 smiley: ":|\\):" as Smiley,
@@ -739,7 +739,7 @@ describe("glyphs", (): void => {
                 ascii: "!/)" as Ascii,
                 smiley: ":!/):" as Smiley,
             },
-            DOUBLE_RIGHT_BARB_UP: {
+            DOUBLE_RIGHT_BARB: {
                 unicode: "" as Unicode,
                 ascii: "|\\\\" as Ascii,
                 smiley: ":|\\ \\:" as Smiley,
@@ -749,7 +749,7 @@ describe("glyphs", (): void => {
                 ascii: "!//" as Ascii,
                 smiley: ":!/ /:" as Smiley,
             },
-            LEFT_SCROLL_DOUBLE_RIGHT_BARB_UP: {
+            LEFT_SCROLL_DOUBLE_RIGHT_BARB: {
                 unicode: "" as Unicode,
                 ascii: ")|\\\\" as Ascii,
                 smiley: ":)|\\ \\:" as Smiley,
@@ -759,7 +759,7 @@ describe("glyphs", (): void => {
                 ascii: ")!//" as Ascii,
                 smiley: ":)!/ /:" as Smiley,
             },
-            LEFT_SCROLL_AND_BOATHOOK_DOUBLE_UP: {
+            LEFT_SCROLL_AND_BOATHOOK_DOUBLE: {
                 unicode: "" as Unicode,
                 ascii: ")~||" as Ascii,
                 smiley: ":)~||:" as Smiley,
@@ -769,7 +769,7 @@ describe("glyphs", (): void => {
                 ascii: ")~!!" as Ascii,
                 smiley: ":)~!!:" as Smiley,
             },
-            DOUBLE_LEFT_BOATHOOK_DOUBLE_UP: {
+            DOUBLE_LEFT_BOATHOOK_DOUBLE: {
                 unicode: "" as Unicode,
                 ascii: "~~||" as Ascii,
                 smiley: ":~~||:" as Smiley,
@@ -779,7 +779,7 @@ describe("glyphs", (): void => {
                 ascii: "~~!!" as Ascii,
                 smiley: ":~~!!:" as Smiley,
             },
-            LEFT_SCROLL_AND_BARB_DOUBLE_UP: {
+            LEFT_SCROLL_AND_BARB_DOUBLE: {
                 unicode: "" as Unicode,
                 ascii: ")/||" as Ascii,
                 smiley: ":)/||:" as Smiley,
@@ -789,7 +789,7 @@ describe("glyphs", (): void => {
                 ascii: ")\\!!" as Ascii,
                 smiley: ":)\\!!:" as Smiley,
             },
-            LEFT_ARC_DOUBLE_UP: {
+            LEFT_ARC_DOUBLE: {
                 unicode: "" as Unicode,
                 ascii: "(||" as Ascii,
                 smiley: ":(||:" as Smiley,
@@ -799,7 +799,7 @@ describe("glyphs", (): void => {
                 ascii: "(!!" as Ascii,
                 smiley: ":(!!:" as Smiley,
             },
-            BOATHOOK_AND_ARC_DOUBLE_UP: {
+            BOATHOOK_AND_ARC_DOUBLE: {
                 unicode: "" as Unicode,
                 ascii: "~||)" as Ascii,
                 smiley: ":~||):" as Smiley,
@@ -809,7 +809,7 @@ describe("glyphs", (): void => {
                 ascii: "~!!)" as Ascii,
                 smiley: ":~!!):" as Smiley,
             },
-            BOATHOOK_AND_BARB_DOUBLE_UP: {
+            BOATHOOK_AND_BARB_DOUBLE: {
                 unicode: "" as Unicode,
                 ascii: "~||\\" as Ascii,
                 smiley: ":~||\\:" as Smiley,
@@ -819,7 +819,7 @@ describe("glyphs", (): void => {
                 ascii: "~!!/" as Ascii,
                 smiley: ":~!!/:" as Smiley,
             },
-            LEFT_SCROLL_DOUBLE_LEFT_BARB_DOUBLE_UP: {
+            LEFT_SCROLL_DOUBLE_LEFT_BARB_DOUBLE: {
                 unicode: "" as Unicode,
                 ascii: ")//||" as Ascii,
                 smiley: ":)/ /||:" as Smiley,
@@ -829,7 +829,7 @@ describe("glyphs", (): void => {
                 ascii: ")\\\\!!" as Ascii,
                 smiley: ":)\\ \\!!:" as Smiley,
             },
-            ARC_AND_BOATHOOK_DOUBLE_UP: {
+            ARC_AND_BOATHOOK_DOUBLE: {
                 unicode: "" as Unicode,
                 ascii: "(||~" as Ascii,
                 smiley: ":(||~:" as Smiley,
@@ -839,7 +839,7 @@ describe("glyphs", (): void => {
                 ascii: "(!!~" as Ascii,
                 smiley: ":(!!~:" as Smiley,
             },
-            LEFT_SCROLL_TRIPLE_UP: {
+            LEFT_SCROLL_TRIPLE: {
                 unicode: "" as Unicode,
                 ascii: ")|||" as Ascii,
                 smiley: ":)|||:" as Smiley,
@@ -849,7 +849,7 @@ describe("glyphs", (): void => {
                 ascii: ")!!!" as Ascii,
                 smiley: ":)!!!:" as Smiley,
             },
-            LEFT_BOATHOOK_TRIPLE_UP: {
+            LEFT_BOATHOOK_TRIPLE: {
                 unicode: "" as Unicode,
                 ascii: "~|||" as Ascii,
                 smiley: ":~|||:" as Smiley,
@@ -859,7 +859,7 @@ describe("glyphs", (): void => {
                 ascii: "~!!!" as Ascii,
                 smiley: ":~!!!:" as Smiley,
             },
-            LEFT_SCROLL_AND_BOATHOOK_TRIPLE_UP: {
+            LEFT_SCROLL_AND_BOATHOOK_TRIPLE: {
                 unicode: "" as Unicode,
                 ascii: ")~|||" as Ascii,
                 smiley: ":)~|||:" as Smiley,
@@ -869,7 +869,7 @@ describe("glyphs", (): void => {
                 ascii: ")~!!!" as Ascii,
                 smiley: ":)~!!!:" as Smiley,
             },
-            DOUBLE_LEFT_BOATHOOK_TRIPLE_UP: {
+            DOUBLE_LEFT_BOATHOOK_TRIPLE: {
                 unicode: "" as Unicode,
                 ascii: "~~|||" as Ascii,
                 smiley: ":~~|||:" as Smiley,
@@ -879,7 +879,7 @@ describe("glyphs", (): void => {
                 ascii: "~~!!!" as Ascii,
                 smiley: ":~~!!!:" as Smiley,
             },
-            SCROLL_AND_BOATHOOK_TRIPLE_UP: {
+            SCROLL_AND_BOATHOOK_TRIPLE: {
                 unicode: "" as Unicode,
                 ascii: ")|||~" as Ascii,
                 smiley: ":)|||~:" as Smiley,
@@ -889,7 +889,7 @@ describe("glyphs", (): void => {
                 ascii: ")!!!~" as Ascii,
                 smiley: ":)!!!~:" as Smiley,
             },
-            SCROLL_AND_ARC_TRIPLE_UP: {
+            SCROLL_AND_ARC_TRIPLE: {
                 unicode: "" as Unicode,
                 ascii: ")|||)" as Ascii,
                 smiley: ":)|||):" as Smiley,
@@ -899,7 +899,7 @@ describe("glyphs", (): void => {
                 ascii: ")!!!)" as Ascii,
                 smiley: ":)!!!):" as Smiley,
             },
-            BOATHOOK_AND_ARC_TRIPLE_UP: {
+            BOATHOOK_AND_ARC_TRIPLE: {
                 unicode: "" as Unicode,
                 ascii: "~|||)" as Ascii,
                 smiley: ":~|||):" as Smiley,
@@ -909,7 +909,7 @@ describe("glyphs", (): void => {
                 ascii: "~!!!)" as Ascii,
                 smiley: ":~!!!):" as Smiley,
             },
-            BOATHOOK_AND_BARB_TRIPLE_UP: {
+            BOATHOOK_AND_BARB_TRIPLE: {
                 unicode: "" as Unicode,
                 ascii: "~|||\\" as Ascii,
                 smiley: ":~|||\\:" as Smiley,
@@ -919,7 +919,7 @@ describe("glyphs", (): void => {
                 ascii: "~!!!/" as Ascii,
                 smiley: ":~!!!/:" as Smiley,
             },
-            LEFT_SCROLL_DOUBLE_LEFT_BARB_TRIPLE_UP: {
+            LEFT_SCROLL_DOUBLE_LEFT_BARB_TRIPLE: {
                 unicode: "" as Unicode,
                 ascii: ")//|||" as Ascii,
                 smiley: ":)/ /|||:" as Smiley,
@@ -929,7 +929,7 @@ describe("glyphs", (): void => {
                 ascii: ")\\\\!!!" as Ascii,
                 smiley: ":)\\ \\!!!:" as Smiley,
             },
-            ARC_AND_BOATHOOK_TRIPLE_UP: {
+            ARC_AND_BOATHOOK_TRIPLE: {
                 unicode: "" as Unicode,
                 ascii: "(|||~" as Ascii,
                 smiley: ":(|||~:" as Smiley,
@@ -939,7 +939,7 @@ describe("glyphs", (): void => {
                 ascii: "(!!!~" as Ascii,
                 smiley: ":(!!!~:" as Smiley,
             },
-            LEFT_ARC_AND_BARB_TRIPLE_UP: {
+            LEFT_ARC_AND_BARB_TRIPLE: {
                 unicode: "" as Unicode,
                 ascii: "(/|||" as Ascii,
                 smiley: ":(/|||:" as Smiley,
@@ -949,7 +949,7 @@ describe("glyphs", (): void => {
                 ascii: "(\\!!!" as Ascii,
                 smiley: ":(\\!!!:" as Smiley,
             },
-            LEFT_SCROLL_AND_DOUBLE_BARB_TRIPLE_UP: {
+            LEFT_SCROLL_AND_DOUBLE_BARB_TRIPLE: {
                 unicode: "" as Unicode,
                 ascii: ")/|||\\" as Ascii,
                 smiley: ":)/|||\\:" as Smiley,
@@ -959,7 +959,7 @@ describe("glyphs", (): void => {
                 ascii: ")\\!!!/" as Ascii,
                 smiley: ":)\\!!!/:" as Smiley,
             },
-            RIGHT_BARB_AND_ARC_TRIPLE_UP: {
+            RIGHT_BARB_AND_ARC_TRIPLE: {
                 unicode: "" as Unicode,
                 ascii: "|||\\)" as Ascii,
                 smiley: ":|||\\):" as Smiley,
@@ -969,7 +969,7 @@ describe("glyphs", (): void => {
                 ascii: "!!!/)" as Ascii,
                 smiley: ":!!!/):" as Smiley,
             },
-            DOUBLE_RIGHT_BARB_TRIPLE_UP: {
+            DOUBLE_RIGHT_BARB_TRIPLE: {
                 unicode: "" as Unicode,
                 ascii: "|||\\\\" as Ascii,
                 smiley: ":|||\\ \\:" as Smiley,
@@ -979,7 +979,7 @@ describe("glyphs", (): void => {
                 ascii: "!!!//" as Ascii,
                 smiley: ":!!!/ /:" as Smiley,
             },
-            LEFT_SCROLL_DOUBLE_RIGHT_BARB_TRIPLE_UP: {
+            LEFT_SCROLL_DOUBLE_RIGHT_BARB_TRIPLE: {
                 unicode: "" as Unicode,
                 ascii: ")|||\\\\" as Ascii,
                 smiley: ":)|||\\ \\:" as Smiley,
@@ -989,7 +989,7 @@ describe("glyphs", (): void => {
                 ascii: ")!!!//" as Ascii,
                 smiley: ":)!!!/ /:" as Smiley,
             },
-            LEFT_SCROLL_AND_BOATHOOK_EX_UP: {
+            LEFT_SCROLL_AND_BOATHOOK_EX: {
                 unicode: "" as Unicode,
                 ascii: ")~X" as Ascii,
                 smiley: ":)~X:" as Smiley,
@@ -999,7 +999,7 @@ describe("glyphs", (): void => {
                 ascii: ")~Y" as Ascii,
                 smiley: ":)~Y:" as Smiley,
             },
-            DOUBLE_LEFT_BOATHOOK_EX_UP: {
+            DOUBLE_LEFT_BOATHOOK_EX: {
                 unicode: "" as Unicode,
                 ascii: "~~X" as Ascii,
                 smiley: ":~~X:" as Smiley,
@@ -1009,7 +1009,7 @@ describe("glyphs", (): void => {
                 ascii: "~~Y" as Ascii,
                 smiley: ":~~Y:" as Smiley,
             },
-            LEFT_SCROLL_AND_BARB_EX_UP: {
+            LEFT_SCROLL_AND_BARB_EX: {
                 unicode: "" as Unicode,
                 ascii: ")/X" as Ascii,
                 smiley: ":)/X:" as Smiley,
@@ -1019,7 +1019,7 @@ describe("glyphs", (): void => {
                 ascii: ")\\Y" as Ascii,
                 smiley: ":)\\Y:" as Smiley,
             },
-            LEFT_ARC_EX_UP: {
+            LEFT_ARC_EX: {
                 unicode: "" as Unicode,
                 ascii: "(X" as Ascii,
                 smiley: ":(X:" as Smiley,
@@ -1029,7 +1029,7 @@ describe("glyphs", (): void => {
                 ascii: "(Y" as Ascii,
                 smiley: ":(Y:" as Smiley,
             },
-            BOATHOOK_AND_ARC_EX_UP: {
+            BOATHOOK_AND_ARC_EX: {
                 unicode: "" as Unicode,
                 ascii: "~X)" as Ascii,
                 smiley: ":~X):" as Smiley,
@@ -1039,7 +1039,7 @@ describe("glyphs", (): void => {
                 ascii: "~Y)" as Ascii,
                 smiley: ":~Y):" as Smiley,
             },
-            BOATHOOK_AND_BARB_EX_UP: {
+            BOATHOOK_AND_BARB_EX: {
                 unicode: "" as Unicode,
                 ascii: "~X\\" as Ascii,
                 smiley: ":~X\\:" as Smiley,
@@ -1049,7 +1049,7 @@ describe("glyphs", (): void => {
                 ascii: "~Y/" as Ascii,
                 smiley: ":~Y/:" as Smiley,
             },
-            LEFT_SCROLL_DOUBLE_LEFT_BARB_EX_UP: {
+            LEFT_SCROLL_DOUBLE_LEFT_BARB_EX: {
                 unicode: "" as Unicode,
                 ascii: ")//X" as Ascii,
                 smiley: ":)/ /X:" as Smiley,
@@ -1059,7 +1059,7 @@ describe("glyphs", (): void => {
                 ascii: ")\\\\Y" as Ascii,
                 smiley: ":)\\ \\Y:" as Smiley,
             },
-            ARC_AND_BOATHOOK_EX_UP: {
+            ARC_AND_BOATHOOK_EX: {
                 unicode: "" as Unicode,
                 ascii: "(X~" as Ascii,
                 smiley: ":(X~:" as Smiley,
@@ -1069,7 +1069,7 @@ describe("glyphs", (): void => {
                 ascii: "(Y~" as Ascii,
                 smiley: ":(Y~:" as Smiley,
             },
-            BARE_SHAFT_UP: {
+            BARE_SHAFT: {
                 unicode: "" as Unicode,
                 ascii: "|" as Ascii,
                 smiley: ":|:" as Smiley,
@@ -1083,7 +1083,7 @@ describe("glyphs", (): void => {
         expect(coreGlyphExpectations).toEqual(expected)
     })
 
-    it("has the correct accent glyphs and computes their IO correctly (when oriented with an upwards-aiming core)            ", (): void => {
+    it("has the correct accent glyphs and computes their IO correctly", (): void => {
         const accentIds = Object.values(AccentId) as AccentId[]
         const accentGlyphExpectations = accentIds.reduce(
             (
@@ -1118,7 +1118,7 @@ describe("glyphs", (): void => {
         expect(accentGlyphExpectations).toEqual(expected)
     })
 
-    it("has the correct accent glyphs and computes their IO correctly (when oriented with a downwards-aiming core)              ", (): void => {
+    it("has the correct accent glyphs and computes their IO correctly (when oriented against the core)", (): void => {
         const accentIds = Object.values(AccentId) as AccentId[]
         const accentGlyphExpectations = accentIds.reduce(
             (
@@ -1127,7 +1127,7 @@ describe("glyphs", (): void => {
             ): Record<AccentId, GlyphExpectation> => {
                 return {
                     ...accentGlyphExpectations,
-                    [accentId]: computeAccentGlyphExpectation(accentId, undefined, Aim.DOWN)
+                    [accentId]: computeAccentGlyphExpectation(accentId, { against: true })
                 }
             },
             {} as Record<AccentId, GlyphExpectation>,

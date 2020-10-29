@@ -1,4 +1,4 @@
-import {Accidental, Aim, Flavor} from "../../../../../src/sagittal/accidental"
+import {Accidental, Flavor} from "../../../../../src/sagittal/accidental"
 import {HeadId} from "../../../../../src/sagittal/accidental/flacco"
 import {computeRevoAccidentalFromCaptureZone} from "../../../../../src/sagittal/accidental/flavor/revo"
 import {Shafts} from "../../../../../src/sagittal/accidental/sagittal"
@@ -88,7 +88,7 @@ describe("computeRevoAccidentalFromCaptureZone", (): void => {
         const actual = computeRevoAccidentalFromCaptureZone(symbolClassId, SECTION_N1A)
 
         const expected = {
-            ...getSagittal({headId: HeadId.DOUBLE_LEFT_BARB, aim: Aim.DOWN}),
+            ...getSagittal({headId: HeadId.DOUBLE_LEFT_BARB, down: true}),
         } as Accidental<Flavor.REVO>
         expect(actual).toEqual(expected)
     })
@@ -99,7 +99,7 @@ describe("computeRevoAccidentalFromCaptureZone", (): void => {
         const actual = computeRevoAccidentalFromCaptureZone(symbolClassId, SECTION_N1T)
 
         const expected = {
-            ...getSagittal({headId: HeadId.DOUBLE_SCROLL, shafts: Shafts.DOUBLE, aim: Aim.DOWN}),
+            ...getSagittal({headId: HeadId.DOUBLE_SCROLL, shafts: Shafts.DOUBLE, down: true}),
         } as Accidental<Flavor.REVO>
         expect(actual).toEqual(expected)
     })
@@ -110,7 +110,7 @@ describe("computeRevoAccidentalFromCaptureZone", (): void => {
         const actual = computeRevoAccidentalFromCaptureZone(symbolClassId, SECTION_N1T)
 
         const expected = {
-            ...getSagittal({headId: HeadId.DOUBLE_ARC, aim: Aim.DOWN}),
+            ...getSagittal({headId: HeadId.DOUBLE_ARC, down: true}),
         } as Accidental<Flavor.REVO>
         expect(actual).toEqual(expected)
     })
@@ -121,7 +121,7 @@ describe("computeRevoAccidentalFromCaptureZone", (): void => {
         const actual = computeRevoAccidentalFromCaptureZone(symbolClassId, SECTION_N2A)
 
         const expected = {
-            ...getSagittal({headId: HeadId.DOUBLE_LEFT_BARB, shafts: Shafts.TRIPLE, aim: Aim.DOWN}),
+            ...getSagittal({headId: HeadId.DOUBLE_LEFT_BARB, shafts: Shafts.TRIPLE, down: true}),
         } as Accidental<Flavor.REVO>
         expect(actual).toEqual(expected)
     })
@@ -132,7 +132,7 @@ describe("computeRevoAccidentalFromCaptureZone", (): void => {
         const actual = computeRevoAccidentalFromCaptureZone(symbolClassId, SECTION_N2T)
 
         const expected = {
-            ...getSagittal({headId: HeadId.DOUBLE_SCROLL, shafts: Shafts.EX, aim: Aim.DOWN}),
+            ...getSagittal({headId: HeadId.DOUBLE_SCROLL, shafts: Shafts.EX, down: true}),
         } as Accidental<Flavor.REVO>
         expect(actual).toEqual(expected)
     })
@@ -143,7 +143,7 @@ describe("computeRevoAccidentalFromCaptureZone", (): void => {
         const actual = computeRevoAccidentalFromCaptureZone(symbolClassId, SECTION_N2T)
 
         const expected = {
-            ...getSagittal({headId: HeadId.DOUBLE_ARC, shafts: Shafts.TRIPLE, aim: Aim.DOWN}),
+            ...getSagittal({headId: HeadId.DOUBLE_ARC, shafts: Shafts.TRIPLE, down: true}),
         } as Accidental<Flavor.REVO>
         expect(actual).toEqual(expected)
     })

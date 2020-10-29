@@ -1,4 +1,4 @@
-import {Accidental, Aim, Compatible, Flavor, Smiley} from "../../../../../src/sagittal/accidental"
+import {Accidental, Compatible, Flavor, Smiley} from "../../../../../src/sagittal/accidental"
 import {ArmId, HeadId} from "../../../../../src/sagittal/accidental/flacco"
 import {computeAccidentalSmiley, computeSagittalSmiley} from "../../../../../src/sagittal/accidental/glyph"
 import {NullSagittal, Shafts} from "../../../../../src/sagittal/accidental/sagittal"
@@ -76,7 +76,7 @@ describe("computeSagittalSmiley", (): void => {
 describe("computeAccidentalSmiley", (): void => {
     it("works for an accidental with a Sagittal-compatible glyph", (): void => {
         const accidental: Accidental<Flavor.EVO> = {                                                    // )\!x
-            ...getSagittal({ headId: HeadId.LEFT_SCROLL_AND_BARB, aim: Aim.DOWN }),
+            ...getSagittal({ headId: HeadId.LEFT_SCROLL_AND_BARB, down: true }),
             compatible: Compatible.DOUBLE_SHARP,
         } as Accidental<Flavor.EVO>
 

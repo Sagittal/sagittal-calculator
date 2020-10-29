@@ -1,4 +1,4 @@
-import {Accidental, Aim, Compatible, Flavor} from "../../../../../src/sagittal/accidental"
+import {Accidental, Compatible, Flavor} from "../../../../../src/sagittal/accidental"
 import {HeadId} from "../../../../../src/sagittal/accidental/flacco"
 import {computeEvoAccidentalFromCaptureZone} from "../../../../../src/sagittal/accidental/flavor/evo"
 import {getSagittal} from "../../../../../src/sagittal/accidental/sagittal/sagittal"
@@ -30,7 +30,7 @@ describe("computeEvoAccidentalFromCaptureZone", (): void => {
         const actual = computeEvoAccidentalFromCaptureZone(symbolClassId, SECTION_P1T)
 
         const expected = {
-            ...getSagittal({headId: HeadId.DOUBLE_LEFT_BARB, aim: Aim.DOWN}),
+            ...getSagittal({headId: HeadId.DOUBLE_LEFT_BARB, down: true}),
             compatible: Compatible.SHARP,
         } as Accidental<Flavor.EVO>
         expect(actual).toEqual(expected)
@@ -65,7 +65,7 @@ describe("computeEvoAccidentalFromCaptureZone", (): void => {
         const actual = computeEvoAccidentalFromCaptureZone(symbolClassId, SECTION_P2T)
 
         const expected = {
-            ...getSagittal({headId: HeadId.DOUBLE_LEFT_BARB, aim: Aim.DOWN}),
+            ...getSagittal({headId: HeadId.DOUBLE_LEFT_BARB, down: true}),
             compatible: Compatible.DOUBLE_SHARP,
         } as Accidental<Flavor.EVO>
         expect(actual).toEqual(expected)
@@ -89,7 +89,7 @@ describe("computeEvoAccidentalFromCaptureZone", (): void => {
         const actual = computeEvoAccidentalFromCaptureZone(symbolClassId, SECTION_N1A)
 
         const expected = {
-            ...getSagittal({headId: HeadId.DOUBLE_LEFT_BARB, aim: Aim.DOWN}),
+            ...getSagittal({headId: HeadId.DOUBLE_LEFT_BARB, down: true}),
         } as Accidental<Flavor.EVO>
         expect(actual).toEqual(expected)
     })
@@ -112,7 +112,7 @@ describe("computeEvoAccidentalFromCaptureZone", (): void => {
         const actual = computeEvoAccidentalFromCaptureZone(symbolClassId, SECTION_N1T)
 
         const expected = {
-            ...getSagittal({headId: HeadId.DOUBLE_ARC, aim: Aim.DOWN}),
+            ...getSagittal({headId: HeadId.DOUBLE_ARC, down: true}),
         } as Accidental<Flavor.EVO>
         expect(actual).toEqual(expected)
     })
@@ -123,7 +123,7 @@ describe("computeEvoAccidentalFromCaptureZone", (): void => {
         const actual = computeEvoAccidentalFromCaptureZone(symbolClassId, SECTION_N2A)
 
         const expected = {
-            ...getSagittal({headId: HeadId.DOUBLE_LEFT_BARB, aim: Aim.DOWN}),
+            ...getSagittal({headId: HeadId.DOUBLE_LEFT_BARB, down: true}),
             compatible: Compatible.FLAT,
         } as Accidental<Flavor.EVO>
         expect(actual).toEqual(expected)
@@ -147,7 +147,7 @@ describe("computeEvoAccidentalFromCaptureZone", (): void => {
         const actual = computeEvoAccidentalFromCaptureZone(symbolClassId, SECTION_N2T)
 
         const expected = {
-            ...getSagittal({headId: HeadId.DOUBLE_ARC, aim: Aim.DOWN}),
+            ...getSagittal({headId: HeadId.DOUBLE_ARC, down: true}),
             compatible: Compatible.FLAT,
         } as Accidental<Flavor.EVO>
         expect(actual).toEqual(expected)

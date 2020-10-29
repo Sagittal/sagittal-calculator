@@ -2,7 +2,7 @@ import {isUndefined} from "../../../general"
 import {getSymbolClass, SymbolClassId} from "../../notation"
 import {Flacco, getFlacco} from "../flacco"
 import {NULL_SAGITTAL} from "./constants"
-import {Aim, NullSagittal, Sagittal, Shafts} from "./types"
+import {NullSagittal, Sagittal, Shafts} from "./types"
 
 const computeSagittalFromSymbolClassId = (symbolClassId: SymbolClassId): Sagittal | NullSagittal => {
     const symbolClass = getSymbolClass(symbolClassId)
@@ -16,7 +16,6 @@ const computeSagittalFromFlacco = (flacco: Flacco): Sagittal | NullSagittal => {
 
     return {
         ...flacco,
-        aim: Aim.UP,
         shafts: Shafts.SINGLE,
     }
 }

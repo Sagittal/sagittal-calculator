@@ -1,5 +1,5 @@
 import {getHead, HeadId} from "../flacco"
-import {Aim, Core, Shafts} from "./types"
+import {Core, Shafts} from "./types"
 
 // I had thought it might be a cool idea to define this in terms of taking the apotome complement of the 2-shaft symbol
 // And verifying that it exists that way, however, it led to an infinite loop because apotome complement uses getCore
@@ -31,7 +31,10 @@ const HEADS_SUPPORTED_WITH_EVEN_SHAFTS = [
     // Above /||\ and you're already into triple shafts; no need for (/|| or beyond
 ]
 
-const getCore = (headId: HeadId, shafts: Shafts = Shafts.SINGLE, aim: Aim = Aim.UP): Core => {
+const getCore = (
+    headId: HeadId,
+    {shafts = Shafts.SINGLE, down = false}: {shafts?: Shafts, down?: boolean} = {},
+): Core => {
     if (
         (shafts === Shafts.DOUBLE || shafts === Shafts.EX)
         && !HEADS_SUPPORTED_WITH_EVEN_SHAFTS.includes(headId)
@@ -43,7 +46,7 @@ const getCore = (headId: HeadId, shafts: Shafts = Shafts.SINGLE, aim: Aim = Aim.
         throw new Error(`Cannot have multiple bare shafts.`)
     }
 
-    return {aim, shafts, ...getHead(headId)}
+    return down ? {down, shafts, ...getHead(headId)} : {shafts, ...getHead(headId)}
 }
 
 export {

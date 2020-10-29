@@ -23,7 +23,7 @@ describe("computeApotomeComplement", (): void => {
     })
 
     it("reorients the arm, so that they will cancel each other out", (): void => {
-        const sagittal = getSagittal({armId: ArmId.WING_AGAINST_TICK, headId: HeadId.DOUBLE_SCROLL})    // ,'|(
+        const sagittal = getSagittal({armId: ArmId.WING_AGAINST_TICK, headId: HeadId.DOUBLE_SCROLL})   // ,'|(
 
         const actual = computeApotomeComplement(sagittal)
 
@@ -46,7 +46,7 @@ describe("computeApotomeComplement", (): void => {
 
         const actual = computeApotomeComplement(sagittal)
 
-        const expected = getSagittal({armId: ArmId.WING_AGAINST_TICK, headId: HeadId.DOUBLE_SCROLL})    // ,'|(
+        const expected = getSagittal({armId: ArmId.WING_AGAINST_TICK, headId: HeadId.DOUBLE_SCROLL})   // ,'|(
         expect(actual).toEqual(expected)
     })
 
@@ -60,11 +60,11 @@ describe("computeApotomeComplement", (): void => {
     })
 
     it("maps a bare shaft with arm to the apotome with a reoriented arm", (): void => {
-        const sagittal = getSagittal({armId: ArmId.WING_AND_TICK, headId: HeadId.BARE_SHAFT})          // `'|
+        const sagittal = getSagittal({armId: ArmId.WING_AND_TICK, headId: HeadId.BARE_SHAFT})         // `'|
 
         const actual = computeApotomeComplement(sagittal)
 
-        const expected = getSagittal({                                                                 // ,./||\\
+        const expected = getSagittal({                                                                // ,./||\\
             armId: ArmId.WING_AND_TICK,
             against: true,
             headId: HeadId.DOUBLE_BARB,

@@ -1,4 +1,3 @@
-import {Aim} from "../../../../../src/sagittal/accidental"
 import {ArmId, HeadId} from "../../../../../src/sagittal/accidental/flacco"
 import {flipSagittal, Shafts} from "../../../../../src/sagittal/accidental/sagittal"
 import {getSagittal} from "../../../../../src/sagittal/accidental/sagittal/sagittal"
@@ -19,7 +18,7 @@ describe("flipSagittal", (): void => {
             against: true,
             headId: HeadId.DOUBLE_BARB,
             shafts: Shafts.TRIPLE,
-            aim: Aim.DOWN,
+            down: true,
         })
         expect(actual).toEqual(expected)
     })

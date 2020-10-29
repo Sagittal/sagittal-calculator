@@ -1,22 +1,22 @@
 import {AccentId, ArmId, FlagId, HeadId} from "../../../../../src/sagittal/accidental/flacco"
-import {Aim, Shafts} from "../../../../../src/sagittal/accidental/sagittal"
+import {Shafts} from "../../../../../src/sagittal/accidental/sagittal"
 import {getSagittal} from "../../../../../src/sagittal/accidental/sagittal/sagittal"
 
 describe("getSagittal", (): void => {
     it("returns the sagittal", (): void => {
         const headId = HeadId.BARB_AND_ARC
         const shafts = Shafts.TRIPLE
-        const aim = Aim.DOWN
+        const down = true
         const armId = ArmId.BIRD
         const against = true
 
-        const actual = getSagittal({headId, shafts, aim, armId, against})
+        const actual = getSagittal({headId, shafts, down, armId, against})
 
         const expected = {
             left: [FlagId.BARB],
             right: [FlagId.ARC],
             arm: [{id: AccentId.BIRD, against: true}],
-            aim: Aim.DOWN,
+            down: true,
             shafts: Shafts.TRIPLE,
         }
         expect(actual).toEqual(expected)

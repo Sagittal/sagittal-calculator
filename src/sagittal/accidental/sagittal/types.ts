@@ -1,11 +1,5 @@
 import {ArmId, Flacco, HeadId} from "../flacco"
 
-// Todo: by the same idea as I eliminated orientation, shouldn't I eliminate aim with a down?
-enum Aim {
-    UP = "up",
-    DOWN = "down",
-}
-
 enum Shafts {
     SINGLE = "single",
     DOUBLE = "double",
@@ -14,7 +8,7 @@ enum Shafts {
 }
 
 interface Sagittal extends Flacco {
-    aim: Aim,
+    down?: boolean,
     shafts: Shafts,
 }
 
@@ -27,12 +21,11 @@ type GetSagittalOptions = Partial<{
     against: boolean,
     headId: HeadId,
     shafts: Shafts,
-    aim: Aim
+    down: boolean,
 }>
 
 export {
     Core,
-    Aim,
     Sagittal,
     NullSagittal,
     Shafts,

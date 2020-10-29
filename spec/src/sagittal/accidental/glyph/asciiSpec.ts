@@ -1,6 +1,5 @@
 import {
     Accidental,
-    Aim,
     Ascii,
     Compatible,
     computeAccidentalAscii,
@@ -31,7 +30,7 @@ describe("computeSagittalAscii", (): void => {
     })
 
     it("converts 4 shafts down into an ex down", (): void => {
-        const sagittal = getSagittal({headId: HeadId.ARC_AND_BOATHOOK, shafts: Shafts.EX, aim: Aim.DOWN})
+        const sagittal = getSagittal({headId: HeadId.ARC_AND_BOATHOOK, shafts: Shafts.EX, down: true})
 
         const actual = computeSagittalAscii(sagittal)
 
