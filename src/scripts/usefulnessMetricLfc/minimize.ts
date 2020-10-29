@@ -1,8 +1,8 @@
 import {Comma, count, LogTarget, saveLog, stringify} from "../../general"
 import {CommaClassId} from "../../sagittal"
-import {computeCommasSquaredDistanceFromMostUsefulCommaInZone} from "./commasSquaredDistanceFromMostUsefulCommaInZone"
 import {computeUsefulnessParameterSets} from "./parameters"
 import {SECONDARY_COMMA_ZONE_COMMAS_ENTRIES} from "./secondaryCommaZoneCommas"
+import {computeSquaredUsefulnessScoreDistanceFromBestUsefulnessScoreInZone} from "./squaredUsefulnessScoreDistanceFromBestUsefulnessScoreInZone"
 import {UsefulnessMetric, UsefulnessMetricId, UsefulnessParameterId, UsefulnessParameterSet} from "./types"
 
 const logUsefulnessParameterSetsForUsefulnessMetricMinimizingSumOfSquares = (
@@ -26,11 +26,12 @@ const logUsefulnessParameterSetsForUsefulnessMetricMinimizingSumOfSquares = (
         let sumOfSquares = 0
 
         SECONDARY_COMMA_ZONE_COMMAS_ENTRIES.forEach((secondaryCommaZoneCommasEntry: [CommaClassId, Comma[]]): void => {
-            const squaredDistanceFromMostUsefulCommaInZone = computeCommasSquaredDistanceFromMostUsefulCommaInZone(
-                secondaryCommaZoneCommasEntry,
-                metric,
-                usefulnessParameterSet,
-            )
+            const squaredDistanceFromMostUsefulCommaInZone =
+                computeSquaredUsefulnessScoreDistanceFromBestUsefulnessScoreInZone(
+                    secondaryCommaZoneCommasEntry,
+                    metric,
+                    usefulnessParameterSet,
+                )
 
             sumOfSquares = sumOfSquares + squaredDistanceFromMostUsefulCommaInZone
         })

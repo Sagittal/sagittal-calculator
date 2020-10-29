@@ -1,15 +1,15 @@
 import {Comma} from "../../../../src/general/music/ji"
 import {CommaClassId} from "../../../../src/sagittal/notation"
 import {Parameter} from "../../../../src/scripts/types"
-import {computeCommasSquaredDistanceFromMostUsefulCommaInZone} from "../../../../src/scripts/usefulnessMetricLfc/commasSquaredDistanceFromMostUsefulCommaInZone"
 import {USEFULNESS_METRICS_WITH_PARAMETERS} from "../../../../src/scripts/usefulnessMetricLfc/metrics"
+import {computeSquaredUsefulnessScoreDistanceFromBestUsefulnessScoreInZone} from "../../../../src/scripts/usefulnessMetricLfc/squaredUsefulnessScoreDistanceFromBestUsefulnessScoreInZone"
 import {
-    SquaredDistanceOfUsefulness,
+    SquaredUsefulnessScoreDistanceFromBestUsefulnessScore,
     UsefulnessMetricId,
     UsefulnessParameterId,
 } from "../../../../src/scripts/usefulnessMetricLfc/types"
 
-describe("computeCommasSquaredDistanceFromMostUsefulCommaInZone", (): void => {
+describe("computeSquaredUsefulnessScoreDistanceFromBestUsefulnessScoreInZone", (): void => {
     it("returns 0 when a comma is the most useful comma in its zone", (): void => {
         const commaClassId = CommaClassId._1_455_n
         const commas = [
@@ -27,13 +27,13 @@ describe("computeCommasSquaredDistanceFromMostUsefulCommaInZone", (): void => {
             [UsefulnessParameterId.TE]: 0.00195 as Parameter,
         }
 
-        const actual = computeCommasSquaredDistanceFromMostUsefulCommaInZone(
+        const actual = computeSquaredUsefulnessScoreDistanceFromBestUsefulnessScoreInZone(
             [commaClassId, commas],
             usefulnessMetric,
             usefulnessParameterSet,
         )
 
-        const expected = 0 as SquaredDistanceOfUsefulness
+        const expected = 0 as SquaredUsefulnessScoreDistanceFromBestUsefulnessScore
         expect(actual).toBeCloseTo(expected)
     })
 
@@ -55,14 +55,14 @@ describe("computeCommasSquaredDistanceFromMostUsefulCommaInZone", (): void => {
             [UsefulnessParameterId.TE]: 0.00195 as Parameter,
         }
 
-        const actual = computeCommasSquaredDistanceFromMostUsefulCommaInZone(
+        const actual = computeSquaredUsefulnessScoreDistanceFromBestUsefulnessScoreInZone(
             [commaClassId, commas],
             usefulnessMetric,
             usefulnessParameterSet,
         )
 
         // 1/8575's usefulness is 7.866050, but 17/19k's usefulness is 6.841035; (7.866050 - 6.841035)^2 = 1.050655
-        const expected = 1.050655 as SquaredDistanceOfUsefulness
+        const expected = 1.050655 as SquaredUsefulnessScoreDistanceFromBestUsefulnessScore
         expect(actual).toBeCloseTo(expected)
     })
 })

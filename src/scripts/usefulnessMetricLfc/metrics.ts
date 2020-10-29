@@ -3,7 +3,7 @@
 import {Abs, Decimal, Exponent, Prime} from "../../general"
 import {ApotomeSlope, N2D3P9} from "../../sagittal"
 import {Parameter} from "../types"
-import {Usefulness, UsefulnessMetric, UsefulnessMetricId, UsefulnessParameterId, UsefulnessParameterSet} from "./types"
+import {UsefulnessMetric, UsefulnessMetricId, UsefulnessParameterId, UsefulnessParameterSet, UsefulnessScore} from "./types"
 
 const DEFAULT_USEFULNESS_PARAMETER_VALUE = 1 as Parameter
 
@@ -12,8 +12,8 @@ const lee = (
     aas: Abs<ApotomeSlope>,
     ate: Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
     {sE = DEFAULT_USEFULNESS_PARAMETER_VALUE, tE = DEFAULT_USEFULNESS_PARAMETER_VALUE}: UsefulnessParameterSet,
-): Usefulness => {
-    return Math.log2(n2d3p9) + sE * 2 ** aas + tE * 2 ** ate as Usefulness
+): UsefulnessScore => {
+    return Math.log2(n2d3p9) + sE * 2 ** aas + tE * 2 ** ate as UsefulnessScore
 }
 
 const ree = (
@@ -21,8 +21,8 @@ const ree = (
     aas: Abs<ApotomeSlope>,
     ate: Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
     {a = DEFAULT_USEFULNESS_PARAMETER_VALUE, sE = DEFAULT_USEFULNESS_PARAMETER_VALUE, tE = DEFAULT_USEFULNESS_PARAMETER_VALUE}: UsefulnessParameterSet,
-): Usefulness => {
-    return n2d3p9 ** a + sE * 2 ** aas + tE * 2 ** ate as Usefulness
+): UsefulnessScore => {
+    return n2d3p9 ** a + sE * 2 ** aas + tE * 2 ** ate as UsefulnessScore
 }
 
 const lpe = (
@@ -30,8 +30,8 @@ const lpe = (
     aas: Abs<ApotomeSlope>,
     ate: Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
     {b = DEFAULT_USEFULNESS_PARAMETER_VALUE, sP = DEFAULT_USEFULNESS_PARAMETER_VALUE, tE = DEFAULT_USEFULNESS_PARAMETER_VALUE}: UsefulnessParameterSet,
-): Usefulness => {
-    return Math.log2(n2d3p9) + sP * aas ** b + tE * 2 ** ate as Usefulness
+): UsefulnessScore => {
+    return Math.log2(n2d3p9) + sP * aas ** b + tE * 2 ** ate as UsefulnessScore
 }
 
 const rpe = (
@@ -39,8 +39,8 @@ const rpe = (
     aas: Abs<ApotomeSlope>,
     ate: Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
     {a = DEFAULT_USEFULNESS_PARAMETER_VALUE, b = DEFAULT_USEFULNESS_PARAMETER_VALUE, sP = DEFAULT_USEFULNESS_PARAMETER_VALUE, tE = DEFAULT_USEFULNESS_PARAMETER_VALUE}: UsefulnessParameterSet,
-): Usefulness => {
-    return n2d3p9 ** a + sP * aas ** b + tE * 2 ** ate as Usefulness
+): UsefulnessScore => {
+    return n2d3p9 ** a + sP * aas ** b + tE * 2 ** ate as UsefulnessScore
 }
 
 const lep = (
@@ -48,8 +48,8 @@ const lep = (
     aas: Abs<ApotomeSlope>,
     ate: Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
     {c = DEFAULT_USEFULNESS_PARAMETER_VALUE, sE = DEFAULT_USEFULNESS_PARAMETER_VALUE, tP = DEFAULT_USEFULNESS_PARAMETER_VALUE}: UsefulnessParameterSet,
-): Usefulness => {
-    return Math.log2(n2d3p9) + sE * 2 ** aas + tP * ate ** c as Usefulness
+): UsefulnessScore => {
+    return Math.log2(n2d3p9) + sE * 2 ** aas + tP * ate ** c as UsefulnessScore
 }
 
 const rep = (
@@ -57,8 +57,8 @@ const rep = (
     aas: Abs<ApotomeSlope>,
     ate: Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
     {a = DEFAULT_USEFULNESS_PARAMETER_VALUE, c = DEFAULT_USEFULNESS_PARAMETER_VALUE, sE = DEFAULT_USEFULNESS_PARAMETER_VALUE, tP = DEFAULT_USEFULNESS_PARAMETER_VALUE}: UsefulnessParameterSet,
-): Usefulness => {
-    return n2d3p9 ** a + sE * 2 ** aas + tP * ate ** c as Usefulness
+): UsefulnessScore => {
+    return n2d3p9 ** a + sE * 2 ** aas + tP * ate ** c as UsefulnessScore
 }
 
 const lpp = (
@@ -66,8 +66,8 @@ const lpp = (
     aas: Abs<ApotomeSlope>,
     ate: Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
     {b = DEFAULT_USEFULNESS_PARAMETER_VALUE, c = DEFAULT_USEFULNESS_PARAMETER_VALUE, sP = DEFAULT_USEFULNESS_PARAMETER_VALUE, tP = DEFAULT_USEFULNESS_PARAMETER_VALUE}: UsefulnessParameterSet,
-): Usefulness => {
-    return Math.log2(n2d3p9) + sP * aas ** b + tP * ate ** c as Usefulness
+): UsefulnessScore => {
+    return Math.log2(n2d3p9) + sP * aas ** b + tP * ate ** c as UsefulnessScore
 }
 
 const rpp = (
@@ -75,8 +75,8 @@ const rpp = (
     aas: Abs<ApotomeSlope>,
     ate: Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
     {a = DEFAULT_USEFULNESS_PARAMETER_VALUE, b = DEFAULT_USEFULNESS_PARAMETER_VALUE, c = DEFAULT_USEFULNESS_PARAMETER_VALUE, sP = DEFAULT_USEFULNESS_PARAMETER_VALUE, tP = DEFAULT_USEFULNESS_PARAMETER_VALUE}: UsefulnessParameterSet,
-): Usefulness => {
-    return n2d3p9 ** a + sP * aas ** b + tP * ate ** c as Usefulness
+): UsefulnessScore => {
+    return n2d3p9 ** a + sP * aas ** b + tP * ate ** c as UsefulnessScore
 }
 
 const USEFULNESS_METRICS_WITH_PARAMETERS: Record<UsefulnessMetricId, {metric: UsefulnessMetric, parameters: UsefulnessParameterId[]}> = {
