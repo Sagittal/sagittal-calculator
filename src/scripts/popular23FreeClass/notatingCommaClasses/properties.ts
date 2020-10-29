@@ -16,10 +16,11 @@ const computeNotatingCommaClassesProperties = (
 
     const smallestSymbolSubsetIndices = notatingCommaClassIds
         .map((commaClassId: CommaClassId): Index<SymbolSubsetId> => {
-            const flaccoId = getCommaClass(commaClassId).representativeSymbolClassId
+            const symbolClassId = getCommaClass(commaClassId).representativeSymbolClassId
 
             // This used to not include Trojan, and the tables that have been shared on the forum reflect that.
-            return SIZE_SORTED_SYMBOL_SUBSET_IDS.indexOf(getSmallestSymbolSubsetId(flaccoId)) as Index<SymbolSubsetId>
+            return SIZE_SORTED_SYMBOL_SUBSET_IDS
+                .indexOf(getSmallestSymbolSubsetId(symbolClassId)) as Index<SymbolSubsetId>
         })
 
     return {

@@ -1,22 +1,11 @@
-import {
-    Ascii,
-    computeSagittalAscii,
-    computeSagittalFromFlacco,
-    Flacco,
-    NullSagittal,
-    Sagittal,
-} from "../../../../src/sagittal/accidental"
-import {getFlacco} from "../../../../src/sagittal/accidental/flacco"
+import {Ascii, computeSagittalAscii, NullSagittal, Sagittal} from "../../../../src/sagittal/accidental"
+import {computeSagittalFromSymbolClassId} from "../../../../src/sagittal/accidental/sagittal"
 import {SymbolSubsetId, SYMBOL_SUBSETS} from "../../../../src/sagittal/notation"
 
 // tslint:disable-next-line ban
 xdescribe("SYMBOL_SUBSETS", (): void => {
     const subject = (symbolSubsetId: SymbolSubsetId): Ascii[] => SYMBOL_SUBSETS[symbolSubsetId]
-        // TODO: SHOULD WE REALLY GO FROM SYMBOL TO FLACCO TO SAGITTAL? MAYBE SO...?
-        //  This feels circuitous... but then I think we're probably going to have something basically the same
-        //  As computing Revo Accidental but for computing a sagittal from a SymbolClassId + Section
-        .map(getFlacco)
-        .map((flacco: Flacco): NullSagittal | Sagittal => computeSagittalFromFlacco(flacco))
+        .map(computeSagittalFromSymbolClassId)
         .map((sagittal: NullSagittal | Sagittal): Ascii => computeSagittalAscii(sagittal))
 
     it("has the correct single-shaft symbols in the Sagittal-compatibles subset", (): void => {

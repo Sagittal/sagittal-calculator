@@ -563,10 +563,6 @@ const FLACCOS: Record<FlaccoId, Flacco> = {
     },
 }
 
-// TODO: SYMBOL VS SAGITTAL; GLYPH TYPES
-//  Every time we getFlacco we immediately convert it to a sagittal. and so if we were going to change getFlacco
-//  To take instead of the ID the HeadId and ArmId and against or whatever
-//  Then maybe we should get rid of it altogether and just cut to the chase with a getAccidental which also takes flavor
 const getFlacco = (flaccoId: FlaccoId): Flacco =>
     FLACCOS[flaccoId]
 

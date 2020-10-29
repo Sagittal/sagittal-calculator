@@ -1,16 +1,13 @@
 import {increment, isUndefined, Maybe, negative} from "../../../general"
-import {getSymbolClass, Section, SymbolClassId} from "../../notation"
-import {getFlacco} from "../flacco"
-import {computeApotomeComplement, computeSagittalFromFlacco, flipSagittal, Shafts} from "../sagittal"
+import {Section, SymbolClassId} from "../../notation"
+import {computeApotomeComplement, computeSagittalFromSymbolClassId, flipSagittal, Shafts} from "../sagittal"
 import {Accidental, Compatible, Flavor} from "./types"
 
 const computeEvoAccidentalFromCaptureZone = (
     symbolClassId: SymbolClassId,
     {negated, mirrored, shifted}: Section,
 ): Accidental<Flavor.EVO> => {
-    const symbolClass = getSymbolClass(symbolClassId)
-    const flacco = getFlacco(symbolClass.flaccoId)
-    let sagittal = computeSagittalFromFlacco(flacco)
+    let sagittal = computeSagittalFromSymbolClassId(symbolClassId)
 
     let apotomeCount = 0
     if (mirrored) {
