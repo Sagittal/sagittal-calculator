@@ -31,7 +31,9 @@ type InaMidpoint<T extends NumericProperties = {}> = {
 
 type JiNotationBound<T extends NumericProperties = {}> = InaMidpoint<T> | CommaMean<T> | SizeCategoryBound<T>
 
-// TODO: JI NOTATION BOUND CLASS TYPE IS ... CONFUSING AND THEREFORE BAD. PLEASE IMPROVE SOMEHOW.
+// TODO: JI NOTATION, AFTER NOTATION GENERATION
+//  JiNotationBoundClass is confusing and therefore bad. Please improve.
+//  Maybe defer this issue until resolving what sagittal/notations/ji looks like post-notation generation
 type JiNotationBoundClass<T extends NumericProperties = {}> =
     JiNotationBound<T> &
     BoundClass<T> &

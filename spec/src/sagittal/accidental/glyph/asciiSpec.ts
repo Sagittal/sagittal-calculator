@@ -6,17 +6,14 @@ import {
     computeAccidentalAscii,
     computeSagittalAscii,
     Flavor,
-    Sagittal,
 } from "../../../../../src/sagittal/accidental"
-import {ArmId, getArm, HeadId} from "../../../../../src/sagittal/accidental/flacco"
-import {getCore, NullSagittal, Shafts} from "../../../../../src/sagittal/accidental/sagittal"
+import {ArmId, HeadId} from "../../../../../src/sagittal/accidental/flacco"
+import {NullSagittal, Shafts} from "../../../../../src/sagittal/accidental/sagittal"
+import {getSagittal} from "../../../../../src/sagittal/accidental/sagittal/sagittal"
 
 describe("computeSagittalAscii", (): void => {
     it("given a sagittal, returns its ASCII representation", (): void => {
-        const sagittal: Sagittal = {
-            arm: getArm(ArmId.BIRD),
-            ...getCore(HeadId.LEFT_SCROLL),
-        }
+        const sagittal = getSagittal({armId: ArmId.BIRD, headId: HeadId.LEFT_SCROLL})
 
         const actual = computeSagittalAscii(sagittal)
 
@@ -25,7 +22,7 @@ describe("computeSagittalAscii", (): void => {
     })
 
     it("converts 4 shafts up into an ex up", (): void => {
-        const sagittal: Sagittal = {...getCore(HeadId.LEFT_SCROLL_AND_BARB, Shafts.EX)}
+        const sagittal = getSagittal({headId: HeadId.LEFT_SCROLL_AND_BARB, shafts: Shafts.EX})
 
         const actual = computeSagittalAscii(sagittal)
 
@@ -34,7 +31,7 @@ describe("computeSagittalAscii", (): void => {
     })
 
     it("converts 4 shafts down into an ex down", (): void => {
-        const sagittal: Sagittal = {...getCore(HeadId.ARC_AND_BOATHOOK, Shafts.EX, Aim.DOWN)}
+        const sagittal = getSagittal({headId: HeadId.ARC_AND_BOATHOOK, shafts: Shafts.EX, aim: Aim.DOWN})
 
         const actual = computeSagittalAscii(sagittal)
 
@@ -56,7 +53,7 @@ describe("computeSagittalAscii", (): void => {
 describe("computeAccidentalAscii", (): void => {
     it("works for accidentals with a Sagittal-compatible glyph", (): void => {
         const accidental: Accidental<Flavor.EVO> = {
-            ...getCore(HeadId.LEFT_BARB),
+            ...getSagittal({headId: HeadId.LEFT_BARB}),
             compatible: Compatible.SHARP,
         } as Accidental<Flavor.EVO>
 

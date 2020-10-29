@@ -1,69 +1,41 @@
-import {Aim, computeSagittalFromFlacco, Flacco, Sagittal} from "../../../../../src/sagittal/accidental"
-import {ArmId, getArm, getHead, HeadId} from "../../../../../src/sagittal/accidental/flacco"
-import {Shafts} from "../../../../../src/sagittal/accidental/sagittal"
+import {computeSagittalFromFlacco, Flacco, FlaccoId, getFlacco} from "../../../../../src/sagittal/accidental"
+import {ArmId, HeadId} from "../../../../../src/sagittal/accidental/flacco"
+import {getSagittal} from "../../../../../src/sagittal/accidental/sagittal/sagittal"
 
 describe("computeSagittalFromFlacco", (): void => {
     it("takes a combo of flags and arm and returns the full Sagittal symbol", (): void => {
-        const flacco: Flacco = {
-            arm: getArm(ArmId.WING, { against: true }),
-            ...getHead(HeadId.BOATHOOK_AND_ARC),
-        }
+        const flacco: Flacco = getFlacco(FlaccoId.WING_AGAINST_BOATHOOK_AND_ARC)
 
         const actual = computeSagittalFromFlacco(flacco)
 
-        const expected: Sagittal = {                                                                       // ,~|)
-            arm: getArm(ArmId.WING, { against: true }),
-            aim: Aim.UP,
-            shafts: Shafts.SINGLE,
-            ...getHead(HeadId.BOATHOOK_AND_ARC),
-        }
+        const expected = getSagittal({armId: ArmId.WING, against: true, headId: HeadId.BOATHOOK_AND_ARC}) // ,~|)
         expect(actual).toEqual(expected)
     })
 
     it("works for a symbol with an accent and flag on the left", (): void => {
-        const flacco: Flacco = {
-            arm: getArm(ArmId.TICK),
-            ...getHead(HeadId.LEFT_ARC),
-        }
+        const flacco: Flacco = getFlacco(FlaccoId.TICK_AND_LEFT_ARC)
 
         const actual = computeSagittalFromFlacco(flacco)
 
-        const expected: Sagittal = {                                                                       // '(|
-            arm: getArm(ArmId.TICK),
-            aim: Aim.UP,
-            shafts: Shafts.SINGLE,
-            ...getHead(HeadId.LEFT_ARC),
-        }
+        const expected = getSagittal({armId: ArmId.TICK, headId: HeadId.LEFT_ARC})                        // '(|
         expect(actual).toEqual(expected)
     })
 
     it("works for a symbol with multiple flags on the right", (): void => {
-        const flacco: Flacco = {
-            ...getHead(HeadId.RIGHT_BARB_AND_ARC),
-        }
+        const flacco: Flacco = getFlacco(FlaccoId.RIGHT_BARB_AND_ARC)
 
         const actual = computeSagittalFromFlacco(flacco)
 
-        const expected: Sagittal = {                                                                       // |\)
-            aim: Aim.UP,
-            shafts: Shafts.SINGLE,
-            ...getHead(HeadId.RIGHT_BARB_AND_ARC),
-        }
+        const expected = getSagittal({headId: HeadId.RIGHT_BARB_AND_ARC})                                 // |\)
         expect(actual).toEqual(expected)
     })
 
     it("works for a symbol with multiple flags on the left", (): void => {
-        const flacco: Flacco = {
-            ...getHead(HeadId.LEFT_SCROLL_DOUBLE_LEFT_BARB),
-        }
+        const flacco: Flacco = getFlacco(FlaccoId.LEFT_SCROLL_DOUBLE_LEFT_BARB)
 
         const actual = computeSagittalFromFlacco(flacco)
 
-        const expected: Sagittal = {                                                                        // )//|
-            aim: Aim.UP,
-            shafts: Shafts.SINGLE,
-            ...getHead(HeadId.LEFT_SCROLL_DOUBLE_LEFT_BARB),
-        }
+        const expected = getSagittal({headId: HeadId.LEFT_SCROLL_DOUBLE_LEFT_BARB})                       // )//|
         expect(actual).toEqual(expected)
     })
 
@@ -72,21 +44,15 @@ describe("computeSagittalFromFlacco", (): void => {
 
         const actual = computeSagittalFromFlacco(flacco)
 
-        expect(actual).toEqual({})                                                               // (|//|)
+        expect(actual).toEqual({})                                                                     // (|//|)
     })
 
     it("works for a symbol with only arm", (): void => {
-        const flacco: Flacco = {
-            arm: getArm(ArmId.WING),
-        }
+        const flacco: Flacco = getFlacco(FlaccoId.WING)
 
         const actual = computeSagittalFromFlacco(flacco)
 
-        const expected: Sagittal = {                                                                       // `|
-            arm: getArm(ArmId.WING),
-            aim: Aim.UP,
-            shafts: Shafts.SINGLE,
-        }
+        const expected = getSagittal({armId: ArmId.WING})                                               // `|
         expect(actual).toEqual(expected)
     })
 })

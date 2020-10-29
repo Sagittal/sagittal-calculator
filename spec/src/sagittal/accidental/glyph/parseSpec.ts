@@ -1,6 +1,7 @@
-import {ArmId, getArm, HeadId} from "../../../../../src/sagittal/accidental/flacco"
+import {ArmId, HeadId} from "../../../../../src/sagittal/accidental/flacco"
 import {Ascii, parseAscii} from "../../../../../src/sagittal/accidental/glyph"
-import {Aim, getCore, Sagittal, Shafts} from "../../../../../src/sagittal/accidental/sagittal"
+import {Aim, Sagittal, Shafts} from "../../../../../src/sagittal/accidental/sagittal"
+import {getSagittal} from "../../../../../src/sagittal/accidental/sagittal/sagittal"
 
 describe("parseAscii", (): void => {
     it("parses a sagittal correctly into its arm and core", (): void => {
@@ -8,10 +9,7 @@ describe("parseAscii", (): void => {
 
         const actual = parseAscii(ascii)
 
-        const expected = {
-            arm: getArm(ArmId.WING_AGAINST_TICK),
-            ...getCore(HeadId.BARB_AND_ARC),
-        } as Sagittal
+        const expected = getSagittal({armId: ArmId.WING_AGAINST_TICK, headId: HeadId.BARB_AND_ARC})
         expect(actual).toEqual(expected)
     })
 
@@ -29,9 +27,7 @@ describe("parseAscii", (): void => {
 
         const actual = parseAscii(ascii)
 
-        const expected = {
-            ...getCore(HeadId.LEFT_BOATHOOK, Shafts.TRIPLE, Aim.DOWN),
-        } as Sagittal
+        const expected = getSagittal({headId: HeadId.LEFT_BOATHOOK, shafts: Shafts.TRIPLE, aim: Aim.DOWN})
         expect(actual).toEqual(expected)
     })
 })

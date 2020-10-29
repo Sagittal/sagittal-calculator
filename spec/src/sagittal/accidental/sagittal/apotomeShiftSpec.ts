@@ -1,44 +1,44 @@
-import {NullSagittal, Sagittal} from "../../../../../src/sagittal/accidental"
-import {ArmId, getArm, HeadId} from "../../../../../src/sagittal/accidental/flacco"
-import {apotomeShift, getCore, Shafts} from "../../../../../src/sagittal/accidental/sagittal"
+import {NullSagittal} from "../../../../../src/sagittal/accidental"
+import {ArmId, HeadId} from "../../../../../src/sagittal/accidental/flacco"
+import {apotomeShift, Shafts} from "../../../../../src/sagittal/accidental/sagittal"
+import {getSagittal} from "../../../../../src/sagittal/accidental/sagittal/sagittal"
 
 describe("apotomeShift", (): void => {
     it("takes a symbol and shifts it by an apotome (adds 2 shafts)", (): void => {
-        const sagittal: Sagittal = {                                                                    // ,')|(
-            arm: getArm(ArmId.WING_AGAINST_TICK),
-            ...getCore(HeadId.DOUBLE_SCROLL),
-        }
+        const sagittal = getSagittal({                          // ,')|(
+            armId: ArmId.WING_AGAINST_TICK,
+            headId: HeadId.DOUBLE_SCROLL,
+        })
 
         const actual = apotomeShift(sagittal)
 
-        const expected: Sagittal = {                                                                  // ,')|||(
-            arm: getArm(ArmId.WING_AGAINST_TICK),
-            ...getCore(HeadId.DOUBLE_SCROLL, Shafts.TRIPLE),
-        }
+        const expected = getSagittal({                          // ,')|||(
+            armId: ArmId.WING_AGAINST_TICK,
+            headId: HeadId.DOUBLE_SCROLL,
+            shafts: Shafts.TRIPLE,
+        })
         expect(actual).toEqual(expected)
     })
 
     it("works for a symbol with a core with 2 shafts", (): void => {
-        const sagittal: Sagittal = {...getCore(HeadId.DOUBLE_SCROLL, Shafts.DOUBLE)}               // )||(
+        const sagittal = getSagittal({headId: HeadId.DOUBLE_SCROLL, shafts: Shafts.DOUBLE})     // )||(
 
         const actual = apotomeShift(sagittal)
 
-        const expected = {...getCore(HeadId.DOUBLE_SCROLL, Shafts.EX)}                         // )X(
+        const expected = getSagittal({headId: HeadId.DOUBLE_SCROLL, shafts: Shafts.EX})         // )X(
         expect(actual).toEqual(expected)
     })
 
     it("works for a symbol which is a bare shaft with arm", (): void => {
-        const sagittal: Sagittal = {                                                                    // `|
-            arm: getArm(ArmId.WING),
-            ...getCore(HeadId.BARE_SHAFT),
-        }
+        const sagittal = getSagittal({armId: ArmId.WING, headId: HeadId.BARE_SHAFT})            // `|
 
         const actual = apotomeShift(sagittal)
 
-        const expected = {                                                                          // `/||\
-            arm: getArm(ArmId.WING),
-            ...getCore(HeadId.DOUBLE_BARB, Shafts.DOUBLE),
-        }
+        const expected = getSagittal({                                                          // `/||\
+            armId: ArmId.WING,
+            headId: HeadId.DOUBLE_BARB,
+            shafts: Shafts.DOUBLE,
+        })
         expect(actual).toEqual(expected)
     })
 
@@ -47,9 +47,7 @@ describe("apotomeShift", (): void => {
 
         const actual = apotomeShift(sagittal)
 
-        const expected = {                                                                          // /||\
-            ...getCore(HeadId.DOUBLE_BARB, Shafts.DOUBLE),
-        }
+        const expected = getSagittal({headId: HeadId.DOUBLE_BARB, shafts: Shafts.DOUBLE})       // /||\
         expect(actual).toEqual(expected)
     })
 })

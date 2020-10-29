@@ -5,6 +5,7 @@ import {Parameter} from "../types"
 type UsefulnessParameterSet = Partial<Record<UsefulnessParameterId, Parameter>>
 
 // TODO: driving me nuts that a low score is better, but too much at once to change this to Unusefulness
+//  Alright, we've agreed upon UsefulnessScore
 type Usefulness = number & { _UsefulnessBrand: boolean }
 
 type SquaredDistanceOfUsefulness = number & { _SquaredDistanceOfUsefulnessBrand: boolean }

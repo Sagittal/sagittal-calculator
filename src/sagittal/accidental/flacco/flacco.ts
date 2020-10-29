@@ -114,7 +114,7 @@ const FLACCOS: Record<FlaccoId, Flacco> = {
     /*30*/[FlaccoId.BOATHOOK_AND_SCROLL]: {                           //     ~|(
         ...getHead(HeadId.BOATHOOK_AND_SCROLL),
     },
-    /*31*/[FlaccoId.WING_BOATHOOK_AND_SCROLL]: {                  //    `~|(
+    /*31*/[FlaccoId.WING_BOATHOOK_AND_SCROLL]: {                      //    `~|(
         arm: getArm(ArmId.WING),
         ...getHead(HeadId.BOATHOOK_AND_SCROLL),
     },
@@ -182,7 +182,7 @@ const FLACCOS: Record<FlaccoId, Flacco> = {
         arm: getArm(ArmId.TICK),
         ...getHead(HeadId.LEFT_BARB),
     },
-    /*49*/[FlaccoId.WING_TICK_AND_LEFT_BARB]: {                   //   `'/|
+    /*49*/[FlaccoId.WING_TICK_AND_LEFT_BARB]: {                       //   `'/|
         arm: getArm(ArmId.WING_AND_TICK),
         ...getHead(HeadId.LEFT_BARB),
     },
@@ -236,7 +236,7 @@ const FLACCOS: Record<FlaccoId, Flacco> = {
         arm: getArm(ArmId.TICK),
         ...getHead(HeadId.RIGHT_ARC),
     },
-    /*63*/[FlaccoId.WING_TICK_AND_RIGHT_ARC]: {                   //    `'|)
+    /*63*/[FlaccoId.WING_TICK_AND_RIGHT_ARC]: {                       //    `'|)
         arm: getArm(ArmId.WING_AND_TICK),
         ...getHead(HeadId.RIGHT_ARC),
     },
@@ -288,7 +288,7 @@ const FLACCOS: Record<FlaccoId, Flacco> = {
     /*76*/[FlaccoId.BOATHOOK_AND_ARC]: {                              //     ~|)
         ...getHead(HeadId.BOATHOOK_AND_ARC),
     },
-    /*77*/[FlaccoId.WING_BOATHOOK_AND_ARC]: {                     //    `~|)
+    /*77*/[FlaccoId.WING_BOATHOOK_AND_ARC]: {                         //    `~|)
         arm: getArm(ArmId.WING),
         ...getHead(HeadId.BOATHOOK_AND_ARC),
     },
@@ -300,7 +300,7 @@ const FLACCOS: Record<FlaccoId, Flacco> = {
         arm: getArm(ArmId.TICK, { against: true }),
         ...getHead(HeadId.ARC_AND_SCROLL),
     },
-    /*80*/[FlaccoId.TICK_BOATHOOK_AND_ARC]: {                     //    '~|)
+    /*80*/[FlaccoId.TICK_BOATHOOK_AND_ARC]: {                         //    '~|)
         arm: getArm(ArmId.TICK),
         ...getHead(HeadId.BOATHOOK_AND_ARC),
     },
@@ -318,7 +318,7 @@ const FLACCOS: Record<FlaccoId, Flacco> = {
     /*84*/[FlaccoId.ARC_AND_SCROLL]: {                                //     (|(
         ...getHead(HeadId.ARC_AND_SCROLL),
     },
-    /*85*/[FlaccoId.WING_ARC_AND_SCROLL]: {                       //    `(|(
+    /*85*/[FlaccoId.WING_ARC_AND_SCROLL]: {                           //    `(|(
         arm: getArm(ArmId.WING),
         ...getHead(HeadId.ARC_AND_SCROLL),
     },
@@ -394,22 +394,22 @@ const FLACCOS: Record<FlaccoId, Flacco> = {
     /*104*/[FlaccoId.BARB_AND_ARC]: {                                 //     /|)
         ...getHead(HeadId.BARB_AND_ARC),
     },
-    /*105*/[FlaccoId.WING_BARB_AND_ARC]: {                        //    `/|)
+    /*105*/[FlaccoId.WING_BARB_AND_ARC]: {                            //    `/|)
         arm: getArm(ArmId.WING),
         ...getHead(HeadId.BARB_AND_ARC),
     },
     /*106*/[FlaccoId.ARC_AND_BOATHOOK]: {                             //     (|~
         ...getHead(HeadId.ARC_AND_BOATHOOK),
     },
-    /*107*/[FlaccoId.WING_AGAINST_TICK_BARB_AND_ARC]: {           //   ,'/|)
+    /*107*/[FlaccoId.WING_AGAINST_TICK_BARB_AND_ARC]: {               //   ,'/|)
         arm: getArm(ArmId.WING_AGAINST_TICK),
         ...getHead(HeadId.BARB_AND_ARC),
     },
-    /*108*/[FlaccoId.TICK_BARB_AND_ARC]: {                        //    '/|)
+    /*108*/[FlaccoId.TICK_BARB_AND_ARC]: {                            //    '/|)
         arm: getArm(ArmId.TICK),
         ...getHead(HeadId.BARB_AND_ARC),
     },
-    /*109*/[FlaccoId.WING_TICK_BARB_AND_ARC]: {               //   `'/|)
+    /*109*/[FlaccoId.WING_TICK_BARB_AND_ARC]: {                       //   `'/|)
         arm: getArm(ArmId.WING_AND_TICK),
         ...getHead(HeadId.BARB_AND_ARC),
     },
@@ -451,7 +451,7 @@ const FLACCOS: Record<FlaccoId, Flacco> = {
         arm: getArm(ArmId.TICK),
         ...getHead(HeadId.DOUBLE_BARB),
     },
-    /*120*/[FlaccoId.WING_TICK_AND_DOUBLE_BARB]: {                //   `'/|\
+    /*120*/[FlaccoId.WING_TICK_AND_DOUBLE_BARB]: {                    //   `'/|\
         arm: getArm(ArmId.WING_AND_TICK),
         ...getHead(HeadId.DOUBLE_BARB),
     },
@@ -462,11 +462,11 @@ const FLACCOS: Record<FlaccoId, Flacco> = {
     /*122*/[FlaccoId.LEFT_SCROLL_AND_DOUBLE_BARB]: {                  //    )/|\
         ...getHead(HeadId.LEFT_SCROLL_AND_DOUBLE_BARB),
     },
-    /*123*/[FlaccoId.WING_LEFT_SCROLL_AND_DOUBLE_BARB]: {         //   `)/|\
+    /*123*/[FlaccoId.WING_LEFT_SCROLL_AND_DOUBLE_BARB]: {             //   `)/|\
         arm: getArm(ArmId.WING),
         ...getHead(HeadId.LEFT_SCROLL_AND_DOUBLE_BARB),
     },
-    /*124*/[FlaccoId.BIRD_LEFT_SCROLL_AND_DOUBLE_BARB]: {         //  ``)/|\
+    /*124*/[FlaccoId.BIRD_LEFT_SCROLL_AND_DOUBLE_BARB]: {             //  ``)/|\
         arm: getArm(ArmId.BIRD),
         ...getHead(HeadId.LEFT_SCROLL_AND_DOUBLE_BARB),
     },
@@ -534,11 +534,11 @@ const FLACCOS: Record<FlaccoId, Flacco> = {
     /*141*/[FlaccoId.ARC_AND_BARB]: {                                 //     (|\
         ...getHead(HeadId.ARC_AND_BARB),
     },
-    /*142*/[FlaccoId.WING_ARC_AND_BARB]: {                        //    `(|\
+    /*142*/[FlaccoId.WING_ARC_AND_BARB]: {                            //    `(|\
         arm: getArm(ArmId.WING),
         ...getHead(HeadId.ARC_AND_BARB),
     },
-    /*143*/[FlaccoId.BIRD_ARC_AND_BARB]: {                        //   ``(|\
+    /*143*/[FlaccoId.BIRD_ARC_AND_BARB]: {                            //   ``(|\
         arm: getArm(ArmId.BIRD),
         ...getHead(HeadId.ARC_AND_BARB),
     },
@@ -572,4 +572,5 @@ const getFlacco = (flaccoId: FlaccoId): Flacco =>
 
 export {
     getFlacco,
+    FLACCOS,
 }

@@ -5,18 +5,15 @@ import {
     computeAccidentalUnicode,
     computeSagittalUnicode,
     Flavor,
-    Sagittal,
     Unicode,
 } from "../../../../../src/sagittal/accidental"
-import {ArmId, getArm, HeadId} from "../../../../../src/sagittal/accidental/flacco"
-import {getCore, NullSagittal, Shafts} from "../../../../../src/sagittal/accidental/sagittal"
+import {ArmId, HeadId} from "../../../../../src/sagittal/accidental/flacco"
+import {NullSagittal, Shafts} from "../../../../../src/sagittal/accidental/sagittal"
+import {getSagittal} from "../../../../../src/sagittal/accidental/sagittal/sagittal"
 
 describe("computeSagittalUnicode", (): void => {
     it("given a symbol, returns its unicode representation", (): void => {
-        const sagittal: Sagittal = {                                // ``)|
-            arm: getArm(ArmId.BIRD),
-            ...getCore(HeadId.LEFT_SCROLL),
-        }
+        const sagittal = getSagittal({armId: ArmId.BIRD, headId: HeadId.LEFT_SCROLL})          // ``)|
 
         const actual = computeSagittalUnicode(sagittal)
 
@@ -37,7 +34,7 @@ describe("computeSagittalUnicode", (): void => {
 describe("computeAccidentalUnicode", (): void => {
     it("works for accidentals with a Sagittal-compatible glyph", (): void => {
         const accidental: Accidental<Flavor.EVO> = {
-            ...getCore(HeadId.RIGHT_ARC, Shafts.SINGLE, Aim.DOWN),
+            ...getSagittal({headId: HeadId.RIGHT_ARC, aim: Aim.DOWN}),
             compatible: Compatible.FLAT,
         } as Accidental<Flavor.EVO>
 
