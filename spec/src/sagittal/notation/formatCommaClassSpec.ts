@@ -33,4 +33,25 @@ describe("formatCommaClass", (): void => {
         const expected = " (|//|) " as Io
         expect(actual).toBe(expected)
     })
+
+    it("can turn off alignment", (): void => {
+        const actual = formatCommaClass(commaClassId, { align: false })
+
+        const expected = ",(/|" as Io
+        expect(actual).toBe(expected)
+    })
+
+    it("can output the comma name too if requested", (): void => {
+        const actual = formatCommaClass(commaClassId, { align: false, name: true })
+
+        const expected = ",(/| 65/7M" as Io
+        expect(actual).toBe(expected)
+    })
+
+    it("can output only the comma name too if requested", (): void => {
+        const actual = formatCommaClass(commaClassId, { align: false, glyph: false, name: true })
+
+        const expected = "65/7M" as Io
+        expect(actual).toBe(expected)
+    })
 })

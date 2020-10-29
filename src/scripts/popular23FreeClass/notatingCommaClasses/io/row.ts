@@ -1,5 +1,5 @@
 import {format23FreeClass, formatDecimal, Formatted, isUndefined, Ranked, Row, SPACE} from "../../../../general"
-import {CommaClassId, formatCommaClass, Glyph} from "../../../../sagittal"
+import {CommaClass, CommaClassId, formatCommaClass} from "../../../../sagittal"
 import {Popular23FreeClass} from "../../types"
 import {NotatingCommaClassesProperties} from "../types"
 
@@ -19,7 +19,7 @@ const computePopular23FreeClassWithNotatingCommaClassesRow = (
     return [
         format23FreeClass(two3FreeClass),
         formatDecimal(n2d3p9, {align: true}),
-        notatingCommaClassIds.map((notatingCommaClassId: CommaClassId): Formatted<Glyph> => {
+        notatingCommaClassIds.map((notatingCommaClassId: CommaClassId): Formatted<CommaClass> => {
             return formatCommaClass(notatingCommaClassId)
         }).join(SPACE).replace(/\[pre] \[\/pre]/g, " "),
         notatingCommaClassSmallestSymbolSubsetIndices.join(", "),

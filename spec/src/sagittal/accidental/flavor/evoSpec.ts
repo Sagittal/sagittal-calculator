@@ -1,7 +1,6 @@
 import {Accidental, Aim, Compatible, Flavor} from "../../../../../src/sagittal/accidental"
 import {HeadId} from "../../../../../src/sagittal/accidental/flacco"
 import {computeEvoAccidentalFromCaptureZone} from "../../../../../src/sagittal/accidental/flavor/evo"
-import {Shafts} from "../../../../../src/sagittal/accidental/sagittal"
 import {getSagittal} from "../../../../../src/sagittal/accidental/sagittal/sagittal"
 import {SymbolClassId} from "../../../../../src/sagittal/notation"
 import {

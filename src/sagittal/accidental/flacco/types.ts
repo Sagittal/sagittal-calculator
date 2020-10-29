@@ -26,6 +26,17 @@ enum FlagId {
     BOATHOOK = "boathook",
 }
 
+// You *could* make:
+/*
+type Flag = {
+    id: FlagId,
+    double?: boolean,
+}
+ */
+// If you strongly wanted parallelism between AccentId -> Accent -> Arm and FlagId -> Flag -> Head.
+// However, I feel that because of the way "double" gets used in HeadId both for doubling a specific flag on one side
+// And for
+
 interface Head {
     left?: FlagId[],
     right?: FlagId[],
