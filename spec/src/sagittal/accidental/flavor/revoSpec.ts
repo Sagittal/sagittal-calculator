@@ -147,4 +147,44 @@ describe("computeRevoAccidentalFromCaptureZone", (): void => {
         } as Accidental<Flavor.REVO>
         expect(actual).toEqual(expected)
     })
+
+    it("works for the natural symbol (in the zone just above the natural)", (): void => {
+        const symbolClassId = SymbolClassId.NULL
+
+        const actual = computeRevoAccidentalFromCaptureZone(symbolClassId, SECTION_P1A)
+
+        const expected = {} as Accidental<Flavor.REVO>
+        expect(actual).toEqual(expected)
+    })
+
+    it("works for the natural symbol (in the zone just below the natural)", (): void => {
+        const symbolClassId = SymbolClassId.NULL
+
+        const actual = computeRevoAccidentalFromCaptureZone(symbolClassId, SECTION_N1A)
+
+        const expected = {} as Accidental<Flavor.REVO>
+        expect(actual).toEqual(expected)
+    })
+
+    it("works for the down apotome symbol (in the zone just above it)", (): void => {
+        const symbolClassId = SymbolClassId.NULL
+
+        const actual = computeRevoAccidentalFromCaptureZone(symbolClassId, SECTION_N1T)
+
+        const expected = {
+            ...getSagittal({headId: HeadId.DOUBLE_BARB, shafts: Shafts.DOUBLE, down: true})
+        } as Accidental<Flavor.REVO>
+        expect(actual).toEqual(expected)
+    })
+
+    it("works for the down apotome symbol (in the zone just above it)", (): void => {
+        const symbolClassId = SymbolClassId.NULL
+
+        const actual = computeRevoAccidentalFromCaptureZone(symbolClassId, SECTION_N2A)
+
+        const expected = {
+            ...getSagittal({headId: HeadId.DOUBLE_BARB, shafts: Shafts.DOUBLE, down: true})
+        } as Accidental<Flavor.REVO>
+        expect(actual).toEqual(expected)
+    })
 })

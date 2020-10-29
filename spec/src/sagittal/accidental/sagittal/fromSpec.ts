@@ -44,7 +44,7 @@ describe("computeSagittalFromFlacco", (): void => {
 
         const actual = computeSagittalFromFlacco(flacco)
 
-        expect(actual).toEqual({})                                                                     // (|//|)
+        expect(actual).toEqual(undefined)                                                             // (|//|)
     })
 
     it("works for a symbol with only arm", (): void => {
@@ -52,7 +52,7 @@ describe("computeSagittalFromFlacco", (): void => {
 
         const actual = computeSagittalFromFlacco(flacco)
 
-        const expected = getSagittal({armId: ArmId.WING})                                               // `|
+        const expected = getSagittal({armId: ArmId.WING})                                                 // `|
         expect(actual).toEqual(expected)
     })
 })

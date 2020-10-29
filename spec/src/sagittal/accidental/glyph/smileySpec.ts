@@ -1,7 +1,7 @@
 import {Accidental, Compatible, Flavor, Smiley} from "../../../../../src/sagittal/accidental"
 import {ArmId, HeadId} from "../../../../../src/sagittal/accidental/flacco"
 import {computeAccidentalSmiley, computeSagittalSmiley} from "../../../../../src/sagittal/accidental/glyph"
-import {NullSagittal, Shafts} from "../../../../../src/sagittal/accidental/sagittal"
+import {Shafts} from "../../../../../src/sagittal/accidental/sagittal"
 import {getSagittal} from "../../../../../src/sagittal/accidental/sagittal/sagittal"
 
 describe("computeSagittalSmiley", (): void => {
@@ -63,7 +63,7 @@ describe("computeSagittalSmiley", (): void => {
 
 
     it("works for the null sagittal (the parenthetical natural)", (): void => {
-        const sagittal: NullSagittal = {}
+        const sagittal = undefined
 
         const actual = computeSagittalSmiley(sagittal)
 

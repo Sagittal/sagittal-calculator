@@ -1,7 +1,7 @@
-import {deepEquals, isUndefined, join, stringify, sumTexts} from "../../../general"
+import {deepEquals, isUndefined, join, Maybe, stringify, sumTexts} from "../../../general"
 import {Accent, AccentId, Arm, HeadId} from "../flacco"
 import {Accidental, Compatible, Flavor} from "../flavor"
-import {Core, getCore, isSagittal, NullSagittal, Sagittal, Shafts} from "../sagittal"
+import {Core, getCore, Sagittal, Shafts} from "../sagittal"
 import {BLANK_UNICODE, PARENTHETICAL_NATURAL_UNICODE} from "./constants"
 import {Unicode} from "./types"
 
@@ -270,8 +270,8 @@ const computeAccentUnicode = ({id, against}: Accent, down?: boolean): Unicode =>
 // TODO: SYMBOL VS SAGITTAL; GLYPH TYPES
 //  I feel like these methods should take the Flavor parameter and pass it on, just in case
 //  Although then, if Sagittal receives a Flavor, then the Flavor type moves out of the flavor/ module
-const computeSagittalUnicode = (sagittal: NullSagittal | Sagittal): Unicode => {
-    if (!isSagittal(sagittal)) return PARENTHETICAL_NATURAL_UNICODE
+const computeSagittalUnicode = (sagittal: Maybe<Sagittal>): Unicode => {
+    if (isUndefined(sagittal)) return PARENTHETICAL_NATURAL_UNICODE
     const {arm, ...core} = sagittal
 
     const armUnicode = isUndefined(arm) ? BLANK_UNICODE : computeArmUnicode(arm, core.down)
@@ -293,7 +293,7 @@ const computeAccidentalUnicode = <T extends Flavor>({compatible, ...sagittal}: A
         BLANK_UNICODE :
         computeArmUnicode(arm, core.down)
 
-    const coreUnicode = !isSagittal(sagittal) ?
+    const coreUnicode = deepEquals(core, {} as Core) ?
         isUndefined(compatible) ? PARENTHETICAL_NATURAL_UNICODE : BLANK_UNICODE :
         computeCoreUnicode(core)
 

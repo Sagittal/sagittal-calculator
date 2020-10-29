@@ -1,9 +1,8 @@
-import {deepClone} from "../../../general"
-import {isSagittal} from "./typeGuards"
-import {NullSagittal, Sagittal} from "./types"
+import {deepClone, isUndefined, Maybe} from "../../../general"
+import {Sagittal} from "./types"
 
-const flipSagittal = (sagittal: NullSagittal | Sagittal): NullSagittal | Sagittal => {
-    if (!isSagittal(sagittal)) return sagittal
+const flipSagittal = (sagittal: Maybe<Sagittal>): Maybe<Sagittal> => {
+    if (isUndefined(sagittal)) return
 
     const flippedSagittal = deepClone(sagittal)
 

@@ -35,7 +35,9 @@ type Flag = {
  */
 // If you strongly wanted parallelism between AccentId -> Accent -> Arm and FlagId -> Flag -> Head.
 // However, I feel that because of the way "double" gets used in HeadId both for doubling a specific flag on one side
-// And for
+// And for the case when you've got the same flag on each side (e.g. double barb)
+// However: an important consideration that has just occurred to me: by splitting into left and right, you now have to
+// Make both of them optional. But if you made it one array of flags, then you'd always have to have at least one.
 
 interface Head {
     left?: FlagId[],
@@ -78,8 +80,8 @@ enum HeadId {
 }
 
 enum FlaccoId {
-    NULL = "bare",
-    WING = "wwing",
+    NULL = "null",
+    WING = "wing",
     BIRD = "bird",
     TICK_AGAINST_LEFT_SCROLL = "tickAgainstLeftScroll",
     TICK = "tick",

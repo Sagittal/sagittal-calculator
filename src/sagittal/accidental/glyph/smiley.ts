@@ -1,7 +1,7 @@
-import {isUndefined, join, sumTexts} from "../../../general"
+import {deepEquals, isUndefined, join, Maybe, sumTexts} from "../../../general"
 import {Accent, Arm} from "../flacco"
 import {Accidental, Compatible, Flavor} from "../flavor"
-import {Core, isSagittal, NullSagittal, Sagittal} from "../sagittal"
+import {Core, Sagittal} from "../sagittal"
 import {computeAccentAscii, computeCompatibleAscii, computeCoreAscii} from "./ascii"
 import {BLANK_ASCII, BLANK_SMILEY, PARENTHETICAL_NATURAL_SMILEY} from "./constants"
 import {Ascii, Smiley} from "./types"
@@ -24,8 +24,8 @@ const computeCompatibleSmiley = (compatible: Compatible): Smiley =>
 const computeAccentSmiley = (accent: Accent, down?: boolean): Smiley =>
     convertAsciiToSmiley(computeAccentAscii(accent, down))
 
-const computeSagittalSmiley = (sagittal: NullSagittal | Sagittal): Smiley => {
-    if (!isSagittal(sagittal)) return PARENTHETICAL_NATURAL_SMILEY
+const computeSagittalSmiley = (sagittal: Maybe<Sagittal>): Smiley => {
+    if (isUndefined(sagittal)) return PARENTHETICAL_NATURAL_SMILEY
     const {arm, ...core} = sagittal
 
     const armSmiley = isUndefined(arm) ? BLANK_SMILEY : computeArmSmiley(arm, core.down)
@@ -47,7 +47,7 @@ const computeAccidentalSmiley = <T extends Flavor>({compatible, ...sagittal}: Ac
         BLANK_SMILEY :
         computeArmSmiley(arm, core.down)
 
-    const coreSmiley = !isSagittal(sagittal) ?
+    const coreSmiley = deepEquals(core, {} as Core) ?
         isUndefined(compatible) ? PARENTHETICAL_NATURAL_SMILEY : BLANK_SMILEY :
         computeCoreSmiley(core)
 

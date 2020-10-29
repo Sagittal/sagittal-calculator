@@ -1,8 +1,7 @@
 import {deepEquals, isUndefined, Maybe, stringify} from "../../../general"
 import {Accent, Arm, ArmId, getArm, HeadId} from "../flacco"
 import {getCore} from "./core"
-import {isSagittal} from "./typeGuards"
-import {Core, NullSagittal, Sagittal, Shafts} from "./types"
+import {Core, Sagittal, Shafts} from "./types"
 
 const reorientAccent = ({against, id}: Accent): Accent =>
     against ? {id} : {id, against: true}
@@ -135,10 +134,10 @@ const computeMaybeArmForSelfComplementingCore = (maybeArm: Maybe<Arm>): Maybe<Ar
 // TODO: SYMBOL VS SAGITTAL; GLYPH TYPES
 //  Just a thought - am I converting from these primitive IDs to the objects too soon? Like, can I wait until IO?
 
-const computeApotomeComplement = (sagittal: NullSagittal | Sagittal): Sagittal => {
+const computeApotomeComplement = (sagittal: Maybe<Sagittal>): Sagittal => {
     // TODO: APOTOME COMPLEMENT EDGE CASE
-    //  Although actually, if there's no arm and it's a double barb, shouldn't it return the NullSagittal?
-    if (!isSagittal(sagittal)) {
+    //  Although actually, if there's no arm and it's a double barb, shouldn't it return a null sagittal?
+    if (isUndefined(sagittal)) {
         return {...getCore(HeadId.DOUBLE_BARB, {shafts: Shafts.DOUBLE})}
     }
     const {arm, down, ...core} = sagittal

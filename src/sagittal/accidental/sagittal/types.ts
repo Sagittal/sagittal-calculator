@@ -12,8 +12,6 @@ interface Sagittal extends Flacco {
     shafts: Shafts,
 }
 
-interface NullSagittal {}
-
 type Core = Omit<Sagittal, "arm">
 
 type GetSagittalOptions = Partial<{
@@ -27,7 +25,6 @@ type GetSagittalOptions = Partial<{
 export {
     Core,
     Sagittal,
-    NullSagittal,
     Shafts,
     GetSagittalOptions,
 }

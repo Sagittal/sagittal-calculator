@@ -311,7 +311,7 @@ const {
     ...SymbolClassId
 } = FlaccoId
 
-type excludedOptions =
+type flaccosBeyondHalfApotome =
     | typeof WING_LEFT_SCROLL_AND_DOUBLE_BARB
     | typeof BIRD_LEFT_SCROLL_AND_DOUBLE_BARB
     | typeof WING_AND_TICK_AGAINST_DOUBLE_ARC
@@ -338,7 +338,7 @@ type excludedOptions =
     | typeof LEFT_SCROLL_DOUBLE_RIGHT_BARB
     | typeof WING_AND_LEFT_SCROLL_DOUBLE_RIGHT_BARB
     | typeof BIRD_AND_LEFT_SCROLL_DOUBLE_RIGHT_BARB
-type SymbolClassId = Exclude<FlaccoId, excludedOptions>
+type SymbolClassId = Exclude<FlaccoId, flaccosBeyondHalfApotome>
 
 // TODO: SYMBOL VS SAGITTAL; GLYPH TYPES
 //  We way want to replace getRepresentativeSagittal called off a comma class with

@@ -1,3 +1,4 @@
+import {isUndefined} from "../../../general"
 import {Section, SymbolClassId} from "../../notation"
 import {apotomeShift, computeApotomeComplement, computeSagittalFromSymbolClassId, flipSagittal} from "../sagittal"
 import {Accidental, Flavor} from "./types"
@@ -12,7 +13,7 @@ const computeRevoAccidentalFromCaptureZone = (
     sagittal = shifted ? apotomeShift(sagittal) : sagittal
     sagittal = negated ? flipSagittal(sagittal) : sagittal
 
-    return sagittal as Accidental<Flavor.REVO>
+    return isUndefined(sagittal) ? {} as Accidental<Flavor.REVO> : sagittal as Accidental<Flavor.REVO>
 }
 
 export {

@@ -1,6 +1,6 @@
 import {ArmId, HeadId} from "../../../../../src/sagittal/accidental/flacco"
 import {Ascii, parseAscii} from "../../../../../src/sagittal/accidental/glyph"
-import {Sagittal, Shafts} from "../../../../../src/sagittal/accidental/sagittal"
+import {Shafts} from "../../../../../src/sagittal/accidental/sagittal"
 import {getSagittal} from "../../../../../src/sagittal/accidental/sagittal/sagittal"
 
 describe("parseAscii", (): void => {
@@ -18,7 +18,7 @@ describe("parseAscii", (): void => {
 
         const actual = parseAscii(ascii)
 
-        const expected = {} as Sagittal
+        const expected = undefined
         expect(actual).toEqual(expected)
     })
 

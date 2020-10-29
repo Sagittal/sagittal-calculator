@@ -152,4 +152,44 @@ describe("computeEvoAccidentalFromCaptureZone", (): void => {
         } as Accidental<Flavor.EVO>
         expect(actual).toEqual(expected)
     })
+
+    it("works for the natural symbol (in the zone just above the natural)", (): void => {
+        const symbolClassId = SymbolClassId.NULL
+
+        const actual = computeEvoAccidentalFromCaptureZone(symbolClassId, SECTION_P1A)
+
+        const expected = {} as Accidental<Flavor.EVO>
+        expect(actual).toEqual(expected)
+    })
+
+    it("works for the natural symbol (in the zone just below the natural)", (): void => {
+        const symbolClassId = SymbolClassId.NULL
+
+        const actual = computeEvoAccidentalFromCaptureZone(symbolClassId, SECTION_N1A)
+
+        const expected = {} as Accidental<Flavor.EVO>
+        expect(actual).toEqual(expected)
+    })
+
+    it("works for the flat symbol (in the zone just above the flat)", (): void => {
+        const symbolClassId = SymbolClassId.NULL
+
+        const actual = computeEvoAccidentalFromCaptureZone(symbolClassId, SECTION_N1T)
+
+        const expected = {
+            compatible: Compatible.FLAT,
+        } as Accidental<Flavor.EVO>
+        expect(actual).toEqual(expected)
+    })
+
+    it("works for the flat symbol (in the zone just below the flat)", (): void => {
+        const symbolClassId = SymbolClassId.NULL
+
+        const actual = computeEvoAccidentalFromCaptureZone(symbolClassId, SECTION_N2A)
+
+        const expected = {
+            compatible: Compatible.FLAT,
+        } as Accidental<Flavor.EVO>
+        expect(actual).toEqual(expected)
+    })
 })

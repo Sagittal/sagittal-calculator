@@ -7,7 +7,6 @@ import {
     Unicode,
 } from "../../../../../src/sagittal/accidental"
 import {ArmId, HeadId} from "../../../../../src/sagittal/accidental/flacco"
-import {NullSagittal, Shafts} from "../../../../../src/sagittal/accidental/sagittal"
 import {getSagittal} from "../../../../../src/sagittal/accidental/sagittal/sagittal"
 
 describe("computeSagittalUnicode", (): void => {
@@ -21,7 +20,7 @@ describe("computeSagittalUnicode", (): void => {
     })
 
     it("works for the null sagittal (the parenthetical natural)", (): void => {
-        const sagittal: NullSagittal = {}
+        const sagittal = undefined
 
         const actual = computeSagittalUnicode(sagittal)
 

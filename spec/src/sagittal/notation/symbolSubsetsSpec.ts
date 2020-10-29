@@ -1,4 +1,4 @@
-import {Ascii, computeSagittalAscii, NullSagittal, Sagittal} from "../../../../src/sagittal/accidental"
+import {Ascii, computeSagittalAscii} from "../../../../src/sagittal/accidental"
 import {computeSagittalFromSymbolClassId} from "../../../../src/sagittal/accidental/sagittal"
 import {SymbolSubsetId, SYMBOL_SUBSETS} from "../../../../src/sagittal/notation"
 
@@ -6,7 +6,7 @@ import {SymbolSubsetId, SYMBOL_SUBSETS} from "../../../../src/sagittal/notation"
 xdescribe("SYMBOL_SUBSETS", (): void => {
     const subject = (symbolSubsetId: SymbolSubsetId): Ascii[] => SYMBOL_SUBSETS[symbolSubsetId]
         .map(computeSagittalFromSymbolClassId)
-        .map((sagittal: NullSagittal | Sagittal): Ascii => computeSagittalAscii(sagittal))
+        .map(computeSagittalAscii)
 
     it("has the correct single-shaft symbols in the Sagittal-compatibles subset", (): void => {
         const symbolSubsetId = SymbolSubsetId.COMPATIBLE

@@ -1,7 +1,7 @@
-import {BLANK, isUndefined, join, sumTexts} from "../../../general"
+import {BLANK, deepEquals, isUndefined, join, Maybe, sumTexts} from "../../../general"
 import {Accent, AccentId, Arm, FlagId} from "../flacco"
 import {Accidental, Compatible, Flavor} from "../flavor"
-import {Core, isSagittal, NullSagittal, Sagittal, Shafts} from "../sagittal"
+import {Core, Sagittal, Shafts} from "../sagittal"
 import {BLANK_ASCII, PARENTHETICAL_NATURAL_ASCII} from "./constants"
 import {Ascii} from "./types"
 
@@ -105,8 +105,8 @@ const computeAccentAscii = ({id, against}: Accent, down?: boolean): Ascii =>
             DOWN_ACCENT_TO_ASCII_MAP[id] :
             ACCENT_TO_ASCII_MAP[id]
 
-const computeSagittalAscii = (sagittal: Sagittal | NullSagittal): Ascii => {
-    if (!isSagittal(sagittal)) return PARENTHETICAL_NATURAL_ASCII
+const computeSagittalAscii = (sagittal: Maybe<Sagittal>): Ascii => {
+    if (isUndefined(sagittal)) return PARENTHETICAL_NATURAL_ASCII
     const {arm, ...core} = sagittal
 
     const armAscii = isUndefined(arm) ? BLANK_ASCII : computeArmAscii(arm, core.down)
@@ -128,7 +128,7 @@ const computeAccidentalAscii = <T extends Flavor>({compatible, ...sagittal}: Acc
         BLANK_ASCII :
         computeArmAscii(arm, core.down)
 
-    const coreAscii = !isSagittal(sagittal) ?
+    const coreAscii = deepEquals(core, {} as Core) ?
         isUndefined(compatible) ? PARENTHETICAL_NATURAL_ASCII : BLANK_ASCII :
         computeCoreAscii(core)
 

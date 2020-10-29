@@ -1,11 +1,11 @@
-import {BLANK, Char, Count, increment, isEmpty, shallowClone} from "../../../general"
+import {BLANK, Char, Count, increment, isEmpty, Maybe, shallowClone} from "../../../general"
 import {AccentId, Arm, FlagId} from "../flacco"
-import {NullSagittal, NULL_SAGITTAL, Sagittal, Shafts} from "../sagittal"
+import {Sagittal, Shafts} from "../sagittal"
 import {PARENTHETICAL_NATURAL_ASCII} from "./constants"
 import {Ascii} from "./types"
 
-const parseAscii = (ascii: Ascii): Sagittal | NullSagittal => {
-    if (ascii === PARENTHETICAL_NATURAL_ASCII) return NULL_SAGITTAL
+const parseAscii = (ascii: Ascii): Maybe<Sagittal> => {
+    if (ascii === PARENTHETICAL_NATURAL_ASCII) return
 
     const down = !!ascii.match(/[Y!]/g)
 

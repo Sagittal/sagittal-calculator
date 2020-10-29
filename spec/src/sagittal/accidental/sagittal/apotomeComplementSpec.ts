@@ -1,4 +1,3 @@
-import {NullSagittal} from "../../../../../src/sagittal/accidental"
 import {ArmId, getArm, HeadId} from "../../../../../src/sagittal/accidental/flacco"
 import {computeApotomeComplement, getCore, Shafts} from "../../../../../src/sagittal/accidental/sagittal"
 import {getSagittal} from "../../../../../src/sagittal/accidental/sagittal/sagittal"
@@ -51,7 +50,7 @@ describe("computeApotomeComplement", (): void => {
     })
 
     it("works for the null sagittal (the parenthetical natural), mapping it to the apotome", (): void => {
-        const sagittal: NullSagittal = {}
+        const sagittal = undefined
 
         const actual = computeApotomeComplement(sagittal)
 
