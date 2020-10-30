@@ -131,7 +131,7 @@ const computeMaybeArmForSelfComplementingCore = (maybeArm: Maybe<Arm>): Maybe<Ar
     }
 }
 
-// TODO: SYMBOL VS SAGITTAL; GLYPH TYPES
+// TODO: POST-NOTATION-GENERATION: SYMBOL VS SAGITTAL; GLYPH TYPES
 //  Just a thought - am I converting from these primitive IDs to the objects too soon? Like, can I wait until IO?
 
 const computeApotomeComplement = (sagittal: Maybe<Sagittal>): Maybe<Sagittal> => {

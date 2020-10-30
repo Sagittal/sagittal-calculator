@@ -2,7 +2,7 @@ import {areScamonsEqual, Comma, compute23FreeClass, LogTarget, saveLog} from "..
 import {CommaClassId, computeAas, computeAte, computeN2D3P9, formatComma, getCommaClass} from "../../sagittal"
 import {SquaredUsefulnessScoreDistanceFromBestUsefulnessScore, UsefulnessMetric, UsefulnessParameterSet} from "./types"
 
-// TODO: and this too is quite redundant with `isCommaMostUsefulInZone`
+// TODO: usefulness - and this too is quite redundant with `isCommaMostUsefulInZone`
 const computeSquaredUsefulnessScoreDistanceFromBestUsefulnessScoreInZone = (
     [commaClassId, commas]: [CommaClassId, Comma[]],
     usefulnessMetric: UsefulnessMetric,

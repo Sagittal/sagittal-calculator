@@ -6,7 +6,7 @@ import {computeUsefulnessParameterSets} from "./parameters"
 import {UsefulnessMetric, UsefulnessMetricId, UsefulnessParameterId, UsefulnessParameterSet} from "./types"
 import {computeZoneCommaEntries} from "./zoneCommas"
 
-// TODO: of course this is pretty not DRY with the minimize.module. You might want to consolidate
+// TODO: usefulness - of course this is pretty not DRY with the minimize.module. You might want to consolidate
 //  And when you do, test cover the exclusion of 14641 and 19/4375
 
 const logUsefulnessParameterSetsForUsefulnessMetricMaximizingMatchCount = (

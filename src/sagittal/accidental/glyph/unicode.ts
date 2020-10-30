@@ -267,9 +267,6 @@ const computeAccentUnicode = ({id, anti}: Accent, down?: boolean): Unicode =>
             DOWN_ACCENT_TO_UNICODE_MAP[id] :
             ACCENT_TO_UNICODE_MAP[id]
 
-// TODO: SYMBOL VS SAGITTAL; GLYPH TYPES
-//  I feel like these methods should take the Flavor parameter and pass it on, just in case
-//  Although then, if Sagittal receives a Flavor, then the Flavor type moves out of the flavor/ module
 const computeSagittalUnicode = (sagittal: Maybe<Sagittal>): Unicode => {
     if (isUndefined(sagittal)) return PARENTHETICAL_NATURAL_UNICODE
     const {arm, ...core} = sagittal

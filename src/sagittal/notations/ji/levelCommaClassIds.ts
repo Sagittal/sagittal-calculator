@@ -2,7 +2,7 @@ import {finalElement, Index, KeyPath, sort} from "../../../general"
 import {CommaClassId} from "../../notation"
 import {JiNotationLevelId} from "./types"
 
-// TODO: JI NOTATION, AFTER NOTATION GENERATION
+// TODO: POST-NOTATION-GENERATION: JI NOTATION CLEAN-UP
 //  So... this whole module should be supplanted once the notation generation is mature? Or it could become a test?
 //  And I wonder what else in here would go that direction...
 //  Really I guess in the end all that should be defined here is fancy stuff that needs to operate *across* the

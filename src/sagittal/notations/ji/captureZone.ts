@@ -6,7 +6,7 @@ import {isWithinJiNotationLevel} from "./isWithinLevel"
 import {JI_NOTATION_LEVELS_BOUND_CLASSES} from "./levelsBoundClasses"
 import {JiNotationBoundClass, JiNotationLevelId} from "./types"
 
-// TODO: JI NOTATION, AFTER NOTATION GENERATION
+// TODO: POST-NOTATION-GENERATION: JI NOTATION CLEAN-UP
 //  This should be another example of a module that should be outmoded post notation generation?
 
 const computeJiNotationCaptureZone = (

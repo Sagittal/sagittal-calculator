@@ -2,7 +2,7 @@ import {JI_NOTATION_BOUND_CLASSES} from "./boundClasses"
 import {JI_NOTATION_LEVELS} from "./levels"
 import {JiNotationBoundClass, JiNotationLevelId} from "./types"
 
-// TODO: JI NOTATION, AFTER NOTATION GENERATION
+// TODO: POST-NOTATION-GENERATION: JI NOTATION CLEAN-UP
 //  Here's an example of a thing I want to become outmoded after notation generation
 
 const JI_NOTATION_LEVELS_BOUND_CLASSES: Record<JiNotationLevelId, JiNotationBoundClass[]> = JI_NOTATION_LEVELS.reduce(

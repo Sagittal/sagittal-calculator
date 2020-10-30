@@ -340,7 +340,7 @@ type flaccosBeyondHalfApotome =
     | typeof BIRD_AND_LEFT_SCROLL_DOUBLE_RIGHT_BARB
 type SymbolClassId = Exclude<FlaccoId, flaccosBeyondHalfApotome>
 
-// TODO: SYMBOL VS SAGITTAL; GLYPH TYPES
+// TODO: POST-NOTATION-GENERATION: SYMBOL VS SAGITTAL; GLYPH TYPES
 //  We way want to replace getRepresentativeSagittal called off a comma class with
 //  The places which have a comma class might actually want a symbol class in the first place?
 interface SymbolClass {
@@ -348,7 +348,7 @@ interface SymbolClass {
     commaClassId: CommaClassId,
 }
 
-// TODO: SYMBOL SUBSETS
+// TODO: POST-NOTATION-GENERATION: TRULY SYMBOL SUBSETS, NOT JUST SYMBOL CLASS SUBSETS
 //  So I made this into SymbolSubsetId which I think is right but there's not literally a SymbolSubset type yet
 //  Which would be an array of SymbolClassIds I suppose?
 enum SymbolSubsetId {

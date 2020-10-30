@@ -58,7 +58,8 @@ const PROMETHEAN_SYMBOL_SUBSET: Array<[Index<SymbolClassId>, SymbolClassId]> = [
     // [146 as Index<SymbolClassId>, SymbolClassId.LEFT_SCROLL_DOUBLE_RIGHT_BARB],
 ]
 
-// TODO: DEFINE SUBSETS IN TERMS OF NEW ACCENTS
+// TODO: POST-NOTATION-GENERATION: TRULY SYMBOL SUBSETS, NOT JUST SYMBOL CLASS SUBSETS
+//  Define subsets in terms of new accents?
 //  Surely there must be some way to simplify / generate this
 const HERCULEAN_SYMBOL_SUBSET: Array<[Index<SymbolClassId>, SymbolClassId]> = [
     ...PROMETHEAN_SYMBOL_SUBSET,
@@ -205,13 +206,13 @@ const TROJAN_SYMBOL_SUBSET: Array<[Index<SymbolClassId>, SymbolClassId]> = [
     // [141 as Index<SymbolClassId>, SymbolClassId.ARC_AND_BARB],
 ]
 
-// TODO: SIMPLIFY ID INDICES
+// TODO: POST-NOTATION-GENERATION: IDS VS INDICES
 //  Probably some way to get the indices from the enums rather than separately specifying them like here and for commas
 //  And at that time probably also clean up the /*119*/ style comments in bound class, comma class, and symbol subsets
 const shapeUpIds = (ids: Array<[Index<SymbolClassId>, SymbolClassId]>): SymbolClassId[] =>
     sort(ids, {by: 0 as KeyPath}).map(([_, id]: [Index<SymbolClassId>, SymbolClassId]): SymbolClassId => id)
 
-// TODO: TRULY SYMBOL SUBSETS, NOT JUST SYMBOL CLASS SUBSETS
+// TODO: POST-NOTATION-GENERATION: TRULY SYMBOL SUBSETS, NOT JUST SYMBOL CLASS SUBSETS
 //  These won't truly be symbol subsets until you map across them and include every complement, shift, and negation
 //  And you could separate the single-shaft ones from multi-shaft ones with filters
 //  These tests are all failing until we fix that issue

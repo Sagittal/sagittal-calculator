@@ -1,6 +1,6 @@
 import {BoundClassId, Notation, SymbolClassId} from "../../notation"
 
-// TODO: TEST WHAT IS LESS OBVIOUS NOW IN THE POST SYMBOL CLASS WORLD
+// TODO: POST-NOTATION-GENERATION: TESTING
 //  Might be nice to test that the commas which used to be here are the commas for the symbols still/now here
 //  And/or the full set of flaccos you get, at which point delete the commented out extra Flacco IDs here
 

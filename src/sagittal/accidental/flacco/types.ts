@@ -37,7 +37,8 @@ type Flag = {
 // However, I feel that because of the way "double" gets used in HeadId both for doubling a specific flag on one side
 // And for the case when you've got the same flag on each side (e.g. double barb)
 // However: an important consideration that has just occurred to me: by splitting into left and right, you now have to
-// Make both of them optional. But if you made it one array of flags, then you'd always have to have at least one.
+// Make both of them optional. But if you made it one array of flags, then you'd always have to have at least one flag.
+// And I prefer having fewer optional fields, because it makes it less likely to get something conflated as your type.
 
 interface Head {
     left?: FlagId[],

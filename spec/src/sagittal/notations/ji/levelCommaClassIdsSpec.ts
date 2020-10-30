@@ -10,7 +10,7 @@ describe("JI_NOTATION_LEVELS_COMMA_CLASS_IDS", (): void => {
         expect(JI_NOTATION_LEVELS_COMMA_CLASS_IDS[ JiNotationLevelId.EXTREME ].length).toBe(123)
     })
 
-    // Todo: SORTED COMMA CLASS IDS TEST POST NO-ID REFACTOR
+    // Todo: POST-NOTATION-GENERATION: IDS VS INDICES
     //  I expect this test to not make any sense any more... but I still want to protect that this works
     //  It's because they need to be sorted by their indices, not their IDs
     // tslint:disable-next-line ban

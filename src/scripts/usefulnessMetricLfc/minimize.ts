@@ -18,7 +18,7 @@ const logUsefulnessParameterSetsForUsefulnessMetricMinimizingSumOfSquares = (
     const countUsefulnessParameterSets = count(usefulnessParameterSets)
 
     let minSumOfSquares = Infinity
-    // TODO: probably acceptable to eliminate this "ties" functionality as it is unlikely to ever tie
+    // TODO: usefulness - probably acceptable to eliminate this "ties" functionality as it is unlikely to ever tie
     //  Though in its place won't you want essentially the local minima functionality?
     //  Well actually we did get 11 ties for one of the metrics, but I still think local minima would be better now
     let usefulnessParameterSetsForUsefulnessMetricMaximizingCountMostUseful = [] as UsefulnessParameterSet[]
@@ -38,7 +38,7 @@ const logUsefulnessParameterSetsForUsefulnessMetricMinimizingSumOfSquares = (
                     usefulnessParameterSet,
                 )
 
-            // TODO: add command line option for excluding any distances > 1
+            // TODO: usefulness - add command line option for excluding any distances > 1
             //  See: http://forum.sagittal.org/viewtopic.php?p=2575#p2575
             sumOfSquares = sumOfSquares + squaredDistanceFromMostUsefulCommaInZone
         })

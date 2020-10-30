@@ -10,7 +10,7 @@ describe("getIntroducingJiNotationLevel", (): void => {
         expect(getIntroducingJiNotationLevel(CommaClassId._11_13_C)).toBe(JiNotationLevelId.EXTREME)
     })
 
-    // TODO: JI NOTATION, AFTER NOTATION GENERATION
+    // TODO: POST-NOTATION-GENERATION: JI NOTATION CLEAN-UP
     //  This module might totally go away, but if it doesn't, then this test won't be relevant until Prime Factor
     //  Notation is added
     // It("throws an error if the comma class ID is not a member of a JI notation", (): void => {

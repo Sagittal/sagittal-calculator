@@ -8,7 +8,7 @@
 // Import {MINA} from "../../../../../src/sagittal/notations/ji/intervals"
 // Import {EXTREME_EDA} from "../../../../../src/sagittal/notations/ji/levelEdas"
 //
-// // TODO: FIGURE OUT MINA NAME SITUATION POST BOUND CLASS ID REFACTOR
+// // TODO: POST-NOTATION-GENERATION: FIGURE OUT MINA NAME SITUATION
 // //  Aren't these kind of just exactly the bound names now? not sure what to do with that exactly...
 // //  And it's bizarre that we fetch them by comma class instead of bound class, no?
 // //  And did we ever get to checking those mina names computation? From the commas that is (the spreadsheet formula)
