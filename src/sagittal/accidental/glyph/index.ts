@@ -19,7 +19,7 @@ export {
     computeCompatibleSmiley,
     computeAccentSmiley,
 } from "./smiley"
-export {formatAscii} from "./formatAscii"
+export {alignAscii} from "./align"
 export {Ascii, Unicode, Smiley, Glyph} from "./types"
-export {formatAccidental} from "./formatAccidental"
+export {formatAccidental} from "./format"
 export {parseAscii} from "./parse"

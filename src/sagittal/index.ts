@@ -34,7 +34,7 @@ export {
     formatComma,
 } from "./ji"
 export {
-    formatAscii,
+    alignAscii,
     Ascii,
     Smiley,
     Unicode,

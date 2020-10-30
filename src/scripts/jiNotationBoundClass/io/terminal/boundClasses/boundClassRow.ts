@@ -1,5 +1,5 @@
 import {computeCentsFromPitch, formatDecimal, formatIntegerDecimal, Index, Row} from "../../../../../general"
-import {BoundClass, formatAscii, JiNotationBoundClassEntry} from "../../../../../sagittal"
+import {alignAscii, BoundClass, JiNotationBoundClassEntry} from "../../../../../sagittal"
 import {JiNotationBoundClassAnalysis} from "../../../boundClass"
 import {extractJiNotationBoundClassIdentifiers} from "../boundClassIdentifiers"
 import {extractJiNotationLevelDistances} from "./levelDistances"
@@ -55,8 +55,8 @@ const computeJiNotationBoundClassRow = (
         formatIntegerDecimal(boundClassIndex, {align: true}),
         formatMinaName(lesserBoundedMinaName),
         formatMinaName(greaterBoundedMinaName),
-        formatAscii(extremeLevelLesserBoundedCommaClass),
-        formatAscii(extremeLevelGreaterBoundedCommaClass),
+        alignAscii(extremeLevelLesserBoundedCommaClass),
+        alignAscii(extremeLevelGreaterBoundedCommaClass),
         mediumLevelRank,
         highLevelRank,
         ultraLevelRank,

@@ -8,7 +8,7 @@ export {
 export {Core, Sagittal, computeSagittalFromFlacco} from "./sagittal"
 export {Accidental, Flavor, Compatible} from "./flavor"
 export {
-    formatAscii,
+    alignAscii,
     Ascii,
     Smiley,
     Unicode,
