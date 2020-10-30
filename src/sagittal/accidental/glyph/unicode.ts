@@ -258,8 +258,8 @@ const computeCoreUnicode = (core: Core): Unicode => {
 const computeCompatibleUnicode = (compatible: Compatible): Unicode =>
     COMPATIBLE_TO_UNICODE_MAP[compatible]
 
-const computeAccentUnicode = ({id, against}: Accent, down?: boolean): Unicode =>
-    against ?
+const computeAccentUnicode = ({id, anti}: Accent, down?: boolean): Unicode =>
+    anti ?
         down ?
             ACCENT_TO_UNICODE_MAP[id] :
             DOWN_ACCENT_TO_UNICODE_MAP[id] :

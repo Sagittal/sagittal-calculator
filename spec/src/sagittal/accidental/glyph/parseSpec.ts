@@ -9,7 +9,7 @@ describe("parseAscii", (): void => {
 
         const actual = parseAscii(ascii)
 
-        const expected = computeAccidental({armId: ArmId.WING_AGAINST_TICK, headId: HeadId.BARB_AND_ARC})
+        const expected = computeAccidental({armId: ArmId.ANTIWING_AND_TICK, headId: HeadId.BARB_AND_ARC})
         expect(actual).toEqual(expected)
     })
 

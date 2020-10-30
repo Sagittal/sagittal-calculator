@@ -22,14 +22,14 @@ const parseAscii = (ascii: Ascii): Maybe<Sagittal> => {
     let sagittalText = shallowClone(ascii)
     if (sagittalText.match("``")) {
         down ?
-            arm.push({id: AccentId.BIRD, against: true}) :
+            arm.push({id: AccentId.BIRD, anti: true}) :
             arm.push({id: AccentId.BIRD})
         sagittalText = sagittalText.replace("``", "") as Ascii
     }
     if (sagittalText.match(",,")) {
         down ?
             arm.push({id: AccentId.BIRD}) :
-            arm.push({id: AccentId.BIRD, against: true})
+            arm.push({id: AccentId.BIRD, anti: true})
         sagittalText = sagittalText.replace(",,", "") as Ascii
     }
 
@@ -37,20 +37,20 @@ const parseAscii = (ascii: Ascii): Maybe<Sagittal> => {
     sagittalChars.forEach((sagittalChar: Char): void => {
         if (sagittalChar === "`") {
             down ?
-                arm.push({id: AccentId.WING, against: true}) :
+                arm.push({id: AccentId.WING, anti: true}) :
                 arm.push({id: AccentId.WING})
         } else if (sagittalChar === ",") {
             down ?
                 arm.push({id: AccentId.WING}) :
-                arm.push({id: AccentId.WING, against: true})
+                arm.push({id: AccentId.WING, anti: true})
         } else if (sagittalChar === "'") {
             down ?
-                arm.push({id: AccentId.TICK, against: true}) :
+                arm.push({id: AccentId.TICK, anti: true}) :
                 arm.push({id: AccentId.TICK})
         } else if (sagittalChar === ".") {
             down ?
                 arm.push({id: AccentId.TICK}) :
-                arm.push({id: AccentId.TICK, against: true})
+                arm.push({id: AccentId.TICK, anti: true})
         } else if (sagittalChar === "/") {
             down ?
                 right.push(FlagId.BARB) :

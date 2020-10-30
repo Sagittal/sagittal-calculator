@@ -4,7 +4,7 @@ import {Shafts} from "../../../../../src/sagittal/accidental/sagittal"
 
 type AccidentalOptions = Partial<{
     armId: ArmId,
-    against: boolean,
+    anti: boolean,
     headId: HeadId,
     shafts: Shafts,
     down: boolean,

@@ -44,7 +44,7 @@ describe("computeSagittalSmiley", (): void => {
     })
 
     it("does the correct thing with double down ticks", (): void => {
-        const sagittal = computeAccidental({armId: ArmId.BIRD, against: true, headId: HeadId.RIGHT_ARC})  // ,,|)
+        const sagittal = computeAccidental({armId: ArmId.BIRD, anti: true, headId: HeadId.RIGHT_ARC})  // ,,|)
 
         const actual = computeSagittalSmiley(sagittal)
 

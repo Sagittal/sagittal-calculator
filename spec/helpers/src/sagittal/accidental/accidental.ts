@@ -18,7 +18,7 @@ import {areShaftsEven, isMultiShaft} from "../../../../../src/sagittal/accidenta
 import {AccidentalOptions} from "./types"
 
 const armContributesAdditionalValueInSameDirection = (arm: Maybe<Arm>): boolean =>
-    !isUndefined(arm) && !finalElement(arm).against
+    !isUndefined(arm) && !finalElement(arm).anti
 
 const headContributesAdditionalValue = (head: Head): boolean =>
     !deepEquals(head, getHead(HeadId.BARE_SHAFT))
@@ -103,7 +103,7 @@ const checkAccidentalValidity = (accidental: Accidental): void => {
 const computeAccidental = (options: AccidentalOptions = {}): Accidental => {
     const {
         armId,
-        against = false,
+        anti = false,
         headId = HeadId.BARE_SHAFT,
         shafts = Shafts.SINGLE,
         down = false,
@@ -136,7 +136,7 @@ const computeAccidental = (options: AccidentalOptions = {}): Accidental => {
         return accidental
     }
 
-    const arm = getArm(armId, {against})
+    const arm = getArm(armId, {anti})
     const accidental = {arm, ...core} as Accidental
     if (!isUndefined(compatible)) accidental.compatible = compatible
 
@@ -151,14 +151,14 @@ describe("computeAccidental", (): void => {
         const shafts = Shafts.TRIPLE
         const down = true
         const armId = ArmId.BIRD
-        const against = true
+        const anti = true
 
-        const actual = computeAccidental({headId, shafts, down, armId, against})
+        const actual = computeAccidental({headId, shafts, down, armId, anti})
 
         const expected = {
             left: [FlagId.BARB],
             right: [FlagId.ARC],
-            arm: [{id: AccentId.BIRD, against: true}],
+            arm: [{id: AccentId.BIRD, anti: true}],
             down: true,
             shafts: Shafts.TRIPLE,
         } as Accidental
@@ -192,41 +192,41 @@ describe("computeAccidental", (): void => {
     it("understands that some flaccos are valid for some shaft counts but not for others", (): void => {
         const headId = HeadId.DOUBLE_SCROLL
         const armId = ArmId.BIRD
-        const against = true
+        const anti = true
 
-        const actual = computeAccidental({headId, armId, against, shafts: Shafts.DOUBLE})
+        const actual = computeAccidental({headId, armId, anti, shafts: Shafts.DOUBLE})
 
         const expected = {
             left: [FlagId.SCROLL],
             right: [FlagId.SCROLL],
-            arm: [{id: AccentId.BIRD, against: true}],
+            arm: [{id: AccentId.BIRD, anti: true}],
             shafts: Shafts.DOUBLE,
         } as Accidental
         expect(actual).toEqual(expected)
 
         expect((): void => {
-            computeAccidental({headId, armId, against})
+            computeAccidental({headId, armId, anti})
         }).toThrowError("Invalid sagittal due to incorrect flag, arm, and shaft combo: ,,)|(")
     })
 
-    it("has the same validity results for sagittals whether their accents are against the apotome or not", (): void => {
+    it("has the same validity results for sagittals whether their accents are against (anti-) their apotome or not               ", (): void => {
         const headId = HeadId.DOUBLE_BARB
         const shafts = Shafts.DOUBLE
 
         expect((): void => {
-            computeAccidental({headId, shafts, armId: ArmId.WING_AND_TICK, against: true})
+            computeAccidental({headId, shafts, armId: ArmId.WING_AND_TICK, anti: true})
         }).not.toThrow()
         expect((): void => {
-            computeAccidental({headId, shafts, armId: ArmId.TICK, against: true})
+            computeAccidental({headId, shafts, armId: ArmId.TICK, anti: true})
         }).not.toThrow()
         expect((): void => {
-            computeAccidental({headId, shafts, armId: ArmId.WING_AGAINST_TICK, against: true})
+            computeAccidental({headId, shafts, armId: ArmId.ANTIWING_AND_TICK, anti: true})
         }).toThrowError("Invalid sagittal due to incorrect flag, arm, and shaft combo: `./||\\")
         expect((): void => {
-            computeAccidental({headId, shafts, armId: ArmId.BIRD, against: true})
+            computeAccidental({headId, shafts, armId: ArmId.BIRD, anti: true})
         }).not.toThrow()
         expect((): void => {
-            computeAccidental({headId, shafts, armId: ArmId.WING, against: true})
+            computeAccidental({headId, shafts, armId: ArmId.WING, anti: true})
         }).not.toThrow()
         expect((): void => {
             computeAccidental({headId, shafts, armId: ArmId.WING})
@@ -235,7 +235,7 @@ describe("computeAccidental", (): void => {
             computeAccidental({headId, shafts, armId: ArmId.BIRD})
         }).not.toThrow()
         expect((): void => {
-            computeAccidental({headId, shafts, armId: ArmId.WING_AGAINST_TICK})
+            computeAccidental({headId, shafts, armId: ArmId.ANTIWING_AND_TICK})
         }).toThrowError("Invalid sagittal due to incorrect flag, arm, and shaft combo: ,'/||\\")
         expect((): void => {
             computeAccidental({headId, shafts, armId: ArmId.TICK})

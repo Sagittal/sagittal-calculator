@@ -22,13 +22,13 @@ describe("computeApotomeComplement", (): void => {
     })
 
     it("reorients the arm, so that they will cancel each other out", (): void => {
-        const sagittal = computeAccidental({armId: ArmId.WING_AGAINST_TICK, headId: HeadId.DOUBLE_SCROLL})   // ,'|(
+        const sagittal = computeAccidental({armId: ArmId.ANTIWING_AND_TICK, headId: HeadId.DOUBLE_SCROLL})   // ,'|(
 
         const actual = computeApotomeComplement(sagittal)
 
         const expected = computeAccidental({                                                                 // `./||)
-            armId: ArmId.WING_AGAINST_TICK,
-            against: true,
+            armId: ArmId.ANTIWING_AND_TICK,
+            anti: true,
             headId: HeadId.DOUBLE_LEFT_BARB,
             shafts: Shafts.DOUBLE,
         })
@@ -37,15 +37,15 @@ describe("computeApotomeComplement", (): void => {
 
     it("can reorient arm the other way", (): void => {
         const sagittal = computeAccidental({                                                                 // `./||)
-            armId: ArmId.WING_AGAINST_TICK,
-            against: true,
+            armId: ArmId.ANTIWING_AND_TICK,
+            anti: true,
             headId: HeadId.DOUBLE_LEFT_BARB,
             shafts: Shafts.DOUBLE,
         })
 
         const actual = computeApotomeComplement(sagittal)
 
-        const expected = computeAccidental({armId: ArmId.WING_AGAINST_TICK, headId: HeadId.DOUBLE_SCROLL})   // ,'|(
+        const expected = computeAccidental({armId: ArmId.ANTIWING_AND_TICK, headId: HeadId.DOUBLE_SCROLL})   // ,'|(
         expect(actual).toEqual(expected)
     })
 
@@ -74,7 +74,7 @@ describe("computeApotomeComplement", (): void => {
 
         const expected = computeAccidental({                                                                // ,./||\\
             armId: ArmId.WING_AND_TICK,
-            against: true,
+            anti: true,
             headId: HeadId.DOUBLE_BARB,
             shafts: Shafts.DOUBLE,
         })
@@ -93,7 +93,7 @@ describe("computeApotomeComplement", (): void => {
     it("has the correct apotome complements for symbols with the core which is its own apotome complement and therefore things get tricky with its arms which are not symmetrical about the half apotome mirror", (): void => {
         const core = getCore(HeadId.LEFT_SCROLL_AND_DOUBLE_BARB)
         expect(computeApotomeComplement({
-            ...core, arm: getArm(ArmId.WING, {against: true}),
+            ...core, arm: getArm(ArmId.WING, {anti: true}),
         })).toEqual({
             ...core, arm: getArm(ArmId.BIRD),
         })
@@ -110,7 +110,7 @@ describe("computeApotomeComplement", (): void => {
         expect(computeApotomeComplement({
             ...core, arm: getArm(ArmId.BIRD),
         })).toEqual({
-            ...core, arm: getArm(ArmId.WING, {against: true}),
+            ...core, arm: getArm(ArmId.WING, {anti: true}),
         })
     })
 

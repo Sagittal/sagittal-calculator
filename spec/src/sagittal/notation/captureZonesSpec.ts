@@ -1619,7 +1619,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_3,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_SCROLL,
                 section: SECTION_N1A,
             },
             {
@@ -1639,7 +1639,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_14,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_BOATHOOK,
                 section: SECTION_N1A,
             },
             {
@@ -1669,7 +1669,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_27,
-                symbolClassId: SymbolClassId.TICK_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_BOATHOOK_AND_SCROLL,
                 section: SECTION_N1A,
             },
             {
@@ -1689,7 +1689,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_40,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_BARB,
                 section: SECTION_N1A,
             },
             {
@@ -1704,7 +1704,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_47,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_SCROLL_AND_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_SCROLL_AND_BARB,
                 section: SECTION_N1A,
             },
             {
@@ -1719,7 +1719,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_53,
-                symbolClassId: SymbolClassId.TICK_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTITICK_AND_RIGHT_ARC,
                 section: SECTION_N1A,
             },
             {
@@ -1739,7 +1739,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_64,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_ARC,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_ARC,
                 section: SECTION_N1A,
             },
             {
@@ -1764,7 +1764,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_76,
-                symbolClassId: SymbolClassId.TICK_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_ARC_AND_SCROLL,
                 section: SECTION_N1A,
             },
             {
@@ -1789,7 +1789,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_85,
-                symbolClassId: SymbolClassId.TICK_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_N1A,
             },
             {
@@ -1824,7 +1824,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_106,
-                symbolClassId: SymbolClassId.TICK_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_DOUBLE_BARB,
                 section: SECTION_N1A,
             },
             {
@@ -1871,7 +1871,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_106,
-                symbolClassId: SymbolClassId.TICK_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_DOUBLE_BARB,
                 section: SECTION_N1T,
             },
             {
@@ -1906,7 +1906,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_85,
-                symbolClassId: SymbolClassId.TICK_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_N1T,
             },
             {
@@ -1931,7 +1931,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_76,
-                symbolClassId: SymbolClassId.TICK_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_ARC_AND_SCROLL,
                 section: SECTION_N1T,
             },
             {
@@ -1956,7 +1956,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_64,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_ARC,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_ARC,
                 section: SECTION_N1T,
             },
             {
@@ -1976,7 +1976,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_53,
-                symbolClassId: SymbolClassId.TICK_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTITICK_AND_RIGHT_ARC,
                 section: SECTION_N1T,
             },
             {
@@ -1991,7 +1991,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_47,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_SCROLL_AND_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_SCROLL_AND_BARB,
                 section: SECTION_N1T,
             },
             {
@@ -2006,7 +2006,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_40,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_BARB,
                 section: SECTION_N1T,
             },
             {
@@ -2026,7 +2026,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_27,
-                symbolClassId: SymbolClassId.TICK_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_BOATHOOK_AND_SCROLL,
                 section: SECTION_N1T,
             },
             {
@@ -2056,7 +2056,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_14,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_BOATHOOK,
                 section: SECTION_N1T,
             },
             {
@@ -2076,7 +2076,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_3,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_SCROLL,
                 section: SECTION_N1T,
             },
             {
@@ -2093,7 +2093,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_3,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_SCROLL,
                 section: SECTION_N2A,
             },
             {
@@ -2113,7 +2113,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_14,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_BOATHOOK,
                 section: SECTION_N2A,
             },
             {
@@ -2143,7 +2143,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_27,
-                symbolClassId: SymbolClassId.TICK_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_BOATHOOK_AND_SCROLL,
                 section: SECTION_N2A,
             },
             {
@@ -2163,7 +2163,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_40,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_BARB,
                 section: SECTION_N2A,
             },
             {
@@ -2178,7 +2178,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_47,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_SCROLL_AND_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_SCROLL_AND_BARB,
                 section: SECTION_N2A,
             },
             {
@@ -2193,7 +2193,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_53,
-                symbolClassId: SymbolClassId.TICK_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTITICK_AND_RIGHT_ARC,
                 section: SECTION_N2A,
             },
             {
@@ -2213,7 +2213,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_64,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_ARC,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_ARC,
                 section: SECTION_N2A,
             },
             {
@@ -2238,7 +2238,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_76,
-                symbolClassId: SymbolClassId.TICK_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_ARC_AND_SCROLL,
                 section: SECTION_N2A,
             },
             {
@@ -2263,7 +2263,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_85,
-                symbolClassId: SymbolClassId.TICK_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_N2A,
             },
             {
@@ -2298,7 +2298,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_106,
-                symbolClassId: SymbolClassId.TICK_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_DOUBLE_BARB,
                 section: SECTION_N2A,
             },
             {
@@ -2345,7 +2345,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_106,
-                symbolClassId: SymbolClassId.TICK_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_DOUBLE_BARB,
                 section: SECTION_N2T,
             },
             {
@@ -2380,7 +2380,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_85,
-                symbolClassId: SymbolClassId.TICK_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_N2T,
             },
             {
@@ -2405,7 +2405,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_76,
-                symbolClassId: SymbolClassId.TICK_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_ARC_AND_SCROLL,
                 section: SECTION_N2T,
             },
             {
@@ -2430,7 +2430,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_64,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_ARC,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_ARC,
                 section: SECTION_N2T,
             },
             {
@@ -2450,7 +2450,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_53,
-                symbolClassId: SymbolClassId.TICK_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTITICK_AND_RIGHT_ARC,
                 section: SECTION_N2T,
             },
             {
@@ -2465,7 +2465,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_47,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_SCROLL_AND_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_SCROLL_AND_BARB,
                 section: SECTION_N2T,
             },
             {
@@ -2480,7 +2480,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_40,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_BARB,
                 section: SECTION_N2T,
             },
             {
@@ -2500,7 +2500,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_27,
-                symbolClassId: SymbolClassId.TICK_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_BOATHOOK_AND_SCROLL,
                 section: SECTION_N2T,
             },
             {
@@ -2530,7 +2530,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_14,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_BOATHOOK,
                 section: SECTION_N2T,
             },
             {
@@ -2550,7 +2550,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_3,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_SCROLL,
                 section: SECTION_N2T,
             },
             {
@@ -2568,7 +2568,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_3,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_SCROLL,
                 section: SECTION_P1A,
             },
             {
@@ -2588,7 +2588,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_14,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_BOATHOOK,
                 section: SECTION_P1A,
             },
             {
@@ -2618,7 +2618,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_27,
-                symbolClassId: SymbolClassId.TICK_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_BOATHOOK_AND_SCROLL,
                 section: SECTION_P1A,
             },
             {
@@ -2638,7 +2638,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_40,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_BARB,
                 section: SECTION_P1A,
             },
             {
@@ -2653,7 +2653,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_47,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_SCROLL_AND_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_SCROLL_AND_BARB,
                 section: SECTION_P1A,
             },
             {
@@ -2668,7 +2668,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_53,
-                symbolClassId: SymbolClassId.TICK_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTITICK_AND_RIGHT_ARC,
                 section: SECTION_P1A,
             },
             {
@@ -2688,7 +2688,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_64,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_ARC,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_ARC,
                 section: SECTION_P1A,
             },
             {
@@ -2713,7 +2713,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_76,
-                symbolClassId: SymbolClassId.TICK_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_ARC_AND_SCROLL,
                 section: SECTION_P1A,
             },
             {
@@ -2738,7 +2738,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_85,
-                symbolClassId: SymbolClassId.TICK_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_P1A,
             },
             {
@@ -2773,7 +2773,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_106,
-                symbolClassId: SymbolClassId.TICK_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_DOUBLE_BARB,
                 section: SECTION_P1A,
             },
             {
@@ -2820,7 +2820,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_106,
-                symbolClassId: SymbolClassId.TICK_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_DOUBLE_BARB,
                 section: SECTION_P1T,
             },
             {
@@ -2855,7 +2855,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_85,
-                symbolClassId: SymbolClassId.TICK_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_P1T,
             },
             {
@@ -2880,7 +2880,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_76,
-                symbolClassId: SymbolClassId.TICK_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_ARC_AND_SCROLL,
                 section: SECTION_P1T,
             },
             {
@@ -2905,7 +2905,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_64,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_ARC,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_ARC,
                 section: SECTION_P1T,
             },
             {
@@ -2925,7 +2925,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_53,
-                symbolClassId: SymbolClassId.TICK_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTITICK_AND_RIGHT_ARC,
                 section: SECTION_P1T,
             },
             {
@@ -2940,7 +2940,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_47,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_SCROLL_AND_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_SCROLL_AND_BARB,
                 section: SECTION_P1T,
             },
             {
@@ -2955,7 +2955,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_40,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_BARB,
                 section: SECTION_P1T,
             },
             {
@@ -2975,7 +2975,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_27,
-                symbolClassId: SymbolClassId.TICK_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_BOATHOOK_AND_SCROLL,
                 section: SECTION_P1T,
             },
             {
@@ -3005,7 +3005,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_14,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_BOATHOOK,
                 section: SECTION_P1T,
             },
             {
@@ -3025,7 +3025,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_3,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_SCROLL,
                 section: SECTION_P1T,
             },
             {
@@ -3042,7 +3042,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_3,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_SCROLL,
                 section: SECTION_P2A,
             },
             {
@@ -3062,7 +3062,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_14,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_BOATHOOK,
                 section: SECTION_P2A,
             },
             {
@@ -3092,7 +3092,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_27,
-                symbolClassId: SymbolClassId.TICK_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_BOATHOOK_AND_SCROLL,
                 section: SECTION_P2A,
             },
             {
@@ -3112,7 +3112,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_40,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_BARB,
                 section: SECTION_P2A,
             },
             {
@@ -3127,7 +3127,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_47,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_SCROLL_AND_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_SCROLL_AND_BARB,
                 section: SECTION_P2A,
             },
             {
@@ -3142,7 +3142,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_53,
-                symbolClassId: SymbolClassId.TICK_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTITICK_AND_RIGHT_ARC,
                 section: SECTION_P2A,
             },
             {
@@ -3162,7 +3162,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_64,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_ARC,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_ARC,
                 section: SECTION_P2A,
             },
             {
@@ -3187,7 +3187,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_76,
-                symbolClassId: SymbolClassId.TICK_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_ARC_AND_SCROLL,
                 section: SECTION_P2A,
             },
             {
@@ -3212,7 +3212,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_85,
-                symbolClassId: SymbolClassId.TICK_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_P2A,
             },
             {
@@ -3247,7 +3247,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_106,
-                symbolClassId: SymbolClassId.TICK_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_DOUBLE_BARB,
                 section: SECTION_P2A,
             },
             {
@@ -3294,7 +3294,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_106,
-                symbolClassId: SymbolClassId.TICK_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_DOUBLE_BARB,
                 section: SECTION_P2T,
             },
             {
@@ -3329,7 +3329,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_85,
-                symbolClassId: SymbolClassId.TICK_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_P2T,
             },
             {
@@ -3354,7 +3354,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_76,
-                symbolClassId: SymbolClassId.TICK_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_ARC_AND_SCROLL,
                 section: SECTION_P2T,
             },
             {
@@ -3379,7 +3379,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_64,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_ARC,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_ARC,
                 section: SECTION_P2T,
             },
             {
@@ -3399,7 +3399,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_53,
-                symbolClassId: SymbolClassId.TICK_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTITICK_AND_RIGHT_ARC,
                 section: SECTION_P2T,
             },
             {
@@ -3414,7 +3414,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_47,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_SCROLL_AND_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_SCROLL_AND_BARB,
                 section: SECTION_P2T,
             },
             {
@@ -3429,7 +3429,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_40,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_BARB,
                 section: SECTION_P2T,
             },
             {
@@ -3449,7 +3449,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_27,
-                symbolClassId: SymbolClassId.TICK_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_BOATHOOK_AND_SCROLL,
                 section: SECTION_P2T,
             },
             {
@@ -3479,7 +3479,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_14,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_BOATHOOK,
                 section: SECTION_P2T,
             },
             {
@@ -3499,7 +3499,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_3,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_SCROLL,
                 section: SECTION_P2T,
             },
             {
@@ -3544,7 +3544,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_3,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_SCROLL,
                 section: SECTION_N1A,
             },
             {
@@ -3559,7 +3559,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_6,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_SCROLL,
                 section: SECTION_N1A,
             },
             {
@@ -3579,12 +3579,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_10,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_RIGHT_SCROLL,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_RIGHT_SCROLL,
                 section: SECTION_N1A,
             },
             {
                 boundClassId: BoundClassId.MINA_11,
-                symbolClassId: SymbolClassId.WING_AGAINST_RIGHT_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_AND_RIGHT_SCROLL,
                 section: SECTION_N1A,
             },
             {
@@ -3599,12 +3599,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_14,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_BOATHOOK,
                 section: SECTION_N1A,
             },
             {
                 boundClassId: BoundClassId.MINA_15,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_RIGHT_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_RIGHT_SCROLL,
                 section: SECTION_N1A,
             },
             {
@@ -3614,7 +3614,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_17,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_BOATHOOK,
                 section: SECTION_N1A,
             },
             {
@@ -3624,7 +3624,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_19,
-                symbolClassId: SymbolClassId.WING_AGAINST_DOUBLE_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_AND_DOUBLE_SCROLL,
                 section: SECTION_N1A,
             },
             {
@@ -3644,7 +3644,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_23,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_DOUBLE_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_DOUBLE_SCROLL,
                 section: SECTION_N1A,
             },
             {
@@ -3659,22 +3659,22 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_26,
-                symbolClassId: SymbolClassId.TICK_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_BOATHOOK_AND_SCROLL,
                 section: SECTION_N1A,
             },
             {
                 boundClassId: BoundClassId.MINA_27,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.WING_ANTITICK_BOATHOOK_AND_SCROLL,
                 section: SECTION_N1A,
             },
             {
                 boundClassId: BoundClassId.MINA_28,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIBIRD_BOATHOOK_AND_SCROLL,
                 section: SECTION_N1A,
             },
             {
                 boundClassId: BoundClassId.MINA_29,
-                symbolClassId: SymbolClassId.WING_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_BOATHOOK_AND_SCROLL,
                 section: SECTION_N1A,
             },
             {
@@ -3689,12 +3689,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_32,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_RIGHT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_RIGHT_BOATHOOK,
                 section: SECTION_N1A,
             },
             {
                 boundClassId: BoundClassId.MINA_33,
-                symbolClassId: SymbolClassId.WING_AGAINST_RIGHT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTIWING_AND_RIGHT_BOATHOOK,
                 section: SECTION_N1A,
             },
             {
@@ -3724,12 +3724,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_39,
-                symbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_ANTITICK_AND_LEFT_BARB,
                 section: SECTION_N1A,
             },
             {
                 boundClassId: BoundClassId.MINA_40,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_BARB,
                 section: SECTION_N1A,
             },
             {
@@ -3739,12 +3739,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_42,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_LEFT_BARB,
                 section: SECTION_N1A,
             },
             {
                 boundClassId: BoundClassId.MINA_43,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_BARB,
                 section: SECTION_N1A,
             },
             {
@@ -3764,7 +3764,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_47,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_SCROLL_AND_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_SCROLL_AND_BARB,
                 section: SECTION_N1A,
             },
             {
@@ -3779,12 +3779,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_49_SPLIT,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_LEFT_SCROLL_AND_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_LEFT_SCROLL_AND_BARB,
                 section: SECTION_N1A,
             },
             {
                 boundClassId: BoundClassId.MINA_50,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL_AND_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_SCROLL_AND_BARB,
                 section: SECTION_N1A,
             },
             {
@@ -3794,27 +3794,27 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_51_SPLIT,
-                symbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_ANTITICK_AND_RIGHT_ARC,
                 section: SECTION_N1A,
             },
             {
                 boundClassId: BoundClassId.MINA_52,
-                symbolClassId: SymbolClassId.TICK_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTITICK_AND_RIGHT_ARC,
                 section: SECTION_N1A,
             },
             {
                 boundClassId: BoundClassId.MINA_53,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.WING_ANTITICK_AND_RIGHT_ARC,
                 section: SECTION_N1A,
             },
             {
                 boundClassId: BoundClassId.MINA_54,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_RIGHT_ARC,
                 section: SECTION_N1A,
             },
             {
                 boundClassId: BoundClassId.MINA_55,
-                symbolClassId: SymbolClassId.WING_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_AND_RIGHT_ARC,
                 section: SECTION_N1A,
             },
             {
@@ -3834,7 +3834,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_59,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_RIGHT_ARC,
                 section: SECTION_N1A,
             },
             {
@@ -3849,7 +3849,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_62,
-                symbolClassId: SymbolClassId.WING_AGAINST_SCROLL_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_SCROLL_AND_ARC,
                 section: SECTION_N1A,
             },
             {
@@ -3859,7 +3859,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_64,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_ARC,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_ARC,
                 section: SECTION_N1A,
             },
             {
@@ -3874,7 +3874,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_67,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_ARC,
                 section: SECTION_N1A,
             },
             {
@@ -3894,7 +3894,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_71,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_LEFT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_LEFT_ARC,
                 section: SECTION_N1A,
             },
             {
@@ -3904,7 +3904,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_72_SPLIT,
-                symbolClassId: SymbolClassId.WING_AGAINST_BOATHOOK_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_BOATHOOK_AND_ARC,
                 section: SECTION_N1A,
             },
             {
@@ -3919,12 +3919,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_75,
-                symbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_ANTITICK_ARC_AND_SCROLL,
                 section: SECTION_N1A,
             },
             {
                 boundClassId: BoundClassId.MINA_76,
-                symbolClassId: SymbolClassId.TICK_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_ARC_AND_SCROLL,
                 section: SECTION_N1A,
             },
             {
@@ -3939,12 +3939,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_78_SPLIT,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIBIRD_ARC_AND_SCROLL,
                 section: SECTION_N1A,
             },
             {
                 boundClassId: BoundClassId.MINA_79,
-                symbolClassId: SymbolClassId.WING_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_ARC_AND_SCROLL,
                 section: SECTION_N1A,
             },
             {
@@ -3964,27 +3964,27 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_83,
-                symbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_ANTITICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_N1A,
             },
             {
                 boundClassId: BoundClassId.MINA_84,
-                symbolClassId: SymbolClassId.TICK_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_N1A,
             },
             {
                 boundClassId: BoundClassId.MINA_85,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.WING_ANTITICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_N1A,
             },
             {
                 boundClassId: BoundClassId.MINA_86,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_N1A,
             },
             {
                 boundClassId: BoundClassId.MINA_87,
-                symbolClassId: SymbolClassId.WING_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_N1A,
             },
             {
@@ -4004,7 +4004,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_91,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_N1A,
             },
             {
@@ -4014,12 +4014,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_93,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_LEFT_SCROLL_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_LEFT_SCROLL_DOUBLE_LEFT_BARB,
                 section: SECTION_N1A,
             },
             {
                 boundClassId: BoundClassId.MINA_94,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_SCROLL_DOUBLE_LEFT_BARB,
                 section: SECTION_N1A,
             },
             {
@@ -4039,12 +4039,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_98,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_BARB_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIBIRD_BARB_AND_ARC,
                 section: SECTION_N1A,
             },
             {
                 boundClassId: BoundClassId.MINA_99,
-                symbolClassId: SymbolClassId.WING_AGAINST_BARB_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_BARB_AND_ARC,
                 section: SECTION_N1A,
             },
             {
@@ -4064,7 +4064,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_103,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_BARB_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_BARB_AND_ARC,
                 section: SECTION_N1A,
             },
             {
@@ -4079,22 +4079,22 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_105_SPLIT,
-                symbolClassId: SymbolClassId.TICK_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_DOUBLE_BARB,
                 section: SECTION_N1A,
             },
             {
                 boundClassId: BoundClassId.MINA_106,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.WING_ANTITICK_AND_DOUBLE_BARB,
                 section: SECTION_N1A,
             },
             {
                 boundClassId: BoundClassId.MINA_107,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_DOUBLE_BARB,
                 section: SECTION_N1A,
             },
             {
                 boundClassId: BoundClassId.MINA_108,
-                symbolClassId: SymbolClassId.WING_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_DOUBLE_BARB,
                 section: SECTION_N1A,
             },
             {
@@ -4109,7 +4109,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_111,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_ARC_AND_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_ARC_AND_BARB,
                 section: SECTION_N1A,
             },
             {
@@ -4134,7 +4134,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_115,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL_AND_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_LEFT_SCROLL_AND_DOUBLE_BARB,
                 section: SECTION_N1A,
             },
             {
@@ -4151,7 +4151,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_115,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL_AND_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_LEFT_SCROLL_AND_DOUBLE_BARB,
                 section: SECTION_N1T,
             },
             {
@@ -4176,7 +4176,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_111,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_ARC_AND_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_ARC_AND_BARB,
                 section: SECTION_N1T,
             },
             {
@@ -4191,22 +4191,22 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_108,
-                symbolClassId: SymbolClassId.WING_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_DOUBLE_BARB,
                 section: SECTION_N1T,
             },
             {
                 boundClassId: BoundClassId.MINA_107,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_DOUBLE_BARB,
                 section: SECTION_N1T,
             },
             {
                 boundClassId: BoundClassId.MINA_106,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.WING_ANTITICK_AND_DOUBLE_BARB,
                 section: SECTION_N1T,
             },
             {
                 boundClassId: BoundClassId.MINA_105_SPLIT,
-                symbolClassId: SymbolClassId.TICK_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_DOUBLE_BARB,
                 section: SECTION_N1T,
             },
             {
@@ -4221,7 +4221,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_103,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_BARB_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_BARB_AND_ARC,
                 section: SECTION_N1T,
             },
             {
@@ -4241,12 +4241,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_99,
-                symbolClassId: SymbolClassId.WING_AGAINST_BARB_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_BARB_AND_ARC,
                 section: SECTION_N1T,
             },
             {
                 boundClassId: BoundClassId.MINA_98,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_BARB_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIBIRD_BARB_AND_ARC,
                 section: SECTION_N1T,
             },
             {
@@ -4266,12 +4266,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_94,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_SCROLL_DOUBLE_LEFT_BARB,
                 section: SECTION_N1T,
             },
             {
                 boundClassId: BoundClassId.MINA_93,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_LEFT_SCROLL_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_LEFT_SCROLL_DOUBLE_LEFT_BARB,
                 section: SECTION_N1T,
             },
             {
@@ -4281,7 +4281,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_91,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_N1T,
             },
             {
@@ -4301,27 +4301,27 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_87,
-                symbolClassId: SymbolClassId.WING_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_N1T,
             },
             {
                 boundClassId: BoundClassId.MINA_86,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_N1T,
             },
             {
                 boundClassId: BoundClassId.MINA_85,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.WING_ANTITICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_N1T,
             },
             {
                 boundClassId: BoundClassId.MINA_84,
-                symbolClassId: SymbolClassId.TICK_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_N1T,
             },
             {
                 boundClassId: BoundClassId.MINA_83,
-                symbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_ANTITICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_N1T,
             },
             {
@@ -4341,12 +4341,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_79,
-                symbolClassId: SymbolClassId.WING_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_ARC_AND_SCROLL,
                 section: SECTION_N1T,
             },
             {
                 boundClassId: BoundClassId.MINA_78_SPLIT,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIBIRD_ARC_AND_SCROLL,
                 section: SECTION_N1T,
             },
             {
@@ -4361,12 +4361,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_76,
-                symbolClassId: SymbolClassId.TICK_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_ARC_AND_SCROLL,
                 section: SECTION_N1T,
             },
             {
                 boundClassId: BoundClassId.MINA_75,
-                symbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_ANTITICK_ARC_AND_SCROLL,
                 section: SECTION_N1T,
             },
             {
@@ -4381,7 +4381,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_72_SPLIT,
-                symbolClassId: SymbolClassId.WING_AGAINST_BOATHOOK_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_BOATHOOK_AND_ARC,
                 section: SECTION_N1T,
             },
             {
@@ -4391,7 +4391,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_71,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_LEFT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_LEFT_ARC,
                 section: SECTION_N1T,
             },
             {
@@ -4411,7 +4411,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_67,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_ARC,
                 section: SECTION_N1T,
             },
             {
@@ -4426,7 +4426,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_64,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_ARC,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_ARC,
                 section: SECTION_N1T,
             },
             {
@@ -4436,7 +4436,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_62,
-                symbolClassId: SymbolClassId.WING_AGAINST_SCROLL_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_SCROLL_AND_ARC,
                 section: SECTION_N1T,
             },
             {
@@ -4451,7 +4451,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_59,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_RIGHT_ARC,
                 section: SECTION_N1T,
             },
             {
@@ -4471,27 +4471,27 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_55,
-                symbolClassId: SymbolClassId.WING_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_AND_RIGHT_ARC,
                 section: SECTION_N1T,
             },
             {
                 boundClassId: BoundClassId.MINA_54,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_RIGHT_ARC,
                 section: SECTION_N1T,
             },
             {
                 boundClassId: BoundClassId.MINA_53,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.WING_ANTITICK_AND_RIGHT_ARC,
                 section: SECTION_N1T,
             },
             {
                 boundClassId: BoundClassId.MINA_52,
-                symbolClassId: SymbolClassId.TICK_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTITICK_AND_RIGHT_ARC,
                 section: SECTION_N1T,
             },
             {
                 boundClassId: BoundClassId.MINA_51_SPLIT,
-                symbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_ANTITICK_AND_RIGHT_ARC,
                 section: SECTION_N1T,
             },
             {
@@ -4501,12 +4501,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_50,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL_AND_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_SCROLL_AND_BARB,
                 section: SECTION_N1T,
             },
             {
                 boundClassId: BoundClassId.MINA_49_SPLIT,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_LEFT_SCROLL_AND_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_LEFT_SCROLL_AND_BARB,
                 section: SECTION_N1T,
             },
             {
@@ -4521,7 +4521,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_47,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_SCROLL_AND_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_SCROLL_AND_BARB,
                 section: SECTION_N1T,
             },
             {
@@ -4541,12 +4541,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_43,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_BARB,
                 section: SECTION_N1T,
             },
             {
                 boundClassId: BoundClassId.MINA_42,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_LEFT_BARB,
                 section: SECTION_N1T,
             },
             {
@@ -4556,12 +4556,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_40,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_BARB,
                 section: SECTION_N1T,
             },
             {
                 boundClassId: BoundClassId.MINA_39,
-                symbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_ANTITICK_AND_LEFT_BARB,
                 section: SECTION_N1T,
             },
             {
@@ -4591,12 +4591,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_33,
-                symbolClassId: SymbolClassId.WING_AGAINST_RIGHT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTIWING_AND_RIGHT_BOATHOOK,
                 section: SECTION_N1T,
             },
             {
                 boundClassId: BoundClassId.MINA_32,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_RIGHT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_RIGHT_BOATHOOK,
                 section: SECTION_N1T,
             },
             {
@@ -4611,22 +4611,22 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_29,
-                symbolClassId: SymbolClassId.WING_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_BOATHOOK_AND_SCROLL,
                 section: SECTION_N1T,
             },
             {
                 boundClassId: BoundClassId.MINA_28,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIBIRD_BOATHOOK_AND_SCROLL,
                 section: SECTION_N1T,
             },
             {
                 boundClassId: BoundClassId.MINA_27,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.WING_ANTITICK_BOATHOOK_AND_SCROLL,
                 section: SECTION_N1T,
             },
             {
                 boundClassId: BoundClassId.MINA_26,
-                symbolClassId: SymbolClassId.TICK_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_BOATHOOK_AND_SCROLL,
                 section: SECTION_N1T,
             },
             {
@@ -4641,7 +4641,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_23,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_DOUBLE_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_DOUBLE_SCROLL,
                 section: SECTION_N1T,
             },
             {
@@ -4661,7 +4661,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_19,
-                symbolClassId: SymbolClassId.WING_AGAINST_DOUBLE_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_AND_DOUBLE_SCROLL,
                 section: SECTION_N1T,
             },
             {
@@ -4671,7 +4671,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_17,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_BOATHOOK,
                 section: SECTION_N1T,
             },
             {
@@ -4681,12 +4681,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_15,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_RIGHT_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_RIGHT_SCROLL,
                 section: SECTION_N1T,
             },
             {
                 boundClassId: BoundClassId.MINA_14,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_BOATHOOK,
                 section: SECTION_N1T,
             },
             {
@@ -4701,12 +4701,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_11,
-                symbolClassId: SymbolClassId.WING_AGAINST_RIGHT_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_AND_RIGHT_SCROLL,
                 section: SECTION_N1T,
             },
             {
                 boundClassId: BoundClassId.MINA_10,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_RIGHT_SCROLL,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_RIGHT_SCROLL,
                 section: SECTION_N1T,
             },
             {
@@ -4726,7 +4726,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_6,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_SCROLL,
                 section: SECTION_N1T,
             },
             {
@@ -4741,7 +4741,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_3,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_SCROLL,
                 section: SECTION_N1T,
             },
             {
@@ -4778,7 +4778,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_3,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_SCROLL,
                 section: SECTION_N2A,
             },
             {
@@ -4793,7 +4793,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_6,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_SCROLL,
                 section: SECTION_N2A,
             },
             {
@@ -4813,12 +4813,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_10,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_RIGHT_SCROLL,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_RIGHT_SCROLL,
                 section: SECTION_N2A,
             },
             {
                 boundClassId: BoundClassId.MINA_11,
-                symbolClassId: SymbolClassId.WING_AGAINST_RIGHT_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_AND_RIGHT_SCROLL,
                 section: SECTION_N2A,
             },
             {
@@ -4833,12 +4833,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_14,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_BOATHOOK,
                 section: SECTION_N2A,
             },
             {
                 boundClassId: BoundClassId.MINA_15,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_RIGHT_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_RIGHT_SCROLL,
                 section: SECTION_N2A,
             },
             {
@@ -4848,7 +4848,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_17,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_BOATHOOK,
                 section: SECTION_N2A,
             },
             {
@@ -4858,7 +4858,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_19,
-                symbolClassId: SymbolClassId.WING_AGAINST_DOUBLE_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_AND_DOUBLE_SCROLL,
                 section: SECTION_N2A,
             },
             {
@@ -4878,7 +4878,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_23,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_DOUBLE_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_DOUBLE_SCROLL,
                 section: SECTION_N2A,
             },
             {
@@ -4893,22 +4893,22 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_26,
-                symbolClassId: SymbolClassId.TICK_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_BOATHOOK_AND_SCROLL,
                 section: SECTION_N2A,
             },
             {
                 boundClassId: BoundClassId.MINA_27,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.WING_ANTITICK_BOATHOOK_AND_SCROLL,
                 section: SECTION_N2A,
             },
             {
                 boundClassId: BoundClassId.MINA_28,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIBIRD_BOATHOOK_AND_SCROLL,
                 section: SECTION_N2A,
             },
             {
                 boundClassId: BoundClassId.MINA_29,
-                symbolClassId: SymbolClassId.WING_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_BOATHOOK_AND_SCROLL,
                 section: SECTION_N2A,
             },
             {
@@ -4923,12 +4923,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_32,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_RIGHT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_RIGHT_BOATHOOK,
                 section: SECTION_N2A,
             },
             {
                 boundClassId: BoundClassId.MINA_33,
-                symbolClassId: SymbolClassId.WING_AGAINST_RIGHT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTIWING_AND_RIGHT_BOATHOOK,
                 section: SECTION_N2A,
             },
             {
@@ -4958,12 +4958,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_39,
-                symbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_ANTITICK_AND_LEFT_BARB,
                 section: SECTION_N2A,
             },
             {
                 boundClassId: BoundClassId.MINA_40,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_BARB,
                 section: SECTION_N2A,
             },
             {
@@ -4973,12 +4973,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_42,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_LEFT_BARB,
                 section: SECTION_N2A,
             },
             {
                 boundClassId: BoundClassId.MINA_43,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_BARB,
                 section: SECTION_N2A,
             },
             {
@@ -4998,7 +4998,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_47,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_SCROLL_AND_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_SCROLL_AND_BARB,
                 section: SECTION_N2A,
             },
             {
@@ -5013,12 +5013,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_49_SPLIT,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_LEFT_SCROLL_AND_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_LEFT_SCROLL_AND_BARB,
                 section: SECTION_N2A,
             },
             {
                 boundClassId: BoundClassId.MINA_50,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL_AND_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_SCROLL_AND_BARB,
                 section: SECTION_N2A,
             },
             {
@@ -5028,27 +5028,27 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_51_SPLIT,
-                symbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_ANTITICK_AND_RIGHT_ARC,
                 section: SECTION_N2A,
             },
             {
                 boundClassId: BoundClassId.MINA_52,
-                symbolClassId: SymbolClassId.TICK_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTITICK_AND_RIGHT_ARC,
                 section: SECTION_N2A,
             },
             {
                 boundClassId: BoundClassId.MINA_53,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.WING_ANTITICK_AND_RIGHT_ARC,
                 section: SECTION_N2A,
             },
             {
                 boundClassId: BoundClassId.MINA_54,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_RIGHT_ARC,
                 section: SECTION_N2A,
             },
             {
                 boundClassId: BoundClassId.MINA_55,
-                symbolClassId: SymbolClassId.WING_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_AND_RIGHT_ARC,
                 section: SECTION_N2A,
             },
             {
@@ -5068,7 +5068,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_59,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_RIGHT_ARC,
                 section: SECTION_N2A,
             },
             {
@@ -5083,7 +5083,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_62,
-                symbolClassId: SymbolClassId.WING_AGAINST_SCROLL_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_SCROLL_AND_ARC,
                 section: SECTION_N2A,
             },
             {
@@ -5093,7 +5093,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_64,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_ARC,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_ARC,
                 section: SECTION_N2A,
             },
             {
@@ -5108,7 +5108,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_67,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_ARC,
                 section: SECTION_N2A,
             },
             {
@@ -5128,7 +5128,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_71,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_LEFT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_LEFT_ARC,
                 section: SECTION_N2A,
             },
             {
@@ -5138,7 +5138,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_72_SPLIT,
-                symbolClassId: SymbolClassId.WING_AGAINST_BOATHOOK_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_BOATHOOK_AND_ARC,
                 section: SECTION_N2A,
             },
             {
@@ -5153,12 +5153,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_75,
-                symbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_ANTITICK_ARC_AND_SCROLL,
                 section: SECTION_N2A,
             },
             {
                 boundClassId: BoundClassId.MINA_76,
-                symbolClassId: SymbolClassId.TICK_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_ARC_AND_SCROLL,
                 section: SECTION_N2A,
             },
             {
@@ -5173,12 +5173,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_78_SPLIT,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIBIRD_ARC_AND_SCROLL,
                 section: SECTION_N2A,
             },
             {
                 boundClassId: BoundClassId.MINA_79,
-                symbolClassId: SymbolClassId.WING_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_ARC_AND_SCROLL,
                 section: SECTION_N2A,
             },
             {
@@ -5198,27 +5198,27 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_83,
-                symbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_ANTITICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_N2A,
             },
             {
                 boundClassId: BoundClassId.MINA_84,
-                symbolClassId: SymbolClassId.TICK_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_N2A,
             },
             {
                 boundClassId: BoundClassId.MINA_85,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.WING_ANTITICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_N2A,
             },
             {
                 boundClassId: BoundClassId.MINA_86,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_N2A,
             },
             {
                 boundClassId: BoundClassId.MINA_87,
-                symbolClassId: SymbolClassId.WING_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_N2A,
             },
             {
@@ -5238,7 +5238,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_91,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_N2A,
             },
             {
@@ -5248,12 +5248,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_93,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_LEFT_SCROLL_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_LEFT_SCROLL_DOUBLE_LEFT_BARB,
                 section: SECTION_N2A,
             },
             {
                 boundClassId: BoundClassId.MINA_94,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_SCROLL_DOUBLE_LEFT_BARB,
                 section: SECTION_N2A,
             },
             {
@@ -5273,12 +5273,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_98,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_BARB_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIBIRD_BARB_AND_ARC,
                 section: SECTION_N2A,
             },
             {
                 boundClassId: BoundClassId.MINA_99,
-                symbolClassId: SymbolClassId.WING_AGAINST_BARB_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_BARB_AND_ARC,
                 section: SECTION_N2A,
             },
             {
@@ -5298,7 +5298,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_103,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_BARB_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_BARB_AND_ARC,
                 section: SECTION_N2A,
             },
             {
@@ -5313,22 +5313,22 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_105_SPLIT,
-                symbolClassId: SymbolClassId.TICK_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_DOUBLE_BARB,
                 section: SECTION_N2A,
             },
             {
                 boundClassId: BoundClassId.MINA_106,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.WING_ANTITICK_AND_DOUBLE_BARB,
                 section: SECTION_N2A,
             },
             {
                 boundClassId: BoundClassId.MINA_107,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_DOUBLE_BARB,
                 section: SECTION_N2A,
             },
             {
                 boundClassId: BoundClassId.MINA_108,
-                symbolClassId: SymbolClassId.WING_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_DOUBLE_BARB,
                 section: SECTION_N2A,
             },
             {
@@ -5343,7 +5343,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_111,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_ARC_AND_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_ARC_AND_BARB,
                 section: SECTION_N2A,
             },
             {
@@ -5368,7 +5368,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_115,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL_AND_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_LEFT_SCROLL_AND_DOUBLE_BARB,
                 section: SECTION_N2A,
             },
             {
@@ -5385,7 +5385,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_115,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL_AND_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_LEFT_SCROLL_AND_DOUBLE_BARB,
                 section: SECTION_N2T,
             },
             {
@@ -5410,7 +5410,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_111,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_ARC_AND_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_ARC_AND_BARB,
                 section: SECTION_N2T,
             },
             {
@@ -5425,22 +5425,22 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_108,
-                symbolClassId: SymbolClassId.WING_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_DOUBLE_BARB,
                 section: SECTION_N2T,
             },
             {
                 boundClassId: BoundClassId.MINA_107,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_DOUBLE_BARB,
                 section: SECTION_N2T,
             },
             {
                 boundClassId: BoundClassId.MINA_106,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.WING_ANTITICK_AND_DOUBLE_BARB,
                 section: SECTION_N2T,
             },
             {
                 boundClassId: BoundClassId.MINA_105_SPLIT,
-                symbolClassId: SymbolClassId.TICK_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_DOUBLE_BARB,
                 section: SECTION_N2T,
             },
             {
@@ -5455,7 +5455,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_103,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_BARB_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_BARB_AND_ARC,
                 section: SECTION_N2T,
             },
             {
@@ -5475,12 +5475,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_99,
-                symbolClassId: SymbolClassId.WING_AGAINST_BARB_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_BARB_AND_ARC,
                 section: SECTION_N2T,
             },
             {
                 boundClassId: BoundClassId.MINA_98,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_BARB_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIBIRD_BARB_AND_ARC,
                 section: SECTION_N2T,
             },
             {
@@ -5500,12 +5500,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_94,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_SCROLL_DOUBLE_LEFT_BARB,
                 section: SECTION_N2T,
             },
             {
                 boundClassId: BoundClassId.MINA_93,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_LEFT_SCROLL_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_LEFT_SCROLL_DOUBLE_LEFT_BARB,
                 section: SECTION_N2T,
             },
             {
@@ -5515,7 +5515,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_91,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_N2T,
             },
             {
@@ -5535,27 +5535,27 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_87,
-                symbolClassId: SymbolClassId.WING_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_N2T,
             },
             {
                 boundClassId: BoundClassId.MINA_86,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_N2T,
             },
             {
                 boundClassId: BoundClassId.MINA_85,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.WING_ANTITICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_N2T,
             },
             {
                 boundClassId: BoundClassId.MINA_84,
-                symbolClassId: SymbolClassId.TICK_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_N2T,
             },
             {
                 boundClassId: BoundClassId.MINA_83,
-                symbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_ANTITICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_N2T,
             },
             {
@@ -5575,12 +5575,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_79,
-                symbolClassId: SymbolClassId.WING_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_ARC_AND_SCROLL,
                 section: SECTION_N2T,
             },
             {
                 boundClassId: BoundClassId.MINA_78_SPLIT,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIBIRD_ARC_AND_SCROLL,
                 section: SECTION_N2T,
             },
             {
@@ -5595,12 +5595,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_76,
-                symbolClassId: SymbolClassId.TICK_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_ARC_AND_SCROLL,
                 section: SECTION_N2T,
             },
             {
                 boundClassId: BoundClassId.MINA_75,
-                symbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_ANTITICK_ARC_AND_SCROLL,
                 section: SECTION_N2T,
             },
             {
@@ -5615,7 +5615,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_72_SPLIT,
-                symbolClassId: SymbolClassId.WING_AGAINST_BOATHOOK_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_BOATHOOK_AND_ARC,
                 section: SECTION_N2T,
             },
             {
@@ -5625,7 +5625,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_71,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_LEFT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_LEFT_ARC,
                 section: SECTION_N2T,
             },
             {
@@ -5645,7 +5645,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_67,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_ARC,
                 section: SECTION_N2T,
             },
             {
@@ -5660,7 +5660,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_64,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_ARC,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_ARC,
                 section: SECTION_N2T,
             },
             {
@@ -5670,7 +5670,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_62,
-                symbolClassId: SymbolClassId.WING_AGAINST_SCROLL_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_SCROLL_AND_ARC,
                 section: SECTION_N2T,
             },
             {
@@ -5685,7 +5685,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_59,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_RIGHT_ARC,
                 section: SECTION_N2T,
             },
             {
@@ -5705,27 +5705,27 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_55,
-                symbolClassId: SymbolClassId.WING_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_AND_RIGHT_ARC,
                 section: SECTION_N2T,
             },
             {
                 boundClassId: BoundClassId.MINA_54,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_RIGHT_ARC,
                 section: SECTION_N2T,
             },
             {
                 boundClassId: BoundClassId.MINA_53,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.WING_ANTITICK_AND_RIGHT_ARC,
                 section: SECTION_N2T,
             },
             {
                 boundClassId: BoundClassId.MINA_52,
-                symbolClassId: SymbolClassId.TICK_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTITICK_AND_RIGHT_ARC,
                 section: SECTION_N2T,
             },
             {
                 boundClassId: BoundClassId.MINA_51_SPLIT,
-                symbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_ANTITICK_AND_RIGHT_ARC,
                 section: SECTION_N2T,
             },
             {
@@ -5735,12 +5735,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_50,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL_AND_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_SCROLL_AND_BARB,
                 section: SECTION_N2T,
             },
             {
                 boundClassId: BoundClassId.MINA_49_SPLIT,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_LEFT_SCROLL_AND_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_LEFT_SCROLL_AND_BARB,
                 section: SECTION_N2T,
             },
             {
@@ -5755,7 +5755,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_47,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_SCROLL_AND_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_SCROLL_AND_BARB,
                 section: SECTION_N2T,
             },
             {
@@ -5775,12 +5775,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_43,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_BARB,
                 section: SECTION_N2T,
             },
             {
                 boundClassId: BoundClassId.MINA_42,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_LEFT_BARB,
                 section: SECTION_N2T,
             },
             {
@@ -5790,12 +5790,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_40,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_BARB,
                 section: SECTION_N2T,
             },
             {
                 boundClassId: BoundClassId.MINA_39,
-                symbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_ANTITICK_AND_LEFT_BARB,
                 section: SECTION_N2T,
             },
             {
@@ -5825,12 +5825,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_33,
-                symbolClassId: SymbolClassId.WING_AGAINST_RIGHT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTIWING_AND_RIGHT_BOATHOOK,
                 section: SECTION_N2T,
             },
             {
                 boundClassId: BoundClassId.MINA_32,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_RIGHT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_RIGHT_BOATHOOK,
                 section: SECTION_N2T,
             },
             {
@@ -5845,22 +5845,22 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_29,
-                symbolClassId: SymbolClassId.WING_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_BOATHOOK_AND_SCROLL,
                 section: SECTION_N2T,
             },
             {
                 boundClassId: BoundClassId.MINA_28,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIBIRD_BOATHOOK_AND_SCROLL,
                 section: SECTION_N2T,
             },
             {
                 boundClassId: BoundClassId.MINA_27,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.WING_ANTITICK_BOATHOOK_AND_SCROLL,
                 section: SECTION_N2T,
             },
             {
                 boundClassId: BoundClassId.MINA_26,
-                symbolClassId: SymbolClassId.TICK_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_BOATHOOK_AND_SCROLL,
                 section: SECTION_N2T,
             },
             {
@@ -5875,7 +5875,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_23,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_DOUBLE_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_DOUBLE_SCROLL,
                 section: SECTION_N2T,
             },
             {
@@ -5895,7 +5895,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_19,
-                symbolClassId: SymbolClassId.WING_AGAINST_DOUBLE_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_AND_DOUBLE_SCROLL,
                 section: SECTION_N2T,
             },
             {
@@ -5905,7 +5905,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_17,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_BOATHOOK,
                 section: SECTION_N2T,
             },
             {
@@ -5915,12 +5915,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_15,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_RIGHT_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_RIGHT_SCROLL,
                 section: SECTION_N2T,
             },
             {
                 boundClassId: BoundClassId.MINA_14,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_BOATHOOK,
                 section: SECTION_N2T,
             },
             {
@@ -5935,12 +5935,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_11,
-                symbolClassId: SymbolClassId.WING_AGAINST_RIGHT_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_AND_RIGHT_SCROLL,
                 section: SECTION_N2T,
             },
             {
                 boundClassId: BoundClassId.MINA_10,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_RIGHT_SCROLL,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_RIGHT_SCROLL,
                 section: SECTION_N2T,
             },
             {
@@ -5960,7 +5960,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_6,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_SCROLL,
                 section: SECTION_N2T,
             },
             {
@@ -5975,7 +5975,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_3,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_SCROLL,
                 section: SECTION_N2T,
             },
             {
@@ -6013,7 +6013,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_3,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_SCROLL,
                 section: SECTION_P1A,
             },
             {
@@ -6028,7 +6028,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_6,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_SCROLL,
                 section: SECTION_P1A,
             },
             {
@@ -6048,12 +6048,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_10,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_RIGHT_SCROLL,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_RIGHT_SCROLL,
                 section: SECTION_P1A,
             },
             {
                 boundClassId: BoundClassId.MINA_11,
-                symbolClassId: SymbolClassId.WING_AGAINST_RIGHT_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_AND_RIGHT_SCROLL,
                 section: SECTION_P1A,
             },
             {
@@ -6068,12 +6068,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_14,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_BOATHOOK,
                 section: SECTION_P1A,
             },
             {
                 boundClassId: BoundClassId.MINA_15,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_RIGHT_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_RIGHT_SCROLL,
                 section: SECTION_P1A,
             },
             {
@@ -6083,7 +6083,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_17,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_BOATHOOK,
                 section: SECTION_P1A,
             },
             {
@@ -6093,7 +6093,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_19,
-                symbolClassId: SymbolClassId.WING_AGAINST_DOUBLE_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_AND_DOUBLE_SCROLL,
                 section: SECTION_P1A,
             },
             {
@@ -6113,7 +6113,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_23,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_DOUBLE_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_DOUBLE_SCROLL,
                 section: SECTION_P1A,
             },
             {
@@ -6128,22 +6128,22 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_26,
-                symbolClassId: SymbolClassId.TICK_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_BOATHOOK_AND_SCROLL,
                 section: SECTION_P1A,
             },
             {
                 boundClassId: BoundClassId.MINA_27,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.WING_ANTITICK_BOATHOOK_AND_SCROLL,
                 section: SECTION_P1A,
             },
             {
                 boundClassId: BoundClassId.MINA_28,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIBIRD_BOATHOOK_AND_SCROLL,
                 section: SECTION_P1A,
             },
             {
                 boundClassId: BoundClassId.MINA_29,
-                symbolClassId: SymbolClassId.WING_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_BOATHOOK_AND_SCROLL,
                 section: SECTION_P1A,
             },
             {
@@ -6158,12 +6158,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_32,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_RIGHT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_RIGHT_BOATHOOK,
                 section: SECTION_P1A,
             },
             {
                 boundClassId: BoundClassId.MINA_33,
-                symbolClassId: SymbolClassId.WING_AGAINST_RIGHT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTIWING_AND_RIGHT_BOATHOOK,
                 section: SECTION_P1A,
             },
             {
@@ -6193,12 +6193,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_39,
-                symbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_ANTITICK_AND_LEFT_BARB,
                 section: SECTION_P1A,
             },
             {
                 boundClassId: BoundClassId.MINA_40,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_BARB,
                 section: SECTION_P1A,
             },
             {
@@ -6208,12 +6208,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_42,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_LEFT_BARB,
                 section: SECTION_P1A,
             },
             {
                 boundClassId: BoundClassId.MINA_43,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_BARB,
                 section: SECTION_P1A,
             },
             {
@@ -6233,7 +6233,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_47,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_SCROLL_AND_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_SCROLL_AND_BARB,
                 section: SECTION_P1A,
             },
             {
@@ -6248,12 +6248,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_49_SPLIT,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_LEFT_SCROLL_AND_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_LEFT_SCROLL_AND_BARB,
                 section: SECTION_P1A,
             },
             {
                 boundClassId: BoundClassId.MINA_50,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL_AND_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_SCROLL_AND_BARB,
                 section: SECTION_P1A,
             },
             {
@@ -6263,27 +6263,27 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_51_SPLIT,
-                symbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_ANTITICK_AND_RIGHT_ARC,
                 section: SECTION_P1A,
             },
             {
                 boundClassId: BoundClassId.MINA_52,
-                symbolClassId: SymbolClassId.TICK_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTITICK_AND_RIGHT_ARC,
                 section: SECTION_P1A,
             },
             {
                 boundClassId: BoundClassId.MINA_53,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.WING_ANTITICK_AND_RIGHT_ARC,
                 section: SECTION_P1A,
             },
             {
                 boundClassId: BoundClassId.MINA_54,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_RIGHT_ARC,
                 section: SECTION_P1A,
             },
             {
                 boundClassId: BoundClassId.MINA_55,
-                symbolClassId: SymbolClassId.WING_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_AND_RIGHT_ARC,
                 section: SECTION_P1A,
             },
             {
@@ -6303,7 +6303,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_59,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_RIGHT_ARC,
                 section: SECTION_P1A,
             },
             {
@@ -6318,7 +6318,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_62,
-                symbolClassId: SymbolClassId.WING_AGAINST_SCROLL_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_SCROLL_AND_ARC,
                 section: SECTION_P1A,
             },
             {
@@ -6328,7 +6328,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_64,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_ARC,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_ARC,
                 section: SECTION_P1A,
             },
             {
@@ -6343,7 +6343,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_67,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_ARC,
                 section: SECTION_P1A,
             },
             {
@@ -6363,7 +6363,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_71,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_LEFT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_LEFT_ARC,
                 section: SECTION_P1A,
             },
             {
@@ -6373,7 +6373,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_72_SPLIT,
-                symbolClassId: SymbolClassId.WING_AGAINST_BOATHOOK_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_BOATHOOK_AND_ARC,
                 section: SECTION_P1A,
             },
             {
@@ -6388,12 +6388,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_75,
-                symbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_ANTITICK_ARC_AND_SCROLL,
                 section: SECTION_P1A,
             },
             {
                 boundClassId: BoundClassId.MINA_76,
-                symbolClassId: SymbolClassId.TICK_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_ARC_AND_SCROLL,
                 section: SECTION_P1A,
             },
             {
@@ -6408,12 +6408,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_78_SPLIT,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIBIRD_ARC_AND_SCROLL,
                 section: SECTION_P1A,
             },
             {
                 boundClassId: BoundClassId.MINA_79,
-                symbolClassId: SymbolClassId.WING_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_ARC_AND_SCROLL,
                 section: SECTION_P1A,
             },
             {
@@ -6433,27 +6433,27 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_83,
-                symbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_ANTITICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_P1A,
             },
             {
                 boundClassId: BoundClassId.MINA_84,
-                symbolClassId: SymbolClassId.TICK_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_P1A,
             },
             {
                 boundClassId: BoundClassId.MINA_85,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.WING_ANTITICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_P1A,
             },
             {
                 boundClassId: BoundClassId.MINA_86,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_P1A,
             },
             {
                 boundClassId: BoundClassId.MINA_87,
-                symbolClassId: SymbolClassId.WING_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_P1A,
             },
             {
@@ -6473,7 +6473,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_91,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_P1A,
             },
             {
@@ -6483,12 +6483,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_93,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_LEFT_SCROLL_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_LEFT_SCROLL_DOUBLE_LEFT_BARB,
                 section: SECTION_P1A,
             },
             {
                 boundClassId: BoundClassId.MINA_94,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_SCROLL_DOUBLE_LEFT_BARB,
                 section: SECTION_P1A,
             },
             {
@@ -6508,12 +6508,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_98,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_BARB_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIBIRD_BARB_AND_ARC,
                 section: SECTION_P1A,
             },
             {
                 boundClassId: BoundClassId.MINA_99,
-                symbolClassId: SymbolClassId.WING_AGAINST_BARB_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_BARB_AND_ARC,
                 section: SECTION_P1A,
             },
             {
@@ -6533,7 +6533,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_103,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_BARB_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_BARB_AND_ARC,
                 section: SECTION_P1A,
             },
             {
@@ -6548,22 +6548,22 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_105_SPLIT,
-                symbolClassId: SymbolClassId.TICK_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_DOUBLE_BARB,
                 section: SECTION_P1A,
             },
             {
                 boundClassId: BoundClassId.MINA_106,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.WING_ANTITICK_AND_DOUBLE_BARB,
                 section: SECTION_P1A,
             },
             {
                 boundClassId: BoundClassId.MINA_107,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_DOUBLE_BARB,
                 section: SECTION_P1A,
             },
             {
                 boundClassId: BoundClassId.MINA_108,
-                symbolClassId: SymbolClassId.WING_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_DOUBLE_BARB,
                 section: SECTION_P1A,
             },
             {
@@ -6578,7 +6578,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_111,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_ARC_AND_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_ARC_AND_BARB,
                 section: SECTION_P1A,
             },
             {
@@ -6603,7 +6603,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_115,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL_AND_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_LEFT_SCROLL_AND_DOUBLE_BARB,
                 section: SECTION_P1A,
             },
             {
@@ -6620,7 +6620,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_115,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL_AND_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_LEFT_SCROLL_AND_DOUBLE_BARB,
                 section: SECTION_P1T,
             },
             {
@@ -6645,7 +6645,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_111,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_ARC_AND_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_ARC_AND_BARB,
                 section: SECTION_P1T,
             },
             {
@@ -6660,22 +6660,22 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_108,
-                symbolClassId: SymbolClassId.WING_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_DOUBLE_BARB,
                 section: SECTION_P1T,
             },
             {
                 boundClassId: BoundClassId.MINA_107,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_DOUBLE_BARB,
                 section: SECTION_P1T,
             },
             {
                 boundClassId: BoundClassId.MINA_106,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.WING_ANTITICK_AND_DOUBLE_BARB,
                 section: SECTION_P1T,
             },
             {
                 boundClassId: BoundClassId.MINA_105_SPLIT,
-                symbolClassId: SymbolClassId.TICK_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_DOUBLE_BARB,
                 section: SECTION_P1T,
             },
             {
@@ -6690,7 +6690,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_103,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_BARB_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_BARB_AND_ARC,
                 section: SECTION_P1T,
             },
             {
@@ -6710,12 +6710,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_99,
-                symbolClassId: SymbolClassId.WING_AGAINST_BARB_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_BARB_AND_ARC,
                 section: SECTION_P1T,
             },
             {
                 boundClassId: BoundClassId.MINA_98,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_BARB_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIBIRD_BARB_AND_ARC,
                 section: SECTION_P1T,
             },
             {
@@ -6735,12 +6735,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_94,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_SCROLL_DOUBLE_LEFT_BARB,
                 section: SECTION_P1T,
             },
             {
                 boundClassId: BoundClassId.MINA_93,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_LEFT_SCROLL_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_LEFT_SCROLL_DOUBLE_LEFT_BARB,
                 section: SECTION_P1T,
             },
             {
@@ -6750,7 +6750,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_91,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_P1T,
             },
             {
@@ -6770,27 +6770,27 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_87,
-                symbolClassId: SymbolClassId.WING_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_P1T,
             },
             {
                 boundClassId: BoundClassId.MINA_86,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_P1T,
             },
             {
                 boundClassId: BoundClassId.MINA_85,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.WING_ANTITICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_P1T,
             },
             {
                 boundClassId: BoundClassId.MINA_84,
-                symbolClassId: SymbolClassId.TICK_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_P1T,
             },
             {
                 boundClassId: BoundClassId.MINA_83,
-                symbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_ANTITICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_P1T,
             },
             {
@@ -6810,12 +6810,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_79,
-                symbolClassId: SymbolClassId.WING_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_ARC_AND_SCROLL,
                 section: SECTION_P1T,
             },
             {
                 boundClassId: BoundClassId.MINA_78_SPLIT,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIBIRD_ARC_AND_SCROLL,
                 section: SECTION_P1T,
             },
             {
@@ -6830,12 +6830,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_76,
-                symbolClassId: SymbolClassId.TICK_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_ARC_AND_SCROLL,
                 section: SECTION_P1T,
             },
             {
                 boundClassId: BoundClassId.MINA_75,
-                symbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_ANTITICK_ARC_AND_SCROLL,
                 section: SECTION_P1T,
             },
             {
@@ -6850,7 +6850,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_72_SPLIT,
-                symbolClassId: SymbolClassId.WING_AGAINST_BOATHOOK_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_BOATHOOK_AND_ARC,
                 section: SECTION_P1T,
             },
             {
@@ -6860,7 +6860,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_71,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_LEFT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_LEFT_ARC,
                 section: SECTION_P1T,
             },
             {
@@ -6880,7 +6880,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_67,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_ARC,
                 section: SECTION_P1T,
             },
             {
@@ -6895,7 +6895,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_64,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_ARC,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_ARC,
                 section: SECTION_P1T,
             },
             {
@@ -6905,7 +6905,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_62,
-                symbolClassId: SymbolClassId.WING_AGAINST_SCROLL_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_SCROLL_AND_ARC,
                 section: SECTION_P1T,
             },
             {
@@ -6920,7 +6920,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_59,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_RIGHT_ARC,
                 section: SECTION_P1T,
             },
             {
@@ -6940,27 +6940,27 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_55,
-                symbolClassId: SymbolClassId.WING_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_AND_RIGHT_ARC,
                 section: SECTION_P1T,
             },
             {
                 boundClassId: BoundClassId.MINA_54,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_RIGHT_ARC,
                 section: SECTION_P1T,
             },
             {
                 boundClassId: BoundClassId.MINA_53,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.WING_ANTITICK_AND_RIGHT_ARC,
                 section: SECTION_P1T,
             },
             {
                 boundClassId: BoundClassId.MINA_52,
-                symbolClassId: SymbolClassId.TICK_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTITICK_AND_RIGHT_ARC,
                 section: SECTION_P1T,
             },
             {
                 boundClassId: BoundClassId.MINA_51_SPLIT,
-                symbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_ANTITICK_AND_RIGHT_ARC,
                 section: SECTION_P1T,
             },
             {
@@ -6970,12 +6970,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_50,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL_AND_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_SCROLL_AND_BARB,
                 section: SECTION_P1T,
             },
             {
                 boundClassId: BoundClassId.MINA_49_SPLIT,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_LEFT_SCROLL_AND_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_LEFT_SCROLL_AND_BARB,
                 section: SECTION_P1T,
             },
             {
@@ -6990,7 +6990,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_47,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_SCROLL_AND_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_SCROLL_AND_BARB,
                 section: SECTION_P1T,
             },
             {
@@ -7010,12 +7010,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_43,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_BARB,
                 section: SECTION_P1T,
             },
             {
                 boundClassId: BoundClassId.MINA_42,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_LEFT_BARB,
                 section: SECTION_P1T,
             },
             {
@@ -7025,12 +7025,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_40,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_BARB,
                 section: SECTION_P1T,
             },
             {
                 boundClassId: BoundClassId.MINA_39,
-                symbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_ANTITICK_AND_LEFT_BARB,
                 section: SECTION_P1T,
             },
             {
@@ -7060,12 +7060,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_33,
-                symbolClassId: SymbolClassId.WING_AGAINST_RIGHT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTIWING_AND_RIGHT_BOATHOOK,
                 section: SECTION_P1T,
             },
             {
                 boundClassId: BoundClassId.MINA_32,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_RIGHT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_RIGHT_BOATHOOK,
                 section: SECTION_P1T,
             },
             {
@@ -7080,22 +7080,22 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_29,
-                symbolClassId: SymbolClassId.WING_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_BOATHOOK_AND_SCROLL,
                 section: SECTION_P1T,
             },
             {
                 boundClassId: BoundClassId.MINA_28,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIBIRD_BOATHOOK_AND_SCROLL,
                 section: SECTION_P1T,
             },
             {
                 boundClassId: BoundClassId.MINA_27,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.WING_ANTITICK_BOATHOOK_AND_SCROLL,
                 section: SECTION_P1T,
             },
             {
                 boundClassId: BoundClassId.MINA_26,
-                symbolClassId: SymbolClassId.TICK_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_BOATHOOK_AND_SCROLL,
                 section: SECTION_P1T,
             },
             {
@@ -7110,7 +7110,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_23,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_DOUBLE_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_DOUBLE_SCROLL,
                 section: SECTION_P1T,
             },
             {
@@ -7130,7 +7130,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_19,
-                symbolClassId: SymbolClassId.WING_AGAINST_DOUBLE_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_AND_DOUBLE_SCROLL,
                 section: SECTION_P1T,
             },
             {
@@ -7140,7 +7140,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_17,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_BOATHOOK,
                 section: SECTION_P1T,
             },
             {
@@ -7150,12 +7150,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_15,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_RIGHT_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_RIGHT_SCROLL,
                 section: SECTION_P1T,
             },
             {
                 boundClassId: BoundClassId.MINA_14,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_BOATHOOK,
                 section: SECTION_P1T,
             },
             {
@@ -7170,12 +7170,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_11,
-                symbolClassId: SymbolClassId.WING_AGAINST_RIGHT_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_AND_RIGHT_SCROLL,
                 section: SECTION_P1T,
             },
             {
                 boundClassId: BoundClassId.MINA_10,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_RIGHT_SCROLL,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_RIGHT_SCROLL,
                 section: SECTION_P1T,
             },
             {
@@ -7195,7 +7195,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_6,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_SCROLL,
                 section: SECTION_P1T,
             },
             {
@@ -7210,7 +7210,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_3,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_SCROLL,
                 section: SECTION_P1T,
             },
             {
@@ -7247,7 +7247,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_3,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_SCROLL,
                 section: SECTION_P2A,
             },
             {
@@ -7262,7 +7262,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_6,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_SCROLL,
                 section: SECTION_P2A,
             },
             {
@@ -7282,12 +7282,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_10,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_RIGHT_SCROLL,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_RIGHT_SCROLL,
                 section: SECTION_P2A,
             },
             {
                 boundClassId: BoundClassId.MINA_11,
-                symbolClassId: SymbolClassId.WING_AGAINST_RIGHT_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_AND_RIGHT_SCROLL,
                 section: SECTION_P2A,
             },
             {
@@ -7302,12 +7302,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_14,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_BOATHOOK,
                 section: SECTION_P2A,
             },
             {
                 boundClassId: BoundClassId.MINA_15,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_RIGHT_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_RIGHT_SCROLL,
                 section: SECTION_P2A,
             },
             {
@@ -7317,7 +7317,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_17,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_BOATHOOK,
                 section: SECTION_P2A,
             },
             {
@@ -7327,7 +7327,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_19,
-                symbolClassId: SymbolClassId.WING_AGAINST_DOUBLE_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_AND_DOUBLE_SCROLL,
                 section: SECTION_P2A,
             },
             {
@@ -7347,7 +7347,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_23,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_DOUBLE_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_DOUBLE_SCROLL,
                 section: SECTION_P2A,
             },
             {
@@ -7362,22 +7362,22 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_26,
-                symbolClassId: SymbolClassId.TICK_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_BOATHOOK_AND_SCROLL,
                 section: SECTION_P2A,
             },
             {
                 boundClassId: BoundClassId.MINA_27,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.WING_ANTITICK_BOATHOOK_AND_SCROLL,
                 section: SECTION_P2A,
             },
             {
                 boundClassId: BoundClassId.MINA_28,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIBIRD_BOATHOOK_AND_SCROLL,
                 section: SECTION_P2A,
             },
             {
                 boundClassId: BoundClassId.MINA_29,
-                symbolClassId: SymbolClassId.WING_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_BOATHOOK_AND_SCROLL,
                 section: SECTION_P2A,
             },
             {
@@ -7392,12 +7392,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_32,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_RIGHT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_RIGHT_BOATHOOK,
                 section: SECTION_P2A,
             },
             {
                 boundClassId: BoundClassId.MINA_33,
-                symbolClassId: SymbolClassId.WING_AGAINST_RIGHT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTIWING_AND_RIGHT_BOATHOOK,
                 section: SECTION_P2A,
             },
             {
@@ -7427,12 +7427,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_39,
-                symbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_ANTITICK_AND_LEFT_BARB,
                 section: SECTION_P2A,
             },
             {
                 boundClassId: BoundClassId.MINA_40,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_BARB,
                 section: SECTION_P2A,
             },
             {
@@ -7442,12 +7442,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_42,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_LEFT_BARB,
                 section: SECTION_P2A,
             },
             {
                 boundClassId: BoundClassId.MINA_43,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_BARB,
                 section: SECTION_P2A,
             },
             {
@@ -7467,7 +7467,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_47,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_SCROLL_AND_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_SCROLL_AND_BARB,
                 section: SECTION_P2A,
             },
             {
@@ -7482,12 +7482,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_49_SPLIT,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_LEFT_SCROLL_AND_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_LEFT_SCROLL_AND_BARB,
                 section: SECTION_P2A,
             },
             {
                 boundClassId: BoundClassId.MINA_50,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL_AND_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_SCROLL_AND_BARB,
                 section: SECTION_P2A,
             },
             {
@@ -7497,27 +7497,27 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_51_SPLIT,
-                symbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_ANTITICK_AND_RIGHT_ARC,
                 section: SECTION_P2A,
             },
             {
                 boundClassId: BoundClassId.MINA_52,
-                symbolClassId: SymbolClassId.TICK_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTITICK_AND_RIGHT_ARC,
                 section: SECTION_P2A,
             },
             {
                 boundClassId: BoundClassId.MINA_53,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.WING_ANTITICK_AND_RIGHT_ARC,
                 section: SECTION_P2A,
             },
             {
                 boundClassId: BoundClassId.MINA_54,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_RIGHT_ARC,
                 section: SECTION_P2A,
             },
             {
                 boundClassId: BoundClassId.MINA_55,
-                symbolClassId: SymbolClassId.WING_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_AND_RIGHT_ARC,
                 section: SECTION_P2A,
             },
             {
@@ -7537,7 +7537,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_59,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_RIGHT_ARC,
                 section: SECTION_P2A,
             },
             {
@@ -7552,7 +7552,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_62,
-                symbolClassId: SymbolClassId.WING_AGAINST_SCROLL_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_SCROLL_AND_ARC,
                 section: SECTION_P2A,
             },
             {
@@ -7562,7 +7562,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_64,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_ARC,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_ARC,
                 section: SECTION_P2A,
             },
             {
@@ -7577,7 +7577,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_67,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_ARC,
                 section: SECTION_P2A,
             },
             {
@@ -7597,7 +7597,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_71,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_LEFT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_LEFT_ARC,
                 section: SECTION_P2A,
             },
             {
@@ -7607,7 +7607,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_72_SPLIT,
-                symbolClassId: SymbolClassId.WING_AGAINST_BOATHOOK_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_BOATHOOK_AND_ARC,
                 section: SECTION_P2A,
             },
             {
@@ -7622,12 +7622,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_75,
-                symbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_ANTITICK_ARC_AND_SCROLL,
                 section: SECTION_P2A,
             },
             {
                 boundClassId: BoundClassId.MINA_76,
-                symbolClassId: SymbolClassId.TICK_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_ARC_AND_SCROLL,
                 section: SECTION_P2A,
             },
             {
@@ -7642,12 +7642,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_78_SPLIT,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIBIRD_ARC_AND_SCROLL,
                 section: SECTION_P2A,
             },
             {
                 boundClassId: BoundClassId.MINA_79,
-                symbolClassId: SymbolClassId.WING_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_ARC_AND_SCROLL,
                 section: SECTION_P2A,
             },
             {
@@ -7667,27 +7667,27 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_83,
-                symbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_ANTITICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_P2A,
             },
             {
                 boundClassId: BoundClassId.MINA_84,
-                symbolClassId: SymbolClassId.TICK_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_P2A,
             },
             {
                 boundClassId: BoundClassId.MINA_85,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.WING_ANTITICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_P2A,
             },
             {
                 boundClassId: BoundClassId.MINA_86,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_P2A,
             },
             {
                 boundClassId: BoundClassId.MINA_87,
-                symbolClassId: SymbolClassId.WING_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_P2A,
             },
             {
@@ -7707,7 +7707,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_91,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_P2A,
             },
             {
@@ -7717,12 +7717,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_93,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_LEFT_SCROLL_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_LEFT_SCROLL_DOUBLE_LEFT_BARB,
                 section: SECTION_P2A,
             },
             {
                 boundClassId: BoundClassId.MINA_94,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_SCROLL_DOUBLE_LEFT_BARB,
                 section: SECTION_P2A,
             },
             {
@@ -7742,12 +7742,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_98,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_BARB_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIBIRD_BARB_AND_ARC,
                 section: SECTION_P2A,
             },
             {
                 boundClassId: BoundClassId.MINA_99,
-                symbolClassId: SymbolClassId.WING_AGAINST_BARB_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_BARB_AND_ARC,
                 section: SECTION_P2A,
             },
             {
@@ -7767,7 +7767,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_103,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_BARB_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_BARB_AND_ARC,
                 section: SECTION_P2A,
             },
             {
@@ -7782,22 +7782,22 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_105_SPLIT,
-                symbolClassId: SymbolClassId.TICK_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_DOUBLE_BARB,
                 section: SECTION_P2A,
             },
             {
                 boundClassId: BoundClassId.MINA_106,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.WING_ANTITICK_AND_DOUBLE_BARB,
                 section: SECTION_P2A,
             },
             {
                 boundClassId: BoundClassId.MINA_107,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_DOUBLE_BARB,
                 section: SECTION_P2A,
             },
             {
                 boundClassId: BoundClassId.MINA_108,
-                symbolClassId: SymbolClassId.WING_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_DOUBLE_BARB,
                 section: SECTION_P2A,
             },
             {
@@ -7812,7 +7812,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_111,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_ARC_AND_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_ARC_AND_BARB,
                 section: SECTION_P2A,
             },
             {
@@ -7837,7 +7837,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_115,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL_AND_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_LEFT_SCROLL_AND_DOUBLE_BARB,
                 section: SECTION_P2A,
             },
             {
@@ -7854,7 +7854,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_115,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL_AND_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_LEFT_SCROLL_AND_DOUBLE_BARB,
                 section: SECTION_P2T,
             },
             {
@@ -7879,7 +7879,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_111,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_ARC_AND_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_ARC_AND_BARB,
                 section: SECTION_P2T,
             },
             {
@@ -7894,22 +7894,22 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_108,
-                symbolClassId: SymbolClassId.WING_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_DOUBLE_BARB,
                 section: SECTION_P2T,
             },
             {
                 boundClassId: BoundClassId.MINA_107,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_DOUBLE_BARB,
                 section: SECTION_P2T,
             },
             {
                 boundClassId: BoundClassId.MINA_106,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.WING_ANTITICK_AND_DOUBLE_BARB,
                 section: SECTION_P2T,
             },
             {
                 boundClassId: BoundClassId.MINA_105_SPLIT,
-                symbolClassId: SymbolClassId.TICK_AGAINST_DOUBLE_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_DOUBLE_BARB,
                 section: SECTION_P2T,
             },
             {
@@ -7924,7 +7924,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_103,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_BARB_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_BARB_AND_ARC,
                 section: SECTION_P2T,
             },
             {
@@ -7944,12 +7944,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_99,
-                symbolClassId: SymbolClassId.WING_AGAINST_BARB_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_BARB_AND_ARC,
                 section: SECTION_P2T,
             },
             {
                 boundClassId: BoundClassId.MINA_98,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_BARB_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIBIRD_BARB_AND_ARC,
                 section: SECTION_P2T,
             },
             {
@@ -7969,12 +7969,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_94,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_SCROLL_DOUBLE_LEFT_BARB,
                 section: SECTION_P2T,
             },
             {
                 boundClassId: BoundClassId.MINA_93,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_LEFT_SCROLL_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_LEFT_SCROLL_DOUBLE_LEFT_BARB,
                 section: SECTION_P2T,
             },
             {
@@ -7984,7 +7984,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_91,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_P2T,
             },
             {
@@ -8004,27 +8004,27 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_87,
-                symbolClassId: SymbolClassId.WING_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_P2T,
             },
             {
                 boundClassId: BoundClassId.MINA_86,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_P2T,
             },
             {
                 boundClassId: BoundClassId.MINA_85,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.WING_ANTITICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_P2T,
             },
             {
                 boundClassId: BoundClassId.MINA_84,
-                symbolClassId: SymbolClassId.TICK_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_P2T,
             },
             {
                 boundClassId: BoundClassId.MINA_83,
-                symbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_DOUBLE_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_ANTITICK_AND_DOUBLE_LEFT_BARB,
                 section: SECTION_P2T,
             },
             {
@@ -8044,12 +8044,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_79,
-                symbolClassId: SymbolClassId.WING_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_ARC_AND_SCROLL,
                 section: SECTION_P2T,
             },
             {
                 boundClassId: BoundClassId.MINA_78_SPLIT,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIBIRD_ARC_AND_SCROLL,
                 section: SECTION_P2T,
             },
             {
@@ -8064,12 +8064,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_76,
-                symbolClassId: SymbolClassId.TICK_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_ARC_AND_SCROLL,
                 section: SECTION_P2T,
             },
             {
                 boundClassId: BoundClassId.MINA_75,
-                symbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_ARC_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_ANTITICK_ARC_AND_SCROLL,
                 section: SECTION_P2T,
             },
             {
@@ -8084,7 +8084,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_72_SPLIT,
-                symbolClassId: SymbolClassId.WING_AGAINST_BOATHOOK_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_BOATHOOK_AND_ARC,
                 section: SECTION_P2T,
             },
             {
@@ -8094,7 +8094,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_71,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_LEFT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_LEFT_ARC,
                 section: SECTION_P2T,
             },
             {
@@ -8114,7 +8114,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_67,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_ARC,
                 section: SECTION_P2T,
             },
             {
@@ -8129,7 +8129,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_64,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_ARC,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_ARC,
                 section: SECTION_P2T,
             },
             {
@@ -8139,7 +8139,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_62,
-                symbolClassId: SymbolClassId.WING_AGAINST_SCROLL_AND_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_SCROLL_AND_ARC,
                 section: SECTION_P2T,
             },
             {
@@ -8154,7 +8154,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_59,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_RIGHT_ARC,
                 section: SECTION_P2T,
             },
             {
@@ -8174,27 +8174,27 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_55,
-                symbolClassId: SymbolClassId.WING_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_AND_RIGHT_ARC,
                 section: SECTION_P2T,
             },
             {
                 boundClassId: BoundClassId.MINA_54,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_RIGHT_ARC,
                 section: SECTION_P2T,
             },
             {
                 boundClassId: BoundClassId.MINA_53,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.WING_ANTITICK_AND_RIGHT_ARC,
                 section: SECTION_P2T,
             },
             {
                 boundClassId: BoundClassId.MINA_52,
-                symbolClassId: SymbolClassId.TICK_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTITICK_AND_RIGHT_ARC,
                 section: SECTION_P2T,
             },
             {
                 boundClassId: BoundClassId.MINA_51_SPLIT,
-                symbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_RIGHT_ARC,
+                symbolClassId: SymbolClassId.ANTIWING_ANTITICK_AND_RIGHT_ARC,
                 section: SECTION_P2T,
             },
             {
@@ -8204,12 +8204,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_50,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL_AND_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_SCROLL_AND_BARB,
                 section: SECTION_P2T,
             },
             {
                 boundClassId: BoundClassId.MINA_49_SPLIT,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_LEFT_SCROLL_AND_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_LEFT_SCROLL_AND_BARB,
                 section: SECTION_P2T,
             },
             {
@@ -8224,7 +8224,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_47,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_SCROLL_AND_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_SCROLL_AND_BARB,
                 section: SECTION_P2T,
             },
             {
@@ -8244,12 +8244,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_43,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_BARB,
                 section: SECTION_P2T,
             },
             {
                 boundClassId: BoundClassId.MINA_42,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_LEFT_BARB,
                 section: SECTION_P2T,
             },
             {
@@ -8259,12 +8259,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_40,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_BARB,
                 section: SECTION_P2T,
             },
             {
                 boundClassId: BoundClassId.MINA_39,
-                symbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_LEFT_BARB,
+                symbolClassId: SymbolClassId.ANTIWING_ANTITICK_AND_LEFT_BARB,
                 section: SECTION_P2T,
             },
             {
@@ -8294,12 +8294,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_33,
-                symbolClassId: SymbolClassId.WING_AGAINST_RIGHT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTIWING_AND_RIGHT_BOATHOOK,
                 section: SECTION_P2T,
             },
             {
                 boundClassId: BoundClassId.MINA_32,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_RIGHT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_RIGHT_BOATHOOK,
                 section: SECTION_P2T,
             },
             {
@@ -8314,22 +8314,22 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_29,
-                symbolClassId: SymbolClassId.WING_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_BOATHOOK_AND_SCROLL,
                 section: SECTION_P2T,
             },
             {
                 boundClassId: BoundClassId.MINA_28,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTIBIRD_BOATHOOK_AND_SCROLL,
                 section: SECTION_P2T,
             },
             {
                 boundClassId: BoundClassId.MINA_27,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.WING_ANTITICK_BOATHOOK_AND_SCROLL,
                 section: SECTION_P2T,
             },
             {
                 boundClassId: BoundClassId.MINA_26,
-                symbolClassId: SymbolClassId.TICK_AGAINST_BOATHOOK_AND_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_BOATHOOK_AND_SCROLL,
                 section: SECTION_P2T,
             },
             {
@@ -8344,7 +8344,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_23,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_DOUBLE_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_DOUBLE_SCROLL,
                 section: SECTION_P2T,
             },
             {
@@ -8364,7 +8364,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_19,
-                symbolClassId: SymbolClassId.WING_AGAINST_DOUBLE_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_AND_DOUBLE_SCROLL,
                 section: SECTION_P2T,
             },
             {
@@ -8374,7 +8374,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_17,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_BOATHOOK,
                 section: SECTION_P2T,
             },
             {
@@ -8384,12 +8384,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_15,
-                symbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_RIGHT_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_TICK_AND_RIGHT_SCROLL,
                 section: SECTION_P2T,
             },
             {
                 boundClassId: BoundClassId.MINA_14,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_BOATHOOK,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_BOATHOOK,
                 section: SECTION_P2T,
             },
             {
@@ -8404,12 +8404,12 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_11,
-                symbolClassId: SymbolClassId.WING_AGAINST_RIGHT_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_AND_RIGHT_SCROLL,
                 section: SECTION_P2T,
             },
             {
                 boundClassId: BoundClassId.MINA_10,
-                symbolClassId: SymbolClassId.BIRD_AGAINST_RIGHT_SCROLL,
+                symbolClassId: SymbolClassId.ANTIBIRD_AND_RIGHT_SCROLL,
                 section: SECTION_P2T,
             },
             {
@@ -8429,7 +8429,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_6,
-                symbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL,
+                symbolClassId: SymbolClassId.ANTIWING_AND_LEFT_SCROLL,
                 section: SECTION_P2T,
             },
             {
@@ -8444,7 +8444,7 @@ describe("computeCaptureZones", (): void => {
             },
             {
                 boundClassId: BoundClassId.MINA_3,
-                symbolClassId: SymbolClassId.TICK_AGAINST_LEFT_SCROLL,
+                symbolClassId: SymbolClassId.ANTITICK_AND_LEFT_SCROLL,
                 section: SECTION_P2T,
             },
             {

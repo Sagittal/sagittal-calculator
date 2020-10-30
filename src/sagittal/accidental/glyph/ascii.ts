@@ -96,8 +96,8 @@ const computeCoreAscii = ({down, shafts, left, right}: Core): Ascii => {
 const computeCompatibleAscii = (compatible: Compatible): Ascii =>
     COMPATIBLE_TO_ASCII_MAP[compatible]
 
-const computeAccentAscii = ({id, against}: Accent, down?: boolean): Ascii =>
-    against ?
+const computeAccentAscii = ({id, anti}: Accent, down?: boolean): Ascii =>
+    anti ?
         down ?
             ACCENT_TO_ASCII_MAP[id] :
             DOWN_ACCENT_TO_ASCII_MAP[id] :

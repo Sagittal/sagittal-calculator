@@ -1,26 +1,26 @@
 import {AccentId, Arm, ArmId} from "./types"
 
-const getArm = (armId: ArmId, {against}: {against?: boolean} = {}): Arm => {
+const getArm = (armId: ArmId, {anti}: {anti?: boolean} = {}): Arm => {
     switch (armId) {
         case ArmId.WING:                                                        //  `|
-            return against ?
-                [{id: AccentId.WING, against}] :
+            return anti ?
+                [{id: AccentId.WING, anti}] :
                 [{id: AccentId.WING}]
         case ArmId.BIRD:                                                        // ``|
-            return against ?
-                [{id: AccentId.BIRD, against}] :
+            return anti ?
+                [{id: AccentId.BIRD, anti}] :
                 [{id: AccentId.BIRD}]
-        case ArmId.WING_AGAINST_TICK:                                           // ,'|
-            return against ?
-                [{id: AccentId.WING}, {id: AccentId.TICK, against }] :
-                [{id: AccentId.WING, against: true }, {id: AccentId.TICK}]
+        case ArmId.ANTIWING_AND_TICK:                                           // ,'|
+            return anti ?
+                [{id: AccentId.WING}, {id: AccentId.TICK, anti }] :
+                [{id: AccentId.WING, anti: true }, {id: AccentId.TICK}]
         case ArmId.TICK:                                                        //  '|
-            return against ?
-                [{id: AccentId.TICK, against}] :
+            return anti ?
+                [{id: AccentId.TICK, anti}] :
                 [{id: AccentId.TICK}]
         case ArmId.WING_AND_TICK:                                               // `'|
-            return against ?
-                [{id: AccentId.WING, against}, {id: AccentId.TICK, against}] :
+            return anti ?
+                [{id: AccentId.WING, anti}, {id: AccentId.TICK, anti}] :
                 [{id: AccentId.WING}, {id: AccentId.TICK}]
     }
 }

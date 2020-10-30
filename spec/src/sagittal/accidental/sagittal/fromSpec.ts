@@ -4,11 +4,11 @@ import {computeAccidental} from "../../../../helpers/src/sagittal/accidental/acc
 
 describe("computeSagittalFromFlacco", (): void => {
     it("takes a combo of flags and arm and returns the full Sagittal symbol", (): void => {
-        const flacco: Flacco = getFlacco(FlaccoId.WING_AGAINST_BOATHOOK_AND_ARC)
+        const flacco: Flacco = getFlacco(FlaccoId.ANTIWING_BOATHOOK_AND_ARC)
 
         const actual = computeSagittalFromFlacco(flacco)
 
-        const expected = computeAccidental({armId: ArmId.WING, against: true, headId: HeadId.BOATHOOK_AND_ARC}) // ,~|)
+        const expected = computeAccidental({armId: ArmId.WING, anti: true, headId: HeadId.BOATHOOK_AND_ARC}) // ,~|)
         expect(actual).toEqual(expected)
     })
 

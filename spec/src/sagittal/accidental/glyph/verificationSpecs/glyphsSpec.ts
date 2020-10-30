@@ -1118,7 +1118,7 @@ describe("glyphs", (): void => {
         expect(accentGlyphExpectations).toEqual(expected)
     })
 
-    it("has the correct accent glyphs and computes their IO correctly (when oriented against the core)", (): void => {
+    it("has the correct accent glyphs and computes their IO correctly (when oriented against, or anti-, their core)              ", (): void => {
         const accentIds = Object.values(AccentId) as AccentId[]
         const accentGlyphExpectations = accentIds.reduce(
             (
@@ -1127,7 +1127,7 @@ describe("glyphs", (): void => {
             ): Record<AccentId, GlyphExpectation> => {
                 return {
                     ...accentGlyphExpectations,
-                    [accentId]: computeAccentGlyphExpectation(accentId, { against: true })
+                    [accentId]: computeAccentGlyphExpectation(accentId, { anti: true })
                 }
             },
             {} as Record<AccentId, GlyphExpectation>,

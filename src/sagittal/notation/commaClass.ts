@@ -15,7 +15,7 @@ const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
         pitch: {monzo: [5, -3, 1, -1, -1, 1]} as Comma,
     },
     /*3*/[CommaClassId._19_5_n]: {
-        representativeSymbolClassId: SymbolClassId.TICK_AGAINST_LEFT_SCROLL,
+        representativeSymbolClassId: SymbolClassId.ANTITICK_AND_LEFT_SCROLL,
         pitch: {monzo: [6, -5, -1, 0, 0, 0, 0, 1]} as Comma,
     },
     /*4*/[CommaClassId._5_s]: {
@@ -27,7 +27,7 @@ const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
         pitch: {monzo: [-3, 6, 0, -1, 0, -1]} as Comma,
     },
     /*6*/[CommaClassId._19_4375_s]: {
-        representativeSymbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL,
+        representativeSymbolClassId: SymbolClassId.ANTIWING_AND_LEFT_SCROLL,
         pitch: {monzo: [-8, 10, -4, -1, 0, 0, 0, 1]} as Comma,
     },
     /*7*/[CommaClassId._19_s]: {
@@ -43,11 +43,11 @@ const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
         pitch: {monzo: [-7, -1, 1, 1, 1]} as Comma,
     },
     /*10*/[CommaClassId._11_13_k]: {
-        representativeSymbolClassId: SymbolClassId.BIRD_AGAINST_RIGHT_SCROLL,
+        representativeSymbolClassId: SymbolClassId.ANTIBIRD_AND_RIGHT_SCROLL,
         pitch: {monzo: [5, -3, 0, 0, 1, -1]} as Comma,
     },
     /*11*/[CommaClassId._31_11_k]: {
-        representativeSymbolClassId: SymbolClassId.WING_AGAINST_RIGHT_SCROLL,
+        representativeSymbolClassId: SymbolClassId.ANTIWING_AND_RIGHT_SCROLL,
         pitch: {monzo: [-11, 6, 0, 0, -1, 0, 0, 0, 0, 0, 1]} as Comma,
     },
     /*12*/[CommaClassId._5_7_k]: {
@@ -59,11 +59,11 @@ const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
         pitch: {monzo: [5, -7, -1, 3]} as Comma,
     },
     /*14*/[CommaClassId._1_85_k]: {
-        representativeSymbolClassId: SymbolClassId.TICK_AGAINST_LEFT_BOATHOOK,
+        representativeSymbolClassId: SymbolClassId.ANTITICK_AND_LEFT_BOATHOOK,
         pitch: {monzo: [8, -1, -1, 0, 0, 0, -1]} as Comma,
     },
     /*15*/[CommaClassId._1_1225_k]: {
-        representativeSymbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_RIGHT_SCROLL,
+        representativeSymbolClassId: SymbolClassId.ANTIWING_TICK_AND_RIGHT_SCROLL,
         pitch: {monzo: [-4, 9, -2, -2]} as Comma,
     },
     /*16*/[CommaClassId._25_7_k]: {
@@ -71,7 +71,7 @@ const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
         pitch: {monzo: [-5, 2, 2, -1]} as Comma,
     },
     /*17*/[CommaClassId._343_k]: {
-        representativeSymbolClassId: SymbolClassId.WING_AGAINST_LEFT_BOATHOOK,
+        representativeSymbolClassId: SymbolClassId.ANTIWING_AND_LEFT_BOATHOOK,
         pitch: {monzo: [-10, 1, 0, 3]} as Comma,
     },
     /*18*/[CommaClassId._1_17_k]: {
@@ -79,7 +79,7 @@ const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
         pitch: {monzo: [-7, 7, 0, 0, 0, 0, -1]} as Comma,
     },
     /*19*/[CommaClassId._14641_k]: {
-        representativeSymbolClassId: SymbolClassId.WING_AGAINST_DOUBLE_SCROLL,
+        representativeSymbolClassId: SymbolClassId.ANTIWING_AND_DOUBLE_SCROLL,
         pitch: {monzo: [-17, 2, 0, 0, 4]} as Comma,
     },
     /*20*/[CommaClassId._7_11_k]: {
@@ -95,7 +95,7 @@ const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
         pitch: {monzo: [-13, 7, 0, 2, 0, -1]} as Comma,
     },
     /*23*/[CommaClassId._1_8575_k]: {
-        representativeSymbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_DOUBLE_SCROLL,
+        representativeSymbolClassId: SymbolClassId.ANTIWING_TICK_AND_DOUBLE_SCROLL,
         pitch: {monzo: [21, -5, -2, -3]} as Comma,
     },
     /*24*/[CommaClassId._35_11_k]: {
@@ -107,19 +107,19 @@ const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
         pitch: {monzo: [4, 2, 0, 0, -1, -1]} as Comma,
     },
     /*26*/[CommaClassId._17_5_C]: {
-        representativeSymbolClassId: SymbolClassId.TICK_AGAINST_BOATHOOK_AND_SCROLL,
+        representativeSymbolClassId: SymbolClassId.ANTITICK_BOATHOOK_AND_SCROLL,
         pitch: {monzo: [3, -3, -1, 0, 0, 0, 1]} as Comma,
     },
     /*27*/[CommaClassId._11_23_C]: {
-        representativeSymbolClassId: SymbolClassId.WING_AGAINST_TICK_AGAINST_BOATHOOK_AND_SCROLL,
+        representativeSymbolClassId: SymbolClassId.WING_ANTITICK_BOATHOOK_AND_SCROLL,
         pitch: {monzo: [9, -5, 0, 0, 1, 0, 0, 0, -1]} as Comma,
     },
     /*28*/[CommaClassId._7_125_C]: {
-        representativeSymbolClassId: SymbolClassId.BIRD_AGAINST_BOATHOOK_AND_SCROLL,
+        representativeSymbolClassId: SymbolClassId.ANTIBIRD_BOATHOOK_AND_SCROLL,
         pitch: {monzo: [1, 2, -3, 1]} as Comma,
     },
     /*29*/[CommaClassId._245_C]: {
-        representativeSymbolClassId: SymbolClassId.WING_AGAINST_BOATHOOK_AND_SCROLL,
+        representativeSymbolClassId: SymbolClassId.ANTIWING_BOATHOOK_AND_SCROLL,
         pitch: {monzo: [0, -5, 1, 2]} as Comma,
     },
     /*30*/[CommaClassId._17_C]: {
@@ -131,11 +131,11 @@ const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
         pitch: {monzo: [2, -4, 0, -1, 1, 1]} as Comma,
     },
     /*32*/[CommaClassId._7_25_C]: {
-        representativeSymbolClassId: SymbolClassId.BIRD_AGAINST_RIGHT_BOATHOOK,
+        representativeSymbolClassId: SymbolClassId.ANTIBIRD_AND_RIGHT_BOATHOOK,
         pitch: {monzo: [-14, 10, -2, 1]} as Comma,
     },
     /*33*/[CommaClassId._1225_C]: {
-        representativeSymbolClassId: SymbolClassId.WING_AGAINST_RIGHT_BOATHOOK,
+        representativeSymbolClassId: SymbolClassId.ANTIWING_AND_RIGHT_BOATHOOK,
         pitch: {monzo: [-15, 3, 2, 2]} as Comma,
     },
     /*34*/[CommaClassId._23_C]: {
@@ -159,11 +159,11 @@ const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
         pitch: {monzo: [13, -9, 0, -1, 0, 0, 1]} as Comma,
     },
     /*39*/[CommaClassId._91_5_C]: {
-        representativeSymbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_LEFT_BARB,
+        representativeSymbolClassId: SymbolClassId.ANTIWING_ANTITICK_AND_LEFT_BARB,
         pitch: {monzo: [-1, -2, -1, 1, 0, 1]} as Comma,
     },
     /*40*/[CommaClassId._1_25_C]: {
-        representativeSymbolClassId: SymbolClassId.TICK_AGAINST_LEFT_BARB,
+        representativeSymbolClassId: SymbolClassId.ANTITICK_AND_LEFT_BARB,
         pitch: {monzo: [11, -4, -2]} as Comma,
     },
     /*41*/[CommaClassId._1_19_C]: {
@@ -171,11 +171,11 @@ const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
         pitch: {monzo: [-10, 9, 0, 0, 0, 0, 0, -1]} as Comma,
     },
     /*42*/[CommaClassId._1_253_C]: {
-        representativeSymbolClassId: SymbolClassId.BIRD_AGAINST_LEFT_BARB,
+        representativeSymbolClassId: SymbolClassId.ANTIBIRD_AND_LEFT_BARB,
         pitch: {monzo: [8, 0, 0, 0, -1, 0, 0, 0, -1]} as Comma,
     },
     /*43*/[CommaClassId._91_C]: {
-        representativeSymbolClassId: SymbolClassId.WING_AGAINST_LEFT_BARB,
+        representativeSymbolClassId: SymbolClassId.ANTIWING_AND_LEFT_BARB,
         pitch: {monzo: [-16, 6, 0, 1, 0, 1]} as Comma,
     },
     /*44*/[CommaClassId._1_5_C]: {
@@ -191,7 +191,7 @@ const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
         pitch: {monzo: [7, -5, 2, 0, 0, -1]} as Comma,
     },
     /*47*/[CommaClassId._19_25_C]: {
-        representativeSymbolClassId: SymbolClassId.TICK_AGAINST_LEFT_SCROLL_AND_BARB,
+        representativeSymbolClassId: SymbolClassId.ANTITICK_AND_LEFT_SCROLL_AND_BARB,
         pitch: {monzo: [2, -1, -2, 0, 0, 0, 0, 1]} as Comma,
     },
     /*48*/[CommaClassId._1_C]: {
@@ -203,11 +203,11 @@ const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
         pitch: {monzo: [-20, 5, 4, 1]} as Comma,
     },
     /*50*/[CommaClassId._77_5_C]: {
-        representativeSymbolClassId: SymbolClassId.BIRD_AGAINST_LEFT_SCROLL_AND_BARB,
+        representativeSymbolClassId: SymbolClassId.ANTIBIRD_AND_LEFT_SCROLL_AND_BARB,
         pitch: {monzo: [4, -5, -1, 1, 1]} as Comma,
     },
     /*51*/[CommaClassId._125_13_C]: {
-        representativeSymbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL_AND_BARB,
+        representativeSymbolClassId: SymbolClassId.ANTIWING_AND_LEFT_SCROLL_AND_BARB,
         pitch: {monzo: [-8, 3, 3, 0, 0, -1]} as Comma,
     },
     /*52*/[CommaClassId._19_5_C]: {                                                   // 1.01447753906
@@ -215,23 +215,23 @@ const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
         pitch: {monzo: [-13, 7, -1, 0, 0, 0, 0, 1]} as Comma,
     },
     /*53*/[CommaClassId._13_C]: {                                                     // 1.01447950008
-        representativeSymbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_RIGHT_ARC,
+        representativeSymbolClassId: SymbolClassId.ANTIWING_ANTITICK_AND_RIGHT_ARC,
         pitch: {monzo: [9, -8, 0, 0, 0, 1]} as Comma,
     },
     /*54*/[CommaClassId._1_35_C]: {
-        representativeSymbolClassId: SymbolClassId.TICK_AGAINST_RIGHT_ARC,
+        representativeSymbolClassId: SymbolClassId.ANTITICK_AND_RIGHT_ARC,
         pitch: {monzo: [21, -10, -1, -1]} as Comma,
     },
     /*55*/[CommaClassId._77_C]: {
-        representativeSymbolClassId: SymbolClassId.WING_AGAINST_TICK_AGAINST_RIGHT_ARC,
+        representativeSymbolClassId: SymbolClassId.WING_ANTITICK_AND_RIGHT_ARC,
         pitch: {monzo: [-11, 3, 0, 1, 1]} as Comma,
     },
     /*56*/[CommaClassId._11_65_C]: {
-        representativeSymbolClassId: SymbolClassId.BIRD_AGAINST_RIGHT_ARC,
+        representativeSymbolClassId: SymbolClassId.ANTIBIRD_AND_RIGHT_ARC,
         pitch: {monzo: [1, 1, -1, 0, 1, -1]} as Comma,
     },
     /*57*/[CommaClassId._65_C]: {
-        representativeSymbolClassId: SymbolClassId.WING_AGAINST_RIGHT_ARC,
+        representativeSymbolClassId: SymbolClassId.ANTIWING_AND_RIGHT_ARC,
         pitch: {monzo: [-6, 0, 1, 0, 0, 1]} as Comma,
     },
     /*58*/[CommaClassId._1_7_C]: {
@@ -247,7 +247,7 @@ const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
         pitch: {monzo: [-14, 9, 0, 0, 1, -1]} as Comma,
     },
     /*61*/[CommaClassId._325_C]: {
-        representativeSymbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_RIGHT_ARC,
+        representativeSymbolClassId: SymbolClassId.ANTIWING_TICK_AND_RIGHT_ARC,
         pitch: {monzo: [-21, 8, 2, 0, 0, 1]} as Comma,
     },
     /*62*/[CommaClassId._5_7_C]: {
@@ -259,7 +259,7 @@ const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
         pitch: {monzo: [-10, -1, 5]} as Comma,
     },
     /*64*/[CommaClassId._85_11_C]: {
-        representativeSymbolClassId: SymbolClassId.WING_AGAINST_SCROLL_AND_ARC,
+        representativeSymbolClassId: SymbolClassId.ANTIWING_SCROLL_AND_ARC,
         pitch: {monzo: [5, -5, 1, 0, -1, 0, 1]} as Comma,
     },
     /*65*/[CommaClassId._19_7_C]: {
@@ -267,7 +267,7 @@ const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
         pitch: {monzo: [-3, 1, 0, -1, 0, 0, 0, 1]} as Comma,
     },
     /*66*/[CommaClassId._7_55_C]: {
-        representativeSymbolClassId: SymbolClassId.TICK_AGAINST_LEFT_ARC,
+        representativeSymbolClassId: SymbolClassId.ANTITICK_AND_LEFT_ARC,
         pitch: {monzo: [3, 0, -1, 1, -1]} as Comma,
     },
     /*67*/[CommaClassId._55_C]: {
@@ -279,7 +279,7 @@ const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
         pitch: {monzo: [11, -5, 0, -1, 1, -1]} as Comma,
     },
     /*69*/[CommaClassId._125_23_C]: {
-        representativeSymbolClassId: SymbolClassId.WING_AGAINST_LEFT_ARC,
+        representativeSymbolClassId: SymbolClassId.ANTIWING_AND_LEFT_ARC,
         pitch: {monzo: [-4, 1, 3, 0, 0, 0, 0, 0, -1]} as Comma,
     },
     /*70*/[CommaClassId._7_11_C]: {
@@ -295,7 +295,7 @@ const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
         pitch: {monzo: [-1, 1, -2, 0, 0, 0, 1]} as Comma,
     },
     /*73*/[CommaClassId._7_247_S]: {
-        representativeSymbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_LEFT_ARC,
+        representativeSymbolClassId: SymbolClassId.ANTIWING_TICK_AND_LEFT_ARC,
         pitch: {monzo: [2, 2, 0, 1, 0, -1, 0, -1]} as Comma,
     },
     /*74*/[CommaClassId._25_49_S]: {
@@ -303,7 +303,7 @@ const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
         pitch: {monzo: [1, 0, 2, -2]} as Comma,
     },
     /*75*/[CommaClassId._31_S]: {
-        representativeSymbolClassId: SymbolClassId.WING_AGAINST_BOATHOOK_AND_ARC,
+        representativeSymbolClassId: SymbolClassId.ANTIWING_BOATHOOK_AND_ARC,
         pitch: {monzo: [3, -5, 0, 0, 0, 0, 0, 0, 0, 0, 1]} as Comma,
     },
     /*76*/[CommaClassId._49_S]: {
@@ -315,11 +315,11 @@ const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
         pitch: {monzo: [-16, 9, -1, 0, 0, 0, 1]} as Comma,
     },
     /*78*/[CommaClassId._11_23_S]: {
-        representativeSymbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_ARC_AND_SCROLL,
+        representativeSymbolClassId: SymbolClassId.ANTIWING_ANTITICK_ARC_AND_SCROLL,
         pitch: {monzo: [-10, 7, 0, 0, 1, 0, 0, 0, -1]} as Comma,
     },
     /*79*/[CommaClassId._1_11_S]: {
-        representativeSymbolClassId: SymbolClassId.TICK_AGAINST_ARC_AND_SCROLL,
+        representativeSymbolClassId: SymbolClassId.ANTITICK_ARC_AND_SCROLL,
         pitch: {monzo: [13, -6, 0, 0, -1]} as Comma,
     },
     /*80*/[CommaClassId._245_S]: {
@@ -331,11 +331,11 @@ const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
         pitch: {monzo: [1, -2, -1, 0, 0, 0, 0, 0, 1]} as Comma,
     },
     /*82*/[CommaClassId._7_13_S]: {
-        representativeSymbolClassId: SymbolClassId.BIRD_AGAINST_ARC_AND_SCROLL,
+        representativeSymbolClassId: SymbolClassId.ANTIBIRD_ARC_AND_SCROLL,
         pitch: {monzo: [-7, 5, 0, 1, 0, -1]} as Comma,
     },
     /*83*/[CommaClassId._11_17_S]: {
-        representativeSymbolClassId: SymbolClassId.WING_AGAINST_ARC_AND_SCROLL,
+        representativeSymbolClassId: SymbolClassId.ANTIWING_ARC_AND_SCROLL,
         pitch: {monzo: [7, -4, 0, 0, 1, 0, -1]} as Comma,
     },
     /*84*/[CommaClassId._5_11_S]: {
@@ -351,23 +351,23 @@ const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
         pitch: {monzo: [-14, 6, 0, 0, 0, 0, 0, 0, 1]} as Comma,
     },
     /*87*/[CommaClassId._91_25_S]: {
-        representativeSymbolClassId: SymbolClassId.WING_AND_TICK_AGAINST_DOUBLE_LEFT_BARB,
+        representativeSymbolClassId: SymbolClassId.ANTIWING_ANTITICK_AND_DOUBLE_LEFT_BARB,
         pitch: {monzo: [-5, 2, -2, 1, 0, 1]} as Comma,
     },
     /*88*/[CommaClassId._1_125_S]: {
-        representativeSymbolClassId: SymbolClassId.TICK_AGAINST_DOUBLE_LEFT_BARB,
+        representativeSymbolClassId: SymbolClassId.ANTITICK_AND_DOUBLE_LEFT_BARB,
         pitch: {monzo: [7, 0, -3]} as Comma,
     },
     /*89*/[CommaClassId._35_S]: {
-        representativeSymbolClassId: SymbolClassId.WING_AGAINST_TICK_AGAINST_DOUBLE_LEFT_BARB,
+        representativeSymbolClassId: SymbolClassId.WING_ANTITICK_AND_DOUBLE_LEFT_BARB,
         pitch: {monzo: [6, -7, 1, 1]} as Comma,
     },
     /*90*/[CommaClassId._17_7_S]: {
-        representativeSymbolClassId: SymbolClassId.BIRD_AGAINST_DOUBLE_LEFT_BARB,
+        representativeSymbolClassId: SymbolClassId.ANTIBIRD_AND_DOUBLE_LEFT_BARB,
         pitch: {monzo: [-6, 3, 0, -1, 0, 0, 1]} as Comma,
     },
     /*91*/[CommaClassId._91_5_S]: {
-        representativeSymbolClassId: SymbolClassId.WING_AGAINST_DOUBLE_LEFT_BARB,
+        representativeSymbolClassId: SymbolClassId.ANTIWING_AND_DOUBLE_LEFT_BARB,
         pitch: {monzo: [-20, 10, -1, 1, 0, 1]} as Comma,
     },
     /*92*/[CommaClassId._1_25_S]: {
@@ -383,7 +383,7 @@ const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
         pitch: {monzo: [3, -1, 1, 0, 0, -1]} as Comma,
     },
     /*95*/[CommaClassId._49_17_S]: {
-        representativeSymbolClassId: SymbolClassId.WING_AGAINST_TICK_AND_DOUBLE_LEFT_BARB,
+        representativeSymbolClassId: SymbolClassId.ANTIWING_TICK_AND_DOUBLE_LEFT_BARB,
         pitch: {monzo: [-11, 6, 0, 2, 0, 0, -1]} as Comma,
     },
     /*96*/[CommaClassId._13_19_S]: {
@@ -391,11 +391,11 @@ const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
         pitch: {monzo: [-1, 1, 0, 0, 0, 1, 0, -1]} as Comma,
     },
     /*97*/[CommaClassId._77_25_M]: {
-        representativeSymbolClassId: SymbolClassId.BIRD_AGAINST_LEFT_SCROLL_DOUBLE_LEFT_BARB,
+        representativeSymbolClassId: SymbolClassId.ANTIBIRD_AND_LEFT_SCROLL_DOUBLE_LEFT_BARB,
         pitch: {monzo: [0, -1, -2, 1, 1]} as Comma,
     },
     /*98*/[CommaClassId._25_13_M]: {
-        representativeSymbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL_DOUBLE_LEFT_BARB,
+        representativeSymbolClassId: SymbolClassId.ANTIWING_AND_LEFT_SCROLL_DOUBLE_LEFT_BARB,
         pitch: {monzo: [-12, 7, 2, 0, 0, -1]} as Comma,
     },
     /*99*/[CommaClassId._13_5_M]: {
@@ -411,11 +411,11 @@ const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
         pitch: {monzo: [-2, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]} as Comma,
     },
     /*102*/[CommaClassId._11_325_M]: {
-        representativeSymbolClassId: SymbolClassId.BIRD_AGAINST_BARB_AND_ARC,
+        representativeSymbolClassId: SymbolClassId.ANTIBIRD_BARB_AND_ARC,
         pitch: {monzo: [-3, 5, -2, 0, 1, -1]} as Comma,
     },
     /*103*/[CommaClassId._13_M]: {
-        representativeSymbolClassId: SymbolClassId.WING_AGAINST_BARB_AND_ARC,
+        representativeSymbolClassId: SymbolClassId.ANTIWING_BARB_AND_ARC,
         pitch: {monzo: [-10, 4, 0, 0, 0, 1]} as Comma,
     },
     /*104*/[CommaClassId._1_35_M]: {
@@ -431,7 +431,7 @@ const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
         pitch: {monzo: [4, -2, 0, 0, 1, 0, 0, -1]} as Comma,
     },
     /*107*/[CommaClassId._65_M]: {
-        representativeSymbolClassId: SymbolClassId.WING_AGAINST_TICK_BARB_AND_ARC,
+        representativeSymbolClassId: SymbolClassId.ANTIWING_TICK_BARB_AND_ARC,
         pitch: {monzo: [-25, 12, 1, 0, 0, 1]} as Comma,
     },
     /*108*/[CommaClassId._1_7_M]: {
@@ -443,19 +443,19 @@ const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
         pitch: {monzo: [-14, 3, 4]} as Comma,
     },
     /*110*/[CommaClassId._11_5_M]: {
-        representativeSymbolClassId: SymbolClassId.TICK_AGAINST_DOUBLE_BARB,
+        representativeSymbolClassId: SymbolClassId.ANTITICK_AND_DOUBLE_BARB,
         pitch: {monzo: [10, -7, -1, 0, 1]} as Comma,
     },
     /*111*/[CommaClassId._17_11_M]: {
-        representativeSymbolClassId: SymbolClassId.WING_AGAINST_TICK_AGAINST_DOUBLE_BARB,
+        representativeSymbolClassId: SymbolClassId.WING_ANTITICK_AND_DOUBLE_BARB,
         pitch: {monzo: [1, -1, 0, 0, -1, 0, 1]} as Comma,
     },
     /*112*/[CommaClassId._5_23_M]: {
-        representativeSymbolClassId: SymbolClassId.BIRD_AGAINST_DOUBLE_BARB,
+        representativeSymbolClassId: SymbolClassId.ANTIBIRD_AND_DOUBLE_BARB,
         pitch: {monzo: [7, -3, 1, 0, 0, 0, 0, 0, -1]} as Comma,
     },
     /*113*/[CommaClassId._7_275_M]: {
-        representativeSymbolClassId: SymbolClassId.WING_AGAINST_DOUBLE_BARB,
+        representativeSymbolClassId: SymbolClassId.ANTIWING_AND_DOUBLE_BARB,
         pitch: {monzo: [-1, 4, -2, 1, -1]} as Comma,
     },
     /*114*/[CommaClassId._11_M]: {
@@ -467,7 +467,7 @@ const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
         pitch: {monzo: [-14, 7, 1, 0, -1, 0, 1]} as Comma,
     },
     /*116*/[CommaClassId._65_7_M]: {
-        representativeSymbolClassId: SymbolClassId.WING_AGAINST_LEFT_ARC_AND_BARB,
+        representativeSymbolClassId: SymbolClassId.ANTIWING_AND_LEFT_ARC_AND_BARB,
         pitch: {monzo: [0, -2, 1, -1, 0, 1]} as Comma,
     },
     /*117*/[CommaClassId._1_49_M]: {
@@ -487,7 +487,7 @@ const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
         pitch: {monzo: [-8, 7, 0, -1, 1, -1]} as Comma,
     },
     /*121*/[CommaClassId._595_M]: {
-        representativeSymbolClassId: SymbolClassId.WING_AGAINST_LEFT_SCROLL_AND_DOUBLE_BARB,
+        representativeSymbolClassId: SymbolClassId.ANTIWING_LEFT_SCROLL_AND_DOUBLE_BARB,
         pitch: {monzo: [-6, -2, 1, 1, 0, 0, 1]} as Comma,
     },
     /*122*/[CommaClassId._5_49_M]: {

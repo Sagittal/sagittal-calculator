@@ -3,8 +3,8 @@ import {Accent, Arm, ArmId, getArm, HeadId} from "../flacco"
 import {APOTOME_CORE, getCore} from "./core"
 import {Core, Sagittal, Shafts} from "./types"
 
-const reorientAccent = ({against, id}: Accent): Accent =>
-    against ? {id} : {id, against: true}
+const reorientAccent = ({anti, id}: Accent): Accent =>
+    anti ? {id} : {id, anti: true}
 
 const APOTOME_COMPLEMENT_CORE_PAIRS: Array<[Core, Core]> = [
     [
@@ -118,14 +118,14 @@ const APOTOME_COMPLEMENT_CORE_PAIRS: Array<[Core, Core]> = [
 ]
 
 const computeMaybeArmForSelfComplementingCore = (maybeArm: Maybe<Arm>): Maybe<Arm> => {
-    if (deepEquals(maybeArm, getArm(ArmId.WING, {against: true}))) {
+    if (deepEquals(maybeArm, getArm(ArmId.WING, {anti: true}))) {
         return getArm(ArmId.BIRD)
     } else if (deepEquals(maybeArm, undefined)) {
         return getArm(ArmId.WING)
     } else if (deepEquals(maybeArm, getArm(ArmId.WING))) {
         return undefined
     } else if (deepEquals(maybeArm, getArm(ArmId.BIRD))) {
-        return getArm(ArmId.WING, {against: true})
+        return getArm(ArmId.WING, {anti: true})
     } else {
         throw new Error(`Did not find arm for self-complementing core with arm ${maybeArm}.`)
     }

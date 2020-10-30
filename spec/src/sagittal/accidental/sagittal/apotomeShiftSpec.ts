@@ -5,14 +5,14 @@ import {computeAccidental} from "../../../../helpers/src/sagittal/accidental/acc
 describe("apotomeShift", (): void => {
     it("takes a symbol and shifts it by an apotome (adds 2 shafts)", (): void => {
         const sagittal = computeAccidental({                          // ,')|(
-            armId: ArmId.WING_AGAINST_TICK,
+            armId: ArmId.ANTIWING_AND_TICK,
             headId: HeadId.DOUBLE_SCROLL,
         })
 
         const actual = apotomeShift(sagittal)
 
         const expected = computeAccidental({                          // ,')|||(
-            armId: ArmId.WING_AGAINST_TICK,
+            armId: ArmId.ANTIWING_AND_TICK,
             headId: HeadId.DOUBLE_SCROLL,
             shafts: Shafts.TRIPLE,
         })

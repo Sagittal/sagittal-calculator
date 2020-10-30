@@ -31,14 +31,11 @@ const computeCoreGlyphExpectation = (
     }
 }
 
-const computeAccentGlyphExpectation = (
-    accentId: AccentId,
-    {against = false}: {against?: boolean} = {},
-): GlyphExpectation =>
+const computeAccentGlyphExpectation = (accentId: AccentId, {anti = false}: {anti?: boolean} = {}): GlyphExpectation =>
     ({
-        ascii: computeAccentAscii({id: accentId, against}),
-        unicode: computeAccentUnicode({id: accentId, against}),
-        smiley: computeAccentSmiley({id: accentId, against}),
+        ascii: computeAccentAscii({id: accentId, anti}),
+        unicode: computeAccentUnicode({id: accentId, anti}),
+        smiley: computeAccentSmiley({id: accentId, anti}),
     })
 
 const computeCompatibleGlyphExpectation = (compatible: Compatible): GlyphExpectation =>
