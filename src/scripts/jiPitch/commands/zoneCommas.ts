@@ -5,8 +5,8 @@ import {
     computeJiNotationCaptureZone,
     computeSecondaryCommaZone,
     formatCommaClass,
-    JI_NOTATION,
     JiNotationLevelId,
+    JI_NOTATION,
 } from "../../../sagittal"
 import {CommasOptions, computeCommas, parseFindCommasSettings} from "../findCommas"
 import {jiPitchScriptGroupSettings} from "../globals"

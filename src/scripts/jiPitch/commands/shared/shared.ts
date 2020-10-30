@@ -6,8 +6,6 @@ import {JiPitchScriptGroupField} from "../../types"
 import {parseExcludedFields} from "./excludedFields"
 
 const applySharedPitchCommandSetup = (): void => {
-    ioSettings.scriptGroup = ScriptGroup.JI_PITCH as Filename
-
     program
         .option(`-${CommandFlag.SORT_BY}, --sort-by <sortBy>`, "sort by")
         .option(`-${CommandFlag.UNDIRECTED_COMMA_NAME}, --undirected`, "undirected comma name")

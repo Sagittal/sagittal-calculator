@@ -8,8 +8,7 @@ import {Filename} from "../types"
 import {CommandFlag} from "./types"
 
 const parseCommands = (scriptGroup: Filename, defaultLogTargets?: LogTarget[]): void => {
-    // TODO: SCRIPT GROUP IMPROVEMENT
-    //  Why don't I just have this thing set the ioSettings.scriptGroup so you don't have to remember to do that?
+    ioSettings.scriptGroup = scriptGroup
 
     program
         .option(`-${CommandFlag.LOG_TARGETS}, --log-targets [logTargets]`, "log targets")

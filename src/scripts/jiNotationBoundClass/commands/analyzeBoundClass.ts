@@ -18,8 +18,6 @@ import {formatJiNotationBoundClass} from "../io"
 
 parseCommands(ScriptGroup.JI_NOTATION_BOUND_CLASS as Filename, [LogTarget.FINAL])
 
-ioSettings.scriptGroup = ScriptGroup.JI_NOTATION_BOUND_CLASS as Filename
-
 const boundClassIndex = program.args[0]
 
 // TODO: STOP USING BOUND CLASS INDEX

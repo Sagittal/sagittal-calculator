@@ -6,8 +6,6 @@ import {USEFULNESS_METRICS_WITH_PARAMETERS} from "../metrics"
 import {logUsefulnessParameterSetsForUsefulnessMetricMinimizingSumOfSquares} from "../minimize"
 import {UsefulnessMetric, UsefulnessMetricId, UsefulnessParameterId} from "../types"
 
-ioSettings.scriptGroup = ScriptGroup.USEFULNESS_METRIC_LFC as Filename
-
 program
     .option(`-${CommandFlag.BOOLEAN_MODE}, --boolean-mode`, "boolean mode (more simply maximize match count, rather than minimize sum-of-squared distances of non-matches)")
 

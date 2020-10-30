@@ -1049,8 +1049,6 @@ const ALREADY_SEARCHED_UP_TO_NUMERATOR = 9765625
 
 const MAX_NUMERATOR = 9765625
 
-ioSettings.scriptGroup = ScriptGroup.POPULAR_2_3_FREE_CLASSES as Filename
-
 parseCommands(ScriptGroup.POPULAR_2_3_FREE_CLASSES as Filename)
 
 const n2pResults: SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P[] =

@@ -6,8 +6,6 @@ import {computeJiNotationBoundClassesImage, computeJiNotationBoundsOutput} from 
 
 parseCommands(ScriptGroup.JI_NOTATION_BOUND_CLASS as Filename, [LogTarget.FINAL])
 
-ioSettings.scriptGroup = ScriptGroup.JI_NOTATION_BOUND_CLASS as Filename
-
 const jiNotationBoundClassAnalyses: JiNotationBoundClassAnalysis[] = analyzeJiNotationBoundClasses()
 
 const tableOutput: Io = computeJiNotationBoundsOutput(jiNotationBoundClassAnalyses)

@@ -17,8 +17,6 @@ import {popular23FreeClassesScriptGroupSettings} from "../globals"
 import {computePopular23FreeClassesOutput} from "../io"
 import {computePopular23FreeClasses} from "../popular23FreeClasses"
 
-ioSettings.scriptGroup = ScriptGroup.POPULAR_2_3_FREE_CLASSES as Filename
-
 program
     .option(`-${CommandFlag.MAX_N2D3P9}, --max-n2d3p9 [maxN2D3P9]`, "max N2D3P9", parseFloat)
     .option(`-${CommandFlag.USE_KNOWN_POPULAR_2_3_FREE_CLASSES}, --use-known`, "use known popular 2,3-free classes")
