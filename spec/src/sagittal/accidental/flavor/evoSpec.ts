@@ -1,7 +1,6 @@
 import {Accidental, Compatible, Flavor} from "../../../../../src/sagittal/accidental"
 import {HeadId} from "../../../../../src/sagittal/accidental/flacco"
 import {computeEvoAccidentalFromCaptureZone} from "../../../../../src/sagittal/accidental/flavor/evo"
-import {getSagittal} from "../../../../../src/sagittal/accidental/sagittal/sagittal"
 import {SymbolClassId} from "../../../../../src/sagittal/notation"
 import {
     SECTION_N1A,
@@ -13,6 +12,7 @@ import {
     SECTION_P2A,
     SECTION_P2T,
 } from "../../../../../src/sagittal/notation/sections"
+import {computeSagittal} from "../../../../helpers/src/sagittal/accidental/sagittal"
 
 describe("computeEvoAccidentalFromCaptureZone", (): void => {
     it("works for section P1A", (): void => {
@@ -20,7 +20,7 @@ describe("computeEvoAccidentalFromCaptureZone", (): void => {
 
         const actual = computeEvoAccidentalFromCaptureZone(symbolClassId, SECTION_P1A)
 
-        const expected = getSagittal({headId: HeadId.DOUBLE_LEFT_BARB}) as Accidental<Flavor.EVO>
+        const expected = computeSagittal({headId: HeadId.DOUBLE_LEFT_BARB}) as Accidental<Flavor.EVO>
         expect(actual).toEqual(expected)
     })
 
@@ -30,7 +30,7 @@ describe("computeEvoAccidentalFromCaptureZone", (): void => {
         const actual = computeEvoAccidentalFromCaptureZone(symbolClassId, SECTION_P1T)
 
         const expected = {
-            ...getSagittal({headId: HeadId.DOUBLE_LEFT_BARB, down: true}),
+            ...computeSagittal({headId: HeadId.DOUBLE_LEFT_BARB, down: true}),
             compatible: Compatible.SHARP,
         } as Accidental<Flavor.EVO>
         expect(actual).toEqual(expected)
@@ -42,7 +42,7 @@ describe("computeEvoAccidentalFromCaptureZone", (): void => {
         const actual = computeEvoAccidentalFromCaptureZone(symbolClassId, SECTION_P1T)
 
         const expected = {
-            ...getSagittal({headId: HeadId.DOUBLE_ARC}),
+            ...computeSagittal({headId: HeadId.DOUBLE_ARC}),
         } as Accidental<Flavor.EVO>
         expect(actual).toEqual(expected)
     })
@@ -53,7 +53,7 @@ describe("computeEvoAccidentalFromCaptureZone", (): void => {
         const actual = computeEvoAccidentalFromCaptureZone(symbolClassId, SECTION_P2A)
 
         const expected = {
-            ...getSagittal({headId: HeadId.DOUBLE_LEFT_BARB}),
+            ...computeSagittal({headId: HeadId.DOUBLE_LEFT_BARB}),
             compatible: Compatible.SHARP,
         } as Accidental<Flavor.EVO>
         expect(actual).toEqual(expected)
@@ -65,7 +65,7 @@ describe("computeEvoAccidentalFromCaptureZone", (): void => {
         const actual = computeEvoAccidentalFromCaptureZone(symbolClassId, SECTION_P2T)
 
         const expected = {
-            ...getSagittal({headId: HeadId.DOUBLE_LEFT_BARB, down: true}),
+            ...computeSagittal({headId: HeadId.DOUBLE_LEFT_BARB, down: true}),
             compatible: Compatible.DOUBLE_SHARP,
         } as Accidental<Flavor.EVO>
         expect(actual).toEqual(expected)
@@ -77,7 +77,7 @@ describe("computeEvoAccidentalFromCaptureZone", (): void => {
         const actual = computeEvoAccidentalFromCaptureZone(symbolClassId, SECTION_P2T)
 
         const expected = {
-            ...getSagittal({headId: HeadId.DOUBLE_ARC}),
+            ...computeSagittal({headId: HeadId.DOUBLE_ARC}),
             compatible: Compatible.SHARP,
         } as Accidental<Flavor.EVO>
         expect(actual).toEqual(expected)
@@ -89,7 +89,7 @@ describe("computeEvoAccidentalFromCaptureZone", (): void => {
         const actual = computeEvoAccidentalFromCaptureZone(symbolClassId, SECTION_N1A)
 
         const expected = {
-            ...getSagittal({headId: HeadId.DOUBLE_LEFT_BARB, down: true}),
+            ...computeSagittal({headId: HeadId.DOUBLE_LEFT_BARB, down: true}),
         } as Accidental<Flavor.EVO>
         expect(actual).toEqual(expected)
     })
@@ -100,7 +100,7 @@ describe("computeEvoAccidentalFromCaptureZone", (): void => {
         const actual = computeEvoAccidentalFromCaptureZone(symbolClassId, SECTION_N1T)
 
         const expected = {
-            ...getSagittal({headId: HeadId.DOUBLE_LEFT_BARB}),
+            ...computeSagittal({headId: HeadId.DOUBLE_LEFT_BARB}),
             compatible: Compatible.FLAT,
         } as Accidental<Flavor.EVO>
         expect(actual).toEqual(expected)
@@ -112,7 +112,7 @@ describe("computeEvoAccidentalFromCaptureZone", (): void => {
         const actual = computeEvoAccidentalFromCaptureZone(symbolClassId, SECTION_N1T)
 
         const expected = {
-            ...getSagittal({headId: HeadId.DOUBLE_ARC, down: true}),
+            ...computeSagittal({headId: HeadId.DOUBLE_ARC, down: true}),
         } as Accidental<Flavor.EVO>
         expect(actual).toEqual(expected)
     })
@@ -123,7 +123,7 @@ describe("computeEvoAccidentalFromCaptureZone", (): void => {
         const actual = computeEvoAccidentalFromCaptureZone(symbolClassId, SECTION_N2A)
 
         const expected = {
-            ...getSagittal({headId: HeadId.DOUBLE_LEFT_BARB, down: true}),
+            ...computeSagittal({headId: HeadId.DOUBLE_LEFT_BARB, down: true}),
             compatible: Compatible.FLAT,
         } as Accidental<Flavor.EVO>
         expect(actual).toEqual(expected)
@@ -135,7 +135,7 @@ describe("computeEvoAccidentalFromCaptureZone", (): void => {
         const actual = computeEvoAccidentalFromCaptureZone(symbolClassId, SECTION_N2T)
 
         const expected = {
-            ...getSagittal({headId: HeadId.DOUBLE_LEFT_BARB}),
+            ...computeSagittal({headId: HeadId.DOUBLE_LEFT_BARB}),
             compatible: Compatible.DOUBLE_FLAT,
         } as Accidental<Flavor.EVO>
         expect(actual).toEqual(expected)
@@ -147,7 +147,7 @@ describe("computeEvoAccidentalFromCaptureZone", (): void => {
         const actual = computeEvoAccidentalFromCaptureZone(symbolClassId, SECTION_N2T)
 
         const expected = {
-            ...getSagittal({headId: HeadId.DOUBLE_ARC, down: true}),
+            ...computeSagittal({headId: HeadId.DOUBLE_ARC, down: true}),
             compatible: Compatible.FLAT,
         } as Accidental<Flavor.EVO>
         expect(actual).toEqual(expected)

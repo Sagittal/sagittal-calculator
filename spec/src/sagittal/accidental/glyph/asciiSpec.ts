@@ -8,11 +8,11 @@ import {
 } from "../../../../../src/sagittal/accidental"
 import {ArmId, HeadId} from "../../../../../src/sagittal/accidental/flacco"
 import {Shafts} from "../../../../../src/sagittal/accidental/sagittal"
-import {getSagittal} from "../../../../../src/sagittal/accidental/sagittal/sagittal"
+import {computeSagittal} from "../../../../helpers/src/sagittal/accidental/sagittal"
 
 describe("computeSagittalAscii", (): void => {
     it("given a sagittal, returns its ASCII representation", (): void => {
-        const sagittal = getSagittal({armId: ArmId.BIRD, headId: HeadId.LEFT_SCROLL})
+        const sagittal = computeSagittal({armId: ArmId.BIRD, headId: HeadId.LEFT_SCROLL})
 
         const actual = computeSagittalAscii(sagittal)
 
@@ -21,7 +21,7 @@ describe("computeSagittalAscii", (): void => {
     })
 
     it("converts 4 shafts up into an ex up", (): void => {
-        const sagittal = getSagittal({headId: HeadId.LEFT_SCROLL_AND_BARB, shafts: Shafts.EX})
+        const sagittal = computeSagittal({headId: HeadId.LEFT_SCROLL_AND_BARB, shafts: Shafts.EX})
 
         const actual = computeSagittalAscii(sagittal)
 
@@ -30,7 +30,7 @@ describe("computeSagittalAscii", (): void => {
     })
 
     it("converts 4 shafts down into an ex down", (): void => {
-        const sagittal = getSagittal({headId: HeadId.ARC_AND_BOATHOOK, shafts: Shafts.EX, down: true})
+        const sagittal = computeSagittal({headId: HeadId.ARC_AND_BOATHOOK, shafts: Shafts.EX, down: true})
 
         const actual = computeSagittalAscii(sagittal)
 
@@ -52,7 +52,7 @@ describe("computeSagittalAscii", (): void => {
 describe("computeAccidentalAscii", (): void => {
     it("works for accidentals with a Sagittal-compatible glyph", (): void => {
         const accidental: Accidental<Flavor.EVO> = {
-            ...getSagittal({headId: HeadId.LEFT_BARB}),
+            ...computeSagittal({headId: HeadId.LEFT_BARB}),
             compatible: Compatible.SHARP,
         } as Accidental<Flavor.EVO>
 

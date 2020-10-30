@@ -2,11 +2,11 @@ import {Accidental, Compatible, Flavor, Smiley} from "../../../../../src/sagitta
 import {ArmId, HeadId} from "../../../../../src/sagittal/accidental/flacco"
 import {computeAccidentalSmiley, computeSagittalSmiley} from "../../../../../src/sagittal/accidental/glyph"
 import {Shafts} from "../../../../../src/sagittal/accidental/sagittal"
-import {getSagittal} from "../../../../../src/sagittal/accidental/sagittal/sagittal"
+import {computeSagittal} from "../../../../helpers/src/sagittal/accidental/sagittal"
 
 describe("computeSagittalSmiley", (): void => {
     it("converts a sagittal to smiley code", (): void => {
-        const sagittal = getSagittal({armId: ArmId.WING_AND_TICK, headId: HeadId.RIGHT_ARC})        // `'|)
+        const sagittal = computeSagittal({armId: ArmId.WING_AND_TICK, headId: HeadId.RIGHT_ARC})        // `'|)
 
 
         const actual = computeSagittalSmiley(sagittal)
@@ -16,7 +16,7 @@ describe("computeSagittalSmiley", (): void => {
     })
 
     it("handles the space that needs to be inserted into //, per forum-specific limitations", (): void => {
-        const sagittal = getSagittal({headId: HeadId.LEFT_SCROLL_DOUBLE_LEFT_BARB})                 // )//|
+        const sagittal = computeSagittal({headId: HeadId.LEFT_SCROLL_DOUBLE_LEFT_BARB})                 // )//|
 
         const actual = computeSagittalSmiley(sagittal)
 
@@ -25,7 +25,7 @@ describe("computeSagittalSmiley", (): void => {
     })
 
     it("handles the space that needs to be inserted into \\\\, per forum-specific limitations", (): void => {
-        const sagittal = getSagittal({headId: HeadId.DOUBLE_RIGHT_BARB})                            // |\\
+        const sagittal = computeSagittal({headId: HeadId.DOUBLE_RIGHT_BARB})                            // |\\
 
 
         const actual = computeSagittalSmiley(sagittal)
@@ -35,7 +35,7 @@ describe("computeSagittalSmiley", (): void => {
     })
 
     it("does the correct thing with double ticks", (): void => {
-        const sagittal = getSagittal({armId: ArmId.BIRD, headId: HeadId.RIGHT_ARC})                 // ``|)
+        const sagittal = computeSagittal({armId: ArmId.BIRD, headId: HeadId.RIGHT_ARC})                 // ``|)
 
         const actual = computeSagittalSmiley(sagittal)
 
@@ -44,7 +44,7 @@ describe("computeSagittalSmiley", (): void => {
     })
 
     it("does the correct thing with double down ticks", (): void => {
-        const sagittal = getSagittal({armId: ArmId.BIRD, against: true, headId: HeadId.RIGHT_ARC})  // ,,|)
+        const sagittal = computeSagittal({armId: ArmId.BIRD, against: true, headId: HeadId.RIGHT_ARC})  // ,,|)
 
         const actual = computeSagittalSmiley(sagittal)
 
@@ -53,7 +53,7 @@ describe("computeSagittalSmiley", (): void => {
     })
 
     it("works for a sagittal with four shafts", (): void => {
-        const sagittal = getSagittal({headId: HeadId.DOUBLE_SCROLL, shafts: Shafts.EX})             // )X(
+        const sagittal = computeSagittal({headId: HeadId.DOUBLE_SCROLL, shafts: Shafts.EX})             // )X(
 
         const actual = computeSagittalSmiley(sagittal)
 
@@ -76,7 +76,7 @@ describe("computeSagittalSmiley", (): void => {
 describe("computeAccidentalSmiley", (): void => {
     it("works for an accidental with a Sagittal-compatible glyph", (): void => {
         const accidental: Accidental<Flavor.EVO> = {                                                    // )\!x
-            ...getSagittal({ headId: HeadId.LEFT_SCROLL_AND_BARB, down: true }),
+            ...computeSagittal({ headId: HeadId.LEFT_SCROLL_AND_BARB, down: true }),
             compatible: Compatible.DOUBLE_SHARP,
         } as Accidental<Flavor.EVO>
 
