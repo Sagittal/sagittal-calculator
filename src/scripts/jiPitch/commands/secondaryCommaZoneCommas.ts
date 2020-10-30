@@ -11,6 +11,8 @@ applySharedPitchCommandSetup()
 
 const findCommasSettings = parseFindCommasSettings()
 
+// Todo: need to write another version of this script which goes by Extreme capture zones
+
 const secondaryCommaZoneCommas = JI_NOTATION.reduce(
     (
         secondaryCommaZoneCommas: Record<CommaClassId, Comma[]>,

@@ -1,10 +1,10 @@
-import {deepClone, isUndefined, Maybe} from "../../../general"
+import {isUndefined, Maybe, shallowClone} from "../../../general"
 import {Sagittal} from "./types"
 
 const flipSagittal = (sagittal: Maybe<Sagittal>): Maybe<Sagittal> => {
     if (isUndefined(sagittal)) return
 
-    const flippedSagittal = deepClone(sagittal)
+    const flippedSagittal = shallowClone(sagittal)
 
     if (flippedSagittal.down) {
         delete flippedSagittal.down

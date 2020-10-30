@@ -1,28 +1,39 @@
-import {deepEquals, isUndefined, Maybe} from "../../../general"
+import {deepEquals, finalElement, isUndefined, stringify} from "../../../general"
 import {Flacco, FLACCOS, getArm, getHead, HeadId} from "../flacco"
+import {formatSagittal} from "../glyph"
 import {computeApotomeComplement} from "./apotomeComplement"
 import {getCore} from "./core"
+import {areShaftsEven} from "./even"
 import {GetSagittalOptions, Sagittal, Shafts} from "./types"
 
 const isFlaccoValid = (flacco: Flacco): boolean =>
     !!Object.values(FLACCOS).find((validFlacco: Flacco): boolean =>
         deepEquals(flacco, validFlacco))
 
-const checkSagittalValidity = (sagittal: Sagittal, options: Required<GetSagittalOptions>): void => {
-    const {shafts, armId, against, headId} = options
+const checkSagittalValidity = (sagittal: Sagittal): void => {
+    const {arm, down, shafts, ...head} = sagittal
 
-    const adjustedSagittalForCheckingFlaccoValidity: Sagittal = shafts === Shafts.DOUBLE || shafts === Shafts.EX ?
-            // TODO: This module needs more testing to make sure you can't request stuff beyond ex-shafted edge, etc.
-            //  Cuz this logic is starting to get crazy town. Way more complex than I expected. But then again we are
-            //  Basically here setting up a totally parallel mechanism to how it's accomplished by going from a flacco
-            //  To a symbol and then apotome shifting...
-            (shafts === Shafts.DOUBLE && headId === HeadId.DOUBLE_BARB && !against) ?
-                {...sagittal, ...getHead(HeadId.BARE_SHAFT)} :
-                computeApotomeComplement({...sagittal, down: false, shafts: Shafts.DOUBLE}) as Sagittal :
-            sagittal
-    const {down: discardDown, shafts: discardShafts, ...flacco} = adjustedSagittalForCheckingFlaccoValidity
+    let adjustedSagittal = sagittal
+    if (areShaftsEven(shafts)) {
+        if (deepEquals(head, getHead(HeadId.DOUBLE_BARB))) {
+            if (!isUndefined(arm) && !finalElement(arm).against) {
+                if (shafts === Shafts.EX) {
+                    throw new Error(`Invalid sagittal due to being beyond the double apotome: ${formatSagittal(sagittal, {align: false})}`)
+                }
+                adjustedSagittal = { arm, shafts: Shafts.SINGLE }
+            } else {
+                adjustedSagittal =
+                    computeApotomeComplement({arm, ...head, shafts: Shafts.DOUBLE}) as Sagittal
+            }
+        } else {
+            adjustedSagittal =
+                computeApotomeComplement({arm, ...head, shafts: Shafts.DOUBLE}) as Sagittal
+        }
+    }
+    const {down: discardDown, shafts: discardShafts, ...flacco} = adjustedSagittal
+
     if (!isFlaccoValid(flacco)) {
-        throw new Error(`Attempted to get invalid sagittal: ${armId} ${against ? "against" : "and"} ${headId} with ${shafts}-shaft`)
+        throw new Error(`Invalid sagittal due to incorrect flag, arm, and shaft combo: ${formatSagittal(sagittal, {align: false})}`)
     }
 }
 
@@ -42,7 +53,7 @@ const getSagittal = (options?: GetSagittalOptions): Sagittal => {
     const arm = getArm(armId, {against})
     const sagittal = {arm, ...core}
 
-    checkSagittalValidity(sagittal, {armId, against, headId, shafts, down})
+    checkSagittalValidity(sagittal)
 
     return sagittal
 }

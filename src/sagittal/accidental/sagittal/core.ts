@@ -1,4 +1,5 @@
 import {getHead, HeadId} from "../flacco"
+import {areShaftsEven} from "./even"
 import {Core, Shafts} from "./types"
 
 // I had thought it might be a cool idea to define this in terms of taking the apotome complement of the 2-shaft symbol
@@ -35,10 +36,7 @@ const getCore = (
     headId: HeadId,
     {shafts = Shafts.SINGLE, down = false}: {shafts?: Shafts, down?: boolean} = {},
 ): Core => {
-    if (
-        (shafts === Shafts.DOUBLE || shafts === Shafts.EX)
-        && !HEADS_SUPPORTED_WITH_EVEN_SHAFTS.includes(headId)
-    ) {
+    if (areShaftsEven(shafts) && !HEADS_SUPPORTED_WITH_EVEN_SHAFTS.includes(headId)) {
         throw new Error(`A core with flag combo ${headId} does not exist for even shaft counts.`)
     }
 

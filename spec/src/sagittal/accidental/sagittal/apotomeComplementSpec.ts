@@ -113,4 +113,12 @@ describe("computeApotomeComplement", (): void => {
             ...core, arm: getArm(ArmId.WING, {against: true}),
         })
     })
+
+    it("throws an error if passed a down symbol", (): void => {
+        const sagittal = getSagittal({headId: HeadId.LEFT_BARB, down: true })                          //  \!
+
+        expect((): void => {
+            computeApotomeComplement(sagittal)
+        }).toThrowError("Do not attempt to take apotome complement of downward-aiming sagittals.")
+    })
 })
