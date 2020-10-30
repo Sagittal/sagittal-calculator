@@ -1,11 +1,13 @@
 import {Comma, count, increment, LogTarget, saveLog, stringify} from "../../general"
 import {CommaClassId} from "../../sagittal"
+import {EXCLUDED_COMMAS} from "./constants"
 import {isCommaMostUsefulInZone} from "./isCommaMostUsefulInZone"
 import {computeUsefulnessParameterSets} from "./parameters"
-import {SECONDARY_COMMA_ZONE_COMMAS_ENTRIES} from "./secondaryCommaZoneCommas"
 import {UsefulnessMetric, UsefulnessMetricId, UsefulnessParameterId, UsefulnessParameterSet} from "./types"
+import {computeZoneCommaEntries} from "./zoneCommas"
 
 // TODO: of course this is pretty not DRY with the minimize.module. You might want to consolidate
+//  And when you do, test cover the exclusion of 14641 and 19/4375
 
 const logUsefulnessParameterSetsForUsefulnessMetricMaximizingMatchCount = (
     [
@@ -24,9 +26,13 @@ const logUsefulnessParameterSetsForUsefulnessMetricMaximizingMatchCount = (
     usefulnessParameterSets.forEach((usefulnessParameterSet: UsefulnessParameterSet, index: number): void => {
         let matchCount = 0
 
-        SECONDARY_COMMA_ZONE_COMMAS_ENTRIES.forEach((secondaryCommaZoneCommasEntry: [CommaClassId, Comma[]]): void => {
+        const zoneCommaEntries = computeZoneCommaEntries()
+
+        zoneCommaEntries.forEach(([commaClassId, commas]: [CommaClassId, Comma[]]): void => {
+            if (EXCLUDED_COMMAS.includes(commaClassId)) return
+
             const isMostUseful = isCommaMostUsefulInZone(
-                secondaryCommaZoneCommasEntry,
+                [commaClassId, commas],
                 metric,
                 usefulnessParameterSet,
             )

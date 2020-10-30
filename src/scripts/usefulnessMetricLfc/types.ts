@@ -37,6 +37,10 @@ enum UsefulnessParameterId {
     TP = "tP",
 }
 
+interface UsefulnessMetricLfcScriptGroupSettings {
+    extremeCaptureZones: boolean,
+}
+
 export {
     UsefulnessMetric,
     UsefulnessScore,
@@ -44,4 +48,5 @@ export {
     UsefulnessMetricId,
     UsefulnessParameterId,
     SquaredUsefulnessScoreDistanceFromBestUsefulnessScore,
+    UsefulnessMetricLfcScriptGroupSettings,
 }
