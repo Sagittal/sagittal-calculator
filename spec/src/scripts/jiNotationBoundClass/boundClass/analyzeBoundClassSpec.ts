@@ -1,22 +1,12 @@
 import {Abs, Cents, Count, HALF_SCALER, Index, Monzo, Multiplier, Name, Scamon, Sum} from "../../../../../src/general"
 import {APOTOME, BoundClass, JiNotationBound} from "../../../../../src/sagittal"
-import {
-    BoundType,
-    Ina,
-    JiNotationBoundClass,
-    JiNotationLevelId,
-    Tina,
-} from "../../../../../src/sagittal/notations"
+import {BoundType, Ina, JiNotationBoundClass, JiNotationLevelId, Tina} from "../../../../../src/sagittal/notations"
 import {EXTREME_EDA, INSANE_EDA} from "../../../../../src/sagittal/notations/ji/levelEdas"
 import {analyzeJiNotationBoundClass} from "../../../../../src/scripts/jiNotationBoundClass/boundClass"
 import * as jiNotationLevels from "../../../../../src/scripts/jiNotationBoundClass/boundClass/levels"
 import * as ranks from "../../../../../src/scripts/jiNotationBoundClass/boundClass/ranks"
 import {BoundHistory} from "../../../../../src/scripts/jiNotationBoundClass/histories"
-import {
-    BoundEventAnalysis,
-    BoundHistoryAnalysis,
-    Score,
-} from "../../../../../src/scripts/jiNotationBoundClass/history"
+import {BoundEventAnalysis, BoundHistoryAnalysis, Score} from "../../../../../src/scripts/jiNotationBoundClass/history"
 import {RANKS} from "../../../../../src/scripts/jiNotationBoundClass/ranks"
 import {jiNotationBoundClassFixture} from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 

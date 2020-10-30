@@ -1,13 +1,13 @@
-import { Denominator, Of, Prime } from "../../../../../../../general"
-import { NumeratorPossibilityForDenominatorGivenMaxN2D3P9 } from "./numeratorPossibilities"
+import {Denominator, Of, Prime} from "../../../../../../../general"
+import {NumeratorPossibilityForDenominatorGivenMaxN2D3P9} from "./numeratorPossibilities"
 
-type N2 = number & { _N2Brand: boolean }
-type N2P = number & { _N2PBrand: boolean }
+type N2 = number & {_N2Brand: boolean}
+type N2P = number & {_N2PBrand: boolean}
 
 type NumeratorPossibilityWithLesserGpfThanDenominatorPrime = NumeratorPossibilityForDenominatorGivenMaxN2D3P9 &
-    { _WithLesserGpfThanDenominatorPrimeBrand: boolean }
+    {_WithLesserGpfThanDenominatorPrimeBrand: boolean}
 type NumeratorPossibilityWithGreaterGpfThanDenominatorPrime = NumeratorPossibilityForDenominatorGivenMaxN2D3P9 &
-    { _WithGreaterGpfThanDenominatorPrimeBrand: boolean }
+    {_WithGreaterGpfThanDenominatorPrimeBrand: boolean}
 
 interface SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2
     extends NumeratorPossibilityWithLesserGpfThanDenominatorPrime {

@@ -143,7 +143,7 @@ const computeApotomeComplement = (sagittal: Maybe<Sagittal>): Maybe<Sagittal> =>
         throw new Error("Do not attempt to take apotome complement of downward-aiming sagittals.")
     }
 
-    if (isUndefined(arm) && deepEquals(core, getCore(HeadId.DOUBLE_BARB, { shafts: Shafts.DOUBLE }))) {
+    if (isUndefined(arm) && deepEquals(core, getCore(HeadId.DOUBLE_BARB, {shafts: Shafts.DOUBLE}))) {
         return undefined
     }
 

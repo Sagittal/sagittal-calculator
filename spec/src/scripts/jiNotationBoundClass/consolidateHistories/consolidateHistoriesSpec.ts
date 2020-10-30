@@ -3,10 +3,7 @@ import {APOTOME, JiNotationBound} from "../../../../../src/sagittal"
 import {BoundType, JiNotationLevelId, Tina} from "../../../../../src/sagittal/notations"
 import {EXTREME_EDA, ULTRA_EDA} from "../../../../../src/sagittal/notations/ji/levelEdas"
 import {consolidateBoundHistories} from "../../../../../src/scripts/jiNotationBoundClass/consolidateHistories"
-import {
-    BoundEventAnalysis,
-    BoundHistoryAnalysis,
-} from "../../../../../src/scripts/jiNotationBoundClass/history"
+import {BoundEventAnalysis, BoundHistoryAnalysis} from "../../../../../src/scripts/jiNotationBoundClass/history"
 import {RANKS} from "../../../../../src/scripts/jiNotationBoundClass/ranks"
 import {
     boundEventAnalysisFixture,

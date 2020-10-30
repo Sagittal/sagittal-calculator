@@ -1,4 +1,4 @@
-import { JiNotationLevelId } from "./types"
+import {JiNotationLevelId} from "./types"
 
 const JI_NOTATION_LEVELS: JiNotationLevelId[] = [
     JiNotationLevelId.MEDIUM,

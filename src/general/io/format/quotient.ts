@@ -15,8 +15,8 @@ const formatQuotient = <T extends Quotient>(
                 `[/pre][latex]${numerator}[/latex][pre]` as Formatted<T> :
                 `[/pre][latex]\\frac{${numerator}}{${denominator}}[/latex][pre]` as Formatted<T> :
             denominator === 1 ?
-            `${numerator}` as Formatted<T> :
-            `${numerator}/${denominator}` as Formatted<T> :
+                `${numerator}` as Formatted<T> :
+                `${numerator}/${denominator}` as Formatted<T> :
         `${denominator}:${numerator}` as Formatted<T>
 }
 

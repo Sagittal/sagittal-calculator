@@ -1,8 +1,8 @@
-import { BoundType, JiNotationLevelId } from "../../../../../src/sagittal/notations/ji"
-import { BoundEventAnalysis } from "../../../../../src/scripts/jiNotationBoundClass/history"
-import { computeScore } from "../../../../../src/scripts/jiNotationBoundClass/history/score"
-import { RANKS } from "../../../../../src/scripts/jiNotationBoundClass/ranks"
-import { boundEventAnalysisFixture } from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
+import {BoundType, JiNotationLevelId} from "../../../../../src/sagittal/notations/ji"
+import {BoundEventAnalysis} from "../../../../../src/scripts/jiNotationBoundClass/history"
+import {computeScore} from "../../../../../src/scripts/jiNotationBoundClass/history/score"
+import {RANKS} from "../../../../../src/scripts/jiNotationBoundClass/ranks"
+import {boundEventAnalysisFixture} from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
 describe("computeScore", (): void => {
     it("scores histories with worse ranks worse", (): void => {
@@ -10,14 +10,14 @@ describe("computeScore", (): void => {
             {
                 ...boundEventAnalysisFixture,
                 jiNotationLevel: JiNotationLevelId.MEDIUM,
-                rank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
+                rank: RANKS[BoundType.SIZE_CATEGORY_BOUND],
             },
         ]
         const expectedBetterScoreHistories: BoundEventAnalysis[] = [
             {
                 ...boundEventAnalysisFixture,
                 jiNotationLevel: JiNotationLevelId.MEDIUM,
-                rank: RANKS[ BoundType.COMMA_MEAN ],
+                rank: RANKS[BoundType.COMMA_MEAN],
             },
         ]
 
@@ -32,24 +32,24 @@ describe("computeScore", (): void => {
             {
                 ...boundEventAnalysisFixture,
                 jiNotationLevel: JiNotationLevelId.MEDIUM,
-                rank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
+                rank: RANKS[BoundType.SIZE_CATEGORY_BOUND],
             },
             {
                 ...boundEventAnalysisFixture,
                 jiNotationLevel: JiNotationLevelId.HIGH,
-                rank: RANKS[ BoundType.COMMA_MEAN ],
+                rank: RANKS[BoundType.COMMA_MEAN],
             },
         ]
         const expectedBetterScoreHistories = [
             {
                 ...boundEventAnalysisFixture,
                 jiNotationLevel: JiNotationLevelId.MEDIUM,
-                rank: RANKS[ BoundType.COMMA_MEAN ],
+                rank: RANKS[BoundType.COMMA_MEAN],
             },
             {
                 ...boundEventAnalysisFixture,
                 jiNotationLevel: JiNotationLevelId.HIGH,
-                rank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
+                rank: RANKS[BoundType.SIZE_CATEGORY_BOUND],
             },
         ]
 
@@ -64,54 +64,54 @@ describe("computeScore", (): void => {
             {
                 ...boundEventAnalysisFixture,
                 jiNotationLevel: JiNotationLevelId.MEDIUM,
-                rank: RANKS[ BoundType.INA_MIDPOINT ],
+                rank: RANKS[BoundType.INA_MIDPOINT],
             },
             {
                 ...boundEventAnalysisFixture,
                 jiNotationLevel: JiNotationLevelId.HIGH,
-                rank: RANKS[ BoundType.INA_MIDPOINT ],
+                rank: RANKS[BoundType.INA_MIDPOINT],
             },
             {
                 ...boundEventAnalysisFixture,
                 jiNotationLevel: JiNotationLevelId.ULTRA,
-                rank: RANKS[ BoundType.INA_MIDPOINT ],
+                rank: RANKS[BoundType.INA_MIDPOINT],
             },
             {
                 ...boundEventAnalysisFixture,
                 jiNotationLevel: JiNotationLevelId.EXTREME,
-                rank: RANKS[ BoundType.INA_MIDPOINT ],
+                rank: RANKS[BoundType.INA_MIDPOINT],
             },
             {
                 ...boundEventAnalysisFixture,
                 jiNotationLevel: JiNotationLevelId.INSANE,
-                rank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
+                rank: RANKS[BoundType.SIZE_CATEGORY_BOUND],
             },
         ]
         const expectedBetterScoreHistories = [
             {
                 ...boundEventAnalysisFixture,
                 jiNotationLevel: JiNotationLevelId.MEDIUM,
-                rank: RANKS[ BoundType.COMMA_MEAN ],
+                rank: RANKS[BoundType.COMMA_MEAN],
             },
             {
                 ...boundEventAnalysisFixture,
                 jiNotationLevel: JiNotationLevelId.HIGH,
-                rank: RANKS[ BoundType.COMMA_MEAN ],
+                rank: RANKS[BoundType.COMMA_MEAN],
             },
             {
                 ...boundEventAnalysisFixture,
                 jiNotationLevel: JiNotationLevelId.ULTRA,
-                rank: RANKS[ BoundType.COMMA_MEAN ],
+                rank: RANKS[BoundType.COMMA_MEAN],
             },
             {
                 ...boundEventAnalysisFixture,
                 jiNotationLevel: JiNotationLevelId.EXTREME,
-                rank: RANKS[ BoundType.COMMA_MEAN ],
+                rank: RANKS[BoundType.COMMA_MEAN],
             },
             {
                 ...boundEventAnalysisFixture,
                 jiNotationLevel: JiNotationLevelId.INSANE,
-                rank: RANKS[ BoundType.COMMA_MEAN ],
+                rank: RANKS[BoundType.COMMA_MEAN],
             },
         ]
 

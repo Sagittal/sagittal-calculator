@@ -1,6 +1,6 @@
-import { dividesEvenly, KeyPath, sort } from "../../../../../../../general"
-import { computeN2P } from "./n2p"
-import { NumeratorPossibilityForDenominatorGivenMaxN2D3P9 } from "./numeratorPossibilities"
+import {dividesEvenly, KeyPath, sort} from "../../../../../../../general"
+import {computeN2P} from "./n2p"
+import {NumeratorPossibilityForDenominatorGivenMaxN2D3P9} from "./numeratorPossibilities"
 import {
     NumeratorPossibilityWithGreaterGpfThanDenominatorPrime,
     SortedNumeratorPossibilitiesOptions,
@@ -8,7 +8,7 @@ import {
 } from "./types"
 
 const computeSortedNumeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenominatorPrimeSortedByN2P = (
-    { denominatorPrime, numeratorPossibilitiesForDenominatorGivenMaxN2D3P9 }: SortedNumeratorPossibilitiesOptions,
+    {denominatorPrime, numeratorPossibilitiesForDenominatorGivenMaxN2D3P9}: SortedNumeratorPossibilitiesOptions,
 ): SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P[] => {
     const numeratorPossibilitiesWithGreaterGpf: NumeratorPossibilityWithGreaterGpfThanDenominatorPrime[] =
         numeratorPossibilitiesForDenominatorGivenMaxN2D3P9.filter(
@@ -21,10 +21,10 @@ const computeSortedNumeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenomin
         .map((
             numeratorPossibility: NumeratorPossibilityWithGreaterGpfThanDenominatorPrime,
         ): SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P => {
-            return { ...numeratorPossibility, n2p: computeN2P(numeratorPossibility.numerator) }
+            return {...numeratorPossibility, n2p: computeN2P(numeratorPossibility.numerator)}
         })
 
-    return sort(numeratorPossibilitiesWithGreaterGpfIncludingN2P, { by: "n2p" as KeyPath })
+    return sort(numeratorPossibilitiesWithGreaterGpfIncludingN2P, {by: "n2p" as KeyPath})
 }
 
 export {

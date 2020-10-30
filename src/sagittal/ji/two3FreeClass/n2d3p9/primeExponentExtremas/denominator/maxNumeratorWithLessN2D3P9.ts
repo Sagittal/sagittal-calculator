@@ -13,27 +13,27 @@ import {
     Numerator,
     Prime,
 } from "../../../../../../general"
-import { computeN2D3P9 } from "../../n2d3p9"
-import { N2D3P9 } from "../../types"
+import {computeN2D3P9} from "../../n2d3p9"
+import {N2D3P9} from "../../types"
 
 const computeMaybeNumeratorWithinMaxN2D3P9 = (
-    numeratorMonzoToCheck: Monzo<{ integer: true }>,
+    numeratorMonzoToCheck: Monzo<{integer: true}>,
     maxN2D3P9: Max<N2D3P9>,
-): Maybe<Numerator & Decimal<{ integer: true }>> => {
+): Maybe<Numerator & Decimal<{integer: true}>> => {
     const two3FreeClass = compute23FreeClass(
-        computeRationalScamonFromRationalMonzo(numeratorMonzoToCheck as Monzo<{ integer: true, rational: true }>),
+        computeRationalScamonFromRationalMonzo(numeratorMonzoToCheck as Monzo<{integer: true, rational: true}>),
     )
     const n2d3p9 = computeN2D3P9(two3FreeClass)
 
     return n2d3p9 < maxN2D3P9 ?
-        computeDecimalFromMonzo(numeratorMonzoToCheck) as Numerator & Decimal<{ integer: true }> :
+        computeDecimalFromMonzo(numeratorMonzoToCheck) as Numerator & Decimal<{integer: true}> :
         undefined
 }
 
 const computeMaxNumeratorWithLessN2D3P9ThanMaxN2D3P9 = (
-    numeratorPrimeExponentExtremasGivenMaxN2D3P9: Array<Extrema<Decimal<{ integer: true }> & Exponent<Prime>>>,
+    numeratorPrimeExponentExtremasGivenMaxN2D3P9: Array<Extrema<Decimal<{integer: true}> & Exponent<Prime>>>,
     maxN2D3P9: Max<N2D3P9>,
-): Max<Numerator & Decimal<{ integer: true }>> => {
+): Max<Numerator & Decimal<{integer: true}>> => {
     const numerators = doForEachRationalMonzo(
         numeratorPrimeExponentExtremasGivenMaxN2D3P9,
         computeMaybeNumeratorWithinMaxN2D3P9,

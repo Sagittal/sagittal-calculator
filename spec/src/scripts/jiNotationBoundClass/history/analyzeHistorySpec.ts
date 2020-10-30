@@ -8,9 +8,9 @@ import {
     Scamon,
     Sum,
 } from "../../../../../src/general"
-import { multiply } from "../../../../../src/general/math"
-import { IRRATIONAL_SCAMON_BASE_MONZO } from "../../../../../src/general/math/irrational/scamon/constants"
-import { APOTOME } from "../../../../../src/sagittal"
+import {multiply} from "../../../../../src/general/math"
+import {IRRATIONAL_SCAMON_BASE_MONZO} from "../../../../../src/general/math/irrational/scamon/constants"
+import {APOTOME} from "../../../../../src/sagittal"
 import {
     BoundType,
     Ina,
@@ -19,11 +19,11 @@ import {
     Tina,
     TINA,
 } from "../../../../../src/sagittal/notations/ji"
-import { EXTREME_EDA } from "../../../../../src/sagittal/notations/ji/levelEdas"
-import { computeInitialPosition } from "../../../../../src/scripts/jiNotationBoundClass/boundClass/initialPosition"
-import { BoundHistory } from "../../../../../src/scripts/jiNotationBoundClass/histories"
-import { analyzeHistory } from "../../../../../src/scripts/jiNotationBoundClass/history"
-import { RANKS } from "../../../../../src/scripts/jiNotationBoundClass/ranks"
+import {EXTREME_EDA} from "../../../../../src/sagittal/notations/ji/levelEdas"
+import {computeInitialPosition} from "../../../../../src/scripts/jiNotationBoundClass/boundClass/initialPosition"
+import {BoundHistory} from "../../../../../src/scripts/jiNotationBoundClass/histories"
+import {analyzeHistory} from "../../../../../src/scripts/jiNotationBoundClass/history"
+import {RANKS} from "../../../../../src/scripts/jiNotationBoundClass/ranks"
 import {
     boundEventAnalysisFixture,
     boundEventFixture,
@@ -34,9 +34,9 @@ describe("analyzeHistory", (): void => {
     const actualJiNotationBoundPitch = {
         monzo: APOTOME.monzo,
         scaler: [25.5, EXTREME_EDA],
-    } as Scamon<{ rational: false }>
+    } as Scamon<{rational: false}>
     let boundHistory: BoundHistory
-    let pitch: Scamon<{ rational: false }>
+    let pitch: Scamon<{rational: false}>
     let jiNotationBoundClass: JiNotationBoundClass
     let initialPosition
 
@@ -46,7 +46,7 @@ describe("analyzeHistory", (): void => {
             {
                 monzo: IRRATIONAL_SCAMON_BASE_MONZO,
                 scaler: [1, 2400] as Quotient,  // 2^(1/2400) = 0.5¢
-            } as Scamon<{ rational: false }>,
+            } as Scamon<{rational: false}>,
         )
         boundHistory = [
             {
@@ -76,7 +76,7 @@ describe("analyzeHistory", (): void => {
                 ...boundEventAnalysisFixture,
                 pitch,
                 boundType: BoundType.INA_MIDPOINT,
-                rank: RANKS[ BoundType.INA_MIDPOINT ],
+                rank: RANKS[BoundType.INA_MIDPOINT],
                 exact: false,
                 distance: 0 as Abs<Cents>,
                 inaDistance: 0 as Multiplier<Ina>,
@@ -86,7 +86,7 @@ describe("analyzeHistory", (): void => {
                 ...boundEventAnalysisFixture,
                 pitch,
                 boundType: BoundType.SIZE_CATEGORY_BOUND,
-                rank: RANKS[ BoundType.SIZE_CATEGORY_BOUND ],
+                rank: RANKS[BoundType.SIZE_CATEGORY_BOUND],
                 exact: false,
                 distance: 0 as Abs<Cents>,
                 inaDistance: 0 as Multiplier<Ina>,
@@ -94,7 +94,7 @@ describe("analyzeHistory", (): void => {
             },
         ])
         expect(actual.pitch).toEqual(pitch)
-        expect(actual.rank).toBe(RANKS[ BoundType.SIZE_CATEGORY_BOUND ])
+        expect(actual.rank).toBe(RANKS[BoundType.SIZE_CATEGORY_BOUND])
         expect(actual.totalDistance).toBe(0 as Sum<Abs<Cents>>)
         expect(actual.initialPositionTinaDistance)
             .toBeCloseToTyped(3.710191 as Multiplier<Tina>)

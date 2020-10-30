@@ -1,7 +1,7 @@
-import { Decimal, Max, Numerator } from "../../../../../../../../../../src/general/math"
-import { N2D3P9 } from "../../../../../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
-import { computeMaxNumeratorGivenMaxN2D3P9 } from "../../../../../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/numeratorPossibilities/maxNumerator"
-import { onlyRunInCi } from "../../../../../../../../../helpers/onlyRunInCi"
+import {Decimal, Max, Numerator} from "../../../../../../../../../../src/general/math"
+import {N2D3P9} from "../../../../../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
+import {computeMaxNumeratorGivenMaxN2D3P9} from "../../../../../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/numeratorPossibilities/maxNumerator"
+import {onlyRunInCi} from "../../../../../../../../../helpers/onlyRunInCi"
 
 describe("computeMaxNumeratorGivenMaxN2D3P9", (): void => {
     it("works for 136, for which the max numerator is a simple power of a single prime", (): void => {
@@ -11,7 +11,7 @@ describe("computeMaxNumeratorGivenMaxN2D3P9", (): void => {
 
         const actual = computeMaxNumeratorGivenMaxN2D3P9(maxN2D3P9)
 
-        const expected = 5 ** 6 as Max<Numerator & Decimal<{ integer: true }>>
+        const expected = 5 ** 6 as Max<Numerator & Decimal<{integer: true}>>
         expect(actual).toEqual(expected)
     })
 
@@ -20,7 +20,7 @@ describe("computeMaxNumeratorGivenMaxN2D3P9", (): void => {
 
         const actual = computeMaxNumeratorGivenMaxN2D3P9(maxN2D3P9)
 
-        const expected = 5 ** 3 as Max<Numerator & Decimal<{ integer: true }>>
+        const expected = 5 ** 3 as Max<Numerator & Decimal<{integer: true}>>
         expect(actual).toEqual(expected)
     })
 
@@ -29,7 +29,7 @@ describe("computeMaxNumeratorGivenMaxN2D3P9", (): void => {
 
         const actual = computeMaxNumeratorGivenMaxN2D3P9(maxN2D3P9)
 
-        const expected = 5 ** 1 * 7 ** 1 as Max<Numerator & Decimal<{ integer: true }>>
+        const expected = 5 ** 1 * 7 ** 1 as Max<Numerator & Decimal<{integer: true}>>
         expect(actual).toEqual(expected)
     })
 })

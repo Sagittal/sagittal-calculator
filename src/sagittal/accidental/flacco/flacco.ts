@@ -11,7 +11,7 @@ const FLACCOS: Record<FlaccoId, Flacco> = {
         arm: getArm(ArmId.BIRD),
     },
     /*3*/[FlaccoId.ANTITICK_AND_LEFT_SCROLL]: {                       //    .)|
-        arm: getArm(ArmId.TICK, { anti: true }),
+        arm: getArm(ArmId.TICK, {anti: true}),
         ...getHead(HeadId.LEFT_SCROLL),
     },
     /*4*/[FlaccoId.TICK]: {                                           //     '|
@@ -21,7 +21,7 @@ const FLACCOS: Record<FlaccoId, Flacco> = {
         arm: getArm(ArmId.WING_AND_TICK),
     },
     /*6*/[FlaccoId.ANTIWING_AND_LEFT_SCROLL]: {                       //    ,)|
-        arm: getArm(ArmId.WING, { anti: true }),
+        arm: getArm(ArmId.WING, {anti: true}),
         ...getHead(HeadId.LEFT_SCROLL),
     },
     /*7*/[FlaccoId.LEFT_SCROLL]: {                                    //     )|
@@ -36,11 +36,11 @@ const FLACCOS: Record<FlaccoId, Flacco> = {
         ...getHead(HeadId.LEFT_SCROLL),
     },
     /*10*/[FlaccoId.ANTIBIRD_AND_RIGHT_SCROLL]: {                     //    ,,|(
-        arm: getArm(ArmId.BIRD, { anti: true }),
+        arm: getArm(ArmId.BIRD, {anti: true}),
         ...getHead(HeadId.RIGHT_SCROLL),
     },
     /*11*/[FlaccoId.ANTIWING_AND_RIGHT_SCROLL]: {                     //     ,|(
-        arm: getArm(ArmId.WING, { anti: true }),
+        arm: getArm(ArmId.WING, {anti: true}),
         ...getHead(HeadId.RIGHT_SCROLL),
     },
     /*12*/[FlaccoId.RIGHT_SCROLL]: {                                  //      |(
@@ -51,7 +51,7 @@ const FLACCOS: Record<FlaccoId, Flacco> = {
         ...getHead(HeadId.RIGHT_SCROLL),
     },
     /*14*/[FlaccoId.ANTITICK_AND_LEFT_BOATHOOK]: {                    //    .~|
-        arm: getArm(ArmId.TICK, { anti: true }),
+        arm: getArm(ArmId.TICK, {anti: true}),
         ...getHead(HeadId.LEFT_BOATHOOK),
     },
     /*15*/[FlaccoId.ANTIWING_TICK_AND_RIGHT_SCROLL]: {                //    ,'|(
@@ -63,14 +63,14 @@ const FLACCOS: Record<FlaccoId, Flacco> = {
         ...getHead(HeadId.RIGHT_SCROLL),
     },
     /*17*/[FlaccoId.ANTIWING_AND_LEFT_BOATHOOK]: {                    //    ,~|
-        arm: getArm(ArmId.WING, { anti: true }),
+        arm: getArm(ArmId.WING, {anti: true}),
         ...getHead(HeadId.LEFT_BOATHOOK),
     },
     /*18*/[FlaccoId.LEFT_BOATHOOK]: {                                 //     ~|
         ...getHead(HeadId.LEFT_BOATHOOK),
     },
     /*19*/[FlaccoId.ANTIWING_AND_DOUBLE_SCROLL]: {                    //    ,)|(
-        arm: getArm(ArmId.WING, { anti: true }),
+        arm: getArm(ArmId.WING, {anti: true}),
         ...getHead(HeadId.DOUBLE_SCROLL),
     },
     /*20*/[FlaccoId.DOUBLE_SCROLL]: {                                 //     )|(
@@ -96,19 +96,19 @@ const FLACCOS: Record<FlaccoId, Flacco> = {
         ...getHead(HeadId.LEFT_SCROLL_AND_BOATHOOK),
     },
     /*26*/[FlaccoId.ANTITICK_BOATHOOK_AND_SCROLL]: {                  //    .~|(
-        arm: getArm(ArmId.TICK, { anti: true }),
+        arm: getArm(ArmId.TICK, {anti: true}),
         ...getHead(HeadId.BOATHOOK_AND_SCROLL),
     },
     /*27*/[FlaccoId.WING_ANTITICK_BOATHOOK_AND_SCROLL]: {             //   `.~|(
-        arm: getArm(ArmId.ANTIWING_AND_TICK, { anti: true }),
+        arm: getArm(ArmId.ANTIWING_AND_TICK, {anti: true}),
         ...getHead(HeadId.BOATHOOK_AND_SCROLL),
     },
     /*28*/[FlaccoId.ANTIBIRD_BOATHOOK_AND_SCROLL]: {                  //   ,,~|(
-        arm: getArm(ArmId.BIRD, { anti: true }),
+        arm: getArm(ArmId.BIRD, {anti: true}),
         ...getHead(HeadId.BOATHOOK_AND_SCROLL),
     },
     /*29*/[FlaccoId.ANTIWING_BOATHOOK_AND_SCROLL]: {                  //    ,~|(
-        arm: getArm(ArmId.WING, { anti: true }),
+        arm: getArm(ArmId.WING, {anti: true}),
         ...getHead(HeadId.BOATHOOK_AND_SCROLL),
     },
     /*30*/[FlaccoId.BOATHOOK_AND_SCROLL]: {                           //     ~|(
@@ -119,11 +119,11 @@ const FLACCOS: Record<FlaccoId, Flacco> = {
         ...getHead(HeadId.BOATHOOK_AND_SCROLL),
     },
     /*32*/[FlaccoId.ANTIBIRD_AND_RIGHT_BOATHOOK]: {                   //    ,,|~
-        arm: getArm(ArmId.BIRD, { anti: true }),
+        arm: getArm(ArmId.BIRD, {anti: true}),
         ...getHead(HeadId.RIGHT_BOATHOOK),
     },
     /*33*/[FlaccoId.ANTIWING_AND_RIGHT_BOATHOOK]: {                   //     ,|~
-        arm: getArm(ArmId.WING, { anti: true }),
+        arm: getArm(ArmId.WING, {anti: true}),
         ...getHead(HeadId.RIGHT_BOATHOOK),
     },
     /*34*/[FlaccoId.RIGHT_BOATHOOK]: {                                //      |~
@@ -145,22 +145,22 @@ const FLACCOS: Record<FlaccoId, Flacco> = {
         ...getHead(HeadId.DOUBLE_LEFT_BOATHOOK),
     },
     /*39*/[FlaccoId.ANTIWING_ANTITICK_AND_LEFT_BARB]: {               //   ,./|
-        arm: getArm(ArmId.WING_AND_TICK, { anti: true }),
+        arm: getArm(ArmId.WING_AND_TICK, {anti: true}),
         ...getHead(HeadId.LEFT_BARB),
     },
     /*40*/[FlaccoId.ANTITICK_AND_LEFT_BARB]: {                        //    ./|
-        arm: getArm(ArmId.TICK, { anti: true }),
+        arm: getArm(ArmId.TICK, {anti: true}),
         ...getHead(HeadId.LEFT_BARB),
     },
     /*41*/[FlaccoId.SCROLL_AND_BOATHOOK]: {                           //     )|~
         ...getHead(HeadId.SCROLL_AND_BOATHOOK),
     },
     /*42*/[FlaccoId.ANTIBIRD_AND_LEFT_BARB]: {                        //   ,,/|
-        arm: getArm(ArmId.BIRD, { anti: true }),
+        arm: getArm(ArmId.BIRD, {anti: true}),
         ...getHead(HeadId.LEFT_BARB),
     },
     /*43*/[FlaccoId.ANTIWING_AND_LEFT_BARB]: {                        //    ,/|
-        arm: getArm(ArmId.WING, { anti: true }),
+        arm: getArm(ArmId.WING, {anti: true}),
         ...getHead(HeadId.LEFT_BARB),
     },
     /*44*/[FlaccoId.LEFT_BARB]: {                                     //     /|
@@ -175,7 +175,7 @@ const FLACCOS: Record<FlaccoId, Flacco> = {
         ...getHead(HeadId.LEFT_BARB),
     },
     /*47*/[FlaccoId.ANTITICK_AND_LEFT_SCROLL_AND_BARB]: {             //   .)/|
-        arm: getArm(ArmId.TICK, { anti: true }),
+        arm: getArm(ArmId.TICK, {anti: true}),
         ...getHead(HeadId.LEFT_SCROLL_AND_BARB),
     },
     /*48*/[FlaccoId.TICK_AND_LEFT_BARB]: {                            //    '/|
@@ -187,34 +187,34 @@ const FLACCOS: Record<FlaccoId, Flacco> = {
         ...getHead(HeadId.LEFT_BARB),
     },
     /*50*/[FlaccoId.ANTIBIRD_AND_LEFT_SCROLL_AND_BARB]: {             //  ,,)/|
-        arm: getArm(ArmId.BIRD, { anti: true }),
+        arm: getArm(ArmId.BIRD, {anti: true}),
         ...getHead(HeadId.LEFT_SCROLL_AND_BARB),
     },
     /*51*/[FlaccoId.ANTIWING_AND_LEFT_SCROLL_AND_BARB]: {             //   ,)/|
-        arm: getArm(ArmId.WING, { anti: true }),
+        arm: getArm(ArmId.WING, {anti: true}),
         ...getHead(HeadId.LEFT_SCROLL_AND_BARB),
     },
     /*52*/[FlaccoId.LEFT_SCROLL_AND_BARB]: {                          //    )/|
         ...getHead(HeadId.LEFT_SCROLL_AND_BARB),
     },
     /*53*/[FlaccoId.ANTIWING_ANTITICK_AND_RIGHT_ARC]: {               //    ,.|)
-        arm: getArm(ArmId.WING_AND_TICK, { anti: true }),
+        arm: getArm(ArmId.WING_AND_TICK, {anti: true}),
         ...getHead(HeadId.RIGHT_ARC),
     },
     /*54*/[FlaccoId.ANTITICK_AND_RIGHT_ARC]: {                        //     .|)
-        arm: getArm(ArmId.TICK, { anti: true }),
+        arm: getArm(ArmId.TICK, {anti: true}),
         ...getHead(HeadId.RIGHT_ARC),
     },
     /*55*/[FlaccoId.WING_ANTITICK_AND_RIGHT_ARC]: {                   //    `.|)
-        arm: getArm(ArmId.ANTIWING_AND_TICK, { anti: true }),
+        arm: getArm(ArmId.ANTIWING_AND_TICK, {anti: true}),
         ...getHead(HeadId.RIGHT_ARC),
     },
     /*56*/[FlaccoId.ANTIBIRD_AND_RIGHT_ARC]: {                        //    ,,|)
-        arm: getArm(ArmId.BIRD, { anti: true }),
+        arm: getArm(ArmId.BIRD, {anti: true}),
         ...getHead(HeadId.RIGHT_ARC),
     },
     /*57*/[FlaccoId.ANTIWING_AND_RIGHT_ARC]: {                        //     ,|)
-        arm: getArm(ArmId.WING, { anti: true }),
+        arm: getArm(ArmId.WING, {anti: true}),
         ...getHead(HeadId.RIGHT_ARC),
     },
     /*58*/[FlaccoId.RIGHT_ARC]: {                                     //      |)
@@ -241,14 +241,14 @@ const FLACCOS: Record<FlaccoId, Flacco> = {
         ...getHead(HeadId.RIGHT_ARC),
     },
     /*64*/[FlaccoId.ANTIWING_SCROLL_AND_ARC]: {                       //    ,)|)
-        arm: getArm(ArmId.WING, { anti: true }),
+        arm: getArm(ArmId.WING, {anti: true}),
         ...getHead(HeadId.SCROLL_AND_ARC),
     },
     /*65*/[FlaccoId.SCROLL_AND_ARC]: {                                //     )|)
         ...getHead(HeadId.SCROLL_AND_ARC),
     },
     /*66*/[FlaccoId.ANTITICK_AND_LEFT_ARC]: {                         //    .(|
-        arm: getArm(ArmId.TICK, { anti: true }),
+        arm: getArm(ArmId.TICK, {anti: true}),
         ...getHead(HeadId.LEFT_ARC),
     },
     /*67*/[FlaccoId.RIGHT_BARB]: {                                    //      |\
@@ -259,7 +259,7 @@ const FLACCOS: Record<FlaccoId, Flacco> = {
         ...getHead(HeadId.RIGHT_BARB),
     },
     /*69*/[FlaccoId.ANTIWING_AND_LEFT_ARC]: {                         //    ,(|
-        arm: getArm(ArmId.WING, { anti: true }),
+        arm: getArm(ArmId.WING, {anti: true}),
         ...getHead(HeadId.LEFT_ARC),
     },
     /*70*/[FlaccoId.LEFT_ARC]: {                                      //     (|
@@ -282,7 +282,7 @@ const FLACCOS: Record<FlaccoId, Flacco> = {
         ...getHead(HeadId.LEFT_ARC),
     },
     /*75*/[FlaccoId.ANTIWING_BOATHOOK_AND_ARC]: {                     //    ,~|)
-        arm: getArm(ArmId.WING, { anti: true }),
+        arm: getArm(ArmId.WING, {anti: true}),
         ...getHead(HeadId.BOATHOOK_AND_ARC),
     },
     /*76*/[FlaccoId.BOATHOOK_AND_ARC]: {                              //     ~|)
@@ -293,11 +293,11 @@ const FLACCOS: Record<FlaccoId, Flacco> = {
         ...getHead(HeadId.BOATHOOK_AND_ARC),
     },
     /*78*/[FlaccoId.ANTIWING_ANTITICK_ARC_AND_SCROLL]: {              //   ,.(|(
-        arm: getArm(ArmId.WING_AND_TICK, { anti: true }),
+        arm: getArm(ArmId.WING_AND_TICK, {anti: true}),
         ...getHead(HeadId.ARC_AND_SCROLL),
     },
     /*79*/[FlaccoId.ANTITICK_ARC_AND_SCROLL]: {                       //    .(|(
-        arm: getArm(ArmId.TICK, { anti: true }),
+        arm: getArm(ArmId.TICK, {anti: true}),
         ...getHead(HeadId.ARC_AND_SCROLL),
     },
     /*80*/[FlaccoId.TICK_BOATHOOK_AND_ARC]: {                         //    '~|)
@@ -308,11 +308,11 @@ const FLACCOS: Record<FlaccoId, Flacco> = {
         ...getHead(HeadId.BARB_AND_BOATHOOK),
     },
     /*82*/[FlaccoId.ANTIBIRD_ARC_AND_SCROLL]: {                       //   ,,(|(
-        arm: getArm(ArmId.BIRD, { anti: true }),
+        arm: getArm(ArmId.BIRD, {anti: true}),
         ...getHead(HeadId.ARC_AND_SCROLL),
     },
     /*83*/[FlaccoId.ANTIWING_ARC_AND_SCROLL]: {                       //    ,(|(
-        arm: getArm(ArmId.WING, { anti: true }),
+        arm: getArm(ArmId.WING, {anti: true}),
         ...getHead(HeadId.ARC_AND_SCROLL),
     },
     /*84*/[FlaccoId.ARC_AND_SCROLL]: {                                //     (|(
@@ -326,23 +326,23 @@ const FLACCOS: Record<FlaccoId, Flacco> = {
         ...getHead(HeadId.BOATHOOK_AND_BARB),
     },
     /*87*/[FlaccoId.ANTIWING_ANTITICK_AND_DOUBLE_LEFT_BARB]: {        //  ,.//|
-        arm: getArm(ArmId.WING_AND_TICK, { anti: true }),
+        arm: getArm(ArmId.WING_AND_TICK, {anti: true}),
         ...getHead(HeadId.DOUBLE_LEFT_BARB),
     },
     /*88*/[FlaccoId.ANTITICK_AND_DOUBLE_LEFT_BARB]: {                 //   .//|
-        arm: getArm(ArmId.TICK, { anti: true }),
+        arm: getArm(ArmId.TICK, {anti: true}),
         ...getHead(HeadId.DOUBLE_LEFT_BARB),
     },
     /*89*/[FlaccoId.WING_ANTITICK_AND_DOUBLE_LEFT_BARB]: {            //  `.//|
-        arm: getArm(ArmId.ANTIWING_AND_TICK, { anti: true }),
+        arm: getArm(ArmId.ANTIWING_AND_TICK, {anti: true}),
         ...getHead(HeadId.DOUBLE_LEFT_BARB),
     },
     /*90*/[FlaccoId.ANTIBIRD_AND_DOUBLE_LEFT_BARB]: {                 //  ,,//|
-        arm: getArm(ArmId.BIRD, { anti: true }),
+        arm: getArm(ArmId.BIRD, {anti: true}),
         ...getHead(HeadId.DOUBLE_LEFT_BARB),
     },
     /*91*/[FlaccoId.ANTIWING_AND_DOUBLE_LEFT_BARB]: {                 //   ,//|
-        arm: getArm(ArmId.WING, { anti: true }),
+        arm: getArm(ArmId.WING, {anti: true}),
         ...getHead(HeadId.DOUBLE_LEFT_BARB),
     },
     /*92*/[FlaccoId.DOUBLE_LEFT_BARB]: {                              //    //|
@@ -365,11 +365,11 @@ const FLACCOS: Record<FlaccoId, Flacco> = {
         ...getHead(HeadId.DOUBLE_LEFT_BARB),
     },
     /*97*/[FlaccoId.ANTIBIRD_AND_LEFT_SCROLL_DOUBLE_LEFT_BARB]: {     // ,,)//|
-        arm: getArm(ArmId.BIRD, { anti: true }),
+        arm: getArm(ArmId.BIRD, {anti: true}),
         ...getHead(HeadId.LEFT_SCROLL_DOUBLE_LEFT_BARB),
     },
     /*98*/[FlaccoId.ANTIWING_AND_LEFT_SCROLL_DOUBLE_LEFT_BARB]: {     //  ,)//|
-        arm: getArm(ArmId.WING, { anti: true }),
+        arm: getArm(ArmId.WING, {anti: true}),
         ...getHead(HeadId.LEFT_SCROLL_DOUBLE_LEFT_BARB),
     },
     /*99*/[FlaccoId.LEFT_SCROLL_DOUBLE_LEFT_BARB]: {                  //   )//|
@@ -384,11 +384,11 @@ const FLACCOS: Record<FlaccoId, Flacco> = {
         ...getHead(HeadId.LEFT_SCROLL_DOUBLE_LEFT_BARB),
     },
     /*102*/[FlaccoId.ANTIBIRD_BARB_AND_ARC]: {                        //   ,,/|)
-        arm: getArm(ArmId.BIRD, { anti: true }),
+        arm: getArm(ArmId.BIRD, {anti: true}),
         ...getHead(HeadId.BARB_AND_ARC),
     },
     /*103*/[FlaccoId.ANTIWING_BARB_AND_ARC]: {                        //    ,/|)
-        arm: getArm(ArmId.WING, { anti: true }),
+        arm: getArm(ArmId.WING, {anti: true}),
         ...getHead(HeadId.BARB_AND_ARC),
     },
     /*104*/[FlaccoId.BARB_AND_ARC]: {                                 //     /|)
@@ -414,19 +414,19 @@ const FLACCOS: Record<FlaccoId, Flacco> = {
         ...getHead(HeadId.BARB_AND_ARC),
     },
     /*110*/[FlaccoId.ANTITICK_AND_DOUBLE_BARB]: {                     //    ./|\
-        arm: getArm(ArmId.TICK, { anti: true }),
+        arm: getArm(ArmId.TICK, {anti: true}),
         ...getHead(HeadId.DOUBLE_BARB),
     },
     /*111*/[FlaccoId.WING_ANTITICK_AND_DOUBLE_BARB]: {                //   `./|\
-        arm: getArm(ArmId.ANTIWING_AND_TICK, { anti: true }),
+        arm: getArm(ArmId.ANTIWING_AND_TICK, {anti: true}),
         ...getHead(HeadId.DOUBLE_BARB),
     },
     /*112*/[FlaccoId.ANTIBIRD_AND_DOUBLE_BARB]: {                     //   ,,/|\
-        arm: getArm(ArmId.BIRD, { anti: true }),
+        arm: getArm(ArmId.BIRD, {anti: true}),
         ...getHead(HeadId.DOUBLE_BARB),
     },
     /*113*/[FlaccoId.ANTIWING_AND_DOUBLE_BARB]: {                     //    ,/|\
-        arm: getArm(ArmId.WING, { anti: true }),
+        arm: getArm(ArmId.WING, {anti: true}),
         ...getHead(HeadId.DOUBLE_BARB),
     },
     /*114*/[FlaccoId.DOUBLE_BARB]: {                                  //     /|\
@@ -437,7 +437,7 @@ const FLACCOS: Record<FlaccoId, Flacco> = {
         ...getHead(HeadId.DOUBLE_BARB),
     },
     /*116*/[FlaccoId.ANTIWING_AND_LEFT_ARC_AND_BARB]: {               //   ,(/|
-        arm: getArm(ArmId.WING, { anti: true }),
+        arm: getArm(ArmId.WING, {anti: true}),
         ...getHead(HeadId.LEFT_ARC_AND_BARB),
     },
     /*117*/[FlaccoId.LEFT_ARC_AND_BARB]: {                            //    (/|
@@ -456,7 +456,7 @@ const FLACCOS: Record<FlaccoId, Flacco> = {
         ...getHead(HeadId.DOUBLE_BARB),
     },
     /*121*/[FlaccoId.ANTIWING_LEFT_SCROLL_AND_DOUBLE_BARB]: {         //   ,)/|\
-        arm: getArm(ArmId.WING, { anti: true }),
+        arm: getArm(ArmId.WING, {anti: true}),
         ...getHead(HeadId.LEFT_SCROLL_AND_DOUBLE_BARB),
     },
     /*122*/[FlaccoId.LEFT_SCROLL_AND_DOUBLE_BARB]: {                  //    )/|\
@@ -471,15 +471,15 @@ const FLACCOS: Record<FlaccoId, Flacco> = {
         ...getHead(HeadId.LEFT_SCROLL_AND_DOUBLE_BARB),
     },
     /*125*/[FlaccoId.ANTIWING_ANTITICK_AND_DOUBLE_ARC]: {             //   ,.(|)
-        arm: getArm(ArmId.WING_AND_TICK, { anti: true }),
+        arm: getArm(ArmId.WING_AND_TICK, {anti: true}),
         ...getHead(HeadId.DOUBLE_ARC),
     },
     /*126*/[FlaccoId.ANTITICK_AND_DOUBLE_ARC]: {                      //    .(|)
-        arm: getArm(ArmId.TICK, { anti: true }),
+        arm: getArm(ArmId.TICK, {anti: true}),
         ...getHead(HeadId.DOUBLE_ARC),
     },
     /*127*/[FlaccoId.ANTIWING_AND_RIGHT_BARB_AND_ARC]: {              //     ,|\)
-        arm: getArm(ArmId.WING, { anti: true }),
+        arm: getArm(ArmId.WING, {anti: true}),
         ...getHead(HeadId.RIGHT_BARB_AND_ARC),
     },
     /*128*/[FlaccoId.RIGHT_BARB_AND_ARC]: {                           //      |\)
@@ -490,7 +490,7 @@ const FLACCOS: Record<FlaccoId, Flacco> = {
         ...getHead(HeadId.RIGHT_BARB_AND_ARC),
     },
     /*130*/[FlaccoId.ANTIWING_AND_DOUBLE_ARC]: {                      //    ,(|)
-        arm: getArm(ArmId.WING, { anti: true }),
+        arm: getArm(ArmId.WING, {anti: true}),
         ...getHead(HeadId.DOUBLE_ARC),
     },
     /*131*/[FlaccoId.DOUBLE_ARC]: {                                   //     (|)
@@ -513,22 +513,22 @@ const FLACCOS: Record<FlaccoId, Flacco> = {
         ...getHead(HeadId.DOUBLE_ARC),
     },
     /*136*/[FlaccoId.ANTIWING_ANTITICK_ARC_AND_BARB]: {               //   ,.(|\
-        arm: getArm(ArmId.WING_AND_TICK, { anti: true }),
+        arm: getArm(ArmId.WING_AND_TICK, {anti: true}),
         ...getHead(HeadId.ARC_AND_BARB),
     },
     /*137*/[FlaccoId.ANTITICK_ARC_AND_BARB]: {                        //    .(|\
-        arm: getArm(ArmId.TICK, { anti: true }),
+        arm: getArm(ArmId.TICK, {anti: true}),
         ...getHead(HeadId.ARC_AND_BARB),
     },
     /*138*/[FlaccoId.WING_ANTITICK_ARC_AND_BARB]: {                   //   `.(|\
-        arm: getArm(ArmId.ANTIWING_AND_TICK, { anti: true }),
+        arm: getArm(ArmId.ANTIWING_AND_TICK, {anti: true}),
         ...getHead(HeadId.ARC_AND_BARB),
     },
     /*139*/[FlaccoId.DOUBLE_RIGHT_BARB]: {                            //      |\\
         ...getHead(HeadId.DOUBLE_RIGHT_BARB),
     },
     /*140*/[FlaccoId.ANTIWING_ARC_AND_BARB]: {                        //    ,(|\
-        arm: getArm(ArmId.WING, { anti: true }),
+        arm: getArm(ArmId.WING, {anti: true}),
         ...getHead(HeadId.ARC_AND_BARB),
     },
     /*141*/[FlaccoId.ARC_AND_BARB]: {                                 //     (|\
@@ -543,11 +543,11 @@ const FLACCOS: Record<FlaccoId, Flacco> = {
         ...getHead(HeadId.ARC_AND_BARB),
     },
     /*144*/[FlaccoId.ANTIBIRD_AND_LEFT_SCROLL_DOUBLE_RIGHT_BARB]: {   //   ,,)|\\
-        arm: getArm(ArmId.BIRD, { anti: true }),
+        arm: getArm(ArmId.BIRD, {anti: true}),
         ...getHead(HeadId.LEFT_SCROLL_DOUBLE_RIGHT_BARB),
     },
     /*145*/[FlaccoId.ANTIWING_AND_LEFT_SCROLL_DOUBLE_RIGHT_BARB]: {   //    ,)|\\
-        arm: getArm(ArmId.WING, { anti: true }),
+        arm: getArm(ArmId.WING, {anti: true}),
         ...getHead(HeadId.LEFT_SCROLL_DOUBLE_RIGHT_BARB),
     },
     /*146*/[FlaccoId.LEFT_SCROLL_DOUBLE_RIGHT_BARB]: {                //     )|\\

@@ -22,7 +22,7 @@ export {
     SizeCategoryBound,
     formatComma,
 } from "./comma"
-export { analyzeJiPitch, computeApotomeSlope, ApotomeSlope, JiPitchAnalysis, computeAte, computeAas } from "./pitch"
+export {analyzeJiPitch, computeApotomeSlope, ApotomeSlope, JiPitchAnalysis, computeAte, computeAas} from "./pitch"
 export {
     Two3FreeClassAnalysis, N2D3P9, computeN2D3P9, computePrimeExponentExtremasGivenMaxN2D3P9, analyze23FreeClass,
 } from "./two3FreeClass"

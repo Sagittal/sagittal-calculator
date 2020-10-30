@@ -3,7 +3,13 @@
 import {Abs, Decimal, Exponent, Prime} from "../../general"
 import {ApotomeSlope, N2D3P9} from "../../sagittal"
 import {Parameter} from "../types"
-import {UsefulnessMetric, UsefulnessMetricId, UsefulnessParameterId, UsefulnessParameterSet, UsefulnessScore} from "./types"
+import {
+    UsefulnessMetric,
+    UsefulnessMetricId,
+    UsefulnessParameterId,
+    UsefulnessParameterSet,
+    UsefulnessScore,
+} from "./types"
 
 const DEFAULT_USEFULNESS_PARAMETER_VALUE = 1 as Parameter
 

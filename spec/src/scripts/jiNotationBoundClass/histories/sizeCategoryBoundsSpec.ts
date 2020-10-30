@@ -1,7 +1,7 @@
-import { Scamon } from "../../../../../src/general/math/numeric/scamon"
-import { maxScamon } from "../../../../../src/general/math/numeric/scamon/typedOperations"
-import { HALF_APOTOME, SizeCategoryBound } from "../../../../../src/sagittal"
-import { computeSizeCategoryBoundsUpToHalfApotome } from "../../../../../src/scripts/jiNotationBoundClass/histories/sizeCategoryBounds"
+import {Scamon} from "../../../../../src/general/math/numeric/scamon"
+import {maxScamon} from "../../../../../src/general/math/numeric/scamon/typedOperations"
+import {HALF_APOTOME, SizeCategoryBound} from "../../../../../src/sagittal"
+import {computeSizeCategoryBoundsUpToHalfApotome} from "../../../../../src/scripts/jiNotationBoundClass/histories/sizeCategoryBounds"
 
 describe("computeSizeCategoryBoundsUpToHalfApotome", (): void => {
     it("only returns the size category bounds that are less than or equal to the max position", (): void => {

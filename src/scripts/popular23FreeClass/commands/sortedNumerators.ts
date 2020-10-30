@@ -6,7 +6,6 @@ import {
     dividesEvenly,
     Filename,
     formatTime,
-    ioSettings,
     KeyPath,
     LogTarget,
     Ms,

@@ -17,7 +17,7 @@ usefulnessMetricLfcScriptGroupSettings.extremeCaptureZones = program.extremeCapt
 
 const usefulnessMetricsWithParametersEntries = Object.entries(
     USEFULNESS_METRICS_WITH_PARAMETERS,
-) as Array<[UsefulnessMetricId, { metric: UsefulnessMetric, parameters: UsefulnessParameterId[]}]>
+) as Array<[UsefulnessMetricId, {metric: UsefulnessMetric, parameters: UsefulnessParameterId[]}]>
 
 if (program.booleanMode) {
     usefulnessMetricsWithParametersEntries.forEach(

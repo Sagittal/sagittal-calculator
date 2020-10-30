@@ -154,7 +154,7 @@ const EXTREME_LEVEL_COMMA_CLASS_IDS: Array<[Index<CommaClassId>, CommaClassId]> 
 
 const INSANE_LEVEL_COMMA_CLASS_IDS = sort([
     ...EXTREME_LEVEL_COMMA_CLASS_IDS,
-], { by: 0 as KeyPath })
+], {by: 0 as KeyPath})
 
 const shapeUpIds = (ids: Array<[Index<CommaClassId>, CommaClassId]>): CommaClassId[] =>
     sort(ids, {by: 0 as KeyPath}).map(([_, id]: [Index<CommaClassId>, CommaClassId]): CommaClassId => id)

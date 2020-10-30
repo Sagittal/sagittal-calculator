@@ -1,6 +1,6 @@
-import { Cents, computePitchFromCents } from "../../../../../src/general"
-import { computeNeighborPositions } from "../../../../../src/scripts/jiNotationBoundClass/boundedPositions/neighborPositions"
-import { NeighborPositions } from "../../../../../src/scripts/jiNotationBoundClass/boundedPositions/types"
+import {Cents, computePitchFromCents} from "../../../../../src/general"
+import {computeNeighborPositions} from "../../../../../src/scripts/jiNotationBoundClass/boundedPositions/neighborPositions"
+import {NeighborPositions} from "../../../../../src/scripts/jiNotationBoundClass/boundedPositions/types"
 
 describe("computeNeighborPositions", (): void => {
     it("returns the two positions in the list of sorted targets which are on either side of the position", (): void => {

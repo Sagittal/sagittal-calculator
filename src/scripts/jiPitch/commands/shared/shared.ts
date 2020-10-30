@@ -1,5 +1,5 @@
 import {program} from "commander"
-import {CommandFlag, Filename, Io, ioSettings, parseCommands} from "../../../../general"
+import {CommandFlag, Filename, Io, parseCommands} from "../../../../general"
 import {ScriptGroup} from "../../../types"
 import {jiPitchScriptGroupSettings} from "../../globals"
 import {JiPitchScriptGroupField} from "../../types"

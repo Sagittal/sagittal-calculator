@@ -1,8 +1,8 @@
-import { Min } from "../../../../../../general"
-import { N2D3P9 } from "../../types"
-import { computeD39ForPossibleMaxDenominatorPrimeExponent } from "./d39"
-import { computeMinN2PForPossibleMaxDenominatorPrimeExponentGivenMaxN2D3P9 } from "./minN2P"
-import { MinN2PForPossibleMaxDenominatorPrimeExponentGivenMaxN2D3P9Options } from "./types"
+import {Min} from "../../../../../../general"
+import {N2D3P9} from "../../types"
+import {computeD39ForPossibleMaxDenominatorPrimeExponent} from "./d39"
+import {computeMinN2PForPossibleMaxDenominatorPrimeExponentGivenMaxN2D3P9} from "./minN2P"
+import {MinN2PForPossibleMaxDenominatorPrimeExponentGivenMaxN2D3P9Options} from "./types"
 
 const computeMinN2D3P9ForPossibleMaxDenominatorPrimeExponentGivenMaxN2D3P9 = (
     options: MinN2PForPossibleMaxDenominatorPrimeExponentGivenMaxN2D3P9Options,

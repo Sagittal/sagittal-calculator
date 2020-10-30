@@ -14,7 +14,7 @@ import {
     parseQuotient,
     Scamon,
 } from "../general"
-import { computeCommaFromCommaNameQuotientAndSizeCategoryName, parseCommaName } from "./ji"
+import {computeCommaFromCommaNameQuotientAndSizeCategoryName, parseCommaName} from "./ji"
 
 const parsePitch = (pitchIo: Io): Scamon => {
     let pitch: Scamon

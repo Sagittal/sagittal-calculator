@@ -1,9 +1,9 @@
-import { Sum } from "../../../../../src/general"
-import { Abs } from "../../../../../src/general/math"
-import { Cents } from "../../../../../src/general/music"
-import { computeBestPossibleBoundHistoryAnalysis } from "../../../../../src/scripts/jiNotationBoundClass/boundClass/bestPossibleHistory"
-import { BoundHistoryAnalysis, Score } from "../../../../../src/scripts/jiNotationBoundClass/history"
-import { boundHistoryAnalysisFixture } from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
+import {Sum} from "../../../../../src/general"
+import {Abs} from "../../../../../src/general/math"
+import {Cents} from "../../../../../src/general/music"
+import {computeBestPossibleBoundHistoryAnalysis} from "../../../../../src/scripts/jiNotationBoundClass/boundClass/bestPossibleHistory"
+import {BoundHistoryAnalysis, Score} from "../../../../../src/scripts/jiNotationBoundClass/history"
+import {boundHistoryAnalysisFixture} from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
 describe("computeBestPossibleBoundHistoryAnalysis", (): void => {
     it("returns the bound class history with the best score (the not possible ones are all already filtered out)                ", (): void => {

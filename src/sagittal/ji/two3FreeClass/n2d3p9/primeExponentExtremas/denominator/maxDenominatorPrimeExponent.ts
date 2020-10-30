@@ -1,6 +1,6 @@
-import { Decimal, decrement, Denominator, Exponent, increment, Max, Of, Prime } from "../../../../../../general"
-import { N2D3P9 } from "../../types"
-import { computeMinN2D3P9ForPossibleMaxDenominatorPrimeExponentGivenMaxN2D3P9 } from "./minN2D3P9"
+import {Decimal, decrement, Denominator, Exponent, increment, Max, Of, Prime} from "../../../../../../general"
+import {N2D3P9} from "../../types"
+import {computeMinN2D3P9ForPossibleMaxDenominatorPrimeExponentGivenMaxN2D3P9} from "./minN2D3P9"
 import {
     computeSortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9,
     NumeratorPossibilityForDenominatorGivenMaxN2D3P9,
@@ -22,7 +22,7 @@ const computeMaxDenominatorPrimeExponentGivenMaxN2D3P9 = (
     denominatorPrime: Prime & Of<Denominator>,
     maxN2D3P9: Max<N2D3P9>,
     numeratorPossibilitiesForDenominatorGivenMaxN2D3P9: NumeratorPossibilityForDenominatorGivenMaxN2D3P9[],
-): Max<Denominator & Decimal<{ integer: true }> & Exponent<Prime>> => {
+): Max<Denominator & Decimal<{integer: true}> & Exponent<Prime>> => {
     const sortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9 =
         computeSortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9(
             denominatorPrime,
@@ -31,7 +31,7 @@ const computeMaxDenominatorPrimeExponentGivenMaxN2D3P9 = (
         )
 
     let possibleMaxDenominatorPrimeExponentGivenMaxN2D3P9 =
-        1 as Max<Denominator & Decimal<{ integer: true }> & Exponent<Prime>>
+        1 as Max<Denominator & Decimal<{integer: true}> & Exponent<Prime>>
     while (true) {
         const minN2D3P9ForPossibleMaxDenominatorPrimeExponentGivenMaxN2D3P9 =
             computeMinN2D3P9ForPossibleMaxDenominatorPrimeExponentGivenMaxN2D3P9({
@@ -51,7 +51,7 @@ const computeMaxDenominatorPrimeExponentGivenMaxN2D3P9 = (
     }
 
     return possibleMaxDenominatorPrimeExponentGivenMaxN2D3P9 as
-        Max<Denominator & Decimal<{ integer: true }> & Exponent<Prime>>
+        Max<Denominator & Decimal<{integer: true}> & Exponent<Prime>>
 }
 
 export {

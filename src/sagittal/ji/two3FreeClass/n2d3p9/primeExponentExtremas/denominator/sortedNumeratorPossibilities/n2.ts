@@ -8,9 +8,9 @@ import {
     pow,
     Prime,
 } from "../../../../../../../general"
-import { N2 } from "./types"
+import {N2} from "./types"
 
-const computeN2 = (numerator: Numerator & Decimal<{ integer: true }>): N2 =>
+const computeN2 = (numerator: Numerator & Decimal<{integer: true}>): N2 =>
     numerator /
     pow(
         BASE_2,

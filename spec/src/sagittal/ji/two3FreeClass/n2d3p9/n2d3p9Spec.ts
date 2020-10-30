@@ -1,10 +1,10 @@
-import { Direction, EMPTY_MONZO, Monzo } from "../../../../../../src/general/math"
-import { Two3FreeClass } from "../../../../../../src/general/music"
-import { computeN2D3P9, N2D3P9 } from "../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
+import {Direction, EMPTY_MONZO, Monzo} from "../../../../../../src/general/math"
+import {Two3FreeClass} from "../../../../../../src/general/music"
+import {computeN2D3P9, N2D3P9} from "../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
 
 describe("computeN2D3P9", (): void => {
     it("returns an approximate rank of the 2,3-free class's popularity", (): void => {
-        const two3FreeClass = { monzo: [0, 0, 1, 0, 1] } as Two3FreeClass // {55}₂,₃
+        const two3FreeClass = {monzo: [0, 0, 1, 0, 1]} as Two3FreeClass // {55}₂,₃
 
         const actual = computeN2D3P9(two3FreeClass)
 
@@ -13,7 +13,7 @@ describe("computeN2D3P9", (): void => {
     })
 
     it("yet another example", (): void => {
-        const two3FreeClass = { monzo: [0, 0, 2, 2] } as Two3FreeClass  // {1225}₂,₃
+        const two3FreeClass = {monzo: [0, 0, 2, 2]} as Two3FreeClass  // {1225}₂,₃
 
         const actual = computeN2D3P9(two3FreeClass)
 
@@ -22,7 +22,7 @@ describe("computeN2D3P9", (): void => {
     })
 
     it("yet another another example", (): void => {
-        const two3FreeClass = { monzo: [0, 0, 0, 0, -1, 0, 0, 0, 1] } as Two3FreeClass  // 23/11
+        const two3FreeClass = {monzo: [0, 0, 0, 0, -1, 0, 0, 0, 1]} as Two3FreeClass  // 23/11
 
         const actual = computeN2D3P9(two3FreeClass)
 
@@ -31,7 +31,7 @@ describe("computeN2D3P9", (): void => {
     })
 
     it("errors if given a malformed 2,3-free class, which is not actually 2,3-free", (): void => {
-        const two3FreeClass = { monzo: [-4, -1, 1, 0, 1] } as Two3FreeClass // {55/48}₂,₃ # bad!!
+        const two3FreeClass = {monzo: [-4, -1, 1, 0, 1]} as Two3FreeClass // {55/48}₂,₃ # bad!!
 
         expect((): void => {
             computeN2D3P9(two3FreeClass)
@@ -40,7 +40,7 @@ describe("computeN2D3P9", (): void => {
     })
 
     it("errors if given a malformed 2,3-free class, for which the quotient is not super (n ≥ d)", (): void => {
-        const two3FreeClass = { monzo: [0, 0, 0, 0, -2] } as Two3FreeClass  // {1/121}₂,₃  # bad!!
+        const two3FreeClass = {monzo: [0, 0, 0, 0, -2]} as Two3FreeClass  // {1/121}₂,₃  # bad!!
 
         expect((): void => {
             computeN2D3P9(two3FreeClass)
@@ -50,7 +50,7 @@ describe("computeN2D3P9", (): void => {
 
     it("can handle 1/1, the empty 2,3-free class", (): void => {
         const two3FreeClass = {
-            monzo: EMPTY_MONZO as Monzo<{ rational: true, direction: Direction.SUPER, rough: 5 }>,   // 1/1
+            monzo: EMPTY_MONZO as Monzo<{rational: true, direction: Direction.SUPER, rough: 5}>,   // 1/1
         } as Two3FreeClass
 
         const actual = computeN2D3P9(two3FreeClass)
@@ -60,7 +60,7 @@ describe("computeN2D3P9", (): void => {
     })
 
     it("in case it receives a non-trimmed monzo, doesn't break", (): void => {
-        const two3FreeClass = { monzo: [0, 0, 0, 0] } as Two3FreeClass      // 1/1
+        const two3FreeClass = {monzo: [0, 0, 0, 0]} as Two3FreeClass      // 1/1
 
         const actual = computeN2D3P9(two3FreeClass)
 

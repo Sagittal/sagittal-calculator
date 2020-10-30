@@ -1,5 +1,5 @@
-import { Index } from "../../../../../src/general"
-import { computeNeighborPositionIndices } from "../../../../../src/scripts/jiNotationBoundClass/boundedPositions/neighborPositionIndices"
+import {Index} from "../../../../../src/general"
+import {computeNeighborPositionIndices} from "../../../../../src/scripts/jiNotationBoundClass/boundedPositions/neighborPositionIndices"
 
 describe("computeNeighborPositionIndices", (): void => {
     it("returns the indices of the positions in the list of sorted targets which are on either side of the position             ", (): void => {

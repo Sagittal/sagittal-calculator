@@ -1,5 +1,5 @@
 import * as cp from "child_process"
-import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
+import {onlyRunInCi} from "../../../../helpers/onlyRunInCi"
 
 describe("analyze-ji-notation-bound-class", (): void => {
     it("can receive the argument without a flag", (): void => {

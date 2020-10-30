@@ -1,10 +1,10 @@
 // tslint:disable max-line-length
 
-import { Decimal, Max, Prime } from "../../../../../../../../../../src/general"
-import { Exponent } from "../../../../../../../../../../src/general/math"
-import { Numerator } from "../../../../../../../../../../src/general/math/numeric/quotient"
-import { N2D3P9 } from "../../../../../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
-import { computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9 } from "../../../../../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/numeratorPossibilities/maxNumeratorPrimeExponents"
+import {Decimal, Max, Prime} from "../../../../../../../../../../src/general"
+import {Exponent} from "../../../../../../../../../../src/general/math"
+import {Numerator} from "../../../../../../../../../../src/general/math/numeric/quotient"
+import {N2D3P9} from "../../../../../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
+import {computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9} from "../../../../../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/numeratorPossibilities/maxNumeratorPrimeExponents"
 
 describe("computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9", (): void => {
     it("returns an array of the max exponent per prime, cutting off at the first prime for which is it is zero (i.e. with this max N2D3P9, there is no way to have that prime in the numerator, even just to the first power, even in complete isolation) but where the first two elements are 0 (corresponding to primes 2 and 3 which have no effect in 2,3-free land)", (): void => {
@@ -13,7 +13,7 @@ describe("computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9", (): void => {
         const actual = computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9(maxN2D3P9)
 
         //                      2  3  5  7 11 13 17 19 23 ...
-        const expected = [0, 0, 6, 4, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1] as Array<Max<Numerator & Decimal<{ integer: true }> & Exponent<Prime>>>
+        const expected = [0, 0, 6, 4, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1] as Array<Max<Numerator & Decimal<{integer: true}> & Exponent<Prime>>>
         expect(actual).toEqual(expected)
     })
 
@@ -23,7 +23,7 @@ describe("computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9", (): void => {
         const actual = computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9(maxN2D3P9)
 
         //                      2  3  5  7 11 13
-        const expected = [0, 0, 3, 2, 1, 1] as Array<Max<Numerator & Decimal<{ integer: true }> & Exponent<Prime>>>
+        const expected = [0, 0, 3, 2, 1, 1] as Array<Max<Numerator & Decimal<{integer: true}> & Exponent<Prime>>>
         expect(actual).toEqual(expected)
     })
 
@@ -32,7 +32,7 @@ describe("computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9", (): void => {
 
         const actual = computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9(maxN2D3P9)
 
-        const expected = [0, 0] as Array<Max<Numerator & Decimal<{ integer: true }> & Exponent<Prime>>>
+        const expected = [0, 0] as Array<Max<Numerator & Decimal<{integer: true}> & Exponent<Prime>>>
         expect(actual).toEqual(expected)
     })
 })

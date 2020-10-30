@@ -1,10 +1,10 @@
-import { HALF_SCALER } from "../../../../../src/general/math/irrational/scamon"
-import { Monzo } from "../../../../../src/general/math/numeric/monzo"
-import { Scamon } from "../../../../../src/general/math/numeric/scamon"
-import { Cents, computePitchFromCents } from "../../../../../src/general/music"
-import { JiNotationBoundClass, JiNotationLevelId } from "../../../../../src/sagittal/notations/ji"
-import { computeInitialPosition } from "../../../../../src/scripts/jiNotationBoundClass/boundClass/initialPosition"
-import { jiNotationBoundClassFixture } from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
+import {HALF_SCALER} from "../../../../../src/general/math/irrational/scamon"
+import {Monzo} from "../../../../../src/general/math/numeric/monzo"
+import {Scamon} from "../../../../../src/general/math/numeric/scamon"
+import {Cents, computePitchFromCents} from "../../../../../src/general/music"
+import {JiNotationBoundClass, JiNotationLevelId} from "../../../../../src/sagittal/notations/ji"
+import {computeInitialPosition} from "../../../../../src/scripts/jiNotationBoundClass/boundClass/initialPosition"
+import {jiNotationBoundClassFixture} from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
 describe("computeInitialPosition", (): void => {
     it("returns the mean of the bounded commas at the introducing JI notation level", (): void => {
@@ -21,9 +21,9 @@ describe("computeInitialPosition", (): void => {
             //   [ -14   6   0   0   0   0   0   0   1 ⟩       ~|\
             // + [  -8   8  -2                         ⟩      //|
             // / 2 =
-            monzo: [-22, 14, -2, 0, 0, 0, 0, 0, 1] as Monzo<{ rational: true }>,
+            monzo: [-22, 14, -2, 0, 0, 0, 0, 0, 1] as Monzo<{rational: true}>,
             scaler: HALF_SCALER,
-        } as Scamon<{ rational: false }>
+        } as Scamon<{rational: false}>
         expect(actual).toEqual(expected)
     })
 })

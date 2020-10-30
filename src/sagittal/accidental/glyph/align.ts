@@ -1,6 +1,6 @@
-import { Formatted, shallowClone } from "../../../general"
+import {Formatted, shallowClone} from "../../../general"
 import {PARENTHETICAL_NATURAL_ASCII} from "./constants"
-import { Ascii } from "./types"
+import {Ascii} from "./types"
 
 const alignAscii = (ascii: Ascii): Formatted<Ascii> => {
     if (ascii === PARENTHETICAL_NATURAL_ASCII) {

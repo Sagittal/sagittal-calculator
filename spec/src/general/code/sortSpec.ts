@@ -29,9 +29,9 @@ describe("sort", (): void => {
 
     it("will sort things numerically even if the key path is a bit complex", (): void => {
         const array = [[48, "gummy"], [23, "hobo"], [103, "jeans"]]
-        
-        const actual = sort(array, { by: 0 as KeyPath })
-        
+
+        const actual = sort(array, {by: 0 as KeyPath})
+
         const expected = [[23, "hobo"], [48, "gummy"], [103, "jeans"]]
         expect(actual).toEqual(expected)
     })

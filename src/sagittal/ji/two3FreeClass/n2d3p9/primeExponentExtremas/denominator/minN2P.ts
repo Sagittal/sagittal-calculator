@@ -1,10 +1,10 @@
-import { Min, min, pow } from "../../../../../../general"
+import {Min, min, pow} from "../../../../../../general"
 import {
     N2P,
     SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P,
     SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2,
 } from "./sortedNumeratorPossibilities"
-import { MinN2PForPossibleMaxDenominatorPrimeExponentGivenMaxN2D3P9Options } from "./types"
+import {MinN2PForPossibleMaxDenominatorPrimeExponentGivenMaxN2D3P9Options} from "./types"
 
 const computeMinN2PForPossibleMaxDenominatorPrimeExponentGivenMaxN2D3P9 = (
     options: MinN2PForPossibleMaxDenominatorPrimeExponentGivenMaxN2D3P9Options,

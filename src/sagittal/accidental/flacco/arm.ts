@@ -12,8 +12,8 @@ const getArm = (armId: ArmId, {anti}: {anti?: boolean} = {}): Arm => {
                 [{id: AccentId.BIRD}]
         case ArmId.ANTIWING_AND_TICK:                                           // ,'|
             return anti ?
-                [{id: AccentId.WING}, {id: AccentId.TICK, anti }] :
-                [{id: AccentId.WING, anti: true }, {id: AccentId.TICK}]
+                [{id: AccentId.WING}, {id: AccentId.TICK, anti}] :
+                [{id: AccentId.WING, anti: true}, {id: AccentId.TICK}]
         case ArmId.TICK:                                                        //  '|
             return anti ?
                 [{id: AccentId.TICK, anti}] :

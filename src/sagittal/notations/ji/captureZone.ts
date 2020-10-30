@@ -17,7 +17,10 @@ const computeJiNotationCaptureZone = (
 
     const introducingJiNotationLevel = getIntroducingJiNotationLevel(commaClassId)
     if (!isWithinJiNotationLevel(introducingJiNotationLevel, jiNotationLevel)) {
-        throw new Error(`JI Notation comma class ${formatCommaClass(commaClassId, {align: false, name: true})} is not present at the ${formatJiNotationLevel(jiNotationLevel)} JI notation level; it is not introduced until the ${formatJiNotationLevel(introducingJiNotationLevel)} JI notation level.`)
+        throw new Error(`JI Notation comma class ${formatCommaClass(commaClassId, {
+            align: false,
+            name: true,
+        })} is not present at the ${formatJiNotationLevel(jiNotationLevel)} JI notation level; it is not introduced until the ${formatJiNotationLevel(introducingJiNotationLevel)} JI notation level.`)
     }
 
     const commaClass = getCommaClass(commaClassId)
