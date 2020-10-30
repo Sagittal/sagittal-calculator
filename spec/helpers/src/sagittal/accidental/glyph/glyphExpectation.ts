@@ -1,6 +1,6 @@
-import {Maybe} from "../../../../../src/general/code"
-import {Compatible, computeCoreUnicode} from "../../../../../src/sagittal/accidental"
-import {AccentId, HeadId} from "../../../../../src/sagittal/accidental/flacco"
+import {Maybe} from "../../../../../../src/general/code"
+import {Compatible, computeCoreUnicode} from "../../../../../../src/sagittal/accidental"
+import {AccentId, HeadId} from "../../../../../../src/sagittal/accidental/flacco"
 import {
     computeAccentAscii,
     computeAccentSmiley,
@@ -10,8 +10,8 @@ import {
     computeCompatibleUnicode,
     computeCoreAscii,
     computeCoreSmiley,
-} from "../../../../../src/sagittal/accidental/glyph"
-import {getCore, Shafts} from "../../../../../src/sagittal/accidental/sagittal"
+} from "../../../../../../src/sagittal/accidental/glyph"
+import {getCore, Shafts} from "../../../../../../src/sagittal/accidental/sagittal"
 import {GlyphExpectation} from "./types"
 
 const computeCoreGlyphExpectation = (

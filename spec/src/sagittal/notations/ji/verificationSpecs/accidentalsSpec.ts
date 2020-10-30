@@ -3,8 +3,8 @@ import {Unicode} from "../../../../../../src/sagittal/accidental/glyph"
 import {CaptureZone} from "../../../../../../src/sagittal/notation"
 import {computeCaptureZones} from "../../../../../../src/sagittal/notation/captureZones"
 import {EXTREME_NOTATION} from "../../../../../../src/sagittal/notations/ji/notations"
-import {computeAccidentalExpectation} from "../../../../../helpers/src/sagittal/accidental/accidentalExpectation"
-import {AccidentalExpectation} from "../../../../../helpers/src/sagittal/accidental/types"
+import { computeFlavorsExpectation } from "../../../../../helpers/src/sagittal/accidental/flavor/accidentalExpectation"
+import {FlavorsExpectation} from "../../../../../helpers/src/sagittal/accidental/flavor/types"
 
 // Todo: POST-NOTATION-GENERATION: ACCIDENTAL, PRIMARY COMMA, ZONE STUFF
 //  So I could either imagine having totally separate specs for verifying the bounds & commas of the capture zones
@@ -42,11 +42,11 @@ describe("accidentals", (): void => {
     it("has the correct accidentals for Extreme", (): void => {
         const captureZones = computeCaptureZones(EXTREME_NOTATION)
 
-        const accidentalExpectations = captureZones.map((captureZone: CaptureZone): AccidentalExpectation => {
-            return computeAccidentalExpectation(captureZone)
+        const accidentalExpectations = captureZones.map((captureZone: CaptureZone): FlavorsExpectation => {
+            return computeFlavorsExpectation(captureZone)
         })
 
-        const expectedN1A: AccidentalExpectation[] = [
+        const expectedN1A: FlavorsExpectation[] = [
             {
                 revo: {
                     ascii: "(|//|)" as Ascii<Flavor.REVO>,
@@ -1524,7 +1524,7 @@ describe("accidentals", (): void => {
                 },
             },
         ].reverse()
-        const expectedN1T: AccidentalExpectation[] = [
+        const expectedN1T: FlavorsExpectation[] = [
             {
                 revo: {
                     ascii: ",)\\!/" as Ascii<Flavor.REVO>,
@@ -3002,7 +3002,7 @@ describe("accidentals", (): void => {
                 },
             },
         ].reverse()
-        const expectedN2A: AccidentalExpectation[] = [
+        const expectedN2A: FlavorsExpectation[] = [
             {
                 revo: {
                     ascii: "\\!!/" as Ascii<Flavor.REVO>,
@@ -4480,7 +4480,7 @@ describe("accidentals", (): void => {
                 },
             },
         ].reverse()
-        const expectedN2T: AccidentalExpectation[] = [
+        const expectedN2T: FlavorsExpectation[] = [
             {
                 revo: {
                     ascii: ",)\\!!!/" as Ascii<Flavor.REVO>,
@@ -5959,7 +5959,7 @@ describe("accidentals", (): void => {
             },
         ].reverse()
 
-        const expectedP1A: AccidentalExpectation[] = [
+        const expectedP1A: FlavorsExpectation[] = [
             {
                 revo: {
                     ascii: "(|//|)" as Ascii<Flavor.REVO>,
@@ -7437,7 +7437,7 @@ describe("accidentals", (): void => {
                 },
             },
         ]
-        const expectedP1T: AccidentalExpectation[] = [
+        const expectedP1T: FlavorsExpectation[] = [
             {
                 revo: {
                     ascii: "`)/|\\" as Ascii<Flavor.REVO>,
@@ -8915,7 +8915,7 @@ describe("accidentals", (): void => {
                 },
             },
         ]
-        const expectedP2A: AccidentalExpectation[] = [
+        const expectedP2A: FlavorsExpectation[] = [
             {
                 revo: {
                     ascii: "/||\\" as Ascii<Flavor.REVO>,
@@ -10393,7 +10393,7 @@ describe("accidentals", (): void => {
                 },
             },
         ]
-        const expectedP2T: AccidentalExpectation[] = [
+        const expectedP2T: FlavorsExpectation[] = [
             {
                 revo: {
                     ascii: "`)/|||\\" as Ascii<Flavor.REVO>,
@@ -11881,7 +11881,7 @@ describe("accidentals", (): void => {
             ...expectedP1T,
             ...expectedP2A,
             ...expectedP2T,
-        ] as AccidentalExpectation[]
+        ] as FlavorsExpectation[]
         expect(accidentalExpectations).toEqual(expected)
     })
 })

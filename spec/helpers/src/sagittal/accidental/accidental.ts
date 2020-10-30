@@ -6,7 +6,8 @@ import {
     Flacco,
     FlagId,
     getArm,
-    getHead, Head,
+    getHead,
+    Head,
     HeadId,
 } from "../../../../../src/sagittal/accidental/flacco"
 import {FLACCOS} from "../../../../../src/sagittal/accidental/flacco/flacco"

@@ -7,8 +7,8 @@ import {
     computeAccentGlyphExpectation,
     computeCompatibleGlyphExpectation,
     computeCoreGlyphExpectation,
-} from "../../../../../helpers/src/sagittal/accidental/glyphExpectation"
-import {GlyphExpectation} from "../../../../../helpers/src/sagittal/accidental/types"
+} from "../../../../../helpers/src/sagittal/accidental/glyph/glyphExpectation"
+import {GlyphExpectation} from "../../../../../helpers/src/sagittal/accidental/glyph/types"
 
 describe("glyphs", (): void => {
     it("has the correct core glyphs and computes their IO correctly", (): void => {
