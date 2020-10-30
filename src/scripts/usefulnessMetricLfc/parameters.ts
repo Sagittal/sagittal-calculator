@@ -1,6 +1,6 @@
-import {Ed, Window} from "../../general"
+import {Combination, Ed, Window} from "../../general"
+import {computePossibilities} from "../possibilities"
 import {DynamicParameterScope, Parameter} from "../types"
-import {computePossibilities} from "./possibilities"
 import {UsefulnessParameterId, UsefulnessParameterSet} from "./types"
 
 // Const SE_OR_TE_WHEN_DAAS_OR_DATE_IS_9 = 0.00195 as Parameter
@@ -57,7 +57,9 @@ const USEFULNESS_PARAMETER_SCOPES: Record<UsefulnessParameterId, DynamicParamete
     },
 }
 
-const computeUsefulnessParameterSets = (usefulnessParameterIds: UsefulnessParameterId[]): UsefulnessParameterSet[] => {
+const computeUsefulnessParameterSets = (
+    usefulnessParameterIds: UsefulnessParameterId[],
+): Combination<UsefulnessParameterSet> => {
     const scope = usefulnessParameterIds.reduce(
         (
             scope: Record<UsefulnessParameterId, DynamicParameterScope>,
@@ -73,7 +75,7 @@ const computeUsefulnessParameterSets = (usefulnessParameterIds: UsefulnessParame
 
     // Return EXPERIMENTAL_USEFULNESS_PARAMETER_SCOPES
 
-    return computePossibilities(scope)
+    return computePossibilities(scope) as Combination<UsefulnessParameterSet>
 }
 
 export {

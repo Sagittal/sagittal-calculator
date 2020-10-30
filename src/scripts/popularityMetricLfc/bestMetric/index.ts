@@ -4,8 +4,6 @@ export {
 export {computeDynamicParameterScope, DynamicParameter, Sample, SamplePoint} from "./scopeToSamples"
 export {
     Metric,
-    ParameterScope,
-    ParameterScopes,
     Scope,
     SubmetricScope,
     SumOfSquares,

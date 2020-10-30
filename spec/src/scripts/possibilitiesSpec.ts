@@ -1,12 +1,12 @@
-import {Combination, Ed, Window} from "../../../../../../src/general"
-import {SubmetricScope} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
-import {computeSubmetricPossibilities} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples/submetricPossibilities"
-import {SubmetricPossibility} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples/types"
-import {PopularityParameterId} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
-import {Parameter} from "../../../../../../src/scripts/types"
+import {Combination, Ed, Window} from "../../../src/general"
+import {SubmetricScope} from "../../../src/scripts/popularityMetricLfc/bestMetric"
+import {SubmetricPossibility} from "../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples/types"
+import {PopularityParameterId} from "../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {computePossibilities} from "../../../src/scripts/possibilities"
+import {Parameter} from "../../../src/scripts/types"
 
-describe("computeSubmetricPossibilities", (): void => {
-    it("given this submetric's scope (centers, windows, and counts for each of its parameters) to compute each of its parameters' sample points, returns an array of all the possible combinations of those parameter sample points", (): void => {
+describe("computePossibilities", (): void => {
+    it("given a scope (centers, windows, and counts for each of its parameters) to compute each of its parameters' sample points, returns an array of all the possible combinations of those parameter sample points", (): void => {
         const submetricScope = {
             [PopularityParameterId.A_AS_COEFFICIENT]: {
                 center: 1 as Parameter,
@@ -20,7 +20,7 @@ describe("computeSubmetricPossibilities", (): void => {
             },
         } as SubmetricScope
 
-        const actual = computeSubmetricPossibilities(submetricScope)
+        const actual = computePossibilities(submetricScope)
 
         const expected = [
             {[PopularityParameterId.A_AS_COEFFICIENT]: 0.75, [PopularityParameterId.W]: 0.6},
@@ -56,7 +56,7 @@ describe("computeSubmetricPossibilities", (): void => {
             },
         } as SubmetricScope
 
-        const actual = computeSubmetricPossibilities(submetricScope)
+        const actual = computePossibilities(submetricScope)
 
         const expected = [
             {[PopularityParameterId.A_AS_COEFFICIENT]: 0.75},
@@ -78,7 +78,7 @@ describe("computeSubmetricPossibilities", (): void => {
             [PopularityParameterId.W]: 0.7 as Parameter,
         } as SubmetricScope
 
-        const actual = computeSubmetricPossibilities(submetricScopes)
+        const actual = computePossibilities(submetricScopes)
 
         const expected = [
             {[PopularityParameterId.A_AS_COEFFICIENT]: 0.75, [PopularityParameterId.W]: 0.7},

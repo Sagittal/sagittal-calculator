@@ -4,10 +4,10 @@ import {Parameter} from "../types"
 
 type UsefulnessParameterSet = Partial<Record<UsefulnessParameterId, Parameter>>
 
-type UsefulnessScore = number & { _UsefulnessScoreBrand: boolean }
+type UsefulnessScore = number & {_UsefulnessScoreBrand: boolean}
 
 type SquaredUsefulnessScoreDistanceFromBestUsefulnessScore =
-    number & { _SquaredUsefulnessScoreDistanceFromBestUsefulnessScoreBrand: boolean }
+    number & {_SquaredUsefulnessScoreDistanceFromBestUsefulnessScoreBrand: boolean}
 
 type UsefulnessMetric = (
     n2d3p9: N2D3P9,

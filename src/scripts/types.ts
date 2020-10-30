@@ -18,8 +18,14 @@ type DynamicParameterScope = Partial<{
     window: Window<Parameter>,
 }>
 
+type ParameterScope = Parameter | boolean | DynamicParameterScope
+
+type ParameterScopes<T extends string = string> = Partial<Record<T, ParameterScope>>
+
 export {
     ScriptGroup,
     Parameter,
     DynamicParameterScope,
+    ParameterScopes,
+    ParameterScope,
 }

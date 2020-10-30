@@ -1,13 +1,16 @@
 import {Combination} from "../../../../general"
-import {Scope} from "../types"
+import {computePossibilities} from "../../../possibilities"
+import {Scope, SubmetricScope} from "../types"
 import {combineSubmetricsPossibilitiesIntoSamples} from "./combineSubmetricsPossibilitiesIntoSamples"
-import {computeSubmetricPossibilities} from "./submetricPossibilities"
 import {DynamicParameter, Sample, SubmetricPossibility} from "./types"
 
 const computeSamples = (
     {dynamicParameters, scope}: {dynamicParameters: DynamicParameter[], scope: Scope},
 ): Sample[] => {
-    const submetricsPossibilities: Array<Combination<SubmetricPossibility>> = scope.map(computeSubmetricPossibilities)
+    const submetricsPossibilities: Array<Combination<SubmetricPossibility>> =
+        scope.map((submetricScope: SubmetricScope): Combination<SubmetricPossibility> => {
+            return computePossibilities(submetricScope) as Combination<SubmetricPossibility>
+        })
 
     return combineSubmetricsPossibilitiesIntoSamples({submetricsPossibilities, dynamicParameters})
 }

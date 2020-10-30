@@ -1,4 +1,4 @@
-import {deepEquals, finalElement, isUndefined, stringify} from "../../../general"
+import {deepEquals, finalElement, isUndefined} from "../../../general"
 import {Flacco, FLACCOS, getArm, getHead, HeadId} from "../flacco"
 import {formatSagittal} from "../glyph"
 import {computeApotomeComplement} from "./apotomeComplement"

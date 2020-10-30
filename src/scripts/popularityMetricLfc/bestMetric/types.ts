@@ -1,5 +1,5 @@
 import {Combination, Index, Io, Maybe, Name, Sum} from "../../../general"
-import {DynamicParameterScope, Parameter} from "../../types"
+import {ParameterScopes} from "../../types"
 import {PopularityParameterId, Submetric} from "../sumOfSquares"
 import {DynamicParameter, Sample} from "./scopeToSamples"
 
@@ -10,11 +10,7 @@ interface Metric {
     sumOfSquares?: SumOfSquares,
 }
 
-type ParameterScope = Parameter | boolean | DynamicParameterScope
-
-type ParameterScopes = Partial<Record<PopularityParameterId, ParameterScope>>
-
-type SubmetricScope = ParameterScopes & {_SubmetricScopeBrand: boolean}
+type SubmetricScope = ParameterScopes<PopularityParameterId> & {_SubmetricScopeBrand: boolean}
 
 type Scope = Combination<SubmetricScope>
 
@@ -67,7 +63,5 @@ export {
     SumOrSumsOfSquaresOptions,
     SearchScopeResults,
     NonRecursiveSearchScopeAndMaybeUpdateBestMetricOptions,
-    ParameterScopes,
-    ParameterScope,
     ShouldUpdateBestMetricOptions,
 }
