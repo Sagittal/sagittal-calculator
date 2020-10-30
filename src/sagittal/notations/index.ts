@@ -22,4 +22,5 @@ export {
     InaMidpoint,
     JiNotationBound,
     JiNotationBoundClassEntry,
+    computeJiNotationCaptureZone,
 } from "./ji"

@@ -1,4 +1,4 @@
-export {FindCommasSettings} from "./types"
+export {FindCommasSettings, CommasOptions} from "./types"
 export {computeCommas} from "./commas"
 export {computeCommaAnalyses} from "./commaAnalyses"
 export {parseFindCommasSettings} from "./parse"

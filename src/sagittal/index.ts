@@ -70,6 +70,7 @@ export {
     InaMidpoint,
     JiNotationBound,
     JiNotationBoundClassEntry,
+    computeJiNotationCaptureZone,
 } from "./notations"
 export {
     BoundClassId,

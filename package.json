@@ -18,7 +18,7 @@
     "generate-ji-notation-levels-diagram": "node -r ts-node/register/transpile-only src/scripts/jiNotationBoundClass/commands/generateLevelsDiagram.ts",
     "find-commas": "node -r ts-node/register/transpile-only src/scripts/jiPitch/commands/findCommas.ts",
     "analyze-ji-pitch": "node -r ts-node/register/transpile-only src/scripts/jiPitch/commands/analyzeJiPitch.ts",
-    "secondary-comma-zone-commas": "node -r ts-node/register/transpile-only src/scripts/jiPitch/commands/secondaryCommaZoneCommas.ts",
+    "zone-commas": "node -r ts-node/register/transpile-only src/scripts/jiPitch/commands/zoneCommas.ts",
     "primary-comma-usefulness": "node -r ts-node/register/transpile-only src/scripts/usefulnessMetricLfc/commands/primaryCommaUsefulness.ts",
     "perfect-metric-from-scope": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/popularityMetricLfc/commands/perfectMetricFromScope.ts",
     "antivotes": "node -r ts-node/register/transpile-only src/scripts/popularityMetricLfc/commands/antivotes.ts",

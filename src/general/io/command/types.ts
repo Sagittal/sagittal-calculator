@@ -7,6 +7,7 @@ enum CommandFlag {
     EXCLUDED_FIELDS = "1",
     SYNC = "2",
     MAX_ATE = "3",
+    EXTREME_CAPTURE_ZONES = "4",
     MAX_AAS = "a",
     TABLE_FORMAT = "b",
     NO_COLOR = "c",
