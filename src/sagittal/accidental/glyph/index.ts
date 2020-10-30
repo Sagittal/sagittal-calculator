@@ -21,5 +21,5 @@ export {
 } from "./smiley"
 export {formatAscii} from "./formatAscii"
 export {Ascii, Unicode, Smiley, Glyph} from "./types"
-export {formatSagittal} from "./formatSagittal"
+export {formatAccidental} from "./formatAccidental"
 export {parseAscii} from "./parse"

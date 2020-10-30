@@ -18,7 +18,7 @@ export {
     computeAccidentalSmiley,
     computeSagittalAscii,
     computeSagittalUnicode,
-    formatSagittal,
+    formatAccidental,
     parseAscii,
     Glyph,
 } from "./glyph"

@@ -40,8 +40,11 @@ const computeArmSmiley = (arm: Arm, down?: boolean): Smiley =>
         BLANK_ASCII,
     )
 
-const computeAccidentalSmiley = <T extends Flavor>({compatible, ...sagittal}: Accidental<T>): Smiley<T> => {
-    const {arm, ...core} = sagittal
+const computeAccidentalSmiley = <T extends Maybe<Flavor> = undefined>(
+    accidental: Maybe<Accidental<T>>
+): Smiley<T> => {
+    if (isUndefined(accidental)) return PARENTHETICAL_NATURAL_SMILEY as Smiley<T>
+    const {arm, compatible, ...core} = accidental
 
     const armSmiley = isUndefined(arm) ?
         BLANK_SMILEY :

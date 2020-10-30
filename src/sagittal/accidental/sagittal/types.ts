@@ -1,4 +1,4 @@
-import {ArmId, Flacco, HeadId} from "../flacco"
+import {Flacco} from "../flacco"
 
 enum Shafts {
     SINGLE = "single",
@@ -14,17 +14,8 @@ interface Sagittal extends Flacco {
 
 type Core = Omit<Sagittal, "arm">
 
-type GetSagittalOptions = Partial<{
-    armId: ArmId,
-    against: boolean,
-    headId: HeadId,
-    shafts: Shafts,
-    down: boolean,
-}>
-
 export {
     Core,
     Sagittal,
     Shafts,
-    GetSagittalOptions,
 }

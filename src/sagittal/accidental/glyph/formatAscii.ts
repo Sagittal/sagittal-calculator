@@ -2,6 +2,7 @@ import { Formatted, shallowClone } from "../../../general"
 import {PARENTHETICAL_NATURAL_ASCII} from "./constants"
 import { Ascii } from "./types"
 
+// TODO: isn't this just "align"?
 const formatAscii = (ascii: Ascii): Formatted<Ascii> => {
     if (ascii === PARENTHETICAL_NATURAL_ASCII) {
         return ` ${PARENTHETICAL_NATURAL_ASCII} ` as Formatted<Ascii>

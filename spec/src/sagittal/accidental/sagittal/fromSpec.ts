@@ -1,6 +1,6 @@
 import {computeSagittalFromFlacco, Flacco, FlaccoId, getFlacco} from "../../../../../src/sagittal/accidental"
 import {ArmId, HeadId} from "../../../../../src/sagittal/accidental/flacco"
-import {computeSagittal} from "../../../../helpers/src/sagittal/accidental/sagittal"
+import {computeAccidental} from "../../../../helpers/src/sagittal/accidental/accidental"
 
 describe("computeSagittalFromFlacco", (): void => {
     it("takes a combo of flags and arm and returns the full Sagittal symbol", (): void => {
@@ -8,7 +8,7 @@ describe("computeSagittalFromFlacco", (): void => {
 
         const actual = computeSagittalFromFlacco(flacco)
 
-        const expected = computeSagittal({armId: ArmId.WING, against: true, headId: HeadId.BOATHOOK_AND_ARC}) // ,~|)
+        const expected = computeAccidental({armId: ArmId.WING, against: true, headId: HeadId.BOATHOOK_AND_ARC}) // ,~|)
         expect(actual).toEqual(expected)
     })
 
@@ -17,7 +17,7 @@ describe("computeSagittalFromFlacco", (): void => {
 
         const actual = computeSagittalFromFlacco(flacco)
 
-        const expected = computeSagittal({armId: ArmId.TICK, headId: HeadId.LEFT_ARC})                        // '(|
+        const expected = computeAccidental({armId: ArmId.TICK, headId: HeadId.LEFT_ARC})                        // '(|
         expect(actual).toEqual(expected)
     })
 
@@ -26,7 +26,7 @@ describe("computeSagittalFromFlacco", (): void => {
 
         const actual = computeSagittalFromFlacco(flacco)
 
-        const expected = computeSagittal({headId: HeadId.RIGHT_BARB_AND_ARC})                                 // |\)
+        const expected = computeAccidental({headId: HeadId.RIGHT_BARB_AND_ARC})                                 // |\)
         expect(actual).toEqual(expected)
     })
 
@@ -35,7 +35,7 @@ describe("computeSagittalFromFlacco", (): void => {
 
         const actual = computeSagittalFromFlacco(flacco)
 
-        const expected = computeSagittal({headId: HeadId.LEFT_SCROLL_DOUBLE_LEFT_BARB})                       // )//|
+        const expected = computeAccidental({headId: HeadId.LEFT_SCROLL_DOUBLE_LEFT_BARB})                       // )//|
         expect(actual).toEqual(expected)
     })
 
@@ -52,7 +52,7 @@ describe("computeSagittalFromFlacco", (): void => {
 
         const actual = computeSagittalFromFlacco(flacco)
 
-        const expected = computeSagittal({armId: ArmId.WING})                                                 // `|
+        const expected = computeAccidental({armId: ArmId.WING})                                                 // `|
         expect(actual).toEqual(expected)
     })
 })

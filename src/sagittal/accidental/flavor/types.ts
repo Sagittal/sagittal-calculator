@@ -22,10 +22,9 @@ enum Compatible {
     DOUBLE_FLAT = "doubleFlat",
 }
 
-interface Accidental<T extends Flavor> extends Sagittal {
-    compatible: Maybe<Compatible>,
-    _FlavorBrand: T,
-}
+type Accidental<T extends Maybe<Flavor> = undefined> = Sagittal
+    & {compatible?: Compatible}
+    & (T extends Flavor ? {_FlavorBrand: T} : {})
 
 export {
     Flavor,

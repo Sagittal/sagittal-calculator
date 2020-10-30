@@ -1,5 +1,5 @@
 import {Formatted, Maybe, SPACE} from "../../general"
-import {formatSagittal, Sagittal} from "../accidental"
+import {formatAccidental, Sagittal} from "../accidental"
 import {computeCommaName} from "../ji"
 import {getCommaClass} from "./commaClass"
 import {getRepresentativeSagittal} from "./representativeSagittal"
@@ -12,7 +12,7 @@ const formatCommaClass = (
     const formattedCommaClass = []
     if (glyph) {
         const representativeSagittal: Maybe<Sagittal> = getRepresentativeSagittal(commaClassId)
-        formattedCommaClass.push(formatSagittal(representativeSagittal, {align}))
+        formattedCommaClass.push(formatAccidental(representativeSagittal, {align}))
     }
 
     if (name) {

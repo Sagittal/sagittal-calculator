@@ -286,8 +286,11 @@ const computeArmUnicode = (arm: Arm, down?: boolean): Unicode =>
         BLANK_UNICODE,
     )
 
-const computeAccidentalUnicode = <T extends Flavor>({compatible, ...sagittal}: Accidental<T>): Unicode<T> => {
-    const {arm, ...core} = sagittal
+const computeAccidentalUnicode = <T extends Maybe<Flavor> = undefined>(
+    accidental: Maybe<Accidental<T>>
+): Unicode<T> => {
+    if (isUndefined(accidental)) return PARENTHETICAL_NATURAL_UNICODE as Unicode<T>
+    const {arm, compatible, ...core} = accidental
 
     const armUnicode = isUndefined(arm) ?
         BLANK_UNICODE :

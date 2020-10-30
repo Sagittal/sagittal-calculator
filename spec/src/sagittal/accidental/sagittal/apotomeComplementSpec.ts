@@ -1,32 +1,32 @@
 import {ArmId, getArm, HeadId} from "../../../../../src/sagittal/accidental/flacco"
 import {computeApotomeComplement, getCore, Shafts} from "../../../../../src/sagittal/accidental/sagittal"
-import {computeSagittal} from "../../../../helpers/src/sagittal/accidental/sagittal"
+import {computeAccidental} from "../../../../helpers/src/sagittal/accidental/accidental"
 
 describe("computeApotomeComplement", (): void => {
     it("returns the apotome complement of the given symbol", (): void => {
-        const sagittal = computeSagittal({headId: HeadId.LEFT_BARB})                                       //  /|
+        const sagittal = computeAccidental({headId: HeadId.LEFT_BARB})                                       //  /|
 
         const actual = computeApotomeComplement(sagittal)
 
-        const expected = computeSagittal({headId: HeadId.RIGHT_BARB, shafts: Shafts.DOUBLE})               // ||\\
+        const expected = computeAccidental({headId: HeadId.RIGHT_BARB, shafts: Shafts.DOUBLE})               // ||\\
         expect(actual).toEqual(expected)
     })
 
     it("can go from a multi-shaft symbol to the single-shaft symbol", (): void => {
-        const sagittal = computeSagittal({headId: HeadId.LEFT_SCROLL_AND_BOATHOOK, shafts: Shafts.DOUBLE}) // )~||
+        const sagittal = computeAccidental({headId: HeadId.LEFT_SCROLL_AND_BOATHOOK, shafts: Shafts.DOUBLE}) // )~||
 
         const actual = computeApotomeComplement(sagittal)
 
-        const expected = computeSagittal({headId: HeadId.BOATHOOK_AND_BARB})                               // ~|\\
+        const expected = computeAccidental({headId: HeadId.BOATHOOK_AND_BARB})                               // ~|\\
         expect(actual).toEqual(expected)
     })
 
     it("reorients the arm, so that they will cancel each other out", (): void => {
-        const sagittal = computeSagittal({armId: ArmId.WING_AGAINST_TICK, headId: HeadId.DOUBLE_SCROLL})   // ,'|(
+        const sagittal = computeAccidental({armId: ArmId.WING_AGAINST_TICK, headId: HeadId.DOUBLE_SCROLL})   // ,'|(
 
         const actual = computeApotomeComplement(sagittal)
 
-        const expected = computeSagittal({                                                                 // `./||)
+        const expected = computeAccidental({                                                                 // `./||)
             armId: ArmId.WING_AGAINST_TICK,
             against: true,
             headId: HeadId.DOUBLE_LEFT_BARB,
@@ -36,7 +36,7 @@ describe("computeApotomeComplement", (): void => {
     })
 
     it("can reorient arm the other way", (): void => {
-        const sagittal = computeSagittal({                                                                 // `./||)
+        const sagittal = computeAccidental({                                                                 // `./||)
             armId: ArmId.WING_AGAINST_TICK,
             against: true,
             headId: HeadId.DOUBLE_LEFT_BARB,
@@ -45,7 +45,7 @@ describe("computeApotomeComplement", (): void => {
 
         const actual = computeApotomeComplement(sagittal)
 
-        const expected = computeSagittal({armId: ArmId.WING_AGAINST_TICK, headId: HeadId.DOUBLE_SCROLL})   // ,'|(
+        const expected = computeAccidental({armId: ArmId.WING_AGAINST_TICK, headId: HeadId.DOUBLE_SCROLL})   // ,'|(
         expect(actual).toEqual(expected)
     })
 
@@ -54,12 +54,12 @@ describe("computeApotomeComplement", (): void => {
 
         const actual = computeApotomeComplement(sagittal)
 
-        const expected = computeSagittal({headId: HeadId.DOUBLE_BARB, shafts: Shafts.DOUBLE})
+        const expected = computeAccidental({headId: HeadId.DOUBLE_BARB, shafts: Shafts.DOUBLE})
         expect(actual).toEqual(expected)
     })
 
     it("works for the apotome, mapping it to the null sagittal (the parenthetical natural", (): void => {
-        const sagittal = computeSagittal({headId: HeadId.DOUBLE_BARB, shafts: Shafts.DOUBLE})
+        const sagittal = computeAccidental({headId: HeadId.DOUBLE_BARB, shafts: Shafts.DOUBLE})
 
         const actual = computeApotomeComplement(sagittal)
 
@@ -68,11 +68,11 @@ describe("computeApotomeComplement", (): void => {
     })
 
     it("maps a bare shaft with arm to the apotome with a reoriented arm", (): void => {
-        const sagittal = computeSagittal({armId: ArmId.WING_AND_TICK, headId: HeadId.BARE_SHAFT})         // `'|
+        const sagittal = computeAccidental({armId: ArmId.WING_AND_TICK, headId: HeadId.BARE_SHAFT})         // `'|
 
         const actual = computeApotomeComplement(sagittal)
 
-        const expected = computeSagittal({                                                                // ,./||\\
+        const expected = computeAccidental({                                                                // ,./||\\
             armId: ArmId.WING_AND_TICK,
             against: true,
             headId: HeadId.DOUBLE_BARB,
@@ -82,11 +82,11 @@ describe("computeApotomeComplement", (): void => {
     })
 
     it("you really gotta be careful with these three different 1-scroll 2-barb symbols", (): void => {
-        const sagittal = computeSagittal({ headId: HeadId.LEFT_SCROLL_DOUBLE_LEFT_BARB })                 // )//|
+        const sagittal = computeAccidental({ headId: HeadId.LEFT_SCROLL_DOUBLE_LEFT_BARB })                 // )//|
 
         const actual = computeApotomeComplement(sagittal)   // *not* )/|\ which is HeadId.LEFT_SCROLL_AND_DOUBLE_BARB
 
-        const expected = computeSagittal({ headId: HeadId.LEFT_SCROLL_DOUBLE_RIGHT_BARB })                // )|\\
+        const expected = computeAccidental({ headId: HeadId.LEFT_SCROLL_DOUBLE_RIGHT_BARB })                // )|\\
         expect(actual).toEqual(expected)
     })
 
@@ -115,7 +115,7 @@ describe("computeApotomeComplement", (): void => {
     })
 
     it("throws an error if passed a down symbol", (): void => {
-        const sagittal = computeSagittal({headId: HeadId.LEFT_BARB, down: true })                          //  \!
+        const sagittal = computeAccidental({headId: HeadId.LEFT_BARB, down: true })                          //  \!
 
         expect((): void => {
             computeApotomeComplement(sagittal)

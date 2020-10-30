@@ -2,6 +2,8 @@ import {getArm} from "./arm"
 import {getHead} from "./head"
 import {ArmId, Flacco, FlaccoId, HeadId} from "./types"
 
+// TODO: COMPLETE FLACCO RENAMING
+//  See: http://forum.sagittal.org/viewtopic.php?p=2580#p2580 and other posts immediately before and after it
 const FLACCOS: Record<FlaccoId, Flacco> = {
     /*0*/[FlaccoId.NULL]: {},                                         //  (|//|)
     /*1*/[FlaccoId.WING]: {                                           //     `|

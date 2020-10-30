@@ -121,8 +121,11 @@ const computeArmAscii = (arm: Arm, down?: boolean): Ascii =>
         BLANK_ASCII,
     )
 
-const computeAccidentalAscii = <T extends Flavor>({compatible, ...sagittal}: Accidental<T>): Ascii<T> => {
-    const {arm, ...core} = sagittal
+const computeAccidentalAscii = <T extends Maybe<Flavor> = undefined>(
+    accidental: Maybe<Accidental<T>>,
+): Ascii<T> => {
+    if (isUndefined(accidental)) return PARENTHETICAL_NATURAL_ASCII as Ascii<T>
+    const {compatible, arm, ...core} = accidental
 
     const armAscii = isUndefined(arm) ?
         BLANK_ASCII :

@@ -1,5 +1,5 @@
 import {getHead, HeadId} from "../flacco"
-import {areShaftsEven} from "./even"
+import {areShaftsEven} from "./shafts"
 import {Core, Shafts} from "./types"
 
 // I had thought it might be a cool idea to define this in terms of taking the apotome complement of the 2-shaft symbol

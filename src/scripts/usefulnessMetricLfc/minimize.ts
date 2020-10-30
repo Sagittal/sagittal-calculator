@@ -33,6 +33,8 @@ const logUsefulnessParameterSetsForUsefulnessMetricMinimizingSumOfSquares = (
                     usefulnessParameterSet,
                 )
 
+            // TODO: add command line option for excluding any distances > 1
+            //  See: http://forum.sagittal.org/viewtopic.php?p=2575#p2575
             sumOfSquares = sumOfSquares + squaredDistanceFromMostUsefulCommaInZone
         })
 

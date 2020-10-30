@@ -2,11 +2,11 @@ import {Accidental, Compatible, Flavor, Smiley} from "../../../../../src/sagitta
 import {ArmId, HeadId} from "../../../../../src/sagittal/accidental/flacco"
 import {computeAccidentalSmiley, computeSagittalSmiley} from "../../../../../src/sagittal/accidental/glyph"
 import {Shafts} from "../../../../../src/sagittal/accidental/sagittal"
-import {computeSagittal} from "../../../../helpers/src/sagittal/accidental/sagittal"
+import {computeAccidental} from "../../../../helpers/src/sagittal/accidental/accidental"
 
 describe("computeSagittalSmiley", (): void => {
     it("converts a sagittal to smiley code", (): void => {
-        const sagittal = computeSagittal({armId: ArmId.WING_AND_TICK, headId: HeadId.RIGHT_ARC})        // `'|)
+        const sagittal = computeAccidental({armId: ArmId.WING_AND_TICK, headId: HeadId.RIGHT_ARC})        // `'|)
 
 
         const actual = computeSagittalSmiley(sagittal)
@@ -16,7 +16,7 @@ describe("computeSagittalSmiley", (): void => {
     })
 
     it("handles the space that needs to be inserted into //, per forum-specific limitations", (): void => {
-        const sagittal = computeSagittal({headId: HeadId.LEFT_SCROLL_DOUBLE_LEFT_BARB})                 // )//|
+        const sagittal = computeAccidental({headId: HeadId.LEFT_SCROLL_DOUBLE_LEFT_BARB})                 // )//|
 
         const actual = computeSagittalSmiley(sagittal)
 
@@ -25,7 +25,7 @@ describe("computeSagittalSmiley", (): void => {
     })
 
     it("handles the space that needs to be inserted into \\\\, per forum-specific limitations", (): void => {
-        const sagittal = computeSagittal({headId: HeadId.DOUBLE_RIGHT_BARB})                            // |\\
+        const sagittal = computeAccidental({headId: HeadId.DOUBLE_RIGHT_BARB})                            // |\\
 
 
         const actual = computeSagittalSmiley(sagittal)
@@ -35,7 +35,7 @@ describe("computeSagittalSmiley", (): void => {
     })
 
     it("does the correct thing with double ticks", (): void => {
-        const sagittal = computeSagittal({armId: ArmId.BIRD, headId: HeadId.RIGHT_ARC})                 // ``|)
+        const sagittal = computeAccidental({armId: ArmId.BIRD, headId: HeadId.RIGHT_ARC})                 // ``|)
 
         const actual = computeSagittalSmiley(sagittal)
 
@@ -44,7 +44,7 @@ describe("computeSagittalSmiley", (): void => {
     })
 
     it("does the correct thing with double down ticks", (): void => {
-        const sagittal = computeSagittal({armId: ArmId.BIRD, against: true, headId: HeadId.RIGHT_ARC})  // ,,|)
+        const sagittal = computeAccidental({armId: ArmId.BIRD, against: true, headId: HeadId.RIGHT_ARC})  // ,,|)
 
         const actual = computeSagittalSmiley(sagittal)
 
@@ -53,7 +53,7 @@ describe("computeSagittalSmiley", (): void => {
     })
 
     it("works for a sagittal with four shafts", (): void => {
-        const sagittal = computeSagittal({headId: HeadId.DOUBLE_SCROLL, shafts: Shafts.EX})             // )X(
+        const sagittal = computeAccidental({headId: HeadId.DOUBLE_SCROLL, shafts: Shafts.EX})             // )X(
 
         const actual = computeSagittalSmiley(sagittal)
 
@@ -75,10 +75,11 @@ describe("computeSagittalSmiley", (): void => {
 
 describe("computeAccidentalSmiley", (): void => {
     it("works for an accidental with a Sagittal-compatible glyph", (): void => {
-        const accidental: Accidental<Flavor.EVO> = {                                                    // )\!x
-            ...computeSagittal({ headId: HeadId.LEFT_SCROLL_AND_BARB, down: true }),
+        const accidental = computeAccidental({
+            headId: HeadId.LEFT_SCROLL_AND_BARB,
+            down: true,
             compatible: Compatible.DOUBLE_SHARP,
-        } as Accidental<Flavor.EVO>
+        })
 
         const actual = computeAccidentalSmiley(accidental)
 
@@ -95,6 +96,24 @@ describe("computeAccidentalSmiley", (): void => {
         const actual = computeAccidentalSmiley(accidental)
 
         const expected = ":x:" as Smiley
+        expect(actual).toBe(expected)
+    })
+
+    it("works for empty accidentals", (): void => {
+        const accidental = {} as Accidental
+
+        const actual = computeAccidentalSmiley(accidental)
+
+        const expected = "(:h:)" as Smiley
+        expect(actual).toBe(expected)
+    })
+
+    it("works for empty accidentals", (): void => {
+        const accidental = undefined
+
+        const actual = computeAccidentalSmiley(accidental)
+
+        const expected = "(:h:)" as Smiley
         expect(actual).toBe(expected)
     })
 })
