@@ -87,6 +87,10 @@ export {
     getRepresentativeSagittal,
     formatCommaClass,
     CommaClassId,
+    SymbolClassId,
+    SYMBOL_CLASSES,
+    SymbolClass,
+    formatSymbolClass,
 } from "./notation"
 export {APOTOME, HALF_APOTOME} from "./constants"
 export {parsePitch} from "./parsePitch"

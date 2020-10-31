@@ -1,7 +1,7 @@
 import {Copfr, Decimal, Max, Numerator, Popularity, Prime, Rank, Votes} from "../../general"
 import {Two3FreeClassAnalysis} from "../../sagittal"
 import {BestNotatingCommaProperties} from "./bestNotatingComma"
-import {NotatingCommaClassesProperties} from "./notatingCommaClasses"
+import {NotatingSymbolClassesProperties} from "./notatingSymbolClasses"
 
 type SharedPopular23FreeClassProperties = Two3FreeClassAnalysis & {
     votes: Votes,
@@ -9,7 +9,7 @@ type SharedPopular23FreeClassProperties = Two3FreeClassAnalysis & {
 }
 
 type Popular23FreeClass = SharedPopular23FreeClassProperties
-    & (NotatingCommaClassesProperties | BestNotatingCommaProperties)
+    & (NotatingSymbolClassesProperties | BestNotatingCommaProperties)
 
 interface Popular23FreeClassesScriptGroupSettings {
     useLate: boolean,

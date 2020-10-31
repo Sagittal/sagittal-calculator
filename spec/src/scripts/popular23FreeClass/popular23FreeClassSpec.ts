@@ -2,7 +2,7 @@ import {Cents, Direction, Index, Monzo, Rank, Two3FreeClass} from "../../../../s
 import {Popularity, Votes} from "../../../../src/general/music"
 import {Two3FreeClassAnalysis} from "../../../../src/sagittal/ji/two3FreeClass"
 import {N2D3P9} from "../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
-import {CommaClassId, SymbolSubsetId} from "../../../../src/sagittal/notation"
+import {CommaClassId, SymbolClassId, SymbolSubsetId} from "../../../../src/sagittal/notation"
 import {popular23FreeClassesScriptGroupSettings} from "../../../../src/scripts/popular23FreeClass/globals"
 import {computePopular23FreeClass} from "../../../../src/scripts/popular23FreeClass/popular23FreeClass"
 import {Popular23FreeClass} from "../../../../src/scripts/popular23FreeClass/types"
@@ -24,8 +24,8 @@ describe("computePopular23FreeClass", (): void => {
             ...two3FreeClassAnalysis,
             popularityRank: 2 as Rank<Popularity>,
             votes: 5371 as Votes,
-            notatingCommaClassIds: [CommaClassId._5_s, CommaClassId._1_5_C],
-            notatingCommaClassSmallestSymbolSubsetIndices: [5, 1] as Array<Index<SymbolSubsetId>>,
+            notatingSymbolClassIds: [SymbolClassId.TICK, SymbolClassId.LEFT_BARB],
+            notatingSymbolClassSmallestSymbolSubsetIndices: [5, 1] as Array<Index<SymbolSubsetId>>,
         }
         expect(actual).toEqual(expected)
     })

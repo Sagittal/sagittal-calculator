@@ -19,7 +19,7 @@ describe("popular-2-3-free-classes", (): void => {
             "[table]",
             "[tr][th][pre]2,3- [/pre][/th][th][pre]       [/pre][/th][th][pre]        [/pre][/th][th][pre]smallest[/pre][/th][th][pre]      [/pre][/th][th][pre]       [/pre][/th][th][pre]           [/pre][/th][/tr]",
             "[tr][th][pre]free [/pre][/th][th][pre]       [/pre][/th][th][pre]notating[/pre][/th][th][pre]symbol  [/pre][/th][th][pre]      [/pre][/th][th][pre]Scala  [/pre][/th][th][pre]Scala      [/pre][/th][/tr]",
-            "[tr][th][pre]class[/pre][/th][th][pre]       [/pre][/th][th][pre]comma   [/pre][/th][th][pre]subset  [/pre][/th][th][pre]N2D3P9[/pre][/th][th][pre]archive[/pre][/th][th][pre]archive    [/pre][/th][/tr]",
+            "[tr][th][pre]class[/pre][/th][th][pre]       [/pre][/th][th][pre]symbol  [/pre][/th][th][pre]subset  [/pre][/th][th][pre]N2D3P9[/pre][/th][th][pre]archive[/pre][/th][th][pre]archive    [/pre][/th][/tr]",
             "[tr][th][pre]name [/pre][/th][th][pre]N2D3P9 [/pre][/th][th][pre]classes [/pre][/th][th][pre]indices [/pre][/th][th][pre]rank  [/pre][/th][th][pre]rank   [/pre][/th][th][pre]occurrences[/pre][/th][/tr]",
             "[tr][td][pre][/pre][latex]\\{1\\}_{\\scriptsize{2,3}}[/latex][pre][/pre][/td][td][pre]  1.000[/pre][/td][td][pre][/pre](:h:) :'::/|:[pre][/pre][/td][td][pre]0, 5    [/pre][/td][td][pre]1     [/pre][/td][td][pre]1      [/pre][/td][td][pre]7624       [/pre][/td][/tr]",
             "[tr][td][pre][/pre][latex]\\{5\\}_{\\scriptsize{2,3}}[/latex][pre][/pre][/td][td][pre]  1.389[/pre][/td][td][pre][/pre]:'::|: :/|:[pre][/pre][/td][td][pre]5, 1    [/pre][/td][td][pre]2     [/pre][/td][td][pre]2      [/pre][/td][td][pre]5371       [/pre][/td][/tr]",
@@ -76,7 +76,7 @@ describe("popular-2-3-free-classes", (): void => {
             "[table]",
             "[tr][th][pre]2,3- [/pre][/th][th][pre]       [/pre][/th][th][pre]        [/pre][/th][th][pre]smallest[/pre][/th][th][pre]      [/pre][/th][th][pre]       [/pre][/th][th][pre]           [/pre][/th][/tr]",
             "[tr][th][pre]free [/pre][/th][th][pre]       [/pre][/th][th][pre]notating[/pre][/th][th][pre]symbol  [/pre][/th][th][pre]      [/pre][/th][th][pre]Scala  [/pre][/th][th][pre]Scala      [/pre][/th][/tr]",
-            "[tr][th][pre]class[/pre][/th][th][pre]       [/pre][/th][th][pre]comma   [/pre][/th][th][pre]subset  [/pre][/th][th][pre]N2D3P9[/pre][/th][th][pre]archive[/pre][/th][th][pre]archive    [/pre][/th][/tr]",
+            "[tr][th][pre]class[/pre][/th][th][pre]       [/pre][/th][th][pre]symbol  [/pre][/th][th][pre]subset  [/pre][/th][th][pre]N2D3P9[/pre][/th][th][pre]archive[/pre][/th][th][pre]archive    [/pre][/th][/tr]",
             "[tr][th][pre]name [/pre][/th][th][pre]N2D3P9 [/pre][/th][th][pre]classes [/pre][/th][th][pre]indices [/pre][/th][th][pre]rank  [/pre][/th][th][pre]rank   [/pre][/th][th][pre]occurrences[/pre][/th][/tr]",
             "[tr][td][pre][/pre][latex]\\{1\\}_{\\scriptsize{2,3}}[/latex][pre][/pre][/td][td][pre]  1.000[/pre][/td][td][pre][/pre](:h:) :'::/|:[pre][/pre][/td][td][pre]0, 5    [/pre][/td][td][pre]1     [/pre][/td][td][pre]1      [/pre][/td][td][pre]7624       [/pre][/td][/tr]",
             "[tr][td][pre][/pre][latex]\\{5\\}_{\\scriptsize{2,3}}[/latex][pre][/pre][/td][td][pre]  1.389[/pre][/td][td][pre][/pre]:'::|: :/|:[pre][/pre][/td][td][pre]5, 1    [/pre][/td][td][pre]2     [/pre][/td][td][pre]2      [/pre][/td][td][pre]5371       [/pre][/td][/tr]",
@@ -105,7 +105,7 @@ describe("popular-2-3-free-classes", (): void => {
         expect(actual).toEqualLines(expected)
     })
 
-    it("can associate the popular 2,3-free classes with their best notating commas (instead of all of their notating comma classes)", (): void => {
+    it("can associate the popular 2,3-free classes with their best notating commas (instead of all of their notating symbol classes)", (): void => {
         onlyRunInCi()
 
         const command = "npm run popular-2-3-free-classes -- --use-best-notating-commas --max-n2d3p9 10 --table-format forum" as Io

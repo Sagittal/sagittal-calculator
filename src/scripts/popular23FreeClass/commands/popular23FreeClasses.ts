@@ -21,7 +21,7 @@ program
     .option(`-${CommandFlag.MAX_N2D3P9}, --max-n2d3p9 [maxN2D3P9]`, "max N2D3P9", parseFloat)
     .option(`-${CommandFlag.USE_KNOWN_POPULAR_2_3_FREE_CLASSES}, --use-known`, "use known popular 2,3-free classes")
     .option(`-${CommandFlag.USE_LATE}, --use-late`, "use LATE (instead of LAAS)")
-    .option(`-${CommandFlag.USE_BEST_NOTATING_COMMAS}, --use-best-notating-commas`, "use best notating comma (instead of notating comma classes)")
+    .option(`-${CommandFlag.USE_BEST_NOTATING_COMMAS}, --use-best-notating-commas`, "use best notating comma (instead of notating symbol classes)")
 
 parseCommands(ScriptGroup.POPULAR_2_3_FREE_CLASSES as Filename)
 

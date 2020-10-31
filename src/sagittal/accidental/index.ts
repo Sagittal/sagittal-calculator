@@ -5,7 +5,7 @@ export {
     FlaccoId,
     getFlacco,
 } from "./flacco"
-export {Core, Sagittal, computeSagittalFromFlacco} from "./sagittal"
+export {Core, Sagittal, computeSagittalFromFlacco, computeSagittalFromSymbolClassId} from "./sagittal"
 export {Accidental, Flavor, Compatible} from "./flavor"
 export {
     alignAscii,

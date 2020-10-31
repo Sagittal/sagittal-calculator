@@ -16,7 +16,7 @@ import {
     Votes,
 } from "../../../../src/general"
 import {N2D3P9} from "../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
-import {CommaClassId, SymbolSubsetId} from "../../../../src/sagittal/notation"
+import {CommaClassId, SymbolClassId, SymbolSubsetId} from "../../../../src/sagittal/notation"
 import {popular23FreeClassesScriptGroupSettings} from "../../../../src/scripts/popular23FreeClass/globals"
 import {computePopular23FreeClasses} from "../../../../src/scripts/popular23FreeClass/popular23FreeClasses"
 import {Popular23FreeClass} from "../../../../src/scripts/popular23FreeClass/types"
@@ -39,8 +39,8 @@ describe("computePopular23FreeClasses", (): void => {
                 } as Two3FreeClass,
                 popularityRank: 1 as Rank<Popularity>,
                 votes: 7624 as Votes,
-                notatingCommaClassIds: [CommaClassId._1_u, CommaClassId._1_C],
-                notatingCommaClassSmallestSymbolSubsetIndices:
+                notatingSymbolClassIds: [SymbolClassId.NULL, SymbolClassId.TICK_AND_LEFT_BARB],
+                notatingSymbolClassSmallestSymbolSubsetIndices:
                     [0, 5] as Array<Index<SymbolSubsetId>>,
                 rank: 1 as Rank<Popular23FreeClass>,
             },
@@ -55,8 +55,8 @@ describe("computePopular23FreeClasses", (): void => {
                 } as Two3FreeClass,
                 popularityRank: 2 as Rank<Popularity>,
                 votes: 5371 as Votes,
-                notatingCommaClassIds: [CommaClassId._5_s, CommaClassId._1_5_C],
-                notatingCommaClassSmallestSymbolSubsetIndices:
+                notatingSymbolClassIds: [SymbolClassId.TICK, SymbolClassId.LEFT_BARB],
+                notatingSymbolClassSmallestSymbolSubsetIndices:
                     [5, 1] as Array<Index<SymbolSubsetId>>,
                 rank: 2 as Rank<Popular23FreeClass>,
             },
@@ -71,8 +71,8 @@ describe("computePopular23FreeClasses", (): void => {
                 } as Two3FreeClass,
                 popularityRank: 3 as Rank<Popularity>,
                 votes: 3016 as Votes,
-                notatingCommaClassIds: [CommaClassId._1_7_C, CommaClassId._1_7_M],
-                notatingCommaClassSmallestSymbolSubsetIndices:
+                notatingSymbolClassIds: [SymbolClassId.RIGHT_ARC, SymbolClassId.TICK_BARB_AND_ARC],
+                notatingSymbolClassSmallestSymbolSubsetIndices:
                     [1, 5] as Array<Index<SymbolSubsetId>>,
                 rank: 3 as Rank<Popular23FreeClass>,
             },
@@ -87,8 +87,8 @@ describe("computePopular23FreeClasses", (): void => {
                 } as Two3FreeClass,
                 popularityRank: 4 as Rank<Popularity>,
                 votes: 1610 as Votes,
-                notatingCommaClassIds: [CommaClassId._1_25_C, CommaClassId._1_25_S],
-                notatingCommaClassSmallestSymbolSubsetIndices:
+                notatingSymbolClassIds: [SymbolClassId.ANTITICK_AND_LEFT_BARB, SymbolClassId.DOUBLE_LEFT_BARB],
+                notatingSymbolClassSmallestSymbolSubsetIndices:
                     [5, 1] as Array<Index<SymbolSubsetId>>,
                 rank: 4 as Rank<Popular23FreeClass>,
             },
@@ -103,8 +103,8 @@ describe("computePopular23FreeClasses", (): void => {
                 } as Two3FreeClass,
                 popularityRank: 5 as Rank<Popularity>,
                 votes: 1318 as Votes,
-                notatingCommaClassIds: [CommaClassId._5_7_k, CommaClassId._5_7_C],
-                notatingCommaClassSmallestSymbolSubsetIndices:
+                notatingSymbolClassIds: [SymbolClassId.RIGHT_SCROLL, SymbolClassId.TICK_AND_RIGHT_ARC],
+                notatingSymbolClassSmallestSymbolSubsetIndices:
                     [1, 5] as Array<Index<SymbolSubsetId>>,
                 rank: 5 as Rank<Popular23FreeClass>,
             },

@@ -1,6 +1,6 @@
 2,3-           	        	                          	smallest
 free           	        	notating                  	symbol  	      	Scala  	Scala
-class          	        	comma                     	subset  	N2D3P9	archive	archive
+class          	        	symbol                    	subset  	N2D3P9	archive	archive
 name           	N2D3P9  	classes                   	indices 	rank  	rank   	occurrences
 {1}₂,₃         	  1.000 	 (|//|)     '/|           	0, 5    	1     	1      	7624
 {5}₂,₃         	  1.389 	    '|       /|           	5, 1    	2     	2      	5371

@@ -2,7 +2,7 @@ import {areRationalScamonsEqual, COMMA_POPULARITIES, isUndefined, Popularity, Vo
 import {Two3FreeClassAnalysis} from "../../sagittal"
 import {computeBestNotatingCommaProperties} from "./bestNotatingComma"
 import {popular23FreeClassesScriptGroupSettings} from "./globals"
-import {computeNotatingCommaClassesProperties} from "./notatingCommaClasses"
+import {computeNotatingSymbolClassesProperties} from "./notatingSymbolClasses"
 import {Popular23FreeClass} from "./types"
 
 const computePopular23FreeClass = (
@@ -15,16 +15,16 @@ const computePopular23FreeClass = (
     const popularityRank = !isUndefined(popularity) ? popularity.rank : undefined
     const votes = popularity?.votes || 0 as Votes
 
-    const bestNotatingCommaOrNotatingCommaClassesProperties =
+    const bestNotatingCommaOrNotatingSymbolClassesProperties =
         popular23FreeClassesScriptGroupSettings.useBestNotatingCommas ?
             computeBestNotatingCommaProperties(two3FreeClass) :
-            computeNotatingCommaClassesProperties(two3FreeClass)
+            computeNotatingSymbolClassesProperties(two3FreeClass)
 
     return {
         ...two3FreeClassAnalysis,
         popularityRank,
         votes,
-        ...bestNotatingCommaOrNotatingCommaClassesProperties,
+        ...bestNotatingCommaOrNotatingSymbolClassesProperties,
     }
 }
 

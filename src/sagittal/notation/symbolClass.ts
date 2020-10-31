@@ -2,7 +2,7 @@ import {isUndefined} from "../../general"
 import {FlaccoId} from "../accidental"
 import {CommaClassId, SymbolClass, SymbolClassId} from "./types"
 
-const SYMBOL_CLASSES: Partial<Record<FlaccoId, SymbolClass>> = {
+const SYMBOL_CLASSES: Record<SymbolClassId, SymbolClass> = {
     [SymbolClassId.NULL]: {
         flaccoId: FlaccoId.NULL,
         commaClassId: CommaClassId._1_u,
@@ -509,4 +509,5 @@ const getSymbolClass = (symbolClassId: SymbolClassId): SymbolClass => {
 
 export {
     getSymbolClass,
+    SYMBOL_CLASSES,
 }
