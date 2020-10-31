@@ -42,6 +42,11 @@ interface UsefulnessMetricLfcScriptGroupSettings {
     maxError: number,
 }
 
+interface BestAndActualCommaUsefulnessScores {
+    bestCommaUsefulnessScore: UsefulnessScore,
+    actualCommaUsefulnessScore: UsefulnessScore,
+}
+
 export {
     UsefulnessMetric,
     UsefulnessScore,
@@ -50,4 +55,5 @@ export {
     UsefulnessParameterId,
     SquaredUsefulnessScoreDistanceFromBestUsefulnessScore,
     UsefulnessMetricLfcScriptGroupSettings,
+    BestAndActualCommaUsefulnessScores,
 }
