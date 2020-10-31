@@ -3,7 +3,7 @@ import {UsefulnessMetricLfcScriptGroupSettings} from "./types"
 
 const INITIAL_USEFULNESS_METRIC_LFC_SCRIPT_GROUP_SETTINGS: UsefulnessMetricLfcScriptGroupSettings = {
     extremeCaptureZones: true,
-    maxError: 1,
+    sosMode: false,
 }
 
 const EXCLUDED_COMMAS: CommaClassId[] = [

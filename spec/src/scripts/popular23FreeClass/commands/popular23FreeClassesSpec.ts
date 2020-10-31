@@ -97,7 +97,7 @@ describe("popular-2-3-free-classes", (): void => {
     it("can use a list of already known popular 3,3-free classes, rather than recalculate them all", (): void => {
         onlyRunInCi()
 
-        const command = "npm run popular-2-3-free-classes -- --use-known" as Io
+        const command = "npm run popular-2-3-free-classes -- --max-n2d3p9 5298.1906468 --use-known" as Io
 
         const actual = runCommandAndGetConsoleOutput(command)
 

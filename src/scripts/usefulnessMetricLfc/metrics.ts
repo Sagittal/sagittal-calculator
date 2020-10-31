@@ -5,7 +5,7 @@ import {ApotomeSlope, N2D3P9} from "../../sagittal"
 import {Parameter} from "../types"
 import {
     UsefulnessMetric,
-    UsefulnessMetricId,
+    UsefulnessMetricFamilyId,
     UsefulnessParameterId,
     UsefulnessParameterSet,
     UsefulnessScore,
@@ -85,41 +85,41 @@ const rpp = (
     return n2d3p9 ** a + sP * aas ** b + tP * ate ** c as UsefulnessScore
 }
 
-const USEFULNESS_METRICS_WITH_PARAMETERS: Record<UsefulnessMetricId, {metric: UsefulnessMetric, parameters: UsefulnessParameterId[]}> = {
-    [UsefulnessMetricId.LEE]: {     // Lb(N2D3P9) + t × 2^ATE + s × 2^AAS
+const USEFULNESS_METRIC_FAMILIES_WITH_PARAMETERS: Record<UsefulnessMetricFamilyId, {metric: UsefulnessMetric, parameters: UsefulnessParameterId[]}> = {
+    [UsefulnessMetricFamilyId.LEE]: {     // Lb(N2D3P9) + t × 2^ATE + s × 2^AAS
         metric: lee,
         parameters: [UsefulnessParameterId.SE, UsefulnessParameterId.TE],
     },
-    [UsefulnessMetricId.REE]: {     // N2D3P9^a + t × 2^ATE + s × 2^AAS
+    [UsefulnessMetricFamilyId.REE]: {     // N2D3P9^a + t × 2^ATE + s × 2^AAS
         metric: ree,
         parameters: [UsefulnessParameterId.A, UsefulnessParameterId.SE, UsefulnessParameterId.TE],
     },
-    [UsefulnessMetricId.LPE]: {     // Lb(N2D3P9) + t × ATE^b + s × 2^AAS
+    [UsefulnessMetricFamilyId.LPE]: {     // Lb(N2D3P9) + t × ATE^b + s × 2^AAS
         metric: lpe,
         parameters: [UsefulnessParameterId.B, UsefulnessParameterId.SP, UsefulnessParameterId.TE],
     },
-    [UsefulnessMetricId.RPE]: {     // N2D3P9^a + t × ATE^b + s × 2^AAS
+    [UsefulnessMetricFamilyId.RPE]: {     // N2D3P9^a + t × ATE^b + s × 2^AAS
         metric: rpe,
         parameters: [UsefulnessParameterId.A, UsefulnessParameterId.B, UsefulnessParameterId.SP, UsefulnessParameterId.TE],
     },
-    [UsefulnessMetricId.LEP]: {     // Lb(N2D3P9) + t × 2^ATE + s × AAS^c
+    [UsefulnessMetricFamilyId.LEP]: {     // Lb(N2D3P9) + t × 2^ATE + s × AAS^c
         metric: lep,
         parameters: [UsefulnessParameterId.SE, UsefulnessParameterId.C, UsefulnessParameterId.TP],
     },
-    [UsefulnessMetricId.REP]: {     // N2D3P9^a + t × 2^ATE + s × AAS^c
+    [UsefulnessMetricFamilyId.REP]: {     // N2D3P9^a + t × 2^ATE + s × AAS^c
         metric: rep,
         parameters: [UsefulnessParameterId.A, UsefulnessParameterId.SE, UsefulnessParameterId.C, UsefulnessParameterId.TP],
     },
-    [UsefulnessMetricId.LPP]: {     // Lb(N2D3P9) + t × ATE^b + s × AAS^c
+    [UsefulnessMetricFamilyId.LPP]: {     // Lb(N2D3P9) + t × ATE^b + s × AAS^c
         metric: lpp,
         parameters: [UsefulnessParameterId.B, UsefulnessParameterId.SP, UsefulnessParameterId.C, UsefulnessParameterId.TP],
     },
-    [UsefulnessMetricId.RPP]: {     // N2D3P9^a + t × ATE^b + s × AAS^c
+    [UsefulnessMetricFamilyId.RPP]: {     // N2D3P9^a + t × ATE^b + s × AAS^c
         metric: rpp,
         parameters: [UsefulnessParameterId.A, UsefulnessParameterId.B, UsefulnessParameterId.SP, UsefulnessParameterId.C, UsefulnessParameterId.TP],
     },
 }
 
 export {
-    USEFULNESS_METRICS_WITH_PARAMETERS,
+    USEFULNESS_METRIC_FAMILIES_WITH_PARAMETERS,
 }

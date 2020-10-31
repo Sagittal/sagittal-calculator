@@ -1,12 +1,18 @@
 import {areScamonsEqual, Comma, compute23FreeClass, LogTarget, saveLog} from "../../general"
 import {CommaClassId, computeAas, computeAte, computeN2D3P9, formatComma, getCommaClass} from "../../sagittal"
-import {BestAndActualCommaUsefulnessScores, UsefulnessMetric, UsefulnessParameterSet, UsefulnessScore} from "./types"
+import {usefulnessMetricLfcScriptGroupSettings} from "./globals"
+import {
+    UsefulnessMetric,
+    UsefulnessMetricScoreForZone,
+    UsefulnessParameterSet,
+    UsefulnessScore,
+} from "./types"
 
-const computeBestAndActualCommaUsefulnessScores = (
+const computeUsefulnessMetricScoreForCommaZone = (
     [commaClassId, commas]: [CommaClassId, Comma[]],
     usefulnessMetric: UsefulnessMetric,
     usefulnessParameterSet: UsefulnessParameterSet,
-): BestAndActualCommaUsefulnessScores => {
+): UsefulnessMetricScoreForZone => {
     let bestCommaUsefulnessScore = Infinity as UsefulnessScore
     let actualCommaUsefulnessScore = Infinity as UsefulnessScore
 
@@ -29,9 +35,13 @@ const computeBestAndActualCommaUsefulnessScores = (
         }
     })
 
-    return {bestCommaUsefulnessScore, actualCommaUsefulnessScore}
+    return usefulnessMetricLfcScriptGroupSettings.sosMode ?
+        (actualCommaUsefulnessScore - bestCommaUsefulnessScore) ** 2 as UsefulnessMetricScoreForZone :
+        actualCommaUsefulnessScore === bestCommaUsefulnessScore ?
+            0 as UsefulnessMetricScoreForZone :
+            1 as UsefulnessMetricScoreForZone
 }
 
 export {
-    computeBestAndActualCommaUsefulnessScores,
+    computeUsefulnessMetricScoreForCommaZone,
 }

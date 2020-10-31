@@ -1,62 +1,60 @@
-import {Comma, count, LogTarget, saveLog, stringify} from "../../general"
+import {Comma, count, LogTarget, Min, saveLog, stringify, Sum} from "../../general"
 import {CommaClassId} from "../../sagittal"
 import {EXCLUDED_COMMAS} from "./constants"
-import {usefulnessMetricLfcScriptGroupSettings} from "./globals"
+import {computeUsefulnessMetricScoreForCommaZone} from "./metricScoreForZone"
 import {computeUsefulnessParameterSets} from "./parameters"
-import {computeSquaredUsefulnessScoreDistanceFromBestUsefulnessScoreInZone} from "./squaredUsefulnessScoreDistanceFromBestUsefulnessScoreInZone"
-import {UsefulnessMetric, UsefulnessMetricId, UsefulnessParameterId, UsefulnessParameterSet} from "./types"
+import {
+    UsefulnessMetric,
+    UsefulnessMetricFamilyId,
+    UsefulnessMetricScoreForZone,
+    UsefulnessParameterId,
+    UsefulnessParameterSet,
+} from "./types"
 import {computeZoneCommaEntries} from "./zoneCommas"
 
-const logUsefulnessParameterSetsForUsefulnessMetricMinimizingSumOfSquares = (
+// TODO: usefulness - probably acceptable to eliminate this "ties" functionality as it is unlikely to ever tie
+//  Though in its place won't you want essentially the local minima functionality?
+//  Well actually we did get 11 ties for one of the metrics, but I still think local minima would be better now
+
+const logUsefulnessParameterSetsForUsefulnessMetricFamilyWhichMinimizeItsScore = (
     [
-        usefulnessMetricId,
+        usefulnessMetricFamilyId,
         {metric, parameters},
-    ]: [UsefulnessMetricId, {metric: UsefulnessMetric, parameters: UsefulnessParameterId[]}],
+    ]: [UsefulnessMetricFamilyId, {metric: UsefulnessMetric, parameters: UsefulnessParameterId[]}],
 ): void => {
-    saveLog(`\nRUNNING FOR USEFULNESS METRIC ${usefulnessMetricId}`, LogTarget.PROGRESS)
+    saveLog(`\nRUNNING FOR USEFULNESS METRIC FAMILY ${usefulnessMetricFamilyId}`, LogTarget.PROGRESS)
 
     const usefulnessParameterSets = computeUsefulnessParameterSets(parameters)
-    const countUsefulnessParameterSets = count(usefulnessParameterSets)
+    const countUsefulnessParameterSetsForUsefulnessMetricFamily = count(usefulnessParameterSets)
 
-    let minSumOfSquares = Infinity
-    // TODO: usefulness - probably acceptable to eliminate this "ties" functionality as it is unlikely to ever tie
-    //  Though in its place won't you want essentially the local minima functionality?
-    //  Well actually we did get 11 ties for one of the metrics, but I still think local minima would be better now
-    let usefulnessParameterSetsForUsefulnessMetricMaximizingCountMostUseful = [] as UsefulnessParameterSet[]
+    let minMetricScore = Infinity as Min<Sum<UsefulnessMetricScoreForZone>>
+    let usefulnessParameterSetsForUsefulnessMetricFamilyWhichMinimizeItsScore = [] as UsefulnessParameterSet[]
 
     usefulnessParameterSets.forEach((usefulnessParameterSet: UsefulnessParameterSet, index: number): void => {
-        let sumOfSquares = 0
+        let metricScore = 0 as Sum<UsefulnessMetricScoreForZone>
 
         const zoneCommaEntries = computeZoneCommaEntries()
-
         zoneCommaEntries.forEach(([commaClassId, commas]: [CommaClassId, Comma[]]): void => {
             if (EXCLUDED_COMMAS.includes(commaClassId)) return
 
-            const squaredDistanceFromMostUsefulCommaInZone =
-                computeSquaredUsefulnessScoreDistanceFromBestUsefulnessScoreInZone(
-                    [commaClassId, commas],
-                    metric,
-                    usefulnessParameterSet,
-                )
-
-            if (squaredDistanceFromMostUsefulCommaInZone < usefulnessMetricLfcScriptGroupSettings.maxError) {
-                sumOfSquares = sumOfSquares + squaredDistanceFromMostUsefulCommaInZone
-            }
+            const usefulnessMetricScoreForCommaZone =
+                computeUsefulnessMetricScoreForCommaZone([commaClassId, commas], metric, usefulnessParameterSet)
+            metricScore = metricScore + usefulnessMetricScoreForCommaZone as Sum<UsefulnessMetricScoreForZone>
         })
 
-        if (sumOfSquares === minSumOfSquares) {
-            usefulnessParameterSetsForUsefulnessMetricMaximizingCountMostUseful.push(usefulnessParameterSet)
-        } else if (sumOfSquares < minSumOfSquares) {
-            minSumOfSquares = sumOfSquares
-            usefulnessParameterSetsForUsefulnessMetricMaximizingCountMostUseful = [usefulnessParameterSet]
+        if (metricScore === minMetricScore) {
+            usefulnessParameterSetsForUsefulnessMetricFamilyWhichMinimizeItsScore.push(usefulnessParameterSet)
+        } else if (metricScore < minMetricScore) {
+            minMetricScore = metricScore as Min<Sum<UsefulnessMetricScoreForZone>>
+            usefulnessParameterSetsForUsefulnessMetricFamilyWhichMinimizeItsScore = [usefulnessParameterSet]
         }
 
-        saveLog(`Usefulness parameter set (${index}/${countUsefulnessParameterSets}): ${stringify(usefulnessParameterSet)} -> sum of squares ${sumOfSquares}`, LogTarget.PROGRESS)
+        saveLog(`Usefulness parameter set (${index}/${countUsefulnessParameterSetsForUsefulnessMetricFamily}): ${stringify(usefulnessParameterSet)} -> metric score ${metricScore}`, LogTarget.PROGRESS)
     })
 
-    saveLog(`Usefulness parameter sets for usefulness metric ${usefulnessMetricId} which minimize the sum of squares, all bringing it to ${minSumOfSquares} (count of ties ${count(usefulnessParameterSetsForUsefulnessMetricMaximizingCountMostUseful)}): ${stringify(usefulnessParameterSetsForUsefulnessMetricMaximizingCountMostUseful)}`, LogTarget.FINAL)
+    saveLog(`Usefulness parameter sets for usefulness metric family ${usefulnessMetricFamilyId} which minimize its metric score, all bringing it to ${minMetricScore} (count of ties ${count(usefulnessParameterSetsForUsefulnessMetricFamilyWhichMinimizeItsScore)}): ${stringify(usefulnessParameterSetsForUsefulnessMetricFamilyWhichMinimizeItsScore)}`, LogTarget.FINAL)
 }
 
 export {
-    logUsefulnessParameterSetsForUsefulnessMetricMinimizingSumOfSquares,
+    logUsefulnessParameterSetsForUsefulnessMetricFamilyWhichMinimizeItsScore,
 }

@@ -2,8 +2,8 @@ import {Abs, Decimal, Exponent, Prime} from "../../../../src/general/math"
 import {ApotomeSlope} from "../../../../src/sagittal/ji/pitch"
 import {N2D3P9} from "../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
 import {Parameter} from "../../../../src/scripts/types"
-import {USEFULNESS_METRICS_WITH_PARAMETERS} from "../../../../src/scripts/usefulnessMetricLfc/metrics"
-import {UsefulnessMetricId} from "../../../../src/scripts/usefulnessMetricLfc/types"
+import {USEFULNESS_METRIC_FAMILIES_WITH_PARAMETERS} from "../../../../src/scripts/usefulnessMetricLfc/metrics"
+import {UsefulnessMetricFamilyId} from "../../../../src/scripts/usefulnessMetricLfc/types"
 
 describe("usefulnessMetric", (): void => {
     const n2d3p9 = 10 as N2D3P9
@@ -18,7 +18,7 @@ describe("usefulnessMetric", (): void => {
     const tP = 0.05 as Parameter
 
     it("lee", (): void => {
-        const usefulnessMetric = USEFULNESS_METRICS_WITH_PARAMETERS[UsefulnessMetricId.LEE].metric
+        const usefulnessMetric = USEFULNESS_METRIC_FAMILIES_WITH_PARAMETERS[UsefulnessMetricFamilyId.LEE].metric
 
         const actual = usefulnessMetric(n2d3p9, aas, ate, {a, b, c, sE, tE, sP, tP})
 
@@ -27,7 +27,7 @@ describe("usefulnessMetric", (): void => {
     })
 
     it("ree", (): void => {
-        const usefulnessMetric = USEFULNESS_METRICS_WITH_PARAMETERS[UsefulnessMetricId.REE].metric
+        const usefulnessMetric = USEFULNESS_METRIC_FAMILIES_WITH_PARAMETERS[UsefulnessMetricFamilyId.REE].metric
 
         const actual = usefulnessMetric(n2d3p9, aas, ate, {a, b, c, sE, tE, sP, tP})
 
@@ -36,7 +36,7 @@ describe("usefulnessMetric", (): void => {
     })
 
     it("lpe", (): void => {
-        const usefulnessMetric = USEFULNESS_METRICS_WITH_PARAMETERS[UsefulnessMetricId.LPE].metric
+        const usefulnessMetric = USEFULNESS_METRIC_FAMILIES_WITH_PARAMETERS[UsefulnessMetricFamilyId.LPE].metric
 
         const actual = usefulnessMetric(n2d3p9, aas, ate, {a, b, c, sE, tE, sP, tP})
 
@@ -45,7 +45,7 @@ describe("usefulnessMetric", (): void => {
     })
 
     it("rpe", (): void => {
-        const usefulnessMetric = USEFULNESS_METRICS_WITH_PARAMETERS[UsefulnessMetricId.RPE].metric
+        const usefulnessMetric = USEFULNESS_METRIC_FAMILIES_WITH_PARAMETERS[UsefulnessMetricFamilyId.RPE].metric
 
         const actual = usefulnessMetric(n2d3p9, aas, ate, {a, b, c, sE, tE, sP, tP})
 
@@ -54,7 +54,7 @@ describe("usefulnessMetric", (): void => {
     })
 
     it("lep", (): void => {
-        const usefulnessMetric = USEFULNESS_METRICS_WITH_PARAMETERS[UsefulnessMetricId.LEP].metric
+        const usefulnessMetric = USEFULNESS_METRIC_FAMILIES_WITH_PARAMETERS[UsefulnessMetricFamilyId.LEP].metric
 
         const actual = usefulnessMetric(n2d3p9, aas, ate, {a, b, c, sE, tE, sP, tP})
 
@@ -63,7 +63,7 @@ describe("usefulnessMetric", (): void => {
     })
 
     it("rep", (): void => {
-        const usefulnessMetric = USEFULNESS_METRICS_WITH_PARAMETERS[UsefulnessMetricId.REP].metric
+        const usefulnessMetric = USEFULNESS_METRIC_FAMILIES_WITH_PARAMETERS[UsefulnessMetricFamilyId.REP].metric
 
         const actual = usefulnessMetric(n2d3p9, aas, ate, {a, b, c, sE, tE, sP, tP})
 
@@ -72,7 +72,7 @@ describe("usefulnessMetric", (): void => {
     })
 
     it("lpp", (): void => {
-        const usefulnessMetric = USEFULNESS_METRICS_WITH_PARAMETERS[UsefulnessMetricId.LPP].metric
+        const usefulnessMetric = USEFULNESS_METRIC_FAMILIES_WITH_PARAMETERS[UsefulnessMetricFamilyId.LPP].metric
 
         const actual = usefulnessMetric(n2d3p9, aas, ate, {a, b, c, sE, tE, sP, tP})
 
@@ -81,7 +81,7 @@ describe("usefulnessMetric", (): void => {
     })
 
     it("rpp", (): void => {
-        const usefulnessMetric = USEFULNESS_METRICS_WITH_PARAMETERS[UsefulnessMetricId.RPP].metric
+        const usefulnessMetric = USEFULNESS_METRIC_FAMILIES_WITH_PARAMETERS[UsefulnessMetricFamilyId.RPP].metric
 
         const actual = usefulnessMetric(n2d3p9, aas, ate, {a, b, c, sE, tE, sP, tP})
 

@@ -6,8 +6,7 @@ type UsefulnessParameterSet = Partial<Record<UsefulnessParameterId, Parameter>>
 
 type UsefulnessScore = number & {_UsefulnessScoreBrand: boolean}
 
-type SquaredUsefulnessScoreDistanceFromBestUsefulnessScore =
-    number & {_SquaredUsefulnessScoreDistanceFromBestUsefulnessScoreBrand: boolean}
+type UsefulnessMetricScoreForZone = number & {_UsefulnessMetricScoreForZoneBrand: boolean}
 
 type UsefulnessMetric = (
     n2d3p9: N2D3P9,
@@ -16,7 +15,7 @@ type UsefulnessMetric = (
     usefulnessParameterSet: UsefulnessParameterSet,
 ) => UsefulnessScore
 
-enum UsefulnessMetricId {
+enum UsefulnessMetricFamilyId {
     LEE = "lee",
     REE = "ree",
     LPE = "lpe",
@@ -39,21 +38,15 @@ enum UsefulnessParameterId {
 
 interface UsefulnessMetricLfcScriptGroupSettings {
     extremeCaptureZones: boolean,
-    maxError: number,
-}
-
-interface BestAndActualCommaUsefulnessScores {
-    bestCommaUsefulnessScore: UsefulnessScore,
-    actualCommaUsefulnessScore: UsefulnessScore,
+    sosMode: boolean,
 }
 
 export {
     UsefulnessMetric,
     UsefulnessScore,
     UsefulnessParameterSet,
-    UsefulnessMetricId,
+    UsefulnessMetricFamilyId,
     UsefulnessParameterId,
-    SquaredUsefulnessScoreDistanceFromBestUsefulnessScore,
+    UsefulnessMetricScoreForZone,
     UsefulnessMetricLfcScriptGroupSettings,
-    BestAndActualCommaUsefulnessScores,
 }

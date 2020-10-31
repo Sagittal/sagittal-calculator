@@ -49,9 +49,4 @@ const zoneCommas = JI_NOTATION.reduce(
 
 saveLog(stringify(zoneCommas, {multiline: true}), LogTarget.FINAL)
 
-if (ioSettings.time) {
-    saveLog(
-        `\nFINDING USEFULNESS PARAMETER SETS FOR USEFULNESS METRICS MAXIMIZING COUNT MOST USEFUL TOOK ${time()}`,
-        LogTarget.FINAL,
-    )
-}
+if (ioSettings.time) saveLog(`\nFINDING ZONE COMMAS TOOK ${time()}`, LogTarget.FINAL)

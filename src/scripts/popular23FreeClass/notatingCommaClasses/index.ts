@@ -5,4 +5,5 @@ export {
     computePopular23FreeClassWithNotatingCommaClassesRow,
 } from "./io"
 
-// TODO: it would be better if this whole module was now notatingSymbolClasses :)
+// TODO: POST-NOTATION-GENERATION: RENAME REFACTOR
+//  It would be better if this whole module was now notatingSymbolClasses :)

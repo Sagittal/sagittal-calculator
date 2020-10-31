@@ -127,7 +127,7 @@ describe("perfect-metrics", (): void => {
 
     it("takes the best metrics that were found per metric name, relatively roughly best, and then recursively searches local minima with an initial search space subdividing resolution an order of magnitude smaller than the best metrics search, until it finds the perfect metric for each best metric", (): void => {
         onlyRunInCi()
-        const command = "npm run perfect-metrics" as Io
+        const command = "npm run perfect-metrics -- --log-targets final" as Io
 
         const actual = runCommandAndGetConsoleOutput(command)
 
@@ -136,7 +136,7 @@ describe("perfect-metrics", (): void => {
 
     it("works in sync mode too", (): void => {
         onlyRunInCi()
-        const command = "npm run perfect-metrics -- --sync" as Io
+        const command = "npm run perfect-metrics -- --log-targets final --sync" as Io
 
         const actual = runCommandAndGetConsoleOutput(command)
 
