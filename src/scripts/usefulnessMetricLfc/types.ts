@@ -39,6 +39,7 @@ enum UsefulnessParameterId {
 
 interface UsefulnessMetricLfcScriptGroupSettings {
     extremeCaptureZones: boolean,
+    maxError: number,
 }
 
 export {

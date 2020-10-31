@@ -1,6 +1,7 @@
 import {Comma, count, LogTarget, saveLog, stringify} from "../../general"
 import {CommaClassId} from "../../sagittal"
 import {EXCLUDED_COMMAS} from "./constants"
+import {usefulnessMetricLfcScriptGroupSettings} from "./globals"
 import {computeUsefulnessParameterSets} from "./parameters"
 import {computeSquaredUsefulnessScoreDistanceFromBestUsefulnessScoreInZone} from "./squaredUsefulnessScoreDistanceFromBestUsefulnessScoreInZone"
 import {UsefulnessMetric, UsefulnessMetricId, UsefulnessParameterId, UsefulnessParameterSet} from "./types"
@@ -38,9 +39,9 @@ const logUsefulnessParameterSetsForUsefulnessMetricMinimizingSumOfSquares = (
                     usefulnessParameterSet,
                 )
 
-            // TODO: usefulness - add command line option for excluding any distances > 1
-            //  See: http://forum.sagittal.org/viewtopic.php?p=2575#p2575
-            sumOfSquares = sumOfSquares + squaredDistanceFromMostUsefulCommaInZone
+            if (squaredDistanceFromMostUsefulCommaInZone < usefulnessMetricLfcScriptGroupSettings.maxError) {
+                sumOfSquares = sumOfSquares + squaredDistanceFromMostUsefulCommaInZone
+            }
         })
 
         if (sumOfSquares === minSumOfSquares) {
