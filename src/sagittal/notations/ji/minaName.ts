@@ -51,7 +51,7 @@ const EXTREME_NOTATION_MINAS: Record<RecordKey<CommaClassId>, Name<Mina>> = {
     [CommaClassId._875_C]: "45" as Name<Mina>,
     [CommaClassId._25_13_C]: "46" as Name<Mina>,
     [CommaClassId._19_25_C]: "47" as Name<Mina>,
-    [CommaClassId._1_C]: "48" as Name<Mina>,
+    [CommaClassId._3_C]: "48" as Name<Mina>,
     [CommaClassId._4375_C]: "49" as Name<Mina>,
     [CommaClassId._77_5_C]: "49.567569" as Name<Mina>,
     [CommaClassId._125_13_C]: "50" as Name<Mina>,

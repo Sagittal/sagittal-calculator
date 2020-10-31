@@ -58,7 +58,7 @@ const ULTRA_LEVEL_COMMA_CLASS_IDS: Array<[Index<CommaClassId>, CommaClassId]> = 
     [26 as Index<CommaClassId>, CommaClassId._17_5_C],
     [40 as Index<CommaClassId>, CommaClassId._1_25_C],
     [47 as Index<CommaClassId>, CommaClassId._19_25_C],
-    [48 as Index<CommaClassId>, CommaClassId._1_C],
+    [48 as Index<CommaClassId>, CommaClassId._3_C],
     [54 as Index<CommaClassId>, CommaClassId._1_35_C],
     [62 as Index<CommaClassId>, CommaClassId._5_7_C],
     [66 as Index<CommaClassId>, CommaClassId._7_55_C],

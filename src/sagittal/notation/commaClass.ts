@@ -194,7 +194,7 @@ const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
         representativeSymbolClassId: SymbolClassId.ANTITICK_AND_LEFT_SCROLL_AND_BARB,
         pitch: {monzo: [2, -1, -2, 0, 0, 0, 0, 1]} as Comma,
     },
-    /*48*/[CommaClassId._1_C]: {
+    /*48*/[CommaClassId._3_C]: {
         representativeSymbolClassId: SymbolClassId.TICK_AND_LEFT_BARB,
         pitch: PYTHAGOREAN_COMMA,
     },

@@ -122,7 +122,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             name: "3C" as Name<Comma>,
                             pitch: {monzo: [-19, 12] as Monzo<{rational: true}>} as Comma,
                         },
-                        id: CommaClassId._1_C,
+                        id: CommaClassId._3_C,
                     },
                 ],
                 [JiNotationLevelId.EXTREME]: [
@@ -190,7 +190,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             name: "3C" as Name<Comma>,
                             pitch: {monzo: [-19, 12] as Monzo<{rational: true}>} as Comma,
                         },
-                        id: CommaClassId._1_C,
+                        id: CommaClassId._3_C,
                     },
                 ],
                 [JiNotationLevelId.INSANE]: [
@@ -258,7 +258,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             name: "3C" as Name<Comma>,
                             pitch: {monzo: [-19, 12] as Monzo<{rational: true}>} as Comma,
                         },
-                        id: CommaClassId._1_C,
+                        id: CommaClassId._3_C,
                     },
                 ],
             },

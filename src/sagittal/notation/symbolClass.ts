@@ -197,7 +197,7 @@ const SYMBOL_CLASSES: Record<SymbolClassId, SymbolClass> = {
     },
     [SymbolClassId.TICK_AND_LEFT_BARB]: {
         flaccoId: FlaccoId.TICK_AND_LEFT_BARB,
-        commaClassId: CommaClassId._1_C,
+        commaClassId: CommaClassId._3_C,
     },
     [SymbolClassId.WING_TICK_AND_LEFT_BARB]: {
         flaccoId: FlaccoId.WING_TICK_AND_LEFT_BARB,
