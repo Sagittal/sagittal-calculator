@@ -8,14 +8,16 @@ import {logUsefulnessParameterSetsForUsefulnessMetricMinimizingSumOfSquares} fro
 import {UsefulnessMetric, UsefulnessMetricId, UsefulnessParameterId} from "../types"
 
 program
-    .option(`-${CommandFlag.BOOLEAN_MODE}, --boolean-mode`, "boolean mode (more simply maximize match count, rather than minimize sum-of-squared distances of non-matches)")
+    .option(`-${CommandFlag.SOS_MODE}, --sos-mode`, "sum-of-squares mode (minimize sum-of-squared distances of non-matches, rather than the default behavior of more simply maximizing match count)")
     .option(`-${CommandFlag.EXTREME_CAPTURE_ZONES}, --extreme-capture-zones`, "use commas in each comma's capture zone for the Extreme precision level notation, rather than the default behavior of the comma's secondary comma zone")
     // Re: max error, see http://forum.sagittal.org/viewtopic.php?p=2575#p2575
     .option(`-${CommandFlag.MAX_ERROR}, --max-error <maxError>`, "exclude any squared distance in score from the most useful comma in a given zone's score which is greater than this value", parseFloat)
 
 parseCommands(ScriptGroup.USEFULNESS_METRIC_LFC as Filename, [LogTarget.PROGRESS, LogTarget.FINAL])
 
-usefulnessMetricLfcScriptGroupSettings.extremeCaptureZones = program.extremeCaptureZones
+if (!isUndefined(program.extremeCaptureZones)) {
+    usefulnessMetricLfcScriptGroupSettings.extremeCaptureZones = program.extremeCaptureZones
+}
 if (!isUndefined(program.maxError)) usefulnessMetricLfcScriptGroupSettings.maxError = program.maxError
 
 const usefulnessMetricsWithParametersEntries = Object.entries(
