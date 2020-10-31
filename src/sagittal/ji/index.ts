@@ -24,5 +24,12 @@ export {
 } from "./comma"
 export {analyzeJiPitch, computeApotomeSlope, ApotomeSlope, JiPitchAnalysis, computeAte, computeAas} from "./pitch"
 export {
-    Two3FreeClassAnalysis, N2D3P9, computeN2D3P9, computePrimeExponentExtremasGivenMaxN2D3P9, analyze23FreeClass,
+    Two3FreeClassAnalysis,
+    N2D3P9,
+    computeN2D3P9,
+    computePrimeExponentExtremasGivenMaxN2D3P9,
+    analyze23FreeClass,
+    SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P,
+    SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2,
+    computeN2,
 } from "./two3FreeClass"

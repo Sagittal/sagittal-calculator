@@ -32,6 +32,9 @@ export {
     computeAas,
     analyze23FreeClass,
     formatComma,
+    SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P,
+    SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2,
+    computeN2,
 } from "./ji"
 export {
     alignAscii,
