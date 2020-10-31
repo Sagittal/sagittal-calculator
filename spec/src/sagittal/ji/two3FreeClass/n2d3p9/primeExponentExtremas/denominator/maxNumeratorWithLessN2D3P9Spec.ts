@@ -1,7 +1,7 @@
-import { Decimal, Exponent, Extrema, Max, Prime } from "../../../../../../../../src/general"
-import { Numerator } from "../../../../../../../../src/general/math/numeric/quotient"
-import { N2D3P9 } from "../../../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
-import { computeMaxNumeratorWithLessN2D3P9ThanMaxN2D3P9 } from "../../../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9/primeExponentExtremas/denominator/maxNumeratorWithLessN2D3P9"
+import {Decimal, Exponent, Extrema, Max, Prime} from "../../../../../../../../src/general"
+import {Numerator} from "../../../../../../../../src/general/math/numeric/quotient"
+import {N2D3P9} from "../../../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
+import {computeMaxNumeratorWithLessN2D3P9ThanMaxN2D3P9} from "../../../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9/primeExponentExtremas/denominator/maxNumeratorWithLessN2D3P9"
 
 describe("computeMaxNumeratorWithLessN2D3P9ThanMaxN2D3P9", (): void => {
     it("chooses the max numerator with less N2D3P9 than the max N2D3P9", (): void => {
@@ -16,7 +16,7 @@ describe("computeMaxNumeratorWithLessN2D3P9ThanMaxN2D3P9", (): void => {
             [0, 0],
             [0, 1],
             [0, 1],
-        ] as Array<Extrema<Decimal<{ integer: true }> & Exponent<Prime>>>
+        ] as Array<Extrema<Decimal<{integer: true}> & Exponent<Prime>>>
         const maxN2D3P9 = 3 as Max<N2D3P9>
 
         const actual = computeMaxNumeratorWithLessN2D3P9ThanMaxN2D3P9(
@@ -24,7 +24,7 @@ describe("computeMaxNumeratorWithLessN2D3P9ThanMaxN2D3P9", (): void => {
             maxN2D3P9,
         )
 
-        const expected = 7 as Max<Numerator & Decimal<{ integer: true }>>
+        const expected = 7 as Max<Numerator & Decimal<{integer: true}>>
         expect(actual).toBe(expected)
     })
 })

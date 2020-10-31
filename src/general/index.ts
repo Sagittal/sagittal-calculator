@@ -220,6 +220,7 @@ export {
     computeRationalQuotientFromRationalScamon,
     invertScamon,
     multiplyScamon,
+    isLowestTerms,
 } from "./math"
 export {
     Cents,

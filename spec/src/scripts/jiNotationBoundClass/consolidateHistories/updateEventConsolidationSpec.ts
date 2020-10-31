@@ -91,7 +91,7 @@ describe("updateEventConsolidation", (): void => {
                 bestPossibleBoundHistoryAnalysis,
             })
 
-            expect(boundEventConsolidation.isPossibleBoundHistoryMember).toBe(true)
+            expect(boundEventConsolidation.isPossibleBoundHistoryMember).toBeTruthy()
         })
 
         it("when the bound class event consolidation has been identified as a member of a possible bound class history, and the bound class history analysis is not possible, the bound class event consolidation remains identified as a member of a possible bound class history", (): void => {
@@ -106,7 +106,7 @@ describe("updateEventConsolidation", (): void => {
                 bestPossibleBoundHistoryAnalysis,
             })
 
-            expect(boundEventConsolidation.isPossibleBoundHistoryMember).toBe(true)
+            expect(boundEventConsolidation.isPossibleBoundHistoryMember).toBeTruthy()
         })
 
         it("when the bound class event consolidation has not been identified as a member of a possible bound class history, and the bound class history analysis is possible, the bound class event consolidation becomes identified as a member of a possible bound class history", (): void => {
@@ -121,7 +121,7 @@ describe("updateEventConsolidation", (): void => {
                 bestPossibleBoundHistoryAnalysis,
             })
 
-            expect(boundEventConsolidation.isPossibleBoundHistoryMember).toBe(true)
+            expect(boundEventConsolidation.isPossibleBoundHistoryMember).toBeTruthy()
         })
 
         it("when the bound class event consolidation has not been identified as a member of a possible bound class history, and the bound class history analysis is not possible, the bound class event consolidation remains not identified as a member of a possible bound class history", (): void => {
@@ -136,7 +136,7 @@ describe("updateEventConsolidation", (): void => {
                 bestPossibleBoundHistoryAnalysis,
             })
 
-            expect(boundEventConsolidation.isPossibleBoundHistoryMember).toBe(false)
+            expect(boundEventConsolidation.isPossibleBoundHistoryMember).toBeFalsy()
         })
     })
 
@@ -164,7 +164,7 @@ describe("updateEventConsolidation", (): void => {
                 bestPossibleBoundHistoryAnalysis,
             })
 
-            expect(boundEventConsolidation.isBestPossibleBoundHistoryMember).toBe(true)
+            expect(boundEventConsolidation.isBestPossibleBoundHistoryMember).toBeTruthy()
         })
 
         it("when the bound class event consolidation has been identified as a member of the best possible bound class history, and the best possible bound class history does not contain this event at this JI notation level, the bound class event consolidation remains identified as a member of the best possible bound class history", (): void => {
@@ -189,7 +189,7 @@ describe("updateEventConsolidation", (): void => {
                 bestPossibleBoundHistoryAnalysis,
             })
 
-            expect(boundEventConsolidation.isBestPossibleBoundHistoryMember).toBe(true)
+            expect(boundEventConsolidation.isBestPossibleBoundHistoryMember).toBeTruthy()
         })
 
         it("when the bound class event consolidation has not been identified as a member of the best possible bound class history, and the best possible bound class history contains this event at this JI notation level, the bound class event consolidation becomes identified as a member of the best possible bound class history", (): void => {
@@ -215,7 +215,7 @@ describe("updateEventConsolidation", (): void => {
                 bestPossibleBoundHistoryAnalysis,
             })
 
-            expect(boundEventConsolidation.isBestPossibleBoundHistoryMember).toBe(true)
+            expect(boundEventConsolidation.isBestPossibleBoundHistoryMember).toBeTruthy()
         })
 
         it("when the bound class event consolidation has not been identified as a member of the best possible bound class history, and the best possible bound class history does not contain this event at this JI notation level, the bound class event consolidation remains not identified as a member of the best possible bound class history", (): void => {
@@ -241,7 +241,7 @@ describe("updateEventConsolidation", (): void => {
                 bestPossibleBoundHistoryAnalysis,
             })
 
-            expect(boundEventConsolidation.isBestPossibleBoundHistoryMember).toBe(false)
+            expect(boundEventConsolidation.isBestPossibleBoundHistoryMember).toBeFalsy()
         })
     })
 

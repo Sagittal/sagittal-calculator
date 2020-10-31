@@ -141,5 +141,6 @@ export {
     computeRationalScamonSmoothness,
     isRationalScamonSmooth,
     computeRationalQuotientFromRationalScamon,
+    isLowestTerms,
 } from "./rational"
 export {HALF_SCALER, computeIrrationalDecimalFromScamon} from "./irrational"

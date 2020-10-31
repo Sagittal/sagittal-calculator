@@ -40,6 +40,9 @@ const compute23FreeRationalMonzosToCheck = (
 
     const primeExponentExtremasGivenMaxN2D3P9:
         Maybe<Array<Extrema<Decimal<{integer: true}> & Exponent<Prime>>>> =
+        // TODO: It would be great if you could take advantage of the 100x faster JI pitch limiting by max N2D3P9
+        //  When it is lower than 5298.1906467 which the popular 2,3-free classes script group has pulled off
+        //  See: http://forum.sagittal.org/viewtopic.php?p=2591#p2591
         maxN2D3P9 && computePrimeExponentExtremasGivenMaxN2D3P9(maxN2D3P9, {mirrored: true})
 
     const two3FreePrimesToCheck = compute23FreePrimesToCheck({

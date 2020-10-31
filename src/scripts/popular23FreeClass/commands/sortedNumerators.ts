@@ -23,6 +23,7 @@ import {
 } from "../../../sagittal/ji/two3FreeClass/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities"
 import {computeN2} from "../../../sagittal/ji/two3FreeClass/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/n2"
 import {ScriptGroup} from "../../types"
+import {MAX_N2D3P9_FOR_WHICH_POSSIBLE_NUMERATORS_ARE_KNOWN} from "../constants"
 
 // Try out Dave's strategy for getting further along: http://forum.sagittal.org/viewtopic.php?p=2481#p2481
 
@@ -1044,6 +1045,18 @@ const ALREADY_FOUND_NUMERATORS: Array<Numerator & Decimal<{integer: true}>> = [
     9765625,
 ] as Array<Numerator & Decimal<{integer: true}>>
 
+// TODO: could really speed this thing up
+/*
+As I pointed out earlier, you only need to consider prime factors up to 307.
+Anything with a greater prime factor must have N2D3P9 > 5298.1906467 because 311/2 * 311/9 = 5373.4.
+
+I suggest you have your prime factoring routine only try primes up to 307 and return the "residue" or "remnant"
+in addition to a monzo with only 63 exponents.
+If the residue is greater than 1 then the numerator-finding code can ignore that number.
+
+This will not only fix the bug, but will also speed things up.
+ */
+
 const ALREADY_SEARCHED_UP_TO_NUMERATOR = 9765625
 
 const MAX_NUMERATOR = 9765625
@@ -1088,7 +1101,9 @@ for (
     const gpf = computeRationalDecimalGpf(numerator)
     const n2p = n2 * gpf
 
-    if (n2p / 9 > 5298.2) continue
+    // Haha, well, this name here is a bit goofy, because this is the place which, in fact, determines what the constant
+    // Should be thenceforth. I mean, this is the script which finds said numerators such that they become "known".
+    if (n2p / 9 > MAX_N2D3P9_FOR_WHICH_POSSIBLE_NUMERATORS_ARE_KNOWN) continue
 
     time = now()
     const delta = time - previousTime

@@ -16,8 +16,10 @@ import {
     Two3FreeClass,
 } from "../../general"
 import {computePrimeExponentExtremasGivenMaxN2D3P9, N2D3P9} from "../../sagittal"
+import {MAX_N2D3P9_FOR_WHICH_POSSIBLE_NUMERATORS_ARE_KNOWN} from "./constants"
 import {popular23FreeClassesScriptGroupSettings} from "./globals"
-import {computeKnownPopular23FreeClasses} from "./known"
+import {computeKnownPopular23FreeClasses} from "./known23FreeClasses"
+import {computePopular23FreeClassesFromKnownNumerators} from "./knownNumerators"
 import {computeMaybePopular23FreeClass} from "./maybe"
 import {Popular23FreeClass} from "./types"
 
@@ -46,13 +48,17 @@ const computePopular23FreeClasses = (maxN2D3P9: Max<N2D3P9>): Array<Ranked<Popul
     } else {
         saveLog("About to calculate prime exponent extremas given max N2D3P9", LogTarget.PROGRESS)
 
-        const primeExponentExtremasGivenMaxN2D3P9 = computePrimeExponentExtremasGivenMaxN2D3P9(maxN2D3P9)
+        if (maxN2D3P9 > MAX_N2D3P9_FOR_WHICH_POSSIBLE_NUMERATORS_ARE_KNOWN) {
+            const primeExponentExtremasGivenMaxN2D3P9 = computePrimeExponentExtremasGivenMaxN2D3P9(maxN2D3P9)
 
-        popular23FreeClasses = doForEachRationalMonzo(
-            primeExponentExtremasGivenMaxN2D3P9,
-            computeMaybeSuperPopular23FreeClass,
-            maxN2D3P9,
-        )
+            popular23FreeClasses = doForEachRationalMonzo(
+                primeExponentExtremasGivenMaxN2D3P9,
+                computeMaybeSuperPopular23FreeClass,
+                maxN2D3P9,
+            )
+        } else {
+            popular23FreeClasses = computePopular23FreeClassesFromKnownNumerators(maxN2D3P9)
+        }
     }
 
     return rank(popular23FreeClasses, {

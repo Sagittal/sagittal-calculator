@@ -126,7 +126,7 @@ describe("analyzeHistory", (): void => {
 
             const actual = analyzeHistory(boundHistory, jiNotationBoundClass, initialPosition)
 
-            expect(actual.possible).toBe(true)
+            expect(actual.possible).toBeTruthy()
             expect(actual.tinaError).toBeCloseToTyped(0 as Multiplier<Tina>)
         })
     })
@@ -159,7 +159,7 @@ describe("analyzeHistory", (): void => {
 
             const actual = analyzeHistory(boundHistory, jiNotationBoundClass, initialPosition)
 
-            expect(actual.possible).toBe(false)
+            expect(actual.possible).toBeFalsy()
             expect(actual.tinaError).toBeCloseToTyped(expectedTinaError)
         })
 
@@ -192,7 +192,7 @@ describe("analyzeHistory", (): void => {
 
             const actual = analyzeHistory(boundHistory, jiNotationBoundClass, initialPosition)
 
-            expect(actual.possible).toBe(false)
+            expect(actual.possible).toBeFalsy()
             expect(actual.tinaError).toBeCloseToTyped(expectedTinaError)
         })
 
@@ -225,7 +225,7 @@ describe("analyzeHistory", (): void => {
 
             const actual = analyzeHistory(boundHistory, jiNotationBoundClass, initialPosition)
 
-            expect(actual.possible).toBe(false)
+            expect(actual.possible).toBeFalsy()
             expect(actual.tinaError).toBeCloseToTyped(expectedTinaError)
         })
 
@@ -256,7 +256,7 @@ describe("analyzeHistory", (): void => {
 
             const actual = analyzeHistory(boundHistory, jiNotationBoundClass, initialPosition)
 
-            expect(actual.possible).toBe(false)
+            expect(actual.possible).toBeFalsy()
             expect(actual.tinaError).toBeCloseToTyped(expectedTinaError)
         })
     })

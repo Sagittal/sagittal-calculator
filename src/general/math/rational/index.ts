@@ -32,6 +32,7 @@ export {
     computeLowestTermsRationalQuotient,
     areRationalQuotientsEqual,
     computeRationalQuotientFromRationalScamon,
+    isLowestTerms,
 } from "./quotient"
 export {
     computeRationalMonzoFromRationalQuotient,

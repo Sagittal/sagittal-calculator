@@ -1,3 +1,4 @@
+import {deepEquals} from "../../../code"
 import {Decimal, NumericProperties, Quotient} from "../../numeric"
 import {divide} from "../../typedOperations"
 import {computeGreatestCommonDivisor} from "../common"
@@ -16,6 +17,10 @@ const computeLowestTermsRationalQuotient = <T extends NumericProperties>(
     ] as Quotient<T & {rational: true}>
 }
 
+const isLowestTerms = (rationalQuotient: Quotient<{ rational: true }>): boolean =>
+    deepEquals(rationalQuotient, computeLowestTermsRationalQuotient(rationalQuotient))
+
 export {
+    isLowestTerms,
     computeLowestTermsRationalQuotient,
 }

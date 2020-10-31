@@ -1,4 +1,4 @@
-import {Popularity, Rank, Votes} from "../../general"
+import {Copfr, Decimal, Max, Numerator, Popularity, Prime, Rank, Votes} from "../../general"
 import {Two3FreeClassAnalysis} from "../../sagittal"
 import {BestNotatingCommaProperties} from "./bestNotatingComma"
 import {NotatingCommaClassesProperties} from "./notatingCommaClasses"
@@ -17,7 +17,14 @@ interface Popular23FreeClassesScriptGroupSettings {
     useBestNotatingCommas: boolean,
 }
 
+interface KnownNumerator {
+    numerator: Numerator & Decimal<{integer: true}>,
+    gpf: Max<Prime>,
+    copfr: Copfr<{rough: 5}>,
+}
+
 export {
     Popular23FreeClass,
     Popular23FreeClassesScriptGroupSettings,
+    KnownNumerator,
 }

@@ -1,6 +1,6 @@
-import { Decimal, Exponent, Max, Numerator, Of, Prime } from "../../../../../../../src/general"
-import { N2D3P9 } from "../../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
-import { computeMaxNumeratorPrimeExponentGivenMaxN2D3P9 } from "../../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9/primeExponentExtremas/maxNumeratorPrimeExponent"
+import {Decimal, Exponent, Max, Numerator, Of, Prime} from "../../../../../../../src/general"
+import {N2D3P9} from "../../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
+import {computeMaxNumeratorPrimeExponentGivenMaxN2D3P9} from "../../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9/primeExponentExtremas/maxNumeratorPrimeExponent"
 
 describe("computeMaxNumeratorPrimeExponentGivenMaxN2D3P9", (): void => {
     it("returns the max exponent for a given numerator prime (in isolation) given a max N2D3P9", (): void => {
@@ -9,7 +9,7 @@ describe("computeMaxNumeratorPrimeExponentGivenMaxN2D3P9", (): void => {
 
         const actual = computeMaxNumeratorPrimeExponentGivenMaxN2D3P9(numeratorPrime, maxN2D3P9)
 
-        const expected = 6 as Max<Numerator & Decimal<{ integer: true }> & Exponent<Prime>>
+        const expected = 6 as Max<Numerator & Decimal<{integer: true}> & Exponent<Prime>>
         expect(actual).toBe(expected)
     })
 
@@ -19,7 +19,7 @@ describe("computeMaxNumeratorPrimeExponentGivenMaxN2D3P9", (): void => {
 
         const actual = computeMaxNumeratorPrimeExponentGivenMaxN2D3P9(numeratorPrime, maxN2D3P9)
 
-        const expected = 5 as Max<Numerator & Decimal<{ integer: true }> & Exponent<Prime>>
+        const expected = 5 as Max<Numerator & Decimal<{integer: true}> & Exponent<Prime>>
         expect(actual).toBe(expected)
     })
 
@@ -29,7 +29,7 @@ describe("computeMaxNumeratorPrimeExponentGivenMaxN2D3P9", (): void => {
 
         const actual = computeMaxNumeratorPrimeExponentGivenMaxN2D3P9(numeratorPrime, maxN2D3P9)
 
-        const expected = 2 as Max<Numerator & Decimal<{ integer: true }> & Exponent<Prime>>
+        const expected = 2 as Max<Numerator & Decimal<{integer: true}> & Exponent<Prime>>
         expect(actual).toBe(expected)
     })
 
@@ -39,7 +39,7 @@ describe("computeMaxNumeratorPrimeExponentGivenMaxN2D3P9", (): void => {
 
         const actual = computeMaxNumeratorPrimeExponentGivenMaxN2D3P9(numeratorPrime, maxN2D3P9)
 
-        const expected = 0 as Max<Numerator & Decimal<{ integer: true }> & Exponent<Prime>>
+        const expected = 0 as Max<Numerator & Decimal<{integer: true}> & Exponent<Prime>>
         expect(actual).toBe(expected)
     })
 })
