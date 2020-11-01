@@ -68,6 +68,7 @@ const formatCommaNameQuotient = (
 
 // "Secor-Keenan systematic name" or "Sagittal name"
 
+// TODO: think there's a bug where this can report 3n when it means unison.
 const computeCommaName = (
     comma: Comma,
     {directed = true, factored = false, abbreviated = true}: CommaNameOptions = {},
