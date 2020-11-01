@@ -53,6 +53,7 @@ export {
     addScamons,
     invertScamon,
     multiplyScamon,
+    invertQuotient,
 } from "./numeric"
 export {computeDistributions} from "./distributions"
 export {dividesEvenly} from "./dividesEvenly"

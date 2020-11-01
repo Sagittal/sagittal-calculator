@@ -221,6 +221,7 @@ export {
     invertScamon,
     multiplyScamon,
     isLowestTerms,
+    invertQuotient,
 } from "./math"
 export {
     Cents,

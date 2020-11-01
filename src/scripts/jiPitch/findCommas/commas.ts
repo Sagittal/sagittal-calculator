@@ -8,6 +8,7 @@ import {
     DEFAULT_UPPER_BOUND,
     MAX_SIZE_CATEGORY_BOUND,
 } from "../../../sagittal"
+import { getTwo3FreeRationalMonzosToCheckWithN2D3P9LowerThan5298 } from "./getTwo3FreeRationalMonzosToCheckWithN2D3P9LowerThan5298"
 import {compute23FreeRationalMonzosToCheck} from "./two3FreeMonzosToCheck"
 import {CommasOptions} from "./types"
 
@@ -36,11 +37,13 @@ const computeCommas = (options: CommasOptions): Comma[] => {
 
     let commas: Comma[] = []
 
-    const two3FreeRationalMonzosToCheck = compute23FreeRationalMonzosToCheck({
-        maxPrimeLimit,
-        max23FreeSopfr,
-        max23FreeCopfr,
-    })
+    const two3FreeRationalMonzosToCheck =
+    //     compute23FreeRationalMonzosToCheck({
+    //     maxPrimeLimit,
+    //     max23FreeSopfr,
+    //     max23FreeCopfr,
+    // })
+        getTwo3FreeRationalMonzosToCheckWithN2D3P9LowerThan5298()
 
     two3FreeRationalMonzosToCheck.forEach((two3FreeRationalMonzoToCheck: Monzo<{rational: true, rough: 5}>): void => {
         commas = commas.concat(
