@@ -11,6 +11,10 @@ import {computeApotomeSlope} from "../../pitch"
 
 // As reverse-engineered here: http://forum.sagittal.org/viewtopic.php?p=1659#p1659
 
+// TODO: There may be a difference between usefulness and complexity, which would prompt a rename of this folder,
+//  Potentially a change in where apotome slope and AAS live,
+//  And a rename of the entire usefulness metric LFC script group.
+
 const computeSecorComplexity = (jiPitch: Scamon<{rational: true}>): number => {
     const two3FreeClass = compute23FreeClass(jiPitch)
     const g = computeRationalScamonSopfr(two3FreeClass)
