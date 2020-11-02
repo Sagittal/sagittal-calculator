@@ -73,9 +73,11 @@ MONZOS_TO_CHECK.forEach((two3FreeRationalMonzoToCheck: Monzo<{rational: true, ro
     )
 })
 
-const TINAS_TO_CHECK_FOR_THIS: Tina[] = computeRange(809 + 1 as Decimal<{integer: true}>)
-    .map((t: number): number => t / 2) as number[] as Tina[]
-const TINA_COMMAS_PLUS_MINUS_RANGE_FOR_THIS = 0.25
+// Const TINAS_TO_CHECK_FOR_THIS: Tina[] = computeRange(809 + 1 as Decimal<{integer: true}>)
+//     .map((t: number): number => t / 2) as number[] as Tina[]
+// Const TINA_COMMAS_PLUS_MINUS_RANGE_FOR_THIS = 0.25
+const TINAS_TO_CHECK_FOR_THIS: Tina[] = computeRange(405 as Decimal<{integer: true}>) as number[] as Tina[]
+const TINA_COMMAS_PLUS_MINUS_RANGE_FOR_THIS = 0.5
 
 const MAX_TINA_SIZES_FOR_THIS: Cents[] =
     TINAS_TO_CHECK_FOR_THIS.map((tina: Tina): Cents => TINA * (tina + TINA_COMMAS_PLUS_MINUS_RANGE_FOR_THIS) as Cents)
@@ -95,8 +97,10 @@ const commaAnalysesByTina: Record<RecordKey<Tina>, CommaAnalysis[]> = TINAS_TO_C
 
 let currentTina = 0
 commaAnalyses.forEach((commaAnalysis: CommaAnalysis): void => {
-    while (commaAnalysis.cents > MAX_TINA_SIZES_FOR_THIS[currentTina * 2]) {
-        currentTina = currentTina + 0.5
+    // While (commaAnalysis.cents > MAX_TINA_SIZES_FOR_THIS[currentTina * 2]) {
+    //     CurrentTina = currentTina + 0.5
+    while (commaAnalysis.cents > MAX_TINA_SIZES_FOR_THIS[currentTina]) {
+        currentTina = currentTina + 1
     }
     // If (currentTina > 400) console.log(currentTina)
     commaAnalysesByTina[currentTina].push(commaAnalysis)
@@ -104,7 +108,8 @@ commaAnalyses.forEach((commaAnalysis: CommaAnalysis): void => {
 
 const commaAnalysesEntries = sort(
     Object.entries(commaAnalysesByTina).map(([k, v]: [string, CommaAnalysis[]]): [Tina, CommaAnalysis[]] => {
-        return [parseFloat(k) as Tina, v]
+        // Return [parseFloat(k) as Tina, v]
+        return [parseInt(k) as Tina, v]
     }),
     {by: 0 as KeyPath},
 ) as Array<[unknown, CommaAnalysis[]]> as Array<[Tina, CommaAnalysis[]]>
@@ -242,7 +247,7 @@ const finalBucketEntries =
 // })
 
 finalBucketEntries.forEach(([tina, metacommas]: [RecordKey<Tina>, Record<Name<Comma>, Count<Comma>>]): void => {
-    saveLog(`\n\n FINAL RESULT FOR TINA ${tina}`, LogTarget.FINAL)
+    saveLog(`\n\nFINAL RESULT FOR TINA ${tina}`, LogTarget.FINAL)
     const entries = Object.entries(metacommas) as Array<[Name<Comma>, Count<Comma>]>
     sort(entries, {by: [1] as KeyPath, descending: true})
     saveLog(stringify(entries, {multiline: true}), LogTarget.FINAL)

@@ -24,6 +24,7 @@ import {computePitchExpectation} from "../../../../helpers/src/general/music/pit
 import {PitchExpectation} from "../../../../helpers/src/general/music/types"
 
 describe("JI_NOTATION_BOUND_CLASS_ENTRIES", (): void => {
+    // TODO: use "semitina" instead of half-tina (and figure out how to export dictionary)
     it("almost every bound class in the JI notation is snapped to a half-tina", (): void => {
         let currentHalfTina = 0.5
 
