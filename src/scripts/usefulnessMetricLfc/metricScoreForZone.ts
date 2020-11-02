@@ -31,6 +31,10 @@ const computeUsefulnessMetricScoreForCommaZone = (
 
         if (isActualComma) actualCommaUsefulnessScore = usefulnessScore
         if (usefulnessScore < bestCommaUsefulnessScore) {
+            // Todo: note that after this module becomes "badness" then this truly will be "best" since that's the
+            //  Superlative form of "good" which is the opposite of bad!
+            //  No wait... but this wasn't going all the way up to badness. This was just going to be complexity.
+            //  I suppose "least complex" is slightly preferable to "simplest"
             bestCommaUsefulnessScore = usefulnessScore
         }
     })

@@ -37,6 +37,9 @@ export {
     subtractMonzos,
     EMPTY_MONZO,
     addMonzos,
+    Val,
+    computeMonzoMapping,
+    computePatentVal,
 } from "./monzo"
 export {
     Scamon,

@@ -54,6 +54,9 @@ export {
     invertScamon,
     multiplyScamon,
     invertQuotient,
+    Val,
+    computeMonzoMapping,
+    computePatentVal,
 } from "./numeric"
 export {computeDistributions} from "./distributions"
 export {dividesEvenly} from "./dividesEvenly"
@@ -143,5 +146,6 @@ export {
     isRationalScamonSmooth,
     computeRationalQuotientFromRationalScamon,
     isLowestTerms,
+    subtractRationalScamons,
 } from "./rational"
 export {HALF_SCALER, computeIrrationalDecimalFromScamon} from "./irrational"

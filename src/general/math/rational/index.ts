@@ -61,4 +61,5 @@ export {
     isRationalScamonRough,
     computeRationalScamonSmoothness,
     isRationalScamonSmooth,
+    subtractRationalScamons,
 } from "./scamon"

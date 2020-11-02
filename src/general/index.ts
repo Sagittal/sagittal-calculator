@@ -222,6 +222,10 @@ export {
     multiplyScamon,
     isLowestTerms,
     invertQuotient,
+    subtractRationalScamons,
+    Val,
+    computeMonzoMapping,
+    computePatentVal,
 } from "./math"
 export {
     Cents,
