@@ -169,7 +169,7 @@ additional_glyphs_for_downward_schisma_diacritic_to_kern_with = [
 for kerning_glyph in additional_glyphs_for_downward_schisma_diacritic_to_kern_with:
 	downward_schisma_glyph.addPosSub(kerning_table, kerning_glyph, 0, 0, -right_side_bearing, 0, 0, 0, 0, 0)
 
-# Add kerning between half-tinas and other tina diacritics (and minas)
+# Add kerning between dots and other tina diacritics (and minas)
 
 upward_half_tina_glyph = bravura[0xe40a]
 upward_tina_glyphs_to_kern_with = ['uniE3F4', 'uniE3F6', 'uniE3F8', 'uniE3FA',

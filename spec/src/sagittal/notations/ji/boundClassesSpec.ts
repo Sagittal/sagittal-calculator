@@ -20,13 +20,13 @@ import {
     TINA,
 } from "../../../../../src/sagittal"
 import {INSANE_EDA} from "../../../../../src/sagittal/notations/ji/levelEdas"
+import {SEMITINA} from "../../../../../src/scripts/jiPitch/semitinaOccams"
 import {computePitchExpectation} from "../../../../helpers/src/general/music/pitchExpectation"
 import {PitchExpectation} from "../../../../helpers/src/general/music/types"
 
 describe("JI_NOTATION_BOUND_CLASS_ENTRIES", (): void => {
-    // TODO: use "semitina" instead of half-tina (and figure out how to export dictionary)
-    it("almost every bound class in the JI notation is snapped to a half-tina", (): void => {
-        let currentHalfTina = 0.5
+    it("almost every bound class in the JI notation is snapped to a odd semitina", (): void => {
+        let currentOddSemitina = 1
 
         const exceptionalJiNotationBoundIds: BoundClassId[] = [
             BoundClassId.MINA_49,     // Comma mean
@@ -41,25 +41,25 @@ describe("JI_NOTATION_BOUND_CLASS_ENTRIES", (): void => {
         JI_NOTATION_BOUND_CLASS_ENTRIES
             .forEach(([boundClassId, {pitch}]: JiNotationBoundClassEntry): void => {
                 while (true) {
-                    const currentHalfTinaCents: Cents = TINA * currentHalfTina as Cents
-                    const currentHalfTinaPitch =
-                        computeIrrationalDecimalFromScamon(computePitchFromCents(currentHalfTinaCents))
+                    const currentOddSemitinaCents: Cents = SEMITINA * currentOddSemitina as Cents
+                    const currentOddSemitinaPitch =
+                        computeIrrationalDecimalFromScamon(computePitchFromCents(currentOddSemitinaCents))
 
                     if (
-                        isCloseTo(currentHalfTinaPitch, computeIrrationalDecimalFromScamon(pitch))
+                        isCloseTo(currentOddSemitinaPitch, computeIrrationalDecimalFromScamon(pitch))
                     ) {
                         break
                     } else if (
-                        isScamonGreater(computeScamonFromDecimal(currentHalfTinaPitch), pitch)
+                        isScamonGreater(computeScamonFromDecimal(currentOddSemitinaPitch), pitch)
                     ) {
                         if (!exceptionalJiNotationBoundIds.includes(boundClassId)) {
-                            fail(`JI notation bound class ID ${boundClassId} was not close to a half-tina, nor registered as an exceptional bound.`)
+                            fail(`JI notation bound class ID ${boundClassId} was not close to an odd semitina, nor registered as an exceptional bound.`)
                         }
 
                         break
                     }
 
-                    currentHalfTina = currentHalfTina + 1
+                    currentOddSemitina = currentOddSemitina + 2
                 }
             })
     })
