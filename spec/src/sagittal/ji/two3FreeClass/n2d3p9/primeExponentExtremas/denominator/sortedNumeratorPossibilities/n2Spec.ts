@@ -1,6 +1,6 @@
 import {Decimal} from "../../../../../../../../../src/general/math/numeric/decimal"
 import {Numerator} from "../../../../../../../../../src/general/math/numeric/quotient"
-import {computeN2} from "../../../../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/n2"
+import {computeN2} from "../../../../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities"
 import {N2} from "../../../../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/types"
 
 describe("computeN2", (): void => {

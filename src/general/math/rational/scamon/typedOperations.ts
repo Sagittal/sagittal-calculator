@@ -10,6 +10,7 @@ const addRationalScamons = <T extends NumericProperties>(
         monzo: addMonzos(rationalScamonA.monzo, rationalScamonB.monzo),
     }) as Scamon<T & {direction: undefined, integer: false, rational: true}>
 
+// TODO: Okay, I think this is super confusing that it switches from and to. relic from when it was compute interval
 const subtractRationalScamons = <T extends NumericProperties>(
     fromRationalScamon: Scamon<T & {rational: true}>,
     toRationalScamon: Scamon<T & {rational: true}>,

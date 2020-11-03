@@ -44,8 +44,8 @@ import {
     computeCommaName,
     computeCommasFrom23FreeRationalMonzo,
     getCommaClass,
-    JI_NOTATION_LEVELS_COMMA_CLASS_IDS,
     JiNotationLevelId,
+    JI_NOTATION_LEVELS_COMMA_CLASS_IDS,
     N2D3P9,
     TINA,
 } from "../../../sagittal"
@@ -132,7 +132,7 @@ saveLog("commas grouped by semitina zone converted to sorted tuples", LogTarget.
 const U = 1.5
 const INCLUDE_ERROR_IN_PHASE_1_SCORE = true // False
 
-const bestCommaPerSemitinaZone = commaAnalysesBySemitinaZoneEntries
+const bestCommaPerSemitinaZone: Array<[Semitina, CommaAnalysis]> = commaAnalysesBySemitinaZoneEntries
     .map(([semitinaZone, commaAnalyses]: [Semitina, CommaAnalysis[]]): [Semitina, CommaAnalysis] => {
         let bestComma = undefined as Maybe<CommaAnalysis>
         let bestScore = Infinity
@@ -169,7 +169,7 @@ saveLog("best comma per semitina zone identified", LogTarget.PROGRESS)
 
 // COMPUTE METACOMMAS AND BUCKET THEM AS YOU GO (REPORTING INCONSISTENCIES FOR REFERENCE LATER)
 
-const semitinaBuckets: Record<RecordKey<Semitina>, Record<Name<Comma>, Count<Comma>>> = {
+const semitinaBuckets: Record<RecordKey<Semitina>, Record<RecordKey<Name<Comma>>, Count<Comma>>> = {
     [0]: {},
     [1]: {},
     [2]: {},
@@ -196,7 +196,7 @@ const INSANE_NOTATION_ZETA_PEAK_VAL: Val =
     // TODO: 281 has no particular meaning, it was just as high as I had on hand. Please verify none exceed that limit.
     computePatentVal({ed: 8539.00834 as Ed<Window<2>>, window: 2 as Window<2>, primeLimit: 281 as Max<Prime>})
 
-const metacommaNametoMetacommaMap: Record<RecordKey<Name<Comma>>, Comma> = {}
+const metacommaNameToMetacommaMap: Record<RecordKey<Name<Comma>>, Comma> = {}
 
 JI_NOTATION_LEVELS_COMMA_CLASS_IDS[JiNotationLevelId.ULTRA].forEach((ultraCommaClassId: CommaClassId): void => {
     const ultraComma = getCommaClass(ultraCommaClassId).pitch
@@ -218,17 +218,12 @@ JI_NOTATION_LEVELS_COMMA_CLASS_IDS[JiNotationLevelId.ULTRA].forEach((ultraCommaC
                 saveLog(`FYI, this metacomma for a whole tina (which is within 9.5 tinas and therefore we care about it) is inconsistent! ${metacommaName} maps to ${mapping} steps of 8539.00834-EDO despite being bucketed as a semitina zone jump of ${metacommaSemitinaJump}`, LogTarget.ERROR)
             }
 
-            metacommaNametoMetacommaMap[metacommaName] = metacomma
+            metacommaNameToMetacommaMap[metacommaName] = metacomma
 
-            // TODO: surely this can be improved to not require ts-ignoring
-            // @ts-ignore
             semitinaBuckets[metacommaSemitinaJump][metacommaName] =
-                // @ts-ignore
-                semitinaBuckets[metacommaSemitinaJump][metacommaName] || 0
-            // @ts-ignore
+                semitinaBuckets[metacommaSemitinaJump][metacommaName] || 0 as Count<Comma>
             semitinaBuckets[metacommaSemitinaJump][metacommaName] =
-                // @ts-ignore
-                semitinaBuckets[metacommaSemitinaJump][metacommaName] + 1
+                semitinaBuckets[metacommaSemitinaJump][metacommaName] + 1 as Count<Comma>
         }
     })
 })
@@ -251,28 +246,41 @@ semitinaBucketEntries.forEach(([semitinaBucket, metacommas]: [Semitina, Record<N
     saveLog(`${stringify(entries, {multiline: true})}\n\n`, LogTarget.FINAL)
 })
 
+saveLog("candidates for semitina presented", LogTarget.PROGRESS)
+
 /*****************/
 /*  PHASE THREE  */
 /*****************/
 
-const mostCommonMetacommaNamePerSemitinaBucketEntries = Object.entries(mostCommonMetacommaNamePerSemitinaBucket) as
-    Array<[unknown, Name<Comma>]> as Array<[RecordKey<Semitina>, Name<Comma>]>
+// FIND WHICH METACOMMAS ACROSS THE ENTIRE SERIES OF BEST COMMAS FOR EACH SEMITINA ZONE ARE THE MOST COMMON
 
-const consecutiveSemitinaBucketMostCommonMetacommas = mostCommonMetacommaNamePerSemitinaBucketEntries.map(
-    ([_, commaName]: [RecordKey<Semitina>, Name<Comma>]): Comma =>
-        metacommaNametoMetacommaMap[commaName]
-)
+const metametacommaCounts: Record<RecordKey<Name<Comma>>, Count<Comma>> = {}
+const metametacommas: Record<RecordKey<Name<Comma>>, Comma> = {}
 
 saveLog(`AND NOW, METAMETACOMMAS`, LogTarget.FINAL)
-consecutiveSemitinaBucketMostCommonMetacommas
-    .forEach((semitinaBucketMostCommonMetacomma: Comma, index: number): void => {
-        if (index === indexOfFinalElement(consecutiveSemitinaBucketMostCommonMetacommas)) return
+bestCommaPerSemitinaZone
+    .forEach((bestCommaPerSemitinaZoneEntry: [Semitina, CommaAnalysis], index: number): void => {
+        if (index === indexOfFinalElement(bestCommaPerSemitinaZone)) return
 
-        const subsequentSemitinaBucketMostCommonMetacomma = consecutiveSemitinaBucketMostCommonMetacommas[index + 1]
+        const [semitinaZone, bestCommaInThisSemitinaZone] = bestCommaPerSemitinaZoneEntry
+
+        const subsequentBestCommaInThatSemitinaZone = bestCommaPerSemitinaZone[index + 1][1]
 
         const metametacomma = subtractRationalScamons(
-            subsequentSemitinaBucketMostCommonMetacomma,
-            semitinaBucketMostCommonMetacomma
-        )
-        saveLog(`${stringify(metametacomma)}`, LogTarget.FINAL)
+            bestCommaInThisSemitinaZone.pitch,
+            subsequentBestCommaInThatSemitinaZone.pitch,
+        ) as Comma
+        const metametacommaName = computeCommaName(metametacomma)
+        metametacommaCounts[metametacommaName] = metametacommaCounts[metametacommaName] || 0 as Count<Comma>
+        metametacommaCounts[metametacommaName] = metametacommaCounts[metametacommaName] + 1 as Count<Comma>
+
+        metametacommas[metametacommaName] = metametacomma
+
+        saveLog(`semitina zone ${semitinaZone}: ${stringify(metametacomma)}`, LogTarget.DETAILS)
     })
+
+const metametacommaCountEntries = Object.entries(metametacommaCounts) as Array<[Name<Comma>, Count<Comma>]>
+sort(metametacommaCountEntries, {by: [1] as KeyPath, descending: true})
+
+saveLog(stringify(metametacommas, { multiline: true }), LogTarget.DETAILS)
+saveLog(stringify(metametacommaCountEntries, { multiline: true }), LogTarget.FINAL)

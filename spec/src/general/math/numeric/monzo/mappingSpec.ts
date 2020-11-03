@@ -1,6 +1,5 @@
-import {Monzo, Step} from "../../../../../../src/general"
-import {computeMonzoMapping} from "../../../../../../src/general/math/numeric/monzo/mapping"
-import {Val} from "../../../../../../src/general/math/numeric/monzo/types"
+import {computePatentVal, Ed, Max, Monzo, Prime, Step, Window} from "../../../../../../src/general"
+import {computeMonzoMapping, Val} from "../../../../../../src/general/math/numeric/monzo"
 
 describe("computeMonzoMapping", (): void => {
     it("given a val mapping, returns the number of steps that would represent the given monzo", (): void => {
@@ -10,6 +9,20 @@ describe("computeMonzoMapping", (): void => {
         const actual = computeMonzoMapping(monzo, val)
 
         const expected = 6 as Step
+        expect(actual).toBe(expected)
+    })
+
+    it("checkin' 77/185n maps to 0 steps under zeta peak EDO for Insane precision level JI notation", (): void => {
+        const val: Val = computePatentVal({
+            ed: 8539.00834 as Ed<Window<2>>,    // TODO: this should be a constant
+            window: 2 as Window<2>,
+            primeLimit: 281 as Max<Prime>,
+        })
+        const monzo = [-13, 9, -1, 1, 1, 0, 0, 0, 0, 0, 0, -1] as Monzo
+
+        const actual = computeMonzoMapping(monzo, val)
+
+        const expected = 0 as Step
         expect(actual).toBe(expected)
     })
 })

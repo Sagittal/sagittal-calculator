@@ -1,6 +1,5 @@
 import {Io, ioSettings, TableFormat} from "../../../../src/general/io"
-import {SymbolClassId} from "../../../../src/sagittal/notation"
-import {formatSymbolClass} from "../../../../src/sagittal/notation/formatSymbolClass"
+import {formatSymbolClass, SymbolClassId} from "../../../../src/sagittal/notation"
 
 describe("formatSymbolClass", (): void => {
     const symbolClassId = SymbolClassId.ANTIWING_AND_LEFT_ARC_AND_BARB
@@ -36,21 +35,21 @@ describe("formatSymbolClass", (): void => {
     })
 
     it("can turn off alignment", (): void => {
-        const actual = formatSymbolClass(symbolClassId, { align: false })
+        const actual = formatSymbolClass(symbolClassId, {align: false})
 
         const expected = ",(/|" as Io
         expect(actual).toBe(expected)
     })
 
     it("can output the comma name too if requested", (): void => {
-        const actual = formatSymbolClass(symbolClassId, { align: false, name: true })
+        const actual = formatSymbolClass(symbolClassId, {align: false, name: true})
 
         const expected = ",(/| 65/7M" as Io
         expect(actual).toBe(expected)
     })
 
     it("can output only the comma name too if requested", (): void => {
-        const actual = formatSymbolClass(symbolClassId, { align: false, glyph: false, name: true })
+        const actual = formatSymbolClass(symbolClassId, {align: false, glyph: false, name: true})
 
         const expected = "65/7M" as Io
         expect(actual).toBe(expected)

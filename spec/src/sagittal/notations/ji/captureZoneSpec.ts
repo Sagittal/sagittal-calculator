@@ -1,7 +1,6 @@
 import {Cents, computeCentsFromPitch} from "../../../../../src/general"
 import {CommaClassId} from "../../../../../src/sagittal/notation"
-import {JiNotationLevelId} from "../../../../../src/sagittal/notations/ji"
-import {computeJiNotationCaptureZone} from "../../../../../src/sagittal/notations/ji/captureZone"
+import {computeJiNotationCaptureZone, JiNotationLevelId} from "../../../../../src/sagittal/notations/ji"
 
 describe("computeJiNotationCaptureZone", (): void => {
     it("given a JI Notation comma class and a JI notation level, returns the capture zone for the JI Notation comma class at that JI notation level (works for a JI Notation comma class introduced before Extreme, but Extreme is requested)", (): void => {

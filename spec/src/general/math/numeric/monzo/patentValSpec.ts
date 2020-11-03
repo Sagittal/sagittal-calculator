@@ -1,7 +1,6 @@
 import {Ed, Window} from "../../../../../../src/general"
-import {Max, Prime, PRIMES} from "../../../../../../src/general/math"
-import {computePatentVal} from "../../../../../../src/general/math/numeric/monzo/patentVal"
-import {Val} from "../../../../../../src/general/math/numeric/monzo/types"
+import {Max, Prime} from "../../../../../../src/general/math"
+import {computePatentVal, Val} from "../../../../../../src/general/math/numeric/monzo"
 
 describe("computePatentVal", (): void => {
     it("given an EDO and a prime limit, returns the patent val", (): void => {
