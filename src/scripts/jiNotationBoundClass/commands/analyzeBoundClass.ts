@@ -1,5 +1,5 @@
 import {program} from "commander"
-import {Filename, Index, Io, isUndefined, LogTarget, setupCommandAndIo, parseInteger, saveLog} from "../../../general"
+import {Filename, Index, Io, isUndefined, LogTarget, parseInteger, saveLog, setupCommandAndIo} from "../../../general"
 import {BoundClass, JI_NOTATION_BOUND_CLASS_ENTRIES} from "../../../sagittal"
 import {ScriptGroup} from "../../types"
 import {analyzeJiNotationBoundClass} from "../boundClass"

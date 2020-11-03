@@ -1,6 +1,6 @@
 // tslint:disable no-reaching-imports
 
-import {Filename, NEWLINE, setupCommandAndIo, readLines} from "../general"
+import {Filename, NEWLINE, readLines, setupCommandAndIo} from "../general"
 import {ScriptGroup} from "./types"
 
 setupCommandAndIo(ScriptGroup.TMP as Filename)

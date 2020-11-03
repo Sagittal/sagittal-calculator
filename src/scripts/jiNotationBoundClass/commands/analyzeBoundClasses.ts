@@ -1,4 +1,4 @@
-import {Filename, Io, LogTarget, setupCommandAndIo, saveLog} from "../../../general"
+import {Filename, Io, LogTarget, saveLog, setupCommandAndIo} from "../../../general"
 import {ScriptGroup} from "../../types"
 import {analyzeJiNotationBoundClasses} from "../analyzeBoundClasses"
 import {JiNotationBoundClassAnalysis} from "../boundClass"

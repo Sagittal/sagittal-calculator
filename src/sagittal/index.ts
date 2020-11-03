@@ -74,6 +74,7 @@ export {
     JiNotationBound,
     JiNotationBoundClassEntry,
     computeJiNotationCaptureZone,
+    INSANE_ZETA_PEAK_VAL,
 } from "./notations"
 export {
     BoundClassId,

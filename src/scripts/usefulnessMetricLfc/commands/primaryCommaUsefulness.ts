@@ -1,5 +1,5 @@
 import {program} from "commander"
-import {CommandFlag, Filename, ioSettings, isUndefined, LogTarget, setupCommandAndIo, saveLog, time} from "../../../general"
+import {CommandFlag, Filename, ioSettings, isUndefined, LogTarget, saveLog, setupCommandAndIo, time} from "../../../general"
 import {ScriptGroup} from "../../types"
 import {usefulnessMetricLfcScriptGroupSettings} from "../globals"
 import {USEFULNESS_METRIC_FAMILIES_WITH_PARAMETERS} from "../metrics"

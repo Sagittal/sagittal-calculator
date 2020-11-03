@@ -6,13 +6,11 @@ import {
     Comma,
     computeCentsFromPitch,
     computeMonzoMapping,
-    computePatentVal,
     computeRange,
     computeSuperScamon,
     Count,
     count,
     Decimal,
-    Ed,
     Filename,
     formatCents,
     increment,
@@ -28,18 +26,15 @@ import {
     min,
     Monzo,
     Name,
-    setupCommandAndIo,
-    Prime,
     readLines,
     RecordKey,
     round,
     saveLog,
+    setupCommandAndIo,
     sort,
     stringify,
     subtractRationalScamons,
     time,
-    Val,
-    Window,
 } from "../../../general"
 import {
     analyzeComma,
@@ -48,6 +43,7 @@ import {
     computeCommaName,
     computeCommasFrom23FreeRationalMonzo,
     getCommaClass,
+    INSANE_ZETA_PEAK_VAL,
     JiNotationLevelId,
     JI_NOTATION_LEVELS_COMMA_CLASS_IDS,
     N2D3P9,
@@ -196,10 +192,6 @@ const semitinaBuckets: Record<RecordKey<SemitinaBucket>, Record<RecordKey<Name<C
     [19]: {},
 }
 
-const INSANE_NOTATION_ZETA_PEAK_VAL: Val =
-    // TODO: 281 has no particular meaning, it was just as high as I had on hand. Please verify none exceed that limit.
-    computePatentVal({ed: 8539.00834 as Ed<Window<2>>, window: 2 as Window<2>, primeLimit: 281 as Max<Prime>})
-
 const metacommaNameToMetacommaMap: Record<RecordKey<Name<Comma>>, Comma> = {}
 
 JI_NOTATION_LEVELS_COMMA_CLASS_IDS[JiNotationLevelId.ULTRA].forEach((ultraCommaClassId: CommaClassId): void => {
@@ -216,9 +208,11 @@ JI_NOTATION_LEVELS_COMMA_CLASS_IDS[JiNotationLevelId.ULTRA].forEach((ultraCommaC
 
         if (metacommaSemitinaZoneJump <= 19) {
             // Todo extract maybe this whole thing and whatever else needed for this computation
-            const tinaMapping = computeMonzoMapping(metacomma.monzo, INSANE_NOTATION_ZETA_PEAK_VAL)
+            const tinaMapping = computeMonzoMapping(metacomma.monzo, INSANE_ZETA_PEAK_VAL)
             const metacommaTinaZoneJump = metacommaSemitinaZoneJump / 2
             const insaneZetaPeakEdoConsistent = tinaMapping === metacommaTinaZoneJump
+            // Todo wait is it the semitinaZone or the metacommaSemitinaZoneJump which matters to be even?
+            //  And/or should we add that to the condition along with <= 19
             const isWholeTina = isEven(semitinaZone)
             if (isWholeTina && !insaneZetaPeakEdoConsistent) {
                 saveLog(`FYI, this metacomma for a whole tina (which is within 9.5 tinas and therefore we care about it) is inconsistent! ${metacommaName} maps to ${tinaMapping} steps of 8539.00834-EDO despite being bucketed as a semitina zone jump of ${metacommaSemitinaZoneJump}`, LogTarget.ERROR)

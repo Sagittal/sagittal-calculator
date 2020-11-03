@@ -6,8 +6,8 @@ import {
     ioSettings,
     LogTarget,
     NEWLINE,
-    setupCommandAndIo,
     saveLog,
+    setupCommandAndIo,
     sumTexts,
     time,
 } from "../../../general"

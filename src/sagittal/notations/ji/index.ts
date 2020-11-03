@@ -22,3 +22,4 @@ export {
     JiNotationBoundClassEntry,
 } from "./types"
 export {JI_NOTATION} from "./levelCommaClassIds"
+export {INSANE_ZETA_PEAK_VAL} from "./zetaPeakVals"

@@ -8,6 +8,7 @@ export {
     PYTHAGOREAN_LARGE_DIESIS,
     PYTHAGOREAN_WHOLE_TONE,
     THIRTYONE_THREE_COMMA,
+    OCTAVE_WINDOW,
 } from "./constants"
 export {Comma, Apotome} from "./types"
 export {
