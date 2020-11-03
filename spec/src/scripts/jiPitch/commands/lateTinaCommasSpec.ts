@@ -6,7 +6,7 @@ describe("late-tina-commas", (): void => {
     it("finds LATE commas for tinas", (): void => {
         onlyRunInCi()
 
-        const command = `npm run late-tina-commas -- --max-2-3-free-sopfr 37` as Io
+        const command = "npm run late-tina-commas -- --max-2-3-free-sopfr 37" as Io
 
         const actual = runCommandAndGetConsoleOutput(command)
 

@@ -31,7 +31,7 @@
     "popular-2-3-free-classes": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/popular23FreeClass/commands/popular23FreeClasses.ts",
     "sorted-numerators": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/popular23FreeClass/commands/sortedNumerators.ts",
     "late-tina-commas": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/jiPitch/commands/lateTinaCommas.ts",
-    "occam-semitinas": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/jiPitch/commands/occamSemitinas.ts"
+    "semitina-occams": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/jiPitch/commands/semitinaOccams.ts"
   },
   "devDependencies": {
     "@types/jasmine": "^3.5.11",

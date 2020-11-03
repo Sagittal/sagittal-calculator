@@ -1,12 +1,49 @@
 import {dividesEvenly} from "../../../../src/general/math"
+import {isEven, isOdd} from "../../../../src/general/math/dividesEvenly"
 
 describe("dividesEvenly", (): void => {
     it("returns the whole version of the type passed to it", (): void => {
-        const numeral = 5
+        const number = 5
         const modulus = 2
 
-        const actual = dividesEvenly(numeral, modulus)
+        const actual = dividesEvenly(number, modulus)
 
         expect(actual).toBeFalsy()
+    })
+})
+
+describe("isEven", (): void => {
+    it("returns true if even", (): void => {
+        const number = 10
+
+        const actual = isEven(number)
+
+        expect(actual).toBeTruthy()
+    })
+
+    it("returns false if odd", (): void => {
+        const number = 11
+
+        const actual = isEven(number)
+
+        expect(actual).toBeFalsy()
+    })
+})
+
+describe("isOdd", (): void => {
+    it("returns false if even", (): void => {
+        const number = 10
+
+        const actual = isOdd(number)
+
+        expect(actual).toBeFalsy()
+    })
+
+    it("returns true if odd", (): void => {
+        const number = 11
+
+        const actual = isOdd(number)
+
+        expect(actual).toBeTruthy()
     })
 })

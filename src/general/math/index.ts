@@ -59,7 +59,7 @@ export {
     computePatentVal,
 } from "./numeric"
 export {computeDistributions} from "./distributions"
-export {dividesEvenly} from "./dividesEvenly"
+export {dividesEvenly, isEven, isOdd} from "./dividesEvenly"
 export {computeAngle, radiansToDegrees} from "./angle"
 export {computeTriangularNumber} from "./triangularNumber"
 export {

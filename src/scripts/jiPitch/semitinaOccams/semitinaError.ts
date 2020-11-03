@@ -1,8 +1,8 @@
 import {abs, Cents} from "../../../general"
 import {SEMITINA} from "./constants"
-import {Semitina, SemitinaError} from "./types"
+import {SemitinaError, SemitinaZone} from "./types"
 
-const computeSemitinaError = (cents: Cents, semitinaZone: Semitina): SemitinaError => {
+const computeSemitinaError = (cents: Cents, semitinaZone: SemitinaZone): SemitinaError => {
     const semitinas = cents / SEMITINA
 
     return abs(semitinas - semitinaZone) as SemitinaError
