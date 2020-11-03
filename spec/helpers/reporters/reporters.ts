@@ -1,6 +1,6 @@
-import { slowReporter } from "./slowReporter"
-import { specNameReporter } from "./specNameReporter"
-import { specReporter } from "./specReporter"
+import {slowReporter} from "./slowReporter"
+import {specNameReporter} from "./specNameReporter"
+import {specReporter} from "./specReporter"
 
 Error.stackTraceLimit = Infinity
 

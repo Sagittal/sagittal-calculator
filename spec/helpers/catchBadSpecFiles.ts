@@ -1,6 +1,6 @@
 import * as fs from "fs"
 import * as path from "path"
-import { Filename } from "../../src/general/io"
+import {Filename} from "../../src/general/io"
 
 const catchBadSpecFiles = (basePath: Filename = "" as Filename): void => {
     for (const file of fs.readdirSync(path.join("spec/src", basePath))) {

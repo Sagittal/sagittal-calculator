@@ -1,4 +1,4 @@
-import { CI_MODE } from "./ciMode"
+import {CI_MODE} from "./ciMode"
 
 const onlyRunInCi = (): void => {
     if (!CI_MODE) {

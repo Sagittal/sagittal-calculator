@@ -10,7 +10,7 @@ import {
     Scamon,
     stringify,
 } from "../../src/general"
-import { Precision } from "../../src/general/code"
+import {Precision} from "../../src/general/code"
 import CustomEqualityTester = jasmine.CustomEqualityTester
 import CustomMatcher = jasmine.CustomMatcher
 import CustomMatcherFactories = jasmine.CustomMatcherFactories
@@ -29,7 +29,7 @@ const doAssertions = (logicFunc: () => void): CustomMatcherResult => {
     try {
         logicFunc()
 
-        return { pass: true }
+        return {pass: true}
     } catch (e) {
         return failWith(e.toString())
     }
@@ -56,12 +56,12 @@ const testIsCloseTo = <T extends number>(actual: T, expected: T, precision: Prec
         assert(
             !isClose,
             message ||
-            `Expected ${stringify(actual, { multiline: true })} not to be close to ${stringify(expected, { multiline: true })}${precisionMessage(precision)}.` as Io,
+            `Expected ${stringify(actual, {multiline: true})} not to be close to ${stringify(expected, {multiline: true})}${precisionMessage(precision)}.` as Io,
         )
     } else {
         assert(
             isClose,
-            message || `Expected ${stringify(actual, { multiline: true })} to be close to ${stringify(expected, { multiline: true })}${precisionMessage(precision)}.` as Io,
+            message || `Expected ${stringify(actual, {multiline: true})} to be close to ${stringify(expected, {multiline: true})}${precisionMessage(precision)}.` as Io,
         )
     }
 }
@@ -78,7 +78,7 @@ const arraysHaveSameContents = <T>(arrayA: T[], arrayB: T[]): boolean => {
 
 const arraysAreCloseUpThroughExpected = <T extends number>(expected: T[], actual: T[], precision: Precision, negate?: boolean, message?: Io): void => {
     expected.forEach((expectedElement: T, index: number): void => {
-        const actualElement: T = actual[ index ]
+        const actualElement: T = actual[index]
 
         testIsCloseTo(actualElement, expectedElement, precision, negate, message)
     })
@@ -105,7 +105,7 @@ const testStringAreEqualTrailingWhitespaceAgnostic = <T extends string>(actual: 
 
 const arraysOfStringsAreEqualTrailingWhitespaceAgnostic = <T extends string>(expected: T[], actual: T[], precision: Precision, negate?: boolean, message?: Io): void => {
     expected.forEach((expectedElement: T, index: number): void => {
-        const actualElement: T = actual[ index ]
+        const actualElement: T = actual[index]
 
         testStringAreEqualTrailingWhitespaceAgnostic(actualElement, expectedElement, negate, message)
     })
@@ -117,7 +117,7 @@ const eachExpectedElementIsCloseToSomeActualElement = <T>(expectedElements: T[],
             actual.some((actualElement: T): boolean => {
                 return deepEquals(actualElement, expectedElement, precision)
             }),
-            message || `This expected element did not find an element close to it: ${stringify(expectedElement, { multiline: true })}.` as Io,
+            message || `This expected element did not find an element close to it: ${stringify(expectedElement, {multiline: true})}.` as Io,
         )
     })
 }
@@ -128,7 +128,7 @@ const eachExpectedElementDeepEqualsSomeActualElement = <T>(expectedElements: T[]
             actual.some((actualElement: T): boolean => {
                 return deepEquals(actualElement, expectedElement)
             }),
-            message || `This expected element was not found: ${stringify(expectedElement, { multiline: true })}.` as Io,
+            message || `This expected element was not found: ${stringify(expectedElement, {multiline: true})}.` as Io,
         )
     })
 }
@@ -139,7 +139,7 @@ const eachExpectedElementHasSameContentsAsSomeActualElement = <T>(expectedElemen
             actual.some((actualElement: T[]): boolean => {
                 return arraysHaveSameContents(actualElement, expectedElement)
             }),
-            message || `This expected element was not found: ${stringify(expectedElement, { multiline: true })}` as Io,
+            message || `This expected element was not found: ${stringify(expectedElement, {multiline: true})}` as Io,
         )
     })
 }
@@ -191,7 +191,7 @@ const customMatchers: CustomMatcherFactories = {
             doAssertions((): void => {
                 assert(
                     deepEquals(actual, expected, precision),
-                    message || `Expected ${stringify(actual, { multiline: true })} to deep equal ${stringify(expected, { multiline: true })} with numbers within decimal precision ${precision}.` as Io,
+                    message || `Expected ${stringify(actual, {multiline: true})} to deep equal ${stringify(expected, {multiline: true})} with numbers within decimal precision ${precision}.` as Io,
                 )
             }),
     }),
@@ -226,10 +226,10 @@ const customMatchers: CustomMatcherFactories = {
                     assert(
                         actual.some((actualElement: T[][]): boolean => {
                             return actualElement.every((actualElementElement: T[], index: number): boolean => {
-                                return arraysHaveSameContents(actualElementElement, expectedElement[ index ])
+                                return arraysHaveSameContents(actualElementElement, expectedElement[index])
                             })
                         }),
-                        message || `This expected element was not found: ${stringify(expectedElement, { multiline: true })}` as Io,
+                        message || `This expected element was not found: ${stringify(expectedElement, {multiline: true})}` as Io,
                     )
                 })
             }),
