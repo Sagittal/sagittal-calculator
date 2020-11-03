@@ -94,11 +94,11 @@ describe("sort", (): void => {
     })
 
     it("works for arrays of strings", (): void => {
-        const array = ["cherimoya", "apple", "banana"]
+        const array = ["grapes", "apple", "banana"]
 
         sort(array)
 
-        expect(array).toEqual(["apple", "banana", "cherimoya"])
+        expect(array).toEqual(["apple", "banana", "grapes"])
     })
 
     it("accepts precision as an option", (): void => {
