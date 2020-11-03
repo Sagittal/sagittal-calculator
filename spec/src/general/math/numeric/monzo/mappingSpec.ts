@@ -25,4 +25,18 @@ describe("computeMonzoMapping", (): void => {
         const expected = 0 as Step
         expect(actual).toBe(expected)
     })
+
+    it("maps 143/1715n to 7 steps", (): void => {
+        const val: Val = computePatentVal({
+            ed: 8539.00834 as Ed<Window<2>>,
+            window: 2 as Window<2>,
+            primeLimit: 281 as Max<Prime>,
+        })
+        const monzo = [2, 1, -1, -3, 1, 1] as Monzo
+
+        const actual = computeMonzoMapping(monzo, val)
+
+        const expected = 7 as Step
+        expect(actual).toBe(expected)
+    })
 })

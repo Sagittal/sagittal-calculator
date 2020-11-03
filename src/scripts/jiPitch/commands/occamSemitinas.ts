@@ -47,10 +47,9 @@ import {
     JiNotationLevelId,
     JI_NOTATION_LEVELS_COMMA_CLASS_IDS,
     N2D3P9,
-    TINA,
 } from "../../../sagittal"
 import {ScriptGroup} from "../../types"
-import {Semitina} from "../types"
+import {computeSemitinaError, SEMITINA, Semitina} from "../occamSemitinas"
 
 parseCommands(
     ScriptGroup.JI_PITCH as Filename,
@@ -84,7 +83,6 @@ saveLog("commas sorted", LogTarget.PROGRESS)
 
 // SORT THEM BY SEMITINA ZONE
 
-const SEMITINA = TINA / 2 as Cents
 const SEMITINA_ZONES: Semitina[] = computeRange(810 as Decimal<{integer: true}>) as number[] as Semitina[]
 const SEMITINA_PLUS_MINUS_RANGE = 0.5
 const MAX_SIZE_PER_SEMITINA_ZONE: Cents[] =
@@ -129,7 +127,7 @@ saveLog("commas grouped by semitina zone converted to sorted tuples", LogTarget.
 
 // FIND THE SINGLE BEST COMMA IN EACH ZONE
 
-const U = 1.5
+const U = 0.8
 const INCLUDE_ERROR_IN_PHASE_1_SCORE = true // False
 
 const bestCommaPerSemitinaZone: Array<[Semitina, CommaAnalysis]> = commaAnalysesBySemitinaZoneEntries
@@ -141,11 +139,10 @@ const bestCommaPerSemitinaZone: Array<[Semitina, CommaAnalysis]> = commaAnalyses
             const aas = commaAnalysis.aas
             const ate = commaAnalysis.ate
 
-            let score = Math.log2(n2d3p9) + (aas / 10) ** 1.5 + 2 ** (ate - 10)
+            let score = Math.log2(n2d3p9) + (aas / 9.65) ** 1.7 + 2 ** (ate - 9.65)
             if (INCLUDE_ERROR_IN_PHASE_1_SCORE) {
-                const tinas = commaAnalysis.cents / TINA
-                const err = abs(2 * tinas - 2 * (semitinaZone / 2))
-                score = score + U * err
+                const semitinaError = computeSemitinaError(commaAnalysis.cents, semitinaZone)
+                score = score + U * semitinaError
             }
 
             if (score < bestScore) {
@@ -228,6 +225,8 @@ JI_NOTATION_LEVELS_COMMA_CLASS_IDS[JiNotationLevelId.ULTRA].forEach((ultraCommaC
     })
 })
 
+saveLog(stringify(metacommaNameToMetacommaMap, { multiline: true }), LogTarget.DETAILS)
+
 saveLog("metacommas gathered", LogTarget.PROGRESS)
 
 // SORT EACH SEMITINA CANDIDATE BUCKET BY DESCENDING OCCAM AND SHARE FINAL RESULT
@@ -254,6 +253,7 @@ saveLog("candidates for semitina presented", LogTarget.PROGRESS)
 
 // FIND WHICH METACOMMAS ACROSS THE ENTIRE SERIES OF BEST COMMAS FOR EACH SEMITINA ZONE ARE THE MOST COMMON
 
+// TODO: they're not really metametacommas anymore if they are across all 809 semitina zones, not the occam winners
 const metametacommaCounts: Record<RecordKey<Name<Comma>>, Count<Comma>> = {}
 const metametacommas: Record<RecordKey<Name<Comma>>, Comma> = {}
 
@@ -282,5 +282,9 @@ bestCommaPerSemitinaZone
 const metametacommaCountEntries = Object.entries(metametacommaCounts) as Array<[Name<Comma>, Count<Comma>]>
 sort(metametacommaCountEntries, {by: [1] as KeyPath, descending: true})
 
-saveLog(stringify(metametacommas, { multiline: true }), LogTarget.DETAILS)
-saveLog(stringify(metametacommaCountEntries, { multiline: true }), LogTarget.FINAL)
+saveLog(stringify(metametacommas, {multiline: true}), LogTarget.DETAILS)
+saveLog(stringify(metametacommaCountEntries, {multiline: true}), LogTarget.FINAL)
+
+// todo might be nice if you like, one-lined each occam, and trimmed all but the top 20%
+
+// todo time

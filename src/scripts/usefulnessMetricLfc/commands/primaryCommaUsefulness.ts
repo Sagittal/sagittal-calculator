@@ -10,7 +10,7 @@ program
     .option(`-${CommandFlag.SOS_MODE}, --sos-mode`, "sum-of-squares mode (minimize the sum of squared distances between the actual comma's usefulness score and the best comma's usefulness score, rather than boolean mode which simply gives a 1 when the actual comma is not the best comma and a 0 when it is")
     .option(`-${CommandFlag.EXTREME_CAPTURE_ZONES}, --extreme-capture-zones`, "use commas in each comma's capture zone for the Extreme precision level notation, rather than the default behavior of the comma's secondary comma zone")
 
-parseCommands(ScriptGroup.USEFULNESS_METRIC_LFC as Filename, [LogTarget.PROGRESS, LogTarget.FINAL])
+parseCommands(ScriptGroup.USEFULNESS_METRIC_LFC as Filename, [LogTarget.ALL])
 
 if (!isUndefined(program.extremeCaptureZones)) {
     usefulnessMetricLfcScriptGroupSettings.extremeCaptureZones = program.extremeCaptureZones

@@ -53,9 +53,6 @@ enum FindCommasField {
 
 type JiPitchScriptGroupField = JiPitchField | Two3FreeClassField | NotatingCommasField | FindCommasField
 
-// Not actually _InaBrand because doesn't correspond to a JI Notation level
-type Semitina = Cents & {_SemitinaBrand: boolean}
-
 export {
     JiPitchScriptGroupSettings,
     JiPitchField,
@@ -63,5 +60,4 @@ export {
     NotatingCommasField,
     FindCommasField,
     JiPitchScriptGroupField,
-    Semitina,
 }
