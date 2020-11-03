@@ -15,7 +15,7 @@ import {
     Filename,
     formatCents,
     increment,
-    Index,
+    indexOfFinalElement,
     isUndefined,
     KeyPath,
     LogTarget,
@@ -29,6 +29,7 @@ import {
     Prime,
     readLines,
     RecordKey,
+    round,
     saveLog,
     sort,
     stringify,
@@ -43,14 +44,18 @@ import {
     computeCommaName,
     computeCommasFrom23FreeRationalMonzo,
     getCommaClass,
-    JI_NOTATION,
+    JI_NOTATION_LEVELS_COMMA_CLASS_IDS,
+    JiNotationLevelId,
     N2D3P9,
     TINA,
-    Tina,
 } from "../../../sagittal"
 import {ScriptGroup} from "../../types"
+import {Semitina} from "../types"
 
-parseCommands(ScriptGroup.JI_PITCH as Filename, [LogTarget.PROGRESS, LogTarget.DETAILS, LogTarget.FINAL])
+parseCommands(
+    ScriptGroup.JI_PITCH as Filename,
+    [LogTarget.PROGRESS, LogTarget.DETAILS, LogTarget.FINAL, LogTarget.ERROR],
+)
 
 /***************/
 /*  PHASE ONE  */
@@ -79,28 +84,27 @@ saveLog("commas sorted", LogTarget.PROGRESS)
 
 // SORT THEM BY SEMITINA ZONE
 
-// TODO: probably I should just actually go by Semitina, like create a new type and all that; then ±range would be 0.5
-const SEMITINA_ZONES: Tina[] = computeRange(809 + 1 as Decimal<{integer: true}>)
-    .map((t: number): number => t / 2) as number[] as Tina[]
-const SEMITINA_PLUS_MINUS_RANGE = 0.25
+const SEMITINA = TINA / 2 as Cents
+const SEMITINA_ZONES: Semitina[] = computeRange(810 as Decimal<{integer: true}>) as number[] as Semitina[]
+const SEMITINA_PLUS_MINUS_RANGE = 0.5
 const MAX_SIZE_PER_SEMITINA_ZONE: Cents[] =
-    SEMITINA_ZONES.map((tina: Tina): Cents => TINA * (tina + SEMITINA_PLUS_MINUS_RANGE) as Cents)
+    SEMITINA_ZONES.map((semitina: Semitina): Cents => SEMITINA * (semitina + SEMITINA_PLUS_MINUS_RANGE) as Cents)
 
-const commaAnalysesBySemitinaZone: Record<RecordKey<Tina>, CommaAnalysis[]> = SEMITINA_ZONES.reduce(
+const commaAnalysesBySemitinaZone: Record<RecordKey<Semitina>, CommaAnalysis[]> = SEMITINA_ZONES.reduce(
     (
-        commaAnalysesBySemitinaZone: Record<RecordKey<Tina>, CommaAnalysis[]>,
-        semitinaZone: Tina,
-    ): Record<RecordKey<Tina>, CommaAnalysis[]> =>
+        commaAnalysesBySemitinaZone: Record<RecordKey<Semitina>, CommaAnalysis[]>,
+        semitinaZone: Semitina,
+    ): Record<RecordKey<Semitina>, CommaAnalysis[]> =>
         ({...commaAnalysesBySemitinaZone, [semitinaZone]: []}),
-    {} as Record<RecordKey<Tina>, CommaAnalysis[]>,
+    {} as Record<RecordKey<Semitina>, CommaAnalysis[]>,
 )
 
-let semitinaZoneIndex = 0 as Index<Tina>
+let semitinaZone = 0 as Semitina
 commaAnalyses.forEach((commaAnalysis: CommaAnalysis): void => {
-    while (commaAnalysis.cents > MAX_SIZE_PER_SEMITINA_ZONE[semitinaZoneIndex]) {
-        semitinaZoneIndex = increment(semitinaZoneIndex)
+    while (commaAnalysis.cents > MAX_SIZE_PER_SEMITINA_ZONE[semitinaZone]) {
+        semitinaZone = increment(semitinaZone)
     }
-    commaAnalysesBySemitinaZone[SEMITINA_ZONES[semitinaZoneIndex]].push(commaAnalysis)
+    commaAnalysesBySemitinaZone[semitinaZone].push(commaAnalysis)
 })
 saveLog("commas grouped by semitina zone", LogTarget.PROGRESS)
 
@@ -108,28 +112,28 @@ saveLog("commas grouped by semitina zone", LogTarget.PROGRESS)
 
 const commaAnalysesBySemitinaZoneEntries = sort(
     Object.entries(commaAnalysesBySemitinaZone)
-        .map(([semitinaZone, commaAnalyses]: [string, CommaAnalysis[]]): [Tina, CommaAnalysis[]] => {
-            return [parseFloat(semitinaZone) as Tina, commaAnalyses]
+        .map(([semitinaZone, commaAnalyses]: [string, CommaAnalysis[]]): [Semitina, CommaAnalysis[]] => {
+            return [parseInt(semitinaZone) as Semitina, commaAnalyses]
         }),
     {by: 0 as KeyPath},
-) as Array<[unknown, CommaAnalysis[]]> as Array<[Tina, CommaAnalysis[]]>
+) as Array<[unknown, CommaAnalysis[]]> as Array<[Semitina, CommaAnalysis[]]>
 
-commaAnalysesBySemitinaZoneEntries.forEach(([tina, commaAnalyses]: [Tina, CommaAnalysis[]]): void => {
+commaAnalysesBySemitinaZoneEntries.forEach(([semitinaZone, commaAnalyses]: [Semitina, CommaAnalysis[]]): void => {
     const centsForEachComma = commaAnalyses.map((ca: CommaAnalysis): Cents => ca.cents)
     const maxCents = formatCents(max(...centsForEachComma), {align: false})
     const minCents = formatCents(min(...centsForEachComma), {align: false})
     const countCents = count(centsForEachComma)
-    saveLog(`${tina}: ${minCents}-${maxCents}, count ${countCents}`, LogTarget.DETAILS)
+    saveLog(`${semitinaZone}: ${minCents}-${maxCents}, count ${countCents}`, LogTarget.DETAILS)
 })
 saveLog("commas grouped by semitina zone converted to sorted tuples", LogTarget.PROGRESS)
 
 // FIND THE SINGLE BEST COMMA IN EACH ZONE
 
 const U = 1.5
-const INCLUDE_ERROR_IN_PHASE_1_SCORE = true
+const INCLUDE_ERROR_IN_PHASE_1_SCORE = true // False
 
 const bestCommaPerSemitinaZone = commaAnalysesBySemitinaZoneEntries
-    .map(([semitinaZone, commaAnalyses]: [Tina, CommaAnalysis[]]): [Tina, CommaAnalysis] => {
+    .map(([semitinaZone, commaAnalyses]: [Semitina, CommaAnalysis[]]): [Semitina, CommaAnalysis] => {
         let bestComma = undefined as Maybe<CommaAnalysis>
         let bestScore = Infinity
         commaAnalyses.forEach((commaAnalysis: CommaAnalysis): void => {
@@ -140,7 +144,7 @@ const bestCommaPerSemitinaZone = commaAnalysesBySemitinaZoneEntries
             let score = Math.log2(n2d3p9) + (aas / 10) ** 1.5 + 2 ** (ate - 10)
             if (INCLUDE_ERROR_IN_PHASE_1_SCORE) {
                 const tinas = commaAnalysis.cents / TINA
-                const err = abs(2 * tinas - 2 * semitinaZone)
+                const err = abs(2 * tinas - 2 * (semitinaZone / 2))
                 score = score + U * err
             }
 
@@ -163,12 +167,10 @@ saveLog("best comma per semitina zone identified", LogTarget.PROGRESS)
 /*  PHASE TWO  */
 /***************/
 
-// COMPUTE METACOMMAS, FILTER FOR CONSISTENCY, AND BUCKET THEM AS YOU GO
+// COMPUTE METACOMMAS AND BUCKET THEM AS YOU GO (REPORTING INCONSISTENCIES FOR REFERENCE LATER)
 
-const INSANE_NOTATION_ZETA_PEAK_VAL: Val =
-    computePatentVal({ed: 8539.00834 as Ed<Window<2>>, window: 2 as Window<2>, primeLimit: 281 as Max<Prime>})
-
-const tinaCandidateBuckets: Record<RecordKey<Tina>, Record<Name<Comma>, Count<Comma>>> = {
+const semitinaBuckets: Record<RecordKey<Semitina>, Record<Name<Comma>, Count<Comma>>> = {
+    [0]: {},
     [1]: {},
     [2]: {},
     [3]: {},
@@ -178,87 +180,99 @@ const tinaCandidateBuckets: Record<RecordKey<Tina>, Record<Name<Comma>, Count<Co
     [7]: {},
     [8]: {},
     [9]: {},
+    [10]: {},
+    [11]: {},
+    [12]: {},
+    [13]: {},
+    [14]: {},
+    [15]: {},
+    [16]: {},
+    [17]: {},
+    [18]: {},
+    [19]: {},
 }
-JI_NOTATION.forEach((commaClassId: CommaClassId): void => {
-    const comma = getCommaClass(commaClassId).pitch
 
-    bestCommaPerSemitinaZone.forEach(([semitinaZone, bestComma]: [Tina, CommaAnalysis]): void => {
-        // Todo: wait, do I want to skip the non-integer semitinas here?
+const INSANE_NOTATION_ZETA_PEAK_VAL: Val =
+    // TODO: 281 has no particular meaning, it was just as high as I had on hand. Please verify none exceed that limit.
+    computePatentVal({ed: 8539.00834 as Ed<Window<2>>, window: 2 as Window<2>, primeLimit: 281 as Max<Prime>})
 
-        const metacomma =
-            // Todo: need to do it vs. the rounded JI Notation comma
-            // Todo: need to do it only against Ultra commas
-            computeSuperScamon(subtractRationalScamons(comma, bestComma.pitch)) as unknown as Comma
-        const metacommaSize = computeCentsFromPitch(metacomma)
+const metacommaNametoMetacommaMap: Record<RecordKey<Name<Comma>>, Comma> = {}
+
+JI_NOTATION_LEVELS_COMMA_CLASS_IDS[JiNotationLevelId.ULTRA].forEach((ultraCommaClassId: CommaClassId): void => {
+    const ultraComma = getCommaClass(ultraCommaClassId).pitch
+
+    bestCommaPerSemitinaZone.forEach(([semitinaZone, bestComma]: [Semitina, CommaAnalysis]): void => {
+        const metacomma = computeSuperScamon(subtractRationalScamons(ultraComma, bestComma.pitch)) as unknown as Comma
         const metacommaName = computeCommaName(metacomma)
-        saveLog(`The metacomma between the Extreme comma ${commaClassId} and the best comma in semitina zone ${semitinaZone} ${bestComma.name} is ${metacommaName} with size ${metacommaSize}`, LogTarget.DETAILS)
 
-        // Todo: filter for consistency here before putting into buckets... maybe?
-        const mapping = computeMonzoMapping(metacomma.monzo, INSANE_NOTATION_ZETA_PEAK_VAL)
+        const ultraCommaRoundedSemitinas = round(computeCentsFromPitch(ultraComma) / SEMITINA)
+        const metacommaSemitinaJump = abs(ultraCommaRoundedSemitinas - semitinaZone)
 
-        // Todo: this is the old bucketing method, by actual metacomma size; you want to do it by rounded int dist bucke
-        if (metacommaSize > 0.5 * TINA && metacommaSize < 1.5 * TINA) {
+        saveLog(`The metacomma between the Extreme comma ${ultraCommaClassId} and the best comma in semitina zone ${semitinaZone} ${bestComma.name} is ${metacommaName} with size ${metacommaSemitinaJump}`, LogTarget.DETAILS)
+
+        if (metacommaSemitinaJump <= 19) {
+            const mapping = computeMonzoMapping(metacomma.monzo, INSANE_NOTATION_ZETA_PEAK_VAL)
+            // TODO: We need an isEven helper, stat
+            // TODO: actually both ints; I think we need to be more careful about SemitinaZone and Semitina eventually
+            if (semitinaZone % 2 === 0 && mapping as number !== (metacommaSemitinaJump / 2) as number) {
+                saveLog(`FYI, this metacomma for a whole tina (which is within 9.5 tinas and therefore we care about it) is inconsistent! ${metacommaName} maps to ${mapping} steps of 8539.00834-EDO despite being bucketed as a semitina zone jump of ${metacommaSemitinaJump}`, LogTarget.ERROR)
+            }
+
+            metacommaNametoMetacommaMap[metacommaName] = metacomma
+
+            // TODO: surely this can be improved to not require ts-ignoring
             // @ts-ignore
-            tinaCandidateBuckets[1 as Tina][metacommaName] = tinaCandidateBuckets[1 as Tina][metacommaName] || 0
+            semitinaBuckets[metacommaSemitinaJump][metacommaName] =
+                // @ts-ignore
+                semitinaBuckets[metacommaSemitinaJump][metacommaName] || 0
             // @ts-ignore
-            tinaCandidateBuckets[1 as Tina][metacommaName] = tinaCandidateBuckets[1 as Tina][metacommaName] + 1
-        } else if (metacommaSize > 1.5 * TINA && metacommaSize < 2.5 * TINA) {
-            // @ts-ignore
-            tinaCandidateBuckets[2 as Tina][metacommaName] = tinaCandidateBuckets[2 as Tina][metacommaName] || 0
-            // @ts-ignore
-            tinaCandidateBuckets[2 as Tina][metacommaName] = tinaCandidateBuckets[2 as Tina][metacommaName] + 1
-        } else if (metacommaSize > 2.5 * TINA && metacommaSize < 3.5 * TINA) {
-            // @ts-ignore
-            tinaCandidateBuckets[3 as Tina][metacommaName] = tinaCandidateBuckets[3 as Tina][metacommaName] || 0
-            // @ts-ignore
-            tinaCandidateBuckets[3 as Tina][metacommaName] = tinaCandidateBuckets[3 as Tina][metacommaName] + 1
-        } else if (metacommaSize > 3.5 * TINA && metacommaSize < 4.5 * TINA) {
-            // @ts-ignore
-            tinaCandidateBuckets[4 as Tina][metacommaName] = tinaCandidateBuckets[4 as Tina][metacommaName] || 0
-            // @ts-ignore
-            tinaCandidateBuckets[4 as Tina][metacommaName] = tinaCandidateBuckets[4 as Tina][metacommaName] + 1
-        } else if (metacommaSize > 4.5 * TINA && metacommaSize < 5.5 * TINA) {
-            // @ts-ignore
-            tinaCandidateBuckets[5 as Tina][metacommaName] = tinaCandidateBuckets[5 as Tina][metacommaName] || 0
-            // @ts-ignore
-            tinaCandidateBuckets[5 as Tina][metacommaName] = tinaCandidateBuckets[5 as Tina][metacommaName] + 1
-        } else if (metacommaSize > 5.5 * TINA && metacommaSize < 6.5 * TINA) {
-            // @ts-ignore
-            tinaCandidateBuckets[6 as Tina][metacommaName] = tinaCandidateBuckets[6 as Tina][metacommaName] || 0
-            // @ts-ignore
-            tinaCandidateBuckets[6 as Tina][metacommaName] = tinaCandidateBuckets[6 as Tina][metacommaName] + 1
-        } else if (metacommaSize > 6.5 * TINA && metacommaSize < 7.5 * TINA) {
-            // @ts-ignore
-            tinaCandidateBuckets[7 as Tina][metacommaName] = tinaCandidateBuckets[7 as Tina][metacommaName] || 0
-            // @ts-ignore
-            tinaCandidateBuckets[7 as Tina][metacommaName] = tinaCandidateBuckets[7 as Tina][metacommaName] + 1
-        } else if (metacommaSize > 7.5 * TINA && metacommaSize < 8.5 * TINA) {
-            // @ts-ignore
-            tinaCandidateBuckets[8 as Tina][metacommaName] = tinaCandidateBuckets[8 as Tina][metacommaName] || 0
-            // @ts-ignore
-            tinaCandidateBuckets[8 as Tina][metacommaName] = tinaCandidateBuckets[8 as Tina][metacommaName] + 1
-        } else if (metacommaSize > 8.5 * TINA && metacommaSize < 9.5 * TINA) {
-            // @ts-ignore
-            tinaCandidateBuckets[9 as Tina][metacommaName] = tinaCandidateBuckets[9 as Tina][metacommaName] || 0
-            // @ts-ignore
-            tinaCandidateBuckets[9 as Tina][metacommaName] = tinaCandidateBuckets[9 as Tina][metacommaName] + 1
+            semitinaBuckets[metacommaSemitinaJump][metacommaName] =
+                // @ts-ignore
+                semitinaBuckets[metacommaSemitinaJump][metacommaName] + 1
         }
     })
 })
 
 saveLog("metacommas gathered", LogTarget.PROGRESS)
 
-// SORT EACH TINA CANDIDATE BUCKET BY DESCENDING OCCAM AND SHARE FINAL RESULT
+// SORT EACH SEMITINA CANDIDATE BUCKET BY DESCENDING OCCAM AND SHARE FINAL RESULT
 
-const tinaCandidateBucketEntries =
-    Object.entries(tinaCandidateBuckets) as Array<[unknown, Record<Name<Comma>, Count<Comma>>]> as
-        Array<[Tina, Record<Name<Comma>, Count<Comma>>]>
+const semitinaBucketEntries =
+    Object.entries(semitinaBuckets) as Array<[unknown, Record<Name<Comma>, Count<Comma>>]> as
+        Array<[Semitina, Record<Name<Comma>, Count<Comma>>]>
 
-tinaCandidateBucketEntries.forEach(([tina, metacommas]: [Tina, Record<Name<Comma>, Count<Comma>>]): void => {
-    saveLog(`CANDIDATES FOR TINA ${tina}`, LogTarget.FINAL)
+const mostCommonMetacommaNamePerSemitinaBucket = {} as Record<RecordKey<Semitina>, Name<Comma>>
+
+semitinaBucketEntries.forEach(([semitinaBucket, metacommas]: [Semitina, Record<Name<Comma>, Count<Comma>>]): void => {
+    saveLog(`CANDIDATES FOR SEMITINA ${semitinaBucket}`, LogTarget.FINAL)
     const entries = Object.entries(metacommas) as Array<[Name<Comma>, Count<Comma>]>
     sort(entries, {by: [1] as KeyPath, descending: true})
+    mostCommonMetacommaNamePerSemitinaBucket[semitinaBucket] = entries[0][0]
     saveLog(`${stringify(entries, {multiline: true})}\n\n`, LogTarget.FINAL)
 })
 
-// Todo: phase "3" - metametacommas for finding the semitina winner
+/*****************/
+/*  PHASE THREE  */
+/*****************/
+
+const mostCommonMetacommaNamePerSemitinaBucketEntries = Object.entries(mostCommonMetacommaNamePerSemitinaBucket) as
+    Array<[unknown, Name<Comma>]> as Array<[RecordKey<Semitina>, Name<Comma>]>
+
+const consecutiveSemitinaBucketMostCommonMetacommas = mostCommonMetacommaNamePerSemitinaBucketEntries.map(
+    ([_, commaName]: [RecordKey<Semitina>, Name<Comma>]): Comma =>
+        metacommaNametoMetacommaMap[commaName]
+)
+
+saveLog(`AND NOW, METAMETACOMMAS`, LogTarget.FINAL)
+consecutiveSemitinaBucketMostCommonMetacommas
+    .forEach((semitinaBucketMostCommonMetacomma: Comma, index: number): void => {
+        if (index === indexOfFinalElement(consecutiveSemitinaBucketMostCommonMetacommas)) return
+
+        const subsequentSemitinaBucketMostCommonMetacomma = consecutiveSemitinaBucketMostCommonMetacommas[index + 1]
+
+        const metametacomma = subtractRationalScamons(
+            subsequentSemitinaBucketMostCommonMetacomma,
+            semitinaBucketMostCommonMetacomma
+        )
+        saveLog(`${stringify(metametacomma)}`, LogTarget.FINAL)
+    })
