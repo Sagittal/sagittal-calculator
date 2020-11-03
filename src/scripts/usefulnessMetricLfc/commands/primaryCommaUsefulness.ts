@@ -1,5 +1,5 @@
 import {program} from "commander"
-import {CommandFlag, Filename, ioSettings, isUndefined, LogTarget, parseCommands, saveLog, time} from "../../../general"
+import {CommandFlag, Filename, ioSettings, isUndefined, LogTarget, setupCommandAndIo, saveLog, time} from "../../../general"
 import {ScriptGroup} from "../../types"
 import {usefulnessMetricLfcScriptGroupSettings} from "../globals"
 import {USEFULNESS_METRIC_FAMILIES_WITH_PARAMETERS} from "../metrics"
@@ -10,7 +10,7 @@ program
     .option(`-${CommandFlag.SOS_MODE}, --sos-mode`, "sum-of-squares mode (minimize the sum of squared distances between the actual comma's usefulness score and the best comma's usefulness score, rather than boolean mode which simply gives a 1 when the actual comma is not the best comma and a 0 when it is")
     .option(`-${CommandFlag.EXTREME_CAPTURE_ZONES}, --extreme-capture-zones`, "use commas in each comma's capture zone for the Extreme precision level notation, rather than the default behavior of the comma's secondary comma zone")
 
-parseCommands(ScriptGroup.USEFULNESS_METRIC_LFC as Filename, [LogTarget.ALL])
+setupCommandAndIo(ScriptGroup.USEFULNESS_METRIC_LFC as Filename, [LogTarget.ALL])
 
 if (!isUndefined(program.extremeCaptureZones)) {
     usefulnessMetricLfcScriptGroupSettings.extremeCaptureZones = program.extremeCaptureZones

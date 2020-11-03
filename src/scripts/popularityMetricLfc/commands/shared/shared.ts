@@ -1,5 +1,5 @@
 import {program} from "commander"
-import {CommandFlag, Filename, LogTarget, parseCommands} from "../../../../general"
+import {CommandFlag, Filename, LogTarget, setupCommandAndIo} from "../../../../general"
 import {ScriptGroup} from "../../../types"
 import {popularityMetricLfcScriptGroupSettings} from "../../globals"
 
@@ -13,7 +13,7 @@ const applySharedPopularityMetricLfcCommandSetup = (
         .option(`-${CommandFlag.MAX_UNIT}, --max-unit <maxUnit>`, "max unit", parseFloat)
         .option(`-${CommandFlag.SYNC}, --sync`, "sync")
 
-    parseCommands(ScriptGroup.POPULARITY_METRIC_LFC as Filename, defaultLogTargets)
+    setupCommandAndIo(ScriptGroup.POPULARITY_METRIC_LFC as Filename, defaultLogTargets)
 
     if (program.z) popularityMetricLfcScriptGroupSettings.z = program.z
     if (program.onlyTop) popularityMetricLfcScriptGroupSettings.onlyTop = program.onlyTop

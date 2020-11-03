@@ -19,7 +19,6 @@ const slowReporter: jasmine.CustomReporter = {
         specTimes.push({description: description, time: time})
 
         if (time >= WARN_THRESHOLD_MS) {
-            // TODO: it seems like this still goes to dist/tmp/ right now?
             saveLog(`      took ${time}ms`, LogTarget.SPEC)
         }
     },

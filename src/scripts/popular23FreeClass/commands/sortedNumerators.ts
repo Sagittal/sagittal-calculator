@@ -12,7 +12,7 @@ import {
     NEWLINE,
     now,
     Numerator,
-    parseCommands,
+    setupCommandAndIo,
     readLines,
     saveLog,
     sort,
@@ -37,7 +37,7 @@ const ALREADY_SEARCHED_UP_TO_NUMERATOR = 9765625
 
 const MAX_NUMERATOR = 9765625
 
-parseCommands(ScriptGroup.POPULAR_2_3_FREE_CLASSES as Filename)
+setupCommandAndIo(ScriptGroup.POPULAR_2_3_FREE_CLASSES as Filename)
 
 const n2pResults: SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P[] =
     [] as unknown[] as SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P[]

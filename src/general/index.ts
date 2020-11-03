@@ -70,7 +70,7 @@ export {
     join,
     LogTarget,
     NEWLINE,
-    parseCommands,
+    setupCommandAndIo,
     parseMonzo,
     parse23FreeClass,
     parseQuotient,

@@ -28,7 +28,7 @@ import {
     min,
     Monzo,
     Name,
-    parseCommands,
+    setupCommandAndIo,
     Prime,
     readLines,
     RecordKey,
@@ -55,7 +55,7 @@ import {
 import {ScriptGroup} from "../../types"
 import {computeSemitinaError, SEMITINA, Semitina, SemitinaBucket, SemitinaZone} from "../semitinaOccams"
 
-parseCommands(
+setupCommandAndIo(
     ScriptGroup.JI_PITCH as Filename,
     [LogTarget.PROGRESS, LogTarget.DETAILS, LogTarget.FINAL, LogTarget.ERROR],
 )

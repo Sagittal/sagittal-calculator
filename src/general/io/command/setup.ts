@@ -7,8 +7,7 @@ import {clearLogFiles, LogTarget, setLogTargets} from "../log"
 import {Filename} from "../types"
 import {CommandFlag} from "./types"
 
-// TODO: this should probably be clearer how much stuff it does, like "setupCommand" or something
-const parseCommands = (scriptGroup: Filename, defaultLogTargets?: LogTarget[]): void => {
+const setupCommandAndIo = (scriptGroup: Filename, defaultLogTargets?: LogTarget[]): void => {
     ioSettings.scriptGroup = scriptGroup
 
     program
@@ -37,5 +36,5 @@ const parseCommands = (scriptGroup: Filename, defaultLogTargets?: LogTarget[]): 
 }
 
 export {
-    parseCommands,
+    setupCommandAndIo,
 }

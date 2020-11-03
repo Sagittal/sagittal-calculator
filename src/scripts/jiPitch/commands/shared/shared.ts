@@ -1,5 +1,5 @@
 import {program} from "commander"
-import {CommandFlag, Filename, Io, parseCommands} from "../../../../general"
+import {CommandFlag, Filename, Io, setupCommandAndIo} from "../../../../general"
 import {ScriptGroup} from "../../../types"
 import {jiPitchScriptGroupSettings} from "../../globals"
 import {JiPitchScriptGroupField} from "../../types"
@@ -17,7 +17,7 @@ const applySharedPitchCommandSetup = (): void => {
             (excludeFieldsIo: string): JiPitchScriptGroupField[] => parseExcludedFields(excludeFieldsIo as Io),
         )
 
-    parseCommands(ScriptGroup.JI_PITCH as Filename)
+    setupCommandAndIo(ScriptGroup.JI_PITCH as Filename)
 
     if (program.sortBy) jiPitchScriptGroupSettings.sortKey = program.sortBy
     if (program.excludedFields) jiPitchScriptGroupSettings.excludedFields = program.excludedFields

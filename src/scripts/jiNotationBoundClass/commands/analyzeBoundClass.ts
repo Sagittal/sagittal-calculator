@@ -1,12 +1,12 @@
 import {program} from "commander"
-import {Filename, Index, Io, isUndefined, LogTarget, parseCommands, parseInteger, saveLog} from "../../../general"
+import {Filename, Index, Io, isUndefined, LogTarget, setupCommandAndIo, parseInteger, saveLog} from "../../../general"
 import {BoundClass, JI_NOTATION_BOUND_CLASS_ENTRIES} from "../../../sagittal"
 import {ScriptGroup} from "../../types"
 import {analyzeJiNotationBoundClass} from "../boundClass"
 import {computeHistories} from "../histories"
 import {formatJiNotationBoundClass} from "../io"
 
-parseCommands(ScriptGroup.JI_NOTATION_BOUND_CLASS as Filename, [LogTarget.FINAL])
+setupCommandAndIo(ScriptGroup.JI_NOTATION_BOUND_CLASS as Filename, [LogTarget.FINAL])
 
 const boundClassIndex = program.args[0]
 
