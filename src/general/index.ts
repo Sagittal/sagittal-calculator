@@ -258,5 +258,6 @@ export {
     THIRTYONE_THREE_COMMA,
     CommaMean,
     OCTAVE_WINDOW,
+    APOTOME,
 } from "./music"
 export {Count, Ed, Extrema, Index, Ms, Multiplier, Name, Step, Sum, Window, Of} from "./types"

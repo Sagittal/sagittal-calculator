@@ -10,8 +10,8 @@ const parseCommaName = (commaNameIo: Io): ParsedCommaName => {
         .replace(/-/, "") as Io
 
     const commaNameQuotient: CommaNameQuotient = computeLowestTermsRationalQuotient(
-        parseQuotient(two3FreePartOfCommaName) as Quotient<{rational: true, rough: 5}>,
-    ) as Quotient<{rational: true, rough: 5}> as CommaNameQuotient
+        parseQuotient(two3FreePartOfCommaName) as Quotient<{rational: true, rough: 3}>,
+    ) as Quotient<{rational: true, rough: 3}> as CommaNameQuotient
 
     let sizeCategoryName: Maybe<SizeCategoryName> = undefined
 

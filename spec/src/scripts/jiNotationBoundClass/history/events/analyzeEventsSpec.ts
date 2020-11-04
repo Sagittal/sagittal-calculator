@@ -1,6 +1,5 @@
-import {Abs, Multiplier, Scamon} from "../../../../../../src/general"
+import {Abs, APOTOME, Multiplier, Scamon} from "../../../../../../src/general"
 import {Cents} from "../../../../../../src/general/music"
-import {APOTOME} from "../../../../../../src/sagittal"
 import {BoundType, Ina, JiNotationLevelId} from "../../../../../../src/sagittal/notations/ji"
 import {EXTREME_EDA, HIGH_EDA, ULTRA_EDA} from "../../../../../../src/sagittal/notations/ji/levelEdas"
 import {BoundHistory} from "../../../../../../src/scripts/jiNotationBoundClass/histories"

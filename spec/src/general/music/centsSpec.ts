@@ -1,8 +1,8 @@
 import {IRRATIONAL_SCAMON_BASE_MONZO} from "../../../../src/general/math/irrational/scamon/constants"
 import {Decimal} from "../../../../src/general/math/numeric/decimal"
 import {Scamon} from "../../../../src/general/math/numeric/scamon"
-import {Cents, computeCentsFromPitch, computePitchFromCents, dividePitch} from "../../../../src/general/music"
-import {APOTOME, HALF_APOTOME} from "../../../../src/sagittal"
+import {APOTOME, Cents, computeCentsFromPitch, computePitchFromCents, dividePitch} from "../../../../src/general/music"
+import {HALF_APOTOME} from "../../../../src/sagittal"
 
 describe("dividePitch", (): void => {
     it("returns the proportion the part pitch is of the whole pitch", (): void => {

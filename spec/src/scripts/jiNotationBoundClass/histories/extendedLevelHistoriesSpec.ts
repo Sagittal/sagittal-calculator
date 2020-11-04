@@ -1,5 +1,5 @@
-import {HALF_SCALER, Name, Scamon} from "../../../../../src/general"
-import {APOTOME, JiNotationBound} from "../../../../../src/sagittal"
+import {APOTOME, HALF_SCALER, Name, Scamon} from "../../../../../src/general"
+import {JiNotationBound} from "../../../../../src/sagittal"
 import {BoundType, JiNotationBoundClass, JiNotationLevelId} from "../../../../../src/sagittal/notations"
 import {EXTREME_EDA, HIGH_EDA, MEDIUM_EDA} from "../../../../../src/sagittal/notations/ji/levelEdas"
 import {BoundEvent, BoundHistory} from "../../../../../src/scripts/jiNotationBoundClass/histories"

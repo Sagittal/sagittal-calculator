@@ -1,4 +1,5 @@
 import {
+    APOTOME,
     Cents,
     computeIrrationalDecimalFromScamon,
     computePitchFromCents,
@@ -11,7 +12,6 @@ import {
     Scamon,
 } from "../../../../../src/general"
 import {
-    APOTOME,
     BoundClassId,
     JiNotationBoundClass,
     JiNotationBoundClassEntry,

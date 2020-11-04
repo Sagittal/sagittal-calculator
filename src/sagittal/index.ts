@@ -95,4 +95,4 @@ export {
     SymbolClass,
     formatSymbolClass,
 } from "./notation"
-export {APOTOME, HALF_APOTOME} from "./constants"
+export {HALF_APOTOME} from "./constants"

@@ -23,4 +23,5 @@ export {
     PYTHAGOREAN_WHOLE_TONE,
     THIRTYONE_THREE_COMMA,
     OCTAVE_WINDOW,
+    APOTOME,
 } from "./ji"

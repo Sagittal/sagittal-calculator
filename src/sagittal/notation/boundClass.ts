@@ -1,5 +1,4 @@
-import {HALF_SCALER, Monzo, PYTHAGOREAN_LIMMA, Scamon} from "../../general"
-import {APOTOME} from "../constants"
+import {APOTOME, HALF_SCALER, Monzo, PYTHAGOREAN_LIMMA, Scamon} from "../../general"
 import {BoundClass, BoundClassId} from "./types"
 
 const BOUND_CLASSES: Record<BoundClassId, BoundClass> = {

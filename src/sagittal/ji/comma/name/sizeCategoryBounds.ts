@@ -1,4 +1,5 @@
 import {
+    APOTOME,
     computeRationalScamonGeometricMean,
     EMPTY_MONZO,
     halfScamon,
@@ -14,7 +15,6 @@ import {
     Scamon,
     THIRTYONE_THREE_COMMA,
 } from "../../../../general"
-import {APOTOME} from "../../../constants"
 import {SizeCategoryBound} from "./types"
 
 const u_n_SIZE_CATEGORY_BOUND = {

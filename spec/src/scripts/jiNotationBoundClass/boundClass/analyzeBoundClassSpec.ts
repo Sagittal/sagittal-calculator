@@ -1,5 +1,17 @@
-import {Abs, Cents, Count, HALF_SCALER, Index, Monzo, Multiplier, Name, Scamon, Sum} from "../../../../../src/general"
-import {APOTOME, BoundClass, JiNotationBound} from "../../../../../src/sagittal"
+import {
+    Abs,
+    APOTOME,
+    Cents,
+    Count,
+    HALF_SCALER,
+    Index,
+    Monzo,
+    Multiplier,
+    Name,
+    Scamon,
+    Sum,
+} from "../../../../../src/general"
+import {BoundClass, JiNotationBound} from "../../../../../src/sagittal"
 import {BoundType, Ina, JiNotationBoundClass, JiNotationLevelId, Tina} from "../../../../../src/sagittal/notations"
 import {EXTREME_EDA, INSANE_EDA} from "../../../../../src/sagittal/notations/ji/levelEdas"
 import {analyzeJiNotationBoundClass} from "../../../../../src/scripts/jiNotationBoundClass/boundClass"

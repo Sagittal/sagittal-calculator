@@ -80,7 +80,7 @@ type CommaNameOptions = Partial<{
 // It WILL be super! This is a subtle but critical point.
 // You can observe this difference in ordering in commaName.ts and two3FreeClass.ts
 type CommaNameQuotient<T extends NumericProperties = {}> =
-    Quotient<T & {rational: true, rough: 5}>
+    Quotient<T & {rational: true, rough: 3}>
     & {_CommaNameQuotientBrand: boolean}
 
 interface ParsedCommaName {

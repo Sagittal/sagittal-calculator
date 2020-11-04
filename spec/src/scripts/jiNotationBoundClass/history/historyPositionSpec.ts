@@ -1,5 +1,5 @@
 import {Scamon} from "../../../../../src/general/math/numeric/scamon"
-import {APOTOME} from "../../../../../src/sagittal"
+import {APOTOME} from "../../../../../src/general/music/ji"
 import {EXTREME_EDA, HIGH_EDA, ULTRA_EDA} from "../../../../../src/sagittal/notations/ji/levelEdas"
 import {BoundHistory} from "../../../../../src/scripts/jiNotationBoundClass/histories"
 import {computeBoundHistoryPosition} from "../../../../../src/scripts/jiNotationBoundClass/history/historyPosition"

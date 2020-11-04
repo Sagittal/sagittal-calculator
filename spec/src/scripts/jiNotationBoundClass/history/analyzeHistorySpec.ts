@@ -1,6 +1,7 @@
 import {
     Abs,
     addScamons,
+    APOTOME,
     Cents,
     computePitchFromCents,
     Multiplier,
@@ -10,7 +11,6 @@ import {
 } from "../../../../../src/general"
 import {multiply} from "../../../../../src/general/math"
 import {IRRATIONAL_SCAMON_BASE_MONZO} from "../../../../../src/general/math/irrational/scamon/constants"
-import {APOTOME} from "../../../../../src/sagittal"
 import {
     BoundType,
     Ina,

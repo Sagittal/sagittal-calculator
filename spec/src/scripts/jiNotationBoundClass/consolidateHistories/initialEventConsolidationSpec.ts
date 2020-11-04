@@ -1,5 +1,5 @@
-import {Name, Scamon} from "../../../../../src/general"
-import {APOTOME, JiNotationBound} from "../../../../../src/sagittal"
+import {APOTOME, Name, Scamon} from "../../../../../src/general"
+import {JiNotationBound} from "../../../../../src/sagittal"
 import {BoundType} from "../../../../../src/sagittal/notations"
 import {ULTRA_EDA} from "../../../../../src/sagittal/notations/ji/levelEdas"
 import {computeInitialEventConsolidation} from "../../../../../src/scripts/jiNotationBoundClass/consolidateHistories/initialEventConsolidation"

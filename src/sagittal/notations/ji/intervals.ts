@@ -1,5 +1,4 @@
-import {Apotome, Cents, computeCentsFromPitch, Ed, reciprocal} from "../../../general"
-import {APOTOME} from "../../constants"
+import {APOTOME, Apotome, Cents, computeCentsFromPitch, Ed, reciprocal} from "../../../general"
 import {EXTREME_EDA, HIGH_EDA, INSANE_EDA, JI_NOTATION_LEVEL_EDAS, MEDIUM_EDA, ULTRA_EDA} from "./levelEdas"
 import {JI_NOTATION_LEVELS} from "./levels"
 import {Highina, JiNotationLevelId, Medina, Mina, Tina, Ultrina} from "./types"

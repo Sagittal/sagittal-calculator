@@ -42,8 +42,8 @@ import {
     computeCommaName,
     computeCommasFrom23FreeRationalMonzo,
     getCommaClass,
-    JiNotationLevelId,
     JI_NOTATION_LEVELS_COMMA_CLASS_IDS,
+    JiNotationLevelId,
     N2D3P9,
 } from "../../../sagittal"
 import {ScriptGroup} from "../../types"
@@ -164,6 +164,11 @@ const bestCommaPerSemitinaZone: Array<[SemitinaZone, CommaAnalysis]> = commaAnal
     })
 
 saveLog(stringify(bestCommaPerSemitinaZone, {multiline: true}), LogTarget.DETAILS)
+
+saveLog("best commas per semitina zone (names)", LogTarget.DETAILS)
+bestCommaPerSemitinaZone.forEach(([semitinaZone, commaAnalysis]: [SemitinaZone, CommaAnalysis]): void => {
+    saveLog(`${semitinaZone}: ${commaAnalysis.name}`, LogTarget.DETAILS)
+})
 
 saveLog("best comma per semitina zone identified", LogTarget.PROGRESS)
 

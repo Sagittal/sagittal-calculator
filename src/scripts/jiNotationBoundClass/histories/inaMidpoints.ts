@@ -1,6 +1,5 @@
-import {isScamonGreater, Maybe, Name, Quotient, Scamon} from "../../../general"
+import {APOTOME, isScamonGreater, Maybe, Name, Quotient, Scamon} from "../../../general"
 import {
-    APOTOME,
     HALF_APOTOME,
     InaMidpoint,
     JiNotationLevelId,
