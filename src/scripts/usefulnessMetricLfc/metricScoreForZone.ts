@@ -1,12 +1,7 @@
 import {areScamonsEqual, Comma, compute23FreeClass, LogTarget, saveLog} from "../../general"
 import {CommaClassId, computeAas, computeAte, computeN2D3P9, formatComma, getCommaClass} from "../../sagittal"
 import {usefulnessMetricLfcScriptGroupSettings} from "./globals"
-import {
-    UsefulnessMetric,
-    UsefulnessMetricScoreForZone,
-    UsefulnessParameterSet,
-    UsefulnessScore,
-} from "./types"
+import {UsefulnessMetric, UsefulnessMetricScoreForZone, UsefulnessParameterSet, UsefulnessScore} from "./types"
 
 const computeUsefulnessMetricScoreForCommaZone = (
     [commaClassId, commas]: [CommaClassId, Comma[]],
@@ -22,7 +17,10 @@ const computeUsefulnessMetricScoreForCommaZone = (
         const n2d3p9 = computeN2D3P9(compute23FreeClass(comma))
         const aas = computeAas(comma)
         const ate = computeAte(comma)
+        // Const cents = computeCentsFromPitch(comma)
+        // Const mina = round(cents / MINA) as Mina
 
+        // Const usefulnessScore = lpei(n2d3p9, aas, ate, usefulnessParameterSet, cents, mina)
         const usefulnessScore = usefulnessMetric(n2d3p9, aas, ate, usefulnessParameterSet)
 
         const isActualComma = areScamonsEqual(comma, actualComma)

@@ -23,9 +23,8 @@ const usefulnessMetricFamiliesWithParametersEntries = Object.entries(
     USEFULNESS_METRIC_FAMILIES_WITH_PARAMETERS,
 ) as Array<[UsefulnessMetricFamilyId, {metric: UsefulnessMetric, parameters: UsefulnessParameterId[]}]>
 
-usefulnessMetricFamiliesWithParametersEntries.forEach(
-    logUsefulnessParameterSetsForUsefulnessMetricFamilyWhichMinimizeItsScore,
-)
+usefulnessMetricFamiliesWithParametersEntries
+    .forEach(logUsefulnessParameterSetsForUsefulnessMetricFamilyWhichMinimizeItsScore)
 
 if (ioSettings.time) {
     saveLog(

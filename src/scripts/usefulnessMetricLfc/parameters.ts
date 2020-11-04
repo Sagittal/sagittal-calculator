@@ -16,6 +16,8 @@ import {UsefulnessParameterId, UsefulnessParameterSet} from "./types"
 //         [UsefulnessParameterId.TP]: 1 as Parameter,
 //     },
 // ]
+//
+// Const DUMMY_PARAMETER_SETS = [{}] as Combination<UsefulnessParameterSet>
 
 const USEFULNESS_SEARCH_ED = 11 as Ed<Parameter>
 
@@ -73,7 +75,7 @@ const computeUsefulnessParameterSets = (
         {} as Record<UsefulnessParameterId, DynamicParameterScope>,
     )
 
-    // Return EXPERIMENTAL_USEFULNESS_PARAMETER_SCOPES
+    // Return DUMMY_PARAMETER_SETS
 
     return computePossibilities(scope) as Combination<UsefulnessParameterSet>
 }

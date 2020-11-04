@@ -39,6 +39,10 @@ const logUsefulnessParameterSetsForUsefulnessMetricFamilyWhichMinimizeItsScore =
 
             const usefulnessMetricScoreForCommaZone =
                 computeUsefulnessMetricScoreForCommaZone([commaClassId, commas], metric, usefulnessParameterSet)
+            saveLog(
+                `usefulness metric score for ${commaClassId}: ${usefulnessMetricScoreForCommaZone}`,
+                LogTarget.DETAILS,
+            )
             metricScore = metricScore + usefulnessMetricScoreForCommaZone as Sum<UsefulnessMetricScoreForZone>
         })
 

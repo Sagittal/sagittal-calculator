@@ -15,6 +15,7 @@ export {
     Tina,
     getIntroducingJiNotationLevel,
     TINA,
+    MINA,
     getMinaName,
     JI_NOTATION,
     computeSecondaryCommaZone,

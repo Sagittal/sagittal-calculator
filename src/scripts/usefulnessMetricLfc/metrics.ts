@@ -2,7 +2,7 @@
 
 import {Abs, Decimal, Exponent, Prime} from "../../general"
 import {ApotomeSlope, N2D3P9} from "../../sagittal"
-import {Parameter} from "../types"
+import {DEFAULT_USEFULNESS_PARAMETER_VALUE} from "./constants"
 import {
     UsefulnessMetric,
     UsefulnessMetricFamilyId,
@@ -10,8 +10,6 @@ import {
     UsefulnessParameterSet,
     UsefulnessScore,
 } from "./types"
-
-const DEFAULT_USEFULNESS_PARAMETER_VALUE = 1 as Parameter
 
 const lee = (
     n2d3p9: N2D3P9,
