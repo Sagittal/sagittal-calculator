@@ -1,5 +1,6 @@
 import {Io} from "../../../../../src/general/io"
 import {onlyRunInCi} from "../../../../helpers/onlyRunInCi"
+import {OLD_MAX_N2D3P9_WHICH_IS_NICE_FOR_SHORTER_TEST_RESULTS} from "../../../../helpers/src/scripts/jiPitch/constants"
 import {runCommandAndGetConsoleOutput} from "../../../../helpers/src/scripts/runCommand"
 
 describe("find-commas", (): void => {
@@ -15,6 +16,7 @@ describe("find-commas", (): void => {
          --max-prime-limit 37       \
          --max-2-3-free-sopfr 58    \
          --max-aas 3                \
+         --max-n2d3p9 ${OLD_MAX_N2D3P9_WHICH_IS_NICE_FOR_SHORTER_TEST_RESULTS}                \
         ` as Io
 
         const actual = runCommandAndGetConsoleOutput(command)
@@ -72,7 +74,7 @@ describe("find-commas", (): void => {
     it("can set the format of the comma names", (): void => {
         onlyRunInCi()
 
-        const command = `npm run find-commas -- --lower-bound 50c --upper-bound 50.31c --undirected --factored --unabbreviated` as Io
+        const command = `npm run find-commas -- --lower-bound 50c --upper-bound 50.31c --undirected --factored --unabbreviated --max-n2d3p9 ${OLD_MAX_N2D3P9_WHICH_IS_NICE_FOR_SHORTER_TEST_RESULTS}` as Io
 
         const actual = runCommandAndGetConsoleOutput(command)
 
@@ -112,6 +114,7 @@ describe("find-commas", (): void => {
          --max-2-3-free-sopfr 58    \
          --max-aas 3                \
          --excluded-fields aas,ate  \
+         --max-n2d3p9 ${OLD_MAX_N2D3P9_WHICH_IS_NICE_FOR_SHORTER_TEST_RESULTS}                \
         ` as Io
 
         const actual = runCommandAndGetConsoleOutput(command)
@@ -139,7 +142,7 @@ describe("find-commas", (): void => {
     it("can set bounds by monzos and quotients instead of just cents", (): void => {
         onlyRunInCi()
 
-        const command = `npm run find-commas -- --lower-bound 1594323/1548800 --upper-bound "[ -25  12   1   0   0   1 ⟩" --undirected --factored --unabbreviated` as Io
+        const command = `npm run find-commas -- --lower-bound 1594323/1548800 --upper-bound "[ -25  12   1   0   0   1 ⟩" --undirected --factored --unabbreviated --max-n2d3p9 ${OLD_MAX_N2D3P9_WHICH_IS_NICE_FOR_SHORTER_TEST_RESULTS}` as Io
 
         const actual = runCommandAndGetConsoleOutput(command)
 
@@ -169,9 +172,7 @@ describe("find-commas", (): void => {
     it("can format for a spreadsheet", (): void => {
         onlyRunInCi()
 
-        const command = `           \
-        npm run find-commas -- --lower-bound 50c --upper-bound 50.31c --sort-by apotomeSlope --table-format spreadsheet \
-        ` as Io
+        const command = `npm run find-commas -- --lower-bound 50c --upper-bound 50.31c --sort-by apotomeSlope --table-format spreadsheet --max-n2d3p9 ${OLD_MAX_N2D3P9_WHICH_IS_NICE_FOR_SHORTER_TEST_RESULTS}` as Io
 
         const actual = runCommandAndGetConsoleOutput(command)
 
