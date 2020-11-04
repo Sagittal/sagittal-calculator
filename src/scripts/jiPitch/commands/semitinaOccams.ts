@@ -42,8 +42,8 @@ import {
     computeCommaName,
     computeCommasFrom23FreeRationalMonzo,
     getCommaClass,
-    JI_NOTATION_LEVELS_COMMA_CLASS_IDS,
     JiNotationLevelId,
+    JI_NOTATION_LEVELS_COMMA_CLASS_IDS,
     N2D3P9,
 } from "../../../sagittal"
 import {ScriptGroup} from "../../types"
