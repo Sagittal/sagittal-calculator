@@ -50,6 +50,7 @@ import {ScriptGroup} from "../../types"
 import {
     checkMetacommaConsistency,
     computeSemitinaError,
+    Occam,
     Semitina,
     SEMITINA,
     SemitinaZone,
@@ -172,8 +173,7 @@ saveLog("best comma per semitina zone identified", LogTarget.PROGRESS)
 
 // COMPUTE METACOMMAS AND BUCKET THEM AS YOU GO (REPORTING INCONSISTENCIES FOR REFERENCE LATER)
 
-const tinaCandidateBuckets: Record<RecordKey<TinaBucket>, Record<RecordKey<Name<Comma>>, Count<Comma>>> = {
-    [0]: {},
+const tinaCandidateBucketOccams: Record<RecordKey<TinaBucket>, Record<RecordKey<Name<Comma>>, Occam>> = {
     [1]: {},
     [2]: {},
     [3]: {},
@@ -199,17 +199,17 @@ JI_NOTATION_LEVELS_COMMA_CLASS_IDS[JiNotationLevelId.ULTRA].forEach((ultraCommaC
 
         saveLog(`The metacomma between the Extreme comma ${ultraCommaClassId} and the best comma in semitina zone ${semitinaZone} ${bestComma.name} is ${metacommaName} with size ${metacommaSemitinaZoneJump}`, LogTarget.DETAILS)
 
-        if (metacommaSemitinaZoneJump <= 18 && isEven(metacommaSemitinaZoneJump)) {
+        if (metacommaSemitinaZoneJump >= 2 && metacommaSemitinaZoneJump <= 18 && isEven(metacommaSemitinaZoneJump)) {
             const tinaBucket = metacommaSemitinaZoneJump / 2 as TinaBucket
 
             checkMetacommaConsistency(metacomma, tinaBucket)
 
             metacommaNameToMetacommaMap[metacommaName] = metacomma
 
-            tinaCandidateBuckets[tinaBucket][metacommaName] =
-                tinaCandidateBuckets[tinaBucket][metacommaName] || 0 as Count<Comma>
-            tinaCandidateBuckets[tinaBucket][metacommaName] =
-                tinaCandidateBuckets[tinaBucket][metacommaName] + 1 as Count<Comma>
+            tinaCandidateBucketOccams[tinaBucket][metacommaName] =
+                tinaCandidateBucketOccams[tinaBucket][metacommaName] || 0 as Occam
+            tinaCandidateBucketOccams[tinaBucket][metacommaName] =
+                tinaCandidateBucketOccams[tinaBucket][metacommaName] + 1 as Occam
         }
     })
 })
@@ -218,19 +218,25 @@ saveLog("metacommas gathered", LogTarget.PROGRESS)
 
 // SORT EACH SEMITINA BUCKET BY DESCENDING OCCAM AND SHARE FINAL RESULT
 
-const tinaCandidateBucketEntries =
-    Object.entries(tinaCandidateBuckets) as Array<[unknown, Record<Name<Comma>, Count<Comma>>]> as
-        Array<[TinaBucket, Record<Name<Comma>, Count<Comma>>]>
+const tinaCandidateBucketOccamEntries =
+    Object.entries(tinaCandidateBucketOccams) as Array<[unknown, Record<Name<Comma>, Occam>]> as
+        Array<[TinaBucket, Record<Name<Comma>, Occam>]>
 
-tinaCandidateBucketEntries.forEach(
-    ([tinaCandidateBucket, tinaCandidateBucketMetacommas]: [TinaBucket, Record<Name<Comma>, Count<Comma>>]): void => {
-        const tinaCandidateBucketMetacommasEntries =
-            Object.entries(tinaCandidateBucketMetacommas) as Array<[Name<Comma>, Count<Comma>]>
+tinaCandidateBucketOccamEntries.forEach(
+    ([tinaCandidateBucket, tinaCandidateBucketOccams]: [TinaBucket, Record<Name<Comma>, Occam>]): void => {
+        saveLog(`CANDIDATES FOR TINA ${tinaCandidateBucket}`, LogTarget.FINAL)
+        const thisTinaCandidateBucketsOccamEntries =
+            Object.entries(tinaCandidateBucketOccams) as Array<[Name<Comma>, Occam]>
 
-        sort(tinaCandidateBucketMetacommasEntries, {by: [1] as KeyPath, descending: true})
+        sort(thisTinaCandidateBucketsOccamEntries, {by: [1] as KeyPath, descending: true})
 
-        // Todo consider only printing the whole tinas here, and only the top 20%
-        saveLog(`CANDIDATES FOR TINA ${tinaCandidateBucket}:\n${stringify(tinaCandidateBucketMetacommasEntries, {multiline: true})}\n\n`, LogTarget.FINAL)
+        const bestOccamInThisBucket = thisTinaCandidateBucketsOccamEntries[0][1]
+        const occamThreshold = bestOccamInThisBucket * 0.8
+
+        for (const [commaName, occam] of thisTinaCandidateBucketsOccamEntries) {
+            if (occam < occamThreshold) break
+            saveLog(`${commaName}\t${occam}`, LogTarget.FINAL)
+        }
     },
 )
 
@@ -242,9 +248,9 @@ saveLog("tina candidate buckets sorted and presented", LogTarget.PROGRESS)
 
 // FIND WHICH METACOMMAS ACROSS THE ENTIRE SERIES OF BEST COMMAS FOR EACH SEMITINA ZONE ARE THE MOST COMMON
 
-const metacommaCounts: Record<RecordKey<Name<Comma>>, Count<Comma>> = {}
+const semitinaCandidateOccams: Record<RecordKey<Name<Comma>>, Occam> = {}
 
-saveLog(`AND NOW FOR THE SEMITINA CANDIDATES`, LogTarget.FINAL)
+saveLog(`CANDIDATES FOR SEMITINA`, LogTarget.FINAL)
 bestCommaPerSemitinaZone
     .forEach((bestCommaPerSemitinaZoneEntry: [SemitinaZone, CommaAnalysis], index: number): void => {
         if (index === indexOfFinalElement(bestCommaPerSemitinaZone)) return
@@ -253,23 +259,31 @@ bestCommaPerSemitinaZone
 
         const subsequentBestCommaInThatSemitinaZone = bestCommaPerSemitinaZone[index + 1][1]
 
-        const metametacomma = subtractRationalScamons(
+        const metacommaBetweenConsecutiveBestCommas = subtractRationalScamons(
             bestCommaInThisSemitinaZone.pitch,
             subsequentBestCommaInThatSemitinaZone.pitch,
         ) as Comma
-        const metametacommaName = computeCommaName(metametacomma)
-        metacommaCounts[metametacommaName] = metacommaCounts[metametacommaName] || 0 as Count<Comma>
-        metacommaCounts[metametacommaName] = metacommaCounts[metametacommaName] + 1 as Count<Comma>
+        const metacommaName = computeCommaName(metacommaBetweenConsecutiveBestCommas)
+        semitinaCandidateOccams[metacommaName] = semitinaCandidateOccams[metacommaName] || 0 as Occam
+        semitinaCandidateOccams[metacommaName] = semitinaCandidateOccams[metacommaName] + 1 as Occam
 
-        metacommaNameToMetacommaMap[metametacommaName] = metametacomma
+        metacommaNameToMetacommaMap[metacommaName] = metacommaBetweenConsecutiveBestCommas
 
-        saveLog(`semitina zone ${semitinaZone}: ${stringify(metametacomma)}`, LogTarget.DETAILS)
+        saveLog(`semitina zone ${semitinaZone}: ${stringify(metacommaBetweenConsecutiveBestCommas)}`, LogTarget.DETAILS)
     })
 
-const metametacommaCountEntries = Object.entries(metacommaCounts) as Array<[Name<Comma>, Count<Comma>]>
-sort(metametacommaCountEntries, {by: [1] as KeyPath, descending: true})
-
 saveLog(stringify(metacommaNameToMetacommaMap, {multiline: true}), LogTarget.DETAILS)
-saveLog(stringify(metametacommaCountEntries, {multiline: true}), LogTarget.FINAL)
+
+const semitinaCandidateOccamEntries = Object.entries(semitinaCandidateOccams) as Array<[Name<Comma>, Occam]>
+sort(semitinaCandidateOccamEntries, {by: [1] as KeyPath, descending: true})
+
+// TODO: try to DRY this up with the above once you get to breaking this script down into parts
+const bestOccamInThisBucket = semitinaCandidateOccamEntries[0][1]
+const occamThreshold = bestOccamInThisBucket * 0.8
+
+for (const [commaName, occam] of semitinaCandidateOccamEntries) {
+    if (occam < occamThreshold) break
+    saveLog(`${commaName}\t${occam}`, LogTarget.FINAL)
+}
 
 if (ioSettings.time) saveLog(`\n\nTOOK ${time()}`, LogTarget.FINAL)
