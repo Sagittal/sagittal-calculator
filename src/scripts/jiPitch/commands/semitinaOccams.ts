@@ -5,7 +5,6 @@ import {
     Cents,
     Comma,
     computeCentsFromPitch,
-    computeMonzoMapping,
     computeRange,
     computeSuperScamon,
     Count,
@@ -43,13 +42,19 @@ import {
     computeCommaName,
     computeCommasFrom23FreeRationalMonzo,
     getCommaClass,
-    INSANE_ZETA_PEAK_VAL,
     JiNotationLevelId,
     JI_NOTATION_LEVELS_COMMA_CLASS_IDS,
     N2D3P9,
 } from "../../../sagittal"
 import {ScriptGroup} from "../../types"
-import {computeSemitinaError, SEMITINA, Semitina, SemitinaBucket, SemitinaZone} from "../semitinaOccams"
+import {
+    checkMetacommaConsistency,
+    computeSemitinaError,
+    Semitina,
+    SEMITINA,
+    SemitinaZone,
+    TinaBucket,
+} from "../semitinaOccams"
 
 setupCommandAndIo(
     ScriptGroup.JI_PITCH as Filename,
@@ -167,9 +172,7 @@ saveLog("best comma per semitina zone identified", LogTarget.PROGRESS)
 
 // COMPUTE METACOMMAS AND BUCKET THEM AS YOU GO (REPORTING INCONSISTENCIES FOR REFERENCE LATER)
 
-// Todo: we don't actually need the odd buckets anymore, and they can be "tinas", and they can be "candidates" again
-//  Since they're all candidates now.
-const semitinaBuckets: Record<RecordKey<SemitinaBucket>, Record<RecordKey<Name<Comma>>, Count<Comma>>> = {
+const tinaCandidateBuckets: Record<RecordKey<TinaBucket>, Record<RecordKey<Name<Comma>>, Count<Comma>>> = {
     [0]: {},
     [1]: {},
     [2]: {},
@@ -180,16 +183,6 @@ const semitinaBuckets: Record<RecordKey<SemitinaBucket>, Record<RecordKey<Name<C
     [7]: {},
     [8]: {},
     [9]: {},
-    [10]: {},
-    [11]: {},
-    [12]: {},
-    [13]: {},
-    [14]: {},
-    [15]: {},
-    [16]: {},
-    [17]: {},
-    [18]: {},
-    [19]: {},
 }
 
 const metacommaNameToMetacommaMap: Record<RecordKey<Name<Comma>>, Comma> = {}
@@ -202,28 +195,21 @@ JI_NOTATION_LEVELS_COMMA_CLASS_IDS[JiNotationLevelId.ULTRA].forEach((ultraCommaC
         const metacommaName = computeCommaName(metacomma)
 
         const ultraCommaSemitinaZone = round(computeCentsFromPitch(ultraComma) / SEMITINA) as SemitinaZone
-        const metacommaSemitinaZoneJump = abs(ultraCommaSemitinaZone - semitinaZone) as Abs<SemitinaZone>
+        const metacommaSemitinaZoneJump = abs(ultraCommaSemitinaZone - semitinaZone) as Abs<Count<SemitinaZone>>
 
         saveLog(`The metacomma between the Extreme comma ${ultraCommaClassId} and the best comma in semitina zone ${semitinaZone} ${bestComma.name} is ${metacommaName} with size ${metacommaSemitinaZoneJump}`, LogTarget.DETAILS)
 
-        if (metacommaSemitinaZoneJump <= 19) {
-            // Todo extract maybe this whole thing and whatever else needed for this computation
-            const tinaMapping = computeMonzoMapping(metacomma.monzo, INSANE_ZETA_PEAK_VAL)
-            const metacommaTinaZoneJump = metacommaSemitinaZoneJump / 2
-            const insaneZetaPeakEdoConsistent = tinaMapping === metacommaTinaZoneJump
-            // Todo wait is it the semitinaZone or the metacommaSemitinaZoneJump which matters to be even?
-            //  And/or should we add that to the condition along with <= 19
-            const isWholeTina = isEven(semitinaZone)
-            if (isWholeTina && !insaneZetaPeakEdoConsistent) {
-                saveLog(`FYI, this metacomma for a whole tina (which is within 9.5 tinas and therefore we care about it) is inconsistent! ${metacommaName} maps to ${tinaMapping} steps of 8539.00834-EDO despite being bucketed as a semitina zone jump of ${metacommaSemitinaZoneJump}`, LogTarget.ERROR)
-            }
+        if (metacommaSemitinaZoneJump <= 18 && isEven(metacommaSemitinaZoneJump)) {
+            const tinaBucket = metacommaSemitinaZoneJump / 2 as TinaBucket
+
+            checkMetacommaConsistency(metacomma, tinaBucket)
 
             metacommaNameToMetacommaMap[metacommaName] = metacomma
 
-            semitinaBuckets[metacommaSemitinaZoneJump][metacommaName] =
-                semitinaBuckets[metacommaSemitinaZoneJump][metacommaName] || 0 as Count<Comma>
-            semitinaBuckets[metacommaSemitinaZoneJump][metacommaName] =
-                semitinaBuckets[metacommaSemitinaZoneJump][metacommaName] + 1 as Count<Comma>
+            tinaCandidateBuckets[tinaBucket][metacommaName] =
+                tinaCandidateBuckets[tinaBucket][metacommaName] || 0 as Count<Comma>
+            tinaCandidateBuckets[tinaBucket][metacommaName] =
+                tinaCandidateBuckets[tinaBucket][metacommaName] + 1 as Count<Comma>
         }
     })
 })
@@ -232,23 +218,23 @@ saveLog("metacommas gathered", LogTarget.PROGRESS)
 
 // SORT EACH SEMITINA BUCKET BY DESCENDING OCCAM AND SHARE FINAL RESULT
 
-const semitinaBucketEntries =
-    Object.entries(semitinaBuckets) as Array<[unknown, Record<Name<Comma>, Count<Comma>>]> as
-        Array<[SemitinaBucket, Record<Name<Comma>, Count<Comma>>]>
+const tinaCandidateBucketEntries =
+    Object.entries(tinaCandidateBuckets) as Array<[unknown, Record<Name<Comma>, Count<Comma>>]> as
+        Array<[TinaBucket, Record<Name<Comma>, Count<Comma>>]>
 
-semitinaBucketEntries.forEach(
-    ([semitinaBucket, semitinaBucketMetacommas]: [SemitinaBucket, Record<Name<Comma>, Count<Comma>>]): void => {
-        const semitinaBucketMetacommasEntries =
-            Object.entries(semitinaBucketMetacommas) as Array<[Name<Comma>, Count<Comma>]>
+tinaCandidateBucketEntries.forEach(
+    ([tinaCandidateBucket, tinaCandidateBucketMetacommas]: [TinaBucket, Record<Name<Comma>, Count<Comma>>]): void => {
+        const tinaCandidateBucketMetacommasEntries =
+            Object.entries(tinaCandidateBucketMetacommas) as Array<[Name<Comma>, Count<Comma>]>
 
-        sort(semitinaBucketMetacommasEntries, {by: [1] as KeyPath, descending: true})
+        sort(tinaCandidateBucketMetacommasEntries, {by: [1] as KeyPath, descending: true})
 
         // Todo consider only printing the whole tinas here, and only the top 20%
-        saveLog(`CANDIDATES FOR SEMITINA ${semitinaBucket}:\n${stringify(semitinaBucketMetacommasEntries, {multiline: true})}\n\n`, LogTarget.FINAL)
+        saveLog(`CANDIDATES FOR TINA ${tinaCandidateBucket}:\n${stringify(tinaCandidateBucketMetacommasEntries, {multiline: true})}\n\n`, LogTarget.FINAL)
     },
 )
 
-saveLog("candidates for semitina presented", LogTarget.PROGRESS)
+saveLog("tina candidate buckets sorted and presented", LogTarget.PROGRESS)
 
 /*****************/
 /*  PHASE THREE  */
@@ -258,7 +244,7 @@ saveLog("candidates for semitina presented", LogTarget.PROGRESS)
 
 const metacommaCounts: Record<RecordKey<Name<Comma>>, Count<Comma>> = {}
 
-saveLog(`AND NOW, METAMETACOMMAS`, LogTarget.FINAL)
+saveLog(`AND NOW FOR THE SEMITINA CANDIDATES`, LogTarget.FINAL)
 bestCommaPerSemitinaZone
     .forEach((bestCommaPerSemitinaZoneEntry: [SemitinaZone, CommaAnalysis], index: number): void => {
         if (index === indexOfFinalElement(bestCommaPerSemitinaZone)) return
@@ -286,4 +272,4 @@ sort(metametacommaCountEntries, {by: [1] as KeyPath, descending: true})
 saveLog(stringify(metacommaNameToMetacommaMap, {multiline: true}), LogTarget.DETAILS)
 saveLog(stringify(metametacommaCountEntries, {multiline: true}), LogTarget.FINAL)
 
-if (ioSettings.time) saveLog(`\n\nCOMPUTING SEMITINA OCCAMS TOOK ${time()}`, LogTarget.FINAL)
+if (ioSettings.time) saveLog(`\n\nTOOK ${time()}`, LogTarget.FINAL)

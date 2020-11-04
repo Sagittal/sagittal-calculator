@@ -4,13 +4,14 @@ import {Abs, Cents, Decimal} from "../../../general"
 type Semitina = Cents & {_SemitinaBrand: boolean}
 
 type SemitinaZone = Decimal<{integer: true}> & {_SemitinaZoneBrand: boolean}
-type SemitinaBucket = Abs<SemitinaZone>
+
+type TinaBucket = Decimal<{integer: true}> & {_TinaBucketBrand: boolean}
 
 type SemitinaError = Abs & {_SemitinaErrorBrand: boolean}
 
 export {
     Semitina,
     SemitinaZone,
-    SemitinaBucket,
+    TinaBucket,
     SemitinaError,
 }
