@@ -22,7 +22,9 @@ import {
 } from "../../../../../../src/general"
 import {ApotomeSlope, CommaAnalysis, CommaClassId} from "../../../../../../src/sagittal"
 import {N2D3P9} from "../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
+import {DEFAULT_FIND_COMMAS_SETTINGS} from "../../../../../../src/scripts/jiPitch/findCommas"
 import {computeFindCommasOutput} from "../../../../../../src/scripts/jiPitch/io"
+import {OLD_MAX_N2D3P9_WHICH_IS_NICE_FOR_SHORTER_TEST_RESULTS} from "../../../../../helpers/src/scripts/jiPitch/constants"
 import {commaAnalysisFixture} from "../../../../../helpers/src/scripts/jiPitch/fixtures"
 
 describe("computeFindCommasOutput", (): void => {
@@ -70,9 +72,13 @@ describe("computeFindCommasOutput", (): void => {
         },
     ]
     const maybeCommaClassIds = [CommaClassId._11_M, undefined]
+    const findCommasSettings = {
+        ...DEFAULT_FIND_COMMAS_SETTINGS,
+        maxN2D3P9: OLD_MAX_N2D3P9_WHICH_IS_NICE_FOR_SHORTER_TEST_RESULTS,
+    }
 
     it("changes column widths so that each cell in a column has the same width", (): void => {
-        const actual = computeFindCommasOutput(commaAnalyses, maybeCommaClassIds)
+        const actual = computeFindCommasOutput(commaAnalyses, maybeCommaClassIds, findCommasSettings)
 
         const expected =
             "" + NEWLINE +
@@ -95,7 +101,7 @@ describe("computeFindCommasOutput", (): void => {
 
     it("can format tables for sharing on the Sagittal forum", (): void => {
         ioSettings.tableFormat = TableFormat.FORUM
-        const actual = computeFindCommasOutput(commaAnalyses, maybeCommaClassIds)
+        const actual = computeFindCommasOutput(commaAnalyses, maybeCommaClassIds, findCommasSettings)
 
         const expected =
             "" + NEWLINE +
@@ -120,7 +126,7 @@ describe("computeFindCommasOutput", (): void => {
 
     it("can format tables for sharing on the Sagittal forum, but where the splitting of quotients and 2,3-free classes is preferred", (): void => {
         ioSettings.tableFormat = TableFormat.FORUM_WITH_SPLIT_QUOTIENTS
-        const actual = computeFindCommasOutput(commaAnalyses, maybeCommaClassIds)
+        const actual = computeFindCommasOutput(commaAnalyses, maybeCommaClassIds, findCommasSettings)
 
         const expected =
             "" + NEWLINE +
@@ -145,7 +151,7 @@ describe("computeFindCommasOutput", (): void => {
 
     it("can format it for a spreadsheet", (): void => {
         ioSettings.tableFormat = TableFormat.SPREADSHEET
-        const actual = computeFindCommasOutput(commaAnalyses, maybeCommaClassIds)
+        const actual = computeFindCommasOutput(commaAnalyses, maybeCommaClassIds, findCommasSettings)
 
         const expected =
             "" + NEWLINE +

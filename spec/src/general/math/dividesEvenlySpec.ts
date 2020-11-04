@@ -1,5 +1,4 @@
-import {dividesEvenly} from "../../../../src/general/math"
-import {isEven, isOdd} from "../../../../src/general/math/dividesEvenly"
+import {dividesEvenly, isEven, isOdd} from "../../../../src/general/math"
 
 describe("dividesEvenly", (): void => {
     it("returns the whole version of the type passed to it", (): void => {

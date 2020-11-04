@@ -1,12 +1,19 @@
 import {LogTarget, Maybe, saveLog} from "../../../general"
 import {analyzeJiPitch, CommaAnalysis, CommaClassId, computeMaybeCommaClassId} from "../../../sagittal"
-import {computeNotatingCommaAnalyses, parseJiPitch, parseNotatingCommasSettings} from "../analyzeJiPitch"
-import {compute23FreeClassOutput, computeJiPitchOutput, computeNotatingCommasOutput, readJiPitchOptions} from "../io"
-import {applySharedPitchCommandSetup} from "./shared"
+import {computeNotatingCommaAnalyses} from "../analyzeJiPitch"
+import {
+    compute23FreeClassOutput,
+    computeJiPitchOutput,
+    computeNotatingCommasOutput,
+    parseJiPitch,
+    parseNotatingCommasSettings,
+    readAnalyzeJiPitchOptions,
+} from "../io"
+import {applySharedJiPitchCommandSetup} from "./shared"
 
-readJiPitchOptions()
+readAnalyzeJiPitchOptions()
 
-applySharedPitchCommandSetup()
+applySharedJiPitchCommandSetup()
 
 const jiPitch = parseJiPitch()
 const jiPitchAnalysis = analyzeJiPitch(jiPitch)

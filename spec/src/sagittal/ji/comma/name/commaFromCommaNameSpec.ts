@@ -14,15 +14,13 @@ describe("computeCommaFromCommaNameQuotientAndSizeCategoryName", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    // TODO: figure out the bug that's causing this to error out
-    // tslint:disable-next-line ban
-    xit("maybe edge case?", (): void => {
+    it("an edge case with large N2D3P9", (): void => {
         const commaNameQuotient: CommaNameQuotient = [77, 185] as CommaNameQuotient
         const sizeCategoryName: SizeCategoryName = SizeCategoryName.SCHISMINA
 
         const actual = computeCommaFromCommaNameQuotientAndSizeCategoryName({commaNameQuotient, sizeCategoryName})
 
-        const expected = {monzo: [] as unknown[] as Monzo<{rational: true}>} as Comma
+        const expected = {monzo: [-13, 9, -1, 1, 1, 0, 0, 0, 0, 0, 0, -1] as Monzo<{rational: true}>} as Comma
         expect(actual).toEqual(expected)
     })
 })

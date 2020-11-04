@@ -35,6 +35,7 @@ export {
     SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P,
     SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2,
     computeN2,
+    MAX_N2D3P9_FOR_WHICH_POSSIBLE_NUMERATORS_ARE_KNOWN,
 } from "./ji"
 export {
     alignAscii,
@@ -94,4 +95,3 @@ export {
     formatSymbolClass,
 } from "./notation"
 export {APOTOME, HALF_APOTOME} from "./constants"
-export {parsePitch} from "./parsePitch"

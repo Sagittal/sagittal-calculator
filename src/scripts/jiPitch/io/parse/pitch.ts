@@ -13,8 +13,8 @@ import {
     parseMonzo,
     parseQuotient,
     Scamon,
-} from "../general"
-import {computeCommaFromCommaNameQuotientAndSizeCategoryName, parseCommaName} from "./ji"
+} from "../../../../general"
+import {computeCommaFromCommaNameQuotientAndSizeCategoryName, parseCommaName} from "../../../../sagittal"
 
 const parsePitch = (pitchIo: Io): Scamon => {
     let pitch: Scamon

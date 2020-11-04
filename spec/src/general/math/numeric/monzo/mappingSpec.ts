@@ -1,6 +1,6 @@
 import {Monzo, Step} from "../../../../../../src/general"
 import {computeMonzoMapping, Val} from "../../../../../../src/general/math/numeric/monzo"
-import {INSANE_ZETA_PEAK_VAL} from "../../../../../../src/sagittal/notations/ji/zetaPeakVals"
+import {INSANE_ZETA_PEAK_VAL} from "../../../../../../src/sagittal/notations/ji"
 
 describe("computeMonzoMapping", (): void => {
     it("given a val mapping, returns the number of steps that would represent the given monzo", (): void => {

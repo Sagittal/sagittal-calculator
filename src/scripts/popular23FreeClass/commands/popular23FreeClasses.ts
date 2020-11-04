@@ -11,8 +11,8 @@ import {
     sumTexts,
     time,
 } from "../../../general"
+import {DEFAULT_MAX_N2D3P9} from "../../../sagittal"
 import {ScriptGroup} from "../../types"
-import {DEFAULT_MAX_N2D3P9_FOR_POPULAR_2_3_FREE_CLASSES} from "../constants"
 import {popular23FreeClassesScriptGroupSettings} from "../globals"
 import {computePopular23FreeClassesOutput} from "../io"
 import {computePopular23FreeClasses} from "../popular23FreeClasses"
@@ -25,7 +25,7 @@ program
 
 setupCommandAndIo(ScriptGroup.POPULAR_2_3_FREE_CLASSES as Filename)
 
-const maxN2D3P9 = program.maxN2d3p9 || DEFAULT_MAX_N2D3P9_FOR_POPULAR_2_3_FREE_CLASSES
+const maxN2D3P9 = program.maxN2d3p9 || DEFAULT_MAX_N2D3P9
 popular23FreeClassesScriptGroupSettings.useKnown = !!program.useKnown
 popular23FreeClassesScriptGroupSettings.useBestNotatingCommas = !!program.useBestNotatingCommas
 

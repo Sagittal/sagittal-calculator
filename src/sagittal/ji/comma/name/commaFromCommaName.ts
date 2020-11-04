@@ -21,13 +21,16 @@ const computeCommaFromCommaNameQuotientAndSizeCategoryName = (
     const commas = computeNotatingCommas(
         computeRationalScamonFromRationalMonzo(two3FreeMonzo),
         {
+            // It would be cool if we could use the search options the user provides here, but it creates a
+            // Chicken-and-egg problem since we need to use this method itself as part of parsing said options!
+            // No real choice but to go with the defaults here, unless we majorly refactor
             lowerBound: lowerBound.pitch as Scamon as Min<Scamon>,
             upperBound: upperBound.pitch as Scamon as Max<Scamon>,
         },
     )
 
     if (commas.length !== 1) {
-        throw new Error(`For whatever reason the number of commas notating the monzo ${two3FreeMonzo} within the bounds of its size category ${sizeCategoryName} was not 1. It was ${commas.length}.`)
+        throw new Error(`For whatever reason the number of commas notating the monzo ${two3FreeMonzo} within the bounds of its size category ${sizeCategoryName} was not 1. It was ${commas.length}. Perhaps you need to expand the search parameters, e.g. raise the max ATE, AAS, or 2,3-free sopfr.`)
     }
 
     return commas[0]

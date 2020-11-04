@@ -1,5 +1,5 @@
 export {FindCommasSettings, CommasOptions} from "./types"
 export {computeCommas} from "./commas"
 export {computeCommaAnalyses} from "./commaAnalyses"
-export {parseFindCommasSettings} from "./parse"
+export {computeFindCommasSettings} from "./settings"
 export {DEFAULT_FIND_COMMAS_SETTINGS} from "./constants"

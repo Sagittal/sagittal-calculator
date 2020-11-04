@@ -4,7 +4,7 @@ import {ApotomeSlope, N2D3P9} from "../../../sagittal"
 import {DEFAULT_FIND_COMMAS_SETTINGS} from "./constants"
 import {FindCommasSettings} from "./types"
 
-const parseFindCommasSettings = (
+const computeFindCommasSettings = (
     defaultOverrides: Partial<FindCommasSettings> = {},
 ): FindCommasSettings => {
     const max23FreeSopfr = program.max23FreeSopfr ||
@@ -36,5 +36,5 @@ const parseFindCommasSettings = (
 }
 
 export {
-    parseFindCommasSettings,
+    computeFindCommasSettings,
 }

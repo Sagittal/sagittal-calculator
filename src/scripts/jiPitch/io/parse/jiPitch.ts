@@ -1,19 +1,13 @@
 import {program} from "commander"
 import {
-    Abs,
     computeRationalMonzoFromRationalDecimal,
     computeRationalMonzoFromRationalQuotient,
-    Decimal,
-    Exponent,
     formatPitch,
     Io,
     isScamonRational,
-    Max,
-    Prime,
     Scamon,
-} from "../../../general"
-import {ApotomeSlope, computeAas, computeAte, JiPitchAnalysis, N2D3P9, parsePitch} from "../../../sagittal"
-import {FindCommasSettings, parseFindCommasSettings} from "../findCommas"
+} from "../../../../general"
+import {parsePitch} from "./pitch"
 
 const parseJiPitch = (): Scamon<{rational: true}> => {
     const jiPitchText = program.args[0] as Io
@@ -44,30 +38,6 @@ const parseJiPitch = (): Scamon<{rational: true}> => {
     return jiPitch
 }
 
-const parseNotatingCommasSettings = (
-    {pitch, two3FreeClassAnalysis}: JiPitchAnalysis,
-): FindCommasSettings => {
-    const findCommasSettings = parseFindCommasSettings()
-
-    const aas = computeAas(pitch)
-    if (aas > findCommasSettings.maxAas) {
-        findCommasSettings.maxAas = aas as Max<Abs<ApotomeSlope>>
-    }
-
-    const ate = computeAte(pitch)
-    if (ate > findCommasSettings.maxAte) {
-        findCommasSettings.maxAte = ate as Max<Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>>
-    }
-
-    const n2d3p9 = two3FreeClassAnalysis.n2d3p9
-    if (n2d3p9 > findCommasSettings.maxN2D3P9) {
-        findCommasSettings.maxN2D3P9 = n2d3p9 as Max<N2D3P9>
-    }
-
-    return findCommasSettings
-}
-
 export {
     parseJiPitch,
-    parseNotatingCommasSettings,
 }

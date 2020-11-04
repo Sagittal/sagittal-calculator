@@ -5,7 +5,7 @@ import {jiPitchScriptGroupSettings} from "../../globals"
 import {JiPitchScriptGroupField} from "../../types"
 import {parseExcludedFields} from "./excludedFields"
 
-const applySharedPitchCommandSetup = (): void => {
+const applySharedJiPitchCommandSetup = (): void => {
     program
         .option(`-${CommandFlag.SORT_BY}, --sort-by <sortBy>`, "sort by")
         .option(`-${CommandFlag.UNDIRECTED_COMMA_NAME}, --undirected`, "undirected comma name")
@@ -30,5 +30,5 @@ const applySharedPitchCommandSetup = (): void => {
 }
 
 export {
-    applySharedPitchCommandSetup,
+    applySharedJiPitchCommandSetup,
 }

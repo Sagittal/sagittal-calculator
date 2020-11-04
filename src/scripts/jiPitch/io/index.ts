@@ -1,4 +1,6 @@
 export {
     computeFindCommasOutput, computeNotatingCommasOutput, compute23FreeClassOutput, computeJiPitchOutput,
 } from "./output"
-export {readJiPitchOptions, readFindCommasOptions} from "./readOptions"
+export {
+    readAnalyzeJiPitchOptions, readFindCommasOptions, parsePitch, parseJiPitch, parseNotatingCommasSettings,
+} from "./parse"

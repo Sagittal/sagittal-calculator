@@ -12,7 +12,7 @@ import {
     time,
 } from "../../../general"
 import {CommaAnalysis} from "../../../sagittal"
-import {computeCommas, FindCommasSettings, parseFindCommasSettings} from "../findCommas"
+import {computeCommas, computeFindCommasSettings, FindCommasSettings} from "../findCommas"
 import {jiPitchScriptGroupSettings} from "../globals"
 import {readFindCommasOptions} from "../io"
 import {
@@ -23,13 +23,13 @@ import {
     TINA_COMMAS_LOWER_BOUND,
     TINA_COMMAS_UPPER_BOUND,
 } from "../lateTinaCommas"
-import {applySharedPitchCommandSetup} from "./shared"
+import {applySharedJiPitchCommandSetup} from "./shared"
 
 // Per http://forum.sagittal.org/viewtopic.php?p=2395#p2395
 
 readFindCommasOptions()
 
-applySharedPitchCommandSetup()
+applySharedJiPitchCommandSetup()
 
 ioSettings.logTargets[LogTarget.ERROR] = true
 
@@ -42,7 +42,7 @@ const DEFAULT_OVERRIDES: Partial<FindCommasSettings> = {
     max23FreeCopfr: INFINITE_2_3_FREE_COPFR,
     maxPrimeLimit: MAX_POSSIBLE_PRIME_LIMIT_GIVEN_MAX_POSSIBLE_SOPFR,
 }
-const findCommasSettings = parseFindCommasSettings(DEFAULT_OVERRIDES)
+const findCommasSettings = computeFindCommasSettings(DEFAULT_OVERRIDES)
 
 const commas = computeCommas({
     ...jiPitchScriptGroupSettings,

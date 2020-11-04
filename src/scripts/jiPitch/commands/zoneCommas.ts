@@ -8,19 +8,19 @@ import {
     JiNotationLevelId,
     JI_NOTATION,
 } from "../../../sagittal"
-import {CommasOptions, computeCommas, parseFindCommasSettings} from "../findCommas"
+import {CommasOptions, computeCommas, computeFindCommasSettings} from "../findCommas"
 import {jiPitchScriptGroupSettings} from "../globals"
 import {readFindCommasOptions} from "../io"
-import {applySharedPitchCommandSetup} from "./shared"
+import {applySharedJiPitchCommandSetup} from "./shared"
 
 readFindCommasOptions()
 
 program
     .option(`-${CommandFlag.EXTREME_CAPTURE_ZONES}, --extreme-capture-zones`, "find commas in each comma's capture zone for the Extreme precision level notation, rather than the default behavior of the comma's secondary comma zone")
 
-applySharedPitchCommandSetup()
+applySharedJiPitchCommandSetup()
 
-const findCommasSettings = parseFindCommasSettings()
+const findCommasSettings = computeFindCommasSettings()
 
 const zoneCommas = JI_NOTATION.reduce(
     (

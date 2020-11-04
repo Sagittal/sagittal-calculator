@@ -1,1 +1,1 @@
-export {applySharedPitchCommandSetup} from "./shared"
+export {applySharedJiPitchCommandSetup} from "./shared"

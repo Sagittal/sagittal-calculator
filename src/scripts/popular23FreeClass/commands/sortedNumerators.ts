@@ -23,11 +23,11 @@ import {
 } from "../../../general"
 import {
     computeN2,
+    MAX_N2D3P9_FOR_WHICH_POSSIBLE_NUMERATORS_ARE_KNOWN,
     SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P,
     SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2,
 } from "../../../sagittal"
 import {ScriptGroup} from "../../types"
-import {MAX_N2D3P9_FOR_WHICH_POSSIBLE_NUMERATORS_ARE_KNOWN} from "../constants"
 
 // Dave's strategy for getting further along: http://forum.sagittal.org/viewtopic.php?p=2481#p2481
 

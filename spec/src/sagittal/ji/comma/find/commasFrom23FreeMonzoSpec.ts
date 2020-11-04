@@ -73,4 +73,15 @@ describe("computeCommasFrom23FreeRationalMonzo", (): void => {
         const expected = [{monzo: [] as unknown[]} as Comma]
         expect(actual).toEqual(expected)
     })
+
+    it("following the trail of this edge case", (): void => {
+        const two3FreeRationalMonzo = [0, 0, -1, 1, 1, 0, 0, 0, 0, 0, 0, -1] as Monzo<{rational: true, rough: 5}>
+
+        const actual = computeCommasFrom23FreeRationalMonzo(two3FreeRationalMonzo)
+
+        const expected = [
+            {monzo: [-13, 9, -1, 1, 1, 0, 0, 0, 0, 0, 0, -1]},
+        ] as Comma[]
+        expect(actual).toEqual(expected)
+    })
 })
