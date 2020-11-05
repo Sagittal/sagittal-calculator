@@ -14,7 +14,6 @@ import {
 import {CommaAnalysis} from "../../../sagittal"
 import {computeCommas, computeFindCommasSettings, FindCommasSettings} from "../findCommas"
 import {jiPitchScriptGroupSettings} from "../globals"
-import {readFindCommasOptions} from "../io"
 import {
     computeCommaAnalysesSortedByTinaEntries,
     computeLateCommaAnalysis,
@@ -26,8 +25,6 @@ import {
 import {applySharedJiPitchCommandSetup} from "./shared"
 
 // Per http://forum.sagittal.org/viewtopic.php?p=2395#p2395
-
-readFindCommasOptions()
 
 applySharedJiPitchCommandSetup()
 

@@ -10,10 +10,7 @@ import {
 } from "../../../sagittal"
 import {CommasOptions, computeCommas, computeFindCommasSettings} from "../findCommas"
 import {jiPitchScriptGroupSettings} from "../globals"
-import {readFindCommasOptions} from "../io"
 import {applySharedJiPitchCommandSetup} from "./shared"
-
-readFindCommasOptions()
 
 program
     .option(`-${CommandFlag.EXTREME_CAPTURE_ZONES}, --extreme-capture-zones`, "find commas in each comma's capture zone for the Extreme precision level notation, rather than the default behavior of the comma's secondary comma zone")

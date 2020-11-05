@@ -1,10 +1,8 @@
 import {Io, LogTarget, Maybe, saveLog} from "../../../general"
 import {CommaAnalysis, CommaClassId, computeMaybeCommaClassId} from "../../../sagittal"
 import {computeCommaAnalyses, computeFindCommasSettings} from "../findCommas"
-import {computeFindCommasOutput, readFindCommasOptions} from "../io"
+import {computeFindCommasOutput} from "../io"
 import {applySharedJiPitchCommandSetup} from "./shared"
-
-readFindCommasOptions()
 
 applySharedJiPitchCommandSetup()
 

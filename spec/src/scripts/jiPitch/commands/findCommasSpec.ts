@@ -21,8 +21,6 @@ describe("find-commas", (): void => {
          --max-2-3-free-sopfr 58    \
          --max-aas 3                \
          --max-n2d3p9 ${OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS}    \
-         --max-aas ${OLD_MAX_AAS_FOR_SHORTER_TEST_RESULTS}          \
-         --max-ate ${OLD_MAX_ATE_FOR_SHORTER_TEST_RESULTS}          \
         ` as Io
 
         const actual = runCommandAndGetConsoleOutput(command)
@@ -50,7 +48,7 @@ describe("find-commas", (): void => {
     it("can sort the resulting list", (): void => {
         onlyRunInCi()
 
-        const command = "npm run find-commas -- --lower-bound 50c --upper-bound 50.31c --sort-by apotomeSlope" as Io
+        const command = `npm run find-commas -- --lower-bound 50c --upper-bound 50.31c --sort-by apotomeSlope  --max-n2d3p9 ${OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS} --max-ate ${OLD_MAX_ATE_FOR_SHORTER_TEST_RESULTS} --max-aas ${OLD_MAX_AAS_FOR_SHORTER_TEST_RESULTS}` as Io
 
         const actual = runCommandAndGetConsoleOutput(command)
 
@@ -121,8 +119,6 @@ describe("find-commas", (): void => {
          --max-aas 3                \
          --excluded-fields aas,ate  \
          --max-n2d3p9 ${OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS}    \
-         --max-aas ${OLD_MAX_AAS_FOR_SHORTER_TEST_RESULTS}          \
-         --max-ate ${OLD_MAX_ATE_FOR_SHORTER_TEST_RESULTS}          \
         ` as Io
 
         const actual = runCommandAndGetConsoleOutput(command)
