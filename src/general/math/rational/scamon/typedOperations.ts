@@ -3,20 +3,19 @@ import {Mean, MeanType} from "../../types"
 import {computeRationalMonzoFromRationalScamon} from "../monzo"
 
 const addRationalScamons = <T extends NumericProperties>(
-    rationalScamonA: Scamon<T & {rational: true}>,
-    rationalScamonB: Scamon<T & {rational: true}>,
+    augendScamon: Scamon<T & {rational: true}>,
+    addendScamon: Scamon<T & {rational: true}>,
 ): Scamon<T & {direction: undefined, integer: false, rational: true}> =>
     ({
-        monzo: addMonzos(rationalScamonA.monzo, rationalScamonB.monzo),
+        monzo: addMonzos(augendScamon.monzo, addendScamon.monzo),
     }) as Scamon<T & {direction: undefined, integer: false, rational: true}>
 
-// TODO: Okay, I think this is super confusing that it switches from and to. relic from when it was compute interval
 const subtractRationalScamons = <T extends NumericProperties>(
-    fromRationalScamon: Scamon<T & {rational: true}>,
-    toRationalScamon: Scamon<T & {rational: true}>,
+    minuendScamon: Scamon<T & {rational: true}>,
+    subtrahendScamon: Scamon<T & {rational: true}>,
 ): Scamon<T & {direction: undefined, integer: false, rational: true}> =>
     ({
-        monzo: subtractMonzos(toRationalScamon.monzo, fromRationalScamon.monzo),
+        monzo: subtractMonzos(minuendScamon.monzo, subtrahendScamon.monzo),
     }) as Scamon<T & {direction: undefined, integer: false, rational: true}>
 
 const computeRationalScamonGeometricMean = (

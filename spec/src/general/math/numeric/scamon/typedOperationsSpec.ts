@@ -2,7 +2,7 @@ import {Max} from "../../../../../../src/general/math"
 import {IRRATIONAL_SCAMON_BASE_MONZO} from "../../../../../../src/general/math/irrational/scamon/constants"
 import {Monzo} from "../../../../../../src/general/math/numeric/monzo"
 import {Quotient} from "../../../../../../src/general/math/numeric/quotient"
-import {addScamons, halfScamon, Scamon} from "../../../../../../src/general/math/numeric/scamon"
+import {addScamons, halveScamon, Scamon} from "../../../../../../src/general/math/numeric/scamon"
 import {maxScamon, subtractScamons} from "../../../../../../src/general/math/numeric/scamon/typedOperations"
 
 describe("addScamons", (): void => {
@@ -22,10 +22,10 @@ describe("addScamons", (): void => {
 
 describe("subtractScamons", (): void => {
     it("works for two rational scamons, returning a irrational interval", (): void => {
-        const fromScamon = {monzo: [-1, 1]} as Scamon<{rational: true}>
-        const toScamon = {monzo: [-2, 0, 0, 1]} as Scamon<{rational: true}>
+        const minuendScamon = {monzo: [-2, 0, 0, 1]} as Scamon<{rational: true}>
+        const subtrahendScamon = {monzo: [-1, 1]} as Scamon<{rational: true}>
 
-        const actual = subtractScamons(fromScamon, toScamon)
+        const actual = subtractScamons(minuendScamon, subtrahendScamon)
 
         const expected = {
             monzo: IRRATIONAL_SCAMON_BASE_MONZO,
@@ -35,13 +35,13 @@ describe("subtractScamons", (): void => {
     })
 
     it("works when the from scamon is irrational", (): void => {
-        const fromScamon = {
+        const minuendScamon = {monzo: [0, 0, 1]} as Scamon<{rational: true}>
+        const subtrahendScamon = {
             monzo: [-2, 0, 0, 1] as Monzo<{rational: true}>,
             scaler: [1, 3] as Quotient,
         } as Scamon<{rational: false}>
-        const toScamon = {monzo: [0, 0, 1]} as Scamon<{rational: true}>
 
-        const actual = subtractScamons(fromScamon, toScamon)
+        const actual = subtractScamons(minuendScamon, subtrahendScamon)
 
         const expected = {
             monzo: IRRATIONAL_SCAMON_BASE_MONZO,
@@ -51,13 +51,13 @@ describe("subtractScamons", (): void => {
     })
 
     it("works when the to scamon is irrational", (): void => {
-        const fromScamon = {monzo: [-2, 0, 0, 1]} as Scamon<{rational: true}>
-        const toScamon = {
+        const minuendScamon = {
             monzo: [0, 0, 1] as Monzo<{rational: true}>,
             scaler: [1, 3] as Quotient,
         } as Scamon<{rational: false}>
+        const subtrahendScamon = {monzo: [-2, 0, 0, 1]} as Scamon<{rational: true}>
 
-        const actual = subtractScamons(fromScamon, toScamon)
+        const actual = subtractScamons(minuendScamon, subtrahendScamon)
 
         const expected = {
             monzo: IRRATIONAL_SCAMON_BASE_MONZO,
@@ -67,16 +67,16 @@ describe("subtractScamons", (): void => {
     })
 
     it("works when both the from and to scamons are irrational", (): void => {
-        const fromScamon = {
-            monzo: [-2, 0, 0, 1] as Monzo<{rational: true}>,
-            scaler: [1, 3] as Quotient,
-        } as Scamon<{rational: false}>
-        const toScamon = {
+        const minuendScamon = {
             monzo: [0, 0, 1] as Monzo<{rational: true}>,
             scaler: [1, 3] as Quotient,
         } as Scamon<{rational: false}>
+        const subtrahendScamon = {
+            monzo: [-2, 0, 0, 1] as Monzo<{rational: true}>,
+            scaler: [1, 3] as Quotient,
+        } as Scamon<{rational: false}>
 
-        const actual = subtractScamons(fromScamon, toScamon)
+        const actual = subtractScamons(minuendScamon, subtrahendScamon)
 
         const expected = {
             monzo: IRRATIONAL_SCAMON_BASE_MONZO,
@@ -86,11 +86,11 @@ describe("subtractScamons", (): void => {
     })
 })
 
-describe("halfScamon", (): void => {
+describe("halveScamon", (): void => {
     it("introduces a scaler (exponent) of 1/2 (root 2)", (): void => {
         const scamon = {monzo: [-11, 7]} as Scamon<{rational: true}>
 
-        const actual = halfScamon(scamon)
+        const actual = halveScamon(scamon)
 
         const expected = {
             monzo: [-11, 7] as Monzo<{rational: true}>,

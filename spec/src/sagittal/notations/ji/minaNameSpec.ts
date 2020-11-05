@@ -8,10 +8,10 @@
 // Import {MINA} from "../../../../../src/sagittal/notations/ji/intervals"
 // Import {EXTREME_EDA} from "../../../../../src/sagittal/notations/ji/levelEdas"
 //
-// // TODO: POST-NOTATION-GENERATION: FIGURE OUT MINA NAME SITUATION
-// //  Aren't these kind of just exactly the bound names now? not sure what to do with that exactly...
-// //  And it's bizarre that we fetch them by comma class instead of bound class, no?
-// //  And did we ever get to checking those mina names computation? From the commas that is (the spreadsheet formula)
+// TODO: POST-NOTATION-GENERATION: FIGURE OUT MINA NAME SITUATION
+//  Aren't these kind of just exactly the bound names now? not sure what to do with that exactly...
+//  And it's bizarre that we fetch them by comma class instead of bound class, no?
+//  And did we ever get to checking those mina names computation? From the commas that is (the spreadsheet formula)
 // Describe("getMinaName", (): void => {
 //     Const SPLIT_MINAS = [49, 51, 72, 78, 105, 113]
 //     Const MAX_MINA = ceil(EXTREME_EDA / 2) as Count<Mina> & Max<Mina>   // 233 / 2 = 116.5 ---> 117

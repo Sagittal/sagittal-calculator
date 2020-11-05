@@ -46,7 +46,7 @@ export {
     isScamonLesser,
     isScamonLesserOrEqual,
     isScamonGreaterOrEqual,
-    halfScamon,
+    halveScamon,
     computeScamonFromDecimal,
     computeScamonFromMonzo,
     computeScamonFromQuotient,

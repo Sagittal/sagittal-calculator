@@ -2,7 +2,7 @@ import {
     APOTOME,
     computeRationalScamonGeometricMean,
     EMPTY_MONZO,
-    halfScamon,
+    halveScamon,
     HALF_SCALER,
     Monzo,
     Name,
@@ -23,27 +23,27 @@ const u_n_SIZE_CATEGORY_BOUND = {
 }
 const n_s_SIZE_CATEGORY_BOUND = {
     name: "n|s" as Name<SizeCategoryBound>,
-    pitch: halfScamon(PYTHAGOREAN_SCHISMA),
+    pitch: halveScamon(PYTHAGOREAN_SCHISMA),
 }
 const s_k_SIZE_CATEGORY_BOUND = {
     name: "s|k" as Name<SizeCategoryBound>,
-    pitch: halfScamon(PYTHAGOREAN_COMPLEX_KLEISMA),
+    pitch: halveScamon(PYTHAGOREAN_COMPLEX_KLEISMA),
 }
 const k_C_SIZE_CATEGORY_BOUND = {
     name: "k|C" as Name<SizeCategoryBound>,
-    pitch: halfScamon(PYTHAGOREAN_COMMA),
+    pitch: halveScamon(PYTHAGOREAN_COMMA),
 }
 const C_S_SIZE_CATEGORY_BOUND = {
     name: "C|S" as Name<SizeCategoryBound>,
-    pitch: halfScamon(PYTHAGOREAN_LARGE_DIESIS),
+    pitch: halveScamon(PYTHAGOREAN_LARGE_DIESIS),
 }
 const S_M_SIZE_CATEGORY_BOUND = {
     name: "S|M" as Name<SizeCategoryBound>,
-    pitch: halfScamon(PYTHAGOREAN_LIMMA),
+    pitch: halveScamon(PYTHAGOREAN_LIMMA),
 }
 const M_L_SIZE_CATEGORY_BOUND = {
     name: "M|L" as Name<SizeCategoryBound>,
-    pitch: halfScamon(APOTOME),
+    pitch: halveScamon(APOTOME),
 }
 const L_SS_SIZE_CATEGORY_BOUND = {
     name: "L|SS" as Name<SizeCategoryBound>,
@@ -51,11 +51,11 @@ const L_SS_SIZE_CATEGORY_BOUND = {
 }
 const SS_MS_SIZE_CATEGORY_BOUND = {
     name: "SS|MS" as Name<SizeCategoryBound>,
-    pitch: halfScamon(THIRTYONE_THREE_COMMA),
+    pitch: halveScamon(THIRTYONE_THREE_COMMA),
 }
 const MS_LS_SIZE_CATEGORY_BOUND = {
     name: "MS|LS" as Name<SizeCategoryBound>,
-    pitch: halfScamon(PYTHAGOREAN_WHOLE_TONE),
+    pitch: halveScamon(PYTHAGOREAN_WHOLE_TONE),
 }
 const LS_A_SIZE_CATEGORY_BOUND = {
     name: "LS|A" as Name<SizeCategoryBound>,

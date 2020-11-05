@@ -198,7 +198,7 @@ export {
     isScamonSub,
     isScamonUnison,
     isScamonRational,
-    halfScamon,
+    halveScamon,
     computeScamonFromDecimal,
     Scamon,
     HALF_SCALER,

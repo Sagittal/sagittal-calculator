@@ -9,10 +9,10 @@ import {
 
 describe("subtractRationalScamons", (): void => {
     it("works for two rational scamons, subtracting the from-scamon's monzo from the to-scamon's monzo", (): void => {
-        const fromRationalScamon = {monzo: [-1, 1]} as Scamon<{rational: true}>
-        const toRationalScamon = {monzo: [-2, 0, 0, 1]} as Scamon<{rational: true}>
+        const minuendScamon = {monzo: [-2, 0, 0, 1]} as Scamon<{rational: true}>
+        const subtrahendScamon = {monzo: [-1, 1]} as Scamon<{rational: true}>
 
-        const actual = subtractRationalScamons(fromRationalScamon, toRationalScamon)
+        const actual = subtractRationalScamons(minuendScamon, subtrahendScamon)
 
         const expected = {monzo: [-1, -1, 0, 1]} as Scamon<{rational: true}>
         expect(actual).toEqual(expected)
