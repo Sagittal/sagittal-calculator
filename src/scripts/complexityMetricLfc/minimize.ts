@@ -2,7 +2,6 @@ import {Comma, count, LogTarget, Min, saveLog, stringify, Sum} from "../../gener
 import {CommaClassId} from "../../sagittal"
 import {Score} from "../types"
 import {EXCLUDED_COMMAS} from "./constants"
-import {computeZoneComplexityMetricScore} from "./zoneMetricScore"
 import {computeComplexityParameterSets} from "./parameters"
 import {
     ComplexityMetric,
@@ -11,6 +10,7 @@ import {
     ComplexityParameterSet,
 } from "./types"
 import {computeZoneCommaEntries} from "./zoneCommas"
+import {computeZoneComplexityMetricScore} from "./zoneMetricScore"
 
 // TODO: complexity - probably acceptable to eliminate this "ties" functionality as it is unlikely to ever tie
 //  Though in its place won't you want essentially the local minima functionality?

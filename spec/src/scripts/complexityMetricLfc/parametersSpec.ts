@@ -1,9 +1,9 @@
 // tslint:disable max-line-length
 
 import {Combination} from "../../../../src/general/math"
-import {Parameter} from "../../../../src/scripts/types"
 import {computeComplexityParameterSets} from "../../../../src/scripts/complexityMetricLfc/parameters"
 import {ComplexityParameterId} from "../../../../src/scripts/complexityMetricLfc/types"
+import {Parameter} from "../../../../src/scripts/types"
 
 describe("computeComplexityParameterSets", (): void => {
     it("for each parameter ID, includes its range of possible values in the set", (): void => {
