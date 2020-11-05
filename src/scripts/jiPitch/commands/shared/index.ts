@@ -1,1 +1,0 @@
-export {applySharedJiPitchCommandSetup} from "./shared"

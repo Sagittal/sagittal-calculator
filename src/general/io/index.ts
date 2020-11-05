@@ -1,6 +1,6 @@
 export {ioSettings} from "./globals"
 export {colorize} from "./colorize"
-export {CommandFlag, setupCommandAndIo} from "./command"
+export {ScriptFlag, setupScriptAndIo} from "./scripts"
 export {
     IDENTIFYING_COMMA_NAME_CHARS,
     ANY_MONZO_CHARS,

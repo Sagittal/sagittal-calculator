@@ -7,7 +7,7 @@ You will need to install Node on your system, then clone down the repo and run `
 
 To see a list of available scripts, run `npm run`.
 
-If you see a script you're interested in, learn its options with `npm run [script name] -- --help`.
+If you see a script you're interested in, learn its options with `npm run [script] -- --help`.
 
 ### Additional helpful setup
 

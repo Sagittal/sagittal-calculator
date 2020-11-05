@@ -1,7 +1,7 @@
 import {program} from "commander"
 import {
     Comma,
-    CommandFlag,
+    ScriptFlag,
     Decimal,
     Io,
     Monzo,
@@ -15,24 +15,24 @@ import {computeCommaFromCommaNameQuotientAndSizeCategoryName, parseCommaName} fr
 const readAnalyzeJiPitchOptions = (): void => {
     program
         .option(
-            `-${CommandFlag.MONZO}, --monzo <monzo>`,
+            `-${ScriptFlag.MONZO}, --monzo <monzo>`,
             "monzo",
             (monzoText: string): Monzo => parseMonzo(monzoText as Io),
         )
         .option(
-            `-${CommandFlag.QUOTIENT}, --quotient <quotient>`,
+            `-${ScriptFlag.QUOTIENT}, --quotient <quotient>`,
             "quotient",
             (quotientText: string): Quotient => parseQuotient(quotientText as Io),
         )
         .option(
-            `-${CommandFlag.COMMA_NAME}, --comma-name <commaName>`,
+            `-${ScriptFlag.COMMA_NAME}, --comma-name <commaName>`,
             "comma name",
             (commaNameText: string): Comma => {
                 return computeCommaFromCommaNameQuotientAndSizeCategoryName(parseCommaName(commaNameText as Io))
             },
         )
         .option(
-            `-${CommandFlag.INTEGER}, --integer <integer>`,
+            `-${ScriptFlag.INTEGER}, --integer <integer>`,
             "integer",
             (integerText: string): Decimal<{integer: true}> => parseInteger(integerText as Io),
         )

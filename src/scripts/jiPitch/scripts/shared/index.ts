@@ -1,0 +1,1 @@
+export {applySharedJiPitchScriptSetup} from "./shared"
