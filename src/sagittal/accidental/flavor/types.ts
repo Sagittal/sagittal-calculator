@@ -8,6 +8,11 @@ enum Flavor {
 
 // Went with "Compatible" over "Conventional" because some of these are arguably unconventional,
 // But they are all definitely Sagittal-compatible (and we try to drop assumed "Sagittal" whenever possible).
+// There is a (weak) sense in which the conventionals are actually sagittals, where the unconventionals are not.
+// That is the sense in which, when we substitute the Stein or Wilson accidentals
+// We call the notation "Sagittal-Stein" or "Sagittal-Wilson", but
+// When we substitute the conventional accidentals we don't feel the need to call it "Sagittal-conventional" notation.
+// We instead call it "mixed Sagittal", or "evo Sagittal".
 enum Compatible {
     STEIN_SEMISHARP = "steinSemisharp",
     STEIN_SEMIFLAT = "steinSemiflat",
