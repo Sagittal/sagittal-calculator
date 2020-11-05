@@ -1,7 +1,6 @@
 import {program} from "commander"
 import {
     Comma,
-    ScriptFlag,
     Decimal,
     Io,
     Monzo,
@@ -9,6 +8,7 @@ import {
     parseMonzo,
     parseQuotient,
     Quotient,
+    ScriptFlag,
 } from "../../../../general"
 import {computeCommaFromCommaNameQuotientAndSizeCategoryName, parseCommaName} from "../../../../sagittal"
 

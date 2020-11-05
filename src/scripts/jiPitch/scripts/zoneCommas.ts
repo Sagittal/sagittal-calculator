@@ -1,5 +1,5 @@
 import {program} from "commander"
-import {Comma, ScriptFlag, ioSettings, LogTarget, Max, Min, saveLog, Scamon, stringify, time} from "../../../general"
+import {Comma, ioSettings, LogTarget, Max, Min, saveLog, Scamon, ScriptFlag, stringify, time} from "../../../general"
 import {
     CommaClassId,
     computeJiNotationCaptureZone,

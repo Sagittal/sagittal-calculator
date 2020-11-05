@@ -268,6 +268,8 @@ bestCommaPerSemitinaZone
         semitinaCandidateOccams[metacommaName] = semitinaCandidateOccams[metacommaName] || 0 as Occam
         semitinaCandidateOccams[metacommaName] = semitinaCandidateOccams[metacommaName] + 1 as Occam
 
+        // CheckMetacommaConsistency(metacomma, tinaBucket) TODO: should map to 0 here!
+
         metacommaNameToMetacommaMap[metacommaName] = metacommaBetweenConsecutiveBestCommas
 
         saveLog(`semitina zone ${semitinaZone}: ${stringify(metacommaBetweenConsecutiveBestCommas)}`, LogTarget.DETAILS)

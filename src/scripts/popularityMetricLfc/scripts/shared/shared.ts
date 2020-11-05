@@ -1,5 +1,5 @@
 import {program} from "commander"
-import {ScriptFlag, Filename, LogTarget, setupScriptAndIo} from "../../../../general"
+import {Filename, LogTarget, ScriptFlag, setupScriptAndIo} from "../../../../general"
 import {ScriptGroup} from "../../../types"
 import {popularityMetricLfcScriptGroupSettings} from "../../globals"
 

@@ -1,12 +1,12 @@
 import {program} from "commander"
 import {
-    ScriptFlag,
     Filename,
     Io,
     ioSettings,
     LogTarget,
     NEWLINE,
     saveLog,
+    ScriptFlag,
     setupScriptAndIo,
     sumTexts,
     time,
