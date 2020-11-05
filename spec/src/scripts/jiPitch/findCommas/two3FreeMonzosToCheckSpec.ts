@@ -1,5 +1,5 @@
 import {Copfr, Max, Monzo, Prime, Sopfr} from "../../../../../src/general"
-import {N2D3P9} from "../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
+import {N2D3P9} from "../../../../../src/sagittal/ji/metrics"
 import {compute23FreeRationalMonzosToCheck} from "../../../../../src/scripts/jiPitch/findCommas/two3FreeMonzosToCheck"
 
 describe("compute23FreeRationalMonzosToCheck", (): void => {

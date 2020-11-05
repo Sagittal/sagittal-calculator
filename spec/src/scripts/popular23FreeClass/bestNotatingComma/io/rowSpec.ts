@@ -2,7 +2,7 @@ import {Direction, Monzo, Name, Popularity, Row, Two3FreeClass, Votes} from "../
 import {Rank, Ranked} from "../../../../../../src/general/code"
 import {IRRATIONAL_SCAMON_BASE_MONZO} from "../../../../../../src/general/math/irrational/scamon/constants"
 import {Cents} from "../../../../../../src/general/music"
-import {N2D3P9} from "../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
+import {N2D3P9} from "../../../../../../src/sagittal/ji/metrics"
 import {CommaClassId} from "../../../../../../src/sagittal/notation"
 import {BestNotatingCommaProperties} from "../../../../../../src/scripts/popular23FreeClass/bestNotatingComma"
 import {computePopular23FreeClassWithBestNotatingCommaRow} from "../../../../../../src/scripts/popular23FreeClass/bestNotatingComma/io"

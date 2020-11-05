@@ -1,6 +1,6 @@
 import {Abs, Decimal, Exponent, Max, Monzo, Prime, Scamon} from "../../../../../../src/general/math"
-import {ApotomeSlope, JiPitchAnalysis} from "../../../../../../src/sagittal/ji/pitch"
-import {N2D3P9} from "../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
+import {JiPitchAnalysis} from "../../../../../../src/sagittal/ji/analyze"
+import {ApotomeSlope, N2D3P9} from "../../../../../../src/sagittal/ji/metrics"
 import {DEFAULT_FIND_COMMAS_SETTINGS} from "../../../../../../src/scripts/jiPitch/findCommas"
 import {parseNotatingCommasSettings} from "../../../../../../src/scripts/jiPitch/io/parse"
 import {jiPitchAnalysisFixture, two3FreeClassAnalysisFixture} from "../../../../../helpers/src/scripts/jiPitch/fixtures"

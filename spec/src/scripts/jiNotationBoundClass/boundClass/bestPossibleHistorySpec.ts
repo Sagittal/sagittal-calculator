@@ -2,7 +2,9 @@ import {Sum} from "../../../../../src/general"
 import {Abs} from "../../../../../src/general/math"
 import {Cents} from "../../../../../src/general/music"
 import {computeBestPossibleBoundHistoryAnalysis} from "../../../../../src/scripts/jiNotationBoundClass/boundClass/bestPossibleHistory"
-import {BoundHistoryAnalysis, Score} from "../../../../../src/scripts/jiNotationBoundClass/history"
+import {BoundHistory} from "../../../../../src/scripts/jiNotationBoundClass/histories"
+import {BoundHistoryAnalysis} from "../../../../../src/scripts/jiNotationBoundClass/history"
+import {Score} from "../../../../../src/scripts/types"
 import {boundHistoryAnalysisFixture} from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
 describe("computeBestPossibleBoundHistoryAnalysis", (): void => {
@@ -10,15 +12,15 @@ describe("computeBestPossibleBoundHistoryAnalysis", (): void => {
         const boundHistoryAnalyses: BoundHistoryAnalysis[] = [
             {
                 ...boundHistoryAnalysisFixture,
-                score: 3436643 as Score,
+                score: 3436643 as Score<BoundHistory>,
             },
             {
                 ...boundHistoryAnalysisFixture,
-                score: 245444 as Score,
+                score: 245444 as Score<BoundHistory>,
             },
             {
                 ...boundHistoryAnalysisFixture,
-                score: 2422436 as Score,
+                score: 2422436 as Score<BoundHistory>,
             },
         ]
 
@@ -26,7 +28,7 @@ describe("computeBestPossibleBoundHistoryAnalysis", (): void => {
 
         const expected = {
             ...boundHistoryAnalysisFixture,
-            score: 245444 as Score,
+            score: 245444 as Score<BoundHistory>,
         }
         expect(actual).toEqual(expected)
     })
@@ -35,17 +37,17 @@ describe("computeBestPossibleBoundHistoryAnalysis", (): void => {
         const boundHistoryAnalyses = [
             {
                 ...boundHistoryAnalysisFixture,
-                score: 3436643 as Score,
+                score: 3436643 as Score<BoundHistory>,
                 exact: true,
             },
             {
                 ...boundHistoryAnalysisFixture,
-                score: 45575474 as Score,
+                score: 45575474 as Score<BoundHistory>,
                 exact: true,
             },
             {
                 ...boundHistoryAnalysisFixture,
-                score: 245444 as Score,
+                score: 245444 as Score<BoundHistory>,
             },
         ]
 
@@ -53,7 +55,7 @@ describe("computeBestPossibleBoundHistoryAnalysis", (): void => {
 
         const expected = {
             ...boundHistoryAnalysisFixture,
-            score: 3436643 as Score,
+            score: 3436643 as Score<BoundHistory>,
             exact: true,
         }
         expect(actual).toEqual(expected)
@@ -63,13 +65,13 @@ describe("computeBestPossibleBoundHistoryAnalysis", (): void => {
         const boundHistoryAnalyses: BoundHistoryAnalysis[] = [
             {
                 ...boundHistoryAnalysisFixture,
-                score: 3436643 as Score,
+                score: 3436643 as Score<BoundHistory>,
                 totalDistance: 0.2 as Sum<Abs<Cents>>,
                 exact: true,
             },
             {
                 ...boundHistoryAnalysisFixture,
-                score: 3436643 as Score,
+                score: 3436643 as Score<BoundHistory>,
                 totalDistance: 0.1 as Sum<Abs<Cents>>,
                 exact: true,
             },
@@ -79,7 +81,7 @@ describe("computeBestPossibleBoundHistoryAnalysis", (): void => {
 
         const expected: BoundHistoryAnalysis = {
             ...boundHistoryAnalysisFixture,
-            score: 3436643 as Score,
+            score: 3436643 as Score<BoundHistory>,
             totalDistance: 0.1 as Sum<Abs<Cents>>,
             exact: true,
         }

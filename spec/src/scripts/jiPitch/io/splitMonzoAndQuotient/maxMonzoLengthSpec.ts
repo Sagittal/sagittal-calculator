@@ -1,7 +1,7 @@
 import {Count, Max, Monzo} from "../../../../../../src/general"
 import {Exponent, Prime} from "../../../../../../src/general/math"
 import {EMPTY_MONZO} from "../../../../../../src/general/math/numeric/monzo"
-import {JiPitchAnalysis} from "../../../../../../src/sagittal/ji/pitch"
+import {JiPitchAnalysis} from "../../../../../../src/sagittal/ji/analyze"
 import {computeMaxMonzoLength} from "../../../../../../src/scripts/jiPitch/io/splitMonzoAndQuotient"
 import {jiPitchAnalysisFixture} from "../../../../../helpers/src/scripts/jiPitch/fixtures"
 

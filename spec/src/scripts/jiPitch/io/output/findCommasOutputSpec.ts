@@ -20,8 +20,7 @@ import {
     TableFormat,
     Two3FreeClass,
 } from "../../../../../../src/general"
-import {ApotomeSlope, CommaAnalysis, CommaClassId} from "../../../../../../src/sagittal"
-import {N2D3P9} from "../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
+import {ApotomeSlope, CommaAnalysis, CommaClassId, N2D3P9} from "../../../../../../src/sagittal"
 import {DEFAULT_FIND_COMMAS_SETTINGS} from "../../../../../../src/scripts/jiPitch/findCommas"
 import {computeFindCommasOutput} from "../../../../../../src/scripts/jiPitch/io"
 import {OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS} from "../../../../../helpers/src/scripts/jiPitch/constants"

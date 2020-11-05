@@ -3,8 +3,8 @@ import {Rank} from "../../../../../../src/general/code"
 import {Row} from "../../../../../../src/general/io/table"
 import {Direction} from "../../../../../../src/general/math/numeric"
 import {Popularity, Votes} from "../../../../../../src/general/music/ji"
-import {N2D3P9} from "../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
-import {CommaClassId, SymbolClassId, SymbolSubsetId} from "../../../../../../src/sagittal/notation"
+import {N2D3P9} from "../../../../../../src/sagittal/ji/metrics/unpopularity/n2d3p9"
+import {SymbolClassId, SymbolSubsetId} from "../../../../../../src/sagittal/notation"
 import {
     computePopular23FreeClassWithNotatingSymbolClassesRow,
     NotatingSymbolClassesProperties,

@@ -18,8 +18,9 @@ import {analyzeJiNotationBoundClass} from "../../../../../src/scripts/jiNotation
 import * as jiNotationLevels from "../../../../../src/scripts/jiNotationBoundClass/boundClass/levels"
 import * as ranks from "../../../../../src/scripts/jiNotationBoundClass/boundClass/ranks"
 import {BoundHistory} from "../../../../../src/scripts/jiNotationBoundClass/histories"
-import {BoundEventAnalysis, BoundHistoryAnalysis, Score} from "../../../../../src/scripts/jiNotationBoundClass/history"
+import {BoundEventAnalysis, BoundHistoryAnalysis} from "../../../../../src/scripts/jiNotationBoundClass/history"
 import {RANKS} from "../../../../../src/scripts/jiNotationBoundClass/ranks"
+import {Score} from "../../../../../src/scripts/types"
 import {jiNotationBoundClassFixture} from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
 describe("analyzeJiNotationBoundClass", (): void => {
@@ -145,7 +146,7 @@ describe("analyzeJiNotationBoundClass", (): void => {
             scaler: [164.5, INSANE_EDA],
         } as Scamon<{rational: false}>,
         rank: RANKS[BoundType.COMMA_MEAN],
-        score: 131 as Score,
+        score: 131 as Score<BoundHistory>,
         possible: true,
         exact: false,
         totalDistance: 0.07887931138776594 as Sum<Abs<Cents>>,

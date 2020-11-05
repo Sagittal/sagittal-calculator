@@ -1,7 +1,7 @@
 import {Count, Formatted, Max} from "../../../../../../src/general"
 import {Exponent, Prime} from "../../../../../../src/general/math"
 import {Monzo} from "../../../../../../src/general/math/numeric/monzo"
-import {JiPitchAnalysis} from "../../../../../../src/sagittal/ji/pitch"
+import {JiPitchAnalysis} from "../../../../../../src/sagittal/ji/analyze"
 import {formatSplitMonzo} from "../../../../../../src/scripts/jiPitch/io/splitMonzoAndQuotient"
 
 describe("formatSplitMonzo", (): void => {

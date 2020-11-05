@@ -13,6 +13,7 @@ import {
     Filename,
     formatCents,
     increment,
+    Index,
     indexOfFinalElement,
     ioSettings,
     isEven,
@@ -39,6 +40,7 @@ import {
     analyzeComma,
     CommaAnalysis,
     CommaClassId,
+    computeCentsError,
     computeCommaName,
     computeCommasFrom23FreeRationalMonzo,
     getCommaClass,
@@ -47,15 +49,7 @@ import {
     N2D3P9,
 } from "../../../sagittal"
 import {ScriptGroup} from "../../types"
-import {
-    checkMetacommaConsistency,
-    computeSemitinaError,
-    Occam,
-    Semitina,
-    SEMITINA,
-    SemitinaZone,
-    TinaBucket,
-} from "../semitinaOccams"
+import {checkMetacommaConsistency, Occam, Semitina, SEMITINA, TinaBucket} from "../semitinaOccams"
 
 setupCommandAndIo(
     ScriptGroup.JI_PITCH as Filename,
@@ -89,22 +83,23 @@ saveLog("commas sorted", LogTarget.PROGRESS)
 
 // SORT THEM BY SEMITINA ZONE
 
-const SEMITINA_ZONES: SemitinaZone[] = computeRange(810 as Decimal<{integer: true}>) as number[] as SemitinaZone[]
+const SEMITINA_ZONES: Array<Index<Semitina>> =
+    computeRange(810 as Decimal<{integer: true}>) as number[] as Array<Index<Semitina>>
 const SEMITINA_PLUS_MINUS_RANGE = 0.5
-const MAX_SIZE_PER_SEMITINA_ZONE: Cents[] = SEMITINA_ZONES.map((semitinaZone: SemitinaZone): Cents => {
+const MAX_SIZE_PER_SEMITINA_ZONE: Cents[] = SEMITINA_ZONES.map((semitinaZone: Index<Semitina>): Cents => {
     return SEMITINA * (semitinaZone + SEMITINA_PLUS_MINUS_RANGE) as Cents
 })
 
-const commaAnalysesBySemitinaZone: Record<RecordKey<SemitinaZone>, CommaAnalysis[]> = SEMITINA_ZONES.reduce(
+const commaAnalysesBySemitinaZone: Record<RecordKey<Index<Semitina>>, CommaAnalysis[]> = SEMITINA_ZONES.reduce(
     (
-        commaAnalysesBySemitinaZone: Record<RecordKey<SemitinaZone>, CommaAnalysis[]>,
-        semitinaZone: SemitinaZone,
+        commaAnalysesBySemitinaZone: Record<RecordKey<Index<Semitina>>, CommaAnalysis[]>,
+        semitinaZone: Index<Semitina>,
     ): Record<RecordKey<Semitina>, CommaAnalysis[]> =>
         ({...commaAnalysesBySemitinaZone, [semitinaZone]: []}),
-    {} as Record<RecordKey<SemitinaZone>, CommaAnalysis[]>,
+    {} as Record<RecordKey<Index<Semitina>>, CommaAnalysis[]>,
 )
 
-let semitinaZone = 0 as SemitinaZone
+let semitinaZone = 0 as Index<Semitina>
 commaAnalyses.forEach((commaAnalysis: CommaAnalysis): void => {
     while (commaAnalysis.cents > MAX_SIZE_PER_SEMITINA_ZONE[semitinaZone]) {
         semitinaZone = increment(semitinaZone)
@@ -117,19 +112,20 @@ saveLog("commas grouped by semitina zone", LogTarget.PROGRESS)
 
 const commaAnalysesBySemitinaZoneEntries = sort(
     Object.entries(commaAnalysesBySemitinaZone)
-        .map(([semitinaZone, commaAnalyses]: [string, CommaAnalysis[]]): [SemitinaZone, CommaAnalysis[]] => {
-            return [parseInt(semitinaZone) as SemitinaZone, commaAnalyses]
+        .map(([semitinaZone, commaAnalyses]: [string, CommaAnalysis[]]): [Index<Semitina>, CommaAnalysis[]] => {
+            return [parseInt(semitinaZone) as Index<Semitina>, commaAnalyses]
         }),
     {by: 0 as KeyPath},
-) as Array<[unknown, CommaAnalysis[]]> as Array<[SemitinaZone, CommaAnalysis[]]>
+) as Array<[unknown, CommaAnalysis[]]> as Array<[Index<Semitina>, CommaAnalysis[]]>
 
-commaAnalysesBySemitinaZoneEntries.forEach(([semitinaZone, commaAnalyses]: [SemitinaZone, CommaAnalysis[]]): void => {
-    const centsForEachComma = commaAnalyses.map((ca: CommaAnalysis): Cents => ca.cents)
-    const maxCents = formatCents(max(...centsForEachComma), {align: false})
-    const minCents = formatCents(min(...centsForEachComma), {align: false})
-    const countCents = count(centsForEachComma)
-    saveLog(`${semitinaZone}: ${minCents}-${maxCents}, count ${countCents}`, LogTarget.DETAILS)
-})
+commaAnalysesBySemitinaZoneEntries
+    .forEach(([semitinaZone, commaAnalyses]: [Index<Semitina>, CommaAnalysis[]]): void => {
+        const centsForEachComma = commaAnalyses.map((ca: CommaAnalysis): Cents => ca.cents)
+        const maxCents = formatCents(max(...centsForEachComma), {align: false})
+        const minCents = formatCents(min(...centsForEachComma), {align: false})
+        const countCents = count(centsForEachComma)
+        saveLog(`${semitinaZone}: ${minCents}-${maxCents}, count ${countCents}`, LogTarget.DETAILS)
+    })
 saveLog("commas grouped by semitina zone converted to sorted tuples", LogTarget.PROGRESS)
 
 // FIND THE SINGLE BEST COMMA IN EACH ZONE
@@ -137,8 +133,8 @@ saveLog("commas grouped by semitina zone converted to sorted tuples", LogTarget.
 const U = 0.8
 const INCLUDE_ERROR_IN_PHASE_1_SCORE = true // False
 
-const bestCommaPerSemitinaZone: Array<[SemitinaZone, CommaAnalysis]> = commaAnalysesBySemitinaZoneEntries
-    .map(([semitinaZone, commaAnalyses]: [SemitinaZone, CommaAnalysis[]]): [SemitinaZone, CommaAnalysis] => {
+const bestCommaPerSemitinaZone: Array<[Index<Semitina>, CommaAnalysis]> = commaAnalysesBySemitinaZoneEntries
+    .map(([semitinaZone, commaAnalyses]: [Index<Semitina>, CommaAnalysis[]]): [Index<Semitina>, CommaAnalysis] => {
         let bestComma = undefined as Maybe<CommaAnalysis>
         let bestScore = Infinity
         commaAnalyses.forEach((commaAnalysis: CommaAnalysis): void => {
@@ -148,7 +144,7 @@ const bestCommaPerSemitinaZone: Array<[SemitinaZone, CommaAnalysis]> = commaAnal
 
             let score = Math.log2(n2d3p9) + (aas / 9.65) ** 1.7 + 2 ** (ate - 9.65)
             if (INCLUDE_ERROR_IN_PHASE_1_SCORE) {
-                const semitinaError = computeSemitinaError(commaAnalysis.cents, semitinaZone)
+                const semitinaError = computeCentsError(commaAnalysis.cents, SEMITINA)
                 score = score + U * semitinaError
             }
 
@@ -166,7 +162,7 @@ const bestCommaPerSemitinaZone: Array<[SemitinaZone, CommaAnalysis]> = commaAnal
 saveLog(stringify(bestCommaPerSemitinaZone, {multiline: true}), LogTarget.DETAILS)
 
 saveLog("best commas per semitina zone (names)", LogTarget.DETAILS)
-bestCommaPerSemitinaZone.forEach(([semitinaZone, commaAnalysis]: [SemitinaZone, CommaAnalysis]): void => {
+bestCommaPerSemitinaZone.forEach(([semitinaZone, commaAnalysis]: [Index<Semitina>, CommaAnalysis]): void => {
     saveLog(`${semitinaZone}: ${commaAnalysis.name}`, LogTarget.DETAILS)
 })
 
@@ -195,12 +191,12 @@ const metacommaNameToMetacommaMap: Record<RecordKey<Name<Comma>>, Comma> = {}
 JI_NOTATION_LEVELS_COMMA_CLASS_IDS[JiNotationLevelId.ULTRA].forEach((ultraCommaClassId: CommaClassId): void => {
     const ultraComma = getCommaClass(ultraCommaClassId).pitch
 
-    bestCommaPerSemitinaZone.forEach(([semitinaZone, bestComma]: [SemitinaZone, CommaAnalysis]): void => {
+    bestCommaPerSemitinaZone.forEach(([semitinaZone, bestComma]: [Index<Semitina>, CommaAnalysis]): void => {
         const metacomma = computeSuperScamon(subtractRationalScamons(ultraComma, bestComma.pitch)) as unknown as Comma
         const metacommaName = computeCommaName(metacomma)
 
-        const ultraCommaSemitinaZone = round(computeCentsFromPitch(ultraComma) / SEMITINA) as SemitinaZone
-        const metacommaSemitinaZoneJump = abs(ultraCommaSemitinaZone - semitinaZone) as Abs<Count<SemitinaZone>>
+        const ultraCommaSemitinaZone = round(computeCentsFromPitch(ultraComma) / SEMITINA) as Index<Semitina>
+        const metacommaSemitinaZoneJump = abs(ultraCommaSemitinaZone - semitinaZone) as Abs<Count<Index<Semitina>>>
 
         saveLog(`The metacomma between the Extreme comma ${ultraCommaClassId} and the best comma in semitina zone ${semitinaZone} ${bestComma.name} is ${metacommaName} with size ${metacommaSemitinaZoneJump}`, LogTarget.DETAILS)
 
@@ -257,7 +253,7 @@ const semitinaCandidateOccams: Record<RecordKey<Name<Comma>>, Occam> = {}
 
 saveLog(`CANDIDATES FOR SEMITINA`, LogTarget.FINAL)
 bestCommaPerSemitinaZone
-    .forEach((bestCommaPerSemitinaZoneEntry: [SemitinaZone, CommaAnalysis], index: number): void => {
+    .forEach((bestCommaPerSemitinaZoneEntry: [Index<Semitina>, CommaAnalysis], index: number): void => {
         if (index === indexOfFinalElement(bestCommaPerSemitinaZone)) return
 
         const [semitinaZone, bestCommaInThisSemitinaZone] = bestCommaPerSemitinaZoneEntry
@@ -265,8 +261,8 @@ bestCommaPerSemitinaZone
         const subsequentBestCommaInThatSemitinaZone = bestCommaPerSemitinaZone[index + 1][1]
 
         const metacommaBetweenConsecutiveBestCommas = subtractRationalScamons(
-            bestCommaInThisSemitinaZone.pitch,
             subsequentBestCommaInThatSemitinaZone.pitch,
+            bestCommaInThisSemitinaZone.pitch,
         ) as Comma
         const metacommaName = computeCommaName(metacommaBetweenConsecutiveBestCommas)
         semitinaCandidateOccams[metacommaName] = semitinaCandidateOccams[metacommaName] || 0 as Occam

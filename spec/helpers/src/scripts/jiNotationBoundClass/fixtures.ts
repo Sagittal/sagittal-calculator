@@ -24,9 +24,10 @@ import {
 } from "../../../../../src/sagittal/notations"
 import {JiNotationBoundClassAnalysis} from "../../../../../src/scripts/jiNotationBoundClass/boundClass"
 import {BoundEventConsolidation} from "../../../../../src/scripts/jiNotationBoundClass/consolidateHistories/types"
-import {BoundEvent} from "../../../../../src/scripts/jiNotationBoundClass/histories"
-import {BoundEventAnalysis, BoundHistoryAnalysis, Score} from "../../../../../src/scripts/jiNotationBoundClass/history"
+import {BoundEvent, BoundHistory} from "../../../../../src/scripts/jiNotationBoundClass/histories"
+import {BoundEventAnalysis, BoundHistoryAnalysis} from "../../../../../src/scripts/jiNotationBoundClass/history"
 import {RANKS} from "../../../../../src/scripts/jiNotationBoundClass/ranks"
+import {Score} from "../../../../../src/scripts/types"
 
 const boundEventFixture: BoundEvent = {
     pitch: {monzo: IRRATIONAL_SCAMON_BASE_MONZO, scaler: HALF_SCALER} as Scamon<{rational: false}>,
@@ -47,7 +48,7 @@ const boundHistoryAnalysisFixture: BoundHistoryAnalysis = {
     boundEventAnalyses: [],
     pitch: {monzo: IRRATIONAL_SCAMON_BASE_MONZO, scaler: HALF_SCALER} as Scamon<{rational: false}>,
     rank: 0 as Decimal<{integer: true}> & Rank<BoundType>,
-    score: 0 as Score,
+    score: 0 as Score<BoundHistory>,
     totalDistance: 0 as Sum<Abs<Cents>>,
     exact: false,
     totalInaDistance: 0 as Sum<Multiplier<Ina>>,

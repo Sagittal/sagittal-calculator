@@ -1,5 +1,4 @@
 export {
-    analyzeComma,
     CommasFrom23FreeMonzoOptions,
     computeNotatingCommas,
     computeCommasFrom23FreeRationalMonzo,
@@ -11,7 +10,8 @@ export {
     DEFAULT_MAX_PRIME_LIMIT,
     DEFAULT_LOWER_BOUND,
     DEFAULT_MAX_N2D3P9,
-    CommaAnalysis,
+} from "./find"
+export {
     computeCommaFromCommaNameQuotientAndSizeCategoryName,
     computeCommaName,
     SIZE_CATEGORY_BOUNDS,
@@ -21,16 +21,29 @@ export {
     ParsedCommaName,
     SizeCategoryBound,
     formatComma,
-} from "./comma"
-export {analyzeJiPitch, computeApotomeSlope, ApotomeSlope, JiPitchAnalysis, computeAte, computeAas} from "./pitch"
+} from "./name"
 export {
+    CommaAnalysis,
+    analyzeJiPitch,
+    analyzeComma,
+    JiPitchAnalysis,
     Two3FreeClassAnalysis,
+    analyze23FreeClass,
+} from "./analyze"
+export {
+    ApotomeSlope,
+    computeApotomeSlope,
+    computeAte,
+    computeAas,
     N2D3P9,
     computeN2D3P9,
     computePrimeExponentExtremasGivenMaxN2D3P9,
-    analyze23FreeClass,
     SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P,
     SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2,
     computeN2,
     MAX_N2D3P9_FOR_WHICH_POSSIBLE_NUMERATORS_ARE_KNOWN,
-} from "./two3FreeClass"
+    computeCentsError,
+    lpei,
+    Badness,
+    Complexity,
+} from "./metrics"

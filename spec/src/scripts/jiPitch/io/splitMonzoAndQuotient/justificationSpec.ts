@@ -1,5 +1,5 @@
 import {Justification, Row} from "../../../../../../src/general/io/table"
-import {JiPitchAnalysis} from "../../../../../../src/sagittal/ji/pitch"
+import {JiPitchAnalysis} from "../../../../../../src/sagittal/ji/analyze"
 import {computeMonzoAndQuotientJustification} from "../../../../../../src/scripts/jiPitch/io/splitMonzoAndQuotient"
 
 describe("computeMonzoAndQuotientJustification", (): void => {

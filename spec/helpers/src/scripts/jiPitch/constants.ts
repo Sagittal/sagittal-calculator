@@ -1,6 +1,5 @@
 import {Abs, Decimal, Exponent, Max, Prime} from "../../../../../src/general/math"
-import {ApotomeSlope} from "../../../../../src/sagittal/ji/pitch"
-import {N2D3P9} from "../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
+import {ApotomeSlope, N2D3P9} from "../../../../../src/sagittal/ji/metrics"
 
 const OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS = 307 as Max<N2D3P9>
 const OLD_MAX_AAS_FOR_SHORTER_TEST_RESULTS = 14 as Max<Abs<ApotomeSlope>>
