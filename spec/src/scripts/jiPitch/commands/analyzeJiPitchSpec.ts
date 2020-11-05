@@ -3,6 +3,10 @@
 import * as cp from "child_process"
 import {Io} from "../../../../../src/general/io"
 import {onlyRunInCi} from "../../../../helpers/onlyRunInCi"
+import {
+    OLD_MAX_AAS_FOR_SHORTER_TEST_RESULTS, OLD_MAX_ATE_FOR_SHORTER_TEST_RESULTS,
+    OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS,
+} from "../../../../helpers/src/scripts/jiPitch/constants"
 import {runCommandAndGetConsoleOutput} from "../../../../helpers/src/scripts/runCommand"
 
 describe("analyze-ji-pitch", (): void => {
@@ -32,7 +36,7 @@ describe("analyze-ji-pitch", (): void => {
     it("analyzes a JI pitch, given it in monzo form (note that it includes inverses in the notating commas list)", (): void => {
         onlyRunInCi()
 
-        const command = "npm run analyze-ji-pitch -- -m [3,-7,2,0,1]" as Io
+        const command = `npm run analyze-ji-pitch -- -m [3,-7,2,0,1] --max-n2d3p9 ${OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS} --max-ate ${OLD_MAX_ATE_FOR_SHORTER_TEST_RESULTS} --max-aas ${OLD_MAX_AAS_FOR_SHORTER_TEST_RESULTS}` as Io
 
         const actual = runCommandAndGetConsoleOutput(command)
 
@@ -42,7 +46,7 @@ describe("analyze-ji-pitch", (): void => {
     it("can appraise a JI pitch for you", (): void => {
         onlyRunInCi()
 
-        const command = "npm run analyze-ji-pitch -- -q 2200/2187" as Io
+        const command = `npm run analyze-ji-pitch -- -q 2200/2187 --max-n2d3p9 ${OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS} --max-ate ${OLD_MAX_ATE_FOR_SHORTER_TEST_RESULTS} --max-aas ${OLD_MAX_AAS_FOR_SHORTER_TEST_RESULTS}` as Io
 
         const actual = runCommandAndGetConsoleOutput(command)
 
@@ -52,7 +56,7 @@ describe("analyze-ji-pitch", (): void => {
     it("can appraise a comma name for you", (): void => {
         onlyRunInCi()
 
-        const command = "npm run analyze-ji-pitch -- --comma-name 275k" as Io
+        const command = `npm run analyze-ji-pitch -- --comma-name 275k --max-n2d3p9 ${OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS} --max-ate ${OLD_MAX_ATE_FOR_SHORTER_TEST_RESULTS} --max-aas ${OLD_MAX_AAS_FOR_SHORTER_TEST_RESULTS}` as Io
 
         const actual = runCommandAndGetConsoleOutput(command)
 
@@ -62,7 +66,7 @@ describe("analyze-ji-pitch", (): void => {
     it("can appraise a comma name for you, in a completely different format", (): void => {
         onlyRunInCi()
 
-        const command = "npm run analyze-ji-pitch -- --comma-name 5².11-kleisma" as Io
+        const command = `npm run analyze-ji-pitch -- --comma-name 5².11-kleisma --max-n2d3p9 ${OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS} --max-ate ${OLD_MAX_ATE_FOR_SHORTER_TEST_RESULTS} --max-aas ${OLD_MAX_AAS_FOR_SHORTER_TEST_RESULTS}` as Io
 
         const actual = runCommandAndGetConsoleOutput(command)
 
@@ -82,7 +86,7 @@ describe("analyze-ji-pitch", (): void => {
     it("can sort the notating commas", (): void => {
         onlyRunInCi()
 
-        const command = "npm run analyze-ji-pitch [3,-7,2,0,1] -- --sort-by apotomeSlope" as Io
+        const command = `npm run analyze-ji-pitch [3,-7,2,0,1] -- --sort-by apotomeSlope --max-n2d3p9 ${OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS} --max-ate ${OLD_MAX_ATE_FOR_SHORTER_TEST_RESULTS} --max-aas ${OLD_MAX_AAS_FOR_SHORTER_TEST_RESULTS}` as Io
 
         const actual = runCommandAndGetConsoleOutput(command)
 
@@ -114,7 +118,7 @@ describe("analyze-ji-pitch", (): void => {
     it("can appraise a JI pitch given as an integer", (): void => {
         onlyRunInCi()
 
-        const command = "npm run analyze-ji-pitch -- -i 275" as Io
+        const command = `npm run analyze-ji-pitch -- -i 275 --max-n2d3p9 ${OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS} --max-ate ${OLD_MAX_ATE_FOR_SHORTER_TEST_RESULTS} --max-aas ${OLD_MAX_AAS_FOR_SHORTER_TEST_RESULTS}` as Io
 
         const actual = runCommandAndGetConsoleOutput(command)
 
@@ -146,7 +150,7 @@ describe("analyze-ji-pitch", (): void => {
     it("can format the names of the commas in the notating commas table", (): void => {
         onlyRunInCi()
 
-        const command = "npm run analyze-ji-pitch [3,-7,2,0,1] -- --undirected --factored --unabbreviated" as Io
+        const command = `npm run analyze-ji-pitch [3,-7,2,0,1] -- --undirected --factored --unabbreviated --max-n2d3p9 ${OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS} --max-ate ${OLD_MAX_ATE_FOR_SHORTER_TEST_RESULTS} --max-aas ${OLD_MAX_AAS_FOR_SHORTER_TEST_RESULTS}` as Io
 
         const actual = runCommandAndGetConsoleOutput(command)
 

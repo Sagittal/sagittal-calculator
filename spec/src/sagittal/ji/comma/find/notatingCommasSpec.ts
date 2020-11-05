@@ -10,6 +10,7 @@ describe("computeNotatingCommas", (): void => {
         const expected = [
             {monzo: [14, -11, 0, 0, 1]},
             {monzo: [-5, 1, 0, 0, 1]},
+            {monzo: [32, -18, 0, 0, -1]},
             {monzo: [13, -6, 0, 0, -1]},
         ] as Comma[]
         expect(actual).toEqual(expected)

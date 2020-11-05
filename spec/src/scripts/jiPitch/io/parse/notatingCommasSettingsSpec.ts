@@ -32,7 +32,7 @@ describe("parseNotatingCommasSettings", (): void => {
     it("adjusts the max AAS if the JI pitch has greater than the current settings", (): void => {
         const actual = parseNotatingCommasSettings(jiPitchAnalysis)
 
-        expect(actual.maxAas).toBeCloseToTyped(2902.757465 as Max<Abs<ApotomeSlope>>)
+        expect(actual.maxAas).toBeCloseToTyped(3483.308958 as Max<Abs<ApotomeSlope>>)
     })
 
     it("adjusts the max ATE if the JI pitch has greater than the current settings", (): void => {

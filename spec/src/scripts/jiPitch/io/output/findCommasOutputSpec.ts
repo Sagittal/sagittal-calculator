@@ -24,7 +24,7 @@ import {ApotomeSlope, CommaAnalysis, CommaClassId} from "../../../../../../src/s
 import {N2D3P9} from "../../../../../../src/sagittal/ji/two3FreeClass/n2d3p9"
 import {DEFAULT_FIND_COMMAS_SETTINGS} from "../../../../../../src/scripts/jiPitch/findCommas"
 import {computeFindCommasOutput} from "../../../../../../src/scripts/jiPitch/io"
-import {OLD_MAX_N2D3P9_WHICH_IS_NICE_FOR_SHORTER_TEST_RESULTS} from "../../../../../helpers/src/scripts/jiPitch/constants"
+import {OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS} from "../../../../../helpers/src/scripts/jiPitch/constants"
 import {commaAnalysisFixture} from "../../../../../helpers/src/scripts/jiPitch/fixtures"
 
 describe("computeFindCommasOutput", (): void => {
@@ -74,7 +74,7 @@ describe("computeFindCommasOutput", (): void => {
     const maybeCommaClassIds = [CommaClassId._11_M, undefined]
     const findCommasSettings = {
         ...DEFAULT_FIND_COMMAS_SETTINGS,
-        maxN2D3P9: OLD_MAX_N2D3P9_WHICH_IS_NICE_FOR_SHORTER_TEST_RESULTS,
+        maxN2D3P9: OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS,
     }
 
     it("changes column widths so that each cell in a column has the same width", (): void => {
@@ -84,8 +84,8 @@ describe("computeFindCommasOutput", (): void => {
             "" + NEWLINE +
             "lower bound:       \t[  ⟩" + NEWLINE +
             "upper bound:       \t[ -11   7 ⟩(1/2)" + NEWLINE +
-            "max ATE:           \t 15    " + NEWLINE +
-            "max AAS:           \t 14.000" + NEWLINE +
+            "max ATE:           \t 20    " + NEWLINE +
+            "max AAS:           \t 20.000" + NEWLINE +
             "max N2D3P9:        \t307.000" + NEWLINE +
             "max 2,3-free sopfr:\t 61    " + NEWLINE +
             "max 2,3-free copfr:\t555    " + NEWLINE +
@@ -107,8 +107,8 @@ describe("computeFindCommasOutput", (): void => {
             "" + NEWLINE +
             "lower bound:       \t[  ⟩" + NEWLINE +
             "upper bound:       \t[ -11   7 ⟩(1/2)" + NEWLINE +
-            "max ATE:           \t 15    " + NEWLINE +
-            "max AAS:           \t 14.000" + NEWLINE +
+            "max ATE:           \t 20    " + NEWLINE +
+            "max AAS:           \t 20.000" + NEWLINE +
             "max N2D3P9:        \t307.000" + NEWLINE +
             "max 2,3-free sopfr:\t 61    " + NEWLINE +
             "max 2,3-free copfr:\t555    " + NEWLINE +
@@ -132,8 +132,8 @@ describe("computeFindCommasOutput", (): void => {
             "" + NEWLINE +
             "lower bound:       \t[  ⟩" + NEWLINE +
             "upper bound:       \t[ -11   7 ⟩(1/2)" + NEWLINE +
-            "max ATE:           \t 15    " + NEWLINE +
-            "max AAS:           \t 14.000" + NEWLINE +
+            "max ATE:           \t 20    " + NEWLINE +
+            "max AAS:           \t 20.000" + NEWLINE +
             "max N2D3P9:        \t307.000" + NEWLINE +
             "max 2,3-free sopfr:\t 61    " + NEWLINE +
             "max 2,3-free copfr:\t555    " + NEWLINE +
@@ -157,8 +157,8 @@ describe("computeFindCommasOutput", (): void => {
             "" + NEWLINE +
             "lower bound:       \t[  ⟩" + NEWLINE +
             "upper bound:       \t[ -11   7 ⟩(1/2)" + NEWLINE +
-            "max ATE:           \t15" + NEWLINE +
-            "max AAS:           \t14.000" + NEWLINE +
+            "max ATE:           \t20" + NEWLINE +
+            "max AAS:           \t20.000" + NEWLINE +
             "max N2D3P9:        \t307.000" + NEWLINE +
             "max 2,3-free sopfr:\t61" + NEWLINE +
             "max 2,3-free copfr:\t555" + NEWLINE +

@@ -14,7 +14,7 @@ describe("late-tina-commas", (): void => {
             `NO COMMAS given current constraints for tina 0.5.`,
             `NO LATE COMMAS given current constraints for tina 1.`,
             `NO LATE COMMAS given current constraints for tina 1.5.`,
-            `NO COMMAS given current constraints for tina 2.`,
+            `NO LATE COMMAS given current constraints for tina 2.`,
             `NO COMMAS given current constraints for tina 2.5.`,
             `TINA 3: {"pitch":{"monzo":[12,-2,-1,-1,0,-1]},"monzo":[12,-2,-1,-1,0,-1],"quotient":[4096,4095],"cents":0.42271616595482425,"decimal":1.0002442002442002,"two3FreeClassAnalysis":{"two3FreeClass":{"monzo":[0,0,1,1,0,1]},"name":"{455}₂,₃","two3FreePrimeLimit":13,"two3FreeSopfr":25,"two3FreeCopfr":3,"n2d3p9":82.15277777777777},"apotomeSlope":-2.0260281743766777,"aas":2.0260281743766777,"ate":2,"name":"1/455n"}`,
             `NO COMMAS given current constraints for tina 3.5.`,

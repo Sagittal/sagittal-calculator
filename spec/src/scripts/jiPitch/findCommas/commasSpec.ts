@@ -65,6 +65,7 @@ describe("computeCommas", (): void => {
             {monzo: [-4, 4, -1]},
             {monzo: [6, -2, 0, -1]},
             {monzo: [-19, 12]},
+            {monzo: [-34, 20, 1]},
         ] as Comma[]
         expect(actual).toEqual(expected)
     })
