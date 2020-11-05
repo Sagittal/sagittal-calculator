@@ -142,6 +142,7 @@ const bestCommaPerSemitinaZone: Array<[Index<Semitina>, CommaAnalysis]> = commaA
             const aas = commaAnalysis.aas
             const ate = commaAnalysis.ate
 
+            // TODO: use actual LPEI function from sagittal/
             let score = Math.log2(n2d3p9) + (aas / 9.65) ** 1.7 + 2 ** (ate - 9.65)
             if (INCLUDE_ERROR_IN_PHASE_1_SCORE) {
                 const semitinaError = computeCentsError(commaAnalysis.cents, SEMITINA)

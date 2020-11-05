@@ -5,8 +5,10 @@ import {EXCLUDED_COMMAS} from "../constants"
 import {computeZoneBadnessScore} from "../zoneBadnessScore"
 import {computeZoneCommaEntries} from "../zoneCommas"
 
-// Technically, badness is a metric which is beyond complexity, but because this script is so similar to the LFC
-// For complexity and shares many of its script flags, it just made sense for it to live here.
+// TODO: Rename script group to badness; put the I of LPEI on all the metrics but set U to 0 or whatever
+//  Technically, badness is a metric which is beyond complexity, but because this script is so similar to the LFC
+//  For complexity and shares many of its script flags, it just made sense for it to live here.
+//  Although script flags are agnostic to script group; I think you meant the global settings object
 
 setupScriptAndIo(ScriptGroup.COMPLEXITY_METRIC_LFC as Filename, [LogTarget.ALL])
 

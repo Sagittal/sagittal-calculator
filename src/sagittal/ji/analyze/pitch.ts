@@ -23,6 +23,8 @@ const analyzeJiPitch = (jiPitch: Scamon<{rational: true}>): JiPitchAnalysis => {
     const aas = computeAas(jiPitch)
     const ate = computeAte(jiPitch)
 
+    // TODO: include LPE cmplxty and LPEI badness
+
     return {
         pitch: jiPitch,
         monzo,

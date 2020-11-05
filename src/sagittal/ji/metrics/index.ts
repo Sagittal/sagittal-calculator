@@ -15,3 +15,6 @@ export {Complexity} from "./complexity"
 // TODO: potentially uselessness and complexity could be consolidated, as could error and badness
 //  If you want to view things that way. Not sure if that makes it clearer or less clear
 //  See: http://forum.sagittal.org/viewtopic.php?f=4&t=493&p=2597#metric-hierarchy
+//  How about this: nest the folders so that badness is the top level instead of metrics,
+//  Then put error and complexity in there, and in complexity put uselessness and popularity.
+//  And put sopfgtt in popularity
