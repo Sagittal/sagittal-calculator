@@ -12,8 +12,8 @@ export {
     MAX_N2D3P9_FOR_WHICH_POSSIBLE_NUMERATORS_ARE_KNOWN,
 } from "./complexity"
 export {computeCentsError} from "./error"
-export {lpei} from "./lpei"
+export {computeLpei} from "./lpei"
 export {Badness} from "./types"
-export {Complexity} from "./complexity"
+export {Complexity, computeLpe} from "./complexity"
 
 // See: http://forum.sagittal.org/viewtopic.php?f=4&t=493&p=2597#metric-hierarchy

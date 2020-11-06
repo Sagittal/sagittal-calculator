@@ -1,4 +1,4 @@
-export {lpe} from "./lpe"
+export {computeLpe} from "./lpe"
 export {Complexity} from "./types"
 export {ApotomeSlope, computeApotomeSlope, computeAte, computeAas} from "./uselessness"
 export {

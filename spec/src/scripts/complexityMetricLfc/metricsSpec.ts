@@ -35,7 +35,7 @@ describe("complexityMetric", (): void => {
         expect(actual).toBeCloseTo(expected)
     })
 
-    it("lpe", (): void => {
+    it("computeLpe", (): void => {
         const complexityMetric = COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS[ComplexityMetricFamilyId.LPE].metric
 
         const actual = complexityMetric(n2d3p9, aas, ate, {a, b, c, sE, tE, sP, tP})

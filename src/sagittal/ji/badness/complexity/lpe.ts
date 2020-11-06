@@ -4,7 +4,7 @@ import {LPE} from "./types"
 import {N2D3P9} from "./unpopularity"
 import {ApotomeSlope} from "./uselessness"
 
-const lpe = (
+const computeLpe = (
     n2d3p9: N2D3P9,
     aas: Abs<ApotomeSlope>,
     ate: Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
@@ -14,5 +14,5 @@ const lpe = (
     + pow(COMPLEXITY_EXPANDING_AND_COMPRESSING_BASE, ate - LPE_T_THING) as LPE
 
 export {
-    lpe,
+    computeLpe,
 }

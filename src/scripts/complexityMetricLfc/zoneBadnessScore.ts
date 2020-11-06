@@ -15,7 +15,7 @@ import {
     computeN2D3P9,
     formatComma,
     getCommaClass,
-    lpei,
+    computeLpei,
 } from "../../sagittal"
 import {complexityMetricLfcScriptGroupSettings} from "./globals"
 
@@ -32,7 +32,7 @@ const computeZoneBadnessScore = ([commaClassId, commas]: [CommaClassId, Comma[]]
         const ate = computeAte(comma)
         const cents = computeCentsFromPitch(comma)
 
-        const badness = lpei(n2d3p9, aas, ate, cents)
+        const badness = computeLpei(n2d3p9, aas, ate, cents)
 
         const isActualComma = areScamonsEqual(comma, actualComma)
 

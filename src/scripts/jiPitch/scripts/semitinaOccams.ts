@@ -40,9 +40,10 @@ import {
     analyzeComma,
     CommaAnalysis,
     CommaClassId,
-    computeCentsError,
     computeCommaName,
     computeCommasFrom23FreeRationalMonzo,
+    computeLpe,
+    computeLpei,
     getCommaClass,
     JiNotationLevelId,
     JI_NOTATION_LEVELS_COMMA_CLASS_IDS,
@@ -130,7 +131,6 @@ saveLog("commas grouped by semitina zone converted to sorted tuples", LogTarget.
 
 // FIND THE SINGLE BEST COMMA IN EACH ZONE
 
-const U = 0.8
 const INCLUDE_ERROR_IN_PHASE_1_SCORE = true // False
 
 const bestCommaPerSemitinaZone: Array<[Index<Semitina>, CommaAnalysis]> = commaAnalysesBySemitinaZoneEntries
@@ -142,11 +142,13 @@ const bestCommaPerSemitinaZone: Array<[Index<Semitina>, CommaAnalysis]> = commaA
             const aas = commaAnalysis.aas
             const ate = commaAnalysis.ate
 
-            // TODO: use actual LPEI function from sagittal/
-            let score = Math.log2(n2d3p9) + (aas / 9.65) ** 1.7 + 2 ** (ate - 9.65)
+            // TODO: and shouldn't you just pass LPEI the comma and have it figure it out?
+            //  And if so, can you stop analyzing them so soon?
+            let score
             if (INCLUDE_ERROR_IN_PHASE_1_SCORE) {
-                const semitinaError = computeCentsError(commaAnalysis.cents, SEMITINA)
-                score = score + U * semitinaError
+                score = computeLpei(n2d3p9, aas, ate, commaAnalysis.cents, SEMITINA)
+            } else {
+                score = computeLpe(n2d3p9, aas, ate)
             }
 
             if (score < bestScore) {
