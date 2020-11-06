@@ -1,6 +1,6 @@
+import {Parameter} from "../../../../../src/general/lfc"
 import {PopularityParameterId, Submetric} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 import {checkSubmetricsForInvalidParameterValueCombinations} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares/checkParameterValues"
-import {Parameter} from "../../../../../src/scripts/types"
 
 describe("checkSubmetricsForInvalidParameterValueCombinations", (): void => {
     it("gives a good error when a is a base but it is 1", (): void => {

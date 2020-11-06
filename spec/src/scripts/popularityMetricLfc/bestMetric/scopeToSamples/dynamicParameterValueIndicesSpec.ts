@@ -1,8 +1,7 @@
-import {Index, Step} from "../../../../../../src/general"
+import {Index, Parameter, Step} from "../../../../../../src/general"
 import {DynamicParameter} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
 import {computeDynamicParameterValueIndices} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples/dynamicParameterValueIndices"
 import {PopularityParameterId, Submetric} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
-import {Parameter} from "../../../../../../src/scripts/types"
 
 describe("computeDynamicParameterValueIndices", (): void => {
     it("given the dynamic parameters and a submetric, returns an array of, in order, for each of the dynamic parameters, its index in the parameter points", (): void => {

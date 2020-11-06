@@ -1,9 +1,14 @@
-import {Antivotes} from "../types"
+import {Score} from "../../../../general"
+import {LfcUnpopularityEstimate} from "../types"
 
 // Or "numenator" and "demonator" ?
 const maybeNuminatorSwap = (
-    options: {useNuminator: boolean, numeratorAntivotes: Antivotes, denominatorAntivotes: Antivotes},
-): {numeratorAntivotes: Antivotes, denominatorAntivotes: Antivotes} => {
+    options: {
+        useNuminator: boolean,
+        numeratorAntivotes: Score<LfcUnpopularityEstimate>,
+        denominatorAntivotes: Score<LfcUnpopularityEstimate>
+    },
+): {numeratorAntivotes: Score<LfcUnpopularityEstimate>, denominatorAntivotes: Score<LfcUnpopularityEstimate>} => {
     const {useNuminator, numeratorAntivotes, denominatorAntivotes} = options
 
     let numeratorAntivotesAfterMaybeNuminatorSwap = useNuminator ?

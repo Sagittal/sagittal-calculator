@@ -1,4 +1,4 @@
-import {areScamonsEqual, Comma, compute23FreeClass, LogTarget, saveLog} from "../../general"
+import {areScamonsEqual, Comma, compute23FreeClass, LogTarget, saveLog, Score} from "../../general"
 import {
     CommaClassId,
     Complexity,
@@ -8,7 +8,6 @@ import {
     formatComma,
     getCommaClass,
 } from "../../sagittal"
-import {Score} from "../types"
 import {complexityMetricLfcScriptGroupSettings} from "./globals"
 import {ComplexityMetric, ComplexityParameterSet} from "./types"
 

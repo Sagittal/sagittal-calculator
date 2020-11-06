@@ -1,4 +1,4 @@
-import {Ed, Name, Window} from "../../../../../src/general"
+import {Ed, Name, Parameter, Window} from "../../../../../src/general"
 import {Combination} from "../../../../../src/general/math"
 import {Metric, Scope, SubmetricScope, SumOfSquares} from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {recursiveSearchScopeAndMaybeUpdateBestMetric} from "../../../../../src/scripts/popularityMetricLfc/perfecter"
@@ -6,7 +6,6 @@ import {perfectMetric} from "../../../../../src/scripts/popularityMetricLfc/perf
 import * as recursiveBestMetric from "../../../../../src/scripts/popularityMetricLfc/perfecter/perfectMetric"
 import {MetricTag} from "../../../../../src/scripts/popularityMetricLfc/perfecter/types"
 import {PopularityParameterId, Submetric} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
-import {Parameter} from "../../../../../src/scripts/types"
 
 describe("perfectMetric", (): void => {
     const options = {metricTag: "1/16" as MetricTag}

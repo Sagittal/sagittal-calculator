@@ -1,5 +1,14 @@
-import {Cents, Direction, Index, Monzo, Rank, Two3FreeClass} from "../../../../src/general"
-import {Popularity, Votes} from "../../../../src/general/music"
+import {
+    Cents,
+    Decimal,
+    Direction,
+    Index,
+    Monzo,
+    Rank,
+    ScalaPopularityStat,
+    Score,
+    Two3FreeClass,
+} from "../../../../src/general"
 import {Two3FreeClassAnalysis} from "../../../../src/sagittal/ji/analyze"
 import {N2D3P9} from "../../../../src/sagittal/ji/badness/complexity/unpopularity/n2d3p9"
 import {CommaClassId, SymbolClassId, SymbolSubsetId} from "../../../../src/sagittal/notation"
@@ -22,8 +31,8 @@ describe("computePopular23FreeClass", (): void => {
 
         const expected: Popular23FreeClass = {
             ...two3FreeClassAnalysis,
-            popularityRank: 2 as Rank<Popularity>,
-            votes: 5371 as Votes,
+            popularityRank: 2 as Rank<ScalaPopularityStat>,
+            votes: 5371 as Decimal<{integer: true}> & Score<ScalaPopularityStat>,
             notatingSymbolClassIds: [SymbolClassId.TICK, SymbolClassId.LEFT_BARB],
             notatingSymbolClassSmallestSymbolSubsetIndices: [5, 1] as Array<Index<SymbolSubsetId>>,
         }
@@ -36,8 +45,8 @@ describe("computePopular23FreeClass", (): void => {
 
         const expected: Popular23FreeClass = {
             ...two3FreeClassAnalysis,
-            popularityRank: 2 as Rank<Popularity>,
-            votes: 5371 as Votes,
+            popularityRank: 2 as Rank<ScalaPopularityStat>,
+            votes: 5371 as Decimal<{integer: true}> & Score<ScalaPopularityStat>,
             bestNotatingCommaCents: 21.506290 as Cents,
             bestNotatingCommaMonzo: [-4, 4, -1] as Monzo<{rational: true}>,
             bestNotatingCommaMaybeCommaClassId: CommaClassId._1_5_C,

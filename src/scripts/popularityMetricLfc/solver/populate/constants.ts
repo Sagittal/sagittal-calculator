@@ -1,7 +1,6 @@
 // tslint:disable max-line-length
 
-import {Maybe, Window} from "../../../../general"
-import {Parameter, ParameterScope, ParameterScopes} from "../../../types"
+import {Maybe, Parameter, ParameterScope, ParameterScopes, Window} from "../../../../general"
 import {computeDynamicParameterScope} from "../../bestMetric"
 import {PopularityParameterId, Submetric} from "../../sumOfSquares"
 import {Chunk} from "../types"

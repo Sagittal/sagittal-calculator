@@ -1,9 +1,9 @@
+import {Parameter} from "../../../../src/general/lfc"
 import {Abs, Decimal, Exponent, Prime} from "../../../../src/general/math"
 import {ApotomeSlope} from "../../../../src/sagittal/ji/badness"
 import {N2D3P9} from "../../../../src/sagittal/ji/badness/complexity/unpopularity"
 import {COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS} from "../../../../src/scripts/complexityMetricLfc/metrics"
 import {ComplexityMetricFamilyId} from "../../../../src/scripts/complexityMetricLfc/types"
-import {Parameter} from "../../../../src/scripts/types"
 
 describe("complexityMetric", (): void => {
     const n2d3p9 = 10 as N2D3P9

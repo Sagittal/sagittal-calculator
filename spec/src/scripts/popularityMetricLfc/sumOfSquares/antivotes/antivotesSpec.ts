@@ -1,11 +1,14 @@
+import {Parameter, Score} from "../../../../../../src/general/lfc"
 import {Combination, Monzo} from "../../../../../../src/general/math"
 import {Two3FreeClass} from "../../../../../../src/general/music"
-import {PopularityParameterId, Submetric} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
+import {
+    LfcUnpopularityEstimate,
+    PopularityParameterId,
+    Submetric,
+} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 import {computeAntivotes} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes"
 import {ANTIVOTES_PRECISION} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes/constants"
 import {computeSubmetricAntivotes} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes/submetricAntivotes"
-import {Antivotes} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/types"
-import {Parameter} from "../../../../../../src/scripts/types"
 
 describe("computeAntivotes", (): void => {
     it("when k = 1 (default), and two 2,3-free classes have the same SoPFR, but one has its primes all lopsided on one side, they still get ranked the same", (): void => {
@@ -59,11 +62,11 @@ describe("computeAntivotes", (): void => {
             0.5 * computeSubmetricAntivotes(
                 [0, 0, 0, 1, 1] as Monzo<{rational: true}>,
                 {[PopularityParameterId.SUM]: true},
-            ) as Antivotes +
+            ) as Score<LfcUnpopularityEstimate> +
             0.3 * computeSubmetricAntivotes(
                 [0, 0, 0, 1, 1] as Monzo<{rational: true}>,
                 {[PopularityParameterId.SUM]: true},
-            ) as Antivotes
+            ) as Score<LfcUnpopularityEstimate>
         expect(actual).toBeCloseToTyped(expected, ANTIVOTES_PRECISION)
     })
 
@@ -98,7 +101,7 @@ describe("computeAntivotes", (): void => {
 
         const actual = computeAntivotes(two3FreeClass, submetrics)
 
-        const expected = 0.321928 as Antivotes
+        const expected = 0.321928 as Score<LfcUnpopularityEstimate>
         expect(actual).toBeCloseToTyped(expected)
     })
 })

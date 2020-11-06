@@ -2,12 +2,13 @@ import {
     computeQuotientFromMonzo,
     computeRationalMonzoFromRationalDecimal,
     isUndefined,
+    Parameter,
     QuotientPartType,
+    Score,
     stringify,
     Two3FreeClass,
 } from "../../../../general"
-import {Parameter} from "../../../types"
-import {Antivotes, Submetric} from "../types"
+import {LfcUnpopularityEstimate, Submetric} from "../types"
 import {maybeNuminatorSwap} from "./numinator"
 import {computeSubmetricAntivotes} from "./submetricAntivotes"
 import {computeWeightedAntivotes} from "./weightedAntivotes"
@@ -15,7 +16,7 @@ import {computeWeightedAntivotes} from "./weightedAntivotes"
 const compute23FreeClassSubmetricAntivotes = (
     two3FreeClass: Two3FreeClass,
     submetric: Submetric = {},
-): Antivotes => {
+): Score<LfcUnpopularityEstimate> => {
     const {
         useNuminator = false,
         kAsCoefficient = 1 as Parameter,
@@ -69,7 +70,7 @@ const compute23FreeClassSubmetricAntivotes = (
         throw new Error(`You got NaN! in two3FreeClassSubmetricAntivotes ${two3FreeClass} ${stringify(submetric, {multiline: true})} ${numeratorAntivotes} ${denominatorAntivotes}`)
     }
 
-    return numeratorAntivotes + denominatorAntivotes as Antivotes
+    return numeratorAntivotes + denominatorAntivotes as Score<LfcUnpopularityEstimate>
 }
 
 export {

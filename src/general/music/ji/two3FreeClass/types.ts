@@ -1,3 +1,4 @@
+import {Score} from "../../../lfc"
 import {Decimal, Direction, Scamon} from "../../../math"
 
 type Two3FreeClass =
@@ -5,15 +6,12 @@ type Two3FreeClass =
         | {rational: true, rough: 5, direction: Direction.UNISON}>
     & {_Two3FreeClassBrand: boolean}
 
-type Votes = Decimal<{integer: true}> & {_VotesBrand: boolean}
-
-interface Popularity {
+interface ScalaPopularityStat {
     two3FreeClass: Two3FreeClass,
-    votes: Votes,
+    votes: Decimal<{integer: true}> & Score<ScalaPopularityStat>,
 }
 
 export {
-    Votes,
-    Popularity,
+    ScalaPopularityStat,
     Two3FreeClass,
 }

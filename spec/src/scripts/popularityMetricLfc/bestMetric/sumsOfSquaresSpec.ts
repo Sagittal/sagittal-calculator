@@ -1,10 +1,9 @@
-import {Combination, Name} from "../../../../../src/general"
+import {Combination, Name, Parameter} from "../../../../../src/general"
 import {Metric, SumOfSquares, SumsOfSquares} from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {SamplePoint} from "../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
 import {computeSumsOfSquaresAndMaybeUpdateBestMetric} from "../../../../../src/scripts/popularityMetricLfc/bestMetric/sumsOfSquares"
 import {bestMetrics} from "../../../../../src/scripts/popularityMetricLfc/globals"
 import {PopularityParameterId, Submetric} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
-import {Parameter} from "../../../../../src/scripts/types"
 
 describe("computeSumsOfSquaresAndMaybeUpdateBestMetric", (): void => {
     const metricName = "{aAsCoefficient,sum,w}" as Name<Metric>

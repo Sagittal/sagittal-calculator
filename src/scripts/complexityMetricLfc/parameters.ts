@@ -1,6 +1,4 @@
-import {Combination, Ed, Window} from "../../general"
-import {computePossibilities} from "../possibilities"
-import {DynamicParameterScope, Parameter} from "../types"
+import {Combination, computePossibilities, DynamicParameterScope, Ed, Parameter, Window} from "../../general"
 import {ComplexityParameterId, ComplexityParameterSet} from "./types"
 
 // Const SE_OR_TE_WHEN_DAAS_OR_DATE_IS_9 = 0.00195 as Parameter

@@ -1,4 +1,4 @@
-import {Combination, Count, Ed, Index, Mean, Name, Step, Window} from "../../../../../src/general"
+import {Combination, Count, Ed, Index, Mean, Name, Parameter, Step, Window} from "../../../../../src/general"
 import {MeanType} from "../../../../../src/general/math"
 import {
     Metric,
@@ -13,7 +13,6 @@ import {
 } from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {bestMetrics, metricNames, solverStatus} from "../../../../../src/scripts/popularityMetricLfc/globals"
 import {PopularityParameterId, Submetric} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
-import {Parameter} from "../../../../../src/scripts/types"
 
 describe("nonRecursiveSearchScopeAndMaybeUpdateBestMetric", (): void => {
     const scope = [

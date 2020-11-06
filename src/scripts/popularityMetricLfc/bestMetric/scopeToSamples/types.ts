@@ -1,5 +1,4 @@
-import {Combination, Index, KeyPath, Max, Min, Step, Window} from "../../../../general"
-import {Parameter} from "../../../types"
+import {Combination, Index, KeyPath, Max, Min, Parameter, Step, Window} from "../../../../general"
 import {PopularityParameterId, Submetric} from "../../sumOfSquares"
 
 interface DynamicParameterValueIndicesOptions {

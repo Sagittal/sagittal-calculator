@@ -1,11 +1,10 @@
-import {Combination, Decimal, Ed, Index, Io, Name, Step, Window} from "../../../../../src/general"
+import {Combination, Decimal, Ed, Index, Io, Name, Parameter, Step, Window} from "../../../../../src/general"
 import {Metric, Scope, SumOfSquares} from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {SamplePoint} from "../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
 import {recursiveSearchScopeAndMaybeUpdateBestMetric} from "../../../../../src/scripts/popularityMetricLfc/perfecter"
 import * as nextLocalMin from "../../../../../src/scripts/popularityMetricLfc/perfecter/nextLocalMin"
 import {LocalMin, MetricTag} from "../../../../../src/scripts/popularityMetricLfc/perfecter/types"
 import {PopularityParameterId, Submetric} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
-import {Parameter} from "../../../../../src/scripts/types"
 
 describe("searchScopeAndMaybeUpdateBestMetric", (): void => {
     it("searches each local min", async (): Promise<void> => {

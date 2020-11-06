@@ -1,10 +1,9 @@
-import {Sum} from "../../../../../src/general"
+import {Score, Sum} from "../../../../../src/general"
 import {Abs} from "../../../../../src/general/math"
 import {Cents} from "../../../../../src/general/music"
 import {computeBestPossibleBoundHistoryAnalysis} from "../../../../../src/scripts/jiNotationBoundClass/boundClass/bestPossibleHistory"
 import {BoundHistory} from "../../../../../src/scripts/jiNotationBoundClass/histories"
 import {BoundHistoryAnalysis} from "../../../../../src/scripts/jiNotationBoundClass/history"
-import {Score} from "../../../../../src/scripts/types"
 import {boundHistoryAnalysisFixture} from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
 describe("computeBestPossibleBoundHistoryAnalysis", (): void => {

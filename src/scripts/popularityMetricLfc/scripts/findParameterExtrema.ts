@@ -8,10 +8,10 @@ import {
     Maybe,
     Min,
     Name,
+    Parameter,
     saveLog,
     stringify,
 } from "../../../general"
-import {Parameter} from "../../types"
 import {Metric} from "../bestMetric"
 import {PopularityParameterId, Submetric} from "../sumOfSquares"
 import {applySharedPopularityMetricLfcScriptSetup, load} from "./shared"

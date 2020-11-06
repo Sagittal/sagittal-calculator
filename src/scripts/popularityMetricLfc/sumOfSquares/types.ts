@@ -1,12 +1,9 @@
-import {Index, Two3FreeClass} from "../../../general"
-import {Parameter} from "../../types"
+import {Index, Parameter, Score, Two3FreeClass} from "../../../general"
 
-type Antivotes = number & {_AntivotesBrand: boolean}
-
-interface Unpopularity {
-    antivotes: Antivotes,
+interface LfcUnpopularityEstimate {
+    antivotes: Score<LfcUnpopularityEstimate>,
     two3FreeClass: Two3FreeClass,
-    index: Index<Unpopularity>,
+    index: Index<LfcUnpopularityEstimate>,
 }
 
 enum PopularityParameterId {
@@ -111,8 +108,7 @@ type WeightedAntivotesOptions = Partial<{
 }>
 
 export {
-    Unpopularity,
-    Antivotes,
+    LfcUnpopularityEstimate,
     PopularityParameterId,
     Submetric,
     WeightedAntivotesOptions,

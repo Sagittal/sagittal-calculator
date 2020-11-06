@@ -1,8 +1,18 @@
-import {Index, ioSettings, Monzo, Name, Ranked, TableFormat, Two3FreeClass} from "../../../../../../src/general"
+import {
+    Decimal,
+    Index,
+    ioSettings,
+    Monzo,
+    Name,
+    Ranked,
+    ScalaPopularityStat,
+    Score,
+    TableFormat,
+    Two3FreeClass,
+} from "../../../../../../src/general"
 import {Rank} from "../../../../../../src/general/code"
 import {Row} from "../../../../../../src/general/io/table"
 import {Direction} from "../../../../../../src/general/math/numeric"
-import {Popularity, Votes} from "../../../../../../src/general/music/ji"
 import {N2D3P9} from "../../../../../../src/sagittal/ji/badness/complexity/unpopularity/n2d3p9"
 import {SymbolClassId, SymbolSubsetId} from "../../../../../../src/sagittal/notation"
 import {
@@ -21,8 +31,8 @@ describe("computePopular23FreeClassWithNotatingSymbolClassesRow", (): void => {
         notatingSymbolClassSmallestSymbolSubsetIndices: [1, 3] as Array<Index<SymbolSubsetId>>,
         notatingSymbolClassIds: [SymbolClassId.DOUBLE_SCROLL, SymbolClassId.ANTITICK_AND_LEFT_BARB],
         n2d3p9: 2 as N2D3P9,
-        votes: 7 as Votes,
-        popularityRank: 3 as Rank<Popularity>,
+        votes: 7 as Decimal<{integer: true}> & Score<ScalaPopularityStat>,
+        popularityRank: 3 as Rank<ScalaPopularityStat>,
         two3FreeClass: {
             monzo: [0, 0, -1, 1] as Monzo<{rational: true, rough: 5, direction: Direction.SUPER}>,
         } as Two3FreeClass,

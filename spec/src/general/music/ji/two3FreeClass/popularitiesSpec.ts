@@ -1,4 +1,4 @@
-import {KeyPath, Popularity, rank, Ranked, RankStrategy} from "../../../../../../src/general"
+import {KeyPath, rank, Ranked, RankStrategy, ScalaPopularityStat} from "../../../../../../src/general"
 import {COMMA_POPULARITIES} from "../../../../../../src/general/music"
 import {onlyRunInCi} from "../../../../../helpers/onlyRunInCi"
 
@@ -6,13 +6,13 @@ describe("COMMA_POPULARITIES", (): void => {
     it("the fractional ranks are correct", (): void => {
         onlyRunInCi()
 
-        const unrankedPopularities: Popularity[] = COMMA_POPULARITIES
-            .map((popularity: Ranked<Popularity>): Popularity => ({
+        const unrankedPopularities: ScalaPopularityStat[] = COMMA_POPULARITIES
+            .map((popularity: Ranked<ScalaPopularityStat>): ScalaPopularityStat => ({
                 two3FreeClass: popularity.two3FreeClass,
                 votes: popularity.votes,
             }))
 
-        const reRankedPopularities: Array<Ranked<Popularity>> = rank(unrankedPopularities, {
+        const reRankedPopularities: Array<Ranked<ScalaPopularityStat>> = rank(unrankedPopularities, {
             by: "votes" as KeyPath,
             strategy: RankStrategy.FRACTIONAL,
             descending: true,

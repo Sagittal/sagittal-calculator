@@ -1,5 +1,4 @@
-import {ceil, Ed, Window} from "../../../../general"
-import {Parameter} from "../../../types"
+import {ceil, Ed, Parameter, Window} from "../../../../general"
 import {popularityMetricLfcScriptGroupSettings} from "../../globals"
 
 const computeEqualDivision = (window: Window<Parameter>): Ed<Parameter> => {

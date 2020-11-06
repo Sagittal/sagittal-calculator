@@ -1,6 +1,5 @@
-import {Comma, count, LogTarget, Min, saveLog, stringify, Sum} from "../../general"
+import {Comma, count, LogTarget, Min, saveLog, Score, stringify, Sum} from "../../general"
 import {CommaClassId} from "../../sagittal"
-import {Score} from "../types"
 import {EXCLUDED_COMMAS} from "./constants"
 import {computeComplexityParameterSets} from "./parameters"
 import {

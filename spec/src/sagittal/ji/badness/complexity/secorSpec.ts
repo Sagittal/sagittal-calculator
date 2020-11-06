@@ -1,6 +1,6 @@
 import {Scamon} from "../../../../../../src/general/math/numeric/scamon"
-import {Complexity} from "../../../../../../src/sagittal/ji/badness/complexity"
 import {computeSecorComplexity} from "../../../../../../src/sagittal/ji/badness/complexity/secor"
+import {SecorComplexity} from "../../../../../../src/sagittal/ji/badness/complexity/types"
 
 describe("computeSecorComplexity", (): void => {
     it("works per example given on the forum", (): void => {
@@ -8,7 +8,7 @@ describe("computeSecorComplexity", (): void => {
 
         const actual = computeSecorComplexity(jiPitch)
 
-        const expected = 6.120342 as Complexity
+        const expected = 6.120342 as SecorComplexity
         expect(actual).toBeCloseToTyped(expected)
     })
 })

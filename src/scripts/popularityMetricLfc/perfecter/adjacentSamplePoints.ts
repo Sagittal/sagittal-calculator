@@ -1,5 +1,4 @@
-import {Index, shallowClone} from "../../../general"
-import {Parameter} from "../../types"
+import {Index, Parameter, shallowClone} from "../../../general"
 import {SamplePoint} from "../bestMetric"
 
 const computeAdjacentSamplePoints = (samplePoint: SamplePoint): SamplePoint[] => {

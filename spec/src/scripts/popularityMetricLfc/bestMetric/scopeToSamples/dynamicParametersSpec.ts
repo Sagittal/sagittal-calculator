@@ -1,8 +1,7 @@
-import {Ed, Index, Step, Window} from "../../../../../../src/general"
+import {Ed, Index, Parameter, Step, Window} from "../../../../../../src/general"
 import {Scope} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {computeDynamicParameters} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
 import {PopularityParameterId, Submetric} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
-import {Parameter} from "../../../../../../src/scripts/types"
 
 describe("computeDynamicParameters", (): void => {
     it("returns a flattened array of all the parameters that are dynamic -- flattened across all the submetrics, that is", (): void => {

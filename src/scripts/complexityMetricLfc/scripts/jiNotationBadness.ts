@@ -1,6 +1,6 @@
-import {Comma, Filename, ioSettings, LogTarget, saveLog, setupScriptAndIo, Sum, time} from "../../../general"
+import {Comma, Filename, ioSettings, LogTarget, saveLog, Score, setupScriptAndIo, Sum, time} from "../../../general"
 import {Badness, CommaClassId} from "../../../sagittal"
-import {Score, ScriptGroup} from "../../types"
+import {ScriptGroup} from "../../types"
 import {EXCLUDED_COMMAS} from "../constants"
 import {computeZoneBadnessScore} from "../zoneBadnessScore"
 import {computeZoneCommaEntries} from "../zoneCommas"

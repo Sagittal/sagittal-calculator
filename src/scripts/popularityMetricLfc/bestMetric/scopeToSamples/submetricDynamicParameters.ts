@@ -1,6 +1,4 @@
-import {Index, isObject, Step} from "../../../../general"
-import {computeParameterValues} from "../../../parameterValues"
-import {DynamicParameterScope, Parameter} from "../../../types"
+import {computeParameterValues, DynamicParameterScope, Index, isObject, Parameter, Step} from "../../../../general"
 import {PopularityParameterId, Submetric} from "../../sumOfSquares"
 import {SubmetricScope} from "../types"
 import {DynamicParameter} from "./types"

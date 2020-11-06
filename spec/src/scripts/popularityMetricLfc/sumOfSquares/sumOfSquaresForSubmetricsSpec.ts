@@ -1,3 +1,4 @@
+import {Parameter} from "../../../../../src/general/lfc"
 import {Combination} from "../../../../../src/general/math"
 import {SumOfSquares} from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {
@@ -5,7 +6,6 @@ import {
     PopularityParameterId,
     Submetric,
 } from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
-import {Parameter} from "../../../../../src/scripts/types"
 
 describe("computeSumOfSquaresForSubmetrics", (): void => {
     it("returns the sum-of-squares for a given submetric combination", (): void => {

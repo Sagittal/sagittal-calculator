@@ -237,8 +237,7 @@ export {
     UNISON,
     computePitchFromCents,
     COMMA_POPULARITIES,
-    Popularity,
-    Votes,
+    ScalaPopularityStat,
     Comma,
     Two3FreeClass,
     compute23FreeClass,
@@ -261,3 +260,12 @@ export {
     APOTOME,
 } from "./music"
 export {Count, Ed, Extrema, Index, Ms, Multiplier, Name, Step, Sum, Window, Of} from "./types"
+export {
+    Score,
+    Parameter,
+    DynamicParameterScope,
+    ParameterScope,
+    ParameterScopes,
+    computeParameterValues,
+    computePossibilities,
+} from "./lfc"

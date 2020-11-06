@@ -1,8 +1,8 @@
 import {KeyPath, rank, Ranked, RankStrategy, sort} from "../../../general"
-import {Unpopularity} from "./types"
+import {LfcUnpopularityEstimate} from "./types"
 
-const addRankToUnpopularities = (unpopularities: Unpopularity[]): Array<Ranked<Unpopularity>> => {
-    const rankedUnpopularities: Array<Ranked<Unpopularity>> = rank(unpopularities, {
+const addRankToUnpopularities = (unpopularities: LfcUnpopularityEstimate[]): Array<Ranked<LfcUnpopularityEstimate>> => {
+    const rankedUnpopularities: Array<Ranked<LfcUnpopularityEstimate>> = rank(unpopularities, {
         by: "antivotes" as KeyPath,
         strategy: RankStrategy.FRACTIONAL,
     })

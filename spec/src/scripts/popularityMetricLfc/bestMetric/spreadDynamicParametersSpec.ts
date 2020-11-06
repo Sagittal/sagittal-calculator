@@ -1,8 +1,7 @@
-import {Combination, Ed, Window} from "../../../../../src/general"
+import {Combination, Ed, Parameter, Window} from "../../../../../src/general"
 import {SubmetricScope} from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {computeSpreadDynamicParameters} from "../../../../../src/scripts/popularityMetricLfc/bestMetric/spreadDynamicParameters"
 import {PopularityParameterId} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
-import {Parameter} from "../../../../../src/scripts/types"
 
 describe("computeSpreadDynamicParameters", (): void => {
     it("given a scope returns a list of the dynamic parameters which are on the all-bins (first) submetric scope           ", (): void => {

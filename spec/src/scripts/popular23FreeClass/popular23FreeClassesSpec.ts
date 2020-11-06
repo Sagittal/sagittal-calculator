@@ -1,19 +1,20 @@
 import {
     Cents,
     Copfr,
+    Decimal,
     Direction,
     EMPTY_MONZO,
     Index,
     Max,
     Monzo,
     Name,
-    Popularity,
     Prime,
     Rank,
     Ranked,
+    ScalaPopularityStat,
+    Score,
     Sopfr,
     Two3FreeClass,
-    Votes,
 } from "../../../../src/general"
 import {N2D3P9} from "../../../../src/sagittal/ji/badness"
 import {CommaClassId, SymbolClassId, SymbolSubsetId} from "../../../../src/sagittal/notation"
@@ -37,8 +38,8 @@ describe("computePopular23FreeClasses", (): void => {
                 two3FreeClass: {
                     monzo: EMPTY_MONZO as Monzo<{rational: true, rough: 5, direction: Direction.SUPER}>,
                 } as Two3FreeClass,
-                popularityRank: 1 as Rank<Popularity>,
-                votes: 7624 as Votes,
+                popularityRank: 1 as Rank<ScalaPopularityStat>,
+                votes: 7624 as Decimal<{integer: true}> & Score<ScalaPopularityStat>,
                 notatingSymbolClassIds: [SymbolClassId.NULL, SymbolClassId.TICK_AND_LEFT_BARB],
                 notatingSymbolClassSmallestSymbolSubsetIndices:
                     [0, 5] as Array<Index<SymbolSubsetId>>,
@@ -53,8 +54,8 @@ describe("computePopular23FreeClasses", (): void => {
                 two3FreeClass: {
                     monzo: [0, 0, 1] as Monzo<{rational: true, rough: 5, direction: Direction.SUPER}>,
                 } as Two3FreeClass,
-                popularityRank: 2 as Rank<Popularity>,
-                votes: 5371 as Votes,
+                popularityRank: 2 as Rank<ScalaPopularityStat>,
+                votes: 5371 as Decimal<{integer: true}> & Score<ScalaPopularityStat>,
                 notatingSymbolClassIds: [SymbolClassId.TICK, SymbolClassId.LEFT_BARB],
                 notatingSymbolClassSmallestSymbolSubsetIndices:
                     [5, 1] as Array<Index<SymbolSubsetId>>,
@@ -69,8 +70,8 @@ describe("computePopular23FreeClasses", (): void => {
                 two3FreeClass: {
                     monzo: [0, 0, 0, 1] as Monzo<{rational: true, rough: 5, direction: Direction.SUPER}>,
                 } as Two3FreeClass,
-                popularityRank: 3 as Rank<Popularity>,
-                votes: 3016 as Votes,
+                popularityRank: 3 as Rank<ScalaPopularityStat>,
+                votes: 3016 as Decimal<{integer: true}> & Score<ScalaPopularityStat>,
                 notatingSymbolClassIds: [SymbolClassId.RIGHT_ARC, SymbolClassId.TICK_BARB_AND_ARC],
                 notatingSymbolClassSmallestSymbolSubsetIndices:
                     [1, 5] as Array<Index<SymbolSubsetId>>,
@@ -85,8 +86,8 @@ describe("computePopular23FreeClasses", (): void => {
                 two3FreeClass: {
                     monzo: [0, 0, 2] as Monzo<{rational: true, rough: 5, direction: Direction.SUPER}>,
                 } as Two3FreeClass,
-                popularityRank: 4 as Rank<Popularity>,
-                votes: 1610 as Votes,
+                popularityRank: 4 as Rank<ScalaPopularityStat>,
+                votes: 1610 as Decimal<{integer: true}> & Score<ScalaPopularityStat>,
                 notatingSymbolClassIds: [SymbolClassId.ANTITICK_AND_LEFT_BARB, SymbolClassId.DOUBLE_LEFT_BARB],
                 notatingSymbolClassSmallestSymbolSubsetIndices:
                     [5, 1] as Array<Index<SymbolSubsetId>>,
@@ -101,8 +102,8 @@ describe("computePopular23FreeClasses", (): void => {
                 two3FreeClass: {
                     monzo: [0, 0, -1, 1] as Monzo<{rational: true, rough: 5, direction: Direction.SUPER}>,
                 } as Two3FreeClass,
-                popularityRank: 5 as Rank<Popularity>,
-                votes: 1318 as Votes,
+                popularityRank: 5 as Rank<ScalaPopularityStat>,
+                votes: 1318 as Decimal<{integer: true}> & Score<ScalaPopularityStat>,
                 notatingSymbolClassIds: [SymbolClassId.RIGHT_SCROLL, SymbolClassId.TICK_AND_RIGHT_ARC],
                 notatingSymbolClassSmallestSymbolSubsetIndices:
                     [1, 5] as Array<Index<SymbolSubsetId>>,
@@ -128,8 +129,8 @@ describe("computePopular23FreeClasses", (): void => {
                 two3FreeClass: {
                     monzo: EMPTY_MONZO as Monzo<{rational: true, rough: 5, direction: Direction.SUPER}>,
                 } as Two3FreeClass,
-                popularityRank: 1 as Rank<Popularity>,
-                votes: 7624 as Votes,
+                popularityRank: 1 as Rank<ScalaPopularityStat>,
+                votes: 7624 as Decimal<{integer: true}> & Score<ScalaPopularityStat>,
                 bestNotatingCommaCents: 0 as Cents,
                 bestNotatingCommaMonzo: EMPTY_MONZO as Monzo<{rational: true}>,
                 bestNotatingCommaMaybeCommaClassId: CommaClassId._1_u,
@@ -144,8 +145,8 @@ describe("computePopular23FreeClasses", (): void => {
                 two3FreeClass: {
                     monzo: [0, 0, 1] as Monzo<{rational: true, rough: 5, direction: Direction.SUPER}>,
                 } as Two3FreeClass,
-                popularityRank: 2 as Rank<Popularity>,
-                votes: 5371 as Votes,
+                popularityRank: 2 as Rank<ScalaPopularityStat>,
+                votes: 5371 as Decimal<{integer: true}> & Score<ScalaPopularityStat>,
                 bestNotatingCommaCents: 21.506290 as Cents,
                 bestNotatingCommaMonzo: [-4, 4, -1] as Monzo<{rational: true}>,
                 bestNotatingCommaMaybeCommaClassId: CommaClassId._1_5_C,
@@ -160,8 +161,8 @@ describe("computePopular23FreeClasses", (): void => {
                 two3FreeClass: {
                     monzo: [0, 0, 0, 1] as Monzo<{rational: true, rough: 5, direction: Direction.SUPER}>,
                 } as Two3FreeClass,
-                popularityRank: 3 as Rank<Popularity>,
-                votes: 3016 as Votes,
+                popularityRank: 3 as Rank<ScalaPopularityStat>,
+                votes: 3016 as Decimal<{integer: true}> & Score<ScalaPopularityStat>,
                 bestNotatingCommaCents: 27.264092 as Cents,
                 bestNotatingCommaMonzo: [6, -2, 0, -1] as Monzo<{rational: true}>,
                 bestNotatingCommaMaybeCommaClassId: CommaClassId._1_7_C,
@@ -176,8 +177,8 @@ describe("computePopular23FreeClasses", (): void => {
                 two3FreeClass: {
                     monzo: [0, 0, 2] as Monzo<{rational: true, rough: 5, direction: Direction.SUPER}>,
                 } as Two3FreeClass,
-                popularityRank: 4 as Rank<Popularity>,
-                votes: 1610 as Votes,
+                popularityRank: 4 as Rank<ScalaPopularityStat>,
+                votes: 1610 as Decimal<{integer: true}> & Score<ScalaPopularityStat>,
                 bestNotatingCommaCents: 19.552569 as Cents,
                 bestNotatingCommaMonzo: [11, -4, -2] as Monzo<{rational: true}>,
                 bestNotatingCommaMaybeCommaClassId: CommaClassId._1_25_C,
@@ -192,8 +193,8 @@ describe("computePopular23FreeClasses", (): void => {
                 two3FreeClass: {
                     monzo: [0, 0, -1, 1] as Monzo<{rational: true, rough: 5, direction: Direction.SUPER}>,
                 } as Two3FreeClass,
-                popularityRank: 5 as Rank<Popularity>,
-                votes: 1318 as Votes,
+                popularityRank: 5 as Rank<ScalaPopularityStat>,
+                votes: 1318 as Decimal<{integer: true}> & Score<ScalaPopularityStat>,
                 bestNotatingCommaCents: 29.217813 as Cents,
                 bestNotatingCommaMonzo: [-9, 6, 1, -1] as Monzo<{rational: true}>,
                 bestNotatingCommaMaybeCommaClassId: CommaClassId._5_7_C,

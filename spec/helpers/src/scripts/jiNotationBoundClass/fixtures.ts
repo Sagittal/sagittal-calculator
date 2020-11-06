@@ -10,6 +10,7 @@ import {
     Quotient,
     Rank,
     Scamon,
+    Score,
     Sum,
     UNISON,
 } from "../../../../../src/general"
@@ -27,7 +28,6 @@ import {BoundEventConsolidation} from "../../../../../src/scripts/jiNotationBoun
 import {BoundEvent, BoundHistory} from "../../../../../src/scripts/jiNotationBoundClass/histories"
 import {BoundEventAnalysis, BoundHistoryAnalysis} from "../../../../../src/scripts/jiNotationBoundClass/history"
 import {RANKS} from "../../../../../src/scripts/jiNotationBoundClass/ranks"
-import {Score} from "../../../../../src/scripts/types"
 
 const boundEventFixture: BoundEvent = {
     pitch: {monzo: IRRATIONAL_SCAMON_BASE_MONZO, scaler: HALF_SCALER} as Scamon<{rational: false}>,

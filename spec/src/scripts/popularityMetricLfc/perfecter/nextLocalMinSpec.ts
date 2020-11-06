@@ -1,4 +1,4 @@
-import {BLANK, Decimal, Index, Ms, Name, Step} from "../../../../../src/general"
+import {BLANK, Decimal, Index, Ms, Name, Parameter, Step} from "../../../../../src/general"
 import * as doOnNextEventLoop from "../../../../../src/general/code/doOnNextEventLoop"
 import {Combination} from "../../../../../src/general/math"
 import {Metric, Scope, SumOfSquares} from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
@@ -8,7 +8,6 @@ import {searchNextLocalMin} from "../../../../../src/scripts/popularityMetricLfc
 import * as recursiveBestMetric from "../../../../../src/scripts/popularityMetricLfc/perfecter/perfectMetric"
 import {LocalMin, MetricTag} from "../../../../../src/scripts/popularityMetricLfc/perfecter/types"
 import {PopularityParameterId, Submetric} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
-import {Parameter} from "../../../../../src/scripts/types"
 
 describe("searchNextLocalMin", (): void => {
     const nextLocalMin: LocalMin = {

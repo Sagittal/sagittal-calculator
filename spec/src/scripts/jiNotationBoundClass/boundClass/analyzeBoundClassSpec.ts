@@ -8,7 +8,7 @@ import {
     Monzo,
     Multiplier,
     Name,
-    Scamon,
+    Scamon, Score,
     Sum,
 } from "../../../../../src/general"
 import {BoundClass, JiNotationBound} from "../../../../../src/sagittal"
@@ -20,7 +20,6 @@ import * as ranks from "../../../../../src/scripts/jiNotationBoundClass/boundCla
 import {BoundHistory} from "../../../../../src/scripts/jiNotationBoundClass/histories"
 import {BoundEventAnalysis, BoundHistoryAnalysis} from "../../../../../src/scripts/jiNotationBoundClass/history"
 import {RANKS} from "../../../../../src/scripts/jiNotationBoundClass/ranks"
-import {Score} from "../../../../../src/scripts/types"
 import {jiNotationBoundClassFixture} from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
 describe("analyzeJiNotationBoundClass", (): void => {

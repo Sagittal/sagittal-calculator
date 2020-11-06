@@ -1,5 +1,4 @@
-import {Combination, LogTarget, saveLog, stringify} from "../../../general"
-import {Parameter} from "../../types"
+import {Combination, LogTarget, Parameter, saveLog, stringify} from "../../../general"
 import {Metric, Scope, SubmetricScope} from "../bestMetric"
 import {PopularityParameterId, Submetric} from "../sumOfSquares"
 import {PARAMETER_DYNAMISMS} from "./constants"

@@ -1,4 +1,12 @@
-import {areScamonsEqual, Comma, compute23FreeClass, computeCentsFromPitch, LogTarget, saveLog} from "../../general"
+import {
+    areScamonsEqual,
+    Comma,
+    compute23FreeClass,
+    computeCentsFromPitch,
+    LogTarget,
+    saveLog,
+    Score,
+} from "../../general"
 import {
     Badness,
     CommaClassId,
@@ -9,7 +17,6 @@ import {
     getCommaClass,
     lpei,
 } from "../../sagittal"
-import {Score} from "../types"
 import {complexityMetricLfcScriptGroupSettings} from "./globals"
 
 // TODO: DRY this with zoneMetricScore

@@ -1,10 +1,9 @@
-import {Count, Exponent, Max, Popularity, Rank, Step} from "../../general"
-import {Parameter} from "../types"
-import {Unpopularity} from "./sumOfSquares"
+import {Count, Exponent, Max, Parameter, Rank, ScalaPopularityStat, Step} from "../../general"
+import {LfcUnpopularityEstimate} from "./sumOfSquares"
 
 interface PopularityMetricLfcScriptGroupSettings {
-    z: Exponent<Rank<Popularity | Unpopularity>>,
-    onlyTop: Count<Popularity>,
+    z: Exponent<Rank<ScalaPopularityStat | LfcUnpopularityEstimate>>,
+    onlyTop: Count<ScalaPopularityStat>,
     maxUnit: Max<Step<Parameter>>,
     noUseless: boolean,
     sync: boolean,

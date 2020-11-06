@@ -1,5 +1,4 @@
-import {Combination, Index, Io, Maybe, Name, Sum} from "../../../general"
-import {ParameterScopes} from "../../types"
+import {Combination, Index, Io, Maybe, Name, ParameterScopes, Sum} from "../../../general"
 import {PopularityParameterId, Submetric} from "../sumOfSquares"
 import {DynamicParameter, Sample} from "./scopeToSamples"
 

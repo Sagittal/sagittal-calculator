@@ -1,6 +1,5 @@
-import {Ed, Window} from "../../../../../../src/general"
+import {Ed, Parameter, Window} from "../../../../../../src/general"
 import {computeEqualDivision} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples/equalDivision"
-import {Parameter} from "../../../../../../src/scripts/types"
 
 describe("computeEqualDivision", (): void => {
     const expected = 5 as Ed<Parameter>

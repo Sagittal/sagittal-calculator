@@ -1,6 +1,5 @@
-import {Abs, Decimal, Exponent, Prime} from "../../general"
+import {Abs, Decimal, Exponent, Parameter, Prime} from "../../general"
 import {ApotomeSlope, Complexity, N2D3P9} from "../../sagittal"
-import {Parameter} from "../types"
 
 type ComplexityParameterSet = Partial<Record<ComplexityParameterId, Parameter>>
 

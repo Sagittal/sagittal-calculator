@@ -7,12 +7,12 @@ import {
     Scamon,
     THREE_PRIME_INDEX,
 } from "../../../../general"
-import {Complexity} from "./types"
+import {SecorComplexity} from "./types"
 import {computeApotomeSlope} from "./uselessness"
 
 // As reverse-engineered here: http://forum.sagittal.org/viewtopic.php?p=1659#p1659
 
-const computeSecorComplexity = (jiPitch: Scamon<{rational: true}>): Complexity => {
+const computeSecorComplexity = (jiPitch: Scamon<{rational: true}>): SecorComplexity => {
     const two3FreeClass = compute23FreeClass(jiPitch)
     const g = computeRationalScamonSopfr(two3FreeClass)
 
@@ -25,7 +25,7 @@ const computeSecorComplexity = (jiPitch: Scamon<{rational: true}>): Complexity =
 
     const l = 2 ** (abs(computeApotomeSlope(jiPitch)) - 8.5) * Math.log(g + 2)
 
-    return g + j + k + l as Complexity
+    return g + j + k + l as SecorComplexity
 }
 
 export {

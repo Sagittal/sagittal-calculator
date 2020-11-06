@@ -1,6 +1,5 @@
-import {BASE_2, decrement, Exponent, pow} from "../../../general"
+import {BASE_2, decrement, Exponent, pow, Score} from "../../../general"
 import {JI_NOTATION_LEVELS} from "../../../sagittal"
-import {Score} from "../../types"
 import {BoundHistory} from "../histories"
 import {RANKS} from "../ranks"
 import {computeBinaryScoreRepresentationIndex} from "./binaryScoreRepresentationCardinality"

@@ -1,5 +1,4 @@
-import {Filename, LogTarget, Maybe, Name, saveLog, stringify} from "../../../../general"
-import {Parameter} from "../../../types"
+import {Filename, LogTarget, Maybe, Name, Parameter, saveLog, stringify} from "../../../../general"
 import {Metric} from "../../bestMetric"
 import {PARAMETER_DYNAMISMS} from "../../perfecter"
 import {PopularityParameterId, Submetric} from "../../sumOfSquares"

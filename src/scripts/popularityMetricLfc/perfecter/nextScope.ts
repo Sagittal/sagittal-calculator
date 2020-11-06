@@ -1,5 +1,4 @@
-import {deepClone, Index, Window} from "../../../general"
-import {Parameter} from "../../types"
+import {deepClone, Index, Parameter, Window} from "../../../general"
 import {computeDynamicParameterScope, DynamicParameter, SamplePoint, Scope} from "../bestMetric"
 
 const computeNextScope = (samplePoint: SamplePoint, dynamicParameters: DynamicParameter[], scope: Scope): Scope => {

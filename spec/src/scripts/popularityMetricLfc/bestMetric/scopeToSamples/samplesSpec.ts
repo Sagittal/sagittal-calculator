@@ -1,11 +1,10 @@
-import {Ed, Window} from "../../../../../../src/general"
+import {Ed, Parameter, Window} from "../../../../../../src/general"
 import {Sample, Scope} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {
     computeDynamicParameters,
     computeSamples,
 } from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
 import {PopularityParameterId} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
-import {Parameter} from "../../../../../../src/scripts/types"
 
 describe("computeSamples", (): void => {
     it("given some submetric scopes, will return all combinations of submetrics to check", (): void => {

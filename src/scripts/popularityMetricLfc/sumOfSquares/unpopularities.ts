@@ -1,14 +1,14 @@
-import { Combination, Index, Popularity, Ranked } from "../../../general"
+import { Combination, Index, Ranked, ScalaPopularityStat } from "../../../general"
 import { computeAntivotes } from "./antivotes"
-import { Submetric, Unpopularity } from "./types"
+import { LfcUnpopularityEstimate, Submetric } from "./types"
 
 const computeUnpopularities = (
-    popularities: Array<Ranked<Popularity>>,
+    popularities: Array<Ranked<ScalaPopularityStat>>,
     submetrics: Combination<Submetric>,
-): Unpopularity[] =>
-    popularities.map(({ two3FreeClass }: Popularity, index: number): Unpopularity =>
+): LfcUnpopularityEstimate[] =>
+    popularities.map(({ two3FreeClass }: ScalaPopularityStat, index: number): LfcUnpopularityEstimate =>
         ({
-            index: index as Index<Unpopularity>,
+            index: index as Index<LfcUnpopularityEstimate>,
             antivotes: computeAntivotes(two3FreeClass, submetrics),
             two3FreeClass,
         }))

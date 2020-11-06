@@ -1,5 +1,4 @@
-import {isUndefined, Window} from "../../../../general"
-import {DynamicParameterScope, Parameter} from "../../../types"
+import {DynamicParameterScope, isUndefined, Parameter, Window} from "../../../../general"
 import {computeEqualDivision} from "./equalDivision"
 import {DynamicParameterScopeOptions} from "./types"
 

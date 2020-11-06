@@ -1,8 +1,7 @@
-import {Ed, Index, Window} from "../../../../../../src/general"
+import {Ed, Index, Parameter, Window} from "../../../../../../src/general"
 import {DynamicParameter, SubmetricScope} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {computeSubmetricDynamicParameters} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples/submetricDynamicParameters"
 import {PopularityParameterId, Submetric} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
-import {Parameter} from "../../../../../../src/scripts/types"
 
 describe("computeSubmetricDynamicParameters", (): void => {
     const submetricIndex = 5 as Index<Submetric>

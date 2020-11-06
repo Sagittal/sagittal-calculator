@@ -1,9 +1,8 @@
-import {Count, Ed, Window} from "../../../../../../src/general"
+import {Count, Ed, Parameter, Window} from "../../../../../../src/general"
 import {Scope} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {scopesToSearch, solverStatus} from "../../../../../../src/scripts/popularityMetricLfc/globals"
 import {Chunk, searchScopes} from "../../../../../../src/scripts/popularityMetricLfc/solver"
 import {PopularityParameterId} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
-import {Parameter} from "../../../../../../src/scripts/types"
 
 describe("search scopes", (): void => {
     it("searches all remaining scopes at the current chunk count and then, given scopes are finished populated by then, searching finishes too", async (): Promise<void> => {

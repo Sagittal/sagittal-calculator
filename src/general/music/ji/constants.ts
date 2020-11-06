@@ -12,7 +12,7 @@ const SEVEN_PRIME_LIMIT: 7 & Max<Prime> = 7 as 7 & Max<Prime>
 const UNISON = {monzo: [] as unknown[]} as Comma
 const OCTAVE = {monzo: [1]} as Scamon
 
-// TODO: maybe direct these comma names
+// TODO: maybe direct these comma names. Await feedback from the forum.
 // This may be of interest: http://forum.sagittal.org/viewtopic.php?p=1723#p1723
 const PYTHAGOREAN_SCHISMA = {monzo: [-84, 53]} as Comma             // 3s       Mercator's comma          3.615046¢
 const PYTHAGOREAN_COMPLEX_KLEISMA = {monzo: [317, -200]} as Comma   // 3k                                 8.999827¢

@@ -13,8 +13,7 @@ export {
 } from "./constants"
 export {Comma, Apotome} from "./types"
 export {
-    Popularity,
-    Votes,
+    ScalaPopularityStat,
     compute23FreeClassName,
     format23FreeClass,
     compute23FreeClass,

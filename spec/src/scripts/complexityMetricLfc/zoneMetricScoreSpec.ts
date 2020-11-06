@@ -1,3 +1,4 @@
+import {Parameter, Score} from "../../../../src/general/lfc"
 import {Comma} from "../../../../src/general/music/ji"
 import {CommaClassId} from "../../../../src/sagittal/notation"
 import {complexityMetricLfcScriptGroupSettings} from "../../../../src/scripts/complexityMetricLfc/globals"
@@ -8,7 +9,6 @@ import {
     ComplexityParameterId,
 } from "../../../../src/scripts/complexityMetricLfc/types"
 import {computeZoneComplexityMetricScore} from "../../../../src/scripts/complexityMetricLfc/zoneMetricScore"
-import {Parameter, Score} from "../../../../src/scripts/types"
 
 describe("computeZoneComplexityMetricScore", (): void => {
     const COMMAS_FOR_1_455_n = [

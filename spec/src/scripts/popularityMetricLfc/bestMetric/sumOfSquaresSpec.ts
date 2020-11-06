@@ -9,6 +9,7 @@ import {
     Ms,
     Name,
     Obj,
+    Score,
     Two3FreeClass,
 } from "../../../../../src/general"
 import * as doOnNextEventLoop from "../../../../../src/general/code/doOnNextEventLoop"
@@ -19,11 +20,10 @@ import {computeSumOfSquaresAndMaybeUpdateBestMetric} from "../../../../../src/sc
 import {bestMetrics} from "../../../../../src/scripts/popularityMetricLfc/globals"
 import {
     computeUnpopularities,
+    LfcUnpopularityEstimate,
     PopularityParameterId,
     Submetric,
-    Unpopularity,
 } from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
-import {Antivotes} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares/types"
 import * as unpopularities from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares/unpopularities"
 
 describe("computeSumOfSquaresAndMaybeUpdateBestMetric", (): void => {
@@ -101,25 +101,25 @@ describe("computeSumOfSquaresAndMaybeUpdateBestMetric", (): void => {
     it("survives an error when computing sum of squares, but sets nothing", async (): Promise<void> => {
         spyOn(unpopularities, "computeUnpopularities").and.returnValue([
             {
-                antivotes: 0 as Antivotes,
+                antivotes: 0 as Score<LfcUnpopularityEstimate>,
                 two3FreeClass: {
                     monzo: EMPTY_MONZO as Monzo<{rational: true, rough: 5, direction: Direction.SUPER}>,
                 } as Two3FreeClass,
-                index: 0 as Index<Unpopularity>,
+                index: 0 as Index<LfcUnpopularityEstimate>,
             },
             {
-                antivotes: NaN as Antivotes,
+                antivotes: NaN as Score<LfcUnpopularityEstimate>,
                 two3FreeClass: {
                     monzo: [0, 0, 1] as Monzo<{rational: true, rough: 5, direction: Direction.SUPER}>,
                 } as Two3FreeClass,
-                index: 0 as Index<Unpopularity>,
+                index: 0 as Index<LfcUnpopularityEstimate>,
             },
             {
-                antivotes: 8 as Antivotes,
+                antivotes: 8 as Score<LfcUnpopularityEstimate>,
                 two3FreeClass: {
                     monzo: [0, 0, 0, 1] as Monzo<{rational: true, rough: 5, direction: Direction.SUPER}>,
                 } as Two3FreeClass,
-                index: 0 as Index<Unpopularity>,
+                index: 0 as Index<LfcUnpopularityEstimate>,
             },
         ])
 

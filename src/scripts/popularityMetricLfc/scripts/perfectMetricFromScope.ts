@@ -1,5 +1,4 @@
-import {LogTarget, saveLog, stringify, Window} from "../../../general"
-import {Parameter} from "../../types"
+import {LogTarget, Parameter, saveLog, stringify, Window} from "../../../general"
 import {computeDynamicParameterScope, Scope} from "../bestMetric"
 import {bestMetrics, popularityMetricLfcScriptGroupSettings} from "../globals"
 import {

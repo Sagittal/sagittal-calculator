@@ -1,30 +1,38 @@
-import {Combination, Index, Popularity, Rank, Ranked, Two3FreeClass} from "../../../../../src/general"
-import {Votes} from "../../../../../src/general/music"
+import {
+    Combination,
+    Decimal,
+    Index,
+    Parameter,
+    Rank,
+    Ranked,
+    ScalaPopularityStat,
+    Score,
+    Two3FreeClass,
+} from "../../../../../src/general"
 import {
     computeUnpopularities,
+    LfcUnpopularityEstimate,
     PopularityParameterId,
     Submetric,
 } from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
-import {Antivotes, Unpopularity} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares/types"
-import {Parameter} from "../../../../../src/scripts/types"
 
 describe("computeUnpopularities", (): void => {
     it("given a list of actual popularities and submetric combinations, returns our estimated unpopularities, which have antivotes instead of votes", (): void => {
-        const popularities: Array<Ranked<Popularity>> = [
+        const popularities: Array<Ranked<ScalaPopularityStat>> = [
             {
-                rank: 5 as Rank<Popularity>,
+                rank: 5 as Rank<ScalaPopularityStat>,
                 two3FreeClass: {monzo: [0, 0, -1, 1]} as Two3FreeClass,
-                votes: 1318 as Votes,
+                votes: 1318 as Decimal<{integer: true}> & Score<ScalaPopularityStat>,
             },
             {
-                rank: 8 as Rank<Popularity>,
+                rank: 8 as Rank<ScalaPopularityStat>,
                 two3FreeClass: {monzo: [0, 0, 3]} as Two3FreeClass,
-                votes: 492 as Votes,
+                votes: 492 as Decimal<{integer: true}> & Score<ScalaPopularityStat>,
             },
             {
-                rank: 39 as Rank<Popularity>,
+                rank: 39 as Rank<ScalaPopularityStat>,
                 two3FreeClass: {monzo: [0, 0, 1, -2, 1]} as Two3FreeClass,
-                votes: 51 as Votes,
+                votes: 51 as Decimal<{integer: true}> & Score<ScalaPopularityStat>,
             },
         ]
         const submetrics: Combination<Submetric> = [
@@ -41,21 +49,21 @@ describe("computeUnpopularities", (): void => {
 
         const actual = computeUnpopularities(popularities, submetrics)
 
-        const expected: Unpopularity[] = [
+        const expected: LfcUnpopularityEstimate[] = [
             {
-                antivotes: 2 as Antivotes,
+                antivotes: 2 as Score<LfcUnpopularityEstimate>,
                 two3FreeClass: {monzo: [0, 0, -1, 1]} as Two3FreeClass,
-                index: 0 as Index<Unpopularity>,
+                index: 0 as Index<LfcUnpopularityEstimate>,
             },
             {
-                antivotes: 1 as Antivotes,
+                antivotes: 1 as Score<LfcUnpopularityEstimate>,
                 two3FreeClass: {monzo: [0, 0, 3]} as Two3FreeClass,
-                index: 1 as Index<Unpopularity>,
+                index: 1 as Index<LfcUnpopularityEstimate>,
             },
             {
-                antivotes: 3 as Antivotes,
+                antivotes: 3 as Score<LfcUnpopularityEstimate>,
                 two3FreeClass: {monzo: [0, 0, 1, -2, 1]} as Two3FreeClass,
-                index: 2 as Index<Unpopularity>,
+                index: 2 as Index<LfcUnpopularityEstimate>,
             },
         ]
         expect(actual).toEqual(expected)

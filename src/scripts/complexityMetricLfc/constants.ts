@@ -1,5 +1,5 @@
+import {Parameter} from "../../general"
 import {CommaClassId} from "../../sagittal"
-import {Parameter} from "../types"
 import {ComplexityMetricLfcScriptGroupSettings} from "./types"
 
 const INITIAL_COMPLEXITY_METRIC_LFC_SCRIPT_GROUP_SETTINGS: ComplexityMetricLfcScriptGroupSettings = {

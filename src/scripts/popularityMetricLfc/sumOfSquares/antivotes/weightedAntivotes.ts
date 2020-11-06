@@ -1,8 +1,10 @@
-import {Base, isUndefined, log} from "../../../../general"
-import {Parameter} from "../../../types"
-import {Antivotes, WeightedAntivotesOptions} from "../types"
+import {Base, isUndefined, log, Parameter, Score} from "../../../../general"
+import {LfcUnpopularityEstimate, WeightedAntivotesOptions} from "../types"
 
-const computeWeightedAntivotes = (antivotes: Antivotes, options: WeightedAntivotesOptions): Antivotes => {
+const computeWeightedAntivotes = (
+    antivotes: Score<LfcUnpopularityEstimate>,
+    options: WeightedAntivotesOptions,
+): Score<LfcUnpopularityEstimate> => {
     const {
         coefficient = 1 as Parameter,
         logarithmBase,
@@ -16,18 +18,18 @@ const computeWeightedAntivotes = (antivotes: Antivotes, options: WeightedAntivot
         weightedAntivotes = log(
             weightedAntivotes,
             logarithmBase as number as Base,
-        ) as number as Antivotes
+        ) as number as Score<LfcUnpopularityEstimate>
     }
     if (!isUndefined(powerExponent)) {
-        weightedAntivotes = weightedAntivotes ** powerExponent as Antivotes
+        weightedAntivotes = weightedAntivotes ** powerExponent as Score<LfcUnpopularityEstimate>
     }
     if (!isUndefined(powerBase)) {
-        weightedAntivotes = powerBase ** weightedAntivotes as Antivotes
+        weightedAntivotes = powerBase ** weightedAntivotes as Score<LfcUnpopularityEstimate>
 
     }
-    weightedAntivotes = weightedAntivotes * coefficient as Antivotes
+    weightedAntivotes = weightedAntivotes * coefficient as Score<LfcUnpopularityEstimate>
 
-    return weightedAntivotes as Antivotes
+    return weightedAntivotes as Score<LfcUnpopularityEstimate>
 }
 
 export {

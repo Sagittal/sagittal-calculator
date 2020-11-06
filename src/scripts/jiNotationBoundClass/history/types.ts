@@ -1,6 +1,5 @@
-import {Abs, Cents, Decimal, Multiplier, Rank, Scamon, Sum} from "../../../general"
+import {Abs, Cents, Decimal, Multiplier, Rank, Scamon, Score, Sum} from "../../../general"
 import {BoundType, Ina, Tina} from "../../../sagittal"
-import {Score} from "../../types"
 import {BoundHistory} from "../histories"
 import {BoundEventAnalysis} from "./events"
 

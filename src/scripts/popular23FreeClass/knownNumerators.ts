@@ -1,17 +1,19 @@
 import {
     compute23FreeClass,
     computeScamonFromQuotient,
+    Denominator,
     Filename,
     isLowestTerms,
     max,
     Max,
     NEWLINE,
     Quotient,
+    QuotientPart,
     readLines,
 } from "../../general"
 import {analyze23FreeClass, N2D3P9} from "../../sagittal"
 import {computePopular23FreeClass} from "./popular23FreeClass"
-import {Popular23FreeClass} from "./types"
+import {KnownNumerator, Popular23FreeClass} from "./types"
 
 const computePopular23FreeClassFromRationalQuotient = (
     rationalQuotient: Quotient<{rational: true}>,
@@ -24,7 +26,7 @@ const computePopular23FreeClassFromRationalQuotient = (
 }
 
 const computePopular23FreeClassesFromKnownNumerators = (maxN2D3P9: Max<N2D3P9>): Popular23FreeClass[] => {
-    const knownNumerators = JSON.parse(
+    const knownNumerators: KnownNumerator[] = JSON.parse(
         readLines("src/scripts/popular23FreeClass/input/knownNumerators.txt" as Filename).join(NEWLINE),
     )
 
@@ -36,13 +38,16 @@ const computePopular23FreeClassesFromKnownNumerators = (maxN2D3P9: Max<N2D3P9>):
         const possibleDenominators = knownNumerators.slice(0, knownNumeratorIndex)
 
         for (const [possibleDenominatorIndex, possibleDenominator] of possibleDenominators.entries()) {
+            // TODO: this could really be cleaned up
             const n2d3p9 = knownNumerator.numerator * possibleDenominator.numerator *
                 2 ** -knownNumerator.copfr * 3 ** -possibleDenominator.copfr *
                 max(knownNumerator.gpf, possibleDenominator.gpf) / 9
 
             if (n2d3p9 <= maxN2D3P9) {
-                const rationalQuotient =
-                    [knownNumerator.numerator, possibleDenominator.numerator] as Quotient<{rational: true}>
+                const rationalQuotient = [
+                    knownNumerator.numerator,
+                    possibleDenominator.numerator as QuotientPart as Denominator,
+                ] as Quotient<{rational: true}>
                 if (!isLowestTerms(rationalQuotient)) continue
                 popular23FreeClasses.push(computePopular23FreeClassFromRationalQuotient(rationalQuotient))
             } else if (possibleDenominatorIndex === 0) {

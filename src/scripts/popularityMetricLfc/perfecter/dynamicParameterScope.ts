@@ -1,5 +1,4 @@
-import {Ed, Window} from "../../../general"
-import {DynamicParameterScope, Parameter} from "../../types"
+import {DynamicParameterScope, Ed, Parameter, Window} from "../../../general"
 import {popularityMetricLfcScriptGroupSettings} from "../globals"
 
 const computeDynamicParameterScopeForPerfecting = (parameterValue: Parameter): DynamicParameterScope => ({

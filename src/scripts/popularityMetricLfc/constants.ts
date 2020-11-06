@@ -1,16 +1,15 @@
-import {Count, Exponent, Max, Popularity, Rank, Step} from "../../general"
-import {Parameter} from "../types"
+import {Count, Exponent, Max, Parameter, Rank, ScalaPopularityStat, Step} from "../../general"
 import {Sample, Scope} from "./bestMetric"
 import {Chunk} from "./solver"
-import {Unpopularity} from "./sumOfSquares"
+import {LfcUnpopularityEstimate} from "./sumOfSquares"
 import {PopularityMetricLfcScriptGroupSettings} from "./types"
 
 // "Zipf exponent"; Applied to the ranks before calculating sum-of-squares, in accordance with the data,
 // To capture how the ranks toward the top of the list are much more important to match
-const DEFAULT_Z = -1 as Exponent<Rank<Popularity | Unpopularity>>
+const DEFAULT_Z = -1 as Exponent<Rank<ScalaPopularityStat | LfcUnpopularityEstimate>>
 
 // The first popularity which no longer has >0.05% of votes, and drops from 19 votes suddenly to 16
-const DEFAULT_ONLY_TOP = 80 as Count<Popularity>
+const DEFAULT_ONLY_TOP = 80 as Count<ScalaPopularityStat>
 
 // When calculating ED, the max unit it will allow a gap between samples
 const DEFAULT_MAX_UNIT = 0.1 as Max<Step<Parameter>>
