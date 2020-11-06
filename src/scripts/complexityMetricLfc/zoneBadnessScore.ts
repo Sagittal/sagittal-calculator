@@ -3,6 +3,7 @@ import {
     Comma,
     compute23FreeClass,
     computeCentsFromPitch,
+    formatDecimal,
     LogTarget,
     saveLog,
     Score,
@@ -36,7 +37,10 @@ const computeZoneBadnessScore = ([commaClassId, commas]: [CommaClassId, Comma[]]
 
         const isActualComma = areScamonsEqual(comma, actualComma)
 
-        saveLog(`for comma ${formatComma(comma)}${isActualComma ? " (which is the actual comma) " : " "}badness score is ${badness}`, LogTarget.DETAILS)
+        saveLog(
+            `${formatComma(comma)} badness: ${formatDecimal(badness)} ${isActualComma ? "* actual comma" : ""}`,
+            LogTarget.DETAILS,
+        )
 
         if (isActualComma) actualCommaBadness = badness
         if (badness < lowestCommaBadness) {
@@ -44,11 +48,15 @@ const computeZoneBadnessScore = ([commaClassId, commas]: [CommaClassId, Comma[]]
         }
     })
 
-    return complexityMetricLfcScriptGroupSettings.sosMode ?
+    const zoneBadnessScore = complexityMetricLfcScriptGroupSettings.sosMode ?
         (actualCommaBadness - lowestCommaBadness) ** 2 as Score<Badness> :
         actualCommaBadness === lowestCommaBadness ?
             0 as Score<Badness> :
             1 as Score<Badness>
+
+    saveLog(`badness score for ${formatComma(actualComma)}'s zone: ${zoneBadnessScore}\n`, LogTarget.DETAILS)
+
+    return zoneBadnessScore
 }
 
 export {

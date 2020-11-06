@@ -19,10 +19,9 @@ zoneCommaEntries.forEach(([commaClassId, commas]: [CommaClassId, Comma[]]): void
     if (EXCLUDED_COMMAS.includes(commaClassId)) return
 
     const zoneBadnessScore = computeZoneBadnessScore([commaClassId, commas])
-    saveLog(`badness score for ${commaClassId}'s zone: ${zoneBadnessScore}`, LogTarget.DETAILS)
     jiNotationBadnessScore = jiNotationBadnessScore + zoneBadnessScore as Sum<Score<Badness>>
 })
 
-saveLog(`JI notation's badness score was: ${jiNotationBadnessScore}`, LogTarget.FINAL)
+saveLog(`\nJI NOTATION'S BADNESS SCORE WAS: ${jiNotationBadnessScore}`, LogTarget.FINAL)
 
 if (ioSettings.time) saveLog(`\ntook ${time()}`, LogTarget.FINAL)
