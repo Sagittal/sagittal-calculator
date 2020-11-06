@@ -1,9 +1,8 @@
-import {isUndefined, Precision} from "../code"
+import {isUndefined, MAX_JS_INTEGER_VALUE, Precision} from "../code"
 import {Addend, Count, Divisor, Multiplier, Product, Subtrahend, Sum} from "../types"
 import {
     ADDITIVE_IDENTITY,
     MULTIPLICATIVE_IDENTITY,
-    VALUE_ABOVE_WHICH_ROUNDING_IMPLEMENTATION_BREAKS,
     VALUE_BELOW_WHICH_ROUNDING_IMPLEMENTATION_BREAKS,
 } from "./constants"
 import {Decimal} from "./numeric"
@@ -47,7 +46,7 @@ const round = <T extends number>(number: T, precision?: Precision): T => {
         return Math.round(number) as T & Decimal<{integer: true}>
     }
 
-    if (abs(number) > VALUE_ABOVE_WHICH_ROUNDING_IMPLEMENTATION_BREAKS) {
+    if (abs(number) > MAX_JS_INTEGER_VALUE) {
         return number
     }
 

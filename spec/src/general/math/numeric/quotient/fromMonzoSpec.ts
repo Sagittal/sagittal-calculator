@@ -42,6 +42,7 @@ describe("computeQuotientFromMonzo", (): void => {
 
         const actual = computeQuotientFromMonzo(monzo, {disableErrorBecauseExactValueNotRequired: true})
 
+        // Whoa. this denominator happens to be the largest value JavaScript can encode as an integer, 2^53
         const expected = [9628575343626794, 9007199254740992] as Quotient
         expect(actual).toBeCloseToArray(expected)
     })

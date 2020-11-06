@@ -1,4 +1,4 @@
-import {DEFAULT_PRECISION, Precision} from "../../../../src/general/code"
+import {DEFAULT_PRECISION, MAX_JS_INTEGER_VALUE, Precision} from "../../../../src/general/code"
 import {Base, Exponent, log, Power, round} from "../../../../src/general/math"
 
 describe("log", (): void => {
@@ -46,5 +46,21 @@ describe("round", (): void => {
         const number = 5.153775207320113e+47
 
         expect(round(number, DEFAULT_PRECISION)).toBe(number)
+    })
+
+    it("it can still handle numbers about this high", (): void => {
+        expect(round(MAX_JS_INTEGER_VALUE, DEFAULT_PRECISION)).toBe(MAX_JS_INTEGER_VALUE)
+    })
+
+    it("ignores a given precision and returns the number unchanged if they are larger than the max JavaScript integer value           ", (): void => {
+        const number = MAX_JS_INTEGER_VALUE + 0.74383
+
+        expect(round(number, 1 as Precision)).toBe(number)
+    })
+
+    it("returns the number unchanged if no precision is given and they are larger than the max JavaScript integer value        ", (): void => {
+        const number = MAX_JS_INTEGER_VALUE + 0.74383
+
+        expect(round(number)).toBe(number)
     })
 })

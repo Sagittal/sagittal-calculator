@@ -1,3 +1,4 @@
+import {MAX_JS_INTEGER_VALUE} from "../../../code"
 import {
     Decimal,
     Monzo,
@@ -23,6 +24,10 @@ const computeIntegerMonzoFromIntegerDecimal = <T extends NumericProperties>(
 ): Monzo<T & {integer: true}> => {
     const integerMonzo = [] as unknown[] as Monzo<T & {integer: true}>
     let remnant = integerDecimal as number
+
+    if (integerDecimal > MAX_JS_INTEGER_VALUE) {
+        throw new Error(`This integer ${integerDecimal} is larger than the maximum integer JavaScript can encode (double float precision, 2^53) and therefore will be rounded and be unable to be prime factorized properly.`)
+    }
 
     let index = 0
     let divisor = PRIMES[index]

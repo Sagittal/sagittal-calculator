@@ -1,3 +1,4 @@
+import {MAX_JS_INTEGER_VALUE} from "../../../../../../src/general/code"
 import {Decimal, Monzo} from "../../../../../../src/general/math"
 import {computeRationalMonzoFromRationalDecimal} from "../../../../../../src/general/math/rational/monzo"
 import {computeIntegerMonzoFromIntegerDecimal} from "../../../../../../src/general/math/rational/monzo/fromDecimal"
@@ -29,5 +30,13 @@ describe("computeIntegerMonzoFromIntegerDecimal", (): void => {
         expect((): void => {
             computeIntegerMonzoFromIntegerDecimal(integerDecimal)
         }).toThrowError("This integer 756065159 contains primes which are too big; remainder is 756065159")
+    })
+
+    it("errors if given numbers which contain low primes but are too big", (): void => {
+        const integerDecimal = MAX_JS_INTEGER_VALUE + 1 as Decimal<{integer: true}>         // 2^53
+
+        expect((): void => {
+            computeIntegerMonzoFromIntegerDecimal(integerDecimal)
+        }).toThrowError("This integer 9007199254740992 is larger than the maximum integer JavaScript can encode (double float precision, 2^53) and therefore will be rounded and be unable to be prime factorized properly.")
     })
 })

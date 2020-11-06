@@ -211,8 +211,3 @@ describe("analyze-ji-pitch", (): void => {
         expect(actual).toEqual(expected)
     })
 })
-
-// TODO: ANALYZE JI PITCH BUG
-//  `npm run analyze-ji-pitch 37252902984619140625`
-//  Error: JI pitches must be rational. This pitch was 78016.784¢
-//  Even though that is rational. it's 5^28
