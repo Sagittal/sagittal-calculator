@@ -1,5 +1,5 @@
 import {Copfr, Io, Max, Monzo, NEWLINE, Prime, Sopfr, Two3FreeClass} from "../../../../../../src/general"
-import {N2D3P9} from "../../../../../../src/sagittal/ji/metrics"
+import {N2D3P9} from "../../../../../../src/sagittal/ji/badness"
 import {compute23FreeClassOutput} from "../../../../../../src/scripts/jiPitch/io"
 import {two3FreeClassAnalysisFixture} from "../../../../../helpers/src/scripts/jiPitch/fixtures"
 

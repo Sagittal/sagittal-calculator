@@ -1,5 +1,5 @@
 import {Abs, Decimal, Exponent, Max, Min, Prime, Scamon} from "../../../general"
-import {ApotomeSlope, N2D3P9} from "../metrics"
+import {ApotomeSlope, N2D3P9} from "../badness"
 
 type CommasFrom23FreeMonzoOptions = Partial<{
     lowerBound: Min<Scamon>,

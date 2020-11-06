@@ -17,7 +17,7 @@ import {
     Two3FreeClass,
 } from "../../../../../../src/general"
 import {ApotomeSlope, CommaAnalysis, CommaClassId} from "../../../../../../src/sagittal"
-import {N2D3P9} from "../../../../../../src/sagittal/ji/metrics"
+import {N2D3P9} from "../../../../../../src/sagittal/ji/badness"
 import {jiPitchScriptGroupSettings} from "../../../../../../src/scripts/jiPitch/globals"
 import {computeFindCommasRow} from "../../../../../../src/scripts/jiPitch/io/row"
 import {FindCommasField} from "../../../../../../src/scripts/jiPitch/types"

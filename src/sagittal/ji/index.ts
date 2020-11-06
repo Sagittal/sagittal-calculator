@@ -46,4 +46,4 @@ export {
     lpei,
     Badness,
     Complexity,
-} from "./metrics"
+} from "./badness"

@@ -9,7 +9,7 @@ import {
     Sopfr,
     Two3FreeClass,
 } from "../../../general"
-import {computeN2D3P9, N2D3P9} from "../metrics"
+import {computeN2D3P9, N2D3P9} from "../badness"
 import {Two3FreeClassAnalysis} from "./types"
 
 const analyze23FreeClass = (two3FreeClass: Two3FreeClass): Two3FreeClassAnalysis => {

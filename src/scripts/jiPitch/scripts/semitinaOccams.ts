@@ -269,7 +269,9 @@ bestCommaPerSemitinaZone
         semitinaCandidateOccams[metacommaName] = semitinaCandidateOccams[metacommaName] || 0 as Occam
         semitinaCandidateOccams[metacommaName] = semitinaCandidateOccams[metacommaName] + 1 as Occam
 
-        // CheckMetacommaConsistency(metacomma, tinaBucket) TODO: should map to 0 here!
+        // TODO: should map to 0 here!
+        //  Also, how about in the final output, giving an *inconsistent; maps to 1 or whatever
+        // CheckMetacommaConsistency(metacomma, tinaBucket)
 
         metacommaNameToMetacommaMap[metacommaName] = metacommaBetweenConsecutiveBestCommas
 

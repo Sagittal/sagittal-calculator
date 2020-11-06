@@ -1,6 +1,6 @@
 import {Abs, abs, Max} from "../../../../../../src/general"
 import {CommaClassId, getCommaClass} from "../../../../../../src/sagittal"
-import {ApotomeSlope, computeApotomeSlope} from "../../../../../../src/sagittal/ji/metrics"
+import {ApotomeSlope, computeApotomeSlope} from "../../../../../../src/sagittal/ji/badness"
 import {JiNotationLevelId, JI_NOTATION_LEVELS_COMMA_CLASS_IDS} from "../../../../../../src/sagittal/notations/ji"
 
 describe("max AAS per JI notation level", (): void => {

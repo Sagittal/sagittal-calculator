@@ -15,7 +15,7 @@ import {
     Sopfr,
     Two3FreeClass,
 } from "../../../general"
-import {ApotomeSlope, N2D3P9} from "../metrics"
+import {ApotomeSlope, N2D3P9} from "../badness"
 
 interface JiPitchAnalysisProperties<T extends NumericProperties = {}> {
     apotomeSlope: ApotomeSlope,

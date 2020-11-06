@@ -5,7 +5,7 @@ import {
     computeQuotientFromMonzo,
     Scamon,
 } from "../../../general"
-import {computeAas, computeApotomeSlope, computeAte} from "../metrics"
+import {computeAas, computeApotomeSlope, computeAte} from "../badness"
 import {analyze23FreeClass} from "./two3FreeClass"
 import {JiPitchAnalysis} from "./types"
 
