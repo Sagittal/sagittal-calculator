@@ -12,10 +12,10 @@ import {
     CommaClassId,
     computeAas,
     computeAte,
+    computeLpei,
     computeN2D3P9,
     formatComma,
     getCommaClass,
-    computeLpei,
 } from "../../sagittal"
 import {complexityMetricLfcScriptGroupSettings} from "./globals"
 

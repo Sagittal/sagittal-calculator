@@ -7,6 +7,7 @@ type Smoothness = Decimal<{integer: true}> & {_SmoothnessBrand: boolean}
 
 type Sopfr<T extends NumericProperties = {}> =
     Sum<Prime>
+    & Decimal<{integer: true}>
     & {_SopfrBrand: boolean}
     & NumericPropertyEffects<T>
 type Copfr<T extends NumericProperties = {}> =

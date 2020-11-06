@@ -25,6 +25,15 @@ const computePopular23FreeClassFromRationalQuotient = (
     return computePopular23FreeClass(two3FreeClassAnalysis)
 }
 
+const computeN2D3P9FromKnownNumeratorAndPossibleDenominator = (
+    knownNumerator: KnownNumerator,
+    possibleDenominator: KnownNumerator,
+): N2D3P9 => {
+    return knownNumerator.numerator * possibleDenominator.numerator *
+        2 ** -knownNumerator.copfr * 3 ** -possibleDenominator.copfr *
+        max(knownNumerator.gpf, possibleDenominator.gpf) / 9 as N2D3P9
+}
+
 const computePopular23FreeClassesFromKnownNumerators = (maxN2D3P9: Max<N2D3P9>): Popular23FreeClass[] => {
     const knownNumerators: KnownNumerator[] = JSON.parse(
         readLines("src/scripts/popular23FreeClass/input/knownNumerators.txt" as Filename).join(NEWLINE),
@@ -38,10 +47,7 @@ const computePopular23FreeClassesFromKnownNumerators = (maxN2D3P9: Max<N2D3P9>):
         const possibleDenominators = knownNumerators.slice(0, knownNumeratorIndex)
 
         for (const [possibleDenominatorIndex, possibleDenominator] of possibleDenominators.entries()) {
-            // TODO: this could really be cleaned up
-            const n2d3p9 = knownNumerator.numerator * possibleDenominator.numerator *
-                2 ** -knownNumerator.copfr * 3 ** -possibleDenominator.copfr *
-                max(knownNumerator.gpf, possibleDenominator.gpf) / 9
+            const n2d3p9 = computeN2D3P9FromKnownNumeratorAndPossibleDenominator(knownNumerator, possibleDenominator)
 
             if (n2d3p9 <= maxN2D3P9) {
                 const rationalQuotient = [
