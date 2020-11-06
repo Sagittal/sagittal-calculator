@@ -3,9 +3,17 @@
         <words>
             <w>amphitrite's</w>
             <w>antibird</w>
+            <w>antidot</w>
+            <w>antihorn</w>
+            <w>antihornbird</w>
+            <w>antihornwing</w>
             <w>antitick</w>
             <w>antivotes</w>
+            <w>antiwedge</w>
+            <w>antiwedgebird</w>
+            <w>antiwedgewing</w>
             <w>antiwing</w>
+            <w>antiwingbird</w>
             <w>apotome</w>
             <w>apotomes</w>
             <w>augend</w>
@@ -61,6 +69,8 @@
             <w>hairclip</w>
             <w>highina</w>
             <w>hilite</w>
+            <w>hornbird</w>
+            <w>hornwing</w>
             <w>ints</w>
             <w>jaidoubleflat</w>
             <w>jaiflat</w>
@@ -272,6 +282,7 @@
             <w>scamon's</w>
             <w>scamons</w>
             <w>schisma</w>
+            <w>schismas</w>
             <w>schismina</w>
             <w>scriptsize</w>
             <w>sagittation</w>
@@ -331,6 +342,7 @@
             <w>tinas</w>
             <w>tsutils</w>
             <w>ultrina</w>
+            <w>ultrinas</w>
             <w>unabbreviated</w>
             <w>unconventionals</w>
             <w>unformat</w>
@@ -349,7 +361,10 @@
             <w>waoflat</w>
             <w>waybl</w>
             <w>waybll</w>
+            <w>wedgebird</w>
+            <w>wedgewing</w>
             <w>wincompose</w>
+            <w>wingbird</w>
             <w>wybl</w>
             <w>wyks</w>
             <w>xwyks</w>
