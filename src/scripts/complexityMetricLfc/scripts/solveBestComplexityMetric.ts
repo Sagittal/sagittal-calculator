@@ -9,6 +9,7 @@ import {ComplexityMetric, ComplexityMetricFamilyId, ComplexityParameterId} from 
 program
     .option(`-${ScriptFlag.SOS_MODE}, --sos-mode`, "sum-of-squares mode (minimize the sum of squared distances between the actual comma's complexity and the best comma's complexity, rather than boolean mode which simply gives a 1 when the actual comma is not the best comma and a 0 when it is")
     .option(`-${ScriptFlag.EXTREME_CAPTURE_ZONES}, --extreme-capture-zones`, "use commas in each comma's capture zone for the Extreme precision level notation, rather than the default behavior of the comma's secondary comma zone")
+    .option(`-${ScriptFlag.COMPLEXITY_SEARCH_ED}, --complexity-search-ed <complexitySearchEd>`, "number of equal divisions for each parameter's search scope")
 
 setupScriptAndIo(ScriptGroup.COMPLEXITY_METRIC_LFC as Filename, [LogTarget.ALL])
 
@@ -17,6 +18,9 @@ if (!isUndefined(program.extremeCaptureZones)) {
 }
 if (!isUndefined(program.sosMode)) {
     complexityMetricLfcScriptGroupSettings.sosMode = program.sosMode
+}
+if (!isUndefined(program.complexitySearchEd)) {
+    complexityMetricLfcScriptGroupSettings.complexitySearchEd = program.complexitySearchEd
 }
 
 const complexityMetricFamiliesWithParametersEntries = Object.entries(

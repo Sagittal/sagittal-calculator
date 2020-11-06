@@ -1,4 +1,5 @@
-import {Combination, computePossibilities, DynamicParameterScope, Ed, Parameter, Window} from "../../general"
+import {Combination, computePossibilities, DynamicParameterScope, Parameter, Window} from "../../general"
+import {complexityMetricLfcScriptGroupSettings} from "./globals"
 import {ComplexityParameterId, ComplexityParameterSet} from "./types"
 
 // Const SE_OR_TE_WHEN_DAAS_OR_DATE_IS_9 = 0.00195 as Parameter
@@ -17,44 +18,44 @@ import {ComplexityParameterId, ComplexityParameterSet} from "./types"
 //
 // Const DUMMY_PARAMETER_SETS = [{}] as Combination<ComplexityParameterSet>
 
-const COMPLEXITY_SEARCH_ED = 11 as Ed<Parameter>
-
-const COMPLEXITY_PARAMETER_SCOPES: Record<ComplexityParameterId, DynamicParameterScope> = {
-    [ComplexityParameterId.A]: {
-        center: 0.5 as Parameter,
-        window: 1 as Window<Parameter>,
-        ed: COMPLEXITY_SEARCH_ED,
-    },
-    [ComplexityParameterId.B]: {
-        center: 2 as Parameter,
-        window: 2 as Window<Parameter>,
-        ed: COMPLEXITY_SEARCH_ED,
-    },
-    [ComplexityParameterId.C]: {
-        center: 2 as Parameter,
-        window: 2 as Window<Parameter>,
-        ed: COMPLEXITY_SEARCH_ED,
-    },
-    [ComplexityParameterId.SE]: {
-        center: 0.002 as Parameter,
-        window: 0.002 as Window<Parameter>,
-        ed: COMPLEXITY_SEARCH_ED,
-    },
-    [ComplexityParameterId.TE]: {
-        center: 0.002 as Parameter,
-        window: 0.002 as Window<Parameter>,
-        ed: COMPLEXITY_SEARCH_ED,
-    },
-    [ComplexityParameterId.SP]: {
-        center: 1 as Parameter,
-        window: 2 as Window<Parameter>,
-        ed: COMPLEXITY_SEARCH_ED,
-    },
-    [ComplexityParameterId.TP]: {
-        center: 1 as Parameter,
-        window: 2 as Window<Parameter>,
-        ed: COMPLEXITY_SEARCH_ED,
-    },
+const computeComplexityParameterScopes = (): Record<ComplexityParameterId, DynamicParameterScope> => {
+    return {
+        [ComplexityParameterId.A]: {
+            center: 0.5 as Parameter,
+            window: 1 as Window<Parameter>,
+            ed: complexityMetricLfcScriptGroupSettings.complexitySearchEd,
+        },
+        [ComplexityParameterId.B]: {
+            center: 2 as Parameter,
+            window: 2 as Window<Parameter>,
+            ed: complexityMetricLfcScriptGroupSettings.complexitySearchEd,
+        },
+        [ComplexityParameterId.C]: {
+            center: 2 as Parameter,
+            window: 2 as Window<Parameter>,
+            ed: complexityMetricLfcScriptGroupSettings.complexitySearchEd,
+        },
+        [ComplexityParameterId.SE]: {
+            center: 0.002 as Parameter,
+            window: 0.002 as Window<Parameter>,
+            ed: complexityMetricLfcScriptGroupSettings.complexitySearchEd,
+        },
+        [ComplexityParameterId.TE]: {
+            center: 0.002 as Parameter,
+            window: 0.002 as Window<Parameter>,
+            ed: complexityMetricLfcScriptGroupSettings.complexitySearchEd,
+        },
+        [ComplexityParameterId.SP]: {
+            center: 1 as Parameter,
+            window: 2 as Window<Parameter>,
+            ed: complexityMetricLfcScriptGroupSettings.complexitySearchEd,
+        },
+        [ComplexityParameterId.TP]: {
+            center: 1 as Parameter,
+            window: 2 as Window<Parameter>,
+            ed: complexityMetricLfcScriptGroupSettings.complexitySearchEd,
+        },
+    }
 }
 
 const computeComplexityParameterSets = (
@@ -67,7 +68,7 @@ const computeComplexityParameterSets = (
         ): Record<ComplexityParameterId, DynamicParameterScope> => {
             return {
                 ...scope,
-                [complexityParameterId]: COMPLEXITY_PARAMETER_SCOPES[complexityParameterId],
+                [complexityParameterId]: computeComplexityParameterScopes()[complexityParameterId],
             }
         },
         {} as Record<ComplexityParameterId, DynamicParameterScope>,

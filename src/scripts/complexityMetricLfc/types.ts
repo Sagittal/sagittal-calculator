@@ -1,4 +1,4 @@
-import {Abs, Decimal, Exponent, Parameter, Prime} from "../../general"
+import {Abs, Decimal, Ed, Exponent, Parameter, Prime} from "../../general"
 import {ApotomeSlope, Complexity, N2D3P9} from "../../sagittal"
 
 type ComplexityParameterSet = Partial<Record<ComplexityParameterId, Parameter>>
@@ -34,6 +34,7 @@ enum ComplexityParameterId {
 interface ComplexityMetricLfcScriptGroupSettings {
     extremeCaptureZones: boolean,
     sosMode: boolean,
+    complexitySearchEd: Ed<Parameter>,
 }
 
 export {

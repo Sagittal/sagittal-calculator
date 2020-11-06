@@ -8,6 +8,7 @@ enum ScriptFlag {
     SYNC = "2",
     MAX_ATE = "3",
     EXTREME_CAPTURE_ZONES = "4",
+    COMPLEXITY_SEARCH_ED = "5",
     MAX_AAS = "a",
     TABLE_FORMAT = "b",
     NO_COLOR = "c",

@@ -1,10 +1,11 @@
-import {Parameter} from "../../general"
+import {Ed, Parameter} from "../../general"
 import {CommaClassId} from "../../sagittal"
 import {ComplexityMetricLfcScriptGroupSettings} from "./types"
 
 const INITIAL_COMPLEXITY_METRIC_LFC_SCRIPT_GROUP_SETTINGS: ComplexityMetricLfcScriptGroupSettings = {
     extremeCaptureZones: true,
     sosMode: false,
+    complexitySearchEd: 11 as Ed<Parameter>,
 }
 
 const EXCLUDED_COMMAS: CommaClassId[] = [

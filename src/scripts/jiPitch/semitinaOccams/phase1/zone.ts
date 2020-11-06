@@ -1,7 +1,7 @@
 import {increment, Index, LogTarget, RecordKey, saveLog} from "../../../../general"
 import {CommaAnalysis} from "../../../../sagittal"
-import {MAX_SIZE_PER_SEMITINA_ZONE, SEMITINA_ZONES} from "./constants"
 import {Semitina} from "../types"
+import {MAX_SIZE_PER_SEMITINA_ZONE, SEMITINA_ZONES} from "./constants"
 
 const computeCommaAnalysesBySemitinaZone = (
     commaAnalyses: CommaAnalysis[],

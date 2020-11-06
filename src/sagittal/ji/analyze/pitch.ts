@@ -24,6 +24,7 @@ const analyzeJiPitch = (jiPitch: Scamon<{rational: true}>): JiPitchAnalysis => {
     const ate = computeAte(jiPitch)
 
     // TODO: include LPE cmplxty and LPEI badness
+    //  Although to be safe wait until the forum conversation is resolved re: these
 
     return {
         pitch: jiPitch,
