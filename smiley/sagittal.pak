@@ -268,7 +268,7 @@
 'mo.png', '4', '19', '0', 'mo', ':,:',
 'mimi.png', '7', '19', '0', 'mimi', ':``:',
 'momo.png', '7', '19', '0', 'momo', ':,,:',
-'magrathean_extension.png', '69', '19', '0', 'magrathean extension', ':magrathean:',
+'magrathean_extension.png', '60', '19', '0', 'magrathean extension', ':magrathean:',	// TODO: or something
 'i.png', '2', '19', '0', 'i', ':@.5:',
 'i.png', '2', '19', '0', 'i', ':@0.5:',
 'o.png', '2', '19', '0', 'o', ':l.5:',
