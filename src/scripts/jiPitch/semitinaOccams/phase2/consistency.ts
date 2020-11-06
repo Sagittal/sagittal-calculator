@@ -1,5 +1,5 @@
-import {Comma, computeMonzoMapping, LogTarget, saveLog} from "../../../general"
-import {formatComma, INSANE_ZETA_PEAK_VAL} from "../../../sagittal"
+import {Comma, computeMonzoMapping, LogTarget, saveLog} from "../../../../general"
+import {formatComma, INSANE_ZETA_PEAK_VAL} from "../../../../sagittal"
 import {TinaBucket} from "./types"
 
 const checkMetacommaConsistency = (metacomma: Comma, tinaBucket: TinaBucket): void => {
