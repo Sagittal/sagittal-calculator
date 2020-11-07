@@ -21,9 +21,9 @@ const computeBestCommaPerSemitinaZone = (
                 //  And if so, can you stop analyzing them so soon?
                 let score
                 if (INCLUDE_ERROR_IN_PHASE_1_SCORE) {
-                    score = computeLpei(n2d3p9, aas, ate, commaAnalysis.cents, SEMITINA)
+                    score = computeLpei(commaAnalysis.pitch, SEMITINA)
                 } else {
-                    score = computeLpe(n2d3p9, aas, ate)
+                    score = computeLpe(commaAnalysis.pitch)
                 }
 
                 if (score < bestScore) {

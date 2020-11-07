@@ -1,23 +1,5 @@
-import {
-    areScamonsEqual,
-    Comma,
-    compute23FreeClass,
-    computeCentsFromPitch,
-    formatDecimal,
-    LogTarget,
-    saveLog,
-    Score,
-} from "../../general"
-import {
-    Badness,
-    CommaClassId,
-    computeAas,
-    computeAte,
-    computeLpei,
-    computeN2D3P9,
-    formatComma,
-    getCommaClass,
-} from "../../sagittal"
+import {areScamonsEqual, Comma, formatDecimal, LogTarget, saveLog, Score} from "../../general"
+import {Badness, CommaClassId, computeLpei, formatComma, getCommaClass} from "../../sagittal"
 import {complexityMetricLfcScriptGroupSettings} from "./globals"
 
 // TODO: DRY this with zoneMetricScore
@@ -28,13 +10,7 @@ const computeZoneBadnessScore = ([commaClassId, commas]: [CommaClassId, Comma[]]
     const actualComma = getCommaClass(commaClassId).pitch
 
     commas.forEach((comma: Comma): void => {
-        const n2d3p9 = computeN2D3P9(compute23FreeClass(comma))
-        const aas = computeAas(comma)
-        const ate = computeAte(comma)
-        const cents = computeCentsFromPitch(comma)
-
-        const badness = computeLpei(n2d3p9, aas, ate, cents)
-
+        const badness = computeLpei(comma)
         const isActualComma = areScamonsEqual(comma, actualComma)
 
         saveLog(
