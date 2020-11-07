@@ -3,10 +3,6 @@ import {computeMetricScoreForMetricAndParameterSet} from "./metricScore"
 import {computeComplexityParameterSets} from "./parameters"
 import {ComplexityMetric, ComplexityMetricFamilyId, ComplexityParameterId, ComplexityParameterSet} from "./types"
 
-// TODO: complexity - probably acceptable to eliminate this "ties" functionality as it is unlikely to ever tie
-//  Though in its place won't you want essentially the local minima functionality?
-//  Well actually we did get 11 ties for one of the metrics, but I still think local minima would be better now
-
 const logComplexityParameterSetsForComplexityMetricFamilyWhichMinimizeItsScore = (
     [
         complexityMetricFamilyId,

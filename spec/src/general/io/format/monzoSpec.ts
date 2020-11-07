@@ -20,7 +20,8 @@ describe("formatMonzo", (): void => {
         expect(actual).toBe(expected)
     })
 
-    // TODO: ability to drop 0's, see: http://forum.sagittal.org/viewtopic.php?p=1611#p1611
+    // TODO: MISC. ABBREVIATED PUNCTUATED MONZO FORMAT
+    //  Ability to drop 0's, see: http://forum.sagittal.org/viewtopic.php?p=1611#p1611
     //  Do you know about those leading commas in the monzos, like [,5 7⟩?
     //  That tells you that the exponents for primes 2 and 3 have been omitted
     //  It also allows things like writing single-prime-factor-above-3 commas

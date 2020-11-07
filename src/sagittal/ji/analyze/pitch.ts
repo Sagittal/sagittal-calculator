@@ -25,6 +25,7 @@ const analyzeJiPitch = (jiPitch: Scamon<{rational: true}>): JiPitchAnalysis => {
 
     // TODO: include LPE cmplxty and LPEI badness
     //  Although to be safe wait until the forum conversation is resolved re: these
+    //  (Specifically, where I ask what "I" stands for, and just thought I'd share my thought about 2-free)
 
     return {
         pitch: jiPitch,
