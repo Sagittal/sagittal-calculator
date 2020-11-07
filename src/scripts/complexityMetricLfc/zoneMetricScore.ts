@@ -1,13 +1,5 @@
-import {areScamonsEqual, Comma, compute23FreeClass, LogTarget, saveLog, Score} from "../../general"
-import {
-    CommaClassId,
-    Complexity,
-    computeAas,
-    computeAte,
-    computeN2D3P9,
-    formatComma,
-    getCommaClass,
-} from "../../sagittal"
+import {areScamonsEqual, Comma, formatDecimal, LogTarget, saveLog, Score} from "../../general"
+import {CommaClassId, Complexity, formatComma, getCommaClass} from "../../sagittal"
 import {complexityMetricLfcScriptGroupSettings} from "./globals"
 import {ComplexityMetric, ComplexityParameterSet} from "./types"
 
@@ -16,32 +8,38 @@ const computeZoneComplexityMetricScore = (
     complexityMetric: ComplexityMetric,
     complexityParameterSet: ComplexityParameterSet,
 ): Score<ComplexityMetric> => {
-    let lowestCommaComplexity = Infinity as Complexity
+    let leastCommaComplexity = Infinity as Complexity
     let actualCommaComplexity = Infinity as Complexity
 
     const actualComma = getCommaClass(commaClassId).pitch
 
     commas.forEach((comma: Comma): void => {
-        const n2d3p9 = computeN2D3P9(compute23FreeClass(comma))
-        const aas = computeAas(comma)
-        const ate = computeAte(comma)
-        const complexity = complexityMetric(n2d3p9, aas, ate, complexityParameterSet)
-
+        const complexity = complexityMetric(comma, complexityParameterSet)
         const isActualComma = areScamonsEqual(comma, actualComma)
 
-        saveLog(`for comma ${formatComma(comma)}${isActualComma ? " (which is the actual comma) " : " "}complexity is ${complexity}`, LogTarget.DETAILS)
+        saveLog(
+            `${isActualComma ? "*" : ""}${formatComma(comma)} complexity: ${formatDecimal(complexity)}`,
+            LogTarget.DETAILS,
+        )
 
         if (isActualComma) actualCommaComplexity = complexity
-        if (complexity < lowestCommaComplexity) {
-            lowestCommaComplexity = complexity
+        if (complexity < leastCommaComplexity) {
+            leastCommaComplexity = complexity
         }
     })
 
-    return complexityMetricLfcScriptGroupSettings.sosMode ?
-        (actualCommaComplexity - lowestCommaComplexity) ** 2 as Score<ComplexityMetric> :
-        actualCommaComplexity === lowestCommaComplexity ?
+    const zoneComplexityMetricScore = complexityMetricLfcScriptGroupSettings.sosMode ?
+        (actualCommaComplexity - leastCommaComplexity) ** 2 as Score<ComplexityMetric> :
+        actualCommaComplexity === leastCommaComplexity ?
             0 as Score<ComplexityMetric> :
             1 as Score<ComplexityMetric>
+
+    saveLog(
+        `complexity metric score for ${formatComma(actualComma)}'s zone: ${zoneComplexityMetricScore}`,
+        LogTarget.DETAILS,
+    )
+
+    return zoneComplexityMetricScore
 }
 
 export {

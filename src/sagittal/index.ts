@@ -99,5 +99,6 @@ export {
     SYMBOL_CLASSES,
     SymbolClass,
     formatSymbolClass,
+    Notation,
 } from "./notation"
 export {HALF_APOTOME} from "./constants"

@@ -1,14 +1,11 @@
 import {Parameter} from "../../../../src/general/lfc"
-import {Abs, Decimal, Exponent, Prime} from "../../../../src/general/math"
-import {ApotomeSlope} from "../../../../src/sagittal/ji/badness"
-import {N2D3P9} from "../../../../src/sagittal/ji/badness/complexity/unpopularity"
+import {Comma} from "../../../../src/general/music/ji"
 import {COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS} from "../../../../src/scripts/complexityMetricLfc/metrics"
 import {ComplexityMetricFamilyId} from "../../../../src/scripts/complexityMetricLfc/types"
 
 describe("complexityMetric", (): void => {
-    const n2d3p9 = 10 as N2D3P9
-    const aas = 5 as Abs<ApotomeSlope>
-    const ate = 3.3 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>
+    const comma = {monzo: [12, -4, 0, -2]} as Comma     // N2D3P9 = 10, AAS = 7.357, ATE = 4
+
     const a = 0.6 as Parameter
     const b = 1.5 as Parameter
     const c = 1.4 as Parameter
@@ -20,72 +17,72 @@ describe("complexityMetric", (): void => {
     it("lee", (): void => {
         const complexityMetric = COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS[ComplexityMetricFamilyId.LEE].metric
 
-        const actual = complexityMetric(n2d3p9, aas, ate, {a, b, c, sE, tE, sP, tP})
+        const actual = complexityMetric(comma, {a, b, c, sE, tE, sP, tP})
 
-        const expected = 7.014386
+        const expected = 20.451536
         expect(actual).toBeCloseTo(expected)
     })
 
     it("ree", (): void => {
         const complexityMetric = COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS[ComplexityMetricFamilyId.REE].metric
 
-        const actual = complexityMetric(n2d3p9, aas, ate, {a, b, c, sE, tE, sP, tP})
+        const actual = complexityMetric(comma, {a, b, c, sE, tE, sP, tP})
 
-        const expected = 7.673529
+        const expected = 21.066582
         expect(actual).toBeCloseTo(expected)
     })
 
-    it("computeLpe", (): void => {
+    it("lpe", (): void => {
         const complexityMetric = COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS[ComplexityMetricFamilyId.LPE].metric
 
-        const actual = complexityMetric(n2d3p9, aas, ate, {a, b, c, sE, tE, sP, tP})
+        const actual = complexityMetric(comma, {a, b, c, sE, tE, sP, tP})
 
-        const expected = 4.932420
+        const expected = 6.047840
         expect(actual).toBeCloseTo(expected)
     })
 
     it("rpe", (): void => {
         const complexityMetric = COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS[ComplexityMetricFamilyId.RPE].metric
 
-        const actual = complexityMetric(n2d3p9, aas, ate, {a, b, c, sE, tE, sP, tP})
+        const actual = complexityMetric(comma, {a, b, c, sE, tE, sP, tP})
 
-        const expected = 5.591563
+        const expected = 6.662885
         expect(actual).toBeCloseTo(expected)
     })
 
     it("lep", (): void => {
         const complexityMetric = COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS[ComplexityMetricFamilyId.LEP].metric
 
-        const actual = complexityMetric(n2d3p9, aas, ate, {a, b, c, sE, tE, sP, tP})
+        const actual = complexityMetric(comma, {a, b, c, sE, tE, sP, tP})
 
-        const expected = 6.787933
+        const expected = 19.999757
         expect(actual).toBeCloseTo(expected)
     })
 
     it("rep", (): void => {
         const complexityMetric = COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS[ComplexityMetricFamilyId.REP].metric
 
-        const actual = complexityMetric(n2d3p9, aas, ate, {a, b, c, sE, tE, sP, tP})
+        const actual = complexityMetric(comma, {a, b, c, sE, tE, sP, tP})
 
-        const expected = 7.447077
+        const expected = 20.614802
         expect(actual).toBeCloseTo(expected)
     })
 
     it("lpp", (): void => {
         const complexityMetric = COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS[ComplexityMetricFamilyId.LPP].metric
 
-        const actual = complexityMetric(n2d3p9, aas, ate, {a, b, c, sE, tE, sP, tP})
+        const actual = complexityMetric(comma, {a, b, c, sE, tE, sP, tP})
 
-        const expected = 4.705967
+        const expected = 5.596060
         expect(actual).toBeCloseTo(expected)
     })
 
     it("rpp", (): void => {
         const complexityMetric = COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS[ComplexityMetricFamilyId.RPP].metric
 
-        const actual = complexityMetric(n2d3p9, aas, ate, {a, b, c, sE, tE, sP, tP})
+        const actual = complexityMetric(comma, {a, b, c, sE, tE, sP, tP})
 
-        const expected = 5.365111
+        const expected = 6.211105
         expect(actual).toBeCloseTo(expected)
     })
 })

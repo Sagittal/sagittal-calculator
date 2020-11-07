@@ -1,84 +1,97 @@
 // tslint:disable max-line-length
 
-import {Abs, Decimal, Exponent, Prime} from "../../general"
-import {ApotomeSlope, Complexity, N2D3P9} from "../../sagittal"
+import {Comma, compute23FreeClass} from "../../general"
+import {Complexity, computeAas, computeAte, computeN2D3P9} from "../../sagittal"
 import {DEFAULT_COMPLEXITY_PARAMETER_VALUE} from "./constants"
 import {
     ComplexityMetric,
     ComplexityMetricFamilyId,
     ComplexityParameterId,
     ComplexityParameterSet,
+    MetricParameters,
 } from "./types"
 
+const computeMetricParameters = (comma: Comma): MetricParameters => {
+    const n2d3p9 = computeN2D3P9(compute23FreeClass(comma))
+    const aas = computeAas(comma)
+    const ate = computeAte(comma)
+
+    return {
+        n2d3p9,
+        aas,
+        ate,
+    }
+}
+
 const lee = (
-    n2d3p9: N2D3P9,
-    aas: Abs<ApotomeSlope>,
-    ate: Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+    comma: Comma,
     {sE = DEFAULT_COMPLEXITY_PARAMETER_VALUE, tE = DEFAULT_COMPLEXITY_PARAMETER_VALUE}: ComplexityParameterSet,
 ): Complexity => {
+    const {n2d3p9, aas, ate} = computeMetricParameters(comma)
+
     return Math.log2(n2d3p9) + sE * 2 ** aas + tE * 2 ** ate as Complexity
 }
 
 const ree = (
-    n2d3p9: N2D3P9,
-    aas: Abs<ApotomeSlope>,
-    ate: Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+    comma: Comma,
     {a = DEFAULT_COMPLEXITY_PARAMETER_VALUE, sE = DEFAULT_COMPLEXITY_PARAMETER_VALUE, tE = DEFAULT_COMPLEXITY_PARAMETER_VALUE}: ComplexityParameterSet,
 ): Complexity => {
+    const {n2d3p9, aas, ate} = computeMetricParameters(comma)
+
     return n2d3p9 ** a + sE * 2 ** aas + tE * 2 ** ate as Complexity
 }
 
 const lpe = (
-    n2d3p9: N2D3P9,
-    aas: Abs<ApotomeSlope>,
-    ate: Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+    comma: Comma,
     {b = DEFAULT_COMPLEXITY_PARAMETER_VALUE, sP = DEFAULT_COMPLEXITY_PARAMETER_VALUE, tE = DEFAULT_COMPLEXITY_PARAMETER_VALUE}: ComplexityParameterSet,
 ): Complexity => {
+    const {n2d3p9, aas, ate} = computeMetricParameters(comma)
+
     return Math.log2(n2d3p9) + sP * aas ** b + tE * 2 ** ate as Complexity
 }
 
 const rpe = (
-    n2d3p9: N2D3P9,
-    aas: Abs<ApotomeSlope>,
-    ate: Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+    comma: Comma,
     {a = DEFAULT_COMPLEXITY_PARAMETER_VALUE, b = DEFAULT_COMPLEXITY_PARAMETER_VALUE, sP = DEFAULT_COMPLEXITY_PARAMETER_VALUE, tE = DEFAULT_COMPLEXITY_PARAMETER_VALUE}: ComplexityParameterSet,
 ): Complexity => {
+    const {n2d3p9, aas, ate} = computeMetricParameters(comma)
+
     return n2d3p9 ** a + sP * aas ** b + tE * 2 ** ate as Complexity
 }
 
 const lep = (
-    n2d3p9: N2D3P9,
-    aas: Abs<ApotomeSlope>,
-    ate: Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+    comma: Comma,
     {c = DEFAULT_COMPLEXITY_PARAMETER_VALUE, sE = DEFAULT_COMPLEXITY_PARAMETER_VALUE, tP = DEFAULT_COMPLEXITY_PARAMETER_VALUE}: ComplexityParameterSet,
 ): Complexity => {
+    const {n2d3p9, aas, ate} = computeMetricParameters(comma)
+
     return Math.log2(n2d3p9) + sE * 2 ** aas + tP * ate ** c as Complexity
 }
 
 const rep = (
-    n2d3p9: N2D3P9,
-    aas: Abs<ApotomeSlope>,
-    ate: Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+    comma: Comma,
     {a = DEFAULT_COMPLEXITY_PARAMETER_VALUE, c = DEFAULT_COMPLEXITY_PARAMETER_VALUE, sE = DEFAULT_COMPLEXITY_PARAMETER_VALUE, tP = DEFAULT_COMPLEXITY_PARAMETER_VALUE}: ComplexityParameterSet,
 ): Complexity => {
+    const {n2d3p9, aas, ate} = computeMetricParameters(comma)
+
     return n2d3p9 ** a + sE * 2 ** aas + tP * ate ** c as Complexity
 }
 
 const lpp = (
-    n2d3p9: N2D3P9,
-    aas: Abs<ApotomeSlope>,
-    ate: Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+    comma: Comma,
     {b = DEFAULT_COMPLEXITY_PARAMETER_VALUE, c = DEFAULT_COMPLEXITY_PARAMETER_VALUE, sP = DEFAULT_COMPLEXITY_PARAMETER_VALUE, tP = DEFAULT_COMPLEXITY_PARAMETER_VALUE}: ComplexityParameterSet,
 ): Complexity => {
+    const {n2d3p9, aas, ate} = computeMetricParameters(comma)
+
     return Math.log2(n2d3p9) + sP * aas ** b + tP * ate ** c as Complexity
 }
 
 const rpp = (
-    n2d3p9: N2D3P9,
-    aas: Abs<ApotomeSlope>,
-    ate: Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+    comma: Comma,
     {a = DEFAULT_COMPLEXITY_PARAMETER_VALUE, b = DEFAULT_COMPLEXITY_PARAMETER_VALUE, c = DEFAULT_COMPLEXITY_PARAMETER_VALUE, sP = DEFAULT_COMPLEXITY_PARAMETER_VALUE, tP = DEFAULT_COMPLEXITY_PARAMETER_VALUE}: ComplexityParameterSet,
 ): Complexity => {
+    const {n2d3p9, aas, ate} = computeMetricParameters(comma)
+
     return n2d3p9 ** a + sP * aas ** b + tP * ate ** c as Complexity
 }
 

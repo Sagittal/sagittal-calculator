@@ -41,7 +41,7 @@ describe("computeZoneComplexityMetricScore", (): void => {
             complexityMetricLfcScriptGroupSettings.sosMode = true
         })
 
-        it("returns 0 when a comma is the most useful comma in its zone", (): void => {
+        it("returns 0 when a comma is the least complex comma in its zone", (): void => {
             const actual = computeZoneComplexityMetricScore(
                 [CommaClassId._1_455_n, COMMAS_FOR_1_455_n],
                 complexityMetric,
@@ -52,7 +52,7 @@ describe("computeZoneComplexityMetricScore", (): void => {
             expect(actual).toBeCloseTo(expected)
         })
 
-        it("returns a squared distance between the actual comma's complexity and the most useful comma when a comma is not the most useful comma in its zone", (): void => {
+        it("returns a squared distance between the actual comma's complexity and the least complex comma when a comma is not the least complex comma in its zone", (): void => {
             complexityMetricLfcScriptGroupSettings.sosMode = true
             const actual = computeZoneComplexityMetricScore(
                 [CommaClassId._1_8575_k, COMMAS_FOR_1_8575_k],
@@ -71,7 +71,7 @@ describe("computeZoneComplexityMetricScore", (): void => {
             complexityMetricLfcScriptGroupSettings.sosMode = false
         })
 
-        it("returns 0 points (good) when a comma is the most useful comma in its zone", (): void => {
+        it("returns 0 points (good) when a comma is the least complex comma in its zone", (): void => {
             const actual = computeZoneComplexityMetricScore(
                 [CommaClassId._1_455_n, COMMAS_FOR_1_455_n],
                 complexityMetric,
@@ -82,14 +82,14 @@ describe("computeZoneComplexityMetricScore", (): void => {
             expect(actual).toBe(expected)
         })
 
-        it("returns 1 point (bad) when a comma is not the most useful comma in its zone", (): void => {
+        it("returns 1 point (bad) when a comma is not the least complex comma in its zone", (): void => {
             const actual = computeZoneComplexityMetricScore(
                 [CommaClassId._1_8575_k, COMMAS_FOR_1_8575_k],
                 complexityMetric,
                 complexityParameterSet,
             )
 
-            // 1/8575's complexity is 7.866050, but 17/19k's complexity is 6.841035; (7.866050 - 6.841035)^2 = 1.050655
+            // 1/8575's complexity is 7.866050, but 17/19k's complexity is 6.841035; so, get penalized one point
             const expected = 1 as Score<ComplexityMetric>
             expect(actual).toBe(expected)
         })

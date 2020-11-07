@@ -3,12 +3,7 @@ import {ApotomeSlope, CommaClassId, Complexity, N2D3P9} from "../../sagittal"
 
 type ComplexityParameterSet = Partial<Record<ComplexityParameterId, Parameter>>
 
-type ComplexityMetric = (
-    n2d3p9: N2D3P9,
-    aas: Abs<ApotomeSlope>,
-    ate: Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
-    complexityParameterSet: ComplexityParameterSet,
-) => Complexity
+type ComplexityMetric = (comma: Comma, complexityParameterSet: ComplexityParameterSet) => Complexity
 
 enum ComplexityMetricFamilyId {
     LEE = "lee",
@@ -37,10 +32,17 @@ interface ComplexityMetricLfcScriptGroupSettings {
     complexitySearchEd: Ed<Parameter>,
 }
 
+interface MetricParameters {
+    n2d3p9: N2D3P9,
+    aas: Abs<ApotomeSlope>,
+    ate: Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+}
+
 export {
     ComplexityMetric,
     ComplexityParameterSet,
     ComplexityMetricFamilyId,
     ComplexityParameterId,
     ComplexityMetricLfcScriptGroupSettings,
+    MetricParameters,
 }

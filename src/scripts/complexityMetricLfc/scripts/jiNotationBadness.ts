@@ -1,6 +1,6 @@
 import {program} from "commander"
 import {Comma, Filename, ioSettings, LogTarget, saveLog, Score, setupScriptAndIo, Sum, time} from "../../../general"
-import {Badness, CommaClassId} from "../../../sagittal"
+import {CommaClassId, Notation} from "../../../sagittal"
 import {ScriptGroup} from "../../types"
 import {EXCLUDED_COMMAS} from "../constants"
 import {complexityMetricLfcScriptGroupSettings} from "../globals"
@@ -22,7 +22,7 @@ import {computeZoneCommaEntries} from "../zoneCommas"
 
 setupScriptAndIo(ScriptGroup.COMPLEXITY_METRIC_LFC as Filename, [LogTarget.ALL])
 
-let jiNotationBadnessScore = 0 as Sum<Score<Badness>>
+let jiNotationBadnessScore = 0 as Sum<Score<Notation>>
 
 complexityMetricLfcScriptGroupSettings.zoneCommaEntries = computeZoneCommaEntries(!!program.secondaryCommaZones)
 
@@ -32,7 +32,7 @@ complexityMetricLfcScriptGroupSettings.zoneCommaEntries
         if (EXCLUDED_COMMAS.includes(commaClassId)) return
 
         const zoneBadnessScore = computeZoneBadnessScore([commaClassId, commas])
-        jiNotationBadnessScore = jiNotationBadnessScore + zoneBadnessScore as Sum<Score<Badness>>
+        jiNotationBadnessScore = jiNotationBadnessScore + zoneBadnessScore as Sum<Score<Notation>>
     })
 
 saveLog(`\nJI NOTATION'S BADNESS SCORE WAS: ${jiNotationBadnessScore}`, LogTarget.FINAL)

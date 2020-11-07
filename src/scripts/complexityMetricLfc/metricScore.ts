@@ -17,10 +17,7 @@ const computeMetricScoreForMetricAndParameterSet = (
 
             const complexityMetricScoreForCommaZone =
                 computeZoneComplexityMetricScore([commaClassId, commas], metric, complexityParameterSet)
-            saveLog(
-                `complexity metric score for ${commaClassId}: ${complexityMetricScoreForCommaZone}`,
-                LogTarget.DETAILS,
-            )
+
             metricScore = metricScore + complexityMetricScoreForCommaZone as Sum<Score<ComplexityMetric>>
         })
 

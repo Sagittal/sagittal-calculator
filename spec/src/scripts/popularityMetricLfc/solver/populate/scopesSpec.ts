@@ -37,7 +37,7 @@ describe("populateScopes", (): void => {
 
         await populateScopes()
 
-        // With repetitions is not useful when the chunk count for submetrics is more than 1 more than
+        // With repetitions is not helpful when the chunk count for submetrics is more than 1 more than
         // The chunk count for parameters (because then you're inevitably going to end up with two submetric scopes
         // That are identical) (and wait no, it's even more complicated than that,
         // Because if you had 3 submetric chunks you could have 2 of them repeat and the 3rd was different,
