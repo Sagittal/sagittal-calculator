@@ -3,7 +3,7 @@ import {onlyRunInCi} from "../../../../helpers/onlyRunInCi"
 import {runScriptAndGetConsoleOutput} from "../../../../helpers/src/scripts/runScriptAndGetConsoleOutput"
 
 describe("solve-best-complexity-metric", (): void => {
-    it("finds, for each tina up to 9, the top 20% candidate commas, sorted in descending order by their occurrence counts as metacommas between the best commas per semitina zone up to the half-apotome, plus the candidate commas for the semitina, also top 20% sorted descending by occam, but this time the metacommas are between consecutive semitinas of the best commas per semitina zone up to the half-apotome", (): void => {
+    it("for each of the 8 complexity metric families, checks each of its complexity parameter sets in scope, then lists the sets which tie for minimizing the metric score", (): void => {
         onlyRunInCi()
 
         const script = `npm run solve-best-complexity-metric -- --complexity-search-ed 3 --log-targets final` as Io

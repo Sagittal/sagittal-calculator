@@ -26,7 +26,7 @@ let jiNotationBadnessScore = 0 as Sum<Score<Notation>>
 
 complexityMetricLfcScriptGroupSettings.zoneCommaEntries = computeZoneCommaEntries(!!program.secondaryCommaZones)
 
-saveLog("Badness scores per zone (* identifies the actual comma for each zone)\n")
+saveLog("Badness scores per zone (* identifies the actual comma for each zone)\n", LogTarget.DETAILS)
 complexityMetricLfcScriptGroupSettings.zoneCommaEntries
     .forEach(([commaClassId, commas]: [CommaClassId, Comma[]]): void => {
         if (EXCLUDED_COMMAS.includes(commaClassId)) return

@@ -1,5 +1,14 @@
 import {program} from "commander"
-import {Filename, ioSettings, isUndefined, LogTarget, saveLog, ScriptFlag, setupScriptAndIo, time} from "../../../general"
+import {
+    Filename,
+    ioSettings,
+    isUndefined,
+    LogTarget,
+    saveLog,
+    ScriptFlag,
+    setupScriptAndIo,
+    time,
+} from "../../../general"
 import {ScriptGroup} from "../../types"
 import {complexityMetricLfcScriptGroupSettings} from "../globals"
 import {COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS} from "../metrics"
@@ -27,7 +36,7 @@ const complexityMetricFamiliesWithParametersEntries = Object.entries(
     COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS,
 ) as Array<[ComplexityMetricFamilyId, {metric: ComplexityMetric, parameters: ComplexityParameterId[]}]>
 
-saveLog("Complexity scores (* identifies the actual comma for each zone)\n")
+saveLog("Complexity scores (* identifies the actual comma for each zone)\n", LogTarget.DETAILS)
 complexityMetricFamiliesWithParametersEntries
     .forEach(logComplexityParameterSetsForComplexityMetricFamilyWhichMinimizeItsScore)
 
