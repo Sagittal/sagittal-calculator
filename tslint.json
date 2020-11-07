@@ -38,7 +38,7 @@
       true,
       120
     ],
-    "no-console": false,
+    "no-console": true,
     "no-dynamic-delete": false,
     "no-duplicate-imports": true,
     "no-implicit-dependencies": [

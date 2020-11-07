@@ -19,6 +19,7 @@ const saveLog = (message: Io, target: LogTarget = LogTarget.ALL, options: SaveLo
 
         if (!writeOnly) {
             const color = targetColors[target]
+            // tslint:disable-next-line:no-console
             console.log(useTargetColor ? colorize(message, color) : message)
         }
     }

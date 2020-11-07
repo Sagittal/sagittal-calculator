@@ -14,8 +14,6 @@ const computeZoneBadnessScore = (
         const badness = computeLpei(comma)
         const isActualComma = areScamonsEqual(comma, actualComma)
 
-        console.log(formatComma(comma), badness)
-
         saveLog(
             `${isActualComma ? "*" : ""}${formatComma(comma)} badness: ${formatDecimal(badness)}`,
             LogTarget.DETAILS,
