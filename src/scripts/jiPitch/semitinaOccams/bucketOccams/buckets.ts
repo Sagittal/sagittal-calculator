@@ -22,7 +22,7 @@ import {
     JiNotationLevelId,
     JI_NOTATION_LEVELS_COMMA_CLASS_IDS,
 } from "../../../../sagittal"
-import {metacommaNameToMetacommaMap} from "../../globals"
+import {inconsistentMetacommas, metacommaNameToMetacommaMap} from "../../globals"
 import {SEMITINA} from "../constants"
 import {Semitina} from "../types"
 import {checkMetacommaConsistency} from "./consistency"

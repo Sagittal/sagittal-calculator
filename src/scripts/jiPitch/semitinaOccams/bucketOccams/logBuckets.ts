@@ -1,4 +1,5 @@
-import {Comma, KeyPath, LogTarget, Name, RecordKey, saveLog, sort} from "../../../../general"
+import {Comma, LogTarget, Name, RecordKey, saveLog} from "../../../../general"
+import {logTopCandidatesByOccamForBucket} from "./logTopCandidatesByOccamForBucket"
 import {Occam, TinaBucket} from "./types"
 
 const logOccamResults = (
@@ -11,18 +12,7 @@ const logOccamResults = (
     tinaCandidateBucketOccamEntries.forEach(
         ([tinaCandidateBucket, tinaCandidateBucketOccams]: [TinaBucket, Record<Name<Comma>, Occam>]): void => {
             saveLog(`CANDIDATES FOR TINA ${tinaCandidateBucket}`, LogTarget.FINAL)
-            const thisTinaCandidateBucketsOccamEntries =
-                Object.entries(tinaCandidateBucketOccams) as Array<[Name<Comma>, Occam]>
-
-            sort(thisTinaCandidateBucketsOccamEntries, {by: [1] as KeyPath, descending: true})
-
-            const bestOccamInThisBucket = thisTinaCandidateBucketsOccamEntries[0][1]
-            const occamThreshold = bestOccamInThisBucket * 0.8
-
-            for (const [commaName, occam] of thisTinaCandidateBucketsOccamEntries) {
-                if (occam < occamThreshold) break
-                saveLog(`${commaName}\t${occam}`, LogTarget.FINAL)
-            }
+            logTopCandidatesByOccamForBucket(tinaCandidateBucketOccams)
         },
     )
 

@@ -11,6 +11,7 @@ describe("semitina-occams", (): void => {
         const actual = runScriptAndGetConsoleOutput(script)
 
         const expected = [
+            "(* indicates inconsistent commas)",
             "CANDIDATES FOR TINA 1",
             "10241/5n\t13",
             "121/1225n\t12",
@@ -40,8 +41,8 @@ describe("semitina-occams", (): void => {
             "CANDIDATES FOR SEMITINA",
             "77/185n\t25",
             "35/299n\t23",
-            "21505/7n\t22",
-            "4675/13n\t21",
+            "21505/7n\t22* (maps to 1 tinas)",
+            "4675/13n\t21* (maps to 1 tinas)",
         ] as Io[]
         expect(actual).toEqual(expected)
     })

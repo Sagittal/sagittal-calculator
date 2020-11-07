@@ -1,5 +1,6 @@
 import {Comma, computeMonzoMapping, LogTarget, saveLog} from "../../../../general"
-import {formatComma, INSANE_ZETA_PEAK_VAL} from "../../../../sagittal"
+import {computeCommaName, formatComma, INSANE_ZETA_PEAK_VAL} from "../../../../sagittal"
+import {inconsistentMetacommas} from "../../globals"
 import {TinaBucket} from "./types"
 
 const checkMetacommaConsistency = (metacomma: Comma, tinaBucket: TinaBucket): void => {
@@ -8,6 +9,8 @@ const checkMetacommaConsistency = (metacomma: Comma, tinaBucket: TinaBucket): vo
     const insaneZetaPeakEdoConsistent = tinaMapping as number === tinaBucket as number
 
     if (!insaneZetaPeakEdoConsistent) {
+        const metacommaName = computeCommaName(metacomma)
+        inconsistentMetacommas[metacommaName] = tinaMapping
         saveLog(`FYI, this metacomma for a whole tina (which is within 9.5 tinas and therefore we care about it) is inconsistent! ${formatComma(metacomma)} maps to ${tinaMapping} steps of 8539.00834-EDO despite being bucketed for tina ${tinaBucket}`, LogTarget.ERROR)
     }
 }

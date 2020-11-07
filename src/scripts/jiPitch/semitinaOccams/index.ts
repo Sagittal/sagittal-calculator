@@ -5,8 +5,12 @@ export {
     computeBestCommaPerSemitinaZone,
     computeCommaAnalysesBySemitinaZone,
     computeCommaAnalysesBySemitinaZoneEntries,
-} from "./phase1"
+} from "./bestZoneCommas"
 export {
-    checkMetacommaConsistency, TinaBucket, Occam, computeTinaCandidateBucketOccams, logOccamResults,
-} from "./phase2"
-export {logSemitinaCandidates} from "./phase3"
+    checkMetacommaConsistency,
+    TinaBucket,
+    Occam,
+    computeTinaCandidateBucketOccams,
+    logOccamResults,
+    logSemitinaCandidates,
+} from "./bucketOccams"
