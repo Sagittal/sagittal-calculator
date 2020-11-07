@@ -38,7 +38,7 @@ const computeZoneBadnessScore = ([commaClassId, commas]: [CommaClassId, Comma[]]
         const isActualComma = areScamonsEqual(comma, actualComma)
 
         saveLog(
-            `${formatComma(comma)} badness: ${formatDecimal(badness)}${isActualComma ? "* actual comma" : ""}`,
+            `${isActualComma ? "*" : ""}${formatComma(comma)} badness: ${formatDecimal(badness)}`,
             LogTarget.DETAILS,
         )
 

@@ -5,17 +5,17 @@ import {complexityMetricLfcScriptGroupSettings} from "../globals"
 import {COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS} from "../metrics"
 import {logComplexityParameterSetsForComplexityMetricFamilyWhichMinimizeItsScore} from "../minimize"
 import {ComplexityMetric, ComplexityMetricFamilyId, ComplexityParameterId} from "../types"
+import {computeZoneCommaEntries} from "../zoneCommas"
 
 program
     .option(`-${ScriptFlag.SOS_MODE}, --sos-mode`, "sum-of-squares mode (minimize the sum of squared distances between the actual comma's complexity and the best comma's complexity, rather than boolean mode which simply gives a 1 when the actual comma is not the best comma and a 0 when it is")
-    .option(`-${ScriptFlag.EXTREME_CAPTURE_ZONES}, --extreme-capture-zones`, "use commas in each comma's capture zone for the Extreme precision level notation, rather than the default behavior of the comma's secondary comma zone")
+    .option(`-${ScriptFlag.SECONDARY_COMMA_ZONES}, --secondary-comma-zones`, "use commas in each comma's secondary comma zone, rather than the default behavior of its capture zone in the Extreme precision level notation")
     .option(`-${ScriptFlag.COMPLEXITY_SEARCH_ED}, --complexity-search-ed <complexitySearchEd>`, "number of equal divisions for each parameter's search scope")
 
 setupScriptAndIo(ScriptGroup.COMPLEXITY_METRIC_LFC as Filename, [LogTarget.ALL])
 
-if (!isUndefined(program.extremeCaptureZones)) {
-    complexityMetricLfcScriptGroupSettings.extremeCaptureZones = program.extremeCaptureZones
-}
+complexityMetricLfcScriptGroupSettings.zoneCommaEntries = computeZoneCommaEntries(!!program.secondaryCommaZones)
+
 if (!isUndefined(program.sosMode)) {
     complexityMetricLfcScriptGroupSettings.sosMode = program.sosMode
 }

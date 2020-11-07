@@ -1,5 +1,5 @@
-import {Abs, Decimal, Ed, Exponent, Parameter, Prime} from "../../general"
-import {ApotomeSlope, Complexity, N2D3P9} from "../../sagittal"
+import {Abs, Comma, Decimal, Ed, Exponent, Parameter, Prime} from "../../general"
+import {ApotomeSlope, CommaClassId, Complexity, N2D3P9} from "../../sagittal"
 
 type ComplexityParameterSet = Partial<Record<ComplexityParameterId, Parameter>>
 
@@ -32,7 +32,7 @@ enum ComplexityParameterId {
 }
 
 interface ComplexityMetricLfcScriptGroupSettings {
-    extremeCaptureZones: boolean,
+    zoneCommaEntries: Array<[CommaClassId, Comma[]]>,
     sosMode: boolean,
     complexitySearchEd: Ed<Parameter>,
 }

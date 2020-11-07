@@ -7,7 +7,7 @@ enum ScriptFlag {
     EXCLUDED_FIELDS = "1",
     SYNC = "2",
     MAX_ATE = "3",
-    EXTREME_CAPTURE_ZONES = "4",
+    SECONDARY_COMMA_ZONES = "4",
     COMPLEXITY_SEARCH_ED = "5",
     MAX_AAS = "a",
     TABLE_FORMAT = "b",

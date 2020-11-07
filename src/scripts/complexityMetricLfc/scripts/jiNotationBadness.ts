@@ -1,7 +1,9 @@
+import {program} from "commander"
 import {Comma, Filename, ioSettings, LogTarget, saveLog, Score, setupScriptAndIo, Sum, time} from "../../../general"
 import {Badness, CommaClassId} from "../../../sagittal"
 import {ScriptGroup} from "../../types"
 import {EXCLUDED_COMMAS} from "../constants"
+import {complexityMetricLfcScriptGroupSettings} from "../globals"
 import {computeZoneBadnessScore} from "../zoneBadnessScore"
 import {computeZoneCommaEntries} from "../zoneCommas"
 
@@ -14,13 +16,16 @@ setupScriptAndIo(ScriptGroup.COMPLEXITY_METRIC_LFC as Filename, [LogTarget.ALL])
 
 let jiNotationBadnessScore = 0 as Sum<Score<Badness>>
 
-const zoneCommaEntries = computeZoneCommaEntries()
-zoneCommaEntries.forEach(([commaClassId, commas]: [CommaClassId, Comma[]]): void => {
-    if (EXCLUDED_COMMAS.includes(commaClassId)) return
+complexityMetricLfcScriptGroupSettings.zoneCommaEntries = computeZoneCommaEntries(!!program.secondaryCommaZones)
 
-    const zoneBadnessScore = computeZoneBadnessScore([commaClassId, commas])
-    jiNotationBadnessScore = jiNotationBadnessScore + zoneBadnessScore as Sum<Score<Badness>>
-})
+saveLog("Badness scores per zone (* identifies the actual comma for each zone)\n")
+complexityMetricLfcScriptGroupSettings.zoneCommaEntries
+    .forEach(([commaClassId, commas]: [CommaClassId, Comma[]]): void => {
+        if (EXCLUDED_COMMAS.includes(commaClassId)) return
+
+        const zoneBadnessScore = computeZoneBadnessScore([commaClassId, commas])
+        jiNotationBadnessScore = jiNotationBadnessScore + zoneBadnessScore as Sum<Score<Badness>>
+    })
 
 saveLog(`\nJI NOTATION'S BADNESS SCORE WAS: ${jiNotationBadnessScore}`, LogTarget.FINAL)
 

@@ -1,15 +1,7 @@
-import {Comma, count, LogTarget, Min, saveLog, Score, stringify, Sum} from "../../general"
-import {CommaClassId} from "../../sagittal"
-import {EXCLUDED_COMMAS} from "./constants"
+import {count, LogTarget, Min, saveLog, Score, stringify, Sum} from "../../general"
+import {computeMetricScoreForMetricAndParameterSet} from "./metricScore"
 import {computeComplexityParameterSets} from "./parameters"
-import {
-    ComplexityMetric,
-    ComplexityMetricFamilyId,
-    ComplexityParameterId,
-    ComplexityParameterSet,
-} from "./types"
-import {computeZoneCommaEntries} from "./zoneCommas"
-import {computeZoneComplexityMetricScore} from "./zoneMetricScore"
+import {ComplexityMetric, ComplexityMetricFamilyId, ComplexityParameterId, ComplexityParameterSet} from "./types"
 
 // TODO: complexity - probably acceptable to eliminate this "ties" functionality as it is unlikely to ever tie
 //  Though in its place won't you want essentially the local minima functionality?
@@ -30,20 +22,7 @@ const logComplexityParameterSetsForComplexityMetricFamilyWhichMinimizeItsScore =
     let complexityParameterSetsForComplexityMetricFamilyWhichMinimizeItsScore = [] as ComplexityParameterSet[]
 
     complexityParameterSets.forEach((complexityParameterSet: ComplexityParameterSet, index: number): void => {
-        let metricScore = 0 as Sum<Score<ComplexityMetric>>
-
-        const zoneCommaEntries = computeZoneCommaEntries()
-        zoneCommaEntries.forEach(([commaClassId, commas]: [CommaClassId, Comma[]]): void => {
-            if (EXCLUDED_COMMAS.includes(commaClassId)) return
-
-            const complexityMetricScoreForCommaZone =
-                computeZoneComplexityMetricScore([commaClassId, commas], metric, complexityParameterSet)
-            saveLog(
-                `complexity metric score for ${commaClassId}: ${complexityMetricScoreForCommaZone}`,
-                LogTarget.DETAILS,
-            )
-            metricScore = metricScore + complexityMetricScoreForCommaZone as Sum<Score<ComplexityMetric>>
-        })
+        const metricScore = computeMetricScoreForMetricAndParameterSet(metric, complexityParameterSet)
 
         if (metricScore === minMetricScore) {
             complexityParameterSetsForComplexityMetricFamilyWhichMinimizeItsScore.push(complexityParameterSet)
@@ -52,7 +31,7 @@ const logComplexityParameterSetsForComplexityMetricFamilyWhichMinimizeItsScore =
             complexityParameterSetsForComplexityMetricFamilyWhichMinimizeItsScore = [complexityParameterSet]
         }
 
-        saveLog(`Complexity parameter set (${index}/${countComplexityParameterSetsForComplexityMetricFamily}): ${stringify(complexityParameterSet)} -> metric score ${metricScore}`, LogTarget.PROGRESS)
+        saveLog(`Complexity parameter set (${index + 1}/${countComplexityParameterSetsForComplexityMetricFamily}): ${stringify(complexityParameterSet)} -> metric score ${metricScore}`, LogTarget.PROGRESS)
     })
 
     saveLog(`Complexity parameter sets for complexity metric family ${complexityMetricFamilyId} which minimize its metric score, all bringing it to ${minMetricScore} (count of ties ${count(complexityParameterSetsForComplexityMetricFamilyWhichMinimizeItsScore)}): ${stringify(complexityParameterSetsForComplexityMetricFamilyWhichMinimizeItsScore)}`, LogTarget.FINAL)

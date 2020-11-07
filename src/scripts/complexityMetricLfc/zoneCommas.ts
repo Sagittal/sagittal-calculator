@@ -1,11 +1,8 @@
 import {Comma, Filename, NEWLINE, readLines} from "../../general"
 import {CommaClassId} from "../../sagittal"
-import {complexityMetricLfcScriptGroupSettings} from "./globals"
 
-const computeZoneCommaEntries = (): Array<[CommaClassId, Comma[]]> => {
-    const zoneCommaType = complexityMetricLfcScriptGroupSettings.extremeCaptureZones ?
-        "extremeCaptureZone" :
-        "secondaryCommaZone"
+const computeZoneCommaEntries = (secondaryCommaZones: boolean): Array<[CommaClassId, Comma[]]> => {
+    const zoneCommaType = secondaryCommaZones ? "secondaryCommaZone" : "extremeCaptureZone"
 
     return Object.entries(JSON.parse(
         readLines(`src/scripts/jiPitch/results/${zoneCommaType}Commas.txt` as Filename).join(NEWLINE),

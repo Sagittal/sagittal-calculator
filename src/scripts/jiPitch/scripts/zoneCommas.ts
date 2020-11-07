@@ -13,7 +13,7 @@ import {jiPitchScriptGroupSettings} from "../globals"
 import {applySharedJiPitchScriptSetup} from "./shared"
 
 program
-    .option(`-${ScriptFlag.EXTREME_CAPTURE_ZONES}, --extreme-capture-zones`, "find commas in each comma's capture zone for the Extreme precision level notation, rather than the default behavior of the comma's secondary comma zone")
+    .option(`-${ScriptFlag.SECONDARY_COMMA_ZONES}, --secondary-comma-zones`, "use commas in each comma's secondary comma zone, rather than the default behavior of its capture zone in the Extreme precision level notation")
 
 applySharedJiPitchScriptSetup()
 
