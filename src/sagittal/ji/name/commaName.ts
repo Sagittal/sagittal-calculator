@@ -50,6 +50,7 @@ const primeFactorizeCommaNameQuotient = (
         },
     )
 
+    // TODO: And we probably should use the unicode dot operator rather than a full stop or middle dot.
     return factorizedTerms.join(".")
 }
 
