@@ -22,14 +22,14 @@ const computeJiPitchRow = (
 
     const row = [] as unknown[] as Row<{of: JiPitchAnalysis}>
 
-    if (!jiPitchScriptGroupSettings.excludedFields.includes(JiPitchField.CENTS)) {
-        row.push(formatCents(cents, {align: true}) as Formatted as Formatted<JiPitchAnalysis>)
-    }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(JiPitchField.QUOTIENT)) {
         row.push(...formatSplitQuotient(quotient))
     }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(JiPitchField.MONZO)) {
         row.push(...formatSplitMonzo(monzo, maxMonzoLength))
+    }
+    if (!jiPitchScriptGroupSettings.excludedFields.includes(JiPitchField.CENTS)) {
+        row.push(formatCents(cents, {align: true}) as Formatted as Formatted<JiPitchAnalysis>)
     }
     if (!jiPitchScriptGroupSettings.excludedFields.includes(JiPitchField.APOTOME_SLOPE)) {
         row.push(formatDecimal(apotomeSlope, {align: true}) as Formatted as Formatted<JiPitchAnalysis>)
