@@ -5,9 +5,9 @@ import {excludeFields} from "./excludeFields"
 import {formatPrimeHeaders, splitMonzoAndQuotientColumnTitles} from "./splitMonzoAndQuotient"
 
 const JI_PITCH_COLUMN_TITLES: Record<JiPitchField, Io> = {
+    [JiPitchField.CENTS]: "cents" as Io,
     [JiPitchField.QUOTIENT]: "quotient" as Io,
     [JiPitchField.MONZO]: "monzo" as Io,
-    [JiPitchField.CENTS]: "cents" as Io,
     [JiPitchField.APOTOME_SLOPE]: "apotome slope" as Io,
     [JiPitchField.AAS]: "AAS" as Io,
     [JiPitchField.ATE]: "ATE" as Io,
@@ -69,6 +69,7 @@ const computeNotatingCommasHeaderRows =
             ),
         )
 
+// TODO: may not be just find commas now, maybe just generic "commas"
 const computeFindCommasHeaderRows =
     (maxMonzoLength: Max<Count<Exponent<Prime>>>): Array<Row<{of: CommaAnalysis, header: true}>> =>
         formatPrimeHeaders(

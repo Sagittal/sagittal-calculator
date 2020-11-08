@@ -9,6 +9,7 @@ import {
 } from "../../../../general"
 import {parsePitch} from "./pitch"
 
+// Todo: this doesn't really distinguish between JI or not, it's just about reading it from the commander...
 const parseJiPitch = (): Scamon<{rational: true}> => {
     const jiPitchText = program.args[0] as Io
 

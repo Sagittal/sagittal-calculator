@@ -44,10 +44,10 @@ const EXTREME_NOTATION_MINAS: Record<RecordKey<CommaClassId>, Name<Mina>> = {
     [CommaClassId._17_7_C]: "38" as Name<Mina>,
     [CommaClassId._91_5_C]: "39" as Name<Mina>,
     [CommaClassId._1_25_C]: "40" as Name<Mina>,
-    [CommaClassId._1_19_C]: "41" as Name<Mina>,
+    [CommaClassId._1_19_C]: "41" as Name<Mina>,         // )|~ // TODO: would be pretty nice to have these all here.
     [CommaClassId._1_253_C]: "42" as Name<Mina>,
     [CommaClassId._91_C]: "43" as Name<Mina>,
-    [CommaClassId._1_5_C]: "44" as Name<Mina>,
+    [CommaClassId._1_5_C]: "44" as Name<Mina>,          // /|
     [CommaClassId._875_C]: "45" as Name<Mina>,
     [CommaClassId._25_13_C]: "46" as Name<Mina>,
     [CommaClassId._19_25_C]: "47" as Name<Mina>,
