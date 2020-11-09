@@ -1,2 +1,3 @@
 export {computeJiNotationBoundClassesImage} from "./image"
-export {computeJiNotationBoundsOutput, formatJiNotationBoundClass} from "./terminal"
+export {computeLevelsDiagram} from "./levelsDiagram"
+export {computeJiNotationBoundClassesOutput, formatJiNotationBoundClass} from "./terminal"

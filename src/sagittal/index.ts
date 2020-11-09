@@ -41,6 +41,7 @@ export {
     computeLpe,
     Badness,
     Complexity,
+    FactoringMode,
 } from "./ji"
 export {
     alignAscii,

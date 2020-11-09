@@ -15,7 +15,7 @@
     "tmp": "node -r ts-node/register/transpile-only src/scripts/tmp.ts",
     "analyze-ji-notation-bound-class": "node -r ts-node/register/transpile-only src/scripts/jiNotationBoundClass/scripts/analyzeBoundClass.ts",
     "analyze-ji-notation-bound-classes": "node -r ts-node/register/transpile-only src/scripts/jiNotationBoundClass/scripts/analyzeBoundClasses.ts",
-    "generate-ji-notation-levels-diagram": "node -r ts-node/register/transpile-only src/scripts/jiNotationBoundClass/scripts/generateLevelsDiagram.ts",
+    "generate-levels-diagram": "node -r ts-node/register/transpile-only src/scripts/jiNotationBoundClass/scripts/generateLevelsDiagram.ts",
     "find-commas": "node -r ts-node/register/transpile-only src/scripts/jiPitch/scripts/findCommas.ts",
     "commas": "node -r ts-node/register/transpile-only src/scripts/jiPitch/scripts/commas.ts",
     "analyze-ji-pitch": "node -r ts-node/register/transpile-only src/scripts/jiPitch/scripts/analyzeJiPitch.ts",

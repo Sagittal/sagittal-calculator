@@ -21,6 +21,7 @@ export {
     ParsedCommaName,
     SizeCategoryBound,
     formatComma,
+    FactoringMode,
 } from "./name"
 export {
     CommaAnalysis,

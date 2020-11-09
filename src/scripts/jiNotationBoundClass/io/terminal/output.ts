@@ -4,7 +4,7 @@ import {computeJiNotationBoundClassAnalysesOutput} from "./boundClasses"
 import {formatJiNotationLevelAnalyses} from "./level"
 import {formatRankAnalyses} from "./rank"
 
-const computeJiNotationBoundsOutput = (jiNotationBoundClassAnalyses: JiNotationBoundClassAnalysis[]): Io => {
+const computeJiNotationBoundClassesOutput = (jiNotationBoundClassAnalyses: JiNotationBoundClassAnalysis[]): Io => {
     let output: Io = computeJiNotationBoundClassAnalysesOutput(jiNotationBoundClassAnalyses)
     output = concat(output, formatJiNotationLevelAnalyses())
     output = concat(output, formatRankAnalyses())
@@ -13,5 +13,5 @@ const computeJiNotationBoundsOutput = (jiNotationBoundClassAnalyses: JiNotationB
 }
 
 export {
-    computeJiNotationBoundsOutput,
+    computeJiNotationBoundClassesOutput,
 }

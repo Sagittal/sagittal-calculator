@@ -2,13 +2,13 @@ import {Filename, Io, LogTarget, saveLog, setupScriptAndIo} from "../../../gener
 import {ScriptGroup} from "../../types"
 import {analyzeJiNotationBoundClasses} from "../analyzeBoundClasses"
 import {JiNotationBoundClassAnalysis} from "../boundClass"
-import {computeJiNotationBoundClassesImage, computeJiNotationBoundsOutput} from "../io"
+import {computeJiNotationBoundClassesImage, computeJiNotationBoundClassesOutput} from "../io"
 
 setupScriptAndIo(ScriptGroup.JI_NOTATION_BOUND_CLASS as Filename, [LogTarget.FINAL])
 
 const jiNotationBoundClassAnalyses: JiNotationBoundClassAnalysis[] = analyzeJiNotationBoundClasses()
 
-const tableOutput: Io = computeJiNotationBoundsOutput(jiNotationBoundClassAnalyses)
+const tableOutput: Io = computeJiNotationBoundClassesOutput(jiNotationBoundClassAnalyses)
 
 const imageOutput: Io = computeJiNotationBoundClassesImage(jiNotationBoundClassAnalyses)
 
