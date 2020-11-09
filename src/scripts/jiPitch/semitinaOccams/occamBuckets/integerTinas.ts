@@ -26,12 +26,12 @@ import {metacommaNameToMetacommaMap} from "../../globals"
 import {SEMITINA_CENTS} from "../constants"
 import {Semitina} from "../types"
 import {checkMetacommaConsistency} from "./consistency"
-import {Occam, TinaBucket} from "./types"
+import {BucketName, Occam} from "./types"
 
-const computeTinaCandidateBucketOccams = (
+const computeIntegerTinaOccamBuckets = (
     bestCommaPerSemitinaZone: Array<[Index<Semitina>, Comma]>,
-): Record<RecordKey<TinaBucket>, Record<RecordKey<Name<Comma>>, Occam>> => {
-    const tinaCandidateBucketOccams: Record<RecordKey<TinaBucket>, Record<RecordKey<Name<Comma>>, Occam>> = {
+): Record<RecordKey<BucketName>, Record<RecordKey<Name<Comma>>, Occam>> => {
+    const integerTinaOccamBuckets: Record<RecordKey<BucketName>, Record<RecordKey<Name<Comma>>, Occam>> = {
         [1]: {},
         [2]: {},
         [3]: {},
@@ -54,32 +54,35 @@ const computeTinaCandidateBucketOccams = (
             const ultraCommaSemitinaZone = round(computeCentsFromPitch(ultraComma) / SEMITINA_CENTS) as Index<Semitina>
             const metacommaSemitinaZoneJump = abs(ultraCommaSemitinaZone - semitinaZone) as Abs<Count<Index<Semitina>>>
 
-            saveLog(`The metacomma between the Extreme comma ${ultraCommaClassId} and the best comma in semitina zone ${semitinaZone} ${formatComma(bestComma)} is ${metacommaName} with size ${metacommaSemitinaZoneJump}`, LogTarget.DETAILS)
+            saveLog(`The metacomma between the Ultra comma ${ultraCommaClassId} and the best comma in semitina zone ${semitinaZone} ${formatComma(bestComma)} is ${metacommaName} with size ${metacommaSemitinaZoneJump}`, LogTarget.DETAILS)
 
             if (
                 metacommaSemitinaZoneJump >= 2
                 && metacommaSemitinaZoneJump <= 18
                 && isEven(metacommaSemitinaZoneJump)
             ) {
-                const tinaBucket = metacommaSemitinaZoneJump / 2 as TinaBucket
+                const tinaOccamBucketName = metacommaSemitinaZoneJump / 2 as BucketName
 
-                checkMetacommaConsistency(metacomma, tinaBucket)
+                checkMetacommaConsistency(metacomma, tinaOccamBucketName)
 
                 metacommaNameToMetacommaMap[metacommaName] = metacomma
 
-                tinaCandidateBucketOccams[tinaBucket][metacommaName] =
-                    tinaCandidateBucketOccams[tinaBucket][metacommaName] || 0 as Occam
-                tinaCandidateBucketOccams[tinaBucket][metacommaName] =
-                    tinaCandidateBucketOccams[tinaBucket][metacommaName] + 1 as Occam
+                integerTinaOccamBuckets[tinaOccamBucketName][metacommaName] =
+                    integerTinaOccamBuckets[tinaOccamBucketName][metacommaName] || 0 as Occam
+                integerTinaOccamBuckets[tinaOccamBucketName][metacommaName] =
+                    integerTinaOccamBuckets[tinaOccamBucketName][metacommaName] + 1 as Occam
             }
         })
     })
 
-    saveLog("metacommas gathered", LogTarget.PROGRESS)
+    saveLog(
+        "metacommas between Ultra commas and best commas per semitina zone gathered, and integer tina occams bucketed",
+        LogTarget.PROGRESS,
+    )
 
-    return tinaCandidateBucketOccams
+    return integerTinaOccamBuckets
 }
 
 export {
-    computeTinaCandidateBucketOccams,
+    computeIntegerTinaOccamBuckets,
 }

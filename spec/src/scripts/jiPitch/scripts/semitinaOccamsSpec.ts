@@ -38,7 +38,7 @@ describe("semitina-occams", (): void => {
             "77/13n\t13",
             "CANDIDATES FOR TINA 9",
             "1/539n\t36",
-            "CANDIDATES FOR SEMITINA",
+            "CANDIDATES FOR FRACTIONAL TINA",
             "77/185n\t25",
             "35/299n\t23",
             "21505/7n\t22* (maps to 1 tinas)",

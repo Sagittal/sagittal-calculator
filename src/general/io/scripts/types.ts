@@ -9,6 +9,7 @@ enum ScriptFlag {
     MAX_ATE = "3",
     SECONDARY_COMMA_ZONES = "4",
     COMPLEXITY_SEARCH_ED = "5",
+    COMPLEXITY_ONLY = "6",
     MAX_AAS = "a",
     TABLE_FORMAT = "b",
     NO_COLOR = "c",

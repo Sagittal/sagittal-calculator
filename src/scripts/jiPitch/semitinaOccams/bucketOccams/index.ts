@@ -1,5 +1,0 @@
-export {checkMetacommaConsistency} from "./consistency"
-export {computeTinaCandidateBucketOccams} from "./buckets"
-export {logOccamResults} from "./logBuckets"
-export {Occam, TinaBucket} from "./types"
-export {logSemitinaCandidates} from "./logSemitina"
