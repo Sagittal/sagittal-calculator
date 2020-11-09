@@ -15,21 +15,21 @@ import {
     subtractRationalScamons,
 } from "../../../../general"
 import {
-    CommaAnalysis,
     CommaClassId,
     computeCommaName,
+    formatComma,
     getCommaClass,
     JiNotationLevelId,
     JI_NOTATION_LEVELS_COMMA_CLASS_IDS,
 } from "../../../../sagittal"
-import {inconsistentMetacommas, metacommaNameToMetacommaMap} from "../../globals"
-import {SEMITINA} from "../constants"
+import {metacommaNameToMetacommaMap} from "../../globals"
+import {SEMITINA_CENTS} from "../constants"
 import {Semitina} from "../types"
 import {checkMetacommaConsistency} from "./consistency"
 import {Occam, TinaBucket} from "./types"
 
 const computeTinaCandidateBucketOccams = (
-    bestCommaPerSemitinaZone: Array<[Index<Semitina>, CommaAnalysis]>,
+    bestCommaPerSemitinaZone: Array<[Index<Semitina>, Comma]>,
 ): Record<RecordKey<TinaBucket>, Record<RecordKey<Name<Comma>>, Occam>> => {
     const tinaCandidateBucketOccams: Record<RecordKey<TinaBucket>, Record<RecordKey<Name<Comma>>, Occam>> = {
         [1]: {},
@@ -46,15 +46,15 @@ const computeTinaCandidateBucketOccams = (
     JI_NOTATION_LEVELS_COMMA_CLASS_IDS[JiNotationLevelId.ULTRA].forEach((ultraCommaClassId: CommaClassId): void => {
         const ultraComma = getCommaClass(ultraCommaClassId).pitch
 
-        bestCommaPerSemitinaZone.forEach(([semitinaZone, bestComma]: [Index<Semitina>, CommaAnalysis]): void => {
+        bestCommaPerSemitinaZone.forEach(([semitinaZone, bestComma]: [Index<Semitina>, Comma]): void => {
             const metacomma =
-                computeSuperScamon(subtractRationalScamons(ultraComma, bestComma.pitch)) as unknown as Comma
+                computeSuperScamon(subtractRationalScamons(ultraComma, bestComma)) as unknown as Comma
             const metacommaName = computeCommaName(metacomma)
 
-            const ultraCommaSemitinaZone = round(computeCentsFromPitch(ultraComma) / SEMITINA) as Index<Semitina>
+            const ultraCommaSemitinaZone = round(computeCentsFromPitch(ultraComma) / SEMITINA_CENTS) as Index<Semitina>
             const metacommaSemitinaZoneJump = abs(ultraCommaSemitinaZone - semitinaZone) as Abs<Count<Index<Semitina>>>
 
-            saveLog(`The metacomma between the Extreme comma ${ultraCommaClassId} and the best comma in semitina zone ${semitinaZone} ${bestComma.name} is ${metacommaName} with size ${metacommaSemitinaZoneJump}`, LogTarget.DETAILS)
+            saveLog(`The metacomma between the Extreme comma ${ultraCommaClassId} and the best comma in semitina zone ${semitinaZone} ${formatComma(bestComma)} is ${metacommaName} with size ${metacommaSemitinaZoneJump}`, LogTarget.DETAILS)
 
             if (
                 metacommaSemitinaZoneJump >= 2

@@ -16,6 +16,15 @@ const computeQuotientProduct = <T extends NumericProperties>(...quotients: Array
         [1, 1] as Quotient<T>,
     )
 
+// TODO: would be great if the rational version could take lowest terms
+const halveQuotient = <T extends NumericProperties>([numerator, denominator]: Quotient<T>): Quotient<T> => {
+    return [
+        numerator,
+        denominator * 2,
+    ] as Quotient<T>
+}
+
 export {
     computeQuotientProduct,
+    halveQuotient,
 }

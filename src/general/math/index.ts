@@ -57,6 +57,7 @@ export {
     Val,
     computeMonzoMapping,
     computePatentVal,
+    scaleScamon,
 } from "./numeric"
 export {computeDistributions} from "./distributions"
 export {dividesEvenly, isEven, isOdd} from "./dividesEvenly"

@@ -1,9 +1,10 @@
-import {Cents} from "../../../general"
+import {computeCentsFromPitch, halveScamon} from "../../../general"
 import {TINA} from "../../../sagittal"
 
-// TODO: Hemitina, and hemiapotome... but wait until forum gets back to me about this suggestion
-const SEMITINA = TINA / 2 as Cents
+const SEMITINA = halveScamon(TINA)
+const SEMITINA_CENTS = computeCentsFromPitch(SEMITINA)
 
 export {
     SEMITINA,
+    SEMITINA_CENTS,
 }

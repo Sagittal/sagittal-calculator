@@ -1,34 +1,28 @@
-import {Index, isUndefined, LogTarget, Maybe, saveLog, stringify} from "../../../../general"
-import {CommaAnalysis, computeLpe, computeLpei} from "../../../../sagittal"
-import {SEMITINA} from "../constants"
+import {Comma, Index, isUndefined, LogTarget, Maybe, saveLog, stringify} from "../../../../general"
+import {computeLpe, computeLpei, formatComma} from "../../../../sagittal"
+import {SEMITINA_CENTS} from "../constants"
 import {Semitina} from "../types"
 
 const computeBestCommaPerSemitinaZone = (
-    commaAnalysesBySemitinaZoneEntries: Array<[Index<Semitina>, CommaAnalysis[]]>,
-): Array<[Index<Semitina>, CommaAnalysis]> => {
-    const INCLUDE_ERROR_IN_PHASE_1_SCORE = true // False // TODO: make a script flag
+    commasBySemitinaZoneEntries: Array<[Index<Semitina>, Comma[]]>,
+): Array<[Index<Semitina>, Comma]> => {
+    const INCLUDE_ERROR_IN_PHASE_1_SCORE = true // False // TODO: make a script flag, pitch it as badness v. complexity?
 
-    const bestCommaPerSemitinaZone: Array<[Index<Semitina>, CommaAnalysis]> = commaAnalysesBySemitinaZoneEntries
-        .map(([semitinaZone, commaAnalyses]: [Index<Semitina>, CommaAnalysis[]]): [Index<Semitina>, CommaAnalysis] => {
-            let bestComma = undefined as Maybe<CommaAnalysis>
+    const bestCommaPerSemitinaZone: Array<[Index<Semitina>, Comma]> = commasBySemitinaZoneEntries
+        .map(([semitinaZone, commas]: [Index<Semitina>, Comma[]]): [Index<Semitina>, Comma] => {
+            let bestComma = undefined as Maybe<Comma>
             let bestScore = Infinity
-            commaAnalyses.forEach((commaAnalysis: CommaAnalysis): void => {
-                const n2d3p9 = commaAnalysis.two3FreeClassAnalysis.n2d3p9
-                const aas = commaAnalysis.aas
-                const ate = commaAnalysis.ate
-
-                // TODO: and shouldn't you just pass LPEI the comma and have it figure it out?
-                //  And if so, can you stop analyzing them so soon?
+            commas.forEach((comma: Comma): void => {
                 let score
                 if (INCLUDE_ERROR_IN_PHASE_1_SCORE) {
-                    score = computeLpei(commaAnalysis.pitch, SEMITINA)
+                    score = computeLpei(comma, SEMITINA_CENTS)
                 } else {
-                    score = computeLpe(commaAnalysis.pitch)
+                    score = computeLpe(comma)
                 }
 
                 if (score < bestScore) {
                     bestScore = score
-                    bestComma = commaAnalysis
+                    bestComma = comma
                 }
             })
 
@@ -39,8 +33,8 @@ const computeBestCommaPerSemitinaZone = (
 
     saveLog(stringify(bestCommaPerSemitinaZone, {multiline: true}), LogTarget.DETAILS)
     saveLog("best commas per semitina zone (names)", LogTarget.DETAILS)
-    bestCommaPerSemitinaZone.forEach(([semitinaZone, commaAnalysis]: [Index<Semitina>, CommaAnalysis]): void => {
-        saveLog(`${semitinaZone}: ${commaAnalysis.name}`, LogTarget.DETAILS)
+    bestCommaPerSemitinaZone.forEach(([semitinaZone, comma]: [Index<Semitina>, Comma]): void => {
+        saveLog(`${semitinaZone}: ${formatComma(comma)}`, LogTarget.DETAILS)
     })
 
     saveLog("best comma per semitina zone identified", LogTarget.PROGRESS)

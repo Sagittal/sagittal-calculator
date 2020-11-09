@@ -151,7 +151,7 @@ describe("analyzeJiNotationBoundClass", (): void => {
         totalDistance: 0.07887931138776594 as Sum<Abs<Cents>>,
         totalInaDistance: 0.4641843423502595 as Sum<Multiplier<Ina>>,
         tinaError: 0 as Multiplier<Tina>,
-        initialPositionTinaDistance: -0.5613173198962398 as Multiplier<Tina>,
+        initialPositionTinaDistance: -0.5613173198962725 as Multiplier<Tina>,
     }
 
     it("returns an analysis of the JI notation bound class using its histories, including a consolidation of said bound histories, and its best possible bound class history, and the difference between the bound and its initial position", (): void => {
@@ -163,7 +163,7 @@ describe("analyzeJiNotationBoundClass", (): void => {
                 monzo: [-17, 11, -2, 0, 0, 0, 0, 1] as Monzo<{rational: true}>,
                 scaler: HALF_SCALER,
             } as Scamon<{rational: false}>,
-            initialPositionTinaDistance: -0.5613173198962398 as Multiplier<Tina>,
+            initialPositionTinaDistance: -0.5613173198962725 as Multiplier<Tina>,
             possibleBoundHistoryCount: 2 as Count<BoundHistoryAnalysis>,
             bestPossibleBoundHistoryAnalysis: expectedBestPossibleBoundHistoryAnalysis,
             bestPossibleBoundHistoryTotalDistance: 0.07887931138776594 as Sum<Abs<Cents>>,
@@ -244,7 +244,7 @@ describe("analyzeJiNotationBoundClass", (): void => {
                 ],
             },
         }
-        expect(actual).toEqual(expected)
+        expect(actual).toBeCloseToObject(expected)
     })
 
     it("updates the rank analysis", (): void => {

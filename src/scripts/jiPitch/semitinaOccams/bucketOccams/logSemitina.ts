@@ -9,19 +9,19 @@ import {
     stringify,
     subtractRationalScamons,
 } from "../../../../general"
-import {CommaAnalysis, computeCommaName} from "../../../../sagittal"
+import {computeCommaName} from "../../../../sagittal"
 import {metacommaNameToMetacommaMap} from "../../globals"
 import {Semitina} from "../types"
 import {checkMetacommaConsistency} from "./consistency"
 import {logTopCandidatesByOccamForBucket} from "./logTopCandidatesByOccamForBucket"
 import {Occam, TinaBucket} from "./types"
 
-const logSemitinaCandidates = (bestCommaPerSemitinaZone: Array<[Index<Semitina>, CommaAnalysis]>): void => {
+const logSemitinaCandidates = (bestCommaPerSemitinaZone: Array<[Index<Semitina>, Comma]>): void => {
     const semitinaCandidateOccams: Record<RecordKey<Name<Comma>>, Occam> = {}
 
     saveLog(`CANDIDATES FOR SEMITINA`, LogTarget.FINAL)
     bestCommaPerSemitinaZone
-        .forEach((bestCommaPerSemitinaZoneEntry: [Index<Semitina>, CommaAnalysis], index: number): void => {
+        .forEach((bestCommaPerSemitinaZoneEntry: [Index<Semitina>, Comma], index: number): void => {
             if (index === indexOfFinalElement(bestCommaPerSemitinaZone)) return
 
             const [semitinaZone, bestCommaInThisSemitinaZone] = bestCommaPerSemitinaZoneEntry
@@ -29,8 +29,8 @@ const logSemitinaCandidates = (bestCommaPerSemitinaZone: Array<[Index<Semitina>,
             const subsequentBestCommaInThatSemitinaZone = bestCommaPerSemitinaZone[index + 1][1]
 
             const metacommaBetweenConsecutiveBestCommas = subtractRationalScamons(
-                subsequentBestCommaInThatSemitinaZone.pitch,
-                bestCommaInThisSemitinaZone.pitch,
+                subsequentBestCommaInThatSemitinaZone,
+                bestCommaInThisSemitinaZone,
             ) as Comma
             const metacommaName = computeCommaName(metacommaBetweenConsecutiveBestCommas)
             semitinaCandidateOccams[metacommaName] = semitinaCandidateOccams[metacommaName] || 0 as Occam

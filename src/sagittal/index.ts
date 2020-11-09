@@ -61,7 +61,7 @@ export {
     JiNotationBoundClass,
     formatJiNotationLevel,
     Ina,
-    INA_SIZES,
+    INA_CENTS_SIZES,
     JI_NOTATION_BOUND_CLASS_ENTRIES,
     JI_NOTATION_BOUND_CLASSES,
     JiNotationLevelId,
@@ -83,6 +83,7 @@ export {
     computeJiNotationCaptureZone,
     INSANE_ZETA_PEAK_VAL,
     MINA,
+    TINA_CENTS,
 } from "./notations"
 export {
     BoundClassId,

@@ -17,8 +17,8 @@ import {
     JiNotationBoundClass,
     JiNotationLevelId,
     Tina,
-    TINA,
 } from "../../../../../src/sagittal/notations/ji"
+import {TINA_CENTS} from "../../../../../src/sagittal/notations/ji/intervals"
 import {EXTREME_EDA} from "../../../../../src/sagittal/notations/ji/levelEdas"
 import {computeInitialPosition} from "../../../../../src/scripts/jiNotationBoundClass/boundClass/initialPosition"
 import {BoundHistory} from "../../../../../src/scripts/jiNotationBoundClass/histories"
@@ -136,7 +136,7 @@ describe("analyzeHistory", (): void => {
             const expectedTinaError = 2 / 5 as Multiplier<Tina>
             pitch = addScamons(
                 actualJiNotationBoundPitch,
-                computePitchFromCents(multiply(TINA, expectedTinaError)),
+                computePitchFromCents(multiply(TINA_CENTS, expectedTinaError)),
             )
             boundHistory = [
                 {
@@ -167,7 +167,7 @@ describe("analyzeHistory", (): void => {
             const expectedTinaError = 5 / 2 as Multiplier<Tina>
             pitch = addScamons(
                 actualJiNotationBoundPitch,
-                computePitchFromCents(multiply(TINA, expectedTinaError)),
+                computePitchFromCents(multiply(TINA_CENTS, expectedTinaError)),
             )
             boundHistory = [
                 {
@@ -200,7 +200,7 @@ describe("analyzeHistory", (): void => {
             const expectedTinaError = -2 / 5 as Multiplier<Tina>
             pitch = addScamons(
                 actualJiNotationBoundPitch,
-                computePitchFromCents(multiply(TINA, expectedTinaError)),
+                computePitchFromCents(multiply(TINA_CENTS, expectedTinaError)),
             )
             boundHistory = [
                 {
@@ -233,7 +233,7 @@ describe("analyzeHistory", (): void => {
             const expectedTinaError = -5 / 2 as Multiplier<Tina>
             pitch = addScamons(
                 actualJiNotationBoundPitch,
-                computePitchFromCents(multiply(TINA, expectedTinaError)),
+                computePitchFromCents(multiply(TINA_CENTS, expectedTinaError)),
             )
             boundHistory = [
                 {

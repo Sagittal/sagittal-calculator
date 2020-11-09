@@ -28,11 +28,10 @@ import {
     Ina,
     N2D3P9,
     SymbolSubsetId,
-    TINA,
     Unicode,
 } from "../../../../../../src/sagittal"
-import {JiNotationBoundClass, JiNotationLevelId, Mina} from "../../../../../../src/sagittal/notations/ji"
-import {MINA, ULTRINA} from "../../../../../../src/sagittal/notations/ji/intervals"
+import {JiNotationBoundClass, JiNotationLevelId, Mina, MINA_CENTS} from "../../../../../../src/sagittal/notations/ji"
+import {TINA_CENTS, ULTRINA_CENTS} from "../../../../../../src/sagittal/notations/ji/intervals"
 import {extractJiNotationBoundClassIdentifiers} from "../../../../../../src/scripts/jiNotationBoundClass/io/terminal/boundClassIdentifiers"
 import {JiNotationBoundClassIdentifiers} from "../../../../../../src/scripts/jiNotationBoundClass/io/terminal/types"
 import {jiNotationBoundClassFixture} from "../../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
@@ -60,7 +59,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                     {
                         introducingJiNotationLevel: JiNotationLevelId.ULTRA,
                         distance: 23.1164196495597 - 22.9305875372457 as Abs<Cents>,
-                        inaDistance: (23.1164196495597 - 22.9305875372457) / ULTRINA as Multiplier<Ina>,
+                        inaDistance: (23.1164196495597 - 22.9305875372457) / ULTRINA_CENTS as Multiplier<Ina>,
                         representativeSagittal: {
                             ascii: ".)/|" as Ascii,
                             unicode: "" as Unicode,
@@ -94,7 +93,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                     {
                         introducingJiNotationLevel: JiNotationLevelId.ULTRA,
                         distance: 23.46001038464900 - 23.1164196495597 as Abs<Cents>,
-                        inaDistance: (23.46001038464900 - 23.1164196495597) / ULTRINA as Multiplier<Ina>,
+                        inaDistance: (23.46001038464900 - 23.1164196495597) / ULTRINA_CENTS as Multiplier<Ina>,
                         representativeSagittal: {
                             ascii: "'/|" as Ascii,
                             unicode: "" as Unicode,
@@ -129,7 +128,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                     {
                         introducingJiNotationLevel: JiNotationLevelId.ULTRA,
                         distance: 23.1164196495597 - 22.9305875372457 as Abs<Cents>,
-                        inaDistance: (23.1164196495597 - 22.9305875372457) / MINA as Multiplier<Ina>,
+                        inaDistance: (23.1164196495597 - 22.9305875372457) / MINA_CENTS as Multiplier<Ina>,
                         representativeSagittal: {
                             ascii: ".)/|" as Ascii,
                             unicode: "" as Unicode,
@@ -162,7 +161,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                     {
                         introducingJiNotationLevel: JiNotationLevelId.ULTRA,
                         distance: 23.46001038464900 - 23.1164196495597 as Abs<Cents>,
-                        inaDistance: (23.46001038464900 - 23.1164196495597) / MINA as Multiplier<Ina>,
+                        inaDistance: (23.46001038464900 - 23.1164196495597) / MINA_CENTS as Multiplier<Ina>,
                         representativeSagittal: {
                             ascii: "'/|" as Ascii,
                             unicode: "" as Unicode,
@@ -197,7 +196,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                     {
                         introducingJiNotationLevel: JiNotationLevelId.ULTRA,
                         distance: 23.1164196495597 - 22.9305875372457 as Abs<Cents>,
-                        inaDistance: (23.1164196495597 - 22.9305875372457) / TINA as Multiplier<Ina>,
+                        inaDistance: (23.1164196495597 - 22.9305875372457) / TINA_CENTS as Multiplier<Ina>,
                         representativeSagittal: {
                             ascii: ".)/|" as Ascii,
                             unicode: "" as Unicode,
@@ -230,7 +229,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                     {
                         introducingJiNotationLevel: JiNotationLevelId.ULTRA,
                         distance: 23.46001038464900 - 23.1164196495597 as Abs<Cents>,
-                        inaDistance: (23.46001038464900 - 23.1164196495597) / TINA as Multiplier<Ina>,
+                        inaDistance: (23.46001038464900 - 23.1164196495597) / TINA_CENTS as Multiplier<Ina>,
                         representativeSagittal: {
                             ascii: "'/|" as Ascii,
                             unicode: "" as Unicode,

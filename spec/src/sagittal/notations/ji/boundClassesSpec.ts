@@ -17,10 +17,9 @@ import {
     JiNotationBoundClassEntry,
     JI_NOTATION_BOUND_CLASSES,
     JI_NOTATION_BOUND_CLASS_ENTRIES,
-    TINA,
 } from "../../../../../src/sagittal"
 import {INSANE_EDA} from "../../../../../src/sagittal/notations/ji/levelEdas"
-import {SEMITINA} from "../../../../../src/scripts/jiPitch/semitinaOccams"
+import {SEMITINA_CENTS} from "../../../../../src/scripts/jiPitch/semitinaOccams"
 import {computePitchExpectation} from "../../../../helpers/src/general/music/pitchExpectation"
 import {PitchExpectation} from "../../../../helpers/src/general/music/types"
 
@@ -41,7 +40,7 @@ describe("JI_NOTATION_BOUND_CLASS_ENTRIES", (): void => {
         JI_NOTATION_BOUND_CLASS_ENTRIES
             .forEach(([boundClassId, {pitch}]: JiNotationBoundClassEntry): void => {
                 while (true) {
-                    const currentOddSemitinaCents: Cents = SEMITINA * currentOddSemitina as Cents
+                    const currentOddSemitinaCents: Cents = SEMITINA_CENTS * currentOddSemitina as Cents
                     const currentOddSemitinaPitch =
                         computeIrrationalDecimalFromScamon(computePitchFromCents(currentOddSemitinaCents))
 

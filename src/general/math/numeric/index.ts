@@ -59,6 +59,7 @@ export {
     addScamons,
     invertScamon,
     multiplyScamon,
+    scaleScamon,
 } from "./scamon"
 export {
     Direction,

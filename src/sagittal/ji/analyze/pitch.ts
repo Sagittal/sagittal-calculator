@@ -23,9 +23,10 @@ const analyzeJiPitch = (jiPitch: Scamon<{rational: true}>): JiPitchAnalysis => {
     const aas = computeAas(jiPitch)
     const ate = computeAte(jiPitch)
 
-    // TODO: include LPE cmplxty and LPEI badness
-    //  Although to be safe wait until the forum conversation is resolved re: these
-    //  (Specifically, where I ask what "I" stands for, and just thought I'd share my thought about 2-free)
+    // TODO: BADNESS & COMPLEXITY
+    //  Include LPE cmplxty and LPEI badness in analyses and reports
+    //  Although maybe we should wait until work is totally done on the badness & complexity LFC, in case those
+    //  Parameters end up getting slightly tweaked
 
     return {
         pitch: jiPitch,

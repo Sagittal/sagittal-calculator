@@ -228,6 +228,8 @@ export {
     computePatentVal,
     isEven,
     computeRationalDecimalCopf,
+    scaleScamon,
+    divide,
 } from "./math"
 export {
     Cents,
@@ -260,7 +262,7 @@ export {
     OCTAVE_WINDOW,
     APOTOME,
 } from "./music"
-export {Count, Ed, Extrema, Index, Ms, Multiplier, Name, Step, Sum, Window, Of} from "./types"
+export {Count, Ed, Extrema, Index, Ms, Multiplier, Name, Step, Sum, Window, Of, Divisor} from "./types"
 export {
     Score,
     Parameter,

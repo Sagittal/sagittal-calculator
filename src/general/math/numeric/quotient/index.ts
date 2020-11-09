@@ -9,4 +9,4 @@ export {
     Numerator,
 } from "./types"
 export {computeSuperQuotient} from "./direction"
-export {computeQuotientProduct} from "./typedOperations"
+export {computeQuotientProduct, halveQuotient} from "./typedOperations"

@@ -7,6 +7,7 @@ type Index<T = void> =
 type Count<T = void> =
     Decimal<{integer: true}> & {_CountBrand: boolean} & (T extends void ? {} : {_CountOfBrand: T})
 
+// TODO: shouldn't these really live in math?
 // Numeric types where parameter is also numeric
 type Addend<T extends number | void = void> =
     number

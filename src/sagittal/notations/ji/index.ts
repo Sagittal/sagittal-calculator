@@ -1,7 +1,7 @@
 export {computeMaybeCommaClassId} from "./maybeCommaClassId"
 export {formatJiNotationLevel} from "./formatLevel"
 export {computeSecondaryCommaZone} from "./secondaryCommaZone"
-export {INA_SIZES, TINA, MINA} from "./intervals"
+export {INA_CENTS_SIZES, TINA, MINA, TINA_CENTS, MINA_CENTS} from "./intervals"
 export {JI_NOTATION_BOUND_CLASS_ENTRIES, JI_NOTATION_BOUND_CLASSES} from "./boundClasses"
 export {getMinaName} from "./minaName"
 export {getIntroducingJiNotationLevel} from "./introducingJiNotationLevel"

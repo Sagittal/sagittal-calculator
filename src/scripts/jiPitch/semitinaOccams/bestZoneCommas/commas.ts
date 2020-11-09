@@ -1,7 +1,7 @@
 import {BLANK, Comma, Filename, KeyPath, LogTarget, Monzo, readLines, saveLog, sort} from "../../../../general"
-import {analyzeComma, CommaAnalysis, computeCommasFrom23FreeRationalMonzo} from "../../../../sagittal"
+import {computeCommasFrom23FreeRationalMonzo} from "../../../../sagittal"
 
-const computeAllCommasLessThanHalfApotome = (): CommaAnalysis[] => {
+const computeAllCommasLessThanHalfApotome = (): Comma[] => {
     const TWO_3_FREE_MONZOS_WITH_N2D3P9_LOWER_THAN_5298 = JSON.parse(
         readLines("src/scripts/jiPitch/input/two3FreeRationalMonzosWithN2D3P9LowerThan5298.txt" as Filename)
             .join(BLANK),
@@ -16,13 +16,10 @@ const computeAllCommasLessThanHalfApotome = (): CommaAnalysis[] => {
         })
     saveLog("commas gathered", LogTarget.PROGRESS)
 
-    const commaAnalyses = commas.map((comma: Comma): CommaAnalysis => analyzeComma(comma))
-    saveLog("commas analyzed", LogTarget.PROGRESS)
-
-    sort(commaAnalyses, {by: "cents" as KeyPath})
+    sort(commas, {by: "cents" as KeyPath})
     saveLog("commas sorted", LogTarget.PROGRESS)
 
-    return commaAnalyses
+    return commas
 }
 
 export {

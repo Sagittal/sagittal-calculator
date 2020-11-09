@@ -1,5 +1,6 @@
 import {
-    Cents,
+    Comma,
+    computeCentsFromPitch,
     count,
     formatCents,
     Index,
@@ -11,23 +12,22 @@ import {
     saveLog,
     sort,
 } from "../../../../general"
-import {CommaAnalysis} from "../../../../sagittal"
 import {Semitina} from "../types"
 
-const computeCommaAnalysesBySemitinaZoneEntries = (
-    commaAnalysesBySemitinaZone: Record<RecordKey<Index<Semitina>>, CommaAnalysis[]>,
-): Array<[Index<Semitina>, CommaAnalysis[]]> => {
-    const commaAnalysesBySemitinaZoneEntries = sort(
-        Object.entries(commaAnalysesBySemitinaZone)
-            .map(([semitinaZone, commaAnalyses]: [string, CommaAnalysis[]]): [Index<Semitina>, CommaAnalysis[]] => {
-                return [parseInt(semitinaZone) as Index<Semitina>, commaAnalyses]
+const computeCommasBySemitinaZoneEntries = (
+    commasBySemitinaZone: Record<RecordKey<Index<Semitina>>, Comma[]>,
+): Array<[Index<Semitina>, Comma[]]> => {
+    const commasBySemitinaZoneEntries = sort(
+        Object.entries(commasBySemitinaZone)
+            .map(([semitinaZone, commas]: [string, Comma[]]): [Index<Semitina>, Comma[]] => {
+                return [parseInt(semitinaZone) as Index<Semitina>, commas]
             }),
         {by: 0 as KeyPath},
-    ) as Array<[unknown, CommaAnalysis[]]> as Array<[Index<Semitina>, CommaAnalysis[]]>
+    ) as Array<[unknown, Comma[]]> as Array<[Index<Semitina>, Comma[]]>
 
-    commaAnalysesBySemitinaZoneEntries
-        .forEach(([semitinaZone, commaAnalyses]: [Index<Semitina>, CommaAnalysis[]]): void => {
-            const centsForEachComma = commaAnalyses.map((ca: CommaAnalysis): Cents => ca.cents)
+    commasBySemitinaZoneEntries
+        .forEach(([semitinaZone, commas]: [Index<Semitina>, Comma[]]): void => {
+            const centsForEachComma = commas.map(computeCentsFromPitch)
             const maxCents = formatCents(max(...centsForEachComma), {align: false})
             const minCents = formatCents(min(...centsForEachComma), {align: false})
             const countCents = count(centsForEachComma)
@@ -35,9 +35,9 @@ const computeCommaAnalysesBySemitinaZoneEntries = (
         })
     saveLog("commas grouped by semitina zone converted to sorted tuples", LogTarget.PROGRESS)
 
-    return commaAnalysesBySemitinaZoneEntries
+    return commasBySemitinaZoneEntries
 }
 
 export {
-    computeCommaAnalysesBySemitinaZoneEntries,
+    computeCommasBySemitinaZoneEntries,
 }

@@ -1,10 +1,10 @@
 export {Semitina} from "./types"
-export {SEMITINA} from "./constants"
+export {SEMITINA_CENTS} from "./constants"
 export {
     computeAllCommasLessThanHalfApotome,
     computeBestCommaPerSemitinaZone,
-    computeCommaAnalysesBySemitinaZone,
-    computeCommaAnalysesBySemitinaZoneEntries,
+    computeCommasBySemitinaZone,
+    computeCommasBySemitinaZoneEntries,
 } from "./bestZoneCommas"
 export {
     checkMetacommaConsistency,

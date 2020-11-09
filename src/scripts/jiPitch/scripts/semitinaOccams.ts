@@ -3,8 +3,8 @@ import {ScriptGroup} from "../../types"
 import {
     computeAllCommasLessThanHalfApotome,
     computeBestCommaPerSemitinaZone,
-    computeCommaAnalysesBySemitinaZone,
-    computeCommaAnalysesBySemitinaZoneEntries,
+    computeCommasBySemitinaZone,
+    computeCommasBySemitinaZoneEntries,
     computeTinaCandidateBucketOccams,
     logOccamResults,
     logSemitinaCandidates,
@@ -20,13 +20,13 @@ setupScriptAndIo(
 /*********************************************/
 
 // GATHER ALL THE COMMAS (AND ANALYZE THEM)
-const commaAnalyses = computeAllCommasLessThanHalfApotome()
+const commas = computeAllCommasLessThanHalfApotome()
 // SORT THEM BY SEMITINA ZONE
-const commaAnalysesBySemitinaZone = computeCommaAnalysesBySemitinaZone(commaAnalyses)
+const commasBySemitinaZone = computeCommasBySemitinaZone(commas)
 // CONVERT RESULTS TO TUPLES OF [SEMITINA ZONE NAMES WHICH ARE ACTUALLY NUMERIC, COMMA ANALYSES] SORTED BY SEMITINA ZONE
-const commaAnalysesBySemitinaZoneEntries = computeCommaAnalysesBySemitinaZoneEntries(commaAnalysesBySemitinaZone)
+const commasBySemitinaZoneEntries = computeCommasBySemitinaZoneEntries(commasBySemitinaZone)
 // FIND THE SINGLE BEST COMMA IN EACH ZONE
-const bestCommaPerSemitinaZone = computeBestCommaPerSemitinaZone(commaAnalysesBySemitinaZoneEntries)
+const bestCommaPerSemitinaZone = computeBestCommaPerSemitinaZone(commasBySemitinaZoneEntries)
 
 /****************************************************************************************/
 /*  PHASE TWO: COMPUTE METACOMMAS, BUCKET OCCURRENCES BY TINA, SORT AND LOG CANDIDATES  */

@@ -1,5 +1,5 @@
 import {isCloseTo, Multiplier, Scamon, subtractPitch} from "../../../general"
-import {JiNotationBoundClass, Tina, TINA} from "../../../sagittal"
+import {JiNotationBoundClass, Tina, TINA_CENTS} from "../../../sagittal"
 import {BoundHistory} from "../histories"
 import {analyzeBoundEvents} from "./events"
 import {computeExact} from "./exact"
@@ -27,13 +27,13 @@ const analyzeHistory = (
     const positionError = subtractPitch(position, pitch)
     const possible = isCloseTo(positionError, 0)
 
-    let tinaError = positionError / TINA as Multiplier<Tina>
+    let tinaError = positionError / TINA_CENTS as Multiplier<Tina>
     if (isCloseTo(tinaError, 0 as Multiplier<Tina>)) {
         tinaError = 0 as Multiplier<Tina>
     }
 
     const initialPositionDistance = subtractPitch(position, initialPosition)
-    const initialPositionTinaDistance = initialPositionDistance / TINA as Multiplier<Tina>
+    const initialPositionTinaDistance = initialPositionDistance / TINA_CENTS as Multiplier<Tina>
 
     return {
         boundEventAnalyses: boundEventAnalyses,

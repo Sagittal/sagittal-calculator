@@ -1,6 +1,7 @@
-import {Decimal, divide, Exponent, Max, Min, multiply, NumericProperties, Prime} from "../../../math"
-import {Multiplier} from "../../../types"
+import {Decimal, divide, Exponent, Max, Min, multiply, NumericProperties, Prime, Quotient} from "../../../math"
+import {Degree, Multiplier} from "../../../types"
 import {computeIrrationalDecimalFromScamon, computeIrrationalScamonFromDecimal, HALF_SCALER} from "../../irrational"
+import {computeQuotientProduct, halveQuotient} from "../quotient"
 import {Scamon} from "./types"
 
 const addScamons = (augendScamon: Scamon, addendScamon: Scamon): Scamon<{direction: undefined, rational: false}> =>
@@ -16,8 +17,18 @@ const subtractScamons = (
         divide(computeIrrationalDecimalFromScamon(minuendScamon), computeIrrationalDecimalFromScamon(subtrahendScamon)),
     ) as Scamon<{direction: undefined, rational: false}>
 
+// TODO: a test that you can halve a scamon which already has a scaler
 const halveScamon = <T extends NumericProperties>(scamon: Scamon<T>): Scamon<T & {rational: false}> =>
-    ({...scamon, scaler: HALF_SCALER} as Scamon<T & {rational: false}>)
+    ({...scamon, scaler: scamon.scaler ? halveQuotient(scamon.scaler) : HALF_SCALER} as Scamon<T & {rational: false}>)
+
+const scaleScamon = <T extends NumericProperties>(
+    scamon: Scamon<T>,
+    scaler: Quotient | Degree,
+): Scamon<T & {rational: false}> =>
+    ({
+        ...scamon,
+        scaler: scamon.scaler ? computeQuotientProduct(scamon.scaler, scaler) : scaler,
+    } as Scamon<T & {rational: false}>)
 
 const maxScamon = (...scamons: Array<Scamon>): Max<Scamon> => {
     let maxDecimal = -Infinity as Decimal
@@ -66,4 +77,5 @@ export {
     minScamon,
     subtractScamons,
     multiplyScamon,
+    scaleScamon,
 }
