@@ -3,7 +3,7 @@ import {abs} from "../../typedOperations"
 import {Exponent} from "../../types"
 import {Copfr, Prime} from "../types"
 
-// Count Of Prime Factors with Repetition (big omega)
+// Count Of Prime Factors with Repetition (big omega, Ω)
 
 const computeRationalMonzoCopfr = <T extends NumericProperties>(
     rationalMonzo: Monzo<T & {rational: true}>,

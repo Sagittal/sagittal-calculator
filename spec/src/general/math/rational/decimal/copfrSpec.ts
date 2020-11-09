@@ -7,7 +7,7 @@ describe("computeRationalDecimalCopfr", (): void => {
 
         const actual = computeRationalDecimalCopfr(rationalDecimal)
 
-        const expected = 3 as Copfr
+        const expected = 3 as Copfr     // 5 & 5 & 11
         expect(actual).toBe(expected)
     })
 })

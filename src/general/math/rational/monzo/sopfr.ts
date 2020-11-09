@@ -4,6 +4,8 @@ import {Exponent} from "../../types"
 import {PRIMES} from "../primes"
 import {Prime, Sopfr} from "../types"
 
+// Sum Of Prime Factors with Repetition
+
 const computeRationalMonzoSopfr = <T extends NumericProperties>(
     rationalMonzo: Monzo<T & {rational: true}>,
 ): Sopfr<T> =>
