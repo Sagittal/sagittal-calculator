@@ -1,5 +1,16 @@
-import {Decimal, divide, Exponent, Max, Min, multiply, NumericProperties, Prime, Quotient} from "../../../math"
-import {Degree, Multiplier} from "../../../types"
+import {
+    Decimal,
+    divide,
+    Exponent,
+    Max,
+    Min,
+    Multiplier,
+    multiply,
+    NumericProperties,
+    Prime,
+    Quotient,
+} from "../../../math"
+import {Degree} from "../../../types"
 import {computeIrrationalDecimalFromScamon, computeIrrationalScamonFromDecimal, HALF_SCALER} from "../../irrational"
 import {computeQuotientProduct, halveQuotient} from "../quotient"
 import {Scamon} from "./types"

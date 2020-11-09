@@ -1,6 +1,6 @@
 import {computeRange, computeTrimmedArray, shallowClone} from "../../../code"
 import {add, count, Decimal, Exponent, invertMonzo, max, Monzo, multiply, NumericProperties, Prime} from "../../../math"
-import {Multiplier} from "../../../types"
+import {Multiplier} from "../../types"
 import {NumericPropertyTranslationForMonzosAndQuotientsToTheirTerms} from "../types"
 
 const sumMonzos = <T extends NumericProperties>(...monzos: Array<Monzo<T>>): Monzo<T> => {

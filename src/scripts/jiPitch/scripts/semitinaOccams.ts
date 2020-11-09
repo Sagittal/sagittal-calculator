@@ -19,6 +19,7 @@ setupScriptAndIo(
 /*  PHASE ONE: COMPUTE BEST COMMAS PER ZONE  */
 /*********************************************/
 
+// TODO: these four should be reduced to a single interface
 // GATHER ALL THE COMMAS (AND ANALYZE THEM)
 const commas = computeAllCommasLessThanHalfApotome()
 // SORT THEM BY SEMITINA ZONE

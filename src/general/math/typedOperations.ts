@@ -1,12 +1,12 @@
 import {isUndefined, MAX_JS_INTEGER_VALUE, Precision} from "../code"
-import {Addend, Count, Divisor, Multiplier, Product, Subtrahend, Sum} from "../types"
+import {Count} from "../types"
 import {
     ADDITIVE_IDENTITY,
     MULTIPLICATIVE_IDENTITY,
     VALUE_BELOW_WHICH_ROUNDING_IMPLEMENTATION_BREAKS,
 } from "./constants"
 import {Decimal} from "./numeric"
-import {Abs, Base, Exponent, Max, Min, Power} from "./types"
+import {Abs, Addend, Base, Divisor, Exponent, Max, Min, Multiplier, Power, Product, Subtrahend, Sum} from "./types"
 
 const count = <T>(array: T[]): Count<T> => {
     return array.length as Count<T>

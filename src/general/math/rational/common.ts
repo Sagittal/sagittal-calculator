@@ -1,7 +1,7 @@
 import {allElementsEqual, isEmpty, isSingleton} from "../../code"
-import {Divisor} from "../../types"
 import {Decimal, mod} from "../numeric"
 import {abs, divide} from "../typedOperations"
+import {Divisor} from "../types"
 import {ONE} from "./constants"
 import {CommonFunction} from "./types"
 

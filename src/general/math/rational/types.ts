@@ -1,5 +1,6 @@
-import {Count, Sum} from "../../types"
+import {Count} from "../../types"
 import {Decimal, NumericProperties, NumericPropertyEffects} from "../numeric"
+import {Sum} from "../types"
 
 type Prime<T extends NumericProperties = {}> = Decimal<T & {integer: true}> & {_PrimeBrand: "Prime"}
 type Roughness = Decimal<{integer: true}> & {_RoughnessBrand: boolean}

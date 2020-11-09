@@ -92,6 +92,9 @@ export {
     Mean,
     MeanType,
     Coordinates,
+    Multiplier,
+    Sum,
+    Divisor,
 } from "./types"
 export {
     FIVE_PRIME_INDEX,

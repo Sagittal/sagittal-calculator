@@ -1,6 +1,6 @@
-import {Multiplier} from "../../../types"
 import {Decimal, Denominator, Numerator, NumericProperties, Quotient} from "../../numeric"
 import {multiply} from "../../typedOperations"
+import {Multiplier} from "../../types"
 import {isDecimalInteger} from "../decimal"
 import {computeLowestTermsRationalQuotient} from "./lowestTerms"
 

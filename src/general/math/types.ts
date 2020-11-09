@@ -1,3 +1,28 @@
+type Addend<T extends number | void = void> =
+    number
+    & {_AddendBrand: boolean}
+    & (T extends void ? {} : T & {_AddendOfBrand: T})
+type Subtrahend<T extends number | void = void> =
+    number
+    & {_SubtrahendBrand: boolean}
+    & (T extends void ? {} : T & {_SubtrahendOfBrand: T})
+type Multiplier<T extends number | void = void> =
+    number
+    & {_MultiplierBrand: boolean}
+    & (T extends void ? {} : T & {_MultiplierOfBrand: T})
+type Divisor<T extends number | void = void> =
+    number
+    & {_DivisorBrand: boolean}
+    & (T extends void ? {} : T & {_DivisorOfBrand: T})
+type Sum<T extends number | void = void> =
+    number
+    & {_SumBrand: boolean}
+    & (T extends void ? {} : T & {_SumOfBrand: T})
+type Product<T extends number | void = void> =
+    number
+    & {_ProductBrand: boolean}
+    & (T extends void ? {} : T & {_ProductOfBrand: T})
+
 type Combination<T> = T[] & {_CombinationBrand: boolean}
 type Combinations<T> = Array<Combination<T>> & {_CombinationsBrand: boolean}
 
@@ -45,6 +70,12 @@ type Radians = number & {_RadiansBrand: boolean}
 type Degrees = number & {_DegreesBrand: boolean}
 
 export {
+    Multiplier,
+    Divisor,
+    Product,
+    Sum,
+    Addend,
+    Subtrahend,
     Combination,
     Combinations,
     Distribution,
