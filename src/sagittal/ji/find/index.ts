@@ -12,4 +12,8 @@ export {
     DEFAULT_MAX_N2D3P9,
 } from "./constants"
 
-// TODO: A weird thing is that I think none of this stuff in here requires them to be commas... maybe investigate?
+// A weird thing is that I think none of this stuff in here requires them to be commas.
+// But it's all quite intimately connected with the find-commas script.
+// And the sibling module "name" is definitely only for commas, but "analyze" is for comma or any JI pitch.
+// And "badness" works for JI pitch or comma (or 2,3-free class). So I think just leave it open-ended. Let go.
+

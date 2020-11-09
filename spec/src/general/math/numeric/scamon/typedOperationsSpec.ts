@@ -1,4 +1,4 @@
-import {Max} from "../../../../../../src/general/math"
+import {Max, scaleScamon} from "../../../../../../src/general/math"
 import {IRRATIONAL_SCAMON_BASE_MONZO} from "../../../../../../src/general/math/irrational/scamon/constants"
 import {Monzo} from "../../../../../../src/general/math/numeric/monzo"
 import {Quotient} from "../../../../../../src/general/math/numeric/quotient"
@@ -95,10 +95,55 @@ describe("halveScamon", (): void => {
         const expected = {
             monzo: [-11, 7] as Monzo<{rational: true}>,
             scaler: [1, 2] as Quotient,
-        }
+        } as Scamon<{rational: false}>
+        expect(actual).toEqual(expected)
+    })
+
+    it("works if a scaler is already present", (): void => {
+        const scamon = {
+            monzo: [-11, 7] as Monzo<{rational: true}>,
+            scaler: [5, 3] as Quotient,
+        } as Scamon<{rational: false}>
+
+        const actual = halveScamon(scamon)
+
+        const expected = {
+            monzo: [-11, 7] as Monzo<{rational: true}>,
+            scaler: [5, 6] as Quotient,
+        } as Scamon<{rational: false}>
         expect(actual).toEqual(expected)
     })
 })
+
+describe("scaleScamon", (): void => {
+    it("introduces a scaler", (): void => {
+        const scamon = {monzo: [-11, 7]} as Scamon<{rational: true}>
+
+        const actual = scaleScamon(scamon, [5, 3] as Quotient)
+
+        const expected = {
+            monzo: [-11, 7] as Monzo<{rational: true}>,
+            scaler: [5, 3] as Quotient,
+        } as Scamon<{rational: false}>
+        expect(actual).toEqual(expected)
+    })
+
+    it("takes the product of the provided scaler with an existing scaler", (): void => {
+        const scamon = {
+            monzo: [-11, 7] as Monzo<{rational: true}>,
+            scaler: [5, 3],
+        } as Scamon<{rational: false}>
+
+        const actual = scaleScamon(scamon, [1, 2] as Quotient)
+
+        const expected = {
+            monzo: [-11, 7] as Monzo<{rational: true}>,
+            scaler: [5, 6] as Quotient,
+        } as Scamon<{rational: false}>
+        expect(actual).toEqual(expected)
+    })
+})
+
 
 describe("maxScamon", (): void => {
     it("works for a mix of rational and irrational scamons", (): void => {
@@ -106,7 +151,7 @@ describe("maxScamon", (): void => {
         const scamonB = {
             monzo: [1] as Monzo<{rational: true}>,
             scaler: [3, 1] as Quotient,
-        } as Scamon<{rational: false}>                                            // 8
+        } as Scamon<{rational: false}>                                           // 8
         const scamonC = {monzo: [0, 1]} as Scamon<{rational: true}>              // 7
 
         const actual = maxScamon(scamonA, scamonB, scamonC)

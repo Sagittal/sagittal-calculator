@@ -24,6 +24,7 @@ export {
     areQuotientsEqual,
     computeQuotientProduct,
     Numerator,
+    halveQuotient,
 } from "./quotient"
 export {
     isMonzoSub,

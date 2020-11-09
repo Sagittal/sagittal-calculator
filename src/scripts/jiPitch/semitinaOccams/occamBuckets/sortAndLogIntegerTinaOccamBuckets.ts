@@ -1,6 +1,6 @@
 import {Comma, LogTarget, Name, RecordKey, saveLog} from "../../../../general"
 import {sortAndLogOccamBucket} from "./sortAndLogOccamBucket"
-import {Occam, BucketName} from "./types"
+import {BucketName, Occam} from "./types"
 
 const sortAndLogIntegerTinaOccamBuckets = (
     tinaOccamBuckets: Record<RecordKey<BucketName>, Record<RecordKey<Name<Comma>>, Occam>>,

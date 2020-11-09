@@ -28,7 +28,6 @@ const subtractScamons = (
         divide(computeIrrationalDecimalFromScamon(minuendScamon), computeIrrationalDecimalFromScamon(subtrahendScamon)),
     ) as Scamon<{direction: undefined, rational: false}>
 
-// TODO: a test that you can halve a scamon which already has a scaler
 const halveScamon = <T extends NumericProperties>(scamon: Scamon<T>): Scamon<T & {rational: false}> =>
     ({...scamon, scaler: scamon.scaler ? halveQuotient(scamon.scaler) : HALF_SCALER} as Scamon<T & {rational: false}>)
 

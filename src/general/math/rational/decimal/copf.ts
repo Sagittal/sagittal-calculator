@@ -5,7 +5,6 @@ import {Copf, Prime} from "../types"
 
 // Count Of Prime Factors (without repetition) (little omega, ω)
 
-// TODO: test this, and also do sopf test and implementation
 const computeRationalDecimalCopf = <T extends NumericProperties>(
     rationalDecimal: Decimal<T & {rational: true}>,
 ): Copf<T> => {
