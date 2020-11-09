@@ -147,5 +147,6 @@ export {
     computeRationalQuotientFromRationalScamon,
     isLowestTerms,
     subtractRationalScamons,
+    computeRationalDecimalCopf,
 } from "./rational"
 export {HALF_SCALER, computeIrrationalDecimalFromScamon} from "./irrational"

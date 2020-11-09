@@ -81,7 +81,7 @@ describe("comma classes", (): void => {
                 monzo: [12, -2, -1, -1, 0, -1] as Monzo<{rational: true}>,
                 decimal: 1.000244 as Decimal<{rational: true}>,
                 cents: 0.422716 as Cents,
-                name: "1/455n" as Name<Comma>,
+                name: "1/(5⋅7⋅13)n" as Name<Comma>,
                 pitch: {monzo: [12, -2, -1, -1, 0, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -165,7 +165,7 @@ describe("comma classes", (): void => {
                 monzo: [-3, 6, 0, -1, 0, -1] as Monzo<{rational: true}>,
                 decimal: 1.001373 as Decimal<{rational: true}>,
                 cents: 2.376436 as Cents,
-                name: "1/91s" as Name<Comma>,
+                name: "1/(7⋅13)s" as Name<Comma>,
                 pitch: {monzo: [-3, 6, 0, -1, 0, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -186,7 +186,7 @@ describe("comma classes", (): void => {
                 monzo: [-8, 10, -4, -1, 0, 0, 0, 1] as Monzo<{rational: true}>,
                 decimal: 1.001724 as Decimal<{rational: true}>,
                 cents: 2.982262 as Cents,
-                name: "19/4375s" as Name<Comma>,
+                name: "19/(5⁴⋅7)s" as Name<Comma>,
                 pitch: {monzo: [-8, 10, -4, -1, 0, 0, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -249,7 +249,7 @@ describe("comma classes", (): void => {
                 monzo: [-7, -1, 1, 1, 1] as Monzo<{rational: true}>,
                 decimal: 1.002604 as Decimal<{rational: true}>,
                 cents: 4.502561 as Cents,
-                name: "385k" as Name<Comma>,
+                name: "5⋅7⋅11k" as Name<Comma>,
                 pitch: {monzo: [-7, -1, 1, 1, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -333,7 +333,7 @@ describe("comma classes", (): void => {
                 monzo: [5, -7, -1, 3] as Monzo<{rational: true}>,
                 decimal: 1.003749 as Decimal<{rational: true}>,
                 cents: 6.478999 as Cents,
-                name: "343/5k" as Name<Comma>,
+                name: "7³/5k" as Name<Comma>,
                 pitch: {monzo: [5, -7, -1, 3] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -354,7 +354,7 @@ describe("comma classes", (): void => {
                 monzo: [8, -1, -1, 0, 0, 0, -1] as Monzo<{rational: true}>,
                 decimal: 1.003921 as Decimal<{rational: true}>,
                 cents: 6.775875 as Cents,
-                name: "1/85k" as Name<Comma>,
+                name: "1/(5⋅17)k" as Name<Comma>,
                 pitch: {monzo: [8, -1, -1, 0, 0, 0, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -375,7 +375,7 @@ describe("comma classes", (): void => {
                 monzo: [-4, 9, -2, -2] as Monzo<{rational: true}>,
                 decimal: 1.004234 as Decimal<{rational: true}>,
                 cents: 7.315767 as Cents,
-                name: "1/1225k" as Name<Comma>,
+                name: "1/(5²⋅7²)k" as Name<Comma>,
                 pitch: {monzo: [-4, 9, -2, -2] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -417,7 +417,7 @@ describe("comma classes", (): void => {
                 monzo: [-10, 1, 0, 3] as Monzo<{rational: true}>,
                 decimal: 1.004882 as Decimal<{rational: true}>,
                 cents: 8.432720 as Cents,
-                name: "343k" as Name<Comma>,
+                name: "7³k" as Name<Comma>,
                 pitch: {monzo: [-10, 1, 0, 3] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -459,7 +459,7 @@ describe("comma classes", (): void => {
                 monzo: [-17, 2, 0, 0, 4] as Monzo<{rational: true}>,
                 decimal: 1.005317 as Decimal<{rational: true}>,
                 cents: 9.181771 as Cents,
-                name: "14641k" as Name<Comma>,
+                name: "11⁴k" as Name<Comma>,
                 pitch: {monzo: [-17, 2, 0, 0, 4] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -501,7 +501,7 @@ describe("comma classes", (): void => {
                 monzo: [3, -7, 2, 0, 1] as Monzo<{rational: true}>,
                 decimal: 1.005944 as Decimal<{rational: true}>,
                 cents: 10.260364 as Cents,
-                name: "275k" as Name<Comma>,
+                name: "5²⋅11k" as Name<Comma>,
                 pitch: {monzo: [3, -7, 2, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -543,7 +543,7 @@ describe("comma classes", (): void => {
                 monzo: [21, -5, -2, -3] as Monzo<{rational: true}>,
                 decimal: 1.006443 as Decimal<{rational: true}>,
                 cents: 11.119848 as Cents,
-                name: "1/8575k" as Name<Comma>,
+                name: "1/(5²⋅7³)k" as Name<Comma>,
                 pitch: {monzo: [21, -5, -2, -3] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -669,7 +669,7 @@ describe("comma classes", (): void => {
                 monzo: [0, -5, 1, 2] as Monzo<{rational: true}>,
                 decimal: 1.008230 as Decimal<{rational: true}>,
                 cents: 14.190522 as Cents,
-                name: "245C" as Name<Comma>,
+                name: "5⋅7²C" as Name<Comma>,
                 pitch: {monzo: [0, -5, 1, 2] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -753,7 +753,7 @@ describe("comma classes", (): void => {
                 monzo: [-15, 3, 2, 2] as Monzo<{rational: true}>,
                 decimal: 1.009368 as Decimal<{rational: true}>,
                 cents: 16.144243 as Cents,
-                name: "1225C" as Name<Comma>,
+                name: "5²⋅7²C" as Name<Comma>,
                 pitch: {monzo: [-15, 3, 2, 2] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -795,7 +795,7 @@ describe("comma classes", (): void => {
                 monzo: [9, -1, 0, 0, 0, -2] as Monzo<{rational: true}>,
                 decimal: 1.009861 as Decimal<{rational: true}>,
                 cents: 16.989675 as Cents,
-                name: "1/169C" as Name<Comma>,
+                name: "1/13²C" as Name<Comma>,
                 pitch: {monzo: [9, -1, 0, 0, 0, -2] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -879,7 +879,7 @@ describe("comma classes", (): void => {
                 monzo: [-1, -2, -1, 1, 0, 1] as Monzo<{rational: true}>,
                 decimal: 1.011111 as Decimal<{rational: true}>,
                 cents: 19.129852 as Cents,
-                name: "91/5C" as Name<Comma>,
+                name: "7⋅13/5C" as Name<Comma>,
                 pitch: {monzo: [-1, -2, -1, 1, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -942,7 +942,7 @@ describe("comma classes", (): void => {
                 monzo: [8, 0, 0, 0, -1, 0, 0, 0, -1] as Monzo<{rational: true}>,
                 decimal: 1.011857 as Decimal<{rational: true}>,
                 cents: 20.407710 as Cents,
-                name: "1/253C" as Name<Comma>,
+                name: "1/(11⋅23)C" as Name<Comma>,
                 pitch: {monzo: [8, 0, 0, 0, -1, 0, 0, 0, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -963,7 +963,7 @@ describe("comma classes", (): void => {
                 monzo: [-16, 6, 0, 1, 0, 1] as Monzo<{rational: true}>,
                 decimal: 1.012252 as Decimal<{rational: true}>,
                 cents: 21.083573 as Cents,
-                name: "91C" as Name<Comma>,
+                name: "7⋅13C" as Name<Comma>,
                 pitch: {monzo: [-16, 6, 0, 1, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1005,7 +1005,7 @@ describe("comma classes", (): void => {
                 monzo: [-5, -3, 3, 1] as Monzo<{rational: true}>,
                 decimal: 1.012731 as Decimal<{rational: true}>,
                 cents: 21.902045 as Cents,
-                name: "875C" as Name<Comma>,
+                name: "5³⋅7C" as Name<Comma>,
                 pitch: {monzo: [-5, -3, 3, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1089,7 +1089,7 @@ describe("comma classes", (): void => {
                 monzo: [-20, 5, 4, 1] as Monzo<{rational: true}>,
                 decimal: 1.013875 as Decimal<{rational: true}>,
                 cents: 23.855766 as Cents,
-                name: "4375C" as Name<Comma>,
+                name: "5⁴⋅7C" as Name<Comma>,
                 pitch: {monzo: [-20, 5, 4, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1299,7 +1299,7 @@ describe("comma classes", (): void => {
                 monzo: [5, -9, 4] as Monzo<{rational: true}>,
                 decimal: 1.016105 as Decimal<{rational: true}>,
                 cents: 27.659847 as Cents,
-                name: "625C" as Name<Comma>,
+                name: "5⁴C" as Name<Comma>,
                 pitch: {monzo: [5, -9, 4] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1341,7 +1341,7 @@ describe("comma classes", (): void => {
                 monzo: [-21, 8, 2, 0, 0, 1] as Monzo<{rational: true}>,
                 decimal: 1.016771 as Decimal<{rational: true}>,
                 cents: 28.795096 as Cents,
-                name: "325C" as Name<Comma>,
+                name: "5²⋅13C" as Name<Comma>,
                 pitch: {monzo: [-21, 8, 2, 0, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1383,7 +1383,7 @@ describe("comma classes", (): void => {
                 monzo: [-10, -1, 5] as Monzo<{rational: true}>,
                 decimal: 1.017252 as Decimal<{rational: true}>,
                 cents: 29.613568 as Cents,
-                name: "3125C" as Name<Comma>,
+                name: "5⁵C" as Name<Comma>,
                 pitch: {monzo: [-10, -1, 5] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1404,7 +1404,7 @@ describe("comma classes", (): void => {
                 monzo: [5, -5, 1, 0, -1, 0, 1] as Monzo<{rational: true}>,
                 decimal: 1.017583 as Decimal<{rational: true}>,
                 cents: 30.176176 as Cents,
-                name: "85/11C" as Name<Comma>,
+                name: "5⋅17/11C" as Name<Comma>,
                 pitch: {monzo: [5, -5, 1, 0, -1, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1488,7 +1488,7 @@ describe("comma classes", (): void => {
                 monzo: [11, -5, 0, -1, 1, -1] as Monzo<{rational: true}>,
                 decimal: 1.018767 as Decimal<{rational: true}>,
                 cents: 32.189369 as Cents,
-                name: "11/91C" as Name<Comma>,
+                name: "11/(7⋅13)C" as Name<Comma>,
                 pitch: {monzo: [11, -5, 0, -1, 1, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1593,7 +1593,7 @@ describe("comma classes", (): void => {
                 monzo: [2, 2, 0, 1, 0, -1, 0, -1] as Monzo<{rational: true}>,
                 decimal: 1.020242 as Decimal<{rational: true}>,
                 cents: 34.695230 as Cents,
-                name: "7/247S" as Name<Comma>,
+                name: "7/(13⋅19)S" as Name<Comma>,
                 pitch: {monzo: [2, 2, 0, 1, 0, -1, 0, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1740,7 +1740,7 @@ describe("comma classes", (): void => {
                 monzo: [-19, 7, 1, 2] as Monzo<{rational: true}>,
                 decimal: 1.021986 as Decimal<{rational: true}>,
                 cents: 37.650532 as Cents,
-                name: "245S" as Name<Comma>,
+                name: "5⋅7²S" as Name<Comma>,
                 pitch: {monzo: [-19, 7, 1, 2] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1845,7 +1845,7 @@ describe("comma classes", (): void => {
                 monzo: [10, 0, 0, -1, -1, -1] as Monzo<{rational: true}>,
                 decimal: 1.022977 as Decimal<{rational: true}>,
                 cents: 39.328489 as Cents,
-                name: "1/1001S" as Name<Comma>,
+                name: "1/(7⋅11⋅13)S" as Name<Comma>,
                 pitch: {monzo: [10, 0, 0, -1, -1, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1887,7 +1887,7 @@ describe("comma classes", (): void => {
                 monzo: [-5, 2, -2, 1, 0, 1] as Monzo<{rational: true}>,
                 decimal: 1.02375 as Decimal<{rational: true}>,
                 cents: 40.636142 as Cents,
-                name: "91/25S" as Name<Comma>,
+                name: "7⋅13/25S" as Name<Comma>,
                 pitch: {monzo: [-5, 2, -2, 1, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1971,7 +1971,7 @@ describe("comma classes", (): void => {
                 monzo: [-20, 10, -1, 1, 0, 1] as Monzo<{rational: true}>,
                 decimal: 1.024905 as Decimal<{rational: true}>,
                 cents: 42.589863 as Cents,
-                name: "91/5S" as Name<Comma>,
+                name: "7⋅13/5S" as Name<Comma>,
                 pitch: {monzo: [-20, 10, -1, 1, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2013,7 +2013,7 @@ describe("comma classes", (): void => {
                 monzo: [-9, 1, 2, 1] as Monzo<{rational: true}>,
                 decimal: 1.025390 as Decimal<{rational: true}>,
                 cents: 43.408335 as Cents,
-                name: "175S" as Name<Comma>,
+                name: "5²⋅7S" as Name<Comma>,
                 pitch: {monzo: [-9, 1, 2, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2160,7 +2160,7 @@ describe("comma classes", (): void => {
                 monzo: [17, -6, -2, -1] as Monzo<{rational: true}>,
                 decimal: 1.027411 as Decimal<{rational: true}>,
                 cents: 46.816660 as Cents,
-                name: "1/175M" as Name<Comma>,
+                name: "1/(5²⋅7)M" as Name<Comma>,
                 pitch: {monzo: [17, -6, -2, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2202,7 +2202,7 @@ describe("comma classes", (): void => {
                 monzo: [-3, 5, -2, 0, 1, -1] as Monzo<{rational: true}>,
                 decimal: 1.028076 as Decimal<{rational: true}>,
                 cents: 47.937857 as Cents,
-                name: "11/325M" as Name<Comma>,
+                name: "11/(5²⋅13)M" as Name<Comma>,
                 pitch: {monzo: [-3, 5, -2, 0, 1, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2349,7 +2349,7 @@ describe("comma classes", (): void => {
                 monzo: [-14, 3, 4] as Monzo<{rational: true}>,
                 decimal: 1.029968 as Decimal<{rational: true}>,
                 cents: 51.119858 as Cents,
-                name: "625M" as Name<Comma>,
+                name: "5⁴M" as Name<Comma>,
                 pitch: {monzo: [-14, 3, 4] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2433,7 +2433,7 @@ describe("comma classes", (): void => {
                 monzo: [-1, 4, -2, 1, -1] as Monzo<{rational: true}>,
                 decimal: 1.030909 as Decimal<{rational: true}>,
                 cents: 52.700539 as Cents,
-                name: "7/275M" as Name<Comma>,
+                name: "7/(5²⋅11)M" as Name<Comma>,
                 pitch: {monzo: [-1, 4, -2, 1, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2475,7 +2475,7 @@ describe("comma classes", (): void => {
                 monzo: [-14, 7, 1, 0, -1, 0, 1] as Monzo<{rational: true}>,
                 decimal: 1.031466 as Decimal<{rational: true}>,
                 cents: 53.636187 as Cents,
-                name: "85/11M" as Name<Comma>,
+                name: "5⋅17/11M" as Name<Comma>,
                 pitch: {monzo: [-14, 7, 1, 0, -1, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2580,7 +2580,7 @@ describe("comma classes", (): void => {
                 monzo: [-8, 7, 0, -1, 1, -1] as Monzo<{rational: true}>,
                 decimal: 1.032666 as Decimal<{rational: true}>,
                 cents: 55.649380 as Cents,
-                name: "11/91M" as Name<Comma>,
+                name: "11/(7⋅13)M" as Name<Comma>,
                 pitch: {monzo: [-8, 7, 0, -1, 1, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2601,7 +2601,7 @@ describe("comma classes", (): void => {
                 monzo: [-6, -2, 1, 1, 0, 0, 1] as Monzo<{rational: true}>,
                 decimal: 1.032986 as Decimal<{rational: true}>,
                 cents: 56.185028 as Cents,
-                name: "595M" as Name<Comma>,
+                name: "5⋅7⋅17M" as Name<Comma>,
                 pitch: {monzo: [-6, -2, 1, 1, 0, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {

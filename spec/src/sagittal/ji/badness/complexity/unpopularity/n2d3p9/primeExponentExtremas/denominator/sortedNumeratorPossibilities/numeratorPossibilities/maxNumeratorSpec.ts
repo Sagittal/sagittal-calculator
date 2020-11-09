@@ -24,7 +24,7 @@ describe("computeMaxNumeratorGivenMaxN2D3P9", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    it("works for 7, for which the max numerator's prime factorization includes more than one different prime                ", (): void => {
+    it("works for 7, for which the max numerator's prime factoring includes more than one different prime                ", (): void => {
         const maxN2D3P9: Max<N2D3P9> = 7 as Max<N2D3P9>
 
         const actual = computeMaxNumeratorGivenMaxN2D3P9(maxN2D3P9)

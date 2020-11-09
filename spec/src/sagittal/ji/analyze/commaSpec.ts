@@ -29,7 +29,7 @@ describe("analyzeComma", (): void => {
             monzo: [-8, -6, 3, 5, -1] as Monzo<{rational: true}>,
             quotient: [2100875, 2052864] as Quotient<{rational: true}>,
             decimal: 1.023387 as Decimal<{rational: true}>,
-            name: "2100875/11S" as Name<Comma>,
+            name: "5³⋅7⁵/11S" as Name<Comma>,
             apotomeSlope: -8.464345 as ApotomeSlope,
             aas: 8.464345 as Abs<ApotomeSlope>,
             ate: 6 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,

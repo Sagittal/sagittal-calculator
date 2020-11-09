@@ -149,7 +149,7 @@ type BoundClass<T extends NumericProperties = {}> = {
     pitch: Scamon<T & {rational: false}>,
 }
 
-enum CommaClassId {
+enum CommaClassId { // TODO: I wonder if I should revise these constant names to fit the new factoring scheme
     _1_u = "_1_u",
     _1_455_n = "_1_455_n",
     _65_77_n = "_65_77_n",

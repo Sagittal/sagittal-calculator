@@ -26,7 +26,7 @@ const computeIntegerMonzoFromIntegerDecimal = <T extends NumericProperties>(
     let remnant = integerDecimal as number
 
     if (integerDecimal > MAX_JS_INTEGER_VALUE) {
-        throw new Error(`This integer ${integerDecimal} is larger than the maximum integer JavaScript can encode (double float precision, 2^53) and therefore will be rounded and be unable to be prime factorized properly.`)
+        throw new Error(`This integer ${integerDecimal} is larger than the maximum integer JavaScript can encode (double float precision, 2^53) and therefore will be rounded and be unable to be prime factored properly.`)
     }
 
     let index = 0

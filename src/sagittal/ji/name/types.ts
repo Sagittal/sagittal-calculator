@@ -14,6 +14,12 @@ type SizeCategoryBound<T extends NumericProperties = {}> = {
     pitch: Scamon<T & {rational: false}>,
 }
 
+enum FactoringMode {
+    ALWAYS = "always",
+    NEVER = "never",
+    THRESHOLD = "threshold",
+}
+
 enum SizeCategoryName {
     UNISON = "unison",
     SCHISMINA = "schismina",
@@ -66,7 +72,7 @@ enum SizeCategoryAbbreviation {
 
 type CommaNameOptions = Partial<{
     directed: boolean,
-    factored: boolean,
+    factoringMode: FactoringMode,
     abbreviated: boolean
 }>
 
@@ -97,4 +103,5 @@ export {
     CommaNameQuotient,
     ParsedCommaName,
     SizeCategoryBound,
+    FactoringMode,
 }

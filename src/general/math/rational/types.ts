@@ -10,9 +10,18 @@ type Sopfr<T extends NumericProperties = {}> =
     & Decimal<{integer: true}>
     & {_SopfrBrand: boolean}
     & NumericPropertyEffects<T>
+type Sopf<T extends NumericProperties = {}> =
+    Sum<Prime>
+    & Decimal<{integer: true}>
+    & {_SopfBrand: boolean}
+    & NumericPropertyEffects<T>
 type Copfr<T extends NumericProperties = {}> =
     Count<Prime>
     & {_CopfrBrand: boolean}
+    & NumericPropertyEffects<T>
+type Copf<T extends NumericProperties = {}> =
+    Count<Prime>
+    & {_CopfBrand: boolean}
     & NumericPropertyEffects<T>
 
 type CommonFunction = (
@@ -34,6 +43,8 @@ type Primes =
 export {
     Sopfr,
     Copfr,
+    Sopf,
+    Copf,
     Prime,
     Roughness,
     Smoothness,

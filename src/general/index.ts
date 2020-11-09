@@ -227,6 +227,7 @@ export {
     computeMonzoMapping,
     computePatentVal,
     isEven,
+    computeRationalDecimalCopf,
 } from "./math"
 export {
     Cents,

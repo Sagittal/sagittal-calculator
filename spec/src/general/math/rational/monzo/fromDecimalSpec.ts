@@ -15,7 +15,7 @@ describe("computeRationalMonzoFromRationalDecimal", (): void => {
 })
 
 describe("computeIntegerMonzoFromIntegerDecimal", (): void => {
-    it("prime factorizes the integer into a monzo", (): void => {
+    it("prime factors the integer into a monzo", (): void => {
         const integerDecimal = 44 as Decimal<{integer: true}>
 
         const actual = computeIntegerMonzoFromIntegerDecimal(integerDecimal)
@@ -24,7 +24,7 @@ describe("computeIntegerMonzoFromIntegerDecimal", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    it("errors if the primes in the integer's factorization are too big", (): void => {
+    it("errors if the primes in the integer's factors are too big", (): void => {
         const integerDecimal = 756065159 as Decimal<{integer: true}>
 
         expect((): void => {
@@ -37,6 +37,6 @@ describe("computeIntegerMonzoFromIntegerDecimal", (): void => {
 
         expect((): void => {
             computeIntegerMonzoFromIntegerDecimal(integerDecimal)
-        }).toThrowError("This integer 9007199254740992 is larger than the maximum integer JavaScript can encode (double float precision, 2^53) and therefore will be rounded and be unable to be prime factorized properly.")
+        }).toThrowError("This integer 9007199254740992 is larger than the maximum integer JavaScript can encode (double float precision, 2^53) and therefore will be rounded and be unable to be prime factored properly.")
     })
 })

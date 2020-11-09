@@ -1,5 +1,5 @@
 import {Comma} from "../../../../../src/general"
-import {computeCommaName} from "../../../../../src/sagittal/ji/name"
+import {computeCommaName, FactoringMode} from "../../../../../src/sagittal/ji/name"
 
 describe("computeCommaName", (): void => {
     it("given a comma will return its Secor-Keenan systematic name", (): void => {
@@ -7,7 +7,7 @@ describe("computeCommaName", (): void => {
 
         const actual = computeCommaName(comma)
 
-        const expected = "343/5k"
+        const expected = "7³/5k"
         expect(actual).toBe(expected)
     })
 
@@ -16,25 +16,34 @@ describe("computeCommaName", (): void => {
 
         const actual = computeCommaName(comma, {directed: false})
 
-        const expected = "5:343k"
-        expect(actual).toBe(expected)
-    })
-
-    it("can return the name in factored form", (): void => {
-        const comma = {monzo: [5, -7, -1, 3]} as Comma
-
-        const actual = computeCommaName(comma, {factored: true})
-
-        const expected = "7³/5k"
-        expect(actual).toBe(expected)
-    })
-
-    it("can return the name in undirected and factored form", (): void => {
-        const comma = {monzo: [5, -7, -1, 3]} as Comma
-
-        const actual = computeCommaName(comma, {directed: false, factored: true})
-
         const expected = "5:7³k"
+        expect(actual).toBe(expected)
+    })
+
+    it("can return the name in unfactored form, even if it would normally factor it", (): void => {
+        const comma = {monzo: [5, -7, -1, 3]} as Comma
+
+        const actual = computeCommaName(comma, {factoringMode: FactoringMode.NEVER})
+
+        const expected = "343/5k"
+        expect(actual).toBe(expected)
+    })
+
+    it("can return the name in factored form, even if it would normally not factor it", (): void => {
+        const comma = {monzo: [-8,	4	,1,	1,-1]} as Comma
+
+        const actual = computeCommaName(comma, {factoringMode: FactoringMode.ALWAYS})
+
+        const expected = "5⋅7/11k"
+        expect(actual).toBe(expected)
+    })
+
+    it("can return the name in undirected and unfactored form", (): void => {
+        const comma = {monzo: [5, -7, -1, 3]} as Comma
+
+        const actual = computeCommaName(comma, {directed: false, factoringMode: FactoringMode.NEVER})
+
+        const expected = "5:343k"
         expect(actual).toBe(expected)
     })
 
@@ -43,11 +52,11 @@ describe("computeCommaName", (): void => {
 
         const actual = computeCommaName(comma, {abbreviated: false})
 
-        const expected = "343/5-kleisma"
+        const expected = "7³/5-kleisma"
         expect(actual).toBe(expected)
     })
 
-    it("works when there are only 2's and 3's in the prime factorization", (): void => {
+    it("works when there are only 2's and 3's in the prime factoring", (): void => {
         const comma = {monzo: [-19, 12]} as Comma
 
         const actual = computeCommaName(comma)
@@ -65,7 +74,7 @@ describe("computeCommaName", (): void => {
         expect(actual).toBe(expected)
     })
 
-    it("throws an error when there are only 2's in the prime factorization, since it must be outside of comma range             ", (): void => {
+    it("throws an error when there are only 2's in the prime factoring, since it must be outside of comma range             ", (): void => {
         const comma = {monzo: [1]} as Comma
 
         expect((): void => {
@@ -83,7 +92,7 @@ describe("computeCommaName", (): void => {
     })
 
     it("assigns the correct size category", (): void => {
-        expect(computeCommaName({monzo: [12, -2, -1, -1, 0, -1]} as Comma)).toBe("1/455n")
+        expect(computeCommaName({monzo: [5, -3, 1, -1, -1, 1]} as Comma)).toBe("65/77n")
         expect(computeCommaName({monzo: [-15, 8, 1]} as Comma)).toBe("5s")
         expect(computeCommaName({monzo: [-7, 7, 0, 0, 0, 0, -1]} as Comma)).toBe("1/17k")
         expect(computeCommaName({monzo: [-12, 5, 0, 0, 0, 0, 1]} as Comma)).toBe("17C")
@@ -122,7 +131,11 @@ describe("computeCommaName", (): void => {
     it("another example, not sure what was up, maybe some edge case", (): void => {
         const comma = {monzo: [-9, 13, -2, 0, -2]} as Comma
 
-        const actual = computeCommaName(comma, {directed: false, abbreviated: false, factored: true})
+        const actual = computeCommaName(comma, {
+            directed: false,
+            abbreviated: false,
+            factoringMode: FactoringMode.ALWAYS,
+        })
 
         const expected = "5²⋅11²-Medium-Diesis"
         expect(actual).toBe(expected)
@@ -133,7 +146,52 @@ describe("computeCommaName", (): void => {
 
         const actual = computeCommaName(comma)
 
-        const expected = "385k"     // The s|k boundary is ~4.499913¢
+        const expected = "5⋅7⋅11k"     // The s|k boundary is ~4.499913¢
+        expect(actual).toBe(expected)
+    })
+
+    it("when factoring a denominator, and there is more than one different prime factor, puts the denominator in parentheses to disambiguate order of operations", (): void => {
+        const comma = {monzo: [12, -2, -1, -1, 0, -1]} as Comma
+
+        const actual = computeCommaName(comma, {factoringMode: FactoringMode.ALWAYS})
+
+        const expected = "1/(5⋅7⋅13)n"
+        expect(actual).toBe(expected)
+    })
+
+    it("when factoring a denominator, and there is more than one prime factor but they're all the same, does not need to put the denominator in parentheses to disambiguate order of operations, so it doesn't", (): void => {
+        const comma = {monzo: [9, -1, 0, 0, 0, -2]} as Comma
+
+        const actual = computeCommaName(comma)
+
+        const expected = "1/13²C"
+        expect(actual).toBe(expected)
+    })
+
+    it("the default threshold factoring mode does not factor 125, even though it has > 2 prime factors                    ", (): void => {
+        const comma = {monzo: [1, 2, -3, 1]} as Comma
+
+        const actual = computeCommaName(comma)
+
+        const expected = "7/125C"
+        expect(actual).toBe(expected)
+    })
+
+    it("the default threshold factoring mode does not factor 65, even though it has gpf > 11", (): void => {
+        const comma = {monzo: [1, 1, -1, 0, 1, -1]} as Comma
+
+        const actual = computeCommaName(comma)
+
+        const expected = "11/65C"
+        expect(actual).toBe(expected)
+    })
+
+    it("the default threshold factoring mode does not factor 143, even though it has gpf > 11", (): void => {
+        const comma = {monzo: [4, 2, 0, 0, -1, -1]} as Comma
+
+        const actual = computeCommaName(comma)
+
+        const expected = "1/143C"
         expect(actual).toBe(expected)
     })
 })

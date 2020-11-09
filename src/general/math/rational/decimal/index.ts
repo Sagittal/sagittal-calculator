@@ -1,4 +1,5 @@
 export {computeRationalDecimalCopfr} from "./copfr"
+export {computeRationalDecimalCopf} from "./copf"
 export {computeRationalDecimalFromRationalScamon} from "./fromScamon"
 export {computeRationalDecimalGpf} from "./gpf"
 export {isDecimalRational, isDecimalInteger} from "./typeGuards"

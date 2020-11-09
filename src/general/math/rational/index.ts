@@ -22,6 +22,7 @@ export {
     isDecimalRational,
     computeRationalDecimalCopfr,
     computeRationalDecimalGpf,
+    computeRationalDecimalCopf,
 } from "./decimal"
 export {
     isRationalQuotientRough,

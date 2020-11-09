@@ -14,7 +14,7 @@ enum ScriptFlag {
     NO_COLOR = "c",
     UNDIRECTED_COMMA_NAME = "d",
     NO_USELESS = "e",
-    FACTORED_COMMA_NAME = "f",
+    FACTORING_MODE = "f",
     COMMA_NAME = "g",
     // "h" reserved for help
     INTEGER = "i",
