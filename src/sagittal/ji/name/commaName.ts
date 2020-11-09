@@ -19,6 +19,7 @@ import {
     THREE_SMOOTHNESS,
 } from "../../../general"
 import {computeCommaNameQuotient} from "./commaNameQuotient"
+import {DOT_OPERATOR} from "./constants"
 import {computeSizeCategory} from "./sizeCategory"
 import {isCommaSized} from "./typeGuards"
 import {CommaNameOptions, SizeCategoryAbbreviation, SizeCategoryName} from "./types"
@@ -50,8 +51,8 @@ const primeFactorizeCommaNameQuotient = (
         },
     )
 
-    // TODO: And we probably should use the unicode dot operator rather than a full stop or middle dot.
-    return factorizedTerms.join(".")
+    // TODO: And we should put factorized denominators in parenthesis
+    return factorizedTerms.join(DOT_OPERATOR)
 }
 
 const formatCommaNameQuotient = (

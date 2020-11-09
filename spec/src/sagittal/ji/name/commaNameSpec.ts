@@ -124,7 +124,7 @@ describe("computeCommaName", (): void => {
 
         const actual = computeCommaName(comma, {directed: false, abbreviated: false, factored: true})
 
-        const expected = "5².11²-Medium-Diesis"
+        const expected = "5²⋅11²-Medium-Diesis"
         expect(actual).toBe(expected)
     })
 
