@@ -104,7 +104,7 @@ const removeParentheses = (string: string): string =>
 
 // "Secor-Keenan systematic name" or "Sagittal name"
 
-// TODO: 3-LIMIT COMMA NAMES & COMPLEX COMMA NAMES
+// TODO: COMMA NAMES: BUG WITH 3n AS UNISON
 //  I think there's a bug where this can report 3n when it means unison.
 const computeCommaName = (
     comma: Comma,

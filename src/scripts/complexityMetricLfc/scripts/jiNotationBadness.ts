@@ -7,7 +7,8 @@ import {complexityMetricLfcScriptGroupSettings} from "../globals"
 import {computeZoneBadnessScore} from "../zoneBadnessScore"
 import {computeZoneCommaEntries} from "../zoneCommas"
 
-// TODO: Rename script group to badness; put the I of LPEI on all the metrics but set U to 0 or whatever
+// TODO: BADNESS & COMPLEXITY: SCRIPT GROUP NAMING
+//  Rename script group to badness; put the I of LPEI on all the metrics but set U to 0 or whatever
 //  Technically, badness is a metric which is beyond complexity, but because this script is so similar to the LFC
 //  For complexity and shares many of its script flags, it just made sense for it to live here.
 //  Although script flags are agnostic to script group; I think you meant the global settings object
@@ -17,6 +18,8 @@ import {computeZoneCommaEntries} from "../zoneCommas"
 //  Error can just be scaled with `u`. Nonetheless, since badness contains complexity, I think this should become
 //  Badness metric LFC. Although for parallelism I'd prefer if we just had one LFC for each... but it can't be denied
 //  That the process for finding them is so similar. Maybe just make it complexityAndBadnessMetricLfc?
+
+// TODO: BADNESS & COMPLEXITY: LOCAL MINIMA
 //  Btw, when it comes to pulling in the perfecter stuff:
 //  We did actually get 11 ties for one of the metrics, but I still think local minima would replace the "ties" stuff
 

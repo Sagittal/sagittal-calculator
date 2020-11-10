@@ -29,7 +29,7 @@ const computeCommaFromCommaNameQuotientAndSizeCategoryName = (
         },
     )
 
-    // TODO: COMMA NAMES
+    // TODO: COMMA NAMES: BUG WITH DIRECTED NAMES
     //  Code crashes for `npm run analyze-ji-pitch 5C` because it gets both [-34 20 1⟩ & [-4 4 -1⟩
     //  I think the problem is that 5C shouldn't become 1/5C too... I mean, 1/5C doesn't become 5C...
     //  But to be safe, wait until the conversation is resolved on the forum about comma naming

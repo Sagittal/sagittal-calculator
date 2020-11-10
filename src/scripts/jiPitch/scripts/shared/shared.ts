@@ -33,11 +33,13 @@ const applySharedJiPitchScriptSetup = (): void => {
         .option(`-${ScriptFlag.MAX_N2D3P9}, --max-n2d3p9 <maxN2d3p9>`, "max n2d3p9", parseFloat)
         .option(`-${ScriptFlag.SORT_BY}, --sort-by <sortBy>`, "sort by")
         .option(`-${ScriptFlag.UNDIRECTED_COMMA_NAME}, --undirected`, "undirected comma name")
-        // TODO: also build in the ability to recognize and substitute (parse and format) words such as Pythagorean,
+        // TODO: COMMA NAMES: WORD NAMES
+        //  Also build in the ability to recognize and substitute (parse and format) words such as Pythagorean,
         //  Classic, septimal, etc. for numbers 3-, 5-, 7- etc. where appropriate?
         //  But not as the default name on output, only as an option.
         .option(`-${ScriptFlag.FACTORING_MODE}, --factoring-mode <factoringMode>`, "factoring mode (always, never, or threshold)")
-        // TODO: Build in the edo naming approach (and maybe the & style too)
+        // TODO: COMMA NAMES: EDO NAMES
+        //  Build in the edo naming approach (and maybe the & style too)
         //  Touched upon [url=http://forum.sagittal.org/viewtopic.php?p=1721#p1721
         .option(`-${ScriptFlag.UNABBREVIATED_COMMA_NAME}, --unabbreviated`, "unabbreviated comma name")
         .option(

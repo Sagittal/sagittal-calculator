@@ -6,7 +6,8 @@ const HIGH_ZETA_PEAK_EDO = 494.01377 as Ed<Window<2>>
 const EXTREME_ZETA_PEAK_EDO = 2459.98488 as Ed<Window<2>>
 const INSANE_ZETA_PEAK_EDO = 8539.00834 as Ed<Window<2>>
 
-// TODO: 281 has no particular meaning, it was just as high as I had on hand. Please verify none exceed that limit.
+// TODO: ZETA PEAKS: PRIME LIMIT
+//  281 has no particular meaning, it was just as high as I had on hand. Please verify none exceed that limit.
 const ARBITRARY_PRIME_LIMIT_FOR_ZETA_PEAK_VALS = 281 as Max<Prime>
 
 const MEDIUM_ZETA_PEAK_VAL: Val =

@@ -4,7 +4,8 @@ import {inconsistentMetacommas} from "../../globals"
 import {BucketName} from "./types"
 
 const checkMetacommaConsistency = (metacomma: Comma, tinaBucket: BucketName): void => {
-    // TODO: should take numeric params to enforce that rational vals and rational monzos return integer steps
+    // TODO: ZETA PEAKS: NUMERIC TYPE PARAMS
+    //  Should take numeric params to enforce that rational vals and rational monzos return integer steps
     const tinaMapping = computeMonzoMapping(metacomma.monzo, INSANE_ZETA_PEAK_VAL)
     const insaneZetaPeakEdoConsistent = tinaMapping as number === tinaBucket as number
 

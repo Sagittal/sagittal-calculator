@@ -100,12 +100,6 @@ describe("parseCommaName", (): void => {
     })
 
     it("works for 3-limit names", (): void => {
-        // TODO: 3-LIMIT COMMA NAMES & COMPLEX COMMA NAMES
-        //  Wait does it matter whether any of these are 3 or 1/3?
-        //  Like whether the 3-exponent is positive or negative?
-        //  I know you can always add tiny 3-limit unnoticeable commas to get new commas w/ same name in same category
-        //  And then they become "complex" versions
-        //  But I haven't built that functionality in here yet
         expect(parseCommaName("3k" as Io))
             .toEqual({commaNameQuotient: [3, 1] as CommaNameQuotient, sizeCategoryName: SizeCategoryName.KLEISMA})
         expect(parseCommaName("3C" as Io))

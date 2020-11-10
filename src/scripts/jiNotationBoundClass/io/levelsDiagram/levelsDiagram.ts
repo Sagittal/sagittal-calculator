@@ -9,7 +9,7 @@ import {visualizeJiNotationLevelCommaClasses} from "../image/levelCommaClasses"
 import {visualizeJiNotationLevels} from "../image/levels"
 import {addParentSvg} from "../image/parentSvg"
 
-// TODO: Finish getting this to work, however you need to:
+// TODO: MISCELLANEOUS: LEVELS DIAGRAM
 //  - bring the cents closer down and include tick marks
 //  - move the mina labels outside the boxes and center them, if you keep them at all
 //  - handle the Extreme notation fitting somehow
