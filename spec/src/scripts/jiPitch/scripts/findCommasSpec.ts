@@ -63,13 +63,13 @@ describe("find-commas", (): void => {
             "max 2,3-free copfr:\t555    ",
             "max prime limit:   \t 47    ",
             "",
-            "        \t       \t        \t \t        \t     \t       \t       \t       \t       \t       \t       \t       \t       \t \t               \t       \t       \t       \t2,3-free\t2,3-free\t \t  \t   \t2,3-free\t2,3-free\t2,3-free",
-            "comma   \t       \tquotient\t \t        \tmonzo\t       \t       \t       \t       \t       \t       \t       \t       \t \t               \tapotome\t       \t       \tprime   \t   class\t \t  \t   \tclass   \tclass   \tclass   ",
-            "class   \tname   \t       n\t/\td       \t    [\t  2    \t  3    \t  5    \t  7    \t 11    \t 13    \t 17    \t 19    \t⟩\tcents          \tslope  \tAAS    \tATE    \tlimit   \t       n\t/\td \t₂,₃\tCoPFR   \tSoPFR   \tN2D3P9  ",
-            "        \t19/175M\t    4864\t/\t4725    \t    [\t  8    \t -3    \t -2    \t -1    \t  0    \t  0    \t  0    \t  1    \t⟩\t        50.195¢\t -6.091\t  6.091\t  3    \t 19     \t     175\t/\t19\t₂,₃\t  4     \t 36     \t292.477 ",
-            "        \t35/17M \t      35\t/\t34      \t    [\t -1    \t  0    \t  1    \t  1    \t  0    \t  0    \t -1    \t       \t⟩\t        50.184¢\t -3.090\t  3.090\t  0    \t 17     \t      35\t/\t17\t₂,₃\t  3     \t 29     \t 93.657 ",
-            "  ,'/|) \t65M    \t34543665\t/\t33554432\t    [\t-25    \t 12    \t  1    \t  0    \t  0    \t  1    \t       \t       \t⟩\t        50.301¢\t  8.903\t  8.903\t 12    \t 13     \t      65\t/\t1 \t₂,₃\t  2     \t 18     \t 23.472 ",
-            "        \t1/3025M\t 1594323\t/\t1548800 \t    [\t -9    \t 13    \t -2    \t  0    \t -2    \t       \t       \t       \t⟩\t        50.152¢\t  9.912\t  9.912\t 13    \t 11     \t    3025\t/\t1 \t₂,₃\t  4     \t 32     \t231.076 ",
+            "        \t           \t        \t \t        \t     \t       \t       \t       \t       \t       \t       \t       \t       \t \t               \t       \t       \t       \t2,3-free\t2,3-free\t \t  \t   \t2,3-free\t2,3-free\t2,3-free",
+            "comma   \t           \tquotient\t \t        \tmonzo\t       \t       \t       \t       \t       \t       \t       \t       \t \t               \tapotome\t       \t       \tprime   \t   class\t \t  \t   \tclass   \tclass   \tclass   ",
+            "class   \tname       \t       n\t/\td       \t    [\t  2    \t  3    \t  5    \t  7    \t 11    \t 13    \t 17    \t 19    \t⟩\tcents          \tslope  \tAAS    \tATE    \tlimit   \t       n\t/\td \t₂,₃\tCoPFR   \tSoPFR   \tN2D3P9  ",
+            "        \t19/(5²⋅7)M \t    4864\t/\t4725    \t    [\t  8    \t -3    \t -2    \t -1    \t  0    \t  0    \t  0    \t  1    \t⟩\t        50.195¢\t -6.091\t  6.091\t  3    \t 19     \t     175\t/\t19\t₂,₃\t  4     \t 36     \t292.477 ",
+            "        \t35/17M     \t      35\t/\t34      \t    [\t -1    \t  0    \t  1    \t  1    \t  0    \t  0    \t -1    \t       \t⟩\t        50.184¢\t -3.090\t  3.090\t  0    \t 17     \t      35\t/\t17\t₂,₃\t  3     \t 29     \t 93.657 ",
+            "  ,'/|) \t65M        \t34543665\t/\t33554432\t    [\t-25    \t 12    \t  1    \t  0    \t  0    \t  1    \t       \t       \t⟩\t        50.301¢\t  8.903\t  8.903\t 12    \t 13     \t      65\t/\t1 \t₂,₃\t  2     \t 18     \t 23.472 ",
+            "        \t1/(5²⋅11)²M\t 1594323\t/\t1548800 \t    [\t -9    \t 13    \t -2    \t  0    \t -2    \t       \t       \t       \t⟩\t        50.152¢\t  9.912\t  9.912\t 13    \t 11     \t    3025\t/\t1 \t₂,₃\t  4     \t 32     \t231.076 ",
             "",
         ] as Io[]
         expect(actual).toEqual(expected)
@@ -176,7 +176,7 @@ describe("find-commas", (): void => {
     it("can format for a spreadsheet", (): void => {
         onlyRunInCi()
 
-        const script = `npm run find-commas -- --lower-bound 50c --upper-bound 50.31c --sort-by apotomeSlope --table-format spreadsheet --max-n2d3p9 ${OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS} --max-ate ${OLD_MAX_ATE_FOR_SHORTER_TEST_RESULTS} --max-aas ${OLD_MAX_AAS_FOR_SHORTER_TEST_RESULTS}` as Io
+        const script = `npm run find-commas -- --lower-bound 50c --upper-bound 50.31c --sort-by apotomeSlope --table-format spreadsheet --max-n2d3p9 ${OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS} --max-ate ${OLD_MAX_ATE_FOR_SHORTER_TEST_RESULTS} --max-aas ${OLD_MAX_AAS_FOR_SHORTER_TEST_RESULTS} --factoring-mode never` as Io
 
         const actual = runScriptAndGetConsoleOutput(script)
 

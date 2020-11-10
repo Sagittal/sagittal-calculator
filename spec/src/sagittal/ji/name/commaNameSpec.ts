@@ -159,6 +159,15 @@ describe("computeCommaName", (): void => {
         expect(actual).toBe(expected)
     })
 
+    it("when factoring a denominator, and there is more than one different prime factor, but is in undirected mode, and one side is not 1, does not add parentheses to disambiguate order of operations, because it's not ambiguous in undirected mode, and also it would be on the wrong side anyway", (): void => {
+        const comma = {monzo: [-14, 7, 1, 0, -1, 0, 1]} as Comma
+
+        const actual = computeCommaName(comma, {factoringMode: FactoringMode.ALWAYS, directed: false})
+
+        const expected = "11:5⋅17M"
+        expect(actual).toBe(expected)
+    })
+
     it("when factoring a denominator, and there is more than one prime factor but they're all the same, does not need to put the denominator in parentheses to disambiguate order of operations, so it doesn't", (): void => {
         const comma = {monzo: [9, -1, 0, 0, 0, -2]} as Comma
 

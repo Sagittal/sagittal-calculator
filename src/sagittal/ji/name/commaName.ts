@@ -97,6 +97,11 @@ const formatCommaNameQuotient = (
             commaNameQuotient.map(formatMaybeFactoredCommaNameQuotientPart)
 }
 
+const removeParentheses = (string: string): string =>
+    string
+        .replace("(", BLANK)
+        .replace(")", BLANK)
+
 // "Secor-Keenan systematic name" or "Sagittal name"
 
 // TODO: 3-LIMIT COMMA NAMES & COMPLEX COMMA NAMES
@@ -126,15 +131,15 @@ const computeCommaName = (
             const stringifiedQuotient = formatCommaNameQuotient(commaNameQuotient, {factoringMode})
 
             formattedCommaNameQuotient = stringifiedQuotient[1] === "1" ?
-                stringifiedQuotient[0].replace("(", BLANK).replace(")", BLANK) :
+                removeParentheses(stringifiedQuotient[0]) :
                 stringifiedQuotient.join("/")
         } else {
             const stringifiedQuotient =
                 formatCommaNameQuotient(computeSubQuotient(commaNameQuotient), {factoringMode})
 
             formattedCommaNameQuotient = stringifiedQuotient[0] === "1" ?
-                stringifiedQuotient[1].replace("(", BLANK).replace(")", BLANK) :
-                stringifiedQuotient.join(":")
+                removeParentheses(stringifiedQuotient[1]) :
+                removeParentheses(stringifiedQuotient.join(":"))
         }
     }
 
