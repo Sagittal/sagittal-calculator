@@ -1,6 +1,6 @@
 import {Count, Exponent, Io, Max, Prime, Row, splitColumnTitlesIntoRowsBySpaces} from "../../../general"
 import {CommaAnalysis, JiPitchAnalysis, Two3FreeClassAnalysis} from "../../../sagittal"
-import {FindCommasField, JiPitchField, NotatingCommasField, Two3FreeClassField} from "../types"
+import {JiPitchesOrFindCommasField, JiPitchField, NotatingCommasField, Two3FreeClassField} from "../types"
 import {excludeFields} from "./excludeFields"
 import {formatPrimeHeaders, splitMonzoAndQuotientColumnTitles} from "./splitMonzoAndQuotient"
 
@@ -27,15 +27,15 @@ const NOTATING_COMMAS_WITH_MAYBE_COMMA_CLASSES_COLUMN_TITLES: Record<NotatingCom
     ...JI_PITCH_COLUMN_TITLES,
 }
 
-const FIND_COMMAS_COLUMN_TITLES: Record<FindCommasField, Io> = {
+const JI_PITCHES_OR_FIND_COMMAS_COLUMN_TITLES: Record<JiPitchesOrFindCommasField, Io> = {
     ...NOTATING_COMMAS_WITH_MAYBE_COMMA_CLASSES_COLUMN_TITLES,
     // Pretty much the same as TWO_3_FREE_CLASS_COLUMN_TITLES,
     // But here we can't assume the "2,3-free class" part b/c there's no 2,3-free class title just above
-    [FindCommasField.TWO_3_FREE_PRIME_LIMIT]: "2,3-free prime limit" as Io,
-    [FindCommasField.TWO_3_FREE_CLASS_NAME]: "2,3-free class name" as Io,
-    [FindCommasField.TWO_3_FREE_COPFR]: "2,3-free class CoPFR" as Io,
-    [FindCommasField.TWO_3_FREE_SOPFR]: "2,3-free class SoPFR" as Io,
-    [FindCommasField.N2D3P9]: "2,3-free class N2D3P9" as Io,
+    [JiPitchesOrFindCommasField.TWO_3_FREE_PRIME_LIMIT]: "2,3-free prime limit" as Io,
+    [JiPitchesOrFindCommasField.TWO_3_FREE_CLASS_NAME]: "2,3-free class name" as Io,
+    [JiPitchesOrFindCommasField.TWO_3_FREE_COPFR]: "2,3-free class CoPFR" as Io,
+    [JiPitchesOrFindCommasField.TWO_3_FREE_SOPFR]: "2,3-free class SoPFR" as Io,
+    [JiPitchesOrFindCommasField.N2D3P9]: "2,3-free class N2D3P9" as Io,
 }
 
 const computeJiPitchHeaderRows = (
@@ -69,13 +69,12 @@ const computeNotatingCommasHeaderRows =
             ),
         )
 
-// TODO: may not be just find commas now, maybe just generic "commas"
-const computeFindCommasHeaderRows =
+const computeJiPitchesOrFindCommasHeaderRows =
     (maxMonzoLength: Max<Count<Exponent<Prime>>>): Array<Row<{of: CommaAnalysis, header: true}>> =>
         formatPrimeHeaders(
             splitColumnTitlesIntoRowsBySpaces(
                 splitMonzoAndQuotientColumnTitles(
-                    excludeFields(FIND_COMMAS_COLUMN_TITLES),
+                    excludeFields(JI_PITCHES_OR_FIND_COMMAS_COLUMN_TITLES),
                     {maxMonzoLength},
                 ),
             ),
@@ -85,5 +84,5 @@ export {
     computeJiPitchHeaderRows,
     compute23FreeClassHeaderRows,
     computeNotatingCommasHeaderRows,
-    computeFindCommasHeaderRows,
+    computeJiPitchesOrFindCommasHeaderRows,
 }

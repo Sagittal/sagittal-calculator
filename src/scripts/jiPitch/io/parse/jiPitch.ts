@@ -8,32 +8,29 @@ import {
     Scamon,
 } from "../../../../general"
 import {parsePitch} from "./pitch"
+import {PitchFormat} from "./types"
 
-// Todo: this doesn't really distinguish between JI or not, it's just about reading it from the commander...
-const parseJiPitch = (): Scamon<{rational: true}> => {
-    const jiPitchText = program.args[0] as Io
-
+const parseJiPitch = (jiPitchIo: Io, pitchFormat: PitchFormat = PitchFormat.UNKNOWN): Scamon<{rational: true}> => {
     let jiPitch: Scamon<{rational: true}>
-    if (jiPitchText) {
-        const pitch = parsePitch(jiPitchText)
+
+    if (pitchFormat === PitchFormat.UNKNOWN) {
+        const pitch = parsePitch(jiPitchIo, pitchFormat)
 
         if (isScamonRational(pitch)) {
             jiPitch = pitch
         } else {
             throw new Error(`JI pitches must be rational. This pitch was ${formatPitch(pitch)}`)
         }
-
-        // When provided via specific flags, they are pre-parsed (in readOptions.ts).
-    } else if (program.monzo) {
+    } else if (pitchFormat === PitchFormat.MONZO) {
         jiPitch = {monzo: program.monzo} as Scamon<{rational: true}>
-    } else if (program.quotient) {
+    } else if (pitchFormat === PitchFormat.QUOTIENT) {
         jiPitch = {monzo: computeRationalMonzoFromRationalQuotient(program.quotient)} as Scamon<{rational: true}>
-    } else if (program.commaName) {
+    } else if (pitchFormat === PitchFormat.COMMA_NAME) {
         jiPitch = program.commaName
-    } else if (program.integer) {
+    } else if (pitchFormat === PitchFormat.INTEGER) {
         jiPitch = {monzo: computeRationalMonzoFromRationalDecimal(program.integer)} as Scamon<{rational: true}>
     } else {
-        throw new Error("Unable to parse JI pitch.")
+        throw new Error(`Unknown pitch format: ${pitchFormat}`)
     }
 
     return jiPitch

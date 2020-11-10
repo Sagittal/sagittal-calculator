@@ -35,7 +35,7 @@ enum NotatingCommasField {
     NAME = "name",
 }
 
-enum FindCommasField {
+enum JiPitchesOrFindCommasField {
     QUOTIENT = "quotient",
     MONZO = "monzo",
     CENTS = "cents",
@@ -51,13 +51,13 @@ enum FindCommasField {
     N2D3P9 = "n2d3p9",
 }
 
-type JiPitchScriptGroupField = JiPitchField | Two3FreeClassField | NotatingCommasField | FindCommasField
+type JiPitchScriptGroupField = JiPitchField | Two3FreeClassField | NotatingCommasField | JiPitchesOrFindCommasField
 
 export {
     JiPitchScriptGroupSettings,
     JiPitchField,
     Two3FreeClassField,
     NotatingCommasField,
-    FindCommasField,
+    JiPitchesOrFindCommasField,
     JiPitchScriptGroupField,
 }

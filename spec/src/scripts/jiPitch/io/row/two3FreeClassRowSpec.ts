@@ -4,7 +4,7 @@ import {Two3FreeClass} from "../../../../../../src/general/music"
 import {N2D3P9, Two3FreeClassAnalysis} from "../../../../../../src/sagittal/ji"
 import {jiPitchScriptGroupSettings} from "../../../../../../src/scripts/jiPitch/globals"
 import {compute23FreeClassRow} from "../../../../../../src/scripts/jiPitch/io/row"
-import {FindCommasField} from "../../../../../../src/scripts/jiPitch/types"
+import {JiPitchesOrFindCommasField} from "../../../../../../src/scripts/jiPitch/types"
 import {two3FreeClassAnalysisFixture} from "../../../../../helpers/src/scripts/jiPitch/fixtures"
 
 describe("compute23FreeClassRow", (): void => {
@@ -37,7 +37,7 @@ describe("compute23FreeClassRow", (): void => {
 
     it("can filter excluded fields", (): void => {
         jiPitchScriptGroupSettings.excludedFields =
-            [FindCommasField.TWO_3_FREE_COPFR, FindCommasField.TWO_3_FREE_PRIME_LIMIT]
+            [JiPitchesOrFindCommasField.TWO_3_FREE_COPFR, JiPitchesOrFindCommasField.TWO_3_FREE_PRIME_LIMIT]
         const actual = compute23FreeClassRow(two3FreeClassAnalysis)
 
         const expected = [

@@ -3,8 +3,8 @@ export {
     computeNotatingCommasOutput,
     compute23FreeClassOutput,
     computeJiPitchOutput,
-    computeCommasOutput,
+    computeJiPitchesOutput,
 } from "./output"
 export {
-    readAnalyzeJiPitchOptions, parsePitch, parseJiPitch, parseNotatingCommasSettings,
+    readAnalyzeJiPitchOptions, parsePitch, parseJiPitch, parseNotatingCommasSettings, readJiPitchIoAndFormat,
 } from "./parse"

@@ -8,6 +8,7 @@ import {
     parseJiPitch,
     parseNotatingCommasSettings,
     readAnalyzeJiPitchOptions,
+    readJiPitchIoAndFormat,
 } from "../io"
 import {applySharedJiPitchScriptSetup} from "./shared"
 
@@ -15,7 +16,8 @@ readAnalyzeJiPitchOptions()
 
 applySharedJiPitchScriptSetup()
 
-const jiPitch = parseJiPitch()
+const [jiPitchIo, pitchFormat] = readJiPitchIoAndFormat()
+const jiPitch = parseJiPitch(jiPitchIo, pitchFormat)
 const jiPitchAnalysis = analyzeJiPitch(jiPitch)
 const jiPitchOutput = computeJiPitchOutput(jiPitchAnalysis)
 saveLog(jiPitchOutput, LogTarget.FINAL)

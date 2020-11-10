@@ -20,7 +20,7 @@ import {ApotomeSlope, CommaAnalysis, CommaClassId} from "../../../../../../src/s
 import {N2D3P9} from "../../../../../../src/sagittal/ji/badness"
 import {jiPitchScriptGroupSettings} from "../../../../../../src/scripts/jiPitch/globals"
 import {computeFindCommasRow} from "../../../../../../src/scripts/jiPitch/io/row"
-import {FindCommasField} from "../../../../../../src/scripts/jiPitch/types"
+import {JiPitchesOrFindCommasField} from "../../../../../../src/scripts/jiPitch/types"
 import {commaAnalysisFixture, two3FreeClassAnalysisFixture} from "../../../../../helpers/src/scripts/jiPitch/fixtures"
 
 describe("computeFindCommasRow", (): void => {
@@ -81,7 +81,7 @@ describe("computeFindCommasRow", (): void => {
     })
 
     it("can filter excluded fields", (): void => {
-        jiPitchScriptGroupSettings.excludedFields = [FindCommasField.AAS, FindCommasField.ATE]
+        jiPitchScriptGroupSettings.excludedFields = [JiPitchesOrFindCommasField.AAS, JiPitchesOrFindCommasField.ATE]
         const actual = computeFindCommasRow(commaAnalysis, commaClassId, maxMonzoLength)
 
         const expected = [

@@ -1,4 +1,5 @@
-export {readAnalyzeJiPitchOptions} from "./analyzeJiPitchOptions"
+export {readAnalyzeJiPitchOptions} from "./readAnalyzeJiPitchOptions"
 export {parsePitch} from "./pitch"
 export {parseNotatingCommasSettings} from "./notatingCommasSettings"
 export {parseJiPitch} from "./jiPitch"
+export {readJiPitchIoAndFormat} from "./readJiPitchIoAndFormat"
