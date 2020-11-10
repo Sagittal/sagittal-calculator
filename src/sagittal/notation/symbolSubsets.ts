@@ -215,7 +215,7 @@ const shapeUpIds = (ids: Array<[Index<SymbolClassId>, SymbolClassId]>): SymbolCl
 // TODO: POST-NOTATION-GENERATION: TRULY SYMBOL SUBSETS, NOT JUST SYMBOL CLASS SUBSETS
 //  These won't truly be symbol subsets until you map across them and include every complement, shift, and negation
 //  And you could separate the single-shaft ones from multi-shaft ones with filters
-//  These tests are all failing until we fix that issue
+//  These tests are all failing until we fix that issue (don't forget to un-xdescribe them!)
 const SYMBOL_SUBSETS: Record<SymbolSubsetId, Array<SymbolClassId>> = {
     [SymbolSubsetId.COMPATIBLE]: shapeUpIds(SAGITTAL_COMPATIBLE_SYMBOL_SUBSET),
     [SymbolSubsetId.SPARTAN]: shapeUpIds(SPARTAN_SYMBOL_SUBSET),
