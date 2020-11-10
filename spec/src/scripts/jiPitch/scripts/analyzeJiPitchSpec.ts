@@ -171,9 +171,9 @@ describe("analyze-ji-pitch", (): void => {
             "",
             "comma   \t                   \tquotient\t \t        \tmonzo\t       \t       \t       \t       \t       \t \t               \tapotome\t       \t       ",
             "class   \tname               \t       n\t/\td       \t    [\t  2    \t  3    \t  5    \t  7    \t 11    \t⟩\tcents          \tslope  \tAAS    \tATE    ",
-            "   `)|( \t5².11-kleisma      \t    2200\t/\t2187    \t    [\t  3    \t -7    \t  2    \t  0    \t  1    \t⟩\t        10.260¢\t -7.632\t  7.632\t  7    ",
-            "        \t5².11-Small-Diesis \t   66825\t/\t65536   \t    [\t-16    \t  5    \t  2    \t  0    \t  1    \t⟩\t        33.720¢\t  2.924\t  2.924\t  5    ",
-            "        \t5².11-Medium-Diesis\t16777216\t/\t16238475\t    [\t 24    \t-10    \t -2    \t  0    \t -1    \t⟩\t        56.505¢\t-13.479\t 13.479\t 10    ",
+            "   `)|( \t5²⋅11-kleisma      \t    2200\t/\t2187    \t    [\t  3    \t -7    \t  2    \t  0    \t  1    \t⟩\t        10.260¢\t -7.632\t  7.632\t  7    ",
+            "        \t5²⋅11-Small-Diesis \t   66825\t/\t65536   \t    [\t-16    \t  5    \t  2    \t  0    \t  1    \t⟩\t        33.720¢\t  2.924\t  2.924\t  5    ",
+            "        \t5²⋅11-Medium-Diesis\t16777216\t/\t16238475\t    [\t 24    \t-10    \t -2    \t  0    \t -1    \t⟩\t        56.505¢\t-13.479\t 13.479\t 10    ",
             "",
         ] as Io[]
         expect(actual).toEqual(expected)
