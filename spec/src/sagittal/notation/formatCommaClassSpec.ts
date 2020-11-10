@@ -2,7 +2,7 @@ import {Io, ioSettings, TableFormat} from "../../../../src/general"
 import {CommaClassId, formatCommaClass} from "../../../../src/sagittal/notation"
 
 describe("formatCommaClass", (): void => {
-    const commaClassId = CommaClassId._65_7_M
+    const commaClassId = CommaClassId._65_V_7_M
 
     it("returns the comma class as its representative sagittal's long ASCII form by default (or configured for display on a terminal)", (): void => {
         const actual = formatCommaClass(commaClassId)

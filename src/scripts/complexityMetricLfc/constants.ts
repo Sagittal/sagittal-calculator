@@ -9,8 +9,8 @@ const INITIAL_COMPLEXITY_METRIC_LFC_SCRIPT_GROUP_SETTINGS: ComplexityMetricLfcSc
 }
 
 const EXCLUDED_COMMAS: CommaClassId[] = [
-    CommaClassId._14641_k,
-    CommaClassId._19_4375_s,
+    CommaClassId._11_P_4_k,
+    CommaClassId._19_V_5_P_4_7_s,
 ]
 
 const DEFAULT_COMPLEXITY_PARAMETER_VALUE = 1 as Parameter

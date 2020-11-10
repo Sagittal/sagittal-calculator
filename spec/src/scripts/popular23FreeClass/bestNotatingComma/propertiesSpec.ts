@@ -15,7 +15,7 @@ describe("computeBestNotatingCommaProperties", (): void => {
         const expected: BestNotatingCommaProperties = {
             bestNotatingCommaCents: 29.217813 as Cents,
             bestNotatingCommaMonzo: [-9, 6, 1, -1] as Monzo<{rational: true}>,
-            bestNotatingCommaMaybeCommaClassId: CommaClassId._5_7_C,
+            bestNotatingCommaMaybeCommaClassId: CommaClassId._5_V_7_C,
         }
         expect(actual).toBeCloseToObject(expected)
     })

@@ -43,7 +43,7 @@ describe("computeZoneComplexityMetricScore", (): void => {
 
         it("returns 0 when a comma is the least complex comma in its zone", (): void => {
             const actual = computeZoneComplexityMetricScore(
-                [CommaClassId._1_455_n, COMMAS_FOR_1_455_n],
+                [CommaClassId._1_V_5_7_13_n, COMMAS_FOR_1_455_n],
                 complexityMetric,
                 complexityParameterSet,
             )
@@ -55,7 +55,7 @@ describe("computeZoneComplexityMetricScore", (): void => {
         it("returns a squared distance between the actual comma's complexity and the least complex comma when a comma is not the least complex comma in its zone", (): void => {
             complexityMetricLfcScriptGroupSettings.sosMode = true
             const actual = computeZoneComplexityMetricScore(
-                [CommaClassId._1_8575_k, COMMAS_FOR_1_8575_k],
+                [CommaClassId._1_V_5_P_2_7_P_3_k, COMMAS_FOR_1_8575_k],
                 complexityMetric,
                 complexityParameterSet,
             )
@@ -73,7 +73,7 @@ describe("computeZoneComplexityMetricScore", (): void => {
 
         it("returns 0 points (good) when a comma is the least complex comma in its zone", (): void => {
             const actual = computeZoneComplexityMetricScore(
-                [CommaClassId._1_455_n, COMMAS_FOR_1_455_n],
+                [CommaClassId._1_V_5_7_13_n, COMMAS_FOR_1_455_n],
                 complexityMetric,
                 complexityParameterSet,
             )
@@ -84,7 +84,7 @@ describe("computeZoneComplexityMetricScore", (): void => {
 
         it("returns 1 point (bad) when a comma is not the least complex comma in its zone", (): void => {
             const actual = computeZoneComplexityMetricScore(
-                [CommaClassId._1_8575_k, COMMAS_FOR_1_8575_k],
+                [CommaClassId._1_V_5_P_2_7_P_3_k, COMMAS_FOR_1_8575_k],
                 complexityMetric,
                 complexityParameterSet,
             )

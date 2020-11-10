@@ -49,7 +49,7 @@ describe("computePopular23FreeClass", (): void => {
             votes: 5371 as Decimal<{integer: true}> & Score<ScalaPopularityStat>,
             bestNotatingCommaCents: 21.506290 as Cents,
             bestNotatingCommaMonzo: [-4, 4, -1] as Monzo<{rational: true}>,
-            bestNotatingCommaMaybeCommaClassId: CommaClassId._1_5_C,
+            bestNotatingCommaMaybeCommaClassId: CommaClassId._1_V_5_C,
         }
         expect(actual).toBeCloseToObject(expected)
     })

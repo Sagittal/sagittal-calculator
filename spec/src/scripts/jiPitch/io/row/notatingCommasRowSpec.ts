@@ -45,7 +45,7 @@ describe("computeNotatingCommasRow", (): void => {
             } as Two3FreeClass,
         },
     }
-    const commaClassId = CommaClassId._1_5_C
+    const commaClassId = CommaClassId._1_V_5_C
     const maxMonzoLength = 5 as Max<Count<Exponent<Prime>>>
 
     it("takes the properties of the comma and puts them in order in a row", (): void => {

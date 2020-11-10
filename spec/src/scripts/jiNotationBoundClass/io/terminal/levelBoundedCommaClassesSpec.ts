@@ -22,9 +22,9 @@ describe("computeJiNotationLevelBoundedCommaClassIds", (): void => {
 
         const expected: BoundedCommaClassIdPairs = {
             boundClassId,
-            [JiNotationLevelId.MEDIUM]: [CommaClassId._1_5_C, CommaClassId._1_7_C],
-            [JiNotationLevelId.EXTREME]: [CommaClassId._125_13_C, CommaClassId._19_5_C],
-            [JiNotationLevelId.INSANE]: [CommaClassId._125_13_C, CommaClassId._19_5_C],
+            [JiNotationLevelId.MEDIUM]: [CommaClassId._1_V_5_C, CommaClassId._1_V_7_C],
+            [JiNotationLevelId.EXTREME]: [CommaClassId._125_V_13_C, CommaClassId._19_V_5_C],
+            [JiNotationLevelId.INSANE]: [CommaClassId._125_V_13_C, CommaClassId._19_V_5_C],
         }
         expect(actual).toBeCloseToObject(expected)
     })
@@ -46,8 +46,8 @@ describe("computeJiNotationLevelBoundedCommaClassIds", (): void => {
         const expected: BoundedCommaClassIdPairs = {
             boundClassId: BoundClassId.MINA_116,
             [JiNotationLevelId.MEDIUM]: [CommaClassId._11_M, undefined],
-            [JiNotationLevelId.EXTREME]: [CommaClassId._5_49_M, undefined],
-            [JiNotationLevelId.INSANE]: [CommaClassId._5_49_M, undefined],
+            [JiNotationLevelId.EXTREME]: [CommaClassId._5_V_49_M, undefined],
+            [JiNotationLevelId.INSANE]: [CommaClassId._5_V_49_M, undefined],
         }
         expect(actual).toBeCloseToObject(expected)
     })
@@ -68,8 +68,8 @@ describe("computeJiNotationLevelBoundedCommaClassIds", (): void => {
 
         const expected: BoundedCommaClassIdPairs = {
             boundClassId: BoundClassId.MINA_0,
-            [JiNotationLevelId.EXTREME]: [CommaClassId._1_u, CommaClassId._1_455_n],
-            [JiNotationLevelId.INSANE]: [CommaClassId._1_u, CommaClassId._1_455_n],
+            [JiNotationLevelId.EXTREME]: [CommaClassId._1_u, CommaClassId._1_V_5_7_13_n],
+            [JiNotationLevelId.INSANE]: [CommaClassId._1_u, CommaClassId._1_V_5_7_13_n],
         }
         expect(actual).toBeCloseToObject(expected)
     })
@@ -90,9 +90,9 @@ describe("computeJiNotationLevelBoundedCommaClassIds", (): void => {
 
         const expected: BoundedCommaClassIdPairs = {
             boundClassId: BoundClassId.MINA_51,
-            [JiNotationLevelId.ULTRA]: [CommaClassId._19_5_C, CommaClassId._1_35_C],
-            [JiNotationLevelId.EXTREME]: [CommaClassId._19_5_C, CommaClassId._13_C],
-            [JiNotationLevelId.INSANE]: [CommaClassId._19_5_C, CommaClassId._13_C],
+            [JiNotationLevelId.ULTRA]: [CommaClassId._19_V_5_C, CommaClassId._1_V_35_C],
+            [JiNotationLevelId.EXTREME]: [CommaClassId._19_V_5_C, CommaClassId._13_C],
+            [JiNotationLevelId.INSANE]: [CommaClassId._19_V_5_C, CommaClassId._13_C],
         }
         expect(actual).toBeCloseToObject(expected)
     })

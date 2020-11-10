@@ -4,10 +4,10 @@ import {getIntroducingJiNotationLevel} from "../../../../../src/sagittal/notatio
 
 describe("getIntroducingJiNotationLevel", (): void => {
     it("returns the lowest JI notation level which includes the given comma class id", (): void => {
-        expect(getIntroducingJiNotationLevel(CommaClassId._5_7_k)).toBe(JiNotationLevelId.MEDIUM)
-        expect(getIntroducingJiNotationLevel(CommaClassId._11_49_C)).toBe(JiNotationLevelId.HIGH)
+        expect(getIntroducingJiNotationLevel(CommaClassId._5_V_7_k)).toBe(JiNotationLevelId.MEDIUM)
+        expect(getIntroducingJiNotationLevel(CommaClassId._11_V_49_C)).toBe(JiNotationLevelId.HIGH)
         expect(getIntroducingJiNotationLevel(CommaClassId._55_M)).toBe(JiNotationLevelId.ULTRA)
-        expect(getIntroducingJiNotationLevel(CommaClassId._11_13_C)).toBe(JiNotationLevelId.EXTREME)
+        expect(getIntroducingJiNotationLevel(CommaClassId._11_V_13_C)).toBe(JiNotationLevelId.EXTREME)
     })
 
     // TODO: POST-NOTATION-GENERATION: JI NOTATION CLEAN-UP

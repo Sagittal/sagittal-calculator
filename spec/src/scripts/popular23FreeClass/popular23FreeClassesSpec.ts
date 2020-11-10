@@ -149,7 +149,7 @@ describe("computePopular23FreeClasses", (): void => {
                 votes: 5371 as Decimal<{integer: true}> & Score<ScalaPopularityStat>,
                 bestNotatingCommaCents: 21.506290 as Cents,
                 bestNotatingCommaMonzo: [-4, 4, -1] as Monzo<{rational: true}>,
-                bestNotatingCommaMaybeCommaClassId: CommaClassId._1_5_C,
+                bestNotatingCommaMaybeCommaClassId: CommaClassId._1_V_5_C,
                 rank: 2 as Rank<Popular23FreeClass>,
             },
             {
@@ -165,7 +165,7 @@ describe("computePopular23FreeClasses", (): void => {
                 votes: 3016 as Decimal<{integer: true}> & Score<ScalaPopularityStat>,
                 bestNotatingCommaCents: 27.264092 as Cents,
                 bestNotatingCommaMonzo: [6, -2, 0, -1] as Monzo<{rational: true}>,
-                bestNotatingCommaMaybeCommaClassId: CommaClassId._1_7_C,
+                bestNotatingCommaMaybeCommaClassId: CommaClassId._1_V_7_C,
                 rank: 3 as Rank<Popular23FreeClass>,
             },
             {
@@ -181,7 +181,7 @@ describe("computePopular23FreeClasses", (): void => {
                 votes: 1610 as Decimal<{integer: true}> & Score<ScalaPopularityStat>,
                 bestNotatingCommaCents: 19.552569 as Cents,
                 bestNotatingCommaMonzo: [11, -4, -2] as Monzo<{rational: true}>,
-                bestNotatingCommaMaybeCommaClassId: CommaClassId._1_25_C,
+                bestNotatingCommaMaybeCommaClassId: CommaClassId._1_V_25_C,
                 rank: 4 as Rank<Popular23FreeClass>,
             },
             {
@@ -197,7 +197,7 @@ describe("computePopular23FreeClasses", (): void => {
                 votes: 1318 as Decimal<{integer: true}> & Score<ScalaPopularityStat>,
                 bestNotatingCommaCents: 29.217813 as Cents,
                 bestNotatingCommaMonzo: [-9, 6, 1, -1] as Monzo<{rational: true}>,
-                bestNotatingCommaMaybeCommaClassId: CommaClassId._5_7_C,
+                bestNotatingCommaMaybeCommaClassId: CommaClassId._5_V_7_C,
                 rank: 5 as Rank<Popular23FreeClass>,
             },
         ] as Array<Ranked<Popular23FreeClass>>

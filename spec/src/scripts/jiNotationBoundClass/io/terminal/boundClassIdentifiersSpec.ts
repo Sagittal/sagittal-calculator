@@ -88,7 +88,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             pitch: {monzo: [2, -1, -2, 0, 0, 0, 0, 1] as Monzo<{rational: true}>} as Comma,
                         },
                         // Not the best example b/c ID and mina name are the same up to this point
-                        id: CommaClassId._19_25_C,
+                        id: CommaClassId._19_V_25_C,
                     },
                     {
                         introducingJiNotationLevel: JiNotationLevelId.ULTRA,
@@ -156,7 +156,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             name: "19/25C" as Name<Comma>,
                             pitch: {monzo: [2, -1, -2, 0, 0, 0, 0, 1] as Monzo<{rational: true}>} as Comma,
                         },
-                        id: CommaClassId._19_25_C,
+                        id: CommaClassId._19_V_25_C,
                     },
                     {
                         introducingJiNotationLevel: JiNotationLevelId.ULTRA,
@@ -224,7 +224,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             name: "19/25C" as Name<Comma>,
                             pitch: {monzo: [2, -1, -2, 0, 0, 0, 0, 1] as Monzo<{rational: true}>} as Comma,
                         },
-                        id: CommaClassId._19_25_C,
+                        id: CommaClassId._19_V_25_C,
                     },
                     {
                         introducingJiNotationLevel: JiNotationLevelId.ULTRA,
