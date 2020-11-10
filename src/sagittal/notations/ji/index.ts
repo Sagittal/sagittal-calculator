@@ -1,4 +1,5 @@
 export {computeMaybeCommaClassId} from "./maybeCommaClassId"
+export {computeCentsFromTinas} from "./inaCents"
 export {formatJiNotationLevel} from "./formatLevel"
 export {computeSecondaryCommaZone} from "./secondaryCommaZone"
 export {INA_CENTS_SIZES, TINA, MINA, TINA_CENTS, MINA_CENTS} from "./intervals"
@@ -14,8 +15,8 @@ export {
     JiNotationBoundClass,
     Ina,
     JiNotationLevelId,
-    Mina,
-    Tina,
+    Minas,
+    Tinas,
     BoundType,
     InaMidpoint,
     JiNotationBound,

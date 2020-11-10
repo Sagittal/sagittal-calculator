@@ -1,6 +1,6 @@
 import {APOTOME, HALF_SCALER, Multiplier, Name, Scamon} from "../../../../../src/general"
 import {JiNotationBound} from "../../../../../src/sagittal"
-import {BoundType, JiNotationLevelId, Tina} from "../../../../../src/sagittal/notations"
+import {BoundType, JiNotationLevelId, Tinas} from "../../../../../src/sagittal/notations"
 import {EXTREME_EDA, ULTRA_EDA} from "../../../../../src/sagittal/notations/ji/levelEdas"
 import {consolidateBoundHistories} from "../../../../../src/scripts/jiNotationBoundClass/consolidateHistories"
 import {BoundEventAnalysis, BoundHistoryAnalysis} from "../../../../../src/scripts/jiNotationBoundClass/history"
@@ -66,7 +66,7 @@ describe("consolidateBoundHistories", (): void => {
             ],
             rank: RANKS[BoundType.COMMA_MEAN],
             possible: true,
-            tinaError: 0 as Multiplier<Tina>,
+            tinaError: 0 as Multiplier<Tinas>,
             pitch: {monzo: [], scaler: HALF_SCALER} as Scamon<{rational: false}>,
         }
         const boundHistoryAnalyses: BoundHistoryAnalysis[] = [
@@ -78,7 +78,7 @@ describe("consolidateBoundHistories", (): void => {
                 ],
                 rank: RANKS[BoundType.SIZE_CATEGORY_BOUND],
                 possible: true,
-                tinaError: 0 as Multiplier<Tina>,
+                tinaError: 0 as Multiplier<Tinas>,
                 pitch: {monzo: [], scaler: HALF_SCALER} as Scamon<{rational: false}>,
             },
             bestPossibleBoundHistoryAnalysis,
@@ -90,7 +90,7 @@ describe("consolidateBoundHistories", (): void => {
                 ],
                 rank: RANKS[BoundType.SIZE_CATEGORY_BOUND],
                 possible: false,
-                tinaError: 3.05589400712 as Multiplier<Tina>,
+                tinaError: 3.05589400712 as Multiplier<Tinas>,
                 pitch: {monzo: [], scaler: HALF_SCALER} as Scamon<{rational: false}>,
             },
             {
@@ -100,7 +100,7 @@ describe("consolidateBoundHistories", (): void => {
                 ],
                 rank: RANKS[BoundType.SIZE_CATEGORY_BOUND],
                 possible: false,
-                tinaError: 2.26723955922 as Multiplier<Tina>,
+                tinaError: 2.26723955922 as Multiplier<Tinas>,
                 pitch: {monzo: [], scaler: HALF_SCALER} as Scamon<{rational: false}>,
             },
         ]

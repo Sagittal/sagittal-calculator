@@ -1,12 +1,12 @@
 import {Abs, Cents, Count, Decimal, Multiplier, Rank, Scamon, Sum} from "../../../general"
-import {BoundType, Ina, Tina} from "../../../sagittal"
+import {BoundType, Ina, Tinas} from "../../../sagittal"
 import {BoundHistoryConsolidation} from "../consolidateHistories"
 import {BoundHistoryAnalysis} from "../history"
 
 interface JiNotationBoundClassAnalysis {
     bestRank: Decimal<{integer: true}> & Rank<BoundType>,
     initialPosition: Scamon,
-    initialPositionTinaDistance: Multiplier<Tina>,
+    initialPositionTinaDistance: Multiplier<Tinas>,
     possibleBoundHistoryCount: Count<BoundHistoryAnalysis>,
     bestPossibleBoundHistoryAnalysis: BoundHistoryAnalysis,
     bestPossibleBoundHistoryTotalDistance: Sum<Abs<Cents>>,

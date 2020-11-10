@@ -1,6 +1,5 @@
 import {Ed, integerDivide, Window} from "../../../../src/general"
-import {DynamicParameterScope, Parameter} from "../../../../src/general/lfc"
-import {computeParameterValues} from "../../../../src/general/lfc/parameterValues"
+import {computeParameterValues, DynamicParameterScope, Parameter} from "../../../../src/general/lfc"
 
 describe("computeParameterValues", (): void => {
     it("given a parameter scope (a center, a window, and a ED), will return a block of points to sample", (): void => {

@@ -8,11 +8,11 @@ enum BoundType {
     SIZE_CATEGORY_BOUND = "sizeCategoryBound",
 }
 
-type Tina = Cents & {_InaBrand: "Tina"}
-type Mina = Cents & {_InaBrand: "Mina"}
-type Ultrina = Cents & {_InaBrand: "Ultrina"}
-type Highina = Cents & {_InaBrand: "Highina"}
-type Medina = Cents & {_InaBrand: "Medina"}
+type Tinas = Cents & {_InaBrand: "Tina"}
+type Minas = Cents & {_InaBrand: "Mina"}
+type Ultrinas = Cents & {_InaBrand: "Ultrina"}
+type Highinas = Cents & {_InaBrand: "Highina"}
+type Medinas = Cents & {_InaBrand: "Medina"}
 
 type Ina = Cents & {_InaBrand: "Tina" | "Mina" | "Ultrina" | "Highina" | "Medina"}
 
@@ -45,11 +45,11 @@ type JiNotationBoundClass<T extends NumericProperties = {}> =
 type JiNotationBoundClassEntry = [BoundClassId, JiNotationBoundClass]
 
 export {
-    Tina,
-    Mina,
-    Ultrina,
-    Highina,
-    Medina,
+    Tinas,
+    Minas,
+    Ultrinas,
+    Highinas,
+    Medinas,
     JiNotationLevelId,
     JiNotationBound,
     JiNotationBoundClass,

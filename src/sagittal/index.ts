@@ -69,8 +69,8 @@ export {
     JI_NOTATION_LEVELS,
     JI_NOTATION_LEVELS_BOUND_CLASSES,
     JI_NOTATION_LEVELS_COMMA_CLASS_IDS,
-    Mina,
-    Tina,
+    Minas,
+    Tinas,
     TINA,
     getIntroducingJiNotationLevel,
     getMinaName,
@@ -84,6 +84,7 @@ export {
     INSANE_ZETA_PEAK_VAL,
     MINA,
     TINA_CENTS,
+    computeCentsFromTinas,
 } from "./notations"
 export {
     BoundClassId,

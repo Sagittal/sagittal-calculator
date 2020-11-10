@@ -6,7 +6,7 @@ import {
     Ina,
     JiNotationBoundClass,
     JiNotationLevelId,
-    Tina,
+    Tinas,
 } from "../../../../../../../src/sagittal"
 import {JiNotationBoundClassAnalysis} from "../../../../../../../src/scripts/jiNotationBoundClass/boundClass"
 import {computeJiNotationBoundClassRow} from "../../../../../../../src/scripts/jiNotationBoundClass/io/terminal/boundClasses/boundClassRow"
@@ -56,7 +56,7 @@ describe("computeJiNotationBoundClassRow", (): void => {
             },
             bestRank: RANKS[BoundType.COMMA_MEAN],
             initialPosition: computePitchFromCents(5.48533 as Cents),
-            initialPositionTinaDistance: 0.0393 as Multiplier<Tina>,
+            initialPositionTinaDistance: 0.0393 as Multiplier<Tinas>,
             bestPossibleBoundHistoryTotalDistance: 0.355 as Sum<Abs<Cents>>,
             bestPossibleBoundHistoryTotalInaDistance: 0.839 as Sum<Multiplier<Ina>>,
         }

@@ -6,7 +6,7 @@ import {
     CommaClassId,
     Ina,
     JiNotationLevelId,
-    Mina,
+    Minas,
     SymbolSubsetId,
     Unicode,
 } from "../../../../sagittal"
@@ -30,7 +30,7 @@ interface BoundedCommaClassInfo {
         smallestSymbolSubsetId: SymbolSubsetId,
     }
     introducingJiNotationLevel: JiNotationLevelId,
-    minaName: Name<Mina>,
+    minaName: Name<Minas>,
     distance: Abs<Cents>,
     inaDistance: Multiplier<Ina>,
 }
@@ -45,8 +45,8 @@ interface JiNotationBoundClassIdentifiers {
     boundedCommaClassInfoPairs: BoundedCommaClassInfoPairs,
     extremeLevelGreaterBoundedCommaClass: Ascii,
     extremeLevelLesserBoundedCommaClass: Ascii,
-    greaterBoundedMinaName: Maybe<Name<Mina>>,
-    lesserBoundedMinaName: Maybe<Name<Mina>>,
+    greaterBoundedMinaName: Maybe<Name<Minas>>,
+    lesserBoundedMinaName: Maybe<Name<Minas>>,
     cents: Cents,
 }
 

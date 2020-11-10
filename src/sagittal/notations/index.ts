@@ -11,8 +11,8 @@ export {
     JI_NOTATION_LEVELS_BOUND_CLASSES,
     JI_NOTATION_LEVELS_COMMA_CLASS_IDS,
     JI_NOTATION_LEVEL_EDAS,
-    Mina,
-    Tina,
+    Minas,
+    Tinas,
     getIntroducingJiNotationLevel,
     TINA,
     MINA,
@@ -27,4 +27,5 @@ export {
     INSANE_ZETA_PEAK_VAL,
     TINA_CENTS,
     MINA_CENTS,
+    computeCentsFromTinas,
 } from "./ji"

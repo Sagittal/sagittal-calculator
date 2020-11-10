@@ -12,7 +12,7 @@ import {
     Sum,
 } from "../../../../../src/general"
 import {BoundClass, JiNotationBound} from "../../../../../src/sagittal"
-import {BoundType, Ina, JiNotationBoundClass, JiNotationLevelId, Tina} from "../../../../../src/sagittal/notations"
+import {BoundType, Ina, JiNotationBoundClass, JiNotationLevelId, Tinas} from "../../../../../src/sagittal/notations"
 import {EXTREME_EDA, INSANE_EDA} from "../../../../../src/sagittal/notations/ji/levelEdas"
 import {analyzeJiNotationBoundClass} from "../../../../../src/scripts/jiNotationBoundClass/boundClass"
 import * as jiNotationLevels from "../../../../../src/scripts/jiNotationBoundClass/boundClass/levels"
@@ -150,8 +150,8 @@ describe("analyzeJiNotationBoundClass", (): void => {
         exact: false,
         totalDistance: 0.07887931138776594 as Sum<Abs<Cents>>,
         totalInaDistance: 0.4641843423502595 as Sum<Multiplier<Ina>>,
-        tinaError: 0 as Multiplier<Tina>,
-        initialPositionTinaDistance: -0.5613173198962725 as Multiplier<Tina>,
+        tinaError: 0 as Multiplier<Tinas>,
+        initialPositionTinaDistance: -0.5613173198962725 as Multiplier<Tinas>,
     }
 
     it("returns an analysis of the JI notation bound class using its histories, including a consolidation of said bound histories, and its best possible bound class history, and the difference between the bound and its initial position", (): void => {
@@ -163,7 +163,7 @@ describe("analyzeJiNotationBoundClass", (): void => {
                 monzo: [-17, 11, -2, 0, 0, 0, 0, 1] as Monzo<{rational: true}>,
                 scaler: HALF_SCALER,
             } as Scamon<{rational: false}>,
-            initialPositionTinaDistance: -0.5613173198962725 as Multiplier<Tina>,
+            initialPositionTinaDistance: -0.5613173198962725 as Multiplier<Tinas>,
             possibleBoundHistoryCount: 2 as Count<BoundHistoryAnalysis>,
             bestPossibleBoundHistoryAnalysis: expectedBestPossibleBoundHistoryAnalysis,
             bestPossibleBoundHistoryTotalDistance: 0.07887931138776594 as Sum<Abs<Cents>>,

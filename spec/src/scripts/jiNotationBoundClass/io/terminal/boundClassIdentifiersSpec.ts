@@ -30,7 +30,7 @@ import {
     SymbolSubsetId,
     Unicode,
 } from "../../../../../../src/sagittal"
-import {JiNotationBoundClass, JiNotationLevelId, Mina, MINA_CENTS} from "../../../../../../src/sagittal/notations/ji"
+import {JiNotationBoundClass, JiNotationLevelId, Minas, MINA_CENTS} from "../../../../../../src/sagittal/notations/ji"
 import {TINA_CENTS, ULTRINA_CENTS} from "../../../../../../src/sagittal/notations/ji/intervals"
 import {extractJiNotationBoundClassIdentifiers} from "../../../../../../src/scripts/jiNotationBoundClass/io/terminal/boundClassIdentifiers"
 import {JiNotationBoundClassIdentifiers} from "../../../../../../src/scripts/jiNotationBoundClass/io/terminal/types"
@@ -65,7 +65,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             unicode: "" as Unicode,
                             smallestSymbolSubsetId: SymbolSubsetId.HERCULEAN,
                         },
-                        minaName: "47" as Name<Mina>,
+                        minaName: "47" as Name<Minas>,
                         commaAnalysis: {
                             apotomeSlope: -2.411919815346935 as ApotomeSlope,
                             aas: 2.411919815346935 as Abs<ApotomeSlope>,
@@ -99,7 +99,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             unicode: "" as Unicode,
                             smallestSymbolSubsetId: SymbolSubsetId.HERCULEAN,
                         },
-                        minaName: "48" as Name<Mina>,
+                        minaName: "48" as Name<Minas>,
                         commaAnalysis: {
                             apotomeSlope: 10.555481691145998 as ApotomeSlope,
                             aas: 10.555481691145998 as Abs<ApotomeSlope>,
@@ -134,7 +134,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             unicode: "" as Unicode,
                             smallestSymbolSubsetId: SymbolSubsetId.HERCULEAN,
                         },
-                        minaName: "47" as Name<Mina>,
+                        minaName: "47" as Name<Minas>,
                         commaAnalysis: {
                             apotomeSlope: -2.411919815346935 as ApotomeSlope,
                             aas: 2.411919815346935 as Abs<ApotomeSlope>,
@@ -167,7 +167,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             unicode: "" as Unicode,
                             smallestSymbolSubsetId: SymbolSubsetId.HERCULEAN,
                         },
-                        minaName: "48" as Name<Mina>,
+                        minaName: "48" as Name<Minas>,
                         commaAnalysis: {
                             apotomeSlope: 10.555481691145998 as ApotomeSlope,
                             aas: 10.555481691145998 as Abs<ApotomeSlope>,
@@ -202,7 +202,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             unicode: "" as Unicode,
                             smallestSymbolSubsetId: SymbolSubsetId.HERCULEAN,
                         },
-                        minaName: "47" as Name<Mina>,
+                        minaName: "47" as Name<Minas>,
                         commaAnalysis: {
                             apotomeSlope: -2.411919815346935 as ApotomeSlope,
                             aas: 2.411919815346935 as Abs<ApotomeSlope>,
@@ -235,7 +235,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             unicode: "" as Unicode,
                             smallestSymbolSubsetId: SymbolSubsetId.HERCULEAN,
                         },
-                        minaName: "48" as Name<Mina>,
+                        minaName: "48" as Name<Minas>,
                         commaAnalysis: {
                             apotomeSlope: 10.555481691145998 as ApotomeSlope,
                             aas: 10.555481691145998 as Abs<ApotomeSlope>,
@@ -261,8 +261,8 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                     },
                 ],
             },
-            lesserBoundedMinaName: "47" as Name<Mina>,
-            greaterBoundedMinaName: "48" as Name<Mina>,
+            lesserBoundedMinaName: "47" as Name<Minas>,
+            greaterBoundedMinaName: "48" as Name<Minas>,
         }
         expect(actual).toBeCloseToObject(expected)
     })

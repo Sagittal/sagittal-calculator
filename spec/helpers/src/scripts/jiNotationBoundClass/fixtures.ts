@@ -21,7 +21,7 @@ import {
     JiNotationBound,
     JiNotationBoundClass,
     JiNotationLevelId,
-    Tina,
+    Tinas,
 } from "../../../../../src/sagittal/notations"
 import {JiNotationBoundClassAnalysis} from "../../../../../src/scripts/jiNotationBoundClass/boundClass"
 import {BoundEventConsolidation} from "../../../../../src/scripts/jiNotationBoundClass/consolidateHistories/types"
@@ -53,8 +53,8 @@ const boundHistoryAnalysisFixture: BoundHistoryAnalysis = {
     exact: false,
     totalInaDistance: 0 as Sum<Multiplier<Ina>>,
     possible: false,
-    tinaError: 0 as Multiplier<Tina>,
-    initialPositionTinaDistance: 0 as Multiplier<Tina>,
+    tinaError: 0 as Multiplier<Tinas>,
+    initialPositionTinaDistance: 0 as Multiplier<Tinas>,
 }
 
 const boundEventConsolidationFixture: BoundEventConsolidation = {
@@ -81,7 +81,7 @@ const jiNotationBoundClassAnalysisFixture: JiNotationBoundClassAnalysis = {
     bestPossibleBoundHistoryAnalysis: boundHistoryAnalysisFixture,
     bestRank: RANKS[BoundType.INA_MIDPOINT],
     initialPosition: UNISON,
-    initialPositionTinaDistance: 0 as Multiplier<Tina>,
+    initialPositionTinaDistance: 0 as Multiplier<Tinas>,
     bestPossibleBoundHistoryTotalDistance: 0 as Sum<Abs<Cents>>,
     bestPossibleBoundHistoryTotalInaDistance: 0 as Sum<Multiplier<Ina>>,
     boundHistoryConsolidation: {},

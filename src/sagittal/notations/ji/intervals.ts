@@ -48,11 +48,11 @@ const INA_CENTS_SIZES: Record<JiNotationLevelId, Cents> = JI_NOTATION_LEVEL_EDAS
     {} as Record<JiNotationLevelId, Cents>,
 )
 
-const TINA_CENTS: Cents = computeCentsFromPitch(TINA)          // 0.14052534741¢
-const MINA_CENTS: Cents = computeCentsFromPitch(MINA)          // 0.48791848093¢
-const ULTRINA_CENTS: Cents = computeCentsFromPitch(ULTRINA)    // 1.96008631134¢
-const HIGHINA_CENTS: Cents = computeCentsFromPitch(HIGHINA)    // 2.41882991613¢
-const MEDINA_CENTS: Cents = computeCentsFromPitch(MEDINA)      // 5.41357171705¢
+const TINA_CENTS: Cents = computeCentsFromPitch(TINA)
+const MINA_CENTS: Cents = computeCentsFromPitch(MINA)
+const ULTRINA_CENTS: Cents = computeCentsFromPitch(ULTRINA)
+const HIGHINA_CENTS: Cents = computeCentsFromPitch(HIGHINA)
+const MEDINA_CENTS: Cents = computeCentsFromPitch(MEDINA)
 
 export {
     TINA,

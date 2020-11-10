@@ -16,9 +16,9 @@ import {
     Ina,
     JiNotationBoundClass,
     JiNotationLevelId,
-    Tina,
+    Tinas,
+    TINA_CENTS,
 } from "../../../../../src/sagittal/notations/ji"
-import {TINA_CENTS} from "../../../../../src/sagittal/notations/ji/intervals"
 import {EXTREME_EDA} from "../../../../../src/sagittal/notations/ji/levelEdas"
 import {computeInitialPosition} from "../../../../../src/scripts/jiNotationBoundClass/boundClass/initialPosition"
 import {BoundHistory} from "../../../../../src/scripts/jiNotationBoundClass/histories"
@@ -97,7 +97,7 @@ describe("analyzeHistory", (): void => {
         expect(actual.rank).toBe(RANKS[BoundType.SIZE_CATEGORY_BOUND])
         expect(actual.totalDistance).toBe(0 as Sum<Abs<Cents>>)
         expect(actual.initialPositionTinaDistance)
-            .toBeCloseToTyped(3.710191 as Multiplier<Tina>)
+            .toBeCloseToTyped(3.710191 as Multiplier<Tinas>)
     })
 
     describe("when the bound class history's position matches the actual JI notation bound class position                    ", (): void => {
@@ -127,13 +127,13 @@ describe("analyzeHistory", (): void => {
             const actual = analyzeHistory(boundHistory, jiNotationBoundClass, initialPosition)
 
             expect(actual.possible).toBeTruthy()
-            expect(actual.tinaError).toBeCloseToTyped(0 as Multiplier<Tina>)
+            expect(actual.tinaError).toBeCloseToTyped(0 as Multiplier<Tinas>)
         })
     })
 
     describe(`when the bound class history's position does not match the actual JI notation bound class position, returns the bound class history plus false for the possible property and the error in tinas`, (): void => {
         it("works when the position is greater than the actual JI notation bound class position by less than a tina              ", (): void => {
-            const expectedTinaError = 2 / 5 as Multiplier<Tina>
+            const expectedTinaError = 2 / 5 as Multiplier<Tinas>
             pitch = addScamons(
                 actualJiNotationBoundPitch,
                 computePitchFromCents(multiply(TINA_CENTS, expectedTinaError)),
@@ -164,7 +164,7 @@ describe("analyzeHistory", (): void => {
         })
 
         it("works when the position is greater than the actual JI notation bound class position by more than a tina             ", (): void => {
-            const expectedTinaError = 5 / 2 as Multiplier<Tina>
+            const expectedTinaError = 5 / 2 as Multiplier<Tinas>
             pitch = addScamons(
                 actualJiNotationBoundPitch,
                 computePitchFromCents(multiply(TINA_CENTS, expectedTinaError)),
@@ -197,7 +197,7 @@ describe("analyzeHistory", (): void => {
         })
 
         it("works when the position is below the actual JI notation bound class position by less than a tina                       ", (): void => {
-            const expectedTinaError = -2 / 5 as Multiplier<Tina>
+            const expectedTinaError = -2 / 5 as Multiplier<Tinas>
             pitch = addScamons(
                 actualJiNotationBoundPitch,
                 computePitchFromCents(multiply(TINA_CENTS, expectedTinaError)),
@@ -230,7 +230,7 @@ describe("analyzeHistory", (): void => {
         })
 
         it("works when the position is below the actual JI notation bound class position by more than a tina                       ", (): void => {
-            const expectedTinaError = -5 / 2 as Multiplier<Tina>
+            const expectedTinaError = -5 / 2 as Multiplier<Tinas>
             pitch = addScamons(
                 actualJiNotationBoundPitch,
                 computePitchFromCents(multiply(TINA_CENTS, expectedTinaError)),
