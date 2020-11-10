@@ -80,7 +80,7 @@ describe("analyze-ji-pitch", (): void => {
 
         expect((): void => {
             cp.execSync(script, {stdio: [undefined, undefined, undefined]})
-        }).toThrowError(/Unable to parse JI pitch/)
+        }).toThrowError(/Unable to read JI pitch/)
     })
 
     it("can sort the notating commas", (): void => {
