@@ -231,17 +231,39 @@
 <Multi_key> <Multi_key> <(> <X> <~>							: ""	UE3EE	# Sagittal (X~
 <Multi_key> <Multi_key> <(> <Y> <~>							: ""	UE3EF	# Sagittal (Y~
 
-# Herculean Sagittal diacritics in the Bravura font (by long ASCII)
+# Herculean Sagittal accents in the Bravura font (by long ASCII)
 <Multi_key> <Multi_key> <|> <space>							: ""	UE3F0	# Sagittal shaft up
 <Multi_key> <Multi_key> <!> <space>							: ""	UE3F1	# Sagittal shaft down
-<Multi_key> <Multi_key> <'>								: ""	UE3F2	# Sagittal acute
-<Multi_key> <Multi_key> <.>								: ""	UE3F3	# Sagittal grave
+<Multi_key> <Multi_key> <'>								: ""	UE3F2	# Sagittal tick up
+<Multi_key> <Multi_key> <.>								: ""	UE3F3	# Sagittal tick down
 
-# Olympian Sagittal diacritics in the Bravura font (by long ASCII)
-<Multi_key> <Multi_key> <`> <space>							: ""	UE3F4	# Sagittal inverted breve
-<Multi_key> <Multi_key> <,> <space>							: ""	UE3F5	# Sagittal breve
-<Multi_key> <Multi_key> <`> <`>								: ""	UE3F6	# Sagittal double inverted breve
-<Multi_key> <Multi_key> <,> <,>								: ""	UE3F7	# Sagittal double breve
+# Olympian Sagittal accents in the Bravura font (by long ASCII)
+<Multi_key> <Multi_key> <`> <space>							: ""	UE3F4	# Sagittal wing up
+<Multi_key> <Multi_key> <,> <space>							: ""	UE3F5	# Sagittal wing down
+<Multi_key> <Multi_key> <`> <`>								: ""	UE3F6	# Sagittal bird up
+<Multi_key> <Multi_key> <,> <,>								: ""	UE3F7	# Sagittal bird down
+
+# Magrathean Sagittal accents in the Bravura font (by long ASCII)
+<Multi_key> <Multi_key>	<@> <1>								: ""	UE3F8	# Sagittal horn up
+<Multi_key> <Multi_key>	<l> <1>								: ""	UE3F9	# Sagittal horn down
+<Multi_key> <Multi_key>	<@> <2>								: ""	UE3FA	# Sagittal wedge up
+<Multi_key> <Multi_key>	<l> <2>								: ""	UE3FB	# Sagittal wedge down
+<Multi_key> <Multi_key>	<@> <3>								: ""	UE3FC	# Sagittal wing up
+<Multi_key> <Multi_key>	<l> <3>								: ""	UE3FD	# Sagittal wing down
+<Multi_key> <Multi_key>	<@> <4>								: ""	UE3FE	# Sagittal hornwing up
+<Multi_key> <Multi_key>	<l> <4>								: ""	UE3FF	# Sagittal hornwing down
+<Multi_key> <Multi_key>	<@> <5>								: ""	UE400	# Sagittal wedgewing up
+<Multi_key> <Multi_key>	<l> <5>								: ""	UE401	# Sagittal wedgewing down
+<Multi_key> <Multi_key>	<@> <6>								: ""	UE402	# Sagittal bird up
+<Multi_key> <Multi_key>	<l> <6>								: ""	UE403	# Sagittal bird down
+<Multi_key> <Multi_key>	<@> <7>								: ""	UE404	# Sagittal hornbird up
+<Multi_key> <Multi_key>	<l> <7>								: ""	UE405	# Sagittal hornbird down
+<Multi_key> <Multi_key>	<@> <8>								: ""	UE406	# Sagittal wedgebird up
+<Multi_key> <Multi_key>	<l> <8>								: ""	UE407	# Sagittal wedgebird down
+<Multi_key> <Multi_key>	<@> <9>								: ""	UE408	# Sagittal wingbird up
+<Multi_key> <Multi_key>	<l> <9>								: ""	UE409	# Sagittal wingbird down
+<Multi_key> <Multi_key>	<@> <.>								: ""	UE40A	# Sagittal dot up
+<Multi_key> <Multi_key>	<l> <.>								: ""	UE40B	# Sagittal dot down
 
 # Sagittal "Lazy" down versions
 <Multi_key> <Multi_key> <\> <|> <space>							: ""	UE303	# Sagittal \!

@@ -218,17 +218,39 @@
 <Multi_key> <Multi_key> <r> <a> <o> <d> <o> <u> <b> <l> <e> <s> <h> <a> <r> <p>		: ""	UE391 UE47D	# Sagittal raodoublesharp
 <Multi_key> <Multi_key> <r> <a> <i> <d> <o> <u> <b> <l> <e> <f> <l> <a> <t>		: ""	UE390 UE264	# Sagittal raidoubleflat
 
-# Herculean Sagittal diacritics in the Bravura font (by Sagispeak)
+# Herculean Sagittal accents in the Bravura font (by Sagispeak)
 <Multi_key> <Multi_key> <a> <i> 							: ""	UE3F0		# Sagittal ai
 <Multi_key> <Multi_key> <a> <o> 							: ""	UE3F1		# Sagittal ao
 <Multi_key> <Multi_key> <b> <i> 							: ""	UE3F2		# Sagittal bi
 <Multi_key> <Multi_key> <b> <o> 							: ""	UE3F3		# Sagittal bo
 
-# Olympian Sagittal diacritics in the Bravura font (by Sagispeak)
+# Olympian Sagittal accents in the Bravura font (by Sagispeak)
 <Multi_key> <Multi_key> <m> <i> <space> 						: ""	UE3F4		# Sagittal mi
 <Multi_key> <Multi_key> <m> <o> <space> 						: ""	UE3F5		# Sagittal mo
 <Multi_key> <Multi_key> <m> <i> <m> <i> 						: ""	UE3F6		# Sagittal mimi
 <Multi_key> <Multi_key> <m> <o> <m> <o> 						: ""	UE3F7		# Sagittal momo
+
+# Magrathean Sagittal accents in the Bravura font (by Sagispeak)
+<Multi_key> <Multi_key>	<q> <u> <i> <space>						: ""	UE3F8		# Sagittal qui
+<Multi_key> <Multi_key> <q> <u> <o> <space>						: ""	UE3F9		# Sagittal quo
+<Multi_key> <Multi_key>	<q> <u> <i> <q> <u> <i> <space>					: ""	UE3FA		# Sagittal quiqui
+<Multi_key> <Multi_key>	<q> <u> <o> <q> <u> <o> <space>					: ""	UE3FB		# Sagittal quoquo
+<Multi_key> <Multi_key>	<m> <i> <m> <a> <g> <r> <a> <t> <h> <e> <a> <n>			: ""	UE3FC		# Sagittal mi
+<Multi_key> <Multi_key>	<m> <o> <m> <a> <g> <r> <a> <t> <h> <e> <a> <n>			: ""	UE3FD		# Sagittal mo
+<Multi_key> <Multi_key>	<q> <u> <i> <m> <i> <space>					: ""	UE3FE		# Sagittal quimi
+<Multi_key> <Multi_key>	<q> <u> <o> <m> <o> <space>					: ""	UE3FF		# Sagittal quomo
+<Multi_key> <Multi_key>	<q> <u> <i> <q> <u> <i> <m> <i> <space>				: ""	UE400		# Sagittal quiquimi
+<Multi_key> <Multi_key>	<q> <u> <o> <q> <u> <o> <m> <o> <space>				: ""	UE401		# Sagittal quoquomo
+<Multi_key> <Multi_key>	<m> <i> <m> <i> <m> <a> <g> <r> <a> <t> <h> <e> <a> <n>		: ""	UE402		# Sagittal mimi
+<Multi_key> <Multi_key>	<m> <o> <m> <o> <m> <a> <g> <r> <a> <t> <h> <e> <a> <n>		: ""	UE403		# Sagittal momo
+<Multi_key> <Multi_key>	<q> <u> <i> <m> <i> <m> <i>					: ""	UE404		# Sagittal quimimi
+<Multi_key> <Multi_key>	<q> <u> <o> <m> <o> <m> <o>					: ""	UE405		# Sagittal quomomo
+<Multi_key> <Multi_key>	<q> <u> <i> <q> <u> <i> <m> <i> <m> <i>				: ""	UE406		# Sagittal quiquimimi
+<Multi_key> <Multi_key>	<q> <u> <o> <q> <u> <o> <m> <o> <m> <o>				: ""	UE407		# Sagittal quoquomomo
+<Multi_key> <Multi_key>	<m> <i> <m> <i> <m> <i>						: ""	UE408		# Sagittal mimimi
+<Multi_key> <Multi_key>	<m> <o> <m> <o> <m> <o>						: ""	UE409		# Sagittal momomo
+<Multi_key> <Multi_key>	<i> <m> <a> <g> <r> <a> <t> <h> <e> <a> <n>			: ""	UE40A		# Sagittal i
+<Multi_key> <Multi_key>	<o> <m> <a> <g> <r> <a> <t> <h> <e> <a> <n>			: ""	UE40B		# Sagittal o
 
 # Spartan Sagittal single-shaft sagittals in the Bravura font (by Sagispeak, alternative spelling)
 <Multi_key> <Multi_key> <f> <a> <i> <space>						: ""	UE306		# Sagittal fai

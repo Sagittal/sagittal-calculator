@@ -35,11 +35,11 @@ wonky_sagittal_grid_positions_in_ps_fu = list(map(round_ideal_to_real, grid_rang
 
 # Kerning stuff
 
-glyphs_for_upward_diacritics_to_kern_with = [ 'uniE386', 'uniE382', 'uniE380', 'uniE37A',
+glyphs_for_upward_accents_to_kern_with = [ 'uniE386', 'uniE382', 'uniE380', 'uniE37A',
 'uniE374', 'uniE362', 'uniE34E', 'uniE334', 'uniE332', 'uniE330', 'uniE32E', 'uniE326',
 'uniE324', 'uniE31E', 'uniE318', 'uniE316', 'uniE30A', 'uniE308', 'uniE302' ]
 
-glyphs_for_downward_diacritics_to_kern_with = [ 'uniE387', 'uniE383', 'uniE381', 'uniE37B',
+glyphs_for_downward_accents_to_kern_with = [ 'uniE387', 'uniE383', 'uniE381', 'uniE37B',
 'uniE375', 'uniE363', 'uniE34F',   'uniE335', 'uniE333', 'uniE331', 'uniE32F', 'uniE327',
 'uniE325', 'uniE31F', 'uniE319', 'uniE317', 'uniE30B', 'uniE309', 'uniE303' ]
 
@@ -99,7 +99,7 @@ def fix_symbol_side_bearing(glyph, unicode):
 	glyph.condenseExtend(1, 0, 0, 0)  # remove existing side-bearing
 	glyph.right_side_bearing = 0
 
-def fix_diacritic_side_bearing(glyph, unicode):
+def fix_accent_side_bearing(glyph, unicode):
 	glyph.right_side_bearing = right_side_bearing
 
 # Fix up the font!
@@ -109,8 +109,8 @@ bravura = fontforge.open("C:/Users/DouglasBlumeyer/Desktop/BravuraSagittalUpdate
 sagittal_symbol_unicode_range_start = 0xe300
 sagittal_symbol_unicode_range_end = 0xe3f4
 
-sagittal_diacritic_unicode_range_start = 0xe3f2
-sagittal_diacritic_unicode_range_end = 0xe40c
+sagittal_accent_unicode_range_start = 0xe3f2
+sagittal_accent_unicode_range_end = 0xe40c
 
 sagittal_compatibles = [0xe284, 0xe285, 0xe47b, 0xe47c, 0xe47d]
 
@@ -135,41 +135,41 @@ for unicode in range(sagittal_symbol_unicode_range_start, sagittal_symbol_unicod
 
 	fix_symbol_side_bearing(downward_version_of_glyph, downward_version_of_glyph_unicode)
 
-for unicode in range(sagittal_diacritic_unicode_range_start, sagittal_diacritic_unicode_range_end, skip_every_other):
+for unicode in range(sagittal_accent_unicode_range_start, sagittal_accent_unicode_range_end, skip_every_other):
 	glyph = bravura[unicode]
 	print(hex(unicode))
 
-	for kerning_glyph in glyphs_for_upward_diacritics_to_kern_with:
+	for kerning_glyph in glyphs_for_upward_accents_to_kern_with:
 		glyph.addPosSub(kerning_table, kerning_glyph, 0, 0, -right_side_bearing, 0, 0, 0, 0, 0)
 
-	fix_diacritic_side_bearing(glyph, unicode)
+	fix_accent_side_bearing(glyph, unicode)
 
 	downward_version_of_glyph_unicode = unicode + 1
 	downward_version_of_glyph = bravura[downward_version_of_glyph_unicode]
 	replace_downward_glyph_with_mirrored_upward_glyph(glyph, downward_version_of_glyph, "Fore")
 	replace_downward_glyph_with_mirrored_upward_glyph(glyph, downward_version_of_glyph, "Back")
 
-	for kerning_glyph in glyphs_for_downward_diacritics_to_kern_with:
+	for kerning_glyph in glyphs_for_downward_accents_to_kern_with:
 		downward_version_of_glyph.addPosSub(kerning_table, kerning_glyph, 0, 0, -right_side_bearing, 0, 0, 0, 0, 0)
 
-	fix_diacritic_side_bearing(downward_version_of_glyph, downward_version_of_glyph_unicode)
+	fix_accent_side_bearing(downward_version_of_glyph, downward_version_of_glyph_unicode)
 
-# Additional kerning for schisma diacritics
+# Additional kerning for schisma accents
 upward_schisma_glyph = bravura[0xe3f2]
-additional_glyphs_for_upward_schisma_diacritic_to_kern_with = [
+additional_glyphs_for_upward_schisma_accent_to_kern_with = [
 'uniE3EA', 'uniE3E8', 'uniE3CE', 'uniE3CC', 'uniE3C2', 'uniE3BA', 'uniE3B8',
 'uniE39E', 'uniE39C', 'uniE392', 'uniE35E', 'uniE356', 'uniE34A', 'uniE342' ]
-for kerning_glyph in additional_glyphs_for_upward_schisma_diacritic_to_kern_with:
+for kerning_glyph in additional_glyphs_for_upward_schisma_accent_to_kern_with:
 	upward_schisma_glyph.addPosSub(kerning_table, kerning_glyph, 0, 0, -right_side_bearing, 0, 0, 0, 0, 0)
 
 downward_schisma_glyph = bravura[0xe3f3]
-additional_glyphs_for_downward_schisma_diacritic_to_kern_with = [
+additional_glyphs_for_downward_schisma_accent_to_kern_with = [
 'uniE3EB', 'uniE3E9', 'uniE3CF', 'uniE3CD', 'uniE3C3', 'uniE3BB', 'uniE3B9',
 'uniE39F', 'uniE39D', 'uniE393', 'uniE35F', 'uniE357', 'uniE34B', 'uniE343' ]
-for kerning_glyph in additional_glyphs_for_downward_schisma_diacritic_to_kern_with:
+for kerning_glyph in additional_glyphs_for_downward_schisma_accent_to_kern_with:
 	downward_schisma_glyph.addPosSub(kerning_table, kerning_glyph, 0, 0, -right_side_bearing, 0, 0, 0, 0, 0)
 
-# Add kerning between dots and other tina diacritics (and minas)
+# Add kerning between dots and other tina accents (and minas)
 
 upward_half_tina_glyph = bravura[0xe40a]
 upward_tina_glyphs_to_kern_with = ['uniE3F4', 'uniE3F6', 'uniE3F8', 'uniE3FA',
