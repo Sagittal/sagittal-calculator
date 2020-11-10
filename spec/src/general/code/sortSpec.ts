@@ -109,4 +109,6 @@ describe("sort", (): void => {
         const expected = [2.0000001, 2, 3, 4, 5, 7]
         expect(array).toEqual(expected)
     })
+
+    // TODO: MISCELLANEOUS: LET'S HAVE SORT THROW AN ERROR WHEN YOU TRY TO SORT BY SOMETHING THE OBJECTS DON'T HAVE
 })

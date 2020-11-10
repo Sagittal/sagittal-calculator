@@ -11,7 +11,7 @@ import {
 import {computeZoneComplexityMetricScore} from "../../../../src/scripts/complexityMetricLfc/zoneMetricScore"
 
 describe("computeZoneComplexityMetricScore", (): void => {
-    const COMMAS_FOR_1_455_n = [
+    const COMMAS_FOR_1_V_5_7_13_n = [
         {monzo: [17, -11, -3, 0, 0, 2]},
         {monzo: [-18, 11, -2, 0, 0, 0, 0, 0, 0, 0, 0, 1]},
         {monzo: [12, -2, -1, -1, 0, -1]},
@@ -20,7 +20,7 @@ describe("computeZoneComplexityMetricScore", (): void => {
         {monzo: [-21, 13, 2, 0, 0, 0, 0, -1]},
         {monzo: [-1, -7, 4, 1]},
     ] as Comma[]
-    const COMMAS_FOR_1_8575_k = [
+    const COMMAS_FOR_1_V_5_P_2_7_P_3_k = [
         {monzo: [-7, 11, -3, 0, -1]},
         {monzo: [21, -5, -2, -3]},
         {monzo: [24, -13, -1, 0, 1, 0, 0, 0, -1]},
@@ -43,7 +43,7 @@ describe("computeZoneComplexityMetricScore", (): void => {
 
         it("returns 0 when a comma is the least complex comma in its zone", (): void => {
             const actual = computeZoneComplexityMetricScore(
-                [CommaClassId._1_V_5_7_13_n, COMMAS_FOR_1_455_n],
+                [CommaClassId._1_V_5_7_13_n, COMMAS_FOR_1_V_5_7_13_n],
                 complexityMetric,
                 complexityParameterSet,
             )
@@ -55,12 +55,12 @@ describe("computeZoneComplexityMetricScore", (): void => {
         it("returns a squared distance between the actual comma's complexity and the least complex comma when a comma is not the least complex comma in its zone", (): void => {
             complexityMetricLfcScriptGroupSettings.sosMode = true
             const actual = computeZoneComplexityMetricScore(
-                [CommaClassId._1_V_5_P_2_7_P_3_k, COMMAS_FOR_1_8575_k],
+                [CommaClassId._1_V_5_P_2_7_P_3_k, COMMAS_FOR_1_V_5_P_2_7_P_3_k],
                 complexityMetric,
                 complexityParameterSet,
             )
 
-            // 1/8575's complexity is 7.866050, but 17/19k's complexity is 6.841035; (7.866050 - 6.841035)^2 = 1.050655
+            // 1/(5²⋅7³)k complexity is 7.866050, but 17/19k complexity is 6.841035; (7.866050 - 6.841035)^2 = 1.050655
             const expected = 1.050655 as Score<ComplexityMetric>
             expect(actual).toBeCloseTo(expected)
         })
@@ -73,7 +73,7 @@ describe("computeZoneComplexityMetricScore", (): void => {
 
         it("returns 0 points (good) when a comma is the least complex comma in its zone", (): void => {
             const actual = computeZoneComplexityMetricScore(
-                [CommaClassId._1_V_5_7_13_n, COMMAS_FOR_1_455_n],
+                [CommaClassId._1_V_5_7_13_n, COMMAS_FOR_1_V_5_7_13_n],
                 complexityMetric,
                 complexityParameterSet,
             )
@@ -84,12 +84,12 @@ describe("computeZoneComplexityMetricScore", (): void => {
 
         it("returns 1 point (bad) when a comma is not the least complex comma in its zone", (): void => {
             const actual = computeZoneComplexityMetricScore(
-                [CommaClassId._1_V_5_P_2_7_P_3_k, COMMAS_FOR_1_8575_k],
+                [CommaClassId._1_V_5_P_2_7_P_3_k, COMMAS_FOR_1_V_5_P_2_7_P_3_k],
                 complexityMetric,
                 complexityParameterSet,
             )
 
-            // 1/8575's complexity is 7.866050, but 17/19k's complexity is 6.841035; so, get penalized one point
+            // 1/(5²⋅7³)k complexity is 7.866050, but 17/19k complexity is 6.841035; so, get penalized one point
             const expected = 1 as Score<ComplexityMetric>
             expect(actual).toBe(expected)
         })

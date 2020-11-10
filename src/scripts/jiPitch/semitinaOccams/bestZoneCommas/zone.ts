@@ -14,8 +14,8 @@ const computeCommasBySemitinaZone = (
         {} as Record<RecordKey<Index<Semitina>>, Comma[]>,
     )
 
-    let semitinaZone = 0 as Index<Semitina>
     commas.forEach((comma: Comma): void => {
+        let semitinaZone = 0 as Index<Semitina>
         while (isScamonGreater(comma, MAX_SIZE_PER_SEMITINA_ZONE[semitinaZone])) {
             semitinaZone = increment(semitinaZone)
         }

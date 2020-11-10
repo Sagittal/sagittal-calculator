@@ -45,7 +45,7 @@ describe("computeZoneBadnessScore", (): void => {
                 [CommaClassId._1_V_5_P_2_7_P_3_k, COMMAS_FOR_1_V_5_P_2_7_P_3_k],
             )
 
-            // 1/8575's badness is 8.317604, but 17/19k's badness is 7.080159; (8.317604 - 7.080159)^2 = 1.531271
+            // 1/(5²⋅7³)k badness is 8.317604, but 17/19k badness is 7.080159; (8.317604 - 7.080159)^2 = 1.531271
             const expected = 1.531271 as Score<Notation>
             expect(actual).toBeCloseTo(expected)
         })
@@ -70,7 +70,7 @@ describe("computeZoneBadnessScore", (): void => {
                 [CommaClassId._1_V_5_P_2_7_P_3_k, COMMAS_FOR_1_V_5_P_2_7_P_3_k],
             )
 
-            // 1/8575's badness is 8.317604, but 17/19k's badness is 7.080159; so, get penalized one point
+            // 1/(5²⋅7³)k badness is 8.317604, but 17/19k badness is 7.080159; so, get penalized one point
             const expected = 1 as Score<Notation>
             expect(actual).toBe(expected)
         })

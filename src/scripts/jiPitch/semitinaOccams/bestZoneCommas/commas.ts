@@ -1,4 +1,4 @@
-import {BLANK, Comma, Filename, KeyPath, LogTarget, Monzo, readLines, saveLog, sort} from "../../../../general"
+import {BLANK, Comma, Filename, LogTarget, Monzo, readLines, saveLog} from "../../../../general"
 import {computeCommasFrom23FreeRationalMonzo} from "../../../../sagittal"
 
 const computeAllCommasLessThanHalfApotome = (): Comma[] => {
@@ -15,9 +15,6 @@ const computeAllCommasLessThanHalfApotome = (): Comma[] => {
             )
         })
     saveLog("commas gathered", LogTarget.PROGRESS)
-
-    sort(commas, {by: "cents" as KeyPath})
-    saveLog("commas sorted", LogTarget.PROGRESS)
 
     return commas
 }
