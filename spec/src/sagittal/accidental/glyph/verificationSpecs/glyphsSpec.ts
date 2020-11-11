@@ -1114,6 +1114,46 @@ describe("glyphs", (): void => {
                 ascii: "``" as Ascii,
                 smiley: ":``:" as Smiley,
             },
+            [AccentId.HORN]: {
+                unicode: "" as Unicode,
+                ascii: "@1" as Ascii,
+                smiley: ":@1:" as Smiley,
+            },
+            [AccentId.WEDGE]: {
+                unicode: "" as Unicode,
+                ascii: "@2" as Ascii,
+                smiley: ":@2:" as Smiley,
+            },
+            [AccentId.HORNWING]: {
+                unicode: "" as Unicode,
+                ascii: "@4" as Ascii,
+                smiley: ":@4:" as Smiley,
+            },
+            [AccentId.WEDGEWING]: {
+                unicode: "" as Unicode,
+                ascii: "@5" as Ascii,
+                smiley: ":@5:" as Smiley,
+            },
+            [AccentId.HORNBIRD]: {
+                unicode: "" as Unicode,
+                ascii: "@7" as Ascii,
+                smiley: ":@7:" as Smiley,
+            },
+            [AccentId.WEDGEBIRD]: {
+                unicode: "" as Unicode,
+                ascii: "@8" as Ascii,
+                smiley: ":@8:" as Smiley,
+            },
+            [AccentId.WINGBIRD]: {
+                unicode: "" as Unicode,
+                ascii: "@9" as Ascii,
+                smiley: ":@9:" as Smiley,
+            },
+            [AccentId.DOT]: {
+                unicode: "" as Unicode,
+                ascii: "@." as Ascii,
+                smiley: ":@.:" as Smiley,
+            },
         }
         expect(accentGlyphExpectations).toEqual(expected)
     })
@@ -1148,6 +1188,46 @@ describe("glyphs", (): void => {
                 unicode: "" as Unicode,
                 ascii: ",," as Ascii,
                 smiley: ":,,:" as Smiley,
+            },
+            [AccentId.HORN]: {
+                unicode: "" as Unicode,
+                ascii: "l1" as Ascii,
+                smiley: ":l1:" as Smiley,
+            },
+            [AccentId.WEDGE]: {
+                unicode: "" as Unicode,
+                ascii: "l2" as Ascii,
+                smiley: ":l2:" as Smiley,
+            },
+            [AccentId.HORNWING]: {
+                unicode: "" as Unicode,
+                ascii: "l4" as Ascii,
+                smiley: ":l4:" as Smiley,
+            },
+            [AccentId.WEDGEWING]: {
+                unicode: "" as Unicode,
+                ascii: "l5" as Ascii,
+                smiley: ":l5:" as Smiley,
+            },
+            [AccentId.HORNBIRD]: {
+                unicode: "" as Unicode,
+                ascii: "l7" as Ascii,
+                smiley: ":l7:" as Smiley,
+            },
+            [AccentId.WEDGEBIRD]: {
+                unicode: "" as Unicode,
+                ascii: "l8" as Ascii,
+                smiley: ":l8:" as Smiley,
+            },
+            [AccentId.WINGBIRD]: {
+                unicode: "" as Unicode,
+                ascii: "l9" as Ascii,
+                smiley: ":l9:" as Smiley,
+            },
+            [AccentId.DOT]: {
+                unicode: "" as Unicode,
+                ascii: "l." as Ascii,
+                smiley: ":l.:" as Smiley,
             },
         }
         expect(accentGlyphExpectations).toEqual(expected)

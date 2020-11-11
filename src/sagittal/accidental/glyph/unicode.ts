@@ -222,12 +222,28 @@ const ACCENT_TO_UNICODE_MAP: Record<AccentId, Unicode> = {
     [AccentId.TICK]: "" as Unicode,
     [AccentId.WING]: "" as Unicode,
     [AccentId.BIRD]: "" as Unicode,
+    [AccentId.HORN]: "" as Unicode,
+    [AccentId.WEDGE]: "" as Unicode,
+    [AccentId.HORNWING]: "" as Unicode,
+    [AccentId.WEDGEWING]: "" as Unicode,
+    [AccentId.HORNBIRD]: "" as Unicode,
+    [AccentId.WEDGEBIRD]: "" as Unicode,
+    [AccentId.WINGBIRD]: "" as Unicode,
+    [AccentId.DOT]: "" as Unicode,
 }
 
 const DOWN_ACCENT_TO_UNICODE_MAP: Record<AccentId, Unicode> = {
     [AccentId.TICK]: "" as Unicode,
     [AccentId.WING]: "" as Unicode,
     [AccentId.BIRD]: "" as Unicode,
+    [AccentId.HORN]: "" as Unicode,
+    [AccentId.WEDGE]: "" as Unicode,
+    [AccentId.HORNWING]: "" as Unicode,
+    [AccentId.WEDGEWING]: "" as Unicode,
+    [AccentId.HORNBIRD]: "" as Unicode,
+    [AccentId.WEDGEBIRD]: "" as Unicode,
+    [AccentId.WINGBIRD]: "" as Unicode,
+    [AccentId.DOT]: "" as Unicode,
 }
 
 const COMPATIBLE_TO_UNICODE_MAP: Record<Compatible, Unicode> = {

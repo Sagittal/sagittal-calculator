@@ -51,12 +51,28 @@ const ACCENT_TO_ASCII_MAP: Record<AccentId, Ascii> = {
     [AccentId.TICK]: "'" as Ascii,
     [AccentId.WING]: "`" as Ascii,
     [AccentId.BIRD]: "``" as Ascii,
+    [AccentId.HORN]: "@1" as Ascii,
+    [AccentId.WEDGE]: "@2" as Ascii,
+    [AccentId.HORNWING]: "@4" as Ascii,
+    [AccentId.WEDGEWING]: "@5" as Ascii,
+    [AccentId.HORNBIRD]: "@7" as Ascii,
+    [AccentId.WEDGEBIRD]: "@8" as Ascii,
+    [AccentId.WINGBIRD]: "@9" as Ascii,
+    [AccentId.DOT]: "@." as Ascii,
 }
 
 const DOWN_ACCENT_TO_ASCII_MAP: Record<AccentId, Ascii> = {
     [AccentId.TICK]: "." as Ascii,
     [AccentId.WING]: "," as Ascii,
     [AccentId.BIRD]: ",," as Ascii,
+    [AccentId.HORN]: "l1" as Ascii,
+    [AccentId.WEDGE]: "l2" as Ascii,
+    [AccentId.HORNWING]: "l4" as Ascii,
+    [AccentId.WEDGEWING]: "l5" as Ascii,
+    [AccentId.HORNBIRD]: "l7" as Ascii,
+    [AccentId.WEDGEBIRD]: "l8" as Ascii,
+    [AccentId.WINGBIRD]: "l9" as Ascii,
+    [AccentId.DOT]: "l." as Ascii,
 }
 
 const COMPATIBLE_TO_ASCII_MAP: Record<Compatible, Ascii> = {

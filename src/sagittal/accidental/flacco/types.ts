@@ -2,6 +2,14 @@ enum AccentId {
     TICK = "tick",
     WING = "wing",
     BIRD = "bird",
+    HORN = "horn",
+    WEDGE = "wedge",
+    HORNWING = "hornwing",
+    WEDGEWING = "wedgewing",
+    HORNBIRD = "hornbird",
+    WEDGEBIRD = "wedgebird",
+    WINGBIRD = "wingbird",
+    DOT = "dot",
 }
 
 type Accent = {
@@ -17,6 +25,11 @@ enum ArmId {
     ANTIWING_AND_TICK = "antiwingAndTick",
     TICK = "tick",
     WING_AND_TICK = "wingAndTick",
+    // I don't think we've defined which Magrathean arms are valid yet
+    // I'm not sure I can just infer what it would be,
+    // Considering that it seems like we very well could have ANTIBIRD_AND_TICK yet we don't
+    // Once you have it, then it would make sense to expand the `glyph/parse` spec to check it can find Magrathean arms
+    // It also slightly disconcerts me that there's no way for it output bird and wing as @3 and @6. Maybe script flag?
 }
 
 enum FlagId {
