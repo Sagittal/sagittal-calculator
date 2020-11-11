@@ -1,3 +1,4 @@
+// TODO: MISCELLANEOUS, give it the ability to parse ASCII into JI pitches.
 enum PitchFormat {
     MONZO = "monzo",
     QUOTIENT = "quotient",
