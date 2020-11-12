@@ -35,6 +35,7 @@ export {
     alignFormattedDecimal,
     formatIntegerDecimal,
     formatMonzo,
+    formatVal,
     formatDecimal,
     formatQuotient,
     formatTime,

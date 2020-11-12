@@ -30,4 +30,13 @@ describe("computeMonzoMapping", (): void => {
         const expected = 7 as Step
         expect(actual).toBe(expected)
     })
+
+    it("throws an error if the monzo is longer than the val, i.e. if it does not have a mapping for every prime exponent in the monzo", (): void => {
+        const monzo = [2, 1, -1, -3, 1, 1] as Monzo
+        const val = [12, 19, 28] as Val
+
+        expect((): void => {
+            computeMonzoMapping(monzo, val)
+        }).toThrowError("Please provide a val with a prime limit at least as high as the monzo it is mapping. This val ⟨  12  19  28 ] could not map monzo [   2   1  -1  -3   1   1 ⟩.")
+    })
 })

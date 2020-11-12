@@ -1,16 +1,7 @@
 import {indexOfFinalElement} from "../../code"
-import {Exponent, Monzo, NumericProperties, Prime} from "../../math"
-import {Io} from "../types"
+import {Monzo, NumericProperties} from "../../math"
+import {spaceMonzoOrValExponent} from "./spaceMonzoOrValExponent"
 import {Formatted} from "./types"
-
-const spacePrimeExponent = (primeExponent: Exponent<Prime>): Io => {
-    let primeExponentText = primeExponent.toString()
-    while (primeExponentText.length < 3) {
-        primeExponentText = " " + primeExponentText
-    }
-
-    return primeExponentText as Io
-}
 
 const formatMonzo = <T extends NumericProperties>(
     monzo: Monzo<T>,
@@ -19,11 +10,11 @@ const formatMonzo = <T extends NumericProperties>(
     let contents
     if (punctuated) {
         const two3FreeMonzo: Monzo<T & {rough: 5}> = monzo.splice(2) as Monzo<T & {rough: 5}>
-        contents = monzo.map(spacePrimeExponent).join(" ") + ", "
+        contents = monzo.map(spaceMonzoOrValExponent).join(" ") + ", "
 
         let index = 0
         while (index < two3FreeMonzo.length) {
-            contents = contents + spacePrimeExponent(two3FreeMonzo[index])
+            contents = contents + spaceMonzoOrValExponent(two3FreeMonzo[index])
             if (index < indexOfFinalElement(two3FreeMonzo)) {
                 if (index % 3 === 2) {
                     contents = contents + ", "
@@ -34,7 +25,7 @@ const formatMonzo = <T extends NumericProperties>(
             index += 1
         }
     } else {
-        contents = monzo.map(spacePrimeExponent).join(" ")
+        contents = monzo.map(spaceMonzoOrValExponent).join(" ")
     }
 
     return `[ ${contents} ⟩` as Formatted<Monzo<T>>

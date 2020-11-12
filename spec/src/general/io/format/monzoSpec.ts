@@ -27,4 +27,5 @@ describe("formatMonzo", (): void => {
     //  It also allows things like writing single-prime-factor-above-3 commas
     //  (like in the Sagittal Prime Factor notation) as: [2 3,,,,37⟩
     //  Do this for both parsing and formatting
+    //  And possibly also for vals
 })
