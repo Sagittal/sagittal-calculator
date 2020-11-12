@@ -1,3 +1,4 @@
+import {stringify} from "../io"
 import {DEFAULT_PRECISION} from "./constants"
 import {dig} from "./dig"
 import {isCloseTo} from "./isCloseTo"
@@ -11,7 +12,15 @@ const isNotClose = (a: number | string, b: number | string, precision: Precision
 }
 
 const sort = <T>(array: T[], {by, descending, precision}: SortOptions = {}): T[] => {
+    if (array.length === 0) return array
+
     if (!isUndefined(by)) {
+        try {
+            dig(array[0] as unknown as Sortable, by, {strict: true})
+        } catch (e) {
+            throw new Error(`"Attempted to sort array by ${stringify(by)}, however the elements do not have this property. Example element: ${stringify(array[0])}`)
+        }
+
         (array as unknown[] as Sortable[])
             .sort((element: Sortable, nextElement: Sortable): number => {
                 const nextSorter = dig(nextElement, by) as number | string

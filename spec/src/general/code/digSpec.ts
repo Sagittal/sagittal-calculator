@@ -57,4 +57,72 @@ describe("dig", (): void => {
         const expected = (object as Record<"a", Record<2, Record<"c", unknown>>>)["a"][2]["c"]
         expect(actual).toBe(expected)
     })
+
+    it("throws an error if strict is true, parents is not provided, and the path does not exist on the object            ", (): void => {
+        const path = ["a", "c"] as KeyPath
+        const object = {a: {b: 3}} as Obj
+
+        expect((): void => {
+            dig(object, path, {strict: true})
+        }).toThrowError(`Failed to dig value at ["a","c"] of {"a":{"b":3}}.`)
+    })
+
+    it("throws an error if strict is true, parents is not provided, the path is only one-deep, and the path does not exist on the object", (): void => {
+        const path = "c" as KeyPath
+        const object = {a: {b: 3}} as Obj
+
+        expect((): void => {
+            dig(object, path, {strict: true})
+        }).toThrowError(`Failed to dig value at "c" of {"a":{"b":3}}.`)
+    })
+
+    it("does not throw an error if strict is not true, parents is not provided, the path does not exist on the object              ", (): void => {
+        const path = ["a", "c"] as KeyPath
+        const object = {a: {b: 3}} as Obj
+
+        const actual = dig(object, path)
+
+        const expected = undefined
+        expect(actual).toBe(expected)
+    })
+
+    it("does not throw an error if strict is not true, parents is not provided, the path is only one-deep, and does not exist on the object", (): void => {
+        const path = "c" as KeyPath
+        const object = {a: {b: 3}} as Obj
+
+        const actual = dig(object, path)
+
+        const expected = undefined
+        expect(actual).toBe(expected)
+    })
+
+    it("does not throw an error if strict is true but parents is provided, and the path does not exist on the object          ", (): void => {
+        const path = ["a", "c"] as KeyPath
+        const object = {a: {b: 3}} as Obj
+
+        const actual = dig(object, path, {strict: true, parents: {}})
+
+        const expected = (object as Record<"a", Record<"c", unknown>>)["a"]["c"]
+        expect(actual).toBe(expected)
+    })
+
+    it("does not throw an error if strict is true but parents is provided, the path is only one-deep, and does not exist on the object", (): void => {
+        const path = "c" as KeyPath
+        const object = {a: {b: 3}} as Obj
+
+        const actual = dig(object, path, {strict: true, parents: {}})
+
+        const expected = (object as Record<"c", unknown>)["c"]
+        expect(actual).toBe(expected)
+    })
+
+    it("when using the parents option, creates the key even if it is only one deep", (): void => {
+        const path = "a" as KeyPath
+        const object = {} as Obj
+
+        const actual = dig(object, path, {parents: true})
+
+        const expected = (object as Record<"a", unknown>)["a"]
+        expect(actual).toBe(expected)
+    })
 })

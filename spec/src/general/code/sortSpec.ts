@@ -45,7 +45,7 @@ describe("sort", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    it("when provided a key to sort by, assumes the array is of objects with that key", (): void => {
+    it("when provided a key to sort by, sorts the array as an array of objects with that key", (): void => {
         const array = [{a: 5, b: 9}, {a: 1, b: 8}, {a: 7, b: 7}, {a: 2, b: 6}, {a: 4, b: 5}, {a: 3, b: 4}]
 
         sort(array, {by: "a" as KeyPath})
@@ -59,6 +59,14 @@ describe("sort", (): void => {
             {a: 7, b: 7},
         ]
         expect(array).toEqual(expected)
+    })
+
+    it("throws an error if you attempt to sort by a key which does not exist on the objects in the array", (): void => {
+        const array = [{a: 5, b: 9}, {a: 1, b: 8}, {a: 7, b: 7}, {a: 2, b: 6}, {a: 4, b: 5}, {a: 3, b: 4}]
+
+        expect((): void => {
+            sort(array, {by: "c" as KeyPath})
+        }).toThrowError(`"Attempted to sort array by "c", however the elements do not have this property. Example element: {"a":5,"b":9}`)
     })
 
     it("can sort descending", (): void => {
@@ -109,6 +117,4 @@ describe("sort", (): void => {
         const expected = [2.0000001, 2, 3, 4, 5, 7]
         expect(array).toEqual(expected)
     })
-
-    // TODO: MISCELLANEOUS: LET'S HAVE SORT THROW AN ERROR WHEN YOU TRY TO SORT BY SOMETHING THE OBJECTS DON'T HAVE
 })
