@@ -86,7 +86,7 @@ describe("analyze-ji-pitch", (): void => {
     it("can analyze a JI pitch, given it in the form of an accidental (expressed as ASCII)", (): void => {
         onlyRunInCi()
 
-        const script = `npm run analyze-ji-pitch -- --accidental "\\\`)|(" --max-n2d3p9 ${OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS} --max-ate ${OLD_MAX_ATE_FOR_SHORTER_TEST_RESULTS} --max-aas ${OLD_MAX_AAS_FOR_SHORTER_TEST_RESULTS}` as Io
+        const script = `npm run analyze-ji-pitch -- --accidental "\`)|(" --max-n2d3p9 ${OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS} --max-ate ${OLD_MAX_ATE_FOR_SHORTER_TEST_RESULTS} --max-aas ${OLD_MAX_AAS_FOR_SHORTER_TEST_RESULTS}` as Io
 
         const actual = runScriptAndGetConsoleOutput(script)
 
