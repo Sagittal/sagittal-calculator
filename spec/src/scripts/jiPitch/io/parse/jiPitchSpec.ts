@@ -1,6 +1,9 @@
 import {program} from "commander"
 import {Scamon} from "../../../../../../src/general/math/numeric/scamon"
+import {ArmId, HeadId} from "../../../../../../src/sagittal/accidental/flacco"
+import {Compatible} from "../../../../../../src/sagittal/accidental/flavor"
 import {parseJiPitch, readJiPitchIoAndFormat} from "../../../../../../src/scripts/jiPitch/io/parse"
+import {computeAccidental} from "../../../../../helpers/src/sagittal/accidental/accidental"
 
 describe("parseJiPitch", (): void => {
     beforeEach((): void => {
@@ -9,6 +12,7 @@ describe("parseJiPitch", (): void => {
         program.quotient = undefined
         program.commaName = undefined
         program.integer = undefined
+        program.accidental = undefined
     })
 
     describe("when the JI pitch is provided as an argument directly (not as a specific flag)", (): void => {
@@ -51,6 +55,19 @@ describe("parseJiPitch", (): void => {
             const expected = {monzo: [0, 1]} as Scamon<{rational: true}>
             expect(actual).toEqual(expected)
         })
+
+        it("works for an accidental", (): void => {
+            program.args = ["``~~|#"]
+            const [jiPitchIo, pitchFormat] = readJiPitchIoAndFormat()
+
+            const actual = parseJiPitch(jiPitchIo, pitchFormat)
+
+            // ``~~|# =
+            // ``~~|    [  13  -9   0  -1   0   0   1 ⟩
+            //      #   [ -11   7                     ⟩
+            const expected = {monzo: [2, -2, 0, -1, 0, 0, 1]} as Scamon<{rational: true}>
+            expect(actual).toEqual(expected)
+        })
     })
 
     describe("when the JI pitch is provided by a specific flag", (): void => {
@@ -84,13 +101,30 @@ describe("parseJiPitch", (): void => {
             expect(actual).toEqual(expected)
         })
 
-        it("works for a decimal (which will have been pre-parsed into an integer)", (): void => {
+        it("works for an integer decimal (which will have been pre-parsed as such)", (): void => {
             program.integer = 3
             const [jiPitchIo, pitchFormat] = readJiPitchIoAndFormat()
 
             const actual = parseJiPitch(jiPitchIo, pitchFormat)
 
             const expected = {monzo: [0, 1]} as Scamon<{rational: true}>
+            expect(actual).toEqual(expected)
+        })
+
+        it("works for an accidental (which will have been pre-parsed as such", (): void => {
+            program.accidental = computeAccidental({                                    // ``~~|#
+                armId: ArmId.BIRD,
+                headId: HeadId.DOUBLE_LEFT_BOATHOOK,
+                compatible: Compatible.SHARP,
+            })
+            const [jiPitchIo, pitchFormat] = readJiPitchIoAndFormat()
+
+            const actual = parseJiPitch(jiPitchIo, pitchFormat)
+
+            // ``~~|# =
+            // ``~~|    [  13  -9   0  -1   0   0   1 ⟩
+            //      #   [ -11   7                     ⟩
+            const expected = {monzo: [2, -2, 0, -1, 0, 0, 1]} as Scamon<{rational: true}>
             expect(actual).toEqual(expected)
         })
     })

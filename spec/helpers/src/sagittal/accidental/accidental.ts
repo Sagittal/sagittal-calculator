@@ -145,6 +145,7 @@ const computeAccidental = (options: AccidentalOptions = {}): Accidental => {
     return accidental
 }
 
+// TODO: so this is cool and all, but it's an issue when you pull this module in from tmp.ts script.
 describe("computeAccidental", (): void => {
     it("returns the accidental", (): void => {
         const headId = HeadId.BARB_AND_ARC

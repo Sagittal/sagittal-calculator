@@ -1,4 +1,4 @@
-import {Comma, formatPitch, isScamonGreater, isUndefined} from "../../../general"
+import {Comma, formatPitch, isScamonGreater, isUndefined, stringify} from "../../../general"
 import {SIZE_CATEGORIES} from "./sizeCategories"
 import {SIZE_CATEGORY_BOUNDS} from "./sizeCategoryBounds"
 import {SizeCategoryAbbreviation, SizeCategoryBound, SizeCategoryName, SizeCategoryOptions} from "./types"

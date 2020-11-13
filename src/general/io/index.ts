@@ -3,7 +3,8 @@ export {colorize} from "./colorize"
 export {ScriptFlag, setupScriptAndIo} from "./scripts"
 export {
     IDENTIFYING_COMMA_NAME_CHARS,
-    ANY_MONZO_CHARS,
+    IDENTIFYING_MONZO_CHARS,
+    IDENTIFYING_ACCIDENTAL_CHARS,
     BLANK,
     IO_PRECISION,
     NEWLINE,
@@ -11,11 +12,14 @@ export {
     SUPERSCRIPT_NUMBERS,
     TAB,
     COMMA,
-    ANY_CENTS_CHARS,
-    ANY_QUOTIENT_CHARS,
+    IDENTIFYING_CENTS_CHARS,
+    IDENTIFYING_QUOTIENT_CHARS,
+    NUMERIC_CHARS,
 } from "./constants"
 export {clearLogFiles, LogTarget, saveLog, setLogTargets} from "./log"
-export {parse23FreeClass, parseMonzo, parseQuotient, parseCents, parseInteger, parseDecimal} from "./parse"
+export {
+    parse23FreeClass, parseMonzo, parseQuotient, parseCents, parseInteger, parseDecimal, DOT_OPERATOR,
+} from "./parse"
 export {removeColor} from "./removeColor"
 export {stringify} from "./stringify"
 export {

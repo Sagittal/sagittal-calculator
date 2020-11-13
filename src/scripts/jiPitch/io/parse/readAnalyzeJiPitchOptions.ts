@@ -3,6 +3,7 @@ import {
     Comma,
     Decimal,
     Io,
+    Maybe,
     Monzo,
     parseInteger,
     parseMonzo,
@@ -10,7 +11,13 @@ import {
     Quotient,
     ScriptFlag,
 } from "../../../../general"
-import {computeCommaFromCommaNameQuotientAndSizeCategoryName, parseCommaName} from "../../../../sagittal"
+import {
+    Accidental,
+    Ascii,
+    computeCommaFromCommaNameQuotientAndSizeCategoryName,
+    parseAscii,
+    parseCommaName,
+} from "../../../../sagittal"
 
 const readAnalyzeJiPitchOptions = (): void => {
     program
@@ -30,6 +37,11 @@ const readAnalyzeJiPitchOptions = (): void => {
             (commaNameText: string): Comma => {
                 return computeCommaFromCommaNameQuotientAndSizeCategoryName(parseCommaName(commaNameText as Io))
             },
+        )
+        .option(
+            `-${ScriptFlag.ACCIDENTAL}, --accidental <symbol>`,
+            "accidental",
+            (accidentalText: string): Maybe<Accidental> => parseAscii(accidentalText as Ascii),
         )
         .option(
             `-${ScriptFlag.INTEGER}, --integer <integer>`,

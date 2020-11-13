@@ -63,4 +63,5 @@ export {
     computeRationalScamonSmoothness,
     isRationalScamonSmooth,
     subtractRationalScamons,
+    sumRationalScamons,
 } from "./scamon"

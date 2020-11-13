@@ -154,7 +154,7 @@ const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
         representativeSymbolClassId: SymbolClassId.WING_AND_DOUBLE_LEFT_BOATHOOK,
         pitch: {monzo: [-8, 6, 0, 0, 1, 0, 0, 0, 0, 0, -1]} as Comma,
     },
-    /*38*/[CommaClassId._17_V_7_C]: {
+    /*38*/[CommaClassId._17_V_7_C]: {                                     // TODO: could be helpful to have symbols here
         representativeSymbolClassId: SymbolClassId.BIRD_AND_DOUBLE_LEFT_BOATHOOK,
         pitch: {monzo: [13, -9, 0, -1, 0, 0, 1]} as Comma,
     },
@@ -180,7 +180,7 @@ const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
     },
     /*44*/[CommaClassId._1_V_5_C]: {
         representativeSymbolClassId: SymbolClassId.LEFT_BARB,
-        pitch: {monzo: [-4, 4, -1]} as Comma,
+        pitch: {monzo: [-4, 4, -1]} as Comma,   // TODO: name syntonic comma?
     },
     /*45*/[CommaClassId._5_P_3_7_C]: {
         representativeSymbolClassId: SymbolClassId.WING_AND_LEFT_BARB,

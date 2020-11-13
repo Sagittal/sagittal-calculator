@@ -5,8 +5,9 @@ import {
     formatPitch,
     Io,
     isScamonRational,
-    Scamon,
+    Scamon, stringify,
 } from "../../../../general"
+import {computeJiPitchFromAccidental} from "../../../../sagittal"
 import {parsePitch} from "./pitch"
 import {PitchFormat} from "./types"
 
@@ -27,6 +28,8 @@ const parseJiPitch = (jiPitchIo: Io, pitchFormat: PitchFormat = PitchFormat.UNKN
         jiPitch = {monzo: computeRationalMonzoFromRationalQuotient(program.quotient)} as Scamon<{rational: true}>
     } else if (pitchFormat === PitchFormat.COMMA_NAME) {
         jiPitch = program.commaName
+    } else if (pitchFormat === PitchFormat.ACCIDENTAL) {
+        jiPitch = computeJiPitchFromAccidental(program.accidental)
     } else if (pitchFormat === PitchFormat.INTEGER) {
         jiPitch = {monzo: computeRationalMonzoFromRationalDecimal(program.integer)} as Scamon<{rational: true}>
     } else {

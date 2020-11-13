@@ -16,4 +16,6 @@ export {
     computeRationalScamonFromRationalMonzo,
     computeRationalScamonFromRationalQuotient,
 } from "./from"
-export {addRationalScamons, subtractRationalScamons, computeRationalScamonGeometricMean} from "./typedOperations"
+export {
+    addRationalScamons, subtractRationalScamons, computeRationalScamonGeometricMean, sumRationalScamons,
+} from "./typedOperations"

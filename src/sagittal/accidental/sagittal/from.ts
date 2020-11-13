@@ -1,13 +1,12 @@
 import {isUndefined, Maybe} from "../../../general"
-import {getSymbolClass, SymbolClassId} from "../../notation"
+import {getSymbolClass, SymbolClass, SymbolClassId} from "../../notation"
 import {Flacco, getFlacco} from "../flacco"
 import {Sagittal, Shafts} from "./types"
 
 const computeSagittalFromSymbolClassId = (symbolClassId: SymbolClassId): Maybe<Sagittal> => {
     const symbolClass = getSymbolClass(symbolClassId)
-    const flacco = getFlacco(symbolClass.flaccoId)
 
-    return computeSagittalFromFlacco(flacco)
+    return computeSagittalFromSymbolClass(symbolClass)
 }
 
 const computeSagittalFromFlacco = (flacco: Flacco): Maybe<Sagittal> => {
@@ -19,7 +18,14 @@ const computeSagittalFromFlacco = (flacco: Flacco): Maybe<Sagittal> => {
     }
 }
 
+const computeSagittalFromSymbolClass = (symbolClass: SymbolClass): Maybe<Sagittal> => {
+    const flacco = getFlacco(symbolClass.flaccoId)
+
+    return computeSagittalFromFlacco(flacco)
+}
+
 export {
     computeSagittalFromSymbolClassId,
     computeSagittalFromFlacco,
+    computeSagittalFromSymbolClass,
 }

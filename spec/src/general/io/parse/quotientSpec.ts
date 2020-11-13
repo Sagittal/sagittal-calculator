@@ -29,6 +29,15 @@ describe("parseQuotient", (): void => {
     })
 
     it("works for factored quotients", (): void => {
+        const quotientIo = "5²⋅11" as Io
+
+        const actual = parseQuotient(quotientIo)
+
+        const expected = [275, 1] as Quotient<{rational: true}>
+        expect(actual).toEqual(expected)
+    })
+
+    it("works for factored quotients, using the period rather than the dot operator", (): void => {
         const quotientIo = "5².11" as Io
 
         const actual = parseQuotient(quotientIo)

@@ -15,6 +15,8 @@ const readJiPitchIoAndFormat = (): [Io, PitchFormat] => {
         return [program.quotient, PitchFormat.QUOTIENT]
     } else if (program.commaName) {
         return [program.commaName, PitchFormat.COMMA_NAME]
+    } else if (program.accidental) {
+        return [program.accidental, PitchFormat.ACCIDENTAL]
     } else if (program.integer) {
         return [program.integer, PitchFormat.INTEGER]
     } else {

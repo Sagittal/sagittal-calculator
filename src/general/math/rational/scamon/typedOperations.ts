@@ -1,4 +1,4 @@
-import {addMonzos, NumericProperties, Quotient, Scamon, subtractMonzos, sumMonzos} from "../../numeric"
+import {addMonzos, Monzo, NumericProperties, Quotient, Scamon, subtractMonzos, sumMonzos} from "../../numeric"
 import {Mean, MeanType} from "../../types"
 import {computeRationalMonzoFromRationalScamon} from "../monzo"
 
@@ -27,8 +27,16 @@ const computeRationalScamonGeometricMean = (
     } as Mean<{of: Scamon<{rational: false}>, meanType: MeanType.GEOMETRIC}>
 }
 
+const sumRationalScamons = <T extends NumericProperties>(
+    ...rationalScamons: Array<Scamon<T & {rational: true}>>
+): Scamon<T & {direction: undefined, integer: false, rational: true}> =>
+    ({
+        monzo: sumMonzos(...rationalScamons.map(computeRationalMonzoFromRationalScamon)),
+    }) as Scamon<T & {direction: undefined, integer: false, rational: true}>
+
 export {
     subtractRationalScamons,
     addRationalScamons,
     computeRationalScamonGeometricMean,
+    sumRationalScamons,
 }

@@ -22,3 +22,4 @@ export {
     parseAscii,
     Glyph,
 } from "./glyph"
+export {computeJiPitchFromAccidental} from "./pitch"

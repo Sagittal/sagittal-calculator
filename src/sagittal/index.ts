@@ -55,6 +55,8 @@ export {
     computeSagittalUnicode,
     parseAscii,
     Glyph,
+    Accidental,
+    computeJiPitchFromAccidental,
 } from "./accidental"
 export {
     computeMaybeCommaClassId,

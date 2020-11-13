@@ -157,7 +157,7 @@ const computeApotomeComplement = (sagittal: Maybe<Sagittal>): Maybe<Sagittal> =>
     )
 
     if (isUndefined(apotomeComplementCore)) {
-        throw new Error(`Tried to compute apotome complement for sagittal whose core is outside the 1st apotome section ${stringify(core)}`)
+        throw new Error(`Failed to compute apotome complement for sagittal. Perhaps its core is outside the 1st apotome section? ${stringify(core)}`)
     }
 
     if (deepEquals(apotomeComplementCore, getCore(HeadId.LEFT_SCROLL_AND_DOUBLE_BARB))) {

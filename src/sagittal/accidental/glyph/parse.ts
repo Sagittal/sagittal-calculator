@@ -1,17 +1,18 @@
 import {BLANK, Char, Count, increment, isEmpty, Maybe, shallowClone} from "../../../general"
 import {AccentId, Arm, FlagId} from "../flacco"
-import {Sagittal, Shafts} from "../sagittal"
+import {Accidental, Compatible} from "../flavor"
+import {Shafts} from "../sagittal"
 import {PARENTHETICAL_NATURAL_ASCII} from "./constants"
 import {Ascii} from "./types"
 
-const parseAscii = (ascii: Ascii): Maybe<Sagittal> => {
-    if (ascii === PARENTHETICAL_NATURAL_ASCII) return
+const parseAscii = (ascii: Ascii): Maybe<Accidental> => {
+    if (ascii === PARENTHETICAL_NATURAL_ASCII) return undefined
 
     const down = !!ascii.match(/[Y!]/g)
 
     let pastShaft = false
 
-    const sagittal = {} as Sagittal
+    const accidental = {} as Accidental
 
     let shaftCount = 0 as Count
 
@@ -19,22 +20,44 @@ const parseAscii = (ascii: Ascii): Maybe<Sagittal> => {
     const left = [] as FlagId[]
     const right = [] as FlagId[]
 
-    let sagittalText = shallowClone(ascii)
-    if (sagittalText.match("``")) {
+    let accidentalText = shallowClone(ascii)
+    if (accidentalText.match(/``/)) {
         down ?
             arm.push({id: AccentId.BIRD, anti: true}) :
             arm.push({id: AccentId.BIRD})
-        sagittalText = sagittalText.replace("``", "") as Ascii
+        accidentalText = accidentalText.replace(/``/, "") as Ascii
     }
-    if (sagittalText.match(",,")) {
+    if (accidentalText.match(/,,/)) {
         down ?
             arm.push({id: AccentId.BIRD}) :
             arm.push({id: AccentId.BIRD, anti: true})
-        sagittalText = sagittalText.replace(",,", "") as Ascii
+        accidentalText = accidentalText.replace(/,,/, "") as Ascii
     }
 
-    const sagittalChars = sagittalText.split(BLANK) as Char[]
-    sagittalChars.forEach((sagittalChar: Char): void => {
+    if (accidentalText.match(/bb/)) {
+        accidental.compatible = Compatible.DOUBLE_FLAT
+    } else if (accidentalText.match(/>#/)) {
+        accidental.compatible = Compatible.STEIN_SESQUISHARP
+    } else if (accidentalText.match(/<b/)) {
+        accidental.compatible = Compatible.ZIMMERMANN_SESQUIFLAT
+    } else if (accidentalText.match(/>/)) {
+        accidental.compatible = Compatible.STEIN_SEMISHARP
+    } else if (accidentalText.match(/</)) {
+        accidental.compatible = Compatible.STEIN_SEMIFLAT
+    } else if (accidentalText.match(/\+/)) {
+        accidental.compatible = Compatible.WILSON_PLUS
+    } else if (accidentalText.match(/-/)) {
+        accidental.compatible = Compatible.WILSON_MINUS
+    } else if (accidentalText.match(/b/)) {
+        accidental.compatible = Compatible.FLAT
+    } else if (accidentalText.match(/#/)) {
+        accidental.compatible = Compatible.SHARP
+    } else if (accidentalText.match(/x/)) {
+        accidental.compatible = Compatible.DOUBLE_SHARP
+    }
+
+    const accidentalChars = accidentalText.split(BLANK) as Char[]
+    accidentalChars.forEach((sagittalChar: Char): void => {
         if (sagittalChar === "`") {
             down ?
                 arm.push({id: AccentId.WING, anti: true}) :
@@ -80,19 +103,19 @@ const parseAscii = (ascii: Ascii): Maybe<Sagittal> => {
         }
     })
 
-    if (down) sagittal.down = down
-    sagittal.shafts = shaftCount === 1 ?
+    if (down) accidental.down = down
+    accidental.shafts = shaftCount === 1 ?
         Shafts.SINGLE :
         shaftCount === 2 ?
             Shafts.DOUBLE :
             shaftCount === 3 ?
                 Shafts.TRIPLE :
                 Shafts.EX
-    if (!isEmpty(arm)) sagittal.arm = arm
-    if (!isEmpty(left)) sagittal.left = left
-    if (!isEmpty(right)) sagittal.right = right
+    if (!isEmpty(arm)) accidental.arm = arm
+    if (!isEmpty(left)) accidental.left = left
+    if (!isEmpty(right)) accidental.right = right
 
-    return sagittal
+    return accidental
 }
 
 export {

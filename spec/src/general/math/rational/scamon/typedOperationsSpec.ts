@@ -1,4 +1,4 @@
-import {Multiplier} from "../../../../../../src/general"
+import {Multiplier, sumRationalScamons} from "../../../../../../src/general"
 import {Decimal, Mean, MeanType, multiplyScamon} from "../../../../../../src/general/math"
 import {Scamon} from "../../../../../../src/general/math/numeric/scamon"
 import {
@@ -55,6 +55,19 @@ describe("multiplyScamon", (): void => {
         const actual = multiplyScamon(scamon, multiplier)
 
         const expected = {monzo: [0, 5, -15, 10]} as Scamon<{rational: true}>
+        expect(actual).toEqual(expected)
+    })
+})
+
+describe("sumRationalScamons", (): void => {
+    it("sums the corresponding terms in each scamon's monzo", (): void => {
+        const scamonA = {monzo: [0, -5, 1]} as Scamon<{rational: true}>
+        const scamonB = {monzo: [2, 0, 1]} as Scamon<{rational: true}>
+        const scamonC = {monzo: [0, 4, 1]} as Scamon<{rational: true}>
+
+        const actual = sumRationalScamons(scamonA, scamonB, scamonC)
+
+        const expected = {monzo: [2, -1, 3]} as Scamon<{rational: true}>
         expect(actual).toEqual(expected)
     })
 })

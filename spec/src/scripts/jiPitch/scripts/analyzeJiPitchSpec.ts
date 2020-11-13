@@ -33,7 +33,7 @@ describe("analyze-ji-pitch", (): void => {
         "",
     ] as Io[]
 
-    it("analyzes a JI pitch, given it in monzo form (note that it includes inverses in the notating commas list)", (): void => {
+    it("can analyze a JI pitch, given it in the form of a monzo (note that it includes inverses in the notating commas list)", (): void => {
         onlyRunInCi()
 
         const script = `npm run analyze-ji-pitch -- -m [3,-7,2,0,1] --max-n2d3p9 ${OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS} --max-ate ${OLD_MAX_ATE_FOR_SHORTER_TEST_RESULTS} --max-aas ${OLD_MAX_AAS_FOR_SHORTER_TEST_RESULTS}` as Io
@@ -43,7 +43,7 @@ describe("analyze-ji-pitch", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    it("can appraise a JI pitch for you", (): void => {
+    it("can analyze a JI pitch, given it in the form of a rational quotient", (): void => {
         onlyRunInCi()
 
         const script = `npm run analyze-ji-pitch -- -q 2200/2187 --max-n2d3p9 ${OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS} --max-ate ${OLD_MAX_ATE_FOR_SHORTER_TEST_RESULTS} --max-aas ${OLD_MAX_AAS_FOR_SHORTER_TEST_RESULTS}` as Io
@@ -53,7 +53,7 @@ describe("analyze-ji-pitch", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    it("can appraise a comma name for you", (): void => {
+    it("can analyze a JI pitch, give it in the form of a comma name", (): void => {
         onlyRunInCi()
 
         const script = `npm run analyze-ji-pitch -- --comma-name 275k --max-n2d3p9 ${OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS} --max-ate ${OLD_MAX_ATE_FOR_SHORTER_TEST_RESULTS} --max-aas ${OLD_MAX_AAS_FOR_SHORTER_TEST_RESULTS}` as Io
@@ -63,17 +63,37 @@ describe("analyze-ji-pitch", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    it("can appraise a comma name for you, in a completely different format", (): void => {
+    it("can analyze a JI pitch, given it in the form of a completely differently formatted comma name", (): void => {
         onlyRunInCi()
 
-        const script = `npm run analyze-ji-pitch -- --comma-name 5².11-kleisma --max-n2d3p9 ${OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS} --max-ate ${OLD_MAX_ATE_FOR_SHORTER_TEST_RESULTS} --max-aas ${OLD_MAX_AAS_FOR_SHORTER_TEST_RESULTS}` as Io
+        const script = `npm run analyze-ji-pitch -- --comma-name 5²⋅11-kleisma --max-n2d3p9 ${OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS} --max-ate ${OLD_MAX_ATE_FOR_SHORTER_TEST_RESULTS} --max-aas ${OLD_MAX_AAS_FOR_SHORTER_TEST_RESULTS}` as Io
 
         const actual = runScriptAndGetConsoleOutput(script)
 
         expect(actual).toEqual(expected)
     })
 
-    it("throws an error if you provide neither monzo, quotient, name, or integer", (): void => {
+    // TODO: is there any way for me to warn users about these shortcomings?
+    /*
+    Formats that work:
+    npm run analyze-ji-pitch "|\\\\"          |\    requires escaping the backlash in two phases!
+    npm run analyze-ji-pitch " /|"           /|     requires a space to prevent interpretation as file path
+    npm run analyze-ji-pitch " /|\\\\"       /|\    both hacks required
+    npm run analyze-ji-pitch "'/|"          '/|     leading space not required if anything is in front of the fwd slash
+     */
+
+    // TODO: would I want to support getting it by Unicode or smiley as well, while I'm at it?
+    it("can analyze a JI pitch, given it in the form of an accidental (expressed as ASCII)", (): void => {
+        onlyRunInCi()
+
+        const script = `npm run analyze-ji-pitch -- --accidental "\\\`)|(" --max-n2d3p9 ${OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS} --max-ate ${OLD_MAX_ATE_FOR_SHORTER_TEST_RESULTS} --max-aas ${OLD_MAX_AAS_FOR_SHORTER_TEST_RESULTS}` as Io
+
+        const actual = runScriptAndGetConsoleOutput(script)
+
+        expect(actual).toEqual(expected)
+    })
+
+    it("throws an error if you provide neither monzo, quotient, comma name, integer decimal, or accidental", (): void => {
         onlyRunInCi()
 
         const script = "npm run analyze-ji-pitch" as Io
@@ -90,6 +110,7 @@ describe("analyze-ji-pitch", (): void => {
 
         const actual = runScriptAndGetConsoleOutput(script)
 
+        // TODO: [ ... ⟩ don't include in the header rows, since they aren't monzos themselves
         const expected = [
             "   --- JI pitch ---",
             "",
@@ -115,7 +136,7 @@ describe("analyze-ji-pitch", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    it("can appraise a JI pitch given as an integer", (): void => {
+    it("can analyze a JI pitch given as an integer decimal", (): void => {
         onlyRunInCi()
 
         const script = `npm run analyze-ji-pitch -- -i 275 --max-n2d3p9 ${OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS} --max-ate ${OLD_MAX_ATE_FOR_SHORTER_TEST_RESULTS} --max-aas ${OLD_MAX_AAS_FOR_SHORTER_TEST_RESULTS}` as Io

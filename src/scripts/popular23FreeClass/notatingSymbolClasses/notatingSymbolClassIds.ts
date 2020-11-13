@@ -8,7 +8,7 @@ const computeNotatingSymbolClassIds = ({monzo}: Scamon<{rational: true}>): Symbo
 
     JI_NOTATION.forEach((commaClassId: CommaClassId): void => {
         // TODO: POST-NOTATION-GENERATION: JI NOTATION CLEAN-UP
-        //  What this should really do is just scan over the JI Notation's SYMBOL class IDs
+        //  What this should really do is just scan over the JI Notation's symbol class IDs
         //  At which time you can hide the SYMBOL_CLASSES from the outside world again
         const commaClass = getCommaClass(commaClassId)
         const commaClassTwo3FreeMonzo = computeRoughRationalMonzo(commaClass.pitch.monzo, TWO_3_FREE)

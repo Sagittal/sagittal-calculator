@@ -9,6 +9,7 @@ import {
     computeSuperScamon,
     Decimal,
     Direction,
+    DOT_OPERATOR,
     Exponent,
     isRationalScamonSmooth,
     isRationalScamonSub,
@@ -23,7 +24,6 @@ import {
     THREE_SMOOTHNESS,
 } from "../../../general"
 import {computeCommaNameQuotient} from "./commaNameQuotient"
-import {DOT_OPERATOR} from "./constants"
 import {computeSizeCategory} from "./sizeCategory"
 import {isCommaSized} from "./typeGuards"
 import {CommaNameOptions, FactoringMode, SizeCategoryAbbreviation, SizeCategoryName} from "./types"

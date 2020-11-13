@@ -46,7 +46,8 @@ export {
     sumTexts,
     alignFormattedDecimal,
     IDENTIFYING_COMMA_NAME_CHARS,
-    ANY_MONZO_CHARS,
+    IDENTIFYING_MONZO_CHARS,
+    IDENTIFYING_ACCIDENTAL_CHARS,
     Basis,
     BLANK,
     clearLogFiles,
@@ -93,8 +94,8 @@ export {
     TableFormat,
     formatPitch,
     parseCents,
-    ANY_CENTS_CHARS,
-    ANY_QUOTIENT_CHARS,
+    IDENTIFYING_CENTS_CHARS,
+    IDENTIFYING_QUOTIENT_CHARS,
     formatCents,
     parseInteger,
     parseDecimal,
@@ -102,6 +103,8 @@ export {
     JustificationOption,
     Char,
     TimePrecision,
+    DOT_OPERATOR,
+    NUMERIC_CHARS,
 } from "./io"
 export {
     abs,
@@ -233,6 +236,7 @@ export {
     Multiplier,
     Sum,
     Divisor,
+    sumRationalScamons,
 } from "./math"
 export {
     Cents,
