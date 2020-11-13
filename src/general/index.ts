@@ -268,6 +268,11 @@ export {
     CommaMean,
     OCTAVE_WINDOW,
     APOTOME,
+    SCHISMA,
+    SCHISMINA,
+    SEPTIMAL_COMMA,
+    SEPTIMAL_KLEISMA,
+    SYNTONIC_COMMA,
 } from "./music"
 export {Count, Ed, Extrema, Index, Ms, Name, Step, Window, Of} from "./types"
 export {

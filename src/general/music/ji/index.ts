@@ -10,6 +10,11 @@ export {
     THIRTYONE_THREE_COMMA,
     OCTAVE_WINDOW,
     APOTOME,
+    SCHISMA,
+    SCHISMINA,
+    SEPTIMAL_COMMA,
+    SEPTIMAL_KLEISMA,
+    SYNTONIC_COMMA,
 } from "./constants"
 export {Comma, Apotome} from "./types"
 export {

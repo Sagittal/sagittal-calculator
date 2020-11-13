@@ -1,4 +1,13 @@
-import {Comma, PYTHAGOREAN_COMMA, UNISON} from "../../general"
+import {
+    Comma,
+    PYTHAGOREAN_COMMA,
+    SCHISMA,
+    SCHISMINA,
+    SEPTIMAL_COMMA,
+    SEPTIMAL_KLEISMA,
+    SYNTONIC_COMMA,
+    UNISON,
+} from "../../general"
 import {CommaClass, CommaClassId, SymbolClassId} from "./types"
 
 const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
@@ -8,7 +17,7 @@ const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
     },
     /*1*/[CommaClassId._1_V_5_7_13_n]: {
         representativeSymbolClassId: SymbolClassId.WING,
-        pitch: {monzo: [12, -2, -1, -1, 0, -1]} as Comma,
+        pitch: SCHISMINA,
     },
     /*2*/[CommaClassId._65_V_77_n]: {
         representativeSymbolClassId: SymbolClassId.BIRD,
@@ -20,7 +29,7 @@ const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
     },
     /*4*/[CommaClassId._5_s]: {
         representativeSymbolClassId: SymbolClassId.TICK,
-        pitch: {monzo: [-15, 8, 1]} as Comma,
+        pitch: SCHISMA,
     },
     /*5*/[CommaClassId._1_V_7_13_s]: {
         representativeSymbolClassId: SymbolClassId.WING_AND_TICK,
@@ -68,7 +77,7 @@ const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
     },
     /*16*/[CommaClassId._25_V_7_k]: {
         representativeSymbolClassId: SymbolClassId.TICK_AND_RIGHT_SCROLL,
-        pitch: {monzo: [-5, 2, 2, -1]} as Comma,
+        pitch: SEPTIMAL_KLEISMA,
     },
     /*17*/[CommaClassId._7_P_3_k]: {
         representativeSymbolClassId: SymbolClassId.ANTIWING_AND_LEFT_BOATHOOK,
@@ -180,7 +189,7 @@ const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
     },
     /*44*/[CommaClassId._1_V_5_C]: {
         representativeSymbolClassId: SymbolClassId.LEFT_BARB,
-        pitch: {monzo: [-4, 4, -1]} as Comma,   // TODO: name syntonic comma?
+        pitch: SYNTONIC_COMMA,
     },
     /*45*/[CommaClassId._5_P_3_7_C]: {
         representativeSymbolClassId: SymbolClassId.WING_AND_LEFT_BARB,
@@ -236,7 +245,7 @@ const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {
     },
     /*58*/[CommaClassId._1_V_7_C]: {
         representativeSymbolClassId: SymbolClassId.RIGHT_ARC,
-        pitch: {monzo: [6, -2, 0, -1]} as Comma,
+        pitch: SEPTIMAL_COMMA,
     },
     /*59*/[CommaClassId._5_P_4_C]: {
         representativeSymbolClassId: SymbolClassId.WING_AND_RIGHT_ARC,

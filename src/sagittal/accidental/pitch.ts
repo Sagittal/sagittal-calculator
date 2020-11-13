@@ -7,8 +7,10 @@ import {
     Maybe,
     Multiplier,
     multiplyScamon,
-    Scamon, stringify,
+    Scamon,
+    stringify,
     sumRationalScamons,
+    SYNTONIC_COMMA,
     UNISON,
 } from "../../general"
 import {
@@ -85,8 +87,8 @@ const COMPATIBLE_TO_PITCH_MAP: Record<Compatible, Scamon<{rational: true}>> = {
     [Compatible.STEIN_SEMIFLAT]: {monzo: [5, -1, 0, 0, -1]} as Scamon<{rational: true}>,
     [Compatible.STEIN_SESQUISHARP]: {monzo: [-16, 8, 0, 0, 1]} as Scamon<{rational: true}>,
     [Compatible.ZIMMERMANN_SESQUIFLAT]: {monzo: [16, -8, 0, 0, -1]} as Scamon<{rational: true}>,
-    [Compatible.WILSON_PLUS]: {monzo: [-4, 4, -1]} as Scamon<{rational: true}>,
-    [Compatible.WILSON_MINUS]: {monzo: [4, -4, 1]} as Scamon<{rational: true}>,
+    [Compatible.WILSON_PLUS]: SYNTONIC_COMMA,
+    [Compatible.WILSON_MINUS]: invertScamon(SYNTONIC_COMMA) as Scamon<{rational: true}>,
     [Compatible.NATURAL]: UNISON,
     [Compatible.SHARP]: APOTOME,
     [Compatible.FLAT]: APOTOME_DOWN,

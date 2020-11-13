@@ -24,6 +24,13 @@ const PYTHAGOREAN_WHOLE_TONE = {monzo: [-3, 2]} as Comma            // 3MS+A    
 
 const OCTAVE_WINDOW = 2 as Window<2>
 
+const SCHISMINA = {monzo: [12, -2, -1, -1, 0, -1]} as Comma
+const SCHISMA = {monzo: [-15, 8, 1]} as Comma
+const KLEISMA = {monzo: [-6, -5, 6]} as Comma
+const SYNTONIC_COMMA = {monzo: [-4, 4, -1]} as Comma
+const SEPTIMAL_KLEISMA = {monzo: [-5, 2, 2, -1]} as Comma
+const SEPTIMAL_COMMA = {monzo: [6, -2, 0, -1]} as Comma
+
 export {
     THREE_PRIME_LIMIT,
     FIVE_PRIME_LIMIT,
@@ -39,4 +46,10 @@ export {
     OCTAVE,
     OCTAVE_WINDOW,
     APOTOME,
+    SCHISMA,
+    SCHISMINA,
+    SEPTIMAL_COMMA,
+    SEPTIMAL_KLEISMA,
+    SYNTONIC_COMMA,
+    KLEISMA,
 }
