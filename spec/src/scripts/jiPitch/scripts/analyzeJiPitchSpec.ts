@@ -80,13 +80,24 @@ describe("analyze-ji-pitch", (): void => {
     npm run analyze-ji-pitch " /|"           /|     requires a space to prevent interpretation as file path
     npm run analyze-ji-pitch " /|\\\\"       /|\    both hacks required
     npm run analyze-ji-pitch "'/|"          '/|     leading space not required if anything is in front of the fwd slash
+    npm run analyze-ji-pitch "\`)|("        `)|(    double quote requires escaping `
+    npm run analyze-ji-pitch '`)|('         `)|(    single quote requires *not* escaping `, which is better, of course
+    npm run analyze-ji-pitch "'"'/|'        '/|     when single quoting, a tick up needs to be in double quotes
+    npm run analyze-ji-pitch '`'"'"'/|'    `'/|     this works too, when the single quote is in the middle of the symbol
+    npm run analyze-ji-pitch '|\\'            |\    when single quoting, only need one phase of backlash escaping
+    npm run analyze-ji-pitch ' /|'           /|     single quotes still requires the leading space
+    npm run analyze-ji-pitch ' /|\\'         /|\
+
+    So of course double quotes are nice because they're not actually used in any of the symbols
+    But they don't seem to work on CI, so that's kind of a deal-breaker
+    And the single quotes require less escaping of \, and not escaping `, but do require escaping '
      */
 
     // TODO: would I want to support getting it by Unicode or smiley as well, while I'm at it?
     it("can analyze a JI pitch, given it in the form of an accidental (expressed as ASCII)", (): void => {
         onlyRunInCi()
 
-        const script = `npm run analyze-ji-pitch -- --accidental "\`)|(" --max-n2d3p9 ${OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS} --max-ate ${OLD_MAX_ATE_FOR_SHORTER_TEST_RESULTS} --max-aas ${OLD_MAX_AAS_FOR_SHORTER_TEST_RESULTS}` as Io
+        const script = `npm run analyze-ji-pitch -- --accidental '\`)|(' --max-n2d3p9 ${OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS} --max-ate ${OLD_MAX_ATE_FOR_SHORTER_TEST_RESULTS} --max-aas ${OLD_MAX_AAS_FOR_SHORTER_TEST_RESULTS}` as Io
 
         const actual = runScriptAndGetConsoleOutput(script)
 
