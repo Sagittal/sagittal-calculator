@@ -8,6 +8,9 @@ import {DEFAULT_FORMAT_TABLE_OPTIONS} from "./constants"
 import {computeColumnWidths, computeJustifications, computeJustifiedCell} from "./justification"
 import {FormatTableOptions, Row, Table, TableForForumRowPartsOptions} from "./types"
 
+// TODO: use [tc] and [tn] bbCodes for alignment on forum, and remove all the internal [pre] tags.
+//  See: http://forum.sagittal.org/viewtopic.php?p=2773#p2773
+
 const computeTableForForumRowParts = <T = unknown>(
     {index, headerRowCount, colors}: TableForForumRowPartsOptions<T>,
 ): {rowOpen: Io, rowClose: Io, separator: Io} => {
