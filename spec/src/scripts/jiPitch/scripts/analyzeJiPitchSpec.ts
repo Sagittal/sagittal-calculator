@@ -122,6 +122,7 @@ describe("analyze-ji-pitch", (): void => {
         const actual = runScriptAndGetConsoleOutput(script)
 
         // TODO: [ ... ⟩ don't include in the header rows, since they aren't monzos themselves
+        //  Or maybe change it to [ 2ᵃ 3ᵃ ⟩
         const expected = [
             "   --- JI pitch ---",
             "",
