@@ -1,36 +1,10 @@
-import {Scamon} from "../../../../src/general/math/numeric/scamon"
-import {computeJiPitchFromAccidental} from "../../../../src/sagittal/accidental"
-import {ArmId, HeadId} from "../../../../src/sagittal/accidental/flacco"
-import {Compatible} from "../../../../src/sagittal/accidental/flavor"
-import {computeSymbolClassIdAndSectionFromSagittal} from "../../../../src/sagittal/accidental/pitch"
-import {Shafts} from "../../../../src/sagittal/accidental/sagittal"
-import {SymbolClassId} from "../../../../src/sagittal/notation"
-import {
-    SECTION_N1A,
-    SECTION_P1A,
-    SECTION_P1T,
-    SECTION_P2A,
-    SECTION_P2T,
-} from "../../../../src/sagittal/notation/sections"
-import {computeAccidental} from "../../../helpers/src/sagittal/accidental/accidental"
-
-describe("computeJiPitchFromAccidental", (): void => {
-    it("computes a JI pitch from an accidental", (): void => {
-        const accidental = computeAccidental({
-            armId: ArmId.BIRD,
-            headId: HeadId.LEFT_SCROLL,
-            compatible: Compatible.SHARP,
-        })
-
-        const actual = computeJiPitchFromAccidental(accidental)
-
-        // ``)|# =
-        // ``)|  [  -7  -1   1   1   1 ⟩    +
-        //     # [ -11   7             ⟩
-        const expected = {monzo: [-18, 6, 1, 1, 1]} as Scamon<{rational: true}>
-        expect(actual).toEqual(expected)
-    })
-})
+import {ArmId, HeadId} from "../../../../../src/sagittal/accidental/flacco"
+import {computeSymbolClassIdAndSectionFromSagittal} from "../../../../../src/sagittal/accidental/pitch/symbolClassIdAndSectionFromSagittal"
+import {Shafts} from "../../../../../src/sagittal/accidental/sagittal"
+import {SECTION_P1T, SECTION_P2A, SECTION_P2T} from "../../../../../src/sagittal/notation"
+import {SECTION_N1A, SECTION_P1A} from "../../../../../src/sagittal/notation/sections"
+import {SymbolClassId} from "../../../../../src/sagittal/notation/types"
+import {computeAccidental} from "../../../../helpers/src/sagittal/accidental/accidental"
 
 describe("computeSymbolClassIdAndSectionFromSagittal", (): void => {
     it("works for a single-shaft sagittal below the half apotome", (): void => {
