@@ -16,6 +16,7 @@ const SUPERSCRIPT_NUMBERS: Char[] = ["⁰", "¹", "²", "³", "⁴", "⁵", "⁶
 const SUBSCRIPT_NUMBERS: Char[] = ["₀", "₁", "₂", "₃", "₄", "₅", "₆", "₇", "₈", "₉"] as Char[]
 
 const NEWLINE = "\n" as Io
+const WINDOWS_CARRIAGE_RETURN = "\r" as Io
 const SPACE = " " as Io
 const BLANK = "" as Io
 const TAB = "\t" as Io
@@ -45,4 +46,5 @@ export {
     IDENTIFYING_ACCIDENTAL_CHARS,
     INITIAL_IO_SETTINGS,
     NUMERIC_CHARS,
+    WINDOWS_CARRIAGE_RETURN,
 }

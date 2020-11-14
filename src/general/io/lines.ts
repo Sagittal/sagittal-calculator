@@ -1,9 +1,13 @@
 import * as fs from "fs"
-import {NEWLINE} from "./constants"
+import {BLANK, NEWLINE} from "./constants"
 import {Filename, Io} from "./types"
 
 const readLines = (filename: Filename): Io[] => {
-    const lines = fs.readFileSync(filename, {encoding: "utf8"}).split(NEWLINE) as Io[]
+    const lines = fs
+        .readFileSync(filename, {encoding: "utf8"})
+        .replace(/\r/g, BLANK)
+        .split(NEWLINE)
+
     lines.pop()
 
     return lines
