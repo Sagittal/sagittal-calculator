@@ -1,12 +1,12 @@
 import {BLANK, Char, Count, increment, isEmpty, Maybe, shallowClone} from "../../../general"
 import {AccentId, Arm, FlagId} from "../flacco"
-import {Accidental, Compatible} from "../flavor"
+import {Accidental, Compatible, EMPTY_ACCIDENTAL} from "../flavor"
 import {Shafts} from "../sagittal"
 import {PARENTHETICAL_NATURAL_ASCII} from "./constants"
 import {Ascii} from "./types"
 
-const parseAscii = (ascii: Ascii): Maybe<Accidental> => {
-    if (ascii === PARENTHETICAL_NATURAL_ASCII) return undefined
+const parseAscii = (ascii: Ascii): Accidental => {
+    if (ascii === PARENTHETICAL_NATURAL_ASCII) return EMPTY_ACCIDENTAL
 
     const down = !!ascii.match(/[Y!]/g)
 
@@ -83,13 +83,13 @@ const parseAscii = (ascii: Ascii): Maybe<Accidental> => {
                 left.push(FlagId.BARB) :
                 right.push(FlagId.BARB)
         } else if (sagittalChar === ")") {
-            down ?
-                pastShaft ? right.push(FlagId.SCROLL) : left.push(FlagId.ARC) :
-                pastShaft ? right.push(FlagId.ARC) : left.push(FlagId.SCROLL)
+            pastShaft ?
+                right.push(FlagId.ARC) :        //      !)  or   |)
+                left.push(FlagId.SCROLL)        //     )!   or  )|
         } else if (sagittalChar === "(") {
-            down ?
-                pastShaft ? right.push(FlagId.ARC) : left.push(FlagId.SCROLL) :
-                pastShaft ? right.push(FlagId.SCROLL) : left.push(FlagId.ARC)
+            pastShaft ?
+                right.push(FlagId.SCROLL) :     //      !(  or   |(
+                left.push(FlagId.ARC)           //     (!   or  (|
         } else if (sagittalChar === "~") {
             pastShaft ?
                 right.push(FlagId.BOATHOOK) :

@@ -70,17 +70,8 @@ describe("computeAccidentalAscii", (): void => {
         expect(actual).toBe(expected)
     })
 
-    it("works for empty accidentals", (): void => {
+    it("works for the empty accidental", (): void => {
         const accidental = {} as Accidental
-
-        const actual = computeAccidentalAscii(accidental)
-
-        const expected = "(|//|)" as Ascii
-        expect(actual).toBe(expected)
-    })
-
-    it("works for undefined accidentals", (): void => {
-        const accidental = undefined
 
         const actual = computeAccidentalAscii(accidental)
 

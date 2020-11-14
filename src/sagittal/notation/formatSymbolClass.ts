@@ -1,5 +1,5 @@
 import {Formatted, SPACE} from "../../general"
-import {computeSagittalFromSymbolClassId, formatAccidental} from "../accidental"
+import {computeSagittalFromSymbolClassId, EMPTY_ACCIDENTAL, formatAccidental} from "../accidental"
 import {computeCommaName} from "../ji"
 import {getCommaClass} from "./commaClass"
 import {getSymbolClass} from "./symbolClass"
@@ -13,7 +13,7 @@ const formatSymbolClass = (
 
     if (glyph) {
         const sagittal = computeSagittalFromSymbolClassId(symbolClassId)
-        formattedSymbolClass.push(formatAccidental(sagittal, {align}))
+        formattedSymbolClass.push(formatAccidental(sagittal || EMPTY_ACCIDENTAL, {align}))
     }
 
     if (name) {

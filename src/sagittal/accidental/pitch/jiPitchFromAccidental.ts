@@ -1,11 +1,11 @@
-import {isUndefined, Maybe, Scamon, sumRationalScamons, UNISON} from "../../../general"
+import {isUndefined, Scamon, sumRationalScamons, UNISON} from "../../../general"
 import {Accidental} from "../flavor"
 import {computeApotomicPitchAlterationFromSection} from "./apotomicPitchAlteration"
 import {computeCommaticPitchAlterationFromSymbolClassIdAndSection} from "./commaticPitchAlteration"
 import {computePitchAlterationFromCompatible} from "./compatiblePitchAlteration"
 import {computeSymbolClassIdAndSectionFromSagittal} from "./symbolClassIdAndSectionFromSagittal"
 
-const computeJiPitchFromAccidental = (accidental: Maybe<Accidental>): Scamon<{rational: true}> => {
+const computeJiPitchFromAccidental = (accidental: Accidental): Scamon<{rational: true}> => {
     if (isUndefined(accidental)) return UNISON
 
     const {compatible, ...sagittal} = accidental

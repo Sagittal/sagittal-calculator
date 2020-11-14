@@ -20,4 +20,16 @@ describe("computeJiPitchFromAccidental", (): void => {
         const expected = {monzo: [-18, 6, 1, 1, 1]} as Scamon<{rational: true}>
         expect(actual).toEqual(expected)
     })
+
+    it("gets this one correctly", (): void => {
+        const accidental = computeAccidental({
+            armId: ArmId.ANTIWING_AND_TICK,
+            headId: HeadId.RIGHT_SCROLL,
+        })
+
+        const actual = computeJiPitchFromAccidental(accidental)
+
+        const expected = {monzo: [-4, 9, -2, -2]} as Scamon<{rational: true}>
+        expect(actual).toEqual(expected)
+    })
 })

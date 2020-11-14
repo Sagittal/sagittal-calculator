@@ -66,11 +66,38 @@ describe("parsePitch", (): void => {
     })
 
     it("works when given as an accidental", (): void => {
-        const pitchText = ",'/|)" as Io
+        const pitchText = ",'/|)<b" as Io
 
         const actual = parsePitch(pitchText)
 
-        const expected = {monzo: [-25, 12, 1, 0, 0, 1]} as Scamon<{rational: false}>
+        //   [ -25  12   1   0   0   1 ⟩   ,'/|)
+        // + [  16  -8   0   0  -1     ⟩        <b
+        // = [  -9   4   1   0  -1   1 ⟩   ,'/|)<b
+        const expected = {monzo: [-9, 4, 1, 0, -1, 1]} as Scamon<{rational: false}>
+        expect(actual).toBeCloseToObject(expected)
+    })
+
+    it("another accidental example (just trying to use all the chars that might be used in other formats, to prove it works at distinguishing accidentals)", (): void => {
+        const pitchText = "`.!(>#"
+
+        const actual = parsePitch(pitchText)
+
+        // - [  -4   9  -2  -2     ⟩   ,'|(
+        // + [ -16   8   0   0   1 ⟩       >#
+        // = [ -12  -1   2   2   1 ⟩   `.!(>#
+        const expected = {monzo: [-12, -1, 2, 2, 1]} as Scamon<{rational: false}>
+        expect(actual).toBeCloseToObject(expected)
+    })
+
+    it("yet another accidental example", (): void => {
+        const pitchText = "\\!~x"
+
+        const actual = parsePitch(pitchText)
+
+        // - [   1  -2  -1   0   0   0   0   0   1 ⟩    /|~
+        // + [ -22  14                             ⟩       x
+        // = [ -23  16   1   0   0   0   0   0  -1 ⟩    \!~x
+        const expected = {monzo: [-23, 16, 1, 0, 0, 0, 0, 0, -1]} as Scamon<{rational: false}>
         expect(actual).toBeCloseToObject(expected)
     })
 })

@@ -1,9 +1,10 @@
 import {
     Accidental,
-    Compatible, computeAccidentalSmiley,
+    Compatible,
     computeAccidentalUnicode,
     computeSagittalUnicode,
-    Flavor, Smiley,
+    EMPTY_ACCIDENTAL,
+    Flavor,
     Unicode,
 } from "../../../../../src/sagittal/accidental"
 import {ArmId, HeadId} from "../../../../../src/sagittal/accidental/flacco"
@@ -54,17 +55,8 @@ describe("computeAccidentalUnicode", (): void => {
         expect(actual).toBe(expected)
     })
 
-    it("works for empty accidentals", (): void => {
-        const accidental = {} as Accidental
-
-        const actual = computeAccidentalUnicode(accidental)
-
-        const expected = "" as Unicode
-        expect(actual).toBe(expected)
-    })
-
-    it("works for empty accidentals", (): void => {
-        const accidental = undefined
+    it("works for the empty accidental", (): void => {
+        const accidental = EMPTY_ACCIDENTAL
 
         const actual = computeAccidentalUnicode(accidental)
 

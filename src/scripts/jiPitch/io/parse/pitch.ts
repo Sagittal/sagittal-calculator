@@ -61,6 +61,8 @@ const parsePitch = (pitchIo: Io, pitchFormat?: PitchFormat): Scamon => {
         const accidental = parseAscii(pitchIo as Ascii)
 
         // TODO: this should really be just pitch and if in ji context throw error if not
+        //  Er, well, at the moment, there is no way to get a non-JI pitch from an accidental
+        //  One could imagine telling this thing which EDO you're in or something, and it tempering stuff
         pitch = computeJiPitchFromAccidental(accidental)
     } else {
         const decimal = parseDecimal(pitchIo)

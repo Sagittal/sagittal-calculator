@@ -1,17 +1,7 @@
 import {deepEquals, finalElement, isUndefined, Maybe} from "../../../../../src/general/code"
-import {
-    AccentId,
-    Arm,
-    ArmId,
-    Flacco,
-    FlagId,
-    getArm,
-    getHead,
-    Head,
-    HeadId,
-} from "../../../../../src/sagittal/accidental/flacco"
+import {Arm, Flacco, getArm, getHead, Head, HeadId} from "../../../../../src/sagittal/accidental/flacco"
 import {FLACCOS} from "../../../../../src/sagittal/accidental/flacco/flacco"
-import {Accidental, Compatible} from "../../../../../src/sagittal/accidental/flavor"
+import {Accidental, Compatible, EMPTY_ACCIDENTAL} from "../../../../../src/sagittal/accidental/flavor"
 import {formatAccidental} from "../../../../../src/sagittal/accidental/glyph"
 import {computeApotomeComplement, getCore, Sagittal, Shafts} from "../../../../../src/sagittal/accidental/sagittal"
 import {areShaftsEven, isMultiShaft} from "../../../../../src/sagittal/accidental/sagittal/shafts"
@@ -115,7 +105,7 @@ const computeAccidental = (options: AccidentalOptions = {}): Accidental => {
     if (isUndefined(armId)) {
         if (headId === HeadId.BARE_SHAFT) {
             if (isUndefined(compatible)) {
-                return {} as Accidental
+                return EMPTY_ACCIDENTAL
             }
 
             const accidental = {compatible} as Accidental

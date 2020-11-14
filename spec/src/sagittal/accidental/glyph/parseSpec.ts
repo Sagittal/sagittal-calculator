@@ -1,7 +1,11 @@
 import {ArmId, HeadId} from "../../../../../src/sagittal/accidental/flacco"
-import {Compatible} from "../../../../../src/sagittal/accidental/flavor"
-import {Ascii, parseAscii} from "../../../../../src/sagittal/accidental/glyph"
+import {Accidental, Compatible} from "../../../../../src/sagittal/accidental/flavor"
+import {computeRevoAccidentalFromCaptureZone} from "../../../../../src/sagittal/accidental/flavor/revo"
+import {Ascii, computeAccidentalAscii, parseAscii} from "../../../../../src/sagittal/accidental/glyph"
 import {Shafts} from "../../../../../src/sagittal/accidental/sagittal"
+import {CaptureZone} from "../../../../../src/sagittal/notation"
+import {computeCaptureZones} from "../../../../../src/sagittal/notation/captureZones"
+import {EXTREME_NOTATION} from "../../../../../src/sagittal/notations/ji/notations"
 import {computeAccidental} from "../../../../helpers/src/sagittal/accidental/accidental"
 
 describe("parseAscii", (): void => {
@@ -19,7 +23,7 @@ describe("parseAscii", (): void => {
 
         const actual = parseAscii(ascii)
 
-        const expected = undefined
+        const expected = computeAccidental()        // {}
         expect(actual).toEqual(expected)
     })
 
@@ -48,5 +52,38 @@ describe("parseAscii", (): void => {
 
         const expected = computeAccidental({headId: HeadId.DOUBLE_BARB})
         expect(actual).toEqual(expected)
+    })
+
+    it("doesn't mess this one up", (): void => {
+        const ascii = "`.!(" as Ascii
+
+        const actual = parseAscii(ascii)
+
+        const expected = computeAccidental({
+            headId: HeadId.RIGHT_SCROLL,
+            armId: ArmId.ANTIWING_AND_TICK,
+            down: true
+        })
+        expect(actual).toEqual(expected)
+    })
+
+    it("works for all of them", (): void => {
+        const captureZones = computeCaptureZones(EXTREME_NOTATION)
+
+        const expecteds = [] as Accidental[]
+        const actuals = captureZones.map(({ symbolClassId, section }: CaptureZone): Ascii => {
+            const revoAccidental = computeRevoAccidentalFromCaptureZone(symbolClassId, section)
+            expecteds.push(revoAccidental)
+
+            return computeAccidentalAscii(revoAccidental)
+        })
+
+        expecteds.forEach((expected: Accidental, index: number): void => {
+            const ascii = actuals[index]
+
+            const actual = parseAscii(ascii)
+
+            expect(actual).toEqual(expected)
+        })
     })
 })

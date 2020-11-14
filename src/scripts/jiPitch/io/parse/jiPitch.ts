@@ -5,7 +5,7 @@ import {
     formatPitch,
     Io,
     isScamonRational,
-    Scamon, stringify,
+    Scamon,
 } from "../../../../general"
 import {computeJiPitchFromAccidental} from "../../../../sagittal"
 import {parsePitch} from "./pitch"

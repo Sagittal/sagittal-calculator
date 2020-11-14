@@ -6,7 +6,7 @@ import {computeAccidentalSmiley} from "./smiley"
 import {Ascii, Glyph, Smiley, Unicode} from "./types"
 import {computeAccidentalUnicode} from "./unicode"
 
-const formatAccidental = (accidental: Maybe<Accidental>, {align = true}: {align?: boolean} = {}): Formatted<Glyph> => {
+const formatAccidental = (accidental: Accidental, {align = true}: {align?: boolean} = {}): Formatted<Glyph> => {
     switch (ioSettings.tableFormat) {
         case TableFormat.TERMINAL:
             const ascii = computeAccidentalAscii(accidental)

@@ -41,7 +41,7 @@ const readAnalyzeJiPitchOptions = (): void => {
         .option(
             `-${ScriptFlag.ACCIDENTAL}, --accidental <symbol>`,
             "accidental",
-            (accidentalText: string): Maybe<Accidental> => parseAscii(accidentalText as Ascii),
+            (accidentalText: string): Accidental => parseAscii(accidentalText as Ascii),
         )
         .option(
             `-${ScriptFlag.INTEGER}, --integer <integer>`,

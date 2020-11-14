@@ -28,8 +28,6 @@ describe("computeAccidental", (): void => {
         const armId = ArmId.WING
         const shafts = Shafts.EX
 
-        expect(true).toBe(false)
-
         expect((): void => {
             computeAccidental({headId, armId, shafts})
         }).toThrowError("Invalid sagittal due to being beyond the double apotome: `/X\\")
@@ -124,7 +122,7 @@ describe("computeAccidental", (): void => {
         }).toThrowError(`You are using too large of a single-shaft symbol against this Sagittal-compatible: (!)# You should instead use the compatible closer to the natural and a single-shaft symbol which goes in its same direction`)
     })
 
-    it("returns an empty object if passed nothing", (): void => {
+    it("returns an empty object (the empty accidental) if passed nothing", (): void => {
         expect(computeAccidental()).toEqual({} as Accidental)
     })
 

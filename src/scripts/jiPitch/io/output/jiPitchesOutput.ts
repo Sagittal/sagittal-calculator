@@ -20,7 +20,7 @@ const computeJiPitchesOutput = (
         }),
     ]
 
-    // TODO: MISCELLANEOUS: TABLES FINESSE
+    // TODO: TABLES FINESSE: REORDERING COLUMNS
     //  By the way, I did find after all that the ability to reorder columns would have been handy to put cents
     //  Earlier in the list since it's way more important for tinas. could be anything like that.
     return formatTable(jiPitchesTable, {headerRowCount, justification})

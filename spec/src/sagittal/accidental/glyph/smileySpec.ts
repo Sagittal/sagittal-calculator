@@ -1,4 +1,4 @@
-import {Accidental, Compatible, Flavor, Smiley} from "../../../../../src/sagittal/accidental"
+import {Accidental, Compatible, EMPTY_ACCIDENTAL, Flavor, Smiley} from "../../../../../src/sagittal/accidental"
 import {ArmId, HeadId} from "../../../../../src/sagittal/accidental/flacco"
 import {computeAccidentalSmiley, computeSagittalSmiley} from "../../../../../src/sagittal/accidental/glyph"
 import {Shafts} from "../../../../../src/sagittal/accidental/sagittal"
@@ -99,17 +99,8 @@ describe("computeAccidentalSmiley", (): void => {
         expect(actual).toBe(expected)
     })
 
-    it("works for empty accidentals", (): void => {
-        const accidental = {} as Accidental
-
-        const actual = computeAccidentalSmiley(accidental)
-
-        const expected = "(:h:)" as Smiley
-        expect(actual).toBe(expected)
-    })
-
-    it("works for empty accidentals", (): void => {
-        const accidental = undefined
+    it("works for the empty accidental", (): void => {
+        const accidental = EMPTY_ACCIDENTAL
 
         const actual = computeAccidentalSmiley(accidental)
 
