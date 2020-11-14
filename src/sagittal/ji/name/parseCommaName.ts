@@ -1,4 +1,12 @@
-import {computeLowestTermsRationalQuotient, Io, isUndefined, Maybe, parseQuotient, Quotient} from "../../../general"
+import {
+    computeLowestTermsRationalQuotient,
+    Io,
+    isUndefined,
+    Maybe,
+    parseQuotient,
+    Quotient,
+    saveLog,
+} from "../../../general"
 import {SIZE_CATEGORIES} from "./sizeCategories"
 import {CommaNameQuotient, ParsedCommaName, SizeCategoryName} from "./types"
 
@@ -25,7 +33,9 @@ const parseCommaName = (commaNameIo: Io): ParsedCommaName => {
     }
 
     if (isUndefined(sizeCategoryName)) {
-        throw new Error(`No size category found for comma name ${commaNameIo}.`)
+        sizeCategoryName = SizeCategoryName.SCHISMINA
+        saveLog(`No size category found for comma name ${commaNameIo}.`)
+        // throw new Error(`No size category found for comma name ${commaNameIo}.`)
     }
 
     return {commaNameQuotient, sizeCategoryName}

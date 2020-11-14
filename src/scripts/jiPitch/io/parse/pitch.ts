@@ -14,7 +14,7 @@ import {
     parseDecimal,
     parseMonzo,
     parseQuotient,
-    Scamon, stringify,
+    Scamon,
 } from "../../../../general"
 import {
     Ascii,
