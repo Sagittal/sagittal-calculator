@@ -91,18 +91,15 @@ describe("analyze-ji-pitch", (): void => {
     So of course double quotes are nice because they're not actually used in any of the symbols
     But they don't seem to work on CI, so that's kind of a deal-breaker
     And the single quotes require less escaping of \, and not escaping `, but do require escaping '
+
+    Wait... except single quotes don't work on CI or locally, but double-quotes do...?
      */
 
     // TODO: would I want to support getting it by Unicode or smiley as well, while I'm at it?
-
-    // TODO: this will not run the same way on CI. actually I haven't tried it locally maybe.
-    //  I mean the command itself works for me, but maybe it's just something about running it through
-    //  Jasmine that breaks it already, and it has nothing to do with the different environment on Travis.ci
-    // tslint:disable-next-line ban
-    xit("can analyze a JI pitch, given it in the form of an accidental (expressed as ASCII)", (): void => {
+    it("can analyze a JI pitch, given it in the form of an accidental (expressed as ASCII)", (): void => {
         onlyRunInCi()
 
-        const script = `npm run analyze-ji-pitch -- --accidental '\`)|(' --max-n2d3p9 ${OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS} --max-ate ${OLD_MAX_ATE_FOR_SHORTER_TEST_RESULTS} --max-aas ${OLD_MAX_AAS_FOR_SHORTER_TEST_RESULTS}` as Io
+        const script = `npm run analyze-ji-pitch -- --accidental "\`)|(" --max-n2d3p9 ${OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS} --max-ate ${OLD_MAX_ATE_FOR_SHORTER_TEST_RESULTS} --max-aas ${OLD_MAX_AAS_FOR_SHORTER_TEST_RESULTS}` as Io
 
         const actual = runScriptAndGetConsoleOutput(script)
 

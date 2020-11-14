@@ -1,5 +1,5 @@
 import {Formatted, Maybe, SPACE} from "../../general"
-import {formatAccidental, EMPTY_ACCIDENTAL, Sagittal} from "../accidental"
+import {EMPTY_ACCIDENTAL, formatAccidental, Sagittal} from "../accidental"
 import {computeCommaName} from "../ji"
 import {getCommaClass} from "./commaClass"
 import {getRepresentativeSagittal} from "./representativeSagittal"
