@@ -5,7 +5,7 @@ import {
     Maybe,
     parseQuotient,
     Quotient,
-    saveLog,
+    saveLog, stringify,
 } from "../../../general"
 import {SIZE_CATEGORIES} from "./sizeCategories"
 import {CommaNameQuotient, ParsedCommaName, SizeCategoryName} from "./types"
@@ -34,8 +34,10 @@ const parseCommaName = (commaNameIo: Io): ParsedCommaName => {
 
     if (isUndefined(sizeCategoryName)) {
         sizeCategoryName = SizeCategoryName.SCHISMINA
-        saveLog(`No size category found for comma name ${commaNameIo}.`)
-        // throw new Error(`No size category found for comma name ${commaNameIo}.`)
+        saveLog(`No size category found for comma name.`)
+        saveLog(commaNameIo)
+        saveLog(stringify(commaNameIo))
+        // Throw new Error(`No size category found for comma name ${commaNameIo}.`)
     }
 
     return {commaNameQuotient, sizeCategoryName}

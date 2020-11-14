@@ -13,8 +13,8 @@ import {
     parseCents,
     parseDecimal,
     parseMonzo,
-    parseQuotient,
-    Scamon,
+    parseQuotient, saveLog,
+    Scamon, stringify,
 } from "../../../../general"
 import {
     Ascii,
@@ -32,6 +32,9 @@ const parsePitch = (pitchIo: Io, pitchFormat?: PitchFormat): Scamon => {
         pitchFormat === PitchFormat.COMMA_NAME
         || (pitchIo.match(IDENTIFYING_COMMA_NAME_CHARS) && pitchIo.match(NUMERIC_CHARS))
     ) {
+        saveLog("any hope here?")
+        saveLog(pitchIo)
+        saveLog(stringify(pitchIo))
         const commaNameQuotientAndSizeCategoryName = parseCommaName(pitchIo)
         pitch = computeCommaFromCommaNameQuotientAndSizeCategoryName(commaNameQuotientAndSizeCategoryName)
     } else if (
