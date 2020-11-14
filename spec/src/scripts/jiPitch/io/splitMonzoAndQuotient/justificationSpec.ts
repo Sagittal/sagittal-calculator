@@ -1,12 +1,17 @@
 import {Justification, Row} from "../../../../../../src/general/io/table"
 import {JiPitchAnalysis} from "../../../../../../src/sagittal/ji/analyze"
 import {computeMonzoAndQuotientJustification} from "../../../../../../src/scripts/jiPitch/io/splitMonzoAndQuotient"
+import {
+    INVISIBLE_MONZO_CLOSING_ANGLE_BRACKET_COLUMN_TITLE,
+    INVISIBLE_MONZO_OPENING_SQUARE_BRACKET_COLUMN_TITLE,
+} from "../../../../../../src/scripts/jiPitch/io/splitMonzoAndQuotient/constants"
 
 describe("computeMonzoAndQuotientJustification", (): void => {
     it("justifies quotients to center on the vinculum, and monzos so that the square bracket is closer to the rest of the materials", (): void => {
         const headerRows = [
             ["comma", "quotient", "", "", "monzo", "", "", "", "apotome"],
-            ["name", "n", "/", "d", "[", "2", "3", "⟩", "slope"],
+            // tslint:disable-next-line max-line-length
+            ["name", "n", "/", "d", INVISIBLE_MONZO_OPENING_SQUARE_BRACKET_COLUMN_TITLE, "2", "3", INVISIBLE_MONZO_CLOSING_ANGLE_BRACKET_COLUMN_TITLE, "slope"],
         ] as Array<Row<{of: JiPitchAnalysis, header: true}>>
 
         const actual = computeMonzoAndQuotientJustification(headerRows)

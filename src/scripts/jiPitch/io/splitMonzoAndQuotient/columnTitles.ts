@@ -9,6 +9,10 @@ import {
     TableFormat,
     TWO_3_FREE_CLASS_SIGN,
 } from "../../../../general"
+import {
+    INVISIBLE_MONZO_CLOSING_ANGLE_BRACKET_COLUMN_TITLE,
+    INVISIBLE_MONZO_OPENING_SQUARE_BRACKET_COLUMN_TITLE,
+} from "./constants"
 
 const splitMonzoAndQuotientColumnTitles = (
     columnTitles: Io[],
@@ -24,9 +28,9 @@ const splitMonzoAndQuotientColumnTitles = (
             adjustedColumnTitles.push("quotient n" as Io, "/" as Io, "d" as Io)
         } else if (columnTitle === "monzo") {
             adjustedColumnTitles.push(
-                "monzo [" as Io,
+                `monzo ${INVISIBLE_MONZO_OPENING_SQUARE_BRACKET_COLUMN_TITLE}` as Io,
                 ...PRIMES.slice(0, maxMonzoLength).map((prime: Prime): string => prime.toString()) as Io[],
-                "⟩" as Io,
+                INVISIBLE_MONZO_CLOSING_ANGLE_BRACKET_COLUMN_TITLE,
             )
         } else if (columnTitle === "2,3-free class name" && ioSettings.tableFormat !== TableFormat.FORUM) {
             const sign = ioSettings.tableFormat === TableFormat.FORUM_WITH_SPLIT_QUOTIENTS ?

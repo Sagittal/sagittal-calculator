@@ -19,11 +19,11 @@ describe("splitMonzoAndQuotientColumnTitles", (): void => {
             "quotient n",
             "/",
             "d",
-            "monzo [",
+            "monzo  ",
             "2",
             "3",
             "5",
-            "⟩",
+            " ",
             "cents",
             "apotome slope",
         ] as Io[]
@@ -36,11 +36,11 @@ describe("splitMonzoAndQuotientColumnTitles", (): void => {
 
         const expected = [
             "quotient",
-            "monzo [",
+            "monzo  ",
             "2",
             "3",
             "5",
-            "⟩",
+            " ",
             "cents",
             "apotome slope",
         ] as Io[]

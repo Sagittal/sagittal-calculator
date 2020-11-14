@@ -39,7 +39,7 @@ describe("computeJiPitchOutput", (): void => {
             "   --- JI pitch ---" + NEWLINE +
             "" + NEWLINE +
             "quotient\t \t \tmonzo\t       \t       \t       \t \t               \tapotome\t       \t       " + NEWLINE +
-            "       n\t/\td\t    [\t  2    \t  3    \t  5    \t⟩\tcents          \tslope  \tAAS    \tATE    ".underline + NEWLINE +
+            "       n\t/\td\t     \t  2    \t  3    \t  5    \t \tcents          \tslope  \tAAS    \tATE    ".underline + NEWLINE +
             "       5\t/\t4\t    [\t  0    \t -1    \t  1    \t⟩\t        11.200¢\t  8.200\t  8.200\t  1    " + NEWLINE as Io
         expect(actual).toEqual(expected)
     })
@@ -52,7 +52,7 @@ describe("computeJiPitchOutput", (): void => {
             "   --- JI pitch ---" + NEWLINE +
             "" + NEWLINE +
             "quotient\t\t\tmonzo\t\t\t\t\t\tapotome\t\t" + NEWLINE +
-            "n\t/\td\t[\t2\t3\t5\t⟩\tcents\tslope\tAAS\tATE".underline + NEWLINE +
+            "n\t/\td\t \t2\t3\t5\t \tcents\tslope\tAAS\tATE".underline + NEWLINE +
             "5\t/\t4\t[\t0\t-1\t1\t⟩\t11.200¢\t8.200\t8.200\t1" + NEWLINE as Io
         expect(actual).toEqual(expected)
     })
