@@ -1,10 +1,10 @@
-import {Score} from "../../../../src/general/lfc"
+import {Grade} from "../../../../src/general/lfc"
 import {Comma} from "../../../../src/general/music/ji"
 import {CommaClassId, Notation} from "../../../../src/sagittal/notation"
 import {complexityMetricLfcScriptGroupSettings} from "../../../../src/scripts/complexityMetricLfc/globals"
-import {computeZoneBadnessScore} from "../../../../src/scripts/complexityMetricLfc/zoneBadnessScore"
+import {computeZoneBadnessGrade} from "../../../../src/scripts/complexityMetricLfc/zoneBadnessGrade"
 
-describe("computeZoneBadnessScore", (): void => {
+describe("computeZoneBadnessGrade", (): void => {
     const COMMAS_FOR_1_V_5_7_13_n = [
         {monzo: [17, -11, -3, 0, 0, 2]},
         {monzo: [-18, 11, -2, 0, 0, 0, 0, 0, 0, 0, 0, 1]},
@@ -31,22 +31,22 @@ describe("computeZoneBadnessScore", (): void => {
         })
 
         it("returns 0 when a comma is the least bad comma in its zone", (): void => {
-            const actual = computeZoneBadnessScore(
+            const actual = computeZoneBadnessGrade(
                 [CommaClassId._1_V_5_7_13_n, COMMAS_FOR_1_V_5_7_13_n],
             )
 
-            const expected = 0 as Score<Notation>
+            const expected = 0 as Grade<Notation>
             expect(actual).toBeCloseTo(expected)
         })
 
         it("returns a squared distance between the actual comma's badness and the least bad comma's when a comma is not the least bad comma in its zone", (): void => {
             complexityMetricLfcScriptGroupSettings.sosMode = true
-            const actual = computeZoneBadnessScore(
+            const actual = computeZoneBadnessGrade(
                 [CommaClassId._1_V_5_P_2_7_P_3_k, COMMAS_FOR_1_V_5_P_2_7_P_3_k],
             )
 
             // 1/(5²⋅7³)k badness is 8.317604, but 17/19k badness is 7.080159; (8.317604 - 7.080159)^2 = 1.531271
-            const expected = 1.531271 as Score<Notation>
+            const expected = 1.531271 as Grade<Notation>
             expect(actual).toBeCloseTo(expected)
         })
     })
@@ -57,21 +57,21 @@ describe("computeZoneBadnessScore", (): void => {
         })
 
         it("returns 0 points (good) when a comma is the least bad comma in its zone", (): void => {
-            const actual = computeZoneBadnessScore(
+            const actual = computeZoneBadnessGrade(
                 [CommaClassId._1_V_5_7_13_n, COMMAS_FOR_1_V_5_7_13_n],
             )
 
-            const expected = 0 as Score<Notation>
+            const expected = 0 as Grade<Notation>
             expect(actual).toBe(expected)
         })
 
         it("returns 1 point (bad) when a comma is not the least bad comma in its zone", (): void => {
-            const actual = computeZoneBadnessScore(
+            const actual = computeZoneBadnessGrade(
                 [CommaClassId._1_V_5_P_2_7_P_3_k, COMMAS_FOR_1_V_5_P_2_7_P_3_k],
             )
 
             // 1/(5²⋅7³)k badness is 8.317604, but 17/19k badness is 7.080159; so, get penalized one point
-            const expected = 1 as Score<Notation>
+            const expected = 1 as Grade<Notation>
             expect(actual).toBe(expected)
         })
     })

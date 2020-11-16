@@ -10,7 +10,7 @@ import {
     Quotient,
     Rank,
     Scamon,
-    Score,
+    Grade,
     Sum,
     UNISON,
 } from "../../../../../src/general"
@@ -48,7 +48,7 @@ const boundHistoryAnalysisFixture: BoundHistoryAnalysis = {
     boundEventAnalyses: [],
     pitch: {monzo: IRRATIONAL_SCAMON_BASE_MONZO, scaler: HALF_SCALER} as Scamon<{rational: false}>,
     rank: 0 as Decimal<{integer: true}> & Rank<BoundType>,
-    score: 0 as Score<BoundHistory>,
+    grade: 0 as Grade<BoundHistory>,
     totalDistance: 0 as Sum<Abs<Cents>>,
     exact: false,
     totalInaDistance: 0 as Sum<Multiplier<Ina>>,

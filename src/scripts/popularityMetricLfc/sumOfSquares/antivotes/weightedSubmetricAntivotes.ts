@@ -1,4 +1,4 @@
-import {Parameter, Score, stringify, Two3FreeClass} from "../../../../general"
+import {Parameter, Grade, stringify, Two3FreeClass} from "../../../../general"
 import {LfcUnpopularityEstimate, Submetric} from "../types"
 import {compute23FreeClassSubmetricAntivotes} from "./two3FreeClassSubmetricAntivotes"
 import {computeWeightedAntivotes} from "./weightedAntivotes"
@@ -6,7 +6,7 @@ import {computeWeightedAntivotes} from "./weightedAntivotes"
 const computeWeightedSubmetricAntivotes = (
     two3FreeClass: Two3FreeClass,
     submetric: Submetric = {},
-): Score<LfcUnpopularityEstimate> => {
+): Grade<LfcUnpopularityEstimate> => {
     const {
         weightAsCoefficient = 1 as Parameter,
         weightAsLogarithmBase,
@@ -14,7 +14,7 @@ const computeWeightedSubmetricAntivotes = (
         weightAsPowerBase,
     }: Submetric = submetric
 
-    let submetricAntivotes = 0 as Score<LfcUnpopularityEstimate>
+    let submetricAntivotes = 0 as Grade<LfcUnpopularityEstimate>
     if (weightAsCoefficient !== 0) {
         submetricAntivotes = compute23FreeClassSubmetricAntivotes(two3FreeClass, submetric)
     }

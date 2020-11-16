@@ -1,10 +1,10 @@
-import {areScamonsEqual, Comma, formatDecimal, LogTarget, saveLog, Score} from "../../general"
+import {areScamonsEqual, Comma, formatDecimal, Grade, LogTarget, saveLog} from "../../general"
 import {Badness, CommaClassId, computeLpei, formatComma, getCommaClass, Notation} from "../../sagittal"
 import {complexityMetricLfcScriptGroupSettings} from "./globals"
 
-const computeZoneBadnessScore = (
+const computeZoneBadnessGrade = (
     [commaClassId, commas]: [CommaClassId, Comma[]],
-): Score<Notation> => {
+): Grade<Notation> => {
     let leastCommaBadness = Infinity as Badness
     let actualCommaBadness = Infinity as Badness
 
@@ -25,20 +25,20 @@ const computeZoneBadnessScore = (
         }
     })
 
-    const zoneBadnessScore = complexityMetricLfcScriptGroupSettings.sosMode ?
-        (actualCommaBadness - leastCommaBadness) ** 2 as Score<Notation> :
+    const zoneBadnessGrade = complexityMetricLfcScriptGroupSettings.sosMode ?
+        (actualCommaBadness - leastCommaBadness) ** 2 as Grade<Notation> :
         actualCommaBadness === leastCommaBadness ?
-            0 as Score<Notation> :
-            1 as Score<Notation>
+            0 as Grade<Notation> :
+            1 as Grade<Notation>
 
     saveLog(
-        `badness score for ${formatComma(actualComma)}'s zone: ${zoneBadnessScore}\n`,
+        `badness grade for ${formatComma(actualComma)}'s zone: ${zoneBadnessGrade}\n`,
         LogTarget.DETAILS,
     )
 
-    return zoneBadnessScore
+    return zoneBadnessGrade
 }
 
 export {
-    computeZoneBadnessScore,
+    computeZoneBadnessGrade,
 }

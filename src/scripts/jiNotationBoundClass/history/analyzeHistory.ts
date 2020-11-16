@@ -7,7 +7,7 @@ import {computeBoundHistoryPosition} from "./historyPosition"
 import {computeBoundHistoryTotalDistance} from "./historyTotalDistance"
 import {computeBoundHistoryTotalInaDistance} from "./historyTotalInaDistance"
 import {computeRank} from "./rank"
-import {computeScore} from "./score"
+import {computeGrade} from "./grade"
 import {BoundHistoryAnalysis} from "./types"
 
 const analyzeHistory = (
@@ -19,7 +19,7 @@ const analyzeHistory = (
 
     const boundEventAnalyses = analyzeBoundEvents(boundHistory, pitch)
     const rank = computeRank(boundEventAnalyses)
-    const score = computeScore(boundEventAnalyses)
+    const grade = computeGrade(boundEventAnalyses)
     const exact = computeExact(boundEventAnalyses)
     const totalDistance = computeBoundHistoryTotalDistance(boundEventAnalyses)
     const totalInaDistance = computeBoundHistoryTotalInaDistance(boundEventAnalyses)
@@ -39,7 +39,7 @@ const analyzeHistory = (
         boundEventAnalyses: boundEventAnalyses,
         pitch: position,
         rank,
-        score,
+        grade,
         totalDistance,
         totalInaDistance,
         exact,

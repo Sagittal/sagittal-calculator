@@ -317,7 +317,7 @@ describe("formatJiNotationBoundClass", (): void => {
             `            ]`,
             `        },`,
             `        "rank": 0,`,
-            `        "score": 0,`,
+            `        "grade": 0,`,
             `        "totalDistance": 0,`,
             `        "exact": false,`,
             `        "totalInaDistance": 0,`,

@@ -1,10 +1,10 @@
-import {Copfr, Decimal, Max, Numerator, Prime, Rank, ScalaPopularityStat, Score} from "../../general"
+import {Copfr, Decimal, Max, Numerator, Prime, Rank, ScalaPopularityStat, Grade} from "../../general"
 import {Two3FreeClassAnalysis} from "../../sagittal"
 import {BestNotatingCommaProperties} from "./bestNotatingComma"
 import {NotatingSymbolClassesProperties} from "./notatingSymbolClasses"
 
 type SharedPopular23FreeClassProperties = Two3FreeClassAnalysis & {
-    votes: Decimal<{integer: true}> & Score<ScalaPopularityStat>,
+    votes: Decimal<{integer: true}> & Grade<ScalaPopularityStat>,
     popularityRank?: Rank<ScalaPopularityStat>,
 }
 

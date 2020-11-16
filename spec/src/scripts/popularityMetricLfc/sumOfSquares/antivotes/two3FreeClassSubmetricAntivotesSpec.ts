@@ -1,4 +1,4 @@
-import {Parameter, Score} from "../../../../../../src/general/lfc"
+import {Parameter, Grade} from "../../../../../../src/general/lfc"
 import {BASE_2, log, Monzo, Power} from "../../../../../../src/general/math"
 import {Two3FreeClass} from "../../../../../../src/general/music"
 import {LfcUnpopularityEstimate} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
@@ -15,10 +15,10 @@ describe("compute23FreeClassSubmetricAntivotes", (): void => {
 
         expect(actual).toBe(
             computeSubmetricAntivotes([0, 0, 0, 0, 1] as Monzo<{rational: true}>, submetric) as
-                Score<LfcUnpopularityEstimate> +
+                Grade<LfcUnpopularityEstimate> +
             kAsCoefficient *
             computeSubmetricAntivotes([0, 0, 0, 1] as Monzo<{rational: true}>, submetric) as
-                Score<LfcUnpopularityEstimate>,
+                Grade<LfcUnpopularityEstimate>,
         )
     })
 
@@ -31,10 +31,10 @@ describe("compute23FreeClassSubmetricAntivotes", (): void => {
 
         expect(actual).toBe(
             computeSubmetricAntivotes([0, 0, 2] as Monzo<{rational: true}>, submetric) as
-                Score<LfcUnpopularityEstimate> +
+                Grade<LfcUnpopularityEstimate> +
             kAsCoefficient *
             computeSubmetricAntivotes([0, 0, 0, 0, 1] as Monzo<{rational: true}>, submetric) as
-                Score<LfcUnpopularityEstimate>,
+                Grade<LfcUnpopularityEstimate>,
         )
     })
 
@@ -59,9 +59,9 @@ describe("compute23FreeClassSubmetricAntivotes", (): void => {
 
         expect(actual).toBe(
             computeSubmetricAntivotes([0, 0, 0, 0, 1] as Monzo<{rational: true}>, submetric) as
-                Score<LfcUnpopularityEstimate> +
+                Grade<LfcUnpopularityEstimate> +
             kAsCoefficient * computeSubmetricAntivotes([0, 0, 2] as Monzo<{rational: true}>, submetric) as
-                Score<LfcUnpopularityEstimate>,
+                Grade<LfcUnpopularityEstimate>,
         )
     })
 
@@ -98,11 +98,11 @@ describe("compute23FreeClassSubmetricAntivotes", (): void => {
 
         expect(actual).toBe(
             computeSubmetricAntivotes([0, 0, 1] as Monzo<{rational: true}>, submetric) as
-                Score<LfcUnpopularityEstimate> +
+                Grade<LfcUnpopularityEstimate> +
             log(
                 computeSubmetricAntivotes([0, 0, 0, 1] as Monzo<{rational: true}>, submetric) as number as Power,
                 BASE_2,
-            ) as Score<LfcUnpopularityEstimate>,
+            ) as Grade<LfcUnpopularityEstimate>,
         )
     })
 
@@ -115,9 +115,9 @@ describe("compute23FreeClassSubmetricAntivotes", (): void => {
 
         expect(actual).toBe(
             computeSubmetricAntivotes([0, 0, 1] as Monzo<{rational: true}>, submetric) as
-                Score<LfcUnpopularityEstimate> +
+                Grade<LfcUnpopularityEstimate> +
             computeSubmetricAntivotes([0, 0, 0, 1] as Monzo<{rational: true}>, submetric) ** 2 as
-                Score<LfcUnpopularityEstimate>,
+                Grade<LfcUnpopularityEstimate>,
         )
     })
 
@@ -130,9 +130,9 @@ describe("compute23FreeClassSubmetricAntivotes", (): void => {
 
         expect(actual).toBe(
             computeSubmetricAntivotes([0, 0, 1] as Monzo<{rational: true}>, submetric) as
-                Score<LfcUnpopularityEstimate> +
+                Grade<LfcUnpopularityEstimate> +
             2 ** computeSubmetricAntivotes([0, 0, 0, 1] as Monzo<{rational: true}>, submetric) as
-                Score<LfcUnpopularityEstimate>,
+                Grade<LfcUnpopularityEstimate>,
         )
     })
 
@@ -151,7 +151,7 @@ describe("compute23FreeClassSubmetricAntivotes", (): void => {
                 ) as number as Power, BASE_2,
             ) as number +
             computeSubmetricAntivotes([0, 0, 0, 1] as Monzo<{rational: true}>, submetric) as
-                Score<LfcUnpopularityEstimate>,
+                Grade<LfcUnpopularityEstimate>,
         )
     })
 
@@ -164,9 +164,9 @@ describe("compute23FreeClassSubmetricAntivotes", (): void => {
 
         expect(actual).toBe(
             computeSubmetricAntivotes([0, 0, 1] as Monzo<{rational: true}>, submetric) ** 2 as
-                Score<LfcUnpopularityEstimate> +
+                Grade<LfcUnpopularityEstimate> +
             computeSubmetricAntivotes([0, 0, 0, 1] as Monzo<{rational: true}>, submetric) as
-                Score<LfcUnpopularityEstimate>,
+                Grade<LfcUnpopularityEstimate>,
         )
     })
 
@@ -179,9 +179,9 @@ describe("compute23FreeClassSubmetricAntivotes", (): void => {
 
         expect(actual).toBe(
             2 ** computeSubmetricAntivotes([0, 0, 1] as Monzo<{rational: true}>, submetric) as
-                Score<LfcUnpopularityEstimate> +
+                Grade<LfcUnpopularityEstimate> +
             computeSubmetricAntivotes([0, 0, 0, 1] as Monzo<{rational: true}>, submetric) as
-                Score<LfcUnpopularityEstimate>,
+                Grade<LfcUnpopularityEstimate>,
         )
     })
 })

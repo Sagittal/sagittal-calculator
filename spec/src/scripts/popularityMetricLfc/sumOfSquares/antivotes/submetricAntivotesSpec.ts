@@ -1,4 +1,4 @@
-import {Parameter, Score} from "../../../../../../src/general/lfc"
+import {Parameter, Grade} from "../../../../../../src/general/lfc"
 import {Base, EMPTY_MONZO, log, Monzo} from "../../../../../../src/general/math"
 import {
     LfcUnpopularityEstimate,
@@ -35,7 +35,7 @@ describe("computeSubmetricAntivotes", (): void => {
             const expected =
                 1 * 11 +
                 1 * 13 +
-                2 * 17 as Score<LfcUnpopularityEstimate>
+                2 * 17 as Grade<LfcUnpopularityEstimate>
             expect(actual).toBe(expected)
         })
 
@@ -48,7 +48,7 @@ describe("computeSubmetricAntivotes", (): void => {
             const expected =
                 1 * 11 * aAsCoefficient +
                 1 * 13 * aAsCoefficient +
-                2 * 17 * aAsCoefficient as Score<LfcUnpopularityEstimate>
+                2 * 17 * aAsCoefficient as Grade<LfcUnpopularityEstimate>
             expect(actual).toBe(expected)
         })
 
@@ -61,7 +61,7 @@ describe("computeSubmetricAntivotes", (): void => {
             expect(actual).toBe(
                 1 * 11 ** aAsPowerExponent +
                 1 * 13 ** aAsPowerExponent +
-                2 * 17 ** aAsPowerExponent as Score<LfcUnpopularityEstimate>,
+                2 * 17 ** aAsPowerExponent as Grade<LfcUnpopularityEstimate>,
             )
         })
 
@@ -74,7 +74,7 @@ describe("computeSubmetricAntivotes", (): void => {
             expect(actual).toBe(
                 1 * log(11, aAsLogarithmBase as number as Base) +
                 1 * log(13, aAsLogarithmBase as number as Base) +
-                2 * log(17, aAsLogarithmBase as number as Base) as Score<LfcUnpopularityEstimate>,
+                2 * log(17, aAsLogarithmBase as number as Base) as Grade<LfcUnpopularityEstimate>,
             )
         })
 
@@ -87,7 +87,7 @@ describe("computeSubmetricAntivotes", (): void => {
             expect(actual).toBe(
                 1 * aAsPowerBase ** 11 +
                 1 * aAsPowerBase ** 13 +
-                2 * aAsPowerBase ** 17 as Score<LfcUnpopularityEstimate>,
+                2 * aAsPowerBase ** 17 as Grade<LfcUnpopularityEstimate>,
             )
         })
 
@@ -102,7 +102,7 @@ describe("computeSubmetricAntivotes", (): void => {
             expect(actual).toBe(
                 1 * (11 * aAsCoefficient + w) +
                 1 * (13 * aAsCoefficient + w) +
-                2 * (17 * aAsCoefficient + w) as Score<LfcUnpopularityEstimate>,
+                2 * (17 * aAsCoefficient + w) as Grade<LfcUnpopularityEstimate>,
             )
         })
 
@@ -119,7 +119,7 @@ describe("computeSubmetricAntivotes", (): void => {
             expect(actual).toBe(
                 1 * (11 * aAsCoefficient + w) +
                 1 * (13 * aAsCoefficient + b) +
-                2 * (17 * aAsCoefficient + w) as Score<LfcUnpopularityEstimate>,
+                2 * (17 * aAsCoefficient + w) as Grade<LfcUnpopularityEstimate>,
             )
         })
 
@@ -134,7 +134,7 @@ describe("computeSubmetricAntivotes", (): void => {
             expect(actual).toBe(
                 1 * (11 + x) * aAsCoefficient +
                 1 * (13 + x) * aAsCoefficient +
-                2 * (17 + x) * aAsCoefficient as Score<LfcUnpopularityEstimate>,
+                2 * (17 + x) * aAsCoefficient as Grade<LfcUnpopularityEstimate>,
             )
         })
 
@@ -151,7 +151,7 @@ describe("computeSubmetricAntivotes", (): void => {
             expect(actual).toBe(
                 1 * (11 + x) * aAsCoefficient +
                 1 * (13 + u) * aAsCoefficient +
-                2 * (17 + x) * aAsCoefficient as Score<LfcUnpopularityEstimate>,
+                2 * (17 + x) * aAsCoefficient as Grade<LfcUnpopularityEstimate>,
             )
         })
 
@@ -164,7 +164,7 @@ describe("computeSubmetricAntivotes", (): void => {
             expect(actual).toBe(
                 1 ** y * 11 +
                 1 ** y * 13 +
-                2 ** y * 17 as Score<LfcUnpopularityEstimate>,
+                2 ** y * 17 as Grade<LfcUnpopularityEstimate>,
             )
         })
 
@@ -179,7 +179,7 @@ describe("computeSubmetricAntivotes", (): void => {
             expect(actual).toBe(
                 1 ** y * 11 +
                 1 ** v * 13 +
-                2 ** y * 17 as Score<LfcUnpopularityEstimate>,
+                2 ** y * 17 as Grade<LfcUnpopularityEstimate>,
             )
         })
 
@@ -191,14 +191,14 @@ describe("computeSubmetricAntivotes", (): void => {
 
             expect(actual).toBe(
                 0.5 * 5 +
-                1 * 7 as Score<LfcUnpopularityEstimate>,
+                1 * 7 as Grade<LfcUnpopularityEstimate>,
             )
         })
 
         it("works for an empty monzo", (): void => {
             const actual = computeSubmetricAntivotes(EMPTY_MONZO as Monzo<{rational: true}>, submetric)
 
-            const expected = 0 as Score<LfcUnpopularityEstimate>
+            const expected = 0 as Grade<LfcUnpopularityEstimate>
             expect(actual).toBe(expected)
         })
     })
@@ -212,7 +212,7 @@ describe("computeSubmetricAntivotes", (): void => {
         const expected =
             1 * 11 +
             1 * 13 +
-            1 * 17 as Score<LfcUnpopularityEstimate>
+            1 * 17 as Grade<LfcUnpopularityEstimate>
         expect(actual).toBe(expected)
     })
 
@@ -225,7 +225,7 @@ describe("computeSubmetricAntivotes", (): void => {
         const expected =
             1 * 5 +
             1 * 6 +
-            2 * 7 as Score<LfcUnpopularityEstimate>
+            2 * 7 as Grade<LfcUnpopularityEstimate>
         expect(actual).toBe(expected)
     })
 
@@ -239,7 +239,7 @@ describe("computeSubmetricAntivotes", (): void => {
         const expected =
             1 * 5 +
             1 * 6 +
-            1 * 7 as Score<LfcUnpopularityEstimate>
+            1 * 7 as Grade<LfcUnpopularityEstimate>
         expect(actual).toBe(expected)
     })
 
@@ -251,7 +251,7 @@ describe("computeSubmetricAntivotes", (): void => {
         const expected =
             1 * 1 +
             1 * 1 +
-            2 * 1 as Score<LfcUnpopularityEstimate>
+            2 * 1 as Grade<LfcUnpopularityEstimate>
         expect(actual).toBe(expected)
     })
 
@@ -264,7 +264,7 @@ describe("computeSubmetricAntivotes", (): void => {
         const expected =
             1 * 1 +
             1 * 1 +
-            1 * 1 as Score<LfcUnpopularityEstimate>
+            1 * 1 as Grade<LfcUnpopularityEstimate>
         expect(actual).toBe(expected)
     })
 
@@ -277,7 +277,7 @@ describe("computeSubmetricAntivotes", (): void => {
         const expected =
             0 * 11 +
             0 * 13 +
-            1 * 17 as Score<LfcUnpopularityEstimate>
+            1 * 17 as Grade<LfcUnpopularityEstimate>
         expect(actual).toBe(expected)
     })
 
@@ -291,7 +291,7 @@ describe("computeSubmetricAntivotes", (): void => {
         const expected =
             0 * 5 +
             0 * 6 +
-            1 * 7 as Score<LfcUnpopularityEstimate>
+            1 * 7 as Grade<LfcUnpopularityEstimate>
         expect(actual).toBe(expected)
     })
 })

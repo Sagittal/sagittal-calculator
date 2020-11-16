@@ -14,12 +14,12 @@ const computeBestCommaPerSemitinaZone = (complexityOnly: boolean): Array<[Index<
     const bestCommaPerSemitinaZone: Array<[Index<Semitina>, Comma]> = commasBySemitinaZoneEntries
         .map(([semitinaZone, commas]: [Index<Semitina>, Comma[]]): [Index<Semitina>, Comma] => {
             let bestComma = undefined as Maybe<Comma>
-            let bestScore = Infinity
+            let bestGrade = Infinity
             commas.forEach((comma: Comma): void => {
-                const score = complexityOnly ? computeLpe(comma) : computeLpei(comma, SEMITINA_CENTS)
+                const grade = complexityOnly ? computeLpe(comma) : computeLpei(comma, SEMITINA_CENTS)
 
-                if (score < bestScore) {
-                    bestScore = score
+                if (grade < bestGrade) {
+                    bestGrade = grade
                     bestComma = comma
                 }
             })

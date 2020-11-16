@@ -10,7 +10,7 @@ import {
     Monzo, Parameter,
     Prime,
     PRIMES,
-    QuotientPartType, Score,
+    QuotientPartType, Grade,
     stringify,
 } from "../../../../general"
 import {LfcUnpopularityEstimate, Submetric} from "../types"
@@ -25,7 +25,7 @@ const computeSubmetricAntivotes = (
     two3FreeRationalMonzo: Monzo<{rational: true}>,
     submetric: Submetric = {},
     quotientPartType?: QuotientPartType,
-): Score<LfcUnpopularityEstimate> => {
+): Grade<LfcUnpopularityEstimate> => {
     const {
         aAsCoefficient = 1 as Parameter,
         aAsPowerExponent,
@@ -51,12 +51,12 @@ const computeSubmetricAntivotes = (
 
     return two3FreeRationalMonzo.reduce(
         (
-            monzoAntivotes: Score<LfcUnpopularityEstimate>,
+            monzoAntivotes: Grade<LfcUnpopularityEstimate>,
             primeExponent: Decimal<{integer: true}> & Exponent<Prime>,
             index: number,
-        ): Score<LfcUnpopularityEstimate> => {
+        ): Grade<LfcUnpopularityEstimate> => {
             if (max && index < indexOfFinalElement(two3FreeRationalMonzo)) {
-                return 0 as Score<LfcUnpopularityEstimate>
+                return 0 as Grade<LfcUnpopularityEstimate>
             }
 
             const prime = PRIMES[index]
@@ -104,9 +104,9 @@ const computeSubmetricAntivotes = (
                 throw new Error(`You got NaN! in submetricAntivotes ${two3FreeRationalMonzo} ${stringify(submetric, {multiline: true})}`)
             }
 
-            return monzoAntivotes + primeExponentAntivotes as Score<LfcUnpopularityEstimate>
+            return monzoAntivotes + primeExponentAntivotes as Grade<LfcUnpopularityEstimate>
         },
-        0 as Score<LfcUnpopularityEstimate>,
+        0 as Grade<LfcUnpopularityEstimate>,
     )
 }
 

@@ -4,7 +4,7 @@ import {
     Decimal,
     isUndefined,
     ScalaPopularityStat,
-    Score,
+    Grade,
 } from "../../general"
 import {Two3FreeClassAnalysis} from "../../sagittal"
 import {computeBestNotatingCommaProperties} from "./bestNotatingComma"
@@ -20,7 +20,7 @@ const computePopular23FreeClass = (
         return areRationalScamonsEqual(popularity.two3FreeClass, two3FreeClass)
     })
     const popularityRank = !isUndefined(popularity) ? popularity.rank : undefined
-    const votes = popularity?.votes || 0 as Decimal<{integer: true}> & Score<ScalaPopularityStat>
+    const votes = popularity?.votes || 0 as Decimal<{integer: true}> & Grade<ScalaPopularityStat>
 
     const bestNotatingCommaOrNotatingSymbolClassesProperties =
         popular23FreeClassesScriptGroupSettings.useBestNotatingCommas ?

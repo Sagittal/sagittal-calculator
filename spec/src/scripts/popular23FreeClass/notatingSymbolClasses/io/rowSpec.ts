@@ -6,7 +6,7 @@ import {
     Name,
     Ranked,
     ScalaPopularityStat,
-    Score,
+    Grade,
     TableFormat,
     Two3FreeClass,
 } from "../../../../../../src/general"
@@ -31,7 +31,7 @@ describe("computePopular23FreeClassWithNotatingSymbolClassesRow", (): void => {
         notatingSymbolClassSmallestSymbolSubsetIndices: [1, 3] as Array<Index<SymbolSubsetId>>,
         notatingSymbolClassIds: [SymbolClassId.DOUBLE_SCROLL, SymbolClassId.ANTITICK_AND_LEFT_BARB],
         n2d3p9: 2 as N2D3P9,
-        votes: 7 as Decimal<{integer: true}> & Score<ScalaPopularityStat>,
+        votes: 7 as Decimal<{integer: true}> & Grade<ScalaPopularityStat>,
         popularityRank: 3 as Rank<ScalaPopularityStat>,
         two3FreeClass: {
             monzo: [0, 0, -1, 1] as Monzo<{rational: true, rough: 5, direction: Direction.SUPER}>,

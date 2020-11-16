@@ -4,7 +4,7 @@ import {
     isUndefined,
     Parameter,
     QuotientPartType,
-    Score,
+    Grade,
     stringify,
     Two3FreeClass,
 } from "../../../../general"
@@ -16,7 +16,7 @@ import {computeWeightedAntivotes} from "./weightedAntivotes"
 const compute23FreeClassSubmetricAntivotes = (
     two3FreeClass: Two3FreeClass,
     submetric: Submetric = {},
-): Score<LfcUnpopularityEstimate> => {
+): Grade<LfcUnpopularityEstimate> => {
     const {
         useNuminator = false,
         kAsCoefficient = 1 as Parameter,
@@ -70,7 +70,7 @@ const compute23FreeClassSubmetricAntivotes = (
         throw new Error(`You got NaN! in two3FreeClassSubmetricAntivotes ${two3FreeClass} ${stringify(submetric, {multiline: true})} ${numeratorAntivotes} ${denominatorAntivotes}`)
     }
 
-    return numeratorAntivotes + denominatorAntivotes as Score<LfcUnpopularityEstimate>
+    return numeratorAntivotes + denominatorAntivotes as Grade<LfcUnpopularityEstimate>
 }
 
 export {

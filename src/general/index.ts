@@ -276,7 +276,7 @@ export {
 } from "./music"
 export {Count, Ed, Extrema, Index, Ms, Name, Step, Window, Of} from "./types"
 export {
-    Score,
+    Grade,
     Parameter,
     DynamicParameterScope,
     ParameterScope,

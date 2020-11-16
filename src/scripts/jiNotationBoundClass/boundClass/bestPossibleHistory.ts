@@ -1,4 +1,4 @@
-import {isEmpty, Maybe, Score} from "../../../general"
+import {isEmpty, Maybe, Grade} from "../../../general"
 import {BoundHistory} from "../histories"
 import {BoundHistoryAnalysis} from "../history"
 
@@ -8,7 +8,7 @@ const computeBestPossibleBoundHistoryAnalysis = (
     if (isEmpty(boundHistoryAnalyses)) return undefined
 
     let bestPossibleBoundHistoryAnalysis: BoundHistoryAnalysis =
-        {score: Infinity as Score<BoundHistory>} as BoundHistoryAnalysis
+        {grade: Infinity as Grade<BoundHistory>} as BoundHistoryAnalysis
 
     const atLeastOneExactBoundHistory = boundHistoryAnalyses
         .some((boundHistoryAnalysis: BoundHistoryAnalysis): boolean => !boundHistoryAnalysis.exact)
@@ -26,9 +26,9 @@ const computeBestPossibleBoundHistoryAnalysis = (
 
     boundHistoryAnalyses.forEach((boundHistoryAnalysis: BoundHistoryAnalysis): void => {
         if (
-            boundHistoryAnalysis.score < bestPossibleBoundHistoryAnalysis.score ||
+            boundHistoryAnalysis.grade < bestPossibleBoundHistoryAnalysis.grade ||
             (
-                boundHistoryAnalysis.score === bestPossibleBoundHistoryAnalysis.score &&
+                boundHistoryAnalysis.grade === bestPossibleBoundHistoryAnalysis.grade &&
                 boundHistoryAnalysis.totalDistance < bestPossibleBoundHistoryAnalysis.totalDistance
             )
         ) {

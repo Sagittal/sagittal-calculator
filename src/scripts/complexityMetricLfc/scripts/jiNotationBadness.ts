@@ -1,10 +1,10 @@
 import {program} from "commander"
-import {Comma, Filename, ioSettings, LogTarget, saveLog, Score, setupScriptAndIo, Sum, time} from "../../../general"
+import {Comma, Filename, ioSettings, LogTarget, saveLog, Grade, setupScriptAndIo, Sum, time} from "../../../general"
 import {CommaClassId, Notation} from "../../../sagittal"
 import {ScriptGroup} from "../../types"
 import {EXCLUDED_COMMAS} from "../constants"
 import {complexityMetricLfcScriptGroupSettings} from "../globals"
-import {computeZoneBadnessScore} from "../zoneBadnessScore"
+import {computeZoneBadnessGrade} from "../zoneBadnessGrade"
 import {computeZoneCommaEntries} from "../zoneCommas"
 
 // TODO: BADNESS & COMPLEXITY: SCRIPT GROUP NAMING
@@ -25,19 +25,19 @@ import {computeZoneCommaEntries} from "../zoneCommas"
 
 setupScriptAndIo(ScriptGroup.COMPLEXITY_METRIC_LFC as Filename, [LogTarget.ALL])
 
-let jiNotationBadnessScore = 0 as Sum<Score<Notation>>
+let jiNotationBadnessGrade = 0 as Sum<Grade<Notation>>
 
 complexityMetricLfcScriptGroupSettings.zoneCommaEntries = computeZoneCommaEntries(!!program.secondaryCommaZones)
 
-saveLog("Badness scores per zone (* identifies the actual comma for each zone)\n", LogTarget.DETAILS)
+saveLog("Badness grades per zone (* identifies the actual comma for each zone)\n", LogTarget.DETAILS)
 complexityMetricLfcScriptGroupSettings.zoneCommaEntries
     .forEach(([commaClassId, commas]: [CommaClassId, Comma[]]): void => {
         if (EXCLUDED_COMMAS.includes(commaClassId)) return
 
-        const zoneBadnessScore = computeZoneBadnessScore([commaClassId, commas])
-        jiNotationBadnessScore = jiNotationBadnessScore + zoneBadnessScore as Sum<Score<Notation>>
+        const zoneBadnessGrade = computeZoneBadnessGrade([commaClassId, commas])
+        jiNotationBadnessGrade = jiNotationBadnessGrade + zoneBadnessGrade as Sum<Grade<Notation>>
     })
 
-saveLog(`\nJI NOTATION'S BADNESS SCORE WAS: ${jiNotationBadnessScore}`, LogTarget.FINAL)
+saveLog(`\nJI NOTATION'S BADNESS GRADE WAS: ${jiNotationBadnessGrade}`, LogTarget.FINAL)
 
 if (ioSettings.time) saveLog(`\ntook ${time()}`, LogTarget.FINAL)

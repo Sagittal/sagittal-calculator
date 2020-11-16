@@ -6,7 +6,7 @@ import {
     Monzo,
     Rank,
     ScalaPopularityStat,
-    Score,
+    Grade,
     Two3FreeClass,
 } from "../../../../src/general"
 import {Two3FreeClassAnalysis} from "../../../../src/sagittal/ji/analyze"
@@ -32,7 +32,7 @@ describe("computePopular23FreeClass", (): void => {
         const expected: Popular23FreeClass = {
             ...two3FreeClassAnalysis,
             popularityRank: 2 as Rank<ScalaPopularityStat>,
-            votes: 5371 as Decimal<{integer: true}> & Score<ScalaPopularityStat>,
+            votes: 5371 as Decimal<{integer: true}> & Grade<ScalaPopularityStat>,
             notatingSymbolClassIds: [SymbolClassId.TICK, SymbolClassId.LEFT_BARB],
             notatingSymbolClassSmallestSymbolSubsetIndices: [5, 1] as Array<Index<SymbolSubsetId>>,
         }
@@ -46,7 +46,7 @@ describe("computePopular23FreeClass", (): void => {
         const expected: Popular23FreeClass = {
             ...two3FreeClassAnalysis,
             popularityRank: 2 as Rank<ScalaPopularityStat>,
-            votes: 5371 as Decimal<{integer: true}> & Score<ScalaPopularityStat>,
+            votes: 5371 as Decimal<{integer: true}> & Grade<ScalaPopularityStat>,
             bestNotatingCommaCents: 21.506290 as Cents,
             bestNotatingCommaMonzo: [-4, 4, -1] as Monzo<{rational: true}>,
             bestNotatingCommaMaybeCommaClassId: CommaClassId._1_V_5_C,

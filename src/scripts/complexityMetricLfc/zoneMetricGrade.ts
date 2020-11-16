@@ -1,13 +1,13 @@
-import {areScamonsEqual, Comma, formatDecimal, LogTarget, saveLog, Score} from "../../general"
+import {areScamonsEqual, Comma, formatDecimal, LogTarget, saveLog, Grade} from "../../general"
 import {CommaClassId, Complexity, formatComma, getCommaClass} from "../../sagittal"
 import {complexityMetricLfcScriptGroupSettings} from "./globals"
 import {ComplexityMetric, ComplexityParameterSet} from "./types"
 
-const computeZoneComplexityMetricScore = (
+const computeZoneComplexityMetricGrade = (
     [commaClassId, commas]: [CommaClassId, Comma[]],
     complexityMetric: ComplexityMetric,
     complexityParameterSet: ComplexityParameterSet,
-): Score<ComplexityMetric> => {
+): Grade<ComplexityMetric> => {
     let leastCommaComplexity = Infinity as Complexity
     let actualCommaComplexity = Infinity as Complexity
 
@@ -28,20 +28,20 @@ const computeZoneComplexityMetricScore = (
         }
     })
 
-    const zoneComplexityMetricScore = complexityMetricLfcScriptGroupSettings.sosMode ?
-        (actualCommaComplexity - leastCommaComplexity) ** 2 as Score<ComplexityMetric> :
+    const zoneComplexityMetricGrade = complexityMetricLfcScriptGroupSettings.sosMode ?
+        (actualCommaComplexity - leastCommaComplexity) ** 2 as Grade<ComplexityMetric> :
         actualCommaComplexity === leastCommaComplexity ?
-            0 as Score<ComplexityMetric> :
-            1 as Score<ComplexityMetric>
+            0 as Grade<ComplexityMetric> :
+            1 as Grade<ComplexityMetric>
 
     saveLog(
-        `complexity metric score for ${formatComma(actualComma)}'s zone: ${zoneComplexityMetricScore}`,
+        `complexity metric grade for ${formatComma(actualComma)}'s zone: ${zoneComplexityMetricGrade}`,
         LogTarget.DETAILS,
     )
 
-    return zoneComplexityMetricScore
+    return zoneComplexityMetricGrade
 }
 
 export {
-    computeZoneComplexityMetricScore,
+    computeZoneComplexityMetricGrade,
 }

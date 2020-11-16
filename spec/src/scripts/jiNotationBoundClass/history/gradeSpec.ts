@@ -1,19 +1,19 @@
 import {BoundType, JiNotationLevelId} from "../../../../../src/sagittal/notations/ji"
 import {BoundEventAnalysis} from "../../../../../src/scripts/jiNotationBoundClass/history"
-import {computeScore} from "../../../../../src/scripts/jiNotationBoundClass/history/score"
+import {computeGrade} from "../../../../../src/scripts/jiNotationBoundClass/history/grade"
 import {RANKS} from "../../../../../src/scripts/jiNotationBoundClass/ranks"
 import {boundEventAnalysisFixture} from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
-describe("computeScore", (): void => {
-    it("scores histories with worse ranks worse", (): void => {
-        const expectedWorseScoreHistories: BoundEventAnalysis[] = [
+describe("computeGrade", (): void => {
+    it("grades histories with worse ranks worse", (): void => {
+        const expectedWorseGradeHistories: BoundEventAnalysis[] = [
             {
                 ...boundEventAnalysisFixture,
                 jiNotationLevel: JiNotationLevelId.MEDIUM,
                 rank: RANKS[BoundType.SIZE_CATEGORY_BOUND],
             },
         ]
-        const expectedBetterScoreHistories: BoundEventAnalysis[] = [
+        const expectedBetterGradeHistories: BoundEventAnalysis[] = [
             {
                 ...boundEventAnalysisFixture,
                 jiNotationLevel: JiNotationLevelId.MEDIUM,
@@ -21,14 +21,14 @@ describe("computeScore", (): void => {
             },
         ]
 
-        const expectedWorseResult = computeScore(expectedWorseScoreHistories)
-        const expectedBetterResult = computeScore(expectedBetterScoreHistories)
+        const expectedWorseResult = computeGrade(expectedWorseGradeHistories)
+        const expectedBetterResult = computeGrade(expectedBetterGradeHistories)
 
         expect(expectedWorseResult).toBeGreaterThan(expectedBetterResult)
     })
 
-    it("if two histories have the same total ranks but one incurs a worse rank at an earlier JI notation level, it gets a lesser score", (): void => {
-        const expectedWorseScoreHistories = [
+    it("if two histories have the same total ranks but one incurs a worse rank at an earlier JI notation level, it gets a lesser grade", (): void => {
+        const expectedWorseGradeHistories = [
             {
                 ...boundEventAnalysisFixture,
                 jiNotationLevel: JiNotationLevelId.MEDIUM,
@@ -40,7 +40,7 @@ describe("computeScore", (): void => {
                 rank: RANKS[BoundType.COMMA_MEAN],
             },
         ]
-        const expectedBetterScoreHistories = [
+        const expectedBetterGradeHistories = [
             {
                 ...boundEventAnalysisFixture,
                 jiNotationLevel: JiNotationLevelId.MEDIUM,
@@ -53,14 +53,14 @@ describe("computeScore", (): void => {
             },
         ]
 
-        const expectedWorseResult = computeScore(expectedWorseScoreHistories)
-        const expectedBetterResult = computeScore(expectedBetterScoreHistories)
+        const expectedWorseResult = computeGrade(expectedWorseGradeHistories)
+        const expectedBetterResult = computeGrade(expectedBetterGradeHistories)
 
         expect(expectedWorseResult).toBeGreaterThan(expectedBetterResult)
     })
 
-    it("a bound class history with the lowest event rank must get the lesser score, even in the most case leaning as much as possible in favor of otherwise", (): void => {
-        const expectedWorseScoreHistories = [
+    it("a bound class history with the lowest event rank must get the lesser grade, even in the most case leaning as much as possible in favor of otherwise", (): void => {
+        const expectedWorseGradeHistories = [
             {
                 ...boundEventAnalysisFixture,
                 jiNotationLevel: JiNotationLevelId.MEDIUM,
@@ -87,7 +87,7 @@ describe("computeScore", (): void => {
                 rank: RANKS[BoundType.SIZE_CATEGORY_BOUND],
             },
         ]
-        const expectedBetterScoreHistories = [
+        const expectedBetterGradeHistories = [
             {
                 ...boundEventAnalysisFixture,
                 jiNotationLevel: JiNotationLevelId.MEDIUM,
@@ -115,8 +115,8 @@ describe("computeScore", (): void => {
             },
         ]
 
-        const expectedWorseResult = computeScore(expectedWorseScoreHistories)
-        const expectedBetterResult = computeScore(expectedBetterScoreHistories)
+        const expectedWorseResult = computeGrade(expectedWorseGradeHistories)
+        const expectedBetterResult = computeGrade(expectedBetterGradeHistories)
 
         expect(expectedWorseResult).toBeGreaterThan(expectedBetterResult)
     })

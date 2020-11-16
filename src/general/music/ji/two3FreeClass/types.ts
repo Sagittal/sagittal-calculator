@@ -1,4 +1,4 @@
-import {Score} from "../../../lfc"
+import {Grade} from "../../../lfc"
 import {Decimal, Direction, Scamon} from "../../../math"
 
 type Two3FreeClass =
@@ -8,7 +8,7 @@ type Two3FreeClass =
 
 interface ScalaPopularityStat {
     two3FreeClass: Two3FreeClass,
-    votes: Decimal<{integer: true}> & Score<ScalaPopularityStat>,
+    votes: Decimal<{integer: true}> & Grade<ScalaPopularityStat>,
 }
 
 export {

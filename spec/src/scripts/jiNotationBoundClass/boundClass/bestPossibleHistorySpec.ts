@@ -1,4 +1,4 @@
-import {Score, Sum} from "../../../../../src/general"
+import {Grade, Sum} from "../../../../../src/general"
 import {Abs} from "../../../../../src/general/math"
 import {Cents} from "../../../../../src/general/music"
 import {computeBestPossibleBoundHistoryAnalysis} from "../../../../../src/scripts/jiNotationBoundClass/boundClass/bestPossibleHistory"
@@ -7,19 +7,19 @@ import {BoundHistoryAnalysis} from "../../../../../src/scripts/jiNotationBoundCl
 import {boundHistoryAnalysisFixture} from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 
 describe("computeBestPossibleBoundHistoryAnalysis", (): void => {
-    it("returns the bound class history with the best score (the not possible ones are all already filtered out)                ", (): void => {
+    it("returns the bound class history with the best grade (the not possible ones are all already filtered out)                ", (): void => {
         const boundHistoryAnalyses: BoundHistoryAnalysis[] = [
             {
                 ...boundHistoryAnalysisFixture,
-                score: 3436643 as Score<BoundHistory>,
+                grade: 3436643 as Grade<BoundHistory>,
             },
             {
                 ...boundHistoryAnalysisFixture,
-                score: 245444 as Score<BoundHistory>,
+                grade: 245444 as Grade<BoundHistory>,
             },
             {
                 ...boundHistoryAnalysisFixture,
-                score: 2422436 as Score<BoundHistory>,
+                grade: 2422436 as Grade<BoundHistory>,
             },
         ]
 
@@ -27,26 +27,26 @@ describe("computeBestPossibleBoundHistoryAnalysis", (): void => {
 
         const expected = {
             ...boundHistoryAnalysisFixture,
-            score: 245444 as Score<BoundHistory>,
+            grade: 245444 as Grade<BoundHistory>,
         }
         expect(actual).toEqual(expected)
     })
 
-    it("returns the best exact bound class history even if its score is not the best", (): void => {
+    it("returns the best exact bound class history even if its grade is not the best", (): void => {
         const boundHistoryAnalyses = [
             {
                 ...boundHistoryAnalysisFixture,
-                score: 3436643 as Score<BoundHistory>,
+                grade: 3436643 as Grade<BoundHistory>,
                 exact: true,
             },
             {
                 ...boundHistoryAnalysisFixture,
-                score: 45575474 as Score<BoundHistory>,
+                grade: 45575474 as Grade<BoundHistory>,
                 exact: true,
             },
             {
                 ...boundHistoryAnalysisFixture,
-                score: 245444 as Score<BoundHistory>,
+                grade: 245444 as Grade<BoundHistory>,
             },
         ]
 
@@ -54,7 +54,7 @@ describe("computeBestPossibleBoundHistoryAnalysis", (): void => {
 
         const expected = {
             ...boundHistoryAnalysisFixture,
-            score: 3436643 as Score<BoundHistory>,
+            grade: 3436643 as Grade<BoundHistory>,
             exact: true,
         }
         expect(actual).toEqual(expected)
@@ -64,13 +64,13 @@ describe("computeBestPossibleBoundHistoryAnalysis", (): void => {
         const boundHistoryAnalyses: BoundHistoryAnalysis[] = [
             {
                 ...boundHistoryAnalysisFixture,
-                score: 3436643 as Score<BoundHistory>,
+                grade: 3436643 as Grade<BoundHistory>,
                 totalDistance: 0.2 as Sum<Abs<Cents>>,
                 exact: true,
             },
             {
                 ...boundHistoryAnalysisFixture,
-                score: 3436643 as Score<BoundHistory>,
+                grade: 3436643 as Grade<BoundHistory>,
                 totalDistance: 0.1 as Sum<Abs<Cents>>,
                 exact: true,
             },
@@ -80,7 +80,7 @@ describe("computeBestPossibleBoundHistoryAnalysis", (): void => {
 
         const expected: BoundHistoryAnalysis = {
             ...boundHistoryAnalysisFixture,
-            score: 3436643 as Score<BoundHistory>,
+            grade: 3436643 as Grade<BoundHistory>,
             totalDistance: 0.1 as Sum<Abs<Cents>>,
             exact: true,
         }

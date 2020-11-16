@@ -12,7 +12,7 @@ import {
 import {ScriptGroup} from "../../types"
 import {complexityMetricLfcScriptGroupSettings} from "../globals"
 import {COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS} from "../metrics"
-import {logComplexityParameterSetsForComplexityMetricFamilyWhichMinimizeItsScore} from "../minimize"
+import {logComplexityParameterSetsForComplexityMetricFamilyWhichOptimizeItsGrade} from "../optimize"
 import {ComplexityMetric, ComplexityMetricFamilyId, ComplexityParameterId} from "../types"
 import {computeZoneCommaEntries} from "../zoneCommas"
 
@@ -36,13 +36,13 @@ const complexityMetricFamiliesWithParametersEntries = Object.entries(
     COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS,
 ) as Array<[ComplexityMetricFamilyId, {metric: ComplexityMetric, parameters: ComplexityParameterId[]}]>
 
-saveLog("Complexity scores (* identifies the actual comma for each zone)\n", LogTarget.DETAILS)
+saveLog("Complexity grades (* identifies the actual comma for each zone)\n", LogTarget.DETAILS)
 complexityMetricFamiliesWithParametersEntries
-    .forEach(logComplexityParameterSetsForComplexityMetricFamilyWhichMinimizeItsScore)
+    .forEach(logComplexityParameterSetsForComplexityMetricFamilyWhichOptimizeItsGrade)
 
 if (ioSettings.time) {
     saveLog(
-        `\nFINDING COMPLEXITY PARAMETER SETS FOR COMPLEXITY METRIC FAMILIES MINIMIZING EACH OF THEIR SCORES TOOK ${time()}`,
+        `\nFINDING COMPLEXITY PARAMETER SETS FOR COMPLEXITY METRIC FAMILIES OPTIMIZING EACH OF THEIR GRADES TOOK ${time()}`,
         LogTarget.FINAL,
     )
 }

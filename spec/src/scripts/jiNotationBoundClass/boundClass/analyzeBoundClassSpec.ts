@@ -8,7 +8,7 @@ import {
     Monzo,
     Multiplier,
     Name,
-    Scamon, Score,
+    Scamon, Grade,
     Sum,
 } from "../../../../../src/general"
 import {BoundClass, JiNotationBound} from "../../../../../src/sagittal"
@@ -145,7 +145,7 @@ describe("analyzeJiNotationBoundClass", (): void => {
             scaler: [164.5, INSANE_EDA],
         } as Scamon<{rational: false}>,
         rank: RANKS[BoundType.COMMA_MEAN],
-        score: 131 as Score<BoundHistory>,
+        grade: 131 as Grade<BoundHistory>,
         possible: true,
         exact: false,
         totalDistance: 0.07887931138776594 as Sum<Abs<Cents>>,

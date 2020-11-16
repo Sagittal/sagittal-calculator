@@ -1,0 +1,29 @@
+import {Comma, Grade, Sum} from "../../general"
+import {CommaClassId} from "../../sagittal"
+import {EXCLUDED_COMMAS} from "./constants"
+import {complexityMetricLfcScriptGroupSettings} from "./globals"
+import {ComplexityMetric, ComplexityParameterSet} from "./types"
+import {computeZoneComplexityMetricGrade} from "./zoneMetricGrade"
+
+const computeMetricGradeForMetricAndParameterSet = (
+    metric: ComplexityMetric,
+    complexityParameterSet: ComplexityParameterSet,
+): Sum<Grade<ComplexityMetric>> => {
+    let metricGrade = 0 as Sum<Grade<ComplexityMetric>>
+
+    complexityMetricLfcScriptGroupSettings.zoneCommaEntries
+        .forEach(([commaClassId, commas]: [CommaClassId, Comma[]]): void => {
+            if (EXCLUDED_COMMAS.includes(commaClassId)) return
+
+            const complexityMetricGradeForCommaZone =
+                computeZoneComplexityMetricGrade([commaClassId, commas], metric, complexityParameterSet)
+
+            metricGrade = metricGrade + complexityMetricGradeForCommaZone as Sum<Grade<ComplexityMetric>>
+        })
+
+    return metricGrade
+}
+
+export {
+    computeMetricGradeForMetricAndParameterSet,
+}

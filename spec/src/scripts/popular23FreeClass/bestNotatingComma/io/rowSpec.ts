@@ -1,6 +1,6 @@
 import {Decimal, Direction, Monzo, Name, Row, ScalaPopularityStat, Two3FreeClass} from "../../../../../../src/general"
 import {Rank, Ranked} from "../../../../../../src/general/code"
-import {Score} from "../../../../../../src/general/lfc"
+import {Grade} from "../../../../../../src/general/lfc"
 import {IRRATIONAL_SCAMON_BASE_MONZO} from "../../../../../../src/general/math/irrational/scamon/constants"
 import {Cents} from "../../../../../../src/general/music"
 import {N2D3P9} from "../../../../../../src/sagittal/ji/badness"
@@ -21,7 +21,7 @@ describe("computePopular23FreeClassWithBestNotatingCommaRow", (): void => {
             bestNotatingCommaMonzo: IRRATIONAL_SCAMON_BASE_MONZO,
             bestNotatingCommaMaybeCommaClassId: CommaClassId._19_V_5_P_4_7_s,
             n2d3p9: 2 as N2D3P9,
-            votes: 7 as Decimal<{integer: true}> & Score<ScalaPopularityStat>,
+            votes: 7 as Decimal<{integer: true}> & Grade<ScalaPopularityStat>,
             popularityRank: 3 as Rank<ScalaPopularityStat>,
             two3FreeClass: {
                 monzo: [0, 0, -1, 1] as Monzo<{rational: true, rough: 5, direction: Direction.SUPER}>,

@@ -1,4 +1,4 @@
-import {Parameter, Score} from "../../../../../../src/general/lfc"
+import {Parameter, Grade} from "../../../../../../src/general/lfc"
 import {Combination, Monzo} from "../../../../../../src/general/math"
 import {Two3FreeClass} from "../../../../../../src/general/music"
 import {
@@ -62,11 +62,11 @@ describe("computeAntivotes", (): void => {
             0.5 * computeSubmetricAntivotes(
                 [0, 0, 0, 1, 1] as Monzo<{rational: true}>,
                 {[PopularityParameterId.SUM]: true},
-            ) as Score<LfcUnpopularityEstimate> +
+            ) as Grade<LfcUnpopularityEstimate> +
             0.3 * computeSubmetricAntivotes(
                 [0, 0, 0, 1, 1] as Monzo<{rational: true}>,
                 {[PopularityParameterId.SUM]: true},
-            ) as Score<LfcUnpopularityEstimate>
+            ) as Grade<LfcUnpopularityEstimate>
         expect(actual).toBeCloseToTyped(expected, ANTIVOTES_PRECISION)
     })
 
@@ -101,7 +101,7 @@ describe("computeAntivotes", (): void => {
 
         const actual = computeAntivotes(two3FreeClass, submetrics)
 
-        const expected = 0.321928 as Score<LfcUnpopularityEstimate>
+        const expected = 0.321928 as Grade<LfcUnpopularityEstimate>
         expect(actual).toBeCloseToTyped(expected)
     })
 })
