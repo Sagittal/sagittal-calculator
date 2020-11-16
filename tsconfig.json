@@ -4,7 +4,8 @@
     "noEmit": true,
     "downlevelIteration": true,
     "lib": [
-      "esnext"
+      "esnext",
+      "dom"
     ],
     "types": [
       "node", "jasmine", "./spec"
@@ -15,6 +16,7 @@
     "skipLibCheck": true,
     "strict": true,
     "noImplicitAny": true,
-    "pretty": true
+    "pretty": true,
+    "esModuleInterop": true,
   }
 }
