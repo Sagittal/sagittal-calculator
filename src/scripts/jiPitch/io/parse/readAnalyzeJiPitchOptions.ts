@@ -3,7 +3,6 @@ import {
     Comma,
     Decimal,
     Io,
-    Maybe,
     Monzo,
     parseInteger,
     parseMonzo,
@@ -15,7 +14,7 @@ import {
     Accidental,
     Ascii,
     computeCommaFromCommaNameQuotientAndSizeCategoryName,
-    parseAscii,
+    parseAccidental,
     parseCommaName,
 } from "../../../../sagittal"
 
@@ -41,7 +40,7 @@ const readAnalyzeJiPitchOptions = (): void => {
         .option(
             `-${ScriptFlag.ACCIDENTAL}, --accidental <symbol>`,
             "accidental",
-            (accidentalText: string): Accidental => parseAscii(accidentalText as Ascii),
+            (accidentalText: string): Accidental => parseAccidental(accidentalText as Ascii),
         )
         .option(
             `-${ScriptFlag.INTEGER}, --integer <integer>`,
