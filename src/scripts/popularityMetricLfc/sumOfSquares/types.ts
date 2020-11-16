@@ -1,4 +1,4 @@
-import {Index, Parameter, Grade, Two3FreeClass} from "../../../general"
+import {Grade, Index, Parameter, Two3FreeClass} from "../../../general"
 
 interface LfcUnpopularityEstimate {
     antivotes: Grade<LfcUnpopularityEstimate>,

@@ -1,12 +1,12 @@
 import {
     Decimal,
+    Grade,
     Index,
     ioSettings,
     Monzo,
     Name,
     Ranked,
     ScalaPopularityStat,
-    Grade,
     TableFormat,
     Two3FreeClass,
 } from "../../../../../../src/general"

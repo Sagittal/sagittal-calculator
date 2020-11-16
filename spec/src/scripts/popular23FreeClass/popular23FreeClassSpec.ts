@@ -2,11 +2,11 @@ import {
     Cents,
     Decimal,
     Direction,
+    Grade,
     Index,
     Monzo,
     Rank,
     ScalaPopularityStat,
-    Grade,
     Two3FreeClass,
 } from "../../../../src/general"
 import {Two3FreeClassAnalysis} from "../../../../src/sagittal/ji/analyze"

@@ -1,9 +1,9 @@
-import {LogTarget, saveLog, Grade, Sum} from "../../../../src/general"
+import {Grade, LogTarget, saveLog, Sum} from "../../../../src/general"
 import * as save from "../../../../src/general/io/log/save"
 import {Parameter} from "../../../../src/general/lfc"
 import {Combination} from "../../../../src/general/math"
-import {COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS} from "../../../../src/scripts/complexityMetricLfc/metrics"
 import * as metricGrade from "../../../../src/scripts/complexityMetricLfc/metricGrade"
+import {COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS} from "../../../../src/scripts/complexityMetricLfc/metrics"
 import {logComplexityParameterSetsForComplexityMetricFamilyWhichOptimizeItsGrade} from "../../../../src/scripts/complexityMetricLfc/optimize"
 import * as parameters from "../../../../src/scripts/complexityMetricLfc/parameters"
 import {

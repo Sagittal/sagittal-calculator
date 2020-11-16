@@ -1,4 +1,4 @@
-import {Rank, Ranked, Grade} from "../../../../../src/general"
+import {Grade, Rank, Ranked} from "../../../../../src/general"
 import {LfcUnpopularityEstimate} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 import {addRankToUnpopularities} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares/rank"
 

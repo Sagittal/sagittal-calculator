@@ -1,4 +1,4 @@
-import {Parameter, Grade} from "../../../../src/general/lfc"
+import {Grade, Parameter} from "../../../../src/general/lfc"
 import {Comma} from "../../../../src/general/music/ji"
 import {CommaClassId} from "../../../../src/sagittal/notation"
 import {complexityMetricLfcScriptGroupSettings} from "../../../../src/scripts/complexityMetricLfc/globals"

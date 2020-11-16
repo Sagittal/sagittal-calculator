@@ -4,6 +4,7 @@ import {
     Decimal,
     Direction,
     EMPTY_MONZO,
+    Grade,
     Index,
     Max,
     Monzo,
@@ -12,7 +13,6 @@ import {
     Rank,
     Ranked,
     ScalaPopularityStat,
-    Grade,
     Sopfr,
     Two3FreeClass,
 } from "../../../../src/general"

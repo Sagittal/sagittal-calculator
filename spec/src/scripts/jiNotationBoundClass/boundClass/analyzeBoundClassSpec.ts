@@ -3,12 +3,12 @@ import {
     APOTOME,
     Cents,
     Count,
+    Grade,
     HALF_SCALER,
     Index,
     Monzo,
     Multiplier,
-    Name,
-    Scamon, Grade,
+    Name, Scamon,
     Sum,
 } from "../../../../../src/general"
 import {BoundClass, JiNotationBound} from "../../../../../src/sagittal"

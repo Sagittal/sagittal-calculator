@@ -1,10 +1,10 @@
 import {
     computeQuotientFromMonzo,
     computeRationalMonzoFromRationalDecimal,
+    Grade,
     isUndefined,
     Parameter,
     QuotientPartType,
-    Grade,
     stringify,
     Two3FreeClass,
 } from "../../../../general"

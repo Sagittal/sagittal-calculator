@@ -1,4 +1,4 @@
-import {Combination, LogTarget, round, saveLog, Grade, stringify, Two3FreeClass} from "../../../../general"
+import {Combination, Grade, LogTarget, round, saveLog, stringify, Two3FreeClass} from "../../../../general"
 import {LfcUnpopularityEstimate, Submetric} from "../types"
 import {ANTIVOTES_PRECISION} from "./constants"
 import {computeWeightedSubmetricAntivotes} from "./weightedSubmetricAntivotes"

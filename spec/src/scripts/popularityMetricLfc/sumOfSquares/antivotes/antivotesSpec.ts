@@ -1,4 +1,4 @@
-import {Parameter, Grade} from "../../../../../../src/general/lfc"
+import {Grade, Parameter} from "../../../../../../src/general/lfc"
 import {Combination, Monzo} from "../../../../../../src/general/math"
 import {Two3FreeClass} from "../../../../../../src/general/music"
 import {

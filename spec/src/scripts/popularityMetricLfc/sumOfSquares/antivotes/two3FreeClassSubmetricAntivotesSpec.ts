@@ -1,4 +1,4 @@
-import {Parameter, Grade} from "../../../../../../src/general/lfc"
+import {Grade, Parameter} from "../../../../../../src/general/lfc"
 import {BASE_2, log, Monzo, Power} from "../../../../../../src/general/math"
 import {Two3FreeClass} from "../../../../../../src/general/music"
 import {LfcUnpopularityEstimate} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"

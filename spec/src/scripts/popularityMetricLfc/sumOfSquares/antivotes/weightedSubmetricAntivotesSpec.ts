@@ -1,4 +1,4 @@
-import {log, Parameter, Grade, Two3FreeClass} from "../../../../../../src/general"
+import {Grade, log, Parameter, Two3FreeClass} from "../../../../../../src/general"
 import {BASE_2, Power} from "../../../../../../src/general/math"
 import {
     LfcUnpopularityEstimate,

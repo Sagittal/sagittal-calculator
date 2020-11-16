@@ -1,4 +1,4 @@
-import {Parameter, Grade} from "../../../../../../src/general/lfc"
+import {Grade, Parameter} from "../../../../../../src/general/lfc"
 import {Base, EMPTY_MONZO, log, Monzo} from "../../../../../../src/general/math"
 import {
     LfcUnpopularityEstimate,

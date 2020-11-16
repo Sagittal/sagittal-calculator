@@ -3,13 +3,13 @@ import {
     dig,
     Direction,
     EMPTY_MONZO,
+    Grade,
     Index,
     KeyPath,
     Monzo,
     Ms,
     Name,
     Obj,
-    Grade,
     Two3FreeClass,
 } from "../../../../../src/general"
 import * as doOnNextEventLoop from "../../../../../src/general/code/doOnNextEventLoop"

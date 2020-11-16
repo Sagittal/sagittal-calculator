@@ -1,5 +1,5 @@
 import {program} from "commander"
-import {Comma, Filename, ioSettings, LogTarget, saveLog, Grade, setupScriptAndIo, Sum, time} from "../../../general"
+import {Comma, Filename, Grade, ioSettings, LogTarget, saveLog, setupScriptAndIo, Sum, time} from "../../../general"
 import {CommaClassId, Notation} from "../../../sagittal"
 import {ScriptGroup} from "../../types"
 import {EXCLUDED_COMMAS} from "../constants"

@@ -1,4 +1,4 @@
-import {BASE_2, decrement, Exponent, pow, Grade} from "../../../general"
+import {BASE_2, decrement, Exponent, Grade, pow} from "../../../general"
 import {JI_NOTATION_LEVELS} from "../../../sagittal"
 import {BoundHistory} from "../histories"
 import {RANKS} from "../ranks"

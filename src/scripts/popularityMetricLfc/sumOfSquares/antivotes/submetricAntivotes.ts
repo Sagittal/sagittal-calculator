@@ -4,13 +4,13 @@ import {
     computePrimeCount,
     Decimal,
     Exponent,
+    Grade,
     indexOfFinalElement,
     isUndefined,
-    log,
-    Monzo, Parameter,
+    log, Monzo,
+    Parameter,
     Prime,
-    PRIMES,
-    QuotientPartType, Grade,
+    PRIMES, QuotientPartType,
     stringify,
 } from "../../../../general"
 import {LfcUnpopularityEstimate, Submetric} from "../types"

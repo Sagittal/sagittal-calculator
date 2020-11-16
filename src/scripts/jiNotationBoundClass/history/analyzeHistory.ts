@@ -3,11 +3,11 @@ import {JiNotationBoundClass, Tinas, TINA_CENTS} from "../../../sagittal"
 import {BoundHistory} from "../histories"
 import {analyzeBoundEvents} from "./events"
 import {computeExact} from "./exact"
+import {computeGrade} from "./grade"
 import {computeBoundHistoryPosition} from "./historyPosition"
 import {computeBoundHistoryTotalDistance} from "./historyTotalDistance"
 import {computeBoundHistoryTotalInaDistance} from "./historyTotalInaDistance"
 import {computeRank} from "./rank"
-import {computeGrade} from "./grade"
 import {BoundHistoryAnalysis} from "./types"
 
 const analyzeHistory = (

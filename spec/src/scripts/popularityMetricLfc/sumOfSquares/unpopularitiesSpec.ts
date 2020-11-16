@@ -1,12 +1,12 @@
 import {
     Combination,
     Decimal,
+    Grade,
     Index,
     Parameter,
     Rank,
     Ranked,
     ScalaPopularityStat,
-    Grade,
     Two3FreeClass,
 } from "../../../../../src/general"
 import {

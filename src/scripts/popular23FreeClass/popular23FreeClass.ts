@@ -2,9 +2,9 @@ import {
     areRationalScamonsEqual,
     COMMA_POPULARITIES,
     Decimal,
+    Grade,
     isUndefined,
     ScalaPopularityStat,
-    Grade,
 } from "../../general"
 import {Two3FreeClassAnalysis} from "../../sagittal"
 import {computeBestNotatingCommaProperties} from "./bestNotatingComma"

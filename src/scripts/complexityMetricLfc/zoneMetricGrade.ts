@@ -1,4 +1,4 @@
-import {areScamonsEqual, Comma, formatDecimal, LogTarget, saveLog, Grade} from "../../general"
+import {areScamonsEqual, Comma, formatDecimal, Grade, LogTarget, saveLog} from "../../general"
 import {CommaClassId, Complexity, formatComma, getCommaClass} from "../../sagittal"
 import {complexityMetricLfcScriptGroupSettings} from "./globals"
 import {ComplexityMetric, ComplexityParameterSet} from "./types"
