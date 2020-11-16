@@ -1,7 +1,8 @@
 import {ArmId, HeadId} from "../../../../../src/sagittal/accidental/flacco"
 import {Accidental, Compatible} from "../../../../../src/sagittal/accidental/flavor"
 import {computeRevoAccidentalFromCaptureZone} from "../../../../../src/sagittal/accidental/flavor/revo"
-import {Ascii, computeAccidentalAscii, parseAscii} from "../../../../../src/sagittal/accidental/glyph"
+import {Ascii, computeAccidentalAscii} from "../../../../../src/sagittal/accidental/glyph"
+import {parseAscii} from "../../../../../src/sagittal/accidental/parse/ascii"
 import {Shafts} from "../../../../../src/sagittal/accidental/sagittal"
 import {CaptureZone} from "../../../../../src/sagittal/notation"
 import {computeCaptureZones} from "../../../../../src/sagittal/notation/captureZones"
@@ -62,7 +63,7 @@ describe("parseAscii", (): void => {
         const expected = computeAccidental({
             headId: HeadId.RIGHT_SCROLL,
             armId: ArmId.ANTIWING_AND_TICK,
-            down: true
+            down: true,
         })
         expect(actual).toEqual(expected)
     })
@@ -71,7 +72,7 @@ describe("parseAscii", (): void => {
         const captureZones = computeCaptureZones(EXTREME_NOTATION)
 
         const expecteds = [] as Accidental[]
-        const actuals = captureZones.map(({ symbolClassId, section }: CaptureZone): Ascii => {
+        const actuals = captureZones.map(({symbolClassId, section}: CaptureZone): Ascii => {
             const revoAccidental = computeRevoAccidentalFromCaptureZone(symbolClassId, section)
             expecteds.push(revoAccidental)
 

@@ -73,7 +73,6 @@ describe("analyze-ji-pitch", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    // TODO: is there any way for me to warn users about these shortcomings?
     /*
     Formats that work:
     npm run analyze-ji-pitch "|\\\\"          |\    requires escaping the backlash in two phases!

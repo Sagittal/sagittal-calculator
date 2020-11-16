@@ -19,10 +19,9 @@ import {
     Scamon,
 } from "../../../../general"
 import {
-    Ascii,
     computeCommaFromCommaNameQuotientAndSizeCategoryName,
     computeJiPitchFromAccidental,
-    parseAscii,
+    parseAccidental,
     parseCommaName,
 } from "../../../../sagittal"
 import {PitchFormat} from "./types"
@@ -48,12 +47,8 @@ const parsePitch = (pitchIo: Io, pitchFormat?: PitchFormat): Scamon => {
             pitch = computeScamonFromDecimal(decimal)
         }
     } else if (pitchFormat === PitchFormat.ACCIDENTAL || pitchIo.match(IDENTIFYING_ACCIDENTAL_CHARS)) {
-        // TODO: perhaps this should be parseAccidental and it should take Io not Ascii, or both, or have a pass-thru
-        const accidental = parseAscii(pitchIo as Ascii)
+        const accidental = parseAccidental(pitchIo)
 
-        // TODO: this should really be just pitch and if in ji context throw error if not
-        //  Er, well, at the moment, there is no way to get a non-JI pitch from an accidental
-        //  One could imagine telling this thing which EDO you're in or something, and it tempering stuff
         pitch = computeJiPitchFromAccidental(accidental)
     }
 

@@ -4,6 +4,10 @@ export {
     computeSagittalUnicode,
     computeCompatibleUnicode,
     computeAccentUnicode,
+    ACCENT_TO_UNICODE_MAP,
+    COMPATIBLE_TO_UNICODE_MAP,
+    CORE_UNICODE_EQUIVALENTS,
+    DOWN_ACCENT_TO_UNICODE_MAP,
 } from "./unicode"
 export {
     computeCoreAscii,
@@ -22,4 +26,4 @@ export {
 export {alignAscii} from "./align"
 export {Ascii, Unicode, Smiley, Glyph} from "./types"
 export {formatAccidental} from "./format"
-export {parseAscii} from "./parse"
+export {PARENTHETICAL_NATURAL_ASCII} from "./constants"

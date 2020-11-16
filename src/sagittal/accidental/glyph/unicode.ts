@@ -326,4 +326,8 @@ export {
     computeCompatibleUnicode,
     computeSagittalUnicode,
     computeAccentUnicode,
+    ACCENT_TO_UNICODE_MAP,
+    DOWN_ACCENT_TO_UNICODE_MAP,
+    COMPATIBLE_TO_UNICODE_MAP,
+    CORE_UNICODE_EQUIVALENTS,
 }

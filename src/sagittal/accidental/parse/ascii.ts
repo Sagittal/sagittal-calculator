@@ -1,9 +1,8 @@
-import {BLANK, Char, Count, increment, isEmpty, Maybe, shallowClone} from "../../../general"
+import {BLANK, Char, Count, increment, isEmpty, shallowClone} from "../../../general"
 import {AccentId, Arm, FlagId} from "../flacco"
 import {Accidental, Compatible, EMPTY_ACCIDENTAL} from "../flavor"
+import {Ascii, PARENTHETICAL_NATURAL_ASCII} from "../glyph"
 import {Shafts} from "../sagittal"
-import {PARENTHETICAL_NATURAL_ASCII} from "./constants"
-import {Ascii} from "./types"
 
 const parseAscii = (ascii: Ascii): Accidental => {
     if (ascii === PARENTHETICAL_NATURAL_ASCII) return EMPTY_ACCIDENTAL

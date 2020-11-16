@@ -57,6 +57,7 @@ export {
     Glyph,
     Accidental,
     computeJiPitchFromAccidental,
+    parseAccidental,
 } from "./accidental"
 export {
     computeMaybeCommaClassId,
