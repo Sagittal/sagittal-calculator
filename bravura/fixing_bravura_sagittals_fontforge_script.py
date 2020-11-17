@@ -155,33 +155,33 @@ for unicode in range(sagittal_accent_unicode_range_start, sagittal_accent_unicod
 	fix_accent_side_bearing(downward_version_of_glyph, downward_version_of_glyph_unicode)
 
 # Additional kerning for schisma accents
-upward_schisma_glyph = bravura[0xe3f2]
-additional_glyphs_for_upward_schisma_accent_to_kern_with = [
+tick_up_glyph = bravura[0xe3f2]
+additional_glyphs_for_tick_up_glyph_to_kern_with = [
 'uniE3EA', 'uniE3E8', 'uniE3CE', 'uniE3CC', 'uniE3C2', 'uniE3BA', 'uniE3B8',
 'uniE39E', 'uniE39C', 'uniE392', 'uniE35E', 'uniE356', 'uniE34A', 'uniE342' ]
-for kerning_glyph in additional_glyphs_for_upward_schisma_accent_to_kern_with:
-	upward_schisma_glyph.addPosSub(kerning_table, kerning_glyph, 0, 0, -right_side_bearing, 0, 0, 0, 0, 0)
+for kerning_glyph in additional_glyphs_for_tick_up_glyph_to_kern_with:
+	tick_up_glyph.addPosSub(kerning_table, kerning_glyph, 0, 0, -right_side_bearing, 0, 0, 0, 0, 0)
 
-downward_schisma_glyph = bravura[0xe3f3]
-additional_glyphs_for_downward_schisma_accent_to_kern_with = [
+tick_down_glyph = bravura[0xe3f3]
+additional_glyphs_for_tick_down_glyph_to_kern_with = [
 'uniE3EB', 'uniE3E9', 'uniE3CF', 'uniE3CD', 'uniE3C3', 'uniE3BB', 'uniE3B9',
 'uniE39F', 'uniE39D', 'uniE393', 'uniE35F', 'uniE357', 'uniE34B', 'uniE343' ]
-for kerning_glyph in additional_glyphs_for_downward_schisma_accent_to_kern_with:
-	downward_schisma_glyph.addPosSub(kerning_table, kerning_glyph, 0, 0, -right_side_bearing, 0, 0, 0, 0, 0)
+for kerning_glyph in additional_glyphs_for_tick_down_glyph_to_kern_with:
+	tick_down_glyph.addPosSub(kerning_table, kerning_glyph, 0, 0, -right_side_bearing, 0, 0, 0, 0, 0)
 
 # Add kerning between dots and other tina accents (and minas)
 
-upward_half_tina_glyph = bravura[0xe40a]
+dot_up_glyph = bravura[0xe40a]
 upward_tina_glyphs_to_kern_with = ['uniE3F4', 'uniE3F6', 'uniE3F8', 'uniE3FA',
 'uniE3FC', 'uniE3FE', 'uniE400', 'uniE402', 'uniE404', 'uniE406', 'uniE408']
 for kerning_glyph in upward_tina_glyphs_to_kern_with:
-	upward_half_tina_glyph.addPosSub(kerning_table, kerning_glyph, 0, 0, -30, 0, 0, 0, 0, 0)
+	dot_up_glyph.addPosSub(kerning_table, kerning_glyph, 0, 0, -30, 0, 0, 0, 0, 0)
 
-downward_half_tina_glyph = bravura[0xe40b]
+dot_down_glyph = bravura[0xe40b]
 downward_tina_glyphs_to_kern_with = ['uniE3F5', 'uniE3F7', 'uniE3F9', 'uniE3FB',
 'uniE3FD', 'uniE3FF', 'uniE401', 'uniE403', 'uniE405', 'uniE407', 'uniE409']
 for kerning_glyph in downward_tina_glyphs_to_kern_with:
-	downward_half_tina_glyph.addPosSub(kerning_table, kerning_glyph, 0, 0, -30, 0, 0, 0, 0, 0)
+	dot_down_glyph.addPosSub(kerning_table, kerning_glyph, 0, 0, -30, 0, 0, 0, 0, 0)
 
 # Snap Sagittal-compatible symbols to wonky grid
 
