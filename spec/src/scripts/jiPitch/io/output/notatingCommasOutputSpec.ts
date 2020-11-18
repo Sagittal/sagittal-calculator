@@ -68,10 +68,10 @@ describe("computeNotatingCommasOutput", (): void => {
             "   --- notating commas ---" + NEWLINE +
             "" + NEWLINE +
             "[table]" + NEWLINE +
-            "[tr][th][pre]comma[/pre][/th][th][pre]      [/pre][/th][th][pre]        [/pre][/th][th][pre]monzo[/pre][/th][th][pre]       [/pre][/th][th][pre]       [/pre][/th][th][pre]       [/pre][/th][th][pre]       [/pre][/th][th][pre] [/pre][/th][th][pre]               [/pre][/th][th][pre]apotome[/pre][/th][th][pre]       [/pre][/th][th][pre]       [/pre][/th][/tr]" + NEWLINE +
-            "[tr][th][pre]class[/pre][/th][th][pre]name  [/pre][/th][th][pre]quotient[/pre][/th][th][pre]     [/pre][/th][th][pre]  2    [/pre][/th][th][pre]  3    [/pre][/th][th][pre]  5    [/pre][/th][th][pre]  7    [/pre][/th][th][pre] [/pre][/th][th][pre]cents          [/pre][/th][th][pre]slope  [/pre][/th][th][pre]AAS    [/pre][/th][th][pre]ATE    [/pre][/th][/tr]" + NEWLINE +
-            "[tr][td][pre][/pre]:/|\\:[pre][/pre][/td][td][pre]11M   [/pre][/td][td][pre][/pre][latex]\\frac{33}{32}[/latex][pre][/pre][/td][td][pre]    [[/pre][/td][td][pre]  0    [/pre][/td][td][pre]  0    [/pre][/td][td][pre]  1    [/pre][/td][td][pre]       [/pre][/td][td][pre]⟩[/pre][/td][td][pre]        45.450¢[/pre][/td][td][pre] -4.000[/pre][/td][td][pre]  4.000[/pre][/td][td][pre]  0    [/pre][/td][/tr]" + NEWLINE +
-            "[tr][td][pre]     [/pre][/td][td][pre]25/49M[/pre][/td][td][pre][/pre][latex]\\frac{50}{49}[/latex][pre][/pre][/td][td][pre]    [[/pre][/td][td][pre]  1    [/pre][/td][td][pre]  0    [/pre][/td][td][pre]  2    [/pre][/td][td][pre] -2    [/pre][/td][td][pre]⟩[/pre][/td][td][pre]        33.400¢[/pre][/td][td][pre] -2.154[/pre][/td][td][pre]  2.154[/pre][/td][td][pre]  0    [/pre][/td][/tr]" + NEWLINE +
+            "[tr][th]comma[/th][th][/th][th][/th][th]monzo[/th][th][/th][th][/th][th][/th][th][/th][th][/th][th][/th][th]apotome[/th][th][/th][th][/th][/tr]" + NEWLINE +
+            "[tr][th]class[/th][th]name[/th][th]quotient[/th][th] [/th][th]  2    [/th][th]  3    [/th][th]  5    [/th][th]  7    [/th][th] [/th][th]cents[/th][th]slope[/th][th]AAS[/th][th]ATE[/th][/tr]" + NEWLINE +
+            "[tr][td]:/|\\:[/td][td]11M[/td][td][latex]\\frac{33}{32}[/latex][/td][tn][[/tn][tc]  0    [/tc][tc]  0    [/tc][tc]  1    [/tc][tc][/tc][td]⟩[/td][td] 45.450¢[/td][td] -4.000[/td][td]  4.000[/td][td]  0    [/td][/tr]" + NEWLINE +
+            "[tr][td][/td][td]25/49M[/td][td][latex]\\frac{50}{49}[/latex][/td][tn][[/tn][tc]  1    [/tc][tc]  0    [/tc][tc]  2    [/tc][tc] -2    [/tc][td]⟩[/td][td] 33.400¢[/td][td] -2.154[/td][td]  2.154[/td][td]  0    [/td][/tr]" + NEWLINE +
             "[/table]" + NEWLINE as Io
         expect(actual).toBe(expected)
     })

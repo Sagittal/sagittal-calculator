@@ -1,35 +1,21 @@
-import {indexOfFinalElement, Maybe} from "../../code"
+import {isUndefined, Maybe} from "../../code"
 import {BLANK, NEWLINE} from "../constants"
 import {Formatted} from "../format"
 import {join, sumTexts} from "../typedOperations"
-import {Io} from "../types"
+import {ColorMethod, Io} from "../types"
 import {computeColumnRange} from "./columnRange"
 import {DEFAULT_FORMAT_TABLE_OPTIONS} from "./constants"
-import {computeColumnWidths, computeJustifications, computeJustifiedCell} from "./justification"
-import {FormatTableOptions, Row, Table, TableForForumRowPartsOptions} from "./types"
+import {computeJustifications} from "./justification"
+import {FormatTableOptions, Justification, Row, Table} from "./types"
 
 // TODO: TABLES FINESSE: FORUM ALIGNMENT
-//  Use [tc] and [tn] bbCodes for alignment on forum, and remove all the internal [pre] tags.
-//  See: http://forum.sagittal.org/viewtopic.php?p=2773#p2773
+//  According to http://forum.sagittal.org/viewtopic.php?p=2868#p2868
+//  It would be great if we could solve two different problems:
+//  1) Use header cell bbCodes which allow for other alignments to fix the n/d issue
+//  2) Use colspan to merge cells so that "monzo" and "quotient" don't take up so much space
 
-const computeTableForForumRowParts = <T = unknown>(
-    {index, headerRowCount, colors}: TableForForumRowPartsOptions<T>,
-): {rowOpen: Io, rowClose: Io, separator: Io} => {
-    const cellTag: Io = index < headerRowCount ? "th" as Io : "td" as Io
-
-    const hiliteOpen: Io = colors ? colors[index] ? `[hilite=${colors[index]}]` as Io : BLANK as Io : BLANK
-    const hiliteClose: Io = colors ? colors[index] ? "[/hilite]" as Io : BLANK : BLANK
-
-    const cellOpen: Io = `[${cellTag}][pre]${hiliteOpen}` as Io
-    const cellClose: Io = `${hiliteClose}[/pre][/${cellTag}]` as Io
-
-    const rowOpen: Io = `[tr]${cellOpen}` as Io
-    const rowClose: Io = `${cellClose}[/tr]` as Io
-
-    const separator: Io = `${cellClose}${cellOpen}` as Io
-
-    return {rowOpen, rowClose, separator}
-}
+const computeMaybeColoredCell = <T = unknown>(cell: Formatted<T>, color: Maybe<ColorMethod>): Io =>
+    isUndefined(color) ? cell : `[hilite=${color}]${cell}[/hilite]`
 
 const formatTableForForum = <T = unknown>(table: Table<T>, options?: Partial<FormatTableOptions<T>>): Io => {
     const {
@@ -41,26 +27,29 @@ const formatTableForForum = <T = unknown>(table: Table<T>, options?: Partial<For
     const columnRange = computeColumnRange(table)
     const justifications = computeJustifications(justification, columnRange)
 
-    const columnWidths = computeColumnWidths(table, columnRange)
-
-    const formattedRows: Io[] = table.map((row: Row<{of: T}>, index: number): Io => {
-        const {rowOpen, rowClose, separator} = computeTableForForumRowParts({index, headerRowCount, colors})
+    const formattedRows: Io[] = table.map((row: Row<{of: T}>, rowIndex: number): Io => {
+        const isHeader = rowIndex < headerRowCount
+        const color = colors ? colors[rowIndex] : undefined
 
         const rowText = row.reduce(
             (justifiedRow: Io, cell: Maybe<Formatted<T>>, cellIndex: number): Io => {
-                const columnWidth = columnWidths[cellIndex]
                 const columnJustification = justifications[cellIndex]
+                const maybeColoredCell = isUndefined(cell) ? BLANK : computeMaybeColoredCell(cell, color)
+                const justifiedCell =
+                    isHeader ?
+                        `[th]${maybeColoredCell}[/th]` :
+                        columnJustification === Justification.CENTER ?
+                            `[tc]${maybeColoredCell}[/tc]` :
+                            columnJustification === Justification.RIGHT ?
+                                `[tn]${maybeColoredCell}[/tn]` :
+                                `[td]${maybeColoredCell}[/td]`
 
-                const justifiedCell: Io = computeJustifiedCell(cell, {columnWidth, columnJustification})
-
-                const maybeSeparator: Io = cellIndex === indexOfFinalElement(row) ? BLANK : separator
-
-                return sumTexts(justifiedRow, justifiedCell, maybeSeparator)
+                return sumTexts(justifiedRow, justifiedCell as Io)
             },
             BLANK,
         )
 
-        return sumTexts(rowOpen, rowText, rowClose)
+        return sumTexts("[tr]" as Io, rowText, "[/tr]" as Io)
     })
 
     formattedRows.unshift("[table]" as Io)

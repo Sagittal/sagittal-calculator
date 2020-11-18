@@ -30,7 +30,7 @@ describe("formatAccidental", (): void => {
 
         const actual = formatAccidental(accidental)
 
-        const expected = "[/pre]:)|\\ \\::#:[pre]" as Formatted<Glyph>
+        const expected = ":)|\\ \\::#:" as Formatted<Glyph>
         expect(actual).toBe(expected)
     })
 })

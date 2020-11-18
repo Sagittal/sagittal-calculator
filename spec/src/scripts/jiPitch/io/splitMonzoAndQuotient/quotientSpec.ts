@@ -18,7 +18,7 @@ describe("formatSplitQuotient", (): void => {
         ioSettings.tableFormat = TableFormat.FORUM
         const actual = formatSplitQuotient(quotient)
 
-        const expected = ["[/pre][latex]\\frac{7}{6}[/latex][pre]"] as Array<Formatted<JiPitchAnalysis>>
+        const expected = ["[latex]\\frac{7}{6}[/latex]"] as Array<Formatted<JiPitchAnalysis>>
         expect(actual).toEqual(expected)
     })
 

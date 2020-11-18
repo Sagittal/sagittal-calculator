@@ -29,7 +29,7 @@ describe("format23FreeClass", (): void => {
         ioSettings.tableFormat = TableFormat.FORUM
         const actual = format23FreeClass(two3FreeClass)
 
-        const expected = "[/pre][latex]\\{\\frac{11}{5}\\}_{\\scriptsize{2,3}}[/latex][pre]" as Formatted<Two3FreeClass>
+        const expected = "[latex]\\{\\frac{11}{5}\\}_{\\scriptsize{2,3}}[/latex]" as Formatted<Two3FreeClass>
         expect(actual).toBe(expected)
     })
 
@@ -39,7 +39,7 @@ describe("format23FreeClass", (): void => {
         ioSettings.tableFormat = TableFormat.FORUM
         const actual = format23FreeClass(two3FreeClass)
 
-        const expected = "[/pre][latex]\\{77\\}_{\\scriptsize{2,3}}[/latex][pre]" as Formatted<Two3FreeClass>
+        const expected = "[latex]\\{77\\}_{\\scriptsize{2,3}}[/latex]" as Formatted<Two3FreeClass>
         expect(actual).toBe(expected)
     })
 })

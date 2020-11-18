@@ -29,7 +29,7 @@ describe("computeJustifiedCell", (): void => {
     })
 
     it("does not justify cells which are for the forum and which have turned off monospacing", (): void => {
-        const cell = "[/pre][latex]\\frac{50}{49}[/latex][pre]" as Io
+        const cell = "[latex]\\frac{50}{49}[/latex]" as Io
 
         const actual = computeJustifiedCell(
             cell,
@@ -56,7 +56,7 @@ describe("computeColumnWidths", (): void => {
     it("does not count cells which are for the forum and which have turned off monospacing in its computation              ", (): void => {
         const table = [
             ["a", "", "apple"],
-            ["dddd", "bb", "[/pre][latex]\\frac{1}{1}[/latex][pre]"],
+            ["dddd", "bb", "[latex]\\frac{1}{1}[/latex]"],
         ] as Table
 
         const actual = computeColumnWidths(table, [0, 1, 2] as Range)

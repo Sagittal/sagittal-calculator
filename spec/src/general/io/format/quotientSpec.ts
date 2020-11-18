@@ -35,7 +35,7 @@ describe("formatQuotient", (): void => {
         ioSettings.tableFormat = TableFormat.FORUM
         const actual = formatQuotient(quotient)
 
-        const expected = "[/pre][latex]\\frac{77}{75}[/latex][pre]" as Formatted<Two3FreeClass>
+        const expected = "[latex]\\frac{77}{75}[/latex]" as Formatted<Two3FreeClass>
         expect(actual).toBe(expected)
     })
 
@@ -73,7 +73,7 @@ describe("formatQuotient", (): void => {
         ioSettings.tableFormat = TableFormat.FORUM
         const actual = formatQuotient(quotient)
 
-        const expected = "[/pre][latex]77[/latex][pre]" as Formatted<Two3FreeClass>
+        const expected = "[latex]77[/latex]" as Formatted<Two3FreeClass>
         expect(actual).toBe(expected)
     })
 })

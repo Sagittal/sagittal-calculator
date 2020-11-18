@@ -84,7 +84,7 @@ describe("splitMonzoAndQuotientColumnTitles", (): void => {
                 "2,3-free class n",
                 "/",
                 "d",
-                "[/pre][latex]_{\\scriptsize{2,3}}[/latex][pre]",
+                "[latex]_{\\scriptsize{2,3}}[/latex]",
                 "2,3-free class CoPFR",
             ] as Io[]
             expect(actual).toEqual(expected)

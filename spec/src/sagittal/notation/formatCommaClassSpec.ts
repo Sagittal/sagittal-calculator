@@ -15,7 +15,7 @@ describe("formatCommaClass", (): void => {
         ioSettings.tableFormat = TableFormat.FORUM
         const actual = formatCommaClass(commaClassId)
 
-        const expected = "[/pre]:,::(/|:[pre]" as Io
+        const expected = ":,::(/|:" as Io
         expect(actual).toBe(expected)
     })
 

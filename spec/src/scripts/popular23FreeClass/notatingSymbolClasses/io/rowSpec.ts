@@ -63,9 +63,9 @@ describe("computePopular23FreeClassWithNotatingSymbolClassesRow", (): void => {
         )
 
         const expected = [
-            "[/pre][latex]\\{\\frac{7}{5}\\}_{\\scriptsize{2,3}}[/latex][pre]", // 2,3-free class name
+            "[latex]\\{\\frac{7}{5}\\}_{\\scriptsize{2,3}}[/latex]", // 2,3-free class name
             "  2.000",                                                          // N2D3P9
-            "[/pre]:)|(: :.::/|:[pre]",                                         // Notating symbol classes
+            ":)|(: :.::/|:",                                         // Notating symbol classes
             "1, 3",                                                             // Notating symbol classes smallest symbol subset indices
             "4",                                                                // Estimated rank
             "3",                                                                // Actual rank

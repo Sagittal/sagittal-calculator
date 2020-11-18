@@ -15,7 +15,7 @@ const formatAccidental = (accidental: Accidental, {align = true}: {align?: boole
                 ascii as string as Formatted<Ascii>
         case TableFormat.FORUM:
         case TableFormat.FORUM_WITH_SPLIT_QUOTIENTS:
-            return `[/pre]${computeAccidentalSmiley(accidental)}[pre]` as Formatted<Smiley>
+            return computeAccidentalSmiley(accidental) as string as Formatted<Smiley>
         case TableFormat.SPREADSHEET:
             return computeAccidentalUnicode(accidental) as string as Formatted<Unicode>
     }

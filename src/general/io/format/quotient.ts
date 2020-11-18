@@ -12,8 +12,8 @@ const formatQuotient = <T extends Quotient>(
     return directed ?
         ioSettings.tableFormat === TableFormat.FORUM && !noLaTeXScaler ?
             denominator === 1 ?
-                `[/pre][latex]${numerator}[/latex][pre]` as Formatted<T> :
-                `[/pre][latex]\\frac{${numerator}}{${denominator}}[/latex][pre]` as Formatted<T> :
+                `[latex]${numerator}[/latex]` as Formatted<T> :
+                `[latex]\\frac{${numerator}}{${denominator}}[/latex]` as Formatted<T> :
             denominator === 1 ?
                 `${numerator}` as Formatted<T> :
                 `${numerator}/${denominator}` as Formatted<T> :

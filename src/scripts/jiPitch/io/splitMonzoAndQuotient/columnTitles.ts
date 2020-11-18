@@ -34,7 +34,7 @@ const splitMonzoAndQuotientColumnTitles = (
             )
         } else if (columnTitle === "2,3-free class name" && ioSettings.tableFormat !== TableFormat.FORUM) {
             const sign = ioSettings.tableFormat === TableFormat.FORUM_WITH_SPLIT_QUOTIENTS ?
-                "[/pre][latex]_{\\scriptsize{2,3}}[/latex][pre]" :
+                "[latex]_{\\scriptsize{2,3}}[/latex]" :
                 TWO_3_FREE_CLASS_SIGN
             adjustedColumnTitles.push("2,3-free class n" as Io, "/" as Io, "d" as Io, sign as Io)
         } else if (
@@ -43,7 +43,7 @@ const splitMonzoAndQuotientColumnTitles = (
             && ioSettings.tableFormat !== TableFormat.FORUM
         ) {
             const sign = ioSettings.tableFormat === TableFormat.FORUM_WITH_SPLIT_QUOTIENTS ?
-                "[/pre][latex]_{\\scriptsize{2,3}}[/latex][pre]" :
+                "[latex]_{\\scriptsize{2,3}}[/latex]" :
                 TWO_3_FREE_CLASS_SIGN
             adjustedColumnTitles.push("name n" as Io, "/" as Io, "d" as Io, sign as Io)
         } else {

@@ -35,13 +35,7 @@ interface JustifiedCellOptions {
 }
 
 type FormatTableOptions<T> = {
-    justification: JustificationOption
-    colors: Maybe<Array<Maybe<ColorMethod>>>,
-    headerRowCount: Count<Row<{of: T, header: true}>>,
-}
-
-interface TableForForumRowPartsOptions<T> {
-    index: number,
+    justification: JustificationOption,
     colors: Maybe<Array<Maybe<ColorMethod>>>,
     headerRowCount: Count<Row<{of: T, header: true}>>,
 }
@@ -61,6 +55,5 @@ export {
     Row,
     Column,
     Table,
-    TableForForumRowPartsOptions,
     TableFormat,
 }

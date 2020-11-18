@@ -21,7 +21,7 @@ const computePopular23FreeClassWithNotatingSymbolClassesRow = (
         formatDecimal(n2d3p9, {align: true}),
         notatingSymbolClassIds.map((notatingSymbolClassId: SymbolClassId): Formatted<SymbolClass> => {
             return formatSymbolClass(notatingSymbolClassId)
-        }).join(SPACE).replace(/\[pre] \[\/pre]/g, " "),
+        }).join(SPACE),
         notatingSymbolClassSmallestSymbolSubsetIndices.join(", "),
         estimatedRank.toString(),
         isUndefined(actualRank) ? "-" : actualRank.toString(),

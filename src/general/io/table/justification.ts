@@ -15,7 +15,7 @@ const computeColumnWidths = <T = unknown>(table: Table<T>, columnRange: Range): 
         return table.reduce(
             (columnWidth: Count<Char>, row: Row<{of: T}>): Count<Char> => {
                 const columnCell = row[columnIndex]
-                const cellWidth = isUndefined(columnCell) || columnCell.includes("[/pre]") ?
+                const cellWidth = isUndefined(columnCell) || columnCell.includes("[/latex]") ?
                     0 as Count<Char> :
                     length(columnCell)
                 if (cellWidth > columnWidth) {
@@ -27,7 +27,6 @@ const computeColumnWidths = <T = unknown>(table: Table<T>, columnRange: Range): 
             0 as Count<Char>,
         )
     })
-
 
 const furtherJustifyCell = (justifiedCell: Io, columnJustification: Justification): Io => {
     return columnJustification === Justification.LEFT ?

@@ -15,7 +15,7 @@ describe("formatSymbolClass", (): void => {
         ioSettings.tableFormat = TableFormat.FORUM
         const actual = formatSymbolClass(symbolClassId)
 
-        const expected = "[/pre]:,::(/|:[pre]" as Io
+        const expected = ":,::(/|:" as Io
         expect(actual).toBe(expected)
     })
 
