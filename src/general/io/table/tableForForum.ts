@@ -9,10 +9,8 @@ import {computeJustifications} from "./justification"
 import {FormatTableOptions, Justification, Row, Table} from "./types"
 
 // TODO: TABLES FINESSE: FORUM ALIGNMENT
-//  According to http://forum.sagittal.org/viewtopic.php?p=2868#p2868
-//  It would be great if we could solve two different problems:
-//  1) Use header cell bbCodes which allow for other alignments to fix the n/d issue
-//  2) Use colspan to merge cells so that "monzo" and "quotient" don't take up so much space
+//  Use [td=2] to merge cells so that "monzo" and "quotient" don't take up so much space
+//  See: http://forum.sagittal.org/viewtopic.php?p=2895#p2895
 
 const computeMaybeColoredCell = <T = unknown>(cell: Formatted<T>, color: Maybe<ColorMethod>): Io =>
     isUndefined(color) ? cell : `[hilite=${color}]${cell}[/hilite]`

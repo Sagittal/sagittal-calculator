@@ -1,13 +1,13 @@
 <span style='font-family: "Bravura Text"; font-size: 233%;' id="staff">{TEXT}</span>
 <script type='text/javascript'>
     var STAFF_MAP = {
-        "sp200": "=",       // U+003D
-        "sp100": "-",
-        "sp50": " ",
+        "sp2": "=",
+        "sp1": "-",
+        "sp0.5": " ",
 
-        "lines300": "",
-        "lines200": "",
-        "lines100": "",
+        "ln3": "",
+        "ln2": "",
+        "ln1": "",
 
         "leger": "",
 
@@ -294,9 +294,13 @@
         "l.": "",
     }
 
-    var staffSpan = document.querySelector("#staff")
-    staffSpan.removeAttribute("id")
-    var staffGlyphs = staffSpan.innerHTML.replace(/<br>/g, " ").replace(/\n/g, " ").split(" ")
-    // console.log("glyphs", staffGlyphs)
-    staffSpan.innerHTML = staffGlyphs.map(g => STAFF_MAP[g]).join("")
+    document.querySelectorAll("span#staff").forEach(staffSpan => {
+        staffSpan.innerHTML = staffSpan
+            .innerHTML
+            .replace(/<br>/g, " ")
+            .replace(/\n/g, " ")
+            .split(" ")
+            .map(g => {m = STAFF_MAP[g]; return m === undefined ? g : m})
+            .join("")
+    })
 </script>
