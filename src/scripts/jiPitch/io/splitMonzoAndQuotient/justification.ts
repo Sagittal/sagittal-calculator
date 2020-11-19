@@ -11,7 +11,7 @@ const computeMonzoAndQuotientJustification = <T>(
 
     let insideQuotientOrMonzo = false
 
-    return finalHeaderRow.map((headerCell: Maybe<Formatted>): Justification => {
+    return finalHeaderRow.map((headerCell: Maybe<Formatted>): Maybe<Justification> => {
         if (headerCell === INVISIBLE_MONZO_OPENING_SQUARE_BRACKET_COLUMN_TITLE || headerCell === "n") {
             insideQuotientOrMonzo = true
             return Justification.RIGHT
@@ -21,7 +21,7 @@ const computeMonzoAndQuotientJustification = <T>(
         } else if (insideQuotientOrMonzo) {
             return Justification.CENTER
         } else {
-            return Justification.LEFT
+            return undefined
         }
     })
 }

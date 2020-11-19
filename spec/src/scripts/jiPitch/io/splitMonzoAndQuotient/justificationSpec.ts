@@ -17,7 +17,7 @@ describe("computeMonzoAndQuotientJustification", (): void => {
         const actual = computeMonzoAndQuotientJustification(headerRows)
 
         const expected = [
-            Justification.LEFT,     // Comma name
+            undefined,              // Comma name
             Justification.RIGHT,    // Quotient numerator
             Justification.CENTER,   // Quotient vinculum
             Justification.LEFT,     // Quotient denominator
@@ -25,7 +25,7 @@ describe("computeMonzoAndQuotientJustification", (): void => {
             Justification.CENTER,   // Monzo 2
             Justification.CENTER,   // Monzo 3
             Justification.LEFT,     // Monzo ⟩
-            Justification.LEFT,     // Apotome slope
+            undefined,              // Apotome slope
         ]
         expect(actual).toEqual(expected)
     })
@@ -40,12 +40,12 @@ describe("computeMonzoAndQuotientJustification", (): void => {
         const actual = computeMonzoAndQuotientJustification(headerRows)
 
         const expected = [
-            Justification.LEFT,     // 2,3-free prime limit
+            undefined,              // 2,3-free prime limit
             Justification.RIGHT,    // 2,3-free class numinator
             Justification.CENTER,   // 2,3-free class vinculum
             Justification.LEFT,     // 2,3-free class diminuator
-            Justification.LEFT,     // 2,3-free class sign
-            Justification.LEFT,     // 2,3-free class CoPFR
+            undefined,              // 2,3-free class sign
+            undefined,              // 2,3-free class CoPFR
         ]
         expect(actual).toEqual(expected)
     })

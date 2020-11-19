@@ -9,7 +9,7 @@ enum Justification {
     CENTER = "center",
 }
 
-type JustificationOption = Justification | Array<Maybe<Justification>>
+type JustificationOption = Maybe<Justification> | Array<Maybe<Justification>>
 
 type TableTypeParameters = Partial<{
     of: unknown,
@@ -30,7 +30,7 @@ type Column<T extends TableTypeParameters = {}> =
 type Table<T = void> = Array<Row<{of: T}>>
 
 interface JustifiedCellOptions {
-    columnJustification: Justification,
+    columnJustification: Maybe<Justification>,
     columnWidth: Count<Char>,
 }
 

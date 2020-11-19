@@ -37,7 +37,11 @@ const formatTableForForum = <T = unknown>(table: Table<T>, options?: Partial<For
                 const maybeColoredCell = isUndefined(cell) ? BLANK : computeMaybeColoredCell(cell, color)
                 const justifiedCell =
                     isHeader ?
-                        `[th]${maybeColoredCell}[/th]` :
+                        columnJustification === Justification.LEFT ?
+                            `[thl]${maybeColoredCell}[/thl]` :
+                            columnJustification === Justification.RIGHT ?
+                                `[thr]${maybeColoredCell}[/thr]` :
+                                `[th]${maybeColoredCell}[/th]` :
                         columnJustification === Justification.CENTER ?
                             `[tdc]${maybeColoredCell}[/tdc]` :
                             columnJustification === Justification.RIGHT ?

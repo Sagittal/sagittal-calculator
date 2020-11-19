@@ -5,10 +5,12 @@ import {length} from "../typedOperations"
 import {Char, Io} from "../types"
 import {Justification, JustificationOption, JustifiedCellOptions, Row, Table} from "./types"
 
-const computeJustifications = (justification: JustificationOption, columnRange: Range): Justification[] =>
+const computeJustifications = (justification: JustificationOption, columnRange: Range): Array<Maybe<Justification>> =>
+    isUndefined(justification) ?
+        columnRange.map((_: number): undefined => undefined) :
     isString(justification) ?
         columnRange.map((_: number): Justification => justification) :
-        columnRange.map((index: number): Justification => justification[index] || Justification.LEFT)
+        columnRange.map((index: number): Maybe<Justification> => justification[index])
 
 const computeColumnWidths = <T = unknown>(table: Table<T>, columnRange: Range): Array<Count<Char>> =>
     columnRange.map((columnIndex: number): Count<Char> => {
@@ -28,15 +30,14 @@ const computeColumnWidths = <T = unknown>(table: Table<T>, columnRange: Range): 
         )
     })
 
-const furtherJustifyCell = (justifiedCell: Io, columnJustification: Justification): Io => {
-    return columnJustification === Justification.LEFT ?
+const furtherJustifyCell = (justifiedCell: Io, columnJustification: Maybe<Justification>): Io =>
+    ((columnJustification === Justification.LEFT) || isUndefined(columnJustification)) ?
         justifiedCell + " " as Io :
         columnJustification === Justification.RIGHT ?
             " " + justifiedCell as Io :
             justifiedCell.length % 2 === 0 ?
                 " " + justifiedCell as Io :
                 justifiedCell + " " as Io
-}
 
 const computeJustifiedCell = (
     cell: Maybe<Io>,
