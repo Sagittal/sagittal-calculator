@@ -80,8 +80,8 @@ describe("formatTableForForum", (): void => {
             "[table]" + NEWLINE +
             "[tr][th]comma[/th][th]prime[/th][th]2,3-free[/th][th][/th][th][/th][th][/th][th]apotome[/th][th][/th][/tr]" + NEWLINE +
             "[tr][th]name[/th][th]limit[/th][th]SoPFR[/th][th]cents[/th][th]monzo[/th][th]quotient[/th][th]slope[/th][th]N2D3P9[/th][/tr]" + NEWLINE +
-            "[tr][tn]11M[/tn][tc]11[/tc][td]11[/td][td]45.45[/td][td][0 0 1⟩[/td][td]33/32[/td][td]-4[/td][td]6.722[/td][/tr]" + NEWLINE +
-            "[tr][tn]25/49M[/tn][tc]7[/tc][td]24[/td][td]33.4[/td][td][0 0⟩[/td][td]50/49[/td][td]-59.333[/td][td]26.466[/td][/tr]" + NEWLINE +
+            "[tr][tdr]11M[/tdr][tdc]11[/tdc][td]11[/td][td]45.45[/td][td][0 0 1⟩[/td][td]33/32[/td][td]-4[/td][td]6.722[/td][/tr]" + NEWLINE +
+            "[tr][tdr]25/49M[/tdr][tdc]7[/tdc][td]24[/td][td]33.4[/td][td][0 0⟩[/td][td]50/49[/td][td]-59.333[/td][td]26.466[/td][/tr]" + NEWLINE +
             "[/table]" + NEWLINE as Io
         expect(actual).toEqual(expected)
     })

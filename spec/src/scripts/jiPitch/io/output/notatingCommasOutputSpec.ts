@@ -70,8 +70,8 @@ describe("computeNotatingCommasOutput", (): void => {
             "[table]" + NEWLINE +
             "[tr][th]comma[/th][th][/th][th][/th][th]monzo[/th][th][/th][th][/th][th][/th][th][/th][th][/th][th][/th][th]apotome[/th][th][/th][th][/th][/tr]" + NEWLINE +
             "[tr][th]class[/th][th]name[/th][th]quotient[/th][th] [/th][th]  2    [/th][th]  3    [/th][th]  5    [/th][th]  7    [/th][th] [/th][th]cents[/th][th]slope[/th][th]AAS[/th][th]ATE[/th][/tr]" + NEWLINE +
-            "[tr][td]:/|\\:[/td][td]11M[/td][td][latex]\\frac{33}{32}[/latex][/td][tn][[/tn][tc]  0    [/tc][tc]  0    [/tc][tc]  1    [/tc][tc][/tc][td]⟩[/td][td] 45.450¢[/td][td] -4.000[/td][td]  4.000[/td][td]  0    [/td][/tr]" + NEWLINE +
-            "[tr][td][/td][td]25/49M[/td][td][latex]\\frac{50}{49}[/latex][/td][tn][[/tn][tc]  1    [/tc][tc]  0    [/tc][tc]  2    [/tc][tc] -2    [/tc][td]⟩[/td][td] 33.400¢[/td][td] -2.154[/td][td]  2.154[/td][td]  0    [/td][/tr]" + NEWLINE +
+            "[tr][td]:/|\\:[/td][td]11M[/td][td][latex]\\frac{33}{32}[/latex][/td][tdr][[/tdr][tdc]  0    [/tdc][tdc]  0    [/tdc][tdc]  1    [/tdc][tdc][/tdc][td]⟩[/td][td] 45.450¢[/td][td] -4.000[/td][td]  4.000[/td][td]  0    [/td][/tr]" + NEWLINE +
+            "[tr][td][/td][td]25/49M[/td][td][latex]\\frac{50}{49}[/latex][/td][tdr][[/tdr][tdc]  1    [/tdc][tdc]  0    [/tdc][tdc]  2    [/tdc][tdc] -2    [/tdc][td]⟩[/td][td] 33.400¢[/td][td] -2.154[/td][td]  2.154[/td][td]  0    [/td][/tr]" + NEWLINE +
             "[/table]" + NEWLINE as Io
         expect(actual).toBe(expected)
     })

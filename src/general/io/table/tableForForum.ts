@@ -39,9 +39,9 @@ const formatTableForForum = <T = unknown>(table: Table<T>, options?: Partial<For
                     isHeader ?
                         `[th]${maybeColoredCell}[/th]` :
                         columnJustification === Justification.CENTER ?
-                            `[tc]${maybeColoredCell}[/tc]` :
+                            `[tdc]${maybeColoredCell}[/tdc]` :
                             columnJustification === Justification.RIGHT ?
-                                `[tn]${maybeColoredCell}[/tn]` :
+                                `[tdr]${maybeColoredCell}[/tdr]` :
                                 `[td]${maybeColoredCell}[/td]`
 
                 return sumTexts(justifiedRow, justifiedCell as Io)
