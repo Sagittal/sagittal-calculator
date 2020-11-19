@@ -4,12 +4,12 @@ import {INSANE_ZETA_PEAK_VAL} from "../../../../../../src/sagittal/notations/ji"
 
 describe("computeMonzoMapping", (): void => {
     it("given a val mapping, returns the number of steps that would represent the given monzo", (): void => {
-        const val: Val = [8539, 13534, 19827, 23972, 29540, 31598] as Val
+        const val = [8539, 13534, 19827, 23972, 29540, 31598] as Val<{integer: true}>
         const monzo = [5, -3, 1, -1, -1, 1] as Monzo
 
         const actual = computeMonzoMapping(monzo, val)
 
-        const expected = 6 as Step
+        const expected = 6 as Step<{integer: true}>
         expect(actual).toBe(expected)
     })
 
@@ -18,7 +18,7 @@ describe("computeMonzoMapping", (): void => {
 
         const actual = computeMonzoMapping(monzo, INSANE_ZETA_PEAK_VAL)
 
-        const expected = 0 as Step
+        const expected = 0 as Step<{integer: true}>
         expect(actual).toBe(expected)
     })
 
@@ -27,7 +27,7 @@ describe("computeMonzoMapping", (): void => {
 
         const actual = computeMonzoMapping(monzo, INSANE_ZETA_PEAK_VAL)
 
-        const expected = 7 as Step
+        const expected = 7 as Step<{integer: true}>
         expect(actual).toBe(expected)
     })
 

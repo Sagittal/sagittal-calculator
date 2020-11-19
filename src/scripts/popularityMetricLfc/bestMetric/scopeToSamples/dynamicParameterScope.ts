@@ -22,7 +22,7 @@ const computeDynamicParameterScope = (options: DynamicParameterScopeOptions): Dy
     let ed
 
     if (!isUndefined(max) && !isUndefined(min)) {
-        window = max - min as Window<Parameter>
+        window = max - min as Window<{of: Parameter}>
         center = min + window / 2 as Parameter
     }
 
@@ -32,7 +32,7 @@ const computeDynamicParameterScope = (options: DynamicParameterScopeOptions): Dy
     }
 
     if (!isUndefined(max) && !isUndefined(centerOption)) {
-        window = (max - centerOption) * 2 as Window<Parameter>
+        window = (max - centerOption) * 2 as Window<{of: Parameter}>
         center = centerOption
     }
 
@@ -42,7 +42,7 @@ const computeDynamicParameterScope = (options: DynamicParameterScopeOptions): Dy
     }
 
     if (!isUndefined(min) && !isUndefined(centerOption)) {
-        window = (centerOption - min) * 2 as Window<Parameter>
+        window = (centerOption - min) * 2 as Window<{of: Parameter}>
         center = centerOption
     }
 
@@ -51,7 +51,7 @@ const computeDynamicParameterScope = (options: DynamicParameterScopeOptions): Dy
         center = centerOption
     }
 
-    ed = computeEqualDivision(window as Window<Parameter>)
+    ed = computeEqualDivision(window as Window<{of: Parameter}>)
 
     return {center, window, ed}
 }

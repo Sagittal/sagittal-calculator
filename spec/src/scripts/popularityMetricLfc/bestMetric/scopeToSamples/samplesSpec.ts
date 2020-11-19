@@ -13,21 +13,21 @@ describe("computeSamples", (): void => {
             {
                 [PopularityParameterId.A_AS_COEFFICIENT]: {
                     center: 2 as Parameter,
-                    window: 2 as Window<Parameter>,
-                    ed: 3 as Ed<Parameter>,
+                    window: 2 as Window<{of: Parameter}>,
+                    ed: 3 as Ed<{of: Parameter}>,
                 },
                 [PopularityParameterId.K_AS_COEFFICIENT]: {
                     center: 0 as Parameter,
-                    window: 4 as Window<Parameter>,
-                    ed: 2 as Ed<Parameter>,
+                    window: 4 as Window<{of: Parameter}>,
+                    ed: 2 as Ed<{of: Parameter}>,
                 },
             },
             {
                 [PopularityParameterId.COUNT]: true,
                 [PopularityParameterId.A_AS_COEFFICIENT]: {
                     center: 1.5 as Parameter,
-                    window: 2 as Window<Parameter>,
-                    ed: 2 as Ed<Parameter>,
+                    window: 2 as Window<{of: Parameter}>,
+                    ed: 2 as Ed<{of: Parameter}>,
                 },
                 [PopularityParameterId.W]: 3.3 as Parameter,
             },
@@ -216,8 +216,8 @@ describe("computeSamples", (): void => {
                 [PopularityParameterId.COUNT]: true,
                 [PopularityParameterId.A_AS_COEFFICIENT]: {
                     center: 1.5 as Parameter,
-                    window: 2 as Window<Parameter>,
-                    ed: 2 as Ed<Parameter>,
+                    window: 2 as Window<{of: Parameter}>,
+                    ed: 2 as Ed<{of: Parameter}>,
                 },
                 [PopularityParameterId.K_AS_COEFFICIENT]: 0.5 as Parameter,
             },
@@ -225,8 +225,8 @@ describe("computeSamples", (): void => {
                 [PopularityParameterId.COUNT]: true,
                 [PopularityParameterId.A_AS_COEFFICIENT]: {
                     center: 1 as Parameter,
-                    window: 2 as Window<Parameter>,
-                    ed: 2 as Ed<Parameter>,
+                    window: 2 as Window<{of: Parameter}>,
+                    ed: 2 as Ed<{of: Parameter}>,
                 },
                 [PopularityParameterId.K_AS_COEFFICIENT]: 0 as Parameter,
             },

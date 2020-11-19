@@ -8,7 +8,7 @@ const computeNextScope = (samplePoint: SamplePoint, dynamicParameters: DynamicPa
         const {submetricIndex, parameter, values, unit} = dynamicParameters[index]
 
         const center = values[dynamicParameterValueIndex]
-        const window: Window<Parameter> = unit * (2 / 3) as Window<Parameter>
+        const window: Window<{of: Parameter}> = unit * (2 / 3) as Window<{of: Parameter}>
 
         nextScope[submetricIndex][parameter] = computeDynamicParameterScope({center, window})
     })

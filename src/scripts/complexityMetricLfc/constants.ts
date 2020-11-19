@@ -5,7 +5,7 @@ import {ComplexityMetricLfcScriptGroupSettings} from "./types"
 const INITIAL_COMPLEXITY_METRIC_LFC_SCRIPT_GROUP_SETTINGS: ComplexityMetricLfcScriptGroupSettings = {
     zoneCommaEntries: [] as Array<[CommaClassId, Comma[]]>,
     sosMode: false,
-    complexitySearchEd: 11 as Ed<Parameter>,
+    complexitySearchEd: 11 as Ed<{of: Parameter}>,
 }
 
 const EXCLUDED_COMMAS: CommaClassId[] = [

@@ -16,7 +16,7 @@ const computeSubmetricDynamicParameters = (
             const {ed, window} = parameterScope
             if (isObject(parameterScope) && ed && window && ed > 1) {
                 const values = computeParameterValues(parameterScope)
-                const unit = window / (ed - 1) as Step<Parameter>
+                const unit = window / (ed - 1) as Step<{of: Parameter}>
                 submetricDynamicParameters.push({submetricIndex, parameter, values, unit})
             }
         },

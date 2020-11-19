@@ -12,43 +12,43 @@ describe("computeNextScope", (): void => {
                 submetricIndex: 0 as Index<Submetric>,
                 parameter: PopularityParameterId.J_AS_COEFFICIENT,
                 values: [0, 0.1, 0.2, 0.3, 0.4, 0.5] as Parameter[],
-                unit: 0.1 as Step<Parameter>,
+                unit: 0.1 as Step<{of: Parameter}>,
             },
             {
                 submetricIndex: 0 as Index<Submetric>,
                 parameter: PopularityParameterId.W,
                 values: [0, 0.5, 1] as Parameter[],
-                unit: 0.5 as Step<Parameter>,
+                unit: 0.5 as Step<{of: Parameter}>,
             },
             {
                 submetricIndex: 1 as Index<Submetric>,
                 parameter: PopularityParameterId.Y,
                 values: [2, 2.02, 2.04, 2.06, 2.08, 2.1] as Parameter[],
-                unit: 0.02 as Step<Parameter>,
+                unit: 0.02 as Step<{of: Parameter}>,
             },
         ]
         const scope: Scope = [
             {
                 [PopularityParameterId.J_AS_COEFFICIENT]: {
                     center: 0.1 as Parameter,
-                    window: 0.05 as Window<Parameter>,
-                    ed: 5 as Ed<Parameter>,
+                    window: 0.05 as Window<{of: Parameter}>,
+                    ed: 5 as Ed<{of: Parameter}>,
                 },
                 // Haha... it just doesn't care what your previous ED was.
                 // Well, that's why I had the top-level script point to the same constant that this module uses,
                 // To generally prevent that.
                 [PopularityParameterId.W]: {
                     center: 0 as Parameter,
-                    window: 0.25 as Window<Parameter>,
-                    ed: 5 as Ed<Parameter>,
+                    window: 0.25 as Window<{of: Parameter}>,
+                    ed: 5 as Ed<{of: Parameter}>,
                 },
                 [PopularityParameterId.A_AS_COEFFICIENT]: 2 as Parameter,
             },
             {
                 [PopularityParameterId.Y]: {
                     center: 2.06 as Parameter,
-                    window: 0.01 as Window<Parameter>,
-                    ed: 5 as Ed<Parameter>,
+                    window: 0.01 as Window<{of: Parameter}>,
+                    ed: 5 as Ed<{of: Parameter}>,
                 },
                 [PopularityParameterId.COUNT]: true,
             },
@@ -60,21 +60,21 @@ describe("computeNextScope", (): void => {
             {
                 [PopularityParameterId.J_AS_COEFFICIENT]: {
                     center: 0.1 as Parameter,
-                    window: 0.066667 as Window<Parameter>,
-                    ed: 2 as Ed<Parameter>,
+                    window: 0.066667 as Window<{of: Parameter}>,
+                    ed: 2 as Ed<{of: Parameter}>,
                 },
                 [PopularityParameterId.W]: {
                     center: 0 as Parameter,
-                    window: 0.333333 as Window<Parameter>,
-                    ed: 4 as Ed<Parameter>,
+                    window: 0.333333 as Window<{of: Parameter}>,
+                    ed: 4 as Ed<{of: Parameter}>,
                 },
                 [PopularityParameterId.A_AS_COEFFICIENT]: 2 as Parameter,
             },
             {
                 [PopularityParameterId.Y]: {
                     center: 2.06 as Parameter,
-                    window: 0.013333 as Window<Parameter>,
-                    ed: 2 as Ed<Parameter>,
+                    window: 0.013333 as Window<{of: Parameter}>,
+                    ed: 2 as Ed<{of: Parameter}>,
                 },
                 [PopularityParameterId.COUNT]: true,
             },

@@ -16,19 +16,19 @@ const scope = [
         [PopularityParameterId.SUM]: true,
         [PopularityParameterId.K_AS_COEFFICIENT]: computeDynamicParameterScope({
             center: 1 as Parameter,
-            window: 0.02 as Window<Parameter>,
+            window: 0.02 as Window<{of: Parameter}>,
         }),
         [PopularityParameterId.A_AS_LOGARITHM_BASE]: computeDynamicParameterScope({
             center: 2.00001 as Parameter,
-            window: 0.02 as Window<Parameter>,
+            window: 0.02 as Window<{of: Parameter}>,
         }),
         [PopularityParameterId.Y]: computeDynamicParameterScope({
             center: 2 as Parameter,
-            window: 0.04 as Window<Parameter>,
+            window: 0.04 as Window<{of: Parameter}>,
         }),
         [PopularityParameterId.W]: computeDynamicParameterScope({
             center: -2.00001 as Parameter,
-            window: 0.03 as Window<Parameter>,
+            window: 0.03 as Window<{of: Parameter}>,
         }),
     },
 ] as Scope

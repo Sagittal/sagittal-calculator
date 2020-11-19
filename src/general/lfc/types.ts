@@ -4,8 +4,8 @@ type Parameter = number & {_ParameterValueBrand: boolean}
 
 type DynamicParameterScope = Partial<{
     center: Parameter,
-    ed: Ed<Parameter>,
-    window: Window<Parameter>,
+    ed: Ed<{of: Parameter}>,
+    window: Window<{of: Parameter}>,
 }>
 
 type ParameterScope = Parameter | boolean | DynamicParameterScope

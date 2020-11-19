@@ -22,7 +22,7 @@ const APOTOME = {monzo: [-11, 7]} as Comma                          // 3A       
 const THIRTYONE_THREE_COMMA = {monzo: [-49, 31]} as Comma           // 3M+A                             160.605027¢
 const PYTHAGOREAN_WHOLE_TONE = {monzo: [-3, 2]} as Comma            // 3MS+A                            203.910002¢        9/8
 
-const OCTAVE_WINDOW = 2 as Window<2>
+const OCTAVE_WINDOW = 2 as Window<{of: 2}>
 
 const SCHISMINA = {monzo: [12, -2, -1, -1, 0, -1]} as Comma
 const SCHISMA = {monzo: [-15, 8, 1]} as Comma

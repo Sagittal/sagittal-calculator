@@ -4,7 +4,7 @@ import {LfcUnpopularityEstimate} from "./sumOfSquares"
 interface PopularityMetricLfcScriptGroupSettings {
     z: Exponent<Rank<ScalaPopularityStat | LfcUnpopularityEstimate>>,
     onlyTop: Count<ScalaPopularityStat>,
-    maxUnit: Max<Step<Parameter>>,
+    maxUnit: Max<Step<{of: Parameter}>>,
     noUseless: boolean,
     sync: boolean,
 }

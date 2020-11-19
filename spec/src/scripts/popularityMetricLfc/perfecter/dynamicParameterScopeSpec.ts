@@ -10,8 +10,8 @@ describe("computeDynamicParameterScopeForPerfecting", (): void => {
 
         const expected = {
             center: 0.5 as Parameter,
-            window: popularityMetricLfcScriptGroupSettings.maxUnit as number as Window<Parameter>,
-            ed: 3 as Ed<Parameter>,
+            window: popularityMetricLfcScriptGroupSettings.maxUnit as number as Window<{of: Parameter}>,
+            ed: 3 as Ed<{of: Parameter}>,
         }
         expect(actual).toEqual(expected)
     })

@@ -10,13 +10,13 @@ describe("computeSubmetricDynamicParameters", (): void => {
         const submetricScope: SubmetricScope = {
             [PopularityParameterId.A_AS_COEFFICIENT]: {
                 center: 1 as Parameter,
-                window: 0.5 as Window<Parameter>,
-                ed: 5 as Ed<Parameter>,
+                window: 0.5 as Window<{of: Parameter}>,
+                ed: 5 as Ed<{of: Parameter}>,
             },
             [PopularityParameterId.W]: {
                 center: 0.7 as Parameter,
-                window: 0.2 as Window<Parameter>,
-                ed: 3 as Ed<Parameter>,
+                window: 0.2 as Window<{of: Parameter}>,
+                ed: 3 as Ed<{of: Parameter}>,
             },
         } as SubmetricScope
 
@@ -38,13 +38,13 @@ describe("computeSubmetricDynamicParameters", (): void => {
         const submetricScope = {
             [PopularityParameterId.A_AS_COEFFICIENT]: {
                 center: 1 as Parameter,
-                window: 0.5 as Window<Parameter>,
-                ed: 5 as Ed<Parameter>,
+                window: 0.5 as Window<{of: Parameter}>,
+                ed: 5 as Ed<{of: Parameter}>,
             },
             [PopularityParameterId.W]: {
                 center: 0.7 as Parameter,
-                window: 0.2 as Window<Parameter>,
-                ed: 0 as Ed<Parameter>,
+                window: 0.2 as Window<{of: Parameter}>,
+                ed: 0 as Ed<{of: Parameter}>,
             },
         } as SubmetricScope
 
@@ -65,8 +65,8 @@ describe("computeSubmetricDynamicParameters", (): void => {
         const submetricScope: SubmetricScope = {
             [PopularityParameterId.A_AS_COEFFICIENT]: {
                 center: 1 as Parameter,
-                window: 0.5 as Window<Parameter>,
-                ed: 5 as Ed<Parameter>,
+                window: 0.5 as Window<{of: Parameter}>,
+                ed: 5 as Ed<{of: Parameter}>,
             },
             [PopularityParameterId.W]: 0.7 as Parameter,
         } as SubmetricScope

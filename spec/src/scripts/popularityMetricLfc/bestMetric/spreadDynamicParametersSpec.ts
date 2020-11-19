@@ -9,8 +9,8 @@ describe("computeSpreadDynamicParameters", (): void => {
             {
                 [PopularityParameterId.K_AS_COEFFICIENT]: {
                     center: 1 as Parameter,
-                    window: 2 as Window<Parameter>,
-                    ed: 2 as Ed<Parameter>,
+                    window: 2 as Window<{of: Parameter}>,
+                    ed: 2 as Ed<{of: Parameter}>,
                 },
             },
             {
@@ -18,8 +18,8 @@ describe("computeSpreadDynamicParameters", (): void => {
                 [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2 as Parameter,
                 [PopularityParameterId.J_AS_POWER_EXPONENT]: {
                     center: 3 as Parameter,
-                    window: 1 as Window<Parameter>,
-                    ed: 5 as Ed<Parameter>,
+                    window: 1 as Window<{of: Parameter}>,
+                    ed: 5 as Ed<{of: Parameter}>,
                 },
             },
         ] as Combination<SubmetricScope>
@@ -40,8 +40,8 @@ describe("computeSpreadDynamicParameters", (): void => {
                 [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2 as Parameter,
                 [PopularityParameterId.J_AS_POWER_EXPONENT]: {
                     center: 3 as Parameter,
-                    window: 1 as Window<Parameter>,
-                    ed: 5 as Ed<Parameter>,
+                    window: 1 as Window<{of: Parameter}>,
+                    ed: 5 as Ed<{of: Parameter}>,
                 },
             },
         ] as Combination<SubmetricScope>
@@ -56,8 +56,8 @@ describe("computeSpreadDynamicParameters", (): void => {
             {
                 [PopularityParameterId.K_AS_COEFFICIENT]: {
                     center: 1 as Parameter,
-                    window: 2 as Window<Parameter>,
-                    ed: 2 as Ed<Parameter>,
+                    window: 2 as Window<{of: Parameter}>,
+                    ed: 2 as Ed<{of: Parameter}>,
                 },
                 [PopularityParameterId.J_AS_LOGARITHM_BASE]: 2 as Parameter,
             },
@@ -66,8 +66,8 @@ describe("computeSpreadDynamicParameters", (): void => {
                 [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2 as Parameter,
                 [PopularityParameterId.J_AS_POWER_EXPONENT]: {
                     center: 3 as Parameter,
-                    window: 1 as Window<Parameter>,
-                    ed: 5 as Ed<Parameter>,
+                    window: 1 as Window<{of: Parameter}>,
+                    ed: 5 as Ed<{of: Parameter}>,
                 },
             },
         ] as Combination<SubmetricScope>

@@ -12,7 +12,7 @@ type Monzo<T extends NumericProperties = {}> =
     Array<Decimal<NumericPropertyTranslationForMonzosAndQuotientsToTheirTerms<T>> & Exponent<Prime>>
     & NumericPropertyEffects<T>
 
-type Val = Array<Exponent<Step>>
+type Val<T extends NumericProperties = {}> = Array<Exponent<Step<T>>>
 
 interface PatentValOptions<T extends Window> {
     ed: Ed<T>,

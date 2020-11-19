@@ -1,17 +1,23 @@
 import {Io} from "./io"
-import {Decimal, Max, Min, Quotient} from "./math"
+import {Decimal, Max, Min, NumericProperties, Quotient} from "./math"
 
 type Index<T = void> =
     Decimal<{integer: true}> & {_IndexBrand: boolean} & (T extends void ? {} : {_IndexOfBrand: T})
 type Count<T = void> =
     Decimal<{integer: true}> & {_CountBrand: boolean} & (T extends void ? {} : {_CountOfBrand: T})
 
-type Step<EdCount extends number | void = void> =                                               // Iteration?
-    Decimal & {_StepBrand: boolean, _StepOfEdBrand: EdCount}
-type Ed<WindowSize extends number | void = void> =                                              // Generator?
-    Decimal<{integer: true}> & {_EdBrand: boolean, _WindowSizeBrand: WindowSize}
-type Window<WindowSize extends number | unknown = unknown> =                                    // Period?
-    Decimal & {_WindowBrand: boolean, _WindowSizeBrand: WindowSize}
+type Step<T extends NumericProperties & {of?: number} = {}> =                         // Iteration?
+    Decimal<T>
+    & {_StepBrand: boolean}
+    & (T extends {of: number} ? { _StepOfEdBrand: T["of"] } : {})
+type Ed<T extends NumericProperties & {of?: number} = {}> =                           // Generator?
+    Decimal<T & {integer: true}>
+    & {_EdBrand: boolean}
+    & (T extends {of: number} ? { _EdOfWindowBrand: T["of"]} : {})
+type Window<T extends NumericProperties & {of?: number} = {}> =                       // Period?
+    Decimal<T>
+    & {_WindowBrand: boolean}
+    & (T extends {of: number} ? {_OfSizeBrand: T["of"]}: {})
 type Degree = [Step<any>, Ed<any>] & Quotient
 
 type Name<T = void> = Io & {_NameBrand: boolean} & (T extends void ? {} : {_NameOfBrand: T})

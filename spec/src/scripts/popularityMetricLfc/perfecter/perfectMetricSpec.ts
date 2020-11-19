@@ -14,16 +14,16 @@ describe("searchScopeAndMaybeUpdateBestMetric", (): void => {
                 [PopularityParameterId.SUM]: true,
                 [PopularityParameterId.A_AS_COEFFICIENT]: {
                     center: 2 as Parameter,
-                    window: 2 as Window<Parameter>,
-                    ed: 3 as Ed<Parameter>,
+                    window: 2 as Window<{of: Parameter}>,
+                    ed: 3 as Ed<{of: Parameter}>,
                 },
             },
             {
                 [PopularityParameterId.COUNT]: true,
                 [PopularityParameterId.W]: {
                     center: 1.5 as Parameter,
-                    window: 2 as Window<Parameter>,
-                    ed: 2 as Ed<Parameter>,
+                    window: 2 as Window<{of: Parameter}>,
+                    ed: 2 as Ed<{of: Parameter}>,
                 },
                 [PopularityParameterId.A_AS_COEFFICIENT]: 3.3 as Parameter,
             },
@@ -85,13 +85,13 @@ describe("searchScopeAndMaybeUpdateBestMetric", (): void => {
                 submetricIndex: 1 as Index<Submetric>,
                 parameter: PopularityParameterId.A_AS_COEFFICIENT,
                 values: [1, 2, 3] as Parameter[],
-                unit: 1 as Step<Parameter>,
+                unit: 1 as Step<{of: Parameter}>,
             },
             {
                 submetricIndex: 2 as Index<Submetric>,
                 parameter: PopularityParameterId.W,
                 values: [0.5, 2.5] as Parameter[],
-                unit: 2 as Step<Parameter>,
+                unit: 2 as Step<{of: Parameter}>,
             },
         ]
         const expectedOptions = {

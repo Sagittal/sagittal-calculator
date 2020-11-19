@@ -19,8 +19,8 @@ describe("nonRecursiveSearchScopeAndMaybeUpdateBestMetric", (): void => {
         {
             [PopularityParameterId.K_AS_COEFFICIENT]: {
                 center: 1 as Parameter,
-                window: 2 as Window<Parameter>,
-                ed: 2 as Ed<Parameter>,
+                window: 2 as Window<{of: Parameter}>,
+                ed: 2 as Ed<{of: Parameter}>,
             },
         },
         {
@@ -28,8 +28,8 @@ describe("nonRecursiveSearchScopeAndMaybeUpdateBestMetric", (): void => {
             [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2 as Parameter,
             [PopularityParameterId.J_AS_POWER_EXPONENT]: {
                 center: 3 as Parameter,
-                window: 1 as Window<Parameter>,
-                ed: 5 as Ed<Parameter>,
+                window: 1 as Window<{of: Parameter}>,
+                ed: 5 as Ed<{of: Parameter}>,
             },
         },
     ] as Combination<SubmetricScope>
@@ -100,13 +100,13 @@ describe("nonRecursiveSearchScopeAndMaybeUpdateBestMetric", (): void => {
                     submetricIndex: 0 as Index<Submetric>,
                     parameter: PopularityParameterId.K_AS_COEFFICIENT,
                     values: [0, 2] as Parameter[],
-                    unit: 2 as Step<Parameter>,
+                    unit: 2 as Step<{of: Parameter}>,
                 },
                 {
                     submetricIndex: 1 as Index<Submetric>,
                     parameter: PopularityParameterId.J_AS_POWER_EXPONENT,
                     values: [2.5, 2.75, 3, 3.25, 3.5] as Parameter[],
-                    unit: 0.25 as Step<Parameter>,
+                    unit: 0.25 as Step<{of: Parameter}>,
                 },
             ],
             samples: [

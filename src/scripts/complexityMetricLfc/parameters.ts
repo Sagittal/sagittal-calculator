@@ -22,37 +22,37 @@ const computeComplexityParameterScopes = (): Record<ComplexityParameterId, Dynam
     return {
         [ComplexityParameterId.A]: {
             center: 0.5 as Parameter,
-            window: 1 as Window<Parameter>,
+            window: 1 as Window<{of: Parameter}>,
             ed: complexityMetricLfcScriptGroupSettings.complexitySearchEd,
         },
         [ComplexityParameterId.B]: {
             center: 2 as Parameter,
-            window: 2 as Window<Parameter>,
+            window: 2 as Window<{of: Parameter}>,
             ed: complexityMetricLfcScriptGroupSettings.complexitySearchEd,
         },
         [ComplexityParameterId.C]: {
             center: 2 as Parameter,
-            window: 2 as Window<Parameter>,
+            window: 2 as Window<{of: Parameter}>,
             ed: complexityMetricLfcScriptGroupSettings.complexitySearchEd,
         },
         [ComplexityParameterId.SE]: {
             center: 0.002 as Parameter,
-            window: 0.002 as Window<Parameter>,
+            window: 0.002 as Window<{of: Parameter}>,
             ed: complexityMetricLfcScriptGroupSettings.complexitySearchEd,
         },
         [ComplexityParameterId.TE]: {
             center: 0.002 as Parameter,
-            window: 0.002 as Window<Parameter>,
+            window: 0.002 as Window<{of: Parameter}>,
             ed: complexityMetricLfcScriptGroupSettings.complexitySearchEd,
         },
         [ComplexityParameterId.SP]: {
             center: 1 as Parameter,
-            window: 2 as Window<Parameter>,
+            window: 2 as Window<{of: Parameter}>,
             ed: complexityMetricLfcScriptGroupSettings.complexitySearchEd,
         },
         [ComplexityParameterId.TP]: {
             center: 1 as Parameter,
-            window: 2 as Window<Parameter>,
+            window: 2 as Window<{of: Parameter}>,
             ed: complexityMetricLfcScriptGroupSettings.complexitySearchEd,
         },
     }

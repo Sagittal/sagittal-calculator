@@ -11,8 +11,8 @@ describe("search scopes", (): void => {
                 [PopularityParameterId.SUM]: true,
                 [PopularityParameterId.A_AS_COEFFICIENT]: {
                     center: 2 as Parameter,
-                    ed: 2 as Ed<Parameter>,
-                    window: 0.1 as Window<Parameter>,
+                    ed: 2 as Ed<{of: Parameter}>,
+                    window: 0.1 as Window<{of: Parameter}>,
                 },
             },
         ] as Scope

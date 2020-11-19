@@ -10,7 +10,7 @@ interface DynamicParameterValueIndicesOptions {
 interface DynamicParameter {
     parameter: PopularityParameterId,
     submetricIndex: Index<Submetric>,
-    unit: Step<Parameter>,
+    unit: Step<{of: Parameter}>,
     values: Parameter[],
 }
 
@@ -26,7 +26,7 @@ interface Sample {
 type DynamicParameterScopeOptions = Partial<{
     max: Max<Parameter>,
     min: Min<Parameter>,
-    window: Window<Parameter>,
+    window: Window<{of: Parameter}>,
     center: Parameter,
 }>
 

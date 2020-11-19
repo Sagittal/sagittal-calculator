@@ -4,8 +4,8 @@ import {DynamicParameterScope, Parameter} from "./types"
 const computeParameterValues = (parameterScope: DynamicParameterScope): Parameter[] => {
     const {
         center = 0 as Parameter,
-        window = 0 as Window<Parameter>,
-        ed = 1 as Ed<Parameter>,
+        window = 0 as Window<{of: Parameter}>,
+        ed = 1 as Ed<{of: Parameter}>,
     }: DynamicParameterScope = parameterScope
 
     if (ed === 1) {

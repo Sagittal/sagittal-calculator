@@ -24,19 +24,19 @@ describe("searchNextLocalMin", (): void => {
             submetricIndex: 0 as Index<Submetric>,
             parameter: PopularityParameterId.K_AS_COEFFICIENT,
             values: [0.3, 0.4, 0.5] as Parameter[],
-            unit: 0.1 as Step<Parameter>,
+            unit: 0.1 as Step<{of: Parameter}>,
         },
         {
             submetricIndex: 0 as Index<Submetric>,
             parameter: PopularityParameterId.A_AS_COEFFICIENT,
             values: [1.1, 2.1, 3.1] as Parameter[],
-            unit: 1 as Step<Parameter>,
+            unit: 1 as Step<{of: Parameter}>,
         },
         {
             submetricIndex: 0 as Index<Submetric>,
             parameter: PopularityParameterId.W,
             values: [1.3, 1.4, 1.5] as Parameter[],
-            unit: 0.1 as Step<Parameter>,
+            unit: 0.1 as Step<{of: Parameter}>,
         },
     ]
     const scope: Scope = [{}] as unknown[] as Scope

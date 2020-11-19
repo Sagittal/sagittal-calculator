@@ -4,8 +4,8 @@ import {computeDynamicParameterScope} from "../../../../../../src/scripts/popula
 describe("computeDynamicParameterScope", (): void => {
     const expectedDynamicParameterScope: DynamicParameterScope = {
         center: -1 as Parameter,
-        window: 2 as Window<Parameter>,
-        ed: 20 as Ed<Parameter>,
+        window: 2 as Window<{of: Parameter}>,
+        ed: 20 as Ed<{of: Parameter}>,
     }
 
     it("given a min and a max computes the correct dynamic parameter scope", (): void => {
@@ -19,7 +19,7 @@ describe("computeDynamicParameterScope", (): void => {
 
     it("given a center and a window computes the correct dynamic parameter scope", (): void => {
         const center = -1 as Parameter
-        const window = 2 as Window<Parameter>
+        const window = 2 as Window<{of: Parameter}>
 
         const actual = computeDynamicParameterScope({center, window})
 
@@ -28,7 +28,7 @@ describe("computeDynamicParameterScope", (): void => {
 
     it("given a min and a window computes the correct dynamic parameter scope", (): void => {
         const min = -2 as Min<Parameter>
-        const window = 2 as Window<Parameter>
+        const window = 2 as Window<{of: Parameter}>
 
         const actual = computeDynamicParameterScope({min, window})
 
@@ -37,7 +37,7 @@ describe("computeDynamicParameterScope", (): void => {
 
     it("given a max and a window computes the correct dynamic parameter scope", (): void => {
         const max = 0 as Max<Parameter>
-        const window = 2 as Window<Parameter>
+        const window = 2 as Window<{of: Parameter}>
 
         const actual = computeDynamicParameterScope({max, window})
 
@@ -79,7 +79,7 @@ describe("computeDynamicParameterScope", (): void => {
     })
 
     it("given only a max, errors", (): void => {
-        const window = 2 as Window<Parameter>
+        const window = 2 as Window<{of: Parameter}>
 
         expect((): void => {
             computeDynamicParameterScope({window})
@@ -98,7 +98,7 @@ describe("computeDynamicParameterScope", (): void => {
         const min = -2 as Min<Parameter>
         const max = 0 as Max<Parameter>
         const center = -1 as Parameter
-        const window = 2 as Window<Parameter>
+        const window = 2 as Window<{of: Parameter}>
 
         expect((): void => {
             computeDynamicParameterScope({min, max, center, window})

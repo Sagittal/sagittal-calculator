@@ -9,49 +9,49 @@ import {Chunk} from "../types"
 const NO_USELESS_INITIAL_PARAMETER_SCOPES: ParameterScopes = {
     [PopularityParameterId.WEIGHT_AS_POWER_EXPONENT]: computeDynamicParameterScope({
         center: 0.875 as Parameter,
-        window: 1.75 as Window<Parameter>,
+        window: 1.75 as Window<{of: Parameter}>,
     }),
     [PopularityParameterId.K_AS_COEFFICIENT]: computeDynamicParameterScope({
         center: 0.5 as Parameter,
-        window: 1 as Window<Parameter>,
+        window: 1 as Window<{of: Parameter}>,
     }),
     [PopularityParameterId.K_AS_POWER_EXPONENT]: computeDynamicParameterScope({
         center: 1.375 as Parameter,
-        window: 2.25 as Window<Parameter>,
+        window: 2.25 as Window<{of: Parameter}>,
     }),
     [PopularityParameterId.J_AS_POWER_EXPONENT]: computeDynamicParameterScope({
         center: 1.125 as Parameter,
-        window: 1.25 as Window<Parameter>,
+        window: 1.25 as Window<{of: Parameter}>,
     }),
     // Per forum discussion, lock it down http://forum.sagittal.org/viewtopic.php?p=2113#p2113
     [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2 as Parameter,
     [PopularityParameterId.A_AS_POWER_EXPONENT]: computeDynamicParameterScope({
         center: 1.25 as Parameter,
-        window: 2.5 as Window<Parameter>,
+        window: 2.5 as Window<{of: Parameter}>,
     }),
     [PopularityParameterId.W]: computeDynamicParameterScope({
         center: -0.25 as Parameter,
-        window: 5.5 as Window<Parameter>,
+        window: 5.5 as Window<{of: Parameter}>,
     }),
     [PopularityParameterId.B]: computeDynamicParameterScope({
         center: -2.625 as Parameter,
-        window: 2.75 as Window<Parameter>,
+        window: 2.75 as Window<{of: Parameter}>,
     }),
     [PopularityParameterId.X]: computeDynamicParameterScope({
         center: -0.375 as Parameter,
-        window: 5.25 as Window<Parameter>,
+        window: 5.25 as Window<{of: Parameter}>,
     }),
     [PopularityParameterId.U]: computeDynamicParameterScope({
         center: -1.375 as Parameter,
-        window: 5.25 as Window<Parameter>,
+        window: 5.25 as Window<{of: Parameter}>,
     }),
     [PopularityParameterId.Y]: computeDynamicParameterScope({
         center: 0.875 as Parameter,
-        window: 0.75 as Window<Parameter>,
+        window: 0.75 as Window<{of: Parameter}>,
     }),
     [PopularityParameterId.V]: computeDynamicParameterScope({
         center: 0.875 as Parameter,
-        window: 0.75 as Window<Parameter>,
+        window: 0.75 as Window<{of: Parameter}>,
     }),
     [PopularityParameterId.SUM]: true,
     [PopularityParameterId.COUNT]: true,
@@ -62,67 +62,67 @@ const NO_USELESS_INITIAL_PARAMETER_SCOPES: ParameterScopes = {
 const INITIAL_PARAMETER_SCOPES: ParameterScopes = {
     [PopularityParameterId.WEIGHT_AS_COEFFICIENT]: computeDynamicParameterScope({
         center: 0.5 as Parameter,
-        window: 1 as Window<Parameter>,
+        window: 1 as Window<{of: Parameter}>,
     }),
     [PopularityParameterId.WEIGHT_AS_LOGARITHM_BASE]: 2 as Parameter,
     [PopularityParameterId.WEIGHT_AS_POWER_EXPONENT]: computeDynamicParameterScope({
         center: 0 as Parameter,
-        window: 6 as Window<Parameter>,
+        window: 6 as Window<{of: Parameter}>,
     }),
     [PopularityParameterId.WEIGHT_AS_POWER_BASE]: 2 as Parameter,
     [PopularityParameterId.K_AS_COEFFICIENT]: computeDynamicParameterScope({
         center: 0.5 as Parameter,
-        window: 1 as Window<Parameter>,
+        window: 1 as Window<{of: Parameter}>,
     }),
     [PopularityParameterId.K_AS_LOGARITHM_BASE]: 2 as Parameter,
     [PopularityParameterId.K_AS_POWER_EXPONENT]: computeDynamicParameterScope({
         center: 0 as Parameter,
-        window: 6 as Window<Parameter>,
+        window: 6 as Window<{of: Parameter}>,
     }),
     [PopularityParameterId.K_AS_POWER_BASE]: 2 as Parameter,
     [PopularityParameterId.J_AS_COEFFICIENT]: computeDynamicParameterScope({
         center: 0.5 as Parameter,
-        window: 1 as Window<Parameter>,
+        window: 1 as Window<{of: Parameter}>,
     }),
     [PopularityParameterId.J_AS_LOGARITHM_BASE]: 2 as Parameter,
     [PopularityParameterId.J_AS_POWER_EXPONENT]: computeDynamicParameterScope({
         center: 0 as Parameter,
-        window: 6 as Window<Parameter>,
+        window: 6 as Window<{of: Parameter}>,
     }),
     [PopularityParameterId.J_AS_POWER_BASE]: 2 as Parameter,
     [PopularityParameterId.A_AS_COEFFICIENT]: computeDynamicParameterScope({
         center: 0.5 as Parameter,
-        window: 1 as Window<Parameter>,
+        window: 1 as Window<{of: Parameter}>,
     }),
     [PopularityParameterId.A_AS_LOGARITHM_BASE]: 2 as Parameter,
     [PopularityParameterId.A_AS_POWER_EXPONENT]: computeDynamicParameterScope({
         center: 0 as Parameter,
-        window: 6 as Window<Parameter>,
+        window: 6 as Window<{of: Parameter}>,
     }),
     [PopularityParameterId.A_AS_POWER_BASE]: 2 as Parameter,
     [PopularityParameterId.W]: computeDynamicParameterScope({
         center: 0 as Parameter,
-        window: 6 as Window<Parameter>,
+        window: 6 as Window<{of: Parameter}>,
     }),
     [PopularityParameterId.B]: computeDynamicParameterScope({
         center: 0 as Parameter,
-        window: 6 as Window<Parameter>,
+        window: 6 as Window<{of: Parameter}>,
     }),
     [PopularityParameterId.X]: computeDynamicParameterScope({
         center: 0 as Parameter,
-        window: 6 as Window<Parameter>,
+        window: 6 as Window<{of: Parameter}>,
     }),
     [PopularityParameterId.U]: computeDynamicParameterScope({
         center: 0 as Parameter,
-        window: 6 as Window<Parameter>,
+        window: 6 as Window<{of: Parameter}>,
     }),
     [PopularityParameterId.Y]: computeDynamicParameterScope({
         center: 0 as Parameter,
-        window: 6 as Window<Parameter>,
+        window: 6 as Window<{of: Parameter}>,
     }),
     [PopularityParameterId.V]: computeDynamicParameterScope({
         center: 0 as Parameter,
-        window: 6 as Window<Parameter>,
+        window: 6 as Window<{of: Parameter}>,
     }),
     [PopularityParameterId.USE_NUMINATOR]: true,
     [PopularityParameterId.MODIFIED_COUNT]: true,

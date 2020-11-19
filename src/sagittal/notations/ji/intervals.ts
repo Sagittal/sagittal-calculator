@@ -38,7 +38,7 @@ const MEDINA: Scamon<{rational: false}> = scaleScamon(
 const INA_CENTS_SIZES: Record<JiNotationLevelId, Cents> = JI_NOTATION_LEVEL_EDAS.reduce(
     (
         jiNotationLevelEdaStepSizes: Record<JiNotationLevelId, Cents>,
-        jiNotationLevelEda: Ed<Apotome>,
+        jiNotationLevelEda: Ed<{of: Apotome}>,
         index: number,
     ): Record<JiNotationLevelId, Cents> =>
         ({

@@ -12,7 +12,7 @@ const DEFAULT_Z = -1 as Exponent<Rank<ScalaPopularityStat | LfcUnpopularityEstim
 const DEFAULT_ONLY_TOP = 80 as Count<ScalaPopularityStat>
 
 // When calculating ED, the max unit it will allow a gap between samples
-const DEFAULT_MAX_UNIT = 0.1 as Max<Step<Parameter>>
+const DEFAULT_MAX_UNIT = 0.1 as Max<Step<{of: Parameter}>>
 
 const INITIAL_SOLVER_STATUS = {
     chunkCount: 0 as Count<Chunk>,
@@ -32,7 +32,7 @@ const INITIAL_POPULARITY_METRIC_LFC_SCRIPT_GROUP_SETTINGS: PopularityMetricLfcSc
 }
 
 // An order of magnitude higher precision when perfecting
-const DEFAULT_MAX_UNIT_WHEN_PERFECTING = DEFAULT_MAX_UNIT / 10 as Max<Step<Parameter>>
+const DEFAULT_MAX_UNIT_WHEN_PERFECTING = DEFAULT_MAX_UNIT / 10 as Max<Step<{of: Parameter}>>
 
 export {
     INITIAL_SOLVER_STATUS,

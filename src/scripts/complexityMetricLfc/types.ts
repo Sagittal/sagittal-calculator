@@ -29,7 +29,7 @@ enum ComplexityParameterId {
 interface ComplexityMetricLfcScriptGroupSettings {
     zoneCommaEntries: Array<[CommaClassId, Comma[]]>,
     sosMode: boolean,
-    complexitySearchEd: Ed<Parameter>,
+    complexitySearchEd: Ed<{of: Parameter}>,
 }
 
 interface MetricParameters {

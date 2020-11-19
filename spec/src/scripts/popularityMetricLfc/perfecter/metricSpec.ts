@@ -32,8 +32,8 @@ describe("perfectMetric", (): void => {
                 [PopularityParameterId.SUM]: true,
                 [PopularityParameterId.K_AS_COEFFICIENT]: {
                     center: 0.8 as Parameter,
-                    window: 0.1 as Window<Parameter>,
-                    ed: 3 as Ed<Parameter>,
+                    window: 0.1 as Window<{of: Parameter}>,
+                    ed: 3 as Ed<{of: Parameter}>,
                 },
             },
         ] as Combination<SubmetricScope>
@@ -69,8 +69,8 @@ describe("perfectMetric", (): void => {
             {
                 [PopularityParameterId.K_AS_COEFFICIENT]: {
                     center: 0.8 as Parameter,
-                    window: 0.1 as Window<Parameter>,
-                    ed: 3 as Ed<Parameter>,
+                    window: 0.1 as Window<{of: Parameter}>,
+                    ed: 3 as Ed<{of: Parameter}>,
                 },
             },
             {

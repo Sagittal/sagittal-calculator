@@ -5,8 +5,8 @@ describe("computeParameterValues", (): void => {
     it("given a parameter scope (a center, a window, and a ED), will return a block of points to sample", (): void => {
         const parameterScope: DynamicParameterScope = {
             center: 1 as Parameter,
-            window: 0.5 as Window<Parameter>,
-            ed: 5 as Ed<Parameter>,
+            window: 0.5 as Window<{of: Parameter}>,
+            ed: 5 as Ed<{of: Parameter}>,
         }
 
         const actual: Parameter[] = computeParameterValues(parameterScope)
@@ -27,8 +27,8 @@ describe("computeParameterValues", (): void => {
     it("works when the ED is even", (): void => {
         const parameterScope: DynamicParameterScope = {
             center: 5 as Parameter,
-            window: 1 as Window<Parameter>,
-            ed: 4 as Ed<Parameter>,
+            window: 1 as Window<{of: Parameter}>,
+            ed: 4 as Ed<{of: Parameter}>,
         }
 
         const actual = computeParameterValues(parameterScope)
@@ -55,7 +55,7 @@ describe("computeParameterValues", (): void => {
     it("works when the ED is one", (): void => {
         const parameterScope: DynamicParameterScope = {
             center: 5 as Parameter,
-            ed: 1 as Ed<Parameter>,
+            ed: 1 as Ed<{of: Parameter}>,
         }
 
         const actual = computeParameterValues(parameterScope)
@@ -70,7 +70,7 @@ describe("computeParameterValues", (): void => {
 
     it("works when the ED is zero", (): void => {
         const parameterScope: DynamicParameterScope = {
-            ed: 0 as Ed<Parameter>,
+            ed: 0 as Ed<{of: Parameter}>,
         }
 
         const actual = computeParameterValues(parameterScope)
