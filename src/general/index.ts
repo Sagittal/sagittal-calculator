@@ -105,6 +105,8 @@ export {
     TimePrecision,
     DOT_OPERATOR,
     NUMERIC_CHARS,
+    Cell,
+    MERGED_CELL_INDICATOR,
 } from "./io"
 export {
     abs,

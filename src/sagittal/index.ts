@@ -58,6 +58,7 @@ export {
     Accidental,
     computeJiPitchFromAccidental,
     parseAccidental,
+    BLANK_ASCII,
 } from "./accidental"
 export {
     computeMaybeCommaClassId,

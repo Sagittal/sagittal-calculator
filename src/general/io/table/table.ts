@@ -9,7 +9,7 @@ import {formatTableForSpreadsheet} from "./tableForSpreadsheet"
 import {formatTableForTerminal} from "./tableForTerminal"
 import {FormatTableOptions, Row, Table, TableFormat} from "./types"
 
-const formatTable = <T = unknown>(table: Table<T>, options?: Partial<FormatTableOptions<T>>): Io => {
+const formatTable = <T>(table: Table<T>, options?: Partial<FormatTableOptions<T>>): Io => {
     const rowLengths = table.map((row: Row<{of: T}>): Count<Maybe<Formatted<T>>> => {
         return count(row)
     })

@@ -7,6 +7,9 @@ const DEFAULT_FORMAT_TABLE_OPTIONS: FormatTableOptions<unknown> = {
     headerRowCount: 1 as Count<Row<{of: unknown, header: true}>>,
 }
 
+const MERGED_CELL_INDICATOR = "⤝"                               // Canadian syllabics chi sign
+
 export {
     DEFAULT_FORMAT_TABLE_OPTIONS,
+    MERGED_CELL_INDICATOR,
 }

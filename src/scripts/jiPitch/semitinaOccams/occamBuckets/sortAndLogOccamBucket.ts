@@ -1,4 +1,4 @@
-import {Comma, KeyPath, LogTarget, Name, saveLog, sort} from "../../../../general"
+import {BLANK, Comma, KeyPath, LogTarget, Name, saveLog, sort} from "../../../../general"
 import {inconsistentMetacommas} from "../../globals"
 import {OCCAM_COMMONALITY_THRESHOLD} from "./constants"
 import {Occam} from "./types"
@@ -12,7 +12,7 @@ const sortAndLogOccamBucket = (occamBucket: Record<Name<Comma>, Occam>): void =>
 
     for (const [commaName, occam] of occamBucketEntries) {
         if (occam < occamThreshold) break
-        const maybeInconsistentMessage = inconsistentMetacommas[commaName] ? `* (maps to ${inconsistentMetacommas[commaName]} tinas)` : ""
+        const maybeInconsistentMessage = inconsistentMetacommas[commaName] ? `* (maps to ${inconsistentMetacommas[commaName]} tinas)` : BLANK
         saveLog(`${commaName}\t${occam}${maybeInconsistentMessage}`, LogTarget.FINAL)
     }
 }

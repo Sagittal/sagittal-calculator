@@ -20,6 +20,7 @@ export {
     computeSagittalUnicode,
     formatAccidental,
     Glyph,
+    BLANK_ASCII,
 } from "./glyph"
 export {computeJiPitchFromAccidental} from "./pitch"
 export {parseAccidental, parseAscii} from "./parse"

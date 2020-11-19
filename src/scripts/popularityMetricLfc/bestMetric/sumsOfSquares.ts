@@ -20,7 +20,7 @@ const computeNextOptions = (
     const {
         indentation = BLANK,
         onlyBetterThanSopfgtt = true,
-        metricName = "" as Name<Metric>,
+        metricName = BLANK as Name<Metric>,
         spreadDynamicParameters,
     } = options
 

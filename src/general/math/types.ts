@@ -49,12 +49,12 @@ enum MeanType {
     HARMONIC = "harmonic",
 }
 
-type MeanTypeParameters = Partial<{
+type MeanProperties = Partial<{
     of: unknown,
     meanType: MeanType,
 }>
 
-type Mean<T extends MeanTypeParameters = {}> =
+type Mean<T extends MeanProperties = {}> =
     T["of"]
     & {_AverageBrand: boolean}
     & (T extends {of: unknown} ? {} : {_AvgOfBrand: T["of"]})

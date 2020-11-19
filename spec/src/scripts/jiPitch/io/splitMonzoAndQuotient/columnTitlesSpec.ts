@@ -30,17 +30,17 @@ describe("splitMonzoAndQuotientColumnTitles", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    it("does not split up quotients on the forum (because there they get LaTeX formatted)", (): void => {
+    it("does not split up quotients on the forum (because there they get LaTeX formatted), and includes instructions to merge cells for the monzo title", (): void => {
         ioSettings.tableFormat = TableFormat.FORUM
         const actual = splitMonzoAndQuotientColumnTitles(columnTitles, {maxMonzoLength})
 
         const expected = [
             "quotient",
             "monzo  ",
-            "2",
-            "3",
-            "5",
-            " ",
+            "⤝ 2",
+            "⤝ 3",
+            "⤝ 5",
+            "⤝  ",
             "cents",
             "apotome slope",
         ] as Io[]
@@ -82,9 +82,9 @@ describe("splitMonzoAndQuotientColumnTitles", (): void => {
             const expected = [
                 "2,3-free prime limit",
                 "2,3-free class n",
-                "/",
-                "d",
-                "[latex]_{\\scriptsize{2,3}}[/latex]",
+                "⤝ ⤝ /",
+                "⤝ ⤝ d",
+                "⤝ ⤝ [latex]_{\\scriptsize{2,3}}[/latex]",
                 "2,3-free class CoPFR",
             ] as Io[]
             expect(actual).toEqual(expected)

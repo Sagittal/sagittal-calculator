@@ -11,18 +11,19 @@ enum Justification {
 
 type JustificationOption = Maybe<Justification> | Array<Maybe<Justification>>
 
-type TableTypeParameters = Partial<{
+type TableProperties = Partial<{
     of: unknown,
     header: boolean,
 }>
 
-type Row<T extends TableTypeParameters = {}> =
-    Array<Maybe<Formatted<T["of"]>>>
+type Cell<T extends TableProperties = {}> = Maybe<Formatted<T["of"]>>
+type Row<T extends TableProperties = {}> =
+    Array<Cell<T>>
     & {_RowBrand: boolean}
     & (T extends {of: unknown} ? {} : {_RowOfBrand: T["of"]})
     & (T extends {header: true} ? {_HeaderBrand: boolean} : {})
-type Column<T extends TableTypeParameters = {}> =
-    Array<Maybe<Formatted<T["of"]>>>
+type Column<T extends TableProperties = {}> =
+    Array<Cell<T>>
     & {_ColumnBrand: boolean}
     & (T extends {of: unknown} ? {} : {_ColumnOfBrand: T["of"]})
     & (T extends {header: true} ? {_HeaderBrand: boolean} : {})
@@ -52,6 +53,7 @@ export {
     JustificationOption,
     JustifiedCellOptions,
     FormatTableOptions,
+    Cell,
     Row,
     Column,
     Table,

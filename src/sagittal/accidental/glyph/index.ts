@@ -26,4 +26,4 @@ export {
 export {alignAscii} from "./align"
 export {Ascii, Unicode, Smiley, Glyph} from "./types"
 export {formatAccidental} from "./format"
-export {PARENTHETICAL_NATURAL_ASCII} from "./constants"
+export {PARENTHETICAL_NATURAL_ASCII, BLANK_ASCII} from "./constants"

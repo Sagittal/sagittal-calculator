@@ -1,4 +1,4 @@
-import {CommaMean, DEFAULT_PRECISION, Io, Px, round, subtract} from "../../../../general"
+import {BLANK, CommaMean, DEFAULT_PRECISION, Io, Px, round, subtract} from "../../../../general"
 import {Ascii, computeAccidentalUnicode, JiNotationLevelId, parseAscii} from "../../../../sagittal"
 import {JI_NOTATION_LEVELS_COMMA_MEANS} from "../../histories"
 import {JI_NOTATION_LEVEL_CENTERS} from "./levelHeights"
@@ -26,7 +26,7 @@ const visualizeJiNotationLevelCommaMeans = (): Io[] => {
             const formattedName = name?.split(" ")
                 .map((sagittalString: string): string => {
                     return computeAccidentalUnicode(parseAscii(sagittalString as Ascii))
-                }).join("   ") || ""
+                }).join("   ") || BLANK
             const positionX: Px = computeX(pitch)
 
             jiNotationLevelCommaMeanElements.push(`  <line stroke-dasharray="${DASH_SIZE}" stroke="${COMMA_MEAN_HEX_COLOR}" x1="${positionX}" x2="${positionX}" y1="${topY}" y2="${bottomY}"/>\n` as Io)

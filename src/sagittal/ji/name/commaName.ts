@@ -114,9 +114,9 @@ const computeCommaName = (
         throw new Error(`Comma ${stringify(comma)} is outside of comma-sized range and cannot be named.`)
     }
 
-    const maybeHyphen = abbreviated ? "" : "-"
+    const maybeHyphen = abbreviated ? BLANK : "-"
 
-    const maybeDown = isRationalScamonSub(comma) ? " down" : ""
+    const maybeDown = isRationalScamonSub(comma) ? " down" : BLANK
 
     const superComma = computeSuperScamon(comma) as Comma<{rational: true, direction: Direction.SUPER}>
     const sizeCategory: SizeCategoryAbbreviation | SizeCategoryName = computeSizeCategory(superComma, {abbreviated})

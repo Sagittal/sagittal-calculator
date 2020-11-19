@@ -1,6 +1,6 @@
 // tslint:disable max-line-length
 
-import {Count, Io, NEWLINE, Row, Table} from "../../../../../src/general"
+import {Count, Io, MERGED_CELL_INDICATOR, NEWLINE, Row, Table} from "../../../../../src/general"
 import {Justification} from "../../../../../src/general/io/table"
 import {formatTableForForum} from "../../../../../src/general/io/table/tableForForum"
 
@@ -102,6 +102,26 @@ describe("formatTableForForum", (): void => {
             "[tr][td]1[/td][td]jim[/td][td]45[/td][td]barb[/td][/tr]" + NEWLINE +
             "[tr][td]2[/td][td]bob[/td][td][/td][td]spot[/td][/tr]" + NEWLINE +
             "[tr][td]2[/td][td]bo[/td][td]9999[/td][td]jet[/td][/tr]" + NEWLINE +
+            "[/table]" + NEWLINE as Io
+        expect(actual).toEqual(expected)
+    })
+
+    it("supports merged cells (but it negates their alignment, because to do the most basic stuff that's how it's got to be)", (): void => {
+        const table = [
+            ["id", "name", MERGED_CELL_INDICATOR, "thing"],
+            ["1", "jim", "45", "barb"],
+            ["2", "bob", undefined, "spot"],
+            ["2", "bo", "9999", "jet"],
+        ] as Table
+
+        const actual = formatTableForForum(table, {justification: [undefined, Justification.LEFT, Justification.RIGHT]})
+
+        const expected =
+            "[table]" + NEWLINE +
+            "[tr][th]id[/th][th=2]name[/th][th]thing[/th][/tr]" + NEWLINE +
+            "[tr][td]1[/td][td]jim[/td][tdr]45[/tdr][td]barb[/td][/tr]" + NEWLINE +
+            "[tr][td]2[/td][td]bob[/td][tdr][/tdr][td]spot[/td][/tr]" + NEWLINE +
+            "[tr][td]2[/td][td]bo[/td][tdr]9999[/tdr][td]jet[/td][/tr]" + NEWLINE +
             "[/table]" + NEWLINE as Io
         expect(actual).toEqual(expected)
     })

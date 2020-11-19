@@ -16,8 +16,8 @@ const parseQuotient = <T extends NumericProperties>(quotientIo: Io): Quotient<T>
 
             return factorPowers.reduce(
                 (product: QuotientPart, factorPower: string): QuotientPart => {
-                    const exponentPartOfFactorPower: string = factorPower.replace(new RegExp(`[^${superscriptNumbers}]`, "g"), "")
-                    const basePartOfFactorPower = factorPower.replace(exponentPartOfFactorPower, "")
+                    const exponentPartOfFactorPower: string = factorPower.replace(new RegExp(`[^${superscriptNumbers}]`, "g"), BLANK)
+                    const basePartOfFactorPower = factorPower.replace(exponentPartOfFactorPower, BLANK)
 
                     const base = parseInteger(basePartOfFactorPower as Io)
                     const power = exponentPartOfFactorPower === BLANK ?

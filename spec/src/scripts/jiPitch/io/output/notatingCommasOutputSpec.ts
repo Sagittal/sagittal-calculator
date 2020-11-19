@@ -68,7 +68,7 @@ describe("computeNotatingCommasOutput", (): void => {
             "   --- notating commas ---" + NEWLINE +
             "" + NEWLINE +
             "[table]" + NEWLINE +
-            "[tr][th]comma[/th][th][/th][th][/th][thr]monzo[/thr][th][/th][th][/th][th][/th][th][/th][thl][/thl][th][/th][th]apotome[/th][th][/th][th][/th][/tr]" + NEWLINE +
+            "[tr][th]comma[/th][th][/th][th][/th][th=6]monzo[/th][th][/th][th]apotome[/th][th][/th][th][/th][/tr]" + NEWLINE +
             "[tr][th]class[/th][th]name[/th][th]quotient[/th][thr] [/thr][th]  2    [/th][th]  3    [/th][th]  5    [/th][th]  7    [/th][thl] [/thl][th]cents[/th][th]slope[/th][th]AAS[/th][th]ATE[/th][/tr]" + NEWLINE +
             "[tr][td]:/|\\:[/td][td]11M[/td][td][latex]\\frac{33}{32}[/latex][/td][tdr][[/tdr][tdc]  0    [/tdc][tdc]  0    [/tdc][tdc]  1    [/tdc][tdc][/tdc][td]⟩[/td][td] 45.450¢[/td][td] -4.000[/td][td]  4.000[/td][td]  0    [/td][/tr]" + NEWLINE +
             "[tr][td][/td][td]25/49M[/td][td][latex]\\frac{50}{49}[/latex][/td][tdr][[/tdr][tdc]  1    [/tdc][tdc]  0    [/tdc][tdc]  2    [/tdc][tdc] -2    [/tdc][td]⟩[/td][td] 33.400¢[/td][td] -2.154[/td][td]  2.154[/td][td]  0    [/td][/tr]" + NEWLINE +

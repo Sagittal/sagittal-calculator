@@ -1,4 +1,4 @@
-import {areScamonsEqual, Comma, formatDecimal, Grade, LogTarget, saveLog} from "../../general"
+import {areScamonsEqual, BLANK, Comma, formatDecimal, Grade, LogTarget, saveLog} from "../../general"
 import {Badness, CommaClassId, computeLpei, formatComma, getCommaClass, Notation} from "../../sagittal"
 import {complexityMetricLfcScriptGroupSettings} from "./globals"
 
@@ -15,7 +15,7 @@ const computeZoneBadnessGrade = (
         const isActualComma = areScamonsEqual(comma, actualComma)
 
         saveLog(
-            `${isActualComma ? "*" : ""}${formatComma(comma)} badness: ${formatDecimal(badness)}`,
+            `${isActualComma ? "*" : BLANK}${formatComma(comma)} badness: ${formatDecimal(badness)}`,
             LogTarget.DETAILS,
         )
 

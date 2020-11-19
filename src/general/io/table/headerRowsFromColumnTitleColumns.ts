@@ -1,4 +1,4 @@
-import {BLANK, Column, count, Count, Formatted, max, Maybe, Row} from "../../../general"
+import {BLANK, Cell, Column, count, Count, Formatted, max, Maybe, Row} from "../../../general"
 
 const computeHeaderRowsFromColumnTitleColumns = <T>(
     columnTitleColumns: Array<Column<{of: T, header: true}>>,
@@ -18,14 +18,14 @@ const computeHeaderRowsFromColumnTitleColumns = <T>(
             columnTitleColumn.unshift(BLANK as Formatted<T>)
         }
 
-        columnTitleColumn.forEach((columnTitleCell: Maybe<Formatted<T>>, index: number): void => {
+        columnTitleColumn.forEach((columnTitleCell: Cell<{of: T, header: true}>, index: number): void => {
             rows[index].push(columnTitleCell)
         })
     })
 
     if (includeSpacerRow) {
         rows.push([...Array(columnTitleColumns.length).keys()]
-            .map((_: number): string => "") as Row<{of: T, header: true}>)
+            .map((_: number): string => BLANK) as Row<{of: T, header: true}>)
     }
 
     return rows

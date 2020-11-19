@@ -1,6 +1,6 @@
 import {computeCentsFromPitch, isUndefined} from "../../../../general"
 import {
-    Ascii,
+    BLANK_ASCII,
     CommaClassId,
     computeSagittalAscii,
     getCommaClass,
@@ -32,7 +32,7 @@ const extractJiNotationBoundClassIdentifiers = (
         getCommaClass(extremeLevelLesserBoundedCommaClassId)
     const formattedExtremeLevelLesserBoundedCommaClass = extremeLevelLesserBoundedCommaClass ?
         computeSagittalAscii(getRepresentativeSagittal(extremeLevelLesserBoundedCommaClassId as CommaClassId)) :
-        "" as Ascii
+        BLANK_ASCII
     const lesserBoundedMinaName = extremeLevelLesserBoundedCommaClass ?
         getMinaName(extremeLevelLesserBoundedCommaClassId as CommaClassId) :
         undefined
@@ -41,7 +41,7 @@ const extractJiNotationBoundClassIdentifiers = (
         getCommaClass(extremeLevelGreaterBoundedCommaClassId)
     const formattedExtremeLevelGreaterBoundedCommaClass = extremeLevelGreaterBoundedCommaClass ?
         computeSagittalAscii(getRepresentativeSagittal(extremeLevelGreaterBoundedCommaClassId as CommaClassId)) :
-        "" as Ascii
+        BLANK_ASCII
     const greaterBoundedMinaName = extremeLevelGreaterBoundedCommaClass ?
         getMinaName(extremeLevelGreaterBoundedCommaClassId as CommaClassId) :
         undefined

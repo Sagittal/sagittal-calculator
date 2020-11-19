@@ -1,13 +1,13 @@
 import {Count, Range, Table} from "../../../../../src/general"
 import {Char, Io} from "../../../../../src/general/io"
 import {Justification} from "../../../../../src/general/io/table"
-import {computeColumnWidths, computeJustifiedCell} from "../../../../../src/general/io/table/justification"
+import {computeColumnWidths, justifyCellIo} from "../../../../../src/general/io/table/justification"
 
-describe("computeJustifiedCell", (): void => {
+describe("justifyCellIo", (): void => {
     it("adds space to justify cells", (): void => {
         const cell = "  7    " as Io
 
-        const actual = computeJustifiedCell(
+        const actual = justifyCellIo(
             cell,
             {columnWidth: 14 as Count<Char>, columnJustification: Justification.LEFT},
         )
@@ -19,7 +19,7 @@ describe("computeJustifiedCell", (): void => {
     it("can justify to the right", (): void => {
         const cell = "  7    " as Io
 
-        const actual = computeJustifiedCell(
+        const actual = justifyCellIo(
             cell,
             {columnWidth: 14 as Count<Char>, columnJustification: Justification.RIGHT},
         )
@@ -31,7 +31,7 @@ describe("computeJustifiedCell", (): void => {
     it("does not justify cells which are for the forum and which have turned off monospacing", (): void => {
         const cell = "[latex]\\frac{50}{49}[/latex]" as Io
 
-        const actual = computeJustifiedCell(
+        const actual = justifyCellIo(
             cell,
             {columnWidth: 14 as Count<Char>, columnJustification: Justification.LEFT},
         )

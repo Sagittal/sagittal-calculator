@@ -1,9 +1,9 @@
 import {
+    Cell,
     formatIntegerDecimal,
     Formatted,
     indexOfFinalElement,
     isUndefined,
-    Maybe,
     parseInteger,
     Row,
 } from "../../../../general"
@@ -18,7 +18,7 @@ const formatPrimeHeaders = <T>(
         ): Row<{of: T, header: true}> => {
             if (index === indexOfFinalElement(headerRows)) {
                 return headerRow.map(
-                    (headerCell: Maybe<Formatted<T>>): Maybe<Formatted<T>> => {
+                    (headerCell: Cell<{of: T, header: true}>): Cell<{of: T, header: true}> => {
                         if (!isUndefined(headerCell) && headerCell.match(/^\d+$/)) {
                             return formatIntegerDecimal(
                                 parseInteger(headerCell),

@@ -1,7 +1,7 @@
 import {BLANK, Char, Count, increment, isEmpty, shallowClone} from "../../../general"
 import {AccentId, Arm, FlagId} from "../flacco"
 import {Accidental, Compatible, EMPTY_ACCIDENTAL} from "../flavor"
-import {Ascii, PARENTHETICAL_NATURAL_ASCII} from "../glyph"
+import {Ascii, BLANK_ASCII, PARENTHETICAL_NATURAL_ASCII} from "../glyph"
 import {Shafts} from "../sagittal"
 
 const parseAscii = (ascii: Ascii): Accidental => {
@@ -24,13 +24,13 @@ const parseAscii = (ascii: Ascii): Accidental => {
         down ?
             arm.push({id: AccentId.BIRD, anti: true}) :
             arm.push({id: AccentId.BIRD})
-        accidentalText = accidentalText.replace(/``/, "") as Ascii
+        accidentalText = accidentalText.replace(/``/, BLANK_ASCII) as Ascii
     }
     if (accidentalText.match(/,,/)) {
         down ?
             arm.push({id: AccentId.BIRD}) :
             arm.push({id: AccentId.BIRD, anti: true})
-        accidentalText = accidentalText.replace(/,,/, "") as Ascii
+        accidentalText = accidentalText.replace(/,,/, BLANK_ASCII) as Ascii
     }
 
     if (accidentalText.match(/bb/)) {

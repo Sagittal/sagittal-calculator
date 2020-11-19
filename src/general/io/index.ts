@@ -31,6 +31,8 @@ export {
     TableFormat,
     Justification,
     JustificationOption,
+    Cell,
+    MERGED_CELL_INDICATOR,
 } from "./table"
 export {sumTexts, join, split} from "./typedOperations"
 export {ColorMethod, Filename, HexColor, Io, Char} from "./types"

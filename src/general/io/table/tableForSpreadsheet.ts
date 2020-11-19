@@ -1,14 +1,13 @@
-import {indexOfFinalElement, isUndefined, Maybe} from "../../code"
+import {indexOfFinalElement, isUndefined} from "../../code"
 import {colorize} from "../colorize"
 import {BLANK, NEWLINE, TAB} from "../constants"
-import {Formatted} from "../format"
 import {join, sumTexts} from "../typedOperations"
 import {ColorMethod, Io} from "../types"
 import {DEFAULT_FORMAT_TABLE_OPTIONS} from "./constants"
 import {maybeColorize} from "./maybeColorize"
-import {FormatTableOptions, Row, Table} from "./types"
+import {Cell, FormatTableOptions, Row, Table} from "./types"
 
-const formatTableForSpreadsheet = <T = unknown>(table: Table<T>, options?: Partial<FormatTableOptions<T>>): Io => {
+const formatTableForSpreadsheet = <T>(table: Table<T>, options?: Partial<FormatTableOptions<T>>): Io => {
     const {
         colors = DEFAULT_FORMAT_TABLE_OPTIONS.colors,
         headerRowCount = DEFAULT_FORMAT_TABLE_OPTIONS.headerRowCount,
@@ -16,7 +15,7 @@ const formatTableForSpreadsheet = <T = unknown>(table: Table<T>, options?: Parti
 
     const formattedRows = table.map((row: Row<{of: T}>, rowIndex: number): Io => {
         const rowText = row.reduce(
-            (justifiedRow: Io, cell: Maybe<Formatted<T>>, cellIndex: number): Io => {
+            (justifiedRow: Io, cell: Cell<{of: T}>, cellIndex: number): Io => {
                 const justifiedCell = isUndefined(cell) ? BLANK : cell
 
                 const maybeSeparator = cellIndex === indexOfFinalElement(row) ? BLANK : TAB

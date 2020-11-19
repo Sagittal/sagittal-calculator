@@ -1,8 +1,9 @@
 import {Maybe} from "../../code"
+import {BLANK} from "../constants"
 import {ioSettings} from "../globals"
 import {LogTarget, LogTargets} from "./types"
 
-const setLogTargets = (logTargetsCommaSeparatedString: Maybe<string | boolean> = ""): void => {
+const setLogTargets = (logTargetsCommaSeparatedString: Maybe<string | boolean> = BLANK): void => {
     ioSettings.logTargets = Object.keys(LogTarget).reduce(
         (logTargets: LogTargets, logTarget: string): LogTargets => ({...logTargets, [logTarget]: false}),
         {} as LogTargets,

@@ -1,4 +1,4 @@
-import {Io} from "../../../../general"
+import {BLANK, Io} from "../../../../general"
 
 const unformatParameters = (io: Io): Io => {
     return io
@@ -34,8 +34,8 @@ const unformatParameters = (io: Io): Io => {
         .replace(/\[ PopularityParameterId\.SUM \]/g, "\"sum\"")
         .replace(/\[ PopularityParameterId\.COUNT \]/g, "\"count\"")
         .replace(/\[ PopularityParameterId\.MAX \]/g, "\"max\"")
-        .replace(/ as \w+/g, "")
-        .replace(/\,(?!\s*?[\{\[\"\'\w])/g, "") as Io
+        .replace(/ as \w+/g, BLANK)
+        .replace(/\,(?!\s*?[\{\[\"\'\w])/g, BLANK) as Io
 }
 
 export {

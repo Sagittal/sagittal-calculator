@@ -12,7 +12,7 @@ const computeJustifications = (justification: JustificationOption, columnRange: 
         columnRange.map((_: number): Justification => justification) :
         columnRange.map((index: number): Maybe<Justification> => justification[index])
 
-const computeColumnWidths = <T = unknown>(table: Table<T>, columnRange: Range): Array<Count<Char>> =>
+const computeColumnWidths = <T>(table: Table<T>, columnRange: Range): Array<Count<Char>> =>
     columnRange.map((columnIndex: number): Count<Char> => {
         return table.reduce(
             (columnWidth: Count<Char>, row: Row<{of: T}>): Count<Char> => {
@@ -30,30 +30,30 @@ const computeColumnWidths = <T = unknown>(table: Table<T>, columnRange: Range): 
         )
     })
 
-const furtherJustifyCell = (justifiedCell: Io, columnJustification: Maybe<Justification>): Io =>
+const furtherJustifyCellIo = (justifiedCellIo: Io, columnJustification: Maybe<Justification>): Io =>
     ((columnJustification === Justification.LEFT) || isUndefined(columnJustification)) ?
-        justifiedCell + " " as Io :
+        justifiedCellIo + " " as Io :
         columnJustification === Justification.RIGHT ?
-            " " + justifiedCell as Io :
-            justifiedCell.length % 2 === 0 ?
-                " " + justifiedCell as Io :
-                justifiedCell + " " as Io
+            " " + justifiedCellIo as Io :
+            justifiedCellIo.length % 2 === 0 ?
+                " " + justifiedCellIo as Io :
+                justifiedCellIo + " " as Io
 
-const computeJustifiedCell = (
-    cell: Maybe<Io>,
+const justifyCellIo = (
+    cellIo: Maybe<Io>,
     {columnWidth, columnJustification}: JustifiedCellOptions,
 ): Io => {
-    let justifiedCell = isUndefined(cell) ? BLANK : cell
+    let justifiedCellIo = isUndefined(cellIo) ? BLANK : cellIo
 
-    while (justifiedCell.length < columnWidth) {
-        justifiedCell = furtherJustifyCell(justifiedCell, columnJustification)
+    while (justifiedCellIo.length < columnWidth) {
+        justifiedCellIo = furtherJustifyCellIo(justifiedCellIo, columnJustification)
     }
 
-    return justifiedCell
+    return justifiedCellIo
 }
 
 export {
     computeJustifications,
     computeColumnWidths,
-    computeJustifiedCell,
+    justifyCellIo,
 }
