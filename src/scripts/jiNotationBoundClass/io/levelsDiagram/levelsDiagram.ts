@@ -9,17 +9,6 @@ import {visualizeJiNotationLevelCommaClasses} from "../image/levelCommaClasses"
 import {visualizeJiNotationLevels} from "../image/levels"
 import {addParentSvg} from "../image/parentSvg"
 
-// TODO: MISCELLANEOUS: LEVELS DIAGRAM
-//  - bring the cents closer down and include tick marks
-//  - move the mina labels outside the boxes and center them, if you keep them at all
-//  - handle the Extreme notation fitting somehow
-//  - add the colors
-//  - add the comma labels
-//  - extend up to max single shaft symbol
-//  - shift to the left a bit so the natural doesn't get cut off
-//  - X_VS_Y_STRETCH to about 0.5
-//  - exclude the bit about // JI notation bound class ID, not mina name in levelBoundClasses.ts
-
 const computeLevelsDiagram = (): Io => {
     if (!ioSettings.noWrite) {
         fs.existsSync("dist") || fs.mkdirSync("dist")

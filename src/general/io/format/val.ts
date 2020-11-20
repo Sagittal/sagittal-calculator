@@ -1,12 +1,11 @@
-import {Val} from "../../math"
-import {spaceMonzoOrValExponent} from "./spaceMonzoOrValExponent"
-import {Formatted} from "./types"
+import {Exponent, Monzo, Val} from "../../math"
+import {formatMonzo} from "./monzo"
+import {FormatMonzoOrValOptions, Formatted} from "./types"
 
-const formatVal = (val: Val): Formatted<Val> => {
-    const contents = val.map(spaceMonzoOrValExponent).join(" ")
-
-    return `⟨ ${contents} ]` as Formatted<Val>
-}
+const formatVal = (val: Val, options?: FormatMonzoOrValOptions): Formatted<Val> =>
+    formatMonzo(val as Array<Exponent> as Monzo, options)
+        .replace("[", "⟨")
+        .replace("⟩", "]") as Formatted<Val>
 
 export {
     formatVal,

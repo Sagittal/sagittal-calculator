@@ -83,4 +83,36 @@ describe("parseMonzo", (): void => {
 
         expect(actual).toEqual([3, 4, 0, 1, 2, 6] as Monzo)
     })
+
+    it("can handle abbreviated format", (): void => {
+        const monzoIo = "[-8 -6 3 5 -1 0 0 0 5 4 2 3⟩" as Io
+
+        const actual = parseMonzo(monzoIo)
+
+        expect(actual).toEqual([-8, -6, 3, 5, -1, 0, 0, 0, 5, 4, 2, 3] as Monzo)
+    })
+
+    it("can handle abbreviated and punctuated format", (): void => {
+        const monzoIo = "[-8 -6,3 5 -1,,5 4 2,,,3⟩" as Io
+
+        const actual = parseMonzo(monzoIo)
+
+        expect(actual).toEqual([-8, -6, 3, 5, -1, 0, 0, 0, 5, 4, 2, 0, 0, 0, 0, 0, 0, 3] as Monzo)
+    })
+
+    it("can handle 2,3-free monzos in abbreviated and punctuated format", (): void => {
+        const monzoIo = "[,5 7⟩" as Io
+
+        const actual = parseMonzo(monzoIo)
+
+        expect(actual).toEqual([0, 0, 5, 7] as Monzo)
+    })
+
+    it("can handle 2-free monzos in abbreviated and punctuated format, when the presence of angle brackets or the like make it clear that it is not supposed to be a non 2-free monzo such as one copied as a JavaScript array", (): void => {
+        const monzoIo = "[3,5⟩" as Io
+
+        const actual = parseMonzo(monzoIo)
+
+        expect(actual).toEqual([0, 3, 5] as Monzo)
+    })
 })

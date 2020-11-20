@@ -38,6 +38,10 @@ describe("formatDecimal", (): void => {
         ioSettings.tableFormat = TableFormat.SPREADSHEET
         expect(formatDecimal(12.340, {align: true})).toBe("12.340")
     })
+
+    it("adds trailing zeroes to integer decimals", (): void => {
+        expect(formatDecimal(12)).toBe("12.000")
+    })
 })
 
 describe("formatIntegerDecimal", (): void => {
