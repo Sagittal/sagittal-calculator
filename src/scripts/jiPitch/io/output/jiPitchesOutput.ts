@@ -1,6 +1,9 @@
-import {count, formatTable, Io, Maybe, Row, Table} from "../../../../general"
+import {count, formatTable, Io, isUndefined, Maybe, Row, Table} from "../../../../general"
 import {CommaClassId, JiPitchAnalysis} from "../../../../sagittal"
+import {jiPitchScriptGroupSettings} from "../../globals"
+import {JI_PITCHES_OR_FIND_COMMAS_FIELD_TITLES} from "../fieldTitles"
 import {computeJiPitchesOrFindCommasHeaderRows} from "../headerRows"
+import {computeOrderedTableAndJustification} from "../orderedFields"
 import {computeJiPitchesRow} from "../row"
 import {computeMaxMonzoLength, computeMonzoAndQuotientJustification} from "../splitMonzoAndQuotient"
 
@@ -11,18 +14,27 @@ const computeJiPitchesOutput = (
     const maxMonzoLength = computeMaxMonzoLength(jiPitchAnalyses)
     const jiPitchesHeaderRows = computeJiPitchesOrFindCommasHeaderRows(maxMonzoLength)
     const headerRowCount = count(jiPitchesHeaderRows)
-    const justification = computeMonzoAndQuotientJustification(jiPitchesHeaderRows)
+    let justification = computeMonzoAndQuotientJustification(jiPitchesHeaderRows)
 
-    const jiPitchesTable: Table<JiPitchAnalysis> = [
+    let jiPitchesTable: Table<JiPitchAnalysis> = [
         ...jiPitchesHeaderRows,
         ...jiPitchAnalyses.map((jiPitchAnalysis: JiPitchAnalysis, index: number): Row<{of: JiPitchAnalysis}> => {
             return computeJiPitchesRow(jiPitchAnalysis, maybeCommaClassIds[index], maxMonzoLength)
         }),
     ]
 
-    // TODO: TABLES FINESSE: REORDERING COLUMNS
-    //  By the way, I did find after all that the ability to reorder columns would have been handy to put cents
-    //  Earlier in the list since it's way more important for tinas. could be anything like that.
+    if (!isUndefined(jiPitchScriptGroupSettings.orderedFields)) {
+        const {
+            table: orderedJiPitchesTable,
+            justification: orderedJustification,
+        } = computeOrderedTableAndJustification(
+            {table: jiPitchesTable, justification},
+            {maxMonzoLength, fieldTitles: JI_PITCHES_OR_FIND_COMMAS_FIELD_TITLES},
+        )
+        jiPitchesTable = orderedJiPitchesTable
+        justification = orderedJustification
+    }
+
     return formatTable(jiPitchesTable, {headerRowCount, justification})
 }
 

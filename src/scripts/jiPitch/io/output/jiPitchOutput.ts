@@ -1,9 +1,12 @@
-import {count, formatTable, Io, sumTexts, Table} from "../../../../general"
+import {count, formatTable, Io, isUndefined, sumTexts, Table} from "../../../../general"
 import {JiPitchAnalysis} from "../../../../sagittal"
+import {jiPitchScriptGroupSettings} from "../../globals"
+import {JI_PITCH_FIELD_TITLES} from "../fieldTitles"
 import {computeJiPitchHeaderRows} from "../headerRows"
+import {computeOrderedTableAndJustification} from "../orderedFields"
 import {computeJiPitchRow} from "../row"
 import {computeMaxMonzoLength, computeMonzoAndQuotientJustification} from "../splitMonzoAndQuotient"
-import {JI_PITCH_TITLE} from "../titles"
+import {JI_PITCH_TABLE_TITLE} from "../tableTitles"
 
 const computeJiPitchOutput = (
     jiPitchAnalysis: JiPitchAnalysis,
@@ -11,15 +14,27 @@ const computeJiPitchOutput = (
     const maxMonzoLength = computeMaxMonzoLength([jiPitchAnalysis])
     const jiPitchHeaderRows = computeJiPitchHeaderRows(maxMonzoLength)
     const headerRowCount = count(jiPitchHeaderRows)
-    const justification = computeMonzoAndQuotientJustification(jiPitchHeaderRows)
+    let justification = computeMonzoAndQuotientJustification(jiPitchHeaderRows)
 
-    const jiPitchTable: Table<JiPitchAnalysis> = [
+    let jiPitchTable: Table<JiPitchAnalysis> = [
         ...jiPitchHeaderRows,
         computeJiPitchRow(jiPitchAnalysis, maxMonzoLength),
     ]
 
+    if (!isUndefined(jiPitchScriptGroupSettings.orderedFields)) {
+        const {
+            table: orderedJiPitchTable,
+            justification: orderedJustification,
+        } = computeOrderedTableAndJustification(
+            {table: jiPitchTable, justification},
+            {maxMonzoLength, fieldTitles: JI_PITCH_FIELD_TITLES},
+        )
+        jiPitchTable = orderedJiPitchTable
+        justification = orderedJustification
+    }
+
     return sumTexts(
-        JI_PITCH_TITLE,
+        JI_PITCH_TABLE_TITLE,
         formatTable(jiPitchTable, {headerRowCount, justification}),
     )
 }

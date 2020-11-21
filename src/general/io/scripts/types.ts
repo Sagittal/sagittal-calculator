@@ -11,6 +11,7 @@ enum ScriptFlag {
     COMPLEXITY_SEARCH_ED = "5",
     COMPLEXITY_ONLY = "6",
     ACCIDENTAL = "7",
+    ORDERED_FIELDS = "8",
     MAX_AAS = "a",
     TABLE_FORMAT = "b",
     NO_COLOR = "c",

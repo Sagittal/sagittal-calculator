@@ -5,6 +5,7 @@ const INITIAL_JI_PITCH_SCRIPT_GROUP_SETTINGS: JiPitchScriptGroupSettings = {
     sortKey: ["two3FreeClassAnalysis", "n2d3p9"] as KeyPath,
     commaNameOptions: {},
     excludedFields: [],
+    orderedFields: undefined,
 }
 
 // We must use this enum rather than the union type because it's technically a "type" not an "enum"

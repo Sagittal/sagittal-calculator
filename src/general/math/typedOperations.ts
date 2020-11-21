@@ -24,6 +24,7 @@ const product = <T extends number>(...factors: T[]): Product<T> =>
         MULTIPLICATIVE_IDENTITY as Product<T>,
     )
 
+// TODO: MISCELLANEOUS: why not Augend<T> | T, Minuend<T> | T, etc.?
 const add = <T extends number>(augend: T, addend: Addend<T> | T): T =>
     augend + addend as T                    // Sum
 

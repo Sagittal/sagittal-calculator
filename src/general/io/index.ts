@@ -27,7 +27,7 @@ export {
     formatTable,
     Row,
     Table,
-    splitColumnTitlesIntoRowsBySpaces,
+    splitFieldTitlesIntoRowsBySpaces,
     TableFormat,
     Justification,
     JustificationOption,

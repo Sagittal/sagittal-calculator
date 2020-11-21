@@ -17,7 +17,9 @@ import {
 } from "../../../../../../src/general"
 import {ApotomeSlope, CommaAnalysis} from "../../../../../../src/sagittal/ji"
 import {CommaClassId} from "../../../../../../src/sagittal/notation"
+import {jiPitchScriptGroupSettings} from "../../../../../../src/scripts/jiPitch/globals"
 import {computeNotatingCommasOutput} from "../../../../../../src/scripts/jiPitch/io"
+import {JiPitchScriptGroupField} from "../../../../../../src/scripts/jiPitch/types"
 import {commaAnalysisFixture, two3FreeClassAnalysisFixture} from "../../../../../helpers/src/scripts/jiPitch/fixtures"
 
 describe("computeNotatingCommasOutput", (): void => {
@@ -73,6 +75,21 @@ describe("computeNotatingCommasOutput", (): void => {
             "[tr][td]:/|\\:[/td][td]11M[/td][td][latex]\\frac{33}{32}[/latex][/td][tdr][[/tdr][tdc]  0    [/tdc][tdc]  0    [/tdc][tdc]  1    [/tdc][tdc][/tdc][td]⟩[/td][td] 45.450¢[/td][td] -4.000[/td][td]  4.000[/td][td]  0    [/td][/tr]" + NEWLINE +
             "[tr][td][/td][td]25/49M[/td][td][latex]\\frac{50}{49}[/latex][/td][tdr][[/tdr][tdc]  1    [/tdc][tdc]  0    [/tdc][tdc]  2    [/tdc][tdc] -2    [/tdc][td]⟩[/td][td] 33.400¢[/td][td] -2.154[/td][td]  2.154[/td][td]  0    [/td][/tr]" + NEWLINE +
             "[/table]" + NEWLINE as Io
+        expect(actual).toBe(expected)
+    })
+
+    it("can reorder fields", (): void => {
+        jiPitchScriptGroupSettings.orderedFields = ["monzo", "ate",  "quotient", "cents"] as Array<JiPitchScriptGroupField>
+
+        const actual = computeNotatingCommasOutput(notatingCommaAnalyses, maybeCommaClassIds)
+
+        const expected =
+            "   --- notating commas ---" + NEWLINE +
+            "" + NEWLINE +
+            "monzo\t       \t       \t       \t       \t \t       \tquotient\t \t  \t               " + NEWLINE +
+            "     \t  2    \t  3    \t  5    \t  7    \t \tATE    \t       n\t/\td \tcents          ".underline + NEWLINE +
+            "    [\t  0    \t  0    \t  1    \t       \t⟩\t  0    \t      33\t/\t32\t        45.450¢" + NEWLINE +
+            "    [\t  1    \t  0    \t  2    \t -2    \t⟩\t  0    \t      50\t/\t49\t        33.400¢" + NEWLINE as Io
         expect(actual).toBe(expected)
     })
 })

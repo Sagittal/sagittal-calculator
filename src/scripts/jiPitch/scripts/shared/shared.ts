@@ -5,7 +5,7 @@ import {ScriptGroup} from "../../../types"
 import {jiPitchScriptGroupSettings} from "../../globals"
 import {parsePitch} from "../../io"
 import {JiPitchScriptGroupField} from "../../types"
-import {parseExcludedFields} from "./excludedFields"
+import {parseFields} from "./fields"
 
 const applySharedJiPitchScriptSetup = (): void => {
     program
@@ -45,13 +45,19 @@ const applySharedJiPitchScriptSetup = (): void => {
         .option(
             `-${ScriptFlag.EXCLUDED_FIELDS}, --excluded-fields <excludedFields>`,
             "exclude fields",
-            (excludeFieldsIo: string): JiPitchScriptGroupField[] => parseExcludedFields(excludeFieldsIo as Io),
+            (excludedFieldsIo: string): JiPitchScriptGroupField[] => parseFields(excludedFieldsIo as Io),
+        )
+        .option(
+            `-${ScriptFlag.ORDERED_FIELDS}, --ordered-fields <orderedFields>`,
+            "specify exact ordered set of fields",
+            (orderedFieldsIo: string): JiPitchScriptGroupField[] => parseFields(orderedFieldsIo as Io),
         )
 
     setupScriptAndIo(ScriptGroup.JI_PITCH as Filename)
 
     if (program.sortBy) jiPitchScriptGroupSettings.sortKey = program.sortBy
     if (program.excludedFields) jiPitchScriptGroupSettings.excludedFields = program.excludedFields
+    if (program.orderedFields) jiPitchScriptGroupSettings.orderedFields = program.orderedFields
 
     jiPitchScriptGroupSettings.commaNameOptions = {
         directed: !program.undirected,

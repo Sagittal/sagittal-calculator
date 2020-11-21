@@ -1,7 +1,7 @@
 import {Io, Row} from "../../../../../src/general/io"
-import {splitColumnTitlesIntoRowsBySpaces} from "../../../../../src/general/io/table"
+import {splitFieldTitlesIntoRowsBySpaces} from "../../../../../src/general/io/table"
 
-describe("splitColumnTitlesIntoRowsBySpaces", (): void => {
+describe("splitFieldTitlesIntoRowsBySpaces", (): void => {
     const titles: Io[] = [
         "2,3- free class",
         "N2D3P9 rank",
@@ -10,8 +10,8 @@ describe("splitColumnTitlesIntoRowsBySpaces", (): void => {
         "best notating comma sagittal",
     ] as Io[]
 
-    it("splits the column titles into rows by spaces", (): void => {
-        const actual = splitColumnTitlesIntoRowsBySpaces(titles)
+    it("splits the field titles into rows by spaces", (): void => {
+        const actual = splitFieldTitlesIntoRowsBySpaces(titles)
 
         const expected = [
             ["", "", "best", "best", "best"],
@@ -23,7 +23,7 @@ describe("splitColumnTitlesIntoRowsBySpaces", (): void => {
     })
 
     it("can include a spacer row", (): void => {
-        const actual = splitColumnTitlesIntoRowsBySpaces(titles, {includeSpacerRow: true})
+        const actual = splitFieldTitlesIntoRowsBySpaces(titles, {includeSpacerRow: true})
 
         const expected = [
             ["", "", "best", "best", "best"],

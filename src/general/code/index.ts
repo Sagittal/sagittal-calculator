@@ -22,6 +22,7 @@ export {allElementsEqual} from "./allElementsEqual"
 export {increment, decrement} from "./crement"
 export {now} from "./typedOperations"
 export {setAt} from "./setAt"
+export {offset} from "./offset"
 export {isNumber, isUndefined, isArray, isString, isObject} from "./typeGuards"
 export {
     ExtensionBaseType, Maybe, KeyPath, Range, Rank, Ranked, RankStrategy, Obj, RecordKey, Precision,

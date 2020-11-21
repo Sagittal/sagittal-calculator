@@ -2,12 +2,11 @@ import {Io} from "../../../general"
 import {jiPitchScriptGroupSettings} from "../globals"
 import {JiPitchScriptGroupField} from "../types"
 
-const excludeFields = (columnTitles: Record<string, Io>): Io[] => {
-    return Object.values(columnTitles).filter((_: Io, index: number): boolean => {
-        return !jiPitchScriptGroupSettings.excludedFields
-            .includes(Object.keys(columnTitles)[index] as JiPitchScriptGroupField)
-    })
-}
+const excludeFields = (fieldTitles: Record<string, Io>): Io[] =>
+    Object.values(fieldTitles).filter((_: Io, index: number): boolean =>
+        !jiPitchScriptGroupSettings.excludedFields
+            .includes(Object.keys(fieldTitles)[index] as JiPitchScriptGroupField),
+    )
 
 export {
     excludeFields,

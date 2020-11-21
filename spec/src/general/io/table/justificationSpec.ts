@@ -3,6 +3,7 @@ import {Char, Io} from "../../../../../src/general/io"
 import {Justification} from "../../../../../src/general/io/table"
 import {computeColumnWidths, justifyCellIo} from "../../../../../src/general/io/table/justification"
 
+// TODO: TABLES FINESSE: everything that's called "justify" is actually "align"
 describe("justifyCellIo", (): void => {
     it("adds space to justify cells", (): void => {
         const cell = "  7    " as Io

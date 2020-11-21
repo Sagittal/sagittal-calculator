@@ -1,10 +1,13 @@
-import {count, formatTable, Io, Maybe, Row, sumTexts, Table} from "../../../../general"
+import {count, formatTable, Io, isUndefined, Maybe, Row, sumTexts, Table} from "../../../../general"
 import {CommaAnalysis, CommaClassId} from "../../../../sagittal"
 import {DEFAULT_FIND_COMMAS_SETTINGS, FindCommasSettings} from "../../findCommas"
+import {jiPitchScriptGroupSettings} from "../../globals"
+import {JI_PITCHES_OR_FIND_COMMAS_FIELD_TITLES} from "../fieldTitles"
 import {computeJiPitchesOrFindCommasHeaderRows} from "../headerRows"
+import {computeOrderedTableAndJustification} from "../orderedFields"
 import {computeFindCommasRow} from "../row"
 import {computeMaxMonzoLength, computeMonzoAndQuotientJustification} from "../splitMonzoAndQuotient"
-import {computeFindCommasTitle} from "../titles"
+import {computeFindCommasTableTitle} from "../tableTitles"
 
 const computeFindCommasOutput = (
     commaAnalyses: CommaAnalysis[],
@@ -14,17 +17,29 @@ const computeFindCommasOutput = (
     const maxMonzoLength = computeMaxMonzoLength(commaAnalyses)
     const findCommasHeaderRows = computeJiPitchesOrFindCommasHeaderRows(maxMonzoLength)
     const headerRowCount = count(findCommasHeaderRows)
-    const justification = computeMonzoAndQuotientJustification(findCommasHeaderRows)
+    let justification = computeMonzoAndQuotientJustification(findCommasHeaderRows)
 
-    const findCommasTable: Table<CommaAnalysis> = [
+    let findCommasTable: Table<CommaAnalysis> = [
         ...findCommasHeaderRows,
         ...commaAnalyses.map((commaAnalysis: CommaAnalysis, index: number): Row<{of: CommaAnalysis}> => {
             return computeFindCommasRow(commaAnalysis, maybeCommaClassIds[index], maxMonzoLength)
         }),
     ]
 
+    if (!isUndefined(jiPitchScriptGroupSettings.orderedFields)) {
+        const {
+            table: orderedFindCommasTable,
+            justification: orderedJustification,
+        } = computeOrderedTableAndJustification(
+            {table: findCommasTable, justification},
+            {maxMonzoLength, fieldTitles: JI_PITCHES_OR_FIND_COMMAS_FIELD_TITLES},
+        )
+        findCommasTable = orderedFindCommasTable
+        justification = orderedJustification
+    }
+
     return sumTexts(
-        computeFindCommasTitle(findCommasSettings),
+        computeFindCommasTableTitle(findCommasSettings),
         formatTable(findCommasTable, {headerRowCount, justification}),
     )
 }

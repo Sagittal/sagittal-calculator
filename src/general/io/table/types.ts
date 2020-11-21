@@ -9,6 +9,8 @@ enum Justification {
     CENTER = "center",
 }
 
+// TODO: TABLES FINESSE: JUSTIFICATION OPTION?
+//  And why is this a justification "option", if it's the return value of computeMonzoAndQuotientJustification?
 type JustificationOption = Maybe<Justification> | Array<Maybe<Justification>>
 
 type TableProperties = Partial<{
@@ -20,12 +22,12 @@ type Cell<T extends TableProperties = {}> = Maybe<Formatted<T["of"]>>
 type Row<T extends TableProperties = {}> =
     Array<Cell<T>>
     & {_RowBrand: boolean}
-    & (T extends {of: unknown} ? {} : {_RowOfBrand: T["of"]})
+    & (T extends {of: unknown} ? {_RowOfBrand: T["of"]} : {_RowOfBrand: unknown})
     & (T extends {header: true} ? {_HeaderBrand: boolean} : {})
 type Column<T extends TableProperties = {}> =
     Array<Cell<T>>
     & {_ColumnBrand: boolean}
-    & (T extends {of: unknown} ? {} : {_ColumnOfBrand: T["of"]})
+    & (T extends {of: unknown} ? {_ColumnOfBrand: T["of"]} : {_ColumnOfBrand: unknown})
     & (T extends {header: true} ? {_HeaderBrand: boolean} : {})
 
 type Table<T = void> = Array<Row<{of: T}>>

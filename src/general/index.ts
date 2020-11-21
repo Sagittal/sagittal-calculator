@@ -41,6 +41,7 @@ export {
     MAX_JS_PRECISION,
     isObject,
     deepMap,
+    offset,
 } from "./code"
 export {
     sumTexts,
@@ -87,7 +88,7 @@ export {
     SUPERSCRIPT_NUMBERS,
     TAB,
     Table,
-    splitColumnTitlesIntoRowsBySpaces,
+    splitFieldTitlesIntoRowsBySpaces,
     time,
     readLines,
     split,
@@ -276,7 +277,7 @@ export {
     SEPTIMAL_KLEISMA,
     SYNTONIC_COMMA,
 } from "./music"
-export {Count, Ed, Extrema, Index, Ms, Name, Step, Window, Of} from "./types"
+export {Count, Ed, Extrema, Index, Ms, Name, Step, Window, Of, Offset} from "./types"
 export {
     Grade,
     Parameter,

@@ -1,10 +1,11 @@
-import {Cents, KeyPath} from "../../general"
+import {KeyPath, Maybe} from "../../general"
 import {CommaNameOptions} from "../../sagittal"
 
 interface JiPitchScriptGroupSettings {
     sortKey: KeyPath,
     commaNameOptions: CommaNameOptions,
     excludedFields: JiPitchScriptGroupField[],
+    orderedFields: Maybe<JiPitchScriptGroupField[]>,
 }
 
 enum JiPitchField {

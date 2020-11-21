@@ -5,6 +5,8 @@ type Index<T = void> =
     Decimal<{integer: true}> & {_IndexBrand: boolean} & (T extends void ? {} : {_IndexOfBrand: T})
 type Count<T = void> =
     Decimal<{integer: true}> & {_CountBrand: boolean} & (T extends void ? {} : {_CountOfBrand: T})
+type Offset<T = void> =
+    Decimal<{integer: true}> & {_OffsetBrand: boolean} & (T extends void ? {} : {_OffsetOfBrand: T})
 
 type Step<T extends NumericProperties & {of?: number} = {}> =                         // Iteration?
     Decimal<T>
@@ -39,4 +41,5 @@ export {
     Ms,
     Of,
     Degree,
+    Offset,
 }

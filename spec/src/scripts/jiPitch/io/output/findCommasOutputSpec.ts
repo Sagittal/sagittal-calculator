@@ -22,7 +22,9 @@ import {
 } from "../../../../../../src/general"
 import {ApotomeSlope, CommaAnalysis, CommaClassId, N2D3P9} from "../../../../../../src/sagittal"
 import {DEFAULT_FIND_COMMAS_SETTINGS} from "../../../../../../src/scripts/jiPitch/findCommas"
+import {jiPitchScriptGroupSettings} from "../../../../../../src/scripts/jiPitch/globals"
 import {computeFindCommasOutput} from "../../../../../../src/scripts/jiPitch/io"
+import {JiPitchScriptGroupField} from "../../../../../../src/scripts/jiPitch/types"
 import {OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS} from "../../../../../helpers/src/scripts/jiPitch/constants"
 import {commaAnalysisFixture} from "../../../../../helpers/src/scripts/jiPitch/fixtures"
 
@@ -168,6 +170,30 @@ describe("computeFindCommasOutput", (): void => {
             "class\tname\tn\t/\td\t \t2\t3\t5\t7\t \tcents\tslope\tAAS\tATE\tlimit\tn\t/\td\t₂,₃\tCoPFR\tSoPFR\tN2D3P9".underline + NEWLINE +
             "\t11M\t33\t/\t32\t[\t0\t0\t1\t\t⟩\t45.450¢\t-4.000\t4.000\t0\t11\t11\t/\t1\t₂,₃\t1\t11\t6.722" + NEWLINE +
             "\t25/49M\t50\t/\t49\t[\t1\t0\t2\t-2\t⟩\t33.400¢\t-2.154\t2.154\t0\t7\t49\t/\t25\t₂,₃\t4\t24\t26.466" + NEWLINE as Io
+        expect(actual).toEqual(expected)
+    })
+
+    it("can reorder fields", (): void => {
+        jiPitchScriptGroupSettings.orderedFields = ["monzo", "two3FreeClassName", "quotient", "cents"] as Array<JiPitchScriptGroupField>
+
+        const actual = computeFindCommasOutput(commaAnalyses, maybeCommaClassIds, findCommasSettings)
+
+        const expected =
+            "" + NEWLINE +
+            "lower bound:       \t[  ⟩" + NEWLINE +
+            "upper bound:       \t[ -11   7 ⟩(1/2)" + NEWLINE +
+            "max ATE:           \t 20    " + NEWLINE +
+            "max AAS:           \t 20.000" + NEWLINE +
+            "max N2D3P9:        \t307.000" + NEWLINE +
+            "max 2,3-free sopfr:\t 61    " + NEWLINE +
+            "max 2,3-free copfr:\t555    " + NEWLINE +
+            "max prime limit:   \t 47    " + NEWLINE +
+            "" + NEWLINE +
+            "     \t       \t       \t       \t       \t \t2,3-free\t \t  \t   \t        \t \t  \t               " + NEWLINE +
+            "monzo\t       \t       \t       \t       \t \t   class\t \t  \t   \tquotient\t \t  \t               " + NEWLINE +
+            "     \t  2    \t  3    \t  5    \t  7    \t \t       n\t/\td \t₂,₃\t       n\t/\td \tcents          ".underline + NEWLINE +
+            "    [\t  0    \t  0    \t  1    \t       \t⟩\t      11\t/\t1 \t₂,₃\t      33\t/\t32\t        45.450¢" + NEWLINE +
+            "    [\t  1    \t  0    \t  2    \t -2    \t⟩\t      49\t/\t25\t₂,₃\t      50\t/\t49\t        33.400¢" + NEWLINE as Io
         expect(actual).toEqual(expected)
     })
 })

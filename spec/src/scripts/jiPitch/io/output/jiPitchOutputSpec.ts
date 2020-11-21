@@ -14,7 +14,9 @@ import {
     TableFormat,
 } from "../../../../../../src/general"
 import {ApotomeSlope, JiPitchAnalysis} from "../../../../../../src/sagittal"
+import {jiPitchScriptGroupSettings} from "../../../../../../src/scripts/jiPitch/globals"
 import {computeJiPitchOutput} from "../../../../../../src/scripts/jiPitch/io"
+import {JiPitchScriptGroupField} from "../../../../../../src/scripts/jiPitch/types"
 import {
     jiPitchAnalysisFixture,
     two3FreeClassAnalysisFixture,
@@ -54,6 +56,20 @@ describe("computeJiPitchOutput", (): void => {
             "quotient\t\t\tmonzo\t\t\t\t\t\tapotome\t\t" + NEWLINE +
             "n\t/\td\t \t2\t3\t5\t \tcents\tslope\tAAS\tATE".underline + NEWLINE +
             "5\t/\t4\t[\t0\t-1\t1\t⟩\t11.200¢\t8.200\t8.200\t1" + NEWLINE as Io
+        expect(actual).toEqual(expected)
+    })
+
+    it("can reorder fields", (): void => {
+        jiPitchScriptGroupSettings.orderedFields = ["cents", "quotient", "monzo", "aas"] as Array<JiPitchScriptGroupField>
+
+        const actual = computeJiPitchOutput(jiPitchAnalysis)
+
+        const expected =
+            "   --- JI pitch ---" + NEWLINE +
+            "" + NEWLINE +
+            "               \tquotient\t \t \tmonzo\t       \t       \t       \t \t       " + NEWLINE +
+            "cents          \t       n\t/\td\t     \t  2    \t  3    \t  5    \t \tAAS    ".underline + NEWLINE +
+            "        11.200¢\t       5\t/\t4\t    [\t  0    \t -1    \t  1    \t⟩\t  8.200" + NEWLINE as Io
         expect(actual).toEqual(expected)
     })
 })

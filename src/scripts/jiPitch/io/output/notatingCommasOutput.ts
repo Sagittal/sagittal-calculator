@@ -1,9 +1,12 @@
-import {count, formatTable, Io, Maybe, Row, sumTexts} from "../../../../general"
+import {count, formatTable, Io, isUndefined, Maybe, Row, sumTexts} from "../../../../general"
 import {CommaAnalysis, CommaClassId} from "../../../../sagittal"
+import {jiPitchScriptGroupSettings} from "../../globals"
+import {NOTATING_COMMAS_FIELD_TITLES} from "../fieldTitles"
 import {computeNotatingCommasHeaderRows} from "../headerRows"
+import {computeOrderedTableAndJustification} from "../orderedFields"
 import {computeNotatingCommasRow} from "../row"
 import {computeMaxMonzoLength, computeMonzoAndQuotientJustification} from "../splitMonzoAndQuotient"
-import {NOTATING_COMMAS_TITLE} from "../titles"
+import {NOTATING_COMMAS_TABLE_TITLE} from "../tableTitles"
 
 const computeNotatingCommasOutput = (
     notatingCommaAnalyses: CommaAnalysis[],
@@ -12,9 +15,9 @@ const computeNotatingCommasOutput = (
     const maxMonzoLength = computeMaxMonzoLength(notatingCommaAnalyses)
     const notatingCommasHeaderRows = computeNotatingCommasHeaderRows(maxMonzoLength)
     const headerRowCount = count(notatingCommasHeaderRows)
-    const justification = computeMonzoAndQuotientJustification(notatingCommasHeaderRows)
+    let justification = computeMonzoAndQuotientJustification(notatingCommasHeaderRows)
 
-    const maybeNotatingCommasTable = [
+    let notatingCommasTable = [
         ...notatingCommasHeaderRows,
         ...notatingCommaAnalyses
             .map((notatingCommaAnalysis: CommaAnalysis, index: number): Row<{of: CommaAnalysis}> => {
@@ -22,9 +25,21 @@ const computeNotatingCommasOutput = (
             }),
     ]
 
+    if (!isUndefined(jiPitchScriptGroupSettings.orderedFields)) {
+        const {
+            table: orderedNotatingCommasTable,
+            justification: orderedJustification,
+        } = computeOrderedTableAndJustification(
+            {table: notatingCommasTable, justification},
+            {maxMonzoLength, fieldTitles: NOTATING_COMMAS_FIELD_TITLES},
+        )
+        notatingCommasTable = orderedNotatingCommasTable
+        justification = orderedJustification
+    }
+
     return sumTexts(
-        NOTATING_COMMAS_TITLE,
-        formatTable(maybeNotatingCommasTable, {headerRowCount, justification}),
+        NOTATING_COMMAS_TABLE_TITLE,
+        formatTable(notatingCommasTable, {headerRowCount, justification}),
     )
 }
 

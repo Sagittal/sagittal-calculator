@@ -1,8 +1,8 @@
-import {Io, Row, splitColumnTitlesIntoRowsBySpaces} from "../../../../general"
+import {Io, Row, splitFieldTitlesIntoRowsBySpaces} from "../../../../general"
 import {Popular23FreeClass} from "../../types"
 import {NotatingSymbolClassesProperties} from "../types"
 
-const POPULAR_2_3_FREE_CLASS_WITH_NOTATING_SYMBOL_CLASSES_COLUMN_TITLES: Io[] = [
+const POPULAR_2_3_FREE_CLASS_WITH_NOTATING_SYMBOL_CLASSES_FIELD_TITLES: Io[] = [
     "2,3- free class name",
     "N2D3P9",
     "notating symbol classes",
@@ -14,7 +14,7 @@ const POPULAR_2_3_FREE_CLASS_WITH_NOTATING_SYMBOL_CLASSES_COLUMN_TITLES: Io[] = 
 
 const computePopular23FreeClassWithNotatingSymbolClassesHeaderRows =
     (): Array<Row<{of: Popular23FreeClass & NotatingSymbolClassesProperties, header: true}>> =>
-        splitColumnTitlesIntoRowsBySpaces(POPULAR_2_3_FREE_CLASS_WITH_NOTATING_SYMBOL_CLASSES_COLUMN_TITLES)
+        splitFieldTitlesIntoRowsBySpaces(POPULAR_2_3_FREE_CLASS_WITH_NOTATING_SYMBOL_CLASSES_FIELD_TITLES)
 
 export {
     computePopular23FreeClassWithNotatingSymbolClassesHeaderRows,

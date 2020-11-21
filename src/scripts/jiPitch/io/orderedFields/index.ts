@@ -1,0 +1,1 @@
+export {computeOrderedTableAndJustification} from "./tableAndJustification"
