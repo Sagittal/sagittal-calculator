@@ -23,11 +23,6 @@ const analyzeJiPitch = (jiPitch: Scamon<{rational: true}>): JiPitchAnalysis => {
     const aas = computeAas(jiPitch)
     const ate = computeAte(jiPitch)
 
-    // TODO: BADNESS & COMPLEXITY: INCLUSION ON ANALYSES
-    //  Include LPE cmplxty and LPEI badness in analyses and reports
-    //  Although maybe we should wait until work is totally done on the badness & complexity LFC, in case those
-    //  Parameters end up getting slightly tweaked
-
     return {
         pitch: jiPitch,
         monzo,

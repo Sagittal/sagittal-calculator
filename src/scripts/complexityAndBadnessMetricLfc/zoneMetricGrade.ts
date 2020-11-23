@@ -1,6 +1,6 @@
 import {areScamonsEqual, BLANK, Comma, formatDecimal, Grade, LogTarget, saveLog} from "../../general"
 import {CommaClassId, Complexity, formatComma, getCommaClass} from "../../sagittal"
-import {complexityMetricLfcScriptGroupSettings} from "./globals"
+import {complexityAndBadnessMetricLfcScriptGroupSettings} from "./globals"
 import {ComplexityMetric, ComplexityParameterSet} from "./types"
 
 const computeZoneComplexityMetricGrade = (
@@ -28,7 +28,7 @@ const computeZoneComplexityMetricGrade = (
         }
     })
 
-    const zoneComplexityMetricGrade = complexityMetricLfcScriptGroupSettings.sosMode ?
+    const zoneComplexityMetricGrade = complexityAndBadnessMetricLfcScriptGroupSettings.sosMode ?
         (actualCommaComplexity - leastCommaComplexity) ** 2 as Grade<ComplexityMetric> :
         actualCommaComplexity === leastCommaComplexity ?
             0 as Grade<ComplexityMetric> :

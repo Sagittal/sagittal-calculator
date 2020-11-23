@@ -2,16 +2,16 @@
 
 import {Comma} from "../../../../src/general/music/ji"
 import {CommaClassId} from "../../../../src/sagittal/notation"
-import {complexityMetricLfcScriptGroupSettings} from "../../../../src/scripts/complexityMetricLfc/globals"
-import {computeMetricGradeForMetricAndParameterSet} from "../../../../src/scripts/complexityMetricLfc/metricGrade"
-import {COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS} from "../../../../src/scripts/complexityMetricLfc/metrics"
-import {computeComplexityParameterSets} from "../../../../src/scripts/complexityMetricLfc/parameters"
-import {ComplexityMetricFamilyId} from "../../../../src/scripts/complexityMetricLfc/types"
-import * as zoneMetricGrade from "../../../../src/scripts/complexityMetricLfc/zoneMetricGrade"
+import {complexityAndBadnessMetricLfcScriptGroupSettings} from "../../../../src/scripts/complexityAndBadnessMetricLfc/globals"
+import {computeMetricGradeForMetricAndParameterSet} from "../../../../src/scripts/complexityAndBadnessMetricLfc/metricGrade"
+import {COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS} from "../../../../src/scripts/complexityAndBadnessMetricLfc/metrics"
+import {computeComplexityParameterSets} from "../../../../src/scripts/complexityAndBadnessMetricLfc/parameters"
+import {ComplexityMetricFamilyId} from "../../../../src/scripts/complexityAndBadnessMetricLfc/types"
+import * as zoneMetricGrade from "../../../../src/scripts/complexityAndBadnessMetricLfc/zoneMetricGrade"
 
 describe("computeMetricGradeForMetricAndParameterSet", (): void => {
     it("checks each zone comma entry, except the 14641k and 19/4375s, two commas who have been identified to have inappropriately low popularity", (): void => {
-        complexityMetricLfcScriptGroupSettings.zoneCommaEntries = [
+        complexityAndBadnessMetricLfcScriptGroupSettings.zoneCommaEntries = [
             [
                 CommaClassId._1_V_5_C,
                 [{monzo: [-4, 4, -1]}, {monzo: [24, -12, 0, -3, 1]}],

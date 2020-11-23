@@ -1,7 +1,7 @@
 import {Parameter} from "../../../../src/general/lfc"
 import {Comma} from "../../../../src/general/music/ji"
-import {COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS} from "../../../../src/scripts/complexityMetricLfc/metrics"
-import {ComplexityMetricFamilyId} from "../../../../src/scripts/complexityMetricLfc/types"
+import {COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS} from "../../../../src/scripts/complexityAndBadnessMetricLfc/metrics"
+import {ComplexityMetricFamilyId} from "../../../../src/scripts/complexityAndBadnessMetricLfc/types"
 
 describe("complexityMetric", (): void => {
     const comma = {monzo: [12, -4, 0, -2]} as Comma     // N2D3P9 = 10, AAS = 7.357, ATE = 4

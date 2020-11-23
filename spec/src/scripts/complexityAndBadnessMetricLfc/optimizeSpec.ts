@@ -2,16 +2,16 @@ import {Grade, LogTarget, saveLog, Sum} from "../../../../src/general"
 import * as save from "../../../../src/general/io/log/save"
 import {Parameter} from "../../../../src/general/lfc"
 import {Combination} from "../../../../src/general/math"
-import * as metricGrade from "../../../../src/scripts/complexityMetricLfc/metricGrade"
-import {COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS} from "../../../../src/scripts/complexityMetricLfc/metrics"
-import {logComplexityParameterSetsForComplexityMetricFamilyWhichOptimizeItsGrade} from "../../../../src/scripts/complexityMetricLfc/optimize"
-import * as parameters from "../../../../src/scripts/complexityMetricLfc/parameters"
+import * as metricGrade from "../../../../src/scripts/complexityAndBadnessMetricLfc/metricGrade"
+import {COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS} from "../../../../src/scripts/complexityAndBadnessMetricLfc/metrics"
+import {logComplexityParameterSetsForComplexityMetricFamilyWhichOptimizeItsGrade} from "../../../../src/scripts/complexityAndBadnessMetricLfc/optimize"
+import * as parameters from "../../../../src/scripts/complexityAndBadnessMetricLfc/parameters"
 import {
     ComplexityMetric,
     ComplexityMetricFamilyId,
     ComplexityParameterId,
     ComplexityParameterSet,
-} from "../../../../src/scripts/complexityMetricLfc/types"
+} from "../../../../src/scripts/complexityAndBadnessMetricLfc/types"
 
 describe("logComplexityParameterSetsForComplexityMetricFamilyWhichOptimizeItsGrade", (): void => {
     it("computes the parameter sets for the given metric family, then checks each one, and finds which one minimizes its grade", (): void => {

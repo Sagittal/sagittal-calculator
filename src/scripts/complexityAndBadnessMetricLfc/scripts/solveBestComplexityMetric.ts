@@ -10,7 +10,7 @@ import {
     time,
 } from "../../../general"
 import {ScriptGroup} from "../../types"
-import {complexityMetricLfcScriptGroupSettings} from "../globals"
+import {complexityAndBadnessMetricLfcScriptGroupSettings} from "../globals"
 import {COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS} from "../metrics"
 import {logComplexityParameterSetsForComplexityMetricFamilyWhichOptimizeItsGrade} from "../optimize"
 import {ComplexityMetric, ComplexityMetricFamilyId, ComplexityParameterId} from "../types"
@@ -21,15 +21,16 @@ program
     .option(`-${ScriptFlag.SECONDARY_COMMA_ZONES}, --secondary-comma-zones`, "use commas in each comma's secondary comma zone, rather than the default behavior of its capture zone in the Extreme precision level notation")
     .option(`-${ScriptFlag.COMPLEXITY_SEARCH_ED}, --complexity-search-ed <complexitySearchEd>`, "number of equal divisions for each parameter's search scope")
 
-setupScriptAndIo(ScriptGroup.COMPLEXITY_METRIC_LFC as Filename, [LogTarget.ALL])
+setupScriptAndIo(ScriptGroup.COMPLEXITY_AND_BADNESS_METRIC_LFC as Filename, [LogTarget.ALL])
 
-complexityMetricLfcScriptGroupSettings.zoneCommaEntries = computeZoneCommaEntries(!!program.secondaryCommaZones)
+complexityAndBadnessMetricLfcScriptGroupSettings.zoneCommaEntries =
+    computeZoneCommaEntries(!!program.secondaryCommaZones)
 
 if (!isUndefined(program.sosMode)) {
-    complexityMetricLfcScriptGroupSettings.sosMode = program.sosMode
+    complexityAndBadnessMetricLfcScriptGroupSettings.sosMode = program.sosMode
 }
 if (!isUndefined(program.complexitySearchEd)) {
-    complexityMetricLfcScriptGroupSettings.complexitySearchEd = program.complexitySearchEd
+    complexityAndBadnessMetricLfcScriptGroupSettings.complexitySearchEd = program.complexitySearchEd
 }
 
 const complexityMetricFamiliesWithParametersEntries = Object.entries(

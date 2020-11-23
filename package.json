@@ -22,7 +22,7 @@
     "analyze-ji-pitch": "node -r ts-node/register/transpile-only src/scripts/jiPitch/scripts/analyzeJiPitch.ts",
     "analyze-ji-pitches": "node -r ts-node/register/transpile-only src/scripts/jiPitch/scripts/analyzeJiPitches.ts",
     "zone-commas": "node -r ts-node/register/transpile-only src/scripts/jiPitch/scripts/zoneCommas.ts",
-    "solve-best-complexity-metric": "node -r ts-node/register/transpile-only src/scripts/complexityMetricLfc/scripts/solveBestComplexityMetric.ts",
+    "solve-best-complexity-metric": "node -r ts-node/register/transpile-only src/scripts/complexityAndBadnessMetricLfc/scripts/solveBestComplexityMetric.ts",
     "perfect-metric-from-scope": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/popularityMetricLfc/scripts/perfectMetricFromScope.ts",
     "antivotes": "node -r ts-node/register/transpile-only src/scripts/popularityMetricLfc/scripts/antivotes.ts",
     "sos": "node -r ts-node/register/transpile-only src/scripts/popularityMetricLfc/scripts/sumOfSquares.ts",
@@ -35,7 +35,7 @@
     "sorted-numerators": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/popular23FreeClass/scripts/sortedNumerators.ts",
     "late-tina-commas": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/jiPitch/scripts/lateTinaCommas.ts",
     "semitina-occams": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/jiPitch/scripts/semitinaOccams.ts",
-    "ji-notation-badness": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/complexityMetricLfc/scripts/jiNotationBadness.ts"
+    "ji-notation-badness": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/complexityAndBadnessMetricLfc/scripts/jiNotationBadness.ts"
   },
   "devDependencies": {
     "@types/jasmine": "^3.5.11",

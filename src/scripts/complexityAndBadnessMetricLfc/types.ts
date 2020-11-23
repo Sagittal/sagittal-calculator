@@ -26,7 +26,7 @@ enum ComplexityParameterId {
     TP = "tP",
 }
 
-interface ComplexityMetricLfcScriptGroupSettings {
+interface ComplexityAndBadnessMetricLfcScriptGroupSettings {
     zoneCommaEntries: Array<[CommaClassId, Comma[]]>,
     sosMode: boolean,
     complexitySearchEd: Ed<{of: Parameter}>,
@@ -43,6 +43,6 @@ export {
     ComplexityParameterSet,
     ComplexityMetricFamilyId,
     ComplexityParameterId,
-    ComplexityMetricLfcScriptGroupSettings,
+    ComplexityAndBadnessMetricLfcScriptGroupSettings,
     MetricParameters,
 }

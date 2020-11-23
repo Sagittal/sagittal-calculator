@@ -2,8 +2,8 @@
 
 import {Parameter} from "../../../../src/general/lfc"
 import {Combination} from "../../../../src/general/math"
-import {computeComplexityParameterSets} from "../../../../src/scripts/complexityMetricLfc/parameters"
-import {ComplexityParameterId} from "../../../../src/scripts/complexityMetricLfc/types"
+import {computeComplexityParameterSets} from "../../../../src/scripts/complexityAndBadnessMetricLfc/parameters"
+import {ComplexityParameterId} from "../../../../src/scripts/complexityAndBadnessMetricLfc/types"
 
 describe("computeComplexityParameterSets", (): void => {
     it("for each parameter ID, includes its range of possible values in the set", (): void => {

@@ -1,8 +1,8 @@
 import {Grade} from "../../../../src/general/lfc"
 import {Comma} from "../../../../src/general/music/ji"
 import {CommaClassId, Notation} from "../../../../src/sagittal/notation"
-import {complexityMetricLfcScriptGroupSettings} from "../../../../src/scripts/complexityMetricLfc/globals"
-import {computeZoneBadnessGrade} from "../../../../src/scripts/complexityMetricLfc/zoneBadnessGrade"
+import {complexityAndBadnessMetricLfcScriptGroupSettings} from "../../../../src/scripts/complexityAndBadnessMetricLfc/globals"
+import {computeZoneBadnessGrade} from "../../../../src/scripts/complexityAndBadnessMetricLfc/zoneBadnessGrade"
 
 describe("computeZoneBadnessGrade", (): void => {
     const COMMAS_FOR_1_V_5_7_13_n = [
@@ -27,7 +27,7 @@ describe("computeZoneBadnessGrade", (): void => {
 
     describe("when in sos mode", (): void => {
         beforeEach((): void => {
-            complexityMetricLfcScriptGroupSettings.sosMode = true
+            complexityAndBadnessMetricLfcScriptGroupSettings.sosMode = true
         })
 
         it("returns 0 when a comma is the least bad comma in its zone", (): void => {
@@ -40,7 +40,7 @@ describe("computeZoneBadnessGrade", (): void => {
         })
 
         it("returns a squared distance between the actual comma's badness and the least bad comma's when a comma is not the least bad comma in its zone", (): void => {
-            complexityMetricLfcScriptGroupSettings.sosMode = true
+            complexityAndBadnessMetricLfcScriptGroupSettings.sosMode = true
             const actual = computeZoneBadnessGrade(
                 [CommaClassId._1_V_5_P_2_7_P_3_k, COMMAS_FOR_1_V_5_P_2_7_P_3_k],
             )
@@ -53,7 +53,7 @@ describe("computeZoneBadnessGrade", (): void => {
 
     describe("when in boolean mode", (): void => {
         beforeEach((): void => {
-            complexityMetricLfcScriptGroupSettings.sosMode = false
+            complexityAndBadnessMetricLfcScriptGroupSettings.sosMode = false
         })
 
         it("returns 0 points (good) when a comma is the least bad comma in its zone", (): void => {

@@ -1,5 +1,5 @@
 import {Combination, computePossibilities, DynamicParameterScope, Parameter, Window} from "../../general"
-import {complexityMetricLfcScriptGroupSettings} from "./globals"
+import {complexityAndBadnessMetricLfcScriptGroupSettings} from "./globals"
 import {ComplexityParameterId, ComplexityParameterSet} from "./types"
 
 // Const SE_OR_TE_WHEN_DAAS_OR_DATE_IS_9 = 0.00195 as Parameter
@@ -23,37 +23,37 @@ const computeComplexityParameterScopes = (): Record<ComplexityParameterId, Dynam
         [ComplexityParameterId.A]: {
             center: 0.5 as Parameter,
             window: 1 as Window<{of: Parameter}>,
-            ed: complexityMetricLfcScriptGroupSettings.complexitySearchEd,
+            ed: complexityAndBadnessMetricLfcScriptGroupSettings.complexitySearchEd,
         },
         [ComplexityParameterId.B]: {
             center: 2 as Parameter,
             window: 2 as Window<{of: Parameter}>,
-            ed: complexityMetricLfcScriptGroupSettings.complexitySearchEd,
+            ed: complexityAndBadnessMetricLfcScriptGroupSettings.complexitySearchEd,
         },
         [ComplexityParameterId.C]: {
             center: 2 as Parameter,
             window: 2 as Window<{of: Parameter}>,
-            ed: complexityMetricLfcScriptGroupSettings.complexitySearchEd,
+            ed: complexityAndBadnessMetricLfcScriptGroupSettings.complexitySearchEd,
         },
         [ComplexityParameterId.SE]: {
             center: 0.002 as Parameter,
             window: 0.002 as Window<{of: Parameter}>,
-            ed: complexityMetricLfcScriptGroupSettings.complexitySearchEd,
+            ed: complexityAndBadnessMetricLfcScriptGroupSettings.complexitySearchEd,
         },
         [ComplexityParameterId.TE]: {
             center: 0.002 as Parameter,
             window: 0.002 as Window<{of: Parameter}>,
-            ed: complexityMetricLfcScriptGroupSettings.complexitySearchEd,
+            ed: complexityAndBadnessMetricLfcScriptGroupSettings.complexitySearchEd,
         },
         [ComplexityParameterId.SP]: {
             center: 1 as Parameter,
             window: 2 as Window<{of: Parameter}>,
-            ed: complexityMetricLfcScriptGroupSettings.complexitySearchEd,
+            ed: complexityAndBadnessMetricLfcScriptGroupSettings.complexitySearchEd,
         },
         [ComplexityParameterId.TP]: {
             center: 1 as Parameter,
             window: 2 as Window<{of: Parameter}>,
-            ed: complexityMetricLfcScriptGroupSettings.complexitySearchEd,
+            ed: complexityAndBadnessMetricLfcScriptGroupSettings.complexitySearchEd,
         },
     }
 }
