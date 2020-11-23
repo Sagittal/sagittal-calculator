@@ -3,9 +3,9 @@ import {JiPitchAnalysis} from "../../../../sagittal"
 import {jiPitchScriptGroupSettings} from "../../globals"
 import {JI_PITCH_FIELD_TITLES} from "../fieldTitles"
 import {computeJiPitchHeaderRows} from "../headerRows"
-import {computeOrderedTableAndJustification} from "../orderedFields"
+import {computeOrderedTableAndAlignment} from "../orderedFields"
 import {computeJiPitchRow} from "../row"
-import {computeMaxMonzoLength, computeMonzoAndQuotientJustification} from "../splitMonzoAndQuotient"
+import {computeMaxMonzoLength, computeSplitMonzoAndQuotientTableAlignment} from "../splitMonzoAndQuotient"
 import {JI_PITCH_TABLE_TITLE} from "../tableTitles"
 
 const computeJiPitchOutput = (
@@ -14,7 +14,7 @@ const computeJiPitchOutput = (
     const maxMonzoLength = computeMaxMonzoLength([jiPitchAnalysis])
     const jiPitchHeaderRows = computeJiPitchHeaderRows(maxMonzoLength)
     const headerRowCount = count(jiPitchHeaderRows)
-    let justification = computeMonzoAndQuotientJustification(jiPitchHeaderRows)
+    let tableAlignment = computeSplitMonzoAndQuotientTableAlignment(jiPitchHeaderRows)
 
     let jiPitchTable: Table<JiPitchAnalysis> = [
         ...jiPitchHeaderRows,
@@ -24,18 +24,18 @@ const computeJiPitchOutput = (
     if (!isUndefined(jiPitchScriptGroupSettings.orderedFields)) {
         const {
             table: orderedJiPitchTable,
-            justification: orderedJustification,
-        } = computeOrderedTableAndJustification(
-            {table: jiPitchTable, justification},
+            tableAlignment: orderedTableAlignment,
+        } = computeOrderedTableAndAlignment(
+            {table: jiPitchTable, tableAlignment},
             {maxMonzoLength, fieldTitles: JI_PITCH_FIELD_TITLES},
         )
         jiPitchTable = orderedJiPitchTable
-        justification = orderedJustification
+        tableAlignment = orderedTableAlignment
     }
 
     return sumTexts(
         JI_PITCH_TABLE_TITLE,
-        formatTable(jiPitchTable, {headerRowCount, justification}),
+        formatTable(jiPitchTable, {headerRowCount, tableAlignment}),
     )
 }
 

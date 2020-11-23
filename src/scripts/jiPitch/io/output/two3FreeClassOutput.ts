@@ -3,9 +3,9 @@ import {Two3FreeClassAnalysis} from "../../../../sagittal"
 import {jiPitchScriptGroupSettings} from "../../globals"
 import {TWO_3_FREE_CLASS_FIELD_TITLES} from "../fieldTitles"
 import {compute23FreeClassHeaderRows} from "../headerRows"
-import {computeOrderedTableAndJustification} from "../orderedFields"
+import {computeOrderedTableAndAlignment} from "../orderedFields"
 import {compute23FreeClassRow} from "../row"
-import {computeMonzoAndQuotientJustification} from "../splitMonzoAndQuotient"
+import {computeSplitMonzoAndQuotientTableAlignment} from "../splitMonzoAndQuotient"
 import {TWO_3_FREE_CLASS_TABLE_TITLE} from "../tableTitles"
 
 const compute23FreeClassOutput = (
@@ -13,7 +13,7 @@ const compute23FreeClassOutput = (
 ): Io => {
     const two3FreeClassHeaderRows = compute23FreeClassHeaderRows()
     const headerRowCount = count(two3FreeClassHeaderRows)
-    let justification = computeMonzoAndQuotientJustification(two3FreeClassHeaderRows)
+    let tableAlignment = computeSplitMonzoAndQuotientTableAlignment(two3FreeClassHeaderRows)
 
     let two3FreeClassTable: Table<Two3FreeClassAnalysis> = [
         ...two3FreeClassHeaderRows,
@@ -23,18 +23,18 @@ const compute23FreeClassOutput = (
     if (!isUndefined(jiPitchScriptGroupSettings.orderedFields)) {
         const {
             table: ordered23FreeClassTable,
-            justification: orderedJustification,
-        } = computeOrderedTableAndJustification(
-            {table: two3FreeClassTable, justification},
+            tableAlignment: orderedTableAlignment,
+        } = computeOrderedTableAndAlignment(
+            {table: two3FreeClassTable, tableAlignment},
             {fieldTitles: TWO_3_FREE_CLASS_FIELD_TITLES, recognizeNameTitleAsBeingFor23FreeClass: true},
         )
         two3FreeClassTable = ordered23FreeClassTable
-        justification = orderedJustification
+        tableAlignment = orderedTableAlignment
     }
 
     return sumTexts(
         TWO_3_FREE_CLASS_TABLE_TITLE,
-        formatTable(two3FreeClassTable, {headerRowCount, justification}),
+        formatTable(two3FreeClassTable, {headerRowCount, tableAlignment}),
     )
 }
 

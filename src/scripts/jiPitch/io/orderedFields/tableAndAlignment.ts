@@ -1,15 +1,15 @@
 import {Column, Index} from "../../../../general"
 import {jiPitchScriptGroupSettings} from "../../globals"
 import {JiPitchScriptGroupField} from "../../types"
+import {computeOrderedTableAlignment} from "./alignment"
 import {computeOrderedColumnIndex} from "./columnIndex"
-import {computeOrderedJustification} from "./justification"
 import {maybeAppendAdditionalColumnIndicesForSplitField} from "./maybeAppendAdditionalColumnIndicesForSplitField"
 import {computeOrderedTable} from "./table"
-import {OrderableTableInformation, OrderedTableAndJustificationOptions} from "./types"
+import {OrderableTableInformation, OrderedTableAndAlignmentOptions} from "./types"
 
-const computeOrderedTableAndJustification = <T>(
-    {table, justification}: OrderableTableInformation<T>,
-    options: OrderedTableAndJustificationOptions,
+const computeOrderedTableAndAlignment = <T>(
+    {table, tableAlignment}: OrderableTableInformation<T>,
+    options: OrderedTableAndAlignmentOptions,
 ): OrderableTableInformation<T> => {
     const {maxMonzoLength, recognizeNameTitleAsBeingFor23FreeClass} = options
 
@@ -31,10 +31,10 @@ const computeOrderedTableAndJustification = <T>(
 
     return {
         table: computeOrderedTable(table, orderedColumnIndices),
-        justification: computeOrderedJustification(justification, orderedColumnIndices),
+        tableAlignment: computeOrderedTableAlignment(tableAlignment, orderedColumnIndices),
     }
 }
 
 export {
-    computeOrderedTableAndJustification,
+    computeOrderedTableAndAlignment,
 }

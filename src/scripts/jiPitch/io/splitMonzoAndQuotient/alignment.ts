@@ -1,25 +1,25 @@
-import {Cell, finalElement, Justification, JustificationOption, Maybe, Row} from "../../../../general"
+import {Alignment, Cell, finalElement, Maybe, Row, TableAlignment} from "../../../../general"
 import {
     INVISIBLE_MONZO_CLOSING_ANGLE_BRACKET_COLUMN_TITLE,
     INVISIBLE_MONZO_OPENING_SQUARE_BRACKET_COLUMN_TITLE,
 } from "./constants"
 
-const computeMonzoAndQuotientJustification = <T>(
+const computeSplitMonzoAndQuotientTableAlignment = <T>(
     headerRows: Array<Row<{of: T, header: true}>>,
-): JustificationOption => {
+): TableAlignment => {
     const finalHeaderRow = finalElement(headerRows)
 
     let insideQuotientOrMonzo = false
 
-    return finalHeaderRow.map((headerCell: Cell<{of: T, header: true}>): Maybe<Justification> => {
+    return finalHeaderRow.map((headerCell: Cell<{of: T, header: true}>): Maybe<Alignment> => {
         if (headerCell === INVISIBLE_MONZO_OPENING_SQUARE_BRACKET_COLUMN_TITLE || headerCell === "n") {
             insideQuotientOrMonzo = true
-            return Justification.RIGHT
+            return Alignment.RIGHT
         } else if (headerCell === "d" || headerCell === INVISIBLE_MONZO_CLOSING_ANGLE_BRACKET_COLUMN_TITLE) {
             insideQuotientOrMonzo = false
-            return Justification.LEFT
+            return Alignment.LEFT
         } else if (insideQuotientOrMonzo) {
-            return Justification.CENTER
+            return Alignment.CENTER
         } else {
             return undefined
         }
@@ -27,5 +27,5 @@ const computeMonzoAndQuotientJustification = <T>(
 }
 
 export {
-    computeMonzoAndQuotientJustification,
+    computeSplitMonzoAndQuotientTableAlignment,
 }

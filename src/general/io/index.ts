@@ -29,8 +29,8 @@ export {
     Table,
     splitFieldTitlesIntoRowsBySpaces,
     TableFormat,
-    Justification,
-    JustificationOption,
+    Alignment,
+    TableAlignment,
     Cell,
     MERGED_CELL_INDICATOR,
 } from "./table"

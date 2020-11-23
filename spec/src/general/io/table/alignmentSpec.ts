@@ -1,40 +1,39 @@
 import {Count, Range, Table} from "../../../../../src/general"
 import {Char, Io} from "../../../../../src/general/io"
-import {Justification} from "../../../../../src/general/io/table"
-import {computeColumnWidths, justifyCellIo} from "../../../../../src/general/io/table/justification"
+import {Alignment} from "../../../../../src/general/io/table"
+import {alignCellIo, computeColumnWidths} from "../../../../../src/general/io/table/alignment"
 
-// TODO: TABLES FINESSE: everything that's called "justify" is actually "align"
-describe("justifyCellIo", (): void => {
-    it("adds space to justify cells", (): void => {
+describe("alignCellIo", (): void => {
+    it("adds space to align cells", (): void => {
         const cell = "  7    " as Io
 
-        const actual = justifyCellIo(
+        const actual = alignCellIo(
             cell,
-            {columnWidth: 14 as Count<Char>, columnJustification: Justification.LEFT},
+            {columnWidth: 14 as Count<Char>, columnAlignment: Alignment.LEFT},
         )
 
         const expected = "  7           "
         expect(actual).toBe(expected)
     })
 
-    it("can justify to the right", (): void => {
+    it("can align to the right", (): void => {
         const cell = "  7    " as Io
 
-        const actual = justifyCellIo(
+        const actual = alignCellIo(
             cell,
-            {columnWidth: 14 as Count<Char>, columnJustification: Justification.RIGHT},
+            {columnWidth: 14 as Count<Char>, columnAlignment: Alignment.RIGHT},
         )
 
         const expected = "         7    "
         expect(actual).toBe(expected)
     })
 
-    it("does not justify cells which are for the forum and which have turned off monospacing", (): void => {
+    it("does not align cells which are for the forum and which have turned off monospacing", (): void => {
         const cell = "[latex]\\frac{50}{49}[/latex]" as Io
 
-        const actual = justifyCellIo(
+        const actual = alignCellIo(
             cell,
-            {columnWidth: 14 as Count<Char>, columnJustification: Justification.LEFT},
+            {columnWidth: 14 as Count<Char>, columnAlignment: Alignment.LEFT},
         )
 
         expect(actual).toBe(cell)

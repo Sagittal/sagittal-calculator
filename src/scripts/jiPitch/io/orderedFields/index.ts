@@ -1,1 +1,1 @@
-export {computeOrderedTableAndJustification} from "./tableAndJustification"
+export {computeOrderedTableAndAlignment} from "./tableAndAlignment"

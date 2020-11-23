@@ -3,15 +3,13 @@ import {Count} from "../../types"
 import {Formatted} from "../format"
 import {Char, ColorMethod} from "../types"
 
-enum Justification {
+enum Alignment {
     LEFT = "left",
     RIGHT = "right",
     CENTER = "center",
 }
 
-// TODO: TABLES FINESSE: JUSTIFICATION OPTION?
-//  And why is this a justification "option", if it's the return value of computeMonzoAndQuotientJustification?
-type JustificationOption = Maybe<Justification> | Array<Maybe<Justification>>
+type TableAlignment = Maybe<Alignment> | Array<Maybe<Alignment>>
 
 type TableProperties = Partial<{
     of: unknown,
@@ -32,13 +30,13 @@ type Column<T extends TableProperties = {}> =
 
 type Table<T = void> = Array<Row<{of: T}>>
 
-interface JustifiedCellOptions {
-    columnJustification: Maybe<Justification>,
+interface AlignedCellOptions {
+    columnAlignment: Maybe<Alignment>,
     columnWidth: Count<Char>,
 }
 
 type FormatTableOptions<T> = {
-    justification: JustificationOption,
+    tableAlignment: TableAlignment,
     colors: Maybe<Array<Maybe<ColorMethod>>>,
     headerRowCount: Count<Row<{of: T, header: true}>>,
 }
@@ -51,9 +49,9 @@ enum TableFormat {
 }
 
 export {
-    Justification,
-    JustificationOption,
-    JustifiedCellOptions,
+    Alignment,
+    TableAlignment,
+    AlignedCellOptions,
     FormatTableOptions,
     Cell,
     Row,

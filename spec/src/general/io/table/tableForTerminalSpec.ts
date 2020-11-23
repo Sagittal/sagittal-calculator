@@ -1,7 +1,7 @@
 // tslint:disable max-line-length
 
 import {ColorMethod, Count, Io, NEWLINE, Row, Table} from "../../../../../src/general"
-import {Justification} from "../../../../../src/general/io/table"
+import {Alignment} from "../../../../../src/general/io/table"
 import {formatTableForTerminal} from "../../../../../src/general/io/table/tableForTerminal"
 
 describe("formatTableForTerminal", (): void => {
@@ -21,8 +21,8 @@ describe("formatTableForTerminal", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    it("can justify all columns to the right", (): void => {
-        const actual = formatTableForTerminal(table, {justification: Justification.RIGHT})
+    it("can align all columns to the right", (): void => {
+        const actual = formatTableForTerminal(table, {tableAlignment: Alignment.RIGHT})
 
         const expected =
             "comma name\tprime limit\t2,3-free SoPFR\tcents\t  monzo\tquotient\tapotome slope".underline + NEWLINE +
@@ -32,7 +32,7 @@ describe("formatTableForTerminal", (): void => {
     })
 
     it("can center columns", (): void => {
-        const actual = formatTableForTerminal(table, {justification: Justification.CENTER})
+        const actual = formatTableForTerminal(table, {tableAlignment: Alignment.CENTER})
 
         const expected =
             "comma name\tprime limit\t2,3-free SoPFR\tcents\t monzo \tquotient\tapotome slope".underline + NEWLINE +
@@ -41,16 +41,16 @@ describe("formatTableForTerminal", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    it("can justify each column individually", (): void => {
-        const justification = [
-            Justification.RIGHT,
-            Justification.LEFT,
-            Justification.CENTER,
+    it("can align each column individually", (): void => {
+        const tableAlignment = [
+            Alignment.RIGHT,
+            Alignment.LEFT,
+            Alignment.CENTER,
             undefined,
-            Justification.RIGHT,
+            Alignment.RIGHT,
         ]
 
-        const actual = formatTableForTerminal(table, {justification})
+        const actual = formatTableForTerminal(table, {tableAlignment})
 
         const expected =
             "comma name\tprime limit\t2,3-free SoPFR\tcents\t  monzo\tquotient\tapotome slope".underline + NEWLINE +

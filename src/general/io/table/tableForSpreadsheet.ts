@@ -15,12 +15,12 @@ const formatTableForSpreadsheet = <T>(table: Table<T>, options?: Partial<FormatT
 
     const formattedRows = table.map((row: Row<{of: T}>, rowIndex: number): Io => {
         const rowText = row.reduce(
-            (justifiedRow: Io, cell: Cell<{of: T}>, cellIndex: number): Io => {
-                const justifiedCell = isUndefined(cell) ? BLANK : cell
+            (alignedRow: Io, cell: Cell<{of: T}>, cellIndex: number): Io => {
+                const alignedCell = isUndefined(cell) ? BLANK : cell
 
                 const maybeSeparator = cellIndex === indexOfFinalElement(row) ? BLANK : TAB
 
-                return sumTexts(justifiedRow, justifiedCell, maybeSeparator)
+                return sumTexts(alignedRow, alignedCell, maybeSeparator)
             },
             BLANK,
         )

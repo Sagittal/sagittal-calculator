@@ -1,30 +1,30 @@
-import {Justification, Row} from "../../../../../../src/general/io/table"
+import {Alignment, Row} from "../../../../../../src/general/io/table"
 import {JiPitchAnalysis} from "../../../../../../src/sagittal/ji/analyze"
-import {computeMonzoAndQuotientJustification} from "../../../../../../src/scripts/jiPitch/io/splitMonzoAndQuotient"
+import {computeSplitMonzoAndQuotientTableAlignment} from "../../../../../../src/scripts/jiPitch/io/splitMonzoAndQuotient"
 import {
     INVISIBLE_MONZO_CLOSING_ANGLE_BRACKET_COLUMN_TITLE,
     INVISIBLE_MONZO_OPENING_SQUARE_BRACKET_COLUMN_TITLE,
 } from "../../../../../../src/scripts/jiPitch/io/splitMonzoAndQuotient/constants"
 
-describe("computeMonzoAndQuotientJustification", (): void => {
-    it("justifies quotients to center on the vinculum, and monzos so that the square bracket is closer to the rest of the materials", (): void => {
+describe("computeSplitMonzoAndQuotientTableAlignment", (): void => {
+    it("aligns quotients to center on the vinculum, and monzos so that the square bracket is closer to the rest of the materials", (): void => {
         const headerRows = [
             ["comma", "quotient", "", "", "monzo", "", "", "", "apotome"],
             // tslint:disable-next-line max-line-length
             ["name", "n", "/", "d", INVISIBLE_MONZO_OPENING_SQUARE_BRACKET_COLUMN_TITLE, "2", "3", INVISIBLE_MONZO_CLOSING_ANGLE_BRACKET_COLUMN_TITLE, "slope"],
         ] as Array<Row<{of: JiPitchAnalysis, header: true}>>
 
-        const actual = computeMonzoAndQuotientJustification(headerRows)
+        const actual = computeSplitMonzoAndQuotientTableAlignment(headerRows)
 
         const expected = [
             undefined,              // Comma name
-            Justification.RIGHT,    // Quotient numerator
-            Justification.CENTER,   // Quotient vinculum
-            Justification.LEFT,     // Quotient denominator
-            Justification.RIGHT,    // Monzo [
-            Justification.CENTER,   // Monzo 2
-            Justification.CENTER,   // Monzo 3
-            Justification.LEFT,     // Monzo ⟩
+            Alignment.RIGHT,    // Quotient numerator
+            Alignment.CENTER,   // Quotient vinculum
+            Alignment.LEFT,     // Quotient denominator
+            Alignment.RIGHT,    // Monzo [
+            Alignment.CENTER,   // Monzo 2
+            Alignment.CENTER,   // Monzo 3
+            Alignment.LEFT,     // Monzo ⟩
             undefined,              // Apotome slope
         ]
         expect(actual).toEqual(expected)
@@ -37,13 +37,13 @@ describe("computeMonzoAndQuotientJustification", (): void => {
             ["limit", "n", "/", "d", "₂,₃", "CoPFR"],
         ] as Array<Row<{of: JiPitchAnalysis, header: true}>>
 
-        const actual = computeMonzoAndQuotientJustification(headerRows)
+        const actual = computeSplitMonzoAndQuotientTableAlignment(headerRows)
 
         const expected = [
             undefined,              // 2,3-free prime limit
-            Justification.RIGHT,    // 2,3-free class numinator
-            Justification.CENTER,   // 2,3-free class vinculum
-            Justification.LEFT,     // 2,3-free class diminuator
+            Alignment.RIGHT,    // 2,3-free class numinator
+            Alignment.CENTER,   // 2,3-free class vinculum
+            Alignment.LEFT,     // 2,3-free class diminuator
             undefined,              // 2,3-free class sign
             undefined,              // 2,3-free class CoPFR
         ]

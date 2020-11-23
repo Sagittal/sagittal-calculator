@@ -5,7 +5,7 @@ import {
     ADDITIONAL_COLUMNS_FOR_SPLIT_QUOTIENT_FIELD,
     computeAdditionalColumnCountForSplitMonzoField,
 } from "./additionalColumnsForSplitFields"
-import {OffsetColumnIndexOffsetOptions, OrderedTableAndJustificationOptions} from "./types"
+import {OffsetColumnIndexOffsetOptions, OrderedTableAndAlignmentOptions} from "./types"
 
 const offsetColumnIndexOffset = (
     options: OffsetColumnIndexOffsetOptions,
@@ -33,7 +33,7 @@ const offsetColumnIndexOffset = (
 
 const computeOrderedColumnIndex = (
     orderedField: JiPitchScriptGroupField,
-    {fieldTitles, maxMonzoLength, recognizeNameTitleAsBeingFor23FreeClass}: OrderedTableAndJustificationOptions,
+    {fieldTitles, maxMonzoLength, recognizeNameTitleAsBeingFor23FreeClass}: OrderedTableAndAlignmentOptions,
 ): Index<Column> => {
     let columnIndexOffset = 0 as Offset<Index<Column>>
 

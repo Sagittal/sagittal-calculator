@@ -1,7 +1,7 @@
 // tslint:disable max-line-length
 
 import {Count, Io, MERGED_CELL_INDICATOR, NEWLINE, Row, Table} from "../../../../../src/general"
-import {Justification} from "../../../../../src/general/io/table"
+import {Alignment} from "../../../../../src/general/io/table"
 import {formatTableForForum} from "../../../../../src/general/io/table/tableForForum"
 
 describe("formatTableForForum", (): void => {
@@ -63,7 +63,7 @@ describe("formatTableForForum", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    it("supports justification", (): void => {
+    it("supports alignment", (): void => {
         const table = [
             ["comma", "prime", "2,3-free", "", "", "", "apotome", ""],
             ["name", "limit", "SoPFR", "cents", "monzo", "quotient", "slope", "N2D3P9"],
@@ -73,7 +73,7 @@ describe("formatTableForForum", (): void => {
 
         const actual = formatTableForForum(table, {
             headerRowCount: 2 as Count<Row<{of: Io, header: true}>>,
-            justification: [Justification.RIGHT, Justification.CENTER, Justification.LEFT],
+            tableAlignment: [Alignment.RIGHT, Alignment.CENTER, Alignment.LEFT],
         })
 
         let expected =
@@ -114,7 +114,7 @@ describe("formatTableForForum", (): void => {
             ["2", "bo", "9999", "jet"],
         ] as Table
 
-        const actual = formatTableForForum(table, {justification: [undefined, Justification.LEFT, Justification.RIGHT]})
+        const actual = formatTableForForum(table, {tableAlignment: [undefined, Alignment.LEFT, Alignment.RIGHT]})
 
         const expected =
             "[table]" + NEWLINE +

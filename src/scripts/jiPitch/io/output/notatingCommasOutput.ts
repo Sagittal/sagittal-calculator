@@ -3,9 +3,9 @@ import {CommaAnalysis, CommaClassId} from "../../../../sagittal"
 import {jiPitchScriptGroupSettings} from "../../globals"
 import {NOTATING_COMMAS_FIELD_TITLES} from "../fieldTitles"
 import {computeNotatingCommasHeaderRows} from "../headerRows"
-import {computeOrderedTableAndJustification} from "../orderedFields"
+import {computeOrderedTableAndAlignment} from "../orderedFields"
 import {computeNotatingCommasRow} from "../row"
-import {computeMaxMonzoLength, computeMonzoAndQuotientJustification} from "../splitMonzoAndQuotient"
+import {computeMaxMonzoLength, computeSplitMonzoAndQuotientTableAlignment} from "../splitMonzoAndQuotient"
 import {NOTATING_COMMAS_TABLE_TITLE} from "../tableTitles"
 
 const computeNotatingCommasOutput = (
@@ -15,7 +15,7 @@ const computeNotatingCommasOutput = (
     const maxMonzoLength = computeMaxMonzoLength(notatingCommaAnalyses)
     const notatingCommasHeaderRows = computeNotatingCommasHeaderRows(maxMonzoLength)
     const headerRowCount = count(notatingCommasHeaderRows)
-    let justification = computeMonzoAndQuotientJustification(notatingCommasHeaderRows)
+    let tableAlignment = computeSplitMonzoAndQuotientTableAlignment(notatingCommasHeaderRows)
 
     let notatingCommasTable = [
         ...notatingCommasHeaderRows,
@@ -28,18 +28,18 @@ const computeNotatingCommasOutput = (
     if (!isUndefined(jiPitchScriptGroupSettings.orderedFields)) {
         const {
             table: orderedNotatingCommasTable,
-            justification: orderedJustification,
-        } = computeOrderedTableAndJustification(
-            {table: notatingCommasTable, justification},
+            tableAlignment: orderedTableAlignment,
+        } = computeOrderedTableAndAlignment(
+            {table: notatingCommasTable, tableAlignment},
             {maxMonzoLength, fieldTitles: NOTATING_COMMAS_FIELD_TITLES},
         )
         notatingCommasTable = orderedNotatingCommasTable
-        justification = orderedJustification
+        tableAlignment = orderedTableAlignment
     }
 
     return sumTexts(
         NOTATING_COMMAS_TABLE_TITLE,
-        formatTable(notatingCommasTable, {headerRowCount, justification}),
+        formatTable(notatingCommasTable, {headerRowCount, tableAlignment}),
     )
 }
 

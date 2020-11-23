@@ -1,9 +1,9 @@
-import {Column, Count, Exponent, Index, Io, JustificationOption, Max, Prime, Table} from "../../../../general"
+import {Column, Count, Exponent, Index, Io, Max, Prime, Table, TableAlignment} from "../../../../general"
 import {JiPitchScriptGroupField} from "../../types"
 
 interface OrderableTableInformation<T> {
     table: Table<T>,
-    justification: JustificationOption,
+    tableAlignment: TableAlignment,
 }
 
 type SharedOrderedFieldsOptions = Partial<{
@@ -15,7 +15,7 @@ interface OffsetColumnIndexOffsetOptions extends SharedOrderedFieldsOptions {
     field: JiPitchScriptGroupField,
 }
 
-interface OrderedTableAndJustificationOptions extends SharedOrderedFieldsOptions {
+interface OrderedTableAndAlignmentOptions extends SharedOrderedFieldsOptions {
     fieldTitles: Partial<Record<JiPitchScriptGroupField, Io>>,
 }
 
@@ -32,7 +32,7 @@ interface AppendAdditionalColumnIndicesForSplitFieldOptions {
 export {
     OrderableTableInformation,
     OffsetColumnIndexOffsetOptions,
-    OrderedTableAndJustificationOptions,
+    OrderedTableAndAlignmentOptions,
     MaybeAppendAdditionalColumnIndicesForSplitFieldOptions,
     AppendAdditionalColumnIndicesForSplitFieldOptions,
 }
