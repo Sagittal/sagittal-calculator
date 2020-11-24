@@ -6,7 +6,22 @@ import {
     VALUE_BELOW_WHICH_ROUNDING_IMPLEMENTATION_BREAKS,
 } from "./constants"
 import {Decimal} from "./numeric"
-import {Abs, Addend, Base, Divisor, Exponent, Max, Min, Multiplier, Power, Product, Subtrahend, Sum} from "./types"
+import {
+    Abs,
+    Addend,
+    Augend,
+    Base, Dividend,
+    Divisor,
+    Exponent,
+    Max,
+    Min,
+    Minuend, Multiplicand,
+    Multiplier,
+    Power,
+    Product,
+    Subtrahend,
+    Sum,
+} from "./types"
 
 const count = <T>(array: T[]): Count<T> => {
     return array.length as Count<T>
@@ -24,18 +39,17 @@ const product = <T extends number>(...factors: T[]): Product<T> =>
         MULTIPLICATIVE_IDENTITY as Product<T>,
     )
 
-// TODO: MISCELLANEOUS: why not Augend<T> | T, Minuend<T> | T, etc.?
-const add = <T extends number>(augend: T, addend: Addend<T> | T): T =>
+const add = <T extends number>(augend: Augend<T> | T, addend: Addend<T> | T): T =>
     augend + addend as T                    // Sum
 
-const subtract = <T extends number>(minuend: T, subtrahend: Subtrahend<T> | T): T =>
+const subtract = <T extends number>(minuend: Minuend<T> | T, subtrahend: Subtrahend<T> | T): T =>
     minuend - subtrahend as T               // Difference
 
-const multiply = <T extends number>(multiplicand: T, multiplier: Multiplier<T> | T): T => {
+const multiply = <T extends number>(multiplicand: Multiplicand<T> | T, multiplier: Multiplier<T> | T): T => {
     return multiplicand * multiplier as T   // Product
 }
 
-const divide = <T extends number>(dividend: T, divisor: Divisor<T> | T): T => {
+const divide = <T extends number>(dividend: Dividend<T> | T, divisor: Divisor<T> | T): T => {
     return dividend / divisor as T          // Quotient
 }
 

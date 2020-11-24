@@ -1,15 +1,31 @@
+type Augend<T extends number | void = void> =
+    number
+    & {_AugendBrand: boolean}
+    & (T extends void ? {} : T & {_AugendOfBrand: T})
 type Addend<T extends number | void = void> =
     number
     & {_AddendBrand: boolean}
     & (T extends void ? {} : T & {_AddendOfBrand: T})
+type Minuend<T extends number | void = void> =
+    number
+    & {_MinuendBrand: boolean}
+    & (T extends void ? {} : T & {_MinuendOfBrand: T})
 type Subtrahend<T extends number | void = void> =
     number
     & {_SubtrahendBrand: boolean}
     & (T extends void ? {} : T & {_SubtrahendOfBrand: T})
+type Multiplicand<T extends number | void = void> =
+    number
+    & {_MultiplicandBrand: boolean}
+    & (T extends void ? {} : T & {_MultiplicandOfBrand: T})
 type Multiplier<T extends number | void = void> =
     number
     & {_MultiplierBrand: boolean}
     & (T extends void ? {} : T & {_MultiplierOfBrand: T})
+type Dividend<T extends number | void = void> =
+    number
+    & {_DividendBrand: boolean}
+    & (T extends void ? {} : T & {_DividendOfBrand: T})
 type Divisor<T extends number | void = void> =
     number
     & {_DivisorBrand: boolean}
@@ -70,11 +86,15 @@ type Radians = number & {_RadiansBrand: boolean}
 type Degrees = number & {_DegreesBrand: boolean}
 
 export {
+    Multiplicand,
     Multiplier,
+    Dividend,
     Divisor,
     Product,
     Sum,
+    Augend,
     Addend,
+    Minuend,
     Subtrahend,
     Combination,
     Combinations,
