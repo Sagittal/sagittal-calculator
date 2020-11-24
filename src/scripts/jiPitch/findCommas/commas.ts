@@ -61,6 +61,7 @@ const computeCommas = (options: CommasOptions): Comma[] => {
                     maxAas,
                     maxAte,
                     maxN2D3P9,
+                    maxPrimeLimit,
                 },
             ),
         )

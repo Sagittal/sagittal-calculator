@@ -3,6 +3,7 @@ import {
     Comma,
     computePlusOrMinusRange,
     computeRationalScamonFromRationalMonzo,
+    computeRationalScamonSmoothness,
     Decimal,
     Exponent,
     isUndefined,
@@ -19,6 +20,7 @@ import {
     DEFAULT_MAX_AAS,
     DEFAULT_MAX_ATE,
     DEFAULT_MAX_N2D3P9,
+    DEFAULT_MAX_PRIME_LIMIT,
     DEFAULT_UPPER_BOUND,
 } from "./constants"
 import {computeRationalMonzoInZone} from "./monzoInZone"
@@ -49,6 +51,7 @@ const computeCommasFrom23FreeRationalMonzo = (
         maxAte = DEFAULT_MAX_ATE,
         maxAas = DEFAULT_MAX_AAS,
         maxN2D3P9 = DEFAULT_MAX_N2D3P9,
+        maxPrimeLimit = DEFAULT_MAX_PRIME_LIMIT,
     } = options || {}
 
     const commas: Comma[] = []
@@ -63,8 +66,9 @@ const computeCommasFrom23FreeRationalMonzo = (
 
             const commaAnalysis: CommaAnalysis = analyzeComma(comma)
             if (
-                abs(commaAnalysis.apotomeSlope) > maxAas ||
-                commaAnalysis.two3FreeClassAnalysis.n2d3p9 > maxN2D3P9
+                abs(commaAnalysis.apotomeSlope) > maxAas
+                || commaAnalysis.two3FreeClassAnalysis.n2d3p9 > maxN2D3P9
+                || computeRationalScamonSmoothness(commaAnalysis.pitch) > maxPrimeLimit
             ) {
                 return
             }

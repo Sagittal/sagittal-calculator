@@ -23,7 +23,6 @@ import {computePrimeExponentRange} from "./primeExponentRange"
 import {compute23FreePrimesToCheck} from "./two3FreePrimesToCheck"
 import {Two3FreeMonzosToCheckOptions} from "./types"
 
-// TODO: should this be max23FreePrimeLimit for consistency?
 const compute23FreeRationalMonzosToCheck = (
     {maxPrimeLimit, max23FreeSopfr, max23FreeCopfr, maxN2D3P9}: Two3FreeMonzosToCheckOptions = {},
 ): Array<Monzo<{rational: true, rough: 5}>> => {

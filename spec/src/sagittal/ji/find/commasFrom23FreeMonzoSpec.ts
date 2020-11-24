@@ -84,4 +84,16 @@ describe("computeCommasFrom23FreeRationalMonzo", (): void => {
         ] as Comma[]
         expect(actual).toEqual(expected)
     })
+
+    it("excludes commas that are beyond the prime limit (I think only important when it is 2)", (): void => {
+        const two3FreeRationalMonzo = [] as unknown[] as Monzo<{rational: true, rough: 5}>
+        const maxPrimeLimit = 2 as Max<Max<Prime>>
+
+        const actual = computeCommasFrom23FreeRationalMonzo(two3FreeRationalMonzo, {maxPrimeLimit})
+
+        const expected = [
+            {monzo: [] as unknown[] as Monzo<{rational: true}>}
+        ] as Comma[]
+        expect(actual).toEqual(expected)
+    })
 })

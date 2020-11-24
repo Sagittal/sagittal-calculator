@@ -71,4 +71,6 @@ describe("computeCommas", (): void => {
     })
 
     // TODO: maybe now we need one test for > max known n2d3p9 and one for <
+
+    // TODO: and a test for excluding [-19, 12] when max prime limit is 2
 })
