@@ -17,14 +17,7 @@ interface Popular23FreeClassesScriptGroupSettings {
     useBestNotatingCommas: boolean,
 }
 
-interface KnownNumerator {
-    numerator: Numerator & Decimal<{integer: true}>,
-    gpf: Max<Prime>,
-    copfr: Copfr<{rough: 5}>,
-}
-
 export {
     Popular23FreeClass,
     Popular23FreeClassesScriptGroupSettings,
-    KnownNumerator,
 }

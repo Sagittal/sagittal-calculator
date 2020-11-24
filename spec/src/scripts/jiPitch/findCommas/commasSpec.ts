@@ -67,6 +67,8 @@ describe("computeCommas", (): void => {
             {monzo: [-19, 12]},
             {monzo: [-34, 20, 1]},
         ] as Comma[]
-        expect(actual).toEqual(expected)
+        expect(actual).toBeArrayWithDeepEqualContents(expected)
     })
+
+    // TODO: maybe now we need one test for > max known n2d3p9 and one for <
 })

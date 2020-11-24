@@ -6,4 +6,5 @@ export {
     SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2,
     computeN2,
 } from "./primeExponentExtremas"
+export {KnownLowN2D3P9Numerator, computeN2D3P9FromKnownLowN2D3P9NumeratorAndPossibleDenominator} from "./knownNumerators"
 export {N2D3P9} from "./types"

@@ -42,6 +42,8 @@ export {
     Badness,
     Complexity,
     FactoringMode,
+    KnownLowN2D3P9Numerator,
+    computeN2D3P9FromKnownLowN2D3P9NumeratorAndPossibleDenominator,
 } from "./ji"
 export {
     alignAscii,
