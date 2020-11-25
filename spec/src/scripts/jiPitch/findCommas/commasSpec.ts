@@ -1,6 +1,8 @@
-import {computeScamonFromDecimal, Max, Min, Scamon, Sopfr} from "../../../../../src/general/math"
+import { computeScamonFromDecimal, Max, Min, Monzo, Prime, Scamon, Sopfr } from "../../../../../src/general/math"
 import {Comma} from "../../../../../src/general/music"
+import { N2D3P9 } from "../../../../../src/sagittal/ji/badness/complexity/unpopularity/n2d3p9"
 import {computeCommas} from "../../../../../src/scripts/jiPitch/findCommas"
+import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
 
 describe("computeCommas", (): void => {
     const max23FreeSopfr = 7 as Max<Sopfr<{rough: 5}>>
@@ -55,7 +57,7 @@ describe("computeCommas", (): void => {
             .toThrowError("Search range must be within comma size category bounds (±227.370¢); range was [  ⟩ - 300.000¢.")
     })
 
-    it("returns commas if the bounds are within the abs value of the max size category bound", (): void => {
+    it("returns commas if the bounds are within the abs value of the max size category bound (and the max N2D3P9 is less than the maximum N2D3P9 for which numerators are known)", (): void => {
         const lowerBound = computeScamonFromDecimal(1.00870198379) as Min<Scamon>
         const upperBound = computeScamonFromDecimal(1.0174796921) as Max<Scamon>
 
@@ -70,7 +72,29 @@ describe("computeCommas", (): void => {
         expect(actual).toBeArrayWithDeepEqualContents(expected)
     })
 
-    // TODO: maybe now we need one test for > max known n2d3p9 and one for <
+    it("returns commas when the max N2D3P9 is greater than the maximum N2D3P9 for which numerators are known             ", (): void => {
+        onlyRunInCi()
 
-    // TODO: and a test for excluding [-19, 12] when max prime limit is 2
+        const lowerBound = computeScamonFromDecimal(1.015873015) as Min<Scamon>
+        const upperBound = computeScamonFromDecimal(1.015873016) as Max<Scamon>
+        const maxN2D3P9 = 6000 as Max<N2D3P9>
+
+        const actual = computeCommas({maxN2D3P9, lowerBound, upperBound})
+
+        const expected: Comma[] = [
+            {monzo: [6, -2, 0, -1]},
+        ] as Comma[]
+        expect(actual).toBeArrayWithDeepEqualContents(expected)
+    })
+
+    it("excludes 3-limit commas when the max prime limit is 2", (): void => {
+        const maxPrimeLimit = 2 as Max<Max<Prime>>
+
+        const actual = computeCommas({maxPrimeLimit})
+
+        const expected: Comma[] = [
+            {monzo: [] as unknown[] as Monzo<{rational: true}>},
+        ] as Comma[]
+        expect(actual).toBeArrayWithDeepEqualContents(expected)
+    })
 })
