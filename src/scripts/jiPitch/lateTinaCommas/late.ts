@@ -1,13 +1,19 @@
-import {Comma, count, Exponent, increment, Io, LogTarget, Maybe, min, Prime, saveLog} from "../../../general"
-import {CommaAnalysis, computeAte, computeNotatingCommas} from "../../../sagittal"
-import {jiPitchScriptGroupSettings} from "../globals"
-import {INFINITE_N2D3P9} from "./constants"
+import { Comma, count, Exponent, increment, Io, LogTarget, Maybe, min, Prime, saveLog } from "../../../general"
+import {
+    CommaAnalysis,
+    computeAte,
+    computeNotatingCommas,
+    MAX_N2D3P9_FOR_WHICH_POSSIBLE_NUMERATORS_ARE_KNOWN,
+} from "../../../sagittal"
+import { jiPitchScriptGroupSettings } from "../globals"
 
 const isCommaLate = (comma: Comma): boolean => {
     const ate = computeAte(comma)
 
-    const notatingCommas =
-        computeNotatingCommas(comma, {...jiPitchScriptGroupSettings, maxN2D3P9: INFINITE_N2D3P9})
+    const notatingCommas = computeNotatingCommas(
+        comma,
+        { ...jiPitchScriptGroupSettings, maxN2D3P9: MAX_N2D3P9_FOR_WHICH_POSSIBLE_NUMERATORS_ARE_KNOWN },
+    )
     const ates = notatingCommas.map((notatingComma: Comma): Exponent<Prime> => {
         return computeAte(notatingComma)
     })
@@ -23,7 +29,7 @@ const computeLateCommaAnalysis = (tinaCommaAnalyses: CommaAnalysis[]): Maybe<Com
     let index = 0
     let lateComma = undefined
     while (index < count(tinaCommaAnalyses)) {
-        const tinaCommaAnalysis = tinaCommaAnalyses[index]
+        const tinaCommaAnalysis = tinaCommaAnalyses[ index ]
 
         saveLog(
             `Checking comma ${index}: ${tinaCommaAnalysis.monzo}, N2D3P9 ${tinaCommaAnalysis.two3FreeClassAnalysis.n2d3p9}` as Io,

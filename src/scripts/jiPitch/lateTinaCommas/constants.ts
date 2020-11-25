@@ -1,7 +1,6 @@
 import {add, Cents, computePitchFromCents, Copfr, Max, Min, Scamon, subtract} from "../../../general"
 import {computeCentsFromTinas, N2D3P9, Tinas} from "../../../sagittal"
 
-const INFINITE_N2D3P9 = Infinity as Max<N2D3P9>
 const INFINITE_2_3_FREE_COPFR = Infinity as Max<Copfr<{rough: 5}>>
 
 const TINAS_TO_CHECK: Tinas[] = [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5] as Tinas[]
@@ -22,7 +21,6 @@ const MAX_TINA_SIZES: Cents[] = TINAS_TO_CHECK
     .map((tina: Tinas): Cents => computeCentsFromTinas(add(tina, TINA_COMMAS_PLUS_MINUS_RANGE)))
 
 export {
-    INFINITE_N2D3P9,
     INFINITE_2_3_FREE_COPFR,
     TINAS_TO_CHECK,
     TINA_COMMAS_LOWER_BOUND,
