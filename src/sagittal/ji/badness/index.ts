@@ -15,6 +15,7 @@ export {
     computeLpe,
     KnownLowN2D3P9Numerator,
     computeN2D3P9FromKnownLowN2D3P9NumeratorAndPossibleDenominator,
+    computeKnownRationalQuotients,
 } from "./complexity"
 export {computeCentsError} from "./error"
 export {computeLpei} from "./lpei"

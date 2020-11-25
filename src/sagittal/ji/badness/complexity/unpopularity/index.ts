@@ -8,5 +8,6 @@ export {
     MAX_N2D3P9_FOR_WHICH_POSSIBLE_NUMERATORS_ARE_KNOWN,
     KnownLowN2D3P9Numerator,
     computeN2D3P9FromKnownLowN2D3P9NumeratorAndPossibleDenominator,
+    computeKnownRationalQuotients,
 } from "./n2d3p9"
 export {computeSopfgtt} from "./sopfgtt"
