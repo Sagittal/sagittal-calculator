@@ -72,21 +72,6 @@ describe("computeCommas", (): void => {
         expect(actual).toBeArrayWithDeepEqualContents(expected)
     })
 
-    it("returns commas when the max N2D3P9 is greater than the maximum N2D3P9 for which numerators are known             ", (): void => {
-        onlyRunInCi()
-
-        const lowerBound = computeScamonFromDecimal(1.015873015) as Min<Scamon>
-        const upperBound = computeScamonFromDecimal(1.015873016) as Max<Scamon>
-        const maxN2D3P9 = 6000 as Max<N2D3P9>
-
-        const actual = computeCommas({maxN2D3P9, lowerBound, upperBound})
-
-        const expected: Comma[] = [
-            {monzo: [6, -2, 0, -1]},
-        ] as Comma[]
-        expect(actual).toBeArrayWithDeepEqualContents(expected)
-    })
-
     it("excludes 3-limit commas when the max prime limit is 2", (): void => {
         const maxPrimeLimit = 2 as Max<Max<Prime>>
 
