@@ -30,15 +30,6 @@ enum ArmId {
     // It also slightly disconcerts me that there's no way for it output bird and wing as @3 and @6. Maybe script flag?
 }
 
-// TODO: COMMA NAMES: BUG WITH PARSING
-//  Whoa does analyze-ji-pitch 17C throw Error: For whatever reason the number of commas notating the monzo
-//  0,0,0,0,0,0,1 within the bounds of its size category Comma was not 1. It was 2. Perhaps
-//  You need to expand the search parameters, e.g. raise the max ATE, AAS, or 2,3-free sopfr.
-//  Okay no I think i've somehow jsut broken the whole parsing by pitch thing recently
-//  Because 1/5C bad too: For whatever reason the number of commas notating the monzo 0,0,-1 within the bounds of its
-//  Size category Comma was not 1. It was 2.
-//  Perhaps you need to expand the search parameters, e.g. raise the max ATE, AAS, or 2,3-free sopfr.
-
 enum FlagId {
     BARB = "barb",
     SCROLL = "scroll",
