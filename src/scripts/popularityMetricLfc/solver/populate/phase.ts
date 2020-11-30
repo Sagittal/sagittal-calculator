@@ -23,8 +23,8 @@ import {formatSearchedAndPopulated} from "../io"
 import {Chunk} from "../types"
 import {
     ALL_BINS_SUBMETRIC_SCOPE,
-    NO_USELESS_PARAMETER_CHUNKS,
-    NO_USELESS_SUBMETRIC_CHUNKS,
+    NO_MOOT_PARAMETER_CHUNKS,
+    NO_MOOT_SUBMETRIC_CHUNKS,
     PARAMETER_CHUNKS,
     SUBMETRIC_CHUNKS,
 } from "./constants"
@@ -53,8 +53,8 @@ const computeChunkCombinations = (
         submetricChunkCombinations = memoizedSubmetricChunkCombinations[chunkCountForSubmetrics]
         saveLog(`used memoized submetric combinations (with repetitions)`, LogTarget.SETUP)
     } else {
-        const submetricChunks = popularityMetricLfcScriptGroupSettings.noUseless ?
-            NO_USELESS_SUBMETRIC_CHUNKS :
+        const submetricChunks = popularityMetricLfcScriptGroupSettings.noMoot ?
+            NO_MOOT_SUBMETRIC_CHUNKS :
             SUBMETRIC_CHUNKS
         submetricChunkCombinations =
             computeCombinations(submetricChunks, chunkCountForSubmetrics, {withRepeatedElements: true})
@@ -70,8 +70,8 @@ const computeChunkCombinations = (
         parameterChunkCombinations = memoizedParameterChunkCombinations[chunkCountForParameters]
         saveLog(`used memoized parameter combinations (with repetitions)`, LogTarget.SETUP)
     } else {
-        const parameterChunks = popularityMetricLfcScriptGroupSettings.noUseless ?
-            NO_USELESS_PARAMETER_CHUNKS :
+        const parameterChunks = popularityMetricLfcScriptGroupSettings.noMoot ?
+            NO_MOOT_PARAMETER_CHUNKS :
             PARAMETER_CHUNKS
         parameterChunkCombinations =
             computeCombinations(PARAMETER_CHUNKS, chunkCountForParameters, {withRepeatedElements: true})

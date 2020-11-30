@@ -7,7 +7,7 @@ const applySharedPopularityMetricLfcScriptSetup = (
     {defaultLogTargets}: {defaultLogTargets?: LogTarget[]} = {},
 ): void => {
     program
-        .option(`-${ScriptFlag.NO_USELESS}, --no-useless`, "eliminate probably useless parameters or parameter value scopes")
+        .option(`-${ScriptFlag.NO_MOOT}, --no-moot`, "eliminate probably moot parameters or parameter value scopes")
         .option(`-${ScriptFlag.Z}, --z <z>`, "z", parseFloat)
         .option(`-${ScriptFlag.ONLY_TOP}, --only-top <onlyTop>`, "only top", parseInt)
         .option(`-${ScriptFlag.MAX_UNIT}, --max-unit <maxUnit>`, "max unit", parseFloat)
@@ -18,7 +18,7 @@ const applySharedPopularityMetricLfcScriptSetup = (
     if (program.z) popularityMetricLfcScriptGroupSettings.z = program.z
     if (program.onlyTop) popularityMetricLfcScriptGroupSettings.onlyTop = program.onlyTop
     if (program.maxUnit) popularityMetricLfcScriptGroupSettings.maxUnit = program.maxUnit
-    if (!program.useless) popularityMetricLfcScriptGroupSettings.noUseless = true
+    if (!program.moot) popularityMetricLfcScriptGroupSettings.noMoot = true
     if (program.sync) popularityMetricLfcScriptGroupSettings.sync = true
 }
 

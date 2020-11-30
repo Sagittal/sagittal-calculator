@@ -8,7 +8,7 @@ import {
     THREE_PRIME_INDEX,
 } from "../../../../general"
 import {SecorComplexity} from "./types"
-import {computeApotomeSlope} from "./uselessness"
+import {computeApotomeSlope} from "./unusefulness"
 
 // As reverse-engineered here: http://forum.sagittal.org/viewtopic.php?p=1659#p1659
 

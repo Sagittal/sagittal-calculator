@@ -4,7 +4,6 @@ import {
     Copfr,
     Decimal,
     Direction,
-    Exponent,
     Max,
     Monzo,
     Name,
@@ -14,7 +13,7 @@ import {
     Sopfr,
     Two3FreeClass,
 } from "../../../../../src/general"
-import {analyzeJiPitch, ApotomeSlope, N2D3P9} from "../../../../../src/sagittal"
+import {analyzeJiPitch, ApotomeSlope, Ate, N2D3P9} from "../../../../../src/sagittal"
 
 describe("analyzeJiPitch", (): void => {
     it("returns an analysis of a JI pitch, given its monzo", (): void => {
@@ -29,7 +28,7 @@ describe("analyzeJiPitch", (): void => {
             quotient: [2100875, 1026432] as Quotient<{rational: true}>,
             decimal: 2.046775 as Decimal<{rational: true}>,
             apotomeSlope: -82.352717 as ApotomeSlope,
-            ate: 6 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+            ate: 6 as Ate,
             aas: 82.352717 as Abs<ApotomeSlope>,
             two3FreeClassAnalysis: {
                 two3FreeClass: {

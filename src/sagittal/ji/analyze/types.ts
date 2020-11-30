@@ -4,7 +4,6 @@ import {
     Comma,
     Copfr,
     Decimal,
-    Exponent,
     Max,
     Monzo,
     Name,
@@ -15,11 +14,11 @@ import {
     Sopfr,
     Two3FreeClass,
 } from "../../../general"
-import {ApotomeSlope, N2D3P9} from "../badness"
+import {ApotomeSlope, Ate, N2D3P9} from "../badness"
 
 interface JiPitchAnalysisProperties<T extends NumericProperties = {}> {
     apotomeSlope: ApotomeSlope,
-    ate: Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+    ate: Ate,
     aas: Abs<ApotomeSlope>,
     monzo: Monzo<T & {rational: true}>,
     quotient: Quotient<T & {rational: true}>,

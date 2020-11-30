@@ -1,19 +1,7 @@
 // tslint:disable max-line-length
 
-import {
-    Abs,
-    Cents,
-    Decimal,
-    Exponent,
-    Io,
-    ioSettings,
-    Monzo,
-    NEWLINE,
-    Prime,
-    Quotient,
-    TableFormat,
-} from "../../../../../../src/general"
-import {ApotomeSlope, JiPitchAnalysis} from "../../../../../../src/sagittal"
+import {Abs, Cents, Io, ioSettings, Monzo, NEWLINE, Quotient, TableFormat} from "../../../../../../src/general"
+import {ApotomeSlope, Ate, JiPitchAnalysis} from "../../../../../../src/sagittal"
 import {jiPitchScriptGroupSettings} from "../../../../../../src/scripts/jiPitch/globals"
 import {computeJiPitchOutput} from "../../../../../../src/scripts/jiPitch/io"
 import {JiPitchScriptGroupField} from "../../../../../../src/scripts/jiPitch/types"
@@ -30,7 +18,7 @@ describe("computeJiPitchOutput", (): void => {
         quotient: [5, 4] as Quotient<{rational: true}>,
         apotomeSlope: 8.2 as ApotomeSlope,
         aas: 8.2 as Abs<ApotomeSlope>,
-        ate: 1 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+        ate: 1 as Ate,
         two3FreeClassAnalysis: two3FreeClassAnalysisFixture,
     }
 

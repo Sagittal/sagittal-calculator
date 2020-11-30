@@ -9,7 +9,6 @@ import {
     Decimal,
     Direction,
     EMPTY_MONZO,
-    Exponent,
     Max,
     Monzo,
     Multiplier,
@@ -22,6 +21,7 @@ import {
 import {
     ApotomeSlope,
     Ascii,
+    Ate,
     BoundClassId,
     BoundType,
     CommaClassId,
@@ -69,7 +69,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         commaAnalysis: {
                             apotomeSlope: -2.411919815346935 as ApotomeSlope,
                             aas: 2.411919815346935 as Abs<ApotomeSlope>,
-                            ate: 1 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                            ate: 1 as Ate,
                             two3FreeClassAnalysis: {
                                 name: "{25/19}₂,₃" as Name<Two3FreeClass>,
                                 two3FreeCopfr: 3 as Copfr<{rough: 5}>,
@@ -103,7 +103,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         commaAnalysis: {
                             apotomeSlope: 10.555481691145998 as ApotomeSlope,
                             aas: 10.555481691145998 as Abs<ApotomeSlope>,
-                            ate: 12 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                            ate: 12 as Ate,
                             two3FreeClassAnalysis: {
                                 name: "{1}₂,₃" as Name<Two3FreeClass>,
                                 two3FreeCopfr: 0 as Copfr<{rough: 5}>,
@@ -138,7 +138,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         commaAnalysis: {
                             apotomeSlope: -2.411919815346935 as ApotomeSlope,
                             aas: 2.411919815346935 as Abs<ApotomeSlope>,
-                            ate: 1 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                            ate: 1 as Ate,
                             two3FreeClassAnalysis: {
                                 name: "{25/19}₂,₃" as Name<Two3FreeClass>,
                                 two3FreeCopfr: 3 as Copfr<{rough: 5}>,
@@ -171,7 +171,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         commaAnalysis: {
                             apotomeSlope: 10.555481691145998 as ApotomeSlope,
                             aas: 10.555481691145998 as Abs<ApotomeSlope>,
-                            ate: 12 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                            ate: 12 as Ate,
                             two3FreeClassAnalysis: {
                                 name: "{1}₂,₃" as Name<Two3FreeClass>,
                                 two3FreeCopfr: 0 as Copfr<{rough: 5}>,
@@ -206,7 +206,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         commaAnalysis: {
                             apotomeSlope: -2.411919815346935 as ApotomeSlope,
                             aas: 2.411919815346935 as Abs<ApotomeSlope>,
-                            ate: 1 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                            ate: 1 as Ate,
                             two3FreeClassAnalysis: {
                                 name: "{25/19}₂,₃" as Name<Two3FreeClass>,
                                 two3FreeCopfr: 3 as Copfr<{rough: 5}>,
@@ -239,7 +239,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         commaAnalysis: {
                             apotomeSlope: 10.555481691145998 as ApotomeSlope,
                             aas: 10.555481691145998 as Abs<ApotomeSlope>,
-                            ate: 12 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                            ate: 12 as Ate,
                             two3FreeClassAnalysis: {
                                 name: "{1}₂,₃" as Name<Two3FreeClass>,
                                 two3FreeCopfr: 0 as Copfr<{rough: 5}>,

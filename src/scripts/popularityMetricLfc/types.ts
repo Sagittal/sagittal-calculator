@@ -5,7 +5,7 @@ interface PopularityMetricLfcScriptGroupSettings {
     z: Exponent<Rank<ScalaPopularityStat | LfcUnpopularityEstimate>>,
     onlyTop: Count<ScalaPopularityStat>,
     maxUnit: Max<Step<{of: Parameter}>>,
-    noUseless: boolean,
+    noMoot: boolean,
     sync: boolean,
 }
 

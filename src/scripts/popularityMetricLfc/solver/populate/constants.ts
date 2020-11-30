@@ -6,7 +6,7 @@ import {PopularityParameterId, Submetric} from "../../sumOfSquares"
 import {Chunk} from "../types"
 
 // AKA: when included in the solver's generated scopes, what should they be scoped to
-const NO_USELESS_INITIAL_PARAMETER_SCOPES: ParameterScopes = {
+const NO_MOOT_INITIAL_PARAMETER_SCOPES: ParameterScopes = {
     [PopularityParameterId.WEIGHT_AS_POWER_EXPONENT]: computeDynamicParameterScope({
         center: 0.875 as Parameter,
         window: 1.75 as Window<{of: Parameter}>,
@@ -133,21 +133,21 @@ const INITIAL_PARAMETER_SCOPES: ParameterScopes = {
     [PopularityParameterId.WITHOUT_REPETITION]: true,
 }
 
-const NO_USELESS_SUBMETRIC_CHUNKS: Array<Chunk<Submetric>> = [
+const NO_MOOT_SUBMETRIC_CHUNKS: Array<Chunk<Submetric>> = [
     { // SOAPFAR
-        [PopularityParameterId.SUM]: NO_USELESS_INITIAL_PARAMETER_SCOPES[PopularityParameterId.SUM],
+        [PopularityParameterId.SUM]: NO_MOOT_INITIAL_PARAMETER_SCOPES[PopularityParameterId.SUM],
     },
     { // SOAPF
-        [PopularityParameterId.SUM]: NO_USELESS_INITIAL_PARAMETER_SCOPES[PopularityParameterId.SUM],
-        [PopularityParameterId.WITHOUT_REPETITION]: NO_USELESS_INITIAL_PARAMETER_SCOPES[PopularityParameterId.WITHOUT_REPETITION],
+        [PopularityParameterId.SUM]: NO_MOOT_INITIAL_PARAMETER_SCOPES[PopularityParameterId.SUM],
+        [PopularityParameterId.WITHOUT_REPETITION]: NO_MOOT_INITIAL_PARAMETER_SCOPES[PopularityParameterId.WITHOUT_REPETITION],
     },
     { // GPF
-        [PopularityParameterId.WITHOUT_REPETITION]: NO_USELESS_INITIAL_PARAMETER_SCOPES[PopularityParameterId.WITHOUT_REPETITION],
-        [PopularityParameterId.MAX]: NO_USELESS_INITIAL_PARAMETER_SCOPES[PopularityParameterId.MAX],
+        [PopularityParameterId.WITHOUT_REPETITION]: NO_MOOT_INITIAL_PARAMETER_SCOPES[PopularityParameterId.WITHOUT_REPETITION],
+        [PopularityParameterId.MAX]: NO_MOOT_INITIAL_PARAMETER_SCOPES[PopularityParameterId.MAX],
     },
     { // LOG BASE A OF N http://forum.sagittal.org/viewtopic.php?p=2076#p2076
-        [PopularityParameterId.SUM]: NO_USELESS_INITIAL_PARAMETER_SCOPES[PopularityParameterId.SUM],
-        [PopularityParameterId.A_AS_LOGARITHM_BASE]: NO_USELESS_INITIAL_PARAMETER_SCOPES[PopularityParameterId.A_AS_LOGARITHM_BASE],
+        [PopularityParameterId.SUM]: NO_MOOT_INITIAL_PARAMETER_SCOPES[PopularityParameterId.SUM],
+        [PopularityParameterId.A_AS_LOGARITHM_BASE]: NO_MOOT_INITIAL_PARAMETER_SCOPES[PopularityParameterId.A_AS_LOGARITHM_BASE],
     },
 ] as Array<Chunk<Submetric>>
 
@@ -178,7 +178,7 @@ const SUBMETRIC_CHUNKS: Array<Chunk<Submetric>> = [
 
 const SUBMETRIC_PARAMETERS = [PopularityParameterId.SUM, PopularityParameterId.COUNT, PopularityParameterId.MAX, PopularityParameterId.WITHOUT_REPETITION]
 
-const NO_USELESS_PARAMETER_CHUNKS: Array<Chunk<PopularityParameterId>> = Object.entries(NO_USELESS_INITIAL_PARAMETER_SCOPES)
+const NO_MOOT_PARAMETER_CHUNKS: Array<Chunk<PopularityParameterId>> = Object.entries(NO_MOOT_INITIAL_PARAMETER_SCOPES)
     .filter(([parameter]: [string, Maybe<ParameterScope>]): boolean => {
         return !SUBMETRIC_PARAMETERS.includes(parameter as PopularityParameterId)
     })
@@ -201,11 +201,11 @@ const PARAMETER_CHUNKS: Array<Chunk<PopularityParameterId>> = Object.entries(INI
 const ALL_BINS_SUBMETRIC_SCOPE: Chunk<Submetric> = {} as Chunk<Submetric>
 
 export {
-    NO_USELESS_INITIAL_PARAMETER_SCOPES,
+    NO_MOOT_INITIAL_PARAMETER_SCOPES,
     INITIAL_PARAMETER_SCOPES,
-    NO_USELESS_SUBMETRIC_CHUNKS,
+    NO_MOOT_SUBMETRIC_CHUNKS,
     SUBMETRIC_CHUNKS,
-    NO_USELESS_PARAMETER_CHUNKS,
+    NO_MOOT_PARAMETER_CHUNKS,
     PARAMETER_CHUNKS,
     ALL_BINS_SUBMETRIC_SCOPE,
 }

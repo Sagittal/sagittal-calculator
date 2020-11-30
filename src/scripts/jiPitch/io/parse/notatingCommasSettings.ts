@@ -1,5 +1,5 @@
-import {Abs, Decimal, Exponent, Max, Prime} from "../../../../general"
-import {ApotomeSlope, computeAas, computeAte, JiPitchAnalysis, N2D3P9} from "../../../../sagittal"
+import {Abs, Max} from "../../../../general"
+import {ApotomeSlope, Ate, computeAas, computeAte, JiPitchAnalysis, N2D3P9} from "../../../../sagittal"
 import {computeFindCommasSettings, FindCommasSettings} from "../../findCommas"
 
 const parseNotatingCommasSettings = ({pitch, two3FreeClassAnalysis}: JiPitchAnalysis): FindCommasSettings => {
@@ -12,7 +12,7 @@ const parseNotatingCommasSettings = ({pitch, two3FreeClassAnalysis}: JiPitchAnal
 
     const ate = computeAte(pitch)
     if (ate > findCommasSettings.maxAte) {
-        findCommasSettings.maxAte = ate as Max<Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>>
+        findCommasSettings.maxAte = ate as Max<Ate>
     }
 
     const n2d3p9 = two3FreeClassAnalysis.n2d3p9

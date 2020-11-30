@@ -45,6 +45,7 @@ export {
     KnownLowN2D3P9Numerator,
     computeN2D3P9FromKnownLowN2D3P9NumeratorAndPossibleDenominator,
     computeKnownRationalQuotients,
+    Ate,
 } from "./ji"
 export {
     alignAscii,

@@ -4,7 +4,6 @@ import {
     Comma,
     Copfr,
     Count,
-    Decimal,
     Direction,
     Exponent,
     Max,
@@ -16,7 +15,7 @@ import {
     Sopfr,
     Two3FreeClass,
 } from "../../../../../../src/general"
-import {ApotomeSlope, CommaAnalysis, CommaClassId, N2D3P9} from "../../../../../../src/sagittal"
+import {ApotomeSlope, Ate, CommaAnalysis, CommaClassId, N2D3P9} from "../../../../../../src/sagittal"
 import {jiPitchScriptGroupSettings} from "../../../../../../src/scripts/jiPitch/globals"
 import {computeNotatingCommasRow} from "../../../../../../src/scripts/jiPitch/io/row"
 import {NotatingCommasField} from "../../../../../../src/scripts/jiPitch/types"
@@ -32,7 +31,7 @@ describe("computeNotatingCommasRow", (): void => {
         quotient: [5, 4] as Quotient<{rational: true}>,
         apotomeSlope: 8.2 as ApotomeSlope,
         aas: 8.2 as Abs<ApotomeSlope>,
-        ate: 1 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+        ate: 1 as Ate,
         two3FreeClassAnalysis: {
             ...two3FreeClassAnalysisFixture,
             two3FreePrimeLimit: 14 as Max<Prime<{rough: 5}>>,

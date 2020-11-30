@@ -27,7 +27,7 @@ const INITIAL_POPULARITY_METRIC_LFC_SCRIPT_GROUP_SETTINGS: PopularityMetricLfcSc
     z: DEFAULT_Z,
     onlyTop: DEFAULT_ONLY_TOP,
     maxUnit: DEFAULT_MAX_UNIT,
-    noUseless: false,
+    noMoot: false,
     sync: false,
 }
 

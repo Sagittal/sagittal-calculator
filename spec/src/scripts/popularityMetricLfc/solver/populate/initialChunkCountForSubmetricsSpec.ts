@@ -5,7 +5,7 @@ import {computeInitialChunkCountForSubmetrics} from "../../../../../../src/scrip
 import {Submetric} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 
 describe("computeInitialChunkCountForSubmetrics", (): void => {
-    describe("when all chunks are being used, including probably useless ones", (): void => {
+    describe("when all chunks are being used, including probably moot ones", (): void => {
         it("when ≤ the total count of possible submetric chunks (6), returns the passed-in chunk count", (): void => {
             const chunkCount = 3 as Count<Chunk>
 
@@ -24,9 +24,9 @@ describe("computeInitialChunkCountForSubmetrics", (): void => {
         })
     })
 
-    describe("when no useless chunks are being used", (): void => {
+    describe("when no moot chunks are being used", (): void => {
         beforeEach((): void => {
-            popularityMetricLfcScriptGroupSettings.noUseless = true
+            popularityMetricLfcScriptGroupSettings.noMoot = true
         })
 
         it("when ≤ the total count of possible submetric chunks (4), returns the passed-in chunk count", (): void => {

@@ -4,18 +4,15 @@ import {
     Abs,
     Cents,
     Comma,
-    Decimal,
-    Exponent,
     Io,
     ioSettings,
     Monzo,
     Name,
     NEWLINE,
-    Prime,
     Quotient,
     TableFormat,
 } from "../../../../../../src/general"
-import {ApotomeSlope, CommaAnalysis, CommaClassId} from "../../../../../../src/sagittal"
+import {ApotomeSlope, Ate, CommaAnalysis, CommaClassId} from "../../../../../../src/sagittal"
 import {jiPitchScriptGroupSettings} from "../../../../../../src/scripts/jiPitch/globals"
 import {computeNotatingCommasOutput} from "../../../../../../src/scripts/jiPitch/io"
 import {JiPitchScriptGroupField} from "../../../../../../src/scripts/jiPitch/types"
@@ -31,7 +28,7 @@ describe("computeNotatingCommasOutput", (): void => {
             quotient: [33, 32] as Quotient<{rational: true}>,
             apotomeSlope: -4 as ApotomeSlope,
             aas: 4 as Abs<ApotomeSlope>,
-            ate: 0 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+            ate: 0 as Ate,
             two3FreeClassAnalysis: two3FreeClassAnalysisFixture,
         },
         {
@@ -42,7 +39,7 @@ describe("computeNotatingCommasOutput", (): void => {
             quotient: [50, 49] as Quotient<{rational: true}>,
             apotomeSlope: -2.154 as ApotomeSlope,
             aas: 2.154 as Abs<ApotomeSlope>,
-            ate: 0 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+            ate: 0 as Ate,
             two3FreeClassAnalysis: two3FreeClassAnalysisFixture,
         },
     ]

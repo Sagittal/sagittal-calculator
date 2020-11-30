@@ -3,20 +3,19 @@ import {
     Comma,
     computeScamonFromDecimal,
     Decimal,
-    Exponent,
     Max,
     Min,
     Monzo,
     Prime,
     Scamon,
 } from "../../../../../src/general"
-import {ApotomeSlope, computeCommasFrom23FreeRationalMonzo, N2D3P9} from "../../../../../src/sagittal"
+import {ApotomeSlope, Ate, computeCommasFrom23FreeRationalMonzo, N2D3P9} from "../../../../../src/sagittal"
 
 describe("computeCommasFrom23FreeRationalMonzo", (): void => {
     const two3FreeRationalMonzo = [0, 0, 3, 5, -1] as Monzo<{rational: true, rough: 5}>
     const lowerBound = computeScamonFromDecimal(1.023374 as Decimal) as Min<Scamon>
     const upperBound = computeScamonFromDecimal(1.023433 as Decimal) as Max<Scamon>
-    const maxAte = 12 as Max<Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>>
+    const maxAte = 12 as Max<Ate>
     const maxN2D3P9 = 40000 as Max<N2D3P9>
 
     it("returns commas with the prime content from the 2,3-free rational monzo", (): void => {

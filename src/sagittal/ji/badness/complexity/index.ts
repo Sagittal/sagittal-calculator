@@ -1,6 +1,6 @@
 export {computeLpe} from "./lpe"
 export {Complexity} from "./types"
-export {ApotomeSlope, computeApotomeSlope, computeAte, computeAas} from "./uselessness"
+export {ApotomeSlope, computeApotomeSlope, computeAte, computeAas, Ate} from "./unusefulness"
 export {
     N2D3P9,
     computeN2D3P9,

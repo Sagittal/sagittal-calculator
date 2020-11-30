@@ -137,7 +137,7 @@ describe("checkSubmetricsForInvalidParameterCombinations", (): void => {
                 },
             ]
 
-            expect((): void => checkSubmetricsForInvalidParameterCombinations(submetrics)).toThrowError(`Metric with only one submetric {"weightAsPowerExponent":2} included a useless weight parameter.`)
+            expect((): void => checkSubmetricsForInvalidParameterCombinations(submetrics)).toThrowError(`Metric with only one submetric {"weightAsPowerExponent":2} included a moot weight parameter.`)
         })
 
         it("gives a good error when a logarithm base weight is provided but there's only one submetric", (): void => {
@@ -147,7 +147,7 @@ describe("checkSubmetricsForInvalidParameterCombinations", (): void => {
                 },
             ]
 
-            expect((): void => checkSubmetricsForInvalidParameterCombinations(submetrics)).toThrowError(`Metric with only one submetric {"weightAsLogarithmBase":2} included a useless weight parameter.`)
+            expect((): void => checkSubmetricsForInvalidParameterCombinations(submetrics)).toThrowError(`Metric with only one submetric {"weightAsLogarithmBase":2} included a moot weight parameter.`)
         })
 
         it("gives a good error when a power base weight is provided but there's only one submetric", (): void => {
@@ -157,7 +157,7 @@ describe("checkSubmetricsForInvalidParameterCombinations", (): void => {
                 },
             ]
 
-            expect((): void => checkSubmetricsForInvalidParameterCombinations(submetrics)).toThrowError(`Metric with only one submetric {"weightAsPowerBase":2} included a useless weight parameter.`)
+            expect((): void => checkSubmetricsForInvalidParameterCombinations(submetrics)).toThrowError(`Metric with only one submetric {"weightAsPowerBase":2} included a moot weight parameter.`)
         })
 
         it("gives a good error when a coefficient weight is provided but there's only one submetric", (): void => {
@@ -167,7 +167,7 @@ describe("checkSubmetricsForInvalidParameterCombinations", (): void => {
                 },
             ]
 
-            expect((): void => checkSubmetricsForInvalidParameterCombinations(submetrics)).toThrowError(`Metric with only one submetric {"weightAsCoefficient":2} included a useless weight parameter.`)
+            expect((): void => checkSubmetricsForInvalidParameterCombinations(submetrics)).toThrowError(`Metric with only one submetric {"weightAsCoefficient":2} included a moot weight parameter.`)
         })
     })
 
@@ -183,6 +183,6 @@ describe("checkSubmetricsForInvalidParameterCombinations", (): void => {
             },
         ]
 
-        expect((): void => checkSubmetricsForInvalidParameterCombinations(submetrics)).toThrowError(`Submetrics [{"sum":true,"aAsPowerBase":2},{"sum":true,"aAsPowerBase":2}] contain duplicates and thus are useless.`)
+        expect((): void => checkSubmetricsForInvalidParameterCombinations(submetrics)).toThrowError(`Submetrics [{"sum":true,"aAsPowerBase":2},{"sum":true,"aAsPowerBase":2}] contain duplicates and thus are moot.`)
     })
 })

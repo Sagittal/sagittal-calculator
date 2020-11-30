@@ -10,12 +10,12 @@ const checkSubmetricsForInvalidParameterCombinations = (submetrics: Submetric[])
             !isUndefined(submetric[PopularityParameterId.WEIGHT_AS_LOGARITHM_BASE]) ||
             !isUndefined(submetric[PopularityParameterId.WEIGHT_AS_POWER_EXPONENT])
         ) {
-            throw new Error(`Metric with only one submetric ${stringify(submetric)} included a useless weight parameter.`)
+            throw new Error(`Metric with only one submetric ${stringify(submetric)} included a moot weight parameter.`)
         }
     }
 
     if (computeDeepDistinct(submetrics).length < submetrics.length) {
-        throw new Error(`Submetrics ${stringify(submetrics)} contain duplicates and thus are useless.`)
+        throw new Error(`Submetrics ${stringify(submetrics)} contain duplicates and thus are moot.`)
     }
 
     submetrics.forEach((submetric: Submetric): void => {

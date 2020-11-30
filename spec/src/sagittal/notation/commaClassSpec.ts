@@ -8,7 +8,6 @@ import {
     Decimal,
     Direction,
     EMPTY_MONZO,
-    Exponent,
     Max,
     Monzo,
     Name,
@@ -20,6 +19,7 @@ import {
 import {
     analyzeComma,
     ApotomeSlope,
+    Ate,
     CommaAnalysis,
     CommaClass,
     CommaClassId,
@@ -52,7 +52,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 0 as ApotomeSlope,
                 aas: 0 as Abs<ApotomeSlope>,
-                ate: 0 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 0 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{1}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 0 as Copfr<{rough: 5}>,
@@ -73,7 +73,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -2.026028 as ApotomeSlope,
                 aas: 2.026028 as Abs<ApotomeSlope>,
-                ate: 2 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 2 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{455}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 3 as Copfr<{rough: 5}>,
@@ -94,7 +94,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -3.051261 as ApotomeSlope,
                 aas: 3.051261 as Abs<ApotomeSlope>,
-                ate: 3 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 3 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{77/65}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 4 as Copfr<{rough: 5}>,
@@ -115,7 +115,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -5.087699 as ApotomeSlope,
                 aas: 5.087699 as Abs<ApotomeSlope>,
-                ate: 5 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 5 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{19/5}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -136,7 +136,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 7.879702 as ApotomeSlope,
                 aas: 7.879702 as Abs<ApotomeSlope>,
-                ate: 8 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 8 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{5}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 1 as Copfr<{rough: 5}>,
@@ -157,7 +157,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 5.853674 as ApotomeSlope,
                 aas: 5.853674 as Abs<ApotomeSlope>,
-                ate: 6 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 6 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{91}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -178,7 +178,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 9.816371 as ApotomeSlope,
                 aas: 9.816371 as Abs<ApotomeSlope>,
-                ate: 10 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 10 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{4375/19}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 6 as Copfr<{rough: 5}>,
@@ -199,7 +199,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 2.792003 as ApotomeSlope,
                 aas: 2.792003 as Abs<ApotomeSlope>,
-                ate: 3 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 3 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{19}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 1 as Copfr<{rough: 5}>,
@@ -220,7 +220,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 1.758005 as ApotomeSlope,
                 aas: 1.758005 as Abs<ApotomeSlope>,
-                ate: 2 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 2 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{55/49}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 4 as Copfr<{rough: 5}>,
@@ -241,7 +241,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -1.277239 as ApotomeSlope,
                 aas: 1.277239 as Abs<ApotomeSlope>,
-                ate: 1 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 1 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{385}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 3 as Copfr<{rough: 5}>,
@@ -262,7 +262,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -3.303267 as ApotomeSlope,
                 aas: 3.303267 as Abs<ApotomeSlope>,
-                ate: 3 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 3 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{13/11}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -283,7 +283,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 5.664569 as ApotomeSlope,
                 aas: 5.664569 as Abs<ApotomeSlope>,
-                ate: 6 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 6 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{31/11}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -304,7 +304,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -6.354528 as ApotomeSlope,
                 aas: 6.354528 as Abs<ApotomeSlope>,
-                ate: 6 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 6 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{7/5}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -325,7 +325,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -7.398935 as ApotomeSlope,
                 aas: 7.398935 as Abs<ApotomeSlope>,
-                ate: 7 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 7 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{343/5}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 4 as Copfr<{rough: 5}>,
@@ -346,7 +346,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -1.417215 as ApotomeSlope,
                 aas: 1.417215 as Abs<ApotomeSlope>,
-                ate: 1 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 1 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{85}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -367,7 +367,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 8.549541 as ApotomeSlope,
                 aas: 8.549541 as Abs<ApotomeSlope>,
-                ate: 9 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 9 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{1225}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 4 as Copfr<{rough: 5}>,
@@ -388,7 +388,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 1.525173 as ApotomeSlope,
                 aas: 1.525173 as Abs<ApotomeSlope>,
-                ate: 2 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 2 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{25/7}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 3 as Copfr<{rough: 5}>,
@@ -409,7 +409,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 0.480766 as ApotomeSlope,
                 aas: 0.480766 as Abs<ApotomeSlope>,
-                ate: 1 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 1 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{343}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 3 as Copfr<{rough: 5}>,
@@ -430,7 +430,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 6.462486 as ApotomeSlope,
                 aas: 6.462486 as Abs<ApotomeSlope>,
-                ate: 7 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 7 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{17}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 1 as Copfr<{rough: 5}>,
@@ -451,7 +451,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 1.434644 as ApotomeSlope,
                 aas: 1.434644 as Abs<ApotomeSlope>,
-                ate: 2 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 2 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{14641}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 4 as Copfr<{rough: 5}>,
@@ -472,7 +472,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -4.596523 as ApotomeSlope,
                 aas: 4.596523 as Abs<ApotomeSlope>,
-                ate: 4 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 4 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{11/7}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -493,7 +493,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -7.631767 as ApotomeSlope,
                 aas: 7.631767 as Abs<ApotomeSlope>,
-                ate: 7 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 7 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{275}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 3 as Copfr<{rough: 5}>,
@@ -514,7 +514,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 6.334440 as ApotomeSlope,
                 aas: 6.334440 as Abs<ApotomeSlope>,
-                ate: 7 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 7 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{49/13}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 3 as Copfr<{rough: 5}>,
@@ -535,7 +535,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -5.684689 as ApotomeSlope,
                 aas: 5.684689 as Abs<ApotomeSlope>,
-                ate: 5 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 5 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{8575}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 5 as Copfr<{rough: 5}>,
@@ -556,7 +556,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 3.283179 as ApotomeSlope,
                 aas: 3.283179 as Abs<ApotomeSlope>,
-                ate: 4 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 4 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{35/11}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 3 as Copfr<{rough: 5}>,
@@ -577,7 +577,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 1.257151 as ApotomeSlope,
                 aas: 1.257151 as Abs<ApotomeSlope>,
-                ate: 2 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 2 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{143}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -598,7 +598,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -3.786707 as ApotomeSlope,
                 aas: 3.786707 as Abs<ApotomeSlope>,
-                ate: 3 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 3 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{17/5}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -619,7 +619,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -5.816995 as ApotomeSlope,
                 aas: 5.816995 as Abs<ApotomeSlope>,
-                ate: 5 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 5 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{23/11}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -640,7 +640,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 1.150605 as ApotomeSlope,
                 aas: 1.150605 as Abs<ApotomeSlope>,
-                ate: 2 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 2 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{125/7}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 4 as Copfr<{rough: 5}>,
@@ -661,7 +661,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -5.873762 as ApotomeSlope,
                 aas: 5.873762 as Abs<ApotomeSlope>,
-                ate: 5 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 5 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{245}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 3 as Copfr<{rough: 5}>,
@@ -682,7 +682,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 4.092994 as ApotomeSlope,
                 aas: 4.092994 as Abs<ApotomeSlope>,
-                ate: 5 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 5 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{17}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 1 as Copfr<{rough: 5}>,
@@ -703,7 +703,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -4.935900 as ApotomeSlope,
                 aas: 4.935900 as Abs<ApotomeSlope>,
-                ate: 4 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 4 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{143/7}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 3 as Copfr<{rough: 5}>,
@@ -724,7 +724,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 9.030308 as ApotomeSlope,
                 aas: 9.030308 as Abs<ApotomeSlope>,
-                ate: 10 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 10 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{25/7}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 3 as Copfr<{rough: 5}>,
@@ -745,7 +745,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 2.005940 as ApotomeSlope,
                 aas: 2.005940 as Abs<ApotomeSlope>,
-                ate: 3 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 3 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{1225}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 4 as Copfr<{rough: 5}>,
@@ -766,7 +766,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -7.018695 as ApotomeSlope,
                 aas: 7.018695 as Abs<ApotomeSlope>,
-                ate: 6 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 6 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{23}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 1 as Copfr<{rough: 5}>,
@@ -787,7 +787,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -2.046116 as ApotomeSlope,
                 aas: 2.046116 as Abs<ApotomeSlope>,
-                ate: 1 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 1 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{169}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -808,7 +808,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 0.917773 as ApotomeSlope,
                 aas: 0.917773 as Abs<ApotomeSlope>,
-                ate: 2 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 2 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{49/11}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 3 as Copfr<{rough: 5}>,
@@ -829,7 +829,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 4.890912 as ApotomeSlope,
                 aas: 4.890912 as Abs<ApotomeSlope>,
-                ate: 6 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 6 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{31/11}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -850,7 +850,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -10.141236 as ApotomeSlope,
                 aas: 10.141236 as Abs<ApotomeSlope>,
-                ate: 9 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 9 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{17/7}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -871,7 +871,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -3.177894 as ApotomeSlope,
                 aas: 3.177894 as Abs<ApotomeSlope>,
-                ate: 2 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 2 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{91/5}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 3 as Copfr<{rough: 5}>,
@@ -892,7 +892,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -5.203922 as ApotomeSlope,
                 aas: 5.203922 as Abs<ApotomeSlope>,
-                ate: 4 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 4 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{25}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -913,7 +913,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 7.763478 as ApotomeSlope,
                 aas: 7.763478 as Abs<ApotomeSlope>,
-                ate: 9 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 9 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{19}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 1 as Copfr<{rough: 5}>,
@@ -934,7 +934,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -1.256577 as ApotomeSlope,
                 aas: 1.256577 as Abs<ApotomeSlope>,
-                ate: 0 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 0 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{253}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -955,7 +955,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 4.701807 as ApotomeSlope,
                 aas: 4.701807 as Abs<ApotomeSlope>,
-                ate: 6 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 6 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{91}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -976,7 +976,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 2.675779 as ApotomeSlope,
                 aas: 2.675779 as Abs<ApotomeSlope>,
-                ate: 4 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 4 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{5}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 1 as Copfr<{rough: 5}>,
@@ -997,7 +997,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -4.348588 as ApotomeSlope,
                 aas: 4.348588 as Abs<ApotomeSlope>,
-                ate: 3 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 3 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{875}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 4 as Copfr<{rough: 5}>,
@@ -1018,7 +1018,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -6.374616 as ApotomeSlope,
                 aas: 6.374616 as Abs<ApotomeSlope>,
-                ate: 5 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 5 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{25/13}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 3 as Copfr<{rough: 5}>,
@@ -1039,7 +1039,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -2.411919 as ApotomeSlope,
                 aas: 2.411919 as Abs<ApotomeSlope>,
-                ate: 1 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 1 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{25/19}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 3 as Copfr<{rough: 5}>,
@@ -1060,7 +1060,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 10.555481 as ApotomeSlope,
                 aas: 10.555481 as Abs<ApotomeSlope>,
-                ate: 12 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 12 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{1}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 0 as Copfr<{rough: 5}>,
@@ -1081,7 +1081,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 3.531113 as ApotomeSlope,
                 aas: 3.531113 as Abs<ApotomeSlope>,
-                ate: 5 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 5 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{4375}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 5 as Copfr<{rough: 5}>,
@@ -1102,7 +1102,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -6.481162 as ApotomeSlope,
                 aas: 6.481162 as Abs<ApotomeSlope>,
-                ate: 5 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 5 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{77/5}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 3 as Copfr<{rough: 5}>,
@@ -1123,7 +1123,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 1.505085 as ApotomeSlope,
                 aas: 1.505085 as Abs<ApotomeSlope>,
-                ate: 3 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 3 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{125/13}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 4 as Copfr<{rough: 5}>,
@@ -1144,7 +1144,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 5.467782 as ApotomeSlope,
                 aas: 5.467782 as Abs<ApotomeSlope>,
-                ate: 7 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 7 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{19/5}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -1165,7 +1165,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -9.532423 as ApotomeSlope,
                 aas: 9.532423 as Abs<ApotomeSlope>,
-                ate: 8 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 8 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{13}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 1 as Copfr<{rough: 5}>,
@@ -1186,7 +1186,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -11.558451 as ApotomeSlope,
                 aas: 11.558451 as Abs<ApotomeSlope>,
-                ate: 10 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 10 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{35}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -1207,7 +1207,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 1.398540 as ApotomeSlope,
                 aas: 1.398540 as Abs<ApotomeSlope>,
-                ate: 3 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 3 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{77}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -1228,7 +1228,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -0.627487 as ApotomeSlope,
                 aas: 0.627487 as Abs<ApotomeSlope>,
-                ate: 1 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 1 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{65/11}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 3 as Copfr<{rough: 5}>,
@@ -1249,7 +1249,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -1.652721 as ApotomeSlope,
                 aas: 1.652721 as Abs<ApotomeSlope>,
-                ate: 0 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 0 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{65}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -1270,7 +1270,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -3.678749 as ApotomeSlope,
                 aas: 3.678749 as Abs<ApotomeSlope>,
-                ate: 2 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 2 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{7}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 1 as Copfr<{rough: 5}>,
@@ -1291,7 +1291,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -10.703117 as ApotomeSlope,
                 aas: 10.703117 as Abs<ApotomeSlope>,
-                ate: 9 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 9 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{625}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 4 as Copfr<{rough: 5}>,
@@ -1312,7 +1312,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 7.252214 as ApotomeSlope,
                 aas: 7.252214 as Abs<ApotomeSlope>,
-                ate: 9 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 9 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{13/11}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -1333,7 +1333,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 6.226981 as ApotomeSlope,
                 aas: 6.226981 as Abs<ApotomeSlope>,
-                ate: 8 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 8 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{325}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 3 as Copfr<{rough: 5}>,
@@ -1354,7 +1354,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 4.200952 as ApotomeSlope,
                 aas: 4.200952 as Abs<ApotomeSlope>,
-                ate: 6 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 6 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{7/5}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -1375,7 +1375,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -2.823415 as ApotomeSlope,
                 aas: 2.823415 as Abs<ApotomeSlope>,
-                ate: 1 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 1 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{3125}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 5 as Copfr<{rough: 5}>,
@@ -1396,7 +1396,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -6.858057 as ApotomeSlope,
                 aas: 6.858057 as Abs<ApotomeSlope>,
-                ate: 5 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 5 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{85/11}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 3 as Copfr<{rough: 5}>,
@@ -1417,7 +1417,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -0.886746 as ApotomeSlope,
                 aas: 0.886746 as Abs<ApotomeSlope>,
-                ate: 1 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 1 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{19/7}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -1438,7 +1438,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -1.920743 as ApotomeSlope,
                 aas: 1.920743 as Abs<ApotomeSlope>,
-                ate: 0 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 0 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{55/7}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 3 as Copfr<{rough: 5}>,
@@ -1459,7 +1459,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -4.955988 as ApotomeSlope,
                 aas: 4.955988 as Abs<ApotomeSlope>,
-                ate: 3 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 3 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{55}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -1480,7 +1480,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -6.982016 as ApotomeSlope,
                 aas: 6.982016 as Abs<ApotomeSlope>,
-                ate: 5 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 5 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{91/11}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 3 as Copfr<{rough: 5}>,
@@ -1501,7 +1501,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -1.008642 as ApotomeSlope,
                 aas: 1.008642 as Abs<ApotomeSlope>,
-                ate: 1 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 1 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{125/23}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 4 as Copfr<{rough: 5}>,
@@ -1522,7 +1522,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 5.958958 as ApotomeSlope,
                 aas: 5.958958 as Abs<ApotomeSlope>,
-                ate: 8 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 8 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{11/7}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -1543,7 +1543,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -3.069936 as ApotomeSlope,
                 aas: 3.069936 as Abs<ApotomeSlope>,
-                ate: 1 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 1 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{17/13}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -1564,7 +1564,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -1.110928 as ApotomeSlope,
                 aas: 1.110928 as Abs<ApotomeSlope>,
-                ate: 1 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 1 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{25/17}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 3 as Copfr<{rough: 5}>,
@@ -1585,7 +1585,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -0.136311 as ApotomeSlope,
                 aas: 0.136311 as Abs<ApotomeSlope>,
-                ate: 2 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 2 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{247/7}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 3 as Copfr<{rough: 5}>,
@@ -1606,7 +1606,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -2.153576 as ApotomeSlope,
                 aas: 2.153576 as Abs<ApotomeSlope>,
-                ate: 0 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 0 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{49/25}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 4 as Copfr<{rough: 5}>,
@@ -1627,7 +1627,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -7.171121 as ApotomeSlope,
                 aas: 7.171121 as Abs<ApotomeSlope>,
-                ate: 5 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 5 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{31}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 1 as Copfr<{rough: 5}>,
@@ -1648,7 +1648,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -3.197982 as ApotomeSlope,
                 aas: 3.197982 as Abs<ApotomeSlope>,
-                ate: 1 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 1 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{49}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -1669,7 +1669,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 6.768774 as ApotomeSlope,
                 aas: 6.768774 as Abs<ApotomeSlope>,
-                ate: 9 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 9 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{17/5}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -1690,7 +1690,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 4.738486 as ApotomeSlope,
                 aas: 4.738486 as Abs<ApotomeSlope>,
-                ate: 7 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 7 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{23/11}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -1711,7 +1711,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -8.275272 as ApotomeSlope,
                 aas: 8.275272 as Abs<ApotomeSlope>,
-                ate: 6 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 6 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{11}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 1 as Copfr<{rough: 5}>,
@@ -1732,7 +1732,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 4.681719 as ApotomeSlope,
                 aas: 4.681719 as Abs<ApotomeSlope>,
-                ate: 7 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 7 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{245}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 3 as Copfr<{rough: 5}>,
@@ -1753,7 +1753,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -4.342916 as ApotomeSlope,
                 aas: 4.342916 as Abs<ApotomeSlope>,
-                ate: 2 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 2 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{23/5}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -1774,7 +1774,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 2.655691 as ApotomeSlope,
                 aas: 2.655691 as Abs<ApotomeSlope>,
-                ate: 5 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 5 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{13/7}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -1795,7 +1795,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -6.373203 as ApotomeSlope,
                 aas: 6.373203 as Abs<ApotomeSlope>,
-                ate: 4 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 4 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{17/11}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -1816,7 +1816,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -0.395570 as ApotomeSlope,
                 aas: 0.395570 as Abs<ApotomeSlope>,
-                ate: 2 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 2 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{11/5}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -1837,7 +1837,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -2.421598 as ApotomeSlope,
                 aas: 2.421598 as Abs<ApotomeSlope>,
-                ate: 0 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 0 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{1001}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 3 as Copfr<{rough: 5}>,
@@ -1858,7 +1858,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 3.536786 as ApotomeSlope,
                 aas: 3.536786 as Abs<ApotomeSlope>,
-                ate: 6 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 6 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{23}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 1 as Copfr<{rough: 5}>,
@@ -1879,7 +1879,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -0.502115 as ApotomeSlope,
                 aas: 0.502115 as Abs<ApotomeSlope>,
-                ate: 2 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 2 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{91/25}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 4 as Copfr<{rough: 5}>,
@@ -1900,7 +1900,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -2.528143 as ApotomeSlope,
                 aas: 2.528143 as Abs<ApotomeSlope>,
-                ate: 0 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 0 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{125}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 3 as Copfr<{rough: 5}>,
@@ -1921,7 +1921,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -9.552511 as ApotomeSlope,
                 aas: 9.552511 as Abs<ApotomeSlope>,
-                ate: 7 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 7 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{35}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -1942,7 +1942,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 0.414245 as ApotomeSlope,
                 aas: 0.414245 as Abs<ApotomeSlope>,
-                ate: 3 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 3 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{17/7}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -1963,7 +1963,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 7.377586 as ApotomeSlope,
                 aas: 7.377586 as Abs<ApotomeSlope>,
-                ate: 10 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 10 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{91/5}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 3 as Copfr<{rough: 5}>,
@@ -1984,7 +1984,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 5.351558 as ApotomeSlope,
                 aas: 5.351558 as Abs<ApotomeSlope>,
-                ate: 8 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 8 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{25}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -2005,7 +2005,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -1.672809 as ApotomeSlope,
                 aas: 1.672809 as Abs<ApotomeSlope>,
-                ate: 1 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 1 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{175}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 3 as Copfr<{rough: 5}>,
@@ -2026,7 +2026,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -3.698837 as ApotomeSlope,
                 aas: 3.698837 as Abs<ApotomeSlope>,
-                ate: 1 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 1 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{13/5}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -2047,7 +2047,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 3.264504 as ApotomeSlope,
                 aas: 3.264504 as Abs<ApotomeSlope>,
-                ate: 6 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 6 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{49/17}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 3 as Copfr<{rough: 5}>,
@@ -2068,7 +2068,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -1.768944 as ApotomeSlope,
                 aas: 1.768944 as Abs<ApotomeSlope>,
-                ate: 1 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 1 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{19/13}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -2089,7 +2089,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -3.805382 as ApotomeSlope,
                 aas: 3.805382 as Abs<ApotomeSlope>,
-                ate: 1 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 1 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{77/25}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 4 as Copfr<{rough: 5}>,
@@ -2110,7 +2110,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 4.180864 as ApotomeSlope,
                 aas: 4.180864 as Abs<ApotomeSlope>,
-                ate: 7 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 7 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{25/13}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 3 as Copfr<{rough: 5}>,
@@ -2131,7 +2131,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -6.856644 as ApotomeSlope,
                 aas: 6.856644 as Abs<ApotomeSlope>,
-                ate: 4 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 4 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{13/5}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -2152,7 +2152,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -8.882672 as ApotomeSlope,
                 aas: 8.882672 as Abs<ApotomeSlope>,
-                ate: 6 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 6 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{175}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 3 as Copfr<{rough: 5}>,
@@ -2173,7 +2173,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -4.920686 as ApotomeSlope,
                 aas: 4.920686 as Abs<ApotomeSlope>,
-                ate: 2 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 2 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{37}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 1 as Copfr<{rough: 5}>,
@@ -2194,7 +2194,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 2.048291 as ApotomeSlope,
                 aas: 2.048291 as Abs<ApotomeSlope>,
-                ate: 5 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 5 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{325/11}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 4 as Copfr<{rough: 5}>,
@@ -2215,7 +2215,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 1.023058 as ApotomeSlope,
                 aas: 1.023058 as Abs<ApotomeSlope>,
-                ate: 4 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 4 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{13}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 1 as Copfr<{rough: 5}>,
@@ -2236,7 +2236,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -1.002970 as ApotomeSlope,
                 aas: 1.002970 as Abs<ApotomeSlope>,
-                ate: 2 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 2 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{35}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -2257,7 +2257,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -8.027338 as ApotomeSlope,
                 aas: 8.027338 as Abs<ApotomeSlope>,
-                ate: 5 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 5 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{125}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 3 as Copfr<{rough: 5}>,
@@ -2278,7 +2278,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -5.072212 as ApotomeSlope,
                 aas: 5.072212 as Abs<ApotomeSlope>,
-                ate: 2 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 2 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{19/11}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -2299,7 +2299,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 8.902760 as ApotomeSlope,
                 aas: 8.902760 as Abs<ApotomeSlope>,
-                ate: 12 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 12 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{65}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -2320,7 +2320,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 6.876732 as ApotomeSlope,
                 aas: 6.876732 as Abs<ApotomeSlope>,
-                ate: 10 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 10 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{7}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 1 as Copfr<{rough: 5}>,
@@ -2341,7 +2341,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -0.147635 as ApotomeSlope,
                 aas: 0.147635 as Abs<ApotomeSlope>,
-                ate: 3 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 3 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{625}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 4 as Copfr<{rough: 5}>,
@@ -2362,7 +2362,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -10.159911 as ApotomeSlope,
                 aas: 10.159911 as Abs<ApotomeSlope>,
-                ate: 7 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 7 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{11/5}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -2383,7 +2383,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -4.182277 as ApotomeSlope,
                 aas: 4.182277 as Abs<ApotomeSlope>,
-                ate: 1 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 1 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{17/11}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -2404,7 +2404,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -6.212565 as ApotomeSlope,
                 aas: 6.212565 as Abs<ApotomeSlope>,
-                ate: 3 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 3 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{23/5}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -2425,7 +2425,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 0.755035 as ApotomeSlope,
                 aas: 0.755035 as Abs<ApotomeSlope>,
-                ate: 4 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 4 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{275/7}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 4 as Copfr<{rough: 5}>,
@@ -2446,7 +2446,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -2.280209 as ApotomeSlope,
                 aas: 2.280209 as Abs<ApotomeSlope>,
-                ate: 1 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 1 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{11}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 1 as Copfr<{rough: 5}>,
@@ -2467,7 +2467,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 3.697424 as ApotomeSlope,
                 aas: 3.697424 as Abs<ApotomeSlope>,
-                ate: 7 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 7 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{85/11}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 3 as Copfr<{rough: 5}>,
@@ -2488,7 +2488,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -5.331470 as ApotomeSlope,
                 aas: 5.331470 as Abs<ApotomeSlope>,
-                ate: 2 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 2 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{65/7}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 3 as Copfr<{rough: 5}>,
@@ -2509,7 +2509,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -7.357498 as ApotomeSlope,
                 aas: 7.357498 as Abs<ApotomeSlope>,
-                ate: 4 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 4 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{49}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -2530,7 +2530,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -3.384360 as ApotomeSlope,
                 aas: 3.384360 as Abs<ApotomeSlope>,
-                ate: 0 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 0 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{31}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 1 as Copfr<{rough: 5}>,
@@ -2551,7 +2551,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 5.599493 as ApotomeSlope,
                 aas: 5.599493 as Abs<ApotomeSlope>,
-                ate: 9 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 9 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{55}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 2 as Copfr<{rough: 5}>,
@@ -2572,7 +2572,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 3.573464 as ApotomeSlope,
                 aas: 3.573464 as Abs<ApotomeSlope>,
-                ate: 7 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 7 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{91/11}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 3 as Copfr<{rough: 5}>,
@@ -2593,7 +2593,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: -5.459516 as ApotomeSlope,
                 aas: 5.459516 as Abs<ApotomeSlope>,
-                ate: 2 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 2 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{595}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 3 as Copfr<{rough: 5}>,
@@ -2614,7 +2614,7 @@ describe("comma classes", (): void => {
             {
                 apotomeSlope: 0.522203 as ApotomeSlope,
                 aas: 0.522203 as Abs<ApotomeSlope>,
-                ate: 4 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+                ate: 4 as Ate,
                 two3FreeClassAnalysis: {
                     name: "{49/5}₂,₃" as Name<Two3FreeClass>,
                     two3FreeCopfr: 3 as Copfr<{rough: 5}>,

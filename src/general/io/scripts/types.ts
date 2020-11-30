@@ -16,7 +16,7 @@ enum ScriptFlag {
     TABLE_FORMAT = "b",
     NO_COLOR = "c",
     UNDIRECTED_COMMA_NAME = "d",
-    NO_USELESS = "e",
+    NO_MOOT = "e",
     FACTORING_MODE = "f",
     COMMA_NAME = "g",
     // "h" reserved for help

@@ -24,8 +24,8 @@ const finalOutput = (): void => {
     if (ioSettings.time) saveLog(`\n\nFINDING BEST METRICS TOOK ${time()}`, LogTarget.FINAL)
     saveLog(`MAX UNIT ${popularityMetricLfcScriptGroupSettings.maxUnit}`, LogTarget.FINAL)
     saveLog(`AVERAGE SAMPLES/SCOPE ${solverStatus.averageSamplesPerScope}`, LogTarget.FINAL)
-    const originalOrNoUseless = popularityMetricLfcScriptGroupSettings.noUseless ? "NO USELESS" : "ORIGINAL"
-    saveLog(`PARAMETER SCOPES @ ${originalOrNoUseless} SETTINGS`, LogTarget.FINAL)
+    const originalOrNoMoot = popularityMetricLfcScriptGroupSettings.noMoot ? "NO MOOT" : "ORIGINAL"
+    saveLog(`PARAMETER SCOPES @ ${originalOrNoMoot} SETTINGS`, LogTarget.FINAL)
     saveLog(`Z ${popularityMetricLfcScriptGroupSettings.z}`, LogTarget.FINAL)
     saveLog(`ONLY TOP ${popularityMetricLfcScriptGroupSettings.onlyTop}`, LogTarget.FINAL)
 }

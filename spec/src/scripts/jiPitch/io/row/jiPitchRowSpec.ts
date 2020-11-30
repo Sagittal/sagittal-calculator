@@ -1,5 +1,5 @@
-import {Abs, Cents, Count, Decimal, Exponent, Max, Monzo, Prime, Quotient, Row} from "../../../../../../src/general"
-import {ApotomeSlope, JiPitchAnalysis} from "../../../../../../src/sagittal"
+import {Abs, Cents, Count, Exponent, Max, Monzo, Prime, Quotient, Row} from "../../../../../../src/general"
+import {ApotomeSlope, Ate, JiPitchAnalysis} from "../../../../../../src/sagittal"
 import {jiPitchScriptGroupSettings} from "../../../../../../src/scripts/jiPitch/globals"
 import {computeJiPitchRow} from "../../../../../../src/scripts/jiPitch/io/row"
 import {JiPitchField} from "../../../../../../src/scripts/jiPitch/types"
@@ -16,7 +16,7 @@ describe("computeJiPitchRow", (): void => {
         quotient: [5, 4] as Quotient<{rational: true}>,
         apotomeSlope: 8.2 as ApotomeSlope,
         aas: 8.2 as Abs<ApotomeSlope>,
-        ate: 1 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+        ate: 1 as Ate,
         two3FreeClassAnalysis: two3FreeClassAnalysisFixture,
     }
     const maxMonzoLength = 5 as Max<Count<Exponent<Prime>>>

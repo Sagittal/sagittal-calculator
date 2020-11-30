@@ -1,5 +1,5 @@
-import {Abs, Comma, Decimal, Ed, Exponent, Parameter, Prime} from "../../general"
-import {ApotomeSlope, CommaClassId, Complexity, N2D3P9} from "../../sagittal"
+import {Abs, Comma, Ed, Parameter} from "../../general"
+import {ApotomeSlope, Ate, CommaClassId, Complexity, N2D3P9} from "../../sagittal"
 
 type ComplexityParameterSet = Partial<Record<ComplexityParameterId, Parameter>>
 
@@ -35,7 +35,7 @@ interface ComplexityAndBadnessMetricLfcScriptGroupSettings {
 interface MetricParameters {
     n2d3p9: N2D3P9,
     aas: Abs<ApotomeSlope>,
-    ate: Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+    ate: Ate,
 }
 
 export {

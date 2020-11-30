@@ -5,9 +5,7 @@ import {
     Cents,
     Comma,
     Copfr,
-    Decimal,
     Direction,
-    Exponent,
     Io,
     ioSettings,
     Max,
@@ -20,7 +18,7 @@ import {
     TableFormat,
     Two3FreeClass,
 } from "../../../../../../src/general"
-import {ApotomeSlope, CommaAnalysis, CommaClassId, N2D3P9} from "../../../../../../src/sagittal"
+import {ApotomeSlope, Ate, CommaAnalysis, CommaClassId, N2D3P9} from "../../../../../../src/sagittal"
 import {DEFAULT_FIND_COMMAS_SETTINGS} from "../../../../../../src/scripts/jiPitch/findCommas"
 import {jiPitchScriptGroupSettings} from "../../../../../../src/scripts/jiPitch/globals"
 import {computeFindCommasOutput} from "../../../../../../src/scripts/jiPitch/io"
@@ -39,7 +37,7 @@ describe("computeFindCommasOutput", (): void => {
             quotient: [33, 32] as Quotient<{rational: true}>,
             apotomeSlope: -4 as ApotomeSlope,
             aas: 4 as Abs<ApotomeSlope>,
-            ate: 0 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+            ate: 0 as Ate,
             two3FreeClassAnalysis: {
                 name: "11/1" as Name<Two3FreeClass>,
                 two3FreePrimeLimit: 11 as Max<Prime<{rough: 5}>>,
@@ -59,7 +57,7 @@ describe("computeFindCommasOutput", (): void => {
             quotient: [50, 49] as Quotient<{rational: true}>,
             apotomeSlope: -2.154 as ApotomeSlope,
             aas: 2.154 as Abs<ApotomeSlope>,
-            ate: 0 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+            ate: 0 as Ate,
             two3FreeClassAnalysis: {
                 name: "49/25" as Name<Two3FreeClass>,
                 two3FreePrimeLimit: 7 as Max<Prime<{rough: 5}>>,

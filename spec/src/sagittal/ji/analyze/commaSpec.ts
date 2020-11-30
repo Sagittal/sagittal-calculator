@@ -5,7 +5,6 @@ import {
     Copfr,
     Decimal,
     Direction,
-    Exponent,
     Max,
     Monzo,
     Name,
@@ -14,7 +13,7 @@ import {
     Sopfr,
     Two3FreeClass,
 } from "../../../../../src/general"
-import {analyzeComma, ApotomeSlope, N2D3P9} from "../../../../../src/sagittal"
+import {analyzeComma, ApotomeSlope, Ate, N2D3P9} from "../../../../../src/sagittal"
 
 describe("analyzeComma", (): void => {
     it("returns an analysis of a comma, given its monzo", (): void => {
@@ -31,7 +30,7 @@ describe("analyzeComma", (): void => {
             name: "5³⋅7⁵/11S" as Name<Comma>,
             apotomeSlope: -8.464345 as ApotomeSlope,
             aas: 8.464345 as Abs<ApotomeSlope>,
-            ate: 6 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+            ate: 6 as Ate,
             two3FreeClassAnalysis: {
                 name: "{2100875/11}₂,₃" as Name<Two3FreeClass>,
                 two3FreePrimeLimit: 11 as Max<Prime<{rough: 5}>>,

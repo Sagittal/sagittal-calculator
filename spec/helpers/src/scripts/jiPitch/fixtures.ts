@@ -5,7 +5,6 @@ import {
     Copfr,
     Decimal,
     EMPTY_MONZO,
-    Exponent,
     Max,
     Monzo,
     Name,
@@ -15,7 +14,14 @@ import {
     Sopfr,
     Two3FreeClass,
 } from "../../../../../src/general"
-import {ApotomeSlope, CommaAnalysis, JiPitchAnalysis, N2D3P9, Two3FreeClassAnalysis} from "../../../../../src/sagittal"
+import {
+    ApotomeSlope,
+    Ate,
+    CommaAnalysis,
+    JiPitchAnalysis,
+    N2D3P9,
+    Two3FreeClassAnalysis,
+} from "../../../../../src/sagittal"
 import {two3FreeClassFixture} from "../../general/music/fixtures"
 
 const two3FreeClassAnalysisFixture: Two3FreeClassAnalysis = {
@@ -39,7 +45,7 @@ const jiPitchAnalysisFixture: JiPitchAnalysis = {
     quotient: [1, 1] as Quotient<{rational: true}>,
     apotomeSlope: 0 as ApotomeSlope,
     aas: 0 as Abs<ApotomeSlope>,
-    ate: 0 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+    ate: 0 as Ate,
     two3FreeClassAnalysis: two3FreeClassAnalysisFixture,
 }
 
@@ -56,7 +62,7 @@ const commaAnalysisFixture: CommaAnalysis = {
     quotient: [1, 1] as Quotient<{rational: true}>,
     apotomeSlope: 0 as ApotomeSlope,
     aas: 0 as Abs<ApotomeSlope>,
-    ate: 0 as Abs<Decimal<{integer: true}> & Exponent<3 & Prime>>,
+    ate: 0 as Ate,
     two3FreeClassAnalysis: two3FreeClassAnalysisFixture,
 }
 
