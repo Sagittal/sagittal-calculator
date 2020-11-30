@@ -7,6 +7,6 @@ describe("computeAllCommasLessThanHalfApotome", (): void => {
 
         const actual = computeAllCommasLessThanHalfApotome()
 
-        expect(actual.length).toBe(18280)
+        expect(actual.length).toBe(18233)
     })
 })
