@@ -1,3 +1,23 @@
+/*
+# staffCode
+
+The `staffCode` script converts text codes for sheet music notation elements into SMuFL unicode
+characters. You can use it to type things like:
+
+a4 nt4 c5 nt4 e5 nt4
+
+and see a chord displayed on a staff.
+
+This script will find all elements on the page matching the CSS selector `span.staff.unprocessed`
+and convert their `staffCode` from text to unicode. The Bravura Text font from Steinberg Media
+Technologies GmbH, designed by Daniel Spreadbury, is used to display as sheet music notation.
+For more information on Bravura Text, please see https://www.smufl.org/fonts/.
+
+You may add an additional class to the span to indicate the clef. This will initiate a staff with
+said clef, and also cause the note position modifiers to adjust for that clef. If no clef class
+is provided, no clef will be displayed, and the note position modifiers will default to treble.
+*/
+
 (() => {
     const CLEF_AGNOSTIC_UNICODE_MAP = {
         "sp1": " ",         // U+200A           HAIR SPACE
@@ -37,15 +57,49 @@
         "nt4dn": "",       // U+E1D6           quarter note stem down
         "nt8": "",         // U+E1D7           quarter note stem up
         "nt8dn": "",       // U+E1D8           quarter note stem down
+        "nt16": "",        // U+E1D9           sixteenth note stem up
+        "nt16dn": "",      // U+E1DA           sixteenth note stem down
 
         "dt": "",          // U+E1E7           augmentation dot
+        "agdt": "",
 
+        // Beamed groups of notes
+        // https://w3c.github.io/smufl/gitbook/tables/beamed-groups-of-notes.html
         "ntbmst": "",      // U+E1F0           note for start of any beam (short stem)
         "ntbm8": "",       // U+E1F2           note for end of eighth beam, and possible continuation of any beam (short stem)
         "ntbm16": "",      // U+E1F4           note for end of sixteenth beam, and possible continuation of any beam (short stem)
         "bm8": "",         // U+E1F7           eighth beam continuation (for short stems)
         "bm16": "",        // U+E1F9           sixteenth beam continuation (for short stems)
         "tp3": "",         // U+E1FF           tuplet digit 3 (for short stems)
+
+        "rsdb": "\uE4E2",   // double whole rest
+        "rs1": "\uE4E3",    // whole rest
+        "rs2": "\uE4E4",    // half rest
+        "rs4": "\uE4E5",    // quarter rest
+        "rs8": "\uE4E6",    // eighth rest
+        "rs16": "\uE4E6",   // sixteenth rest
+
+        "brln": "\uE030",   // bar line (single)
+        "brlndb": "\uE031", // bar line double
+
+        "8va": "\uE512",    // octave above
+        "8vb": "\uE51C",    // octave below
+
+        "tm0": "\uE080",    // time signature digit 0
+        "tm1": "\uE081",    // time signature digit 1
+        "tm2": "\uE082",    // time signature digit 2
+        "tm3": "\uE083",    // time signature digit 3
+        "tm4": "\uE084",    // time signature digit 4
+        "tm5": "\uE085",    // time signature digit 5
+        "tm6": "\uE086",    // time signature digit 6
+        "tm7": "\uE087",    // time signature digit 7
+        "tm8": "\uE088",    // time signature digit 8
+        "tm9": "\uE089",    // time signature digit 9
+
+        "tmcm": "\uE08A",   // common time
+
+        "tmnm": "\uE09E",   // time signature combining numerator position
+        "tmdn": "\uE09F",   // time signature combining denominator position
 
         // conventional compatibles
         "h": "",           // U+E261           natural
@@ -301,12 +355,91 @@
         "l.": "",          // U+E40B           fractional tina down, 77/(5⋅37)-schismina down, 0.08 cents down
 
         // unconventional Sagittal-compatibles
+        // https://w3c.github.io/smufl/gitbook/tables/stein-zimmermann-accidentals-24-edo.html
+        // https://w3c.github.io/smufl/gitbook/tables/other-accidentals.html
         ">": "",           // U+E282           Half sharp (quarter-tone sharp) (Stein)
         "<": "",           // U+E284           Narrow reversed flat (quarter-tone flat)
         ">#": "",          // U+E283           One and a half sharps (three-quarter-tones sharp) (Stein)
         "<b": "",          // U+E285           Narrow reversed flat and flat (three-quarter-tones flat)
         "+": "",           // U+E47B           Wilson plus (5 comma up)
         "-": "",           // U+E47C           Wilson minus (5 comma down)
+
+        // ups and downs
+        // https://w3c.github.io/smufl/gitbook/tables/arrows-and-arrowheads.html
+        "^": "\uEB88",
+        "v": "\uEB8C",
+
+        // EHEJIPN
+        // https://w3c.github.io/smufl/gitbook/tables/extended-helmholtz-ellis-accidentals-just-intonation.html
+        // All EHEJIPN staffCodes start with a dot (full-stop). Unicodes are successive below.
+        ".bbv": "\uE2C0",
+        ".bv": "\uE2C1",
+        ".hv": "\uE2C2",
+        ".#v": "\uE2C3",
+        ".xv": "\uE2C4",
+        ".bb^": "\uE2C5",
+        ".b^": "\uE2C6",
+        ".h^": "\uE2C7",
+        ".#^": "\uE2C8",
+        ".x^": "\uE2C9",
+        ".bbvv": "\uE2CA",
+        ".bvv": "\uE2CB",
+        ".hvv": "\uE2CC",
+        ".#vv": "\uE2CD",
+        ".xvv": "\uE2CE",
+        ".bb^^": "\uE2CF",
+        ".b^^": "\uE2D0",
+        ".h^^": "\uE2D1",
+        ".#^^": "\uE2D2",
+        ".x^^": "\uE2D3",
+        ".bbvvv": "\uE2D4",
+        ".bvvv": "\uE2D5",
+        ".hvvv": "\uE2D6",
+        ".#vvv": "\uE2D7",
+        ".xvvv": "\uE2D8",
+        ".bb^^^": "\uE2D9",
+        ".b^^^": "\uE2DA",
+        ".h^^^": "\uE2DB",
+        ".#^^^": "\uE2DC",
+        ".x^^^": "\uE2DD",
+        ".l": "\uE2DE", // lowercase L here, but people would type it uppercase
+        ".p": "\uE2DF", // people would type it uppercase
+        ".ll": "\uE2E0", // lowercase LL here, but people would type them uppercase
+        ".pp": "\uE2E1", // people would type them uppercase
+        ".<": "\uE2E2",
+        ".>": "\uE2E3",
+        ".<|": "\uE2E4",
+        ".>|": "\uE2E5",
+        ".\\\\": "\uE2E6",
+        ".//": "\uE2E7",
+        ".\\": "\uE2E8",
+        "./": "\uE2E9",
+        ".^": "\uE2EA",
+        ".v": "\uE2EB",
+        ".-": "\uE2EC",
+        ".+": "\uE2ED",
+        ".{": "\uE2EE",
+        ".}": "\uE2EF",
+        ".bbt": "\uE2F0",
+        ".bt": "\uE2F1",
+        ".ht": "\uE2F2",
+        ".#t": "\uE2F3",
+        ".xt": "\uE2F4",
+        ".<t": "\uE2F5",
+        ".>t": "\uE2F6",
+        ".\\\\\\": "\uE2F7",
+        ".///": "\uE2F8",
+        ".~": "\uE2F9",
+        ".~~": "\uE2FA",
+        ".=": "\uE2FB",
+
+        // For convenience of EHEJIPN users, standard accidentals with dots at the start of their codes
+        // https://w3c.github.io/smufl/gitbook/tables/standard-accidentals-12-edo.html
+        ".bb": "\uE264",
+        ".b": "\uE260",
+        ".h": "\uE261",
+        ".#": "\uE262",
+        ".x": "\uE263", // Small double-sharp, not the same as "x" or "X", which is the (sagittal-compatible) large double-sharp
     }
 
     const TREBLE_COMBINING_STAFF_POSITION_UNICODE_MAP = {
