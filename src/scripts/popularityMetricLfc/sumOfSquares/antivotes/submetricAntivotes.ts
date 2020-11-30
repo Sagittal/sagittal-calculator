@@ -7,10 +7,12 @@ import {
     Grade,
     indexOfFinalElement,
     isUndefined,
-    log, Monzo,
+    log,
+    Monzo,
     Parameter,
     Prime,
-    PRIMES, QuotientPartType,
+    PRIMES,
+    QuotientPartType,
     stringify,
 } from "../../../../general"
 import {LfcUnpopularityEstimate, Submetric} from "../types"

@@ -1,4 +1,4 @@
-import {Decimal} from "../../../../../../src/general/math/numeric/decimal"
+import {Decimal} from "../../../../../../src/general"
 import {computeIntegerDecimalSmoothness, Smoothness} from "../../../../../../src/general/math/rational"
 import {
     computeRationalDecimalSmoothness,

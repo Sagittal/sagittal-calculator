@@ -1,5 +1,4 @@
-import {Decimal, Exponent, Extrema, Max, Prime} from "../../../../../../../../../src/general"
-import {Numerator} from "../../../../../../../../../src/general/math/numeric/quotient"
+import {Decimal, Exponent, Extrema, Max, Numerator, Prime} from "../../../../../../../../../src/general"
 import {N2D3P9} from "../../../../../../../../../src/sagittal"
 import {computePrimeExponentExtremaGivenMaxN2D3P9} from "../../../../../../../../../src/sagittal/ji/badness/complexity/unpopularity/n2d3p9/primeExponentExtremas/primeExponentExtrema"
 

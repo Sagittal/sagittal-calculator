@@ -1,6 +1,5 @@
-import {Sopfr} from "../../../../../../../src/general/math/rational"
-import {Two3FreeClass} from "../../../../../../../src/general/music/ji/two3FreeClass"
-import {computeSopfgtt} from "../../../../../../../src/sagittal/ji/badness/complexity/unpopularity"
+import {Sopfr, Two3FreeClass} from "../../../../../../../src/general"
+import {computeSopfgtt} from "../../../../../../../src/sagittal/ji/badness"
 import {Unpopularity} from "../../../../../../../src/sagittal/ji/badness/complexity/unpopularity/types"
 
 describe("computeSopfgtt", (): void => {

@@ -1,7 +1,6 @@
-import {Formatted, ioSettings, TableFormat} from "../../../../../src/general/io"
+import {Formatted, ioSettings, TableFormat} from "../../../../../src/general"
+import {Compatible, formatAccidental, Glyph} from "../../../../../src/sagittal/accidental"
 import {HeadId} from "../../../../../src/sagittal/accidental/flacco"
-import {Compatible} from "../../../../../src/sagittal/accidental/flavor"
-import {formatAccidental, Glyph} from "../../../../../src/sagittal/accidental/glyph"
 import {computeAccidental} from "../../../../helpers/src/sagittal/accidental/accidental"
 
 describe("formatAccidental", (): void => {

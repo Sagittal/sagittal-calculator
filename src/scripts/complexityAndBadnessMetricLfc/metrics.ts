@@ -34,7 +34,11 @@ const lee = (
 
 const ree = (
     comma: Comma,
-    {a = DEFAULT_COMPLEXITY_PARAMETER_VALUE, sE = DEFAULT_COMPLEXITY_PARAMETER_VALUE, tE = DEFAULT_COMPLEXITY_PARAMETER_VALUE}: ComplexityParameterSet,
+    {
+        a = DEFAULT_COMPLEXITY_PARAMETER_VALUE,
+        sE = DEFAULT_COMPLEXITY_PARAMETER_VALUE,
+        tE = DEFAULT_COMPLEXITY_PARAMETER_VALUE,
+    }: ComplexityParameterSet,
 ): Complexity => {
     const {n2d3p9, aas, ate} = computeMetricParameters(comma)
 
@@ -43,7 +47,11 @@ const ree = (
 
 const lpe = (
     comma: Comma,
-    {b = DEFAULT_COMPLEXITY_PARAMETER_VALUE, sP = DEFAULT_COMPLEXITY_PARAMETER_VALUE, tE = DEFAULT_COMPLEXITY_PARAMETER_VALUE}: ComplexityParameterSet,
+    {
+        b = DEFAULT_COMPLEXITY_PARAMETER_VALUE,
+        sP = DEFAULT_COMPLEXITY_PARAMETER_VALUE,
+        tE = DEFAULT_COMPLEXITY_PARAMETER_VALUE,
+    }: ComplexityParameterSet,
 ): Complexity => {
     const {n2d3p9, aas, ate} = computeMetricParameters(comma)
 
@@ -52,7 +60,12 @@ const lpe = (
 
 const rpe = (
     comma: Comma,
-    {a = DEFAULT_COMPLEXITY_PARAMETER_VALUE, b = DEFAULT_COMPLEXITY_PARAMETER_VALUE, sP = DEFAULT_COMPLEXITY_PARAMETER_VALUE, tE = DEFAULT_COMPLEXITY_PARAMETER_VALUE}: ComplexityParameterSet,
+    {
+        a = DEFAULT_COMPLEXITY_PARAMETER_VALUE,
+        b = DEFAULT_COMPLEXITY_PARAMETER_VALUE,
+        sP = DEFAULT_COMPLEXITY_PARAMETER_VALUE,
+        tE = DEFAULT_COMPLEXITY_PARAMETER_VALUE,
+    }: ComplexityParameterSet,
 ): Complexity => {
     const {n2d3p9, aas, ate} = computeMetricParameters(comma)
 
@@ -61,7 +74,11 @@ const rpe = (
 
 const lep = (
     comma: Comma,
-    {c = DEFAULT_COMPLEXITY_PARAMETER_VALUE, sE = DEFAULT_COMPLEXITY_PARAMETER_VALUE, tP = DEFAULT_COMPLEXITY_PARAMETER_VALUE}: ComplexityParameterSet,
+    {
+        c = DEFAULT_COMPLEXITY_PARAMETER_VALUE,
+        sE = DEFAULT_COMPLEXITY_PARAMETER_VALUE,
+        tP = DEFAULT_COMPLEXITY_PARAMETER_VALUE,
+    }: ComplexityParameterSet,
 ): Complexity => {
     const {n2d3p9, aas, ate} = computeMetricParameters(comma)
 
@@ -70,7 +87,12 @@ const lep = (
 
 const rep = (
     comma: Comma,
-    {a = DEFAULT_COMPLEXITY_PARAMETER_VALUE, c = DEFAULT_COMPLEXITY_PARAMETER_VALUE, sE = DEFAULT_COMPLEXITY_PARAMETER_VALUE, tP = DEFAULT_COMPLEXITY_PARAMETER_VALUE}: ComplexityParameterSet,
+    {
+        a = DEFAULT_COMPLEXITY_PARAMETER_VALUE,
+        c = DEFAULT_COMPLEXITY_PARAMETER_VALUE,
+        sE = DEFAULT_COMPLEXITY_PARAMETER_VALUE,
+        tP = DEFAULT_COMPLEXITY_PARAMETER_VALUE,
+    }: ComplexityParameterSet,
 ): Complexity => {
     const {n2d3p9, aas, ate} = computeMetricParameters(comma)
 
@@ -79,7 +101,12 @@ const rep = (
 
 const lpp = (
     comma: Comma,
-    {b = DEFAULT_COMPLEXITY_PARAMETER_VALUE, c = DEFAULT_COMPLEXITY_PARAMETER_VALUE, sP = DEFAULT_COMPLEXITY_PARAMETER_VALUE, tP = DEFAULT_COMPLEXITY_PARAMETER_VALUE}: ComplexityParameterSet,
+    {
+        b = DEFAULT_COMPLEXITY_PARAMETER_VALUE,
+        c = DEFAULT_COMPLEXITY_PARAMETER_VALUE,
+        sP = DEFAULT_COMPLEXITY_PARAMETER_VALUE,
+        tP = DEFAULT_COMPLEXITY_PARAMETER_VALUE,
+    }: ComplexityParameterSet,
 ): Complexity => {
     const {n2d3p9, aas, ate} = computeMetricParameters(comma)
 
@@ -88,7 +115,13 @@ const lpp = (
 
 const rpp = (
     comma: Comma,
-    {a = DEFAULT_COMPLEXITY_PARAMETER_VALUE, b = DEFAULT_COMPLEXITY_PARAMETER_VALUE, c = DEFAULT_COMPLEXITY_PARAMETER_VALUE, sP = DEFAULT_COMPLEXITY_PARAMETER_VALUE, tP = DEFAULT_COMPLEXITY_PARAMETER_VALUE}: ComplexityParameterSet,
+    {
+        a = DEFAULT_COMPLEXITY_PARAMETER_VALUE,
+        b = DEFAULT_COMPLEXITY_PARAMETER_VALUE,
+        c = DEFAULT_COMPLEXITY_PARAMETER_VALUE,
+        sP = DEFAULT_COMPLEXITY_PARAMETER_VALUE,
+        tP = DEFAULT_COMPLEXITY_PARAMETER_VALUE,
+    }: ComplexityParameterSet,
 ): Complexity => {
     const {n2d3p9, aas, ate} = computeMetricParameters(comma)
 

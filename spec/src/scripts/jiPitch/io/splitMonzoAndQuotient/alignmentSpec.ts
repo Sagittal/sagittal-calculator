@@ -1,5 +1,5 @@
-import {Alignment, Row} from "../../../../../../src/general/io/table"
-import {JiPitchAnalysis} from "../../../../../../src/sagittal/ji/analyze"
+import {Alignment, Row} from "../../../../../../src/general"
+import {JiPitchAnalysis} from "../../../../../../src/sagittal"
 import {computeSplitMonzoAndQuotientTableAlignment} from "../../../../../../src/scripts/jiPitch/io/splitMonzoAndQuotient"
 import {
     INVISIBLE_MONZO_CLOSING_ANGLE_BRACKET_COLUMN_TITLE,

@@ -1,4 +1,4 @@
-import {addMonzos, Monzo, NumericProperties, Quotient, Scamon, subtractMonzos, sumMonzos} from "../../numeric"
+import {addMonzos, NumericProperties, Quotient, Scamon, subtractMonzos, sumMonzos} from "../../numeric"
 import {Mean, MeanType} from "../../types"
 import {computeRationalMonzoFromRationalScamon} from "../monzo"
 

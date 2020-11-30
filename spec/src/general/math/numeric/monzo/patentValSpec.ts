@@ -1,6 +1,4 @@
-import {Ed, Window} from "../../../../../../src/general"
-import {Max, Prime} from "../../../../../../src/general/math"
-import {computePatentVal, Val} from "../../../../../../src/general/math/numeric/monzo"
+import {computePatentVal, Ed, Max, Prime, Val, Window} from "../../../../../../src/general"
 
 describe("computePatentVal", (): void => {
     it("given an EDO and a prime limit, returns the patent val", (): void => {

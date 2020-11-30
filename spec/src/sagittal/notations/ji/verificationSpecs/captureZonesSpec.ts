@@ -1,6 +1,10 @@
 import {computeIrrationalDecimalFromScamon, Decimal, Extrema, Maybe, Zone} from "../../../../../../src/general"
-import {CommaClassId, JI_NOTATION_LEVELS_COMMA_CLASS_IDS} from "../../../../../../src/sagittal"
-import {computeJiNotationCaptureZone, JiNotationLevelId} from "../../../../../../src/sagittal/notations/ji"
+import {
+    CommaClassId,
+    computeJiNotationCaptureZone,
+    JiNotationLevelId,
+    JI_NOTATION_LEVELS_COMMA_CLASS_IDS,
+} from "../../../../../../src/sagittal"
 
 describe("capture zones", (): void => {
     it("Medium JI notation level capture zones check out", (): void => {

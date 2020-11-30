@@ -1,7 +1,7 @@
 import {Decimal, NumericProperties} from "../../numeric"
 import {Exponent} from "../../types"
 import {computeRationalMonzoFromRationalDecimal} from "../monzo"
-import { PRIMES } from "../primes"
+import {PRIMES} from "../primes"
 import {Prime, Sopf} from "../types"
 
 // Sum Of Prime Factors (without repetition)

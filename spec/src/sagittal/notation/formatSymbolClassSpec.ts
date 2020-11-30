@@ -1,5 +1,5 @@
-import {Io, ioSettings, TableFormat} from "../../../../src/general/io"
-import {formatSymbolClass, SymbolClassId} from "../../../../src/sagittal/notation"
+import {Io, ioSettings, TableFormat} from "../../../../src/general"
+import {formatSymbolClass, SymbolClassId} from "../../../../src/sagittal"
 
 describe("formatSymbolClass", (): void => {
     const symbolClassId = SymbolClassId.ANTIWING_AND_LEFT_ARC_AND_BARB

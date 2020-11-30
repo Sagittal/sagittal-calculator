@@ -1,5 +1,5 @@
 import {add, Cents, computePitchFromCents, Copfr, Max, Min, Scamon, subtract} from "../../../general"
-import {computeCentsFromTinas, N2D3P9, Tinas} from "../../../sagittal"
+import {computeCentsFromTinas, Tinas} from "../../../sagittal"
 
 const INFINITE_2_3_FREE_COPFR = Infinity as Max<Copfr<{rough: 5}>>
 

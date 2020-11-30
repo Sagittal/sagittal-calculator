@@ -1,7 +1,6 @@
 // tslint:disable max-line-length
 
-import {Combinations, Count, Index} from "../../../../../../src/general"
-import {Combination} from "../../../../../../src/general/math"
+import {Combination, Combinations, Count, Index} from "../../../../../../src/general"
 import {scopesToSearch} from "../../../../../../src/scripts/popularityMetricLfc/globals"
 import {Chunk} from "../../../../../../src/scripts/popularityMetricLfc/solver"
 import {INITIAL_PARAMETER_SCOPES} from "../../../../../../src/scripts/popularityMetricLfc/solver/populate/constants"

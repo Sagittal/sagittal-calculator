@@ -1,6 +1,5 @@
-import {Of} from "../../../../../../../../../../../src/general"
-import {Decimal, Denominator, Max, Numerator, Prime} from "../../../../../../../../../../../src/general/math"
-import {SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2} from "../../../../../../../../../../../src/sagittal/ji/badness/complexity/unpopularity/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities"
+import {Decimal, Denominator, Max, Numerator, Of, Prime} from "../../../../../../../../../../../src/general"
+import {SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2} from "../../../../../../../../../../../src/sagittal"
 import {computeSortedNumeratorPossibilitiesGivenMaxN2D3P9WithLesserGpfThanDenominatorPrimeSortedByN2} from "../../../../../../../../../../../src/sagittal/ji/badness/complexity/unpopularity/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/sortedNumeratorPossibilitiesWithLesserGpf"
 import {N2} from "../../../../../../../../../../../src/sagittal/ji/badness/complexity/unpopularity/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/types"
 

@@ -82,11 +82,11 @@ describe("computeApotomeComplement", (): void => {
     })
 
     it("you really gotta be careful with these three different 1-scroll 2-barb symbols", (): void => {
-        const sagittal = computeAccidental({ headId: HeadId.LEFT_SCROLL_DOUBLE_LEFT_BARB })                 // )//|
+        const sagittal = computeAccidental({headId: HeadId.LEFT_SCROLL_DOUBLE_LEFT_BARB})                 // )//|
 
         const actual = computeApotomeComplement(sagittal)   // *not* )/|\ which is HeadId.LEFT_SCROLL_AND_DOUBLE_BARB
 
-        const expected = computeAccidental({ headId: HeadId.LEFT_SCROLL_DOUBLE_RIGHT_BARB })                // )|\\
+        const expected = computeAccidental({headId: HeadId.LEFT_SCROLL_DOUBLE_RIGHT_BARB})                // )|\\
         expect(actual).toEqual(expected)
     })
 
@@ -115,7 +115,7 @@ describe("computeApotomeComplement", (): void => {
     })
 
     it("throws an error if passed a down symbol", (): void => {
-        const sagittal = computeAccidental({headId: HeadId.LEFT_BARB, down: true })                          //  \!
+        const sagittal = computeAccidental({headId: HeadId.LEFT_BARB, down: true})                          //  \!
 
         expect((): void => {
             computeApotomeComplement(sagittal)

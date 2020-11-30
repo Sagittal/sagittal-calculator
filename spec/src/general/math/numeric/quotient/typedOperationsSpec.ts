@@ -1,4 +1,4 @@
-import {computeQuotientProduct, Quotient} from "../../../../../../src/general/math/numeric/quotient"
+import {computeQuotientProduct, Quotient} from "../../../../../../src/general/math/numeric"
 
 describe("computeQuotientProduct", (): void => {
     it("returns the product of all the quotients", (): void => {

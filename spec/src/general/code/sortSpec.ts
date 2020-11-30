@@ -1,4 +1,4 @@
-import {DEFAULT_PRECISION, KeyPath, sort} from "../../../../src/general/code"
+import {DEFAULT_PRECISION, KeyPath, sort} from "../../../../src/general"
 
 describe("sort", (): void => {
     it("takes an array and sorts it numerically, in place", (): void => {

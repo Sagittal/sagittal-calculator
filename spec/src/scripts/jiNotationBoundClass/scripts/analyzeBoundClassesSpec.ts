@@ -1,5 +1,4 @@
-import {Filename, Io} from "../../../../../src/general"
-import {readLines} from "../../../../../src/general/io"
+import {Filename, Io, readLines} from "../../../../../src/general"
 import {onlyRunInCi} from "../../../../helpers/onlyRunInCi"
 import {runScriptAndGetConsoleOutput} from "../../../../helpers/src/scripts/runScriptAndGetConsoleOutput"
 

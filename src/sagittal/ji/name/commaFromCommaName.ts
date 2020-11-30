@@ -1,12 +1,14 @@
 import {
-    Comma, compute23FreeClass,
+    Comma,
+    compute23FreeClass,
     computeRationalMonzoFromRationalQuotient,
-    computeRationalScamonFromRationalMonzo, isUndefined,
+    computeRationalScamonFromRationalMonzo,
+    isUndefined,
     Max,
     Min,
-    Scamon, stringify,
+    Scamon,
 } from "../../../general"
-import { computeN2D3P9 } from "../badness/complexity/unpopularity/n2d3p9"
+import {computeN2D3P9} from "../badness"
 import {computeNotatingCommas} from "../find"
 import {computeSizeCategoryExtrema} from "./sizeCategoryExtrema"
 import {CommaNameQuotient, SizeCategoryName} from "./types"

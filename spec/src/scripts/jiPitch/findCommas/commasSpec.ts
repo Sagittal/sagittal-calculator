@@ -1,8 +1,5 @@
-import { computeScamonFromDecimal, Max, Min, Monzo, Prime, Scamon, Sopfr } from "../../../../../src/general/math"
-import {Comma} from "../../../../../src/general/music"
-import { N2D3P9 } from "../../../../../src/sagittal/ji/badness/complexity/unpopularity/n2d3p9"
+import {Comma, computeScamonFromDecimal, Max, Min, Monzo, Prime, Scamon, Sopfr} from "../../../../../src/general"
 import {computeCommas} from "../../../../../src/scripts/jiPitch/findCommas"
-import { onlyRunInCi } from "../../../../helpers/onlyRunInCi"
 
 describe("computeCommas", (): void => {
     const max23FreeSopfr = 7 as Max<Sopfr<{rough: 5}>>

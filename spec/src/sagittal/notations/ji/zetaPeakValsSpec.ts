@@ -1,5 +1,5 @@
 import {Val} from "../../../../../src/general"
-import {INSANE_ZETA_PEAK_VAL} from "../../../../../src/sagittal/notations/ji"
+import {INSANE_ZETA_PEAK_VAL} from "../../../../../src/sagittal"
 
 describe("zeta peak vals", (): void => {
     it("has the correct patent val for the zeta-peak EDO which corresponds to the Insane precision notation's 809-EDA         ", (): void => {

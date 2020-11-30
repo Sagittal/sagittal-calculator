@@ -1,6 +1,5 @@
-import {Ascii, computeSagittalAscii} from "../../../../src/sagittal/accidental"
-import {computeSagittalFromSymbolClassId} from "../../../../src/sagittal/accidental/sagittal"
-import {SymbolSubsetId, SYMBOL_SUBSETS} from "../../../../src/sagittal/notation"
+import {Ascii, computeSagittalAscii, SymbolSubsetId, SYMBOL_SUBSETS} from "../../../../src/sagittal"
+import {computeSagittalFromSymbolClassId} from "../../../../src/sagittal/accidental"
 
 // tslint:disable-next-line ban
 xdescribe("SYMBOL_SUBSETS", (): void => {

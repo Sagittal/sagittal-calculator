@@ -1,11 +1,15 @@
-import {Multiplier, sumRationalScamons} from "../../../../../../src/general"
-import {Decimal, Mean, MeanType, multiplyScamon} from "../../../../../../src/general/math"
-import {Scamon} from "../../../../../../src/general/math/numeric/scamon"
 import {
     addRationalScamons,
     computeRationalScamonGeometricMean,
+    Decimal,
+    Mean,
+    MeanType,
+    Multiplier,
+    multiplyScamon,
+    Scamon,
     subtractRationalScamons,
-} from "../../../../../../src/general/math/rational/scamon"
+    sumRationalScamons,
+} from "../../../../../../src/general"
 
 describe("subtractRationalScamons", (): void => {
     it("works for two rational scamons, subtracting the from-scamon's monzo from the to-scamon's monzo", (): void => {

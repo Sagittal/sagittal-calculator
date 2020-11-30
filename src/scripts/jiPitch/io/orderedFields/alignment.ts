@@ -2,7 +2,7 @@ import {Alignment, Column, Index, isArray, isUndefined, Maybe, TableAlignment} f
 
 const computeOrderedTableAlignment = (
     tableAlignment: TableAlignment,
-    columnIndices: Array<Index<Column>>
+    columnIndices: Array<Index<Column>>,
 ): TableAlignment => {
     return isUndefined(tableAlignment) ?
         tableAlignment :

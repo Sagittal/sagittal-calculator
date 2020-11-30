@@ -1,5 +1,4 @@
-import {Monzo} from "../../../../../../src/general/math/numeric/monzo"
-import {isMonzoRational} from "../../../../../../src/general/math/rational/monzo"
+import {isMonzoRational, Monzo} from "../../../../../../src/general"
 import {isMonzoInteger} from "../../../../../../src/general/math/rational/monzo/typeGuards"
 
 describe("isMonzoInteger", (): void => {

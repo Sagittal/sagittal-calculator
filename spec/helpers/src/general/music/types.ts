@@ -1,5 +1,4 @@
-import {Decimal, Monzo, NumericProperties, Scamon} from "../../../../../src/general/math/numeric"
-import {Cents} from "../../../../../src/general/music"
+import {Cents, Decimal, Monzo, NumericProperties, Scamon} from "../../../../../src/general"
 
 type PitchExpectation<T extends NumericProperties = {}> = {
     pitch: Scamon<T>,

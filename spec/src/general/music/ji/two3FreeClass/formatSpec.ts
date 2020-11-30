@@ -1,6 +1,4 @@
-import {Formatted, ioSettings} from "../../../../../../src/general/io"
-import {TableFormat} from "../../../../../../src/general/io/table"
-import {format23FreeClass, Two3FreeClass} from "../../../../../../src/general/music/ji/two3FreeClass"
+import {format23FreeClass, Formatted, ioSettings, TableFormat, Two3FreeClass} from "../../../../../../src/general"
 
 describe("format23FreeClass", (): void => {
     it("gives the name of the 2,3-free class when formatting for the terminal", (): void => {

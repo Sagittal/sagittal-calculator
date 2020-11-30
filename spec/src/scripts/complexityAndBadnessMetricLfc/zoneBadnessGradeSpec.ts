@@ -1,6 +1,5 @@
-import {Grade} from "../../../../src/general/lfc"
-import {Comma} from "../../../../src/general/music/ji"
-import {CommaClassId, Notation} from "../../../../src/sagittal/notation"
+import {Comma, Grade} from "../../../../src/general"
+import {CommaClassId, Notation} from "../../../../src/sagittal"
 import {complexityAndBadnessMetricLfcScriptGroupSettings} from "../../../../src/scripts/complexityAndBadnessMetricLfc/globals"
 import {computeZoneBadnessGrade} from "../../../../src/scripts/complexityAndBadnessMetricLfc/zoneBadnessGrade"
 

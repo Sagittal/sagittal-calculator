@@ -1,4 +1,4 @@
-import { areScamonsEqual, Comma, computeSuperScamon, formatPitch, isScamonGreater, Monzo } from "../../../general"
+import {areScamonsEqual, Comma, computeSuperScamon, formatPitch, isScamonGreater, Monzo} from "../../../general"
 import {
     computeCommasFrom23FreeRationalMonzo,
     DEFAULT_LOWER_BOUND,
@@ -9,9 +9,9 @@ import {
     MAX_N2D3P9_FOR_WHICH_POSSIBLE_NUMERATORS_ARE_KNOWN,
     MAX_SIZE_CATEGORY_BOUND,
 } from "../../../sagittal"
-import { compute23FreeRationalMonzosToCheckFromKnownLowN2D3P9Numerators } from "./knownNumerators"
-import { compute23FreeRationalMonzosToCheck } from "./two3FreeMonzosToCheck"
-import { CommasOptions } from "./types"
+import {compute23FreeRationalMonzosToCheckFromKnownLowN2D3P9Numerators} from "./knownNumerators"
+import {compute23FreeRationalMonzosToCheck} from "./two3FreeMonzosToCheck"
+import {CommasOptions} from "./types"
 
 const computeCommas = (options: CommasOptions): Comma[] => {
     const {
@@ -52,7 +52,7 @@ const computeCommas = (options: CommasOptions): Comma[] => {
             maxN2D3P9,
         })
 
-    two3FreeRationalMonzosToCheck.forEach((two3FreeRationalMonzoToCheck: Monzo<{ rational: true, rough: 5 }>): void => {
+    two3FreeRationalMonzosToCheck.forEach((two3FreeRationalMonzoToCheck: Monzo<{rational: true, rough: 5}>): void => {
         commas = commas.concat(
             computeCommasFrom23FreeRationalMonzo(
                 two3FreeRationalMonzoToCheck,

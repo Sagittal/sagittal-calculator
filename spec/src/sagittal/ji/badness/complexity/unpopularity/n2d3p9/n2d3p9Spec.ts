@@ -1,6 +1,5 @@
-import {Direction, EMPTY_MONZO, Monzo} from "../../../../../../../../src/general/math"
-import {Two3FreeClass} from "../../../../../../../../src/general/music"
-import {computeN2D3P9, N2D3P9} from "../../../../../../../../src/sagittal/ji/badness/complexity/unpopularity/n2d3p9"
+import {Direction, EMPTY_MONZO, Monzo, Two3FreeClass} from "../../../../../../../../src/general"
+import {computeN2D3P9, N2D3P9} from "../../../../../../../../src/sagittal"
 
 describe("computeN2D3P9", (): void => {
     it("returns an approximate rank of the 2,3-free class's popularity", (): void => {

@@ -1,4 +1,4 @@
-import {KeyPath, Obj, setAt} from "../../../../src/general/code"
+import {KeyPath, Obj, setAt} from "../../../../src/general"
 
 describe("setAt", (): void => {
     it("sets the value on the object at the specified key path", (): void => {

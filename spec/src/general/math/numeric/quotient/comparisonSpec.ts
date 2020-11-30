@@ -1,4 +1,4 @@
-import {areQuotientsEqual, Quotient} from "../../../../../../src/general/math/numeric/quotient"
+import {areQuotientsEqual, Quotient} from "../../../../../../src/general/math"
 
 describe("areQuotientsEqual", (): void => {
     it("returns true when the quotients are equal", (): void => {

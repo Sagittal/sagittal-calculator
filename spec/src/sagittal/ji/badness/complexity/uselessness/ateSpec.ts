@@ -1,5 +1,5 @@
-import {Abs, Decimal, Exponent, Prime, Scamon} from "../../../../../../../src/general/math"
-import {computeAte} from "../../../../../../../src/sagittal/ji/badness"
+import {Abs, Decimal, Exponent, Prime, Scamon} from "../../../../../../../src/general"
+import {computeAte} from "../../../../../../../src/sagittal"
 
 describe("computeAte", (): void => {
     it("returns the ATE (abs 3-exponent) of the JI pitch", (): void => {

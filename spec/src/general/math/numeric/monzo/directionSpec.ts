@@ -6,8 +6,8 @@ import {
     isMonzoSub,
     isMonzoSuper,
     Monzo,
-} from "../../../../../../src/general/math"
-import {isMonzoUnison} from "../../../../../../src/general/math/numeric/monzo"
+} from "../../../../../../src/general"
+import {isMonzoUnison} from "../../../../../../src/general/math"
 
 describe("isMonzoSub", (): void => {
     it("returns false if the monzo is super", (): void => {

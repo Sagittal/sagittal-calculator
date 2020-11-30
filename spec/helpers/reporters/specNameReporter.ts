@@ -1,5 +1,5 @@
 import {CustomReporterResult} from "jasmine-spec-reporter/built/spec-reporter"
-import {LogTarget, saveLog} from "../../../src/general/io/log"
+import {LogTarget, saveLog} from "../../../src/general"
 
 // This is quite handy when the suite starts to hang, so you can identify where the issue is.
 

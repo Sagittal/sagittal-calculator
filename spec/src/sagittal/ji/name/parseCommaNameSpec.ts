@@ -1,5 +1,5 @@
 import {Io} from "../../../../../src/general"
-import {parseCommaName} from "../../../../../src/sagittal/ji/name"
+import {parseCommaName} from "../../../../../src/sagittal"
 import {CommaNameQuotient, SizeCategoryName} from "../../../../../src/sagittal/ji/name/types"
 
 describe("parseCommaName", (): void => {

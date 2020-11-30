@@ -1,6 +1,5 @@
-import {Scamon} from "../../../../../../../src/general/math/numeric/scamon"
-import {ApotomeSlope} from "../../../../../../../src/sagittal"
-import {computeApotomeSlope} from "../../../../../../../src/sagittal/ji/badness"
+import {Scamon} from "../../../../../../../src/general"
+import {ApotomeSlope, computeApotomeSlope} from "../../../../../../../src/sagittal"
 
 describe("computeApotomeSlope", (): void => {
     it("gives the amount that the comma changes by when tempering the apotome", (): void => {

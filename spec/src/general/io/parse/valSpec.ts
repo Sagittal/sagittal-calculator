@@ -1,6 +1,5 @@
-import {Io} from "../../../../../src/general/io"
+import {Io, Val} from "../../../../../src/general"
 import {parseVal} from "../../../../../src/general/io/parse/val"
-import {Val} from "../../../../../src/general/math"
 
 describe("parseVal", (): void => {
     const expected = [3, 4, -5] as Val

@@ -1,5 +1,4 @@
-import {Abs, Sum} from "../../../../../src/general"
-import {Cents} from "../../../../../src/general/music"
+import {Abs, Cents, Sum} from "../../../../../src/general"
 import {BoundEventAnalysis} from "../../../../../src/scripts/jiNotationBoundClass/history"
 import {computeBoundHistoryTotalDistance} from "../../../../../src/scripts/jiNotationBoundClass/history/historyTotalDistance"
 import {boundEventAnalysisFixture} from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"

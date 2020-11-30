@@ -1,6 +1,4 @@
-import {Count, Range, Table} from "../../../../../src/general"
-import {Char, Io} from "../../../../../src/general/io"
-import {Alignment} from "../../../../../src/general/io/table"
+import {Alignment, Char, Count, Io, Range, Table} from "../../../../../src/general"
 import {alignCellIo, computeColumnWidths} from "../../../../../src/general/io/table/alignment"
 
 describe("alignCellIo", (): void => {

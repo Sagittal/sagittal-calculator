@@ -1,6 +1,6 @@
-import {Maybe} from "../../../../../../src/general/code"
-import {Flavor} from "../../../../../../src/sagittal/accidental/flavor"
-import {Ascii, Smiley, Unicode} from "../../../../../../src/sagittal/accidental/glyph"
+import {Maybe} from "../../../../../../src/general"
+import {Ascii, Smiley, Unicode} from "../../../../../../src/sagittal"
+import {Flavor} from "../../../../../../src/sagittal/accidental"
 
 interface GlyphExpectation<T extends Maybe<Flavor> = undefined> {
     ascii: Ascii<T>,

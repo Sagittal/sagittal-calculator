@@ -1,4 +1,4 @@
-import {Direction} from "../../../../../../src/general/math/numeric"
+import {Direction} from "../../../../../../src/general"
 import {Decimal, invertDecimal} from "../../../../../../src/general/math/numeric/decimal"
 import {computeSuperDecimal} from "../../../../../../src/general/math/numeric/decimal/direction"
 

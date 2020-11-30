@@ -1,6 +1,5 @@
 import {Ed, Index, Parameter, Step, Window} from "../../../../../src/general"
-import {Scope} from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
-import {DynamicParameter, SamplePoint} from "../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
+import {DynamicParameter, SamplePoint, Scope} from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {computeNextScope} from "../../../../../src/scripts/popularityMetricLfc/perfecter/nextScope"
 import {PopularityParameterId, Submetric} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 

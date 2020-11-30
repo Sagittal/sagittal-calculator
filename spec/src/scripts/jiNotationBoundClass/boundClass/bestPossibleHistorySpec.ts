@@ -1,6 +1,4 @@
-import {Grade, Sum} from "../../../../../src/general"
-import {Abs} from "../../../../../src/general/math"
-import {Cents} from "../../../../../src/general/music"
+import {Abs, Cents, Grade, Sum} from "../../../../../src/general"
 import {computeBestPossibleBoundHistoryAnalysis} from "../../../../../src/scripts/jiNotationBoundClass/boundClass/bestPossibleHistory"
 import {BoundHistory} from "../../../../../src/scripts/jiNotationBoundClass/histories"
 import {BoundHistoryAnalysis} from "../../../../../src/scripts/jiNotationBoundClass/history"

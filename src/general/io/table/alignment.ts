@@ -8,9 +8,9 @@ import {AlignedCellOptions, Alignment, Row, Table, TableAlignment} from "./types
 const computeColumnAlignments = (tableAlignment: TableAlignment, columnRange: Range): Array<Maybe<Alignment>> =>
     isUndefined(tableAlignment) ?
         columnRange.map((_: number): undefined => undefined) :
-    isString(tableAlignment) ?
-        columnRange.map((_: number): Alignment => tableAlignment) :
-        columnRange.map((index: number): Maybe<Alignment> => tableAlignment[index])
+        isString(tableAlignment) ?
+            columnRange.map((_: number): Alignment => tableAlignment) :
+            columnRange.map((index: number): Maybe<Alignment> => tableAlignment[index])
 
 const computeColumnWidths = <T>(table: Table<T>, columnRange: Range): Array<Count<Char>> =>
     columnRange.map((columnIndex: number): Count<Char> => {

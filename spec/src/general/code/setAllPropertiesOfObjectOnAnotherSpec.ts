@@ -1,4 +1,4 @@
-import {Maybe} from "../../../../src/general/code"
+import {Maybe} from "../../../../src/general"
 import {setAllPropertiesOfObjectOnAnother} from "../../../../src/general/code/setAllPropertiesOfObjectOnAnother"
 
 describe("setAllPropertiesOfObjectOnAnother", (): void => {

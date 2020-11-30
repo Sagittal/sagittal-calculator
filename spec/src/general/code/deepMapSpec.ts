@@ -1,5 +1,4 @@
-import {deepMap, DEFAULT_PRECISION} from "../../../../src/general/code"
-import {round} from "../../../../src/general/math"
+import {deepMap, DEFAULT_PRECISION, round} from "../../../../src/general"
 
 describe("deepMap", (): void => {
     it("calls the function on all leaves of the object and/or array structure", (): void => {

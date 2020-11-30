@@ -1,5 +1,5 @@
 import {Decimal, Rank} from "../../../../../src/general"
-import {BoundType} from "../../../../../src/sagittal/notations/ji"
+import {BoundType} from "../../../../../src/sagittal"
 import {computeBinaryGradeRepresentationIndex} from "../../../../../src/scripts/jiNotationBoundClass/history/binaryGradeRepresentationCardinality"
 import {RANKS} from "../../../../../src/scripts/jiNotationBoundClass/ranks"
 

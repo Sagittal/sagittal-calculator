@@ -1,6 +1,5 @@
-import {Comma} from "../../../../../src/general/music/ji"
-import {CommaClassId} from "../../../../../src/sagittal/notation"
-import {computeMaybeCommaClassId} from "../../../../../src/sagittal/notations/ji"
+import {Comma} from "../../../../../src/general"
+import {CommaClassId, computeMaybeCommaClassId} from "../../../../../src/sagittal"
 
 describe("computeMaybeCommaClassId", (): void => {
     it("if the comma is a primary comma in the Sagittal JI notation, returns the comma class ID of the comma class with that primary comma", (): void => {

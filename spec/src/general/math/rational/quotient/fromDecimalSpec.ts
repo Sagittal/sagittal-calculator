@@ -1,6 +1,5 @@
-import {Decimal} from "../../../../../../src/general/math/numeric/decimal"
-import {Quotient} from "../../../../../../src/general/math/numeric/quotient"
-import {computeRationalQuotientFromRationalDecimal} from "../../../../../../src/general/math/rational/quotient"
+import {Decimal, Quotient} from "../../../../../../src/general"
+import {computeRationalQuotientFromRationalDecimal} from "../../../../../../src/general/math"
 
 describe("computeRationalQuotientFromRationalDecimal", (): void => {
     it("works", (): void => {

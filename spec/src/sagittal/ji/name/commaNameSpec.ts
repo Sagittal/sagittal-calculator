@@ -1,5 +1,5 @@
 import {Comma} from "../../../../../src/general"
-import {computeCommaName, FactoringMode} from "../../../../../src/sagittal/ji/name"
+import {computeCommaName, FactoringMode} from "../../../../../src/sagittal"
 
 describe("computeCommaName", (): void => {
     it("given a comma will return its Secor-Keenan systematic name", (): void => {
@@ -30,7 +30,7 @@ describe("computeCommaName", (): void => {
     })
 
     it("can return the name in factored form, even if it would normally not factor it", (): void => {
-        const comma = {monzo: [-8,	4	,1,	1,-1]} as Comma
+        const comma = {monzo: [-8, 4, 1, 1, -1]} as Comma
 
         const actual = computeCommaName(comma, {factoringMode: FactoringMode.ALWAYS})
 

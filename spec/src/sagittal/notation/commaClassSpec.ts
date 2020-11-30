@@ -17,9 +17,16 @@ import {
     Sopfr,
     Two3FreeClass,
 } from "../../../../src/general"
-import {analyzeComma, CommaAnalysis, CommaClass, CommaClassId, getCommaClass} from "../../../../src/sagittal"
-import {FlaccoId} from "../../../../src/sagittal/accidental/flacco"
-import {ApotomeSlope, N2D3P9} from "../../../../src/sagittal/ji"
+import {
+    analyzeComma,
+    ApotomeSlope,
+    CommaAnalysis,
+    CommaClass,
+    CommaClassId,
+    getCommaClass,
+    N2D3P9,
+} from "../../../../src/sagittal"
+import {FlaccoId} from "../../../../src/sagittal/accidental"
 
 describe("getCommaClass", (): void => {
     it("given a comma class ID, returns the full comma class", (): void => {

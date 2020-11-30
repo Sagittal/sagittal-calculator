@@ -1,5 +1,5 @@
 import {APOTOME, Name} from "../../../../../src/general"
-import {InaMidpoint, JiNotationLevelId} from "../../../../../src/sagittal/notations/ji"
+import {InaMidpoint, JiNotationLevelId} from "../../../../../src/sagittal"
 import {EXTREME_EDA, MEDIUM_EDA} from "../../../../../src/sagittal/notations/ji/levelEdas"
 import {computeInaMidpoints} from "../../../../../src/scripts/jiNotationBoundClass/histories/inaMidpoints"
 import {computePitchExpectation} from "../../../../helpers/src/general/music/pitchExpectation"

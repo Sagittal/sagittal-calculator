@@ -1,7 +1,6 @@
 // tslint:disable max-line-length
 
-import {Count, Io, MERGED_CELL_INDICATOR, NEWLINE, Row, Table} from "../../../../../src/general"
-import {Alignment} from "../../../../../src/general/io/table"
+import {Alignment, Count, Io, MERGED_CELL_INDICATOR, NEWLINE, Row, Table} from "../../../../../src/general"
 import {formatTableForForum} from "../../../../../src/general/io/table/tableForForum"
 
 describe("formatTableForForum", (): void => {

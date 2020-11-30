@@ -1,5 +1,4 @@
-import {Combination, Ed, Parameter, Window} from "../../../../src/general"
-import {computePossibilities} from "../../../../src/general/lfc"
+import {Combination, computePossibilities, Ed, Parameter, Window} from "../../../../src/general"
 import {SubmetricScope} from "../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {SubmetricPossibility} from "../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples/types"
 import {PopularityParameterId} from "../../../../src/scripts/popularityMetricLfc/sumOfSquares"

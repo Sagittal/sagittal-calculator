@@ -1,6 +1,5 @@
 import {Cents, computeCentsFromPitch} from "../../../../../src/general"
-import {CommaClassId} from "../../../../../src/sagittal/notation"
-import {computeSecondaryCommaZone} from "../../../../../src/sagittal/notations/ji"
+import {CommaClassId, computeSecondaryCommaZone} from "../../../../../src/sagittal"
 
 describe("computeSecondaryCommaZone", (): void => {
     it("returns the min and max cents of where secondary commas are represented by the given JI Notation comma class, i.e. its capture zone at its introducing JI notation level", (): void => {

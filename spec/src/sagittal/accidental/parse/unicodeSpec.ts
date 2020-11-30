@@ -1,6 +1,6 @@
+import {Unicode} from "../../../../../src/sagittal"
+import {Compatible} from "../../../../../src/sagittal/accidental"
 import {ArmId, HeadId} from "../../../../../src/sagittal/accidental/flacco"
-import {Compatible} from "../../../../../src/sagittal/accidental/flavor"
-import {Unicode} from "../../../../../src/sagittal/accidental/glyph"
 import {parseUnicode} from "../../../../../src/sagittal/accidental/parse/unicode"
 import {computeAccidental} from "../../../../helpers/src/sagittal/accidental/accidental"
 

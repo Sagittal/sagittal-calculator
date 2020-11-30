@@ -1,7 +1,6 @@
 // tslint:disable max-line-length
 
-import {Parameter} from "../../../../src/general/lfc"
-import {Combination} from "../../../../src/general/math"
+import {Combination, Parameter} from "../../../../src/general"
 import {computeComplexityParameterSets} from "../../../../src/scripts/complexityAndBadnessMetricLfc/parameters"
 import {ComplexityParameterId} from "../../../../src/scripts/complexityAndBadnessMetricLfc/types"
 

@@ -1,6 +1,4 @@
-import {Io} from "../../../../../src/general/io"
-import {parseDecimal} from "../../../../../src/general/io/parse"
-import {Decimal} from "../../../../../src/general/math"
+import {Decimal, Io, parseDecimal} from "../../../../../src/general"
 
 describe("parseDecimal", (): void => {
     it("works when the decimal being parsed has been aligned", (): void => {

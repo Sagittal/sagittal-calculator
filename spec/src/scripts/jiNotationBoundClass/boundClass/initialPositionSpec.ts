@@ -1,8 +1,5 @@
-import {HALF_SCALER} from "../../../../../src/general/math/irrational/scamon"
-import {Monzo} from "../../../../../src/general/math/numeric/monzo"
-import {Scamon} from "../../../../../src/general/math/numeric/scamon"
-import {Cents, computePitchFromCents} from "../../../../../src/general/music"
-import {JiNotationBoundClass, JiNotationLevelId} from "../../../../../src/sagittal/notations/ji"
+import {Cents, computePitchFromCents, HALF_SCALER, Monzo, Scamon} from "../../../../../src/general"
+import {JiNotationBoundClass, JiNotationLevelId} from "../../../../../src/sagittal"
 import {computeInitialPosition} from "../../../../../src/scripts/jiNotationBoundClass/boundClass/initialPosition"
 import {jiNotationBoundClassFixture} from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 

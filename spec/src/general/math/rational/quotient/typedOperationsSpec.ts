@@ -1,4 +1,4 @@
-import {Quotient} from "../../../../../../src/general/math/numeric/quotient"
+import {Quotient} from "../../../../../../src/general"
 import {computeRationalQuotientProduct} from "../../../../../../src/general/math/rational/quotient"
 
 describe("computeRationalQuotientProduct", (): void => {

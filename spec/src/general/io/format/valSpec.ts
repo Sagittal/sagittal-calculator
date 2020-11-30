@@ -1,5 +1,5 @@
-import {formatVal} from "../../../../../src/general/io/format"
-import {Val} from "../../../../../src/general/math/numeric/monzo"
+import {Val} from "../../../../../src/general"
+import {formatVal} from "../../../../../src/general/io"
 
 describe("formatVal", (): void => {
     it("formats it correctly, with enough space that 2-digit negative exponents will line up", (): void => {

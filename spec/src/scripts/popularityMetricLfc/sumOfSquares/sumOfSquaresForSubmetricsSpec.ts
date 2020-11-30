@@ -1,5 +1,4 @@
-import {Parameter} from "../../../../../src/general/lfc"
-import {Combination} from "../../../../../src/general/math"
+import {Combination, Parameter} from "../../../../../src/general"
 import {SumOfSquares} from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {
     computeSumOfSquaresForSubmetrics,

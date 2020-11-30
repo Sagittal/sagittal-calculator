@@ -1,6 +1,4 @@
-import {Scamon} from "../../../../../../src/general/math/numeric/scamon"
-import {Sopfr} from "../../../../../../src/general/math/rational"
-import {computeRationalScamonSopfr} from "../../../../../../src/general/math/rational/scamon"
+import {computeRationalScamonSopfr, Scamon, Sopfr} from "../../../../../../src/general"
 
 describe("computeRationalScamonSopfr", (): void => {
     it("sums the abs values of the prime factors (with repetition) in the monzo", (): void => {

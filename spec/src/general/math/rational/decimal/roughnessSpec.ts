@@ -1,5 +1,5 @@
-import {Decimal} from "../../../../../../src/general/math/numeric/decimal"
-import {Roughness} from "../../../../../../src/general/math/rational"
+import {Decimal} from "../../../../../../src/general"
+import {Roughness} from "../../../../../../src/general/math"
 import {computeRoughIntegerDecimal, isIntegerDecimalRough} from "../../../../../../src/general/math/rational/decimal"
 
 describe("isIntegerDecimalRough", (): void => {

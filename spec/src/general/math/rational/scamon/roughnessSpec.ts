@@ -1,6 +1,5 @@
-import {Scamon} from "../../../../../../src/general/math/numeric/scamon"
-import {Roughness} from "../../../../../../src/general/math/rational"
-import {isRationalScamonRough} from "../../../../../../src/general/math/rational/scamon"
+import {isRationalScamonRough, Scamon} from "../../../../../../src/general"
+import {Roughness} from "../../../../../../src/general/math"
 
 describe("isRationalScamonRough", (): void => {
     it("returns true if the scamon is n-rough (has no prime factors less than the prime min)", (): void => {

@@ -1,1 +1,1 @@
-export { computeMetacommasAndBucketSortAndLogOccams} from "./computeMetacommasAndBucketSortAndLogOccams"
+export {computeMetacommasAndBucketSortAndLogOccams} from "./computeMetacommasAndBucketSortAndLogOccams"

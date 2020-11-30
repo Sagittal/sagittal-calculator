@@ -1,5 +1,4 @@
-import {Combinations, Count} from "../../../../src/general"
-import {computeCombinations} from "../../../../src/general/math"
+import {Combinations, computeCombinations, Count} from "../../../../src/general"
 
 describe("computeCombinations", (): void => {
     const set = ["a", "b", "c", "d"]

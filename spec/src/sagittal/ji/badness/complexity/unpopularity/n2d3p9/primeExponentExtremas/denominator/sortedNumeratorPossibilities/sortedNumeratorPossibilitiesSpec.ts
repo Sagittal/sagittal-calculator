@@ -1,6 +1,5 @@
-import {Of} from "../../../../../../../../../../../src/general"
-import {Decimal, Denominator, Max, Numerator, Prime} from "../../../../../../../../../../../src/general/math"
-import {N2D3P9} from "../../../../../../../../../../../src/sagittal/ji/badness/complexity/unpopularity/n2d3p9"
+import {Decimal, Denominator, Max, Numerator, Of, Prime} from "../../../../../../../../../../../src/general"
+import {N2D3P9} from "../../../../../../../../../../../src/sagittal"
 import {
     computeSortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9,
     N2P,

@@ -5,20 +5,13 @@ import {
     Cents,
     computePitchFromCents,
     Multiplier,
+    multiply,
     Quotient,
     Scamon,
     Sum,
 } from "../../../../../src/general"
-import {multiply} from "../../../../../src/general/math"
 import {IRRATIONAL_SCAMON_BASE_MONZO} from "../../../../../src/general/math/irrational/scamon/constants"
-import {
-    BoundType,
-    Ina,
-    JiNotationBoundClass,
-    JiNotationLevelId,
-    Tinas,
-    TINA_CENTS,
-} from "../../../../../src/sagittal/notations/ji"
+import {BoundType, Ina, JiNotationBoundClass, JiNotationLevelId, Tinas, TINA_CENTS} from "../../../../../src/sagittal"
 import {EXTREME_EDA} from "../../../../../src/sagittal/notations/ji/levelEdas"
 import {computeInitialPosition} from "../../../../../src/scripts/jiNotationBoundClass/boundClass/initialPosition"
 import {BoundHistory} from "../../../../../src/scripts/jiNotationBoundClass/histories"

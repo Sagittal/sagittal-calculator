@@ -1,6 +1,6 @@
 // tslint:disable max-line-length
 
-import {Filename, Io, readLines} from "../../../../../src/general/io"
+import {Filename, Io, readLines} from "../../../../../src/general"
 import {onlyRunInCi} from "../../../../helpers/onlyRunInCi"
 import {runScriptAndGetConsoleOutput} from "../../../../helpers/src/scripts/runScriptAndGetConsoleOutput"
 

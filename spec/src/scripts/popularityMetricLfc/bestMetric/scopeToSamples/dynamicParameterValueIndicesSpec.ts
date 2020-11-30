@@ -1,5 +1,5 @@
 import {Index, Parameter, Step} from "../../../../../../src/general"
-import {DynamicParameter} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
+import {DynamicParameter} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {computeDynamicParameterValueIndices} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples/dynamicParameterValueIndices"
 import {PopularityParameterId, Submetric} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 

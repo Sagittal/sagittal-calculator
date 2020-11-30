@@ -1,12 +1,22 @@
-import {Decimal, Direction, Monzo, Name, Row, ScalaPopularityStat, Two3FreeClass} from "../../../../../../src/general"
-import {Rank, Ranked} from "../../../../../../src/general/code"
-import {Grade} from "../../../../../../src/general/lfc"
+import {
+    Cents,
+    Decimal,
+    Direction,
+    Grade,
+    Monzo,
+    Name,
+    Rank,
+    Ranked,
+    Row,
+    ScalaPopularityStat,
+    Two3FreeClass,
+} from "../../../../../../src/general"
 import {IRRATIONAL_SCAMON_BASE_MONZO} from "../../../../../../src/general/math/irrational/scamon/constants"
-import {Cents} from "../../../../../../src/general/music"
-import {N2D3P9} from "../../../../../../src/sagittal/ji/badness"
-import {CommaClassId} from "../../../../../../src/sagittal/notation"
-import {BestNotatingCommaProperties} from "../../../../../../src/scripts/popular23FreeClass/bestNotatingComma"
-import {computePopular23FreeClassWithBestNotatingCommaRow} from "../../../../../../src/scripts/popular23FreeClass/bestNotatingComma/io"
+import {CommaClassId, N2D3P9} from "../../../../../../src/sagittal"
+import {
+    BestNotatingCommaProperties,
+    computePopular23FreeClassWithBestNotatingCommaRow,
+} from "../../../../../../src/scripts/popular23FreeClass/bestNotatingComma"
 import {Popular23FreeClass} from "../../../../../../src/scripts/popular23FreeClass/types"
 import {two3FreeClassAnalysisFixture} from "../../../../../helpers/src/scripts/jiPitch/fixtures"
 

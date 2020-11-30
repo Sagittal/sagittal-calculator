@@ -1,5 +1,4 @@
-import {Decimal} from "../../../../../../src/general/math/numeric/decimal"
-import {Sopfr} from "../../../../../../src/general/math/rational"
+import {Decimal, Sopfr} from "../../../../../../src/general"
 import {computeRationalDecimalSopfr} from "../../../../../../src/general/math/rational/decimal/sopfr"
 
 describe("computeRationalDecimalSopfr", (): void => {

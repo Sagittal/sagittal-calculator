@@ -1,10 +1,11 @@
 // tslint:disable max-line-length
 
 import * as cp from "child_process"
-import {Io} from "../../../../../src/general/io"
+import {Io} from "../../../../../src/general"
 import {onlyRunInCi} from "../../../../helpers/onlyRunInCi"
 import {
-    OLD_MAX_AAS_FOR_SHORTER_TEST_RESULTS, OLD_MAX_ATE_FOR_SHORTER_TEST_RESULTS,
+    OLD_MAX_AAS_FOR_SHORTER_TEST_RESULTS,
+    OLD_MAX_ATE_FOR_SHORTER_TEST_RESULTS,
     OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS,
 } from "../../../../helpers/src/scripts/jiPitch/constants"
 import {runScriptAndGetConsoleOutput} from "../../../../helpers/src/scripts/runScriptAndGetConsoleOutput"

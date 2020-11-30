@@ -1,5 +1,4 @@
-import {Decimal} from "../../../../../../../../../../../src/general/math/numeric/decimal"
-import {Numerator} from "../../../../../../../../../../../src/general/math/numeric/quotient"
+import {Decimal, Numerator} from "../../../../../../../../../../../src/general"
 import {N2P} from "../../../../../../../../../../../src/sagittal/ji/badness/complexity/unpopularity/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities"
 import {computeN2P} from "../../../../../../../../../../../src/sagittal/ji/badness/complexity/unpopularity/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/n2p"
 

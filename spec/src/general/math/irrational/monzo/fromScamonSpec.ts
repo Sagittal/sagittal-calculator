@@ -1,7 +1,5 @@
+import {Monzo, Quotient, Scamon} from "../../../../../../src/general"
 import {computeIrrationalMonzoFromScamon} from "../../../../../../src/general/math/irrational/monzo"
-import {Monzo} from "../../../../../../src/general/math/numeric/monzo"
-import {Quotient} from "../../../../../../src/general/math/numeric/quotient"
-import {Scamon} from "../../../../../../src/general/math/numeric/scamon"
 
 describe("computeIrrationalMonzoFromScamon", (): void => {
     it("works for a irrational scamon", (): void => {

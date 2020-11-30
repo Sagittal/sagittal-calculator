@@ -1,6 +1,5 @@
 import {Count, Decimal, deepClone, Index, Rank} from "../../../../../src/general"
-import {BoundClass} from "../../../../../src/sagittal/notation"
-import {BoundType} from "../../../../../src/sagittal/notations"
+import {BoundClass, BoundType} from "../../../../../src/sagittal"
 import {updateRankAnalysis} from "../../../../../src/scripts/jiNotationBoundClass/boundClass/ranks"
 import {rankBoundClassIndices, rankCounts} from "../../../../../src/scripts/jiNotationBoundClass/globals"
 import {RANKS} from "../../../../../src/scripts/jiNotationBoundClass/ranks"

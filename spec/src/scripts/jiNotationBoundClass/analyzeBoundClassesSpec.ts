@@ -5,10 +5,10 @@ import {
     JiNotationBoundClass,
     JiNotationLevelId,
     JI_NOTATION_BOUND_CLASSES,
-} from "../../../../src/sagittal/notations"
+} from "../../../../src/sagittal"
 import {analyzeJiNotationBoundClasses} from "../../../../src/scripts/jiNotationBoundClass/analyzeBoundClasses"
 import {JiNotationBoundClassAnalysis} from "../../../../src/scripts/jiNotationBoundClass/boundClass"
-import {BoundEventAnalysis} from "../../../../src/scripts/jiNotationBoundClass/history/events"
+import {BoundEventAnalysis} from "../../../../src/scripts/jiNotationBoundClass/history"
 import {onlyRunInCi} from "../../../helpers/onlyRunInCi"
 
 describe("analyzeJiNotationBoundClasses", (): void => {

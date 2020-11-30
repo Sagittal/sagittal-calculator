@@ -1,5 +1,4 @@
-import {Ed, Name, Parameter, Window} from "../../../../../src/general"
-import {Combination} from "../../../../../src/general/math"
+import {Combination, Ed, Name, Parameter, Window} from "../../../../../src/general"
 import {Metric, Scope, SubmetricScope, SumOfSquares} from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {recursiveSearchScopeAndMaybeUpdateBestMetric} from "../../../../../src/scripts/popularityMetricLfc/perfecter"
 import {perfectMetric} from "../../../../../src/scripts/popularityMetricLfc/perfecter/metric"

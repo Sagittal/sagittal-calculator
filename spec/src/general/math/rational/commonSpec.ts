@@ -1,5 +1,4 @@
-import {Divisor} from "../../../../../src/general/math"
-import {Decimal} from "../../../../../src/general/math/numeric/decimal"
+import {Decimal, Divisor} from "../../../../../src/general"
 import {computeGreatestCommonDivisor} from "../../../../../src/general/math/rational"
 import {computeLeastCommonMultiple} from "../../../../../src/general/math/rational/common"
 

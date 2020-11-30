@@ -1,4 +1,4 @@
-import {Scamon} from "../../../../../src/general/math/numeric/scamon"
+import {Scamon} from "../../../../../src/general"
 import {maxScamon} from "../../../../../src/general/math/numeric/scamon/typedOperations"
 import {HALF_APOTOME, SizeCategoryBound} from "../../../../../src/sagittal"
 import {computeSizeCategoryBoundsUpToHalfApotome} from "../../../../../src/scripts/jiNotationBoundClass/histories/sizeCategoryBounds"

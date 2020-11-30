@@ -1,5 +1,5 @@
-import {Abs, Scamon} from "../../../../../../../src/general/math"
-import {ApotomeSlope, computeAas} from "../../../../../../../src/sagittal/ji/badness"
+import {Abs, Scamon} from "../../../../../../../src/general"
+import {ApotomeSlope, computeAas} from "../../../../../../../src/sagittal"
 
 describe("computeAas", (): void => {
     it("returns the AAS (absolute apotome slope) of the JI pitch", (): void => {

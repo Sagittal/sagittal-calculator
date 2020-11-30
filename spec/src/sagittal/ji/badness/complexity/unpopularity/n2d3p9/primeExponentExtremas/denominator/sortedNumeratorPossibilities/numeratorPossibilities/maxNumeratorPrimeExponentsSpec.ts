@@ -1,9 +1,7 @@
 // tslint:disable max-line-length
 
-import {Decimal, Max, Prime} from "../../../../../../../../../../../../src/general"
-import {Exponent} from "../../../../../../../../../../../../src/general/math"
-import {Numerator} from "../../../../../../../../../../../../src/general/math/numeric/quotient"
-import {N2D3P9} from "../../../../../../../../../../../../src/sagittal/ji/badness/complexity/unpopularity/n2d3p9"
+import {Decimal, Exponent, Max, Numerator, Prime} from "../../../../../../../../../../../../src/general"
+import {N2D3P9} from "../../../../../../../../../../../../src/sagittal"
 import {computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9} from "../../../../../../../../../../../../src/sagittal/ji/badness/complexity/unpopularity/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/numeratorPossibilities/maxNumeratorPrimeExponents"
 
 describe("computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9", (): void => {

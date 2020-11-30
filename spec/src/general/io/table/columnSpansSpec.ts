@@ -1,7 +1,5 @@
-import {Count, MERGED_CELL_INDICATOR} from "../../../../../src/general"
-import {Cell, Row} from "../../../../../src/general/io/table"
+import {Cell, Count, MERGED_CELL_INDICATOR, Row, sum} from "../../../../../src/general"
 import {computeColumnSpans} from "../../../../../src/general/io/table/columnSpans"
-import {sum} from "../../../../../src/general/math"
 
 describe("computeColumnSpans", (): void => {
     const row = [

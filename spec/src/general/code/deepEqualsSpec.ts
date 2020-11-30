@@ -1,4 +1,4 @@
-import {deepEquals, DEFAULT_PRECISION} from "../../../../src/general/code"
+import {deepEquals, DEFAULT_PRECISION} from "../../../../src/general"
 
 describe("deepEquals", (): void => {
     it("returns true if two arrays are equal", (): void => {

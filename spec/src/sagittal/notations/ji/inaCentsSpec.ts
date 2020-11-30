@@ -1,5 +1,5 @@
-import {Cents} from "../../../../../src/general/music"
-import {computeCentsFromTinas, Minas, Tinas} from "../../../../../src/sagittal/notations/ji"
+import {Cents} from "../../../../../src/general"
+import {computeCentsFromTinas, Minas, Tinas} from "../../../../../src/sagittal"
 import {
     computeCentsFromHighinas,
     computeCentsFromMedinas,

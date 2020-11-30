@@ -1,4 +1,4 @@
-import {Maybe} from "../../../../../../src/general/code"
+import {Maybe} from "../../../../../../src/general"
 import {Compatible, computeCoreUnicode} from "../../../../../../src/sagittal/accidental"
 import {AccentId, HeadId} from "../../../../../../src/sagittal/accidental/flacco"
 import {

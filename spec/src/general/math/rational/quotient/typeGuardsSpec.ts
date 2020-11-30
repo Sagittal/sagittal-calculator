@@ -1,4 +1,4 @@
-import {Quotient} from "../../../../../../src/general/math/numeric/quotient"
+import {Quotient} from "../../../../../../src/general"
 import {isQuotientInteger, isQuotientRational} from "../../../../../../src/general/math/rational/quotient/typeGuards"
 
 describe("isQuotientInteger", (): void => {

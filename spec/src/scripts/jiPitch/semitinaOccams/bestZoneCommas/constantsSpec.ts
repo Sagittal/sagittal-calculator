@@ -1,4 +1,4 @@
-import {Scamon} from "../../../../../../src/general/math/numeric/scamon"
+import {Scamon} from "../../../../../../src/general"
 import {MAX_SIZE_PER_SEMITINA_ZONE} from "../../../../../../src/scripts/jiPitch/semitinaOccams/bestZoneCommas/constants"
 
 describe("MAX_SIZE_PER_SEMITINA_ZONE", (): void => {

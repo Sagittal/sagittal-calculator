@@ -1,5 +1,5 @@
+import {computeRationalMonzoSmoothness} from "../../../../../../src/general"
 import {isRationalMonzoSmooth, Monzo, Smoothness, THREE_SMOOTHNESS} from "../../../../../../src/general/math"
-import {computeRationalMonzoSmoothness} from "../../../../../../src/general/math/rational/monzo"
 
 describe("isRationalMonzoSmooth", (): void => {
     it("returns true if the monzo is smooth to the requested smoothness", (): void => {

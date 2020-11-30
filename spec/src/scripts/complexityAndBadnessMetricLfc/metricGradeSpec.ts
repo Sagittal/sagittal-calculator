@@ -1,7 +1,7 @@
 // tslint:disable max-line-length
 
-import {Comma} from "../../../../src/general/music/ji"
-import {CommaClassId} from "../../../../src/sagittal/notation"
+import {Comma} from "../../../../src/general"
+import {CommaClassId} from "../../../../src/sagittal"
 import {complexityAndBadnessMetricLfcScriptGroupSettings} from "../../../../src/scripts/complexityAndBadnessMetricLfc/globals"
 import {computeMetricGradeForMetricAndParameterSet} from "../../../../src/scripts/complexityAndBadnessMetricLfc/metricGrade"
 import {COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS} from "../../../../src/scripts/complexityAndBadnessMetricLfc/metrics"

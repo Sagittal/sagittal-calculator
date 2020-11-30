@@ -1,5 +1,4 @@
-import {Decimal} from "../../../../../../src/general/math/numeric/decimal"
-import {computeRationalDecimalCopf} from "../../../../../../src/general/math/rational"
+import {computeRationalDecimalCopf, Decimal} from "../../../../../../src/general"
 import {Copf} from "../../../../../../src/general/math/rational/types"
 
 describe("computeRationalDecimalCopf", (): void => {

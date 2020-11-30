@@ -1,5 +1,4 @@
-import {computePlusOrMinusRange} from "../../../../src/general/code"
-import {Decimal} from "../../../../src/general/math/numeric/decimal"
+import {computePlusOrMinusRange, Decimal} from "../../../../src/general"
 
 describe("computePlusOrMinusRange", (): void => {
     it("given an integer decimal, returns a range of integer decimals from its negation to itself, inclusive            ", (): void => {

@@ -1,6 +1,10 @@
-import {Combination} from "../../../../../src/general/math"
-import {SumOfSquares, SumsOfSquares} from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
-import {Sample, SamplePoint} from "../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
+import {Combination} from "../../../../../src/general"
+import {
+    Sample,
+    SamplePoint,
+    SumOfSquares,
+    SumsOfSquares,
+} from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {computeLocalMinima} from "../../../../../src/scripts/popularityMetricLfc/perfecter/localMinima"
 import {LocalMin} from "../../../../../src/scripts/popularityMetricLfc/perfecter/types"
 import {Submetric} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"

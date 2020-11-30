@@ -1,12 +1,12 @@
 import {
     alignFormattedDecimal,
+    Decimal,
     formatDecimal,
     formatIntegerDecimal,
     Formatted,
     ioSettings,
     TableFormat,
-} from "../../../../../src/general/io"
-import {Decimal} from "../../../../../src/general/math/numeric/decimal"
+} from "../../../../../src/general"
 
 describe("alignFormattedDecimal", (): void => {
     it("shifts over numbers so that the decimal places align", (): void => {

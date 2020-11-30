@@ -1,6 +1,10 @@
 import {Combination, Name, Parameter} from "../../../../../src/general"
-import {Metric, SumOfSquares, SumsOfSquares} from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
-import {SamplePoint} from "../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
+import {
+    Metric,
+    SamplePoint,
+    SumOfSquares,
+    SumsOfSquares,
+} from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {computeSumsOfSquaresAndMaybeUpdateBestMetric} from "../../../../../src/scripts/popularityMetricLfc/bestMetric/sumsOfSquares"
 import {bestMetrics} from "../../../../../src/scripts/popularityMetricLfc/globals"
 import {PopularityParameterId, Submetric} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"

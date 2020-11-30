@@ -14,8 +14,7 @@ import {
     Sopfr,
     Two3FreeClass,
 } from "../../../../../src/general"
-import {ApotomeSlope, N2D3P9} from "../../../../../src/sagittal"
-import {analyzeJiPitch} from "../../../../../src/sagittal/ji"
+import {analyzeJiPitch, ApotomeSlope, N2D3P9} from "../../../../../src/sagittal"
 
 describe("analyzeJiPitch", (): void => {
     it("returns an analysis of a JI pitch, given its monzo", (): void => {

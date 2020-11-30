@@ -1,4 +1,4 @@
-import {Scamon} from "../../../../../../src/general/math/numeric/scamon"
+import {Scamon} from "../../../../../../src/general"
 import {computeSecorComplexity} from "../../../../../../src/sagittal/ji/badness/complexity/secor"
 import {SecorComplexity} from "../../../../../../src/sagittal/ji/badness/complexity/types"
 

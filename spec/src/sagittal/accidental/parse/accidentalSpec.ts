@@ -1,7 +1,7 @@
-import {Io} from "../../../../../src/general/io"
-import {parseAccidental} from "../../../../../src/sagittal/accidental"
+import {Io} from "../../../../../src/general"
+import {parseAccidental} from "../../../../../src/sagittal"
+import {Compatible} from "../../../../../src/sagittal/accidental"
 import {ArmId, HeadId} from "../../../../../src/sagittal/accidental/flacco"
-import {Compatible} from "../../../../../src/sagittal/accidental/flavor"
 import {Shafts} from "../../../../../src/sagittal/accidental/sagittal"
 import {computeAccidental} from "../../../../helpers/src/sagittal/accidental/accidental"
 

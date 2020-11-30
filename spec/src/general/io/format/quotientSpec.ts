@@ -1,5 +1,4 @@
-import {Formatted, ioSettings, Quotient, TableFormat, Two3FreeClass} from "../../../../../src/general"
-import {formatQuotient} from "../../../../../src/general/io"
+import {formatQuotient, Formatted, ioSettings, Quotient, TableFormat, Two3FreeClass} from "../../../../../src/general"
 
 describe("formatQuotient", (): void => {
     it("it shows it with a slash", (): void => {

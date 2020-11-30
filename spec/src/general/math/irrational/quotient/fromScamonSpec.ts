@@ -1,7 +1,6 @@
+import {Quotient, Scamon} from "../../../../../../src/general"
 import {computeIrrationalQuotientFromScamon} from "../../../../../../src/general/math/irrational/quotient"
 import {IRRATIONAL_SCAMON_BASE_MONZO} from "../../../../../../src/general/math/irrational/scamon/constants"
-import {Quotient} from "../../../../../../src/general/math/numeric/quotient"
-import {Scamon} from "../../../../../../src/general/math/numeric/scamon"
 
 describe("computeIrrationalQuotientFromScamon", (): void => {
     it("returns a dumb irrational quotient, essentially the same irrational decimal you would have gotten, but over 1            ", (): void => {

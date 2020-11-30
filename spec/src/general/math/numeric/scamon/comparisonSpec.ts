@@ -1,13 +1,13 @@
-import {Monzo} from "../../../../../../src/general/math/numeric/monzo"
-import {Quotient} from "../../../../../../src/general/math/numeric/quotient"
 import {
     areScamonsEqual,
     isScamonGreater,
     isScamonGreaterOrEqual,
     isScamonLesser,
     isScamonLesserOrEqual,
+    Monzo,
+    Quotient,
     Scamon,
-} from "../../../../../../src/general/math/numeric/scamon"
+} from "../../../../../../src/general"
 
 describe("areScamonsEqual", (): void => {
     describe("for rational scamons", (): void => {

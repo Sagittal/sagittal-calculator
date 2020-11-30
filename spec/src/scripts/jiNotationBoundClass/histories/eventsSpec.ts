@@ -1,6 +1,5 @@
 import {APOTOME, Cents, computePitchFromCents, HALF_SCALER, Monzo, Name, Scamon} from "../../../../../src/general"
-import {JiNotationBound} from "../../../../../src/sagittal"
-import {BoundType, JiNotationLevelId} from "../../../../../src/sagittal/notations"
+import {BoundType, JiNotationBound, JiNotationLevelId} from "../../../../../src/sagittal"
 import {HIGH_EDA, ULTRA_EDA} from "../../../../../src/sagittal/notations/ji/levelEdas"
 import {
     BoundedCommaClassPositions,

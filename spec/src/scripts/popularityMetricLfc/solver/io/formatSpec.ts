@@ -1,6 +1,4 @@
-import {Name, NEWLINE} from "../../../../../../src/general"
-import {Io} from "../../../../../../src/general/io"
-import {Combination} from "../../../../../../src/general/math"
+import {Combination, Io, Name, NEWLINE} from "../../../../../../src/general"
 import {Metric, SumOfSquares} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {bestMetrics} from "../../../../../../src/scripts/popularityMetricLfc/globals"
 import {formatBestMetrics} from "../../../../../../src/scripts/popularityMetricLfc/solver"

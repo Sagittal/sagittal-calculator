@@ -1,6 +1,5 @@
-import {Formatted, ioSettings, TableFormat} from "../../../../../../src/general/io"
-import {Two3FreeClass} from "../../../../../../src/general/music/ji/two3FreeClass"
-import {Two3FreeClassAnalysis} from "../../../../../../src/sagittal/ji/analyze"
+import {Formatted, ioSettings, TableFormat, Two3FreeClass} from "../../../../../../src/general"
+import {Two3FreeClassAnalysis} from "../../../../../../src/sagittal"
 import {formatSplit23FreeClass} from "../../../../../../src/scripts/jiPitch/io/splitMonzoAndQuotient"
 
 describe("formatSplit23FreeClass", (): void => {

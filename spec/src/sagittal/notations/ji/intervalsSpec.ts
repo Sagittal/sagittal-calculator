@@ -1,4 +1,4 @@
-import {JiNotationLevelId} from "../../../../../src/sagittal/notations/ji"
+import {JiNotationLevelId} from "../../../../../src/sagittal"
 import {
     HIGHINA_CENTS,
     INA_CENTS_SIZES,

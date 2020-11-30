@@ -1,5 +1,4 @@
-import {Decimal} from "../../../../../../src/general/math/numeric/decimal"
-import {computeRationalDecimalCopfr, Copfr} from "../../../../../../src/general/math/rational"
+import {computeRationalDecimalCopfr, Copfr, Decimal} from "../../../../../../src/general"
 
 describe("computeRationalDecimalCopfr", (): void => {
     it("returns the count of prime factors with repetition", (): void => {

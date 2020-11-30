@@ -1,5 +1,5 @@
 import {Decimal, Exponent, Max, Numerator, Of, Prime} from "../../../../../../../../../src/general"
-import {N2D3P9} from "../../../../../../../../../src/sagittal/ji/badness/complexity/unpopularity/n2d3p9"
+import {N2D3P9} from "../../../../../../../../../src/sagittal"
 import {computeMaxNumeratorPrimeExponentGivenMaxN2D3P9} from "../../../../../../../../../src/sagittal/ji/badness/complexity/unpopularity/n2d3p9/primeExponentExtremas/maxNumeratorPrimeExponent"
 
 describe("computeMaxNumeratorPrimeExponentGivenMaxN2D3P9", (): void => {

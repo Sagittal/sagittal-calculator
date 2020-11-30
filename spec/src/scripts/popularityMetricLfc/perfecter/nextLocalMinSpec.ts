@@ -1,8 +1,12 @@
-import {BLANK, Decimal, Index, Ms, Name, Parameter, Step} from "../../../../../src/general"
+import {BLANK, Combination, Decimal, Index, Ms, Name, Parameter, Step} from "../../../../../src/general"
 import * as doOnNextEventLoop from "../../../../../src/general/code/doOnNextEventLoop"
-import {Combination} from "../../../../../src/general/math"
-import {Metric, Scope, SumOfSquares} from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
-import {DynamicParameter, SamplePoint} from "../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
+import {
+    DynamicParameter,
+    Metric,
+    SamplePoint,
+    Scope,
+    SumOfSquares,
+} from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {metricNames} from "../../../../../src/scripts/popularityMetricLfc/globals"
 import {searchNextLocalMin} from "../../../../../src/scripts/popularityMetricLfc/perfecter/nextLocalMin"
 import * as recursiveBestMetric from "../../../../../src/scripts/popularityMetricLfc/perfecter/perfectMetric"

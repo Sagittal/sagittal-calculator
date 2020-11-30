@@ -1,7 +1,15 @@
-import {Decimal, Index, Numerator, Of} from "../../../../../../../../../../../../../src/general"
-import {increment} from "../../../../../../../../../../../../../src/general/code"
-import {Exponent, Max, Prime, PRIMES} from "../../../../../../../../../../../../../src/general/math"
-import {N2D3P9} from "../../../../../../../../../../../../../src/sagittal/ji/badness/complexity/unpopularity/n2d3p9"
+import {
+    Decimal,
+    Exponent,
+    increment,
+    Index,
+    Max,
+    Numerator,
+    Of,
+    Prime,
+    PRIMES,
+} from "../../../../../../../../../../../../../src/general"
+import {N2D3P9} from "../../../../../../../../../../../../../src/sagittal"
 
 describe("breaking points of max N2D3P9 per numerator prime", (): void => {
     const expected: Array<Array<Max<N2D3P9>>> = [

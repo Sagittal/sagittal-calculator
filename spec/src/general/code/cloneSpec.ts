@@ -1,4 +1,4 @@
-import {deepClone} from "../../../../src/general/code"
+import {deepClone} from "../../../../src/general"
 
 describe("deepClone", (): void => {
     it("returns a clone of the object which when changed will not change the source object", (): void => {

@@ -1,5 +1,5 @@
 import {Decimal, Denominator, Exponent, Max, Min, Numerator, Of, Prime} from "../../../../../../../../../../src/general"
-import {N2D3P9} from "../../../../../../../../../../src/sagittal/ji/badness/complexity/unpopularity/n2d3p9"
+import {N2D3P9} from "../../../../../../../../../../src/sagittal"
 import {
     computeMaxDenominatorPrimeExponentGivenMaxN2D3P9,
     NumeratorPossibilityForDenominatorGivenMaxN2D3P9,

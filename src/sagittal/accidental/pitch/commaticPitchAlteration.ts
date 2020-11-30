@@ -2,7 +2,7 @@ import {invertScamon, Scamon} from "../../../general"
 import {getCommaClass, getSymbolClass, Section, SymbolClassId} from "../../notation"
 
 const computeCommaticPitchAlterationFromSymbolClassIdAndSection = (
-    [symbolClassId, section]: [SymbolClassId, Section]
+    [symbolClassId, section]: [SymbolClassId, Section],
 ): Scamon<{rational: true}> => {
     const symbolClass = getSymbolClass(symbolClassId)
     const commaClass = getCommaClass(symbolClass.commaClassId)

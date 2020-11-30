@@ -1,5 +1,5 @@
 import {Basis, Cents, Multiplier, Px} from "../../../../../../src/general"
-import {JiNotationLevelId} from "../../../../../../src/sagittal/notations/ji"
+import {JiNotationLevelId} from "../../../../../../src/sagittal"
 import {computeJiNotationLevelHeights} from "../../../../../../src/scripts/jiNotationBoundClass/io/image/levelHeights"
 
 describe("computeJiNotationLevelHeights", (): void => {

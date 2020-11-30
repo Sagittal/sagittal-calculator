@@ -1,6 +1,4 @@
-import {Quotient} from "../../../../../../src/general/math/numeric/quotient"
-import {Scamon} from "../../../../../../src/general/math/numeric/scamon"
-import {computeRationalQuotientFromRationalScamon} from "../../../../../../src/general/math/rational/quotient"
+import {computeRationalQuotientFromRationalScamon, Quotient, Scamon} from "../../../../../../src/general"
 
 describe("computeRationalQuotientFromRationalScamon", (): void => {
     it("given a rational scamon, returns a rational quotient", (): void => {

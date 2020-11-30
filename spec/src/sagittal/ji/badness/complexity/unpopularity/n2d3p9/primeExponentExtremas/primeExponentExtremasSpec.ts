@@ -1,6 +1,5 @@
 import {Decimal, Exponent, Extrema, Max, Prime} from "../../../../../../../../../src/general"
-import {N2D3P9} from "../../../../../../../../../src/sagittal/ji/badness/complexity/unpopularity/n2d3p9"
-import {computePrimeExponentExtremasGivenMaxN2D3P9} from "../../../../../../../../../src/sagittal/ji/badness/complexity/unpopularity/n2d3p9/primeExponentExtremas"
+import {computePrimeExponentExtremasGivenMaxN2D3P9, N2D3P9} from "../../../../../../../../../src/sagittal"
 import {onlyRunInCi} from "../../../../../../../../helpers/onlyRunInCi"
 
 describe("computePrimeExponentExtremasGivenMaxN2D3P9", (): void => {

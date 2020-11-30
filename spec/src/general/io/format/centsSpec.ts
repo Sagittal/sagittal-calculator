@@ -1,6 +1,4 @@
-import {ioSettings, TableFormat} from "../../../../../src/general/io"
-import {formatCents, Formatted} from "../../../../../src/general/io/format"
-import {Cents} from "../../../../../src/general/music"
+import {Cents, formatCents, Formatted, ioSettings, TableFormat} from "../../../../../src/general"
 
 describe("formatCents", (): void => {
     const cents = 884.358713 as Cents

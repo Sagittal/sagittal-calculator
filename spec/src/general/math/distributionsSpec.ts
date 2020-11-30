@@ -1,5 +1,4 @@
-import {Count} from "../../../../src/general"
-import {computeDistributions, Distribution, DistributionBin} from "../../../../src/general/math"
+import {computeDistributions, Count, Distribution, DistributionBin} from "../../../../src/general"
 
 describe("computeDistributions", (): void => {
     it("given an array and a count of bins, will return all the possible ways of distributing the elements across the bins", (): void => {

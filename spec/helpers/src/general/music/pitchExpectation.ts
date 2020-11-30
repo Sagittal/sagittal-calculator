@@ -1,6 +1,10 @@
-import {computeIrrationalDecimalFromScamon, NumericProperties, Scamon} from "../../../../../src/general/math"
+import {
+    computeCentsFromPitch,
+    computeIrrationalDecimalFromScamon,
+    NumericProperties,
+    Scamon,
+} from "../../../../../src/general"
 import {computeIrrationalMonzoFromScamon} from "../../../../../src/general/math/irrational/monzo"
-import {computeCentsFromPitch} from "../../../../../src/general/music"
 import {PitchExpectation} from "./types"
 
 const computePitchExpectation = <T extends NumericProperties>(pitch: Scamon<T>): PitchExpectation<T> =>

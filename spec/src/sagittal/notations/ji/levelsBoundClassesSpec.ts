@@ -1,9 +1,9 @@
-import {BoundClassId} from "../../../../../src/sagittal/notation"
 import {
+    BoundClassId,
     JiNotationLevelId,
     JI_NOTATION_LEVELS_BOUND_CLASSES,
     JI_NOTATION_LEVELS_COMMA_CLASS_IDS,
-} from "../../../../../src/sagittal/notations"
+} from "../../../../../src/sagittal"
 import {getJiNotationBoundClass} from "../../../../../src/sagittal/notations/ji/boundClasses"
 
 describe("JI_NOTATION_LEVELS_BOUND_CLASSES", (): void => {

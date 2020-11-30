@@ -1,5 +1,4 @@
-import {Parameter} from "../../../../src/general/lfc"
-import {Comma} from "../../../../src/general/music/ji"
+import {Comma, Parameter} from "../../../../src/general"
 import {COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS} from "../../../../src/scripts/complexityAndBadnessMetricLfc/metrics"
 import {ComplexityMetricFamilyId} from "../../../../src/scripts/complexityAndBadnessMetricLfc/types"
 

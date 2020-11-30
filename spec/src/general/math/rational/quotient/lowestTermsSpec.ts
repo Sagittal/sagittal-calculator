@@ -1,5 +1,4 @@
-import {Quotient} from "../../../../../../src/general/math/numeric/quotient"
-import {computeLowestTermsRationalQuotient, isLowestTerms} from "../../../../../../src/general/math/rational/quotient"
+import {computeLowestTermsRationalQuotient, isLowestTerms, Quotient} from "../../../../../../src/general"
 
 describe("computeLowestTermsRationalQuotient", (): void => {
     it("returns the rational quotient in lowest terms", (): void => {

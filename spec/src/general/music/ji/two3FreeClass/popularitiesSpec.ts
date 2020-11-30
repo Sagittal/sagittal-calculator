@@ -1,5 +1,11 @@
-import {KeyPath, rank, Ranked, RankStrategy, ScalaPopularityStat} from "../../../../../../src/general"
-import {COMMA_POPULARITIES} from "../../../../../../src/general/music"
+import {
+    COMMA_POPULARITIES,
+    KeyPath,
+    rank,
+    Ranked,
+    RankStrategy,
+    ScalaPopularityStat,
+} from "../../../../../../src/general"
 import {onlyRunInCi} from "../../../../../helpers/onlyRunInCi"
 
 describe("COMMA_POPULARITIES", (): void => {

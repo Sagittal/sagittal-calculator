@@ -1,4 +1,4 @@
-import {computeDeepDistinct} from "../../../../src/general/code"
+import {computeDeepDistinct} from "../../../../src/general"
 
 describe("computeDeepDistinct", (): void => {
     it("removes duplicate objects from the array", (): void => {

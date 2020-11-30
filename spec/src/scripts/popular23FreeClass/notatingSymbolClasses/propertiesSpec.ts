@@ -1,5 +1,5 @@
 import {Index, Two3FreeClass} from "../../../../../src/general"
-import {SymbolClassId, SymbolSubsetId} from "../../../../../src/sagittal/notation"
+import {SymbolClassId, SymbolSubsetId} from "../../../../../src/sagittal"
 import {
     computeNotatingSymbolClassesProperties,
     NotatingSymbolClassesProperties,

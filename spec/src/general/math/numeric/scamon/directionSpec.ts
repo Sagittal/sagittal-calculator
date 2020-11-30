@@ -1,7 +1,5 @@
+import {computeSuperScamon, Direction, EMPTY_MONZO, Monzo, Quotient} from "../../../../../../src/general"
 import {IRRATIONAL_SCAMON_BASE_MONZO} from "../../../../../../src/general/math/irrational/scamon/constants"
-import {computeSuperScamon, Direction, EMPTY_MONZO} from "../../../../../../src/general/math/numeric"
-import {Monzo} from "../../../../../../src/general/math/numeric/monzo"
-import {Quotient} from "../../../../../../src/general/math/numeric/quotient"
 import {isScamonSub, isScamonSuper, isScamonUnison, Scamon} from "../../../../../../src/general/math/numeric/scamon"
 
 describe("isScamonSub", (): void => {

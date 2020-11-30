@@ -1,5 +1,4 @@
-import {computeRange} from "../../../../src/general/code"
-import {Decimal} from "../../../../src/general/math/numeric/decimal"
+import {computeRange, Decimal} from "../../../../src/general"
 
 describe("computeRange", (): void => {
     it("when given a single integer decimal, gives the set of integer decimals from 0 to itself, excluding itself               ", (): void => {

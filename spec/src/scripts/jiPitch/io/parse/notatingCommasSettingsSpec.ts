@@ -1,8 +1,7 @@
-import {Abs, Decimal, Exponent, Max, Monzo, Prime, Scamon} from "../../../../../../src/general/math"
-import {JiPitchAnalysis} from "../../../../../../src/sagittal/ji/analyze"
-import {ApotomeSlope, N2D3P9} from "../../../../../../src/sagittal/ji/badness"
+import {Abs, Decimal, Exponent, Max, Monzo, Prime, Scamon} from "../../../../../../src/general"
+import {ApotomeSlope, JiPitchAnalysis, N2D3P9} from "../../../../../../src/sagittal"
 import {DEFAULT_FIND_COMMAS_SETTINGS} from "../../../../../../src/scripts/jiPitch/findCommas"
-import {parseNotatingCommasSettings} from "../../../../../../src/scripts/jiPitch/io/parse"
+import {parseNotatingCommasSettings} from "../../../../../../src/scripts/jiPitch/io"
 import {jiPitchAnalysisFixture, two3FreeClassAnalysisFixture} from "../../../../../helpers/src/scripts/jiPitch/fixtures"
 
 describe("parseNotatingCommasSettings", (): void => {

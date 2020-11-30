@@ -1,5 +1,4 @@
-import {SumOfSquares, SumsOfSquares} from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
-import {SamplePoint} from "../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
+import {SamplePoint, SumOfSquares, SumsOfSquares} from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {setSumOfSquaresAtSamplePoint} from "../../../../../src/scripts/popularityMetricLfc/bestMetric/setSumOfSquaresAtSamplePoint"
 import {getSumOfSquaresAtSamplePointIfLocalMin} from "../../../../../src/scripts/popularityMetricLfc/perfecter/localMin"
 

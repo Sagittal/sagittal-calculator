@@ -1,4 +1,4 @@
-import {Flavor} from "../../../../../../src/sagittal/accidental/flavor"
+import {Flavor} from "../../../../../../src/sagittal/accidental"
 import {GlyphExpectation} from "../glyph/types"
 
 interface FlavorsExpectation {

@@ -1,4 +1,4 @@
-import {Io} from "../../../../../../src/general/io"
+import {Io} from "../../../../../../src/general"
 import {parseFields} from "../../../../../../src/scripts/jiPitch/scripts/shared/fields"
 import {JiPitchField, NotatingCommasField} from "../../../../../../src/scripts/jiPitch/types"
 

@@ -1,4 +1,4 @@
-import {Scamon} from "../../../../../src/general/math/numeric/scamon"
+import {Scamon} from "../../../../../src/general"
 import {isCommaSized} from "../../../../../src/sagittal/ji/name/typeGuards"
 
 describe("isCommaSized", (): void => {

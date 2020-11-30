@@ -1,7 +1,6 @@
 // tslint:disable max-line-length
 
-import {ColorMethod, Count, Io, NEWLINE, Row, Table} from "../../../../../src/general"
-import {Alignment} from "../../../../../src/general/io/table"
+import {Alignment, ColorMethod, Count, Io, NEWLINE, Row, Table} from "../../../../../src/general"
 import {formatTableForTerminal} from "../../../../../src/general/io/table/tableForTerminal"
 
 describe("formatTableForTerminal", (): void => {

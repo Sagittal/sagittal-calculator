@@ -1,7 +1,13 @@
+import {
+    APOTOME,
+    Cents,
+    computeCentsFromPitch,
+    computePitchFromCents,
+    Decimal,
+    dividePitch,
+    Scamon,
+} from "../../../../src/general"
 import {IRRATIONAL_SCAMON_BASE_MONZO} from "../../../../src/general/math/irrational/scamon/constants"
-import {Decimal} from "../../../../src/general/math/numeric/decimal"
-import {Scamon} from "../../../../src/general/math/numeric/scamon"
-import {APOTOME, Cents, computeCentsFromPitch, computePitchFromCents, dividePitch} from "../../../../src/general/music"
 import {HALF_APOTOME} from "../../../../src/sagittal"
 
 describe("dividePitch", (): void => {

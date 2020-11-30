@@ -1,5 +1,4 @@
-import {computeDecimalFromMonzo, Decimal} from "../../../../../../src/general/math"
-import {Monzo} from "../../../../../../src/general/math/numeric/monzo"
+import {computeDecimalFromMonzo, Decimal, Monzo} from "../../../../../../src/general"
 
 describe("computeDecimalFromMonzo", (): void => {
     it("returns the decimal representation of the monzo", (): void => {

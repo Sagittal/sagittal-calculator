@@ -1,6 +1,4 @@
-import {Decimal, Max, Min, Of, Prime} from "../../../../../../../../../../src/general"
-import {Denominator, Exponent} from "../../../../../../../../../../src/general/math"
-import {Numerator} from "../../../../../../../../../../src/general/math/numeric/quotient"
+import {Decimal, Denominator, Exponent, Max, Min, Numerator, Of, Prime} from "../../../../../../../../../../src/general"
 import {computeMinN2PForPossibleMaxDenominatorPrimeExponentGivenMaxN2D3P9} from "../../../../../../../../../../src/sagittal/ji/badness/complexity/unpopularity/n2d3p9/primeExponentExtremas/denominator/minN2P"
 import {
     N2,

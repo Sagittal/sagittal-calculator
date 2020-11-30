@@ -1,5 +1,4 @@
-import {Io, NEWLINE} from "../../../../../src/general/io"
-import {Table} from "../../../../../src/general/io/table"
+import {Io, NEWLINE, Table} from "../../../../../src/general"
 import {formatTableForSpreadsheet} from "../../../../../src/general/io/table/tableForSpreadsheet"
 
 describe("formatTableForSpreadsheet", (): void => {

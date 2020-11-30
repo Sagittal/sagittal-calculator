@@ -1,5 +1,4 @@
-import {Scamon} from "../../../../../../src/general/math/numeric/scamon"
-import {compute23FreeClass, Two3FreeClass} from "../../../../../../src/general/music/ji/two3FreeClass"
+import {compute23FreeClass, Scamon, Two3FreeClass} from "../../../../../../src/general"
 
 describe("compute23FreeClass", (): void => {
     it("returns the 2,3-free, THEN super taken (n ≥ d) version of the pitch, branded", (): void => {

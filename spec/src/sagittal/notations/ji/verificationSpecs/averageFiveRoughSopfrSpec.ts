@@ -1,5 +1,4 @@
-import {compute23FreeClass, computeRationalScamonSopfr} from "../../../../../../src/general"
-import {Mean, MeanType, Sopfr} from "../../../../../../src/general/math"
+import {compute23FreeClass, computeRationalScamonSopfr, Mean, MeanType, Sopfr} from "../../../../../../src/general"
 import {computeArithmeticMean} from "../../../../../../src/general/math/numeric/decimal/typedOperations"
 import {CommaClassId, getCommaClass, JI_NOTATION} from "../../../../../../src/sagittal"
 

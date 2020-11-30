@@ -11,7 +11,7 @@ import {
     stringify,
     time,
 } from "../../../general"
-import { CommaAnalysis, MAX_N2D3P9_FOR_WHICH_POSSIBLE_NUMERATORS_ARE_KNOWN } from "../../../sagittal"
+import {CommaAnalysis, MAX_N2D3P9_FOR_WHICH_POSSIBLE_NUMERATORS_ARE_KNOWN} from "../../../sagittal"
 import {computeCommas, computeFindCommasSettings, FindCommasSettings} from "../findCommas"
 import {jiPitchScriptGroupSettings} from "../globals"
 import {

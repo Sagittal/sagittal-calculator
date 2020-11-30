@@ -1,4 +1,4 @@
-import {Decimal} from "../../../../../../src/general/math/numeric/decimal"
+import {Decimal} from "../../../../../../src/general"
 import {computeRationalDecimalSopf} from "../../../../../../src/general/math/rational/decimal/sopf"
 import {Sopf} from "../../../../../../src/general/math/rational/types"
 

@@ -7,10 +7,10 @@ import {
     Io,
     isCloseTo,
     isUndefined,
+    Precision,
     Scamon,
     stringify,
 } from "../../src/general"
-import {Precision} from "../../src/general/code"
 import CustomEqualityTester = jasmine.CustomEqualityTester
 import CustomMatcher = jasmine.CustomMatcher
 import CustomMatcherFactories = jasmine.CustomMatcherFactories

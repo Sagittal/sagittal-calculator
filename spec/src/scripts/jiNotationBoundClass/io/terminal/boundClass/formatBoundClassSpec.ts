@@ -1,6 +1,5 @@
 import {Cents, computePitchFromCents, NEWLINE} from "../../../../../../../src/general"
-import {BoundClassId} from "../../../../../../../src/sagittal/notation"
-import {BoundType, JiNotationBoundClass} from "../../../../../../../src/sagittal/notations"
+import {BoundClassId, BoundType, JiNotationBoundClass} from "../../../../../../../src/sagittal"
 import {JiNotationBoundClassAnalysis} from "../../../../../../../src/scripts/jiNotationBoundClass/boundClass"
 import {formatJiNotationBoundClass} from "../../../../../../../src/scripts/jiNotationBoundClass/io"
 import {RANKS} from "../../../../../../../src/scripts/jiNotationBoundClass/ranks"

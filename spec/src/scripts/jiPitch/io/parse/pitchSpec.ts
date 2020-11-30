@@ -1,8 +1,6 @@
-import {Io} from "../../../../../../src/general/io"
+import {Io, Quotient, Scamon} from "../../../../../../src/general"
 import {IRRATIONAL_SCAMON_BASE_MONZO} from "../../../../../../src/general/math/irrational/scamon/constants"
-import {Quotient} from "../../../../../../src/general/math/numeric/quotient"
-import {Scamon} from "../../../../../../src/general/math/numeric/scamon"
-import {parsePitch} from "../../../../../../src/scripts/jiPitch/io/parse"
+import {parsePitch} from "../../../../../../src/scripts/jiPitch/io"
 
 describe("parsePitch", (): void => {
     it("works when given as a monzo, returning a JI pitch", (): void => {

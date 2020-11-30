@@ -1,12 +1,10 @@
-import {Grade, Parameter} from "../../../../../../src/general/lfc"
-import {Combination, Monzo} from "../../../../../../src/general/math"
-import {Two3FreeClass} from "../../../../../../src/general/music"
+import {Combination, Grade, Monzo, Parameter, Two3FreeClass} from "../../../../../../src/general"
 import {
+    computeAntivotes,
     LfcUnpopularityEstimate,
     PopularityParameterId,
     Submetric,
 } from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
-import {computeAntivotes} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes"
 import {ANTIVOTES_PRECISION} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes/constants"
 import {computeSubmetricAntivotes} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes/submetricAntivotes"
 

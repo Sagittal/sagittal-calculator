@@ -1,4 +1,4 @@
-import {computeSuperQuotient, Direction} from "../../../../../../src/general/math"
+import {computeSuperQuotient, Direction} from "../../../../../../src/general"
 import {
     Denominator,
     invertQuotient,

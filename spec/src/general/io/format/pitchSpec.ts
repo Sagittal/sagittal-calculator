@@ -1,7 +1,4 @@
-import {formatPitch, Formatted} from "../../../../../src/general/io/format"
-import {Monzo} from "../../../../../src/general/math/numeric/monzo"
-import {Quotient} from "../../../../../src/general/math/numeric/quotient"
-import {Scamon} from "../../../../../src/general/math/numeric/scamon"
+import {formatPitch, Formatted, Monzo, Quotient, Scamon} from "../../../../../src/general"
 
 describe("formatPitch", (): void => {
     it("if only the monzo is present, returns the monzo formatted", (): void => {

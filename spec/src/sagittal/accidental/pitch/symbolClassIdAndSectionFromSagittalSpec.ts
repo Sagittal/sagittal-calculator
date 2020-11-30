@@ -1,9 +1,9 @@
+import {SymbolClassId} from "../../../../../src/sagittal"
 import {ArmId, HeadId} from "../../../../../src/sagittal/accidental/flacco"
 import {computeSymbolClassIdAndSectionFromSagittal} from "../../../../../src/sagittal/accidental/pitch/symbolClassIdAndSectionFromSagittal"
 import {Shafts} from "../../../../../src/sagittal/accidental/sagittal"
 import {SECTION_P1T, SECTION_P2A, SECTION_P2T} from "../../../../../src/sagittal/notation"
 import {SECTION_N1A, SECTION_P1A} from "../../../../../src/sagittal/notation/sections"
-import {SymbolClassId} from "../../../../../src/sagittal/notation/types"
 import {computeAccidental} from "../../../../helpers/src/sagittal/accidental/accidental"
 
 describe("computeSymbolClassIdAndSectionFromSagittal", (): void => {

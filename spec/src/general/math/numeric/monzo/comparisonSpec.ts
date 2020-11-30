@@ -1,4 +1,4 @@
-import {areMonzosEqual, Monzo} from "../../../../../../src/general/math/numeric/monzo"
+import {areMonzosEqual, Monzo} from "../../../../../../src/general"
 
 describe("areMonzosEqual", (): void => {
     it("returns true if the monzos are equal", (): void => {

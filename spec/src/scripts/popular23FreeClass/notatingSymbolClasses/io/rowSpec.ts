@@ -1,20 +1,19 @@
 import {
     Decimal,
+    Direction,
     Grade,
     Index,
     ioSettings,
     Monzo,
     Name,
+    Rank,
     Ranked,
+    Row,
     ScalaPopularityStat,
     TableFormat,
     Two3FreeClass,
 } from "../../../../../../src/general"
-import {Rank} from "../../../../../../src/general/code"
-import {Row} from "../../../../../../src/general/io/table"
-import {Direction} from "../../../../../../src/general/math/numeric"
-import {N2D3P9} from "../../../../../../src/sagittal/ji/badness/complexity/unpopularity/n2d3p9"
-import {SymbolClassId, SymbolSubsetId} from "../../../../../../src/sagittal/notation"
+import {N2D3P9, SymbolClassId, SymbolSubsetId} from "../../../../../../src/sagittal"
 import {
     computePopular23FreeClassWithNotatingSymbolClassesRow,
     NotatingSymbolClassesProperties,

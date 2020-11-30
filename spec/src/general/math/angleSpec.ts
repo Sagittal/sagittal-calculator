@@ -1,4 +1,4 @@
-import {computeAngle} from "../../../../src/general/math"
+import {computeAngle} from "../../../../src/general"
 import {Coordinates, Radians} from "../../../../src/general/math/types"
 
 describe("computeAngle", (): void => {

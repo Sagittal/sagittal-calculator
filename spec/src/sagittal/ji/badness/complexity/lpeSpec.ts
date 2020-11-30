@@ -1,5 +1,5 @@
-import {Scamon} from "../../../../../../src/general/math/numeric/scamon"
-import {computeLpe} from "../../../../../../src/sagittal/ji/badness/complexity"
+import {Scamon} from "../../../../../../src/general"
+import {computeLpe} from "../../../../../../src/sagittal"
 import {LPE} from "../../../../../../src/sagittal/ji/badness/complexity/types"
 
 describe("computeLpe", (): void => {

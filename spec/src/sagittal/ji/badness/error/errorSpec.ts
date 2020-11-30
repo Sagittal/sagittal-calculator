@@ -1,5 +1,5 @@
-import {Cents} from "../../../../../../src/general/music"
-import {computeCentsError} from "../../../../../../src/sagittal/ji/badness/error"
+import {Cents} from "../../../../../../src/general"
+import {computeCentsError} from "../../../../../../src/sagittal"
 import {SEMITINA_CENTS} from "../../../../../../src/scripts/jiPitch/semitinaOccams"
 
 describe("computeCentsError", (): void => {

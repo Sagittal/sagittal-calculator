@@ -1,4 +1,4 @@
-import {Copfr, Decimal, Grade, Max, Numerator, Prime, Rank, ScalaPopularityStat} from "../../general"
+import {Decimal, Grade, Rank, ScalaPopularityStat} from "../../general"
 import {Two3FreeClassAnalysis} from "../../sagittal"
 import {BestNotatingCommaProperties} from "./bestNotatingComma"
 import {NotatingSymbolClassesProperties} from "./notatingSymbolClasses"

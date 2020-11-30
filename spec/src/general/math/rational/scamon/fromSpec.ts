@@ -1,6 +1,4 @@
-import {Monzo} from "../../../../../../src/general/math/numeric/monzo"
-import {Scamon} from "../../../../../../src/general/math/numeric/scamon"
-import {computeRationalScamonFromRationalMonzo} from "../../../../../../src/general/math/rational/scamon"
+import {computeRationalScamonFromRationalMonzo, Monzo, Scamon} from "../../../../../../src/general"
 
 describe("computeRationalScamonFromRationalMonzo", (): void => {
     it("returns a rational scamon with the rational monzo as its monzo", (): void => {

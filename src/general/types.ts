@@ -11,15 +11,15 @@ type Offset<T = void> =
 type Step<T extends NumericProperties & {of?: number} = {}> =                         // Iteration?
     Decimal<T>
     & {_StepBrand: boolean}
-    & (T extends {of: number} ? { _StepOfEdBrand: T["of"] } : {})
+    & (T extends {of: number} ? {_StepOfEdBrand: T["of"]} : {})
 type Ed<T extends NumericProperties & {of?: number} = {}> =                           // Generator?
     Decimal<T & {integer: true}>
     & {_EdBrand: boolean}
-    & (T extends {of: number} ? { _EdOfWindowBrand: T["of"]} : {})
+    & (T extends {of: number} ? {_EdOfWindowBrand: T["of"]} : {})
 type Window<T extends NumericProperties & {of?: number} = {}> =                       // Period?
     Decimal<T>
     & {_WindowBrand: boolean}
-    & (T extends {of: number} ? {_OfSizeBrand: T["of"]}: {})
+    & (T extends {of: number} ? {_OfSizeBrand: T["of"]} : {})
 type Degree = [Step<any>, Ed<any>] & Quotient
 
 type Name<T = void> = Io & {_NameBrand: boolean} & (T extends void ? {} : {_NameOfBrand: T})

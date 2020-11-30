@@ -1,5 +1,4 @@
-import {Monzo} from "../../../../../../src/general/math/numeric/monzo"
-import {computeQuotientFromMonzo, Quotient} from "../../../../../../src/general/math/numeric/quotient"
+import {computeQuotientFromMonzo, Monzo, Quotient} from "../../../../../../src/general"
 
 describe("computeQuotientFromMonzo", (): void => {
     it("converts a monzo into a two-element array representing the numerator and denominator", (): void => {

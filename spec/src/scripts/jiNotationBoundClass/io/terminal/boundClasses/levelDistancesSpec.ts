@@ -1,7 +1,5 @@
-import {Abs, Multiplier} from "../../../../../../../src/general"
-import {Formatted} from "../../../../../../../src/general/io"
-import {Cents} from "../../../../../../../src/general/music"
-import {Ina, JiNotationLevelId} from "../../../../../../../src/sagittal/notations/ji"
+import {Abs, Cents, Formatted, Multiplier} from "../../../../../../../src/general"
+import {Ina, JiNotationLevelId} from "../../../../../../../src/sagittal"
 import {BoundHistoryAnalysis} from "../../../../../../../src/scripts/jiNotationBoundClass/history"
 import {extractJiNotationLevelDistances} from "../../../../../../../src/scripts/jiNotationBoundClass/io/terminal/boundClasses/levelDistances"
 import {

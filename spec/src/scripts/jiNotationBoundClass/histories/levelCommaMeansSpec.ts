@@ -1,5 +1,5 @@
 import {Cents, CommaMean, Decimal, HALF_SCALER, Monzo, Name, Scamon} from "../../../../../src/general"
-import {JiNotationLevelId} from "../../../../../src/sagittal/notations/ji"
+import {JiNotationLevelId} from "../../../../../src/sagittal"
 import {computeJiNotationLevelCommaMeans} from "../../../../../src/scripts/jiNotationBoundClass/histories/levelCommaMeans"
 import {computePitchExpectation} from "../../../../helpers/src/general/music/pitchExpectation"
 import {PitchExpectation} from "../../../../helpers/src/general/music/types"

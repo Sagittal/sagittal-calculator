@@ -1,25 +1,24 @@
 import {
+    Abs,
+    Cents,
     Copfr,
+    Decimal,
     Direction,
-    ioSettings,
+    Exponent,
+    Io,
     Max,
+    Monzo,
     Name,
+    NEWLINE,
+    Prime,
+    Quotient,
     Scamon,
     Sopfr,
-    TableFormat,
     Two3FreeClass,
 } from "../../../../../../src/general"
-import {Io, NEWLINE} from "../../../../../../src/general/io"
-import {Abs, Decimal, Exponent, Prime} from "../../../../../../src/general/math"
-import {Monzo} from "../../../../../../src/general/math/numeric/monzo"
-import {Quotient} from "../../../../../../src/general/math/numeric/quotient"
-import {Cents} from "../../../../../../src/general/music"
-import {JiPitchAnalysis} from "../../../../../../src/sagittal/ji/analyze"
-import {N2D3P9} from "../../../../../../src/sagittal/ji/badness/complexity/unpopularity/n2d3p9"
-import {ApotomeSlope} from "../../../../../../src/sagittal/ji/badness/complexity/uselessness"
-import {CommaClassId} from "../../../../../../src/sagittal/notation"
+import {ApotomeSlope, CommaClassId, JiPitchAnalysis, N2D3P9} from "../../../../../../src/sagittal"
 import {jiPitchScriptGroupSettings} from "../../../../../../src/scripts/jiPitch/globals"
-import {computeJiPitchesOutput} from "../../../../../../src/scripts/jiPitch/io/output"
+import {computeJiPitchesOutput} from "../../../../../../src/scripts/jiPitch/io"
 import {JiPitchScriptGroupField} from "../../../../../../src/scripts/jiPitch/types"
 import {jiPitchAnalysisFixture} from "../../../../../helpers/src/scripts/jiPitch/fixtures"
 

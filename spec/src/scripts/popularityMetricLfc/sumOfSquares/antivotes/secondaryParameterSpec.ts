@@ -1,5 +1,4 @@
-import {Parameter} from "../../../../../../src/general/lfc"
-import {Exponent, Prime, QuotientPartType} from "../../../../../../src/general/math"
+import {Exponent, Parameter, Prime, QuotientPartType} from "../../../../../../src/general"
 import {secondaryParameterOverride} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes/secondaryParameter"
 
 describe("secondaryParameterOverride", (): void => {

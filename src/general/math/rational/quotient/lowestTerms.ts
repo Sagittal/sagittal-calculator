@@ -17,7 +17,7 @@ const computeLowestTermsRationalQuotient = <T extends NumericProperties>(
     ] as Quotient<T & {rational: true}>
 }
 
-const isLowestTerms = (rationalQuotient: Quotient<{ rational: true }>): boolean =>
+const isLowestTerms = (rationalQuotient: Quotient<{rational: true}>): boolean =>
     deepEquals(rationalQuotient, computeLowestTermsRationalQuotient(rationalQuotient))
 
 export {

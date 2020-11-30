@@ -1,5 +1,5 @@
 import {Scamon} from "../../../../../src/general"
-import {SymbolClassId} from "../../../../../src/sagittal/notation"
+import {SymbolClassId} from "../../../../../src/sagittal"
 import {computeNotatingSymbolClassIds} from "../../../../../src/scripts/popular23FreeClass/notatingSymbolClasses/notatingSymbolClassIds"
 
 describe("computeNotatingSymbolClassIds", (): void => {

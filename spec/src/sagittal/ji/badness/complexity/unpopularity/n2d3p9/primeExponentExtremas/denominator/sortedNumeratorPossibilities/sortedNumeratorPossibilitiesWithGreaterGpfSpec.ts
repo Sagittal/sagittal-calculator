@@ -1,5 +1,4 @@
-import {Of} from "../../../../../../../../../../../src/general"
-import {Decimal, Denominator, Max, Numerator, Prime} from "../../../../../../../../../../../src/general/math"
+import {Decimal, Denominator, Max, Numerator, Of, Prime} from "../../../../../../../../../../../src/general"
 import {
     N2P,
     SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P,

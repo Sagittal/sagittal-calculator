@@ -1,5 +1,4 @@
-import {Ms} from "../../../../src/general"
-import {doOnNextEventLoop} from "../../../../src/general/code"
+import {doOnNextEventLoop, Ms} from "../../../../src/general"
 
 describe("doOnNextEventLoop", (): void => {
     it("resolves on the next event loop", async (done: DoneFn): Promise<void> => {

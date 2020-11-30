@@ -1,6 +1,5 @@
+import {computeRationalMonzoFromRationalDecimal, Decimal, Monzo} from "../../../../../../src/general"
 import {MAX_JS_INTEGER_VALUE} from "../../../../../../src/general/code"
-import {Decimal, Monzo} from "../../../../../../src/general/math"
-import {computeRationalMonzoFromRationalDecimal} from "../../../../../../src/general/math/rational/monzo"
 import {computeIntegerMonzoFromIntegerDecimal} from "../../../../../../src/general/math/rational/monzo/fromDecimal"
 
 describe("computeRationalMonzoFromRationalDecimal", (): void => {

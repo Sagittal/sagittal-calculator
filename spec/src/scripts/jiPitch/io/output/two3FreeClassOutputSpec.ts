@@ -1,5 +1,5 @@
 import {Copfr, Io, Max, Monzo, NEWLINE, Prime, Sopfr, Two3FreeClass} from "../../../../../../src/general"
-import {N2D3P9} from "../../../../../../src/sagittal/ji/badness"
+import {N2D3P9} from "../../../../../../src/sagittal"
 import {jiPitchScriptGroupSettings} from "../../../../../../src/scripts/jiPitch/globals"
 import {compute23FreeClassOutput} from "../../../../../../src/scripts/jiPitch/io"
 import {JiPitchScriptGroupField} from "../../../../../../src/scripts/jiPitch/types"
@@ -31,7 +31,7 @@ describe("compute23FreeClassOutput", (): void => {
 
     it("can reorder columns", (): void => {
         jiPitchScriptGroupSettings.orderedFields =
-            ["two3FreeCopfr", "two3FreeClassName",  "two3FreePrimeLimit"] as Array<JiPitchScriptGroupField>
+            ["two3FreeCopfr", "two3FreeClassName", "two3FreePrimeLimit"] as Array<JiPitchScriptGroupField>
 
         const actual = compute23FreeClassOutput(two3FreeClassAnalysis)
 

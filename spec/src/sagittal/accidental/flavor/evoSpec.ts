@@ -1,7 +1,7 @@
+import {SymbolClassId} from "../../../../../src/sagittal"
 import {Accidental, Compatible, Flavor} from "../../../../../src/sagittal/accidental"
 import {HeadId} from "../../../../../src/sagittal/accidental/flacco"
 import {computeEvoAccidentalFromCaptureZone} from "../../../../../src/sagittal/accidental/flavor/evo"
-import {SymbolClassId} from "../../../../../src/sagittal/notation"
 import {
     SECTION_N1A,
     SECTION_N1T,
@@ -173,7 +173,7 @@ describe("computeEvoAccidentalFromCaptureZone", (): void => {
 
         const actual = computeEvoAccidentalFromCaptureZone(symbolClassId, SECTION_N1T)
 
-        const expected = computeAccidental({ compatible: Compatible.FLAT}) as Accidental<Flavor.EVO>
+        const expected = computeAccidental({compatible: Compatible.FLAT}) as Accidental<Flavor.EVO>
         expect(actual).toEqual(expected)
     })
 
@@ -182,7 +182,7 @@ describe("computeEvoAccidentalFromCaptureZone", (): void => {
 
         const actual = computeEvoAccidentalFromCaptureZone(symbolClassId, SECTION_N2A)
 
-        const expected = computeAccidental({ compatible: Compatible.FLAT}) as Accidental<Flavor.EVO>
+        const expected = computeAccidental({compatible: Compatible.FLAT}) as Accidental<Flavor.EVO>
         expect(actual).toEqual(expected)
     })
 })

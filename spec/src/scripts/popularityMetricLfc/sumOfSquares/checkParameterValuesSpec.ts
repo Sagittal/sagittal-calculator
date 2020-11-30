@@ -1,4 +1,4 @@
-import {Parameter} from "../../../../../src/general/lfc"
+import {Parameter} from "../../../../../src/general"
 import {PopularityParameterId, Submetric} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 import {checkSubmetricsForInvalidParameterValueCombinations} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares/checkParameterValues"
 

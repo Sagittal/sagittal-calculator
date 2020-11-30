@@ -1,7 +1,4 @@
-import {Monzo} from "../../../../../../src/general/math/numeric/monzo"
-import {Quotient} from "../../../../../../src/general/math/numeric/quotient"
-import {Scamon} from "../../../../../../src/general/math/numeric/scamon"
-import {isScamonRational} from "../../../../../../src/general/math/rational/scamon"
+import {isScamonRational, Monzo, Quotient, Scamon} from "../../../../../../src/general"
 
 describe("isScamonRational", (): void => {
     it("returns true if the scaler is absent", (): void => {

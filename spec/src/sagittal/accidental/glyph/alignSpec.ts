@@ -1,5 +1,4 @@
-import { Ascii } from "../../../../../src/sagittal"
-import { alignAscii } from "../../../../../src/sagittal/accidental"
+import {alignAscii, Ascii} from "../../../../../src/sagittal"
 
 describe("alignAscii", (): void => {
     it("shifts the ascii so that its shaft aligns with all the others' shafts, making it 8 total chars wide                  ", (): void => {

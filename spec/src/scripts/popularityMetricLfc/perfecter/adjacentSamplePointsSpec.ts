@@ -1,4 +1,4 @@
-import {SamplePoint} from "../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples"
+import {SamplePoint} from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {computeAdjacentSamplePoints} from "../../../../../src/scripts/popularityMetricLfc/perfecter/adjacentSamplePoints"
 
 describe("computeAdjacentSamplePoints", (): void => {

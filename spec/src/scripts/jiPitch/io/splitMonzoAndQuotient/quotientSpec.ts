@@ -1,7 +1,5 @@
-import {ioSettings, TableFormat} from "../../../../../../src/general/io"
-import {Formatted} from "../../../../../../src/general/io/format"
-import {Quotient} from "../../../../../../src/general/math/numeric/quotient"
-import {JiPitchAnalysis} from "../../../../../../src/sagittal/ji/analyze"
+import {Formatted, ioSettings, Quotient, TableFormat} from "../../../../../../src/general"
+import {JiPitchAnalysis} from "../../../../../../src/sagittal"
 import {formatSplitQuotient} from "../../../../../../src/scripts/jiPitch/io/splitMonzoAndQuotient"
 
 describe("formatSplitQuotient", (): void => {

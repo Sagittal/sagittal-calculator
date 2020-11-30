@@ -1,8 +1,8 @@
 import {program} from "commander"
-import {Scamon} from "../../../../../../src/general/math/numeric/scamon"
+import {Scamon} from "../../../../../../src/general"
+import {Compatible} from "../../../../../../src/sagittal/accidental"
 import {ArmId, HeadId} from "../../../../../../src/sagittal/accidental/flacco"
-import {Compatible} from "../../../../../../src/sagittal/accidental/flavor"
-import {parseJiPitch, readJiPitchIoAndFormat} from "../../../../../../src/scripts/jiPitch/io/parse"
+import {parseJiPitch, readJiPitchIoAndFormat} from "../../../../../../src/scripts/jiPitch/io"
 import {computeAccidental} from "../../../../../helpers/src/sagittal/accidental/accidental"
 
 describe("parseJiPitch", (): void => {

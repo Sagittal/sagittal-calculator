@@ -1,12 +1,4 @@
-import {
-    computeScamonFromDecimal,
-    Decimal,
-    EMPTY_MONZO,
-    Max,
-    Min,
-    Monzo,
-    Scamon,
-} from "../../../../../src/general/math"
+import {computeScamonFromDecimal, Decimal, EMPTY_MONZO, Max, Min, Monzo, Scamon} from "../../../../../src/general"
 import {computeRationalMonzoInZone} from "../../../../../src/sagittal/ji/find/monzoInZone"
 
 describe("computeRationalMonzoInZone", (): void => {

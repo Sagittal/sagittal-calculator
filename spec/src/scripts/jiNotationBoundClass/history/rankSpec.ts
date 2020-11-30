@@ -1,4 +1,4 @@
-import {BoundType} from "../../../../../src/sagittal/notations/ji"
+import {BoundType} from "../../../../../src/sagittal"
 import {BoundEventAnalysis} from "../../../../../src/scripts/jiNotationBoundClass/history"
 import {computeRank} from "../../../../../src/scripts/jiNotationBoundClass/history/rank"
 import {RANKS} from "../../../../../src/scripts/jiNotationBoundClass/ranks"

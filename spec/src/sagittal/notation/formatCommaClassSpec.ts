@@ -1,5 +1,5 @@
 import {Io, ioSettings, TableFormat} from "../../../../src/general"
-import {CommaClassId, formatCommaClass} from "../../../../src/sagittal/notation"
+import {CommaClassId, formatCommaClass} from "../../../../src/sagittal"
 
 describe("formatCommaClass", (): void => {
     const commaClassId = CommaClassId._65_V_7_M
@@ -35,21 +35,21 @@ describe("formatCommaClass", (): void => {
     })
 
     it("can turn off alignment", (): void => {
-        const actual = formatCommaClass(commaClassId, { align: false })
+        const actual = formatCommaClass(commaClassId, {align: false})
 
         const expected = ",(/|" as Io
         expect(actual).toBe(expected)
     })
 
     it("can output the comma name too if requested", (): void => {
-        const actual = formatCommaClass(commaClassId, { align: false, name: true })
+        const actual = formatCommaClass(commaClassId, {align: false, name: true})
 
         const expected = ",(/| 65/7M" as Io
         expect(actual).toBe(expected)
     })
 
     it("can output only the comma name too if requested", (): void => {
-        const actual = formatCommaClass(commaClassId, { align: false, glyph: false, name: true })
+        const actual = formatCommaClass(commaClassId, {align: false, glyph: false, name: true})
 
         const expected = "65/7M" as Io
         expect(actual).toBe(expected)

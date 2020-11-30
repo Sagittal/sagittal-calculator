@@ -1,5 +1,5 @@
 import {Name} from "../../../../../src/general"
-import {BoundType, JiNotationBound, JiNotationLevelId} from "../../../../../src/sagittal/notations"
+import {BoundType, JiNotationBound, JiNotationLevelId} from "../../../../../src/sagittal"
 import {isBoundEventContained} from "../../../../../src/scripts/jiNotationBoundClass/consolidateHistories/doEventsContainEvent"
 import {BoundEventAnalysis} from "../../../../../src/scripts/jiNotationBoundClass/history"
 import {RANKS} from "../../../../../src/scripts/jiNotationBoundClass/ranks"

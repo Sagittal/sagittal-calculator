@@ -1,5 +1,4 @@
-import {Combination, Count, Ed, Index, Mean, Name, Parameter, Step, Window} from "../../../../../src/general"
-import {MeanType} from "../../../../../src/general/math"
+import {Combination, Count, Ed, Index, Mean, MeanType, Name, Parameter, Step, Window} from "../../../../../src/general"
 import {
     Metric,
     nonRecursiveSearchScopeAndMaybeUpdateBestMetric,

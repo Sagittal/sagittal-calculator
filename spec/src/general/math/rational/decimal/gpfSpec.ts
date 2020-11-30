@@ -1,5 +1,4 @@
-import {Decimal, Max, Prime} from "../../../../../../src/general/math"
-import {computeRationalDecimalGpf} from "../../../../../../src/general/math/rational/decimal"
+import {computeRationalDecimalGpf, Decimal, Max, Prime} from "../../../../../../src/general"
 
 describe("computeRationalDecimalGpf", (): void => {
     it("returns the greatest prime factor", (): void => {

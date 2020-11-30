@@ -15,8 +15,7 @@ import {
     Quotient,
     TableFormat,
 } from "../../../../../../src/general"
-import {ApotomeSlope, CommaAnalysis} from "../../../../../../src/sagittal/ji"
-import {CommaClassId} from "../../../../../../src/sagittal/notation"
+import {ApotomeSlope, CommaAnalysis, CommaClassId} from "../../../../../../src/sagittal"
 import {jiPitchScriptGroupSettings} from "../../../../../../src/scripts/jiPitch/globals"
 import {computeNotatingCommasOutput} from "../../../../../../src/scripts/jiPitch/io"
 import {JiPitchScriptGroupField} from "../../../../../../src/scripts/jiPitch/types"
@@ -79,7 +78,7 @@ describe("computeNotatingCommasOutput", (): void => {
     })
 
     it("can reorder fields", (): void => {
-        jiPitchScriptGroupSettings.orderedFields = ["monzo", "ate",  "quotient", "cents"] as Array<JiPitchScriptGroupField>
+        jiPitchScriptGroupSettings.orderedFields = ["monzo", "ate", "quotient", "cents"] as Array<JiPitchScriptGroupField>
 
         const actual = computeNotatingCommasOutput(notatingCommaAnalyses, maybeCommaClassIds)
 

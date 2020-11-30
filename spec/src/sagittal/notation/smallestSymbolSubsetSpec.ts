@@ -1,4 +1,4 @@
-import {getSmallestSymbolSubsetId, SymbolClassId, SymbolSubsetId} from "../../../../src/sagittal/notation"
+import {getSmallestSymbolSubsetId, SymbolClassId, SymbolSubsetId} from "../../../../src/sagittal"
 
 describe("getSmallestSymbolSubsetId", (): void => {
     it("returns the smallest symbol subset which includes (a symbol for) the given flacco id", (): void => {

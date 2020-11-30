@@ -1,5 +1,4 @@
-import {Io, Row} from "../../../../../src/general/io"
-import {splitFieldTitlesIntoRowsBySpaces} from "../../../../../src/general/io/table"
+import {Io, Row, splitFieldTitlesIntoRowsBySpaces} from "../../../../../src/general"
 
 describe("splitFieldTitlesIntoRowsBySpaces", (): void => {
     const titles: Io[] = [

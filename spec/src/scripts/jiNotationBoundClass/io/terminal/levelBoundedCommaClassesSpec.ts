@@ -1,6 +1,12 @@
 import {APOTOME, CommaMean, HALF_SCALER, Monzo, Name, Scamon} from "../../../../../../src/general"
-import {BoundClassId, BoundType, CommaClassId, InaMidpoint} from "../../../../../../src/sagittal"
-import {JiNotationBoundClass, JiNotationLevelId} from "../../../../../../src/sagittal/notations/ji"
+import {
+    BoundClassId,
+    BoundType,
+    CommaClassId,
+    InaMidpoint,
+    JiNotationBoundClass,
+    JiNotationLevelId,
+} from "../../../../../../src/sagittal"
 import {INSANE_EDA} from "../../../../../../src/sagittal/notations/ji/levelEdas"
 import {computeJiNotationLevelBoundedCommaClassIds} from "../../../../../../src/scripts/jiNotationBoundClass/io/terminal/levelBoundedCommaClasses"
 import {BoundedCommaClassIdPairs} from "../../../../../../src/scripts/jiNotationBoundClass/io/terminal/types"

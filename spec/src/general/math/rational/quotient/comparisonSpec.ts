@@ -1,5 +1,5 @@
-import {Quotient} from "../../../../../../src/general/math/numeric/quotient"
-import {areRationalQuotientsEqual} from "../../../../../../src/general/math/rational/quotient"
+import {Quotient} from "../../../../../../src/general"
+import {areRationalQuotientsEqual} from "../../../../../../src/general/math/rational"
 
 describe("areRationalQuotientsEqual", (): void => {
     it("returns true when the quotients are equal", (): void => {

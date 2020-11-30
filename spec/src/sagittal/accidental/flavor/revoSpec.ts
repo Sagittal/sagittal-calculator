@@ -1,8 +1,8 @@
+import {SymbolClassId} from "../../../../../src/sagittal"
 import {Accidental, Flavor} from "../../../../../src/sagittal/accidental"
 import {HeadId} from "../../../../../src/sagittal/accidental/flacco"
 import {computeRevoAccidentalFromCaptureZone} from "../../../../../src/sagittal/accidental/flavor/revo"
 import {Shafts} from "../../../../../src/sagittal/accidental/sagittal"
-import {SymbolClassId} from "../../../../../src/sagittal/notation"
 import {
     SECTION_N1A,
     SECTION_N1T,

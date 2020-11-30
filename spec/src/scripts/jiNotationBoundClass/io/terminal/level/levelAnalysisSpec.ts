@@ -1,6 +1,5 @@
-import {Count, Decimal, NEWLINE} from "../../../../../../../src/general"
-import {Rank} from "../../../../../../../src/general/code"
-import {BoundType, JiNotationLevelId} from "../../../../../../../src/sagittal/notations/ji"
+import {Count, Decimal, NEWLINE, Rank} from "../../../../../../../src/general"
+import {BoundType, JiNotationLevelId} from "../../../../../../../src/sagittal"
 import {
     jiNotationLevelsBestCumulativeHistoryRanks,
     jiNotationLevelsBestHistoryRanks,

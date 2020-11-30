@@ -1,6 +1,4 @@
-import {Scamon} from "../../../../../../src/general/math/numeric/scamon"
-import {Copfr} from "../../../../../../src/general/math/rational"
-import {computeRationalScamonCopfr} from "../../../../../../src/general/math/rational/scamon"
+import {computeRationalScamonCopfr, Copfr, Scamon} from "../../../../../../src/general"
 
 describe("computeRationalScamonCopfr", (): void => {
     it("returns the count of prime factors (with repetition) in the monzo", (): void => {

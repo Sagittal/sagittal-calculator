@@ -1,5 +1,5 @@
-import {Decimal, Max, Numerator} from "../../../../../../../../../../../../src/general/math"
-import {N2D3P9} from "../../../../../../../../../../../../src/sagittal/ji/badness/complexity/unpopularity/n2d3p9"
+import {Decimal, Max, Numerator} from "../../../../../../../../../../../../src/general"
+import {N2D3P9} from "../../../../../../../../../../../../src/sagittal"
 import {computeMaxNumeratorGivenMaxN2D3P9} from "../../../../../../../../../../../../src/sagittal/ji/badness/complexity/unpopularity/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/numeratorPossibilities/maxNumerator"
 import {onlyRunInCi} from "../../../../../../../../../../../helpers/onlyRunInCi"
 

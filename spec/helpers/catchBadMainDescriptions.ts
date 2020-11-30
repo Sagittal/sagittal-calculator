@@ -1,7 +1,6 @@
 import * as fs from "fs"
 import * as path from "path"
-import {isUndefined, Maybe} from "../../src/general/code"
-import {Filename, Io, readLines} from "../../src/general/io"
+import {Filename, Io, isUndefined, Maybe, readLines} from "../../src/general"
 
 const INDEX_OF_CAPTURED_GROUP = 1
 

@@ -1,6 +1,6 @@
-import {Decimal, Max, Numerator, Prime} from "../../../../../../../../../../../../src/general/math"
-import {N2D3P9} from "../../../../../../../../../../../../src/sagittal/ji/badness/complexity/unpopularity/n2d3p9"
-import {computeNumeratorPossibilitiesForDenominatorGivenMaxN2D3P9} from "../../../../../../../../../../../../src/sagittal/ji/badness/complexity/unpopularity/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/numeratorPossibilities"
+import {Decimal, Max, Numerator, Prime} from "../../../../../../../../../../../../src/general"
+import {N2D3P9} from "../../../../../../../../../../../../src/sagittal"
+import {computeNumeratorPossibilitiesForDenominatorGivenMaxN2D3P9} from "../../../../../../../../../../../../src/sagittal/ji/badness/complexity/unpopularity/n2d3p9/primeExponentExtremas/denominator"
 
 describe("computeNumeratorPossibilitiesForDenominatorGivenMaxN2D3P9", (): void => {
     it("returns the possibilities for the numerator (which will be used to calculate the possibilities for the denominator; hence starting at 7) given the max N2D3P9, along with their GPF", (): void => {

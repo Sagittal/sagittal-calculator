@@ -1,5 +1,5 @@
 import {Name} from "../../../../../src/general"
-import {BoundType, JiNotationBound, JiNotationLevelId} from "../../../../../src/sagittal/notations"
+import {BoundType, JiNotationBound, JiNotationLevelId} from "../../../../../src/sagittal"
 import {BoundEventConsolidation} from "../../../../../src/scripts/jiNotationBoundClass/consolidateHistories/types"
 import {updateEventConsolidation} from "../../../../../src/scripts/jiNotationBoundClass/consolidateHistories/updateEventConsolidation"
 import {BoundEventAnalysis, BoundHistoryAnalysis} from "../../../../../src/scripts/jiNotationBoundClass/history"

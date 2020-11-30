@@ -1,4 +1,4 @@
-import {merge} from "../../../../src/general/code"
+import {merge} from "../../../../src/general"
 
 describe("merge", (): void => {
     it("merges the objects on top of each other, in the order given", (): void => {

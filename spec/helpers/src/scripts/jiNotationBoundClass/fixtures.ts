@@ -22,7 +22,7 @@ import {
     JiNotationBoundClass,
     JiNotationLevelId,
     Tinas,
-} from "../../../../../src/sagittal/notations"
+} from "../../../../../src/sagittal"
 import {JiNotationBoundClassAnalysis} from "../../../../../src/scripts/jiNotationBoundClass/boundClass"
 import {BoundEventConsolidation} from "../../../../../src/scripts/jiNotationBoundClass/consolidateHistories/types"
 import {BoundEvent, BoundHistory} from "../../../../../src/scripts/jiNotationBoundClass/histories"

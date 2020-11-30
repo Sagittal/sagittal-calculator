@@ -1,9 +1,9 @@
+import {Unicode} from "../../../../../../src/sagittal"
 import {Ascii, Flavor, Smiley} from "../../../../../../src/sagittal/accidental"
-import {Unicode} from "../../../../../../src/sagittal/accidental/glyph"
 import {CaptureZone} from "../../../../../../src/sagittal/notation"
 import {computeCaptureZones} from "../../../../../../src/sagittal/notation/captureZones"
 import {EXTREME_NOTATION} from "../../../../../../src/sagittal/notations/ji/notations"
-import { computeFlavorsExpectation } from "../../../../../helpers/src/sagittal/accidental/flavor/accidentalExpectation"
+import {computeFlavorsExpectation} from "../../../../../helpers/src/sagittal/accidental/flavor/accidentalExpectation"
 import {FlavorsExpectation} from "../../../../../helpers/src/sagittal/accidental/flavor/types"
 
 // TODO: POST-NOTATION-GENERATION: ACCIDENTAL, PRIMARY COMMA, ZONE STUFF

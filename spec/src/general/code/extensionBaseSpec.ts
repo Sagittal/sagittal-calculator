@@ -1,4 +1,4 @@
-import {computeExtensionBase, ExtensionBaseType} from "../../../../src/general/code"
+import {computeExtensionBase, ExtensionBaseType} from "../../../../src/general"
 
 describe("computeExtensionBase", (): void => {
     it("returns an empty array when array is asked for", (): void => {

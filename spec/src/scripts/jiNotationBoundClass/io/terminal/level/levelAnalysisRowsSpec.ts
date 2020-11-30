@@ -1,7 +1,5 @@
-import {Count, Decimal} from "../../../../../../../src/general"
-import {Rank} from "../../../../../../../src/general/code"
-import {Row} from "../../../../../../../src/general/io/table"
-import {BoundType, JiNotationLevelId} from "../../../../../../../src/sagittal/notations/ji"
+import {Count, Decimal, Rank, Row} from "../../../../../../../src/general"
+import {BoundType, JiNotationLevelId} from "../../../../../../../src/sagittal"
 import {
     jiNotationLevelsBestCumulativeHistoryRanks,
     jiNotationLevelsBestHistoryRanks,

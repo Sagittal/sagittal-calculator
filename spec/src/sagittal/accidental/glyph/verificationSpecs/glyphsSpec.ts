@@ -1,4 +1,4 @@
-import {isUndefined} from "../../../../../../src/general/code"
+import {isUndefined} from "../../../../../../src/general"
 import {camelCaseToConstantCase} from "../../../../../../src/general/code/case"
 import {Ascii, Compatible, Smiley, Unicode} from "../../../../../../src/sagittal/accidental"
 import {AccentId, HeadId} from "../../../../../../src/sagittal/accidental/flacco"
@@ -1088,11 +1088,11 @@ describe("glyphs", (): void => {
         const accentGlyphExpectations = accentIds.reduce(
             (
                 accentGlyphExpectations: Record<AccentId, GlyphExpectation>,
-                accentId: AccentId
+                accentId: AccentId,
             ): Record<AccentId, GlyphExpectation> => {
                 return {
                     ...accentGlyphExpectations,
-                    [accentId]: computeAccentGlyphExpectation(accentId)
+                    [accentId]: computeAccentGlyphExpectation(accentId),
                 }
             },
             {} as Record<AccentId, GlyphExpectation>,
@@ -1163,11 +1163,11 @@ describe("glyphs", (): void => {
         const accentGlyphExpectations = accentIds.reduce(
             (
                 accentGlyphExpectations: Record<AccentId, GlyphExpectation>,
-                accentId: AccentId
+                accentId: AccentId,
             ): Record<AccentId, GlyphExpectation> => {
                 return {
                     ...accentGlyphExpectations,
-                    [accentId]: computeAccentGlyphExpectation(accentId, { anti: true })
+                    [accentId]: computeAccentGlyphExpectation(accentId, {anti: true}),
                 }
             },
             {} as Record<AccentId, GlyphExpectation>,
@@ -1238,11 +1238,11 @@ describe("glyphs", (): void => {
         const compatibleGlyphExpectations = compatibles.reduce(
             (
                 compatibleGlyphExpectations: Record<Compatible, GlyphExpectation>,
-                compatible: Compatible
+                compatible: Compatible,
             ): Record<Compatible, GlyphExpectation> => {
                 return {
                     ...compatibleGlyphExpectations,
-                    [compatible]: computeCompatibleGlyphExpectation(compatible)
+                    [compatible]: computeCompatibleGlyphExpectation(compatible),
                 }
             },
             {} as Record<Compatible, GlyphExpectation>,

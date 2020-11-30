@@ -1,4 +1,4 @@
-import {Io} from "../../../../../src/general/io"
+import {Io} from "../../../../../src/general"
 import {onlyRunInCi} from "../../../../helpers/onlyRunInCi"
 import {runScriptAndGetConsoleOutput} from "../../../../helpers/src/scripts/runScriptAndGetConsoleOutput"
 
