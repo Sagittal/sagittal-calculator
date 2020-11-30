@@ -1,42 +1,59 @@
-<span style='font-family: "Bravura Text BB"; font-size: 280%;' class="staff unprocessed {TEXT}">{TEXT2}</span>
+<span style='font-family: "Bravura Text BB"; font-size: 280%;' class="staff unprocessed {IDENTIFIER}">{TEXT}</span>
 <script type='text/javascript'>
     (() => {
         const CLEF_AGNOSTIC_UNICODE_MAP = {
-            "sp2": " ",         // U+2003   EM SPACE
-            "sp1": " ",         // U+2002   EN SPACE
-            "sp0.5": " ",       // U+2005   FOUR-PER-EM SPACE
-            "sp0.25": " ",      // U+2009   THIN SPACE
-            "sp0.125": " ",     // U+200A   HAIR SPACE
-            "nbsp1": " ",       // U+2007   FIGURE SPACE
-            "nbsp0.5": " ",     // U+00A0   NO-BREAK SPACE [NBSP]
-            "nbsp0.25": " ",    // U+202F   NARROW NO-BREAK SPACE [NNBSP]
+            "sp1": " ",   // U+200A   HAIR SPACE
+            "sp2": " ",   // U+2009   THIN SPACE
+            "sp3": "  ",  // U+2009 U+200A
+            "sp4": " ",   // U+2005   FOUR-PER-EM SPACE
+            "sp5": "  ",  // U+2005 U+200A
+            "sp6": " ",   // U+2004   THREE-PER-EM SPACE
+            "sp7": "  ",   // U+2004 U+200A
+            "sp8": " ",   // U+2002   EN SPACE
+            "sp9": "  ",   // U+2002 U+200A
+            "sp10": " ",  // U+2008   PUNCTUATION SPACE
+            "sp11": "  ",  // U+2008 U+200A
+            "sp12": "　",  // U+3000   IDEOGRAPHIC SPACE
+            "sp13": "　 ",  // U+3000 U+200A
+            "sp14": " ",  // U+2001   EM QUAD (not in font yet)
+            "sp15": "  ",  // U+2001 U+200A (not in font yet)
+            "sp16": " ",  // U+2003   EM SPACE
 
-            "ln3": "",
-            "ln2": "",
-            "ln1": "",
+            "ln8": "",  // staff lines
+            "ln16": "",
+            "ln24": "",
 
-            "leger": "",
+            "lgln": "",  // leger line
 
-            "tclef": "",
-            "aclef": "",
-            "bclef": "",
+            "tbcf": "",  // treble clef
+            "alcf": "",  // alto clef
+            "bscf": "",  // bass clef
 
-            "1note": "",
-            "1notedown": "",
-            "2note": "",
-            "2notedown": "",
-            "4note": "",
-            "4notedown": "",
-            "8note": "",
-            "8notedown": "",
+            "ntdb": "",  // double whole note
+            "nt1": "",  // whole note
+            "nt2": "",  // half note stem up
+            "nt2dn": "",  // half note stem down
+            "nt4": "",
+            "nt4dn": "",
+            "nt8": "",
+            "nt8dn": "",
 
-            "h": "",
+            "dt": "\uE1E7", // augmentation dot
+
+            "ntbmst": "\uE1F0", // note for start of any beam (short stem)
+            "ntbm8": "\uE1F2", // note for end of eighth beam, and possible continuation of any beam (short stem)
+            "ntbm16": "\uE1F4", // note for end of sixteenth beam, and possible continuation of any beam (short stem)
+            "bm8": "\uE1F7", // eighth beam continuation (for short stems)
+            "bm16": "\uE1F9", // sixteenth beam continuation (for short stems)
+            "tp3": "\uE1FF", // Tuplet digit 3 (for short stems)
+
+            "h": "",  // natural
             "#": "",
             "b": "",
             "x": "",
             "bb": "",
 
-            "|(": "",
+            "|(": "",  // sagittals
             "!(": "",
             "/|": "",
             "\\!": "",
