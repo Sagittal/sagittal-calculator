@@ -38,12 +38,10 @@ is provided, no clef will be displayed, and the note position modifiers will def
         "sp16": " ",        // U+2003           EM SPACE
 
         // staff lines
-        "ln8": "",         // U+E020
-        "st8": "",
-        "ln16": "",        // U+E014
-        "st16": "",
-        "ln24": "",        // U+E01A
-        "st24": "",
+        "st8": "",         // U+E020
+        "st16": "",        // U+E014
+        "st24": "",        // U+E01A
+        "st": "",
 
         "lgln": "",        // U+E022           leger line
 
@@ -507,10 +505,10 @@ is provided, no clef will be displayed, and the note position modifiers will def
 
         staffSpan.classList.remove("unprocessed")
 
-        const clefStuff = clef === "bass" ? "ln3 bclef ln3 sp2" :
-            clef === "treble" ? "ln3 tclef ln3 sp2" : ""
+        const clefInitiation = clef === "bass" ? "st24 bscf sp16 st24" :
+            clef === "treble" ? "st24 tbcf sp16 st24" : ""
 
-        staffSpan.textContent = `${clefStuff}${staffSpan.textContent}`
+        staffSpan.textContent = `${clefInitiation}${staffSpan.textContent}`
             .toLowerCase()
             .replace(/<br>/g, " ")
             .replace(/\n/g, " ")
