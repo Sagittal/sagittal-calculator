@@ -445,7 +445,7 @@ assets/fonts folder. Please do not load it from another forum's assets, for your
         ".b": "",          // U+E260
         ".h": "",          // U+E261
         ".#": "",          // U+E262
-        ".x": ""          // U+E263            Small double-sharp, not the same as "x" or "X", which is the (sagittal-compatible) large double-sharp
+        ".x": "",          // U+E263            Small double-sharp, not the same as "x" or "X", which is the (sagittal-compatible) large double-sharp
     }
 
     const TREBLE_COMBINING_STAFF_POSITION_UNICODE_MAP = {
@@ -512,7 +512,7 @@ assets/fonts folder. Please do not load it from another forum's assets, for your
         const clefInitiation = clef === "bass" ? "st24 bscf sp16 st24" :
             clef === "treble" ? "st24 tbcf sp16 st24" : ""
 
-        staffSpan.textContent = `${clefInitiation}${staffSpan.textContent}`
+        const textContent = `${clefInitiation}${staffSpan.textContent}`
             .toLowerCase()
             .replace(/<br>/g, " ")
             .replace(/\n/g, " ")
@@ -528,5 +528,23 @@ assets/fonts folder. Please do not load it from another forum's assets, for your
                     unicode
             })
             .join("")
+        staffSpan.textContent = textContent
+
+        // const bravura = "assets/fonts/BravuraTextBB.otf"
+        // const options = {x: 20, y: 100}
+        //
+        // TextToSVG.load(bravura, (_, textToSVG) => {
+        //     const metrics = textToSVG.getMetrics(textContent, options)
+        //     const width = metrics.width * 2
+        //     const height = metrics.height * 2
+        //
+        //     const path = textToSVG.getPath(textContent, options)
+        //     const svgString = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${width}" height="${height}">${path}</svg>`
+        //
+        //     const svgWrapper = document.createElement("div")
+        //     staffSpan.appendChild(svgWrapper)
+        //
+        //     svgWrapper.innerHTML = svgString
+        // })
     })
 })()
