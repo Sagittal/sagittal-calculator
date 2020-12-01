@@ -11,17 +11,6 @@ If you see a script you're interested in, learn its options with `npm run [scrip
 
 ### Additional helpful setup
 
-Add to your `.git/hooks/pre-commit`:
-
-```
-#!/bin/sh
-
-set -e
-
-tsc
-npm run lint
-```
-
 Run Jasmine tests written in TypeScript with Webstorm by adding the following to `Node options` 
 in the Jasmine run configuration template: `-r ts-node/register/transpile-only`.
 
