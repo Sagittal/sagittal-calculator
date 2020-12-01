@@ -34,9 +34,6 @@ const applySharedJiPitchScriptSetup = (): void => {
         .option(`-${ScriptFlag.SORT_BY}, --sort-by <sortBy>`, "sort by")
         .option(`-${ScriptFlag.UNDIRECTED_COMMA_NAME}, --undirected`, "undirected comma name")
         .option(`-${ScriptFlag.FACTORING_MODE}, --factoring-mode <factoringMode>`, "factoring mode (always, never, or threshold)")
-        // TODO: COMMA NAMES: EDO NAMES
-        //  Build in the edo naming approach (and maybe the & style too)
-        //  Touched upon [url=http://forum.sagittal.org/viewtopic.php?p=1721#p1721
         .option(`-${ScriptFlag.UNABBREVIATED_COMMA_NAME}, --unabbreviated`, "unabbreviated comma name")
         .option(
             `-${ScriptFlag.EXCLUDED_FIELDS}, --excluded-fields <excludedFields>`,

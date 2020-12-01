@@ -203,4 +203,11 @@ describe("computeCommaName", (): void => {
         const expected = "1/143C"
         expect(actual).toBe(expected)
     })
+
+    it("can name complex 3-limit commas", (): void => {
+        // TODO: COMMA NAMES: EDO NAMES
+        //  Build in the edo naming approach (and maybe the & style too)
+        //  Touched upon here: http://forum.sagittal.org/viewtopic.php?p=1721#p1721
+        //  Latest questions here: http://forum.sagittal.org/viewtopic.php?p=2980#p2980
+    })
 })
