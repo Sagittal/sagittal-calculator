@@ -1,4 +1,4 @@
-export {computeCommaFromCommaNameQuotientAndSizeCategoryName} from "./commaFromCommaName"
+export {computeCommaFromCommaNameQuotientAndSizeCategory} from "./commaFromCommaName"
 export {computeCommaName} from "./commaName"
 export {parseCommaName} from "./parseCommaName"
 export {formatComma} from "./formatComma"

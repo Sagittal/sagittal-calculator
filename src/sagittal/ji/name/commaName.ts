@@ -1,101 +1,23 @@
 import {
     BLANK,
     Comma,
-    computeRationalDecimalCopf,
-    computeRationalDecimalCopfr,
-    computeRationalDecimalGpf,
-    computeRationalMonzoFromRationalDecimal,
     computeSubQuotient,
     computeSuperScamon,
-    Decimal,
     Direction,
-    DOT_OPERATOR,
-    Exponent,
     isRationalScamonSmooth,
     isRationalScamonSub,
     isRationalScamonUnison,
     Name,
-    Prime,
-    PRIMES,
-    Quotient,
-    QuotientPart,
     stringify,
-    SUPERSCRIPT_NUMBERS,
     THREE_SMOOTHNESS,
 } from "../../../general"
 import {computeCommaNameQuotient} from "./commaNameQuotient"
+import {computeMaybeComplex} from "./complex"
+import {formatCommaNameQuotient} from "./formatCommaNameQuotient"
+import {SIZE_CATEGORY_ABBREVIATIONS, SIZE_CATEGORY_NAMES} from "./sizeCategories"
 import {computeSizeCategory} from "./sizeCategory"
 import {isCommaSized} from "./typeGuards"
-import {CommaNameOptions, FactoringMode, SizeCategoryAbbreviation, SizeCategoryName} from "./types"
-
-const formatFactoredCommaNameQuotientPart = (
-    commaNameQuotientPart: QuotientPart & Decimal<{integer: true}>,
-    quotientPartIndex: number,
-): string => {
-    if (commaNameQuotientPart === 1) return "1"
-
-    const integerMonzo = computeRationalMonzoFromRationalDecimal(commaNameQuotientPart)
-    const factoredTerms: string[] = []
-
-    integerMonzo.forEach(
-        (
-            primeExponent: Decimal<{integer: true}> & Exponent<Prime>,
-            primeExponentIndex: number,
-        ): void => {
-            if (primeExponent === 0) {
-                return
-            }
-
-            if (primeExponent === 1) {
-                factoredTerms.push(`${PRIMES[primeExponentIndex]}`)
-            }
-
-            if (primeExponent > 1) {
-                factoredTerms.push(`${PRIMES[primeExponentIndex]}${SUPERSCRIPT_NUMBERS[primeExponent]}`)
-            }
-        },
-    )
-
-    const joinedFactoredTerms = factoredTerms.join(DOT_OPERATOR)
-
-    return quotientPartIndex === 1 && computeRationalDecimalCopf(commaNameQuotientPart) > 1 ?
-        `(${joinedFactoredTerms})` :
-        joinedFactoredTerms
-}
-
-const formatUnfactoredCommaNameQuotientPart = (
-    commaNameQuotientPart: QuotientPart & Decimal<{integer: true}>,
-): string =>
-    commaNameQuotientPart.toString()
-
-const computeShouldFactor = (
-    commaNameQuotientPart: QuotientPart & Decimal<{integer: true}>,
-): boolean => {
-    if (computeRationalDecimalCopfr(commaNameQuotientPart) > 2 && commaNameQuotientPart !== 125) return true
-
-    return computeRationalDecimalGpf(commaNameQuotientPart) > 11
-        && commaNameQuotientPart !== 65
-        && commaNameQuotientPart !== 143
-}
-
-const formatMaybeFactoredCommaNameQuotientPart = (
-    commaNameQuotientPart: QuotientPart & Decimal<{integer: true}>,
-    quotientPartIndex: number,
-): string =>
-    computeShouldFactor(commaNameQuotientPart) ?
-        formatFactoredCommaNameQuotientPart(commaNameQuotientPart, quotientPartIndex) :
-        formatUnfactoredCommaNameQuotientPart(commaNameQuotientPart)
-
-const formatCommaNameQuotient = (
-    commaNameQuotient: Quotient<{rational: true}>,
-    {factoringMode}: {factoringMode: FactoringMode},
-): string[] => {
-    return factoringMode === FactoringMode.ALWAYS ?
-        commaNameQuotient.map(formatFactoredCommaNameQuotientPart) :
-        factoringMode === FactoringMode.NEVER ?
-            commaNameQuotient.map(formatUnfactoredCommaNameQuotientPart) :
-            commaNameQuotient.map(formatMaybeFactoredCommaNameQuotientPart)
-}
+import {CommaNameOptions, FactoringMode, SizeCategory, SizeCategoryAbbreviation, SizeCategoryName} from "./types"
 
 const removeParentheses = (string: string): string =>
     string
@@ -117,7 +39,8 @@ const computeCommaName = (
     const maybeDown = isRationalScamonSub(comma) ? " down" : BLANK
 
     const superComma = computeSuperScamon(comma) as Comma<{rational: true, direction: Direction.SUPER}>
-    const sizeCategory: SizeCategoryAbbreviation | SizeCategoryName = computeSizeCategory(superComma, {abbreviated})
+    const sizeCategory: SizeCategory = computeSizeCategory(superComma)
+    const sizeCategoryText = abbreviated ? SIZE_CATEGORY_ABBREVIATIONS[sizeCategory] : SIZE_CATEGORY_NAMES[sizeCategory]
 
     let formattedCommaNameQuotient
     if (isRationalScamonSmooth(comma, THREE_SMOOTHNESS) && !isRationalScamonUnison(comma)) {
@@ -141,7 +64,9 @@ const computeCommaName = (
         }
     }
 
-    return `${formattedCommaNameQuotient}${maybeHyphen}${sizeCategory}${maybeDown}` as Name<Comma>
+    const maybeComplex = computeMaybeComplex(comma, sizeCategory)
+
+    return `${maybeComplex}${formattedCommaNameQuotient}${maybeHyphen}${sizeCategoryText}${maybeDown}` as Name<Comma>
 }
 
 export {

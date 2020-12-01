@@ -19,7 +19,7 @@ import {
     Scamon,
 } from "../../../../general"
 import {
-    computeCommaFromCommaNameQuotientAndSizeCategoryName,
+    computeCommaFromCommaNameQuotientAndSizeCategory,
     computeJiPitchFromAccidental,
     parseAccidental,
     parseCommaName,
@@ -32,7 +32,7 @@ const parsePitch = (pitchIo: Io, pitchFormat?: PitchFormat): Scamon => {
     if (pitchIo.match(NUMERIC_CHARS)) {
         if (pitchFormat === PitchFormat.COMMA_NAME || pitchIo.match(IDENTIFYING_COMMA_NAME_CHARS)) {
             const commaNameQuotientAndSizeCategoryName = parseCommaName(pitchIo)
-            pitch = computeCommaFromCommaNameQuotientAndSizeCategoryName(commaNameQuotientAndSizeCategoryName)
+            pitch = computeCommaFromCommaNameQuotientAndSizeCategory(commaNameQuotientAndSizeCategoryName)
         } else if (pitchFormat === PitchFormat.QUOTIENT || pitchIo.match(IDENTIFYING_QUOTIENT_CHARS)) {
             const quotient = parseQuotient(pitchIo)
             pitch = computeScamonFromQuotient(quotient)

@@ -210,4 +210,23 @@ describe("computeCommaName", (): void => {
         //  Touched upon here: http://forum.sagittal.org/viewtopic.php?p=1721#p1721
         //  Latest questions here: http://forum.sagittal.org/viewtopic.php?p=2980#p2980
     })
+
+    // TODO: COMMA NAMES: COMPLEX NAMES
+    it("can name complex commas beyond the 3-limit", (): void => {
+        // Const comma = {monzo: [-34, 20, 1]} as Comma
+        //
+        // Const actual = computeCommaName(comma)
+        //
+        // Const expected = "c5C"
+        // Expect(actual).toBe(expected)
+    })
+
+    it("can name complex commas beyond the 3-limit, in unabbreviated form", (): void => {
+        // Const comma = {monzo: [-34, 20, 1]} as Comma
+        //
+        // Const actual = computeCommaName(comma, {abbreviated: false})
+        //
+        // Const expected = "complex-5-Comma"
+        // Expect(actual).toBe(expected)
+    })
 })

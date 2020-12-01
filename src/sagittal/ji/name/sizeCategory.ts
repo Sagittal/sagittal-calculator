@@ -1,19 +1,14 @@
 import {Comma, formatPitch, isScamonGreater, isUndefined} from "../../../general"
-import {SIZE_CATEGORIES} from "./sizeCategories"
 import {SIZE_CATEGORY_BOUNDS} from "./sizeCategoryBounds"
-import {SizeCategoryAbbreviation, SizeCategoryBound, SizeCategoryName, SizeCategoryOptions} from "./types"
+import {SizeCategory, SizeCategoryBound} from "./types"
 
-const computeSizeCategory: {
-    (comma: Comma, {abbreviated}: {abbreviated: true}): SizeCategoryAbbreviation,
-    (comma: Comma, {abbreviated}: {abbreviated: false}): SizeCategoryName,
-    (comma: Comma, {}: {}): SizeCategoryName | SizeCategoryAbbreviation,
-    (comma: Comma): SizeCategoryName | SizeCategoryAbbreviation,
-} = (comma: Comma, {abbreviated = true}: SizeCategoryOptions = {}): SizeCategoryName & SizeCategoryAbbreviation => {
-    let sizeCategory = SIZE_CATEGORIES[0]
+const computeSizeCategory = (comma: Comma): SizeCategory => {
+    const sizeCategories = Object.values(SizeCategory)
+    let sizeCategory = sizeCategories[0]
 
     SIZE_CATEGORY_BOUNDS.forEach((sizeCategoryBound: SizeCategoryBound, index: number): void => {
         if (isScamonGreater(comma, sizeCategoryBound.pitch)) {
-            sizeCategory = SIZE_CATEGORIES[index + 1]
+            sizeCategory = sizeCategories[index + 1]
         }
     })
 
@@ -21,9 +16,7 @@ const computeSizeCategory: {
         throw new Error(`${formatPitch(comma)} is beyond the maximum size category's bounds.`)
     }
 
-    return abbreviated ?
-        sizeCategory.abbreviation as SizeCategoryName & SizeCategoryAbbreviation :
-        sizeCategory.name as SizeCategoryName & SizeCategoryAbbreviation
+    return sizeCategory
 }
 
 export {

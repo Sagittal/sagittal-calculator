@@ -1,11 +1,10 @@
 import {Extrema, Max, Min} from "../../../general"
-import {SIZE_CATEGORIES} from "./sizeCategories"
 import {SIZE_CATEGORY_BOUNDS} from "./sizeCategoryBounds"
-import {SizeCategory, SizeCategoryBound, SizeCategoryName} from "./types"
+import {SizeCategory, SizeCategoryBound} from "./types"
 
-const computeSizeCategoryExtrema = (sizeCategoryName: SizeCategoryName): Extrema<SizeCategoryBound> => {
-    const sizeCategoryIndex = SIZE_CATEGORIES.findIndex((sizeCategory: SizeCategory): boolean => {
-        return sizeCategory.name === sizeCategoryName
+const computeSizeCategoryExtrema = (sizeCategory: SizeCategory): Extrema<SizeCategoryBound> => {
+    const sizeCategoryIndex = Object.values(SizeCategory).findIndex((sizeCategoryValue: SizeCategory): boolean => {
+        return sizeCategory === sizeCategoryValue
     })
 
     return [

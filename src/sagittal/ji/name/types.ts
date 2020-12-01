@@ -1,14 +1,5 @@
 import {Name, NumericProperties, Quotient, Scamon} from "../../../general"
 
-interface SizeCategoryOptions {
-    abbreviated?: boolean,
-}
-
-interface SizeCategory {
-    name: SizeCategoryName,
-    abbreviation: SizeCategoryAbbreviation,
-}
-
 type SizeCategoryBound<T extends NumericProperties = {}> = {
     name: Name<SizeCategoryBound>,
     pitch: Scamon<T & {rational: false}>,
@@ -20,55 +11,33 @@ enum FactoringMode {
     THRESHOLD = "threshold",
 }
 
-enum SizeCategoryName {
+enum SizeCategory {
     UNISON = "unison",
     SCHISMINA = "schismina",
     SCHISMA = "schisma",
     KLEISMA = "kleisma",
-    COMMA = "Comma",
-    SMALL_DIESIS = "Small-Diesis",
-    MEDIUM_DIESIS = "Medium-Diesis",
-    LARGE_DIESIS = "Large-Diesis",
-    SMALL_SEMITONE = "Small-Semitone",
-    MEDIUM_SEMITONE = "Medium-Semitone",
-    LARGE_SEMITONE = "Large-Semitone",
-    APOTOME = "Apotome",
-    SCHISMA_PLUS_APOTOME = "schisma-plus-Apotome",
-    KLEISMA_PLUS_APOTOME = "kleisma-plus-Apotome",
-    COMMA_PLUS_APOTOME = "Comma-plus-Apotome",
-    SMALL_DIESIS_PLUS_APOTOME = "Small-Diesis-plus-Apotome",
-    MEDIUM_DIESIS_PLUS_APOTOME = "Medium-Diesis-plus-Apotome",
-    LARGE_DIESIS_PLUS_APOTOME = "Large-Diesis-plus-Apotome",
-    SMALL_SEMITONE_PLUS_APOTOME = "Small-Semitone-plus-Apotome",
-    MEDIUM_SEMITONE_PLUS_APOTOME = "Medium-Semitone-plus-Apotome",
-    LARGE_SEMITONE_PLUS_APOTOME = "Large-Semitone-plus-Apotome",
-    DOUBLE_APOTOME = "double-Apotome",
+    COMMA = "comma",
+    SMALL_DIESIS = "smallDiesis",
+    MEDIUM_DIESIS = "mediumDiesis",
+    LARGE_DIESIS = "largeDiesis",
+    SMALL_SEMITONE = "smallSemitone",
+    MEDIUM_SEMITONE = "mediumSemitone",
+    LARGE_SEMITONE = "largeSemitone",
+    APOTOME = "apotome",
+    SCHISMA_PLUS_APOTOME = "schismaPlusApotome",
+    KLEISMA_PLUS_APOTOME = "kleismaPlusApotome",
+    COMMA_PLUS_APOTOME = "commaPlusApotome",
+    SMALL_DIESIS_PLUS_APOTOME = "smallDiesisPlusApotome",
+    MEDIUM_DIESIS_PLUS_APOTOME = "mediumDiesisPlusApotome",
+    LARGE_DIESIS_PLUS_APOTOME = "largeDiesisPlusApotome",
+    SMALL_SEMITONE_PLUS_APOTOME = "smallSemitonePlusApotome",
+    MEDIUM_SEMITONE_PLUS_APOTOME = "mediumSemitonePlusApotome",
+    LARGE_SEMITONE_PLUS_APOTOME = "largeSemitonePlusApotome",
+    DOUBLE_APOTOME = "doubleApotome",
 }
 
-enum SizeCategoryAbbreviation {
-    UNISON = "u",
-    SCHISMINA = "n",
-    SCHISMA = "s",
-    KLEISMA = "k",
-    COMMA = "C",
-    SMALL_DIESIS = "S",
-    MEDIUM_DIESIS = "M",
-    LARGE_DIESIS = "L",
-    SMALL_SEMITONE = "SS",
-    MEDIUM_SEMITONE = "MS",
-    LARGE_SEMITONE = "LS",
-    APOTOME = "A",
-    SCHISMA_PLUS_APOTOME = "s+A",
-    KLEISMA_PLUS_APOTOME = "k+A",
-    COMMA_PLUS_APOTOME = "C+A",
-    SMALL_DIESIS_PLUS_APOTOME = "S+A",
-    MEDIUM_DIESIS_PLUS_APOTOME = "M+A",
-    LARGE_DIESIS_PLUS_APOTOME = "L+A",
-    SMALL_SEMITONE_PLUS_APOTOME = "SS+A",
-    MEDIUM_SEMITONE_PLUS_APOTOME = "MS+A",
-    LARGE_SEMITONE_PLUS_APOTOME = "LS+A",
-    DOUBLE_APOTOME = "A+A",
-}
+type SizeCategoryName = string & {_SizeCategoryNameBrand: boolean}
+type SizeCategoryAbbreviation = string & {_SizeCategoryAbbreviationBrand: boolean}
 
 type CommaNameOptions = Partial<{
     directed: boolean,
@@ -91,12 +60,11 @@ type CommaNameQuotient<T extends NumericProperties = {}> =
 
 interface ParsedCommaName {
     commaNameQuotient: CommaNameQuotient,
-    sizeCategoryName: SizeCategoryName,
+    sizeCategory: SizeCategory,
 }
 
 export {
     SizeCategory,
-    SizeCategoryOptions,
     SizeCategoryName,
     SizeCategoryAbbreviation,
     CommaNameOptions,

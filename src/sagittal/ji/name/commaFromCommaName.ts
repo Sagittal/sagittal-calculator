@@ -11,14 +11,14 @@ import {
 import {computeN2D3P9} from "../badness"
 import {computeNotatingCommas} from "../find"
 import {computeSizeCategoryExtrema} from "./sizeCategoryExtrema"
-import {CommaNameQuotient, SizeCategoryName} from "./types"
+import {CommaNameQuotient, SizeCategory} from "./types"
 
-const computeCommaFromCommaNameQuotientAndSizeCategoryName = (
-    parsedCommaName: {commaNameQuotient: CommaNameQuotient, sizeCategoryName: SizeCategoryName},
+const computeCommaFromCommaNameQuotientAndSizeCategory = (
+    parsedCommaName: {commaNameQuotient: CommaNameQuotient, sizeCategory: SizeCategory},
 ): Comma => {
-    const {commaNameQuotient, sizeCategoryName} = parsedCommaName
+    const {commaNameQuotient, sizeCategory} = parsedCommaName
 
-    const [lowerBound, upperBound] = computeSizeCategoryExtrema(sizeCategoryName)
+    const [lowerBound, upperBound] = computeSizeCategoryExtrema(sizeCategory)
 
     const two3FreeMonzo = computeRationalMonzoFromRationalQuotient(commaNameQuotient)
     const commas = computeNotatingCommas(
@@ -43,12 +43,12 @@ const computeCommaFromCommaNameQuotientAndSizeCategoryName = (
     })
 
     if (isUndefined(mostPopularComma)) {
-        throw new Error(`For whatever reason the number of commas notating the monzo ${two3FreeMonzo} within the bounds of its size category ${sizeCategoryName} was not 1. It was ${commas.length}. Perhaps you need to expand the search parameters, e.g. raise the max ATE, AAS, or 2,3-free sopfr.`)
+        throw new Error(`For whatever reason the number of commas notating the monzo ${two3FreeMonzo} within the bounds of its size category ${sizeCategory} was not 1. It was ${commas.length}. Perhaps you need to expand the search parameters, e.g. raise the max ATE, AAS, or 2,3-free sopfr.`)
     }
 
     return mostPopularComma
 }
 
 export {
-    computeCommaFromCommaNameQuotientAndSizeCategoryName,
+    computeCommaFromCommaNameQuotientAndSizeCategory,
 }

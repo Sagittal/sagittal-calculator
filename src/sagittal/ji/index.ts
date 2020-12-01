@@ -12,7 +12,7 @@ export {
     DEFAULT_MAX_N2D3P9,
 } from "./find"
 export {
-    computeCommaFromCommaNameQuotientAndSizeCategoryName,
+    computeCommaFromCommaNameQuotientAndSizeCategory,
     computeCommaName,
     SIZE_CATEGORY_BOUNDS,
     parseCommaName,

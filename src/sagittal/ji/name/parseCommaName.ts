@@ -7,8 +7,8 @@ import {
     parseQuotient,
     Quotient,
 } from "../../../general"
-import {SIZE_CATEGORIES} from "./sizeCategories"
-import {CommaNameQuotient, ParsedCommaName, SizeCategoryName} from "./types"
+import {SIZE_CATEGORY_ABBREVIATIONS, SIZE_CATEGORY_NAMES} from "./sizeCategories"
+import {CommaNameQuotient, ParsedCommaName, SizeCategory} from "./types"
 
 const parseCommaName = (commaNameIo: Io): ParsedCommaName => {
     const two3FreePartOfCommaName = commaNameIo // *not* a 2,3-free class, because it's not necessarily super!!!
@@ -21,22 +21,22 @@ const parseCommaName = (commaNameIo: Io): ParsedCommaName => {
         parseQuotient(two3FreePartOfCommaName) as Quotient<{rational: true, rough: 3}>,
     ) as Quotient<{rational: true, rough: 3}> as CommaNameQuotient
 
-    let sizeCategoryName: Maybe<SizeCategoryName> = undefined
+    let sizeCategory: Maybe<SizeCategory> = undefined
 
-    for (const sizeCategory of SIZE_CATEGORIES) {
+    for (const sizeCategoryValue of Object.values(SizeCategory)) {
         if (
-            sizeCategoryPartOfCommaName === sizeCategory.name ||
-            sizeCategoryPartOfCommaName === sizeCategory.abbreviation
+            sizeCategoryPartOfCommaName === SIZE_CATEGORY_NAMES[sizeCategoryValue]
+            || sizeCategoryPartOfCommaName === SIZE_CATEGORY_ABBREVIATIONS[sizeCategoryValue]
         ) {
-            sizeCategoryName = sizeCategory.name
+            sizeCategory = sizeCategoryValue
         }
     }
 
-    if (isUndefined(sizeCategoryName)) {
+    if (isUndefined(sizeCategory)) {
         throw new Error(`No size category found for comma name ${commaNameIo}.`)
     }
 
-    return {commaNameQuotient, sizeCategoryName}
+    return {commaNameQuotient, sizeCategory}
 }
 
 export {
