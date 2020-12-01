@@ -368,80 +368,80 @@ is provided, no clef will be displayed, and the note position modifiers will def
 
         // ups and downs
         // https://w3c.github.io/smufl/gitbook/tables/arrows-and-arrowheads.html
-        "^": "\uEB88",
-        "v": "\uEB8C",
+        "^": "",           // U+EB88
+        "v": "",           // U+EB8C
 
         // EHEJIPN
         // https://w3c.github.io/smufl/gitbook/tables/extended-helmholtz-ellis-accidentals-just-intonation.html
         // All EHEJIPN staffCodes start with a dot (full-stop). Unicodes are successive below.
-        ".bbv": "\uE2C0",
-        ".bv": "\uE2C1",
-        ".hv": "\uE2C2",
-        ".#v": "\uE2C3",
-        ".xv": "\uE2C4",
-        ".bb^": "\uE2C5",
-        ".b^": "\uE2C6",
-        ".h^": "\uE2C7",
-        ".#^": "\uE2C8",
-        ".x^": "\uE2C9",
-        ".bbvv": "\uE2CA",
-        ".bvv": "\uE2CB",
-        ".hvv": "\uE2CC",
-        ".#vv": "\uE2CD",
-        ".xvv": "\uE2CE",
-        ".bb^^": "\uE2CF",
-        ".b^^": "\uE2D0",
-        ".h^^": "\uE2D1",
-        ".#^^": "\uE2D2",
-        ".x^^": "\uE2D3",
-        ".bbvvv": "\uE2D4",
-        ".bvvv": "\uE2D5",
-        ".hvvv": "\uE2D6",
-        ".#vvv": "\uE2D7",
-        ".xvvv": "\uE2D8",
-        ".bb^^^": "\uE2D9",
-        ".b^^^": "\uE2DA",
-        ".h^^^": "\uE2DB",
-        ".#^^^": "\uE2DC",
-        ".x^^^": "\uE2DD",
-        ".l": "\uE2DE", // lowercase L here, but people would type it uppercase
-        ".p": "\uE2DF", // people would type it uppercase
-        ".ll": "\uE2E0", // lowercase LL here, but people would type them uppercase
-        ".pp": "\uE2E1", // people would type them uppercase
-        ".<": "\uE2E2",
-        ".>": "\uE2E3",
-        ".<|": "\uE2E4",
-        ".>|": "\uE2E5",
-        ".\\\\": "\uE2E6",
-        ".//": "\uE2E7",
-        ".\\": "\uE2E8",
-        "./": "\uE2E9",
-        ".^": "\uE2EA",
-        ".v": "\uE2EB",
-        ".-": "\uE2EC",
-        ".+": "\uE2ED",
-        ".{": "\uE2EE",
-        ".}": "\uE2EF",
-        ".bbt": "\uE2F0",
-        ".bt": "\uE2F1",
-        ".ht": "\uE2F2",
-        ".#t": "\uE2F3",
-        ".xt": "\uE2F4",
-        ".<t": "\uE2F5",
-        ".>t": "\uE2F6",
-        ".\\\\\\": "\uE2F7",
-        ".///": "\uE2F8",
-        ".~": "\uE2F9",
-        ".~~": "\uE2FA",
-        ".=": "\uE2FB",
+        ".bbv": "",        // U+E2C0
+        ".bv": "",         // U+E2C1
+        ".hv": "",         // U+E2C2
+        ".#v": "",         // U+E2C3
+        ".xv": "",         // U+E2C4
+        ".bb^": "",        // U+E2C5
+        ".b^": "",         // U+E2C6
+        ".h^": "",         // U+E2C7
+        ".#^": "",         // U+E2C8
+        ".x^": "",         // U+E2C9
+        ".bbvv": "",       // U+E2CA
+        ".bvv": "",        // U+E2CB
+        ".hvv": "",        // U+E2CC
+        ".#vv": "",        // U+E2CD
+        ".xvv": "",        // U+E2CE
+        ".bb^^": "",       // U+E2CF
+        ".b^^": "",        // U+E2D0
+        ".h^^": "",        // U+E2D1
+        ".#^^": "",        // U+E2D2
+        ".x^^": "",        // U+E2D3
+        ".bbvvv": "",      // U+E2D4
+        ".bvvv": "",       // U+E2D5
+        ".hvvv": "",       // U+E2D6
+        ".#vvv": "",       // U+E2D7
+        ".xvvv": "",       // U+E2D8
+        ".bb^^^": "",      // U+E2D9
+        ".b^^^": "",       // U+E2DA
+        ".h^^^": "",       // U+E2DB
+        ".#^^^": "",       // U+E2DC
+        ".x^^^": "",       // U+E2DD
+        ".l": "",          // U+E2DE           lowercase L here, but people would type it uppercase
+        ".p": "",          // U+E2DF           people would type it uppercase
+        ".ll": "",         // U+E2E0           lowercase LL here, but people would type them uppercase
+        ".pp": "",         // U+E2E1           people would type them uppercase
+        ".<": "",          // U+E2E2
+        ".>": "",          // U+E2E3
+        ".<|": "",         // U+E2E4
+        ".>|": "",         // U+E2E5
+        ".\\\\": "",       // U+E2E6
+        ".//": "",         // U+E2E7
+        ".\\": "",         // U+E2E8
+        "./": "",          // U+E2E9
+        ".^": "",          // U+E2EA
+        ".v": "",          // U+E2EB
+        ".-": "",          // U+E2EC
+        ".+": "",          // U+E2ED
+        ".{": "",          // U+E2EE
+        ".}": "",          // U+E2EF
+        ".bbt": "",        // U+E2F0
+        ".bt": "",         // U+E2F1
+        ".ht": "",         // U+E2F2
+        ".#t": "",         // U+E2F3
+        ".xt": "",         // U+E2F4
+        ".<t": "",         // U+E2F5
+        ".>t": "",         // U+E2F6
+        ".\\\\\\": "",     // U+E2F7
+        ".///": "",        // U+E2F8
+        ".~": "",          // U+E2F9
+        ".~~": "",         // U+E2FA
+        ".=": "",          // U+E2FB
 
         // For convenience of EHEJIPN users, standard accidentals with dots at the start of their codes
         // https://w3c.github.io/smufl/gitbook/tables/standard-accidentals-12-edo.html
-        ".bb": "\uE264",
-        ".b": "\uE260",
-        ".h": "\uE261",
-        ".#": "\uE262",
-        ".x": "\uE263", // Small double-sharp, not the same as "x" or "X", which is the (sagittal-compatible) large double-sharp
+        ".bb": "",         // U+E264
+        ".b": "",          // U+E260
+        ".h": "",          // U+E261
+        ".#": "",          // U+E262
+        ".x": ""          // U+E263            Small double-sharp, not the same as "x" or "X", which is the (sagittal-compatible) large double-sharp
     }
 
     const TREBLE_COMBINING_STAFF_POSITION_UNICODE_MAP = {
