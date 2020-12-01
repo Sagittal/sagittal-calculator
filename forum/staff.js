@@ -39,8 +39,11 @@ is provided, no clef will be displayed, and the note position modifiers will def
 
         // staff lines
         "ln8": "",         // U+E020
+        "st8": "",
         "ln16": "",        // U+E014
+        "st16": "",
         "ln24": "",        // U+E01A
+        "st24": "",
 
         "lgln": "",        // U+E022           leger line
 
@@ -103,6 +106,7 @@ is provided, no clef will be displayed, and the note position modifiers will def
 
         // conventional compatibles
         "h": "",           // U+E261           natural
+        "n": "",
         "#": "",           // U+E262           sharp
         "b": "",           // U+E260           flat
         "x": "",           // U+E47D           double sharp
