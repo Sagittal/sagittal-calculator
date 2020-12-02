@@ -50,7 +50,33 @@ const SIZE_CATEGORY_ABBREVIATIONS: Record<SizeCategory, SizeCategoryAbbreviation
     [SizeCategory.DOUBLE_APOTOME]: "A+A" as SizeCategoryAbbreviation,
 }
 
+const SIZE_CATEGORY_NAME_ALTERNATIVES: Record<SizeCategory, SizeCategoryName[]> = {
+    [SizeCategory.UNISON]: [] as SizeCategoryName[],
+    [SizeCategory.SCHISMINA]: ["atom", "skismina", "skhismina"] as SizeCategoryName[],
+    [SizeCategory.SCHISMA]: ["skisma", "skhisma"] as SizeCategoryName[],
+    [SizeCategory.KLEISMA]: ["semicomma"] as SizeCategoryName[],
+    [SizeCategory.COMMA]: ["diaschisma", "diaskisma", "diaskhisma"] as SizeCategoryName[],
+    [SizeCategory.SMALL_DIESIS]: ["minor-diesis", "fifth-tone"] as SizeCategoryName[],
+    [SizeCategory.MEDIUM_DIESIS]: ["diesis", "quarter-tone", "enharmonic-diesis", "enharmonic"] as SizeCategoryName[],
+    [SizeCategory.LARGE_DIESIS]: ["major-diesis", "third-tone"] as SizeCategoryName[],
+    [SizeCategory.SMALL_SEMITONE]: ["chromatic-semitone"] as SizeCategoryName[],
+    [SizeCategory.LIMMA]: ["medium-semitone"] as SizeCategoryName[],
+    [SizeCategory.LARGE_SEMITONE]: ["diatonic-semitone"] as SizeCategoryName[],
+    [SizeCategory.APOTOME]: [] as SizeCategoryName[],
+    [SizeCategory.SCHISMA_PLUS_APOTOME]: [] as SizeCategoryName[],
+    [SizeCategory.KLEISMA_PLUS_APOTOME]: [] as SizeCategoryName[],
+    [SizeCategory.COMMA_PLUS_APOTOME]: [] as SizeCategoryName[],
+    [SizeCategory.SMALL_DIESIS_PLUS_APOTOME]: ["neutral-second"] as SizeCategoryName[],
+    [SizeCategory.MEDIUM_DIESIS_PLUS_APOTOME]: [] as SizeCategoryName[],
+    [SizeCategory.LARGE_DIESIS_PLUS_APOTOME]: [] as SizeCategoryName[],
+    [SizeCategory.SMALL_SEMITONE_PLUS_APOTOME]: [] as SizeCategoryName[],
+    [SizeCategory.LIMMA_PLUS_APOTOME]: [] as SizeCategoryName[],
+    [SizeCategory.LARGE_SEMITONE_PLUS_APOTOME]: [] as SizeCategoryName[],
+    [SizeCategory.DOUBLE_APOTOME]: [] as SizeCategoryName[],
+}
+
 export {
     SIZE_CATEGORY_NAMES,
     SIZE_CATEGORY_ABBREVIATIONS,
+    SIZE_CATEGORY_NAME_ALTERNATIVES,
 }
