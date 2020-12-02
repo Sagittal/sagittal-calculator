@@ -47,45 +47,45 @@ assets/fonts folder. Please do not load it from another forum's assets, for your
         "st24": "",        // U+E01A
         "st": "",
 
-        "lgln": "",        // U+E022           lgLn: leger line
+        "lgln": "",        // U+E022           leger line
 
         // clefs
-        "tbcf": "",        // U+E050           tbCf: treble
-        "alcf": "",        // U+E05C           alCf: alto
-        "bscf": "",        // U+E062           bsCf: bass
+        "tbcf": "",        // U+E050           treble
+        "alcf": "",        // U+E05C           alto
+        "bscf": "",        // U+E062           bass
 
-        "ntdb": "",        // U+E1D0           ntDb: double whole note
-        "nt1": "",         // U+E1D2           nt1: whole note
-        "nt2": "",         // U+E1D3           nt2: half note stem up
-        "nt2dn": "",       // U+E1D4           nt2Dn: half note stem down
-        "nt4": "",         // U+E1D5           nt4: quarter note stem up
-        "nt4dn": "",       // U+E1D6           nt4Dn: quarter note stem down
-        "nt8": "",         // U+E1D7           nt8: quarter note stem up
-        "nt8dn": "",       // U+E1D8           nt8Dn: quarter note stem down
-        "nt16": "",        // U+E1D9           nt16: sixteenth note stem up
-        "nt16dn": "",      // U+E1DA           nt16Dn: sixteenth note stem down
+        "ntdb": "",        // U+E1D0           double whole note
+        "nt1": "",         // U+E1D2           whole note
+        "nt2": "",         // U+E1D3           half note stem up
+        "nt2dn": "",       // U+E1D4           half note stem down
+        "nt4": "",         // U+E1D5           quarter note stem up
+        "nt4dn": "",       // U+E1D6           quarter note stem down
+        "nt8": "",         // U+E1D7           quarter note stem up
+        "nt8dn": "",       // U+E1D8           quarter note stem down
+        "nt16": "",        // U+E1D9           sixteenth note stem up
+        "nt16dn": "",      // U+E1DA           sixteenth note stem down
 
         "dt": "",          // U+E1E7           augmentation dot
-        "agdt": "",        // U+E1E7           agDt: augmentation dot
+        "agdt": "",
 
         // Beamed groups of notes
         // https://w3c.github.io/smufl/gitbook/tables/beamed-groups-of-notes.html
-        "ntbmst": "",      // U+E1F0           ntBmSt: note for start of any beam (short stem)
-        "ntbm8": "",       // U+E1F2           ntBm8: note for end of eighth beam, and possible continuation of any beam (short stem)
-        "ntbm16": "",      // U+E1F4           ntBm16: note for end of sixteenth beam, and possible continuation of any beam (short stem)
-        "bm8": "",         // U+E1F7           bm8: eighth beam continuation (for short stems)
-        "bm16": "",        // U+E1F9           bm16: sixteenth beam continuation (for short stems)
-        "tp3": "",         // U+E1FF           tp3: tuplet digit 3 (for short stems)
+        "ntbmst": "",      // U+E1F0           note for start of any beam (short stem)
+        "ntbm8": "",       // U+E1F2           note for end of eighth beam, and possible continuation of any beam (short stem)
+        "ntbm16": "",      // U+E1F4           note for end of sixteenth beam, and possible continuation of any beam (short stem)
+        "bm8": "",         // U+E1F7           eighth beam continuation (for short stems)
+        "bm16": "",        // U+E1F9           sixteenth beam continuation (for short stems)
+        "tp3": "",         // U+E1FF           tuplet digit 3 (for short stems)
 
-        "rsdb": "",        // U+E4E2           rsDb: double whole rest
-        "rs1": "",         // U+E4E3           rs1: whole rest
-        "rs2": "",         // U+E4E4           rs2: half rest
-        "rs4": "",         // U+E4E5           rs4: quarter rest
-        "rs8": "",         // U+E4E6           rs8: eighth rest
-        "rs16": "",        // U+E4E6           rs16: sixteenth rest
+        "rsdb": "",        // U+E4E2           double whole rest
+        "rs1": "",         // U+E4E3           whole rest
+        "rs2": "",         // U+E4E4           half rest
+        "rs4": "",         // U+E4E5           quarter rest
+        "rs8": "",         // U+E4E6           eighth rest
+        "rs16": "",        // U+E4E6           sixteenth rest
 
-        "brln": "",        // U+E030           brLn: bar line (single)
-        "brlndb": "",      // U+E031           brLnDb: bar line double
+        "brln": "",        // U+E030           bar line (single)
+        "brlndb": "",      // U+E031           bar line double
 
         "8va": "",         // U+E512           octave above
         "8vb": "",         // U+E51C           octave below
@@ -101,10 +101,10 @@ assets/fonts folder. Please do not load it from another forum's assets, for your
         "tm8": "",         // U+E088           time signature digit 8
         "tm9": "",         // U+E089           time signature digit 9
 
-        "tmcm": "",        // U+E08A           tmCm: common time
+        "tmcm": "",        // U+E08A           common time
 
-        "tmnm": "",        // U+E09E           tmNm: time signature combining numerator position
-        "tmdn": "",        // U+E09F           tmDn: time signature combining denominator position
+        "tmnm": "",        // U+E09E           time signature combining numerator position
+        "tmdn": "",        // U+E09F           time signature combining denominator position
 
         // conventional compatibles
         "h": "",           // U+E261           natural
