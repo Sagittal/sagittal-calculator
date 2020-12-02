@@ -105,4 +105,30 @@ describe("parseCommaName", (): void => {
         expect(parseCommaName("3C" as Io))
             .toEqual({commaNameQuotient: [3, 1] as CommaNameQuotient, sizeCategory: SizeCategory.COMMA})
     })
+
+    // TODO: COMMA NAMES: support alternative names when parsing
+    // tslint:disable max-line-length
+    /*
+    schismina	                n	    atom                skismina    skhismina
+    schisma	                    s	    skisma	            skhisma
+    kleisma	                    k	    semicomma
+    comma	                    C	    diaschisma	        diaskisma   diaskhisma
+    small-diesis	            S	    minor-diesis	    1/5-tone
+    diesis	                    M	    medium-diesis	    1/4-tone	enharmonic-diesis	enharmonic
+    large-diesis	            L	    major-diesis	    1/3-tone
+    small-semitone	            SS	    chromatic-semitone
+    limma	                    MS	    medium-semitone
+    large-semitone	            LS	    diatonic-semitone
+    apotome	                    A
+    schisma-plus-apotome	    s+A
+    kleisma-plus-apotome	    k+A
+    comma-plus-apotome	        C+A
+    small-diesis-plus-apotome	S+A	    neutral-second
+    diesis-plus-apotome	        M+A
+    large-diesis-plus-apotome	L+A
+    small-semitone-plus-apotome	SS+A
+    limma-plus-apotome	        MS+A
+    large-semitone-plus-apotome	LS+A
+    double-apotome	            A+A
+     */
 })

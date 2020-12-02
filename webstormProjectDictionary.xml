@@ -39,6 +39,8 @@
             <w>daoflat</w>
             <w>demonator</w>
             <w>diaschisma</w>
+            <w>diaskhisma</w>
+            <w>diaskisma</w>
             <w>ditonic</w>
             <w>dibbler</w>
             <w>didymus</w>
@@ -292,11 +294,13 @@
             <w>schisma</w>
             <w>schismas</w>
             <w>schismina</w>
+            <w>schisminas</w>
             <w>scriptsize</w>
             <w>sagittation</w>
             <w>sagittations</w>
             <w>secor</w>
             <w>secor's</w>
+            <w>semicomma</w>
             <w>semiflat</w>
             <w>semisharp</w>
             <w>semitina</w>
@@ -311,6 +315,14 @@
             <w>shaodoublesharp</w>
             <w>shaoflat</w>
             <w>shaosharp</w>
+            <w>skisma</w>
+            <w>skismas</w>
+            <w>skismina</w>
+            <w>skisminas</w>
+            <w>skhisma</w>
+            <w>skhismas</w>
+            <w>skhismina</w>
+            <w>skhisminas</w>
             <w>slai</w>
             <w>slaidoubleflat</w>
             <w>slaiflat</w>
@@ -341,6 +353,7 @@
             <w>submetric's</w>
             <w>submetrics</w>
             <w>subtable</w>
+            <w>subtables</w>
             <w>syllabics</w>
             <w>syntonic</w>
             <w>taidoubleflat</w>
