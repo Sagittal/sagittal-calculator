@@ -1,7 +1,7 @@
 import {LogTarget, Maybe, saveLog} from "../../../general"
 import {analyzeJiPitch, CommaAnalysis, CommaClassId, computeMaybeCommaClassId} from "../../../sagittal"
-import {computeNotatingCommaAnalyses} from "../analyzeJiPitch"
-import {computeFindNotatingCommasSettings} from "../findCommas"
+import {findNotatingCommaAnalyses} from "../analyzeJiPitch"
+import {computeFindNotatingCommasOptions} from "../findCommas"
 import {
     compute23FreeClassOutput,
     computeJiPitchOutput,
@@ -25,10 +25,8 @@ saveLog(jiPitchOutput, LogTarget.FINAL)
 const two3FreeClassOutput = compute23FreeClassOutput(jiPitchAnalysis.two3FreeClassAnalysis)
 saveLog(two3FreeClassOutput, LogTarget.FINAL)
 
-const findNotatingCommasSettings = computeFindNotatingCommasSettings(jiPitchAnalysis)
-// TODO: should this be "findNotatingCommaAnalyses"? and "findCommaAnalyses" too?
-//  And then what's the difference between Settings and Options if you update the type param name?
-const notatingCommaAnalyses = computeNotatingCommaAnalyses(jiPitch, findNotatingCommasSettings)
+const findNotatingCommasOptions = computeFindNotatingCommasOptions(jiPitchAnalysis)
+const notatingCommaAnalyses = findNotatingCommaAnalyses(jiPitch, findNotatingCommasOptions)
 const maybeCommaClassIds = notatingCommaAnalyses.map((commaAnalysis: CommaAnalysis): Maybe<CommaClassId> => {
     return computeMaybeCommaClassId(commaAnalysis.pitch)
 })

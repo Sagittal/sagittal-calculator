@@ -19,7 +19,7 @@ import {
     Two3FreeClass,
 } from "../../../../../../src/general"
 import {ApotomeSlope, Ate, CommaAnalysis, CommaClassId, N2D3P9} from "../../../../../../src/sagittal"
-import {DEFAULT_FIND_COMMAS_SETTINGS} from "../../../../../../src/scripts/jiPitch/findCommas"
+import {DEFAULT_FIND_COMMAS_OPTIONS} from "../../../../../../src/scripts/jiPitch/findCommas"
 import {jiPitchScriptGroupSettings} from "../../../../../../src/scripts/jiPitch/globals"
 import {computeFindCommasOutput} from "../../../../../../src/scripts/jiPitch/io"
 import {JiPitchScriptGroupField} from "../../../../../../src/scripts/jiPitch/types"
@@ -71,13 +71,13 @@ describe("computeFindCommasOutput", (): void => {
         },
     ]
     const maybeCommaClassIds = [CommaClassId._11_M, undefined]
-    const findCommasSettings = {
-        ...DEFAULT_FIND_COMMAS_SETTINGS,
+    const findCommasOptions = {
+        ...DEFAULT_FIND_COMMAS_OPTIONS,
         maxN2D3P9: OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS,
     }
 
     it("changes column widths so that each cell in a column has the same width", (): void => {
-        const actual = computeFindCommasOutput(commaAnalyses, maybeCommaClassIds, findCommasSettings)
+        const actual = computeFindCommasOutput(commaAnalyses, maybeCommaClassIds, findCommasOptions)
 
         const expected =
             "" + NEWLINE +
@@ -100,7 +100,7 @@ describe("computeFindCommasOutput", (): void => {
 
     it("can format tables for sharing on the Sagittal forum", (): void => {
         ioSettings.tableFormat = TableFormat.FORUM
-        const actual = computeFindCommasOutput(commaAnalyses, maybeCommaClassIds, findCommasSettings)
+        const actual = computeFindCommasOutput(commaAnalyses, maybeCommaClassIds, findCommasOptions)
 
         const expected =
             "" + NEWLINE +
@@ -125,7 +125,7 @@ describe("computeFindCommasOutput", (): void => {
 
     it("can format tables for sharing on the Sagittal forum, but where the splitting of quotients and 2,3-free classes is preferred", (): void => {
         ioSettings.tableFormat = TableFormat.FORUM_WITH_SPLIT_QUOTIENTS
-        const actual = computeFindCommasOutput(commaAnalyses, maybeCommaClassIds, findCommasSettings)
+        const actual = computeFindCommasOutput(commaAnalyses, maybeCommaClassIds, findCommasOptions)
 
         const expected =
             "" + NEWLINE +
@@ -150,7 +150,7 @@ describe("computeFindCommasOutput", (): void => {
 
     it("can format it for a spreadsheet", (): void => {
         ioSettings.tableFormat = TableFormat.SPREADSHEET
-        const actual = computeFindCommasOutput(commaAnalyses, maybeCommaClassIds, findCommasSettings)
+        const actual = computeFindCommasOutput(commaAnalyses, maybeCommaClassIds, findCommasOptions)
 
         const expected =
             "" + NEWLINE +
@@ -174,7 +174,7 @@ describe("computeFindCommasOutput", (): void => {
     it("can reorder fields", (): void => {
         jiPitchScriptGroupSettings.orderedFields = ["monzo", "two3FreeClassName", "quotient", "cents"] as Array<JiPitchScriptGroupField>
 
-        const actual = computeFindCommasOutput(commaAnalyses, maybeCommaClassIds, findCommasSettings)
+        const actual = computeFindCommasOutput(commaAnalyses, maybeCommaClassIds, findCommasOptions)
 
         const expected =
             "" + NEWLINE +

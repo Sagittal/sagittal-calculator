@@ -21,10 +21,10 @@ import {computePrimeExponentExtremasGivenMaxN2D3P9} from "../../../sagittal"
 import {TWO_3_FREE_MONZO_BASE} from "./constants"
 import {computePrimeExponentRange} from "./primeExponentRange"
 import {compute23FreePrimesToCheck} from "./two3FreePrimesToCheck"
-import {Two3FreeMonzosToCheckOptions} from "./types"
+import {FindCommasOptions} from "./types"
 
 const compute23FreeRationalMonzosToCheck = (
-    {maxPrimeLimit, max23FreeSopfr, max23FreeCopfr, maxN2D3P9}: Two3FreeMonzosToCheckOptions = {},
+    {maxPrimeLimit, max23FreeSopfr, max23FreeCopfr, maxN2D3P9}: Partial<FindCommasOptions> = {},
 ): Array<Monzo<{rational: true, rough: 5}>> => {
     if (isUndefined(max23FreeSopfr) && isUndefined(maxN2D3P9)) {
         if (isUndefined(maxPrimeLimit)) {

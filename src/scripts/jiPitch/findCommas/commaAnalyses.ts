@@ -1,11 +1,11 @@
 import {Comma, sort} from "../../../general"
 import {analyzeComma, CommaAnalysis} from "../../../sagittal"
 import {jiPitchScriptGroupSettings} from "../globals"
-import {computeCommas} from "./commas"
-import {FindCommasSettings} from "./types"
+import {findCommas} from "./commas"
+import {FindCommasOptions} from "./types"
 
-const computeCommaAnalyses = (findCommasSettings: Partial<FindCommasSettings> = {}): CommaAnalysis[] => {
-    const commas = computeCommas({...jiPitchScriptGroupSettings, ...findCommasSettings})
+const findCommaAnalyses = (findCommasOptions: Partial<FindCommasOptions> = {}): CommaAnalysis[] => {
+    const commas = findCommas({...jiPitchScriptGroupSettings, ...findCommasOptions})
 
     const commaAnalyses = commas.map((comma: Comma): CommaAnalysis => {
         return analyzeComma(comma, jiPitchScriptGroupSettings.commaNameOptions)
@@ -19,5 +19,5 @@ const computeCommaAnalyses = (findCommasSettings: Partial<FindCommasSettings> = 
 }
 
 export {
-    computeCommaAnalyses,
+    findCommaAnalyses,
 }

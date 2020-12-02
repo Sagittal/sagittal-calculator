@@ -1,6 +1,6 @@
 export {
     CommasFrom23FreeMonzoOptions,
-    computeNotatingCommas,
+    findNotatingCommas,
     computeCommasFrom23FreeRationalMonzo,
     DEFAULT_MAX_AAS,
     DEFAULT_MAX_ATE,

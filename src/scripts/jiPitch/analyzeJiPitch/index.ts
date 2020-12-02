@@ -1,1 +1,1 @@
-export {computeNotatingCommaAnalyses} from "./notatingCommaAnalyses"
+export {findNotatingCommaAnalyses} from "./notatingCommaAnalyses"

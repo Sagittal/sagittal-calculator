@@ -12,9 +12,9 @@ import {
 } from "../../../sagittal"
 import {compute23FreeRationalMonzosToCheckFromKnownLowN2D3P9Numerators} from "./knownNumerators"
 import {compute23FreeRationalMonzosToCheck} from "./two3FreeMonzosToCheck"
-import {CommasOptions} from "./types"
+import {FindCommasOptions} from "./types"
 
-const computeCommas = (options: CommasOptions): Comma[] => {
+const findCommas = (options: Partial<FindCommasOptions>): Comma[] => {
     const {
         lowerBound = DEFAULT_LOWER_BOUND,
         upperBound = DEFAULT_UPPER_BOUND,
@@ -75,5 +75,5 @@ const computeCommas = (options: CommasOptions): Comma[] => {
 }
 
 export {
-    computeCommas,
+    findCommas,
 }

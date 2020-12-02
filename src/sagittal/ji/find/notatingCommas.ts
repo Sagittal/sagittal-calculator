@@ -11,7 +11,7 @@ import {
 import {computeCommasFrom23FreeRationalMonzo} from "./commasFrom23FreeMonzo"
 import {CommasFrom23FreeMonzoOptions} from "./types"
 
-const computeNotatingCommas = <T extends NumericProperties>(
+const findNotatingCommas = <T extends NumericProperties>(
     {monzo}: Scamon<T & {rational: true}>,
     options?: CommasFrom23FreeMonzoOptions,
 ): Comma[] => {
@@ -29,5 +29,5 @@ const computeNotatingCommas = <T extends NumericProperties>(
 }
 
 export {
-    computeNotatingCommas,
+    findNotatingCommas,
 }

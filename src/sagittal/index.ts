@@ -9,7 +9,7 @@ export {
     computeApotomeSlope,
     computeCommasFrom23FreeRationalMonzo,
     computeN2D3P9,
-    computeNotatingCommas,
+    findNotatingCommas,
     computePrimeExponentExtremasGivenMaxN2D3P9,
     DEFAULT_MAX_AAS,
     DEFAULT_MAX_ATE,

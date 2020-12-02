@@ -1,5 +1,5 @@
 import {BLANK, formatDecimal, formatIntegerDecimal, formatPitch, Io, NEWLINE} from "../../../general"
-import {FindCommasSettings} from "../findCommas"
+import {FindCommasOptions} from "../findCommas"
 
 const JI_PITCH_TABLE_TITLE = "   --- JI pitch ---\n\n" as Io
 
@@ -7,7 +7,7 @@ const TWO_3_FREE_CLASS_TABLE_TITLE = "   --- 2,3-free class ---\n\n" as Io
 
 const NOTATING_COMMAS_TABLE_TITLE = "   --- notating commas ---\n\n" as Io
 
-const computeFindCommasTableTitle = (findCommasSettings: FindCommasSettings): Io => {
+const computeFindCommasTableTitle = (findCommasOptions: FindCommasOptions): Io => {
     const {
         max23FreeSopfr,
         max23FreeCopfr,
@@ -17,7 +17,7 @@ const computeFindCommasTableTitle = (findCommasSettings: FindCommasSettings): Io
         upperBound,
         maxAte,
         maxAas,
-    } = findCommasSettings
+    } = findCommasOptions
 
     return [
         BLANK,

@@ -9,10 +9,10 @@ import {
     Monzo,
 } from "../../../general"
 import {computeKnownRationalQuotients, MAX_N2D3P9_FOR_WHICH_POSSIBLE_NUMERATORS_ARE_KNOWN} from "../../../sagittal"
-import {Two3FreeMonzosToCheckOptions} from "./types"
+import {FindCommasOptions} from "./types"
 
 const compute23FreeRationalMonzosToCheckFromKnownLowN2D3P9Numerators = (
-    options: Two3FreeMonzosToCheckOptions = {},
+    options: Partial<FindCommasOptions> = {},
 ): Array<Monzo<{rational: true, rough: 5}>> => {
     const {
         maxPrimeLimit,

@@ -8,7 +8,7 @@ import {
     JiNotationLevelId,
     JI_NOTATION,
 } from "../../../sagittal"
-import {CommasOptions, computeCommas, computeFindCommasSettings} from "../findCommas"
+import {computeFindCommasOptions, findCommas, FindCommasOptions} from "../findCommas"
 import {jiPitchScriptGroupSettings} from "../globals"
 import {applySharedJiPitchScriptSetup} from "./shared"
 
@@ -17,7 +17,7 @@ program
 
 applySharedJiPitchScriptSetup()
 
-const findCommasSettings = computeFindCommasSettings()
+const findCommasOptions = computeFindCommasOptions()
 
 const zoneCommas = JI_NOTATION.reduce(
     (
@@ -30,15 +30,15 @@ const zoneCommas = JI_NOTATION.reduce(
             computeJiNotationCaptureZone(commaClassId, JiNotationLevelId.EXTREME) :
             computeSecondaryCommaZone(commaClassId)
 
-        const options: CommasOptions = {
+        const options: FindCommasOptions = {
             ...jiPitchScriptGroupSettings,
-            ...findCommasSettings,
+            ...findCommasOptions,
         }
         if (lowerBound) options.lowerBound = lowerBound as Min<Scamon>
         if (lowerBound) options.upperBound = upperBound as Max<Scamon>
         return {
             ...zoneCommas,
-            [commaClassId]: computeCommas(options),
+            [commaClassId]: findCommas(options),
         }
     },
     {} as Record<CommaClassId, Comma[]>,

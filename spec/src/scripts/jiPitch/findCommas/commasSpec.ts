@@ -1,19 +1,19 @@
 import {Comma, computeScamonFromDecimal, Max, Min, Monzo, Prime, Scamon, Sopfr} from "../../../../../src/general"
-import {computeCommas} from "../../../../../src/scripts/jiPitch/findCommas"
+import {findCommas} from "../../../../../src/scripts/jiPitch/findCommas"
 
-describe("computeCommas", (): void => {
+describe("findCommas", (): void => {
     const max23FreeSopfr = 7 as Max<Sopfr<{rough: 5}>>
 
     it("throws an error if the bounds are on the wrong side of each other, or equal", (): void => {
         expect((): void => {
-            computeCommas({
+            findCommas({
                 max23FreeSopfr,
                 lowerBound: computeScamonFromDecimal(1.02930223664) as Min<Scamon>,
                 upperBound: computeScamonFromDecimal(1.00579294107) as Max<Scamon>,
             })
         }).toThrowError("Lower bound is not less than upper bound; range was 50.000¢ - 10.000¢.")
         expect((): void => {
-            computeCommas({
+            findCommas({
                 max23FreeSopfr,
                 lowerBound: computeScamonFromDecimal(1.02930223664) as Min<Scamon>,
                 upperBound: computeScamonFromDecimal(1.02930223664) as Max<Scamon>,
@@ -23,14 +23,14 @@ describe("computeCommas", (): void => {
 
     it("throws an error if the bounds are outside than the abs value of the max size category bound", (): void => {
         expect((): void => {
-            computeCommas({
+            findCommas({
                 max23FreeSopfr,
                 lowerBound: computeScamonFromDecimal(0.84089641525) as Min<Scamon>,
             })
         })
             .toThrowError("Search range must be within comma size category bounds (±227.370¢); range was -300.000¢ - [ -11   7 ⟩(1/2).")
         expect((): void => {
-            computeCommas({
+            findCommas({
                 max23FreeSopfr,
                 lowerBound: computeScamonFromDecimal(0.79370052598) as Min<Scamon>,
                 upperBound: computeScamonFromDecimal(0.84089641525) as Max<Scamon>,
@@ -38,7 +38,7 @@ describe("computeCommas", (): void => {
         })
             .toThrowError("Search range must be within comma size category bounds (±227.370¢); range was -400.000¢ - -300.000¢.")
         expect((): void => {
-            computeCommas({
+            findCommas({
                 max23FreeSopfr,
                 lowerBound: computeScamonFromDecimal(1.189207115) as Min<Scamon>,
                 upperBound: computeScamonFromDecimal(1.25992104989) as Max<Scamon>,
@@ -46,7 +46,7 @@ describe("computeCommas", (): void => {
         })
             .toThrowError("Search range must be within comma size category bounds (±227.370¢); range was 300.000¢ - 400.000¢.")
         expect((): void => {
-            computeCommas({
+            findCommas({
                 max23FreeSopfr,
                 upperBound: computeScamonFromDecimal(1.189207115) as Max<Scamon>,
             })
@@ -58,7 +58,7 @@ describe("computeCommas", (): void => {
         const lowerBound = computeScamonFromDecimal(1.00870198379) as Min<Scamon>
         const upperBound = computeScamonFromDecimal(1.0174796921) as Max<Scamon>
 
-        const actual = computeCommas({lowerBound, upperBound, max23FreeSopfr})
+        const actual = findCommas({lowerBound, upperBound, max23FreeSopfr})
 
         const expected: Comma[] = [
             {monzo: [-4, 4, -1]},
@@ -72,7 +72,7 @@ describe("computeCommas", (): void => {
     it("excludes 3-limit commas when the max prime limit is 2", (): void => {
         const maxPrimeLimit = 2 as Max<Max<Prime>>
 
-        const actual = computeCommas({maxPrimeLimit})
+        const actual = findCommas({maxPrimeLimit})
 
         const expected: Comma[] = [
             {monzo: [] as unknown[] as Monzo<{rational: true}>},

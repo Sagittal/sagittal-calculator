@@ -1,7 +1,7 @@
 import {areMonzosEqual, computeRoughRationalMonzo, invertMonzo, isUndefined, Scamon, TWO_3_FREE} from "../../../general"
 import {CommaClassId, getCommaClass, JI_NOTATION, SymbolClass, SymbolClassId, SYMBOL_CLASSES} from "../../../sagittal"
 
-// Different than computeNotatingCommas because this one only concerns itself with commas that are in Sagittal
+// Different than findNotatingCommas because this one only concerns itself with commas that are in Sagittal
 const computeNotatingSymbolClassIds = ({monzo}: Scamon<{rational: true}>): SymbolClassId[] => {
     const notatingSymbolClassIds: SymbolClassId[] = []
     const two3FreeRationalMonzo = computeRoughRationalMonzo(monzo, TWO_3_FREE)

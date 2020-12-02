@@ -14,7 +14,7 @@ import {
     Scamon,
 } from "../../../general"
 import {computeN2D3P9} from "../badness"
-import {computeNotatingCommas, computeRationalMonzoInZone} from "../find"
+import {findNotatingCommas, computeRationalMonzoInZone} from "../find"
 import {computeSizeCategoryExtrema} from "./sizeCategoryExtrema"
 import {CommaNameQuotient, SizeCategory} from "./types"
 
@@ -52,7 +52,7 @@ const computeCommaFromCommaNameQuotientAndSizeCategory = (
 
     const [lowerBound, upperBound] = computeSizeCategoryExtrema(sizeCategory)
 
-    const commas = computeNotatingCommas(
+    const commas = findNotatingCommas(
         computeRationalScamonFromRationalQuotient(commaNameQuotient),
         {
             // It would be cool if we could use the search options the user provides here, but it creates a

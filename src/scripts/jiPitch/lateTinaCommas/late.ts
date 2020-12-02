@@ -2,7 +2,7 @@ import {Comma, count, Exponent, increment, Io, LogTarget, Maybe, min, Prime, sav
 import {
     CommaAnalysis,
     computeAte,
-    computeNotatingCommas,
+    findNotatingCommas,
     MAX_N2D3P9_FOR_WHICH_POSSIBLE_NUMERATORS_ARE_KNOWN,
 } from "../../../sagittal"
 import {jiPitchScriptGroupSettings} from "../globals"
@@ -10,7 +10,7 @@ import {jiPitchScriptGroupSettings} from "../globals"
 const isCommaLate = (comma: Comma): boolean => {
     const ate = computeAte(comma)
 
-    const notatingCommas = computeNotatingCommas(
+    const notatingCommas = findNotatingCommas(
         comma,
         {...jiPitchScriptGroupSettings, maxN2D3P9: MAX_N2D3P9_FOR_WHICH_POSSIBLE_NUMERATORS_ARE_KNOWN},
     )

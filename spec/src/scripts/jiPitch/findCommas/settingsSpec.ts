@@ -1,14 +1,14 @@
 import {Abs, Decimal, Max, Monzo, Scamon} from "../../../../../src/general"
 import {ApotomeSlope, Ate, computeAas, JiPitchAnalysis, N2D3P9} from "../../../../../src/sagittal"
 import {
-    computeFindNotatingCommasSettings,
-    DEFAULT_FIND_COMMAS_SETTINGS,
+    computeFindNotatingCommasOptions,
+    DEFAULT_FIND_COMMAS_OPTIONS,
 } from "../../../../../src/scripts/jiPitch/findCommas"
 import {jiPitchAnalysisFixture, two3FreeClassAnalysisFixture} from "../../../../helpers/src/scripts/jiPitch/fixtures"
 
-describe("computeFindNotatingCommasSettings", (): void => {
-    const n2d3p9 = DEFAULT_FIND_COMMAS_SETTINGS.maxN2D3P9 + 100 as N2D3P9
-    const ate = DEFAULT_FIND_COMMAS_SETTINGS.maxAte + 10 as Ate
+describe("computeFindNotatingCommasOptions", (): void => {
+    const n2d3p9 = DEFAULT_FIND_COMMAS_OPTIONS.maxN2D3P9 + 100 as N2D3P9
+    const ate = DEFAULT_FIND_COMMAS_OPTIONS.maxAte + 10 as Ate
     const monzo = [0, ate] as Monzo<{rational: true}>
     const pitch = {monzo} as Scamon<{rational: true}>
     const aas = computeAas(pitch)
@@ -25,20 +25,20 @@ describe("computeFindNotatingCommasSettings", (): void => {
         pitch,
     }
 
-    it("adjusts the max N2D3P9 if the JI pitch has greater than the current settings", (): void => {
-        const actual = computeFindNotatingCommasSettings(jiPitchAnalysis)
+    it("adjusts the max N2D3P9 if the JI pitch has greater than the current options", (): void => {
+        const actual = computeFindNotatingCommasOptions(jiPitchAnalysis)
 
         expect(actual.maxN2D3P9).toBe(n2d3p9 as Max<N2D3P9>)
     })
 
-    it("adjusts the max AAS if the JI pitch has greater than the current settings", (): void => {
-        const actual = computeFindNotatingCommasSettings(jiPitchAnalysis)
+    it("adjusts the max AAS if the JI pitch has greater than the current options", (): void => {
+        const actual = computeFindNotatingCommasOptions(jiPitchAnalysis)
 
         expect(actual.maxAas).toBeCloseToTyped(3483.308958 as Max<Abs<ApotomeSlope>>)
     })
 
-    it("adjusts the max ATE if the JI pitch has greater than the current settings", (): void => {
-        const actual = computeFindNotatingCommasSettings(jiPitchAnalysis)
+    it("adjusts the max ATE if the JI pitch has greater than the current options", (): void => {
+        const actual = computeFindNotatingCommasOptions(jiPitchAnalysis)
 
         expect(actual.maxAte).toBe(ate as Max<Ate>)
     })

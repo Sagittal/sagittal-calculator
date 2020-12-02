@@ -12,7 +12,7 @@ import {
     time,
 } from "../../../general"
 import {CommaAnalysis, MAX_N2D3P9_FOR_WHICH_POSSIBLE_NUMERATORS_ARE_KNOWN} from "../../../sagittal"
-import {computeCommas, computeFindCommasSettings, FindCommasSettings} from "../findCommas"
+import {findCommas, computeFindCommasOptions, FindCommasOptions} from "../findCommas"
 import {jiPitchScriptGroupSettings} from "../globals"
 import {
     computeCommaAnalysesSortedByTinaEntries,
@@ -33,16 +33,16 @@ const MAX_POSSIBLE_2_3_FREE_SOPFR_WITHOUT_CRASHING = 127 as Max<Sopfr<{rough: 5}
 const MAX_POSSIBLE_PRIME_LIMIT_GIVEN_MAX_POSSIBLE_SOPFR =
     MAX_POSSIBLE_2_3_FREE_SOPFR_WITHOUT_CRASHING as Max<Max<Prime>>
 
-const DEFAULT_OVERRIDES: Partial<FindCommasSettings> = {
+const DEFAULT_OVERRIDES: Partial<FindCommasOptions> = {
     max23FreeSopfr: MAX_POSSIBLE_2_3_FREE_SOPFR_WITHOUT_CRASHING,
     max23FreeCopfr: INFINITE_2_3_FREE_COPFR,
     maxPrimeLimit: MAX_POSSIBLE_PRIME_LIMIT_GIVEN_MAX_POSSIBLE_SOPFR,
 }
-const findCommasSettings = computeFindCommasSettings(DEFAULT_OVERRIDES)
+const findCommasOptions = computeFindCommasOptions(DEFAULT_OVERRIDES)
 
-const commas = computeCommas({
+const commas = findCommas({
     ...jiPitchScriptGroupSettings,
-    ...findCommasSettings,
+    ...findCommasOptions,
     lowerBound: TINA_COMMAS_LOWER_BOUND,
     upperBound: TINA_COMMAS_UPPER_BOUND,
     maxN2D3P9: MAX_N2D3P9_FOR_WHICH_POSSIBLE_NUMERATORS_ARE_KNOWN,

@@ -1,14 +1,16 @@
 import {Comma, Scamon, sort} from "../../../general"
-import {analyzeComma, CommaAnalysis, computeNotatingCommas} from "../../../sagittal"
-import {FindCommasSettings} from "../findCommas"
+import {analyzeComma, CommaAnalysis, findNotatingCommas} from "../../../sagittal"
+import {FindCommasOptions} from "../findCommas"
 import {jiPitchScriptGroupSettings} from "../globals"
 
-const computeNotatingCommaAnalyses = (
+const findNotatingCommaAnalyses = (
     jiPitch: Scamon<{rational: true}>,
-    notatingCommasSettings: Partial<FindCommasSettings> = {},
+    findNotatingCommasOptions: Partial<FindCommasOptions> = {},
 ): CommaAnalysis[] => {
-    const notatingCommas: Comma[] =
-        computeNotatingCommas(jiPitch, {...jiPitchScriptGroupSettings, ...notatingCommasSettings})
+    const notatingCommas: Comma[] = findNotatingCommas(
+        jiPitch,
+        {...jiPitchScriptGroupSettings, ...findNotatingCommasOptions},
+    )
 
     const notatingCommaAnalyses = notatingCommas.map((comma: Comma): CommaAnalysis => {
         return analyzeComma(comma, jiPitchScriptGroupSettings.commaNameOptions)
@@ -22,5 +24,5 @@ const computeNotatingCommaAnalyses = (
 }
 
 export {
-    computeNotatingCommaAnalyses,
+    findNotatingCommaAnalyses,
 }

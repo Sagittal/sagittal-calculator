@@ -1,4 +1,4 @@
-export {computeNotatingCommas} from "./notatingCommas"
+export {findNotatingCommas} from "./notatingCommas"
 export {computeRationalMonzoInZone} from "./monzoInZone"
 export {computeCommasFrom23FreeRationalMonzo} from "./commasFrom23FreeMonzo"
 export {CommasFrom23FreeMonzoOptions} from "./types"
