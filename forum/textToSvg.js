@@ -203,7 +203,7 @@ var TextToSVG =
             key: "loadSync",
             value: function loadSync() {
                 var file = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : undefined;
-                return new TextToSVG(opentype.loadSync(file));
+                return new TextToSVG(opentype.loadSync(file/*, {liga: true}*/));
             }
         }, {
             key: "load",
