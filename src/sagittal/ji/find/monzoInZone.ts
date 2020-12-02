@@ -38,6 +38,8 @@ const computeInZone = (
 const computeRationalMonzoInZone = (
     twoFreeRationalMonzo: Monzo<{rational: true, rough: 3}>,
     zone: Zone,
+    // TODO: should inclusive be a property of a zone, and affect upper and lower individually?
+    //  I think I considered this before. I don't like this third option, not being a named argument
     inclusive: boolean = false,
 ): Maybe<Monzo<{rational: true}>> => {
     const [lowerBound, upperBound] = zone

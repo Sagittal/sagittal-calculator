@@ -1,14 +1,7 @@
-import {
-    computeScamonFromDecimal,
-    Decimal,
-    EMPTY_MONZO,
-    Max,
-    Min,
-    Monzo,
-    Scamon,
-} from "../../../../../src/general"
+import {computeScamonFromDecimal, Decimal, EMPTY_MONZO, Max, Min, Monzo, Scamon} from "../../../../../src/general"
 import {computeRationalMonzoInZone} from "../../../../../src/sagittal/ji/find"
 import {n_s_SIZE_CATEGORY_BOUND, u_n_SIZE_CATEGORY_BOUND} from "../../../../../src/sagittal/ji/name/sizeCategoryBounds"
+import {onlyRunInCi} from "../../../../helpers/onlyRunInCi"
 
 describe("computeRationalMonzoInZone", (): void => {
     it("given a 2-free monzo, finds the correct power of 2 for the monzo which is in the search bounds", (): void => {
@@ -105,6 +98,19 @@ describe("computeRationalMonzoInZone", (): void => {
         const actual = computeRationalMonzoInZone(twoFreeMonzo, [lowerBound, upperBound], inclusive)
 
         const expected = [] as unknown[] as Monzo<{rational: true}>
+        expect(actual).toEqual(expected)
+    })
+
+    it("works for a huge 3-limit monzo", (): void => {
+        onlyRunInCi()
+
+        const twoFreeMonzo = [0, 31867] as Monzo<{rational: true, rough: 3}>
+        const lowerBound = u_n_SIZE_CATEGORY_BOUND.pitch as Scamon as Min<Scamon>
+        const upperBound = n_s_SIZE_CATEGORY_BOUND.pitch as Scamon as Max<Scamon>
+
+        const actual = computeRationalMonzoInZone(twoFreeMonzo, [lowerBound, upperBound])
+
+        const expected = [-50508, 31867] as Monzo<{rational: true}>
         expect(actual).toEqual(expected)
     })
 })

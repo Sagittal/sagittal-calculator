@@ -209,6 +209,9 @@ describe("computeCommaName", (): void => {
         //  Build in the edo naming approach (and maybe the & style too)
         //  Touched upon here: http://forum.sagittal.org/viewtopic.php?p=1721#p1721
         //  Latest questions here: http://forum.sagittal.org/viewtopic.php?p=2980#p2980
+        //  1c3C = c3C = 41e3C and
+        //  0c3C = 3C = 12e3C.
+        //  The form for output is bolded.
     })
 
     // TODO: COMMA NAMES: COMPLEX NAMES

@@ -106,7 +106,7 @@ describe("parseCommaName", (): void => {
             .toEqual({commaNameQuotient: [3, 1] as CommaNameQuotient, sizeCategory: SizeCategory.COMMA})
     })
 
-    // TODO: COMMA NAMES: support alternative names when parsing
+    // TODO: COMMA NAMES: SUPPORT PARSING ALTERNATIVE NAMES
     // tslint:disable max-line-length
     /*
     schismina	                n	    atom                skismina    skhismina
