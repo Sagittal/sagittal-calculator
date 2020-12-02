@@ -31,8 +31,11 @@ const computeFindCommasSettings = (
     const maxAte: Max<Ate> = program.maxAte ||
         defaultOverrides.maxAte ||
         DEFAULT_FIND_COMMAS_SETTINGS.maxAte
+    const inclusive: boolean = program.inclusive ||
+        defaultOverrides.inclusive ||
+        DEFAULT_FIND_COMMAS_SETTINGS.inclusive
 
-    return {max23FreeSopfr, max23FreeCopfr, maxPrimeLimit, maxN2D3P9, lowerBound, upperBound, maxAas, maxAte}
+    return {max23FreeSopfr, max23FreeCopfr, maxPrimeLimit, maxN2D3P9, lowerBound, upperBound, maxAas, maxAte, inclusive}
 }
 
 export {

@@ -10,7 +10,7 @@ const SIZE_CATEGORY_NAMES: Record<SizeCategory, SizeCategoryName> = {
     [SizeCategory.MEDIUM_DIESIS]: "Medium-Diesis" as SizeCategoryName,
     [SizeCategory.LARGE_DIESIS]: "Large-Diesis" as SizeCategoryName,
     [SizeCategory.SMALL_SEMITONE]: "Small-Semitone" as SizeCategoryName,
-    [SizeCategory.MEDIUM_SEMITONE]: "Medium-Semitone" as SizeCategoryName,
+    [SizeCategory.MEDIUM_SEMITONE]: "Medium-Semitone" as SizeCategoryName, // TODO: limma is preferred name for MS
     [SizeCategory.LARGE_SEMITONE]: "Large-Semitone" as SizeCategoryName,
     [SizeCategory.APOTOME]: "Apotome" as SizeCategoryName,
     [SizeCategory.SCHISMA_PLUS_APOTOME]: "schisma-plus-Apotome" as SizeCategoryName,

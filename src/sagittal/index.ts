@@ -18,6 +18,7 @@ export {
     DEFAULT_MAX_2_3_FREE_SOPFR,
     DEFAULT_MAX_PRIME_LIMIT,
     DEFAULT_LOWER_BOUND,
+    DEFAULT_INCLUSIVE,
     N2D3P9,
     computeCommaFromCommaNameQuotientAndSizeCategory,
     parseCommaName,

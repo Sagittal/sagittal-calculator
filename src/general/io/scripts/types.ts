@@ -12,6 +12,7 @@ enum ScriptFlag {
     COMPLEXITY_ONLY = "6",
     ACCIDENTAL = "7",
     ORDERED_FIELDS = "8",
+    INCLUSIVE = "9", // todo implement and test this
     MAX_AAS = "a",
     TABLE_FORMAT = "b",
     NO_COLOR = "c",

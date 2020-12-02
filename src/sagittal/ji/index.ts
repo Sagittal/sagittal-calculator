@@ -10,6 +10,7 @@ export {
     DEFAULT_MAX_PRIME_LIMIT,
     DEFAULT_LOWER_BOUND,
     DEFAULT_MAX_N2D3P9,
+    DEFAULT_INCLUSIVE,
 } from "./find"
 export {
     computeCommaFromCommaNameQuotientAndSizeCategory,

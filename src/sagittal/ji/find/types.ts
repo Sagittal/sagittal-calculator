@@ -8,6 +8,7 @@ type CommasFrom23FreeMonzoOptions = Partial<{
     maxAas: Max<Abs<ApotomeSlope>>,
     maxN2D3P9: Max<N2D3P9>,
     maxPrimeLimit: Max<Max<Prime>>,
+    inclusive: boolean,
 }>
 
 export {

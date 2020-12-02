@@ -17,9 +17,28 @@ import {
     Zone,
 } from "../../../general"
 
+const computeInZone = (
+    rationalMonzoInZone: Monzo<{rational: true, rough: 3}>,
+    zone: Zone,
+    inclusive: boolean,
+): boolean => {
+    const [lowerBound, upperBound] = zone
+
+    return inclusive ?
+        (
+            isScamonGreaterOrEqual(computeScamonFromMonzo(rationalMonzoInZone), lowerBound) &&
+            isScamonLesserOrEqual(computeScamonFromMonzo(rationalMonzoInZone), upperBound)
+        ) :
+        (
+            isScamonGreater(computeScamonFromMonzo(rationalMonzoInZone), lowerBound) &&
+            isScamonLesser(computeScamonFromMonzo(rationalMonzoInZone), upperBound)
+        )
+}
+
 const computeRationalMonzoInZone = (
     twoFreeRationalMonzo: Monzo<{rational: true, rough: 3}>,
     zone: Zone,
+    inclusive: boolean = false,
 ): Maybe<Monzo<{rational: true}>> => {
     const [lowerBound, upperBound] = zone
 
@@ -36,10 +55,7 @@ const computeRationalMonzoInZone = (
         }
     }
 
-    return (
-        isScamonGreater(computeScamonFromMonzo(rationalMonzoInZone), lowerBound) &&
-        isScamonLesserOrEqual(computeScamonFromMonzo(rationalMonzoInZone), upperBound)
-    ) ?
+    return computeInZone(rationalMonzoInZone, zone, inclusive) ?
         computeTrimmedArray(rationalMonzoInZone) :
         undefined
 }

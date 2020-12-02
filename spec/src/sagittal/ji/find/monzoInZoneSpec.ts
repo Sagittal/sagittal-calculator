@@ -53,12 +53,12 @@ describe("computeRationalMonzoInZone", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    it("works for the empty two-free monzo when unison is on the cusp of the search range", (): void => {
+    it("works for the empty two-free monzo when unison is on the cusp of the search range, if inclusive is specified             ", (): void => {
         const twoFreeMonzo = [0, 0] as Monzo<{rational: true, rough: 3}>
         const lowerBound = computeScamonFromDecimal(1.000000 as Decimal) as Min<Scamon>
         const upperBound = computeScamonFromDecimal(1.023433 as Decimal) as Max<Scamon>
 
-        const actual = computeRationalMonzoInZone(twoFreeMonzo, [lowerBound, upperBound])
+        const actual = computeRationalMonzoInZone(twoFreeMonzo, [lowerBound, upperBound], true)
 
         const expected = EMPTY_MONZO as Monzo<{rational: true}>
         expect(actual).toEqual(expected)
@@ -86,7 +86,7 @@ describe("computeRationalMonzoInZone", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    it("excludes the unison from the smallest size category besides unison (schismina), even when the 3-exponent is zero and thus ", (): void => {
+    it("excludes the unison from the smallest size category besides unison (schismina), even when the 3-exponent is zero", (): void => {
         const twoFreeMonzo = [0, 0] as Monzo<{rational: true, rough: 3}>
         const lowerBound = u_n_SIZE_CATEGORY_BOUND.pitch as Scamon as Min<Scamon>
         const upperBound = n_s_SIZE_CATEGORY_BOUND.pitch as Scamon as Max<Scamon>
@@ -94,5 +94,17 @@ describe("computeRationalMonzoInZone", (): void => {
         const actual = computeRationalMonzoInZone(twoFreeMonzo, [lowerBound, upperBound])
 
         expect(actual).toBeUndefined()
+    })
+
+    it("excludes the unison from the smallest size category besides unison (schismina), even when the 3-exponent is zero, unless inclusive is specified", (): void => {
+        const twoFreeMonzo = [0, 0] as Monzo<{rational: true, rough: 3}>
+        const lowerBound = u_n_SIZE_CATEGORY_BOUND.pitch as Scamon as Min<Scamon>
+        const upperBound = n_s_SIZE_CATEGORY_BOUND.pitch as Scamon as Max<Scamon>
+        const inclusive = true
+
+        const actual = computeRationalMonzoInZone(twoFreeMonzo, [lowerBound, upperBound], inclusive)
+
+        const expected = [] as unknown[] as Monzo<{rational: true}>
+        expect(actual).toEqual(expected)
     })
 })

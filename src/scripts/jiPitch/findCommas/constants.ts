@@ -1,5 +1,6 @@
 import {Monzo} from "../../../general"
 import {
+    DEFAULT_INCLUSIVE,
     DEFAULT_LOWER_BOUND,
     DEFAULT_MAX_2_3_FREE_COPFR,
     DEFAULT_MAX_2_3_FREE_SOPFR,
@@ -20,6 +21,7 @@ const DEFAULT_FIND_COMMAS_SETTINGS: FindCommasSettings = {
     upperBound: DEFAULT_UPPER_BOUND,
     maxAas: DEFAULT_MAX_AAS,
     maxAte: DEFAULT_MAX_ATE,
+    inclusive: DEFAULT_INCLUSIVE,
 }
 
 const TWO_3_FREE_MONZO_BASE = [0, 0] as Monzo<{rational: true, rough: 5}>

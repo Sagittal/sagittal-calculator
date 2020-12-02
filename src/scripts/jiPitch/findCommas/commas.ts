@@ -1,6 +1,7 @@
 import {areScamonsEqual, Comma, computeSuperScamon, formatPitch, isScamonGreater, Monzo} from "../../../general"
 import {
     computeCommasFrom23FreeRationalMonzo,
+    DEFAULT_INCLUSIVE,
     DEFAULT_LOWER_BOUND,
     DEFAULT_MAX_AAS,
     DEFAULT_MAX_ATE,
@@ -23,6 +24,7 @@ const computeCommas = (options: CommasOptions): Comma[] => {
         maxPrimeLimit,
         maxAas = DEFAULT_MAX_AAS,
         maxN2D3P9 = DEFAULT_MAX_N2D3P9,
+        inclusive = DEFAULT_INCLUSIVE,
     } = options
 
     if (isScamonGreater(lowerBound, upperBound) || areScamonsEqual(lowerBound, upperBound)) {
@@ -63,6 +65,7 @@ const computeCommas = (options: CommasOptions): Comma[] => {
                     maxAte,
                     maxN2D3P9,
                     maxPrimeLimit,
+                    inclusive,
                 },
             ),
         )
