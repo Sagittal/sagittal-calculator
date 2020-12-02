@@ -37,7 +37,7 @@ const computeRationalMonzoInZone = (
     }
 
     return (
-        isScamonGreaterOrEqual(computeScamonFromMonzo(rationalMonzoInZone), lowerBound) &&
+        isScamonGreater(computeScamonFromMonzo(rationalMonzoInZone), lowerBound) &&
         isScamonLesserOrEqual(computeScamonFromMonzo(rationalMonzoInZone), upperBound)
     ) ?
         computeTrimmedArray(rationalMonzoInZone) :

@@ -262,6 +262,4 @@ describe("analyze-ji-pitch", (): void => {
         ] as Io[]
         expect(actual).toEqual(expected)
     })
-
-    // TODO: fix bug, `npm run analyze-ji-pitch 3n` returns the unison, not the correct pitch (and 3L returns 0 commas)
 })

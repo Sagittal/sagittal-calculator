@@ -1,5 +1,14 @@
-import {computeScamonFromDecimal, Decimal, EMPTY_MONZO, Max, Min, Monzo, Scamon} from "../../../../../src/general"
-import {computeRationalMonzoInZone} from "../../../../../src/sagittal/ji/find/monzoInZone"
+import {
+    computeScamonFromDecimal,
+    Decimal,
+    EMPTY_MONZO,
+    Max,
+    Min,
+    Monzo,
+    Scamon,
+} from "../../../../../src/general"
+import {computeRationalMonzoInZone} from "../../../../../src/sagittal/ji/find"
+import {n_s_SIZE_CATEGORY_BOUND, u_n_SIZE_CATEGORY_BOUND} from "../../../../../src/sagittal/ji/name/sizeCategoryBounds"
 
 describe("computeRationalMonzoInZone", (): void => {
     it("given a 2-free monzo, finds the correct power of 2 for the monzo which is in the search bounds", (): void => {
@@ -64,5 +73,26 @@ describe("computeRationalMonzoInZone", (): void => {
 
         const expected = [0, -6, 3, 5, -1] as Monzo<{rational: true}>
         expect(twoFreeMonzo).toEqual(expected)
+    })
+
+    it("excludes the unison from the smallest size category besides unison (schismina)", (): void => {
+        const twoFreeMonzo = [0, -306] as Monzo<{rational: true, rough: 3}>
+        const lowerBound = u_n_SIZE_CATEGORY_BOUND.pitch as Scamon as Min<Scamon>
+        const upperBound = n_s_SIZE_CATEGORY_BOUND.pitch as Scamon as Max<Scamon>
+
+        const actual = computeRationalMonzoInZone(twoFreeMonzo, [lowerBound, upperBound])
+
+        const expected = [485, -306] as Monzo<{rational: true}>
+        expect(actual).toEqual(expected)
+    })
+
+    it("excludes the unison from the smallest size category besides unison (schismina), even when the 3-exponent is zero and thus ", (): void => {
+        const twoFreeMonzo = [0, 0] as Monzo<{rational: true, rough: 3}>
+        const lowerBound = u_n_SIZE_CATEGORY_BOUND.pitch as Scamon as Min<Scamon>
+        const upperBound = n_s_SIZE_CATEGORY_BOUND.pitch as Scamon as Max<Scamon>
+
+        const actual = computeRationalMonzoInZone(twoFreeMonzo, [lowerBound, upperBound])
+
+        expect(actual).toBeUndefined()
     })
 })

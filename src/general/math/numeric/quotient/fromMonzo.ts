@@ -1,5 +1,5 @@
 import {MAX_JS_INTEGER_VALUE} from "../../../code"
-import {formatMonzo} from "../../../io"
+import {formatMonzo, LogTarget, saveLog} from "../../../io"
 import {Prime, PRIMES} from "../../rational"
 import {Exponent} from "../../types"
 import {Monzo} from "../monzo"
@@ -26,7 +26,7 @@ const computeQuotientFromMonzo = <T extends NumericProperties>(
         !disableErrorBecauseExactValueNotRequired &&
         (numerator > MAX_JS_INTEGER_VALUE || denominator > MAX_JS_INTEGER_VALUE)
     ) {
-        throw new Error(`Tried to convert a monzo to a quotient where a fractional part would exceed JavaScript's maximum safe integer value. ${formatMonzo(monzo)}`)
+        saveLog(`Tried to convert a monzo to a quotient where a fractional part would exceed JavaScript's maximum safe integer value. ${formatMonzo(monzo)}`, LogTarget.ERROR)
     }
 
     return [numerator, denominator] as Quotient<T>

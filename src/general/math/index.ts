@@ -153,5 +153,8 @@ export {
     subtractRationalScamons,
     computeRationalDecimalCopf,
     sumRationalScamons,
+    computeRationalQuotientSmoothness,
+    FIVE_SMOOTHNESS,
+    computeRationalScamonFromRationalQuotient,
 } from "./rational"
 export {HALF_SCALER, computeIrrationalDecimalFromScamon} from "./irrational"

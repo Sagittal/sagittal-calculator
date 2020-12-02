@@ -21,6 +21,7 @@ const setLogTargets = (logTargetsCommaSeparatedString: Maybe<string | boolean> =
     })
 
     ioSettings.logTargets[LogTarget.FINAL] = true
+    ioSettings.logTargets[LogTarget.ERROR] = true
 }
 
 export {

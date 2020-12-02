@@ -240,6 +240,9 @@ export {
     Sum,
     Divisor,
     sumRationalScamons,
+    computeRationalQuotientSmoothness,
+    computeRationalScamonFromRationalQuotient,
+    FIVE_SMOOTHNESS,
 } from "./math"
 export {
     Cents,

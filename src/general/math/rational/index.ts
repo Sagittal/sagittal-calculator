@@ -6,6 +6,7 @@ export {
     THREE_ROUGHNESS,
     THREE_SMOOTHNESS,
     TWO_PRIME_INDEX,
+    FIVE_SMOOTHNESS,
 } from "./constants"
 export {computePrimeCount, computeRoughnessIndex, computeSmoothnessIndex} from "./primeCount"
 export {PRIMES} from "./primes"
@@ -34,6 +35,7 @@ export {
     areRationalQuotientsEqual,
     computeRationalQuotientFromRationalScamon,
     isLowestTerms,
+    computeRationalQuotientSmoothness,
 } from "./quotient"
 export {
     computeRationalMonzoFromRationalQuotient,

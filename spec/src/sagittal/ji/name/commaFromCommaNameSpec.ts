@@ -42,4 +42,18 @@ describe("computeCommaFromCommaNameQuotientAndSizeCategory", (): void => {
         const expected = {monzo: [-12, 5, 0, 0, 0, 0, 1] as Monzo<{rational: true}>} as Comma
         expect(actual).toEqual(expected)
     })
+
+    it("can handle 3-limit commas", (): void => {
+        const commaNameQuotient: CommaNameQuotient = [3, 1] as CommaNameQuotient
+        const sizeCategory: SizeCategory = SizeCategory.SCHISMINA
+
+        const actual = computeCommaFromCommaNameQuotientAndSizeCategory({commaNameQuotient, sizeCategory})
+
+        const expected = {monzo: [485, -306] as Monzo<{rational: true}>} as Comma
+        expect(actual).toEqual(expected)
+    })
+
+    // TODO: COMMA NAMES: figure out why analyze-ji-pitch 3n returns a huge list of notating commas, but 3L doesn't...
+
+    // TODO: COMMA NAMES: eventually add a third element to parsedCommaName: complexity, affecting what it returns
 })
