@@ -17,6 +17,10 @@ describe("computeIrrationalDecimalFromScamon", (): void => {
     // TODO: COMMA NAMES: this won't actually work until I implement a special stay-in-bounds technique
     //  Like, 2^ => 0 and 3^ => Infinity, but if you do them one at a time, or at least prevent overflow as you go
     //  This *could* work
+    //  If you fix this, then you'll get WAY more results for `run analyze-ji-pitch [-50508,31867]`
+    //  Because the reason why that arbitrarily cuts off around ATE of 600 is that beyond that
+    //  ComputeIrrationalDecimalFromScamon returns 0 or Infinity and thus greaterThanOrEqualScamons says its OOB
+    //  So you find no monzosInZone
     // tslint:disable-next-line ban
     xit("works for this rational scamon", (): void => {
         const rationalScamon = {monzo: [-50508,31867]} as Scamon<{rational: false}>

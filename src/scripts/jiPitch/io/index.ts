@@ -6,5 +6,5 @@ export {
     computeJiPitchesOutput,
 } from "./output"
 export {
-    readAnalyzeJiPitchOptions, parsePitch, parseJiPitch, parseNotatingCommasSettings, readJiPitchIoAndFormat,
+    readAnalyzeJiPitchOptions, parsePitch, parseJiPitch, readJiPitchIoAndFormat,
 } from "./parse"
