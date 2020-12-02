@@ -212,6 +212,19 @@ describe("computeCommaName", (): void => {
     })
 
     // TODO: COMMA NAMES: COMPLEX NAMES
+    //  Complex 	    c
+    //  Supercomplex 	sc
+    //  Hypercomplex 	hc
+    //  Ultracomplex 	uc
+    //  5-complex 	    5c
+    //  6-complex 	    6c
+    //  7-complex 	    7c
+    //  8-complex 	    8c
+    //  9-complex 	    9c
+    //  10-complex 	    10c
+    //  11-complex 	    11c
+    //  12-complex 	    12c
+    //  13-complex 	    13c
     it("can name complex commas beyond the 3-limit", (): void => {
         // Const comma = {monzo: [-34, 20, 1]} as Comma
         //

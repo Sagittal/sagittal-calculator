@@ -53,7 +53,5 @@ describe("computeCommaFromCommaNameQuotientAndSizeCategory", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    // TODO: COMMA NAMES: figure out why analyze-ji-pitch 3n returns a huge list of notating commas, but 3L doesn't...
-
     // TODO: COMMA NAMES: eventually add a third element to parsedCommaName: complexity, affecting what it returns
 })
