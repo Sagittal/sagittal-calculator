@@ -1,7 +1,6 @@
 import {computeScamonFromDecimal, Decimal, EMPTY_MONZO, Max, Min, Monzo, Scamon} from "../../../../../src/general"
 import {computeRationalMonzoInZone} from "../../../../../src/sagittal/ji/find"
 import {n_s_SIZE_CATEGORY_BOUND, u_n_SIZE_CATEGORY_BOUND} from "../../../../../src/sagittal/ji/name/sizeCategoryBounds"
-import {onlyRunInCi} from "../../../../helpers/onlyRunInCi"
 
 describe("computeRationalMonzoInZone", (): void => {
     it("given a 2-free monzo, finds the correct power of 2 for the monzo which is in the search bounds", (): void => {
@@ -102,19 +101,13 @@ describe("computeRationalMonzoInZone", (): void => {
     })
 
     it("works for a huge 3-limit monzo", (): void => {
-        onlyRunInCi()
-        // TODO: GETTING COMPLEX 3-LIMIT COMMA REFERENCE: DOWN GEAR A HUGE TEST TO SOMETHING LESS HUGE
-        //  This runs in 8 minutes locally, but crashes on CI b/c takes >10 mins
-        //  Perhaps we need to change this to [1539 -971> (1.69¢) (sc3n) or [-2108 1330> (0.151¢) (hc3n)
-        //  Will that still prove out the work I did to support huge-ness though?
-
-        const twoFreeMonzo = [0, 31867] as Monzo<{rational: true, rough: 3}>
+        const twoFreeMonzo = [0, 665] as Monzo<{rational: true, rough: 3}>
         const lowerBound = u_n_SIZE_CATEGORY_BOUND.pitch as Scamon as Min<Scamon>
         const upperBound = n_s_SIZE_CATEGORY_BOUND.pitch as Scamon as Max<Scamon>
 
         const actual = computeRationalMonzoInZone(twoFreeMonzo, [lowerBound, upperBound])
 
-        const expected = [-50508, 31867] as Monzo<{rational: true}>
+        const expected = [-1054, 665] as Monzo<{rational: true}>
         expect(actual).toEqual(expected)
     })
 })
