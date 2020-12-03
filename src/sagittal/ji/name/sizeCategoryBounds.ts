@@ -7,7 +7,7 @@ import {
     Monzo,
     Name,
     PYTHAGOREAN_COMMA,
-    PYTHAGOREAN_COMPLEX_KLEISMA,
+    SUPERCOMPLEX_PYTHAGOREAN_KLEISMA,
     PYTHAGOREAN_LARGE_DIESIS,
     PYTHAGOREAN_LIMMA,
     PYTHAGOREAN_SCHISMA,
@@ -27,7 +27,7 @@ const n_s_SIZE_CATEGORY_BOUND = {
 }
 const s_k_SIZE_CATEGORY_BOUND = {
     name: "s|k" as Name<SizeCategoryBound>,
-    pitch: halveScamon(PYTHAGOREAN_COMPLEX_KLEISMA),
+    pitch: halveScamon(SUPERCOMPLEX_PYTHAGOREAN_KLEISMA),
 }
 const k_C_SIZE_CATEGORY_BOUND = {
     name: "k|C" as Name<SizeCategoryBound>,
