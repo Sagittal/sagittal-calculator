@@ -21,7 +21,7 @@ enum SizeCategory {
     MEDIUM_DIESIS = "mediumDiesis",
     LARGE_DIESIS = "largeDiesis",
     SMALL_SEMITONE = "smallSemitone",
-    LIMMA = "limma",
+    MEDIUM_SEMITONE = "mediumSemitone",
     LARGE_SEMITONE = "largeSemitone",
     APOTOME = "apotome",
     SCHISMA_PLUS_APOTOME = "schismaPlusApotome",

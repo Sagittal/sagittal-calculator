@@ -19,5 +19,6 @@ export {computeSplitMonzoAndQuotientTableAlignment} from "./alignment"
 //  And it would be great if it sorted correctly (not alphabetically)
 //  Alright so far I've added the sizeCategory field and excluded it by default
 //  It doesn't sort correctly yet
+//  (Using index for size category would also help with sorting them, and then just format them)
 //  And I still can't accomplish the original goal because we can't parse comma-separated sortBy option to scripts
 //  Nor can we sort by multiple nested sorts yet

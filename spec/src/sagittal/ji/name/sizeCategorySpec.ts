@@ -15,7 +15,7 @@ describe("computeSizeCategory", (): void => {
         expect(computeSizeCategory(computePitchFromCents(50 as Cents) as Scamon as Comma)).toBe(SizeCategory.MEDIUM_DIESIS)
         expect(computeSizeCategory(computePitchFromCents(60 as Cents) as Scamon as Comma)).toBe(SizeCategory.LARGE_DIESIS)
         expect(computeSizeCategory(computePitchFromCents(80 as Cents) as Scamon as Comma)).toBe(SizeCategory.SMALL_SEMITONE)
-        expect(computeSizeCategory(computePitchFromCents(100 as Cents) as Scamon as Comma)).toBe(SizeCategory.LIMMA)
+        expect(computeSizeCategory(computePitchFromCents(100 as Cents) as Scamon as Comma)).toBe(SizeCategory.MEDIUM_SEMITONE)
         expect(computeSizeCategory(computePitchFromCents(110 as Cents) as Scamon as Comma)).toBe(SizeCategory.LARGE_SEMITONE)
         expect(computeSizeCategory(computePitchFromCents(115 as Cents) as Scamon as Comma)).toBe(SizeCategory.APOTOME)
         expect(computeSizeCategory(computePitchFromCents(117 as Cents) as Scamon as Comma)).toBe(SizeCategory.SCHISMA_PLUS_APOTOME)
