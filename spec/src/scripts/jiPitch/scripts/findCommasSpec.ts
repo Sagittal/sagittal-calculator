@@ -119,16 +119,16 @@ describe("find-commas", (): void => {
     it("can exclude fields from the results", (): void => {
         onlyRunInCi()
 
-        const script = `           \
-        npm run find-commas --      \
-         --lower-bound 30c          \
-         --upper-bound 30.5c        \
-         --max-ate 2                \
-         --max-2-3-free-copfr 3     \
-         --max-prime-limit 37       \
-         --max-2-3-free-sopfr 58    \
-         --max-aas 3                \
-         --excluded-fields aas,ate  \
+        const script = `                                            \
+        npm run find-commas --                                      \
+         --lower-bound 30c                                          \
+         --upper-bound 30.5c                                        \
+         --max-ate 2                                                \
+         --max-2-3-free-copfr 3                                     \
+         --max-prime-limit 37                                       \
+         --max-2-3-free-sopfr 58                                    \
+         --max-aas 3                                                \
+         --excluded-fields aas,ate,sizeCategory                     \
          --max-n2d3p9 ${OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS}    \
         ` as Io
 
