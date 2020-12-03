@@ -1,4 +1,11 @@
-import {decrement, increment, indexOfFinalElement, shallowClone} from "../../../code"
+import {
+    decrement,
+    increment,
+    indexOfFinalElement,
+    MAX_JS_VALUE_PRESERVING_PRECISION,
+    MIN_JS_VALUE_PRESERVING_PRECISION,
+    shallowClone,
+} from "../../../code"
 import {MULTIPLICATIVE_IDENTITY} from "../../constants"
 import {Prime, PRIMES} from "../../rational"
 import {pow} from "../../typedOperations"
@@ -7,10 +14,8 @@ import {isMonzoUnison, Monzo} from "../monzo"
 import {NumericProperties} from "../types"
 import {Decimal} from "./types"
 
-const isHuge = (decimal: Decimal): boolean =>
-    // TODO: GETTING COMPLEX 3-LIMIT COMMA REFERENCE: MIN JS VALUE
-    //  Constant-ize, smallest you can get w/o losing precision i think, since it's 15 away from JS min value 5e-324
-    isNaN(decimal) || decimal === Infinity || decimal < 1e-309
+const isDecimalWithLostPrecision = (decimal: Decimal): boolean =>
+    isNaN(decimal) || decimal > MAX_JS_VALUE_PRESERVING_PRECISION || decimal < MIN_JS_VALUE_PRESERVING_PRECISION
 
 const computeDecimalFromHugeMonzo = <T extends NumericProperties>(monzo: Monzo): Decimal<T> => {
     let decimal = MULTIPLICATIVE_IDENTITY as Decimal<T>
@@ -23,7 +28,7 @@ const computeDecimalFromHugeMonzo = <T extends NumericProperties>(monzo: Monzo):
     while (!isMonzoUnison(depletingMonzo)) {
         index = depletingMonzo.length
         maybeNewDecimal = NaN as Decimal<T>
-        while (isHuge(maybeNewDecimal)) {
+        while (isDecimalWithLostPrecision(maybeNewDecimal)) {
             index = decrement(index)
             if (depletingMonzo[index] === 0) continue
             if (index < 0) return maybeNewDecimal
@@ -54,7 +59,7 @@ const computeDecimalFromMonzo = <T extends NumericProperties>(monzo: Monzo<T>): 
         MULTIPLICATIVE_IDENTITY as Decimal<T>,
     )
 
-    if (isHuge(decimal)) {
+    if (isDecimalWithLostPrecision(decimal)) {
         return computeDecimalFromHugeMonzo(monzo)
     }
 

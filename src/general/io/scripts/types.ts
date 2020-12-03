@@ -12,7 +12,9 @@ enum ScriptFlag {
     COMPLEXITY_ONLY = "6",
     ACCIDENTAL = "7",
     ORDERED_FIELDS = "8",
-    INCLUSIVE = "9", // todo implement and test this
+    // TODO: GETTING COMPLEX 3-LIMIT COMMA REFERENCE: INCLUSIVE FIND COMMAS BOUNDS
+    //  Implement and test this
+    INCLUSIVE = "9",
     MAX_AAS = "a",
     TABLE_FORMAT = "b",
     NO_COLOR = "c",

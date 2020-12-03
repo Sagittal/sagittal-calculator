@@ -12,7 +12,7 @@ import {
     time,
 } from "../../../general"
 import {CommaAnalysis, MAX_N2D3P9_FOR_WHICH_POSSIBLE_NUMERATORS_ARE_KNOWN} from "../../../sagittal"
-import {findCommas, computeFindCommasOptions, FindCommasOptions} from "../findCommas"
+import {computeFindCommasOptions, findCommas, FindCommasOptions} from "../findCommas"
 import {jiPitchScriptGroupSettings} from "../globals"
 import {
     computeCommaAnalysesSortedByTinaEntries,

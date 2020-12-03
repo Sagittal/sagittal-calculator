@@ -2,7 +2,15 @@ export {computeCardinality} from "./cardinality"
 export {deepClone, shallowClone} from "./clone"
 export {deepMap} from "./deepMap"
 export {concat} from "./concat"
-export {DEFAULT_PRECISION, ZERO_ONE_INDEX_DIFF, MAX_JS_INTEGER_VALUE, NOT_FOUND, MAX_JS_PRECISION} from "./constants"
+export {
+    DEFAULT_PRECISION,
+    ZERO_ONE_INDEX_DIFF,
+    MAX_JS_INTEGER_VALUE,
+    NOT_FOUND,
+    MAX_JS_PRECISION,
+    MAX_JS_VALUE_PRESERVING_PRECISION,
+    MIN_JS_VALUE_PRESERVING_PRECISION,
+} from "./constants"
 export {computeDeepDistinct} from "./deepDistinct"
 export {deepEquals} from "./deepEquals"
 export {dig} from "./dig"

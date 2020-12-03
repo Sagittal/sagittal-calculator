@@ -60,8 +60,8 @@ describe("computeDecimalFromMonzo", (): void => {
 
         const actual = computeDecimalFromMonzo(monzo)
 
-        // 1 / 0.98513616174 = 1.0150881055204163
-        const expected = 1.0150881055204163e-115 as Decimal
+        // 1 / 0.98513616174 = 1.0150881055204
+        const expected = 1.0150881055203759e-115 as Decimal
         expect(actual).toEqual(expected)
     })
 })
