@@ -1,11 +1,11 @@
 import {program} from "commander"
-import {Filename, Io, Scamon, ScriptFlag, setupScriptAndIo} from "../../../../general"
+import {COMMA, Exclusive, Filename, Io, isString, Scamon, ScriptFlag, setupScriptAndIo} from "../../../../general"
 import {FactoringMode} from "../../../../sagittal"
 import {ScriptGroup} from "../../../types"
 import {jiPitchScriptGroupSettings} from "../../globals"
 import {parsePitch} from "../../io"
 import {JiPitchScriptGroupField} from "../../types"
-import {parseFields} from "./fields"
+import {parseExclusive, parseFields} from "./parse"
 
 const applySharedJiPitchScriptSetup = (): void => {
     program
@@ -18,7 +18,7 @@ const applySharedJiPitchScriptSetup = (): void => {
             "upper bound",
             (pitchIo: string): Scamon => parsePitch(pitchIo as Io),
         )
-        .option(`-${ScriptFlag.EXCLUSIVE}, --exclusive`, "exclusive bounds")
+        .option(`-${ScriptFlag.EXCLUSIVE}, --exclusive [exclusive]`, "exclusive bounds", parseExclusive)
         .option(`-${ScriptFlag.MAX_AAS}, --max-aas <maxAas>`, "max AAS", parseFloat)
         .option(`-${ScriptFlag.MAX_ATE}, --max-ate <maxAte>`, "max ATE", parseInt)
         .option(`-${ScriptFlag.PRIME_LIMIT}, --max-prime-limit <maxPrimeLimit>`, "max prime limit", parseInt)

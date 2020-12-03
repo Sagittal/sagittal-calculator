@@ -50,6 +50,9 @@ const parsePitch = (pitchIo: Io, pitchFormat?: PitchFormat): Scamon => {
         const accidental = parseAccidental(pitchIo)
 
         pitch = computeJiPitchFromAccidental(accidental)
+    } else if (pitchFormat === PitchFormat.MONZO || pitchIo.match(IDENTIFYING_MONZO_CHARS)) {
+        const monzo = parseMonzo(pitchIo)
+        pitch = computeScamonFromMonzo(monzo)
     }
 
     if (isUndefined(pitch)) throw new Error(`Could not identify format of pitch ${pitchIo}`)

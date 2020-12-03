@@ -1,4 +1,4 @@
-import {COMMA, Io, split} from "../../../../general"
+import {COMMA, Exclusive, Io, isString, parseBoolean, split} from "../../../../general"
 import {JI_PITCH_SCRIPT_GROUP_FIELDS} from "../../constants"
 import {JiPitchesOrFindCommasField, JiPitchScriptGroupField} from "../../types"
 
@@ -14,6 +14,15 @@ const parseFields = (fieldsIo: Io): JiPitchScriptGroupField[] => {
     return fields as JiPitchScriptGroupField[]
 }
 
+const parseExclusive = (exclusiveText: boolean | Io): Exclusive => {
+    if (isString(exclusiveText)) {
+        return exclusiveText.split(COMMA).map(parseBoolean) as Exclusive
+    }
+
+    return exclusiveText
+}
+
 export {
     parseFields,
+    parseExclusive,
 }

@@ -1,4 +1,4 @@
-import {count, formatTable, Io, isUndefined, Maybe, Row, sumTexts, Table} from "../../../../general"
+import {count, formatTable, Io, isEmpty, isUndefined, Maybe, Row, sumTexts, Table} from "../../../../general"
 import {CommaAnalysis, CommaClassId} from "../../../../sagittal"
 import {DEFAULT_FIND_COMMAS_OPTIONS, FindCommasOptions} from "../../findCommas"
 import {jiPitchScriptGroupSettings} from "../../globals"
@@ -8,12 +8,17 @@ import {computeOrderedTableAndAlignment} from "../orderedFields"
 import {computeFindCommasRow} from "../row"
 import {computeMaxMonzoLength, computeSplitMonzoAndQuotientTableAlignment} from "../splitMonzoAndQuotient"
 import {computeFindCommasTableTitle} from "../tableTitles"
+import {NO_RESULTS} from "./constants"
 
 const computeFindCommasOutput = (
     commaAnalyses: CommaAnalysis[],
     maybeCommaClassIds: Array<Maybe<CommaClassId>>,
     findCommasOptions: FindCommasOptions = DEFAULT_FIND_COMMAS_OPTIONS,
 ): Io => {
+    const tableTitle = computeFindCommasTableTitle(findCommasOptions)
+
+    if (isEmpty(commaAnalyses)) return sumTexts(tableTitle, NO_RESULTS)
+
     const maxMonzoLength = computeMaxMonzoLength(commaAnalyses)
     const findCommasHeaderRows = computeJiPitchesOrFindCommasHeaderRows(maxMonzoLength)
     const headerRowCount = count(findCommasHeaderRows)
@@ -39,7 +44,7 @@ const computeFindCommasOutput = (
     }
 
     return sumTexts(
-        computeFindCommasTableTitle(findCommasOptions),
+        tableTitle,
         formatTable(findCommasTable, {headerRowCount, tableAlignment}),
     )
 }

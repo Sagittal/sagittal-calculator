@@ -114,4 +114,17 @@ describe("parseMonzo", (): void => {
 
         expect(actual).toEqual([0, 3, 5] as Monzo)
     })
+
+    it("can parse various formats of the empty monzo", (): void => {
+        expect(parseMonzo("[]")).toEqual([] as Monzo)
+        expect(parseMonzo("[>")).toEqual([] as Monzo)
+        expect(parseMonzo("[⟩")).toEqual([] as Monzo)
+        expect(parseMonzo("|⟩")).toEqual([] as Monzo)
+        expect(parseMonzo("|>")).toEqual([] as Monzo)
+        expect(parseMonzo("[ ]")).toEqual([] as Monzo)
+        expect(parseMonzo("[ >")).toEqual([] as Monzo)
+        expect(parseMonzo("[ ⟩")).toEqual([] as Monzo)
+        expect(parseMonzo("| ⟩")).toEqual([] as Monzo)
+        expect(parseMonzo("| >")).toEqual([] as Monzo)
+    })
 })

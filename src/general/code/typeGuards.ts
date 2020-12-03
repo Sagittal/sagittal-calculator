@@ -13,10 +13,14 @@ const isObject = (candidateObject: unknown): candidateObject is Object =>
 const isArray = (candidateArray: unknown): candidateArray is unknown[] =>
     candidateArray instanceof Array
 
+const isBoolean = (candidateBoolean: unknown): candidateBoolean is boolean =>
+    candidateBoolean === true || candidateBoolean === false
+
 export {
     isNumber,
     isString,
     isUndefined,
     isArray,
     isObject,
+    isBoolean,
 }

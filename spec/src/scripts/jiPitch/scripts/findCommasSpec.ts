@@ -213,4 +213,83 @@ describe("find-commas", (): void => {
         ] as Io[]
         expect(actual).toEqual(expected)
     })
+
+    it("by default includes the bounds", (): void => {
+        onlyRunInCi()
+
+        const script = `npm run find-commas -- --lower-bound [] --upper-bound [-19,12] --max-prime-limit 3 --max-n2d3p9 ${OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS} --max-ate ${OLD_MAX_ATE_FOR_SHORTER_TEST_RESULTS} --max-aas ${OLD_MAX_AAS_FOR_SHORTER_TEST_RESULTS}` as Io
+
+        const actual = runScriptAndGetConsoleOutput(script)
+
+        const expected = [
+            "",
+            "lower bound:       \t[  ⟩ (inclusive)",
+            "upper bound:       \t[ -19  12 ⟩ (inclusive)",
+            "max ATE:           \t 15    ",
+            "max AAS:           \t 14.000",
+            "max N2D3P9:        \t307.000",
+            "max 2,3-free sopfr:\t 61    ",
+            "max 2,3-free copfr:\t555    ",
+            "max prime limit:   \t  3    ",
+            "",
+            "        \t    \t        \t \t      \t     \t       \t       \t \t               \t       \t       \t       \t2,3-free\t2,3-free\t \t \t   \t2,3-free\t2,3-free\t2,3-free",
+            "comma   \t    \tquotient\t \t      \tmonzo\t       \t       \t \t               \tapotome\t       \t       \tprime   \t   class\t \t \t   \tclass   \tclass   \tclass   ",
+            "class   \tname\t       n\t/\td     \t     \t  2    \t  3    \t \tcents          \tslope  \tAAS    \tATE    \tlimit   \t       n\t/\td\t₂,₃\tCoPFR   \tSoPFR   \tN2D3P9  ",
+            " (|//|) \t1u  \t       1\t/\t1     \t    [\t       \t       \t⟩\t         0.000¢\t  0.000\t  0.000\t  0    \t  1     \t       1\t/\t1\t₂,₃\t  0     \t  0     \t  1.000 ",
+            "   '/|  \t3C  \t  531441\t/\t524288\t    [\t-19    \t 12    \t⟩\t        23.460¢\t 10.555\t 10.555\t 12    \t  1     \t       1\t/\t1\t₂,₃\t  0     \t  0     \t  1.000 ",
+            "",
+        ] as Io[]
+        expect(actual).toEqual(expected)
+    })
+
+    it("can exclude the bounds", (): void => {
+        onlyRunInCi()
+
+        const script = `npm run find-commas -- --exclusive --lower-bound [] --upper-bound [-19,12] --max-prime-limit 3 --max-n2d3p9 ${OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS} --max-ate ${OLD_MAX_ATE_FOR_SHORTER_TEST_RESULTS} --max-aas ${OLD_MAX_AAS_FOR_SHORTER_TEST_RESULTS}` as Io
+
+        const actual = runScriptAndGetConsoleOutput(script)
+
+        const expected = [
+            "",
+            "lower bound:       \t[  ⟩ (exclusive)",
+            "upper bound:       \t[ -19  12 ⟩ (exclusive)",
+            "max ATE:           \t 15    ",
+            "max AAS:           \t 14.000",
+            "max N2D3P9:        \t307.000",
+            "max 2,3-free sopfr:\t 61    ",
+            "max 2,3-free copfr:\t555    ",
+            "max prime limit:   \t  3    ",
+            "",
+            "(no results)",
+            "",
+        ] as Io[]
+        expect(actual).toEqual(expected)
+    })
+
+    it("can exclude only one or the other of the bounds", (): void => {
+        onlyRunInCi()
+
+        const script = `npm run find-commas -- --exclusive true,false --lower-bound [] --upper-bound [-19,12] --max-prime-limit 3 --max-n2d3p9 ${OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS} --max-ate ${OLD_MAX_ATE_FOR_SHORTER_TEST_RESULTS} --max-aas ${OLD_MAX_AAS_FOR_SHORTER_TEST_RESULTS}` as Io
+
+        const actual = runScriptAndGetConsoleOutput(script)
+
+        const expected = [
+            "",
+            "lower bound:       \t[  ⟩ (exclusive)",
+            "upper bound:       \t[ -19  12 ⟩ (inclusive)",
+            "max ATE:           \t 15    ",
+            "max AAS:           \t 14.000",
+            "max N2D3P9:        \t307.000",
+            "max 2,3-free sopfr:\t 61    ",
+            "max 2,3-free copfr:\t555    ",
+            "max prime limit:   \t  3    ",
+            "",
+            "        \t    \t        \t \t      \t     \t       \t       \t \t               \t       \t       \t       \t2,3-free\t2,3-free\t \t \t   \t2,3-free\t2,3-free\t2,3-free",
+            "comma   \t    \tquotient\t \t      \tmonzo\t       \t       \t \t               \tapotome\t       \t       \tprime   \t   class\t \t \t   \tclass   \tclass   \tclass   ",
+            "class   \tname\t       n\t/\td     \t     \t  2    \t  3    \t \tcents          \tslope  \tAAS    \tATE    \tlimit   \t       n\t/\td\t₂,₃\tCoPFR   \tSoPFR   \tN2D3P9  ",
+            "   '/|  \t3C  \t  531441\t/\t524288\t    [\t-19    \t 12    \t⟩\t        23.460¢\t 10.555\t 10.555\t 12    \t  1     \t       1\t/\t1\t₂,₃\t  0     \t  0     \t  1.000 ",
+            "",
+        ] as Io[]
+        expect(actual).toEqual(expected)
+    })
 })

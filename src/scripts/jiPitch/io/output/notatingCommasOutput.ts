@@ -1,4 +1,4 @@
-import {count, formatTable, Io, isUndefined, Maybe, Row, sumTexts} from "../../../../general"
+import {count, formatTable, Io, isEmpty, isUndefined, Maybe, Row, sumTexts} from "../../../../general"
 import {CommaAnalysis, CommaClassId} from "../../../../sagittal"
 import {jiPitchScriptGroupSettings} from "../../globals"
 import {NOTATING_COMMAS_FIELD_TITLES} from "../fieldTitles"
@@ -7,11 +7,14 @@ import {computeOrderedTableAndAlignment} from "../orderedFields"
 import {computeNotatingCommasRow} from "../row"
 import {computeMaxMonzoLength, computeSplitMonzoAndQuotientTableAlignment} from "../splitMonzoAndQuotient"
 import {NOTATING_COMMAS_TABLE_TITLE} from "../tableTitles"
+import {NO_RESULTS} from "./constants"
 
 const computeNotatingCommasOutput = (
     notatingCommaAnalyses: CommaAnalysis[],
     maybeCommaClassIds: Array<Maybe<CommaClassId>>,
 ): Io => {
+    if (isEmpty(notatingCommaAnalyses)) return sumTexts(NOTATING_COMMAS_TABLE_TITLE, NO_RESULTS)
+
     const maxMonzoLength = computeMaxMonzoLength(notatingCommaAnalyses)
     const notatingCommasHeaderRows = computeNotatingCommasHeaderRows(maxMonzoLength)
     const headerRowCount = count(notatingCommasHeaderRows)

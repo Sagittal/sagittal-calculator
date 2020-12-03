@@ -12,8 +12,6 @@ enum ScriptFlag {
     COMPLEXITY_ONLY = "6",
     ACCIDENTAL = "7",
     ORDERED_FIELDS = "8",
-    // TODO: GETTING COMPLEX 3-LIMIT COMMA REFERENCE: EXCLUSIVE FIND COMMAS BOUNDS
-    //  Implement and test this
     EXCLUSIVE = "9",
     MAX_AAS = "a",
     TABLE_FORMAT = "b",

@@ -13,6 +13,7 @@ export {
 } from "./constants"
 export {computeDeepDistinct} from "./deepDistinct"
 export {deepEquals} from "./deepEquals"
+export {parseBoolean} from "./parseBoolean"
 export {dig} from "./dig"
 export {doOnNextEventLoop} from "./doOnNextEventLoop"
 export {computeExtensionBase} from "./extensionBase"

@@ -195,4 +195,22 @@ describe("computeFindCommasOutput", (): void => {
             "    [\t  1    \t  0    \t  2    \t -2    \t⟩\t      49\t/\t25\t₂,₃\t      50\t/\t49\t        33.400¢" + NEWLINE as Io
         expect(actual).toEqual(expected)
     })
+
+    it("does not create an empty table if there are no results", (): void => {
+        const actual = computeFindCommasOutput([], maybeCommaClassIds, findCommasOptions)
+
+        const expected =
+            "" + NEWLINE +
+            "lower bound:       \t[  ⟩ (inclusive)" + NEWLINE +
+            "upper bound:       \t[ -11   7 ⟩(1/2) (inclusive)" + NEWLINE +
+            "max ATE:           \t 20    " + NEWLINE +
+            "max AAS:           \t 20.000" + NEWLINE +
+            "max N2D3P9:        \t307.000" + NEWLINE +
+            "max 2,3-free sopfr:\t 61    " + NEWLINE +
+            "max 2,3-free copfr:\t555    " + NEWLINE +
+            "max prime limit:   \t 47    " + NEWLINE +
+            "" + NEWLINE +
+            "(no results)" + NEWLINE as Io
+        expect(actual).toEqual(expected)
+    })
 })

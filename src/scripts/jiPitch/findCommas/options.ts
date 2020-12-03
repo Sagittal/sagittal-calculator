@@ -34,7 +34,7 @@ const computeFindCommasOptions = (
         DEFAULT_FIND_COMMAS_OPTIONS.zone?.extrema[1]
     const exclusive: Exclusive = program.exclusive ||
         defaultOverrides.zone?.exclusive ||
-        DEFAULT_FIND_COMMAS_OPTIONS.zone?.exclusive
+        DEFAULT_FIND_COMMAS_OPTIONS.zone!.exclusive!
     const zone = {extrema: [lowerBound, upperBound] as Extrema<{of: Scamon, open: true}>, exclusive}
 
     return {max23FreeSopfr, max23FreeCopfr, maxPrimeLimit, maxN2D3P9, zone, maxAas, maxAte}

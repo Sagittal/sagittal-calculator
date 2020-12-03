@@ -1,4 +1,4 @@
-import {Filename, Io, LogTarget, Maybe, readLines, saveLog, Scamon} from "../../../general"
+import {Filename, Io, isEmpty, LogTarget, Maybe, readLines, saveLog, Scamon} from "../../../general"
 import {analyzeJiPitch, CommaClassId, computeMaybeCommaClassId, JiPitchAnalysis} from "../../../sagittal"
 import {computeJiPitchesOutput, parsePitch} from "../io"
 import {applySharedJiPitchScriptSetup} from "./shared"
@@ -6,6 +6,7 @@ import {applySharedJiPitchScriptSetup} from "./shared"
 applySharedJiPitchScriptSetup()
 
 const jiPitchIos = readLines("src/scripts/jiPitch/input/jiPitches.txt" as Filename) as Io[]
+if (isEmpty(jiPitchIos)) throw new Error("No JI pitches found in src/scripts/jiPitch/input/jiPitches.txt to analyze.")
 const jiPitches: Array<Scamon<{rational: true}>> = jiPitchIos.map((jiPitchIo: Io): Scamon<{rational: true}> => {
     return parsePitch(jiPitchIo) as Scamon<{rational: true}>
 })

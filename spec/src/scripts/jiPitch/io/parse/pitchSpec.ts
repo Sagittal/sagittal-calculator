@@ -1,4 +1,4 @@
-import {Io, Quotient, Scamon} from "../../../../../../src/general"
+import {Io, Monzo, Quotient, Scamon} from "../../../../../../src/general"
 import {IRRATIONAL_SCAMON_BASE_MONZO} from "../../../../../../src/general/math/irrational/scamon/constants"
 import {parsePitch} from "../../../../../../src/scripts/jiPitch/io"
 
@@ -97,5 +97,14 @@ describe("parsePitch", (): void => {
         // = [ -23  16   1   0   0   0   0   0  -1 ⟩    \!~x
         const expected = {monzo: [-23, 16, 1, 0, 0, 0, 0, 0, -1]} as Scamon<{rational: false}>
         expect(actual).toBeCloseToObject(expected)
+    })
+
+    it("can handle an empty monzo", (): void => {
+        const pitchText = "[]"
+
+        const actual = parsePitch(pitchText)
+
+        const expected = {monzo: [] as unknown[] as Monzo<{rational: true}>} as Scamon<{rational: true}>
+        expect(actual).toEqual(expected)
     })
 })

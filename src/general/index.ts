@@ -42,6 +42,8 @@ export {
     isObject,
     deepMap,
     offset,
+    isString,
+    parseBoolean,
 } from "./code"
 export {
     sumTexts,

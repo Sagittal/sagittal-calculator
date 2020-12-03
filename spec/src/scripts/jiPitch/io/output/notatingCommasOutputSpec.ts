@@ -89,4 +89,14 @@ describe("computeNotatingCommasOutput", (): void => {
             "    [\t  1    \t  0    \t  2    \t -2    \t⟩\t  0    \t      50\t/\t49\t        33.400¢" + NEWLINE as Io
         expect(actual).toBe(expected)
     })
+
+    it("does not create an empty table if there are no results", (): void => {
+        const actual = computeNotatingCommasOutput([], maybeCommaClassIds)
+
+        const expected =
+            "   --- notating commas ---" + NEWLINE +
+            "" + NEWLINE +
+            "(no results)" + NEWLINE as Io
+        expect(actual).toBe(expected)
+    })
 })
