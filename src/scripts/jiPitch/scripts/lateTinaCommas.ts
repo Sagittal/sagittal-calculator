@@ -18,8 +18,7 @@ import {
     computeCommaAnalysesSortedByTinaEntries,
     computeLateCommaAnalysis,
     INFINITE_2_3_FREE_COPFR,
-    TINA_COMMAS_LOWER_BOUND,
-    TINA_COMMAS_UPPER_BOUND,
+    TINA_COMMAS_ZONE,
 } from "../lateTinaCommas"
 import {applySharedJiPitchScriptSetup} from "./shared"
 
@@ -43,8 +42,7 @@ const findCommasOptions = computeFindCommasOptions(DEFAULT_OVERRIDES)
 const commas = findCommas({
     ...jiPitchScriptGroupSettings,
     ...findCommasOptions,
-    lowerBound: TINA_COMMAS_LOWER_BOUND,
-    upperBound: TINA_COMMAS_UPPER_BOUND,
+    zone: TINA_COMMAS_ZONE,
     maxN2D3P9: MAX_N2D3P9_FOR_WHICH_POSSIBLE_NUMERATORS_ARE_KNOWN,
 })
 

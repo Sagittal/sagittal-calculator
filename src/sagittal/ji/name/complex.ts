@@ -1,10 +1,10 @@
 import {Comma} from "../../../general"
-import {computeSizeCategoryExtrema} from "./sizeCategoryExtrema"
+import {computeSizeCategoryZone} from "./sizeCategoryZone"
 import {SizeCategory} from "./types"
 
-
+// TODO: COMMA NAMES: HAHA, CLEARLY I STARTED DOING COMPLEX STUFF AT SOME POINT BUT GOT BOGGED DOWN
 const computeMaybeComplex = (comma: Comma, sizeCategory: SizeCategory): string => {
-    const [lowerBound, upperBound] = computeSizeCategoryExtrema(sizeCategory)
+    const zone = computeSizeCategoryZone(sizeCategory)
 
     return ""
 }

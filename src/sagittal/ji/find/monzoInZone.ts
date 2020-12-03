@@ -1,5 +1,5 @@
 import {
-    areMonzosEqual,
+    areMonzosEqual, computeLowerAndUpperExclusive,
     computeScamonFromMonzo,
     computeTrimmedArray,
     Decimal,
@@ -9,6 +9,7 @@ import {
     isScamonGreaterOrEqual,
     isScamonLesser,
     isScamonLesserOrEqual,
+    isUndefined,
     Maybe,
     Monzo,
     Prime,
@@ -20,45 +21,45 @@ import {
 const computeInZone = (
     rationalMonzoInZone: Monzo<{rational: true, rough: 3}>,
     zone: Zone,
-    inclusive: boolean,
 ): boolean => {
-    const [lowerBound, upperBound] = zone
+    const {extrema: [lowerBound, upperBound], exclusive} = zone
+    const {lowerExclusive, upperExclusive} = computeLowerAndUpperExclusive(exclusive)
 
-    return inclusive ?
-        (
-            isScamonGreaterOrEqual(computeScamonFromMonzo(rationalMonzoInZone), lowerBound) &&
+    const aboveLowerBound = isUndefined(lowerBound) ?
+        true :
+        lowerExclusive ?
+            isScamonGreater(computeScamonFromMonzo(rationalMonzoInZone), lowerBound) :
+            isScamonGreaterOrEqual(computeScamonFromMonzo(rationalMonzoInZone), lowerBound)
+
+    const belowUpperBound = isUndefined(upperBound) ?
+        true :
+        upperExclusive ?
+            isScamonLesser(computeScamonFromMonzo(rationalMonzoInZone), upperBound) :
             isScamonLesserOrEqual(computeScamonFromMonzo(rationalMonzoInZone), upperBound)
-        ) :
-        (
-            isScamonGreater(computeScamonFromMonzo(rationalMonzoInZone), lowerBound) &&
-            isScamonLesser(computeScamonFromMonzo(rationalMonzoInZone), upperBound)
-        )
+
+    return aboveLowerBound && belowUpperBound
 }
 
 const computeRationalMonzoInZone = (
     twoFreeRationalMonzo: Monzo<{rational: true, rough: 3}>,
     zone: Zone,
-    // TODO: GETTING COMPLEX 3-LIMIT COMMA REFERENCE: INCLUSIVE ZONES
-    //  Should inclusive be a property of a zone, and affect upper and lower individually?
-    //  I think I considered this before. I don't like this third option, not being a named argument
-    inclusive: boolean = false,
 ): Maybe<Monzo<{rational: true}>> => {
-    const [lowerBound, upperBound] = zone
+    const {extrema: [lowerBound, upperBound]} = zone
 
     const rationalMonzoInZone = shallowClone(twoFreeRationalMonzo)
 
     if (!areMonzosEqual(rationalMonzoInZone, EMPTY_MONZO)) {
-        while (isScamonGreater(computeScamonFromMonzo(rationalMonzoInZone), upperBound)) {
+        while (!isUndefined(upperBound) && isScamonGreater(computeScamonFromMonzo(rationalMonzoInZone), upperBound)) {
             rationalMonzoInZone[TWO_PRIME_INDEX] = rationalMonzoInZone[TWO_PRIME_INDEX] - 1 as
                 Decimal<{integer: true}> & Exponent<Prime>
         }
-        while (isScamonLesser(computeScamonFromMonzo(rationalMonzoInZone), lowerBound)) {
+        while (!isUndefined(lowerBound) && isScamonLesser(computeScamonFromMonzo(rationalMonzoInZone), lowerBound)) {
             rationalMonzoInZone[TWO_PRIME_INDEX] = rationalMonzoInZone[TWO_PRIME_INDEX] + 1 as
                 Decimal<{integer: true}> & Exponent<Prime>
         }
     }
 
-    return computeInZone(rationalMonzoInZone, zone, inclusive) ?
+    return computeInZone(rationalMonzoInZone, zone) ?
         computeTrimmedArray(rationalMonzoInZone) :
         undefined
 }

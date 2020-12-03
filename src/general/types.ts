@@ -1,3 +1,4 @@
+import {Maybe} from "./code"
 import {Io} from "./io"
 import {Decimal, Max, Min, NumericProperties, Quotient} from "./math"
 
@@ -24,7 +25,9 @@ type Degree = [Step<any>, Ed<any>] & Quotient
 
 type Name<T = void> = Io & {_NameBrand: boolean} & (T extends void ? {} : {_NameOfBrand: T})
 
-type Extrema<T extends unknown = number> = [Min<T>, Max<T>]
+type Extrema<T extends {of?: unknown, open?: boolean} = {of: number, open: false}> = T extends {open: true} ?
+    [Maybe<Min<T["of"]>>, Maybe<Max<T["of"]>>] :
+    [Min<T["of"]>, Max<T["of"]>]
 
 type Ms = number & {_MsBrand: boolean}
 

@@ -7,12 +7,12 @@ import {
     Monzo,
     Name,
     PYTHAGOREAN_COMMA,
-    SUPERCOMPLEX_PYTHAGOREAN_KLEISMA,
     PYTHAGOREAN_LARGE_DIESIS,
     PYTHAGOREAN_LIMMA,
     PYTHAGOREAN_SCHISMA,
     PYTHAGOREAN_WHOLE_TONE,
     Scamon,
+    SUPERCOMPLEX_PYTHAGOREAN_KLEISMA,
     THIRTYONE_THREE_COMMA,
 } from "../../../general"
 import {SizeCategoryBound} from "./types"

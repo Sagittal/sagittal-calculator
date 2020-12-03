@@ -18,7 +18,7 @@ const applySharedJiPitchScriptSetup = (): void => {
             "upper bound",
             (pitchIo: string): Scamon => parsePitch(pitchIo as Io),
         )
-        .option(`-${ScriptFlag.INCLUSIVE}, --inclusive`, "inclusive bounds")
+        .option(`-${ScriptFlag.EXCLUSIVE}, --exclusive`, "exclusive bounds")
         .option(`-${ScriptFlag.MAX_AAS}, --max-aas <maxAas>`, "max AAS", parseFloat)
         .option(`-${ScriptFlag.MAX_ATE}, --max-ate <maxAte>`, "max ATE", parseInt)
         .option(`-${ScriptFlag.PRIME_LIMIT}, --max-prime-limit <maxPrimeLimit>`, "max prime limit", parseInt)

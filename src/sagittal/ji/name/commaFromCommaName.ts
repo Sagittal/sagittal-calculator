@@ -7,25 +7,22 @@ import {
     FIVE_SMOOTHNESS,
     increment,
     isUndefined,
-    Max,
     Maybe,
-    Min,
     Monzo,
-    Scamon,
 } from "../../../general"
 import {computeN2D3P9} from "../badness"
 import {computeRationalMonzoInZone, findNotatingCommas} from "../find"
-import {computeSizeCategoryExtrema} from "./sizeCategoryExtrema"
+import {computeSizeCategoryZone} from "./sizeCategoryZone"
 import {CommaNameQuotient, SizeCategory} from "./types"
 
 const compute3LimitCommaInSizeCategory = (sizeCategory: SizeCategory): Comma => {
     let threeExponent = 0
-    const [lowerBound, upperBound] = computeSizeCategoryExtrema(sizeCategory)
+    const zone = computeSizeCategoryZone(sizeCategory)
 
     while (true) {
         let rationalMonzoInZone: Maybe<Monzo<{rational: true}>> = computeRationalMonzoInZone(
             [0, threeExponent] as Monzo<{rational: true, rough: 3}>,
-            [lowerBound.pitch as Scamon as Min<Scamon>, upperBound.pitch as Scamon as Max<Scamon>],
+            zone,
         )
         if (!isUndefined(rationalMonzoInZone)) {
             return computeRationalScamonFromRationalMonzo(rationalMonzoInZone) as Comma
@@ -33,7 +30,7 @@ const compute3LimitCommaInSizeCategory = (sizeCategory: SizeCategory): Comma => 
 
         rationalMonzoInZone = computeRationalMonzoInZone(
             [0, -threeExponent] as Monzo<{rational: true, rough: 3}>,
-            [lowerBound.pitch as Scamon as Min<Scamon>, upperBound.pitch as Scamon as Max<Scamon>],
+            zone,
         )
         if (!isUndefined(rationalMonzoInZone)) {
             return computeRationalScamonFromRationalMonzo(rationalMonzoInZone) as Comma
@@ -50,18 +47,12 @@ const computeCommaFromCommaNameQuotientAndSizeCategory = (
         return compute3LimitCommaInSizeCategory(sizeCategory)
     }
 
-    const [lowerBound, upperBound] = computeSizeCategoryExtrema(sizeCategory)
+    const zone = computeSizeCategoryZone(sizeCategory)
 
-    const commas = findNotatingCommas(
-        computeRationalScamonFromRationalQuotient(commaNameQuotient),
-        {
-            // It would be cool if we could use the search options the user provides here, but it creates a
-            // Chicken-and-egg problem since we need to use this method itself as part of parsing said options!
-            // No real choice but to go with the defaults here, unless we majorly refactor
-            lowerBound: lowerBound.pitch as Scamon as Min<Scamon>,
-            upperBound: upperBound.pitch as Scamon as Max<Scamon>,
-        },
-    )
+    // No real choice but to go with the defaults here, unless we majorly refactor
+    // It would be cool if we could use the search options the user provides here, but it creates a
+    // Chicken-and-egg problem since we need to use this method itself as part of parsing said options!
+    const commas = findNotatingCommas(computeRationalScamonFromRationalQuotient(commaNameQuotient), {zone})
 
     let mostPopularComma = undefined
     let bestPopularity = Infinity

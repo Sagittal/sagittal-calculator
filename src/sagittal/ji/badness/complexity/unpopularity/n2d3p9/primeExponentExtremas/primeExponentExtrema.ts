@@ -22,7 +22,7 @@ const computePrimeExponentExtremaGivenMaxN2D3P9 = (
     maxN2D3P9: Max<N2D3P9>,
     numeratorPossibilitiesForDenominatorGivenMaxN2D3P9: NumeratorPossibilityForDenominatorGivenMaxN2D3P9[],
     {mirrored}: {mirrored?: boolean} = {},
-): Extrema<Decimal<{integer: true}> & Exponent<Prime>> => {
+): Extrema<{of: Decimal<{integer: true}> & Exponent<Prime>}> => {
     const maxNumeratorPrimeExponentGivenMaxN2D3P9: Max<Numerator & Decimal<{integer: true}> & Exponent<Prime>> =
         computeMaxNumeratorPrimeExponentGivenMaxN2D3P9(prime as Prime & Of<Numerator>, maxN2D3P9)
 

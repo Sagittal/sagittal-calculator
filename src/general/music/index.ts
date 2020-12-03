@@ -1,6 +1,7 @@
 export {dividePitch, subtractPitch, computeCentsFromPitch, computePitchFromCents} from "./cents"
 export {CENTS_PER_OCTAVE} from "./constants"
-export {Cents, Zone, CommaMean} from "./types"
+export {computeLowerAndUpperExclusive} from "./zone"
+export {Cents, Zone, CommaMean, Exclusive} from "./types"
 export {
     compute23FreeClass,
     THREE_PRIME_LIMIT,

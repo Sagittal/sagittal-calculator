@@ -6,7 +6,7 @@ import {Exponent} from "../../types"
 import {Prime} from "../types"
 
 const doForEachRationalMonzo = <T extends NumericProperties, U>(
-    primeExponentExtremas: Array<Extrema<Decimal<{integer: true}> & Exponent<Prime>>>,
+    primeExponentExtremas: Array<Extrema<{of: Decimal<{integer: true}> & Exponent<Prime>}>>,
     workFunction: (rationalMonzo: Monzo<T & {rational: true}>, ...args: any) => Maybe<U>,
     ...args: any
 ): U[] => {
@@ -21,12 +21,12 @@ const doForEachRationalMonzo = <T extends NumericProperties, U>(
 
     const initialMonzo = primeExponentExtremas.map(
         (
-            [minPrimeExponent, _]: Extrema<Decimal<{integer: true}> & Exponent<Prime>>,
+            [minPrimeExponent, _]: Extrema<{of: Decimal<{integer: true}> & Exponent<Prime>}>,
         ): Decimal<{integer: true}> & Exponent<Prime> => minPrimeExponent,
     ) as Monzo<{rational: true}>
     const finalMonzo = primeExponentExtremas.map(
         (
-            [_, maxPrimeExponent]: Extrema<Decimal<{integer: true}> & Exponent<Prime>>,
+            [_, maxPrimeExponent]: Extrema<{of: Decimal<{integer: true}> & Exponent<Prime>}>,
         ): Decimal<{integer: true}> & Exponent<Prime> => maxPrimeExponent,
     ) as Monzo<{rational: true}>
 

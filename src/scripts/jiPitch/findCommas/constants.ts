@@ -1,6 +1,6 @@
 import {Monzo} from "../../../general"
 import {
-    DEFAULT_INCLUSIVE,
+    DEFAULT_EXCLUSIVE,
     DEFAULT_LOWER_BOUND,
     DEFAULT_MAX_2_3_FREE_COPFR,
     DEFAULT_MAX_2_3_FREE_SOPFR,
@@ -17,11 +17,9 @@ const DEFAULT_FIND_COMMAS_OPTIONS: FindCommasOptions = {
     max23FreeCopfr: DEFAULT_MAX_2_3_FREE_COPFR,
     maxPrimeLimit: DEFAULT_MAX_PRIME_LIMIT,
     maxN2D3P9: DEFAULT_MAX_N2D3P9,
-    lowerBound: DEFAULT_LOWER_BOUND,
-    upperBound: DEFAULT_UPPER_BOUND,
+    zone: {extrema: [DEFAULT_LOWER_BOUND, DEFAULT_UPPER_BOUND], exclusive: DEFAULT_EXCLUSIVE},
     maxAas: DEFAULT_MAX_AAS,
     maxAte: DEFAULT_MAX_ATE,
-    inclusive: DEFAULT_INCLUSIVE,
 }
 
 const TWO_3_FREE_MONZO_BASE = [0, 0] as Monzo<{rational: true, rough: 5}>

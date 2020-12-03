@@ -108,6 +108,7 @@ export {
     NUMERIC_CHARS,
     Cell,
     MERGED_CELL_INDICATOR,
+    formatBound,
 } from "./io"
 export {
     abs,
@@ -279,6 +280,8 @@ export {
     SEPTIMAL_COMMA,
     SEPTIMAL_KLEISMA,
     SYNTONIC_COMMA,
+    Exclusive,
+    computeLowerAndUpperExclusive,
 } from "./music"
 export {Count, Ed, Extrema, Index, Ms, Name, Step, Window, Of, Offset} from "./types"
 export {

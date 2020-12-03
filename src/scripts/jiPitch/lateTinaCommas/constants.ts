@@ -1,4 +1,4 @@
-import {add, Cents, computePitchFromCents, Copfr, Max, Min, Scamon, subtract} from "../../../general"
+import {add, Cents, computePitchFromCents, Copfr, Exclusive, Max, Min, Scamon, subtract} from "../../../general"
 import {computeCentsFromTinas, Tinas} from "../../../sagittal"
 
 const INFINITE_2_3_FREE_COPFR = Infinity as Max<Copfr<{rough: 5}>>
@@ -20,11 +20,17 @@ const TINA_COMMAS_UPPER_BOUND = computePitchFromCents(
 const MAX_TINA_SIZES: Cents[] = TINAS_TO_CHECK
     .map((tina: Tinas): Cents => computeCentsFromTinas(add(tina, TINA_COMMAS_PLUS_MINUS_RANGE)))
 
+const TINA_COMMAS_EXTREMA: [Min<Scamon<{rational: false}>>, Max<Scamon<{rational: false}>>] =
+    [TINA_COMMAS_LOWER_BOUND, TINA_COMMAS_UPPER_BOUND]
+const TINA_COMMAS_EXCLUSIVE: Exclusive = true
+const TINA_COMMAS_ZONE = {extrema: TINA_COMMAS_EXTREMA, exclusive: TINA_COMMAS_EXCLUSIVE}
+
 export {
     INFINITE_2_3_FREE_COPFR,
     TINAS_TO_CHECK,
     TINA_COMMAS_LOWER_BOUND,
     TINA_COMMAS_UPPER_BOUND,
+    TINA_COMMAS_ZONE,
     TINA_COMMAS_PLUS_MINUS_RANGE,
     MAX_TINA_SIZES,
 }

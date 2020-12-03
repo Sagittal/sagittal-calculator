@@ -129,10 +129,10 @@ describe("secondary comma zones", (): void => {
             [{decimal: 1.032540}, {decimal: 1.032791}], // [{ cents: 55.437249 }, { cents: 55.858825 }],
             [{decimal: 1.032791}, {decimal: 1.033126}], // [{ cents: 55.858825 }, { cents: 56.420926 }],
             [{decimal: 1.032791}, {decimal: 1.033965}], // [{ cents: 55.858825 }, { cents: 56.842503 }],
-        ] as Array<Extrema<{decimal: Decimal}>>
-        expected.forEach((zone: Extrema<{decimal: Decimal}>, index: number): void => {
-            expect(computeIrrationalDecimalFromScamon(actual[index][0])).toBeCloseTo(zone[0].decimal!)
-            expect(computeIrrationalDecimalFromScamon(actual[index][1])).toBeCloseTo(zone[1].decimal!)
+        ] as Array<Extrema<{of: {decimal: Decimal}}>>
+        expected.forEach((extrema: Extrema<{of: {decimal: Decimal}}>, index: number): void => {
+            expect(computeIrrationalDecimalFromScamon(actual[index]!.extrema[0]!)).toBeCloseTo(extrema[0].decimal!)
+            expect(computeIrrationalDecimalFromScamon(actual[index]!.extrema[1]!)).toBeCloseTo(extrema[1].decimal!)
         })
     })
 })

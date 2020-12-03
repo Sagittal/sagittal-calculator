@@ -39,7 +39,7 @@ const compute23FreeRationalMonzosToCheck = (
     }
 
     const primeExponentExtremasGivenMaxN2D3P9:
-        Maybe<Array<Extrema<Decimal<{integer: true}> & Exponent<Prime>>>> =
+        Maybe<Array<Extrema<{of: Decimal<{integer: true}> & Exponent<Prime>}>>> =
         maxN2D3P9 && computePrimeExponentExtremasGivenMaxN2D3P9(maxN2D3P9, {mirrored: true})
 
     const two3FreePrimesToCheck = compute23FreePrimesToCheck({
@@ -56,7 +56,7 @@ const compute23FreeRationalMonzosToCheck = (
             computeExtensionBase(ExtensionBaseType.ARRAY) as Array<Monzo<{rational: true, rough: 5}>>
 
         const primeExponentExtremaGivenMaxN2D3P9:
-            Maybe<Extrema<Decimal<{integer: true}> & Exponent<Prime>>> =
+            Maybe<Extrema<{of: Decimal<{integer: true}> & Exponent<Prime>}>> =
             primeExponentExtremasGivenMaxN2D3P9 && primeExponentExtremasGivenMaxN2D3P9[index + FIVE_PRIME_INDEX]
 
         two3FreeRationalMonzosToCheck.forEach((two3FreeMonzoToCheck: Monzo<{rational: true}>): void => {

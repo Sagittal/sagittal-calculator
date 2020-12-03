@@ -15,7 +15,7 @@ describe("computeMaxNumeratorWithLessN2D3P9ThanMaxN2D3P9", (): void => {
             [0, 0],
             [0, 1],
             [0, 1],
-        ] as Array<Extrema<Decimal<{integer: true}> & Exponent<Prime>>>
+        ] as Array<Extrema<{of: Decimal<{integer: true}> & Exponent<Prime>}>>
         const maxN2D3P9 = 3 as Max<N2D3P9>
 
         const actual = computeMaxNumeratorWithLessN2D3P9ThanMaxN2D3P9(

@@ -20,7 +20,7 @@ applySharedPopularityMetricLfcScriptSetup()
 
 const chunkCountResults = load("metrics" as Filename) as Record<Name<Metric>, Metric>
 
-const parameterExtrema = {} as Record<string, Extrema<Parameter>>
+const parameterExtrema = {} as Record<string, Extrema<{of: Parameter}>>
 
 Object.values(PopularityParameterId).forEach((parameter: PopularityParameterId): void => {
     if (parameter.includes("Base")) {

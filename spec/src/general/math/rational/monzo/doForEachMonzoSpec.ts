@@ -14,7 +14,7 @@ describe("doForEachRationalMonzo", (): void => {
         [-2, 1],
         [0, 1],
         [-1, 0],
-    ] as Array<Extrema<Decimal<{integer: true}> & Exponent<Prime>>>
+    ] as Array<Extrema<{of: Decimal<{integer: true}> & Exponent<Prime>}>>
     const arg1 = "here I am"
     const arg2 = "here I am 2"
 

@@ -31,11 +31,10 @@ const computePrimeExponentRange = (
         throw new Error("The range must be constrained somehow.")
     }
 
-    const [
-        minPrimeExponentGivenMaxN2D3P9,
-        maxPrimeExponentGivenMaxN2D3P9,
-    ]: Extrema<Decimal<{integer: true}> & Exponent<Prime>> =
-    primeExponentExtremaGivenMaxN2D3P9 || [-Infinity, Infinity] as Extrema<Decimal<{integer: true}> & Exponent<Prime>>
+    const [minPrimeExponentGivenMaxN2D3P9, maxPrimeExponentGivenMaxN2D3P9]:
+        Extrema<{of: Decimal<{integer: true}> & Exponent<Prime>}> =
+    primeExponentExtremaGivenMaxN2D3P9 || [-Infinity, Infinity] as
+        Extrema<{of: Decimal<{integer: true}> & Exponent<Prime>}>
 
     const maxPrimeExponentGivenMaxSopfr: Max<Decimal<{integer: true}> & Exponent<Prime>> =
         integerDivide(max23FreeSopfr, prime) as number as Max<Decimal<{integer: true}> & Exponent<Prime>>

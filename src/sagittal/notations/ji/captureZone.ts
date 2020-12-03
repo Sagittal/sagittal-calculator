@@ -12,7 +12,7 @@ import {JiNotationBoundClass, JiNotationLevelId} from "./types"
 const computeJiNotationCaptureZone = (
     commaClassId: CommaClassId,
     jiNotationLevel: JiNotationLevelId = JiNotationLevelId.EXTREME,
-): Maybe<Zone> => {
+): Maybe<Zone<{of: CommaClass}>> => {
     const jiNotationLevelBoundClasses = JI_NOTATION_LEVELS_BOUND_CLASSES[jiNotationLevel]
 
     const introducingJiNotationLevel = getIntroducingJiNotationLevel(commaClassId)
@@ -38,7 +38,7 @@ const computeJiNotationCaptureZone = (
     const upperBoundClassPitch =
         jiNotationLevelBoundClasses[indexOfBoundClassJustAboveCommaAtThisLevel].pitch as Scamon as Max<Scamon>
 
-    return [lowerBoundClassPitch, upperBoundClassPitch] as Zone<CommaClass>
+    return {extrema: [lowerBoundClassPitch, upperBoundClassPitch]} as Zone<{of: CommaClass}>
 }
 
 export {

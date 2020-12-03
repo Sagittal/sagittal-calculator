@@ -1,12 +1,12 @@
 import {areScamonsEqual, Comma, computeSuperScamon, formatPitch, isScamonGreater, Monzo} from "../../../general"
 import {
     computeCommasFrom23FreeRationalMonzo,
-    DEFAULT_INCLUSIVE,
     DEFAULT_LOWER_BOUND,
     DEFAULT_MAX_AAS,
     DEFAULT_MAX_ATE,
     DEFAULT_MAX_N2D3P9,
     DEFAULT_UPPER_BOUND,
+    DEFAULT_ZONE,
     MAX_N2D3P9_FOR_WHICH_POSSIBLE_NUMERATORS_ARE_KNOWN,
     MAX_SIZE_CATEGORY_BOUND,
 } from "../../../sagittal"
@@ -16,16 +16,16 @@ import {FindCommasOptions} from "./types"
 
 const findCommas = (options: Partial<FindCommasOptions>): Comma[] => {
     const {
-        lowerBound = DEFAULT_LOWER_BOUND,
-        upperBound = DEFAULT_UPPER_BOUND,
+        zone = DEFAULT_ZONE,
         max23FreeSopfr,
         max23FreeCopfr,
         maxAte = DEFAULT_MAX_ATE,
         maxPrimeLimit,
         maxAas = DEFAULT_MAX_AAS,
         maxN2D3P9 = DEFAULT_MAX_N2D3P9,
-        inclusive = DEFAULT_INCLUSIVE,
     } = options
+
+    const {extrema: [lowerBound = DEFAULT_LOWER_BOUND, upperBound = DEFAULT_UPPER_BOUND]} = zone
 
     if (isScamonGreater(lowerBound, upperBound) || areScamonsEqual(lowerBound, upperBound)) {
         throw new Error(`Lower bound is not less than upper bound; range was ${formatPitch(lowerBound)} - ${formatPitch(upperBound)}.`)
@@ -59,13 +59,11 @@ const findCommas = (options: Partial<FindCommasOptions>): Comma[] => {
             computeCommasFrom23FreeRationalMonzo(
                 two3FreeRationalMonzoToCheck,
                 {
-                    lowerBound,
-                    upperBound,
+                    zone,
                     maxAas,
                     maxAte,
                     maxN2D3P9,
                     maxPrimeLimit,
-                    inclusive,
                 },
             ),
         )

@@ -11,7 +11,7 @@ describe("computePrimeExponentExtremasGivenMaxN2D3P9", (): void => {
         const expected = [
             [0, 0],   // 2
             [0, 0],   // 3
-        ] as Array<Extrema<Decimal<{integer: true}> & Exponent<Prime>>>
+        ] as Array<Extrema<{of: Decimal<{integer: true}> & Exponent<Prime>}>>
         expect(actual).toEqual(expected)
     })
 
@@ -23,7 +23,7 @@ describe("computePrimeExponentExtremasGivenMaxN2D3P9", (): void => {
         const expected = [
             [0, 0],   // 2
             [0, 0],   // 3
-        ] as Array<Extrema<Decimal<{integer: true}> & Exponent<Prime>>>
+        ] as Array<Extrema<{of: Decimal<{integer: true}> & Exponent<Prime>}>>
         expect(actual).toEqual(expected)
     })
 
@@ -39,7 +39,7 @@ describe("computePrimeExponentExtremasGivenMaxN2D3P9", (): void => {
             [0, 2],     // 7
             [0, 1],     // 11
             [0, 1],     // 13
-        ] as Array<Extrema<Decimal<{integer: true}> & Exponent<Prime>>>
+        ] as Array<Extrema<{of: Decimal<{integer: true}> & Exponent<Prime>}>>
         expect(actual).toEqual(expected)
     })
 
@@ -67,7 +67,7 @@ describe("computePrimeExponentExtremasGivenMaxN2D3P9", (): void => {
             [0, 1],     // 41
             [0, 1],     // 43
             [0, 1],     // 47
-        ] as Array<Extrema<Decimal<{integer: true}> & Exponent<Prime>>>
+        ] as Array<Extrema<{of: Decimal<{integer: true}> & Exponent<Prime>}>>
         expect(actual).toEqual(expected)
     })
 })

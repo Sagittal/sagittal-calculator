@@ -25,7 +25,7 @@ describe("computePrimeExponentExtremaGivenMaxN2D3P9", (): void => {
             numeratorPossibilitiesForDenominatorGivenMaxN2D3P9,
         )
 
-        const expected = [-1, 2] as Extrema<Decimal<{integer: true}> & Exponent<Prime>>
+        const expected = [-1, 2] as Extrema<{of: Decimal<{integer: true}> & Exponent<Prime>}>
         expect(actual).toEqual(expected)
     })
 
@@ -37,7 +37,7 @@ describe("computePrimeExponentExtremaGivenMaxN2D3P9", (): void => {
             {mirrored: true},
         )
 
-        const expected = [-2, 2] as Extrema<Decimal<{integer: true}> & Exponent<Prime>>
+        const expected = [-2, 2] as Extrema<{of: Decimal<{integer: true}> & Exponent<Prime>}>
         expect(actual).toEqual(expected)
     })
 })

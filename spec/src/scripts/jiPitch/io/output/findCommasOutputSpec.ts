@@ -81,8 +81,8 @@ describe("computeFindCommasOutput", (): void => {
 
         const expected =
             "" + NEWLINE +
-            "lower bound:       \t[  ⟩" + NEWLINE +
-            "upper bound:       \t[ -11   7 ⟩(1/2)" + NEWLINE +
+            "lower bound:       \t[  ⟩ (inclusive)" + NEWLINE +
+            "upper bound:       \t[ -11   7 ⟩(1/2) (inclusive)" + NEWLINE +
             "max ATE:           \t 20    " + NEWLINE +
             "max AAS:           \t 20.000" + NEWLINE +
             "max N2D3P9:        \t307.000" + NEWLINE +
@@ -104,8 +104,8 @@ describe("computeFindCommasOutput", (): void => {
 
         const expected =
             "" + NEWLINE +
-            "lower bound:       \t[  ⟩" + NEWLINE +
-            "upper bound:       \t[ -11   7 ⟩(1/2)" + NEWLINE +
+            "lower bound:       \t[  ⟩ (inclusive)" + NEWLINE +
+            "upper bound:       \t[ -11   7 ⟩(1/2) (inclusive)" + NEWLINE +
             "max ATE:           \t 20    " + NEWLINE +
             "max AAS:           \t 20.000" + NEWLINE +
             "max N2D3P9:        \t307.000" + NEWLINE +
@@ -129,8 +129,8 @@ describe("computeFindCommasOutput", (): void => {
 
         const expected =
             "" + NEWLINE +
-            "lower bound:       \t[  ⟩" + NEWLINE +
-            "upper bound:       \t[ -11   7 ⟩(1/2)" + NEWLINE +
+            "lower bound:       \t[  ⟩ (inclusive)" + NEWLINE +
+            "upper bound:       \t[ -11   7 ⟩(1/2) (inclusive)" + NEWLINE +
             "max ATE:           \t 20    " + NEWLINE +
             "max AAS:           \t 20.000" + NEWLINE +
             "max N2D3P9:        \t307.000" + NEWLINE +
@@ -154,8 +154,8 @@ describe("computeFindCommasOutput", (): void => {
 
         const expected =
             "" + NEWLINE +
-            "lower bound:       \t[  ⟩" + NEWLINE +
-            "upper bound:       \t[ -11   7 ⟩(1/2)" + NEWLINE +
+            "lower bound:       \t[  ⟩ (inclusive)" + NEWLINE +
+            "upper bound:       \t[ -11   7 ⟩(1/2) (inclusive)" + NEWLINE +
             "max ATE:           \t20" + NEWLINE +
             "max AAS:           \t20.000" + NEWLINE +
             "max N2D3P9:        \t307.000" + NEWLINE +
@@ -179,8 +179,8 @@ describe("computeFindCommasOutput", (): void => {
 
         const expected =
             "" + NEWLINE +
-            "lower bound:       \t[  ⟩" + NEWLINE +
-            "upper bound:       \t[ -11   7 ⟩(1/2)" + NEWLINE +
+            "lower bound:       \t[  ⟩ (inclusive)" + NEWLINE +
+            "upper bound:       \t[ -11   7 ⟩(1/2) (inclusive)" + NEWLINE +
             "max ATE:           \t 20    " + NEWLINE +
             "max AAS:           \t 20.000" + NEWLINE +
             "max N2D3P9:        \t307.000" + NEWLINE +

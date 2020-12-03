@@ -16,13 +16,11 @@ import {
 } from "../../../general"
 import {analyzeComma, CommaAnalysis} from "../analyze"
 import {
-    DEFAULT_INCLUSIVE,
-    DEFAULT_LOWER_BOUND,
     DEFAULT_MAX_AAS,
     DEFAULT_MAX_ATE,
     DEFAULT_MAX_N2D3P9,
     DEFAULT_MAX_PRIME_LIMIT,
-    DEFAULT_UPPER_BOUND,
+    DEFAULT_ZONE,
 } from "./constants"
 import {computeRationalMonzoInZone} from "./monzoInZone"
 import {CommasFrom23FreeMonzoOptions} from "./types"
@@ -47,13 +45,11 @@ const computeCommasFrom23FreeRationalMonzo = (
     options?: CommasFrom23FreeMonzoOptions,
 ): Comma[] => {
     const {
-        lowerBound = DEFAULT_LOWER_BOUND,
-        upperBound = DEFAULT_UPPER_BOUND,
+        zone = DEFAULT_ZONE,
         maxAte = DEFAULT_MAX_ATE,
         maxAas = DEFAULT_MAX_AAS,
         maxN2D3P9 = DEFAULT_MAX_N2D3P9,
         maxPrimeLimit = DEFAULT_MAX_PRIME_LIMIT,
-        inclusive = DEFAULT_INCLUSIVE,
     } = options || {}
 
     const commas: Comma[] = []
@@ -61,7 +57,7 @@ const computeCommasFrom23FreeRationalMonzo = (
     computePlusOrMinusRange(maxAte).forEach((threeExponent: Decimal<{integer: true}> & Exponent<3 & Prime>): void => {
         const twoFreeRationalMonzo = compute2FreeRationalMonzo(two3FreeRationalMonzo, threeExponent)
         const rationalMonzoInZone: Maybe<Monzo<{rational: true}>> =
-            computeRationalMonzoInZone(twoFreeRationalMonzo, [lowerBound, upperBound], inclusive)
+            computeRationalMonzoInZone(twoFreeRationalMonzo, zone)
 
         if (rationalMonzoInZone) {
             const comma = computeRationalScamonFromRationalMonzo(rationalMonzoInZone) as Comma

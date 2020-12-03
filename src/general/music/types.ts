@@ -1,11 +1,17 @@
+import {Maybe} from "../code"
 import {NumericProperties, Scamon} from "../math"
 import {Extrema, Name} from "../types"
 
 type Cents = number & {_CentsBrand: boolean}
 
-type Zone<Of = void, T extends NumericProperties = {}> =
-    Extrema<Scamon<T>>
-    & (Of extends void ? {} : {_ZoneOfBrand: Of})
+type Exclusive = boolean | [Maybe<boolean>, Maybe<boolean>]
+
+type Zone<T extends {of?: unknown} & NumericProperties = {}> =
+    {
+        extrema: Extrema<{of: Scamon, open: true}>,
+        exclusive?: Exclusive
+    }
+    & (T extends {of: unknown} ? {_ZoneOfBrand: T["of"]} : {})
 
 type CommaMean<T extends NumericProperties = {}> = {
     name: Name<CommaMean>,
@@ -15,5 +21,6 @@ type CommaMean<T extends NumericProperties = {}> = {
 export {
     Cents,
     Zone,
+    Exclusive,
     CommaMean,
 }

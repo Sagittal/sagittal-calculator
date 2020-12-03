@@ -1,4 +1,4 @@
-import {Abs, Comma, computeScamonFromDecimal, Decimal, Max, Scamon} from "../../../../../src/general"
+import {Abs, Comma, computeScamonFromDecimal, Decimal, Max, Min, Scamon, UNISON, Zone} from "../../../../../src/general"
 import {ApotomeSlope, findNotatingCommas} from "../../../../../src/sagittal"
 
 describe("findNotatingCommas", (): void => {
@@ -20,8 +20,9 @@ describe("findNotatingCommas", (): void => {
         const jiPitch = {monzo: [0, 0, 0, 0, 1]} as Scamon<{rational: true}>
         const maxAas = 9 as Max<Abs<ApotomeSlope>>
         const upperBound = computeScamonFromDecimal(1.032279 as Decimal) as Max<Scamon>
+        const zone: Zone = {extrema: [UNISON as Scamon as Min<Scamon>, upperBound]}
 
-        const actual = findNotatingCommas(jiPitch, {maxAas, upperBound})
+        const actual = findNotatingCommas(jiPitch, {maxAas, zone})
 
         const expected = [
             {monzo: [-5, 1, 0, 0, 1]},

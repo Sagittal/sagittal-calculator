@@ -1,8 +1,8 @@
 // tslint:disable max-line-length
 
 import {Cents, Comma, computePitchFromCents, Scamon} from "../../../../../src/general"
-import {computeSizeCategory} from "../../../../../src/sagittal/ji/name/sizeCategory"
-import {SizeCategory} from "../../../../../src/sagittal/ji/name/types"
+import {computeSizeCategory} from "../../../../../src/sagittal"
+import {SizeCategory} from "../../../../../src/sagittal/ji/name"
 
 describe("computeSizeCategory", (): void => {
     it("returns the correct size category for the pitch size", (): void => {

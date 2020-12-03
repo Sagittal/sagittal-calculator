@@ -27,8 +27,8 @@ describe("find-commas", (): void => {
 
         const expected = [
             "",
-            "lower bound:       \t        30.000¢",
-            "upper bound:       \t        30.500¢",
+            "lower bound:       \t        30.000¢ (inclusive)",
+            "upper bound:       \t        30.500¢ (inclusive)",
             "max ATE:           \t  2    ",
             "max AAS:           \t  3.000",
             "max N2D3P9:        \t307.000",
@@ -54,8 +54,8 @@ describe("find-commas", (): void => {
 
         const expected = [
             "",
-            "lower bound:       \t        50.000¢",
-            "upper bound:       \t        50.310¢",
+            "lower bound:       \t        50.000¢ (inclusive)",
+            "upper bound:       \t        50.310¢ (inclusive)",
             "max ATE:           \t 15    ",
             "max AAS:           \t 14.000",
             "max N2D3P9:        \t307.000",
@@ -95,8 +95,8 @@ describe("find-commas", (): void => {
 
         const expected = [
             "",
-            "lower bound:       \t        50.000¢",
-            "upper bound:       \t        50.310¢",
+            "lower bound:       \t        50.000¢ (inclusive)",
+            "upper bound:       \t        50.310¢ (inclusive)",
             "max ATE:           \t 15    ",
             "max AAS:           \t 14.000",
             "max N2D3P9:        \t307.000",
@@ -136,8 +136,8 @@ describe("find-commas", (): void => {
 
         const expected = [
             "",
-            "lower bound:       \t        30.000¢",
-            "upper bound:       \t        30.500¢",
+            "lower bound:       \t        30.000¢ (inclusive)",
+            "upper bound:       \t        30.500¢ (inclusive)",
             "max ATE:           \t  2    ",
             "max AAS:           \t  3.000",
             "max N2D3P9:        \t307.000",
@@ -163,8 +163,8 @@ describe("find-commas", (): void => {
 
         const expected = [
             "",
-            "lower bound:       \t[  -9  13  -2   0  -2 ⟩",
-            "upper bound:       \t[ -25  12   1   0   0   1 ⟩",
+            "lower bound:       \t[  -9  13  -2   0  -2 ⟩ (inclusive)",
+            "upper bound:       \t[ -25  12   1   0   0   1 ⟩ (inclusive)",
             "max ATE:           \t 15    ",
             "max AAS:           \t 14.000",
             "max N2D3P9:        \t307.000",
@@ -193,8 +193,8 @@ describe("find-commas", (): void => {
 
         const expected = [
             "",
-            "lower bound:       \t50.000¢",
-            "upper bound:       \t50.310¢",
+            "lower bound:       \t50.000¢ (inclusive)",
+            "upper bound:       \t50.310¢ (inclusive)",
             "max ATE:           \t15",
             "max AAS:           \t14.000",
             "max N2D3P9:        \t307.000",

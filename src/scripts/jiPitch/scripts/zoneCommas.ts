@@ -1,5 +1,5 @@
 import {program} from "commander"
-import {Comma, ioSettings, LogTarget, Max, Min, saveLog, Scamon, ScriptFlag, stringify, time} from "../../../general"
+import {Comma, ioSettings, isUndefined, LogTarget, saveLog, ScriptFlag, stringify, time} from "../../../general"
 import {
     CommaClassId,
     computeJiNotationCaptureZone,
@@ -26,16 +26,20 @@ const zoneCommas = JI_NOTATION.reduce(
     ): Record<CommaClassId, Comma[]> => {
         saveLog(formatCommaClass(commaClassId, {name: true}), LogTarget.PROGRESS)
 
-        const [lowerBound, upperBound] = program.extremeCaptureZones ?
+        const zone = program.extremeCaptureZones ?
             computeJiNotationCaptureZone(commaClassId, JiNotationLevelId.EXTREME) :
             computeSecondaryCommaZone(commaClassId)
+
+        if (isUndefined(zone)) {
+            throw new Error(`Unable to find zone for comma class Id ${commaClassId}.`)
+        }
 
         const options: FindCommasOptions = {
             ...jiPitchScriptGroupSettings,
             ...findCommasOptions,
         }
-        if (lowerBound) options.lowerBound = lowerBound as Min<Scamon>
-        if (lowerBound) options.upperBound = upperBound as Max<Scamon>
+        if (zone) options.zone = zone
+
         return {
             ...zoneCommas,
             [commaClassId]: findCommas(options),

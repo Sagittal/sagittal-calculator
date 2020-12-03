@@ -1,12 +1,13 @@
 import {
     computeRationalScamonSmoothness,
+    FIVE_SMOOTHNESS,
     isRationalScamonSmooth,
     Max,
     Prime,
     Scamon,
+    THREE_SMOOTHNESS,
 } from "../../../../../../src/general"
 import {Smoothness} from "../../../../../../src/general/math"
-import {FIVE_SMOOTHNESS, THREE_SMOOTHNESS} from "../../../../../../src/general/math/rational/constants"
 
 describe("isRationalScamonSmooth", (): void => {
     it("returns true if the scamon is n-smooth (within the n prime limit)", (): void => {

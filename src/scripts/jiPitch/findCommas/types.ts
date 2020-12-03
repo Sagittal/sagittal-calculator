@@ -10,13 +10,13 @@ interface FindCommasOptions extends Required<CommasFrom23FreeMonzoOptions> {
 type PrimeExponentRangeOptions = Partial<{
     max23FreeCopfr: Max<Copfr<{rough: 5}>>,
     max23FreeSopfr: Max<Sopfr<{rough: 5}>>,
-    primeExponentExtremaGivenMaxN2D3P9: Extrema<Decimal<{integer: true}> & Exponent<Prime>>,
+    primeExponentExtremaGivenMaxN2D3P9: Extrema<{of: Decimal<{integer: true}> & Exponent<Prime>}>,
 }>
 
 type Two3FreePrimesToCheckOptions = Partial<{
     maxPrimeLimit: Max<Max<Prime>>,
     max23FreeSopfr: Max<Sopfr<{rough: 5}>>,
-    primeExponentExtremasGivenMaxN2D3P9: Array<Extrema<Decimal<{integer: true}> & Exponent<Prime>>>,
+    primeExponentExtremasGivenMaxN2D3P9: Array<Extrema<{of: Decimal<{integer: true}> & Exponent<Prime>}>>,
 }>
 
 export {

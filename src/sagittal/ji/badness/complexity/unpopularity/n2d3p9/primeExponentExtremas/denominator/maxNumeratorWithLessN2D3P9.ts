@@ -31,7 +31,7 @@ const computeMaybeNumeratorWithinMaxN2D3P9 = (
 }
 
 const computeMaxNumeratorWithLessN2D3P9ThanMaxN2D3P9 = (
-    numeratorPrimeExponentExtremasGivenMaxN2D3P9: Array<Extrema<Decimal<{integer: true}> & Exponent<Prime>>>,
+    numeratorPrimeExponentExtremasGivenMaxN2D3P9: Array<Extrema<{of: Decimal<{integer: true}> & Exponent<Prime>}>>,
     maxN2D3P9: Max<N2D3P9>,
 ): Max<Numerator & Decimal<{integer: true}>> => {
     const numerators = doForEachRationalMonzo(

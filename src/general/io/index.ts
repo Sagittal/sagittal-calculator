@@ -49,6 +49,7 @@ export {
     Formatted,
     formatCents,
     TimePrecision,
+    formatBound,
 } from "./format"
 export {time} from "./time"
 export {readLines} from "./lines"

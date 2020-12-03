@@ -11,7 +11,8 @@ export {
     DEFAULT_MAX_PRIME_LIMIT,
     DEFAULT_LOWER_BOUND,
     DEFAULT_MAX_N2D3P9,
-    DEFAULT_INCLUSIVE,
+    DEFAULT_EXCLUSIVE,
+    DEFAULT_ZONE,
 } from "./constants"
 
 // A weird thing is that I think none of this stuff in here requires them to be commas.

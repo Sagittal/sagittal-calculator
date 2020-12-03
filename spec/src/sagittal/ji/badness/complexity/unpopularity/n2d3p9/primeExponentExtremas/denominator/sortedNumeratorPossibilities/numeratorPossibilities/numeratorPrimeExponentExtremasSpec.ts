@@ -23,7 +23,7 @@ describe("computeNumeratorPrimeExponentExtremasGivenMaxN2D3P9", (): void => {
             [0, 0],
             [0, 1],
             [0, 1],
-        ] as Array<Extrema<Decimal<{integer: true}> & Exponent<Prime>>>
+        ] as Array<Extrema<{of: Decimal<{integer: true}> & Exponent<Prime>}>>
         expect(actual).toEqual(expected)
     })
 })
