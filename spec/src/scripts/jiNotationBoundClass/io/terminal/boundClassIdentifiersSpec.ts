@@ -30,6 +30,7 @@ import {
     SymbolSubsetId,
     Unicode,
 } from "../../../../../../src/sagittal"
+import {SizeCategory} from "../../../../../../src/sagittal/ji/name"
 import {JiNotationBoundClass, JiNotationLevelId, Minas, MINA_CENTS} from "../../../../../../src/sagittal/notations/ji"
 import {TINA_CENTS, ULTRINA_CENTS} from "../../../../../../src/sagittal/notations/ji/intervals"
 import {extractJiNotationBoundClassIdentifiers} from "../../../../../../src/scripts/jiNotationBoundClass/io/terminal/boundClassIdentifiers"
@@ -85,6 +86,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             decimal: 1.01333333302 as Decimal<{rational: true}>,
                             cents: 22.930587 as Cents,
                             name: "19/25C" as Name<Comma>,
+                            sizeCategory: SizeCategory.COMMA,
                             pitch: {monzo: [2, -1, -2, 0, 0, 0, 0, 1] as Monzo<{rational: true}>} as Comma,
                         },
                         // Not the best example b/c ID and mina name are the same up to this point
@@ -119,6 +121,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             decimal: 1.01364326455 as Decimal<{rational: true}>,
                             cents: 23.460010 as Cents,
                             name: "3C" as Name<Comma>,
+                            sizeCategory: SizeCategory.COMMA,
                             pitch: {monzo: [-19, 12] as Monzo<{rational: true}>} as Comma,
                         },
                         id: CommaClassId._3_C,
@@ -154,6 +157,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             decimal: 1.01333333302 as Decimal<{rational: true}>,
                             cents: 22.930587 as Cents,
                             name: "19/25C" as Name<Comma>,
+                            sizeCategory: SizeCategory.COMMA,
                             pitch: {monzo: [2, -1, -2, 0, 0, 0, 0, 1] as Monzo<{rational: true}>} as Comma,
                         },
                         id: CommaClassId._19_V_25_C,
@@ -187,6 +191,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             decimal: 1.01364326455 as Decimal<{rational: true}>,
                             cents: 23.460010 as Cents,
                             name: "3C" as Name<Comma>,
+                            sizeCategory: SizeCategory.COMMA,
                             pitch: {monzo: [-19, 12] as Monzo<{rational: true}>} as Comma,
                         },
                         id: CommaClassId._3_C,
@@ -222,6 +227,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             decimal: 1.01333333302 as Decimal<{rational: true}>,
                             cents: 22.930587 as Cents,
                             name: "19/25C" as Name<Comma>,
+                            sizeCategory: SizeCategory.COMMA,
                             pitch: {monzo: [2, -1, -2, 0, 0, 0, 0, 1] as Monzo<{rational: true}>} as Comma,
                         },
                         id: CommaClassId._19_V_25_C,
@@ -255,6 +261,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                             decimal: 1.01364326455 as Decimal<{rational: true}>,
                             cents: 23.460010 as Cents,
                             name: "3C" as Name<Comma>,
+                            sizeCategory: SizeCategory.COMMA,
                             pitch: {monzo: [-19, 12] as Monzo<{rational: true}>} as Comma,
                         },
                         id: CommaClassId._3_C,

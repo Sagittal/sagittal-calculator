@@ -49,6 +49,7 @@ describe("computeJiPitchOutput", (): void => {
 
     it("can reorder fields", (): void => {
         jiPitchScriptGroupSettings.orderedFields = ["cents", "quotient", "monzo", "aas"] as Array<JiPitchScriptGroupField>
+        jiPitchScriptGroupSettings.excludedFields = [] // This happens automatically when ordering fields
 
         const actual = computeJiPitchOutput(jiPitchAnalysis)
 

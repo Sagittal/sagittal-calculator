@@ -81,7 +81,7 @@ describe("computeJiPitchesOutput", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    it("can reorder the fields", (): void => {
+    it("can reorder fields", (): void => {
         jiPitchScriptGroupSettings.orderedFields = [
             "ate",
             "monzo",
@@ -92,6 +92,7 @@ describe("computeJiPitchesOutput", (): void => {
             "two3FreeClassName",
             "name",
         ] as Array<JiPitchScriptGroupField>
+        jiPitchScriptGroupSettings.excludedFields = [] // This happens automatically when ordering fields
 
         const actual = computeJiPitchesOutput(jiPitchAnalyses, maybeCommaClassIds)
 

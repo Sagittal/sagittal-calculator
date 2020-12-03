@@ -6,7 +6,8 @@ import {Monzo} from "../monzo"
 import {NumericProperties} from "../types"
 import {Denominator, Numerator, Quotient} from "./types"
 
-// TODO: this should probably use a similar strategy to computeDecimalFromHugeMonzo to prevent
+// TODO: GETTING COMPLEX 3-LIMIT COMMA REFERENCE: NO INFINITY QUOTIENTS
+//  This should probably use a similar strategy to computeDecimalFromHugeMonzo to prevent
 //  `npm run analyze-ji-pitch [-1054,665]` from saying the quotient is Infinity/Infinity
 //  [1539 -971> (1.69¢) as sc3n and [-2108 1330> (0.151¢) as the hc3n
 const computeQuotientFromMonzo = <T extends NumericProperties>(monzo: Monzo<T>): Quotient<T> => {

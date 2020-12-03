@@ -34,6 +34,7 @@ enum NotatingCommasField {
     ATE = "ate",
     COMMA_CLASS = "commaClass",
     NAME = "name",
+    SIZE_CATEGORY = "sizeCategory"
 }
 
 enum JiPitchesOrFindCommasField {
@@ -45,6 +46,7 @@ enum JiPitchesOrFindCommasField {
     ATE = "ate",
     COMMA_CLASS = "commaClass",
     NAME = "name",
+    SIZE_CATEGORY = "sizeCategory",
     TWO_3_FREE_PRIME_LIMIT = "two3FreePrimeLimit",
     TWO_3_FREE_CLASS_NAME = "two3FreeClassName",
     TWO_3_FREE_COPFR = "two3FreeCopfr",

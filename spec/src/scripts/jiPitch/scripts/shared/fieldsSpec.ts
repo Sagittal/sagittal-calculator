@@ -17,6 +17,6 @@ describe("parseFields", (): void => {
 
         expect((): void => {
             parseFields(excludedFieldIo)
-        }).toThrowError("Tried to parse field two3FreeClass but it is not a member of the list of possible fields: quotient,monzo,cents,apotomeSlope,aas,ate,commaClass,name,two3FreePrimeLimit,two3FreeClassName,two3FreeCopfr,two3FreeSopfr,n2d3p9")
+        }).toThrowError("Tried to parse field two3FreeClass but it is not a member of the list of possible fields: quotient,monzo,cents,apotomeSlope,aas,ate,commaClass,name,sizeCategory,two3FreePrimeLimit,two3FreeClassName,two3FreeCopfr,two3FreeSopfr,n2d3p9")
     })
 })

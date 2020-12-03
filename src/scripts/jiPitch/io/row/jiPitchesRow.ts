@@ -1,7 +1,14 @@
 import {BLANK, Comma, Count, Exponent, Max, Maybe, Prime, Row} from "../../../../general"
-import {CommaAnalysis, CommaClassId, computeCommaName, formatCommaClass, JiPitchAnalysis} from "../../../../sagittal"
+import {
+    CommaAnalysis,
+    CommaClassId,
+    computeCommaName,
+    computeSizeCategory,
+    formatCommaClass,
+    JiPitchAnalysis,
+} from "../../../../sagittal"
 import {jiPitchScriptGroupSettings} from "../../globals"
-import {JiPitchesOrFindCommasField} from "../../types"
+import {JiPitchesOrFindCommasField, NotatingCommasField} from "../../types"
 import {computeJiPitchRow} from "./jiPitchRow"
 import {compute23FreeClassRow} from "./two3FreeClassRow"
 
@@ -23,6 +30,17 @@ const computeJiPitchesRow = (
         } catch (e) {
         }
         row.push(commaName)
+    }
+    // TODO: GETTING COMPLEX 3-LIMIT COMMA REFERENCE: MAYBE COMMA FIELDS
+    //  I tried to DRY this up with computeNotatingCommasRow before and failed, but it bit me in the butt today
+    //  Okay hm I see now though... is this cluster of 3 fields like, "maybe comma" stuff?
+    if (!jiPitchScriptGroupSettings.excludedFields.includes(NotatingCommasField.SIZE_CATEGORY)) {
+        let sizeCategory = BLANK
+        try {
+            sizeCategory = computeSizeCategory(jiPitchAnalysis.pitch as Comma)
+        } catch (e) {
+        }
+        row.push(sizeCategory)
     }
 
     return [

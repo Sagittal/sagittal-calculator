@@ -8,7 +8,9 @@ import {NumericProperties} from "../types"
 import {Decimal} from "./types"
 
 const isHuge = (decimal: Decimal): boolean =>
-    isNaN(decimal) || decimal === Infinity || decimal === 0
+    // TODO: GETTING COMPLEX 3-LIMIT COMMA REFERENCE: MIN JS VALUE
+    //  Constant-ize, smallest you can get w/o losing precision i think, since it's 15 away from JS min value 5e-324
+    isNaN(decimal) || decimal === Infinity || decimal < 1e-309
 
 const computeDecimalFromHugeMonzo = <T extends NumericProperties>(monzo: Monzo): Decimal<T> => {
     let decimal = MULTIPLICATIVE_IDENTITY as Decimal<T>

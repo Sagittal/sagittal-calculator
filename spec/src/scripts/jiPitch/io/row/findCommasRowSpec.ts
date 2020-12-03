@@ -85,6 +85,7 @@ describe("computeFindCommasRow", (): void => {
         const expected = [
             "    /|  ",         // Comma class
             "1/5C",             // Comma name
+            "unison",           // Size category
             "5",                // Quotient numerator
             "/",                // Quotient vinculum
             "4",                // Quotient denominator

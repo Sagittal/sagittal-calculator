@@ -32,6 +32,8 @@ const applySharedJiPitchScriptSetup = (): void => {
             parseInt,
         )
         .option(`-${ScriptFlag.MAX_N2D3P9}, --max-n2d3p9 <maxN2d3p9>`, "max n2d3p9", parseFloat)
+        // TODO: GETTING COMPLEX 3-LIMIT COMMA REFERENCE: PARSE SORT BY (MULTIPLE)
+        //  Add a handler here for `parseSortBy`, to handle comma-separated list of multiple sorts
         .option(`-${ScriptFlag.SORT_BY}, --sort-by <sortBy>`, "sort by")
         .option(`-${ScriptFlag.UNDIRECTED_COMMA_NAME}, --undirected`, "undirected comma name")
         .option(`-${ScriptFlag.FACTORING_MODE}, --factoring-mode <factoringMode>`, "factoring mode (always, never, or threshold)")
@@ -51,7 +53,12 @@ const applySharedJiPitchScriptSetup = (): void => {
 
     if (program.sortBy) jiPitchScriptGroupSettings.sortKey = program.sortBy
     if (program.excludedFields) jiPitchScriptGroupSettings.excludedFields = program.excludedFields
-    if (program.orderedFields) jiPitchScriptGroupSettings.orderedFields = program.orderedFields
+    if (program.orderedFields) {
+        // TODO: GETTING COMPLEX 3-LIMIT COMMA REFERENCE: DO NOT EXCLUDE FIELDS WHEN ORDERING
+        //  You should make sure this is covered by a test (other to-do w/ same name has it started)
+        jiPitchScriptGroupSettings.excludedFields = []
+        jiPitchScriptGroupSettings.orderedFields = program.orderedFields
+    }
 
     jiPitchScriptGroupSettings.commaNameOptions = {
         directed: !program.undirected,

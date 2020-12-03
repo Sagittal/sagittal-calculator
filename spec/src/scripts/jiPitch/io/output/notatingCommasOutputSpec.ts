@@ -76,6 +76,7 @@ describe("computeNotatingCommasOutput", (): void => {
 
     it("can reorder fields", (): void => {
         jiPitchScriptGroupSettings.orderedFields = ["monzo", "ate", "quotient", "cents"] as Array<JiPitchScriptGroupField>
+        jiPitchScriptGroupSettings.excludedFields = [] // This happens automatically when ordering fields
 
         const actual = computeNotatingCommasOutput(notatingCommaAnalyses, maybeCommaClassIds)
 

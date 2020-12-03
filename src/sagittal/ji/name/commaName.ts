@@ -1,9 +1,11 @@
 import {
     BLANK,
     Comma,
+    computeCentsFromPitch,
     computeSubQuotient,
     computeSuperScamon,
     Direction,
+    formatCents,
     isRationalScamonSmooth,
     isRationalScamonSub,
     isRationalScamonUnison,
@@ -31,7 +33,7 @@ const computeCommaName = (
     {directed = true, factoringMode = FactoringMode.THRESHOLD, abbreviated = true}: CommaNameOptions = {},
 ): Name<Comma> => {
     if (!isCommaSized(comma)) {
-        throw new Error(`Comma ${stringify(comma)} is outside of comma-sized range and cannot be named.`)
+        throw new Error(`Comma ${stringify(comma)} is outside of comma-sized range and cannot be named: ${formatCents(computeCentsFromPitch(comma))}`)
     }
 
     const maybeHyphen = abbreviated ? BLANK : "-"

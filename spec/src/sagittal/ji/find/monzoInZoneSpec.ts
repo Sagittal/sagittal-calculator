@@ -103,6 +103,10 @@ describe("computeRationalMonzoInZone", (): void => {
 
     it("works for a huge 3-limit monzo", (): void => {
         onlyRunInCi()
+        // TODO: GETTING COMPLEX 3-LIMIT COMMA REFERENCE: DOWN GEAR A HUGE TEST TO SOMETHING LESS HUGE
+        //  This runs in 8 minutes locally, but crashes on CI b/c takes >10 mins
+        //  Perhaps we need to change this to [1539 -971> (1.69¢) (sc3n) or [-2108 1330> (0.151¢) (hc3n)
+        //  Will that still prove out the work I did to support huge-ness though?
 
         const twoFreeMonzo = [0, 31867] as Monzo<{rational: true, rough: 3}>
         const lowerBound = u_n_SIZE_CATEGORY_BOUND.pitch as Scamon as Min<Scamon>

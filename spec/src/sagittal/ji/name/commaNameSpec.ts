@@ -79,7 +79,7 @@ describe("computeCommaName", (): void => {
 
         expect((): void => {
             computeCommaName(comma)
-        }).toThrowError(`Comma {"monzo":[1]} is outside of comma-sized range and cannot be named.`)
+        }).toThrowError(`Comma {"monzo":[1]} is outside of comma-sized range and cannot be named: 1200.000¢`)
     })
 
     it("works when the monzo is empty", (): void => {

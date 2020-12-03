@@ -19,6 +19,12 @@ const computeNotatingCommasRow = (
         const {name} = commaAnalysis
         row.push(name)
     }
+    if (!jiPitchScriptGroupSettings.excludedFields.includes(NotatingCommasField.SIZE_CATEGORY)) {
+        // TODO: GETTING COMPLEX 3-LIMIT COMMA REFERENCE: FORMAT SIZE CATEGORY
+        //  Probably need a formatSizeCategory which either maps it to name or abbreviation
+        const {sizeCategory} = commaAnalysis
+        row.push(sizeCategory)
+    }
 
     return [
         ...row,

@@ -22,6 +22,7 @@ import {
     N2D3P9,
     Two3FreeClassAnalysis,
 } from "../../../../../src/sagittal"
+import {SizeCategory} from "../../../../../src/sagittal/ji/name"
 import {two3FreeClassFixture} from "../../general/music/fixtures"
 
 const two3FreeClassAnalysisFixture: Two3FreeClassAnalysis = {
@@ -56,6 +57,7 @@ const commaFixture: Comma = {
 const commaAnalysisFixture: CommaAnalysis = {
     pitch: commaFixture,
     name: "" as Name<Comma>,
+    sizeCategory: SizeCategory.UNISON,
     cents: 0 as Cents,
     decimal: 1 as Decimal<{rational: true}>,
     monzo: [] as unknown[] as Monzo<{rational: true}>,

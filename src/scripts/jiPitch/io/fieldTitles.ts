@@ -21,12 +21,13 @@ const TWO_3_FREE_CLASS_FIELD_TITLES: Record<Two3FreeClassField, Io> = {
 const NOTATING_COMMAS_FIELD_TITLES: Record<NotatingCommasField, Io> = {
     [NotatingCommasField.COMMA_CLASS]: "comma class" as Io,
     [NotatingCommasField.NAME]: "name" as Io,
+    [NotatingCommasField.SIZE_CATEGORY]: "size category" as Io,
     ...JI_PITCH_FIELD_TITLES,
 }
 
 const JI_PITCHES_OR_FIND_COMMAS_FIELD_TITLES: Record<JiPitchesOrFindCommasField, Io> = {
     ...NOTATING_COMMAS_FIELD_TITLES,
-    // Pretty much the same as TWO_3_FREE_CLASS_FIELD_TITLES,
+    // The rest are pretty much the same as TWO_3_FREE_CLASS_FIELD_TITLES,
     // But here we can't assume the "2,3-free class" part b/c there's no 2,3-free class title just above
     [JiPitchesOrFindCommasField.TWO_3_FREE_PRIME_LIMIT]: "2,3-free prime limit" as Io,
     [JiPitchesOrFindCommasField.TWO_3_FREE_CLASS_NAME]: "2,3-free class name" as Io,

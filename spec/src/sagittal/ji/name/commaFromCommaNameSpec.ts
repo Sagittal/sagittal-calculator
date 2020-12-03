@@ -53,5 +53,6 @@ describe("computeCommaFromCommaNameQuotientAndSizeCategory", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    // TODO: COMMA NAMES: eventually add a third element to parsedCommaName: complexity, affecting what it returns
+    // TODO: COMMA NAMES: COMPLEX NAMES PARSING
+    //  Eventually add a third element to parsedCommaName: complexity, affecting what it returns
 })

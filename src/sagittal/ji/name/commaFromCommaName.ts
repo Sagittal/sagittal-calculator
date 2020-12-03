@@ -14,7 +14,7 @@ import {
     Scamon,
 } from "../../../general"
 import {computeN2D3P9} from "../badness"
-import {findNotatingCommas, computeRationalMonzoInZone} from "../find"
+import {computeRationalMonzoInZone, findNotatingCommas} from "../find"
 import {computeSizeCategoryExtrema} from "./sizeCategoryExtrema"
 import {CommaNameQuotient, SizeCategory} from "./types"
 

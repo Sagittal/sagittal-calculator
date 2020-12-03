@@ -57,4 +57,15 @@ describe("analyze-ji-pitches", (): void => {
         ] as Io[]
         expect(actual).toEqual(expected)
     })
+
+    // TODO: GETTING COMPLEX 3-LIMIT COMMA REFERENCE: DO NOT EXCLUDE FIELDS WHEN ORDERING
+    //  Ordered fields should automatically un-exclude themselves
+    //  (so if you say --ordered-fields sizeCategory it works w/o also needing --excluded-fields (anything)
+    //  To override that sizeCategory is excluded by default)
+    //  Although actually it now looks like even if you don't include sizeCategory in the list of ordered fields
+    //  There is a problem. I think the problem is that excluded fields are not handled in the calculation of the
+    //  Field indices. I think that when you provide ordered-fields, it should just wipe out excluded-fields
+
+    // TODO: GETTING COMPLEX 3-LIMIT COMMA REFERENCE: ORDERING WORKS FOR NOTATING COMMAS BUT SCRAMBLES OTHER TABLES
+    //  I'm pretty sure anyway...
 })

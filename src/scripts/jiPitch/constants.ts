@@ -4,7 +4,7 @@ import {JiPitchesOrFindCommasField, JiPitchScriptGroupSettings} from "./types"
 const INITIAL_JI_PITCH_SCRIPT_GROUP_SETTINGS: JiPitchScriptGroupSettings = {
     sortKey: ["two3FreeClassAnalysis", "n2d3p9"] as KeyPath,
     commaNameOptions: {},
-    excludedFields: [],
+    excludedFields: [JiPitchesOrFindCommasField.SIZE_CATEGORY],
     orderedFields: undefined,
 }
 

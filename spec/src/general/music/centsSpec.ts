@@ -81,4 +81,22 @@ describe("computeCentsFromPitch", (): void => {
         const expected = -138.572661 as Cents
         expect(actual).toBeCloseToTyped(expected)
     })
+
+    it("works for this huge 3-limit example, upwards", (): void => {
+        const pitch = {monzo: [-1726, 1330]} as Scamon<{rational: true}>
+
+        const actual = computeCentsFromPitch(pitch)
+
+        const expected = 458400.151151 as Cents
+        expect(actual).toBeCloseToTyped(expected)
+    })
+
+    it("works for this huge 3-limit example, downwards", (): void => {
+        const pitch = {monzo: [1726, -1330]} as Scamon<{rational: true}>
+
+        const actual = computeCentsFromPitch(pitch)
+
+        const expected = -458400.151151 as Cents
+        expect(actual).toBeCloseToTyped(expected)
+    })
 })

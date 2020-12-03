@@ -45,7 +45,7 @@ describe("find-commas", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    it("can sort the resulting list", (): void => {
+    it("can sort the resulting list by a specific field", (): void => {
         onlyRunInCi()
 
         const script = `npm run find-commas -- --lower-bound 50c --upper-bound 50.31c --sort-by apotomeSlope  --max-n2d3p9 ${OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS} --max-ate ${OLD_MAX_ATE_FOR_SHORTER_TEST_RESULTS} --max-aas ${OLD_MAX_AAS_FOR_SHORTER_TEST_RESULTS}` as Io
@@ -73,6 +73,17 @@ describe("find-commas", (): void => {
             "",
         ] as Io[]
         expect(actual).toEqual(expected)
+    })
+
+    it("can sort the resulting list by more than one field", (): void => {
+        onlyRunInCi()
+
+        // TODO: GETTING COMPLEX 3-LIMIT COMMA REFERENCE: SORTING BY MORE THAN ONE THING
+        //  Dang, okay. So the current implementation of sort allows you to provide a single thing or an array
+        //  However, the array does not correspond with sorting by more than one thing, nested sorting, so to speak
+        //  It just lets you specify the path to the single thing in each datum to sort by. It's always a single sort.
+        //  So if you want to be able to do this, you'll have to complicate the implementation of sort to maybe take
+        //  A `...args` type thing, each one of which is the single-or-path thing already implemented
     })
 
     it("can set the format of the comma names", (): void => {

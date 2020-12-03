@@ -15,6 +15,7 @@ import {
     Two3FreeClass,
 } from "../../../general"
 import {ApotomeSlope, Ate, N2D3P9} from "../badness"
+import {SizeCategory} from "../name"
 
 interface JiPitchAnalysisProperties<T extends NumericProperties = {}> {
     apotomeSlope: ApotomeSlope,
@@ -29,7 +30,7 @@ interface JiPitchAnalysisProperties<T extends NumericProperties = {}> {
 
 type CommaAnalysis<T extends NumericProperties = {}, U extends Comma<T> = Comma<T>> =
     JiPitchAnalysisProperties<T>
-    & {name: Name<Comma>, pitch: U}
+    & {name: Name<Comma>, sizeCategory: SizeCategory, pitch: U}
 
 type JiPitchAnalysis<T extends NumericProperties = {}> =
     JiPitchAnalysisProperties<T>

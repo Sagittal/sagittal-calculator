@@ -14,6 +14,7 @@ import {
     Two3FreeClass,
 } from "../../../../../src/general"
 import {analyzeComma, ApotomeSlope, Ate, N2D3P9} from "../../../../../src/sagittal"
+import {SizeCategory} from "../../../../../src/sagittal/ji/name"
 
 describe("analyzeComma", (): void => {
     it("returns an analysis of a comma, given its monzo", (): void => {
@@ -28,6 +29,7 @@ describe("analyzeComma", (): void => {
             quotient: [2100875, 2052864] as Quotient<{rational: true}>,
             decimal: 1.023387 as Decimal<{rational: true}>,
             name: "5³⋅7⁵/11S" as Name<Comma>,
+            sizeCategory: SizeCategory.SMALL_DIESIS,
             apotomeSlope: -8.464345 as ApotomeSlope,
             aas: 8.464345 as Abs<ApotomeSlope>,
             ate: 6 as Ate,
