@@ -1,5 +1,5 @@
 import {program} from "commander"
-import {COMMA, Exclusive, Filename, Io, isString, Scamon, ScriptFlag, setupScriptAndIo} from "../../../../general"
+import {Filename, Io, Scamon, ScriptFlag, setupScriptAndIo} from "../../../../general"
 import {FactoringMode} from "../../../../sagittal"
 import {ScriptGroup} from "../../../types"
 import {jiPitchScriptGroupSettings} from "../../globals"
@@ -54,9 +54,10 @@ const applySharedJiPitchScriptSetup = (): void => {
     if (program.sortBy) jiPitchScriptGroupSettings.sortKey = program.sortBy
     if (program.excludedFields) jiPitchScriptGroupSettings.excludedFields = program.excludedFields
     if (program.orderedFields) {
-        // TODO: GETTING COMPLEX 3-LIMIT COMMA REFERENCE: DO NOT EXCLUDE FIELDS WHEN ORDERING
-        //  You should make sure this is covered by a test (other to-do w/ same name has it started)
-        jiPitchScriptGroupSettings.excludedFields = []
+        jiPitchScriptGroupSettings.excludedFields = jiPitchScriptGroupSettings.excludedFields
+            .filter((excludedField: JiPitchScriptGroupField): boolean => {
+                return !program.orderedFields.includes(excludedField)
+            })
         jiPitchScriptGroupSettings.orderedFields = program.orderedFields
     }
 
