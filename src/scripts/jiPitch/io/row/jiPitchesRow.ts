@@ -19,6 +19,10 @@ const computeJiPitchesRow = (
 ): Row<{of: CommaAnalysis}> => {
     const row = []
 
+    // These are the same set of three fields which computeNotatingCommasRow addresses.
+    // They are the fields which commas have which general JI pitches don't.
+    // When analyzing a bunch of JI pitches at once, we are interested in these if they're there.
+    // But we can't assume each JI pitch will have them. So we have to handle them a bit differently.
     if (!jiPitchScriptGroupSettings.excludedFields.includes(JiPitchesOrFindCommasField.COMMA_CLASS)) {
         const formattedCommaClass = maybeCommaClassId ? formatCommaClass(maybeCommaClassId) : BLANK
         row.push(formattedCommaClass)
@@ -31,9 +35,6 @@ const computeJiPitchesRow = (
         }
         row.push(commaName)
     }
-    // TODO: GETTING COMPLEX 3-LIMIT COMMA REFERENCE: MAYBE COMMA FIELDS
-    //  I tried to DRY this up with computeNotatingCommasRow before and failed, but it bit me in the butt today
-    //  Okay hm I see now though... is this cluster of 3 fields like, "maybe comma" stuff?
     if (!jiPitchScriptGroupSettings.excludedFields.includes(NotatingCommasField.SIZE_CATEGORY)) {
         let sizeCategory = BLANK
         try {
