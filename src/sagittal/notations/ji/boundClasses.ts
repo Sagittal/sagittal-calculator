@@ -749,7 +749,7 @@ const JI_NOTATION_BOUND_CLASSES: Record<BoundClassId, JiNotationBoundClass> = {
 const getJiNotationBoundClass = (boundClassId: BoundClassId): JiNotationBoundClass =>
     JI_NOTATION_BOUND_CLASSES[boundClassId]
 
-const JI_NOTATION_BOUND_CLASS_ENTRIES = Object.entries(JI_NOTATION_BOUND_CLASSES) as Array<JiNotationBoundClassEntry>
+const JI_NOTATION_BOUND_CLASS_ENTRIES = Object.entries(JI_NOTATION_BOUND_CLASSES) as JiNotationBoundClassEntry[]
 
 export {
     JI_NOTATION_BOUND_CLASSES,

@@ -1,4 +1,4 @@
-import {Copfr, Io, Max, Monzo, NEWLINE, Prime, Sopfr, Two3FreeClass} from "../../../../../../src/general"
+import {BLANK, Copfr, Io, Max, Monzo, NEWLINE, Prime, Sopfr, Two3FreeClass} from "../../../../../../src/general"
 import {N2D3P9} from "../../../../../../src/sagittal"
 import {jiPitchScriptGroupSettings} from "../../../../../../src/scripts/jiPitch/globals"
 import {compute23FreeClassOutput} from "../../../../../../src/scripts/jiPitch/io"
@@ -31,7 +31,7 @@ describe("compute23FreeClassOutput", (): void => {
 
     it("can reorder columns", (): void => {
         jiPitchScriptGroupSettings.orderedFields =
-            ["two3FreeCopfr", "two3FreeClassName", "two3FreePrimeLimit"] as Array<JiPitchScriptGroupField>
+            ["two3FreeCopfr", "two3FreeClassName", "two3FreePrimeLimit"] as JiPitchScriptGroupField[]
 
         const actual = compute23FreeClassOutput(two3FreeClassAnalysis)
 
@@ -42,5 +42,20 @@ describe("compute23FreeClassOutput", (): void => {
             "CoPFR  \t   n\t/\td\t₂,₃\tlimit  ".underline + NEWLINE +
             "  2    \t   5\t/\t1\t₂,₃\t 14    " + NEWLINE as Io
         expect(actual).toEqual(expected)
+    })
+
+    it("returns blank (not the title) when all columns are excluded", (): void => {
+        jiPitchScriptGroupSettings.excludedFields = [
+            "two3FreeCopfr",
+            "two3FreeClassName",
+            "two3FreeClassName",
+            "two3FreePrimeLimit",
+            "two3FreeSopfr",
+            "n2d3p9"
+        ] as JiPitchScriptGroupField[]
+
+        const actual = compute23FreeClassOutput(two3FreeClassAnalysis)
+
+        expect(actual).toEqual(BLANK)
     })
 })

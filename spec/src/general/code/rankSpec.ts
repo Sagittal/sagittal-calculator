@@ -1,7 +1,7 @@
 import {deepClone, DEFAULT_PRECISION, KeyPath, rank, Rank, RankStrategy} from "../../../../src/general"
 
 describe("rank", (): void => {
-    const arrayOfObjects: Array<unknown> = [
+    const arrayOfObjects: unknown[] = [
         {value: 1, otherValue: 1},
         {value: 4, otherValue: 3},
         {value: 2, otherValue: 2},
@@ -89,7 +89,7 @@ describe("rank", (): void => {
     })
 
     it("supports precision when comparing", (): void => {
-        const arrayOfObjects: Array<unknown> = [
+        const arrayOfObjects: unknown[] = [
             {value: 1, otherValue: 1},
             {value: 4, otherValue: 3},
             {value: 2, otherValue: 2},

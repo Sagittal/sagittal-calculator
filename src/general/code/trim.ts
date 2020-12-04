@@ -1,7 +1,7 @@
 import {shallowClone} from "./clone"
 import {finalElement} from "./finalElement"
 
-const computeTrimmedArray = <T extends Array<unknown>>(array: T): T => {
+const computeTrimmedArray = <T extends unknown[]>(array: T): T => {
     const trimmedArray = shallowClone(array)
 
     while (trimmedArray.length && !finalElement(trimmedArray)) {

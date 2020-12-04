@@ -13,7 +13,7 @@ const parseVal = (valIo: Io): Val => {
         fakeTmpMonzoIo = fakeTmpMonzoIo.replace("]", "⟩")
     }
 
-    return parseMonzo(fakeTmpMonzoIo) as Array<Exponent> as Val
+    return parseMonzo(fakeTmpMonzoIo) as Exponent[] as Val
 }
 
 export {

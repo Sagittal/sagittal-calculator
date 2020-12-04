@@ -262,4 +262,38 @@ describe("analyze-ji-pitch", (): void => {
         ] as Io[]
         expect(actual).toEqual(expected)
     })
+
+    // There's a complication with respect to ordered fields, which only pertains to the `analyze-ji-pitch` script:
+    // You can't specify which table the ordered fields are for.
+    // Now, all three of the constituent tables have had the work done to make them orderable.
+    // But you still can't choose different orders for each of them.
+    // Which is... fine I guess, but the problem was when you pick ordered fields that one of the tables doesn't have
+    // Then it gets totally scrambled. So I've fixed that now. Which results sometimes in a table having no columns.
+    it("can order fields without scrambling any of the tables", (): void => {
+        onlyRunInCi()
+
+        const script = "npm run analyze-ji-pitch 1/5C -- --ordered-fields name,cents,aas,ate" as Io
+
+        const actual = runScriptAndGetConsoleOutput(script)
+
+        const expected = [
+            "   --- JI pitch ---",
+            "",
+            "               \t       \t       ",
+            "cents          \tAAS    \tATE    ",
+            "        21.506¢\t  2.676\t  4    ",
+            "",
+            "",
+            "   --- notating commas ---",
+            "",
+            "    \t               \t       \t       ",
+            "name\tcents          \tAAS    \tATE    ",
+            "1/5C\t        21.506¢\t  2.676\t  4    ",
+            "1/5S\t        44.966¢\t 13.231\t 16    ",
+            "5s  \t         1.954¢\t  7.880\t  8    ",
+            "5C  \t        25.414¢\t 18.435\t 20    ",
+            "",
+        ] as Io[]
+        expect(actual).toEqual(expected)
+    })
 })

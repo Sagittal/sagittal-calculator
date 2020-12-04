@@ -11,9 +11,12 @@ const computeOrderedTableAndAlignment = <T>(
     {table, tableAlignment}: OrderableTableInformation<T>,
     options: OrderedTableAndAlignmentOptions,
 ): OrderableTableInformation<T> => {
-    const {maxMonzoLength, recognizeNameTitleAsBeingFor23FreeClass} = options
+    const {maxMonzoLength, recognizeNameTitleAsBeingFor23FreeClass, fieldTitles} = options
 
-    const orderedFields = jiPitchScriptGroupSettings.orderedFields as JiPitchScriptGroupField[]
+    const orderedFields = jiPitchScriptGroupSettings.orderedFields!
+        .filter((orderedField: JiPitchScriptGroupField): boolean => {
+            return Object.keys(fieldTitles).includes(orderedField)
+        }) as JiPitchScriptGroupField[]
     const orderedColumnIndices = [] as Array<Index<Column>>
     orderedFields.forEach((orderedField: JiPitchScriptGroupField): void => {
         const columnIndex = computeOrderedColumnIndex(orderedField, options)

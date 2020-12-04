@@ -1,6 +1,6 @@
 // tslint:disable max-line-length
 
-import {Abs, Cents, Io, ioSettings, Monzo, NEWLINE, Quotient, TableFormat} from "../../../../../../src/general"
+import {Abs, BLANK, Cents, Io, ioSettings, Monzo, NEWLINE, Quotient, TableFormat} from "../../../../../../src/general"
 import {ApotomeSlope, Ate, JiPitchAnalysis} from "../../../../../../src/sagittal"
 import {jiPitchScriptGroupSettings} from "../../../../../../src/scripts/jiPitch/globals"
 import {computeJiPitchOutput} from "../../../../../../src/scripts/jiPitch/io"
@@ -48,7 +48,7 @@ describe("computeJiPitchOutput", (): void => {
     })
 
     it("can reorder fields", (): void => {
-        jiPitchScriptGroupSettings.orderedFields = ["cents", "quotient", "monzo", "aas"] as Array<JiPitchScriptGroupField>
+        jiPitchScriptGroupSettings.orderedFields = ["cents", "quotient", "monzo", "aas"] as JiPitchScriptGroupField[]
         jiPitchScriptGroupSettings.excludedFields = [] // This happens automatically when ordering fields
 
         const actual = computeJiPitchOutput(jiPitchAnalysis)
@@ -60,5 +60,20 @@ describe("computeJiPitchOutput", (): void => {
             "cents          \t       n\t/\td\t     \t  2    \t  3    \t  5    \t \tAAS    ".underline + NEWLINE +
             "        11.200¢\t       5\t/\t4\t    [\t  0    \t -1    \t  1    \t⟩\t  8.200" + NEWLINE as Io
         expect(actual).toEqual(expected)
+    })
+
+    it("returns blank (not the title) when all columns are excluded", (): void => {
+        jiPitchScriptGroupSettings.excludedFields = [
+            "quotient",
+            "monzo",
+            "cents",
+            "apotomeSlope",
+            "aas",
+            "ate"
+        ] as JiPitchScriptGroupField[]
+
+        const actual = computeJiPitchOutput(jiPitchAnalysis)
+
+        expect(actual).toEqual(BLANK)
     })
 })

@@ -21,7 +21,7 @@ import {JiPitchScriptGroupField} from "../../../../../../src/scripts/jiPitch/typ
 import {jiPitchAnalysisFixture} from "../../../../../helpers/src/scripts/jiPitch/fixtures"
 
 describe("computeJiPitchesOutput", (): void => {
-    const jiPitchAnalyses: Array<JiPitchAnalysis> = [
+    const jiPitchAnalyses: JiPitchAnalysis[] = [
         {
             ...jiPitchAnalysisFixture,
             pitch: {
@@ -91,7 +91,7 @@ describe("computeJiPitchesOutput", (): void => {
             "cents",
             "two3FreeClassName",
             "name",
-        ] as Array<JiPitchScriptGroupField>
+        ] as JiPitchScriptGroupField[]
         jiPitchScriptGroupSettings.excludedFields = [] // This happens automatically when ordering fields
 
         const actual = computeJiPitchesOutput(jiPitchAnalyses, maybeCommaClassIds)

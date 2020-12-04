@@ -39,4 +39,13 @@ describe("computeHeaderRowsFromFieldTitleColumns", (): void => {
         ] as Array<Row<{of: string, header: true}>>
         expect(actual).toEqual(expected)
     })
+
+    it("doesn't crash when there are no field title columns", (): void => {
+        const fieldTitleColumns = [] as Array<Column<{of: string, header: true}>>
+
+        const actual = computeHeaderRowsFromFieldTitleColumns(fieldTitleColumns)
+
+        const expected = [] as Array<Row<{of: string, header: true}>>
+        expect(actual).toEqual(expected)
+    })
 })

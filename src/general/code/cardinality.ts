@@ -2,7 +2,7 @@ import {count} from "../math"
 import {Count} from "../types"
 import {isObject} from "./typeGuards"
 
-const computeCardinality = (array: unknown[]): Array<Count> => {
+const computeCardinality = (array: unknown[]): Count[] => {
     const cardinality = []
 
     let cursor = array

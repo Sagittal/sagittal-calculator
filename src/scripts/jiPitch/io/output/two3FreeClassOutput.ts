@@ -1,4 +1,4 @@
-import {count, formatTable, Io, isUndefined, sumTexts, Table} from "../../../../general"
+import {BLANK, count, exampleElement, formatTable, Io, isEmpty, isUndefined, sumTexts, Table} from "../../../../general"
 import {Two3FreeClassAnalysis} from "../../../../sagittal"
 import {jiPitchScriptGroupSettings} from "../../globals"
 import {TWO_3_FREE_CLASS_FIELD_TITLES} from "../fieldTitles"
@@ -31,6 +31,8 @@ const compute23FreeClassOutput = (
         two3FreeClassTable = ordered23FreeClassTable
         tableAlignment = orderedTableAlignment
     }
+
+    if (isEmpty(exampleElement(two3FreeClassTable))) return BLANK
 
     return sumTexts(
         TWO_3_FREE_CLASS_TABLE_TITLE,

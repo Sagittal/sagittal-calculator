@@ -34,7 +34,7 @@ enum ExtensionBaseType {
     OBJECT = "object",
 }
 
-type Range<T = number> = Array<T> & {_RangeBrand: boolean}
+type Range<T = number> = T[] & {_RangeBrand: boolean}
 
 type Maybe<T> = T | undefined
 

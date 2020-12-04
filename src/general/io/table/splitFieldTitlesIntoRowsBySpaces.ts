@@ -3,7 +3,7 @@ import {computeHeaderRowsFromFieldTitleColumns} from "./headerRowsFromFieldTitle
 import {Column, Row} from "./types"
 
 const splitFieldTitlesIntoRowsBySpaces = <T>(
-    fieldTitles: Array<Io>,
+    fieldTitles: Io[],
     options: {includeSpacerRow?: boolean} = {},
 ): Array<Row<{of: T, header: true}>> => {
     const popular23FreeClassesFieldTitleColumns = fieldTitles.map((fieldTitle: Io): Column<{of: T, header: true}> => {

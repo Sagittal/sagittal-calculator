@@ -1,4 +1,5 @@
-import {count, formatTable, Io, isUndefined, sumTexts, Table} from "../../../../general"
+import {BLANK, count, formatTable, Io, isEmpty, isUndefined, sumTexts, Table} from "../../../../general"
+import {exampleElement} from "../../../../general/code/exampleElement"
 import {JiPitchAnalysis} from "../../../../sagittal"
 import {jiPitchScriptGroupSettings} from "../../globals"
 import {JI_PITCH_FIELD_TITLES} from "../fieldTitles"
@@ -32,6 +33,8 @@ const computeJiPitchOutput = (
         jiPitchTable = orderedJiPitchTable
         tableAlignment = orderedTableAlignment
     }
+
+    if (isEmpty(exampleElement(jiPitchTable))) return BLANK
 
     return sumTexts(
         JI_PITCH_TABLE_TITLE,

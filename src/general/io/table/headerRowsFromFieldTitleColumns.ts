@@ -1,10 +1,10 @@
-import {BLANK, Cell, Column, count, Count, Formatted, max, Maybe, Row} from "../../../general"
+import {BLANK, Cell, Column, count, Count, Formatted, isEmpty, max, Maybe, Row} from "../../../general"
 
 const computeHeaderRowsFromFieldTitleColumns = <T>(
     fieldTitleColumns: Array<Column<{of: T, header: true}>>,
     {includeSpacerRow = false}: {includeSpacerRow?: boolean} = {},
 ): Array<Row<{of: T, header: true}>> => {
-    const maxFieldTitleHeaderRowCount = max(
+    const maxFieldTitleHeaderRowCount = isEmpty(fieldTitleColumns) ? 0 : max(
         ...fieldTitleColumns.map((fieldTitleColumn: Column<{of: T, header: true}>): Count<Maybe<Formatted<T>>> => {
             return count(fieldTitleColumn)
         }),

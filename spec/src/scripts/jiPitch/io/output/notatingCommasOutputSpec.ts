@@ -2,6 +2,7 @@
 
 import {
     Abs,
+    BLANK,
     Cents,
     Comma,
     Io,
@@ -75,7 +76,7 @@ describe("computeNotatingCommasOutput", (): void => {
     })
 
     it("can reorder fields", (): void => {
-        jiPitchScriptGroupSettings.orderedFields = ["monzo", "ate", "quotient", "cents"] as Array<JiPitchScriptGroupField>
+        jiPitchScriptGroupSettings.orderedFields = ["monzo", "ate", "quotient", "cents"] as JiPitchScriptGroupField[]
         jiPitchScriptGroupSettings.excludedFields = [] // This happens automatically when ordering fields
 
         const actual = computeNotatingCommasOutput(notatingCommaAnalyses, maybeCommaClassIds)
@@ -98,5 +99,23 @@ describe("computeNotatingCommasOutput", (): void => {
             "" + NEWLINE +
             "(no results)" + NEWLINE as Io
         expect(actual).toBe(expected)
+    })
+
+    it("returns blank (not the title) when all columns are excluded", (): void => {
+        jiPitchScriptGroupSettings.excludedFields = [
+            "quotient",
+            "monzo",
+            "cents",
+            "apotomeSlope",
+            "aas",
+            "ate",
+            "commaClass",
+            "name",
+            "sizeCategory",
+        ] as JiPitchScriptGroupField[]
+
+        const actual = computeNotatingCommasOutput(notatingCommaAnalyses, maybeCommaClassIds)
+
+        expect(actual).toEqual(BLANK)
     })
 })

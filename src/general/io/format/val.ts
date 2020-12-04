@@ -3,7 +3,7 @@ import {formatMonzo} from "./monzo"
 import {FormatMonzoOrValOptions, Formatted} from "./types"
 
 const formatVal = (val: Val, options?: FormatMonzoOrValOptions): Formatted<Val> =>
-    formatMonzo(val as Array<Exponent> as Monzo, options)
+    formatMonzo(val as Exponent[] as Monzo, options)
         .replace("[", "⟨")
         .replace("⟩", "]") as Formatted<Val>
 

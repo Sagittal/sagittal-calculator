@@ -17,7 +17,7 @@ type Accent = {
     anti?: boolean,
 }
 
-type Arm = Array<Accent>
+type Arm = Accent[]
 
 enum ArmId {
     WING = "wing",

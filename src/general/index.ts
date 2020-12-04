@@ -44,6 +44,7 @@ export {
     offset,
     isString,
     parseBoolean,
+    exampleElement,
 } from "./code"
 export {
     sumTexts,

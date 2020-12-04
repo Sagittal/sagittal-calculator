@@ -172,7 +172,7 @@ describe("computeFindCommasOutput", (): void => {
     })
 
     it("can reorder fields", (): void => {
-        jiPitchScriptGroupSettings.orderedFields = ["monzo", "two3FreeClassName", "quotient", "cents"] as Array<JiPitchScriptGroupField>
+        jiPitchScriptGroupSettings.orderedFields = ["monzo", "two3FreeClassName", "quotient", "cents"] as JiPitchScriptGroupField[]
         jiPitchScriptGroupSettings.excludedFields = [] // This happens automatically when ordering fields
 
         const actual = computeFindCommasOutput(commaAnalyses, maybeCommaClassIds, findCommasOptions)

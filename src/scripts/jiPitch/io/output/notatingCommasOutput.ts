@@ -1,4 +1,5 @@
-import {count, formatTable, Io, isEmpty, isUndefined, Maybe, Row, sumTexts} from "../../../../general"
+import {BLANK, count, formatTable, Io, isEmpty, isUndefined, Maybe, Row, sumTexts} from "../../../../general"
+import {exampleElement} from "../../../../general/code/exampleElement"
 import {CommaAnalysis, CommaClassId} from "../../../../sagittal"
 import {jiPitchScriptGroupSettings} from "../../globals"
 import {NOTATING_COMMAS_FIELD_TITLES} from "../fieldTitles"
@@ -39,6 +40,8 @@ const computeNotatingCommasOutput = (
         notatingCommasTable = orderedNotatingCommasTable
         tableAlignment = orderedTableAlignment
     }
+
+    if (isEmpty(exampleElement(notatingCommasTable))) return BLANK
 
     return sumTexts(
         NOTATING_COMMAS_TABLE_TITLE,

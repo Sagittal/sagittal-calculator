@@ -65,7 +65,4 @@ describe("analyze-ji-pitches", (): void => {
     //  Although actually it now looks like even if you don't include sizeCategory in the list of ordered fields
     //  There is a problem. I think the problem is that excluded fields are not handled in the calculation of the
     //  Field indices. I think that when you provide ordered-fields, it should just wipe out excluded-fields
-
-    // TODO: GETTING COMPLEX 3-LIMIT COMMA REFERENCE: ORDERING WORKS FOR NOTATING COMMAS BUT SCRAMBLES OTHER TABLES
-    //  I'm pretty sure anyway...
 })

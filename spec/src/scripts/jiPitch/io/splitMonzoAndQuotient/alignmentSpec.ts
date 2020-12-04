@@ -1,5 +1,4 @@
-import {Alignment, Row} from "../../../../../../src/general"
-import {JiPitchAnalysis} from "../../../../../../src/sagittal"
+import {Alignment, Row, TableAlignment} from "../../../../../../src/general"
 import {computeSplitMonzoAndQuotientTableAlignment} from "../../../../../../src/scripts/jiPitch/io/splitMonzoAndQuotient"
 import {
     INVISIBLE_MONZO_CLOSING_ANGLE_BRACKET_COLUMN_TITLE,
@@ -12,12 +11,12 @@ describe("computeSplitMonzoAndQuotientTableAlignment", (): void => {
             ["comma", "quotient", "", "", "monzo", "", "", "", "apotome"],
             // tslint:disable-next-line max-line-length
             ["name", "n", "/", "d", INVISIBLE_MONZO_OPENING_SQUARE_BRACKET_COLUMN_TITLE, "2", "3", INVISIBLE_MONZO_CLOSING_ANGLE_BRACKET_COLUMN_TITLE, "slope"],
-        ] as Array<Row<{of: JiPitchAnalysis, header: true}>>
+        ] as Array<Row<{header: true}>>
 
         const actual = computeSplitMonzoAndQuotientTableAlignment(headerRows)
 
         const expected = [
-            undefined,              // Comma name
+            undefined,          // Comma name
             Alignment.RIGHT,    // Quotient numerator
             Alignment.CENTER,   // Quotient vinculum
             Alignment.LEFT,     // Quotient denominator
@@ -25,7 +24,7 @@ describe("computeSplitMonzoAndQuotientTableAlignment", (): void => {
             Alignment.CENTER,   // Monzo 2
             Alignment.CENTER,   // Monzo 3
             Alignment.LEFT,     // Monzo ⟩
-            undefined,              // Apotome slope
+            undefined,          // Apotome slope
         ]
         expect(actual).toEqual(expected)
     })
@@ -35,18 +34,26 @@ describe("computeSplitMonzoAndQuotientTableAlignment", (): void => {
             ["2,3-free", "2,3-free", "", "", "", "2,3-free"],
             ["prime", "class", "", "", "", "class"],
             ["limit", "n", "/", "d", "₂,₃", "CoPFR"],
-        ] as Array<Row<{of: JiPitchAnalysis, header: true}>>
+        ] as Array<Row<{header: true}>>
 
         const actual = computeSplitMonzoAndQuotientTableAlignment(headerRows)
 
         const expected = [
-            undefined,              // 2,3-free prime limit
+            undefined,          // 2,3-free prime limit
             Alignment.RIGHT,    // 2,3-free class numinator
             Alignment.CENTER,   // 2,3-free class vinculum
             Alignment.LEFT,     // 2,3-free class diminuator
-            undefined,              // 2,3-free class sign
-            undefined,              // 2,3-free class CoPFR
+            undefined,          // 2,3-free class sign
+            undefined,          // 2,3-free class CoPFR
         ]
         expect(actual).toEqual(expected)
+    })
+
+    it("doesn't crash when there are no header rows", (): void => {
+        const headerRows = [] as Array<Row<{header: true}>>
+
+        const actual = computeSplitMonzoAndQuotientTableAlignment(headerRows)
+
+        expect(actual).toBeUndefined()
     })
 })
