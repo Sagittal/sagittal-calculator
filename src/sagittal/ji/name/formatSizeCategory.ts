@@ -1,9 +1,11 @@
-import {Index} from "../../../general"
+import {BLANK, Index, isUndefined, Maybe} from "../../../general"
 import {SIZE_CATEGORY_ABBREVIATIONS} from "./sizeCategories"
 import {SizeCategory, SizeCategoryAbbreviation} from "./types"
 
-const formatSizeCategory = (sizeCategoryIndex: Index<SizeCategory>): SizeCategoryAbbreviation =>
-    Object.values(SIZE_CATEGORY_ABBREVIATIONS)[sizeCategoryIndex]
+const formatSizeCategory = (sizeCategoryIndex: Maybe<Index<SizeCategory>>): SizeCategoryAbbreviation =>
+    isUndefined(sizeCategoryIndex) ?
+        BLANK as SizeCategoryAbbreviation :
+        Object.values(SIZE_CATEGORY_ABBREVIATIONS)[sizeCategoryIndex]
 
 export {
     formatSizeCategory,

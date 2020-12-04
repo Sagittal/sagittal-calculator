@@ -1,4 +1,5 @@
-export {Two3FreeClassAnalysis, CommaAnalysis, JiPitchAnalysis} from "./types"
+export {Two3FreeClassAnalysis, CommaAnalysis, JiPitchAnalysis, PotentiallyCommaAnalysis} from "./types"
 export {analyze23FreeClass} from "./two3FreeClass"
 export {analyzeJiPitch} from "./pitch"
 export {analyzeComma} from "./comma"
+export {analyzePotentiallyComma} from "./potentiallyComma"

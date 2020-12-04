@@ -6,6 +6,7 @@ import {
     Decimal,
     Index,
     Max,
+    Maybe,
     Monzo,
     Name,
     NumericProperties,
@@ -37,6 +38,10 @@ type JiPitchAnalysis<T extends NumericProperties = {}> =
     JiPitchAnalysisProperties<T>
     & {pitch: Scamon<T & {rational: true}>}
 
+type PotentiallyCommaAnalysis<T extends NumericProperties = {}> =
+    JiPitchAnalysisProperties<T>
+    & {name: Maybe<Name<Comma>>, sizeCategory: Maybe<Index<SizeCategory>>, pitch: Scamon<T & {rational: true}>}
+
 type Two3FreeClassAnalysis = {
     two3FreeClass: Two3FreeClass,
     name: Name<Two3FreeClass>,
@@ -50,4 +55,5 @@ export {
     JiPitchAnalysis,
     CommaAnalysis,
     Two3FreeClassAnalysis,
+    PotentiallyCommaAnalysis,
 }

@@ -1,5 +1,5 @@
 import {count, formatTable, Io, isUndefined, Maybe, Row, Table} from "../../../../general"
-import {CommaClassId, JiPitchAnalysis} from "../../../../sagittal"
+import {CommaClassId, JiPitchAnalysis, PotentiallyCommaAnalysis} from "../../../../sagittal"
 import {jiPitchScriptGroupSettings} from "../../globals"
 import {JI_PITCHES_OR_FIND_COMMAS_FIELD_TITLES} from "../fieldTitles"
 import {computeJiPitchesOrFindCommasHeaderRows} from "../headerRows"
@@ -8,19 +8,24 @@ import {computeJiPitchesRow} from "../row"
 import {computeMaxMonzoLength, computeSplitMonzoAndQuotientTableAlignment} from "../splitMonzoAndQuotient"
 
 const computeJiPitchesOutput = (
-    jiPitchAnalyses: JiPitchAnalysis[],
+    potentiallyCommaAnalyses: PotentiallyCommaAnalysis[],
     maybeCommaClassIds: Array<Maybe<CommaClassId>>,
 ): Io => {
-    const maxMonzoLength = computeMaxMonzoLength(jiPitchAnalyses)
+    const maxMonzoLength = computeMaxMonzoLength(potentiallyCommaAnalyses)
     const jiPitchesHeaderRows = computeJiPitchesOrFindCommasHeaderRows(maxMonzoLength)
     const headerRowCount = count(jiPitchesHeaderRows)
     let tableAlignment = computeSplitMonzoAndQuotientTableAlignment(jiPitchesHeaderRows)
 
     let jiPitchesTable: Table<JiPitchAnalysis> = [
         ...jiPitchesHeaderRows,
-        ...jiPitchAnalyses.map((jiPitchAnalysis: JiPitchAnalysis, index: number): Row<{of: JiPitchAnalysis}> => {
-            return computeJiPitchesRow(jiPitchAnalysis, maybeCommaClassIds[index], maxMonzoLength)
-        }),
+        ...potentiallyCommaAnalyses.map(
+            (
+                potentiallyCommaAnalysis: PotentiallyCommaAnalysis,
+                index: number
+            ): Row<{of: PotentiallyCommaAnalysis}> => {
+                return computeJiPitchesRow(potentiallyCommaAnalysis, maybeCommaClassIds[index], maxMonzoLength)
+            },
+        ),
     ]
 
     if (!isUndefined(jiPitchScriptGroupSettings.orderedFields)) {

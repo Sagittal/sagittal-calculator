@@ -21,6 +21,7 @@ import {
     CommaAnalysis,
     JiPitchAnalysis,
     N2D3P9,
+    PotentiallyCommaAnalysis,
     Two3FreeClassAnalysis,
 } from "../../../../../src/sagittal"
 import {SizeCategory} from "../../../../../src/sagittal/ji/name"
@@ -56,17 +57,16 @@ const commaFixture: Comma = {
 } as Comma
 
 const commaAnalysisFixture: CommaAnalysis = {
+    ...jiPitchAnalysisFixture,
     pitch: commaFixture,
     name: "" as Name<Comma>,
     sizeCategory: 0 as Index<SizeCategory>,
-    cents: 0 as Cents,
-    decimal: 1 as Decimal<{rational: true}>,
-    monzo: [] as unknown[] as Monzo<{rational: true}>,
-    quotient: [1, 1] as Quotient<{rational: true}>,
-    apotomeSlope: 0 as ApotomeSlope,
-    aas: 0 as Abs<ApotomeSlope>,
-    ate: 0 as Ate,
-    two3FreeClassAnalysis: two3FreeClassAnalysisFixture,
+}
+
+const potentiallyCommaAnalysisFixture: PotentiallyCommaAnalysis = {
+    ...jiPitchAnalysisFixture,
+    name: undefined,
+    sizeCategory: undefined,
 }
 
 export {
@@ -75,4 +75,5 @@ export {
     two3FreeClassAnalysisFixture,
     commaFixture,
     commaAnalysisFixture,
+    potentiallyCommaAnalysisFixture,
 }

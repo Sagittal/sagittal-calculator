@@ -35,6 +35,8 @@ export {
     JiPitchAnalysis,
     Two3FreeClassAnalysis,
     analyze23FreeClass,
+    analyzePotentiallyComma,
+    PotentiallyCommaAnalysis,
 } from "./analyze"
 export {
     ApotomeSlope,

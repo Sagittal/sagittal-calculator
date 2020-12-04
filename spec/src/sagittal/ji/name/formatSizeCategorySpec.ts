@@ -4,6 +4,7 @@ import {SizeCategory} from "../../../../../src/sagittal/ji/name"
 
 describe("formatSizeCategory", (): void => {
     it("takes a size category index and returns the abbreviation", (): void => {
+        expect(formatSizeCategory(undefined)).toBe("")
         expect(formatSizeCategory(0 as Index<SizeCategory>)).toBe("u")
         expect(formatSizeCategory(1 as Index<SizeCategory>)).toBe("n")
         expect(formatSizeCategory(2 as Index<SizeCategory>)).toBe("s")

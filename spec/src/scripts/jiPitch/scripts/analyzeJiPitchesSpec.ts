@@ -56,4 +56,30 @@ describe("analyze-ji-pitches", (): void => {
         ] as Io[]
         expect(actual).toEqual(expected)
     })
+
+    it("supports sorting the results", (): void => {
+        onlyRunInCi()
+
+        const script = "npm run analyze-ji-pitches -- --ordered-fields cents,quotient,name,monzo,two3FreePrimeLimit,sizeCategory --sort-by name" as Io
+
+        const actual = runScriptAndGetConsoleOutput(script)
+
+        const expected = [
+            "               \t        \t \t       \t             \t     \t       \t       \t       \t       \t       \t       \t       \t       \t       \t       \t       \t       \t \t2,3-free\t        ",
+            "               \tquotient\t \t       \t             \tmonzo\t       \t       \t       \t       \t       \t       \t       \t       \t       \t       \t       \t       \t \tprime   \tsize    ",
+            "cents          \t       n\t/\td      \tname         \t     \t  2    \t  3    \t  5    \t  7    \t 11    \t 13    \t 17    \t 19    \t 23    \t 29    \t 31    \t 37    \t \tlimit   \tcategory",
+            "         0.423¢\t    4096\t/\t4095   \t1/(5⋅7⋅13)n  \t    [\t 12    \t -2    \t -1    \t -1    \t  0    \t -1    \t       \t       \t       \t       \t       \t       \t⟩\t 13     \tn       ",
+            "         1.255¢\t  131072\t/\t130977 \t1/(7²⋅11)n   \t    [\t 17    \t -5    \t  0    \t -2    \t -1    \t       \t       \t       \t       \t       \t       \t       \t⟩\t 11     \tn       ",
+            "         0.297¢\t    5832\t/\t5831   \t1/(7³⋅17)n   \t    [\t  3    \t  6    \t  0    \t -3    \t  0    \t  0    \t -1    \t       \t       \t       \t       \t       \t⟩\t 17     \tn       ",
+            "         1.135¢\t  382976\t/\t382725 \t11⋅17/(5²⋅7)n\t    [\t 11    \t -7    \t -2    \t -1    \t  1    \t  0    \t  1    \t       \t       \t       \t       \t       \t⟩\t 17     \tn       ",
+            "         0.572¢\t    3025\t/\t3024   \t5²⋅11²/7n    \t    [\t -4    \t -3    \t  2    \t -1    \t  2    \t       \t       \t       \t       \t       \t       \t       \t⟩\t 11     \tn       ",
+            "         0.833¢\t    2080\t/\t2079   \t65/77n       \t    [\t  5    \t -3    \t  1    \t -1    \t -1    \t  1    \t       \t       \t       \t       \t       \t       \t⟩\t 13     \tn       ",
+            "         1.018¢\t    1701\t/\t1700   \t7/(5²⋅17)n   \t    [\t -2    \t  5    \t -2    \t  1    \t  0    \t  0    \t -1    \t       \t       \t       \t       \t       \t⟩\t 17     \tn       ",
+            "         0.081¢\t 1515591\t/\t1515520\t77/(5⋅37)n   \t    [\t-13    \t  9    \t -1    \t  1    \t  1    \t  0    \t  0    \t  0    \t  0    \t  0    \t  0    \t -1    \t⟩\t 37     \tn       ",
+            "         0.169¢\t   10241\t/\t10240  \t7²⋅11⋅19/5n  \t    [\t-11    \t  0    \t -1    \t  2    \t  1    \t  0    \t  0    \t  1    \t       \t       \t       \t       \t⟩\t 19     \tn       ",
+            "         0.721¢\t    2401\t/\t2400   \t7⁴/25n       \t    [\t -5    \t -1    \t -2    \t  4    \t       \t       \t       \t       \t       \t       \t       \t       \t⟩\t  7     \tn       ",
+            "",
+        ] as Io[]
+        expect(actual).toEqual(expected)
+    })
 })

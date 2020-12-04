@@ -51,6 +51,8 @@ export {
     computeSizeCategory,
     formatSizeCategory,
     computeSizeCategoryIndex,
+    analyzePotentiallyComma,
+    PotentiallyCommaAnalysis,
 } from "./ji"
 export {
     alignAscii,

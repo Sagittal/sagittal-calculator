@@ -3,14 +3,14 @@ import {
     CommaAnalysis,
     CommaClassId,
     formatCommaClass,
-    formatSizeCategory,
+    formatSizeCategory, PotentiallyCommaAnalysis,
 } from "../../../../sagittal"
 import {jiPitchScriptGroupSettings} from "../../globals"
 import {NotatingCommasField} from "../../types"
 import {computeJiPitchRow} from "./jiPitchRow"
 
 const computeNotatingCommasRow = (
-    commaAnalysis: CommaAnalysis,
+    commaAnalysis: CommaAnalysis | PotentiallyCommaAnalysis,
     maybeCommaClassId: Maybe<CommaClassId>,
     maxMonzoLength: Max<Count<Exponent<Prime>>>,
 ): Row<{of: CommaAnalysis}> => {

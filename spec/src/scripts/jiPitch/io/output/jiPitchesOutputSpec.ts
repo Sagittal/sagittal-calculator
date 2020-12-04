@@ -1,6 +1,7 @@
 import {
     Abs,
     Cents,
+    Comma,
     Copfr,
     Direction,
     Io,
@@ -14,16 +15,17 @@ import {
     Sopfr,
     Two3FreeClass,
 } from "../../../../../../src/general"
-import {ApotomeSlope, Ate, CommaClassId, JiPitchAnalysis, N2D3P9} from "../../../../../../src/sagittal"
+import {ApotomeSlope, Ate, CommaClassId, N2D3P9, PotentiallyCommaAnalysis} from "../../../../../../src/sagittal"
 import {jiPitchScriptGroupSettings} from "../../../../../../src/scripts/jiPitch/globals"
 import {computeJiPitchesOutput} from "../../../../../../src/scripts/jiPitch/io"
 import {JiPitchScriptGroupField} from "../../../../../../src/scripts/jiPitch/types"
-import {jiPitchAnalysisFixture} from "../../../../../helpers/src/scripts/jiPitch/fixtures"
+import {potentiallyCommaAnalysisFixture} from "../../../../../helpers/src/scripts/jiPitch/fixtures"
 
 describe("computeJiPitchesOutput", (): void => {
-    const jiPitchAnalyses: JiPitchAnalysis[] = [
+    const potentiallyCommaAnalyses: PotentiallyCommaAnalysis[] = [
         {
-            ...jiPitchAnalysisFixture,
+            ...potentiallyCommaAnalysisFixture,
+            name: "11M" as Name<Comma>,
             pitch: {
                 monzo: [-5, 1, 0, 0, 1] as Monzo<{rational: true}>,
             } as Scamon<{rational: true}>,
@@ -45,7 +47,8 @@ describe("computeJiPitchesOutput", (): void => {
             },
         },
         {
-            ...jiPitchAnalysisFixture,
+            ...potentiallyCommaAnalysisFixture,
+            name: "25/49S" as Name<Comma>,
             pitch: {
                 monzo: [1, 0, 2, -2] as Monzo<{rational: true}>,
             } as Scamon<{rational: true}>,
@@ -70,7 +73,7 @@ describe("computeJiPitchesOutput", (): void => {
     const maybeCommaClassIds = [CommaClassId._11_M, undefined]
 
     it("returns a row for each JI pitch being analyzed", (): void => {
-        const actual = computeJiPitchesOutput(jiPitchAnalyses, maybeCommaClassIds)
+        const actual = computeJiPitchesOutput(potentiallyCommaAnalyses, maybeCommaClassIds)
 
         const expected =
             "        \t      \t        \t \t  \t     \t       \t       \t       \t       \t       \t \t               \t       \t       \t       \t2,3-free\t2,3-free\t \t  \t   \t2,3-free\t2,3-free\t2,3-free" + NEWLINE +
@@ -94,7 +97,7 @@ describe("computeJiPitchesOutput", (): void => {
         ] as JiPitchScriptGroupField[]
         jiPitchScriptGroupSettings.excludedFields = [] // This happens automatically when ordering fields
 
-        const actual = computeJiPitchesOutput(jiPitchAnalyses, maybeCommaClassIds)
+        const actual = computeJiPitchesOutput(potentiallyCommaAnalyses, maybeCommaClassIds)
 
         const expected =
             "       \t     \t       \t       \t       \t       \t       \t \t       \t        \t \t  \t2,3-free\t               \t2,3-free\t \t  \t   \t      " + NEWLINE +
