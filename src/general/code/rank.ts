@@ -7,7 +7,7 @@ import {dig} from "./dig"
 import {isCloseTo} from "./isCloseTo"
 import {computeKeyPath} from "./keyPath"
 import {sort} from "./sort"
-import {isNumber, isUndefined} from "./typeGuards"
+import {isArray, isNumber, isUndefined} from "./typeGuards"
 import {Obj, Precision, Rank, RankOptions, RankStrategy} from "./types"
 
 const isCloseOrEqual = (a: unknown, b: unknown, precision: Precision = DEFAULT_PRECISION): boolean => {
@@ -27,6 +27,8 @@ const rank = <T>(arrayOfObjects: T[], options: RankOptions = {}): Array<T & {ran
     let rank = 0 as Rank<T>
     let tiesCount = 0 as Count
     let previousValue: unknown
+
+    if (isArray(by)) throw new Error("Ranking by multiple properties is not yet supported")
 
     switch (strategy) {
         case RankStrategy.FRACTIONAL:

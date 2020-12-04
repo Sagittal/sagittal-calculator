@@ -66,7 +66,7 @@ describe("sort", (): void => {
 
         expect((): void => {
             sort(array, {by: computeKeyPath("c")})
-        }).toThrowError(`"Attempted to sort array by "c", however the elements do not have this property. Example element: {"a":5,"b":9}`)
+        }).toThrowError(`"Attempted to sort array by "c", however its elements do not have this property. Example element: {"a":5,"b":9}`)
     })
 
     it("can sort descending", (): void => {
@@ -116,5 +116,28 @@ describe("sort", (): void => {
 
         const expected = [2.0000001, 2, 3, 4, 5, 7]
         expect(array).toEqual(expected)
+    })
+
+    it("can sort by more than one thing", (): void => {
+        const array = [
+            [103, "jeans"],
+            [48, "gummy"],
+            [23, "hobo"],
+            [103, "apple"],
+            [23, "dang"],
+            [103, "quine"],
+        ]
+
+        const actual = sort(array, {by: [computeKeyPath(0), computeKeyPath(1)]})
+
+        const expected = [
+            [23, "dang"],
+            [23, "hobo"],
+            [48, "gummy"],
+            [103, "apple"],
+            [103, "jeans"],
+            [103, "quine"],
+        ]
+        expect(actual).toEqual(expected)
     })
 })

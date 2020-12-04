@@ -44,7 +44,7 @@ export {
     offset,
     isString,
     parseBoolean,
-    exampleElement,
+    computeExampleElement,
     computeKeyPath,
 } from "./code"
 export {

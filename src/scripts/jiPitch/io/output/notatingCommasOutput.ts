@@ -1,7 +1,7 @@
 import {
     BLANK,
     count,
-    exampleElement,
+    computeExampleElement,
     formatTable,
     Io,
     isEmpty,
@@ -51,7 +51,7 @@ const computeNotatingCommasOutput = (
         tableAlignment = orderedTableAlignment
     }
 
-    if (isEmpty(exampleElement(notatingCommasTable))) return BLANK
+    if (isEmpty(computeExampleElement(notatingCommasTable))) return BLANK
 
     return sumTexts(
         NOTATING_COMMAS_TABLE_TITLE,

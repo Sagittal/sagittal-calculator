@@ -15,7 +15,7 @@ export {
 export {computeDeepDistinct} from "./deepDistinct"
 export {deepEquals} from "./deepEquals"
 export {parseBoolean} from "./parseBoolean"
-export {exampleElement} from "./exampleElement"
+export {computeExampleElement} from "./exampleElement"
 export {dig} from "./dig"
 export {doOnNextEventLoop} from "./doOnNextEventLoop"
 export {computeExtensionBase} from "./extensionBase"

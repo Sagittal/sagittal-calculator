@@ -1,6 +1,6 @@
-const exampleElement = <T>(array: T[]): T =>
+const computeExampleElement = <T>(array: T[]): T =>
     array[0]
 
 export {
-    exampleElement,
+    computeExampleElement,
 }

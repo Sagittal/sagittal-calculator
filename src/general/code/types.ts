@@ -1,10 +1,17 @@
 import {Decimal} from "../math"
 
-type SortOptions = Partial<{
-    by: KeyPath,
+type SortResultOptions = Partial<{
     descending: boolean,
     precision: Precision,
 }>
+
+type SortOptions = SortResultOptions & {
+    by?: KeyPath | KeyPath[],
+}
+
+type SortByResultOptions = SortResultOptions & {
+    keyPath: KeyPath,
+}
 
 type KeyPath = (
     number
@@ -17,6 +24,8 @@ type Obj = (Array<unknown> | Record<any, unknown>) & {[index: string]: unknown} 
 type RecordKey<T> = T | (T extends number ? number : T extends string ? string : {})
 
 type Sortable = {[index: string]: number}
+
+type SortResult = -1 | 0 | 1
 
 type Rank<T = void> = number & {_RankBrand: boolean} & (T extends void ? {} : {_RankOfBrand: T})
 
@@ -58,4 +67,7 @@ export {
     Obj,
     RecordKey,
     Precision,
+    SortByResultOptions,
+    SortResult,
+    SortResultOptions,
 }
