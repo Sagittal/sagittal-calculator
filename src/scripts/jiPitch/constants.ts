@@ -1,10 +1,12 @@
 import {computeKeyPath} from "../../general"
 import {JiPitchesOrFindCommasField, JiPitchScriptGroupSettings} from "./types"
 
+const DEFAULT_JI_PITCH_SCRIPT_GROUP_EXCLUDED_FIELDS = [JiPitchesOrFindCommasField.SIZE_CATEGORY]
+
 const DEFAULT_JI_PITCH_SCRIPT_GROUP_SETTINGS: JiPitchScriptGroupSettings = {
     sortKey: undefined,
     commaNameOptions: {},
-    excludedFields: [],
+    excludedFields: DEFAULT_JI_PITCH_SCRIPT_GROUP_EXCLUDED_FIELDS,
     orderedFields: undefined,
 }
 
