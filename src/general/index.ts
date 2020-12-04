@@ -45,6 +45,7 @@ export {
     isString,
     parseBoolean,
     exampleElement,
+    computeKeyPath,
 } from "./code"
 export {
     sumTexts,

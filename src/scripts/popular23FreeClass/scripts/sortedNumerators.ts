@@ -1,12 +1,12 @@
 import {
     COMMA,
+    computeKeyPath,
     computeRationalDecimalGpf,
     Decimal,
     dividesEvenly,
     Filename,
     formatTime,
     ioSettings,
-    KeyPath,
     LogTarget,
     Ms,
     NEWLINE,
@@ -100,8 +100,8 @@ for (
     n2pResults.push({numerator, gpf, n2p} as SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P)
 }
 
-sort(n2Results, {by: "n2" as KeyPath})
-sort(n2pResults, {by: "n2p" as KeyPath})
+sort(n2Results, {by: computeKeyPath("n2")})
+sort(n2pResults, {by: computeKeyPath("n2p")})
 
 saveLog(stringify(n2Results, {multiline: true}), LogTarget.FINAL)
 saveLog(stringify(n2pResults, {multiline: true}), LogTarget.FINAL)

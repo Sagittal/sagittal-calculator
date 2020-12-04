@@ -1,4 +1,5 @@
 export {computeCardinality} from "./cardinality"
+export {computeKeyPath} from "./keyPath"
 export {deepClone, shallowClone} from "./clone"
 export {deepMap} from "./deepMap"
 export {concat} from "./concat"

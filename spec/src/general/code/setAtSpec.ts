@@ -1,9 +1,9 @@
-import {KeyPath, Obj, setAt} from "../../../../src/general"
+import {computeKeyPath, Obj, setAt} from "../../../../src/general"
 
 describe("setAt", (): void => {
     it("sets the value on the object at the specified key path", (): void => {
         const object = {polygons: {rectangles: {squares: {}}}} as Obj
-        const keyPath = ["polygons", "rectangles", "squares", "magicSquare"] as KeyPath
+        const keyPath = computeKeyPath("polygons", "rectangles", "squares", "magicSquare")
         const value = true
 
         setAt(object, keyPath, value)
@@ -13,7 +13,7 @@ describe("setAt", (): void => {
 
     it("can create the path if necessary, with the 'parents' options", (): void => {
         const object = {} as Obj
-        const keyPath = ["polygons", 2, "squares", "magicSquare"] as KeyPath
+        const keyPath = computeKeyPath("polygons", 2, "squares", "magicSquare")
         const value = true
         const options = {parents: {}}
 
@@ -24,7 +24,7 @@ describe("setAt", (): void => {
 
     it("can create the path if necessary, with the 'parents' options", (): void => {
         const object = [] as unknown[] as Obj
-        const keyPath = [3, 2, 0] as KeyPath
+        const keyPath = computeKeyPath(3, 2, 0)
         const value = true
         const options = {parents: []}
 

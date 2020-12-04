@@ -1,12 +1,12 @@
 import {
     BLANK,
     Combination,
+    computeKeyPath,
     dig,
     Direction,
     EMPTY_MONZO,
     Grade,
     Index,
-    KeyPath,
     Monzo,
     Ms,
     Name,
@@ -94,7 +94,7 @@ describe("computeSumOfSquaresAndMaybeUpdateBestMetric", (): void => {
     it("sets the sum of squares at the sample point", async (): Promise<void> => {
         await computeSumOfSquaresAndMaybeUpdateBestMetric(sample, options)
 
-        expect(dig(sumsOfSquares as Obj, [1, 0] as KeyPath)).toBeCloseToTyped(0.007969)
+        expect(dig(sumsOfSquares as Obj, computeKeyPath(1, 0))).toBeCloseToTyped(0.007969)
     })
 
     it("survives an error when computing sum of squares, but sets nothing", async (): Promise<void> => {
@@ -124,7 +124,7 @@ describe("computeSumOfSquaresAndMaybeUpdateBestMetric", (): void => {
 
         await computeSumOfSquaresAndMaybeUpdateBestMetric(sample, options)
 
-        expect(dig(sumsOfSquares as Obj, [1, 0] as KeyPath)).toBeUndefined()
+        expect(dig(sumsOfSquares as Obj, computeKeyPath(1, 0))).toBeUndefined()
         expect(bestMetrics.get(metricName)).toBeUndefined()
     })
 })

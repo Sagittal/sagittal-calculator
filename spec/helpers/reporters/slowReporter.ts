@@ -1,4 +1,4 @@
-import {count, KeyPath, LogTarget, Ms, now, round, saveLog, sort, subtract} from "../../../src/general"
+import {computeKeyPath, count, LogTarget, Ms, now, round, saveLog, sort, subtract} from "../../../src/general"
 import {COUNT_SLOW_SPECS_TO_SUMMARIZE, MAX_TEST_DESCRIPTION_LENGTH, WARN_THRESHOLD_MS} from "./constants"
 import {SpecTime} from "./types"
 
@@ -23,7 +23,7 @@ const slowReporter: jasmine.CustomReporter = {
     },
 
     jasmineDone(): void {
-        const slowestSpecs = sort(specTimes, {by: "time" as KeyPath, descending: true})
+        const slowestSpecs = sort(specTimes, {by: computeKeyPath("time"), descending: true})
             .filter((specTime: SpecTime): boolean => specTime.time > WARN_THRESHOLD_MS)
             .slice(0, COUNT_SLOW_SPECS_TO_SUMMARIZE)
 

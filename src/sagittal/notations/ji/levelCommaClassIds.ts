@@ -1,4 +1,4 @@
-import {finalElement, Index, KeyPath, sort} from "../../../general"
+import {computeKeyPath, finalElement, Index, sort} from "../../../general"
 import {CommaClassId} from "../../notation"
 import {JiNotationLevelId} from "./types"
 
@@ -154,10 +154,10 @@ const EXTREME_LEVEL_COMMA_CLASS_IDS: Array<[Index<CommaClassId>, CommaClassId]> 
 
 const INSANE_LEVEL_COMMA_CLASS_IDS = sort([
     ...EXTREME_LEVEL_COMMA_CLASS_IDS,
-], {by: 0 as KeyPath})
+], {by: computeKeyPath(0)})
 
 const shapeUpIds = (ids: Array<[Index<CommaClassId>, CommaClassId]>): CommaClassId[] =>
-    sort(ids, {by: 0 as KeyPath}).map(([_, id]: [Index<CommaClassId>, CommaClassId]): CommaClassId => id)
+    sort(ids, {by: computeKeyPath(0)}).map(([_, id]: [Index<CommaClassId>, CommaClassId]): CommaClassId => id)
 
 const JI_NOTATION_LEVELS_COMMA_CLASS_IDS: Record<JiNotationLevelId, CommaClassId[]> = {
     [JiNotationLevelId.MEDIUM]: shapeUpIds(MEDIUM_LEVEL_COMMA_CLASS_IDS),

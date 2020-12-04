@@ -1,10 +1,10 @@
 import {
     Comma,
     computeCentsFromPitch,
+    computeKeyPath,
     count,
     formatCents,
     Index,
-    KeyPath,
     LogTarget,
     max,
     min,
@@ -22,7 +22,7 @@ const computeCommasBySemitinaZoneEntries = (
             .map(([semitinaZone, commas]: [string, Comma[]]): [Index<Semitina>, Comma[]] => {
                 return [parseInt(semitinaZone) as Index<Semitina>, commas]
             }),
-        {by: 0 as KeyPath},
+        {by: computeKeyPath(0)},
     ) as Array<[unknown, Comma[]]> as Array<[Index<Semitina>, Comma[]]>
 
     commasBySemitinaZoneEntries

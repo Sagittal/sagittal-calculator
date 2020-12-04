@@ -1,6 +1,6 @@
 import {
     COMMA_POPULARITIES,
-    KeyPath,
+    computeKeyPath,
     LogTarget,
     rank,
     Ranked,
@@ -14,7 +14,7 @@ const fractionalizeRanks = (): void => {
     // This script is only kept for historical reasons
     // When it was needed to replace the existing rank which wasn't fractional
     const rankedPopularities: Array<Ranked<ScalaPopularityStat>> = rank(COMMA_POPULARITIES, {
-        by: "votes" as KeyPath,
+        by: computeKeyPath("votes"),
         strategy: RankStrategy.FRACTIONAL,
         descending: true,
     })

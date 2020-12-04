@@ -1,6 +1,6 @@
 import {
     COMMA_POPULARITIES,
-    KeyPath,
+    computeKeyPath,
     rank,
     Ranked,
     RankStrategy,
@@ -19,7 +19,7 @@ describe("COMMA_POPULARITIES", (): void => {
             }))
 
         const reRankedPopularities: Array<Ranked<ScalaPopularityStat>> = rank(unrankedPopularities, {
-            by: "votes" as KeyPath,
+            by: computeKeyPath("votes"),
             strategy: RankStrategy.FRACTIONAL,
             descending: true,
         })

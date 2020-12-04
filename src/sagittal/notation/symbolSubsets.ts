@@ -1,4 +1,4 @@
-import {Index, KeyPath, sort} from "../../general"
+import {computeKeyPath, Index, sort} from "../../general"
 import {SymbolClassId, SymbolSubsetId} from "./types"
 
 const SIZE_SORTED_SYMBOL_SUBSET_IDS: SymbolSubsetId[] = [
@@ -210,7 +210,7 @@ const TROJAN_SYMBOL_SUBSET: Array<[Index<SymbolClassId>, SymbolClassId]> = [
 //  Probably some way to get the indices from the enums rather than separately specifying them like here and for commas
 //  And at that time probably also clean up the /*119*/ style comments in bound class, comma class, and symbol subsets
 const shapeUpIds = (ids: Array<[Index<SymbolClassId>, SymbolClassId]>): SymbolClassId[] =>
-    sort(ids, {by: 0 as KeyPath}).map(([_, id]: [Index<SymbolClassId>, SymbolClassId]): SymbolClassId => id)
+    sort(ids, {by: computeKeyPath(0)}).map(([_, id]: [Index<SymbolClassId>, SymbolClassId]): SymbolClassId => id)
 
 // TODO: POST-NOTATION-GENERATION: TRULY SYMBOL SUBSETS, NOT JUST SYMBOL CLASS SUBSETS
 //  These won't truly be symbol subsets until you map across them and include every complement, shift, and negation

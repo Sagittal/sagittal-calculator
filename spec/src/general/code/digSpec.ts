@@ -1,8 +1,8 @@
-import {dig, KeyPath, Obj} from "../../../../src/general"
+import {computeKeyPath, dig, Obj} from "../../../../src/general"
 
 describe("dig", (): void => {
     it("returns the value within the object following the path", (): void => {
-        const path = ["a", "b"] as KeyPath
+        const path = computeKeyPath("a", "b")
         const object = {a: {b: 3}} as Obj
 
         const actual = dig(object, path)
@@ -12,7 +12,7 @@ describe("dig", (): void => {
     })
 
     it("also works for nested arrays", (): void => {
-        const path = [2, 1] as KeyPath
+        const path = computeKeyPath(2, 1)
         const object = [
             [],
             [],
@@ -29,7 +29,7 @@ describe("dig", (): void => {
     })
 
     it("works when the path is a single number (not in an array)", (): void => {
-        const path = 1 as KeyPath
+        const path = computeKeyPath(1)
         const object = ["a", "b", "c"] as Obj
 
         const actual = dig(object, path)
@@ -39,7 +39,7 @@ describe("dig", (): void => {
     })
 
     it("works when the path is a single string (not in an array)", (): void => {
-        const path = "b" as KeyPath
+        const path = computeKeyPath("b")
         const object = {a: 0, b: 1, c: 2} as Obj
 
         const actual = dig(object, path)
@@ -49,7 +49,7 @@ describe("dig", (): void => {
     })
 
     it("works with the parents option which allows it to make parent objects as it goes if undefined", (): void => {
-        const path = ["a", 2, "c"] as KeyPath
+        const path = computeKeyPath("a", 2, "c")
         const object = {} as Obj
 
         const actual = dig(object, path, {parents: true})
@@ -59,7 +59,7 @@ describe("dig", (): void => {
     })
 
     it("throws an error if strict is true, parents is not provided, and the path does not exist on the object            ", (): void => {
-        const path = ["a", "c"] as KeyPath
+        const path = computeKeyPath("a", "c")
         const object = {a: {b: 3}} as Obj
 
         expect((): void => {
@@ -68,16 +68,16 @@ describe("dig", (): void => {
     })
 
     it("throws an error if strict is true, parents is not provided, the path is only one-deep, and the path does not exist on the object", (): void => {
-        const path = "c" as KeyPath
+        const path = computeKeyPath("c")
         const object = {a: {b: 3}} as Obj
 
         expect((): void => {
             dig(object, path, {strict: true})
-        }).toThrowError(`Failed to dig value at "c" of {"a":{"b":3}}.`)
+        }).toThrowError(`Failed to dig value at ["c"] of {"a":{"b":3}}.`)
     })
 
     it("does not throw an error if strict is not true, parents is not provided, the path does not exist on the object              ", (): void => {
-        const path = ["a", "c"] as KeyPath
+        const path = computeKeyPath("a", "c")
         const object = {a: {b: 3}} as Obj
 
         const actual = dig(object, path)
@@ -87,7 +87,7 @@ describe("dig", (): void => {
     })
 
     it("does not throw an error if strict is not true, parents is not provided, the path is only one-deep, and does not exist on the object", (): void => {
-        const path = "c" as KeyPath
+        const path = computeKeyPath("c")
         const object = {a: {b: 3}} as Obj
 
         const actual = dig(object, path)
@@ -97,7 +97,7 @@ describe("dig", (): void => {
     })
 
     it("does not throw an error if strict is true but parents is provided, and the path does not exist on the object          ", (): void => {
-        const path = ["a", "c"] as KeyPath
+        const path = computeKeyPath("a", "c")
         const object = {a: {b: 3}} as Obj
 
         const actual = dig(object, path, {strict: true, parents: {}})
@@ -107,7 +107,7 @@ describe("dig", (): void => {
     })
 
     it("does not throw an error if strict is true but parents is provided, the path is only one-deep, and does not exist on the object", (): void => {
-        const path = "c" as KeyPath
+        const path = computeKeyPath("c")
         const object = {a: {b: 3}} as Obj
 
         const actual = dig(object, path, {strict: true, parents: {}})
@@ -117,7 +117,7 @@ describe("dig", (): void => {
     })
 
     it("when using the parents option, creates the key even if it is only one deep", (): void => {
-        const path = "a" as KeyPath
+        const path = computeKeyPath("a")
         const object = {} as Obj
 
         const actual = dig(object, path, {parents: true})

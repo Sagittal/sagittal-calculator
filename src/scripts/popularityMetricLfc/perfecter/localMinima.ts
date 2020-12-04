@@ -1,4 +1,4 @@
-import {computeDeepDistinct, KeyPath, sort} from "../../../general"
+import {computeDeepDistinct, computeKeyPath, sort} from "../../../general"
 import {Sample, SumsOfSquares} from "../bestMetric"
 import {getSumOfSquaresAtSamplePointIfLocalMin} from "./localMin"
 import {LocalMin} from "./types"
@@ -13,7 +13,7 @@ const computeLocalMinima = (samples: Sample[], sumsOfSquares: SumsOfSquares, loc
         }
     })
 
-    sort(localMinima, {by: "sumOfSquares" as KeyPath})
+    sort(localMinima, {by: computeKeyPath("sumOfSquares")})
 
     return computeDeepDistinct(localMinima)
 }

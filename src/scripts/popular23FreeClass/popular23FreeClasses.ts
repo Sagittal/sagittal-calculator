@@ -1,9 +1,9 @@
 import {
+    computeKeyPath,
     DEFAULT_PRECISION,
     doForEachRationalMonzo,
     isMonzoSub,
     isUndefined,
-    KeyPath,
     LogTarget,
     Max,
     Maybe,
@@ -65,7 +65,7 @@ const computePopular23FreeClasses = (maxN2D3P9: Max<N2D3P9>): Array<Ranked<Popul
     }
 
     return rank(popular23FreeClasses, {
-        by: "n2d3p9" as KeyPath,
+        by: computeKeyPath("n2d3p9"),
         strategy: RankStrategy.FRACTIONAL,
         precision: DEFAULT_PRECISION,
     })

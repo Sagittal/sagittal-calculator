@@ -1,4 +1,4 @@
-import {setAt} from "../../../general"
+import {computeKeyPath, setAt} from "../../../general"
 import {SamplePoint} from "./scopeToSamples"
 import {SumOfSquares, SumsOfSquares} from "./types"
 
@@ -9,7 +9,7 @@ const setSumOfSquaresAtSamplePoint = (
 ): void => {
     setAt(
         sumsOfSquares as Record<number, SumsOfSquares | SumOfSquares>,
-        samplePoint,
+        computeKeyPath(...samplePoint),
         sumOfSquares,
         {parents: []},
     )

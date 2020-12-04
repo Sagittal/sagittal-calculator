@@ -1,10 +1,10 @@
-import {Comma, KeyPath, RecordKey, sort} from "../../../general"
+import {Comma, computeKeyPath, RecordKey, sort} from "../../../general"
 import {analyzeComma, CommaAnalysis, Tinas} from "../../../sagittal"
 import {MAX_TINA_SIZES} from "./constants"
 
 const computeCommaAnalysesSortedByTinaEntries = (commas: Comma[]): Array<[string, CommaAnalysis[]]> => {
     const commaAnalyses = commas.map((comma: Comma): CommaAnalysis => analyzeComma(comma))
-    sort(commaAnalyses, {by: "cents" as KeyPath})
+    sort(commaAnalyses, {by: computeKeyPath("cents")})
 
     const commaAnalysesByTina: Record<RecordKey<Tinas>, CommaAnalysis[]> = {
         [0.5]: [],
@@ -37,10 +37,10 @@ const computeCommaAnalysesSortedByTinaEntries = (commas: Comma[]): Array<[string
     })
 
     Object.values(commaAnalysesByTina).forEach((tinaCommaAnalyses: CommaAnalysis[]): void => {
-        sort(tinaCommaAnalyses, {by: ["two3FreeClassAnalysis", "n2d3p9"] as KeyPath})
+        sort(tinaCommaAnalyses, {by: computeKeyPath("two3FreeClassAnalysis", "n2d3p9")})
     })
 
-    return sort(Object.entries(commaAnalysesByTina), {by: 0 as KeyPath})
+    return sort(Object.entries(commaAnalysesByTina), {by: computeKeyPath(0)})
 }
 
 export {

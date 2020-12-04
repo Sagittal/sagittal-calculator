@@ -1,18 +1,16 @@
 import {dig} from "./dig"
 import {finalElement, indexOfFinalElement} from "./finalElement"
-import {isArray} from "./typeGuards"
+import {computeKeyPath, computeKeyPathArray} from "./keyPath"
 import {KeyPath, Obj} from "./types"
 
 const setAt = (object: Obj, keyPath: KeyPath, value: unknown, options: {parents?: [] | {}} = {}): void => {
-    let cursor: Obj
-    let finalKey: string | number
-    if (isArray(keyPath)) {
-        cursor = dig(object, keyPath.slice(0, indexOfFinalElement(keyPath)) as KeyPath, options) as Obj
-        finalKey = finalElement(keyPath)
-    } else {
-        cursor = object
-        finalKey = keyPath
-    }
+    const keyPathArray = computeKeyPathArray(keyPath)
+
+    const upToSecondToLastStepOfKeyPathArray = keyPathArray.slice(0, indexOfFinalElement(keyPathArray))
+    const upToSecondToLastStepOfKeyPath = computeKeyPath(...upToSecondToLastStepOfKeyPathArray)
+
+    let cursor = dig(object, upToSecondToLastStepOfKeyPath, options) as Obj
+    const finalKey = finalElement(keyPathArray)
 
     cursor[finalKey] = value
 }

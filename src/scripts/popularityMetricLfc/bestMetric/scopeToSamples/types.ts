@@ -1,4 +1,4 @@
-import {Combination, Index, KeyPath, Max, Min, Parameter, Step, Window} from "../../../../general"
+import {Combination, Index, Max, Min, Parameter, Step, Window} from "../../../../general"
 import {PopularityParameterId, Submetric} from "../../sumOfSquares"
 
 interface DynamicParameterValueIndicesOptions {
@@ -16,7 +16,7 @@ interface DynamicParameter {
 
 type SubmetricPossibility = Submetric & {_SubmetricPossibilityBrand: boolean}
 
-type SamplePoint = KeyPath & Array<Index<Parameter>>
+type SamplePoint = Array<Index<Parameter>> & {_SamplePointBrand: boolean}
 
 interface Sample {
     samplePoint: SamplePoint,

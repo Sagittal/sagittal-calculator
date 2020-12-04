@@ -1,8 +1,8 @@
-import {KeyPath} from "../../general"
+import {computeKeyPath} from "../../general"
 import {JiPitchesOrFindCommasField, JiPitchScriptGroupSettings} from "./types"
 
 const INITIAL_JI_PITCH_SCRIPT_GROUP_SETTINGS: JiPitchScriptGroupSettings = {
-    sortKey: ["two3FreeClassAnalysis", "n2d3p9"] as KeyPath,
+    sortKey: computeKeyPath("two3FreeClassAnalysis", "n2d3p9"),
     commaNameOptions: {},
     excludedFields: [JiPitchesOrFindCommasField.SIZE_CATEGORY],
     orderedFields: undefined,

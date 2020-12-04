@@ -1,4 +1,4 @@
-import {deepClone, DEFAULT_PRECISION, KeyPath, rank, Rank, RankStrategy} from "../../../../src/general"
+import {computeKeyPath, deepClone, DEFAULT_PRECISION, KeyPath, rank, Rank, RankStrategy} from "../../../../src/general"
 
 describe("rank", (): void => {
     const arrayOfObjects: unknown[] = [
@@ -32,7 +32,7 @@ describe("rank", (): void => {
 
     describe("when the strategy is fractional", (): void => {
         it("splits the ranks across ties", (): void => {
-            const actual = rank(arrayOfObjects, {by: "value" as KeyPath, strategy: RankStrategy.FRACTIONAL})
+            const actual = rank(arrayOfObjects, {by: computeKeyPath("value"), strategy: RankStrategy.FRACTIONAL})
 
             const expected = [
                 {value: 1, otherValue: 1, rank: 1.5 as Rank<unknown>},
@@ -45,7 +45,7 @@ describe("rank", (): void => {
         })
 
         it("another example", (): void => {
-            const actual = rank(arrayOfObjects, {by: "otherValue" as KeyPath, strategy: RankStrategy.FRACTIONAL})
+            const actual = rank(arrayOfObjects, {by: computeKeyPath("otherValue"), strategy: RankStrategy.FRACTIONAL})
 
             const expected = [
                 {value: 1, otherValue: 1, rank: 1 as Rank<unknown>},

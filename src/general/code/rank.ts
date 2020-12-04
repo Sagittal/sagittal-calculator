@@ -5,9 +5,10 @@ import {DEFAULT_PRECISION} from "./constants"
 import {increment} from "./crement"
 import {dig} from "./dig"
 import {isCloseTo} from "./isCloseTo"
+import {computeKeyPath} from "./keyPath"
 import {sort} from "./sort"
 import {isNumber, isUndefined} from "./typeGuards"
-import {KeyPath, Obj, Precision, Rank, RankOptions, RankStrategy} from "./types"
+import {Obj, Precision, Rank, RankOptions, RankStrategy} from "./types"
 
 const isCloseOrEqual = (a: unknown, b: unknown, precision: Precision = DEFAULT_PRECISION): boolean => {
     if (isUndefined(precision) || !isNumber(a) || !isNumber(b)) {
@@ -18,7 +19,7 @@ const isCloseOrEqual = (a: unknown, b: unknown, precision: Precision = DEFAULT_P
 }
 
 const rank = <T>(arrayOfObjects: T[], options: RankOptions = {}): Array<T & {rank: Rank<T>}> => {
-    const {by = "value" as KeyPath, strategy = RankStrategy.COMPETITION, descending, precision} = options
+    const {by = computeKeyPath("value"), strategy = RankStrategy.COMPETITION, descending, precision} = options
 
     const clonedArrayOfObjects = deepClone(arrayOfObjects)
     sort(clonedArrayOfObjects, {by, descending, precision})

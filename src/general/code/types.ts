@@ -6,7 +6,11 @@ type SortOptions = Partial<{
     precision: Precision,
 }>
 
-type KeyPath = (number | string | Array<number | string>) & {_KeyPathBrand: boolean}
+type KeyPath = (
+    number
+    | string
+    | Record<number | string, number | string | Record<number | string, number | string>>
+    ) & {_KeyPathBrand: boolean}
 
 type Obj = (Array<unknown> | Record<any, unknown>) & {[index: string]: unknown} & {[index: number]: unknown}
 
