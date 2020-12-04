@@ -26,6 +26,7 @@ export {
     FactoringMode,
     formatSizeCategory,
     computeSizeCategory,
+    computeSizeCategoryIndex,
 } from "./name"
 export {
     CommaAnalysis,

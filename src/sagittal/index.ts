@@ -50,6 +50,7 @@ export {
     Ate,
     computeSizeCategory,
     formatSizeCategory,
+    computeSizeCategoryIndex,
 } from "./ji"
 export {
     alignAscii,

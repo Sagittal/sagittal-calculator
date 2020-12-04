@@ -3,8 +3,9 @@ import {
     CommaAnalysis,
     CommaClassId,
     computeCommaName,
-    computeSizeCategory,
+    computeSizeCategoryIndex,
     formatCommaClass,
+    formatSizeCategory,
     JiPitchAnalysis,
 } from "../../../../sagittal"
 import {jiPitchScriptGroupSettings} from "../../globals"
@@ -38,7 +39,13 @@ const computeJiPitchesRow = (
     if (!jiPitchScriptGroupSettings.excludedFields.includes(NotatingCommasField.SIZE_CATEGORY)) {
         let sizeCategory = BLANK
         try {
-            sizeCategory = computeSizeCategory(jiPitchAnalysis.pitch as Comma)
+            const sizeCategoryIndex = computeSizeCategoryIndex(jiPitchAnalysis.pitch as Comma)
+            sizeCategory = formatSizeCategory(sizeCategoryIndex)
+            // TODO: oh dang, well you won't be able to sort ji pitches by size category,
+            //  Because sorting happens BEFORE this step!
+            //  What you should do is have this method be the same as computeNotatingCommaRow,
+            //  Clean up the above comment,
+            //  And create a new thing between a JiPitchAnalysis and CommaAnalysis called a PotentiallyCommaAnalysis
         } catch (e) {
         }
         row.push(sizeCategory)
