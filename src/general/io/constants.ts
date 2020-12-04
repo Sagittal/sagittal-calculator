@@ -22,7 +22,7 @@ const BLANK = "" as Io
 const TAB = "\t" as Io
 const COMMA = "," as Io
 
-const INITIAL_IO_SETTINGS: IoSettings = {
+const DEFAULT_IO_SETTINGS: IoSettings = {
     noWrite: false,
     tableFormat: TableFormat.TERMINAL,
     logTargets: {} as LogTargets,
@@ -44,7 +44,7 @@ export {
     IDENTIFYING_CENTS_CHARS,
     IDENTIFYING_QUOTIENT_CHARS,
     IDENTIFYING_ACCIDENTAL_CHARS,
-    INITIAL_IO_SETTINGS,
+    DEFAULT_IO_SETTINGS,
     NUMERIC_CHARS,
     WINDOWS_CARRIAGE_RETURN,
 }

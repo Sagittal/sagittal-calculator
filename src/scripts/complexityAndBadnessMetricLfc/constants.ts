@@ -2,7 +2,7 @@ import {Comma, Ed, Parameter} from "../../general"
 import {CommaClassId} from "../../sagittal"
 import {ComplexityAndBadnessMetricLfcScriptGroupSettings} from "./types"
 
-const INITIAL_COMPLEXITY_AND_BADNESS_METRIC_LFC_SCRIPT_GROUP_SETTINGS:
+const DEFAULT_COMPLEXITY_AND_BADNESS_METRIC_LFC_SCRIPT_GROUP_SETTINGS:
     ComplexityAndBadnessMetricLfcScriptGroupSettings = {
     zoneCommaEntries: [] as Array<[CommaClassId, Comma[]]>,
     sosMode: false,
@@ -17,7 +17,7 @@ const EXCLUDED_COMMAS: CommaClassId[] = [
 const DEFAULT_COMPLEXITY_PARAMETER_VALUE = 1 as Parameter
 
 export {
-    INITIAL_COMPLEXITY_AND_BADNESS_METRIC_LFC_SCRIPT_GROUP_SETTINGS,
+    DEFAULT_COMPLEXITY_AND_BADNESS_METRIC_LFC_SCRIPT_GROUP_SETTINGS,
     EXCLUDED_COMMAS,
     DEFAULT_COMPLEXITY_PARAMETER_VALUE,
 }

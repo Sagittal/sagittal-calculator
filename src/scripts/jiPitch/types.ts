@@ -2,7 +2,7 @@ import {KeyPath, Maybe} from "../../general"
 import {CommaNameOptions} from "../../sagittal"
 
 interface JiPitchScriptGroupSettings {
-    sortKey: KeyPath,
+    sortKey?: KeyPath,
     commaNameOptions: CommaNameOptions,
     excludedFields: JiPitchScriptGroupField[],
     orderedFields: Maybe<JiPitchScriptGroupField[]>,

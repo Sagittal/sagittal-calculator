@@ -1,7 +1,9 @@
 import {LogTarget, Maybe, saveLog} from "../../../general"
 import {analyzeJiPitch, CommaAnalysis, CommaClassId, computeMaybeCommaClassId} from "../../../sagittal"
 import {findNotatingCommaAnalyses} from "../analyzeJiPitch"
+import {DEFAULT_ANALYZE_JI_PITCH_AND_FIND_COMMAS_SORT_KEY} from "../constants"
 import {computeFindNotatingCommasOptions} from "../findCommas"
+import {jiPitchScriptGroupSettings} from "../globals"
 import {
     compute23FreeClassOutput,
     computeJiPitchOutput,
@@ -15,6 +17,7 @@ import {applySharedJiPitchScriptSetup} from "./shared"
 readAnalyzeJiPitchOptions()
 
 applySharedJiPitchScriptSetup()
+jiPitchScriptGroupSettings.sortKey = DEFAULT_ANALYZE_JI_PITCH_AND_FIND_COMMAS_SORT_KEY
 
 const [jiPitchIo, pitchFormat] = readJiPitchIoAndFormat()
 const jiPitch = parseJiPitch(jiPitchIo, pitchFormat)
