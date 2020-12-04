@@ -5,6 +5,7 @@ import {
     Copfr,
     Decimal,
     EMPTY_MONZO,
+    Index,
     Max,
     Monzo,
     Name,
@@ -57,7 +58,7 @@ const commaFixture: Comma = {
 const commaAnalysisFixture: CommaAnalysis = {
     pitch: commaFixture,
     name: "" as Name<Comma>,
-    sizeCategory: SizeCategory.UNISON,
+    sizeCategory: 0 as Index<SizeCategory>,
     cents: 0 as Cents,
     decimal: 1 as Decimal<{rational: true}>,
     monzo: [] as unknown[] as Monzo<{rational: true}>,

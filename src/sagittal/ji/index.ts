@@ -24,6 +24,7 @@ export {
     SizeCategoryBound,
     formatComma,
     FactoringMode,
+    formatSizeCategory,
     computeSizeCategory,
 } from "./name"
 export {

@@ -78,7 +78,7 @@ describe("computeNotatingCommasRow", (): void => {
         const expected = [
             "    /|  ",         // Comma class
             "1/5C",             // Comma name
-            "unison",           // Size category
+            "u",                // Size category (abbreviation)
             "5",                // Quotient numerator
             "/",                // Quotient vinculum
             "4",                // Quotient denominator

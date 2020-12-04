@@ -6,7 +6,9 @@ declare namespace jasmine {
         toBeCloseToTyped(expected: T, precision?: number, negate?: boolean, message?: string): CustomMatcherResult
 
         toEqualLines(expected: T, precision?: number, negate?: boolean, message?: string): CustomMatcherResult
-        
+
+        toEqualWhitespaceAgnostic(expected: T, negate?: boolean, message?: string): CustomMatcherResult
+
         toBeCloseToArray(expected: T, precision?: number, negate?: boolean, message?: string): CustomMatcherResult
 
         toBeArrayWithDeepCloseContents(expected: T, precision?: number, message?: string): CustomMatcherResult

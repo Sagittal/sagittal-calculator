@@ -49,6 +49,7 @@ export {
     computeKnownRationalQuotients,
     Ate,
     computeSizeCategory,
+    formatSizeCategory,
 } from "./ji"
 export {
     alignAscii,

@@ -1,5 +1,5 @@
 import {Comma, NumericProperties} from "../../../general"
-import {CommaNameOptions, computeCommaName, computeSizeCategory, FactoringMode} from "../name"
+import {CommaNameOptions, computeCommaName, computeSizeCategoryIndex, FactoringMode} from "../name"
 import {analyzeJiPitch} from "./pitch"
 import {CommaAnalysis} from "./types"
 
@@ -9,7 +9,7 @@ const analyzeComma = <T extends NumericProperties, U extends Comma<T>>(
 ): CommaAnalysis<T, U> => {
     const {directed = true, factoringMode = FactoringMode.THRESHOLD, abbreviated = true} = options
     const name = computeCommaName(comma, {directed, factoringMode, abbreviated})
-    const sizeCategory = computeSizeCategory(comma)
+    const sizeCategory = computeSizeCategoryIndex(comma)
 
     const jiPitchAnalysis = analyzeJiPitch(comma)
 

@@ -4,6 +4,7 @@ import {
     Comma,
     Copfr,
     Decimal,
+    Index,
     Max,
     Monzo,
     Name,
@@ -30,7 +31,7 @@ interface JiPitchAnalysisProperties<T extends NumericProperties = {}> {
 
 type CommaAnalysis<T extends NumericProperties = {}, U extends Comma<T> = Comma<T>> =
     JiPitchAnalysisProperties<T>
-    & {name: Name<Comma>, sizeCategory: SizeCategory, pitch: U}
+    & {name: Name<Comma>, sizeCategory: Index<SizeCategory>, pitch: U}
 
 type JiPitchAnalysis<T extends NumericProperties = {}> =
     JiPitchAnalysisProperties<T>

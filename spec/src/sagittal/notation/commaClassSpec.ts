@@ -8,6 +8,7 @@ import {
     Decimal,
     Direction,
     EMPTY_MONZO,
+    Index,
     Max,
     Monzo,
     Name,
@@ -69,7 +70,7 @@ describe("comma classes", (): void => {
                 decimal: 1.000000 as Decimal<{rational: true}>,
                 cents: 0 as Cents,
                 name: "1u" as Name<Comma>,
-                sizeCategory: SizeCategory.UNISON,
+                sizeCategory: 0 as Index<SizeCategory>,
                 pitch: {monzo: EMPTY_MONZO as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -91,7 +92,7 @@ describe("comma classes", (): void => {
                 decimal: 1.000244 as Decimal<{rational: true}>,
                 cents: 0.422716 as Cents,
                 name: "1/(5⋅7⋅13)n" as Name<Comma>,
-                sizeCategory: SizeCategory.SCHISMINA,
+                sizeCategory: 1 as Index<SizeCategory>,
                 pitch: {monzo: [12, -2, -1, -1, 0, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -113,7 +114,7 @@ describe("comma classes", (): void => {
                 decimal: 1.000481 as Decimal<{rational: true}>,
                 cents: 0.832524 as Cents,
                 name: "65/77n" as Name<Comma>,
-                sizeCategory: SizeCategory.SCHISMINA,
+                sizeCategory: 1 as Index<SizeCategory>,
                 pitch: {monzo: [5, -3, 1, -1, -1, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -135,7 +136,7 @@ describe("comma classes", (): void => {
                 decimal: 1.000823 as Decimal<{rational: true}>,
                 cents: 1.424297 as Cents,
                 name: "19/5n" as Name<Comma>,
-                sizeCategory: SizeCategory.SCHISMINA,
+                sizeCategory: 1 as Index<SizeCategory>,
                 pitch: {monzo: [6, -5, -1, 0, 0, 0, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -157,7 +158,7 @@ describe("comma classes", (): void => {
                 decimal: 1.001129 as Decimal<{rational: true}>,
                 cents: 1.953720 as Cents,
                 name: "5s" as Name<Comma>,
-                sizeCategory: SizeCategory.SCHISMA,
+                sizeCategory: 2 as Index<SizeCategory>,
                 pitch: {monzo: [-15, 8, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -179,7 +180,7 @@ describe("comma classes", (): void => {
                 decimal: 1.001373 as Decimal<{rational: true}>,
                 cents: 2.376436 as Cents,
                 name: "1/(7⋅13)s" as Name<Comma>,
-                sizeCategory: SizeCategory.SCHISMA,
+                sizeCategory: 2 as Index<SizeCategory>,
                 pitch: {monzo: [-3, 6, 0, -1, 0, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -201,7 +202,7 @@ describe("comma classes", (): void => {
                 decimal: 1.001724 as Decimal<{rational: true}>,
                 cents: 2.982262 as Cents,
                 name: "19/(5⁴⋅7)s" as Name<Comma>,
-                sizeCategory: SizeCategory.SCHISMA,
+                sizeCategory: 2 as Index<SizeCategory>,
                 pitch: {monzo: [-8, 10, -4, -1, 0, 0, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -223,7 +224,7 @@ describe("comma classes", (): void => {
                 decimal: 1.001953 as Decimal<{rational: true}>,
                 cents: 3.378018 as Cents,
                 name: "19s" as Name<Comma>,
-                sizeCategory: SizeCategory.SCHISMA,
+                sizeCategory: 2 as Index<SizeCategory>,
                 pitch: {monzo: [-9, 3, 0, 0, 0, 0, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -245,7 +246,7 @@ describe("comma classes", (): void => {
                 decimal: 1.002272 as Decimal<{rational: true}>,
                 cents: 3.930158 as Cents,
                 name: "49/55s" as Name<Comma>,
-                sizeCategory: SizeCategory.SCHISMA,
+                sizeCategory: 2 as Index<SizeCategory>,
                 pitch: {monzo: [-3, 2, -1, 2, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -267,7 +268,7 @@ describe("comma classes", (): void => {
                 decimal: 1.002604 as Decimal<{rational: true}>,
                 cents: 4.502561 as Cents,
                 name: "5⋅7⋅11k" as Name<Comma>,
-                sizeCategory: SizeCategory.KLEISMA,
+                sizeCategory: 3 as Index<SizeCategory>,
                 pitch: {monzo: [-7, -1, 1, 1, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -289,7 +290,7 @@ describe("comma classes", (): void => {
                 decimal: 1.002849 as Decimal<{rational: true}>,
                 cents: 4.925277 as Cents,
                 name: "11/13k" as Name<Comma>,
-                sizeCategory: SizeCategory.KLEISMA,
+                sizeCategory: 3 as Index<SizeCategory>,
                 pitch: {monzo: [5, -3, 0, 0, 1, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -311,7 +312,7 @@ describe("comma classes", (): void => {
                 decimal: 1.003151 as Decimal<{rational: true}>,
                 cents: 5.447635 as Cents,
                 name: "31/11k" as Name<Comma>,
-                sizeCategory: SizeCategory.KLEISMA,
+                sizeCategory: 3 as Index<SizeCategory>,
                 pitch: {monzo: [-11, 6, 0, 0, -1, 0, 0, 0, 0, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -333,7 +334,7 @@ describe("comma classes", (): void => {
                 decimal: 1.003331 as Decimal<{rational: true}>,
                 cents: 5.757802 as Cents,
                 name: "5/7k" as Name<Comma>,
-                sizeCategory: SizeCategory.KLEISMA,
+                sizeCategory: 3 as Index<SizeCategory>,
                 pitch: {monzo: [10, -6, 1, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -355,7 +356,7 @@ describe("comma classes", (): void => {
                 decimal: 1.003749 as Decimal<{rational: true}>,
                 cents: 6.478999 as Cents,
                 name: "7³/5k" as Name<Comma>,
-                sizeCategory: SizeCategory.KLEISMA,
+                sizeCategory: 3 as Index<SizeCategory>,
                 pitch: {monzo: [5, -7, -1, 3] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -377,7 +378,7 @@ describe("comma classes", (): void => {
                 decimal: 1.003921 as Decimal<{rational: true}>,
                 cents: 6.775875 as Cents,
                 name: "1/(5⋅17)k" as Name<Comma>,
-                sizeCategory: SizeCategory.KLEISMA,
+                sizeCategory: 3 as Index<SizeCategory>,
                 pitch: {monzo: [8, -1, -1, 0, 0, 0, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -399,7 +400,7 @@ describe("comma classes", (): void => {
                 decimal: 1.004234 as Decimal<{rational: true}>,
                 cents: 7.315767 as Cents,
                 name: "1/(5²⋅7²)k" as Name<Comma>,
-                sizeCategory: SizeCategory.KLEISMA,
+                sizeCategory: 3 as Index<SizeCategory>,
                 pitch: {monzo: [-4, 9, -2, -2] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -421,7 +422,7 @@ describe("comma classes", (): void => {
                 decimal: 1.004464 as Decimal<{rational: true}>,
                 cents: 7.711522 as Cents,
                 name: "25/7k" as Name<Comma>,
-                sizeCategory: SizeCategory.KLEISMA,
+                sizeCategory: 3 as Index<SizeCategory>,
                 pitch: {monzo: [-5, 2, 2, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -443,7 +444,7 @@ describe("comma classes", (): void => {
                 decimal: 1.004882 as Decimal<{rational: true}>,
                 cents: 8.432720 as Cents,
                 name: "7³k" as Name<Comma>,
-                sizeCategory: SizeCategory.KLEISMA,
+                sizeCategory: 3 as Index<SizeCategory>,
                 pitch: {monzo: [-10, 1, 0, 3] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -465,7 +466,7 @@ describe("comma classes", (): void => {
                 decimal: 1.005055 as Decimal<{rational: true}>,
                 cents: 8.729596 as Cents,
                 name: "1/17k" as Name<Comma>,
-                sizeCategory: SizeCategory.KLEISMA,
+                sizeCategory: 3 as Index<SizeCategory>,
                 pitch: {monzo: [-7, 7, 0, 0, 0, 0, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -487,7 +488,7 @@ describe("comma classes", (): void => {
                 decimal: 1.005317 as Decimal<{rational: true}>,
                 cents: 9.181771 as Cents,
                 name: "11⁴k" as Name<Comma>,
-                sizeCategory: SizeCategory.KLEISMA,
+                sizeCategory: 3 as Index<SizeCategory>,
                 pitch: {monzo: [-17, 2, 0, 0, 4] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -509,7 +510,7 @@ describe("comma classes", (): void => {
                 decimal: 1.005611 as Decimal<{rational: true}>,
                 cents: 9.687960 as Cents,
                 name: "7/11k" as Name<Comma>,
-                sizeCategory: SizeCategory.KLEISMA,
+                sizeCategory: 3 as Index<SizeCategory>,
                 pitch: {monzo: [7, -4, 0, 1, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -531,7 +532,7 @@ describe("comma classes", (): void => {
                 decimal: 1.005944 as Decimal<{rational: true}>,
                 cents: 10.260364 as Cents,
                 name: "5²⋅11k" as Name<Comma>,
-                sizeCategory: SizeCategory.KLEISMA,
+                sizeCategory: 3 as Index<SizeCategory>,
                 pitch: {monzo: [3, -7, 2, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -553,7 +554,7 @@ describe("comma classes", (): void => {
                 decimal: 1.006263 as Decimal<{rational: true}>,
                 cents: 10.809157 as Cents,
                 name: "49/13k" as Name<Comma>,
-                sizeCategory: SizeCategory.KLEISMA,
+                sizeCategory: 3 as Index<SizeCategory>,
                 pitch: {monzo: [-13, 7, 0, 2, 0, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -575,7 +576,7 @@ describe("comma classes", (): void => {
                 decimal: 1.006443 as Decimal<{rational: true}>,
                 cents: 11.119848 as Cents,
                 name: "1/(5²⋅7³)k" as Name<Comma>,
-                sizeCategory: SizeCategory.KLEISMA,
+                sizeCategory: 3 as Index<SizeCategory>,
                 pitch: {monzo: [21, -5, -2, -3] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -597,7 +598,7 @@ describe("comma classes", (): void => {
                 decimal: 1.006747 as Decimal<{rational: true}>,
                 cents: 11.641681 as Cents,
                 name: "35/11k" as Name<Comma>,
-                sizeCategory: SizeCategory.KLEISMA,
+                sizeCategory: 3 as Index<SizeCategory>,
                 pitch: {monzo: [-8, 4, 1, 1, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -619,7 +620,7 @@ describe("comma classes", (): void => {
                 decimal: 1.006993 as Decimal<{rational: true}>,
                 cents: 12.064397 as Cents,
                 name: "1/143C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [4, 2, 0, 0, -1, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -641,7 +642,7 @@ describe("comma classes", (): void => {
                 decimal: 1.007407 as Decimal<{rational: true}>,
                 cents: 12.776693 as Cents,
                 name: "17/5C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [3, -3, -1, 0, 0, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -663,7 +664,7 @@ describe("comma classes", (): void => {
                 decimal: 1.007693 as Decimal<{rational: true}>,
                 cents: 13.268590 as Cents,
                 name: "11/23C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [9, -5, 0, 0, 1, 0, 0, 0, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -685,7 +686,7 @@ describe("comma classes", (): void => {
                 decimal: 1.008 as Decimal<{rational: true}>,
                 cents: 13.794766 as Cents,
                 name: "7/125C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [1, 2, -3, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -707,7 +708,7 @@ describe("comma classes", (): void => {
                 decimal: 1.008230 as Decimal<{rational: true}>,
                 cents: 14.190522 as Cents,
                 name: "5⋅7²C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [0, -5, 1, 2] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -729,7 +730,7 @@ describe("comma classes", (): void => {
                 decimal: 1.008544 as Decimal<{rational: true}>,
                 cents: 14.730413 as Cents,
                 name: "17C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [-12, 5, 0, 0, 0, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -751,7 +752,7 @@ describe("comma classes", (): void => {
                 decimal: 1.008818 as Decimal<{rational: true}>,
                 cents: 15.199694 as Cents,
                 name: "143/7C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [2, -4, 0, -1, 1, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -773,7 +774,7 @@ describe("comma classes", (): void => {
                 decimal: 1.009138 as Decimal<{rational: true}>,
                 cents: 15.748487 as Cents,
                 name: "7/25C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [-14, 10, -2, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -795,7 +796,7 @@ describe("comma classes", (): void => {
                 decimal: 1.009368 as Decimal<{rational: true}>,
                 cents: 16.144243 as Cents,
                 name: "5²⋅7²C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [-15, 3, 2, 2] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -817,7 +818,7 @@ describe("comma classes", (): void => {
                 decimal: 1.009602 as Decimal<{rational: true}>,
                 cents: 16.544342 as Cents,
                 name: "23C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [5, -6, 0, 0, 0, 0, 0, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -839,7 +840,7 @@ describe("comma classes", (): void => {
                 decimal: 1.009861 as Decimal<{rational: true}>,
                 cents: 16.989675 as Cents,
                 name: "1/13²C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [9, -1, 0, 0, 0, -2] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -861,7 +862,7 @@ describe("comma classes", (): void => {
                 decimal: 1.010204 as Decimal<{rational: true}>,
                 cents: 17.576131 as Cents,
                 name: "11/49C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [-1, 2, 0, -2, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -883,7 +884,7 @@ describe("comma classes", (): void => {
                 decimal: 1.010458 as Decimal<{rational: true}>,
                 cents: 18.012375 as Cents,
                 name: "11/31C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [-8, 6, 0, 0, 1, 0, 0, 0, 0, 0, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -905,7 +906,7 @@ describe("comma classes", (): void => {
                 decimal: 1.010763 as Decimal<{rational: true}>,
                 cents: 18.534495 as Cents,
                 name: "17/7C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [13, -9, 0, -1, 0, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -927,7 +928,7 @@ describe("comma classes", (): void => {
                 decimal: 1.011111 as Decimal<{rational: true}>,
                 cents: 19.129852 as Cents,
                 name: "7⋅13/5C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [-1, -2, -1, 1, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -949,7 +950,7 @@ describe("comma classes", (): void => {
                 decimal: 1.011358 as Decimal<{rational: true}>,
                 cents: 19.552569 as Cents,
                 name: "1/25C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [11, -4, -2] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -971,7 +972,7 @@ describe("comma classes", (): void => {
                 decimal: 1.011667 as Decimal<{rational: true}>,
                 cents: 20.081991 as Cents,
                 name: "1/19C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [-10, 9, 0, 0, 0, 0, 0, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -993,7 +994,7 @@ describe("comma classes", (): void => {
                 decimal: 1.011857 as Decimal<{rational: true}>,
                 cents: 20.407710 as Cents,
                 name: "1/(11⋅23)C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [8, 0, 0, 0, -1, 0, 0, 0, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1015,7 +1016,7 @@ describe("comma classes", (): void => {
                 decimal: 1.012252 as Decimal<{rational: true}>,
                 cents: 21.083573 as Cents,
                 name: "7⋅13C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [-16, 6, 0, 1, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1037,7 +1038,7 @@ describe("comma classes", (): void => {
                 decimal: 1.0125 as Decimal<{rational: true}>,
                 cents: 21.506289 as Cents,
                 name: "1/5C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [-4, 4, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1059,7 +1060,7 @@ describe("comma classes", (): void => {
                 decimal: 1.012731 as Decimal<{rational: true}>,
                 cents: 21.902045 as Cents,
                 name: "5³⋅7C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [-5, -3, 3, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1081,7 +1082,7 @@ describe("comma classes", (): void => {
                 decimal: 1.012978 as Decimal<{rational: true}>,
                 cents: 22.324761 as Cents,
                 name: "25/13C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [7, -5, 2, 0, 0, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1103,7 +1104,7 @@ describe("comma classes", (): void => {
                 decimal: 1.013333 as Decimal<{rational: true}>,
                 cents: 22.930587 as Cents,
                 name: "19/25C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [2, -1, -2, 0, 0, 0, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1125,7 +1126,7 @@ describe("comma classes", (): void => {
                 decimal: 1.013643 as Decimal<{rational: true}>,
                 cents: 23.460010 as Cents,
                 name: "3C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [-19, 12] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1147,7 +1148,7 @@ describe("comma classes", (): void => {
                 decimal: 1.013875 as Decimal<{rational: true}>,
                 cents: 23.855766 as Cents,
                 name: "5⁴⋅7C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [-20, 5, 4, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1169,7 +1170,7 @@ describe("comma classes", (): void => {
                 decimal: 1.013991 as Decimal<{rational: true}>,
                 cents: 24.055130 as Cents,
                 name: "77/5C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [4, -5, -1, 1, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1191,7 +1192,7 @@ describe("comma classes", (): void => {
                 decimal: 1.014122 as Decimal<{rational: true}>,
                 cents: 24.278482 as Cents,
                 name: "125/13C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [-8, 3, 3, 0, 0, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1213,7 +1214,7 @@ describe("comma classes", (): void => {
                 decimal: 1.014477 as Decimal<{rational: true}>,
                 cents: 24.884308 as Cents,
                 name: "19/5C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [-13, 7, -1, 0, 0, 0, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1235,7 +1236,7 @@ describe("comma classes", (): void => {
                 decimal: 1.014479 as Decimal<{rational: true}>,
                 cents: 24.887654 as Cents,
                 name: "13C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [9, -8, 0, 0, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1257,7 +1258,7 @@ describe("comma classes", (): void => {
                 decimal: 1.014727 as Decimal<{rational: true}>,
                 cents: 25.310371 as Cents,
                 name: "1/35C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [21, -10, -1, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1279,7 +1280,7 @@ describe("comma classes", (): void => {
                 decimal: 1.015136 as Decimal<{rational: true}>,
                 cents: 26.008851 as Cents,
                 name: "77C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [-11, 3, 0, 1, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1301,7 +1302,7 @@ describe("comma classes", (): void => {
                 decimal: 1.015384 as Decimal<{rational: true}>,
                 cents: 26.431567 as Cents,
                 name: "11/65C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [1, 1, -1, 0, 1, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1323,7 +1324,7 @@ describe("comma classes", (): void => {
                 decimal: 1.015625 as Decimal<{rational: true}>,
                 cents: 26.841375 as Cents,
                 name: "65C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [-6, 0, 1, 0, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1345,7 +1346,7 @@ describe("comma classes", (): void => {
                 decimal: 1.015873 as Decimal<{rational: true}>,
                 cents: 27.264092 as Cents,
                 name: "1/7C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [6, -2, 0, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1367,7 +1368,7 @@ describe("comma classes", (): void => {
                 decimal: 1.016105 as Decimal<{rational: true}>,
                 cents: 27.659847 as Cents,
                 name: "5⁴C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [5, -9, 4] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1389,7 +1390,7 @@ describe("comma classes", (): void => {
                 decimal: 1.016531 as Decimal<{rational: true}>,
                 cents: 28.385288 as Cents,
                 name: "11/13C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [-14, 9, 0, 0, 1, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1411,7 +1412,7 @@ describe("comma classes", (): void => {
                 decimal: 1.016771 as Decimal<{rational: true}>,
                 cents: 28.795096 as Cents,
                 name: "5²⋅13C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [-21, 8, 2, 0, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1433,7 +1434,7 @@ describe("comma classes", (): void => {
                 decimal: 1.017020 as Decimal<{rational: true}>,
                 cents: 29.217813 as Cents,
                 name: "5/7C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [-9, 6, 1, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1455,7 +1456,7 @@ describe("comma classes", (): void => {
                 decimal: 1.017252 as Decimal<{rational: true}>,
                 cents: 29.613568 as Cents,
                 name: "5⁵C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [-10, -1, 5] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1477,7 +1478,7 @@ describe("comma classes", (): void => {
                 decimal: 1.017583 as Decimal<{rational: true}>,
                 cents: 30.176176 as Cents,
                 name: "5⋅17/11C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [5, -5, 1, 0, -1, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1499,7 +1500,7 @@ describe("comma classes", (): void => {
                 decimal: 1.017857 as Decimal<{rational: true}>,
                 cents: 30.642110 as Cents,
                 name: "19/7C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [-3, 1, 0, -1, 0, 0, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1521,7 +1522,7 @@ describe("comma classes", (): void => {
                 decimal: 1.018181 as Decimal<{rational: true}>,
                 cents: 31.194250 as Cents,
                 name: "7/55C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [3, 0, -1, 1, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1543,7 +1544,7 @@ describe("comma classes", (): void => {
                 decimal: 1.018518 as Decimal<{rational: true}>,
                 cents: 31.766653 as Cents,
                 name: "55C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [-1, -3, 1, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1565,7 +1566,7 @@ describe("comma classes", (): void => {
                 decimal: 1.018767 as Decimal<{rational: true}>,
                 cents: 32.189369 as Cents,
                 name: "11/(7⋅13)C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [11, -5, 0, -1, 1, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1587,7 +1588,7 @@ describe("comma classes", (): void => {
                 decimal: 1.019021 as Decimal<{rational: true}>,
                 cents: 32.621795 as Cents,
                 name: "125/23C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [-4, 1, 3, 0, 0, 0, 0, 0, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1609,7 +1610,7 @@ describe("comma classes", (): void => {
                 decimal: 1.019331 as Decimal<{rational: true}>,
                 cents: 33.147971 as Cents,
                 name: "7/11C" as Name<Comma>,
-                sizeCategory: SizeCategory.COMMA,
+                sizeCategory: 4 as Index<SizeCategory>,
                 pitch: {monzo: [-12, 8, 0, 1, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1631,7 +1632,7 @@ describe("comma classes", (): void => {
                 decimal: 1.019607 as Decimal<{rational: true}>,
                 cents: 33.617251 as Cents,
                 name: "13/17S" as Name<Comma>,
-                sizeCategory: SizeCategory.SMALL_DIESIS,
+                sizeCategory: 5 as Index<SizeCategory>,
                 pitch: {monzo: [2, -1, 0, 0, 0, 1, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1653,7 +1654,7 @@ describe("comma classes", (): void => {
                 decimal: 1.02 as Decimal<{rational: true}>,
                 cents: 34.282982 as Cents,
                 name: "17/25S" as Name<Comma>,
-                sizeCategory: SizeCategory.SMALL_DIESIS,
+                sizeCategory: 5 as Index<SizeCategory>,
                 pitch: {monzo: [-1, 1, -2, 0, 0, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1675,7 +1676,7 @@ describe("comma classes", (): void => {
                 decimal: 1.020242 as Decimal<{rational: true}>,
                 cents: 34.695230 as Cents,
                 name: "7/(13⋅19)S" as Name<Comma>,
-                sizeCategory: SizeCategory.SMALL_DIESIS,
+                sizeCategory: 5 as Index<SizeCategory>,
                 pitch: {monzo: [2, 2, 0, 1, 0, -1, 0, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1697,7 +1698,7 @@ describe("comma classes", (): void => {
                 decimal: 1.020408 as Decimal<{rational: true}>,
                 cents: 34.975614 as Cents,
                 name: "25/49S" as Name<Comma>,
-                sizeCategory: SizeCategory.SMALL_DIESIS,
+                sizeCategory: 5 as Index<SizeCategory>,
                 pitch: {monzo: [1, 0, 2, -2] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1719,7 +1720,7 @@ describe("comma classes", (): void => {
                 decimal: 1.020576 as Decimal<{rational: true}>,
                 cents: 35.260568 as Cents,
                 name: "31S" as Name<Comma>,
-                sizeCategory: SizeCategory.SMALL_DIESIS,
+                sizeCategory: 5 as Index<SizeCategory>,
                 pitch: {monzo: [3, -5, 0, 0, 0, 0, 0, 0, 0, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1741,7 +1742,7 @@ describe("comma classes", (): void => {
                 decimal: 1.020833 as Decimal<{rational: true}>,
                 cents: 35.696812 as Cents,
                 name: "49S" as Name<Comma>,
-                sizeCategory: SizeCategory.SMALL_DIESIS,
+                sizeCategory: 5 as Index<SizeCategory>,
                 pitch: {monzo: [-4, -1, 0, 2] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1763,7 +1764,7 @@ describe("comma classes", (): void => {
                 decimal: 1.021151 as Decimal<{rational: true}>,
                 cents: 36.236703 as Cents,
                 name: "17/5S" as Name<Comma>,
-                sizeCategory: SizeCategory.SMALL_DIESIS,
+                sizeCategory: 5 as Index<SizeCategory>,
                 pitch: {monzo: [-16, 9, -1, 0, 0, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1785,7 +1786,7 @@ describe("comma classes", (): void => {
                 decimal: 1.021441 as Decimal<{rational: true}>,
                 cents: 36.728601 as Cents,
                 name: "11/23S" as Name<Comma>,
-                sizeCategory: SizeCategory.SMALL_DIESIS,
+                sizeCategory: 5 as Index<SizeCategory>,
                 pitch: {monzo: [-10, 7, 0, 0, 1, 0, 0, 0, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1807,7 +1808,7 @@ describe("comma classes", (): void => {
                 decimal: 1.021573 as Decimal<{rational: true}>,
                 cents: 36.952052 as Cents,
                 name: "1/11S" as Name<Comma>,
-                sizeCategory: SizeCategory.SMALL_DIESIS,
+                sizeCategory: 5 as Index<SizeCategory>,
                 pitch: {monzo: [13, -6, 0, 0, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1829,7 +1830,7 @@ describe("comma classes", (): void => {
                 decimal: 1.021986 as Decimal<{rational: true}>,
                 cents: 37.650532 as Cents,
                 name: "5⋅7²S" as Name<Comma>,
-                sizeCategory: SizeCategory.SMALL_DIESIS,
+                sizeCategory: 5 as Index<SizeCategory>,
                 pitch: {monzo: [-19, 7, 1, 2] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1851,7 +1852,7 @@ describe("comma classes", (): void => {
                 decimal: 1.022222 as Decimal<{rational: true}>,
                 cents: 38.050631 as Cents,
                 name: "23/5S" as Name<Comma>,
-                sizeCategory: SizeCategory.SMALL_DIESIS,
+                sizeCategory: 5 as Index<SizeCategory>,
                 pitch: {monzo: [1, -2, -1, 0, 0, 0, 0, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1873,7 +1874,7 @@ describe("comma classes", (): void => {
                 decimal: 1.022235 as Decimal<{rational: true}>,
                 cents: 38.073249 as Cents,
                 name: "7/13S" as Name<Comma>,
-                sizeCategory: SizeCategory.SMALL_DIESIS,
+                sizeCategory: 5 as Index<SizeCategory>,
                 pitch: {monzo: [-7, 5, 0, 1, 0, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1895,7 +1896,7 @@ describe("comma classes", (): void => {
                 decimal: 1.022512 as Decimal<{rational: true}>,
                 cents: 38.542529 as Cents,
                 name: "11/17S" as Name<Comma>,
-                sizeCategory: SizeCategory.SMALL_DIESIS,
+                sizeCategory: 5 as Index<SizeCategory>,
                 pitch: {monzo: [7, -4, 0, 0, 1, 0, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1917,7 +1918,7 @@ describe("comma classes", (): void => {
                 decimal: 1.022727 as Decimal<{rational: true}>,
                 cents: 38.905773 as Cents,
                 name: "5/11S" as Name<Comma>,
-                sizeCategory: SizeCategory.SMALL_DIESIS,
+                sizeCategory: 5 as Index<SizeCategory>,
                 pitch: {monzo: [-2, 2, 1, 0, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1939,7 +1940,7 @@ describe("comma classes", (): void => {
                 decimal: 1.022977 as Decimal<{rational: true}>,
                 cents: 39.328489 as Cents,
                 name: "1/(7⋅11⋅13)S" as Name<Comma>,
-                sizeCategory: SizeCategory.SMALL_DIESIS,
+                sizeCategory: 5 as Index<SizeCategory>,
                 pitch: {monzo: [10, 0, 0, -1, -1, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1961,7 +1962,7 @@ describe("comma classes", (): void => {
                 decimal: 1.023376 as Decimal<{rational: true}>,
                 cents: 40.004352 as Cents,
                 name: "23S" as Name<Comma>,
-                sizeCategory: SizeCategory.SMALL_DIESIS,
+                sizeCategory: 5 as Index<SizeCategory>,
                 pitch: {monzo: [-14, 6, 0, 0, 0, 0, 0, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -1983,7 +1984,7 @@ describe("comma classes", (): void => {
                 decimal: 1.02375 as Decimal<{rational: true}>,
                 cents: 40.636142 as Cents,
                 name: "7⋅13/25S" as Name<Comma>,
-                sizeCategory: SizeCategory.SMALL_DIESIS,
+                sizeCategory: 5 as Index<SizeCategory>,
                 pitch: {monzo: [-5, 2, -2, 1, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2005,7 +2006,7 @@ describe("comma classes", (): void => {
                 decimal: 1.024 as Decimal<{rational: true}>,
                 cents: 41.058858 as Cents,
                 name: "1/125S" as Name<Comma>,
-                sizeCategory: SizeCategory.SMALL_DIESIS,
+                sizeCategory: 5 as Index<SizeCategory>,
                 pitch: {monzo: [7, 0, -3] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2027,7 +2028,7 @@ describe("comma classes", (): void => {
                 decimal: 1.024234 as Decimal<{rational: true}>,
                 cents: 41.454614 as Cents,
                 name: "35S" as Name<Comma>,
-                sizeCategory: SizeCategory.SMALL_DIESIS,
+                sizeCategory: 5 as Index<SizeCategory>,
                 pitch: {monzo: [6, -7, 1, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2049,7 +2050,7 @@ describe("comma classes", (): void => {
                 decimal: 1.024553 as Decimal<{rational: true}>,
                 cents: 41.994505 as Cents,
                 name: "17/7S" as Name<Comma>,
-                sizeCategory: SizeCategory.SMALL_DIESIS,
+                sizeCategory: 5 as Index<SizeCategory>,
                 pitch: {monzo: [-6, 3, 0, -1, 0, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2071,7 +2072,7 @@ describe("comma classes", (): void => {
                 decimal: 1.024905 as Decimal<{rational: true}>,
                 cents: 42.589863 as Cents,
                 name: "7⋅13/5S" as Name<Comma>,
-                sizeCategory: SizeCategory.SMALL_DIESIS,
+                sizeCategory: 5 as Index<SizeCategory>,
                 pitch: {monzo: [-20, 10, -1, 1, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2093,7 +2094,7 @@ describe("comma classes", (): void => {
                 decimal: 1.025156 as Decimal<{rational: true}>,
                 cents: 43.012579 as Cents,
                 name: "1/25S" as Name<Comma>,
-                sizeCategory: SizeCategory.SMALL_DIESIS,
+                sizeCategory: 5 as Index<SizeCategory>,
                 pitch: {monzo: [-8, 8, -2] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2115,7 +2116,7 @@ describe("comma classes", (): void => {
                 decimal: 1.025390 as Decimal<{rational: true}>,
                 cents: 43.408335 as Cents,
                 name: "5²⋅7S" as Name<Comma>,
-                sizeCategory: SizeCategory.SMALL_DIESIS,
+                sizeCategory: 5 as Index<SizeCategory>,
                 pitch: {monzo: [-9, 1, 2, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2137,7 +2138,7 @@ describe("comma classes", (): void => {
                 decimal: 1.025641 as Decimal<{rational: true}>,
                 cents: 43.831051 as Cents,
                 name: "5/13S" as Name<Comma>,
-                sizeCategory: SizeCategory.SMALL_DIESIS,
+                sizeCategory: 5 as Index<SizeCategory>,
                 pitch: {monzo: [3, -1, 1, 0, 0, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2159,7 +2160,7 @@ describe("comma classes", (): void => {
                 decimal: 1.025993 as Decimal<{rational: true}>,
                 cents: 44.426408 as Cents,
                 name: "49/17S" as Name<Comma>,
-                sizeCategory: SizeCategory.SMALL_DIESIS,
+                sizeCategory: 5 as Index<SizeCategory>,
                 pitch: {monzo: [-11, 6, 0, 2, 0, 0, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2181,7 +2182,7 @@ describe("comma classes", (): void => {
                 decimal: 1.026315 as Decimal<{rational: true}>,
                 cents: 44.969646 as Cents,
                 name: "13/19S" as Name<Comma>,
-                sizeCategory: SizeCategory.SMALL_DIESIS,
+                sizeCategory: 5 as Index<SizeCategory>,
                 pitch: {monzo: [-1, 1, 0, 0, 0, 1, 0, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2203,7 +2204,7 @@ describe("comma classes", (): void => {
                 decimal: 1.026666 as Decimal<{rational: true}>,
                 cents: 45.561420 as Cents,
                 name: "77/25M" as Name<Comma>,
-                                sizeCategory: SizeCategory.MEDIUM_DIESIS,
+                sizeCategory: 6 as Index<SizeCategory>,
                 pitch: {monzo: [0, -1, -2, 1, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2225,7 +2226,7 @@ describe("comma classes", (): void => {
                 decimal: 1.026799 as Decimal<{rational: true}>,
                 cents: 45.784772 as Cents,
                 name: "25/13M" as Name<Comma>,
-                                sizeCategory: SizeCategory.MEDIUM_DIESIS,
+                sizeCategory: 6 as Index<SizeCategory>,
                 pitch: {monzo: [-12, 7, 2, 0, 0, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2247,7 +2248,7 @@ describe("comma classes", (): void => {
                 decimal: 1.027160 as Decimal<{rational: true}>,
                 cents: 46.393944 as Cents,
                 name: "13/5M" as Name<Comma>,
-                                sizeCategory: SizeCategory.MEDIUM_DIESIS,
+                sizeCategory: 6 as Index<SizeCategory>,
                 pitch: {monzo: [5, -4, -1, 0, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2269,7 +2270,7 @@ describe("comma classes", (): void => {
                 decimal: 1.027411 as Decimal<{rational: true}>,
                 cents: 46.816660 as Cents,
                 name: "1/(5²⋅7)M" as Name<Comma>,
-                                sizeCategory: SizeCategory.MEDIUM_DIESIS,
+                sizeCategory: 6 as Index<SizeCategory>,
                 pitch: {monzo: [17, -6, -2, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2291,7 +2292,7 @@ describe("comma classes", (): void => {
                 decimal: 1.027777 as Decimal<{rational: true}>,
                 cents: 47.434037 as Cents,
                 name: "37M" as Name<Comma>,
-                                sizeCategory: SizeCategory.MEDIUM_DIESIS,
+                sizeCategory: 6 as Index<SizeCategory>,
                 pitch: {monzo: [-2, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2313,7 +2314,7 @@ describe("comma classes", (): void => {
                 decimal: 1.028076 as Decimal<{rational: true}>,
                 cents: 47.937857 as Cents,
                 name: "11/(5²⋅13)M" as Name<Comma>,
-                                sizeCategory: SizeCategory.MEDIUM_DIESIS,
+                sizeCategory: 6 as Index<SizeCategory>,
                 pitch: {monzo: [-3, 5, -2, 0, 1, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2335,7 +2336,7 @@ describe("comma classes", (): void => {
                 decimal: 1.028320 as Decimal<{rational: true}>,
                 cents: 48.347665 as Cents,
                 name: "13M" as Name<Comma>,
-                                sizeCategory: SizeCategory.MEDIUM_DIESIS,
+                sizeCategory: 6 as Index<SizeCategory>,
                 pitch: {monzo: [-10, 4, 0, 0, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2357,7 +2358,7 @@ describe("comma classes", (): void => {
                 decimal: 1.028571 as Decimal<{rational: true}>,
                 cents: 48.770381 as Cents,
                 name: "1/35M" as Name<Comma>,
-                                sizeCategory: SizeCategory.MEDIUM_DIESIS,
+                sizeCategory: 6 as Index<SizeCategory>,
                 pitch: {monzo: [2, 2, -1, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2379,7 +2380,7 @@ describe("comma classes", (): void => {
                 decimal: 1.028806 as Decimal<{rational: true}>,
                 cents: 49.166137 as Cents,
                 name: "125M" as Name<Comma>,
-                                sizeCategory: SizeCategory.MEDIUM_DIESIS,
+                sizeCategory: 6 as Index<SizeCategory>,
                 pitch: {monzo: [1, -5, 3] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2401,7 +2402,7 @@ describe("comma classes", (): void => {
                 decimal: 1.029239 as Decimal<{rational: true}>,
                 cents: 49.894924 as Cents,
                 name: "11/19M" as Name<Comma>,
-                                sizeCategory: SizeCategory.MEDIUM_DIESIS,
+                sizeCategory: 6 as Index<SizeCategory>,
                 pitch: {monzo: [4, -2, 0, 0, 1, 0, 0, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2423,7 +2424,7 @@ describe("comma classes", (): void => {
                 decimal: 1.029481 as Decimal<{rational: true}>,
                 cents: 50.301386 as Cents,
                 name: "65M" as Name<Comma>,
-                                sizeCategory: SizeCategory.MEDIUM_DIESIS,
+                sizeCategory: 6 as Index<SizeCategory>,
                 pitch: {monzo: [-25, 12, 1, 0, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2445,7 +2446,7 @@ describe("comma classes", (): void => {
                 decimal: 1.029732 as Decimal<{rational: true}>,
                 cents: 50.724102 as Cents,
                 name: "1/7M" as Name<Comma>,
-                                sizeCategory: SizeCategory.MEDIUM_DIESIS,
+                sizeCategory: 6 as Index<SizeCategory>,
                 pitch: {monzo: [-13, 10, 0, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2467,7 +2468,7 @@ describe("comma classes", (): void => {
                 decimal: 1.029968 as Decimal<{rational: true}>,
                 cents: 51.119858 as Cents,
                 name: "5⁴M" as Name<Comma>,
-                                sizeCategory: SizeCategory.MEDIUM_DIESIS,
+                sizeCategory: 6 as Index<SizeCategory>,
                 pitch: {monzo: [-14, 3, 4] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2489,7 +2490,7 @@ describe("comma classes", (): void => {
                 decimal: 1.030086 as Decimal<{rational: true}>,
                 cents: 51.319222 as Cents,
                 name: "11/5M" as Name<Comma>,
-                                sizeCategory: SizeCategory.MEDIUM_DIESIS,
+                sizeCategory: 6 as Index<SizeCategory>,
                 pitch: {monzo: [10, -7, -1, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2511,7 +2512,7 @@ describe("comma classes", (): void => {
                 decimal: 1.030303 as Decimal<{rational: true}>,
                 cents: 51.682466 as Cents,
                 name: "17/11M" as Name<Comma>,
-                                sizeCategory: SizeCategory.MEDIUM_DIESIS,
+                sizeCategory: 6 as Index<SizeCategory>,
                 pitch: {monzo: [1, -1, 0, 0, -1, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2533,7 +2534,7 @@ describe("comma classes", (): void => {
                 decimal: 1.030595 as Decimal<{rational: true}>,
                 cents: 52.174364 as Cents,
                 name: "5/23M" as Name<Comma>,
-                                sizeCategory: SizeCategory.MEDIUM_DIESIS,
+                sizeCategory: 6 as Index<SizeCategory>,
                 pitch: {monzo: [7, -3, 1, 0, 0, 0, 0, 0, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2555,7 +2556,7 @@ describe("comma classes", (): void => {
                 decimal: 1.030909 as Decimal<{rational: true}>,
                 cents: 52.700539 as Cents,
                 name: "7/(5²⋅11)M" as Name<Comma>,
-                                sizeCategory: SizeCategory.MEDIUM_DIESIS,
+                sizeCategory: 6 as Index<SizeCategory>,
                 pitch: {monzo: [-1, 4, -2, 1, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2577,7 +2578,7 @@ describe("comma classes", (): void => {
                 decimal: 1.03125 as Decimal<{rational: true}>,
                 cents: 53.272943 as Cents,
                 name: "11M" as Name<Comma>,
-                                sizeCategory: SizeCategory.MEDIUM_DIESIS,
+                sizeCategory: 6 as Index<SizeCategory>,
                 pitch: {monzo: [-5, 1, 0, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2599,7 +2600,7 @@ describe("comma classes", (): void => {
                 decimal: 1.031466 as Decimal<{rational: true}>,
                 cents: 53.636187 as Cents,
                 name: "5⋅17/11M" as Name<Comma>,
-                                sizeCategory: SizeCategory.MEDIUM_DIESIS,
+                sizeCategory: 6 as Index<SizeCategory>,
                 pitch: {monzo: [-14, 7, 1, 0, -1, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2621,7 +2622,7 @@ describe("comma classes", (): void => {
                 decimal: 1.031746 as Decimal<{rational: true}>,
                 cents: 54.105467 as Cents,
                 name: "65/7M" as Name<Comma>,
-                                sizeCategory: SizeCategory.MEDIUM_DIESIS,
+                sizeCategory: 6 as Index<SizeCategory>,
                 pitch: {monzo: [0, -2, 1, -1, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2643,7 +2644,7 @@ describe("comma classes", (): void => {
                 decimal: 1.031997 as Decimal<{rational: true}>,
                 cents: 54.528183 as Cents,
                 name: "1/49M" as Name<Comma>,
-                                sizeCategory: SizeCategory.MEDIUM_DIESIS,
+                sizeCategory: 6 as Index<SizeCategory>,
                 pitch: {monzo: [12, -4, 0, -2] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2665,7 +2666,7 @@ describe("comma classes", (): void => {
                 decimal: 1.032258 as Decimal<{rational: true}>,
                 cents: 54.964427 as Cents,
                 name: "1/31M" as Name<Comma>,
-                                sizeCategory: SizeCategory.MEDIUM_DIESIS,
+                sizeCategory: 6 as Index<SizeCategory>,
                 pitch: {monzo: [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2687,7 +2688,7 @@ describe("comma classes", (): void => {
                 decimal: 1.032414 as Decimal<{rational: true}>,
                 cents: 55.226664 as Cents,
                 name: "55M" as Name<Comma>,
-                                sizeCategory: SizeCategory.MEDIUM_DIESIS,
+                sizeCategory: 6 as Index<SizeCategory>,
                 pitch: {monzo: [-20, 9, 1, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2709,7 +2710,7 @@ describe("comma classes", (): void => {
                 decimal: 1.032666 as Decimal<{rational: true}>,
                 cents: 55.649380 as Cents,
                 name: "11/(7⋅13)M" as Name<Comma>,
-                                sizeCategory: SizeCategory.MEDIUM_DIESIS,
+                sizeCategory: 6 as Index<SizeCategory>,
                 pitch: {monzo: [-8, 7, 0, -1, 1, -1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2731,7 +2732,7 @@ describe("comma classes", (): void => {
                 decimal: 1.032986 as Decimal<{rational: true}>,
                 cents: 56.185028 as Cents,
                 name: "5⋅7⋅17M" as Name<Comma>,
-                                sizeCategory: SizeCategory.MEDIUM_DIESIS,
+                sizeCategory: 6 as Index<SizeCategory>,
                 pitch: {monzo: [-6, -2, 1, 1, 0, 0, 1] as Monzo<{rational: true}>} as Comma,
             },
             {
@@ -2753,7 +2754,7 @@ describe("comma classes", (): void => {
                 decimal: 1.033163 as Decimal<{rational: true}>,
                 cents: 56.481904 as Cents,
                 name: "5/49M" as Name<Comma>,
-                                sizeCategory: SizeCategory.MEDIUM_DIESIS,
+                sizeCategory: 6 as Index<SizeCategory>,
                 pitch: {monzo: [-3, 4, 1, -2] as Monzo<{rational: true}>} as Comma,
             },
         ]

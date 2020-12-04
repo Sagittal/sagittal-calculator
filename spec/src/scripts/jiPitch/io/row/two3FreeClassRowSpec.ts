@@ -33,7 +33,7 @@ describe("compute23FreeClassRow", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    it("can filter excluded fields", (): void => {
+    it("can filter the excluded fields", (): void => {
         jiPitchScriptGroupSettings.excludedFields =
             [JiPitchesOrFindCommasField.TWO_3_FREE_COPFR, JiPitchesOrFindCommasField.TWO_3_FREE_PRIME_LIMIT]
         const actual = compute23FreeClassRow(two3FreeClassAnalysis)

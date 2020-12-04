@@ -78,14 +78,14 @@ describe("computeFindCommasRow", (): void => {
         expect(actual).toEqual(expected)
     })
 
-    it("can filter excluded fields", (): void => {
+    it("can filter the excluded fields", (): void => {
         jiPitchScriptGroupSettings.excludedFields = [JiPitchesOrFindCommasField.AAS, JiPitchesOrFindCommasField.ATE]
         const actual = computeFindCommasRow(commaAnalysis, commaClassId, maxMonzoLength)
 
         const expected = [
             "    /|  ",         // Comma class
             "1/5C",             // Comma name
-            "unison",           // Size category
+            "u",                // Size category (abbreviation)
             "5",                // Quotient numerator
             "/",                // Quotient vinculum
             "4",                // Quotient denominator

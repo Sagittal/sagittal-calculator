@@ -9,6 +9,7 @@ import {
     isUndefined,
     Precision,
     Scamon,
+    SPACE,
     stringify,
 } from "../../src/general"
 import CustomEqualityTester = jasmine.CustomEqualityTester
@@ -166,6 +167,15 @@ const customMatchers: CustomMatcherFactories = {
                 )
 
                 arraysOfStringsAreEqualTrailingWhitespaceAgnostic(expected, actual, precision, negate, message)
+            }),
+    }),
+    toEqualWhitespaceAgnostic: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({
+        compare: <T extends string>(actual: T, expected: T, negate?: boolean, message?: Io): CustomMatcherResult =>
+            doAssertions((): void => {
+                assert(
+                    actual.replace(/\s+/g, SPACE) === expected.replace(/\s+/g, SPACE),
+                    message || `Expected strings to be equal, ignoring differences in whitespace. Actual: ${actual}` as Io,
+                )
             }),
     }),
     toBeCloseToArray: (util: MatchersUtil, customEqualityTesters: readonly CustomEqualityTester[]): CustomMatcher => ({
