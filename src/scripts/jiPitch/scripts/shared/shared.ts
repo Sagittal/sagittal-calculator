@@ -54,10 +54,10 @@ const applySharedJiPitchScriptSetup = (): void => {
     if (program.sortBy) jiPitchScriptGroupSettings.sortKey = program.sortBy
     if (program.excludedFields) jiPitchScriptGroupSettings.excludedFields = program.excludedFields
     if (program.orderedFields) {
-        jiPitchScriptGroupSettings.excludedFields = jiPitchScriptGroupSettings.excludedFields
-            .filter((excludedField: JiPitchScriptGroupField): boolean => {
-                return !program.orderedFields.includes(excludedField)
-            })
+        // The excluded fields must be wiped out if ordered fields feature is in use.
+        // The code which re-orders fields is not smart enough to take into account excluded fields.
+        // Think of the ordered fields feature as completely overriding which fields are in use, as well as their order.
+        jiPitchScriptGroupSettings.excludedFields = []
         jiPitchScriptGroupSettings.orderedFields = program.orderedFields
     }
 
