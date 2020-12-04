@@ -4,16 +4,16 @@ category    	     	   2     	   3     	 	                      n	/	d         
 unison      	    [	         	         	⟩	                      1	/	1                      	         0.000¢	1u	1u
 
 schismina   	    [	 485     	 -306    	⟩	 9.989595361011175e+145	/	9.979388823371093e+145 	         1.770¢	3n	3n
-schismina   	    [	-1054    	 665     	⟩	               Infinity	/	Infinity               	         0.076¢	c3n	665e3n
-schismina   	    [	 1539    	 -971    	⟩	               Infinity	/	Infinity               	         1.694¢	sc3n	971e3n
-schismina   	    [	-2108    	 1330    	⟩	               Infinity	/	Infinity               	         0.151¢	hc3n	1330e3n
+schismina   	    [	-1054    	 665     	⟩	       (too big for JS)	/	(too big for JS)       	         0.076¢	c3n	665e3n
+schismina   	    [	 1539    	 -971    	⟩	       (too big for JS)	/	(too big for JS)       	         1.694¢	sc3n	971e3n
+schismina   	    [	-2108    	 1330    	⟩	       (too big for JS)	/	(too big for JS)       	         0.151¢	hc3n	1330e3n
 
 schisma     	    [	 -84     	  53     	⟩	  1.938324566768002e+25	/	1.9342813113834067e+25 	         3.615¢	3s	3s
 schisma     	    [	 -569    	 359     	⟩	1.9343294517670213e+171	/	1.9322687615086292e+171	         1.845¢	c3s	359e3s
 schisma     	    [	 970     	 -612    	⟩	   9.9792015476736e+291	/	9.958820128802388e+291 	         3.539¢	sc3s	612e3s
-schisma     	    [	-1138    	 718     	⟩	               Infinity	/	Infinity               	         3.691¢	hc3s	718e3s
-schisma     	    [	-1623    	 1024    	⟩	               Infinity	/	Infinity               	         1.921¢	uc3s	1024e3s
-schisma     	    [	 2024    	-1277    	⟩	               Infinity	/	Infinity               	         3.464¢	5c3s	1277e3s
+schisma     	    [	-1138    	 718     	⟩	       (too big for JS)	/	(too big for JS)       	         3.691¢	hc3s	718e3s
+schisma     	    [	-1623    	 1024    	⟩	       (too big for JS)	/	(too big for JS)       	         1.921¢	uc3s	1024e3s
+schisma     	    [	 2024    	-1277    	⟩	       (too big for JS)	/	(too big for JS)       	         3.464¢	5c3s	1277e3s
 
 kleisma     	    [	 -168    	 106     	⟩	  3.757102126136363e+50	/	3.7414441915671115e+50 	         7.230¢	3k	3k
 kleisma     	    [	 -252    	 159     	⟩	  7.282483350946405e+75	/	7.237005577332262e+75  	        10.845¢	c3k	159e3k
@@ -23,14 +23,14 @@ kleisma     	    [	 -653    	 412     	⟩	3.7493582965828984e+196	/	3.737551353
 kleisma     	    [	 -737    	 465     	⟩	 7.267473295882061e+221	/	7.229475734293037e+221 	         9.075¢	5c3k	465e3k
 kleisma     	    [	 802     	 -506    	⟩	 2.667205773151942e+241	/	2.6506652719189185e+241	        10.770¢	6c3k	506e3k
 kleisma     	    [	 886     	 -559    	⟩	 5.159126280621731e+266	/	5.137849614839226e+266 	         7.155¢	7c3k	559e3k
-kleisma     	    [	-1222    	 771     	⟩	               Infinity	/	Infinity               	         7.306¢	8c3k	771e3k
-kleisma     	    [	-1306    	 824     	⟩	               Infinity	/	Infinity               	        10.921¢	9c3k	824e3k
-kleisma     	    [	 1371    	 -865    	⟩	               Infinity	/	Infinity               	         8.924¢	10c3k	865e3k
-kleisma     	    [	 1455    	 -918    	⟩	               Infinity	/	Infinity               	         5.309¢	11c3k	918e3k
-kleisma     	    [	-1707    	 1077    	⟩	               Infinity	/	Infinity               	         5.536¢	12c3k	1077e3k
-kleisma     	    [	-1791    	 1130    	⟩	               Infinity	/	Infinity               	         9.151¢	13c3k	1130e3k
-kleisma     	    [	 1856    	-1171    	⟩	               Infinity	/	Infinity               	        10.694¢	14c3k	1171e3k
-kleisma     	    [	 1940    	-1224    	⟩	               Infinity	/	Infinity               	         7.079¢	15c3k	1224e3k
+kleisma     	    [	-1222    	 771     	⟩	       (too big for JS)	/	(too big for JS)       	         7.306¢	8c3k	771e3k
+kleisma     	    [	-1306    	 824     	⟩	       (too big for JS)	/	(too big for JS)       	        10.921¢	9c3k	824e3k
+kleisma     	    [	 1371    	 -865    	⟩	       (too big for JS)	/	(too big for JS)       	         8.924¢	10c3k	865e3k
+kleisma     	    [	 1455    	 -918    	⟩	       (too big for JS)	/	(too big for JS)       	         5.309¢	11c3k	918e3k
+kleisma     	    [	-1707    	 1077    	⟩	       (too big for JS)	/	(too big for JS)       	         5.536¢	12c3k	1077e3k
+kleisma     	    [	-1791    	 1130    	⟩	       (too big for JS)	/	(too big for JS)       	         9.151¢	13c3k	1130e3k
+kleisma     	    [	 1856    	-1171    	⟩	       (too big for JS)	/	(too big for JS)       	        10.694¢	14c3k	1171e3k
+kleisma     	    [	 1940    	-1224    	⟩	       (too big for JS)	/	(too big for JS)       	         7.079¢	15c3k	1224e3k
 
 comma       	    [	 -19     	  12     	⟩	                 531441	/	524288                 	        23.460¢	3C	3C
 comma       	    [	  65     	 -41     	⟩	   36893488147419103000	/	36472996377170790000   	        19.845¢	c3C	41e3C
@@ -55,31 +55,31 @@ comma       	    [	 867     	 -547    	⟩	 9.840252457850897e+260	/	9.667770485
 comma       	    [	 -905    	 571     	⟩	 2.730463937159773e+272	/	2.704867999414606e+272 	        16.305¢	20c3C	571e3C
 comma       	    [	 951     	 -600    	⟩	1.9033816428515623e+286	/	1.873927703884794e+286 	        26.999¢	21c3C	600e3C
 comma       	    [	 -989    	 624     	⟩	  5.29252532807087e+297	/	5.231975621026696e+297 	        19.921¢	22c3C	624e3C
-comma       	    [	 1035    	 -653    	⟩	               Infinity	/	Infinity               	        23.384¢	23c3C	653e3C
-comma       	    [	-1073    	 677     	⟩	               Infinity	/	Infinity               	        23.536¢	24c3C	677e3C
-comma       	    [	 1119    	 -706    	⟩	               Infinity	/	Infinity               	        19.769¢	25c3C	706e3C
-comma       	    [	-1157    	 730     	⟩	               Infinity	/	Infinity               	        27.151¢	26c3C	730e3C
-comma       	    [	 1203    	 -759    	⟩	               Infinity	/	Infinity               	        16.154¢	27c3C	759e3C
-comma       	    [	-1241    	 783     	⟩	               Infinity	/	Infinity               	        30.766¢	28c3C	783e3C
-comma       	    [	 1287    	 -812    	⟩	               Infinity	/	Infinity               	        12.539¢	29c3C	812e3C
-comma       	    [	 1352    	 -853    	⟩	               Infinity	/	Infinity               	        32.384¢	30c3C	853e3C
-comma       	    [	-1390    	 877     	⟩	               Infinity	/	Infinity               	        14.536¢	31c3C	877e3C
-comma       	    [	 1436    	 -906    	⟩	               Infinity	/	Infinity               	        28.769¢	32c3C	906e3C
-comma       	    [	-1474    	 930     	⟩	               Infinity	/	Infinity               	        18.151¢	33c3C	930e3C
-comma       	    [	 1520    	 -959    	⟩	               Infinity	/	Infinity               	        25.154¢	34c3C	959e3C
-comma       	    [	-1558    	 983     	⟩	               Infinity	/	Infinity               	        21.766¢	35c3C	983e3C
-comma       	    [	 1604    	-1012    	⟩	               Infinity	/	Infinity               	        21.539¢	36c3C	1012e3C
-comma       	    [	-1642    	 1036    	⟩	               Infinity	/	Infinity               	        25.381¢	37c3C	1036e3C
-comma       	    [	 1688    	-1065    	⟩	               Infinity	/	Infinity               	        17.924¢	38c3C	1065e3C
-comma       	    [	-1726    	 1089    	⟩	               Infinity	/	Infinity               	        28.996¢	39c3C	1089e3C
-comma       	    [	 1772    	-1118    	⟩	               Infinity	/	Infinity               	        14.309¢	40c3C	1118e3C
-comma       	    [	-1810    	 1142    	⟩	               Infinity	/	Infinity               	        32.611¢	41c3C	1142e3C
-comma       	    [	-1875    	 1183    	⟩	               Infinity	/	Infinity               	        12.766¢	42c3C	1183e3C
-comma       	    [	 1921    	-1212    	⟩	               Infinity	/	Infinity               	        30.539¢	43c3C	1212e3C
-comma       	    [	-1959    	 1236    	⟩	               Infinity	/	Infinity               	        16.381¢	44c3C	1236e3C
-comma       	    [	 2005    	-1265    	⟩	               Infinity	/	Infinity               	        26.924¢	45c3C	1265e3C
-comma       	    [	-2043    	 1289    	⟩	               Infinity	/	Infinity               	        19.996¢	46c3C	1289e3C
-comma       	    [	 2089    	-1318    	⟩	               Infinity	/	Infinity               	        23.309¢	47c3C	1318e3C
+comma       	    [	 1035    	 -653    	⟩	       (too big for JS)	/	(too big for JS)       	        23.384¢	23c3C	653e3C
+comma       	    [	-1073    	 677     	⟩	       (too big for JS)	/	(too big for JS)       	        23.536¢	24c3C	677e3C
+comma       	    [	 1119    	 -706    	⟩	       (too big for JS)	/	(too big for JS)       	        19.769¢	25c3C	706e3C
+comma       	    [	-1157    	 730     	⟩	       (too big for JS)	/	(too big for JS)       	        27.151¢	26c3C	730e3C
+comma       	    [	 1203    	 -759    	⟩	       (too big for JS)	/	(too big for JS)       	        16.154¢	27c3C	759e3C
+comma       	    [	-1241    	 783     	⟩	       (too big for JS)	/	(too big for JS)       	        30.766¢	28c3C	783e3C
+comma       	    [	 1287    	 -812    	⟩	       (too big for JS)	/	(too big for JS)       	        12.539¢	29c3C	812e3C
+comma       	    [	 1352    	 -853    	⟩	       (too big for JS)	/	(too big for JS)       	        32.384¢	30c3C	853e3C
+comma       	    [	-1390    	 877     	⟩	       (too big for JS)	/	(too big for JS)       	        14.536¢	31c3C	877e3C
+comma       	    [	 1436    	 -906    	⟩	       (too big for JS)	/	(too big for JS)       	        28.769¢	32c3C	906e3C
+comma       	    [	-1474    	 930     	⟩	       (too big for JS)	/	(too big for JS)       	        18.151¢	33c3C	930e3C
+comma       	    [	 1520    	 -959    	⟩	       (too big for JS)	/	(too big for JS)       	        25.154¢	34c3C	959e3C
+comma       	    [	-1558    	 983     	⟩	       (too big for JS)	/	(too big for JS)       	        21.766¢	35c3C	983e3C
+comma       	    [	 1604    	-1012    	⟩	       (too big for JS)	/	(too big for JS)       	        21.539¢	36c3C	1012e3C
+comma       	    [	-1642    	 1036    	⟩	       (too big for JS)	/	(too big for JS)       	        25.381¢	37c3C	1036e3C
+comma       	    [	 1688    	-1065    	⟩	       (too big for JS)	/	(too big for JS)       	        17.924¢	38c3C	1065e3C
+comma       	    [	-1726    	 1089    	⟩	       (too big for JS)	/	(too big for JS)       	        28.996¢	39c3C	1089e3C
+comma       	    [	 1772    	-1118    	⟩	       (too big for JS)	/	(too big for JS)       	        14.309¢	40c3C	1118e3C
+comma       	    [	-1810    	 1142    	⟩	       (too big for JS)	/	(too big for JS)       	        32.611¢	41c3C	1142e3C
+comma       	    [	-1875    	 1183    	⟩	       (too big for JS)	/	(too big for JS)       	        12.766¢	42c3C	1183e3C
+comma       	    [	 1921    	-1212    	⟩	       (too big for JS)	/	(too big for JS)       	        30.539¢	43c3C	1212e3C
+comma       	    [	-1959    	 1236    	⟩	       (too big for JS)	/	(too big for JS)       	        16.381¢	44c3C	1236e3C
+comma       	    [	 2005    	-1265    	⟩	       (too big for JS)	/	(too big for JS)       	        26.924¢	45c3C	1265e3C
+comma       	    [	-2043    	 1289    	⟩	       (too big for JS)	/	(too big for JS)       	        19.996¢	46c3C	1289e3C
+comma       	    [	 2089    	-1318    	⟩	       (too big for JS)	/	(too big for JS)       	        23.309¢	47c3C	1318e3C
 
 smallDiesis 	    [	  46     	 -29     	⟩	         70368744177664	/	68630377364883         	        43.305¢	3S	3S
 smallDiesis 	    [	 130     	 -82     	⟩	  1.361129467683754e+39	/	1.3302794647291133e+39 	        39.690¢	c3S	82e3S
@@ -94,19 +94,19 @@ smallDiesis 	    [	 783     	 -494    	⟩	 5.087291284850963e+235	/	4.987694347
 smallDiesis 	    [	 -840    	 530     	⟩	  7.48626164114344e+252	/	7.33155940312959e+252  	        36.150¢	10c3S	530e3S
 smallDiesis 	    [	 -924    	 583     	⟩	 1.451080485228127e+278	/	1.418129833677085e+278 	        39.766¢	11c3S	583e3S
 smallDiesis 	    [	-1008    	 636     	⟩	 2.812664952875311e+303	/	2.7430620343968443e+303	        43.381¢	12c3S	636e3S
-smallDiesis 	    [	 1100    	 -694    	⟩	               Infinity	/	Infinity               	        43.229¢	13c3S	694e3S
-smallDiesis 	    [	 1184    	 -747    	⟩	               Infinity	/	Infinity               	        39.614¢	14c3S	747e3S
-smallDiesis 	    [	 1268    	 -800    	⟩	               Infinity	/	Infinity               	        35.999¢	15c3S	800e3S
-smallDiesis 	    [	-1325    	 836     	⟩	               Infinity	/	Infinity               	        34.381¢	16c3S	836e3S
-smallDiesis 	    [	-1409    	 889     	⟩	               Infinity	/	Infinity               	        37.996¢	17c3S	889e3S
-smallDiesis 	    [	-1493    	 942     	⟩	               Infinity	/	Infinity               	        41.611¢	18c3S	942e3S
-smallDiesis 	    [	 1585    	-1000    	⟩	               Infinity	/	Infinity               	        44.999¢	19c3S	1000e3S
-smallDiesis 	    [	 1669    	-1053    	⟩	               Infinity	/	Infinity               	        41.384¢	20c3S	1053e3S
-smallDiesis 	    [	 1753    	-1106    	⟩	               Infinity	/	Infinity               	        37.769¢	21c3S	1106e3S
-smallDiesis 	    [	 1837    	-1159    	⟩	               Infinity	/	Infinity               	        34.154¢	22c3S	1159e3S
-smallDiesis 	    [	-1894    	 1195    	⟩	               Infinity	/	Infinity               	        36.226¢	23c3S	1195e3S
-smallDiesis 	    [	-1978    	 1248    	⟩	               Infinity	/	Infinity               	        39.841¢	24c3S	1248e3S
-smallDiesis 	    [	-2062    	 1301    	⟩	               Infinity	/	Infinity               	        43.456¢	25c3S	1301e3S
+smallDiesis 	    [	 1100    	 -694    	⟩	       (too big for JS)	/	(too big for JS)       	        43.229¢	13c3S	694e3S
+smallDiesis 	    [	 1184    	 -747    	⟩	       (too big for JS)	/	(too big for JS)       	        39.614¢	14c3S	747e3S
+smallDiesis 	    [	 1268    	 -800    	⟩	       (too big for JS)	/	(too big for JS)       	        35.999¢	15c3S	800e3S
+smallDiesis 	    [	-1325    	 836     	⟩	       (too big for JS)	/	(too big for JS)       	        34.381¢	16c3S	836e3S
+smallDiesis 	    [	-1409    	 889     	⟩	       (too big for JS)	/	(too big for JS)       	        37.996¢	17c3S	889e3S
+smallDiesis 	    [	-1493    	 942     	⟩	       (too big for JS)	/	(too big for JS)       	        41.611¢	18c3S	942e3S
+smallDiesis 	    [	 1585    	-1000    	⟩	       (too big for JS)	/	(too big for JS)       	        44.999¢	19c3S	1000e3S
+smallDiesis 	    [	 1669    	-1053    	⟩	       (too big for JS)	/	(too big for JS)       	        41.384¢	20c3S	1053e3S
+smallDiesis 	    [	 1753    	-1106    	⟩	       (too big for JS)	/	(too big for JS)       	        37.769¢	21c3S	1106e3S
+smallDiesis 	    [	 1837    	-1159    	⟩	       (too big for JS)	/	(too big for JS)       	        34.154¢	22c3S	1159e3S
+smallDiesis 	    [	-1894    	 1195    	⟩	       (too big for JS)	/	(too big for JS)       	        36.226¢	23c3S	1195e3S
+smallDiesis 	    [	-1978    	 1248    	⟩	       (too big for JS)	/	(too big for JS)       	        39.841¢	24c3S	1248e3S
+smallDiesis 	    [	-2062    	 1301    	⟩	       (too big for JS)	/	(too big for JS)       	        43.456¢	25c3S	1301e3S
 
 mediumDiesis	    [	 -38     	  24     	⟩	           282429536481	/	274877906944           	        46.920¢	3M	3M
 mediumDiesis	    [	 -122    	  77     	⟩	  5.474401089420219e+36	/	5.316911983139664e+36  	        50.535¢	c3M	77e3M
@@ -121,16 +121,16 @@ mediumDiesis	    [	 -775    	 489     	⟩	2.0525491143440157e+233	/	1.987223158
 mediumDiesis	    [	 848     	 -535    	⟩	 1.876879207201175e+255	/	1.8191615787978557e+255	        54.075¢	10c3M	535e3M
 mediumDiesis	    [	 932     	 -588    	⟩	3.6304123742133376e+280	/	3.5261255791043484e+280	        50.459¢	11c3M	588e3M
 mediumDiesis	    [	 1016    	 -641    	⟩	 7.022238808055922e+305	/	6.834775835487006e+305 	        46.844¢	12c3M	641e3M
-mediumDiesis	    [	-1092    	 689     	⟩	               Infinity	/	Infinity               	        46.996¢	13c3M	689e3M
-mediumDiesis	    [	-1176    	 742     	⟩	               Infinity	/	Infinity               	        50.611¢	14c3M	742e3M
-mediumDiesis	    [	-1260    	 795     	⟩	               Infinity	/	Infinity               	        54.226¢	15c3M	795e3M
-mediumDiesis	    [	 1333    	 -841    	⟩	               Infinity	/	Infinity               	        55.844¢	16c3M	841e3M
-mediumDiesis	    [	 1417    	 -894    	⟩	               Infinity	/	Infinity               	        52.229¢	17c3M	894e3M
-mediumDiesis	    [	 1501    	 -947    	⟩	               Infinity	/	Infinity               	        48.614¢	18c3M	947e3M
-mediumDiesis	    [	-1577    	 995     	⟩	               Infinity	/	Infinity               	        45.226¢	19c3M	995e3M
-mediumDiesis	    [	-1661    	 1048    	⟩	               Infinity	/	Infinity               	        48.841¢	20c3M	1048e3M
-mediumDiesis	    [	-1745    	 1101    	⟩	               Infinity	/	Infinity               	        52.456¢	21c3M	1101e3M
-mediumDiesis	    [	-1829    	 1154    	⟩	               Infinity	/	Infinity               	        56.071¢	22c3M	1154e3M
-mediumDiesis	    [	 1902    	-1200    	⟩	               Infinity	/	Infinity               	        53.999¢	23c3M	1200e3M
-mediumDiesis	    [	 1986    	-1253    	⟩	               Infinity	/	Infinity               	        50.384¢	24c3M	1253e3M
-mediumDiesis	    [	 2070    	-1306    	⟩	               Infinity	/	Infinity               	        46.769¢	25c3M	1306e3M
+mediumDiesis	    [	-1092    	 689     	⟩	       (too big for JS)	/	(too big for JS)       	        46.996¢	13c3M	689e3M
+mediumDiesis	    [	-1176    	 742     	⟩	       (too big for JS)	/	(too big for JS)       	        50.611¢	14c3M	742e3M
+mediumDiesis	    [	-1260    	 795     	⟩	       (too big for JS)	/	(too big for JS)       	        54.226¢	15c3M	795e3M
+mediumDiesis	    [	 1333    	 -841    	⟩	       (too big for JS)	/	(too big for JS)       	        55.844¢	16c3M	841e3M
+mediumDiesis	    [	 1417    	 -894    	⟩	       (too big for JS)	/	(too big for JS)       	        52.229¢	17c3M	894e3M
+mediumDiesis	    [	 1501    	 -947    	⟩	       (too big for JS)	/	(too big for JS)       	        48.614¢	18c3M	947e3M
+mediumDiesis	    [	-1577    	 995     	⟩	       (too big for JS)	/	(too big for JS)       	        45.226¢	19c3M	995e3M
+mediumDiesis	    [	-1661    	 1048    	⟩	       (too big for JS)	/	(too big for JS)       	        48.841¢	20c3M	1048e3M
+mediumDiesis	    [	-1745    	 1101    	⟩	       (too big for JS)	/	(too big for JS)       	        52.456¢	21c3M	1101e3M
+mediumDiesis	    [	-1829    	 1154    	⟩	       (too big for JS)	/	(too big for JS)       	        56.071¢	22c3M	1154e3M
+mediumDiesis	    [	 1902    	-1200    	⟩	       (too big for JS)	/	(too big for JS)       	        53.999¢	23c3M	1200e3M
+mediumDiesis	    [	 1986    	-1253    	⟩	       (too big for JS)	/	(too big for JS)       	        50.384¢	24c3M	1253e3M
+mediumDiesis	    [	 2070    	-1306    	⟩	       (too big for JS)	/	(too big for JS)       	        46.769¢	25c3M	1306e3M

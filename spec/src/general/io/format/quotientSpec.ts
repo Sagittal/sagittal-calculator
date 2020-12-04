@@ -75,4 +75,13 @@ describe("formatQuotient", (): void => {
         const expected = "[latex]77[/latex]" as Formatted<Two3FreeClass>
         expect(actual).toBe(expected)
     })
+
+    it("formats quotients with huge fractional parts friendlily", (): void => {
+        const quotient = [Infinity, Infinity] as Quotient
+
+        const actual = formatQuotient(quotient)
+
+        const expected = "(too big for JS)/(too big for JS)"
+        expect(actual).toBe(expected)
+    })
 })

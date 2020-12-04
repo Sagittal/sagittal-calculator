@@ -37,6 +37,6 @@ describe("parseExclusive", (): void => {
         const actual = parseExclusive(exclusiveIo)
 
         const expected = [true, false] as Exclusive
-        expect(actual).toBe(expected)
+        expect(actual).toEqual(expected)
     })
 })

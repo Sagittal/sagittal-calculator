@@ -1,4 +1,4 @@
-import {computeSuperQuotient, Quotient} from "../../math"
+import {computeSuperQuotient, Denominator, Numerator, Quotient} from "../../math"
 import {ioSettings} from "../globals"
 import {TableFormat} from "../table"
 import {Formatted} from "./types"
@@ -7,7 +7,10 @@ const formatQuotient = <T extends Quotient>(
     inputQuotient: T,
     {directed = true, noLaTeXScaler = false}: {directed?: boolean, noLaTeXScaler?: boolean} = {},
 ): Formatted<T> => {
-    const [numerator, denominator] = directed ? inputQuotient : computeSuperQuotient(inputQuotient)
+    let [numerator, denominator] = directed ? inputQuotient : computeSuperQuotient(inputQuotient)
+
+    if (numerator === Infinity) numerator = "(too big for JS)" as unknown as Numerator
+    if (denominator === Infinity) denominator = "(too big for JS)" as unknown as Denominator
 
     return directed ?
         ioSettings.tableFormat === TableFormat.FORUM && !noLaTeXScaler ?
