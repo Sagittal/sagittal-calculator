@@ -1,4 +1,4 @@
-import {Multiplier, Sum} from "../../../../../src/general"
+import {Multiplier, Sum} from "@sagittal/general"
 import {Ina} from "../../../../../src/sagittal"
 import {BoundEventAnalysis} from "../../../../../src/scripts/jiNotationBoundClass/history"
 import {computeBoundHistoryTotalInaDistance} from "../../../../../src/scripts/jiNotationBoundClass/history/historyTotalInaDistance"

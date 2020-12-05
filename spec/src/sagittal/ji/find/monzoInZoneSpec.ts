@@ -7,7 +7,7 @@ import {
     Min,
     Monzo,
     Scamon,
-} from "../../../../../src/general"
+} from "@sagittal/general"
 import {computeRationalMonzoInZone} from "../../../../../src/sagittal/ji/find"
 import {n_s_SIZE_CATEGORY_BOUND, u_n_SIZE_CATEGORY_BOUND} from "../../../../../src/sagittal/ji/name/sizeCategoryBounds"
 

@@ -1,4 +1,4 @@
-import {Count, Decimal, increment, Rank} from "../../../general"
+import {Count, Decimal, increment, Rank} from "@sagittal/general"
 import {BoundType} from "../../../sagittal"
 import {jiNotationLevelsBestCumulativeHistoryRanks, jiNotationLevelsBestHistoryRanks} from "../globals"
 import {BoundEventAnalysis, BoundHistoryAnalysis} from "../history"

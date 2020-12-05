@@ -1,4 +1,4 @@
-import {Column, Count, Exponent, Index, Io, Max, Prime, Table, TableAlignment} from "../../../../general"
+import {Column, Count, Exponent, Index, Io, Max, Prime, Table, TableAlignment} from "@sagittal/general"
 import {JiPitchScriptGroupField} from "../../types"
 
 interface OrderableTableInformation<T> {

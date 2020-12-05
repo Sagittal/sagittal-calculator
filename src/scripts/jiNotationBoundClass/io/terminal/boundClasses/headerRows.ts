@@ -1,4 +1,4 @@
-import {Io, Row, splitFieldTitlesIntoRowsBySpaces} from "../../../../../general"
+import {Io, Row, splitFieldTitlesIntoRowsBySpaces} from "@sagittal/general"
 import {JiNotationBoundClassAnalysis} from "../../../boundClass"
 
 const BOUND_ANALYSES_FIELD_TITLES: Io[] = [

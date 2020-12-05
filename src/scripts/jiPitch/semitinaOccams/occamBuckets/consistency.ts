@@ -1,4 +1,4 @@
-import {Comma, computeMonzoMapping, Decimal, LogTarget, saveLog} from "../../../../general"
+import {Comma, computeMonzoMapping, Decimal, LogTarget, saveLog} from "@sagittal/general"
 import {computeCommaName, formatComma, INSANE_ZETA_PEAK_VAL} from "../../../../sagittal"
 import {inconsistentMetacommas} from "../../globals"
 import {BucketName} from "./types"

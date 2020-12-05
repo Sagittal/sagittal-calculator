@@ -1,4 +1,4 @@
-import {Decimal, increment, Index, Rank} from "../../../general"
+import {Decimal, increment, Index, Rank} from "@sagittal/general"
 import {BoundClass, BoundType} from "../../../sagittal"
 import {rankBoundClassIndices, rankCounts} from "../globals"
 

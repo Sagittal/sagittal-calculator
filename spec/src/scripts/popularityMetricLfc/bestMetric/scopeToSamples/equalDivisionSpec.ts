@@ -1,4 +1,4 @@
-import {Ed, Parameter, Window} from "../../../../../../src/general"
+import {Ed, Parameter, Window} from "@sagittal/general"
 import {computeEqualDivision} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples/equalDivision"
 
 describe("computeEqualDivision", (): void => {

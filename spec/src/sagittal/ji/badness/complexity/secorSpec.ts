@@ -1,4 +1,4 @@
-import {Scamon} from "../../../../../../src/general"
+import {Scamon} from "@sagittal/general"
 import {computeSecorComplexity} from "../../../../../../src/sagittal/ji/badness/complexity/secor"
 import {SecorComplexity} from "../../../../../../src/sagittal/ji/badness/complexity/types"
 

@@ -1,4 +1,4 @@
-import {Exponent, isUndefined, Maybe, Parameter, Prime, QuotientPartType} from "../../../../general"
+import {Exponent, isUndefined, Maybe, Parameter, Prime, QuotientPartType} from "@sagittal/general"
 
 const secondaryParameterOverride = (
     parameter: Parameter,

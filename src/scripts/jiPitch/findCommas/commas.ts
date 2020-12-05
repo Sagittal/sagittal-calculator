@@ -1,4 +1,4 @@
-import {areScamonsEqual, Comma, computeSuperScamon, formatPitch, isScamonGreater, Monzo} from "../../../general"
+import {areScamonsEqual, Comma, computeSuperScamon, formatPitch, isScamonGreater, Monzo} from "@sagittal/general"
 import {
     computeCommasFrom23FreeRationalMonzo,
     DEFAULT_LOWER_BOUND,

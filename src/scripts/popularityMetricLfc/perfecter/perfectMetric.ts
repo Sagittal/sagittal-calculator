@@ -1,4 +1,4 @@
-import {BLANK, Decimal, LogTarget, round, saveLog} from "../../../general"
+import {BLANK, Decimal, LogTarget, round, saveLog} from "@sagittal/general"
 import {
     nonRecursiveSearchScopeAndMaybeUpdateBestMetric,
     nonRecursiveSearchScopeAndMaybeUpdateBestMetricSync,

@@ -8,7 +8,7 @@ import {
     saveLog,
     ScalaPopularityStat,
     stringify,
-} from "../../../../general"
+} from "@sagittal/general"
 import {Metric} from "../../bestMetric"
 import {popularityMetricLfcScriptGroupSettings} from "../../globals"
 import {computeUnpopularities, LfcUnpopularityEstimate} from "../../sumOfSquares"

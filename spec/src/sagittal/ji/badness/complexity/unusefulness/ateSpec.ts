@@ -1,4 +1,4 @@
-import {Scamon} from "../../../../../../../src/general"
+import {Scamon} from "@sagittal/general"
 import {Ate, computeAte} from "../../../../../../../src/sagittal"
 
 describe("computeAte", (): void => {

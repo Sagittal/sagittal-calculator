@@ -1,4 +1,4 @@
-import {Formatted, SPACE} from "../../general"
+import {Formatted, SPACE} from "@sagittal/general"
 import {computeSagittalFromSymbolClassId, EMPTY_ACCIDENTAL, formatAccidental} from "../accidental"
 import {computeCommaName} from "../ji"
 import {getCommaClass} from "./commaClass"

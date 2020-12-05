@@ -1,4 +1,4 @@
-import {Abs, Cents, Sum} from "../../../../../src/general"
+import {Abs, Cents, Sum} from "@sagittal/general"
 import {BoundEventAnalysis} from "../../../../../src/scripts/jiNotationBoundClass/history"
 import {computeBoundHistoryTotalDistance} from "../../../../../src/scripts/jiNotationBoundClass/history/historyTotalDistance"
 import {boundEventAnalysisFixture} from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"

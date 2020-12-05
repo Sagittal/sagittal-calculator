@@ -1,4 +1,4 @@
-import {BLANK, CommaMean, DEFAULT_PRECISION, Io, Px, round, subtract} from "../../../../general"
+import {BLANK, CommaMean, DEFAULT_PRECISION, Io, Px, round, subtract} from "@sagittal/general"
 import {Ascii, computeAccidentalUnicode, JiNotationLevelId, parseAscii} from "../../../../sagittal"
 import {JI_NOTATION_LEVELS_COMMA_MEANS} from "../../histories"
 import {JI_NOTATION_LEVEL_CENTERS} from "./levelHeights"

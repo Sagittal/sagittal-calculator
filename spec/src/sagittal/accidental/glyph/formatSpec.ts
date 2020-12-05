@@ -1,4 +1,4 @@
-import {Formatted, ioSettings, TableFormat} from "../../../../../src/general"
+import {Formatted, ioSettings, TableFormat} from "@sagittal/general"
 import {Compatible, formatAccidental, Glyph} from "../../../../../src/sagittal/accidental"
 import {HeadId} from "../../../../../src/sagittal/accidental/flacco"
 import {computeAccidental} from "../../../../helpers/src/sagittal/accidental/accidental"

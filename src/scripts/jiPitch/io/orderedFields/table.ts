@@ -1,4 +1,4 @@
-import {Cell, Column, Index, Row, Table} from "../../../../general"
+import {Cell, Column, Index, Row, Table} from "@sagittal/general"
 
 const computeOrderedTable = <T>(table: Table<T>, orderedColumnIndices: Array<Index<Column>>): Table<T> =>
     table.map((row: Row<{of: T}>): Row<{of: T}> =>

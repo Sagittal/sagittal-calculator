@@ -1,4 +1,4 @@
-import {computePatentVal, Ed, Max, OCTAVE_WINDOW, Prime, Val, Window} from "../../../general"
+import {computePatentVal, Ed, Max, OCTAVE_WINDOW, Prime, Val, Window} from "@sagittal/general"
 
 const MEDIUM_ZETA_PEAK_EDO = 217.02470 as Ed<{of: Window<{of: 2}>}>
 const HIGH_ZETA_PEAK_EDO = 494.01377 as Ed<{of: Window<{of: 2}>}>

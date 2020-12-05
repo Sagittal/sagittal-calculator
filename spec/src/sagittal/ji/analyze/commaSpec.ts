@@ -13,7 +13,7 @@ import {
     Quotient,
     Sopfr,
     Two3FreeClass,
-} from "../../../../../src/general"
+} from "@sagittal/general"
 import {analyzeComma, ApotomeSlope, Ate, N2D3P9} from "../../../../../src/sagittal"
 import {SizeCategory} from "../../../../../src/sagittal/ji/name"
 

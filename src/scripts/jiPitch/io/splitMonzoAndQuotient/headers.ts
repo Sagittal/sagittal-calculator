@@ -6,7 +6,7 @@ import {
     isUndefined,
     parseInteger,
     Row,
-} from "../../../../general"
+} from "@sagittal/general"
 
 const formatPrimeHeaders = <T>(
     headerRows: Array<Row<{of: T, header: true}>>,

@@ -1,6 +1,6 @@
 // tslint:disable max-line-length
 
-import {Count, Ms} from "../../../../../../src/general"
+import {Count, Ms} from "@sagittal/general"
 import {Scope} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {scopesToSearch, solverStatus} from "../../../../../../src/scripts/popularityMetricLfc/globals"
 import {Chunk} from "../../../../../../src/scripts/popularityMetricLfc/solver"

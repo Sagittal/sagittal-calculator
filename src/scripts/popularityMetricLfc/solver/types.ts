@@ -1,4 +1,4 @@
-import {Count, Mean} from "../../../general"
+import {Count, Mean} from "@sagittal/general"
 import {Sample, Scope, SubmetricScope} from "../bestMetric"
 import {PopularityParameterId, Submetric} from "../sumOfSquares"
 

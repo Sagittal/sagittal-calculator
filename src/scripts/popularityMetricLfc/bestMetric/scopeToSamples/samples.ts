@@ -1,4 +1,4 @@
-import {Combination, computePossibilities} from "../../../../general"
+import {Combination, computePossibilities} from "@sagittal/general"
 import {Scope, SubmetricScope} from "../types"
 import {combineSubmetricsPossibilitiesIntoSamples} from "./combineSubmetricsPossibilitiesIntoSamples"
 import {DynamicParameter, Sample, SubmetricPossibility} from "./types"

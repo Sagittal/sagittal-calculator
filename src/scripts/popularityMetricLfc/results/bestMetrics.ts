@@ -1,4 +1,4 @@
-import {Combination} from "../../../general"
+import {Combination} from "@sagittal/general"
 import {SumOfSquares} from "../bestMetric"
 import {PopularityParameterId, Submetric} from "../sumOfSquares"
 

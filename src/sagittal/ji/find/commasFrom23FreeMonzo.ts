@@ -13,7 +13,7 @@ import {
     shallowClone,
     THREE_PRIME_INDEX,
     TWO_PRIME_INDEX,
-} from "../../../general"
+} from "@sagittal/general"
 import {analyzeComma, CommaAnalysis} from "../analyze"
 import {
     DEFAULT_MAX_AAS,

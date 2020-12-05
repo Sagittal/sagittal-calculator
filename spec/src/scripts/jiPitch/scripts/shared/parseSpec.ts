@@ -1,4 +1,4 @@
-import {Exclusive, Io} from "../../../../../../src/general"
+import {Exclusive, Io} from "@sagittal/general"
 import {parseExclusive, parseFields} from "../../../../../../src/scripts/jiPitch/scripts/shared/parse"
 import {CommaField, JiPitchField} from "../../../../../../src/scripts/jiPitch/types"
 

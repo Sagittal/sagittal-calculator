@@ -1,1 +1,0 @@
-export {computeIrrationalQuotientFromScamon} from "./fromScamon"

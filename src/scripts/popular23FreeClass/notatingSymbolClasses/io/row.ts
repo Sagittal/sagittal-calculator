@@ -1,4 +1,4 @@
-import {format23FreeClass, formatDecimal, Formatted, isUndefined, Ranked, Row, SPACE} from "../../../../general"
+import {format23FreeClass, formatDecimal, Formatted, isUndefined, Ranked, Row, SPACE} from "@sagittal/general"
 import {formatSymbolClass, SymbolClass, SymbolClassId} from "../../../../sagittal"
 import {Popular23FreeClass} from "../../types"
 import {NotatingSymbolClassesProperties} from "../types"

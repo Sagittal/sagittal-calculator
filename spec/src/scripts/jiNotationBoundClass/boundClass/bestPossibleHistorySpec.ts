@@ -1,4 +1,4 @@
-import {Abs, Cents, Grade, Sum} from "../../../../../src/general"
+import {Abs, Cents, Grade, Sum} from "@sagittal/general"
 import {computeBestPossibleBoundHistoryAnalysis} from "../../../../../src/scripts/jiNotationBoundClass/boundClass/bestPossibleHistory"
 import {BoundHistory} from "../../../../../src/scripts/jiNotationBoundClass/histories"
 import {BoundHistoryAnalysis} from "../../../../../src/scripts/jiNotationBoundClass/history"

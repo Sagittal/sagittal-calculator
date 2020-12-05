@@ -1,4 +1,4 @@
-import {computeKeyPath, Index, sort} from "../../general"
+import {computeKeyPath, Index, sort} from "@sagittal/general"
 import {SymbolClassId, SymbolSubsetId} from "./types"
 
 const SIZE_SORTED_SYMBOL_SUBSET_IDS: SymbolSubsetId[] = [

@@ -1,4 +1,4 @@
-import {BLANK, Char, Count, increment, isEmpty, shallowClone} from "../../../general"
+import {BLANK, Char, Count, increment, isEmpty, shallowClone} from "@sagittal/general"
 import {AccentId, Arm, FlagId} from "../flacco"
 import {Accidental, Compatible, EMPTY_ACCIDENTAL} from "../flavor"
 import {Ascii, BLANK_ASCII, PARENTHETICAL_NATURAL_ASCII} from "../glyph"

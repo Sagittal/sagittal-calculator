@@ -9,7 +9,7 @@
 //  However, if you put a console log right after the work it does in populateScopes,
 //   It does seem to be able to be interrupted, in a good way, so that's a good sign.
 
-import {LogTarget, saveLog} from "../../../general"
+import {LogTarget, saveLog} from "@sagittal/general"
 import {solverStatus} from "../globals"
 import {formatSearchedAndPopulated} from "./io"
 import {populateScopes, populateScopesSync} from "./populate"

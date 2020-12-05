@@ -7,7 +7,7 @@ import {
     Numerator,
     pow,
     Prime,
-} from "../../../../../../../../../general"
+} from "@sagittal/general"
 import {N2} from "./types"
 
 const computeN2 = (numerator: Numerator & Decimal<{integer: true}>): N2 =>

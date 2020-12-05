@@ -1,4 +1,4 @@
-import {DEFAULT_PRECISION, Io, Px, round, subtract} from "../../../../general"
+import {DEFAULT_PRECISION, Io, Px, round, subtract} from "@sagittal/general"
 import {JiNotationBoundClass, JiNotationLevelId, JI_NOTATION_LEVELS_BOUND_CLASSES} from "../../../../sagittal"
 import {JI_NOTATION_LEVEL_BOTTOMS, JI_NOTATION_LEVEL_TOPS} from "./levelHeights"
 import {DASH_SIZE, SAGITTAL_OFFSET} from "./sizes"

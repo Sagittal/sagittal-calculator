@@ -1,4 +1,4 @@
-import {Io, ioSettings, TableFormat} from "../../../../src/general"
+import {Io, ioSettings, TableFormat} from "@sagittal/general"
 import {CommaClassId, formatCommaClass} from "../../../../src/sagittal"
 
 describe("formatCommaClass", (): void => {

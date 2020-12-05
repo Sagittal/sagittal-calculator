@@ -1,4 +1,4 @@
-import {formatTable, Io} from "../../../../../general"
+import {formatTable, Io} from "@sagittal/general"
 import {JiNotationLevelId} from "../../../../../sagittal"
 import {computeJiNotationLevelAnalysisHeaderRow} from "./levelAnalysisHeaderRow"
 import {computeJiNotationLevelAnalysisRowColors} from "./levelAnalysisRowColors"

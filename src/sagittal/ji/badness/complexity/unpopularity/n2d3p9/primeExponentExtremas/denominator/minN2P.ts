@@ -1,4 +1,4 @@
-import {Min, min, pow} from "../../../../../../../../general"
+import {Min, min, pow} from "@sagittal/general"
 import {
     N2P,
     SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P,

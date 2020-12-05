@@ -1,4 +1,4 @@
-import {Abs, Comma, Ed, Parameter} from "../../general"
+import {Abs, Comma, Ed, Parameter} from "@sagittal/general"
 import {ApotomeSlope, Ate, CommaClassId, Complexity, N2D3P9} from "../../sagittal"
 
 type ComplexityParameterSet = Partial<Record<ComplexityParameterId, Parameter>>

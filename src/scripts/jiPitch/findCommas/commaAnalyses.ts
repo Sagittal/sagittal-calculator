@@ -1,4 +1,4 @@
-import {Comma, sort} from "../../../general"
+import {Comma, sort} from "@sagittal/general"
 import {analyzeComma, CommaAnalysis} from "../../../sagittal"
 import {jiPitchScriptGroupSettings} from "../globals"
 import {findCommas} from "./commas"

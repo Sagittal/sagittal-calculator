@@ -1,4 +1,4 @@
-import {IDENTIFYING_ACCIDENTAL_CHARS, Io} from "../../../general"
+import {IDENTIFYING_ACCIDENTAL_CHARS, Io} from "@sagittal/general"
 import {Accidental} from "../flavor"
 import {Ascii, Smiley, Unicode} from "../glyph"
 import {parseAscii} from "./ascii"

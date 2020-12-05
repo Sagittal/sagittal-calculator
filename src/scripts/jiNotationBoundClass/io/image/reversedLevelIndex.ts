@@ -1,4 +1,4 @@
-import {Basis, Cents, indexOfFinalElement, Multiplier} from "../../../../general"
+import {Basis, Cents, indexOfFinalElement, Multiplier} from "@sagittal/general"
 import {JI_NOTATION_LEVELS} from "../../../../sagittal"
 
 const computeReversedJiNotationLevelIndex = (jiNotationLevelIndex: number): Multiplier<Basis<Cents>> =>

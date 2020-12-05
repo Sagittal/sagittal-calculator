@@ -1,4 +1,4 @@
-import {BASE_2, Grade, log, Monzo, Parameter, Power, Two3FreeClass} from "../../../../../../src/general"
+import {BASE_2, Grade, log, Monzo, Parameter, Power, Two3FreeClass} from "@sagittal/general"
 import {LfcUnpopularityEstimate} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"
 import {computeSubmetricAntivotes} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes/submetricAntivotes"
 import {compute23FreeClassSubmetricAntivotes} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes/two3FreeClassSubmetricAntivotes"

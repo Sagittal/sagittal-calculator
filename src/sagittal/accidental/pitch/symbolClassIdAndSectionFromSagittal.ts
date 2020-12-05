@@ -1,4 +1,4 @@
-import {isUndefined, Maybe, stringify} from "../../../general"
+import {isUndefined, Maybe, stringify} from "@sagittal/general"
 import {Section, SymbolClassId} from "../../notation"
 import {computeApotomeComplement, Sagittal, Shafts} from "../sagittal"
 import {getSymbolClassEntry} from "./symbolClassEntry"

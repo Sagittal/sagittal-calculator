@@ -1,4 +1,4 @@
-import {Abs, Cents, Formatted, Multiplier} from "../../../../../../../src/general"
+import {Abs, Cents, Formatted, Multiplier} from "@sagittal/general"
 import {Ina, JiNotationLevelId} from "../../../../../../../src/sagittal"
 import {BoundHistoryAnalysis} from "../../../../../../../src/scripts/jiNotationBoundClass/history"
 import {extractJiNotationLevelDistances} from "../../../../../../../src/scripts/jiNotationBoundClass/io/terminal/boundClasses/levelDistances"

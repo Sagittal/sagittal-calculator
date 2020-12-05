@@ -1,4 +1,4 @@
-import {Comma} from "../../../../../src/general"
+import {Comma} from "@sagittal/general"
 import {computeBestNotatingComma} from "../../../../../src/scripts/popular23FreeClass/bestNotatingComma/bestNotatingComma"
 import {popular23FreeClassesScriptGroupSettings} from "../../../../../src/scripts/popular23FreeClass/globals"
 

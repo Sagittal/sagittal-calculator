@@ -1,6 +1,6 @@
 // tslint:disable max-line-length
 
-import {Decimal, Exponent, Max, Numerator, Prime} from "../../../../../../../../../../../../src/general"
+import {Decimal, Exponent, Max, Numerator, Prime} from "@sagittal/general"
 import {N2D3P9} from "../../../../../../../../../../../../src/sagittal"
 import {computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9} from "../../../../../../../../../../../../src/sagittal/ji/badness/complexity/unpopularity/n2d3p9/primeExponentExtremas/denominator/sortedNumeratorPossibilities/numeratorPossibilities/maxNumeratorPrimeExponents"
 

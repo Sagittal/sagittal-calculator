@@ -1,4 +1,4 @@
-import {count, formatTable, Io, isUndefined, Maybe, Row, Table} from "../../../../general"
+import {count, formatTable, Io, isUndefined, Maybe, Row, Table} from "@sagittal/general"
 import {CommaClassId, JiPitchAnalysis, PotentiallyCommaAnalysis} from "../../../../sagittal"
 import {jiPitchScriptGroupSettings} from "../../globals"
 import {JI_PITCHES_OR_FIND_COMMAS_FIELD_TITLES} from "../fieldTitles"

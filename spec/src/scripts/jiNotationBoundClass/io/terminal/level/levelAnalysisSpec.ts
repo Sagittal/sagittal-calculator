@@ -1,4 +1,4 @@
-import {Count, Decimal, NEWLINE, Rank} from "../../../../../../../src/general"
+import {Count, Decimal, NEWLINE, Rank} from "@sagittal/general"
 import {BoundType, JiNotationLevelId} from "../../../../../../../src/sagittal"
 import {
     jiNotationLevelsBestCumulativeHistoryRanks,

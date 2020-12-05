@@ -1,4 +1,4 @@
-import {Formatted, ioSettings, TableFormat} from "../../../general"
+import {Formatted, ioSettings, TableFormat} from "@sagittal/general"
 import {Accidental} from "../flavor"
 import {alignAscii} from "./align"
 import {computeAccidentalAscii} from "./ascii"

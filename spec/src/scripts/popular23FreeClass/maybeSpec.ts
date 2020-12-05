@@ -1,4 +1,4 @@
-import {Direction, Max, Monzo, Two3FreeClass} from "../../../../src/general"
+import {Direction, Max, Monzo, Two3FreeClass} from "@sagittal/general"
 import {N2D3P9} from "../../../../src/sagittal"
 import {computeMaybePopular23FreeClass} from "../../../../src/scripts/popular23FreeClass/maybe"
 

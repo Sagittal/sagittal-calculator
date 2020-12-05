@@ -1,4 +1,4 @@
-import {Formatted, Maybe, SPACE} from "../../general"
+import {Formatted, Maybe, SPACE} from "@sagittal/general"
 import {EMPTY_ACCIDENTAL, formatAccidental, Sagittal} from "../accidental"
 import {computeCommaName} from "../ji"
 import {getCommaClass} from "./commaClass"

@@ -9,7 +9,7 @@ import {
     Numerator,
     Of,
     Prime,
-} from "../../../../../../../general"
+} from "@sagittal/general"
 import {N2D3P9} from "../types"
 import {
     computeMaxDenominatorPrimeExponentGivenMaxN2D3P9,

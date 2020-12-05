@@ -1,4 +1,4 @@
-import {Abs, abs, Max} from "../../../../../../src/general"
+import {Abs, abs, Max} from "@sagittal/general"
 import {
     ApotomeSlope,
     CommaClassId,

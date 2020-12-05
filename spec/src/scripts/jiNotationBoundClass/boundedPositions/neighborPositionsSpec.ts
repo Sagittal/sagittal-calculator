@@ -1,4 +1,4 @@
-import {Cents, computePitchFromCents} from "../../../../../src/general"
+import {Cents, computePitchFromCents} from "@sagittal/general"
 import {computeNeighborPositions} from "../../../../../src/scripts/jiNotationBoundClass/boundedPositions/neighborPositions"
 import {NeighborPositions} from "../../../../../src/scripts/jiNotationBoundClass/boundedPositions/types"
 

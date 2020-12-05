@@ -1,4 +1,4 @@
-import {Decimal, Denominator, Exponent, Max, Min, Of, Prime} from "../../../../../../../../../../src/general"
+import {Decimal, Denominator, Exponent, Max, Min, Of, Prime} from "@sagittal/general"
 import {N2D3P9} from "../../../../../../../../../../src/sagittal"
 import * as d39
     from "../../../../../../../../../../src/sagittal/ji/badness/complexity/unpopularity/n2d3p9/primeExponentExtremas/denominator/d39"

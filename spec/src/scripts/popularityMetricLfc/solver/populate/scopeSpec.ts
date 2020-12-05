@@ -1,5 +1,4 @@
-import {Count} from "../../../../../../src/general"
-import {cleanArray} from "../../../../../../src/general/code/cleanArray"
+import {cleanArray, Count} from "@sagittal/general"
 import {Scope} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {scopesToSearch, solverStatus} from "../../../../../../src/scripts/popularityMetricLfc/globals"
 import {populateScope} from "../../../../../../src/scripts/popularityMetricLfc/solver/populate/scope"

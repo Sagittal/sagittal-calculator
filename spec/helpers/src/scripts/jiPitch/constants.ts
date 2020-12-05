@@ -1,4 +1,4 @@
-import {Abs, Max} from "../../../../../src/general"
+import {Abs, Max} from "@sagittal/general"
 import {ApotomeSlope, Ate, N2D3P9} from "../../../../../src/sagittal"
 
 const OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS = 307 as Max<N2D3P9>

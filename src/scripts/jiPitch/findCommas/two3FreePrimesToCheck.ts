@@ -6,7 +6,7 @@ import {
     Prime,
     PRIMES,
     ZERO_ONE_INDEX_DIFF,
-} from "../../../general"
+} from "@sagittal/general"
 import {Two3FreePrimesToCheckOptions} from "./types"
 
 const compute23FreePrimesToCheck = (options: Two3FreePrimesToCheckOptions): Prime[] => {

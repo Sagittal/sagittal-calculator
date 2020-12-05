@@ -1,4 +1,4 @@
-import {Combination, computePossibilities, DynamicParameterScope, Parameter, Window} from "../../general"
+import {Combination, computePossibilities, DynamicParameterScope, Parameter, Window} from "@sagittal/general"
 import {complexityAndBadnessMetricLfcScriptGroupSettings} from "./globals"
 import {ComplexityParameterId, ComplexityParameterSet} from "./types"
 

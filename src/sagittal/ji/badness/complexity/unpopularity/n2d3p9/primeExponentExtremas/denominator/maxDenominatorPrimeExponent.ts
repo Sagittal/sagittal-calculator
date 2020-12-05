@@ -1,4 +1,4 @@
-import {Decimal, decrement, Denominator, Exponent, increment, Max, Of, Prime} from "../../../../../../../../general"
+import {Decimal, decrement, Denominator, Exponent, increment, Max, Of, Prime} from "@sagittal/general"
 import {N2D3P9} from "../../types"
 import {computeMinN2D3P9ForPossibleMaxDenominatorPrimeExponentGivenMaxN2D3P9} from "./minN2D3P9"
 import {

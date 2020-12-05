@@ -1,4 +1,4 @@
-import {Combination, Index, Max, Min, Parameter, Step, Window} from "../../../../general"
+import {Combination, Index, Max, Min, Parameter, Step, Window} from "@sagittal/general"
 import {PopularityParameterId, Submetric} from "../../sumOfSquares"
 
 interface DynamicParameterValueIndicesOptions {

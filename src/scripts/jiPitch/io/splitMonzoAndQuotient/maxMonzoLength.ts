@@ -1,4 +1,4 @@
-import {count, Count, Exponent, Max, max, Prime} from "../../../../general"
+import {count, Count, Exponent, Max, max, Prime} from "@sagittal/general"
 import {JiPitchAnalysis} from "../../../../sagittal"
 
 const computeMaxMonzoLength = (jiPitchAnalyses: JiPitchAnalysis[]): Max<Count<Exponent<Prime>>> =>

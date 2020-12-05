@@ -1,4 +1,4 @@
-import {Count, Ms, Name} from "../../../../../src/general"
+import {Count, Ms, Name} from "@sagittal/general"
 import {Metric} from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {bestMetrics, solverStatus} from "../../../../../src/scripts/popularityMetricLfc/globals"
 import {Chunk, populateAndSearchScopesAndPerfectMetrics} from "../../../../../src/scripts/popularityMetricLfc/solver"

@@ -1,6 +1,6 @@
 // tslint:disable max-line-length
 
-import {CommaMean, Name} from "../../../general"
+import {CommaMean, Name} from "@sagittal/general"
 import {SizeCategoryBound} from "../../ji"
 import {BoundClassId, getBoundClass} from "../../notation"
 import {BoundType, InaMidpoint, JiNotationBoundClass, JiNotationBoundClassEntry, JiNotationLevelId} from "./types"

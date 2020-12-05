@@ -11,7 +11,7 @@ import {
     THREE_PRIME_INDEX,
     Two3FreeClass,
     TWO_PRIME_INDEX,
-} from "../../../../../../general"
+} from "@sagittal/general"
 import {N2D3P9} from "./types"
 
 const computeN2D3P9 = <T extends NumericProperties>(two3FreeClass: Two3FreeClass): N2D3P9 => {

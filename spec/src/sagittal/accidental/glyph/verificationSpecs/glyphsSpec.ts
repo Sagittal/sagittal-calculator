@@ -1,5 +1,4 @@
-import {isUndefined} from "../../../../../../src/general"
-import {camelCaseToConstantCase} from "../../../../../../src/general/code/case"
+import {camelCaseToConstantCase, isUndefined} from "@sagittal/general"
 import {Ascii, Compatible, Smiley, Unicode} from "../../../../../../src/sagittal/accidental"
 import {AccentId, HeadId} from "../../../../../../src/sagittal/accidental/flacco"
 import {Shafts} from "../../../../../../src/sagittal/accidental/sagittal"

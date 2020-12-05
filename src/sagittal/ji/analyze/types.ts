@@ -15,7 +15,7 @@ import {
     Scamon,
     Sopfr,
     Two3FreeClass,
-} from "../../../general"
+} from "@sagittal/general"
 import {ApotomeSlope, Ate, N2D3P9} from "../badness"
 import {SizeCategory} from "../name"
 

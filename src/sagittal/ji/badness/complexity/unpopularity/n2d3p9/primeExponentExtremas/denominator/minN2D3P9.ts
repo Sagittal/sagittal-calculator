@@ -1,4 +1,4 @@
-import {Min} from "../../../../../../../../general"
+import {Min} from "@sagittal/general"
 import {N2D3P9} from "../../types"
 import {computeD39ForPossibleMaxDenominatorPrimeExponent} from "./d39"
 import {computeMinN2PForPossibleMaxDenominatorPrimeExponentGivenMaxN2D3P9} from "./minN2P"

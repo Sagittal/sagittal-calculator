@@ -17,7 +17,7 @@ import {
     Sopfr,
     TableFormat,
     Two3FreeClass,
-} from "../../../../../../src/general"
+} from "@sagittal/general"
 import {ApotomeSlope, Ate, CommaAnalysis, CommaClassId, N2D3P9} from "../../../../../../src/sagittal"
 import {DEFAULT_FIND_COMMAS_OPTIONS} from "../../../../../../src/scripts/jiPitch/findCommas"
 import {jiPitchScriptGroupSettings} from "../../../../../../src/scripts/jiPitch/globals"

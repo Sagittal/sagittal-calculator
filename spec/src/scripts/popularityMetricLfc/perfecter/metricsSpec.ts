@@ -1,4 +1,4 @@
-import {Combination, Name} from "../../../../../src/general"
+import {Combination, Name} from "@sagittal/general"
 import {Metric} from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {perfectMetrics} from "../../../../../src/scripts/popularityMetricLfc/perfecter"
 import * as metric from "../../../../../src/scripts/popularityMetricLfc/perfecter/metric"

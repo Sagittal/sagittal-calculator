@@ -1,4 +1,4 @@
-import {Base, EMPTY_MONZO, Grade, log, Monzo, Parameter} from "../../../../../../src/general"
+import {Base, EMPTY_MONZO, Grade, log, Monzo, Parameter} from "@sagittal/general"
 import {
     LfcUnpopularityEstimate,
     PopularityParameterId,

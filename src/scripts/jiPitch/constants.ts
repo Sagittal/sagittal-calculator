@@ -1,4 +1,4 @@
-import {computeKeyPath} from "../../general"
+import {computeKeyPath} from "@sagittal/general"
 import {JiPitchesOrFindCommasField, JiPitchScriptGroupSettings} from "./types"
 
 const DEFAULT_JI_PITCH_SCRIPT_GROUP_EXCLUDED_FIELDS = [JiPitchesOrFindCommasField.SIZE_CATEGORY]

@@ -1,4 +1,4 @@
-import {increment, isUndefined, Maybe, negative} from "../../../general"
+import {increment, isUndefined, Maybe, negative} from "@sagittal/general"
 import {Section, SymbolClassId} from "../../notation"
 import {computeApotomeComplement, computeSagittalFromSymbolClassId, flipSagittal, Shafts} from "../sagittal"
 import {Accidental, Compatible, Flavor} from "./types"

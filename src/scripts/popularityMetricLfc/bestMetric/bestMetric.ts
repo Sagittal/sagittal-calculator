@@ -1,4 +1,4 @@
-import {add, count, Count, Io, LogTarget, Maybe, Mean, MeanType, Name, round, saveLog} from "../../../general"
+import {add, count, Count, Io, LogTarget, Maybe, Mean, MeanType, Name, round, saveLog} from "@sagittal/general"
 import {metricNames, solverStatus} from "../globals"
 import {PopularityParameterId} from "../sumOfSquares"
 import {computeMetricName} from "./metricName"

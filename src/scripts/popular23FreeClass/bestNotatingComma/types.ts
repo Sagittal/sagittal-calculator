@@ -1,4 +1,4 @@
-import {Cents, Maybe, Monzo} from "../../../general"
+import {Cents, Maybe, Monzo} from "@sagittal/general"
 import {CommaClassId} from "../../../sagittal"
 
 interface BestNotatingCommaProperties {

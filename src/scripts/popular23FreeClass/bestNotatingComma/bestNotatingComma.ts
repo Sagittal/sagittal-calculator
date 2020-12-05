@@ -1,4 +1,4 @@
-import {Comma, isUndefined, Maybe} from "../../../general"
+import {Comma, isUndefined, Maybe} from "@sagittal/general"
 import {popular23FreeClassesScriptGroupSettings} from "../globals"
 import {isLaas} from "./isLaas"
 import {isLate} from "./isLate"

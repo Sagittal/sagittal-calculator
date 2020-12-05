@@ -1,4 +1,4 @@
-import {computeRationalDecimalGpf, Decimal, Max, Numerator, Prime} from "../../../../../../../../../../general"
+import {computeRationalDecimalGpf, Decimal, Max, Numerator, Prime} from "@sagittal/general"
 import {N2D3P9} from "../../../../types"
 import {computePossibleNumeratorsGivenMaxN2D3P9} from "./possibleNumerators"
 import {NumeratorPossibilityForDenominatorGivenMaxN2D3P9} from "./types"

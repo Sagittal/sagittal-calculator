@@ -1,4 +1,4 @@
-import {Zone} from "../../../general"
+import {Zone} from "@sagittal/general"
 import {CommaClass, CommaClassId} from "../../notation"
 import {computeJiNotationCaptureZone} from "./captureZone"
 import {getIntroducingJiNotationLevel} from "./introducingJiNotationLevel"

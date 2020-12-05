@@ -1,4 +1,4 @@
-import {Count, Exponent, Io, ioSettings, Max, Prime, TableFormat} from "../../../../../../src/general"
+import {Count, Exponent, Io, ioSettings, Max, Prime, TableFormat} from "@sagittal/general"
 import {splitMonzoAndQuotientFieldTitles} from "../../../../../../src/scripts/jiPitch/io/splitMonzoAndQuotient"
 
 describe("splitMonzoAndQuotientFieldTitles", (): void => {

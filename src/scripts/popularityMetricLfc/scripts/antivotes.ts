@@ -7,7 +7,7 @@ import {
     saveLog,
     stringify,
     Two3FreeClass,
-} from "../../../general"
+} from "@sagittal/general"
 import {computeAntivotes, Submetric} from "../sumOfSquares"
 import {applySharedPopularityMetricLfcScriptSetup, load} from "./shared"
 

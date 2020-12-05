@@ -1,4 +1,4 @@
-import {ColorMethod, Maybe} from "../../../../../general"
+import {ColorMethod, Maybe} from "@sagittal/general"
 import {JiNotationLevelId} from "../../../../../sagittal"
 import {jiNotationLevelsBestHistoryRanks} from "../../../globals"
 import {RANK_COLOR_METHODS} from "../rankColors"

@@ -1,4 +1,4 @@
-import {Column, Index} from "../../../../general"
+import {Column, Index} from "@sagittal/general"
 import {jiPitchScriptGroupSettings} from "../../globals"
 import {JiPitchScriptGroupField} from "../../types"
 import {computeOrderedTableAlignment} from "./alignment"

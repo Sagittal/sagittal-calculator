@@ -7,7 +7,7 @@ import {
     Px,
     round,
     Scamon,
-} from "../../../../general"
+} from "@sagittal/general"
 import {MARGIN, X_SCALE} from "./sizes"
 
 const computeX = (pitch: Scamon): Px =>

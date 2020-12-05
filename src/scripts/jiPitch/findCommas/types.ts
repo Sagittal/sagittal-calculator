@@ -1,4 +1,4 @@
-import {Copfr, Decimal, Exponent, Extrema, Max, Prime, Sopfr} from "../../../general"
+import {Copfr, Decimal, Exponent, Extrema, Max, Prime, Sopfr} from "@sagittal/general"
 import {CommasFrom23FreeMonzoOptions} from "../../../sagittal"
 
 interface FindCommasOptions extends Required<CommasFrom23FreeMonzoOptions> {

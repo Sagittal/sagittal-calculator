@@ -1,4 +1,4 @@
-import {Monzo, Scamon} from "../../../../../../src/general"
+import {Monzo, Scamon} from "@sagittal/general"
 import {CommaClassId} from "../../../../../../src/sagittal"
 import {computePositionCommaClassId} from "../../../../../../src/scripts/jiNotationBoundClass/io/terminal/positionCommaClassId"
 

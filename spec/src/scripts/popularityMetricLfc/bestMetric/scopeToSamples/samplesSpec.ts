@@ -1,4 +1,4 @@
-import {Ed, Parameter, Window} from "../../../../../../src/general"
+import {Ed, Parameter, Window} from "@sagittal/general"
 import {Sample, Scope} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {
     computeDynamicParameters,

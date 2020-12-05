@@ -1,4 +1,4 @@
-import {increment, Index, subtract} from "../../../general"
+import {increment, Index, subtract} from "@sagittal/general"
 
 const computeNeighborPositionIndices = (position: number, sortedTargetPositions: number[]): [Index, Index] => {
     let index = 0 as Index

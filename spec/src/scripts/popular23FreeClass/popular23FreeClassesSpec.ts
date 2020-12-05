@@ -15,7 +15,7 @@ import {
     ScalaPopularityStat,
     Sopfr,
     Two3FreeClass,
-} from "../../../../src/general"
+} from "@sagittal/general"
 import {CommaClassId, N2D3P9, SymbolClassId, SymbolSubsetId} from "../../../../src/sagittal"
 import {popular23FreeClassesScriptGroupSettings} from "../../../../src/scripts/popular23FreeClass/globals"
 import {computePopular23FreeClasses} from "../../../../src/scripts/popular23FreeClass/popular23FreeClasses"

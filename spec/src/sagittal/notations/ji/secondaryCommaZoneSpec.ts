@@ -1,4 +1,4 @@
-import {Cents, computeCentsFromPitch} from "../../../../../src/general"
+import {Cents, computeCentsFromPitch} from "@sagittal/general"
 import {CommaClassId, computeSecondaryCommaZone} from "../../../../../src/sagittal"
 
 describe("computeSecondaryCommaZone", (): void => {

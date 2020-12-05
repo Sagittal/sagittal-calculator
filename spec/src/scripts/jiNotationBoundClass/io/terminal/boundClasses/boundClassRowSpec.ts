@@ -1,4 +1,4 @@
-import {Abs, Cents, computePitchFromCents, Index, Multiplier, Row, Sum} from "../../../../../../../src/general"
+import {Abs, Cents, computePitchFromCents, Index, Multiplier, Row, Sum} from "@sagittal/general"
 import {
     BoundClass,
     BoundClassId,

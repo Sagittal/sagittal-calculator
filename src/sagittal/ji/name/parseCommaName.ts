@@ -6,7 +6,7 @@ import {
     Maybe,
     parseQuotient,
     Quotient,
-} from "../../../general"
+} from "@sagittal/general"
 import {SIZE_CATEGORY_ABBREVIATIONS, SIZE_CATEGORY_NAMES, SIZE_CATEGORY_NAME_ALTERNATIVES} from "./sizeCategories"
 import {CommaNameQuotient, ParsedCommaName, SizeCategory, SizeCategoryName} from "./types"
 

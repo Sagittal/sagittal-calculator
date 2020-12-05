@@ -1,4 +1,4 @@
-import {Io, Maybe} from "../../../general"
+import {Io, Maybe} from "@sagittal/general"
 import {Flavor} from "../flavor"
 
 type Ascii<T extends Maybe<Flavor> = undefined> =

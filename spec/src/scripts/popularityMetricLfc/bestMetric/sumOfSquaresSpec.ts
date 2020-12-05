@@ -12,8 +12,8 @@ import {
     Name,
     Obj,
     Two3FreeClass,
-} from "../../../../../src/general"
-import * as doOnNextEventLoop from "../../../../../src/general/code/doOnNextEventLoop"
+} from "@sagittal/general"
+import * as doOnNextEventLoop from "@sagittal/general/dist/code/doOnNextEventLoop"
 import {Metric, Sample, SamplePoint, SumsOfSquares} from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {computeSumOfSquaresAndMaybeUpdateBestMetric} from "../../../../../src/scripts/popularityMetricLfc/bestMetric/sumOfSquares"
 import {bestMetrics} from "../../../../../src/scripts/popularityMetricLfc/globals"

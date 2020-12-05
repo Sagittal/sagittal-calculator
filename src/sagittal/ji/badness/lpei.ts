@@ -1,4 +1,4 @@
-import {Cents, computeCentsFromPitch, Scamon} from "../../../general"
+import {Cents, computeCentsFromPitch, Scamon} from "@sagittal/general"
 import {MINA_CENTS} from "../../notations"
 import {computeLpe} from "./complexity"
 import {LPEI_U} from "./constants"

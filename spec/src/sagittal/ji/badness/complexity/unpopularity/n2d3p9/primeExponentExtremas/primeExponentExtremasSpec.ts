@@ -1,4 +1,4 @@
-import {Decimal, Exponent, Extrema, Max, Prime} from "../../../../../../../../../src/general"
+import {Decimal, Exponent, Extrema, Max, Prime} from "@sagittal/general"
 import {computePrimeExponentExtremasGivenMaxN2D3P9, N2D3P9} from "../../../../../../../../../src/sagittal"
 import {onlyRunInCi} from "../../../../../../../../helpers/onlyRunInCi"
 

@@ -1,4 +1,4 @@
-import {Decimal, Denominator, Exponent, Max, Of, Prime} from "../../../../../../../../../../src/general"
+import {Decimal, Denominator, Exponent, Max, Of, Prime} from "@sagittal/general"
 import {computeD39ForPossibleMaxDenominatorPrimeExponent} from "../../../../../../../../../../src/sagittal/ji/badness/complexity/unpopularity/n2d3p9/primeExponentExtremas/denominator/d39"
 import {D39} from "../../../../../../../../../../src/sagittal/ji/badness/complexity/unpopularity/n2d3p9/primeExponentExtremas/denominator/types"
 

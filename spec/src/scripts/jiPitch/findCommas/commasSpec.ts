@@ -1,4 +1,4 @@
-import {Comma, computeScamonFromDecimal, Max, Min, Monzo, Prime, Scamon, Sopfr} from "../../../../../src/general"
+import {Comma, computeScamonFromDecimal, Max, Min, Monzo, Prime, Scamon, Sopfr} from "@sagittal/general"
 import {findCommas} from "../../../../../src/scripts/jiPitch/findCommas"
 
 describe("findCommas", (): void => {

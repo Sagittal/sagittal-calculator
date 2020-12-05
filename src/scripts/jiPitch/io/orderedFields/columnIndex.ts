@@ -1,4 +1,4 @@
-import {Column, Count, Decimal, Exponent, Index, Max, Offset, offset, Prime} from "../../../../general"
+import {Column, Count, Decimal, Exponent, Index, Max, Offset, offset, Prime} from "@sagittal/general"
 import {JiPitchesOrFindCommasField, JiPitchField, JiPitchScriptGroupField, Two3FreeClassField} from "../../types"
 import {
     ADDITIONAL_COLUMNS_FOR_SPLIT_2_3_FREE_CLASS_FIELD,

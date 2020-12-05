@@ -1,4 +1,4 @@
-import {computeDeepDistinct, computeKeyPath, sort} from "../../../general"
+import {computeDeepDistinct, computeKeyPath, sort} from "@sagittal/general"
 import {Sample, SumsOfSquares} from "../bestMetric"
 import {getSumOfSquaresAtSamplePointIfLocalMin} from "./localMin"
 import {LocalMin} from "./types"

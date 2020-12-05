@@ -1,4 +1,4 @@
-import {Name} from "../../../../src/general"
+import {Name} from "@sagittal/general"
 import {
     BoundType,
     JiNotationBound,

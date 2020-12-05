@@ -9,7 +9,7 @@ import {
     Maybe,
     Row,
     sumTexts,
-} from "../../../../general"
+} from "@sagittal/general"
 import {CommaAnalysis, CommaClassId} from "../../../../sagittal"
 import {jiPitchScriptGroupSettings} from "../../globals"
 import {COMMA_FIELD_TITLES} from "../fieldTitles"

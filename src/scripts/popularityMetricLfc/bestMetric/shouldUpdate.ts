@@ -1,4 +1,4 @@
-import {isUndefined} from "../../../general"
+import {isUndefined} from "@sagittal/general"
 import {SUM_OF_SQUARES_TO_BEAT} from "./constants"
 import {Metric, ShouldUpdateBestMetricOptions, SumOfSquares} from "./types"
 

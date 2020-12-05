@@ -1,4 +1,4 @@
-import {isUndefined, Maybe, shallowClone} from "../../../general"
+import {isUndefined, Maybe, shallowClone} from "@sagittal/general"
 import {Sagittal} from "./types"
 
 const flipSagittal = (sagittal: Maybe<Sagittal>): Maybe<Sagittal> => {

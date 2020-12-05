@@ -11,7 +11,7 @@ import {
     RecordKey,
     saveLog,
     sort,
-} from "../../../../general"
+} from "@sagittal/general"
 import {Semitina} from "../types"
 
 const computeCommasBySemitinaZoneEntries = (

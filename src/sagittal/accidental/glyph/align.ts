@@ -1,4 +1,4 @@
-import {Formatted, shallowClone} from "../../../general"
+import {Formatted, shallowClone} from "@sagittal/general"
 import {PARENTHETICAL_NATURAL_ASCII} from "./constants"
 import {Ascii} from "./types"
 

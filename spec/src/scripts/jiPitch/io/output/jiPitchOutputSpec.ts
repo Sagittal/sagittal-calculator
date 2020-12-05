@@ -1,6 +1,6 @@
 // tslint:disable max-line-length
 
-import {Abs, BLANK, Cents, Io, ioSettings, Monzo, NEWLINE, Quotient, TableFormat} from "../../../../../../src/general"
+import {Abs, BLANK, Cents, Io, ioSettings, Monzo, NEWLINE, Quotient, TableFormat} from "@sagittal/general"
 import {ApotomeSlope, Ate, JiPitchAnalysis} from "../../../../../../src/sagittal"
 import {jiPitchScriptGroupSettings} from "../../../../../../src/scripts/jiPitch/globals"
 import {computeJiPitchOutput} from "../../../../../../src/scripts/jiPitch/io"

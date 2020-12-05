@@ -1,4 +1,4 @@
-import { Combination, Index, Ranked, ScalaPopularityStat } from "../../../general"
+import { Combination, Index, Ranked, ScalaPopularityStat } from "@sagittal/general"
 import { computeAntivotes } from "./antivotes"
 import { LfcUnpopularityEstimate, Submetric } from "./types"
 

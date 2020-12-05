@@ -1,5 +1,5 @@
-import {Combination, Combinations, computeCombinations, Count, Index} from "../../../../../../src/general"
-import * as combinations from "../../../../../../src/general/math/combinations"
+import {Combination, Combinations, Count, Index} from "@sagittal/general"
+import * as combinations from "@sagittal/general/dist/math/combinations"
 import {
     memoizedParameterChunkCombinations,
     memoizedSubmetricChunkCombinations,

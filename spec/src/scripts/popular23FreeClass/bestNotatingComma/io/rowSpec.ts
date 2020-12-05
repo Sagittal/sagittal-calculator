@@ -3,6 +3,7 @@ import {
     Decimal,
     Direction,
     Grade,
+    IRRATIONAL_SCAMON_BASE_MONZO,
     Monzo,
     Name,
     Rank,
@@ -10,8 +11,7 @@ import {
     Row,
     ScalaPopularityStat,
     Two3FreeClass,
-} from "../../../../../../src/general"
-import {IRRATIONAL_SCAMON_BASE_MONZO} from "../../../../../../src/general/math/irrational/scamon/constants"
+} from "@sagittal/general"
 import {CommaClassId, N2D3P9} from "../../../../../../src/sagittal"
 import {
     BestNotatingCommaProperties,

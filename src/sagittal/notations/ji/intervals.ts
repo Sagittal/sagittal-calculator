@@ -9,7 +9,7 @@ import {
     Quotient,
     scaleScamon,
     Scamon,
-} from "../../../general"
+} from "@sagittal/general"
 import {EXTREME_EDA, HIGH_EDA, INSANE_EDA, JI_NOTATION_LEVEL_EDAS, MEDIUM_EDA, ULTRA_EDA} from "./levelEdas"
 import {JI_NOTATION_LEVELS} from "./levels"
 import {JiNotationLevelId} from "./types"

@@ -1,4 +1,4 @@
-import {DynamicParameterScope, Ed, Max, Min, Parameter, Window} from "../../../../../../src/general"
+import {DynamicParameterScope, Ed, Max, Min, Parameter, Window} from "@sagittal/general"
 import {computeDynamicParameterScope} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
 
 describe("computeDynamicParameterScope", (): void => {

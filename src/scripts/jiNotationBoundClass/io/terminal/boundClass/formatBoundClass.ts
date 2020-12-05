@@ -8,7 +8,7 @@ import {
     round,
     stringify,
     sumTexts,
-} from "../../../../../general"
+} from "@sagittal/general"
 import {JiNotationBoundClassEntry} from "../../../../../sagittal"
 import {JiNotationBoundClassAnalysis} from "../../../boundClass"
 import {extractJiNotationBoundClassIdentifiers} from "../boundClassIdentifiers"

@@ -7,7 +7,7 @@ import {
     invertMonzo,
     isUndefined,
     Monzo,
-} from "../../../general"
+} from "@sagittal/general"
 import {computeKnownRationalQuotients, MAX_N2D3P9_FOR_WHICH_POSSIBLE_NUMERATORS_ARE_KNOWN} from "../../../sagittal"
 import {FindCommasOptions} from "./types"
 

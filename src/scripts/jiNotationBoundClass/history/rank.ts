@@ -1,4 +1,4 @@
-import {Decimal, Rank} from "../../../general"
+import {Decimal, Rank} from "@sagittal/general"
 import {BoundType} from "../../../sagittal"
 import {RANKS} from "../ranks"
 import {BoundEventAnalysis} from "./events"

@@ -1,4 +1,4 @@
-import {Abs, BLANK, Cents, formatDecimal, Formatted, indexOfFinalElement, Multiplier} from "../../../../../general"
+import {Abs, BLANK, Cents, formatDecimal, Formatted, indexOfFinalElement, Multiplier} from "@sagittal/general"
 import {Ina, JiNotationLevelId, JI_NOTATION_LEVELS} from "../../../../../sagittal"
 import {BoundEventAnalysis, BoundHistoryAnalysis} from "../../../history"
 

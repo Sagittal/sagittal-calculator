@@ -1,4 +1,4 @@
-import {computeKeyPath, Name, sort} from "../../../../general"
+import {computeKeyPath, Name, sort} from "@sagittal/general"
 import {Metric} from "../../bestMetric"
 import {bestMetrics} from "../../globals"
 

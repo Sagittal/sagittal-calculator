@@ -1,4 +1,4 @@
-import {deepEquals, isUndefined, join, Maybe, sumTexts} from "../../../general"
+import {deepEquals, isUndefined, join, Maybe, sumTexts} from "@sagittal/general"
 import {Accent, Arm} from "../flacco"
 import {Accidental, Compatible, Flavor} from "../flavor"
 import {Core, Sagittal} from "../sagittal"

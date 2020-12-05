@@ -1,6 +1,6 @@
 // tslint:disable no-reaching-imports
 
-import {Filename, NEWLINE, readLines, setupScriptAndIo} from "../general"
+import {Filename, NEWLINE, readLines, setupScriptAndIo} from "@sagittal/general"
 import {ScriptGroup} from "./types"
 
 setupScriptAndIo(ScriptGroup.TMP as Filename)

@@ -1,4 +1,4 @@
-import {Comma, Count, Decimal} from "../../../../general"
+import {Comma, Count, Decimal} from "@sagittal/general"
 
 type BucketName = Decimal<{integer: true}> & {_TinaBucketBrand: boolean}
 

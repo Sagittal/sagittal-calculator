@@ -1,4 +1,4 @@
-import {Combination, Name, stringify} from "../../../../../../src/general"
+import {Combination, Name, stringify} from "@sagittal/general"
 import {Metric, SumOfSquares} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {bestMetrics} from "../../../../../../src/scripts/popularityMetricLfc/globals"
 import {computeSortedBestMetrics} from "../../../../../../src/scripts/popularityMetricLfc/solver"

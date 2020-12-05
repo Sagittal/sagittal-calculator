@@ -1,4 +1,4 @@
-import {Parameter} from "../../../../../src/general"
+import {Parameter} from "@sagittal/general"
 import {
     checkSubmetricsForInvalidParameterCombinations,
     PopularityParameterId,

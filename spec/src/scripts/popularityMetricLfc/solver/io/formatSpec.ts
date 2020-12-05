@@ -1,4 +1,4 @@
-import {Combination, Io, Name, NEWLINE} from "../../../../../../src/general"
+import {Combination, Io, Name, NEWLINE} from "@sagittal/general"
 import {Metric, SumOfSquares} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {bestMetrics} from "../../../../../../src/scripts/popularityMetricLfc/globals"
 import {formatBestMetrics} from "../../../../../../src/scripts/popularityMetricLfc/solver"

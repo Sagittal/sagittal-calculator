@@ -5,7 +5,7 @@ import {
     Grade,
     isUndefined,
     ScalaPopularityStat,
-} from "../../general"
+} from "@sagittal/general"
 import {Two3FreeClassAnalysis} from "../../sagittal"
 import {computeBestNotatingCommaProperties} from "./bestNotatingComma"
 import {popular23FreeClassesScriptGroupSettings} from "./globals"

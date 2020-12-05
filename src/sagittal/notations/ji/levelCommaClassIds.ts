@@ -1,4 +1,4 @@
-import {computeKeyPath, finalElement, Index, sort} from "../../../general"
+import {computeKeyPath, finalElement, Index, sort} from "@sagittal/general"
 import {CommaClassId} from "../../notation"
 import {JiNotationLevelId} from "./types"
 

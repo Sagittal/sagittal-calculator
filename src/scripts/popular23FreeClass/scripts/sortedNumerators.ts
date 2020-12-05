@@ -20,7 +20,7 @@ import {
     sumTexts,
     time,
     TimePrecision,
-} from "../../../general"
+} from "@sagittal/general"
 import {
     computeN2,
     MAX_N2D3P9_FOR_WHICH_POSSIBLE_NUMERATORS_ARE_KNOWN,

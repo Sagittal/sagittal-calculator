@@ -1,4 +1,4 @@
-import {Count, EMPTY_MONZO, Exponent, Max, Monzo, Prime} from "../../../../../../src/general"
+import {Count, EMPTY_MONZO, Exponent, Max, Monzo, Prime} from "@sagittal/general"
 import {JiPitchAnalysis} from "../../../../../../src/sagittal"
 import {computeMaxMonzoLength} from "../../../../../../src/scripts/jiPitch/io/splitMonzoAndQuotient"
 import {jiPitchAnalysisFixture} from "../../../../../helpers/src/scripts/jiPitch/fixtures"

@@ -1,4 +1,4 @@
-import {Comma, Name, RecordKey, Step} from "../../general"
+import {Comma, Name, RecordKey, Step} from "@sagittal/general"
 import {DEFAULT_JI_PITCH_SCRIPT_GROUP_SETTINGS} from "./constants"
 import {JiPitchScriptGroupSettings} from "./types"
 

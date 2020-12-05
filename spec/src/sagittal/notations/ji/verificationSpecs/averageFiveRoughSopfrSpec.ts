@@ -1,5 +1,4 @@
-import {compute23FreeClass, computeRationalScamonSopfr, Mean, MeanType, Sopfr} from "../../../../../../src/general"
-import {computeArithmeticMean} from "../../../../../../src/general/math/numeric/decimal/typedOperations"
+import {compute23FreeClass, computeArithmeticMean, computeRationalScamonSopfr, Mean, MeanType, Sopfr} from "@sagittal/general"
 import {CommaClassId, getCommaClass, JI_NOTATION} from "../../../../../../src/sagittal"
 
 const AVERAGE_2_3_FREE_SOPFR = 22.878049 as Mean<{of: Sopfr<{rough: 5}>, meanType: MeanType.ARITHMETIC}>

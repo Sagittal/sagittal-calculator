@@ -1,4 +1,4 @@
-import {Max, Maybe, Two3FreeClass} from "../../general"
+import {Max, Maybe, Two3FreeClass} from "@sagittal/general"
 import {analyze23FreeClass, N2D3P9} from "../../sagittal"
 import {computePopular23FreeClass} from "./popular23FreeClass"
 import {Popular23FreeClass} from "./types"

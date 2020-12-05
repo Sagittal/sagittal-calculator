@@ -10,7 +10,7 @@ import {
     setupScriptAndIo,
     sumTexts,
     time,
-} from "../../../general"
+} from "@sagittal/general"
 import {DEFAULT_MAX_N2D3P9} from "../../../sagittal"
 import {ScriptGroup} from "../../types"
 import {popular23FreeClassesScriptGroupSettings} from "../globals"

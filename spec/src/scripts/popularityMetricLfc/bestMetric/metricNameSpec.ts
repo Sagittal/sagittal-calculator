@@ -1,4 +1,4 @@
-import {Combination} from "../../../../../src/general"
+import {Combination} from "@sagittal/general"
 import {SubmetricScope} from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {computeMetricName} from "../../../../../src/scripts/popularityMetricLfc/bestMetric/metricName"
 import {PopularityParameterId} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"

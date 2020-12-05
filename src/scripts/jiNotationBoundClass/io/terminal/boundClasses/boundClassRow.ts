@@ -1,4 +1,4 @@
-import {computeCentsFromPitch, formatDecimal, formatIntegerDecimal, Index, Row} from "../../../../../general"
+import {computeCentsFromPitch, formatDecimal, formatIntegerDecimal, Index, Row} from "@sagittal/general"
 import {alignAscii, BoundClass, JiNotationBoundClassEntry} from "../../../../../sagittal"
 import {JiNotationBoundClassAnalysis} from "../../../boundClass"
 import {extractJiNotationBoundClassIdentifiers} from "../boundClassIdentifiers"

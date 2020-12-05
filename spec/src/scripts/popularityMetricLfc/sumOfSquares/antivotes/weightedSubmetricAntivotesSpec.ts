@@ -1,4 +1,4 @@
-import {BASE_2, Grade, log, Parameter, Power, Two3FreeClass} from "../../../../../../src/general"
+import {BASE_2, Grade, log, Parameter, Power, Two3FreeClass} from "@sagittal/general"
 import {
     LfcUnpopularityEstimate,
     PopularityParameterId,

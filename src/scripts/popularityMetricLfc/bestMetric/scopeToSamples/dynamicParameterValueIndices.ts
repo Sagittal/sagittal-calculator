@@ -1,4 +1,4 @@
-import {Index, Parameter} from "../../../../general"
+import {Index, Parameter} from "@sagittal/general"
 import {PopularityParameterId} from "../../sumOfSquares"
 import {DynamicParameter, DynamicParameterValueIndicesOptions} from "./types"
 

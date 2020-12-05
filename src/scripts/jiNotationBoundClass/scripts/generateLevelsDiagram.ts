@@ -1,4 +1,4 @@
-import {Filename, Io, LogTarget, saveLog, setupScriptAndIo} from "../../../general"
+import {Filename, Io, LogTarget, saveLog, setupScriptAndIo} from "@sagittal/general"
 import {ScriptGroup} from "../../types"
 import {computeLevelsDiagram} from "../io"
 

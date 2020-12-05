@@ -1,4 +1,4 @@
-import {Count} from "../../../../../../src/general"
+import {Count} from "@sagittal/general"
 import {Scope} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import * as nonRecursiveBestMetric from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/bestMetric"
 import {scopesToSearch, solverStatus} from "../../../../../../src/scripts/popularityMetricLfc/globals"

@@ -1,4 +1,4 @@
-import {Comma, Index} from "../../../general"
+import {Comma, Index} from "@sagittal/general"
 import {computeSizeCategory} from "./sizeCategory"
 import {SizeCategory} from "./types"
 

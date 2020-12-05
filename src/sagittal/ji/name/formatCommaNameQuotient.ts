@@ -11,7 +11,7 @@ import {
     Quotient,
     QuotientPart,
     SUPERSCRIPT_NUMBERS,
-} from "../../../general"
+} from "@sagittal/general"
 import {FactoringMode} from "./types"
 
 const formatFactoredCommaNameQuotientPart = (

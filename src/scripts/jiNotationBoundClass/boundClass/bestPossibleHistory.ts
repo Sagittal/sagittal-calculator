@@ -1,4 +1,4 @@
-import {Grade, isEmpty, Maybe} from "../../../general"
+import {Grade, isEmpty, Maybe} from "@sagittal/general"
 import {BoundHistory} from "../histories"
 import {BoundHistoryAnalysis} from "../history"
 

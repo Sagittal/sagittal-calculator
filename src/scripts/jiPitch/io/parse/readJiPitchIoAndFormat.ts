@@ -1,5 +1,5 @@
 import {program} from "commander"
-import {Io} from "../../../../general"
+import {Io} from "@sagittal/general"
 import {PitchFormat} from "./types"
 
 const readJiPitchIoAndFormat = (): [Io, PitchFormat] => {

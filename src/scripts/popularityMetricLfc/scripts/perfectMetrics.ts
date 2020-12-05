@@ -1,4 +1,4 @@
-import {Filename, ioSettings, LogTarget, Name, saveLog, time} from "../../../general"
+import {Filename, ioSettings, LogTarget, Name, saveLog, time} from "@sagittal/general"
 import {Metric} from "../bestMetric"
 import {DEFAULT_MAX_UNIT_WHEN_PERFECTING} from "../constants"
 import {popularityMetricLfcScriptGroupSettings} from "../globals"

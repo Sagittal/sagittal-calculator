@@ -1,4 +1,4 @@
-import {Filename, Io, LogTarget, saveLog, setupScriptAndIo} from "../../../general"
+import {Filename, Io, LogTarget, saveLog, setupScriptAndIo} from "@sagittal/general"
 import {ScriptGroup} from "../../types"
 import {analyzeJiNotationBoundClasses} from "../analyzeBoundClasses"
 import {JiNotationBoundClassAnalysis} from "../boundClass"

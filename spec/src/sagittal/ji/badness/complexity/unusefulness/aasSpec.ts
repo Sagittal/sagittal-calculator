@@ -1,4 +1,4 @@
-import {Abs, Scamon} from "../../../../../../../src/general"
+import {Abs, Scamon} from "@sagittal/general"
 import {ApotomeSlope, computeAas} from "../../../../../../../src/sagittal"
 
 describe("computeAas", (): void => {

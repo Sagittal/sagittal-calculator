@@ -1,4 +1,4 @@
-import {colorize, ColorMethod, Count, Decimal, Io, Rank} from "../../../../../general"
+import {colorize, ColorMethod, Count, Decimal, Io, Rank} from "@sagittal/general"
 import {BoundType} from "../../../../../sagittal"
 import {rankBoundClassIndices} from "../../../globals"
 import {RANK_COLOR_METHODS} from "../rankColors"

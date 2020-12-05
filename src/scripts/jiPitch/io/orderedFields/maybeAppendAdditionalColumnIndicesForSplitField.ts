@@ -10,7 +10,7 @@ import {
     ONE,
     Range,
     TableFormat,
-} from "../../../../general"
+} from "@sagittal/general"
 import {JiPitchesOrFindCommasField, JiPitchField, Two3FreeClassField} from "../../types"
 import {
     ADDITIONAL_COLUMNS_FOR_SPLIT_2_3_FREE_CLASS_FIELD,

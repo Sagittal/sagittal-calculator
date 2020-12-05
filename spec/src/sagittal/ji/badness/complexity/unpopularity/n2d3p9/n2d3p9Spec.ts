@@ -1,4 +1,4 @@
-import {Direction, EMPTY_MONZO, Monzo, Two3FreeClass} from "../../../../../../../../src/general"
+import {Direction, EMPTY_MONZO, Monzo, Two3FreeClass} from "@sagittal/general"
 import {computeN2D3P9, N2D3P9} from "../../../../../../../../src/sagittal"
 
 describe("computeN2D3P9", (): void => {

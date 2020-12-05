@@ -1,4 +1,4 @@
-import {Index} from "../../../general"
+import {Index} from "@sagittal/general"
 import {SymbolClassId, SymbolSubsetId} from "../../../sagittal"
 
 interface NotatingSymbolClassesProperties {

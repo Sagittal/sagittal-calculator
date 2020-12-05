@@ -1,4 +1,4 @@
-import {Index} from "../../../../../src/general"
+import {Index} from "@sagittal/general"
 import {formatSizeCategory} from "../../../../../src/sagittal"
 import {SizeCategory} from "../../../../../src/sagittal/ji/name"
 

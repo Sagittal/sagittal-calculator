@@ -1,4 +1,4 @@
-import {APOTOME, dividePitch, Scamon, THREE_PRIME_INDEX} from "../../../../../general"
+import {APOTOME, dividePitch, Scamon, THREE_PRIME_INDEX} from "@sagittal/general"
 import {APOTOME_3_EXPONENT} from "../../../../constants"
 import {ApotomeSlope} from "./types"
 

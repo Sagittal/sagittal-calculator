@@ -1,4 +1,4 @@
-import {BLANK, Comma, Filename, LogTarget, Monzo, readLines, saveLog} from "../../../../general"
+import {BLANK, Comma, Filename, LogTarget, Monzo, readLines, saveLog} from "@sagittal/general"
 import {computeCommasFrom23FreeRationalMonzo} from "../../../../sagittal"
 import {MAX_PRIME_LIMIT_OF_ANY_SEMITINA_BUCKET_BEST_COMMA} from "./constants"
 

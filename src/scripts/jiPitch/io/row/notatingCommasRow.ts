@@ -1,4 +1,4 @@
-import {BLANK, Count, Exponent, Max, Maybe, Prime, Row} from "../../../../general"
+import {BLANK, Count, Exponent, Max, Maybe, Prime, Row} from "@sagittal/general"
 import {
     CommaAnalysis,
     CommaClassId,

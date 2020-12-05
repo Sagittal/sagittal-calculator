@@ -1,4 +1,4 @@
-import {Name, Scamon} from "../../../general"
+import {Name, Scamon} from "@sagittal/general"
 import {BoundType, JiNotationBound, JiNotationLevelId} from "../../../sagittal"
 
 interface BoundEvent {

@@ -1,4 +1,4 @@
-import {Cents, computeCentsFromPitch} from "../../../../../src/general"
+import {Cents, computeCentsFromPitch} from "@sagittal/general"
 import {CommaClassId, computeJiNotationCaptureZone, JiNotationLevelId} from "../../../../../src/sagittal"
 
 describe("computeJiNotationCaptureZone", (): void => {

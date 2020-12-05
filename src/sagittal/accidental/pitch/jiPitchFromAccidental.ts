@@ -1,4 +1,4 @@
-import {isUndefined, Scamon, sumRationalScamons, UNISON} from "../../../general"
+import {isUndefined, Scamon, sumRationalScamons, UNISON} from "@sagittal/general"
 import {Accidental} from "../flavor"
 import {computeApotomicPitchAlterationFromSection} from "./apotomicPitchAlteration"
 import {computeCommaticPitchAlterationFromSymbolClassIdAndSection} from "./commaticPitchAlteration"

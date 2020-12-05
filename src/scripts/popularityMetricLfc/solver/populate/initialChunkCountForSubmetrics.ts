@@ -1,4 +1,4 @@
-import {count, Count, min} from "../../../../general"
+import {count, Count, min} from "@sagittal/general"
 import {popularityMetricLfcScriptGroupSettings} from "../../globals"
 import {Submetric} from "../../sumOfSquares"
 import {Chunk} from "../types"

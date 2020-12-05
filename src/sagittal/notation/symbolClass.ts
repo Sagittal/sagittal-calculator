@@ -1,4 +1,4 @@
-import {isUndefined} from "../../general"
+import {isUndefined} from "@sagittal/general"
 import {FlaccoId} from "../accidental"
 import {CommaClassId, SymbolClass, SymbolClassId} from "./types"
 

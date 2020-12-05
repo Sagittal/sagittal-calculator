@@ -1,5 +1,5 @@
-import {Combination, Grade, LogTarget, Parameter, saveLog, Sum} from "../../../../src/general"
-import * as save from "../../../../src/general/io/log/save"
+import {Combination, Grade, LogTarget, Parameter, Sum} from "@sagittal/general"
+import * as save from "@sagittal/general/dist/io/log/save"
 import * as metricGrade from "../../../../src/scripts/complexityAndBadnessMetricLfc/metricGrade"
 import {COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS} from "../../../../src/scripts/complexityAndBadnessMetricLfc/metrics"
 import {logComplexityParameterSetsForComplexityMetricFamilyWhichOptimizeItsGrade} from "../../../../src/scripts/complexityAndBadnessMetricLfc/optimize"

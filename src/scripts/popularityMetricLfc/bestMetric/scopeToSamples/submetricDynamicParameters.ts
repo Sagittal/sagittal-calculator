@@ -1,4 +1,4 @@
-import {computeParameterValues, DynamicParameterScope, Index, isObject, Parameter, Step} from "../../../../general"
+import {computeParameterValues, DynamicParameterScope, Index, isObject, Parameter, Step} from "@sagittal/general"
 import {PopularityParameterId, Submetric} from "../../sumOfSquares"
 import {SubmetricScope} from "../types"
 import {DynamicParameter} from "./types"

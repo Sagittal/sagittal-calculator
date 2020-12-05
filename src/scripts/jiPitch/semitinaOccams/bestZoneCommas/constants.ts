@@ -1,4 +1,4 @@
-import {computeRange, Decimal, Index, Max, ONE, Prime, Quotient, scaleScamon, Scamon} from "../../../../general"
+import {computeRange, Decimal, Index, Max, ONE, Prime, Quotient, scaleScamon, Scamon} from "@sagittal/general"
 import {SEMITINA} from "../constants"
 import {Semitina} from "../types"
 

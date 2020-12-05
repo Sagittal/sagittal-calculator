@@ -1,4 +1,4 @@
-import {invertScamon, Scamon} from "../../../general"
+import {invertScamon, Scamon} from "@sagittal/general"
 import {getCommaClass, getSymbolClass, Section, SymbolClassId} from "../../notation"
 
 const computeCommaticPitchAlterationFromSymbolClassIdAndSection = (

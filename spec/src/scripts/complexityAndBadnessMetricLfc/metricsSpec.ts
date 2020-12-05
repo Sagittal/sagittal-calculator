@@ -1,4 +1,4 @@
-import {Comma, Parameter} from "../../../../src/general"
+import {Comma, Parameter} from "@sagittal/general"
 import {COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS} from "../../../../src/scripts/complexityAndBadnessMetricLfc/metrics"
 import {ComplexityMetricFamilyId} from "../../../../src/scripts/complexityAndBadnessMetricLfc/types"
 

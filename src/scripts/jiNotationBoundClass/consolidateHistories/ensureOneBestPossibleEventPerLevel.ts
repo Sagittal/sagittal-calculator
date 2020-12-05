@@ -1,4 +1,4 @@
-import {isEmpty} from "../../../general"
+import {isEmpty} from "@sagittal/general"
 import {formatJiNotationLevel, JiNotationLevelId} from "../../../sagittal"
 import {BoundEventConsolidation, BoundHistoryConsolidation} from "./types"
 

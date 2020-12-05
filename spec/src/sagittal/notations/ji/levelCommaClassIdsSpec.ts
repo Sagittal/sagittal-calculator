@@ -1,4 +1,4 @@
-import {shallowClone, sort} from "../../../../../src/general"
+import {shallowClone, sort} from "@sagittal/general"
 import {JiNotationLevelId, JI_NOTATION_LEVELS_COMMA_CLASS_IDS} from "../../../../../src/sagittal"
 
 describe("JI_NOTATION_LEVELS_COMMA_CLASS_IDS", (): void => {

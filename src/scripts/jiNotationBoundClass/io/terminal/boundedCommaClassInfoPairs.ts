@@ -1,4 +1,4 @@
-import {isUndefined, Maybe} from "../../../../general"
+import {isUndefined, Maybe} from "@sagittal/general"
 import {JiNotationLevelId} from "../../../../sagittal"
 import {computeBoundedCommaClassInfo} from "./boundedCommaClassInfo"
 import {BoundedCommaClassIdPair, BoundedCommaClassIdPairs, BoundedCommaClassInfoPairs} from "./types"

@@ -1,4 +1,4 @@
-import {Max, Min, Scamon, Zone} from "../../../general"
+import {Max, Min, Scamon, Zone} from "@sagittal/general"
 import {EXCLUDE_LOWER_BOUND} from "../constants"
 import {SIZE_CATEGORY_BOUNDS} from "./sizeCategoryBounds"
 import {computeSizeCategoryIndexFromSizeCategory} from "./sizeCategoryIndex"

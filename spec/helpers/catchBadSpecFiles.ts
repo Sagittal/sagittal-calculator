@@ -1,6 +1,6 @@
+import {Filename} from "@sagittal/general"
 import * as fs from "fs"
 import * as path from "path"
-import {Filename} from "../../src/general"
 
 const catchBadSpecFiles = (basePath: Filename = "" as Filename): void => {
     for (const file of fs.readdirSync(path.join("spec/src", basePath))) {

@@ -1,4 +1,4 @@
-import {abs, Cents, round} from "../../../../general"
+import {abs, Cents, round} from "@sagittal/general"
 import {Err} from "./types"
 
 const computeCentsError = (cents: Cents, centUnit: Cents): Err<Cents> => {

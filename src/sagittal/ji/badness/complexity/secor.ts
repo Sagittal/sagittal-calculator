@@ -6,7 +6,7 @@ import {
     computeRationalScamonSopfr,
     Scamon,
     THREE_PRIME_INDEX,
-} from "../../../../general"
+} from "@sagittal/general"
 import {SecorComplexity} from "./types"
 import {computeApotomeSlope} from "./unusefulness"
 

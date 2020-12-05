@@ -1,4 +1,4 @@
-import {deepEquals, Maybe} from "../../../general"
+import {deepEquals, Maybe} from "@sagittal/general"
 import {SymbolClass, SymbolClassId, SYMBOL_CLASSES} from "../../notation"
 import {computeSagittalFromSymbolClass, Sagittal} from "../sagittal"
 

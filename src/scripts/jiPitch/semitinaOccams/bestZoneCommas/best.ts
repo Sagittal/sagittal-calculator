@@ -1,4 +1,4 @@
-import {Comma, Index, isUndefined, LogTarget, Maybe, saveLog, stringify} from "../../../../general"
+import {Comma, Index, isUndefined, LogTarget, Maybe, saveLog, stringify} from "@sagittal/general"
 import {computeLpe, computeLpei, formatComma} from "../../../../sagittal"
 import {SEMITINA_CENTS} from "../constants"
 import {Semitina} from "../types"

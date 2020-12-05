@@ -7,7 +7,7 @@ import {
     QuotientPartType,
     stringify,
     Two3FreeClass,
-} from "../../../../general"
+} from "@sagittal/general"
 import {LfcUnpopularityEstimate, Submetric} from "../types"
 import {maybeNuminatorSwap} from "./numinator"
 import {computeSubmetricAntivotes} from "./submetricAntivotes"

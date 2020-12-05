@@ -1,4 +1,4 @@
-import {isScamonGreater, isUndefined, Max, Maybe, Min, Scamon, UNISON, Zone} from "../../../general"
+import {isScamonGreater, isUndefined, Max, Maybe, Min, Scamon, UNISON, Zone} from "@sagittal/general"
 import {CommaClass, CommaClassId, formatCommaClass, getCommaClass} from "../../notation"
 import {formatJiNotationLevel} from "./formatLevel"
 import {getIntroducingJiNotationLevel} from "./introducingJiNotationLevel"

@@ -1,9 +1,9 @@
 // tslint:disable comment-format
 
-import {APOTOME, Cents, Decimal, EMPTY_MONZO, HALF_SCALER, Monzo, Scamon} from "../../../../../src/general"
+import {APOTOME, Cents, Decimal, EMPTY_MONZO, HALF_SCALER, Monzo, Scamon} from "@sagittal/general"
 import {SizeCategoryBound, SIZE_CATEGORY_BOUNDS} from "../../../../../src/sagittal"
-import {computePitchExpectation} from "../../../../helpers/src/general/music/pitchExpectation"
-import {PitchExpectation} from "../../../../helpers/src/general/music/types"
+import {computePitchExpectation} from "../../../../helpers/src/sagittal/pitchExpectation"
+import {PitchExpectation} from "../../../../helpers/src/sagittal/types"
 
 describe("SIZE_CATEGORY_BOUNDS", (): void => {
     it("the bounds have the correct cents values and such", (): void => {

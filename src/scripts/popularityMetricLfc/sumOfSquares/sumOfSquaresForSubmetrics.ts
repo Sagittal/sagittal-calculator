@@ -8,7 +8,7 @@ import {
     saveLog,
     ScalaPopularityStat,
     stringify,
-} from "../../../general"
+} from "@sagittal/general"
 import {SumOfSquares} from "../bestMetric"
 import {popularityMetricLfcScriptGroupSettings} from "../globals"
 import {checkSubmetricsForInvalidParameterValueCombinations} from "./checkParameterValues"

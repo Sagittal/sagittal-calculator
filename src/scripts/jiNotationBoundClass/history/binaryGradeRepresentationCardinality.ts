@@ -1,4 +1,4 @@
-import {Decimal, Rank} from "../../../general"
+import {Decimal, Rank} from "@sagittal/general"
 import {BoundType, JI_NOTATION_LEVELS} from "../../../sagittal"
 
 const computeBinaryGradeRepresentationIndex = (

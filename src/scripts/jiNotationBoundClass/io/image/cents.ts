@@ -8,7 +8,7 @@ import {
     Io,
     Px,
     round,
-} from "../../../../general"
+} from "@sagittal/general"
 import {HALF_APOTOME} from "../../../../sagittal"
 import {MARGIN, Y_SCALE} from "./sizes"
 import {computeX} from "./x"

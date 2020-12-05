@@ -1,4 +1,4 @@
-import {Grade, Parameter, stringify, Two3FreeClass} from "../../../../general"
+import {Grade, Parameter, stringify, Two3FreeClass} from "@sagittal/general"
 import {LfcUnpopularityEstimate, Submetric} from "../types"
 import {compute23FreeClassSubmetricAntivotes} from "./two3FreeClassSubmetricAntivotes"
 import {computeWeightedAntivotes} from "./weightedAntivotes"

@@ -1,4 +1,4 @@
-import {abs, Abs, Scamon} from "../../../../../general"
+import {abs, Abs, Scamon} from "@sagittal/general"
 import {computeApotomeSlope} from "./apotomeSlope"
 import {ApotomeSlope} from "./types"
 

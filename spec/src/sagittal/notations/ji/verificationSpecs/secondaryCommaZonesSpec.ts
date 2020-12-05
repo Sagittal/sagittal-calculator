@@ -1,4 +1,4 @@
-import {computeIrrationalDecimalFromScamon, Decimal, Extrema} from "../../../../../../src/general"
+import {computeIrrationalDecimalFromScamon, Decimal, Extrema} from "@sagittal/general"
 import {computeSecondaryCommaZone, JI_NOTATION} from "../../../../../../src/sagittal"
 
 describe("secondary comma zones", (): void => {

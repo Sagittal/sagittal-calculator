@@ -1,4 +1,4 @@
-import {Name} from "../../../../../src/general"
+import {Name} from "@sagittal/general"
 import {BoundType, JiNotationBound, JiNotationLevelId} from "../../../../../src/sagittal"
 import {BoundEventConsolidation} from "../../../../../src/scripts/jiNotationBoundClass/consolidateHistories/types"
 import {updateEventConsolidation} from "../../../../../src/scripts/jiNotationBoundClass/consolidateHistories/updateEventConsolidation"

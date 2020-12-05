@@ -1,4 +1,4 @@
-import {max} from "../../../../../../../general"
+import {max} from "@sagittal/general"
 import {N2D3P9} from "../types"
 import {KnownLowN2D3P9Numerator} from "./types"
 

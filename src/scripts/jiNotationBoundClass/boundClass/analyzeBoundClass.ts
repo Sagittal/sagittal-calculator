@@ -1,4 +1,4 @@
-import {count, Index, isUndefined, Multiplier, subtractPitch} from "../../../general"
+import {count, Index, isUndefined, Multiplier, subtractPitch} from "@sagittal/general"
 import {BoundClass, JiNotationBoundClass, Tinas, TINA_CENTS} from "../../../sagittal"
 import {consolidateBoundHistories} from "../consolidateHistories"
 import {BoundHistory} from "../histories"

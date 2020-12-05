@@ -1,4 +1,4 @@
-import {Decimal, Denominator, Max, Numerator, Of, Prime} from "../../../../../../../../../../../src/general"
+import {Decimal, Denominator, Max, Numerator, Of, Prime} from "@sagittal/general"
 import {N2D3P9} from "../../../../../../../../../../../src/sagittal"
 import {
     computeSortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9,

@@ -7,7 +7,7 @@ import {
     Quotient,
     QuotientPart,
     readLines,
-} from "../../../../../../../general"
+} from "@sagittal/general"
 import {N2D3P9} from "../types"
 import {computeN2D3P9FromKnownLowN2D3P9NumeratorAndPossibleDenominator} from "./n2d3p9"
 import {KnownLowN2D3P9Numerator} from "./types"

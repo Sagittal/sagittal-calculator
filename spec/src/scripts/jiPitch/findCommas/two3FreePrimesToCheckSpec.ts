@@ -1,4 +1,4 @@
-import {Decimal, Exponent, Extrema, Max, Prime, Sopfr} from "../../../../../src/general"
+import {Decimal, Exponent, Extrema, Max, Prime, Sopfr} from "@sagittal/general"
 import {compute23FreePrimesToCheck} from "../../../../../src/scripts/jiPitch/findCommas/two3FreePrimesToCheck"
 
 describe("compute23FreePrimesToCheck", (): void => {

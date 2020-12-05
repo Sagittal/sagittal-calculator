@@ -1,4 +1,4 @@
-import {Decimal} from "../../../general"
+import {Decimal} from "@sagittal/general"
 import {DynamicParameter, Sample, Scope, SumOfSquares, SumOrSumsOfSquaresOptions} from "../bestMetric"
 
 type MetricTag = string & {_MetricTagBrand: boolean}

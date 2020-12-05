@@ -1,4 +1,4 @@
-import {Index} from "../../../../../src/general"
+import {Index} from "@sagittal/general"
 import {computeNeighborPositionIndices} from "../../../../../src/scripts/jiNotationBoundClass/boundedPositions/neighborPositionIndices"
 
 describe("computeNeighborPositionIndices", (): void => {

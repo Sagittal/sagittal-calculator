@@ -1,4 +1,4 @@
-import {Comma, Index, LogTarget, saveLog, stringify} from "../../../../general"
+import {Comma, Index, LogTarget, saveLog, stringify} from "@sagittal/general"
 import {metacommaNameToMetacommaMap} from "../../globals"
 import {Semitina} from "../types"
 import {computeFractionalTinaOccamBucket} from "./fractionalTina"

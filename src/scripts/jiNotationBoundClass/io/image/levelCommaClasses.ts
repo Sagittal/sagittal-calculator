@@ -1,4 +1,4 @@
-import {add, DEFAULT_PRECISION, Io, Px, round, subtract} from "../../../../general"
+import {add, DEFAULT_PRECISION, Io, Px, round, subtract} from "@sagittal/general"
 import {
     analyzeComma,
     CommaClassId,

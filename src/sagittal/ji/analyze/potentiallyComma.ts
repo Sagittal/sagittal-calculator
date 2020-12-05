@@ -1,4 +1,4 @@
-import {Comma, Scamon} from "../../../general"
+import {Comma, Scamon} from "@sagittal/general"
 import {CommaNameOptions, computeCommaName, computeSizeCategoryIndex, FactoringMode} from "../name"
 import {analyzeJiPitch} from "./pitch"
 import {PotentiallyCommaAnalysis} from "./types"

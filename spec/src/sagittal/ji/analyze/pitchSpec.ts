@@ -12,7 +12,7 @@ import {
     Scamon,
     Sopfr,
     Two3FreeClass,
-} from "../../../../../src/general"
+} from "@sagittal/general"
 import {analyzeJiPitch, ApotomeSlope, Ate, N2D3P9} from "../../../../../src/sagittal"
 
 describe("analyzeJiPitch", (): void => {

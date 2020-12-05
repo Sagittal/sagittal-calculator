@@ -1,4 +1,4 @@
-import {Combination, Decimal, Ed, Index, Io, Name, Parameter, Step, Window} from "../../../../../src/general"
+import {Combination, Decimal, Ed, Index, Io, Name, Parameter, Step, Window} from "@sagittal/general"
 import {Metric, SamplePoint, Scope, SumOfSquares} from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {recursiveSearchScopeAndMaybeUpdateBestMetric} from "../../../../../src/scripts/popularityMetricLfc/perfecter"
 import * as nextLocalMin from "../../../../../src/scripts/popularityMetricLfc/perfecter/nextLocalMin"

@@ -1,4 +1,4 @@
-import {Comma} from "../../../../../src/general"
+import {Comma} from "@sagittal/general"
 import {computeCommaName, FactoringMode} from "../../../../../src/sagittal"
 
 describe("computeCommaName", (): void => {

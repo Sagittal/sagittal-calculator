@@ -1,4 +1,4 @@
-import {Count} from "../../../../../../src/general"
+import {Count} from "@sagittal/general"
 import {popularityMetricLfcScriptGroupSettings} from "../../../../../../src/scripts/popularityMetricLfc/globals"
 import {Chunk} from "../../../../../../src/scripts/popularityMetricLfc/solver"
 import {computeInitialChunkCountForSubmetrics} from "../../../../../../src/scripts/popularityMetricLfc/solver/populate/initialChunkCountForSubmetrics"

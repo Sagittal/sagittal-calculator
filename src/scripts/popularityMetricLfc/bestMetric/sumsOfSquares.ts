@@ -1,4 +1,4 @@
-import {BLANK, Index, isUndefined, LogTarget, Maybe, Name, saveLog} from "../../../general"
+import {BLANK, Index, isUndefined, LogTarget, Maybe, Name, saveLog} from "@sagittal/general"
 import {checkSubmetricsForInvalidParameterCombinations} from "../sumOfSquares"
 import {Sample} from "./scopeToSamples"
 import {

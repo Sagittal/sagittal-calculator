@@ -1,4 +1,4 @@
-import {Abs, abs, Cents, subtractPitch} from "../../../../general"
+import {Abs, abs, Cents, subtractPitch} from "@sagittal/general"
 import {BoundEvent, BoundHistory} from "../../histories"
 
 const computeBoundEventDistance = (

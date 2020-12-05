@@ -4,6 +4,7 @@ import {
     Comma,
     Copfr,
     Decimal,
+    Direction,
     EMPTY_MONZO,
     Index,
     Max,
@@ -14,7 +15,7 @@ import {
     Scamon,
     Sopfr,
     Two3FreeClass,
-} from "../../../../../src/general"
+} from "@sagittal/general"
 import {
     ApotomeSlope,
     Ate,
@@ -25,7 +26,10 @@ import {
     Two3FreeClassAnalysis,
 } from "../../../../../src/sagittal"
 import {SizeCategory} from "../../../../../src/sagittal/ji/name"
-import {two3FreeClassFixture} from "../../general/music/fixtures"
+
+const two3FreeClassFixture: Two3FreeClass = {
+    monzo: [1, 1] as Monzo<{rational: true, rough: 5, direction: Direction.SUPER}>,
+} as Two3FreeClass
 
 const two3FreeClassAnalysisFixture: Two3FreeClassAnalysis = {
     two3FreeClass: two3FreeClassFixture,

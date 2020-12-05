@@ -1,4 +1,4 @@
-import {formatDecimal, formatIntegerDecimal, Formatted, Row} from "../../../../general"
+import {formatDecimal, formatIntegerDecimal, Formatted, Row} from "@sagittal/general"
 import {Two3FreeClassAnalysis} from "../../../../sagittal"
 import {jiPitchScriptGroupSettings} from "../../globals"
 import {Two3FreeClassField} from "../../types"

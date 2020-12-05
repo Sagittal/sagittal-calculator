@@ -1,4 +1,4 @@
-import {abs, Scamon, THREE_PRIME_INDEX} from "../../../../../general"
+import {abs, Scamon, THREE_PRIME_INDEX} from "@sagittal/general"
 import {Ate} from "./types"
 
 const computeAte = (jiPitch: Scamon<{rational: true}>): Ate =>

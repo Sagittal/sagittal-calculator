@@ -1,4 +1,4 @@
-import {Index} from "../../general"
+import {Index} from "@sagittal/general"
 import {BoundClass, JiNotationBoundClass, JI_NOTATION_BOUND_CLASSES} from "../../sagittal"
 import {analyzeJiNotationBoundClass, JiNotationBoundClassAnalysis} from "./boundClass"
 import {computeHistories} from "./histories"

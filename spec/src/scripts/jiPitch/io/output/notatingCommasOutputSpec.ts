@@ -12,7 +12,7 @@ import {
     NEWLINE,
     Quotient,
     TableFormat,
-} from "../../../../../../src/general"
+} from "@sagittal/general"
 import {ApotomeSlope, Ate, CommaAnalysis, CommaClassId} from "../../../../../../src/sagittal"
 import {jiPitchScriptGroupSettings} from "../../../../../../src/scripts/jiPitch/globals"
 import {computeNotatingCommasOutput} from "../../../../../../src/scripts/jiPitch/io"

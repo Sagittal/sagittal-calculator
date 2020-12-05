@@ -1,5 +1,5 @@
 import {program} from "commander"
-import {Scamon} from "../../../../../../src/general"
+import {Scamon} from "@sagittal/general"
 import {Compatible} from "../../../../../../src/sagittal/accidental"
 import {ArmId, HeadId} from "../../../../../../src/sagittal/accidental/flacco"
 import {parseJiPitch, readJiPitchIoAndFormat} from "../../../../../../src/scripts/jiPitch/io"

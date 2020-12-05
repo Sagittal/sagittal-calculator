@@ -1,4 +1,4 @@
-import {Comma, Formatted} from "../../../general"
+import {Comma, Formatted} from "@sagittal/general"
 import {computeCommaName} from "./commaName"
 
 const formatComma = (comma: Comma): Formatted<Comma> => {

@@ -1,4 +1,4 @@
-import {Combination, Index, Parameter} from "../../../../general"
+import {Combination, Index, Parameter} from "@sagittal/general"
 import {Submetric} from "../../sumOfSquares"
 import {computeDynamicParameterValueIndices} from "./dynamicParameterValueIndices"
 import {

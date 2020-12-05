@@ -1,4 +1,4 @@
-import {Combination, Grade, Monzo, Parameter, Two3FreeClass} from "../../../../../../src/general"
+import {Combination, Grade, Monzo, Parameter, Two3FreeClass} from "@sagittal/general"
 import {
     computeAntivotes,
     LfcUnpopularityEstimate,

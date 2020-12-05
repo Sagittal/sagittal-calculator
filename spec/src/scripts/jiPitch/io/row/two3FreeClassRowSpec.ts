@@ -1,4 +1,4 @@
-import {Copfr, Max, Monzo, Prime, Row, Sopfr, Two3FreeClass} from "../../../../../../src/general"
+import {Copfr, Max, Monzo, Prime, Row, Sopfr, Two3FreeClass} from "@sagittal/general"
 import {N2D3P9, Two3FreeClassAnalysis} from "../../../../../../src/sagittal"
 import {jiPitchScriptGroupSettings} from "../../../../../../src/scripts/jiPitch/globals"
 import {compute23FreeClassRow} from "../../../../../../src/scripts/jiPitch/io/row"

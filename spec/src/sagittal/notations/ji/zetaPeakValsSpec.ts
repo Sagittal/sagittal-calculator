@@ -1,4 +1,4 @@
-import {Val} from "../../../../../src/general"
+import {Val} from "@sagittal/general"
 import {INSANE_ZETA_PEAK_VAL} from "../../../../../src/sagittal"
 
 describe("zeta peak vals", (): void => {

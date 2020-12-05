@@ -1,4 +1,4 @@
-import {computeIrrationalDecimalFromScamon, NumericProperties, Scamon} from "../../../general"
+import {computeIrrationalDecimalFromScamon, NumericProperties, Scamon} from "@sagittal/general"
 import {computeNeighborPositionIndices} from "./neighborPositionIndices"
 import {NeighborPositions} from "./types"
 

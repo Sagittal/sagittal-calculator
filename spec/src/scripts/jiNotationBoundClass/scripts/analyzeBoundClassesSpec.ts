@@ -1,4 +1,4 @@
-import {Filename, Io, readLines} from "../../../../../src/general"
+import {Filename, Io, readLines} from "@sagittal/general"
 import {onlyRunInCi} from "../../../../helpers/onlyRunInCi"
 import {runScriptAndGetConsoleOutput} from "../../../../helpers/src/scripts/runScriptAndGetConsoleOutput"
 

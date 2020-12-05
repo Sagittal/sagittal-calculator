@@ -1,4 +1,4 @@
-import {Count, LogTarget, saveLog} from "../../../../general"
+import {Count, LogTarget, saveLog} from "@sagittal/general"
 import {solverStatus} from "../../globals"
 import {Submetric} from "../../sumOfSquares"
 import {formatSearchedAndPopulated} from "../io"

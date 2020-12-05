@@ -1,4 +1,4 @@
-import {Index, Parameter, shallowClone} from "../../../general"
+import {Index, Parameter, shallowClone} from "@sagittal/general"
 import {SamplePoint} from "../bestMetric"
 
 const computeAdjacentSamplePoints = (samplePoint: SamplePoint): SamplePoint[] => {

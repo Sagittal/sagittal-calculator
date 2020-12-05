@@ -1,4 +1,4 @@
-import {DynamicParameterScope, Ed, Parameter, Window} from "../../../general"
+import {DynamicParameterScope, Ed, Parameter, Window} from "@sagittal/general"
 import {popularityMetricLfcScriptGroupSettings} from "../globals"
 
 const computeDynamicParameterScopeForPerfecting = (parameterValue: Parameter): DynamicParameterScope => ({

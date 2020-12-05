@@ -1,4 +1,4 @@
-import {Row} from "../../../../../../src/general"
+import {Row} from "@sagittal/general"
 import {formatPrimeHeaders} from "../../../../../../src/scripts/jiPitch/io/splitMonzoAndQuotient"
 
 describe("formatPrimeHeaders", (): void => {

@@ -14,7 +14,7 @@ import {
     saveLog,
     stringify,
     Two3FreeClass,
-} from "../../general"
+} from "@sagittal/general"
 import {
     computePrimeExponentExtremasGivenMaxN2D3P9,
     MAX_N2D3P9_FOR_WHICH_POSSIBLE_NUMERATORS_ARE_KNOWN,

@@ -1,4 +1,4 @@
-import {Basis, Cents, Multiplier} from "../../../../../../src/general"
+import {Basis, Cents, Multiplier} from "@sagittal/general"
 import {computeReversedJiNotationLevelIndex} from "../../../../../../src/scripts/jiNotationBoundClass/io/image/reversedLevelIndex"
 
 describe("computeReversedJiNotationLevelIndex", (): void => {

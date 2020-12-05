@@ -5,7 +5,7 @@ import {
     computeSuperScamon,
     Direction,
     TWO_3_FREE,
-} from "../../../general"
+} from "@sagittal/general"
 import {CommaNameQuotient} from "./types"
 
 const computeCommaNameQuotient = (comma: Comma): CommaNameQuotient => {

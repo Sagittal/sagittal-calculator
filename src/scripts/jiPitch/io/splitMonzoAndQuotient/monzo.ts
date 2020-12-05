@@ -10,7 +10,7 @@ import {
     Monzo,
     parseInteger,
     Prime,
-} from "../../../../general"
+} from "@sagittal/general"
 import {JiPitchAnalysis} from "../../../../sagittal"
 
 const formatSplitMonzo = (

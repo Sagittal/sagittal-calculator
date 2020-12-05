@@ -1,4 +1,4 @@
-import {computeKeyPath, dig, isUndefined, Maybe, Obj} from "../../../general"
+import {computeKeyPath, dig, isUndefined, Maybe, Obj} from "@sagittal/general"
 import {SamplePoint, SumOfSquares, SumsOfSquares} from "../bestMetric"
 import {computeAdjacentSamplePoints} from "./adjacentSamplePoints"
 

@@ -11,7 +11,7 @@ import {
     invertMonzo,
     Max,
     Scamon,
-} from "../../../general"
+} from "@sagittal/general"
 import {ApotomeSlope, Ate, computeAte} from "../badness"
 import {computeCommasFrom23FreeRationalMonzo} from "../find"
 import {computeSizeCategoryZone} from "./sizeCategoryZone"

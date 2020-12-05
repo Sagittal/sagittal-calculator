@@ -1,4 +1,4 @@
-import {Count, Exponent, Max, Maybe, Prime, Row} from "../../../../general"
+import {Count, Exponent, Max, Maybe, Prime, Row} from "@sagittal/general"
 import {CommaAnalysis, CommaClassId, PotentiallyCommaAnalysis} from "../../../../sagittal"
 import {computeNotatingCommasRow} from "./notatingCommasRow"
 import {compute23FreeClassRow} from "./two3FreeClassRow"

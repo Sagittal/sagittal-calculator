@@ -1,4 +1,4 @@
-import {Abs, Cents, computePitchFromCents} from "../../../../../../src/general"
+import {Abs, Cents, computePitchFromCents} from "@sagittal/general"
 import {BoundEvent} from "../../../../../../src/scripts/jiNotationBoundClass/histories"
 import {computeBoundEventDistance} from "../../../../../../src/scripts/jiNotationBoundClass/history/events/eventDistance"
 import {boundEventFixture} from "../../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"

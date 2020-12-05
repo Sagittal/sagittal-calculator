@@ -1,4 +1,4 @@
-import {Comma, NumericProperties, Scamon} from "../../general"
+import {Comma, NumericProperties, Scamon} from "@sagittal/general"
 import {FlaccoId} from "../accidental"
 
 // State of the art plans described here: http://forum.sagittal.org/viewtopic.php?p=2492#p2492

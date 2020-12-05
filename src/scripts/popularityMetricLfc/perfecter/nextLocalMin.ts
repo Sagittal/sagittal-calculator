@@ -1,4 +1,4 @@
-import {Decimal, doOnNextEventLoop, LogTarget, Ms, saveLog} from "../../../general"
+import {Decimal, doOnNextEventLoop, LogTarget, Ms, saveLog} from "@sagittal/general"
 import {Scope} from "../bestMetric"
 import {computeNextScope} from "./nextScope"
 import {

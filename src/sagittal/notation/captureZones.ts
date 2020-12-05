@@ -1,4 +1,4 @@
-import {Count, count} from "../../general"
+import {Count, count} from "@sagittal/general"
 import {
     SECTION_N1A,
     SECTION_N1T,

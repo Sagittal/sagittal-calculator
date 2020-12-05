@@ -13,7 +13,7 @@ import {
     round,
     saveLog,
     subtractRationalScamons,
-} from "../../../../general"
+} from "@sagittal/general"
 import {
     CommaClassId,
     computeCommaName,

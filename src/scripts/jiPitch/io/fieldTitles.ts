@@ -1,4 +1,4 @@
-import {Io} from "../../../general"
+import {Io} from "@sagittal/general"
 import {CommaField, JiPitchesOrFindCommasField, JiPitchField, Two3FreeClassField} from "../types"
 
 const JI_PITCH_FIELD_TITLES: Record<JiPitchField, Io> = {

@@ -1,4 +1,4 @@
-import {Comma, LogTarget, Name, RecordKey, saveLog} from "../../../../general"
+import {Comma, LogTarget, Name, RecordKey, saveLog} from "@sagittal/general"
 import {sortAndLogOccamBucket} from "./sortAndLogOccamBucket"
 import {Occam} from "./types"
 

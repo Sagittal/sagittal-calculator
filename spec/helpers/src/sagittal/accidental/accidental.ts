@@ -1,4 +1,4 @@
-import {deepEquals, finalElement, isUndefined, Maybe} from "../../../../../src/general"
+import {deepEquals, finalElement, isUndefined, Maybe} from "@sagittal/general"
 import {formatAccidental} from "../../../../../src/sagittal/accidental"
 import {Arm, Flacco, getArm, getHead, Head, HeadId} from "../../../../../src/sagittal/accidental/flacco"
 import {FLACCOS} from "../../../../../src/sagittal/accidental/flacco/flacco"

@@ -1,4 +1,4 @@
-import {Io} from "../../../../../../src/general"
+import {Io} from "@sagittal/general"
 import {unformatParameters} from "../../../../../../src/scripts/popularityMetricLfc/solver"
 
 describe("unformatParameters", (): void => {

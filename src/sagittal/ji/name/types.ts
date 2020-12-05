@@ -1,4 +1,4 @@
-import {Name, NumericProperties, Quotient, Scamon} from "../../../general"
+import {Name, NumericProperties, Quotient, Scamon} from "@sagittal/general"
 
 type SizeCategoryBound<T extends NumericProperties = {}> = {
     name: Name<SizeCategoryBound>,

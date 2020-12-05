@@ -16,7 +16,7 @@ import {
     shallowClone,
     TWO_PRIME_INDEX,
     Zone,
-} from "../../../general"
+} from "@sagittal/general"
 
 const computeInZone = (
     rationalMonzoInZone: Monzo<{rational: true, rough: 3}>,

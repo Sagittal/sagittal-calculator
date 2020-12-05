@@ -1,4 +1,4 @@
-import {areMonzosEqual, computeRoughRationalMonzo, invertMonzo, isUndefined, Scamon, TWO_3_FREE} from "../../../general"
+import {areMonzosEqual, computeRoughRationalMonzo, invertMonzo, isUndefined, Scamon, TWO_3_FREE} from "@sagittal/general"
 import {CommaClassId, getCommaClass, JI_NOTATION, SymbolClass, SymbolClassId, SYMBOL_CLASSES} from "../../../sagittal"
 
 // Different than findNotatingCommas because this one only concerns itself with commas that are in Sagittal

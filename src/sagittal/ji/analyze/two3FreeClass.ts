@@ -7,7 +7,7 @@ import {
     Prime,
     Sopfr,
     Two3FreeClass,
-} from "../../../general"
+} from "@sagittal/general"
 import {computeN2D3P9, computeSopfgtt, N2D3P9} from "../badness"
 import {Two3FreeClassAnalysis} from "./types"
 

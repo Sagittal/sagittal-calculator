@@ -1,4 +1,4 @@
-import {Count, Ed, Parameter, Window} from "../../../../../../src/general"
+import {Count, Ed, Parameter, Window} from "@sagittal/general"
 import {Scope} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {scopesToSearch, solverStatus} from "../../../../../../src/scripts/popularityMetricLfc/globals"
 import {Chunk, searchScopes} from "../../../../../../src/scripts/popularityMetricLfc/solver"

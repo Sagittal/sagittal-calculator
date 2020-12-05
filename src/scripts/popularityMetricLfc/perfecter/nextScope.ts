@@ -1,4 +1,4 @@
-import {deepClone, Index, Parameter, Window} from "../../../general"
+import {deepClone, Index, Parameter, Window} from "@sagittal/general"
 import {computeDynamicParameterScope, DynamicParameter, SamplePoint, Scope} from "../bestMetric"
 
 const computeNextScope = (samplePoint: SamplePoint, dynamicParameters: DynamicParameter[], scope: Scope): Scope => {

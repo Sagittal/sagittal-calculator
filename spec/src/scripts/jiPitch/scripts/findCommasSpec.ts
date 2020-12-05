@@ -1,4 +1,4 @@
-import {Io} from "../../../../../src/general"
+import {Io} from "@sagittal/general"
 import {onlyRunInCi} from "../../../../helpers/onlyRunInCi"
 import {
     OLD_MAX_AAS_FOR_SHORTER_TEST_RESULTS,

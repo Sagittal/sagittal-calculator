@@ -1,4 +1,4 @@
-import {setAllPropertiesOfObjectOnAnother} from "../../../../../src/general/code/setAllPropertiesOfObjectOnAnother"
+import {setAllPropertiesOfObjectOnAnother} from "@sagittal/general"
 import {DEFAULT_JI_PITCH_SCRIPT_GROUP_SETTINGS} from "../../../../../src/scripts/jiPitch/constants"
 import {jiPitchScriptGroupSettings} from "../../../../../src/scripts/jiPitch/globals"
 

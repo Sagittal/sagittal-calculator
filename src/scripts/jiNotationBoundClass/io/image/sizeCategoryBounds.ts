@@ -1,4 +1,4 @@
-import {DEFAULT_PRECISION, Io, Px, round} from "../../../../general"
+import {DEFAULT_PRECISION, Io, Px, round} from "@sagittal/general"
 import {JiNotationLevelId, SizeCategoryBound} from "../../../../sagittal"
 import {JI_NOTATION_LEVELS_SIZE_CATEGORY_BOUNDS} from "../../histories"
 import {JI_NOTATION_LEVEL_BOTTOMS, JI_NOTATION_LEVEL_TOPS} from "./levelHeights"

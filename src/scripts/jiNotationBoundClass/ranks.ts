@@ -1,4 +1,4 @@
-import {Decimal, Rank} from "../../general"
+import {Decimal, Rank} from "@sagittal/general"
 import {BoundType} from "../../sagittal"
 
 const RANKS: Record<BoundType, Decimal<{integer: true}> & Rank<BoundType>> = {

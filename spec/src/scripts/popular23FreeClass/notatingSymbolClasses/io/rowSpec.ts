@@ -12,7 +12,7 @@ import {
     ScalaPopularityStat,
     TableFormat,
     Two3FreeClass,
-} from "../../../../../../src/general"
+} from "@sagittal/general"
 import {N2D3P9, SymbolClassId, SymbolSubsetId} from "../../../../../../src/sagittal"
 import {
     computePopular23FreeClassWithNotatingSymbolClassesRow,

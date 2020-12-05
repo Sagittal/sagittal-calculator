@@ -1,4 +1,4 @@
-import {BLANK, computeExampleElement, count, formatTable, Io, isEmpty, isUndefined, sumTexts, Table} from "../../../../general"
+import {BLANK, computeExampleElement, count, formatTable, Io, isEmpty, isUndefined, sumTexts, Table} from "@sagittal/general"
 import {JiPitchAnalysis} from "../../../../sagittal"
 import {jiPitchScriptGroupSettings} from "../../globals"
 import {JI_PITCH_FIELD_TITLES} from "../fieldTitles"

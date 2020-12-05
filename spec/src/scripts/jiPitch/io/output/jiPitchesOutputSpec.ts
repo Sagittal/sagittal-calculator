@@ -14,7 +14,7 @@ import {
     Scamon,
     Sopfr,
     Two3FreeClass,
-} from "../../../../../../src/general"
+} from "@sagittal/general"
 import {ApotomeSlope, Ate, CommaClassId, N2D3P9, PotentiallyCommaAnalysis} from "../../../../../../src/sagittal"
 import {jiPitchScriptGroupSettings} from "../../../../../../src/scripts/jiPitch/globals"
 import {computeJiPitchesOutput} from "../../../../../../src/scripts/jiPitch/io"

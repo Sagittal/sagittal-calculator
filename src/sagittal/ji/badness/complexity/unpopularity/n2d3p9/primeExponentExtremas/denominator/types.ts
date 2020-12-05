@@ -1,4 +1,4 @@
-import {Decimal, Denominator, Exponent, Max, Of, Prime} from "../../../../../../../../general"
+import {Decimal, Denominator, Exponent, Max, Of, Prime} from "@sagittal/general"
 import {SortedNumeratorPossibilitiesForDenominatorPrimeGivenMaxN2D3P9} from "./sortedNumeratorPossibilities"
 
 interface D39ForPossibleMaxDenominatorPrimeExponentOptions {

@@ -9,7 +9,7 @@ import {
     Prime,
     Scamon,
     Zone,
-} from "../../../../../src/general"
+} from "@sagittal/general"
 import {ApotomeSlope, Ate, computeCommasFrom23FreeRationalMonzo, N2D3P9} from "../../../../../src/sagittal"
 
 describe("computeCommasFrom23FreeRationalMonzo", (): void => {

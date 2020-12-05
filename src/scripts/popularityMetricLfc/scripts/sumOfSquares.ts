@@ -1,4 +1,4 @@
-import {Combination, Filename, LogTarget, saveLog, stringify} from "../../../general"
+import {Combination, Filename, LogTarget, saveLog, stringify} from "@sagittal/general"
 import {computeSumOfSquaresForSubmetrics, Submetric} from "../sumOfSquares"
 import {applySharedPopularityMetricLfcScriptSetup, load} from "./shared"
 

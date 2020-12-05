@@ -1,4 +1,4 @@
-import {BLANK, Index, isUndefined, Maybe} from "../../../general"
+import {BLANK, Index, isUndefined, Maybe} from "@sagittal/general"
 import {SIZE_CATEGORY_ABBREVIATIONS} from "./sizeCategories"
 import {SizeCategory, SizeCategoryAbbreviation} from "./types"
 

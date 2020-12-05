@@ -8,7 +8,7 @@ import {
     parseBoolean,
     SortBy,
     split,
-} from "../../../../general"
+} from "@sagittal/general"
 import {JI_PITCH_SCRIPT_GROUP_FIELDS} from "../../constants"
 import {JiPitchesOrFindCommasField, JiPitchScriptGroupField} from "../../types"
 

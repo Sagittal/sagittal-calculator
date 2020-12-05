@@ -1,4 +1,4 @@
-import {isUndefined} from "../../../general"
+import {isUndefined} from "@sagittal/general"
 import {Section, SymbolClassId} from "../../notation"
 import {apotomeShift, computeApotomeComplement, computeSagittalFromSymbolClassId, flipSagittal} from "../sagittal"
 import {Accidental, Flavor} from "./types"

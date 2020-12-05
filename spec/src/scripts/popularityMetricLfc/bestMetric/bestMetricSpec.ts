@@ -1,4 +1,4 @@
-import {Combination, Count, Ed, Index, Mean, MeanType, Name, Parameter, Step, Window} from "../../../../../src/general"
+import {Combination, Count, Ed, Index, Mean, MeanType, Name, Parameter, Step, Window} from "@sagittal/general"
 import {
     Metric,
     nonRecursiveSearchScopeAndMaybeUpdateBestMetric,

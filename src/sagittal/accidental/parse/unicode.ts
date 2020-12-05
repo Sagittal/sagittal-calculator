@@ -1,4 +1,4 @@
-import {deepEquals, isUndefined} from "../../../general"
+import {deepEquals, isUndefined} from "@sagittal/general"
 import {Accent, AccentId} from "../flacco"
 import {Accidental, Compatible} from "../flavor"
 import {

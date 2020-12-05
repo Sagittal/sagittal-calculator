@@ -1,4 +1,4 @@
-import {increment, LogTarget, saveLog} from "../../../../general"
+import {increment, LogTarget, saveLog} from "@sagittal/general"
 import {
     nonRecursiveSearchScopeAndMaybeUpdateBestMetric,
     nonRecursiveSearchScopeAndMaybeUpdateBestMetricSync,

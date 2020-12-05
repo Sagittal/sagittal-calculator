@@ -1,4 +1,4 @@
-import {Decimal, Exponent, floor, log, Max, Numerator, Of, Power, Prime} from "../../../../../../../general"
+import {Decimal, Exponent, floor, log, Max, Numerator, Of, Power, Prime} from "@sagittal/general"
 import {N2D3P9} from "../types"
 
 const computeMaxNumeratorPrimeExponentGivenMaxN2D3P9 = (

@@ -1,4 +1,4 @@
-import {deepEquals, isUndefined, Maybe, stringify} from "../../../general"
+import {deepEquals, isUndefined, Maybe, stringify} from "@sagittal/general"
 import {HeadId} from "../flacco"
 import {APOTOME_CORE, getCore} from "./core"
 import {Sagittal, Shafts} from "./types"

@@ -1,4 +1,4 @@
-import {Scamon} from "../../../../../src/general"
+import {Scamon} from "@sagittal/general"
 import {computeJiPitchFromAccidental} from "../../../../../src/sagittal"
 import {Compatible} from "../../../../../src/sagittal/accidental"
 import {ArmId, HeadId} from "../../../../../src/sagittal/accidental/flacco"

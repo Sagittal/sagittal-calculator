@@ -1,4 +1,4 @@
-import {Combination, Ed, Name, Parameter, Window} from "../../../../../src/general"
+import {Combination, Ed, Name, Parameter, Window} from "@sagittal/general"
 import {Metric, Scope, SubmetricScope, SumOfSquares} from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {recursiveSearchScopeAndMaybeUpdateBestMetric} from "../../../../../src/scripts/popularityMetricLfc/perfecter"
 import {perfectMetric} from "../../../../../src/scripts/popularityMetricLfc/perfecter/metric"

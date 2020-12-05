@@ -1,4 +1,4 @@
-import {Exponent, Parameter, Prime, QuotientPartType} from "../../../../../../src/general"
+import {Exponent, Parameter, Prime, QuotientPartType} from "@sagittal/general"
 import {secondaryParameterOverride} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares/antivotes/secondaryParameter"
 
 describe("secondaryParameterOverride", (): void => {

@@ -1,4 +1,4 @@
-import {Filename, Io, NEWLINE, readLines} from "../../../../general"
+import {Filename, Io, NEWLINE, readLines} from "@sagittal/general"
 import {unformatParameters} from "../../solver"
 
 const load = (filename: Filename): Object => {

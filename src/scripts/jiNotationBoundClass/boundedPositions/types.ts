@@ -1,4 +1,4 @@
-import {Maybe, NumericProperties, Scamon} from "../../../general"
+import {Maybe, NumericProperties, Scamon} from "@sagittal/general"
 
 type NeighborPositions<T extends NumericProperties = {}> = [Maybe<Scamon<T>>, Maybe<Scamon<T>>]
 

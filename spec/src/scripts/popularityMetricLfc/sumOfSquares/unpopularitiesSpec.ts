@@ -8,7 +8,7 @@ import {
     Ranked,
     ScalaPopularityStat,
     Two3FreeClass,
-} from "../../../../../src/general"
+} from "@sagittal/general"
 import {
     computeUnpopularities,
     LfcUnpopularityEstimate,

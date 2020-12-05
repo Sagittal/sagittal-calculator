@@ -1,4 +1,4 @@
-import {Abs, Cents, Decimal, Multiplier, Rank} from "../../../../general"
+import {Abs, Cents, Decimal, Multiplier, Rank} from "@sagittal/general"
 import {BoundType, Ina} from "../../../../sagittal"
 import {BoundEvent} from "../../histories"
 

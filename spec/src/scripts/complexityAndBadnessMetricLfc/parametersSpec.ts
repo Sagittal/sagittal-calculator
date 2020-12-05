@@ -1,6 +1,6 @@
 // tslint:disable max-line-length
 
-import {Combination, Parameter} from "../../../../src/general"
+import {Combination, Parameter} from "@sagittal/general"
 import {computeComplexityParameterSets} from "../../../../src/scripts/complexityAndBadnessMetricLfc/parameters"
 import {ComplexityParameterId} from "../../../../src/scripts/complexityAndBadnessMetricLfc/types"
 

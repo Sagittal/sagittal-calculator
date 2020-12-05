@@ -1,4 +1,4 @@
-import {Combination, LogTarget, Parameter, saveLog, stringify} from "../../../general"
+import {Combination, LogTarget, Parameter, saveLog, stringify} from "@sagittal/general"
 import {Metric, Scope, SubmetricScope} from "../bestMetric"
 import {PopularityParameterId, Submetric} from "../sumOfSquares"
 import {PARAMETER_DYNAMISMS} from "./constants"

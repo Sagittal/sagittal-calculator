@@ -1,4 +1,4 @@
-import {Index, Two3FreeClass} from "../../../general"
+import {Index, Two3FreeClass} from "@sagittal/general"
 import {
     getSmallestSymbolSubsetId,
     SIZE_SORTED_SYMBOL_SUBSET_IDS,

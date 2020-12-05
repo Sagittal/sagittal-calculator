@@ -1,4 +1,4 @@
-import {Name, RecordKey} from "../../../general"
+import {Name, RecordKey} from "@sagittal/general"
 import {CommaClassId} from "../../notation"
 import {Minas} from "./types"
 

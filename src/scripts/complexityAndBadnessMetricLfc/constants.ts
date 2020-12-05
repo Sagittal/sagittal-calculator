@@ -1,4 +1,4 @@
-import {Comma, Ed, Parameter} from "../../general"
+import {Comma, Ed, Parameter} from "@sagittal/general"
 import {CommaClassId} from "../../sagittal"
 import {ComplexityAndBadnessMetricLfcScriptGroupSettings} from "./types"
 

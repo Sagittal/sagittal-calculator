@@ -1,4 +1,4 @@
-import {computeKeyPath, setAt} from "../../../general"
+import {computeKeyPath, setAt} from "@sagittal/general"
 import {SamplePoint} from "./scopeToSamples"
 import {SumOfSquares, SumsOfSquares} from "./types"
 

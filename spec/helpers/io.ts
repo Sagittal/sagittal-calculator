@@ -1,6 +1,11 @@
-import {clearLogFiles, Filename, ioSettings, LogTarget} from "../../src/general"
-import {setAllPropertiesOfObjectOnAnother} from "../../src/general/code/setAllPropertiesOfObjectOnAnother"
-import {DEFAULT_IO_SETTINGS} from "../../src/general/io/constants"
+import {
+    clearLogFiles,
+    DEFAULT_IO_SETTINGS,
+    Filename,
+    ioSettings,
+    LogTarget,
+    setAllPropertiesOfObjectOnAnother,
+} from "@sagittal/general"
 import {ScriptGroup} from "../../src/scripts/types"
 
 clearLogFiles(ScriptGroup.SPEC as Filename)

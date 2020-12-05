@@ -1,4 +1,4 @@
-import {Multiplier} from "../../../../general"
+import {Multiplier} from "@sagittal/general"
 import {Ina} from "../../../../sagittal"
 import {BoundEvent, BoundHistory} from "../../histories"
 import {computeBoundEventDistance} from "./eventDistance"

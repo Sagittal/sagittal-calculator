@@ -1,4 +1,4 @@
-import {Io, Row, splitFieldTitlesIntoRowsBySpaces} from "../../../../general"
+import {Io, Row, splitFieldTitlesIntoRowsBySpaces} from "@sagittal/general"
 import {Popular23FreeClass} from "../../types"
 import {NotatingSymbolClassesProperties} from "../types"
 

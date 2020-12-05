@@ -1,4 +1,4 @@
-import {Count, Decimal, Rank} from "../../../../../src/general"
+import {Count, Decimal, Rank} from "@sagittal/general"
 import {BoundType, JiNotationLevelId} from "../../../../../src/sagittal"
 import {updateJiNotationLevelAnalysis} from "../../../../../src/scripts/jiNotationBoundClass/boundClass/levels"
 import {

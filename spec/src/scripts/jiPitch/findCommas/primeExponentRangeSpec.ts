@@ -1,4 +1,4 @@
-import {Copfr, Decimal, Exponent, Extrema, Max, Prime, Sopfr} from "../../../../../src/general"
+import {Copfr, Decimal, Exponent, Extrema, Max, Prime, Sopfr} from "@sagittal/general"
 import {computePrimeExponentRange} from "../../../../../src/scripts/jiPitch/findCommas/primeExponentRange"
 
 describe("computePrimeExponentRange", (): void => {

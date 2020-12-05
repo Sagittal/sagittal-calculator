@@ -1,4 +1,4 @@
-import {Cents} from "../../../general"
+import {Cents} from "@sagittal/general"
 import {HIGHINA_CENTS, MEDINA_CENTS, MINA_CENTS, TINA_CENTS, ULTRINA_CENTS} from "./intervals"
 import {Highinas, Medinas, Minas, Tinas, Ultrinas} from "./types"
 

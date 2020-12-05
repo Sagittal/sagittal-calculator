@@ -1,4 +1,4 @@
-import {computeRationalDecimalGpf, Decimal, Numerator} from "../../../../../../../../../general"
+import {computeRationalDecimalGpf, Decimal, Numerator} from "@sagittal/general"
 import {computeN2} from "./n2"
 import {N2P} from "./types"
 

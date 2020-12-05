@@ -7,7 +7,7 @@ import {
     NumericProperties,
     Scamon,
     TWO_3_FREE,
-} from "../../../general"
+} from "@sagittal/general"
 import {computeCommasFrom23FreeRationalMonzo} from "./commasFrom23FreeMonzo"
 import {CommasFrom23FreeMonzoOptions} from "./types"
 

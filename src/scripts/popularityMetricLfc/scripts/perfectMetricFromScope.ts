@@ -1,4 +1,4 @@
-import {LogTarget, Parameter, saveLog, stringify, Window} from "../../../general"
+import {LogTarget, Parameter, saveLog, stringify, Window} from "@sagittal/general"
 import {computeDynamicParameterScope, Scope} from "../bestMetric"
 import {bestMetrics, popularityMetricLfcScriptGroupSettings} from "../globals"
 import {

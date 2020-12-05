@@ -1,4 +1,4 @@
-import {Decimal, HexColor, Rank, RecordKey} from "../../../../general"
+import {Decimal, HexColor, Rank, RecordKey} from "@sagittal/general"
 import {BoundType} from "../../../../sagittal"
 import {RANKS} from "../../ranks"
 

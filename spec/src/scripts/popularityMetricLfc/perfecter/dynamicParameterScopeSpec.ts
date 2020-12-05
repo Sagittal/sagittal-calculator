@@ -1,4 +1,4 @@
-import {Ed, Parameter, Window} from "../../../../../src/general"
+import {Ed, Parameter, Window} from "@sagittal/general"
 import {popularityMetricLfcScriptGroupSettings} from "../../../../../src/scripts/popularityMetricLfc/globals"
 import {computeDynamicParameterScopeForPerfecting} from "../../../../../src/scripts/popularityMetricLfc/perfecter/dynamicParameterScope"
 

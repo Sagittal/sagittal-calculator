@@ -9,7 +9,7 @@ import {
     Prime,
     PRIMES,
     shallowClone,
-} from "../../../../../../../../../../general"
+} from "@sagittal/general"
 import {N2D3P9} from "../../../../types"
 import {computeMaxNumeratorPrimeExponentGivenMaxN2D3P9} from "../../../maxNumeratorPrimeExponent"
 import {INITIAL_MAX_NUMERATOR_PRIME_EXPONENTS_FOR_TWO_AND_THREE} from "./constants"

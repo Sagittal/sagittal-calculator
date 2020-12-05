@@ -1,4 +1,4 @@
-import {BLANK, Io} from "../../../../general"
+import {BLANK, Io} from "@sagittal/general"
 
 const unformatParameters = (io: Io): Io => {
     return io

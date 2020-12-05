@@ -1,4 +1,4 @@
-import {Count, count, formatTable, Io, Max, Ranked, Row, sumTexts, Table} from "../../../general"
+import {Count, count, formatTable, Io, Max, Ranked, Row, sumTexts, Table} from "@sagittal/general"
 import {N2D3P9} from "../../../sagittal"
 import {
     BestNotatingCommaProperties,

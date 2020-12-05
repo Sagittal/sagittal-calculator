@@ -1,4 +1,4 @@
-import {Maybe} from "../../../general"
+import {Maybe} from "@sagittal/general"
 import {Shafts} from "./types"
 
 const areShaftsEven = (shafts: Shafts): boolean =>

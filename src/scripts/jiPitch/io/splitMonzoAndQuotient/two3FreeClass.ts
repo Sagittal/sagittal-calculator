@@ -6,7 +6,7 @@ import {
     TableFormat,
     Two3FreeClass,
     TWO_3_FREE_CLASS_SIGN,
-} from "../../../../general"
+} from "@sagittal/general"
 import {Two3FreeClassAnalysis} from "../../../../sagittal"
 
 const formatSplit23FreeClass = (two3FreeClass: Two3FreeClass): Array<Formatted<Two3FreeClassAnalysis>> => {

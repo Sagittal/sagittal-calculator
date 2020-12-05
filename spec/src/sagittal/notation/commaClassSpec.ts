@@ -16,7 +16,7 @@ import {
     Quotient,
     Sopfr,
     Two3FreeClass,
-} from "../../../../src/general"
+} from "@sagittal/general"
 import {
     analyzeComma,
     ApotomeSlope,

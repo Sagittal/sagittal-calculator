@@ -1,4 +1,4 @@
-import {computeKeyPath, sort} from "../../../../../../../../../general"
+import {computeKeyPath, sort} from "@sagittal/general"
 import {computeN2} from "./n2"
 import {NumeratorPossibilityForDenominatorGivenMaxN2D3P9} from "./numeratorPossibilities"
 import {

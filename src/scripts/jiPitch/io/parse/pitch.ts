@@ -17,7 +17,7 @@ import {
     parseMonzo,
     parseQuotient,
     Scamon,
-} from "../../../../general"
+} from "@sagittal/general"
 import {
     computeCommaFromCommaNameQuotientAndSizeCategory,
     computeJiPitchFromAccidental,

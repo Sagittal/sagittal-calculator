@@ -1,4 +1,4 @@
-import {Abs, Decimal, Exponent, Prime} from "../../../../../general"
+import {Abs, Decimal, Exponent, Prime} from "@sagittal/general"
 
 type Unusefulness = number & {_UnusefulnessBrand: boolean}
 

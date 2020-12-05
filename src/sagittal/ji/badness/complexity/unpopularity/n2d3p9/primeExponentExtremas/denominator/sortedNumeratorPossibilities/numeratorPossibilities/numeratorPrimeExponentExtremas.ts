@@ -1,4 +1,4 @@
-import {Decimal, Exponent, Extrema, Max, Min, Numerator, Prime} from "../../../../../../../../../../general"
+import {Decimal, Exponent, Extrema, Max, Min, Numerator, Prime} from "@sagittal/general"
 import {N2D3P9} from "../../../../types"
 import {computeMaxNumeratorPrimeExponentsGivenMaxN2D3P9} from "./maxNumeratorPrimeExponents"
 

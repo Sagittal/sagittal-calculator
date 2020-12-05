@@ -11,7 +11,7 @@ import {
     LogTarget,
     saveLog,
     subtract,
-} from "../../../../general"
+} from "@sagittal/general"
 import {
     memoizedParameterChunkCombinations,
     memoizedSubmetricChunkCombinations,

@@ -1,4 +1,4 @@
-import {doOnNextEventLoop, Io, LogTarget, Ms, saveLog, stringify} from "../../../general"
+import {doOnNextEventLoop, Io, LogTarget, Ms, saveLog, stringify} from "@sagittal/general"
 import {bestMetrics} from "../globals"
 import {computeSumOfSquaresForSubmetrics} from "../sumOfSquares"
 import {Sample} from "./scopeToSamples"

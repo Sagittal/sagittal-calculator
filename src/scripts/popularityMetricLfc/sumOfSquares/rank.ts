@@ -1,4 +1,4 @@
-import {computeKeyPath, rank, Ranked, RankStrategy, sort} from "../../../general"
+import {computeKeyPath, rank, Ranked, RankStrategy, sort} from "@sagittal/general"
 import {LfcUnpopularityEstimate} from "./types"
 
 const addRankToUnpopularities = (unpopularities: LfcUnpopularityEstimate[]): Array<Ranked<LfcUnpopularityEstimate>> => {

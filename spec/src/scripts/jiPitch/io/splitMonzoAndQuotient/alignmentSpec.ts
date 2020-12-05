@@ -1,4 +1,4 @@
-import {Alignment, Row, TableAlignment} from "../../../../../../src/general"
+import {Alignment, Row, TableAlignment} from "@sagittal/general"
 import {computeSplitMonzoAndQuotientTableAlignment} from "../../../../../../src/scripts/jiPitch/io/splitMonzoAndQuotient"
 import {
     INVISIBLE_MONZO_CLOSING_ANGLE_BRACKET_COLUMN_TITLE,

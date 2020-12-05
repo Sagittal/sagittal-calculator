@@ -1,4 +1,4 @@
-import {Grade} from "../../../../general"
+import {Grade} from "@sagittal/general"
 import {LfcUnpopularityEstimate} from "../types"
 
 // Or "numenator" and "demonator" ?

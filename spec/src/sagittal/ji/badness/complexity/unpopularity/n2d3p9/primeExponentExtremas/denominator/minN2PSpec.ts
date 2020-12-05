@@ -1,4 +1,4 @@
-import {Decimal, Denominator, Exponent, Max, Min, Numerator, Of, Prime} from "../../../../../../../../../../src/general"
+import {Decimal, Denominator, Exponent, Max, Min, Numerator, Of, Prime} from "@sagittal/general"
 import {computeMinN2PForPossibleMaxDenominatorPrimeExponentGivenMaxN2D3P9} from "../../../../../../../../../../src/sagittal/ji/badness/complexity/unpopularity/n2d3p9/primeExponentExtremas/denominator/minN2P"
 import {
     N2,

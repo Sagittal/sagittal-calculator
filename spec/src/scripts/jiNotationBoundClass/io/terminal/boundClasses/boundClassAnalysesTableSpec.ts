@@ -1,5 +1,5 @@
-import {ColorMethod, Count, Row} from "../../../../../../../src/general"
-import * as table from "../../../../../../../src/general/io/table/table"
+import {ColorMethod, Count, Row} from "@sagittal/general"
+import * as table from "@sagittal/general/dist/io/table/table"
 import {BoundType} from "../../../../../../../src/sagittal"
 import {JiNotationBoundClassAnalysis} from "../../../../../../../src/scripts/jiNotationBoundClass/boundClass"
 import {computeJiNotationBoundClassAnalysesOutput} from "../../../../../../../src/scripts/jiNotationBoundClass/io/terminal/boundClasses"

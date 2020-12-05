@@ -1,4 +1,4 @@
-import {BLANK, Comma, computeKeyPath, LogTarget, Name, saveLog, sort} from "../../../../general"
+import {BLANK, Comma, computeKeyPath, LogTarget, Name, saveLog, sort} from "@sagittal/general"
 import {inconsistentMetacommas} from "../../globals"
 import {OCCAM_COMMONALITY_THRESHOLD} from "./constants"
 import {Occam} from "./types"

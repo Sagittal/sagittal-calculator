@@ -1,4 +1,4 @@
-import {Scamon} from "../../../../../src/general"
+import {Scamon} from "@sagittal/general"
 import {SymbolClassId} from "../../../../../src/sagittal"
 import {computeNotatingSymbolClassIds} from "../../../../../src/scripts/popular23FreeClass/notatingSymbolClasses/notatingSymbolClassIds"
 

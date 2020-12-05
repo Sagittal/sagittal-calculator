@@ -1,4 +1,4 @@
-import {Comma, formatPitch, isScamonGreater, isUndefined} from "../../../general"
+import {Comma, formatPitch, isScamonGreater, isUndefined} from "@sagittal/general"
 import {SIZE_CATEGORY_BOUNDS} from "./sizeCategoryBounds"
 import {SizeCategory, SizeCategoryBound} from "./types"
 

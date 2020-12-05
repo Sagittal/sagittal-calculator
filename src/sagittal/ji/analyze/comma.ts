@@ -1,4 +1,4 @@
-import {Comma, NumericProperties} from "../../../general"
+import {Comma, NumericProperties} from "@sagittal/general"
 import {CommaNameOptions, computeCommaName, computeSizeCategoryIndex, FactoringMode} from "../name"
 import {analyzeJiPitch} from "./pitch"
 import {CommaAnalysis} from "./types"

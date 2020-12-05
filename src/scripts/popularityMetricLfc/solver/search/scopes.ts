@@ -1,4 +1,4 @@
-import {doOnNextEventLoop, LogTarget, saveLog} from "../../../../general"
+import {doOnNextEventLoop, LogTarget, saveLog} from "@sagittal/general"
 import {scopesToSearch, solverStatus} from "../../globals"
 import {formatSearchedAndPopulated} from "../io"
 import {ONE_SECOND_TO_GIVE_POPULATION_A_CHANCE_TO_CATCH_UP} from "./constants"

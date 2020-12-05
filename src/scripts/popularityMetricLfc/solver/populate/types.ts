@@ -1,4 +1,4 @@
-import {Combination, Count, Index} from "../../../../general"
+import {Combination, Count, Index} from "@sagittal/general"
 import {PopularityParameterId, Submetric} from "../../sumOfSquares"
 import {Chunk} from "../types"
 

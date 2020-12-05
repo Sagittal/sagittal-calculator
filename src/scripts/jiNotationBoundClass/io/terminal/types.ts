@@ -1,4 +1,4 @@
-import {Abs, Cents, Maybe, Multiplier, Name} from "../../../../general"
+import {Abs, Cents, Maybe, Multiplier, Name} from "@sagittal/general"
 import {
     Ascii,
     BoundClassId,

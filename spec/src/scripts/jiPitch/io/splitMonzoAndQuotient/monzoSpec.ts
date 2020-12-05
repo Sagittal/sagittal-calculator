@@ -1,4 +1,4 @@
-import {Count, Exponent, Formatted, Max, Monzo, Prime} from "../../../../../../src/general"
+import {Count, Exponent, Formatted, Max, Monzo, Prime} from "@sagittal/general"
 import {JiPitchAnalysis} from "../../../../../../src/sagittal"
 import {formatSplitMonzo} from "../../../../../../src/scripts/jiPitch/io/splitMonzoAndQuotient"
 

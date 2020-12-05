@@ -1,4 +1,4 @@
-import {abs, subtractPitch} from "../../../../general"
+import {abs, subtractPitch} from "@sagittal/general"
 import {
     analyzeComma,
     BoundClassId,

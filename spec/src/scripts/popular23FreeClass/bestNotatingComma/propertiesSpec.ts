@@ -1,4 +1,4 @@
-import {Cents, Monzo, Two3FreeClass} from "../../../../../src/general"
+import {Cents, Monzo, Two3FreeClass} from "@sagittal/general"
 import {CommaClassId} from "../../../../../src/sagittal"
 import {
     BestNotatingCommaProperties,

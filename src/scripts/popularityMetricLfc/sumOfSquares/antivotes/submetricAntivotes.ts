@@ -14,7 +14,7 @@ import {
     PRIMES,
     QuotientPartType,
     stringify,
-} from "../../../../general"
+} from "@sagittal/general"
 import {LfcUnpopularityEstimate, Submetric} from "../types"
 import {secondaryParameterOverride} from "./secondaryParameter"
 

@@ -1,4 +1,4 @@
-import {Combinations, Name} from "../../general"
+import {Combinations, Name} from "@sagittal/general"
 import {Metric, Scope} from "./bestMetric"
 import {DEFAULT_POPULARITY_METRIC_LFC_SCRIPT_GROUP_SETTINGS, INITIAL_SOLVER_STATUS} from "./constants"
 import {Chunk, SolverStatus} from "./solver"

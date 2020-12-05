@@ -1,4 +1,4 @@
-import {Cents, computePitchFromCents, NEWLINE} from "../../../../../../../src/general"
+import {Cents, computePitchFromCents, NEWLINE} from "@sagittal/general"
 import {BoundClassId, BoundType, JiNotationBoundClass} from "../../../../../../../src/sagittal"
 import {JiNotationBoundClassAnalysis} from "../../../../../../../src/scripts/jiNotationBoundClass/boundClass"
 import {formatJiNotationBoundClass} from "../../../../../../../src/scripts/jiNotationBoundClass/io"

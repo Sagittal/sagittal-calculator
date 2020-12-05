@@ -1,4 +1,4 @@
-import {Denominator, Of, Prime} from "../../../../../../../../../general"
+import {Denominator, Of, Prime} from "@sagittal/general"
 import {NumeratorPossibilityForDenominatorGivenMaxN2D3P9} from "./numeratorPossibilities"
 
 type N2 = number & {_N2Brand: boolean}

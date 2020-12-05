@@ -1,4 +1,4 @@
-import {concat, Io} from "../../../../general"
+import {concat, Io} from "@sagittal/general"
 import {JiNotationBoundClassAnalysis} from "../../boundClass"
 import {computeJiNotationBoundClassAnalysesOutput} from "./boundClasses"
 import {formatJiNotationLevelAnalyses} from "./level"

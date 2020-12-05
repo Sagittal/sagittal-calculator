@@ -1,4 +1,4 @@
-import {Comma} from "../../../../../src/general"
+import {Comma} from "@sagittal/general"
 import {isLate} from "../../../../../src/scripts/popular23FreeClass/bestNotatingComma/isLate"
 
 describe("isLate", (): void => {

@@ -1,4 +1,4 @@
-import {Copfr, Max, Monzo, Prime, Sopfr} from "../../../../../src/general"
+import {Copfr, Max, Monzo, Prime, Sopfr} from "@sagittal/general"
 import {N2D3P9} from "../../../../../src/sagittal"
 import {compute23FreeRationalMonzosToCheck} from "../../../../../src/scripts/jiPitch/findCommas/two3FreeMonzosToCheck"
 

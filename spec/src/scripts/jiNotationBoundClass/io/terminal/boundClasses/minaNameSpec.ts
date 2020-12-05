@@ -1,4 +1,4 @@
-import {Name} from "../../../../../../../src/general"
+import {Name} from "@sagittal/general"
 import {Minas} from "../../../../../../../src/sagittal"
 import {formatMinaName} from "../../../../../../../src/scripts/jiNotationBoundClass/io/terminal"
 

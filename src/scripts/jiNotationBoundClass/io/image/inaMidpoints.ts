@@ -1,4 +1,4 @@
-import {add, DEFAULT_PRECISION, Io, Px, round, subtract} from "../../../../general"
+import {add, DEFAULT_PRECISION, Io, Px, round, subtract} from "@sagittal/general"
 import {InaMidpoint, JiNotationLevelId} from "../../../../sagittal"
 import {INA_MIDPOINTS} from "../../histories"
 import {JI_NOTATION_LEVEL_CENTERS} from "./levelHeights"

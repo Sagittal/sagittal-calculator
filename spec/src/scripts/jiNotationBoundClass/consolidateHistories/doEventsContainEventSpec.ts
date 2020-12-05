@@ -1,4 +1,4 @@
-import {Name} from "../../../../../src/general"
+import {Name} from "@sagittal/general"
 import {BoundType, JiNotationBound, JiNotationLevelId} from "../../../../../src/sagittal"
 import {isBoundEventContained} from "../../../../../src/scripts/jiNotationBoundClass/consolidateHistories/doEventsContainEvent"
 import {BoundEventAnalysis} from "../../../../../src/scripts/jiNotationBoundClass/history"

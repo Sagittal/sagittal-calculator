@@ -1,4 +1,4 @@
-import {Abs, Copfr, Exclusive, Max, Min, Prime, Scamon, Sopfr, Zone} from "../../../general"
+import {Abs, Copfr, Exclusive, Max, Min, Prime, Scamon, Sopfr, Zone} from "@sagittal/general"
 import {HALF_APOTOME} from "../../constants"
 import {ApotomeSlope, Ate, MAX_N2D3P9_FOR_WHICH_POSSIBLE_NUMERATORS_ARE_KNOWN} from "../badness"
 

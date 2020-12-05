@@ -1,4 +1,4 @@
-import {Combination, computeExtensionBase, ExtensionBaseType, Index, Parameter} from "../../../../general"
+import {Combination, computeExtensionBase, ExtensionBaseType, Index, Parameter} from "@sagittal/general"
 import {Submetric} from "../../sumOfSquares"
 import {computeDynamicParameterValueIndices} from "./dynamicParameterValueIndices"
 import {spreadAllBinSubmetricsPossibilitiesAcrossSamples} from "./spreadAllBinSubmetricsPossibilities"

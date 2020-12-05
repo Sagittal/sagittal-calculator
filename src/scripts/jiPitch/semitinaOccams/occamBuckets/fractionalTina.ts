@@ -8,7 +8,7 @@ import {
     saveLog,
     stringify,
     subtractRationalScamons,
-} from "../../../../general"
+} from "@sagittal/general"
 import {computeCommaName} from "../../../../sagittal"
 import {metacommaNameToMetacommaMap} from "../../globals"
 import {Semitina} from "../types"

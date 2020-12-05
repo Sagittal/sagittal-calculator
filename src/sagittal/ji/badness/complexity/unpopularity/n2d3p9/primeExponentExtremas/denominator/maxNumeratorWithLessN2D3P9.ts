@@ -12,7 +12,7 @@ import {
     Monzo,
     Numerator,
     Prime,
-} from "../../../../../../../../general"
+} from "@sagittal/general"
 import {computeN2D3P9} from "../../n2d3p9"
 import {N2D3P9} from "../../types"
 

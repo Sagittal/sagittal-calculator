@@ -1,6 +1,6 @@
 // tslint:disable max-line-length
 
-import {Cents, Comma, computePitchFromCents, Scamon} from "../../../../../src/general"
+import {Cents, Comma, computePitchFromCents, Scamon} from "@sagittal/general"
 import {computeSizeCategory} from "../../../../../src/sagittal"
 import {SizeCategory} from "../../../../../src/sagittal/ji/name"
 

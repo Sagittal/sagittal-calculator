@@ -1,4 +1,4 @@
-import {Formatted, ioSettings, Quotient, TableFormat} from "../../../../../../src/general"
+import {Formatted, ioSettings, Quotient, TableFormat} from "@sagittal/general"
 import {JiPitchAnalysis} from "../../../../../../src/sagittal"
 import {formatSplitQuotient} from "../../../../../../src/scripts/jiPitch/io/splitMonzoAndQuotient"
 

@@ -1,4 +1,4 @@
-import {Comma, Monzo} from "../../../../../src/general"
+import {Comma, Monzo} from "@sagittal/general"
 import {computeCommaFromCommaNameQuotientAndSizeCategory} from "../../../../../src/sagittal"
 import {CommaNameQuotient, SizeCategory} from "../../../../../src/sagittal/ji/name/types"
 

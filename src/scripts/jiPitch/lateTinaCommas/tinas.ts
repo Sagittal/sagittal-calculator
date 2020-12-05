@@ -1,4 +1,4 @@
-import {Comma, computeKeyPath, RecordKey, sort} from "../../../general"
+import {Comma, computeKeyPath, RecordKey, sort} from "@sagittal/general"
 import {analyzeComma, CommaAnalysis, Tinas} from "../../../sagittal"
 import {MAX_TINA_SIZES} from "./constants"
 

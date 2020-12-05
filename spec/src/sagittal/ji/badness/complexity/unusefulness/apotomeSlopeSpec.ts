@@ -1,4 +1,4 @@
-import {Scamon} from "../../../../../../../src/general"
+import {Scamon} from "@sagittal/general"
 import {ApotomeSlope, computeApotomeSlope} from "../../../../../../../src/sagittal"
 
 describe("computeApotomeSlope", (): void => {

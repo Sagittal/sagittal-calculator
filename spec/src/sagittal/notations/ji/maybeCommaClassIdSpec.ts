@@ -1,4 +1,4 @@
-import {Comma} from "../../../../../src/general"
+import {Comma} from "@sagittal/general"
 import {CommaClassId, computeMaybeCommaClassId} from "../../../../../src/sagittal"
 
 describe("computeMaybeCommaClassId", (): void => {

@@ -11,7 +11,7 @@ import {
     Parameter,
     saveLog,
     stringify,
-} from "../../../general"
+} from "@sagittal/general"
 import {Metric} from "../bestMetric"
 import {PopularityParameterId, Submetric} from "../sumOfSquares"
 import {applySharedPopularityMetricLfcScriptSetup, load} from "./shared"

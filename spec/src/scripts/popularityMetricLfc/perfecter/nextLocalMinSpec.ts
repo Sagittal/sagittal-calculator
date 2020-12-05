@@ -1,5 +1,5 @@
-import {BLANK, Combination, Decimal, Index, Ms, Name, Parameter, Step} from "../../../../../src/general"
-import * as doOnNextEventLoop from "../../../../../src/general/code/doOnNextEventLoop"
+import {BLANK, Combination, Decimal, Index, Ms, Name, Parameter, Step} from "@sagittal/general"
+import * as doOnNextEventLoop from "@sagittal/general/dist/code/doOnNextEventLoop"
 import {
     DynamicParameter,
     Metric,

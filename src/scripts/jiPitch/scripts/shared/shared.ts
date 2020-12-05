@@ -1,5 +1,5 @@
 import {program} from "commander"
-import {Filename, Io, Scamon, ScriptFlag, setupScriptAndIo} from "../../../../general"
+import {Filename, Io, Scamon, ScriptFlag, setupScriptAndIo} from "@sagittal/general"
 import {FactoringMode} from "../../../../sagittal"
 import {ScriptGroup} from "../../../types"
 import {jiPitchScriptGroupSettings} from "../../globals"

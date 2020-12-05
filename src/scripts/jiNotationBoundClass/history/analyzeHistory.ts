@@ -1,4 +1,4 @@
-import {isCloseTo, Multiplier, Scamon, subtractPitch} from "../../../general"
+import {isCloseTo, Multiplier, Scamon, subtractPitch} from "@sagittal/general"
 import {JiNotationBoundClass, Tinas, TINA_CENTS} from "../../../sagittal"
 import {BoundHistory} from "../histories"
 import {analyzeBoundEvents} from "./events"

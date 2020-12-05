@@ -8,7 +8,7 @@ import {
     ScriptFlag,
     setupScriptAndIo,
     time,
-} from "../../../general"
+} from "@sagittal/general"
 import {ScriptGroup} from "../../types"
 import {complexityAndBadnessMetricLfcScriptGroupSettings} from "../globals"
 import {COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS} from "../metrics"

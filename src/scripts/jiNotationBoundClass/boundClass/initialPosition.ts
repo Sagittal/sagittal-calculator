@@ -1,4 +1,4 @@
-import {computeRationalScamonGeometricMean, Scamon, UNISON} from "../../../general"
+import {computeRationalScamonGeometricMean, Scamon, UNISON} from "@sagittal/general"
 import {HALF_APOTOME, JiNotationBoundClass} from "../../../sagittal"
 import {computeBoundedCommaClassPositions} from "../boundedPositions"
 

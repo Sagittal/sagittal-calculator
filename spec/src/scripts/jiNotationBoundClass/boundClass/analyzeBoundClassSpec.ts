@@ -11,7 +11,7 @@ import {
     Name,
     Scamon,
     Sum,
-} from "../../../../../src/general"
+} from "@sagittal/general"
 import {
     BoundClass,
     BoundType,

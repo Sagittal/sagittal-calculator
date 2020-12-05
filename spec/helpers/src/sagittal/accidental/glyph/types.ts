@@ -1,4 +1,4 @@
-import {Maybe} from "../../../../../../src/general"
+import {Maybe} from "@sagittal/general"
 import {Ascii, Smiley, Unicode} from "../../../../../../src/sagittal"
 import {Flavor} from "../../../../../../src/sagittal/accidental"
 

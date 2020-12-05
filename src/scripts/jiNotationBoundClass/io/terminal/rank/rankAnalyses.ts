@@ -1,4 +1,4 @@
-import {Count, Decimal, Io, join, NEWLINE, Rank, sumTexts} from "../../../../../general"
+import {Count, Decimal, Io, join, NEWLINE, Rank, sumTexts} from "@sagittal/general"
 import {BoundType} from "../../../../../sagittal"
 import {rankCounts} from "../../../globals"
 import {RANK_ANALYSES_TITLE} from "../titles"

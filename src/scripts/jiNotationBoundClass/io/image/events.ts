@@ -7,7 +7,7 @@ import {
     Px,
     radiansToDegrees,
     round,
-} from "../../../../general"
+} from "@sagittal/general"
 import {JiNotationLevelId} from "../../../../sagittal"
 import {BoundEventAnalysis} from "../../history"
 import {JI_NOTATION_LEVEL_BOTTOMS, JI_NOTATION_LEVEL_CENTERS} from "./levelHeights"

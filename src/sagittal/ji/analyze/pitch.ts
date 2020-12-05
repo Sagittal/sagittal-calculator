@@ -4,7 +4,7 @@ import {
     computeDecimalFromMonzo,
     computeQuotientFromMonzo,
     Scamon,
-} from "../../../general"
+} from "@sagittal/general"
 import {computeAas, computeApotomeSlope, computeAte} from "../badness"
 import {analyze23FreeClass} from "./two3FreeClass"
 import {JiPitchAnalysis} from "./types"

@@ -1,4 +1,4 @@
-import {finalElement, Scamon} from "../../../general"
+import {finalElement, Scamon} from "@sagittal/general"
 import {BoundHistory} from "../histories"
 
 const computeBoundHistoryPosition = (boundHistory: BoundHistory): Scamon =>

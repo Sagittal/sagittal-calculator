@@ -1,4 +1,4 @@
-// Import {ceil, Count, decrement, increment, Name} from "../../../../../src/general"
+// Import {ceil, Count, decrement, increment, Name} from "@sagittal/general"
 // Import {computeRange} from "../../../../../src/general/code"
 // Import {Max} from "../../../../../src/general/math"
 // Import {subtractPitch} from "../../../../../src/general/music"

@@ -1,4 +1,4 @@
-import {Count, Decimal, Index, Rank, RecordKey} from "../../general"
+import {Count, Decimal, Index, Rank, RecordKey} from "@sagittal/general"
 import {BoundClass, BoundType, JiNotationLevelId} from "../../sagittal"
 import {RANKS} from "./ranks"
 

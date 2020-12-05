@@ -1,4 +1,4 @@
-import {Decimal, Exponent, Extrema, Prime} from "../../../../../../../general"
+import {Decimal, Exponent, Extrema, Prime} from "@sagittal/general"
 
 const EMPTY_PRIME_EXPONENT_EXTREMA = [0, 0] as Extrema<{of: Decimal<{integer: true}> & Exponent<Prime>}>
 

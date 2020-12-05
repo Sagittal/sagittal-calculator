@@ -1,6 +1,6 @@
 //tslint:disable comment-format
 
-import {APOTOME, invertScamon, Scamon, SYNTONIC_COMMA, UNISON} from "../../../general"
+import {APOTOME, invertScamon, Scamon, SYNTONIC_COMMA, UNISON} from "@sagittal/general"
 import {Compatible} from "../flavor"
 import {APOTOME_DOWN, DOUBLE_APOTOME, DOUBLE_APOTOME_DOWN} from "./constants"
 

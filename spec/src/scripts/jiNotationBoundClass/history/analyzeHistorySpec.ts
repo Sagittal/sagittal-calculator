@@ -4,13 +4,13 @@ import {
     APOTOME,
     Cents,
     computePitchFromCents,
+    IRRATIONAL_SCAMON_BASE_MONZO,
     Multiplier,
     multiply,
     Quotient,
     Scamon,
     Sum,
-} from "../../../../../src/general"
-import {IRRATIONAL_SCAMON_BASE_MONZO} from "../../../../../src/general/math/irrational/scamon/constants"
+} from "@sagittal/general"
 import {BoundType, Ina, JiNotationBoundClass, JiNotationLevelId, Tinas, TINA_CENTS} from "../../../../../src/sagittal"
 import {EXTREME_EDA} from "../../../../../src/sagittal/notations/ji/levelEdas"
 import {computeInitialPosition} from "../../../../../src/scripts/jiNotationBoundClass/boundClass/initialPosition"

@@ -1,4 +1,4 @@
-import {computeSuperScamon, isScamonGreater, NumericProperties, Scamon} from "../../../general"
+import {computeSuperScamon, isScamonGreater, NumericProperties, Scamon} from "@sagittal/general"
 import {MAX_SIZE_CATEGORY_BOUND} from "./constants"
 
 // But not necessarily a Comma, since it isn't necessarily rational.

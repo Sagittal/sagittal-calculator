@@ -1,5 +1,5 @@
 import {program} from "commander"
-import {Count, Io, ioSettings, LogTarget, parseInteger, saveLog, time} from "../../../general"
+import {Count, Io, ioSettings, LogTarget, parseInteger, saveLog, time} from "@sagittal/general"
 import {popularityMetricLfcScriptGroupSettings, solverStatus} from "../globals"
 import {
     Chunk,

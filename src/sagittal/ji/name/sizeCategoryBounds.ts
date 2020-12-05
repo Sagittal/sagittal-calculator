@@ -14,7 +14,7 @@ import {
     Scamon,
     SUPERCOMPLEX_PYTHAGOREAN_KLEISMA,
     THIRTYONE_THREE_COMMA,
-} from "../../../general"
+} from "@sagittal/general"
 import {SizeCategoryBound} from "./types"
 
 const u_n_SIZE_CATEGORY_BOUND = {

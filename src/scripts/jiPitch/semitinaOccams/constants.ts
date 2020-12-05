@@ -1,4 +1,4 @@
-import {computeCentsFromPitch, halveScamon} from "../../../general"
+import {computeCentsFromPitch, halveScamon} from "@sagittal/general"
 import {TINA} from "../../../sagittal"
 
 const SEMITINA = halveScamon(TINA)

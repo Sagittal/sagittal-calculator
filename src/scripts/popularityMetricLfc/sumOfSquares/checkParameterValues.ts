@@ -1,4 +1,4 @@
-import {isNumber, stringify} from "../../../general"
+import {isNumber, stringify} from "@sagittal/general"
 import {PopularityParameterId, Submetric} from "./types"
 
 const checkSubmetricsForInvalidParameterValueCombinations = (submetrics: Submetric[]): void => {

@@ -1,5 +1,4 @@
-import {cleanObject} from "../../../../../src/general/code/cleanObject"
-import {setAllPropertiesOfObjectOnAnother} from "../../../../../src/general/code/setAllPropertiesOfObjectOnAnother"
+import {cleanObject, setAllPropertiesOfObjectOnAnother} from "@sagittal/general"
 import {
     INITIAL_RANK_BOUND_INDICES,
     INITIAL_RANK_COUNTS,

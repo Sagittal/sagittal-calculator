@@ -1,4 +1,4 @@
-import {Count, Decimal, formatIntegerDecimal, Rank, RecordKey, Row} from "../../../../../general"
+import {Count, Decimal, formatIntegerDecimal, Rank, RecordKey, Row} from "@sagittal/general"
 import {BoundType, JiNotationLevelId} from "../../../../../sagittal"
 import {jiNotationLevelsBestCumulativeHistoryRanks, jiNotationLevelsBestHistoryRanks} from "../../../globals"
 import {FORMATTED_RANKS} from "../rankNames"

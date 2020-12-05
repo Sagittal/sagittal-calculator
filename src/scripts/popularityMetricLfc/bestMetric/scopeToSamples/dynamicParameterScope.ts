@@ -1,4 +1,4 @@
-import {DynamicParameterScope, isUndefined, Parameter, Window} from "../../../../general"
+import {DynamicParameterScope, isUndefined, Parameter, Window} from "@sagittal/general"
 import {computeEqualDivision} from "./equalDivision"
 import {DynamicParameterScopeOptions} from "./types"
 

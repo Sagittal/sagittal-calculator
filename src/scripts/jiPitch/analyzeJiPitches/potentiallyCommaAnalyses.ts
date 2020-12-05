@@ -1,4 +1,4 @@
-import {Filename, Io, isEmpty, readLines, Scamon, sort} from "../../../general"
+import {Filename, Io, isEmpty, readLines, Scamon, sort} from "@sagittal/general"
 import {analyzePotentiallyComma, PotentiallyCommaAnalysis} from "../../../sagittal"
 import {jiPitchScriptGroupSettings} from "../globals"
 import {parsePitch} from "../io"

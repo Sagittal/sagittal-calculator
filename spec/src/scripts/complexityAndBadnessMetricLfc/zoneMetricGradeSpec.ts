@@ -1,4 +1,4 @@
-import {Comma, Grade, Parameter} from "../../../../src/general"
+import {Comma, Grade, Parameter} from "@sagittal/general"
 import {CommaClassId} from "../../../../src/sagittal"
 import {complexityAndBadnessMetricLfcScriptGroupSettings} from "../../../../src/scripts/complexityAndBadnessMetricLfc/globals"
 import {COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS} from "../../../../src/scripts/complexityAndBadnessMetricLfc/metrics"

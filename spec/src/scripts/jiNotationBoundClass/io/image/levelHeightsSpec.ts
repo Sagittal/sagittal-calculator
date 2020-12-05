@@ -1,4 +1,4 @@
-import {Basis, Cents, Multiplier, Px} from "../../../../../../src/general"
+import {Basis, Cents, Multiplier, Px} from "@sagittal/general"
 import {JiNotationLevelId} from "../../../../../../src/sagittal"
 import {computeJiNotationLevelHeights} from "../../../../../../src/scripts/jiNotationBoundClass/io/image/levelHeights"
 

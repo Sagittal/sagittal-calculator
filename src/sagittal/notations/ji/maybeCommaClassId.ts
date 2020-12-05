@@ -1,4 +1,4 @@
-import {areRationalScamonsEqual, Maybe, Scamon} from "../../../general"
+import {areRationalScamonsEqual, Maybe, Scamon} from "@sagittal/general"
 import {CommaClassId, getCommaClass} from "../../notation"
 import {JI_NOTATION} from "./levelCommaClassIds"
 

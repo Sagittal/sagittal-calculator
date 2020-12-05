@@ -1,4 +1,4 @@
-import {BLANK, Comma} from "../../../../../src/general"
+import {BLANK, Comma} from "@sagittal/general"
 import {SizeCategory} from "../../../../../src/sagittal/ji/name"
 import {computeMaybeComplex} from "../../../../../src/sagittal/ji/name/complex"
 import {onlyRunInCi} from "../../../../helpers/onlyRunInCi"

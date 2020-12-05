@@ -9,7 +9,7 @@ import {
     isUndefined,
     Maybe,
     Monzo,
-} from "../../../general"
+} from "@sagittal/general"
 import {computeN2D3P9} from "../badness"
 import {computeRationalMonzoInZone, findNotatingCommas} from "../find"
 import {computeSizeCategoryZone} from "./sizeCategoryZone"

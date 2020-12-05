@@ -1,4 +1,4 @@
-import {Comma, increment, Index, isScamonGreater, LogTarget, RecordKey, saveLog} from "../../../../general"
+import {Comma, increment, Index, isScamonGreater, LogTarget, RecordKey, saveLog} from "@sagittal/general"
 import {Semitina} from "../types"
 import {MAX_SIZE_PER_SEMITINA_ZONE, SEMITINA_ZONES} from "./constants"
 

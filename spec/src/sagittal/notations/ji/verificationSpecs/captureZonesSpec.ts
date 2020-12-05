@@ -1,4 +1,4 @@
-import {computeIrrationalDecimalFromScamon, Decimal, Extrema, Maybe, Zone} from "../../../../../../src/general"
+import {computeIrrationalDecimalFromScamon, Decimal, Extrema, Maybe, Zone} from "@sagittal/general"
 import {
     CommaClassId,
     computeJiNotationCaptureZone,

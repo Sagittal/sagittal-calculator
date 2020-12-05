@@ -1,4 +1,4 @@
-import {Index, Two3FreeClass} from "../../../../../src/general"
+import {Index, Two3FreeClass} from "@sagittal/general"
 import {SymbolClassId, SymbolSubsetId} from "../../../../../src/sagittal"
 import {
     computeNotatingSymbolClassesProperties,

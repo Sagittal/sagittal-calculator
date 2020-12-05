@@ -1,4 +1,4 @@
-import {computeExtensionBase, ExtensionBaseType} from "../../../general"
+import {computeExtensionBase, ExtensionBaseType} from "@sagittal/general"
 import {JiNotationBoundClass, JiNotationLevelId} from "../../../sagittal"
 import {computeExtendedHistories} from "./extendedHistories"
 import {BoundHistory} from "./types"

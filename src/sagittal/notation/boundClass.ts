@@ -1,4 +1,4 @@
-import {APOTOME, HALF_SCALER, Monzo, PYTHAGOREAN_LIMMA, Scamon} from "../../general"
+import {APOTOME, HALF_SCALER, Monzo, PYTHAGOREAN_LIMMA, Scamon} from "@sagittal/general"
 import {BoundClass, BoundClassId} from "./types"
 
 const BOUND_CLASSES: Record<BoundClassId, BoundClass> = {

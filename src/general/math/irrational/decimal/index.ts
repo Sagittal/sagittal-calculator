@@ -1,1 +1,0 @@
-export {computeIrrationalDecimalFromScamon} from "./fromScamon"

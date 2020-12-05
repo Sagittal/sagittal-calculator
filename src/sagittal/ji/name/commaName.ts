@@ -12,7 +12,7 @@ import {
     Name,
     stringify,
     THREE_SMOOTHNESS,
-} from "../../../general"
+} from "@sagittal/general"
 import {computeCommaNameQuotient} from "./commaNameQuotient"
 import {computeMaybeComplex} from "./complex"
 import {formatCommaNameQuotient} from "./formatCommaNameQuotient"

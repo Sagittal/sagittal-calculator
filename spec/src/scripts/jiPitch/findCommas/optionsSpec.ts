@@ -1,4 +1,4 @@
-import {Abs, Decimal, Max, Monzo, Scamon} from "../../../../../src/general"
+import {Abs, Decimal, Max, Monzo, Scamon} from "@sagittal/general"
 import {ApotomeSlope, Ate, computeAas, JiPitchAnalysis, N2D3P9} from "../../../../../src/sagittal"
 import {
     computeFindNotatingCommasOptions,

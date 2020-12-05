@@ -1,4 +1,4 @@
-import {add, DEFAULT_PRECISION, Io, Px, round, UNISON} from "../../../../general"
+import {add, DEFAULT_PRECISION, Io, Px, round, UNISON} from "@sagittal/general"
 import {HALF_APOTOME, JiNotationLevelId} from "../../../../sagittal"
 import {JI_NOTATION_LEVEL_BOTTOMS} from "./levelHeights"
 import {computeX} from "./x"

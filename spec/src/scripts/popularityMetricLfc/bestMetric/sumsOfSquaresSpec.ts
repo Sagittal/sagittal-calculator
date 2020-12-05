@@ -1,4 +1,4 @@
-import {Combination, Name, Parameter} from "../../../../../src/general"
+import {Combination, Name, Parameter} from "@sagittal/general"
 import {
     Metric,
     SamplePoint,

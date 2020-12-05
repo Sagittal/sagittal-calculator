@@ -8,7 +8,7 @@ import {
     Max,
     Prime,
     Row,
-} from "../../../../general"
+} from "@sagittal/general"
 import {JiPitchAnalysis} from "../../../../sagittal"
 import {jiPitchScriptGroupSettings} from "../../globals"
 import {JiPitchField} from "../../types"

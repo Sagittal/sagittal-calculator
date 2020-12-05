@@ -1,4 +1,4 @@
-import {Decimal, formatIntegerDecimal, Formatted, Rank} from "../../../../../general"
+import {Decimal, formatIntegerDecimal, Formatted, Rank} from "@sagittal/general"
 import {BoundType, JiNotationLevelId, JI_NOTATION_LEVELS} from "../../../../../sagittal"
 import {BoundEventAnalysis, BoundHistoryAnalysis} from "../../../history"
 

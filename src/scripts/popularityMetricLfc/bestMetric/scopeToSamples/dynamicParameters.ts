@@ -1,4 +1,4 @@
-import {Index} from "../../../../general"
+import {Index} from "@sagittal/general"
 import {Submetric} from "../../sumOfSquares"
 import {Scope, SubmetricScope} from "../types"
 import {computeSubmetricDynamicParameters} from "./submetricDynamicParameters"

@@ -1,4 +1,4 @@
-import {areScamonsEqual, Scamon} from "../../../../general"
+import {areScamonsEqual, Scamon} from "@sagittal/general"
 import {BoundEvent, BoundHistory} from "../../histories"
 import {RANKS} from "../../ranks"
 import {computeBoundEventDistance} from "./eventDistance"

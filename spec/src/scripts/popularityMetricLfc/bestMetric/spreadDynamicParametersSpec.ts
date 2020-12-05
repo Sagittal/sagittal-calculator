@@ -1,4 +1,4 @@
-import {Combination, Ed, Parameter, Window} from "../../../../../src/general"
+import {Combination, Ed, Parameter, Window} from "@sagittal/general"
 import {SubmetricScope} from "../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {computeSpreadDynamicParameters} from "../../../../../src/scripts/popularityMetricLfc/bestMetric/spreadDynamicParameters"
 import {PopularityParameterId} from "../../../../../src/scripts/popularityMetricLfc/sumOfSquares"

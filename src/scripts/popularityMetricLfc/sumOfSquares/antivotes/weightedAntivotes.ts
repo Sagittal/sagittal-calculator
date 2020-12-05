@@ -1,4 +1,4 @@
-import {Base, Grade, isUndefined, log, Parameter} from "../../../../general"
+import {Base, Grade, isUndefined, log, Parameter} from "@sagittal/general"
 import {LfcUnpopularityEstimate, WeightedAntivotesOptions} from "../types"
 
 const computeWeightedAntivotes = (

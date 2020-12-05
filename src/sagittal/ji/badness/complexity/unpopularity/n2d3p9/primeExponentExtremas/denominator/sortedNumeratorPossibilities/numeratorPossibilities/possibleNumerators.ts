@@ -1,4 +1,4 @@
-import {Decimal, isIntegerDecimalRough, Max, Numerator, TWO_3_FREE} from "../../../../../../../../../../general"
+import {Decimal, isIntegerDecimalRough, Max, Numerator, TWO_3_FREE} from "@sagittal/general"
 import {N2D3P9} from "../../../../types"
 import {computeMaxNumeratorGivenMaxN2D3P9} from "./maxNumerator"
 

@@ -10,7 +10,7 @@ import {
     Sopfr,
     stringify,
     time,
-} from "../../../general"
+} from "@sagittal/general"
 import {CommaAnalysis, MAX_N2D3P9_FOR_WHICH_POSSIBLE_NUMERATORS_ARE_KNOWN} from "../../../sagittal"
 import {computeFindCommasOptions, findCommas, FindCommasOptions} from "../findCommas"
 import {jiPitchScriptGroupSettings} from "../globals"

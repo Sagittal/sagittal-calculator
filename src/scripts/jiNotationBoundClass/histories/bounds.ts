@@ -1,4 +1,4 @@
-import {CommaMean} from "../../../general"
+import {CommaMean} from "@sagittal/general"
 import {
     BoundType,
     InaMidpoint,

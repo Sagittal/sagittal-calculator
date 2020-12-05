@@ -1,4 +1,4 @@
-import {Io, stringify} from "../../../../general"
+import {Io, stringify} from "@sagittal/general"
 import {scopesToSearch, solverStatus} from "../../globals"
 import {computeSortedBestMetrics} from "./sort"
 

@@ -1,4 +1,4 @@
-import {pow} from "../../../../../../../../general"
+import {pow} from "@sagittal/general"
 import {D39, D39ForPossibleMaxDenominatorPrimeExponentOptions} from "./types"
 
 const computeD39ForPossibleMaxDenominatorPrimeExponent = (

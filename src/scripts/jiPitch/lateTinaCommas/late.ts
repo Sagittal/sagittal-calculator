@@ -1,4 +1,4 @@
-import {Comma, count, Exponent, increment, Io, LogTarget, Maybe, min, Prime, saveLog} from "../../../general"
+import {Comma, count, Exponent, increment, Io, LogTarget, Maybe, min, Prime, saveLog} from "@sagittal/general"
 import {
     CommaAnalysis,
     computeAte,

@@ -1,4 +1,4 @@
-import {CommaMean, computeRationalScamonGeometricMean, indexOfFinalElement, Name} from "../../../general"
+import {CommaMean, computeRationalScamonGeometricMean, indexOfFinalElement, Name} from "@sagittal/general"
 import {
     CommaClassId,
     computeSagittalAscii,

@@ -1,4 +1,4 @@
-import {BLANK} from "../../../general"
+import {BLANK} from "@sagittal/general"
 import {Accidental} from "../flavor"
 import {Ascii, Smiley} from "../glyph"
 import {parseAscii} from "./ascii"

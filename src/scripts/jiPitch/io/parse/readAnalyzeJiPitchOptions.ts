@@ -9,7 +9,7 @@ import {
     parseQuotient,
     Quotient,
     ScriptFlag,
-} from "../../../../general"
+} from "@sagittal/general"
 import {
     Accidental,
     Ascii,

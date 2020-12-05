@@ -1,4 +1,4 @@
-import {Name, sort} from "../../../general"
+import {Name, sort} from "@sagittal/general"
 import {Submetric} from "../sumOfSquares"
 import {Metric, Scope, SubmetricScope} from "./types"
 

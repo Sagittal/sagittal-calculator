@@ -1,4 +1,4 @@
-import {Monzo} from "../../../general"
+import {Monzo} from "@sagittal/general"
 import {
     DEFAULT_EXCLUSIVE,
     DEFAULT_LOWER_BOUND,

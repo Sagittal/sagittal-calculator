@@ -1,4 +1,4 @@
-import {Maybe} from "../../general"
+import {Maybe} from "@sagittal/general"
 import {computeSagittalFromFlacco, getFlacco, Sagittal} from "../accidental"
 import {getCommaClass} from "./commaClass"
 import {CommaClassId} from "./types"

@@ -8,7 +8,7 @@ import {
     Of,
     Prime,
     PRIMES,
-} from "../../../../../../../../../../../../../src/general"
+} from "@sagittal/general"
 import {N2D3P9} from "../../../../../../../../../../../../../src/sagittal"
 
 describe("breaking points of max N2D3P9 per numerator prime", (): void => {

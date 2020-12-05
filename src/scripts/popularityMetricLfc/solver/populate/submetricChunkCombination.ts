@@ -12,7 +12,7 @@ import {
     LogTarget,
     merge,
     saveLog,
-} from "../../../../general"
+} from "@sagittal/general"
 import {Scope, SubmetricScope} from "../../bestMetric"
 import {PopularityParameterId, Submetric} from "../../sumOfSquares"
 import {formatSearchedAndPopulated} from "../io"

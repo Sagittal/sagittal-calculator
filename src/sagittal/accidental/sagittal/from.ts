@@ -1,4 +1,4 @@
-import {isUndefined, Maybe} from "../../../general"
+import {isUndefined, Maybe} from "@sagittal/general"
 import {getSymbolClass, SymbolClass, SymbolClassId} from "../../notation"
 import {Flacco, getFlacco} from "../flacco"
 import {Sagittal, Shafts} from "./types"

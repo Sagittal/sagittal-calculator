@@ -1,4 +1,4 @@
-import {ColorMethod, Count, formatTable, Index, Io, Row, sumTexts, Table} from "../../../../../general"
+import {ColorMethod, Count, formatTable, Index, Io, Row, sumTexts, Table} from "@sagittal/general"
 import {BoundClass, JI_NOTATION_BOUND_CLASS_ENTRIES} from "../../../../../sagittal"
 import {JiNotationBoundClassAnalysis} from "../../../boundClass"
 import {RANK_COLOR_METHODS} from "../rankColors"

@@ -1,4 +1,4 @@
-import {Cents, computePitchFromCents, Multiplier} from "../../../../../../src/general"
+import {Cents, computePitchFromCents, Multiplier} from "@sagittal/general"
 import {Ina, JiNotationLevelId} from "../../../../../../src/sagittal"
 import {HIGHINA_CENTS} from "../../../../../../src/sagittal/notations/ji/intervals"
 import {computeBoundEventInaDistance} from "../../../../../../src/scripts/jiNotationBoundClass/history/events/eventInaDistance"

@@ -1,4 +1,4 @@
-import {Abs, Comma, computeScamonFromDecimal, Decimal, Max, Min, Scamon, UNISON, Zone} from "../../../../../src/general"
+import {Abs, Comma, computeScamonFromDecimal, Decimal, Max, Min, Scamon, UNISON, Zone} from "@sagittal/general"
 import {ApotomeSlope, findNotatingCommas} from "../../../../../src/sagittal"
 
 describe("findNotatingCommas", (): void => {

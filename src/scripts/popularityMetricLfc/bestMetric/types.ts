@@ -1,4 +1,4 @@
-import {Combination, Index, Io, Maybe, Name, ParameterScopes, Sum} from "../../../general"
+import {Combination, Index, Io, Maybe, Name, ParameterScopes, Sum} from "@sagittal/general"
 import {PopularityParameterId, Submetric} from "../sumOfSquares"
 import {DynamicParameter, Sample} from "./scopeToSamples"
 

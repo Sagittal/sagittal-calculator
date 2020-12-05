@@ -1,4 +1,4 @@
-import {Formatted, IO_PRECISION, isUndefined, Maybe, Name, round} from "../../../../../general"
+import {Formatted, IO_PRECISION, isUndefined, Maybe, Name, round} from "@sagittal/general"
 import {Minas} from "../../../../../sagittal"
 
 const formatMinaName = (mina: Maybe<Name<Minas>>): Formatted<Name<Minas>> => {

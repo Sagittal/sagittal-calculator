@@ -1,4 +1,4 @@
-import {Copfr, Decimal, Max, Numerator, Prime} from "../../../../../../../general"
+import {Copfr, Decimal, Max, Numerator, Prime} from "@sagittal/general"
 
 interface KnownLowN2D3P9Numerator {
     numerator: Numerator & Decimal<{integer: true}>,

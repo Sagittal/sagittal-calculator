@@ -1,4 +1,4 @@
-import {count, Grade, LogTarget, Min, saveLog, stringify, Sum} from "../../general"
+import {count, Grade, LogTarget, Min, saveLog, stringify, Sum} from "@sagittal/general"
 import {computeMetricGradeForMetricAndParameterSet} from "./metricGrade"
 import {computeComplexityParameterSets} from "./parameters"
 import {ComplexityMetric, ComplexityMetricFamilyId, ComplexityParameterId, ComplexityParameterSet} from "./types"

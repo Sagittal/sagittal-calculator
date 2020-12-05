@@ -1,4 +1,4 @@
-import {Apotome, Ed} from "../../../general"
+import {Apotome, Ed} from "@sagittal/general"
 
 const MEDIUM_EDA = 21 as Ed<{of: Apotome}>
 const HIGH_EDA = 47 as Ed<{of: Apotome}>

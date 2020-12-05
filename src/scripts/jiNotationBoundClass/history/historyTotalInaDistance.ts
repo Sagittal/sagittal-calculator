@@ -1,4 +1,4 @@
-import {Multiplier, sum, Sum} from "../../../general"
+import {Multiplier, sum, Sum} from "@sagittal/general"
 import {Ina} from "../../../sagittal"
 import {BoundEventAnalysis} from "./events"
 

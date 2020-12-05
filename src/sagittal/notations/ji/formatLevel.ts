@@ -1,4 +1,4 @@
-import {Formatted} from "../../../general"
+import {Formatted} from "@sagittal/general"
 import {JiNotationLevelId} from "./types"
 
 // Not moving into an io folder for JI dir until there's at least one other thing

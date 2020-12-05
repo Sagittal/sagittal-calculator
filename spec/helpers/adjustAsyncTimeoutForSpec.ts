@@ -1,4 +1,4 @@
-import {Ms} from "../../src/general"
+import {Ms} from "@sagittal/general"
 
 const adjustAsyncTimeoutForSpec = (timeout: Ms): void => {
     let originalJasmineTimeoutInterval: number

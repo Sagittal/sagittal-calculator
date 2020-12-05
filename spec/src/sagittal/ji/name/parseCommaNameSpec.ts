@@ -1,4 +1,4 @@
-import {Io} from "../../../../../src/general"
+import {Io} from "@sagittal/general"
 import {parseCommaName} from "../../../../../src/sagittal"
 import {CommaNameQuotient, SizeCategory} from "../../../../../src/sagittal/ji/name/types"
 

@@ -14,7 +14,7 @@ import {
     Row,
     Sopfr,
     Two3FreeClass,
-} from "../../../../../../src/general"
+} from "@sagittal/general"
 import {ApotomeSlope, Ate, CommaAnalysis, CommaClassId, N2D3P9} from "../../../../../../src/sagittal"
 import {jiPitchScriptGroupSettings} from "../../../../../../src/scripts/jiPitch/globals"
 import {computeFindCommasRow} from "../../../../../../src/scripts/jiPitch/io/row"

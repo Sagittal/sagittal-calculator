@@ -6,7 +6,7 @@ import {
     Io,
     isScamonRational,
     Scamon,
-} from "../../../../general"
+} from "@sagittal/general"
 import {computeJiPitchFromAccidental} from "../../../../sagittal"
 import {parsePitch} from "./pitch"
 import {PitchFormat} from "./types"

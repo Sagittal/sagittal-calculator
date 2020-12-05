@@ -1,4 +1,4 @@
-import {computeCentsFromPitch, Two3FreeClass} from "../../../general"
+import {computeCentsFromPitch, Two3FreeClass} from "@sagittal/general"
 import {computeMaybeCommaClassId, findNotatingCommas} from "../../../sagittal"
 import {computeBestNotatingComma} from "./bestNotatingComma"
 import {BestNotatingCommaProperties} from "./types"

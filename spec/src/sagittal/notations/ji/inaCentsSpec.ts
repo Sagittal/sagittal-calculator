@@ -1,4 +1,4 @@
-import {Cents} from "../../../../../src/general"
+import {Cents} from "@sagittal/general"
 import {computeCentsFromTinas, Minas, Tinas} from "../../../../../src/sagittal"
 import {
     computeCentsFromHighinas,

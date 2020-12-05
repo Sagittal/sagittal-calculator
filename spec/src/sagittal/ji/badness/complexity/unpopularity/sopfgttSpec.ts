@@ -1,4 +1,4 @@
-import {Sopfr, Two3FreeClass} from "../../../../../../../src/general"
+import {Sopfr, Two3FreeClass} from "@sagittal/general"
 import {computeSopfgtt} from "../../../../../../../src/sagittal/ji/badness"
 import {Unpopularity} from "../../../../../../../src/sagittal/ji/badness/complexity/unpopularity/types"
 

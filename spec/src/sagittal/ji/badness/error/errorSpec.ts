@@ -1,4 +1,4 @@
-import {Cents} from "../../../../../../src/general"
+import {Cents} from "@sagittal/general"
 import {computeCentsError} from "../../../../../../src/sagittal"
 import {SEMITINA_CENTS} from "../../../../../../src/scripts/jiPitch/semitinaOccams"
 

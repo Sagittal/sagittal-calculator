@@ -16,7 +16,7 @@ import {
     Prime,
     shallowClone,
     Sopfr,
-} from "../../../general"
+} from "@sagittal/general"
 import {computePrimeExponentExtremasGivenMaxN2D3P9} from "../../../sagittal"
 import {TWO_3_FREE_MONZO_BASE} from "./constants"
 import {computePrimeExponentRange} from "./primeExponentRange"

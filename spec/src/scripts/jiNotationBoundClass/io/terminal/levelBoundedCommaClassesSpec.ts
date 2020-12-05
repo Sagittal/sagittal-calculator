@@ -1,4 +1,4 @@
-import {APOTOME, CommaMean, HALF_SCALER, Monzo, Name, Scamon} from "../../../../../../src/general"
+import {APOTOME, CommaMean, HALF_SCALER, Monzo, Name, Scamon} from "@sagittal/general"
 import {
     BoundClassId,
     BoundType,

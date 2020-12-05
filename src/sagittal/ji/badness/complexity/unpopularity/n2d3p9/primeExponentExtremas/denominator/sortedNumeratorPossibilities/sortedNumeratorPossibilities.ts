@@ -1,4 +1,4 @@
-import {Denominator, Io, LogTarget, Max, Of, Prime, saveLog, stringify} from "../../../../../../../../../general"
+import {Denominator, Io, LogTarget, Max, Of, Prime, saveLog, stringify} from "@sagittal/general"
 import {N2D3P9} from "../../../types"
 import {NumeratorPossibilityForDenominatorGivenMaxN2D3P9} from "./numeratorPossibilities"
 import {computeSortedNumeratorPossibilitiesGivenMaxN2D3P9WithGreaterGpfThanDenominatorPrimeSortedByN2P} from "./sortedNumeratorPossibilitiesWithGreaterGpf"

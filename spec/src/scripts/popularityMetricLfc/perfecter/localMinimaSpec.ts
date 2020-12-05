@@ -1,4 +1,4 @@
-import {Combination} from "../../../../../src/general"
+import {Combination} from "@sagittal/general"
 import {
     Sample,
     SamplePoint,

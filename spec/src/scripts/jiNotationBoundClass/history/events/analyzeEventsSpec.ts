@@ -1,4 +1,4 @@
-import {Abs, APOTOME, Cents, Multiplier, Scamon} from "../../../../../../src/general"
+import {Abs, APOTOME, Cents, Multiplier, Scamon} from "@sagittal/general"
 import {BoundType, Ina, JiNotationLevelId} from "../../../../../../src/sagittal"
 import {EXTREME_EDA, HIGH_EDA, ULTRA_EDA} from "../../../../../../src/sagittal/notations/ji/levelEdas"
 import {BoundHistory} from "../../../../../../src/scripts/jiNotationBoundClass/histories"

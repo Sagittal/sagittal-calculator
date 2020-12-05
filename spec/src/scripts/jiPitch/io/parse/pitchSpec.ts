@@ -1,5 +1,4 @@
-import {Io, Monzo, Quotient, Scamon} from "../../../../../../src/general"
-import {IRRATIONAL_SCAMON_BASE_MONZO} from "../../../../../../src/general/math/irrational/scamon/constants"
+import {Io, IRRATIONAL_SCAMON_BASE_MONZO, Monzo, Quotient, Scamon} from "@sagittal/general"
 import {parsePitch} from "../../../../../../src/scripts/jiPitch/io"
 
 describe("parsePitch", (): void => {

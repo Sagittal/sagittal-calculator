@@ -1,4 +1,4 @@
-import {Maybe} from "../../../general"
+import {Maybe} from "@sagittal/general"
 import {BoundEventAnalysis, BoundHistoryAnalysis} from "../history"
 import {ensureOneBestPossibleEventPerJiNotationLevel} from "./ensureOneBestPossibleEventPerLevel"
 import {computeInitialEventConsolidation} from "./initialEventConsolidation"

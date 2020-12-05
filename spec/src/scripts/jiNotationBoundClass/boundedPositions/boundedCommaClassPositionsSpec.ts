@@ -1,4 +1,4 @@
-import {Cents, Comma, computePitchFromCents, Monzo} from "../../../../../src/general"
+import {Cents, Comma, computePitchFromCents, Monzo} from "@sagittal/general"
 import {JiNotationLevelId} from "../../../../../src/sagittal"
 import {computeBoundedCommaClassPositions} from "../../../../../src/scripts/jiNotationBoundClass/boundedPositions"
 

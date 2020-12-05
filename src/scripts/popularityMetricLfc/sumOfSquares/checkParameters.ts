@@ -1,4 +1,4 @@
-import {computeDeepDistinct, isUndefined, stringify} from "../../../general"
+import {computeDeepDistinct, isUndefined, stringify} from "@sagittal/general"
 import {PopularityParameterId, Submetric} from "./types"
 
 const checkSubmetricsForInvalidParameterCombinations = (submetrics: Submetric[]): void => {

@@ -1,4 +1,4 @@
-import {Index, Parameter, Step} from "../../../../../../src/general"
+import {Index, Parameter, Step} from "@sagittal/general"
 import {DynamicParameter} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {computeDynamicParameterValueIndices} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples/dynamicParameterValueIndices"
 import {PopularityParameterId, Submetric} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"

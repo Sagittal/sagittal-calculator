@@ -1,4 +1,4 @@
-import {Io} from "../../../../../src/general"
+import {Io} from "@sagittal/general"
 import {parseAccidental} from "../../../../../src/sagittal"
 import {Compatible} from "../../../../../src/sagittal/accidental"
 import {ArmId, HeadId} from "../../../../../src/sagittal/accidental/flacco"

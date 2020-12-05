@@ -11,7 +11,7 @@ import {
     PRIMES,
     TableFormat,
     TWO_3_FREE_CLASS_SIGN,
-} from "../../../../general"
+} from "@sagittal/general"
 import {JiPitchesOrFindCommasField, JiPitchField, Two3FreeClassField} from "../../types"
 import {
     JI_PITCHES_OR_FIND_COMMAS_FIELD_TITLES,

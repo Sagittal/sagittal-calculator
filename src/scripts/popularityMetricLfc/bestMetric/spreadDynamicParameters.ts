@@ -1,4 +1,4 @@
-import {Maybe} from "../../../general"
+import {Maybe} from "@sagittal/general"
 import {PARAMETER_DYNAMISMS} from "../perfecter"
 import {PopularityParameterId} from "../sumOfSquares"
 import {Scope, SubmetricScope} from "./types"

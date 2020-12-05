@@ -1,4 +1,4 @@
-import {Comma, Filename, NEWLINE, readLines} from "../../general"
+import {Comma, Filename, NEWLINE, readLines} from "@sagittal/general"
 import {CommaClassId} from "../../sagittal"
 
 const computeZoneCommaEntries = (secondaryCommaZones: boolean): Array<[CommaClassId, Comma[]]> => {

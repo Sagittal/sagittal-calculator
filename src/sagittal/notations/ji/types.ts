@@ -1,4 +1,4 @@
-import {Cents, CommaMean, Name, NumericProperties, Scamon} from "../../../general"
+import {Cents, CommaMean, Name, NumericProperties, Scamon} from "@sagittal/general"
 import {SizeCategoryBound} from "../../ji"
 import {BoundClass, BoundClassId} from "../../notation"
 

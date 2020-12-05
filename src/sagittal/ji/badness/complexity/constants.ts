@@ -1,4 +1,4 @@
-import {Base, BASE_2, Exponent, negative, pow, reciprocal} from "../../../../general"
+import {Base, BASE_2, Exponent, negative, pow, reciprocal} from "@sagittal/general"
 
 const COMPLEXITY_EXPANDING_AND_COMPRESSING_BASE = 2 as Base
 

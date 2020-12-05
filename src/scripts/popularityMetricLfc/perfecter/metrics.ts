@@ -1,4 +1,4 @@
-import {count, Count, LogTarget, saveLog, stringify} from "../../../general"
+import {count, Count, LogTarget, saveLog, stringify} from "@sagittal/general"
 import {Metric} from "../bestMetric"
 import {perfectMetric, perfectMetricSync} from "./metric"
 import {MetricTag} from "./types"

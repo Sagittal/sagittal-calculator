@@ -1,4 +1,4 @@
-import {Count, Exponent, Max, Prime, Row, splitFieldTitlesIntoRowsBySpaces} from "../../../general"
+import {Count, Exponent, Max, Prime, Row, splitFieldTitlesIntoRowsBySpaces} from "@sagittal/general"
 import {CommaAnalysis, JiPitchAnalysis, Two3FreeClassAnalysis} from "../../../sagittal"
 import {excludeFields} from "./excludeFields"
 import {

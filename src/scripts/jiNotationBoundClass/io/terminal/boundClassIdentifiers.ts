@@ -1,4 +1,4 @@
-import {computeCentsFromPitch, isUndefined} from "../../../../general"
+import {computeCentsFromPitch, isUndefined} from "@sagittal/general"
 import {
     BLANK_ASCII,
     CommaClassId,

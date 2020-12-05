@@ -1,4 +1,4 @@
-import {Io, LogTarget, Maybe, saveLog} from "../../../general"
+import {Io, LogTarget, Maybe, saveLog} from "@sagittal/general"
 import {CommaAnalysis, CommaClassId, computeMaybeCommaClassId} from "../../../sagittal"
 import {DEFAULT_ANALYZE_JI_PITCH_AND_FIND_COMMAS_SORT_KEY} from "../constants"
 import {computeFindCommasOptions, findCommaAnalyses} from "../findCommas"

@@ -1,4 +1,4 @@
-import {Alignment, Cell, finalElement, isEmpty, Maybe, Row, TableAlignment} from "../../../../general"
+import {Alignment, Cell, finalElement, isEmpty, Maybe, Row, TableAlignment} from "@sagittal/general"
 import {
     INVISIBLE_MONZO_CLOSING_ANGLE_BRACKET_COLUMN_TITLE,
     INVISIBLE_MONZO_OPENING_SQUARE_BRACKET_COLUMN_TITLE,

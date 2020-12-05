@@ -10,7 +10,7 @@ import {
     Monzo,
     Quotient,
     Scamon,
-} from "../../../../../src/general"
+} from "@sagittal/general"
 import {
     BoundClassId,
     JiNotationBoundClass,
@@ -20,8 +20,8 @@ import {
 } from "../../../../../src/sagittal"
 import {INSANE_EDA} from "../../../../../src/sagittal/notations/ji/levelEdas"
 import {SEMITINA_CENTS} from "../../../../../src/scripts/jiPitch/semitinaOccams"
-import {computePitchExpectation} from "../../../../helpers/src/general/music/pitchExpectation"
-import {PitchExpectation} from "../../../../helpers/src/general/music/types"
+import {computePitchExpectation} from "../../../../helpers/src/sagittal/pitchExpectation"
+import {PitchExpectation} from "../../../../helpers/src/sagittal/types"
 
 describe("JI_NOTATION_BOUND_CLASS_ENTRIES", (): void => {
     it("almost every bound class in the JI notation is snapped to a odd semitina", (): void => {

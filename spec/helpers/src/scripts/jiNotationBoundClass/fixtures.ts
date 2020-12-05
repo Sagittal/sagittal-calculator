@@ -6,6 +6,7 @@ import {
     EMPTY_MONZO,
     Grade,
     HALF_SCALER,
+    IRRATIONAL_SCAMON_BASE_MONZO,
     Multiplier,
     Name,
     Quotient,
@@ -13,8 +14,7 @@ import {
     Scamon,
     Sum,
     UNISON,
-} from "../../../../../src/general"
-import {IRRATIONAL_SCAMON_BASE_MONZO} from "../../../../../src/general/math/irrational/scamon/constants"
+} from "@sagittal/general"
 import {
     BoundType,
     Ina,

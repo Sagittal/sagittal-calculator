@@ -1,4 +1,4 @@
-import {Ed, Index, Parameter, Window} from "../../../../../../src/general"
+import {Ed, Index, Parameter, Window} from "@sagittal/general"
 import {DynamicParameter, SubmetricScope} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric"
 import {computeSubmetricDynamicParameters} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples/submetricDynamicParameters"
 import {PopularityParameterId, Submetric} from "../../../../../../src/scripts/popularityMetricLfc/sumOfSquares"

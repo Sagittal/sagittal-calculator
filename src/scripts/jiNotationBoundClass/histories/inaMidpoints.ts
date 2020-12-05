@@ -1,4 +1,4 @@
-import {APOTOME, isScamonGreater, Maybe, Name, Quotient, Scamon} from "../../../general"
+import {APOTOME, isScamonGreater, Maybe, Name, Quotient, Scamon} from "@sagittal/general"
 import {
     HALF_APOTOME,
     InaMidpoint,

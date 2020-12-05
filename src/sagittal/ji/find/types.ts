@@ -1,4 +1,4 @@
-import {Abs, Max, Prime, Zone} from "../../../general"
+import {Abs, Max, Prime, Zone} from "@sagittal/general"
 import {ApotomeSlope, Ate, N2D3P9} from "../badness"
 
 type CommasFrom23FreeMonzoOptions = Partial<{

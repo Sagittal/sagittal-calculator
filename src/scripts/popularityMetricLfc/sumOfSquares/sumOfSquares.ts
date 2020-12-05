@@ -1,4 +1,4 @@
-import {Ranked, ScalaPopularityStat} from "../../../general"
+import {Ranked, ScalaPopularityStat} from "@sagittal/general"
 import {SumOfSquares} from "../bestMetric"
 import {LfcUnpopularityEstimate} from "./types"
 

@@ -6,7 +6,7 @@ import {
     formatIntegerDecimal,
     Io,
     NEWLINE,
-} from "../../../general"
+} from "@sagittal/general"
 import {FindCommasOptions} from "../findCommas"
 
 const JI_PITCH_TABLE_TITLE = "   --- JI pitch ---\n\n" as Io

@@ -1,4 +1,4 @@
-import {Io} from "../../../general"
+import {Io} from "@sagittal/general"
 import {jiPitchScriptGroupSettings} from "../globals"
 import {JiPitchScriptGroupField} from "../types"
 

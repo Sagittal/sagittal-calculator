@@ -7,7 +7,7 @@ import {
     SEPTIMAL_KLEISMA,
     SYNTONIC_COMMA,
     UNISON,
-} from "../../general"
+} from "@sagittal/general"
 import {CommaClass, CommaClassId, SymbolClassId} from "./types"
 
 const COMMA_CLASSES: Record<CommaClassId, CommaClass> = {

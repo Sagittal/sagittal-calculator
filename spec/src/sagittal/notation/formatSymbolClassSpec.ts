@@ -1,4 +1,4 @@
-import {Io, ioSettings, TableFormat} from "../../../../src/general"
+import {Io, ioSettings, TableFormat} from "@sagittal/general"
 import {formatSymbolClass, SymbolClassId} from "../../../../src/sagittal"
 
 describe("formatSymbolClass", (): void => {

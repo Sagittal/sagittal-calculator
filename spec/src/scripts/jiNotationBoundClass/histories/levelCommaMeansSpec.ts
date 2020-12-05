@@ -1,8 +1,8 @@
-import {Cents, CommaMean, Decimal, HALF_SCALER, Monzo, Name, Scamon} from "../../../../../src/general"
+import {Cents, CommaMean, Decimal, HALF_SCALER, Monzo, Name, Scamon} from "@sagittal/general"
 import {JiNotationLevelId} from "../../../../../src/sagittal"
 import {computeJiNotationLevelCommaMeans} from "../../../../../src/scripts/jiNotationBoundClass/histories/levelCommaMeans"
-import {computePitchExpectation} from "../../../../helpers/src/general/music/pitchExpectation"
-import {PitchExpectation} from "../../../../helpers/src/general/music/types"
+import {computePitchExpectation} from "../../../../helpers/src/sagittal/pitchExpectation"
+import {PitchExpectation} from "../../../../helpers/src/sagittal/types"
 
 describe("computeJiNotationLevelCommaMeans", (): void => {
     describe("naming", (): void => {

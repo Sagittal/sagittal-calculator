@@ -1,4 +1,4 @@
-import {Combination, Index, Parameter, Step} from "../../../../../../src/general"
+import {Combination, Index, Parameter, Step} from "@sagittal/general"
 import {combineSubmetricsPossibilitiesIntoSamples} from "../../../../../../src/scripts/popularityMetricLfc/bestMetric/scopeToSamples/combineSubmetricsPossibilitiesIntoSamples"
 import {
     DynamicParameter,

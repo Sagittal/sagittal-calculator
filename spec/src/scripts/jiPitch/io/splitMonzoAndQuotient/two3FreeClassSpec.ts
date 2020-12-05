@@ -1,4 +1,4 @@
-import {Formatted, ioSettings, TableFormat, Two3FreeClass} from "../../../../../../src/general"
+import {Formatted, ioSettings, TableFormat, Two3FreeClass} from "@sagittal/general"
 import {Two3FreeClassAnalysis} from "../../../../../../src/sagittal"
 import {formatSplit23FreeClass} from "../../../../../../src/scripts/jiPitch/io/splitMonzoAndQuotient"
 

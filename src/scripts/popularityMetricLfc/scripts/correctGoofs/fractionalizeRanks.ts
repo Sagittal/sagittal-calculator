@@ -8,7 +8,7 @@ import {
     saveLog,
     ScalaPopularityStat,
     stringify,
-} from "../../../../general"
+} from "@sagittal/general"
 
 const fractionalizeRanks = (): void => {
     // This script is only kept for historical reasons
