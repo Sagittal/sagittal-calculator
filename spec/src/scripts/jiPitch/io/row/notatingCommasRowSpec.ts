@@ -18,7 +18,7 @@ import {
 import {ApotomeSlope, Ate, CommaAnalysis, CommaClassId, N2D3P9} from "../../../../../../src/sagittal"
 import {jiPitchScriptGroupSettings} from "../../../../../../src/scripts/jiPitch/globals"
 import {computeNotatingCommasRow} from "../../../../../../src/scripts/jiPitch/io/row"
-import {NotatingCommasField} from "../../../../../../src/scripts/jiPitch/types"
+import {CommaField} from "../../../../../../src/scripts/jiPitch/types"
 import {commaAnalysisFixture, two3FreeClassAnalysisFixture} from "../../../../../helpers/src/scripts/jiPitch/fixtures"
 
 describe("computeNotatingCommasRow", (): void => {
@@ -71,7 +71,7 @@ describe("computeNotatingCommasRow", (): void => {
     })
 
     it("can filter the excluded fields", (): void => {
-        jiPitchScriptGroupSettings.excludedFields = [NotatingCommasField.CENTS, NotatingCommasField.MONZO]
+        jiPitchScriptGroupSettings.excludedFields = [CommaField.CENTS, CommaField.MONZO]
 
         const actual = computeNotatingCommasRow(commaAnalysis, commaClassId, maxMonzoLength)
 

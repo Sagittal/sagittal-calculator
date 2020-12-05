@@ -46,6 +46,7 @@ export {
     parseBoolean,
     computeExampleElement,
     computeKeyPath,
+    SortBy,
 } from "./code"
 export {
     sumTexts,

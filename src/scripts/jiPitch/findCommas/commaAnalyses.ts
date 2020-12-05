@@ -11,8 +11,8 @@ const findCommaAnalyses = (findCommasOptions: Partial<FindCommasOptions> = {}): 
         return analyzeComma(comma, jiPitchScriptGroupSettings.commaNameOptions)
     })
 
-    if (jiPitchScriptGroupSettings.sortKey) {
-        sort(commaAnalyses, {by: jiPitchScriptGroupSettings.sortKey})
+    if (jiPitchScriptGroupSettings.sortBy) {
+        sort(commaAnalyses, {by: jiPitchScriptGroupSettings.sortBy})
     }
 
     return commaAnalyses

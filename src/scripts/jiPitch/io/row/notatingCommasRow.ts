@@ -6,7 +6,7 @@ import {
     formatSizeCategory, PotentiallyCommaAnalysis,
 } from "../../../../sagittal"
 import {jiPitchScriptGroupSettings} from "../../globals"
-import {NotatingCommasField} from "../../types"
+import {CommaField} from "../../types"
 import {computeJiPitchRow} from "./jiPitchRow"
 
 const computeNotatingCommasRow = (
@@ -16,15 +16,15 @@ const computeNotatingCommasRow = (
 ): Row<{of: CommaAnalysis}> => {
     const row = []
 
-    if (!jiPitchScriptGroupSettings.excludedFields.includes(NotatingCommasField.COMMA_CLASS)) {
+    if (!jiPitchScriptGroupSettings.excludedFields.includes(CommaField.COMMA_CLASS)) {
         const formattedCommaClass = maybeCommaClassId ? formatCommaClass(maybeCommaClassId) : BLANK
         row.push(formattedCommaClass)
     }
-    if (!jiPitchScriptGroupSettings.excludedFields.includes(NotatingCommasField.NAME)) {
+    if (!jiPitchScriptGroupSettings.excludedFields.includes(CommaField.NAME)) {
         const {name} = commaAnalysis
         row.push(name)
     }
-    if (!jiPitchScriptGroupSettings.excludedFields.includes(NotatingCommasField.SIZE_CATEGORY)) {
+    if (!jiPitchScriptGroupSettings.excludedFields.includes(CommaField.SIZE_CATEGORY)) {
         const {sizeCategory} = commaAnalysis
         row.push(formatSizeCategory(sizeCategory))
     }

@@ -78,7 +78,7 @@ describe("sort", (): void => {
         expect(array).toEqual(expected)
     })
 
-    it("can use a nested path as a sort key", (): void => {
+    it("can take path to a property on each object to sort by", (): void => {
         const array = [
             [{}, {a: 5}],
             [{}, {a: 1}],

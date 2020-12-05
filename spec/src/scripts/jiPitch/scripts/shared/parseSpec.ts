@@ -1,6 +1,6 @@
 import {Exclusive, Io} from "../../../../../../src/general"
 import {parseExclusive, parseFields} from "../../../../../../src/scripts/jiPitch/scripts/shared/parse"
-import {JiPitchField, NotatingCommasField} from "../../../../../../src/scripts/jiPitch/types"
+import {CommaField, JiPitchField} from "../../../../../../src/scripts/jiPitch/types"
 
 describe("parseFields", (): void => {
     it("splits the fields by comma", (): void => {
@@ -8,7 +8,7 @@ describe("parseFields", (): void => {
 
         const actual = parseFields(fieldsIo)
 
-        const expected = [JiPitchField.MONZO, NotatingCommasField.NAME]
+        const expected = [JiPitchField.MONZO, CommaField.NAME]
         expect(actual).toEqual(expected)
     })
 

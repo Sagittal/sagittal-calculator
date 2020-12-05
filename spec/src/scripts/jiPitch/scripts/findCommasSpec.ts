@@ -48,7 +48,7 @@ describe("find-commas", (): void => {
     it("can sort the resulting list by a specific field", (): void => {
         onlyRunInCi()
 
-        const script = `npm run find-commas -- --lower-bound 50c --upper-bound 50.31c --sort-by apotomeSlope  --max-n2d3p9 ${OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS} --max-ate ${OLD_MAX_ATE_FOR_SHORTER_TEST_RESULTS} --max-aas ${OLD_MAX_AAS_FOR_SHORTER_TEST_RESULTS}` as Io
+        const script = `npm run find-commas -- --lower-bound 50c --upper-bound 50.31c --sort-by apotomeSlope --max-n2d3p9 ${OLD_MAX_N2D3P9_FOR_SHORTER_TEST_RESULTS} --max-ate ${OLD_MAX_ATE_FOR_SHORTER_TEST_RESULTS} --max-aas ${OLD_MAX_AAS_FOR_SHORTER_TEST_RESULTS}` as Io
 
         const actual = runScriptAndGetConsoleOutput(script)
 
@@ -78,12 +78,40 @@ describe("find-commas", (): void => {
     it("can sort the resulting list by more than one field", (): void => {
         onlyRunInCi()
 
-        // TODO: GETTING COMPLEX 3-LIMIT COMMA REFERENCE: SORTING BY MORE THAN ONE THING
-        //  Dang, okay. So the current implementation of sort allows you to provide a single thing or an array
-        //  However, the array does not correspond with sorting by more than one thing, nested sorting, so to speak
-        //  It just lets you specify the path to the single thing in each datum to sort by. It's always a single sort.
-        //  So if you want to be able to do this, you'll have to complicate the implementation of sort to maybe take
-        //  A `...args` type thing, each one of which is the single-or-path thing already implemented
+        const script = `npm run find-commas -- --sort-by n2d3p9,cents --max-prime-limit 7 --max-n2d3p9 8 --max-ate ${OLD_MAX_ATE_FOR_SHORTER_TEST_RESULTS} --max-aas ${OLD_MAX_AAS_FOR_SHORTER_TEST_RESULTS}` as Io
+
+        const actual = runScriptAndGetConsoleOutput(script)
+
+        const expected = [
+            "",
+            "lower bound:       \t[  ⟩ (inclusive)",
+            "upper bound:       \t[ -11   7 ⟩(1/2) (inclusive)",
+            "max ATE:           \t 15    ",
+            "max AAS:           \t 14.000",
+            "max N2D3P9:        \t  8.000",
+            "max 2,3-free sopfr:\t 61    ",
+            "max 2,3-free copfr:\t555    ",
+            "max prime limit:   \t  7    ",
+            "",
+            "        \t     \t        \t \t       \t     \t       \t       \t       \t       \t \t               \t       \t       \t       \t2,3-free\t2,3-free\t \t \t   \t2,3-free\t2,3-free\t2,3-free",
+            "comma   \t     \tquotient\t \t       \tmonzo\t       \t       \t       \t       \t \t               \tapotome\t       \t       \tprime   \t   class\t \t \t   \tclass   \tclass   \tclass   ",
+            "class   \tname \t       n\t/\td      \t     \t  2    \t  3    \t  5    \t  7    \t \tcents          \tslope  \tAAS    \tATE    \tlimit   \t       n\t/\td\t₂,₃\tCoPFR   \tSoPFR   \tN2D3P9  ",
+            " (|//|) \t1u   \t       1\t/\t1      \t    [\t       \t       \t       \t       \t⟩\t         0.000¢\t  0.000\t  0.000\t  0    \t  1     \t       1\t/\t1\t₂,₃\t  0     \t  0     \t  1.000 ",
+            "   '/|  \t3C   \t  531441\t/\t524288 \t    [\t-19    \t 12    \t       \t       \t⟩\t        23.460¢\t 10.555\t 10.555\t 12    \t  1     \t       1\t/\t1\t₂,₃\t  0     \t  0     \t  1.000 ",
+            "    '|  \t5s   \t   32805\t/\t32768  \t    [\t-15    \t  8    \t  1    \t       \t⟩\t         1.954¢\t  7.880\t  7.880\t  8    \t  5     \t       5\t/\t1\t₂,₃\t  1     \t  5     \t  1.389 ",
+            "    /|  \t1/5C \t      81\t/\t80     \t    [\t -4    \t  4    \t -1    \t       \t⟩\t        21.506¢\t  2.676\t  2.676\t  4    \t  5     \t       5\t/\t1\t₂,₃\t  1     \t  5     \t  1.389 ",
+            "     |) \t1/7C \t      64\t/\t63     \t    [\t  6    \t -2    \t  0    \t -1    \t⟩\t        27.264¢\t -3.679\t  3.679\t  2    \t  7     \t       7\t/\t1\t₂,₃\t  1     \t  7     \t  2.722 ",
+            "   '/|) \t1/7M \t   59049\t/\t57344  \t    [\t-13    \t 10    \t  0    \t -1    \t⟩\t        50.724¢\t  6.877\t  6.877\t 10    \t  7     \t       7\t/\t1\t₂,₃\t  1     \t  7     \t  2.722 ",
+            "   ./|  \t1/25C\t    2048\t/\t2025   \t    [\t 11    \t -4    \t -2    \t       \t⟩\t        19.553¢\t -5.204\t  5.204\t  4    \t  5     \t      25\t/\t1\t₂,₃\t  2     \t 10     \t  3.472 ",
+            "   //|  \t1/25S\t    6561\t/\t6400   \t    [\t -8    \t  8    \t -2    \t       \t⟩\t        43.013¢\t  5.352\t  5.352\t  8    \t  5     \t      25\t/\t1\t₂,₃\t  2     \t 10     \t  3.472 ",
+            "     |( \t5/7k \t    5120\t/\t5103   \t    [\t 10    \t -6    \t  1    \t -1    \t⟩\t         5.758¢\t -6.355\t  6.355\t  6    \t  7     \t       7\t/\t5\t₂,₃\t  2     \t 12     \t  4.537 ",
+            "    '|) \t5/7C \t    3645\t/\t3584   \t    [\t -9    \t  6    \t  1    \t -1    \t⟩\t        29.218¢\t  4.201\t  4.201\t  6    \t  7     \t       7\t/\t5\t₂,₃\t  2     \t 12     \t  4.537 ",
+            "    .|) \t1/35C\t 2097152\t/\t2066715\t    [\t 21    \t-10    \t -1    \t -1    \t⟩\t        25.310¢\t-11.558\t 11.558\t 10    \t  7     \t      35\t/\t1\t₂,₃\t  2     \t 12     \t  6.806 ", // Here's where it actually makes a difference.
+            " `.//|  \t35S  \t    2240\t/\t2187   \t    [\t  6    \t -7    \t  1    \t  1    \t⟩\t        41.455¢\t -9.553\t  9.553\t  7    \t  7     \t      35\t/\t1\t₂,₃\t  2     \t 12     \t  6.806 ", // These two lines would otherwise be swapped.
+            "    /|) \t1/35M\t      36\t/\t35     \t    [\t  2    \t  2    \t -1    \t -1    \t⟩\t        48.770¢\t -1.003\t  1.003\t  2    \t  7     \t      35\t/\t1\t₂,₃\t  2     \t 12     \t  6.806 ",
+            "",
+        ] as Io[]
+        expect(actual).toEqual(expected)
     })
 
     it("can set the format of the comma names", (): void => {

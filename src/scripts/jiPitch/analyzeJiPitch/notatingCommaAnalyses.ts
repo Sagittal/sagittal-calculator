@@ -16,8 +16,8 @@ const findNotatingCommaAnalyses = (
         return analyzeComma(comma, jiPitchScriptGroupSettings.commaNameOptions)
     })
 
-    if (jiPitchScriptGroupSettings.sortKey) {
-        sort(notatingCommaAnalyses, {by: jiPitchScriptGroupSettings.sortKey})
+    if (jiPitchScriptGroupSettings.sortBy) {
+        sort(notatingCommaAnalyses, {by: jiPitchScriptGroupSettings.sortBy})
     }
 
     return notatingCommaAnalyses

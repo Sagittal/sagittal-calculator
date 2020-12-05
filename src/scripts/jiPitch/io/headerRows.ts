@@ -2,9 +2,9 @@ import {Count, Exponent, Max, Prime, Row, splitFieldTitlesIntoRowsBySpaces} from
 import {CommaAnalysis, JiPitchAnalysis, Two3FreeClassAnalysis} from "../../../sagittal"
 import {excludeFields} from "./excludeFields"
 import {
+    COMMA_FIELD_TITLES,
     JI_PITCHES_OR_FIND_COMMAS_FIELD_TITLES,
     JI_PITCH_FIELD_TITLES,
-    NOTATING_COMMAS_FIELD_TITLES,
     TWO_3_FREE_CLASS_FIELD_TITLES,
 } from "./fieldTitles"
 import {formatPrimeHeaders, splitMonzoAndQuotientFieldTitles} from "./splitMonzoAndQuotient"
@@ -34,7 +34,7 @@ const computeNotatingCommasHeaderRows =
         formatPrimeHeaders(
             splitFieldTitlesIntoRowsBySpaces(
                 splitMonzoAndQuotientFieldTitles(
-                    excludeFields(NOTATING_COMMAS_FIELD_TITLES),
+                    excludeFields(COMMA_FIELD_TITLES),
                     {maxMonzoLength},
                 ),
             ),

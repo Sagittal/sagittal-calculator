@@ -12,7 +12,7 @@ import {
 } from "../../../../general"
 import {CommaAnalysis, CommaClassId} from "../../../../sagittal"
 import {jiPitchScriptGroupSettings} from "../../globals"
-import {NOTATING_COMMAS_FIELD_TITLES} from "../fieldTitles"
+import {COMMA_FIELD_TITLES} from "../fieldTitles"
 import {computeNotatingCommasHeaderRows} from "../headerRows"
 import {computeOrderedTableAndAlignment} from "../orderedFields"
 import {computeNotatingCommasRow} from "../row"
@@ -45,7 +45,7 @@ const computeNotatingCommasOutput = (
             tableAlignment: orderedTableAlignment,
         } = computeOrderedTableAndAlignment(
             {table: notatingCommasTable, tableAlignment},
-            {maxMonzoLength, fieldTitles: NOTATING_COMMAS_FIELD_TITLES},
+            {maxMonzoLength, fieldTitles: COMMA_FIELD_TITLES},
         )
         notatingCommasTable = orderedNotatingCommasTable
         tableAlignment = orderedTableAlignment

@@ -1,8 +1,8 @@
-import {KeyPath, Maybe} from "../../general"
+import {Maybe, SortBy} from "../../general"
 import {CommaNameOptions} from "../../sagittal"
 
 interface JiPitchScriptGroupSettings {
-    sortKey?: KeyPath,
+    sortBy?: SortBy,
     commaNameOptions: CommaNameOptions,
     excludedFields: JiPitchScriptGroupField[],
     orderedFields: Maybe<JiPitchScriptGroupField[]>,
@@ -25,7 +25,7 @@ enum Two3FreeClassField {
     N2D3P9 = "n2d3p9",
 }
 
-enum NotatingCommasField {
+enum CommaField {
     QUOTIENT = "quotient",
     MONZO = "monzo",
     CENTS = "cents",
@@ -54,13 +54,13 @@ enum JiPitchesOrFindCommasField {
     N2D3P9 = "n2d3p9",
 }
 
-type JiPitchScriptGroupField = JiPitchField | Two3FreeClassField | NotatingCommasField | JiPitchesOrFindCommasField
+type JiPitchScriptGroupField = JiPitchField | Two3FreeClassField | CommaField | JiPitchesOrFindCommasField
 
 export {
     JiPitchScriptGroupSettings,
     JiPitchField,
     Two3FreeClassField,
-    NotatingCommasField,
+    CommaField,
     JiPitchesOrFindCommasField,
     JiPitchScriptGroupField,
 }

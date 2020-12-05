@@ -6,8 +6,8 @@ import {jiPitchScriptGroupSettings} from "../globals"
 import {computeFindCommasOutput} from "../io"
 import {applySharedJiPitchScriptSetup} from "./shared"
 
+jiPitchScriptGroupSettings.sortBy = DEFAULT_ANALYZE_JI_PITCH_AND_FIND_COMMAS_SORT_KEY
 applySharedJiPitchScriptSetup()
-jiPitchScriptGroupSettings.sortKey = DEFAULT_ANALYZE_JI_PITCH_AND_FIND_COMMAS_SORT_KEY
 
 const findCommasOptions = computeFindCommasOptions()
 const commaAnalyses: CommaAnalysis[] = findCommaAnalyses(findCommasOptions)

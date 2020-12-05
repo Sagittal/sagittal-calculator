@@ -5,7 +5,7 @@ import {ScriptGroup} from "../../../types"
 import {jiPitchScriptGroupSettings} from "../../globals"
 import {parsePitch} from "../../io"
 import {JiPitchScriptGroupField} from "../../types"
-import {parseExclusive, parseFields} from "./parse"
+import {parseExclusive, parseFields, parseSortBy} from "./parse"
 
 const applySharedJiPitchScriptSetup = (): void => {
     program
@@ -32,9 +32,7 @@ const applySharedJiPitchScriptSetup = (): void => {
             parseInt,
         )
         .option(`-${ScriptFlag.MAX_N2D3P9}, --max-n2d3p9 <maxN2d3p9>`, "max n2d3p9", parseFloat)
-        // TODO: GETTING COMPLEX 3-LIMIT COMMA REFERENCE: PARSE SORT BY (MULTIPLE)
-        //  Add a handler here for `parseSortBy`, to handle comma-separated list of multiple sorts
-        .option(`-${ScriptFlag.SORT_BY}, --sort-by <sortBy>`, "sort by")
+        .option(`-${ScriptFlag.SORT_BY}, --sort-by <sortBy>`, "sort by", parseSortBy)
         .option(`-${ScriptFlag.UNDIRECTED_COMMA_NAME}, --undirected`, "undirected comma name")
         .option(`-${ScriptFlag.FACTORING_MODE}, --factoring-mode <factoringMode>`, "factoring mode (always, never, or threshold)")
         .option(`-${ScriptFlag.UNABBREVIATED_COMMA_NAME}, --unabbreviated`, "unabbreviated comma name")
@@ -51,7 +49,7 @@ const applySharedJiPitchScriptSetup = (): void => {
 
     setupScriptAndIo(ScriptGroup.JI_PITCH as Filename)
 
-    if (program.sortBy) jiPitchScriptGroupSettings.sortKey = program.sortBy
+    if (program.sortBy) jiPitchScriptGroupSettings.sortBy = program.sortBy
     if (program.excludedFields) jiPitchScriptGroupSettings.excludedFields = program.excludedFields
     if (program.orderedFields) {
         // The excluded fields must be wiped out if ordered fields feature is in use.

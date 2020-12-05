@@ -13,8 +13,8 @@ const computePotentiallyCommaAnalyses = (): PotentiallyCommaAnalysis[] => {
         jiPitches.map((jiPitch: Scamon<{rational: true}>): PotentiallyCommaAnalysis => {
             return analyzePotentiallyComma(jiPitch)
         })
-    if (jiPitchScriptGroupSettings.sortKey) {
-        sort(potentiallyCommaAnalyses, {by: jiPitchScriptGroupSettings.sortKey})
+    if (jiPitchScriptGroupSettings.sortBy) {
+        sort(potentiallyCommaAnalyses, {by: jiPitchScriptGroupSettings.sortBy})
     }
 
     return potentiallyCommaAnalyses

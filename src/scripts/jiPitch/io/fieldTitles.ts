@@ -1,5 +1,5 @@
 import {Io} from "../../../general"
-import {JiPitchesOrFindCommasField, JiPitchField, NotatingCommasField, Two3FreeClassField} from "../types"
+import {CommaField, JiPitchesOrFindCommasField, JiPitchField, Two3FreeClassField} from "../types"
 
 const JI_PITCH_FIELD_TITLES: Record<JiPitchField, Io> = {
     [JiPitchField.QUOTIENT]: "quotient" as Io,
@@ -18,15 +18,16 @@ const TWO_3_FREE_CLASS_FIELD_TITLES: Record<Two3FreeClassField, Io> = {
     [Two3FreeClassField.N2D3P9]: "N2D3P9" as Io,
 }
 
-const NOTATING_COMMAS_FIELD_TITLES: Record<NotatingCommasField, Io> = {
-    [NotatingCommasField.COMMA_CLASS]: "comma class" as Io,
-    [NotatingCommasField.NAME]: "name" as Io,
-    [NotatingCommasField.SIZE_CATEGORY]: "size category" as Io,
+const COMMA_FIELD_TITLES: Record<CommaField, Io> = {
+    [CommaField.COMMA_CLASS]: "comma class" as Io,
+    [CommaField.NAME]: "name" as Io,
+    [CommaField.SIZE_CATEGORY]: "size category" as Io,
+    // This is spread at the end because the order actually matters.
     ...JI_PITCH_FIELD_TITLES,
 }
 
 const JI_PITCHES_OR_FIND_COMMAS_FIELD_TITLES: Record<JiPitchesOrFindCommasField, Io> = {
-    ...NOTATING_COMMAS_FIELD_TITLES,
+    ...COMMA_FIELD_TITLES,
     // The rest are pretty much the same as TWO_3_FREE_CLASS_FIELD_TITLES,
     // But here we can't assume the "2,3-free class" part b/c there's no 2,3-free class title just above
     [JiPitchesOrFindCommasField.TWO_3_FREE_PRIME_LIMIT]: "2,3-free prime limit" as Io,
@@ -40,5 +41,5 @@ export {
     JI_PITCHES_OR_FIND_COMMAS_FIELD_TITLES,
     JI_PITCH_FIELD_TITLES,
     TWO_3_FREE_CLASS_FIELD_TITLES,
-    NOTATING_COMMAS_FIELD_TITLES,
+    COMMA_FIELD_TITLES,
 }

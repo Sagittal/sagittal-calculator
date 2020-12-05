@@ -16,8 +16,8 @@ import {applySharedJiPitchScriptSetup} from "./shared"
 
 readAnalyzeJiPitchOptions()
 
+jiPitchScriptGroupSettings.sortBy = DEFAULT_ANALYZE_JI_PITCH_AND_FIND_COMMAS_SORT_KEY
 applySharedJiPitchScriptSetup()
-jiPitchScriptGroupSettings.sortKey = DEFAULT_ANALYZE_JI_PITCH_AND_FIND_COMMAS_SORT_KEY
 
 const [jiPitchIo, pitchFormat] = readJiPitchIoAndFormat()
 const jiPitch = parseJiPitch(jiPitchIo, pitchFormat)

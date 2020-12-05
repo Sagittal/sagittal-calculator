@@ -6,12 +6,14 @@ type SortResultOptions = Partial<{
 }>
 
 type SortOptions = SortResultOptions & {
-    by?: KeyPath | KeyPath[],
+    by?: SortBy,
 }
 
 type SortByResultOptions = SortResultOptions & {
     keyPath: KeyPath,
 }
+
+type SortBy = KeyPath | KeyPath[]
 
 type KeyPath = (
     number
@@ -70,4 +72,5 @@ export {
     SortByResultOptions,
     SortResult,
     SortResultOptions,
+    SortBy,
 }
