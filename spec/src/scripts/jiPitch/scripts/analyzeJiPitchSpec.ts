@@ -337,7 +337,7 @@ describe("analyze-ji-pitch", (): void => {
             "1/5C\t        21.506¢\t  2.676\t  4    ",
             "1/5S\t        44.966¢\t 13.231\t 16    ",
             "5s  \t         1.954¢\t  7.880\t  8    ",
-            "5C  \t        25.414¢\t 18.435\t 20    ",
+            "c5C \t        25.414¢\t 18.435\t 20    ",
             "",
         ] as Io[]
         expect(actual).toEqual(expected)
