@@ -214,35 +214,21 @@ describe("computeCommaName", (): void => {
         //  The form for output is bolded.
     })
 
-    // TODO: COMMA NAMES: COMPLEX NAMES
-    //  Complex 	    c
-    //  Supercomplex 	sc
-    //  Hypercomplex 	hc
-    //  Ultracomplex 	uc
-    //  5-complex 	    5c
-    //  6-complex 	    6c
-    //  7-complex 	    7c
-    //  8-complex 	    8c
-    //  9-complex 	    9c
-    //  10-complex 	    10c
-    //  11-complex 	    11c
-    //  12-complex 	    12c
-    //  13-complex 	    13c
     it("can name complex commas beyond the 3-limit", (): void => {
-        // Const comma = {monzo: [-34, 20, 1]} as Comma
-        //
-        // Const actual = computeCommaName(comma)
-        //
-        // Const expected = "c5C"
-        // Expect(actual).toBe(expected)
+        const comma = {monzo: [-34, 20, 1]} as Comma
+
+        const actual = computeCommaName(comma)
+
+        const expected = "c5C"
+        expect(actual).toBe(expected)
     })
 
     it("can name complex commas beyond the 3-limit, in unabbreviated form", (): void => {
-        // Const comma = {monzo: [-34, 20, 1]} as Comma
-        //
-        // Const actual = computeCommaName(comma, {abbreviated: false})
-        //
-        // Const expected = "complex-5-Comma"
-        // Expect(actual).toBe(expected)
+        const comma = {monzo: [-34, 20, 1]} as Comma
+
+        const actual = computeCommaName(comma, {abbreviated: false})
+
+        const expected = "complex-5-Comma"
+        expect(actual).toBe(expected)
     })
 })

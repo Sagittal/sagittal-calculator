@@ -63,6 +63,12 @@ interface ParsedCommaName {
     sizeCategory: SizeCategory,
 }
 
+interface MaybeComplexOptions {
+    two3FreeQuotient: Quotient<{rational: true, rough: 5}>,
+    sizeCategory: SizeCategory,
+    abbreviated: boolean,
+}
+
 export {
     SizeCategory,
     SizeCategoryName,
@@ -72,4 +78,5 @@ export {
     ParsedCommaName,
     SizeCategoryBound,
     FactoringMode,
+    MaybeComplexOptions,
 }
