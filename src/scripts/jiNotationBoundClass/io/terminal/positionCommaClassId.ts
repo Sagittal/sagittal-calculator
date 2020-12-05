@@ -1,5 +1,5 @@
 import {areScamonsEqual, isUndefined, Maybe, Scamon} from "@sagittal/general"
-import {CommaClassId, getCommaClass, JI_NOTATION} from "../../../../sagittal"
+import {CommaClassId, getCommaClass, JI_NOTATION} from "@sagittal/system"
 
 const computePositionCommaClassId = (position: Maybe<Scamon<{rational: true}>>): Maybe<CommaClassId> => {
     if (!position) {

@@ -1,5 +1,5 @@
 import {Filename, Io, parse23FreeClass, readLines, Two3FreeClass} from "@sagittal/general"
-import {analyze23FreeClass} from "../../sagittal"
+import {analyze23FreeClass} from "@sagittal/system"
 import {computePopular23FreeClass} from "./popular23FreeClass"
 import {Popular23FreeClass} from "./types"
 

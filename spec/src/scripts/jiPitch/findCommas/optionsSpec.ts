@@ -1,5 +1,5 @@
 import {Abs, Decimal, Max, Monzo, Scamon} from "@sagittal/general"
-import {ApotomeSlope, Ate, computeAas, JiPitchAnalysis, N2D3P9} from "../../../../../src/sagittal"
+import {ApotomeSlope, Ate, computeAas, JiPitchAnalysis, N2D3P9} from "@sagittal/system"
 import {
     computeFindNotatingCommasOptions,
     DEFAULT_FIND_COMMAS_OPTIONS,

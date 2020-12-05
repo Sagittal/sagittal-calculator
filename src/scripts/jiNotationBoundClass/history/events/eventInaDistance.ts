@@ -1,5 +1,5 @@
 import {Multiplier} from "@sagittal/general"
-import {Ina} from "../../../../sagittal"
+import {Ina} from "@sagittal/system"
 import {BoundEvent, BoundHistory} from "../../histories"
 import {computeBoundEventDistance} from "./eventDistance"
 import {computeInaDistance} from "./inaDistance"

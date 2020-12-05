@@ -1,5 +1,5 @@
 import {Comma, Grade, Sum} from "@sagittal/general"
-import {CommaClassId} from "../../sagittal"
+import {CommaClassId} from "@sagittal/system"
 import {EXCLUDED_COMMAS} from "./constants"
 import {complexityAndBadnessMetricLfcScriptGroupSettings} from "./globals"
 import {ComplexityMetric, ComplexityParameterSet} from "./types"

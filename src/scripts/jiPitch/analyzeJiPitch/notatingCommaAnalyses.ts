@@ -1,5 +1,5 @@
 import {Comma, Scamon, sort} from "@sagittal/general"
-import {analyzeComma, CommaAnalysis, findNotatingCommas} from "../../../sagittal"
+import {analyzeComma, CommaAnalysis, findNotatingCommas} from "@sagittal/system"
 import {FindCommasOptions} from "../findCommas"
 import {jiPitchScriptGroupSettings} from "../globals"
 

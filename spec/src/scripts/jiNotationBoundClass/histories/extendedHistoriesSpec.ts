@@ -1,6 +1,5 @@
 import {APOTOME, Cents, computePitchFromCents, HALF_SCALER, Monzo, Name, Scamon} from "@sagittal/general"
-import {BoundType, JiNotationBound, JiNotationLevelId} from "../../../../../src/sagittal"
-import {HIGH_EDA, ULTRA_EDA} from "../../../../../src/sagittal/notations/ji/levelEdas"
+import {BoundType, HIGH_EDA, JiNotationBound, JiNotationLevelId, ULTRA_EDA} from "@sagittal/system"
 import {BoundEvent, BoundHistory} from "../../../../../src/scripts/jiNotationBoundClass/histories"
 import {computeExtendedHistories} from "../../../../../src/scripts/jiNotationBoundClass/histories/extendedHistories"
 import {jiNotationBoundClassFixture} from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"

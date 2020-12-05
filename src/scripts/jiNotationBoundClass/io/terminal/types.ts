@@ -9,7 +9,7 @@ import {
     Minas,
     SymbolSubsetId,
     Unicode,
-} from "../../../../sagittal"
+} from "@sagittal/system"
 
 // Building up to BoundedCommaClassIdPairs
 

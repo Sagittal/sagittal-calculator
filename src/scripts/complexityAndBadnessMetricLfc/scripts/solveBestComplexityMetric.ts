@@ -1,4 +1,3 @@
-import {program} from "commander"
 import {
     Filename,
     ioSettings,
@@ -9,6 +8,7 @@ import {
     setupScriptAndIo,
     time,
 } from "@sagittal/general"
+import {program} from "commander"
 import {ScriptGroup} from "../../types"
 import {complexityAndBadnessMetricLfcScriptGroupSettings} from "../globals"
 import {COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS} from "../metrics"

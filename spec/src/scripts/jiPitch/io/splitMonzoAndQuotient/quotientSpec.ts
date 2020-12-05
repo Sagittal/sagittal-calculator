@@ -1,5 +1,5 @@
 import {Formatted, ioSettings, Quotient, TableFormat} from "@sagittal/general"
-import {JiPitchAnalysis} from "../../../../../../src/sagittal"
+import {JiPitchAnalysis} from "@sagittal/system"
 import {formatSplitQuotient} from "../../../../../../src/scripts/jiPitch/io/splitMonzoAndQuotient"
 
 describe("formatSplitQuotient", (): void => {

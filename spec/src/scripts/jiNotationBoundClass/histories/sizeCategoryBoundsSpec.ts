@@ -1,5 +1,5 @@
 import {maxScamon, Scamon} from "@sagittal/general"
-import {HALF_APOTOME, SizeCategoryBound} from "../../../../../src/sagittal"
+import {HALF_APOTOME, SizeCategoryBound} from "@sagittal/system"
 import {computeSizeCategoryBoundsUpToHalfApotome} from "../../../../../src/scripts/jiNotationBoundClass/histories/sizeCategoryBounds"
 
 describe("computeSizeCategoryBoundsUpToHalfApotome", (): void => {

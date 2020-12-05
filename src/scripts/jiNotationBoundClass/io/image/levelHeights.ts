@@ -1,5 +1,5 @@
 import {add, Basis, Cents, computePx, DEFAULT_PRECISION, Multiplier, multiply, Px, round} from "@sagittal/general"
-import {JiNotationLevelId, JI_NOTATION_LEVELS} from "../../../../sagittal"
+import {JiNotationLevelId, JI_NOTATION_LEVELS} from "@sagittal/system"
 import {computeReversedJiNotationLevelIndex} from "./reversedLevelIndex"
 import {LEVEL_HEIGHT, MARGIN, Y_SCALE} from "./sizes"
 

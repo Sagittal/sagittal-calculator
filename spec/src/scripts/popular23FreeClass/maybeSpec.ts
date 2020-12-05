@@ -1,5 +1,5 @@
 import {Direction, Max, Monzo, Two3FreeClass} from "@sagittal/general"
-import {N2D3P9} from "../../../../src/sagittal"
+import {N2D3P9} from "@sagittal/system"
 import {computeMaybePopular23FreeClass} from "../../../../src/scripts/popular23FreeClass/maybe"
 
 describe("computeMaybePopular23FreeClass", (): void => {

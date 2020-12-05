@@ -1,9 +1,6 @@
-import {APOTOME, Name} from "@sagittal/general"
-import {InaMidpoint, JiNotationLevelId} from "../../../../../src/sagittal"
-import {EXTREME_EDA, MEDIUM_EDA} from "../../../../../src/sagittal/notations/ji/levelEdas"
+import {APOTOME, computePitchExpectation, Name, PitchExpectation} from "@sagittal/general"
+import {EXTREME_EDA, InaMidpoint, JiNotationLevelId, MEDIUM_EDA} from "@sagittal/system"
 import {computeInaMidpoints} from "../../../../../src/scripts/jiNotationBoundClass/histories/inaMidpoints"
-import {computePitchExpectation} from "../../../../helpers/src/sagittal/pitchExpectation"
-import {PitchExpectation} from "../../../../helpers/src/sagittal/types"
 
 describe("computeInaMidpoints", (): void => {
     it("works (e.g.) for the Medium JI notation level, only including midpoints below or at the max position                ", (): void => {

@@ -1,5 +1,5 @@
 import {compute23FreeClass, computeScamonFromQuotient, Max, Quotient} from "@sagittal/general"
-import {analyze23FreeClass, computeKnownRationalQuotients, N2D3P9} from "../../sagittal"
+import {analyze23FreeClass, computeKnownRationalQuotients, N2D3P9} from "@sagittal/system"
 import {computePopular23FreeClass} from "./popular23FreeClass"
 import {Popular23FreeClass} from "./types"
 

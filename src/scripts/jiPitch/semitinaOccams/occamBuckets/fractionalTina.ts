@@ -9,7 +9,7 @@ import {
     stringify,
     subtractRationalScamons,
 } from "@sagittal/general"
-import {computeCommaName} from "../../../../sagittal"
+import {computeCommaName} from "@sagittal/system"
 import {metacommaNameToMetacommaMap} from "../../globals"
 import {Semitina} from "../types"
 import {checkMetacommaConsistency} from "./consistency"

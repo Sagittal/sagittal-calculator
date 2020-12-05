@@ -1,5 +1,5 @@
 import {Io, join, NEWLINE, shallowClone, sumTexts} from "@sagittal/general"
-import {JiNotationLevelId, JI_NOTATION_LEVELS} from "../../../../../sagittal"
+import {JiNotationLevelId, JI_NOTATION_LEVELS} from "@sagittal/system"
 import {LEVEL_ANALYSES_TITLE} from "../titles"
 import {formatJiNotationLevelAnalysis} from "./levelAnalysis"
 

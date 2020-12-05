@@ -1,5 +1,5 @@
 import {Cents, Maybe, Monzo} from "@sagittal/general"
-import {CommaClassId} from "../../../sagittal"
+import {CommaClassId} from "@sagittal/system"
 
 interface BestNotatingCommaProperties {
     bestNotatingCommaCents: Cents,

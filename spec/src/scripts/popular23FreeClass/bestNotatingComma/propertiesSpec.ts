@@ -1,5 +1,5 @@
 import {Cents, Monzo, Two3FreeClass} from "@sagittal/general"
-import {CommaClassId} from "../../../../../src/sagittal"
+import {CommaClassId} from "@sagittal/system"
 import {
     BestNotatingCommaProperties,
     computeBestNotatingCommaProperties,

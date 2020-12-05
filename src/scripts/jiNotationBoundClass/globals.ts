@@ -1,5 +1,5 @@
 import {Count, Decimal, Index, Rank, RecordKey} from "@sagittal/general"
-import {BoundClass, BoundType, JiNotationLevelId} from "../../sagittal"
+import {BoundClass, BoundType, JiNotationLevelId} from "@sagittal/system"
 import {RANKS} from "./ranks"
 
 const jiNotationLevelsBestHistoryRanks:

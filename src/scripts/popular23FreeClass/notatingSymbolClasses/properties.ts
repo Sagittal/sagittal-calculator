@@ -4,7 +4,7 @@ import {
     SIZE_SORTED_SYMBOL_SUBSET_IDS,
     SymbolClassId,
     SymbolSubsetId,
-} from "../../../sagittal"
+} from "@sagittal/system"
 import {computeNotatingSymbolClassIds} from "./notatingSymbolClassIds"
 import {NotatingSymbolClassesProperties} from "./types"
 

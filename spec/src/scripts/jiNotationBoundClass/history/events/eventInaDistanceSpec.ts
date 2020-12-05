@@ -1,6 +1,5 @@
 import {Cents, computePitchFromCents, Multiplier} from "@sagittal/general"
-import {Ina, JiNotationLevelId} from "../../../../../../src/sagittal"
-import {HIGHINA_CENTS} from "../../../../../../src/sagittal/notations/ji/intervals"
+import {HIGHINA_CENTS, Ina, JiNotationLevelId} from "@sagittal/system"
 import {computeBoundEventInaDistance} from "../../../../../../src/scripts/jiNotationBoundClass/history/events/eventInaDistance"
 import {boundEventFixture} from "../../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 

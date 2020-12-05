@@ -1,5 +1,5 @@
 import {BLANK, Copfr, Io, Max, Monzo, NEWLINE, Prime, Sopfr, Two3FreeClass} from "@sagittal/general"
-import {N2D3P9} from "../../../../../../src/sagittal"
+import {N2D3P9} from "@sagittal/system"
 import {jiPitchScriptGroupSettings} from "../../../../../../src/scripts/jiPitch/globals"
 import {compute23FreeClassOutput} from "../../../../../../src/scripts/jiPitch/io"
 import {JiPitchScriptGroupField} from "../../../../../../src/scripts/jiPitch/types"

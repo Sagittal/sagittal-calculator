@@ -1,5 +1,5 @@
 import {Cents, computePitchFromCents, HALF_SCALER, Monzo, Scamon} from "@sagittal/general"
-import {JiNotationBoundClass, JiNotationLevelId} from "../../../../../src/sagittal"
+import {JiNotationBoundClass, JiNotationLevelId} from "@sagittal/system"
 import {computeInitialPosition} from "../../../../../src/scripts/jiNotationBoundClass/boundClass/initialPosition"
 import {jiNotationBoundClassFixture} from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"
 

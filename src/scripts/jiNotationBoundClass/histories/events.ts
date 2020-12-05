@@ -1,5 +1,5 @@
 import {BLANK, isScamonGreater, isScamonLesser, Name} from "@sagittal/general"
-import {BoundType, JiNotationBound, JiNotationLevelId} from "../../../sagittal"
+import {BoundType, JiNotationBound, JiNotationLevelId} from "@sagittal/system"
 import {BoundedCommaClassPositions} from "../boundedPositions"
 import {JI_NOTATION_BOUNDS_BY_TYPE} from "./bounds"
 import {BoundEvent} from "./types"

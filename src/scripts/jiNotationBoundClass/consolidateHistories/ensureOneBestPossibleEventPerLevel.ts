@@ -1,5 +1,5 @@
 import {isEmpty} from "@sagittal/general"
-import {formatJiNotationLevel, JiNotationLevelId} from "../../../sagittal"
+import {formatJiNotationLevel, JiNotationLevelId} from "@sagittal/system"
 import {BoundEventConsolidation, BoundHistoryConsolidation} from "./types"
 
 const ensureOneBestPossibleEventPerJiNotationLevel = (

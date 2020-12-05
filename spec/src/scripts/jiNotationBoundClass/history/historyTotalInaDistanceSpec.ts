@@ -1,5 +1,5 @@
 import {Multiplier, Sum} from "@sagittal/general"
-import {Ina} from "../../../../../src/sagittal"
+import {Ina} from "@sagittal/system"
 import {BoundEventAnalysis} from "../../../../../src/scripts/jiNotationBoundClass/history"
 import {computeBoundHistoryTotalInaDistance} from "../../../../../src/scripts/jiNotationBoundClass/history/historyTotalInaDistance"
 import {boundEventAnalysisFixture} from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"

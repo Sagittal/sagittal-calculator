@@ -1,5 +1,5 @@
 import {Decimal, formatIntegerDecimal, Formatted, Rank} from "@sagittal/general"
-import {BoundType, JiNotationLevelId, JI_NOTATION_LEVELS} from "../../../../../sagittal"
+import {BoundType, JiNotationLevelId, JI_NOTATION_LEVELS} from "@sagittal/system"
 import {BoundEventAnalysis, BoundHistoryAnalysis} from "../../../history"
 
 const extractJiNotationLevelRanks = (

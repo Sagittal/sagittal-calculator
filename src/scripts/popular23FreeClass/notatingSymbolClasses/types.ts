@@ -1,5 +1,5 @@
 import {Index} from "@sagittal/general"
-import {SymbolClassId, SymbolSubsetId} from "../../../sagittal"
+import {SymbolClassId, SymbolSubsetId} from "@sagittal/system"
 
 interface NotatingSymbolClassesProperties {
     notatingSymbolClassSmallestSymbolSubsetIndices: Array<Index<SymbolSubsetId>>,

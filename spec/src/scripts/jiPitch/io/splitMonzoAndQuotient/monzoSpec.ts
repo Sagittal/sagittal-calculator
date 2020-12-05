@@ -1,5 +1,5 @@
 import {Count, Exponent, Formatted, Max, Monzo, Prime} from "@sagittal/general"
-import {JiPitchAnalysis} from "../../../../../../src/sagittal"
+import {JiPitchAnalysis} from "@sagittal/system"
 import {formatSplitMonzo} from "../../../../../../src/scripts/jiPitch/io/splitMonzoAndQuotient"
 
 describe("formatSplitMonzo", (): void => {

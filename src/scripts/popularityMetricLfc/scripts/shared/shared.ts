@@ -1,5 +1,5 @@
-import {program} from "commander"
 import {Filename, LogTarget, ScriptFlag, setupScriptAndIo} from "@sagittal/general"
+import {program} from "commander"
 import {ScriptGroup} from "../../../types"
 import {popularityMetricLfcScriptGroupSettings} from "../../globals"
 

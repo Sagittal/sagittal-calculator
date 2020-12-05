@@ -1,5 +1,5 @@
 import {Name} from "@sagittal/general"
-import {Minas} from "../../../../../../../src/sagittal"
+import {Minas} from "@sagittal/system"
 import {formatMinaName} from "../../../../../../../src/scripts/jiNotationBoundClass/io/terminal"
 
 describe("formatMinaName", (): void => {

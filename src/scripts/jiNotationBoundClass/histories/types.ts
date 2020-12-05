@@ -1,5 +1,5 @@
 import {Name, Scamon} from "@sagittal/general"
-import {BoundType, JiNotationBound, JiNotationLevelId} from "../../../sagittal"
+import {BoundType, JiNotationBound, JiNotationLevelId} from "@sagittal/system"
 
 interface BoundEvent {
     jiNotationLevel: JiNotationLevelId,

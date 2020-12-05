@@ -1,6 +1,0 @@
-export {flipSagittal} from "./flip"
-export {computeApotomeComplement} from "./apotomeComplement"
-export {apotomeShift} from "./apotomeShift"
-export {getCore} from "./core"
-export {Core, Sagittal, Shafts} from "./types"
-export {computeSagittalFromFlacco, computeSagittalFromSymbolClassId, computeSagittalFromSymbolClass} from "./from"

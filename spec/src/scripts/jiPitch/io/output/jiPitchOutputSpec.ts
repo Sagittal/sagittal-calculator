@@ -1,7 +1,7 @@
 // tslint:disable max-line-length
 
 import {Abs, BLANK, Cents, Io, ioSettings, Monzo, NEWLINE, Quotient, TableFormat} from "@sagittal/general"
-import {ApotomeSlope, Ate, JiPitchAnalysis} from "../../../../../../src/sagittal"
+import {ApotomeSlope, Ate, JiPitchAnalysis} from "@sagittal/system"
 import {jiPitchScriptGroupSettings} from "../../../../../../src/scripts/jiPitch/globals"
 import {computeJiPitchOutput} from "../../../../../../src/scripts/jiPitch/io"
 import {JiPitchScriptGroupField} from "../../../../../../src/scripts/jiPitch/types"
@@ -69,7 +69,7 @@ describe("computeJiPitchOutput", (): void => {
             "cents",
             "apotomeSlope",
             "aas",
-            "ate"
+            "ate",
         ] as JiPitchScriptGroupField[]
 
         const actual = computeJiPitchOutput(jiPitchAnalysis)

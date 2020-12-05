@@ -6,7 +6,7 @@ import {
     getRepresentativeSagittal,
     JiNotationLevelId,
     JI_NOTATION_LEVELS_COMMA_CLASS_IDS,
-} from "../../../sagittal"
+} from "@sagittal/system"
 
 const computeJiNotationLevelCommaMeans = (jiNotationLevel: JiNotationLevelId): CommaMean[] => {
     const jiNotationLevelCommaClassIds = JI_NOTATION_LEVELS_COMMA_CLASS_IDS[jiNotationLevel]

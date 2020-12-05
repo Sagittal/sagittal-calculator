@@ -1,5 +1,15 @@
-import {BLANK, computeExampleElement, count, formatTable, Io, isEmpty, isUndefined, sumTexts, Table} from "@sagittal/general"
-import {Two3FreeClassAnalysis} from "../../../../sagittal"
+import {
+    BLANK,
+    computeExampleElement,
+    count,
+    formatTable,
+    Io,
+    isEmpty,
+    isUndefined,
+    sumTexts,
+    Table,
+} from "@sagittal/general"
+import {Two3FreeClassAnalysis} from "@sagittal/system"
 import {jiPitchScriptGroupSettings} from "../../globals"
 import {TWO_3_FREE_CLASS_FIELD_TITLES} from "../fieldTitles"
 import {compute23FreeClassHeaderRows} from "../headerRows"

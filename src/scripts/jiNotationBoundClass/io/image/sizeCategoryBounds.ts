@@ -1,5 +1,5 @@
 import {DEFAULT_PRECISION, Io, Px, round} from "@sagittal/general"
-import {JiNotationLevelId, SizeCategoryBound} from "../../../../sagittal"
+import {JiNotationLevelId, SizeCategoryBound} from "@sagittal/system"
 import {JI_NOTATION_LEVELS_SIZE_CATEGORY_BOUNDS} from "../../histories"
 import {JI_NOTATION_LEVEL_BOTTOMS, JI_NOTATION_LEVEL_TOPS} from "./levelHeights"
 import {SIZE_CATEGORY_BOUND_HEX_COLOR} from "./rankColors"

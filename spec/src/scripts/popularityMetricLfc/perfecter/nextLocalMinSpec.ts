@@ -77,7 +77,7 @@ describe("searchNextLocalMin", (): void => {
         // Setting up for an error because this metric name has already been searched
         metricNames.push(metricName)
 
-        await expectAsync(new Promise(async (resolve: () => void, reject: () => void): Promise<void> => {
+        await expectAsync(new Promise(async (resolve: (value?: unknown) => void, reject: () => void): Promise<void> => {
             try {
                 await searchNextLocalMin(nextLocalMin, {
                     dynamicParameters,

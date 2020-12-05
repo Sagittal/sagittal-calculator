@@ -1,5 +1,5 @@
-import * as cp from "child_process"
 import {count, Io, NEWLINE, split} from "@sagittal/general"
+import * as cp from "child_process"
 import {NPM_SCRIPT_HEADER_LINES_COUNT, SKIP_THE_FINAL_EMPTY_LINE} from "./constants"
 
 const runScriptAndGetConsoleOutput = (script: Io): Io[] => {

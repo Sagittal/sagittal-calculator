@@ -1,7 +1,7 @@
 // tslint:disable max-line-length
 
 import {Index} from "@sagittal/general"
-import {BoundClass, JiNotationBoundClass, JI_NOTATION_BOUND_CLASSES} from "../../../../../../../src/sagittal"
+import {BoundClass, JiNotationBoundClass, JI_NOTATION_BOUND_CLASSES} from "@sagittal/system"
 import {analyzeJiNotationBoundClass} from "../../../../../../../src/scripts/jiNotationBoundClass/boundClass"
 import {computeHistories} from "../../../../../../../src/scripts/jiNotationBoundClass/histories"
 import {formatRankAnalyses} from "../../../../../../../src/scripts/jiNotationBoundClass/io/terminal/rank"

@@ -1,5 +1,5 @@
-import {program} from "commander"
 import {Filename, ioSettings, LogTarget, saveLog, ScriptFlag, setupScriptAndIo, time} from "@sagittal/general"
+import {program} from "commander"
 import {ScriptGroup} from "../../types"
 import {computeBestCommaPerSemitinaZone, computeMetacommasAndBucketSortAndLogOccams} from "../semitinaOccams"
 

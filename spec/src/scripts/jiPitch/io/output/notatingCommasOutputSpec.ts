@@ -13,7 +13,7 @@ import {
     Quotient,
     TableFormat,
 } from "@sagittal/general"
-import {ApotomeSlope, Ate, CommaAnalysis, CommaClassId} from "../../../../../../src/sagittal"
+import {ApotomeSlope, Ate, CommaAnalysis, CommaClassId} from "@sagittal/system"
 import {jiPitchScriptGroupSettings} from "../../../../../../src/scripts/jiPitch/globals"
 import {computeNotatingCommasOutput} from "../../../../../../src/scripts/jiPitch/io"
 import {JiPitchScriptGroupField} from "../../../../../../src/scripts/jiPitch/types"

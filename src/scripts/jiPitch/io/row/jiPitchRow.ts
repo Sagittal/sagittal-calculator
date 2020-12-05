@@ -9,7 +9,7 @@ import {
     Prime,
     Row,
 } from "@sagittal/general"
-import {JiPitchAnalysis} from "../../../../sagittal"
+import {JiPitchAnalysis} from "@sagittal/system"
 import {jiPitchScriptGroupSettings} from "../../globals"
 import {JiPitchField} from "../../types"
 import {formatSplitMonzo, formatSplitQuotient} from "../splitMonzoAndQuotient"

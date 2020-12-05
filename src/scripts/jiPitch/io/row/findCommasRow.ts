@@ -1,5 +1,5 @@
 import {Count, Exponent, Max, Maybe, Prime, Row} from "@sagittal/general"
-import {CommaAnalysis, CommaClassId} from "../../../../sagittal"
+import {CommaAnalysis, CommaClassId} from "@sagittal/system"
 import {computeNotatingCommasRow} from "./notatingCommasRow"
 import {compute23FreeClassRow} from "./two3FreeClassRow"
 

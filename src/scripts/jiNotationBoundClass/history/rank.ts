@@ -1,5 +1,5 @@
 import {Decimal, Rank} from "@sagittal/general"
-import {BoundType} from "../../../sagittal"
+import {BoundType} from "@sagittal/system"
 import {RANKS} from "../ranks"
 import {BoundEventAnalysis} from "./events"
 

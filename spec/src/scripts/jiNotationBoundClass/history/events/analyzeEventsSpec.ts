@@ -1,6 +1,5 @@
 import {Abs, APOTOME, Cents, Multiplier, Scamon} from "@sagittal/general"
-import {BoundType, Ina, JiNotationLevelId} from "../../../../../../src/sagittal"
-import {EXTREME_EDA, HIGH_EDA, ULTRA_EDA} from "../../../../../../src/sagittal/notations/ji/levelEdas"
+import {BoundType, EXTREME_EDA, HIGH_EDA, Ina, JiNotationLevelId, ULTRA_EDA} from "@sagittal/system"
 import {BoundHistory} from "../../../../../../src/scripts/jiNotationBoundClass/histories"
 import {analyzeBoundEvents} from "../../../../../../src/scripts/jiNotationBoundClass/history/events"
 import {RANKS} from "../../../../../../src/scripts/jiNotationBoundClass/ranks"

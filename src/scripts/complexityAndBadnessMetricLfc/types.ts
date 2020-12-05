@@ -1,5 +1,5 @@
 import {Abs, Comma, Ed, Parameter} from "@sagittal/general"
-import {ApotomeSlope, Ate, CommaClassId, Complexity, N2D3P9} from "../../sagittal"
+import {ApotomeSlope, Ate, CommaClassId, Complexity, N2D3P9} from "@sagittal/system"
 
 type ComplexityParameterSet = Partial<Record<ComplexityParameterId, Parameter>>
 

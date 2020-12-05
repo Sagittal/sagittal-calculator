@@ -1,5 +1,5 @@
 import {Copfr, Decimal, Exponent, Extrema, Max, Prime, Sopfr} from "@sagittal/general"
-import {CommasFrom23FreeMonzoOptions} from "../../../sagittal"
+import {CommasFrom23FreeMonzoOptions} from "@sagittal/system"
 
 interface FindCommasOptions extends Required<CommasFrom23FreeMonzoOptions> {
     maxPrimeLimit: Max<Max<Prime>>,

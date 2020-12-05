@@ -3,8 +3,9 @@ import {
     CommaAnalysis,
     CommaClassId,
     formatCommaClass,
-    formatSizeCategory, PotentiallyCommaAnalysis,
-} from "../../../../sagittal"
+    formatSizeCategory,
+    PotentiallyCommaAnalysis,
+} from "@sagittal/system"
 import {jiPitchScriptGroupSettings} from "../../globals"
 import {CommaField} from "../../types"
 import {computeJiPitchRow} from "./jiPitchRow"

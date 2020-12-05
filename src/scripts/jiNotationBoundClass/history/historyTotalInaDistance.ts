@@ -1,5 +1,5 @@
 import {Multiplier, sum, Sum} from "@sagittal/general"
-import {Ina} from "../../../sagittal"
+import {Ina} from "@sagittal/system"
 import {BoundEventAnalysis} from "./events"
 
 const computeBoundHistoryTotalInaDistance = (

@@ -4,10 +4,10 @@ import {
     BoundType,
     CommaClassId,
     InaMidpoint,
+    INSANE_EDA,
     JiNotationBoundClass,
     JiNotationLevelId,
-} from "../../../../../../src/sagittal"
-import {INSANE_EDA} from "../../../../../../src/sagittal/notations/ji/levelEdas"
+} from "@sagittal/system"
 import {computeJiNotationLevelBoundedCommaClassIds} from "../../../../../../src/scripts/jiNotationBoundClass/io/terminal/levelBoundedCommaClasses"
 import {BoundedCommaClassIdPairs} from "../../../../../../src/scripts/jiNotationBoundClass/io/terminal/types"
 

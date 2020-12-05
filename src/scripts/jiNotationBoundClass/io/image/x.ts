@@ -1,13 +1,4 @@
-import {
-    Basis,
-    Cents,
-    computeCentsFromPitch,
-    computePx,
-    DEFAULT_PRECISION,
-    Px,
-    round,
-    Scamon,
-} from "@sagittal/general"
+import {Basis, Cents, computeCentsFromPitch, computePx, DEFAULT_PRECISION, Px, round, Scamon} from "@sagittal/general"
 import {MARGIN, X_SCALE} from "./sizes"
 
 const computeX = (pitch: Scamon): Px =>

@@ -1,5 +1,5 @@
-import * as fs from "fs"
 import {deepEquals} from "@sagittal/general"
+import * as fs from "fs"
 
 const tmp = fs.readFileSync("src/scripts/tmp.ts")
 const tmpSnapshot = fs.readFileSync("spec/helpers/tmpSnapshot.txt")

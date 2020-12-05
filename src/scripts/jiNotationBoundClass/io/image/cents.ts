@@ -9,7 +9,7 @@ import {
     Px,
     round,
 } from "@sagittal/general"
-import {HALF_APOTOME} from "../../../../sagittal"
+import {HALF_APOTOME} from "@sagittal/system"
 import {MARGIN, Y_SCALE} from "./sizes"
 import {computeX} from "./x"
 

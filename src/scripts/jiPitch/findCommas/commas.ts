@@ -9,7 +9,7 @@ import {
     DEFAULT_ZONE,
     MAX_N2D3P9_FOR_WHICH_POSSIBLE_NUMERATORS_ARE_KNOWN,
     MAX_SIZE_CATEGORY_BOUND,
-} from "../../../sagittal"
+} from "@sagittal/system"
 import {compute23FreeRationalMonzosToCheckFromKnownLowN2D3P9Numerators} from "./knownNumerators"
 import {compute23FreeRationalMonzosToCheck} from "./two3FreeMonzosToCheck"
 import {FindCommasOptions} from "./types"

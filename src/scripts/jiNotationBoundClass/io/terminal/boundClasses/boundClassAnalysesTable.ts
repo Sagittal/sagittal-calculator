@@ -1,5 +1,5 @@
 import {ColorMethod, Count, formatTable, Index, Io, Row, sumTexts, Table} from "@sagittal/general"
-import {BoundClass, JI_NOTATION_BOUND_CLASS_ENTRIES} from "../../../../../sagittal"
+import {BoundClass, JI_NOTATION_BOUND_CLASS_ENTRIES} from "@sagittal/system"
 import {JiNotationBoundClassAnalysis} from "../../../boundClass"
 import {RANK_COLOR_METHODS} from "../rankColors"
 import {JI_NOTATION_BOUND_CLASS_ANALYSES_TABLE_TITLE} from "../titles"

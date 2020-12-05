@@ -1,5 +1,5 @@
 import {format23FreeClass, formatDecimal, Formatted, isUndefined, Ranked, Row, SPACE} from "@sagittal/general"
-import {formatSymbolClass, SymbolClass, SymbolClassId} from "../../../../sagittal"
+import {formatSymbolClass, SymbolClass, SymbolClassId} from "@sagittal/system"
 import {Popular23FreeClass} from "../../types"
 import {NotatingSymbolClassesProperties} from "../types"
 

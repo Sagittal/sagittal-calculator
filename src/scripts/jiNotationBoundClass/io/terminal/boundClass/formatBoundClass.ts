@@ -9,7 +9,7 @@ import {
     stringify,
     sumTexts,
 } from "@sagittal/general"
-import {JiNotationBoundClassEntry} from "../../../../../sagittal"
+import {JiNotationBoundClassEntry} from "@sagittal/system"
 import {JiNotationBoundClassAnalysis} from "../../../boundClass"
 import {extractJiNotationBoundClassIdentifiers} from "../boundClassIdentifiers"
 

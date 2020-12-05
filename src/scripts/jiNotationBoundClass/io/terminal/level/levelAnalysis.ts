@@ -1,5 +1,5 @@
 import {formatTable, Io} from "@sagittal/general"
-import {JiNotationLevelId} from "../../../../../sagittal"
+import {JiNotationLevelId} from "@sagittal/system"
 import {computeJiNotationLevelAnalysisHeaderRow} from "./levelAnalysisHeaderRow"
 import {computeJiNotationLevelAnalysisRowColors} from "./levelAnalysisRowColors"
 import {computeJiNotationLevelAnalysisRows} from "./levelAnalysisRows"

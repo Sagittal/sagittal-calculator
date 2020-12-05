@@ -1,5 +1,5 @@
-import * as fs from "fs"
 import {BLANK, Io, ioSettings, join} from "@sagittal/general"
+import * as fs from "fs"
 import {JiNotationBoundClassAnalysis} from "../../boundClass"
 import {visualizeCents} from "./cents"
 import {visualizeBoundEventAnalyses} from "./events"

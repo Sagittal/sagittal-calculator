@@ -1,4 +1,3 @@
-import {program} from "commander"
 import {
     Filename,
     Io,
@@ -11,7 +10,8 @@ import {
     sumTexts,
     time,
 } from "@sagittal/general"
-import {DEFAULT_MAX_N2D3P9} from "../../../sagittal"
+import {DEFAULT_MAX_N2D3P9} from "@sagittal/system"
+import {program} from "commander"
 import {ScriptGroup} from "../../types"
 import {popular23FreeClassesScriptGroupSettings} from "../globals"
 import {computePopular23FreeClassesOutput} from "../io"

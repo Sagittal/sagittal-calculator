@@ -1,5 +1,5 @@
 import {Io, LogTarget, Maybe, saveLog} from "@sagittal/general"
-import {CommaAnalysis, CommaClassId, computeMaybeCommaClassId} from "../../../sagittal"
+import {CommaAnalysis, CommaClassId, computeMaybeCommaClassId} from "@sagittal/system"
 import {DEFAULT_ANALYZE_JI_PITCH_AND_FIND_COMMAS_SORT_KEY} from "../constants"
 import {computeFindCommasOptions, findCommaAnalyses} from "../findCommas"
 import {jiPitchScriptGroupSettings} from "../globals"

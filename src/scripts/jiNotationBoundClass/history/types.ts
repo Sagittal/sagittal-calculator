@@ -1,5 +1,5 @@
 import {Abs, Cents, Decimal, Grade, Multiplier, Rank, Scamon, Sum} from "@sagittal/general"
-import {BoundType, Ina, Tinas} from "../../../sagittal"
+import {BoundType, Ina, Tinas} from "@sagittal/system"
 import {BoundHistory} from "../histories"
 import {BoundEventAnalysis} from "./events"
 

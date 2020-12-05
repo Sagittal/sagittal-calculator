@@ -1,4 +1,3 @@
-import {program} from "commander"
 import {
     computeRationalMonzoFromRationalDecimal,
     computeRationalMonzoFromRationalQuotient,
@@ -7,7 +6,8 @@ import {
     isScamonRational,
     Scamon,
 } from "@sagittal/general"
-import {computeJiPitchFromAccidental} from "../../../../sagittal"
+import {computeJiPitchFromAccidental} from "@sagittal/system"
+import {program} from "commander"
 import {parsePitch} from "./pitch"
 import {PitchFormat} from "./types"
 

@@ -10,7 +10,7 @@ import {
     Row,
     sumTexts,
 } from "@sagittal/general"
-import {CommaAnalysis, CommaClassId} from "../../../../sagittal"
+import {CommaAnalysis, CommaClassId} from "@sagittal/system"
 import {jiPitchScriptGroupSettings} from "../../globals"
 import {COMMA_FIELD_TITLES} from "../fieldTitles"
 import {computeNotatingCommasHeaderRows} from "../headerRows"

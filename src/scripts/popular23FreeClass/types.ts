@@ -1,5 +1,5 @@
 import {Decimal, Grade, Rank, ScalaPopularityStat} from "@sagittal/general"
-import {Two3FreeClassAnalysis} from "../../sagittal"
+import {Two3FreeClassAnalysis} from "@sagittal/system"
 import {BestNotatingCommaProperties} from "./bestNotatingComma"
 import {NotatingSymbolClassesProperties} from "./notatingSymbolClasses"
 

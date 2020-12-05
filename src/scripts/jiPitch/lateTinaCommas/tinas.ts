@@ -1,5 +1,5 @@
 import {Comma, computeKeyPath, RecordKey, sort} from "@sagittal/general"
-import {analyzeComma, CommaAnalysis, Tinas} from "../../../sagittal"
+import {analyzeComma, CommaAnalysis, Tinas} from "@sagittal/system"
 import {MAX_TINA_SIZES} from "./constants"
 
 const computeCommaAnalysesSortedByTinaEntries = (commas: Comma[]): Array<[string, CommaAnalysis[]]> => {

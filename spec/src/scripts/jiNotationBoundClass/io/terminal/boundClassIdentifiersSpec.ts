@@ -27,13 +27,17 @@ import {
     BoundType,
     CommaClassId,
     Ina,
+    JiNotationBoundClass,
+    JiNotationLevelId,
+    Minas,
+    MINA_CENTS,
     N2D3P9,
+    SizeCategory,
     SymbolSubsetId,
+    TINA_CENTS,
+    ULTRINA_CENTS,
     Unicode,
-} from "../../../../../../src/sagittal"
-import {SizeCategory} from "../../../../../../src/sagittal/ji/name"
-import {JiNotationBoundClass, JiNotationLevelId, Minas, MINA_CENTS} from "../../../../../../src/sagittal/notations/ji"
-import {TINA_CENTS, ULTRINA_CENTS} from "../../../../../../src/sagittal/notations/ji/intervals"
+} from "@sagittal/system"
 import {extractJiNotationBoundClassIdentifiers} from "../../../../../../src/scripts/jiNotationBoundClass/io/terminal/boundClassIdentifiers"
 import {JiNotationBoundClassIdentifiers} from "../../../../../../src/scripts/jiNotationBoundClass/io/terminal/types"
 import {jiNotationBoundClassFixture} from "../../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"

@@ -1,5 +1,5 @@
 import {Abs, BLANK, Cents, formatDecimal, Formatted, indexOfFinalElement, Multiplier} from "@sagittal/general"
-import {Ina, JiNotationLevelId, JI_NOTATION_LEVELS} from "../../../../../sagittal"
+import {Ina, JiNotationLevelId, JI_NOTATION_LEVELS} from "@sagittal/system"
 import {BoundEventAnalysis, BoundHistoryAnalysis} from "../../../history"
 
 const extractJiNotationLevelDistances = (

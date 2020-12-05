@@ -15,13 +15,14 @@ import {
 import {
     BoundClass,
     BoundType,
+    EXTREME_EDA,
     Ina,
+    INSANE_EDA,
     JiNotationBound,
     JiNotationBoundClass,
     JiNotationLevelId,
     Tinas,
-} from "../../../../../src/sagittal"
-import {EXTREME_EDA, INSANE_EDA} from "../../../../../src/sagittal/notations/ji/levelEdas"
+} from "@sagittal/system"
 import {analyzeJiNotationBoundClass} from "../../../../../src/scripts/jiNotationBoundClass/boundClass"
 import * as jiNotationLevels from "../../../../../src/scripts/jiNotationBoundClass/boundClass/levels"
 import * as ranks from "../../../../../src/scripts/jiNotationBoundClass/boundClass/ranks"

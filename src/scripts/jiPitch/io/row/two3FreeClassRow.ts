@@ -1,5 +1,5 @@
 import {formatDecimal, formatIntegerDecimal, Formatted, Row} from "@sagittal/general"
-import {Two3FreeClassAnalysis} from "../../../../sagittal"
+import {Two3FreeClassAnalysis} from "@sagittal/system"
 import {jiPitchScriptGroupSettings} from "../../globals"
 import {Two3FreeClassField} from "../../types"
 import {formatSplit23FreeClass} from "../splitMonzoAndQuotient"

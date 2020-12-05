@@ -9,7 +9,7 @@ import {
     DEFAULT_MAX_N2D3P9,
     DEFAULT_MAX_PRIME_LIMIT,
     DEFAULT_UPPER_BOUND,
-} from "../../../sagittal"
+} from "@sagittal/system"
 import {FindCommasOptions} from "./types"
 
 const DEFAULT_FIND_COMMAS_OPTIONS: FindCommasOptions = {

@@ -23,7 +23,7 @@ import {
     computeJiPitchFromAccidental,
     parseAccidental,
     parseCommaName,
-} from "../../../../sagittal"
+} from "@sagittal/system"
 import {PitchFormat} from "./types"
 
 const parsePitch = (pitchIo: Io, pitchFormat?: PitchFormat): Scamon => {

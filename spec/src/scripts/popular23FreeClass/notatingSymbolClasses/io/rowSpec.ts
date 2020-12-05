@@ -13,7 +13,7 @@ import {
     TableFormat,
     Two3FreeClass,
 } from "@sagittal/general"
-import {N2D3P9, SymbolClassId, SymbolSubsetId} from "../../../../../../src/sagittal"
+import {N2D3P9, SymbolClassId, SymbolSubsetId} from "@sagittal/system"
 import {
     computePopular23FreeClassWithNotatingSymbolClassesRow,
     NotatingSymbolClassesProperties,

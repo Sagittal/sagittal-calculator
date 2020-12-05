@@ -1,5 +1,5 @@
 import {Decimal, increment, Index, Rank} from "@sagittal/general"
-import {BoundClass, BoundType} from "../../../sagittal"
+import {BoundClass, BoundType} from "@sagittal/system"
 import {rankBoundClassIndices, rankCounts} from "../globals"
 
 const updateRankAnalysis = (

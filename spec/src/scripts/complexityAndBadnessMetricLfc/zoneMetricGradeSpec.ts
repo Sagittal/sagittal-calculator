@@ -1,5 +1,5 @@
 import {Comma, Grade, Parameter} from "@sagittal/general"
-import {CommaClassId} from "../../../../src/sagittal"
+import {CommaClassId} from "@sagittal/system"
 import {complexityAndBadnessMetricLfcScriptGroupSettings} from "../../../../src/scripts/complexityAndBadnessMetricLfc/globals"
 import {COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS} from "../../../../src/scripts/complexityAndBadnessMetricLfc/metrics"
 import {

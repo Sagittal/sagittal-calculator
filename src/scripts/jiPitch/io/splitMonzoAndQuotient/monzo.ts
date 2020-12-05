@@ -11,7 +11,7 @@ import {
     parseInteger,
     Prime,
 } from "@sagittal/general"
-import {JiPitchAnalysis} from "../../../../sagittal"
+import {JiPitchAnalysis} from "@sagittal/system"
 
 const formatSplitMonzo = (
     monzo: Monzo,

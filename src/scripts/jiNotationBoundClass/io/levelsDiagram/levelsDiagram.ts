@@ -1,7 +1,7 @@
 /* tslint:disable:no-reaching-imports */
 
-import * as fs from "fs"
 import {BLANK, Io, ioSettings, join} from "@sagittal/general"
+import * as fs from "fs"
 import {visualizeCents} from "../image/cents"
 import {addFont} from "../image/font"
 import {visualizeJiNotationLevelBoundClasses} from "../image/levelBoundClasses"

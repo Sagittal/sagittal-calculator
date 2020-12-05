@@ -17,7 +17,7 @@ import {
     shallowClone,
     Sopfr,
 } from "@sagittal/general"
-import {computePrimeExponentExtremasGivenMaxN2D3P9} from "../../../sagittal"
+import {computePrimeExponentExtremasGivenMaxN2D3P9} from "@sagittal/system"
 import {TWO_3_FREE_MONZO_BASE} from "./constants"
 import {computePrimeExponentRange} from "./primeExponentRange"
 import {compute23FreePrimesToCheck} from "./two3FreePrimesToCheck"

@@ -1,9 +1,7 @@
-import {program} from "commander"
 import {Scamon} from "@sagittal/general"
-import {Compatible} from "../../../../../../src/sagittal/accidental"
-import {ArmId, HeadId} from "../../../../../../src/sagittal/accidental/flacco"
+import {ArmId, Compatible, computeAccidental, HeadId} from "@sagittal/system"
+import {program} from "commander"
 import {parseJiPitch, readJiPitchIoAndFormat} from "../../../../../../src/scripts/jiPitch/io"
-import {computeAccidental} from "../../../../../helpers/src/sagittal/accidental/accidental"
 
 describe("parseJiPitch", (): void => {
     beforeEach((): void => {
@@ -111,7 +109,7 @@ describe("parseJiPitch", (): void => {
             expect(actual).toEqual(expected)
         })
 
-        it("works for an accidental (which will have been pre-parsed as such", (): void => {
+        it("works for an accidental (which will have been pre-parsed as such)", (): void => {
             program.accidental = computeAccidental({                                    // ``~~|#
                 armId: ArmId.BIRD,
                 headId: HeadId.DOUBLE_LEFT_BOATHOOK,

@@ -60,14 +60,16 @@ describe("nonRecursiveSearchScopeAndMaybeUpdateBestMetric", (): void => {
     it("throws an error if this metric name has already been searched", async (): Promise<void> => {
         metricNames.push(metricName)
 
-        await expectAsync(new Promise(async (resolve: () => void, reject: (e: Error) => void): Promise<void> => {
-            try {
-                await nonRecursiveSearchScopeAndMaybeUpdateBestMetric(scope)
-            } catch (e) {
-                reject(e)
-            }
-            resolve()
-        })).toBeRejectedWithError("Already searched equivalent initial scope for {aAsLogarithmBase,jAsPowerExponent,sum},{kAsCoefficient}")
+        await expectAsync(
+            new Promise(async (resolve: (value?: unknown) => void, reject: (e: Error) => void): Promise<void> => {
+                try {
+                    await nonRecursiveSearchScopeAndMaybeUpdateBestMetric(scope)
+                } catch (e) {
+                    reject(e)
+                }
+                resolve()
+            }),
+        ).toBeRejectedWithError("Already searched equivalent initial scope for {aAsLogarithmBase,jAsPowerExponent,sum},{kAsCoefficient}")
     })
 
     it("adds to the total sample count", async (): Promise<void> => {

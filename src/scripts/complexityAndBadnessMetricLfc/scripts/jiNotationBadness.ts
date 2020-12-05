@@ -1,6 +1,6 @@
-import {program} from "commander"
 import {Comma, Filename, Grade, ioSettings, LogTarget, saveLog, setupScriptAndIo, Sum, time} from "@sagittal/general"
-import {CommaClassId, Notation} from "../../../sagittal"
+import {CommaClassId, Notation} from "@sagittal/system"
+import {program} from "commander"
 import {ScriptGroup} from "../../types"
 import {EXCLUDED_COMMAS} from "../constants"
 import {complexityAndBadnessMetricLfcScriptGroupSettings} from "../globals"

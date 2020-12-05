@@ -1,5 +1,5 @@
 import {Decimal, HexColor, Rank, RecordKey} from "@sagittal/general"
-import {BoundType} from "../../../../sagittal"
+import {BoundType} from "@sagittal/system"
 import {RANKS} from "../../ranks"
 
 const INA_MIDPOINT_HEX_COLOR: HexColor = "#6666ff" as HexColor

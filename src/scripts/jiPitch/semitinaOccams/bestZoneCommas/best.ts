@@ -1,5 +1,5 @@
 import {Comma, Index, isUndefined, LogTarget, Maybe, saveLog, stringify} from "@sagittal/general"
-import {computeLpe, computeLpei, formatComma} from "../../../../sagittal"
+import {computeLpe, computeLpei, formatComma} from "@sagittal/system"
 import {SEMITINA_CENTS} from "../constants"
 import {Semitina} from "../types"
 import {computeAllCommasLessThanHalfApotome} from "./commas"

@@ -1,5 +1,5 @@
 import {Abs, Cents, Count, Exponent, Max, Monzo, Prime, Quotient, Row} from "@sagittal/general"
-import {ApotomeSlope, Ate, JiPitchAnalysis} from "../../../../../../src/sagittal"
+import {ApotomeSlope, Ate, JiPitchAnalysis} from "@sagittal/system"
 import {jiPitchScriptGroupSettings} from "../../../../../../src/scripts/jiPitch/globals"
 import {computeJiPitchRow} from "../../../../../../src/scripts/jiPitch/io/row"
 import {JiPitchField} from "../../../../../../src/scripts/jiPitch/types"

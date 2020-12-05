@@ -9,7 +9,7 @@ import {
     ScalaPopularityStat,
     Two3FreeClass,
 } from "@sagittal/general"
-import {CommaClassId, N2D3P9, SymbolClassId, SymbolSubsetId, Two3FreeClassAnalysis} from "../../../../src/sagittal"
+import {CommaClassId, N2D3P9, SymbolClassId, SymbolSubsetId, Two3FreeClassAnalysis} from "@sagittal/system"
 import {popular23FreeClassesScriptGroupSettings} from "../../../../src/scripts/popular23FreeClass/globals"
 import {computePopular23FreeClass} from "../../../../src/scripts/popular23FreeClass/popular23FreeClass"
 import {Popular23FreeClass} from "../../../../src/scripts/popular23FreeClass/types"

@@ -1,5 +1,5 @@
 import {Comma, Filename, NEWLINE, readLines} from "@sagittal/general"
-import {CommaClassId} from "../../sagittal"
+import {CommaClassId} from "@sagittal/system"
 
 const computeZoneCommaEntries = (secondaryCommaZones: boolean): Array<[CommaClassId, Comma[]]> => {
     const zoneCommaType = secondaryCommaZones ? "secondaryCommaZone" : "extremeCaptureZone"

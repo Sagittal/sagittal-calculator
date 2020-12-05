@@ -1,5 +1,5 @@
 import {Decimal, Rank} from "@sagittal/general"
-import {BoundType} from "../../sagittal"
+import {BoundType} from "@sagittal/system"
 
 const RANKS: Record<BoundType, Decimal<{integer: true}> & Rank<BoundType>> = {
     [BoundType.INA_MIDPOINT]: 1 as Decimal<{integer: true}> & Rank<BoundType>,

@@ -1,7 +1,7 @@
 // tslint:disable:max-line-length
 
 import {Decimal, Formatted, Rank, RecordKey} from "@sagittal/general"
-import {BoundType} from "../../../../sagittal"
+import {BoundType} from "@sagittal/system"
 import {RANKS} from "../../ranks"
 
 const FORMATTED_RANKS: Record<RecordKey<Decimal<{integer: true}> & Rank<BoundType>>, Formatted<Decimal<{integer: true}> & Rank<BoundType>>> = {

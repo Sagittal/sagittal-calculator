@@ -1,5 +1,5 @@
 import {Formatted, IO_PRECISION, isUndefined, Maybe, Name, round} from "@sagittal/general"
-import {Minas} from "../../../../../sagittal"
+import {Minas} from "@sagittal/system"
 
 const formatMinaName = (mina: Maybe<Name<Minas>>): Formatted<Name<Minas>> => {
     if (isUndefined(mina)) {

@@ -9,7 +9,7 @@ import {
     getRepresentativeSagittal,
     JiNotationLevelId,
     JI_NOTATION_LEVELS_COMMA_CLASS_IDS,
-} from "../../../../sagittal"
+} from "@sagittal/system"
 import {formatMinaName} from "../terminal"
 import {JI_NOTATION_LEVEL_CENTERS} from "./levelHeights"
 import {DOT_SIZE, MINA_OFFSET, SAGITTAL_OFFSET} from "./sizes"

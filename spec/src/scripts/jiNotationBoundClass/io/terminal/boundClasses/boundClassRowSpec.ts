@@ -7,7 +7,7 @@ import {
     JiNotationBoundClass,
     JiNotationLevelId,
     Tinas,
-} from "../../../../../../../src/sagittal"
+} from "@sagittal/system"
 import {JiNotationBoundClassAnalysis} from "../../../../../../../src/scripts/jiNotationBoundClass/boundClass"
 import {computeJiNotationBoundClassRow} from "../../../../../../../src/scripts/jiNotationBoundClass/io/terminal/boundClasses/boundClassRow"
 import {RANKS} from "../../../../../../../src/scripts/jiNotationBoundClass/ranks"

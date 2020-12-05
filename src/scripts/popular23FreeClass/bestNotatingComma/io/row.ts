@@ -1,5 +1,5 @@
 import {BLANK, format23FreeClass, formatCents, formatMonzo, isUndefined, Ranked, Row} from "@sagittal/general"
-import {formatCommaClass} from "../../../../sagittal"
+import {formatCommaClass} from "@sagittal/system"
 import {Popular23FreeClass} from "../../types"
 import {BestNotatingCommaProperties} from "../types"
 

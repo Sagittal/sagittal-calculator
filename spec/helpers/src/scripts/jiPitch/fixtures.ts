@@ -4,7 +4,6 @@ import {
     Comma,
     Copfr,
     Decimal,
-    Direction,
     EMPTY_MONZO,
     Index,
     Max,
@@ -15,6 +14,7 @@ import {
     Scamon,
     Sopfr,
     Two3FreeClass,
+    two3FreeClassFixture,
 } from "@sagittal/general"
 import {
     ApotomeSlope,
@@ -23,13 +23,9 @@ import {
     JiPitchAnalysis,
     N2D3P9,
     PotentiallyCommaAnalysis,
+    SizeCategory,
     Two3FreeClassAnalysis,
-} from "../../../../../src/sagittal"
-import {SizeCategory} from "../../../../../src/sagittal/ji/name"
-
-const two3FreeClassFixture: Two3FreeClass = {
-    monzo: [1, 1] as Monzo<{rational: true, rough: 5, direction: Direction.SUPER}>,
-} as Two3FreeClass
+} from "@sagittal/system"
 
 const two3FreeClassAnalysisFixture: Two3FreeClassAnalysis = {
     two3FreeClass: two3FreeClassFixture,

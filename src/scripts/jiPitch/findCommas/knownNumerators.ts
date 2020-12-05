@@ -8,7 +8,7 @@ import {
     isUndefined,
     Monzo,
 } from "@sagittal/general"
-import {computeKnownRationalQuotients, MAX_N2D3P9_FOR_WHICH_POSSIBLE_NUMERATORS_ARE_KNOWN} from "../../../sagittal"
+import {computeKnownRationalQuotients, MAX_N2D3P9_FOR_WHICH_POSSIBLE_NUMERATORS_ARE_KNOWN} from "@sagittal/system"
 import {FindCommasOptions} from "./types"
 
 const compute23FreeRationalMonzosToCheckFromKnownLowN2D3P9Numerators = (

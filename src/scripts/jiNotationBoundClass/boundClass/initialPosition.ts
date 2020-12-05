@@ -1,5 +1,5 @@
 import {computeRationalScamonGeometricMean, Scamon, UNISON} from "@sagittal/general"
-import {HALF_APOTOME, JiNotationBoundClass} from "../../../sagittal"
+import {HALF_APOTOME, JiNotationBoundClass} from "@sagittal/system"
 import {computeBoundedCommaClassPositions} from "../boundedPositions"
 
 const computeInitialPosition = (jiNotationBoundClass: JiNotationBoundClass): Scamon => {

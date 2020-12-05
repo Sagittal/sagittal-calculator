@@ -4,7 +4,7 @@ import {
     computeAte,
     findNotatingCommas,
     MAX_N2D3P9_FOR_WHICH_POSSIBLE_NUMERATORS_ARE_KNOWN,
-} from "../../../sagittal"
+} from "@sagittal/system"
 import {jiPitchScriptGroupSettings} from "../globals"
 
 const isCommaLate = (comma: Comma): boolean => {

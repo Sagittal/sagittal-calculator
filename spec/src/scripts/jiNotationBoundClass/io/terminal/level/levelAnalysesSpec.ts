@@ -1,5 +1,5 @@
 import {Count, Decimal, Rank, shallowClone} from "@sagittal/general"
-import {BoundType, JiNotationLevelId, JI_NOTATION_LEVELS} from "../../../../../../../src/sagittal"
+import {BoundType, JiNotationLevelId, JI_NOTATION_LEVELS} from "@sagittal/system"
 import {
     jiNotationLevelsBestCumulativeHistoryRanks,
     jiNotationLevelsBestHistoryRanks,

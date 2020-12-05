@@ -1,4 +1,3 @@
-import {program} from "commander"
 import {Comma, ioSettings, isUndefined, LogTarget, saveLog, ScriptFlag, stringify, time} from "@sagittal/general"
 import {
     CommaClassId,
@@ -7,7 +6,8 @@ import {
     formatCommaClass,
     JiNotationLevelId,
     JI_NOTATION,
-} from "../../../sagittal"
+} from "@sagittal/system"
+import {program} from "commander"
 import {computeFindCommasOptions, findCommas, FindCommasOptions} from "../findCommas"
 import {jiPitchScriptGroupSettings} from "../globals"
 import {applySharedJiPitchScriptSetup} from "./shared"

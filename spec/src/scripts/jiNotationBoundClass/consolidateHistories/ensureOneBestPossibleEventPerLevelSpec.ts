@@ -1,4 +1,4 @@
-import {JiNotationLevelId} from "../../../../../src/sagittal"
+import {JiNotationLevelId} from "@sagittal/system"
 import {BoundHistoryConsolidation} from "../../../../../src/scripts/jiNotationBoundClass/consolidateHistories"
 import {ensureOneBestPossibleEventPerJiNotationLevel} from "../../../../../src/scripts/jiNotationBoundClass/consolidateHistories/ensureOneBestPossibleEventPerLevel"
 import {boundEventConsolidationFixture} from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"

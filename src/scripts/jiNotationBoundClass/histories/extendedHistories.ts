@@ -1,5 +1,5 @@
 import {computeExtensionBase, ExtensionBaseType} from "@sagittal/general"
-import {BoundType, JiNotationBoundClass, JiNotationLevelId} from "../../../sagittal"
+import {BoundType, JiNotationBoundClass, JiNotationLevelId} from "@sagittal/system"
 import {computeBoundedCommaClassPositions} from "../boundedPositions"
 import {computeBoundEvents} from "./events"
 import {BoundEvent, BoundHistory} from "./types"

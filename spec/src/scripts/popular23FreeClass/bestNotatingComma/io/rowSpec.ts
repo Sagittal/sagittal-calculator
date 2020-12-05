@@ -12,7 +12,7 @@ import {
     ScalaPopularityStat,
     Two3FreeClass,
 } from "@sagittal/general"
-import {CommaClassId, N2D3P9} from "../../../../../../src/sagittal"
+import {CommaClassId, N2D3P9} from "@sagittal/system"
 import {
     BestNotatingCommaProperties,
     computePopular23FreeClassWithBestNotatingCommaRow,

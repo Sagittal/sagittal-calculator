@@ -8,7 +8,7 @@ import {
     radiansToDegrees,
     round,
 } from "@sagittal/general"
-import {JiNotationLevelId} from "../../../../sagittal"
+import {JiNotationLevelId} from "@sagittal/system"
 import {BoundEventAnalysis} from "../../history"
 import {JI_NOTATION_LEVEL_BOTTOMS, JI_NOTATION_LEVEL_CENTERS} from "./levelHeights"
 import {RANK_HEX_COLORS} from "./rankColors"

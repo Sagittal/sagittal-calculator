@@ -1,5 +1,5 @@
 import {Comma, Ed, Parameter} from "@sagittal/general"
-import {CommaClassId} from "../../sagittal"
+import {CommaClassId} from "@sagittal/system"
 import {ComplexityAndBadnessMetricLfcScriptGroupSettings} from "./types"
 
 const DEFAULT_COMPLEXITY_AND_BADNESS_METRIC_LFC_SCRIPT_GROUP_SETTINGS:

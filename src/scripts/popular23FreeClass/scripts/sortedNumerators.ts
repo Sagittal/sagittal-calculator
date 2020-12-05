@@ -26,7 +26,7 @@ import {
     MAX_N2D3P9_FOR_WHICH_POSSIBLE_NUMERATORS_ARE_KNOWN,
     SortedNumeratorPossibilityWithGreaterGpfThanDenominatorPrimeIncludingN2P,
     SortedNumeratorPossibilityWithLesserGpfThanDenominatorPrimeIncludingN2,
-} from "../../../sagittal"
+} from "@sagittal/system"
 import {ScriptGroup} from "../../types"
 
 // Dave's strategy for getting further along: http://forum.sagittal.org/viewtopic.php?p=2481#p2481

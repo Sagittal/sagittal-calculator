@@ -8,7 +8,7 @@ import {
     getRepresentativeSagittal,
     JiNotationBoundClassEntry,
     JiNotationLevelId,
-} from "../../../../sagittal"
+} from "@sagittal/system"
 import {computeBoundedCommaClassInfoPairs} from "./boundedCommaClassInfoPairs"
 import {BOUNDED_COMMA_CLASS_ID_PAIRS} from "./levelBoundedCommaClasses"
 import {BoundedCommaClassIdPairs, BoundedCommaClassInfoPairs, JiNotationBoundClassIdentifiers} from "./types"
@@ -26,7 +26,7 @@ const extractJiNotationBoundClassIdentifiers = (
         computeBoundedCommaClassInfoPairs(boundedCommaClassIdPair)
 
     const [extremeLevelLesserBoundedCommaClassId, extremeLevelGreaterBoundedCommaClassId] =
-        boundedCommaClassIdPair[JiNotationLevelId.EXTREME]
+        boundedCommaClassIdPair[JiNotationLevelId.EXTREME]!
 
     const extremeLevelLesserBoundedCommaClass = !isUndefined(extremeLevelLesserBoundedCommaClassId) &&
         getCommaClass(extremeLevelLesserBoundedCommaClassId)

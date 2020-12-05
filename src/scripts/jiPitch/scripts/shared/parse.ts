@@ -1,14 +1,4 @@
-import {
-    COMMA,
-    computeKeyPath,
-    Exclusive,
-    Io,
-    isString,
-    KeyPath,
-    parseBoolean,
-    SortBy,
-    split,
-} from "@sagittal/general"
+import {COMMA, computeKeyPath, Exclusive, Io, isString, KeyPath, parseBoolean, SortBy, split} from "@sagittal/general"
 import {JI_PITCH_SCRIPT_GROUP_FIELDS} from "../../constants"
 import {JiPitchesOrFindCommasField, JiPitchScriptGroupField} from "../../types"
 

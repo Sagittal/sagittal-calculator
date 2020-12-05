@@ -1,5 +1,5 @@
 import {ColorMethod, Maybe} from "@sagittal/general"
-import {JiNotationLevelId} from "../../../../../sagittal"
+import {JiNotationLevelId} from "@sagittal/system"
 import {jiNotationLevelsBestHistoryRanks} from "../../../globals"
 import {RANK_COLOR_METHODS} from "../rankColors"
 

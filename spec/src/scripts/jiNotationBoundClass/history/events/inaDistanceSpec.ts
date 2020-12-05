@@ -1,5 +1,5 @@
 import {Abs, Cents, Multiplier} from "@sagittal/general"
-import {Ina, JiNotationLevelId} from "../../../../../../src/sagittal"
+import {Ina, JiNotationLevelId} from "@sagittal/system"
 import {computeInaDistance} from "../../../../../../src/scripts/jiNotationBoundClass/history"
 
 describe("inaDistance", (): void => {

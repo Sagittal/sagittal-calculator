@@ -1,5 +1,5 @@
 import {Count, Exponent, Max, Prime, Row, splitFieldTitlesIntoRowsBySpaces} from "@sagittal/general"
-import {CommaAnalysis, JiPitchAnalysis, Two3FreeClassAnalysis} from "../../../sagittal"
+import {CommaAnalysis, JiPitchAnalysis, Two3FreeClassAnalysis} from "@sagittal/system"
 import {excludeFields} from "./excludeFields"
 import {
     COMMA_FIELD_TITLES,

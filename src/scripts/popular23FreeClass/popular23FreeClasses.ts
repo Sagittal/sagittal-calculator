@@ -19,7 +19,7 @@ import {
     computePrimeExponentExtremasGivenMaxN2D3P9,
     MAX_N2D3P9_FOR_WHICH_POSSIBLE_NUMERATORS_ARE_KNOWN,
     N2D3P9,
-} from "../../sagittal"
+} from "@sagittal/system"
 import {popular23FreeClassesScriptGroupSettings} from "./globals"
 import {computeKnownPopular23FreeClasses} from "./known23FreeClasses"
 import {computePopular23FreeClassesFromKnownNumerators} from "./knownNumerators"

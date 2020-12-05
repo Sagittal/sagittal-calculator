@@ -1,7 +1,7 @@
 // tslint:disable max-line-length
 
 import {Comma} from "@sagittal/general"
-import {CommaClassId} from "../../../../src/sagittal"
+import {CommaClassId} from "@sagittal/system"
 import {complexityAndBadnessMetricLfcScriptGroupSettings} from "../../../../src/scripts/complexityAndBadnessMetricLfc/globals"
 import {computeMetricGradeForMetricAndParameterSet} from "../../../../src/scripts/complexityAndBadnessMetricLfc/metricGrade"
 import {COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS} from "../../../../src/scripts/complexityAndBadnessMetricLfc/metrics"

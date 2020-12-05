@@ -5,7 +5,7 @@ import {
     JiNotationLevelId,
     JI_NOTATION_LEVELS,
     JI_NOTATION_LEVEL_EDAS,
-} from "../../../sagittal"
+} from "@sagittal/system"
 
 const computeInaMidpoints = (jiNotationLevel: JiNotationLevelId): InaMidpoint[] => {
     const eda = JI_NOTATION_LEVEL_EDAS[JI_NOTATION_LEVELS.indexOf(jiNotationLevel)]

@@ -1,7 +1,7 @@
 // tslint:disable max-line-length
 
-import * as cp from "child_process"
 import {Io} from "@sagittal/general"
+import * as cp from "child_process"
 import {onlyRunInCi} from "../../../../helpers/onlyRunInCi"
 import {
     OLD_MAX_AAS_FOR_SHORTER_TEST_RESULTS,

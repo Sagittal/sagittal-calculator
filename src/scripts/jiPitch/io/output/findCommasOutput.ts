@@ -1,5 +1,5 @@
 import {count, formatTable, Io, isEmpty, isUndefined, Maybe, Row, sumTexts, Table} from "@sagittal/general"
-import {CommaAnalysis, CommaClassId} from "../../../../sagittal"
+import {CommaAnalysis, CommaClassId} from "@sagittal/system"
 import {DEFAULT_FIND_COMMAS_OPTIONS, FindCommasOptions} from "../../findCommas"
 import {jiPitchScriptGroupSettings} from "../../globals"
 import {JI_PITCHES_OR_FIND_COMMAS_FIELD_TITLES} from "../fieldTitles"

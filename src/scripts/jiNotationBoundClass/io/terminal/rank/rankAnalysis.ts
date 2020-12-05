@@ -1,5 +1,5 @@
 import {colorize, ColorMethod, Count, Decimal, Io, Rank} from "@sagittal/general"
-import {BoundType} from "../../../../../sagittal"
+import {BoundType} from "@sagittal/system"
 import {rankBoundClassIndices} from "../../../globals"
 import {RANK_COLOR_METHODS} from "../rankColors"
 import {FORMATTED_RANKS} from "../rankNames"

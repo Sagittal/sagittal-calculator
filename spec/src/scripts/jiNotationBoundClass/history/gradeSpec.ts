@@ -1,4 +1,4 @@
-import {BoundType, JiNotationLevelId} from "../../../../../src/sagittal"
+import {BoundType, JiNotationLevelId} from "@sagittal/system"
 import {BoundEventAnalysis} from "../../../../../src/scripts/jiNotationBoundClass/history"
 import {computeGrade} from "../../../../../src/scripts/jiNotationBoundClass/history/grade"
 import {RANKS} from "../../../../../src/scripts/jiNotationBoundClass/ranks"

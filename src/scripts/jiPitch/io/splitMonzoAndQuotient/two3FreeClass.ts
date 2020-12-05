@@ -7,7 +7,7 @@ import {
     Two3FreeClass,
     TWO_3_FREE_CLASS_SIGN,
 } from "@sagittal/general"
-import {Two3FreeClassAnalysis} from "../../../../sagittal"
+import {Two3FreeClassAnalysis} from "@sagittal/system"
 
 const formatSplit23FreeClass = (two3FreeClass: Two3FreeClass): Array<Formatted<Two3FreeClassAnalysis>> => {
     const formatted23FreeClass = format23FreeClass(two3FreeClass) as Formatted as Formatted<Two3FreeClassAnalysis>

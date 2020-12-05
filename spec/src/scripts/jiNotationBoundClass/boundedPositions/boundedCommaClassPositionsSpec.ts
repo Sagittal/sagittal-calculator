@@ -1,5 +1,5 @@
 import {Cents, Comma, computePitchFromCents, Monzo} from "@sagittal/general"
-import {JiNotationLevelId} from "../../../../../src/sagittal"
+import {JiNotationLevelId} from "@sagittal/system"
 import {computeBoundedCommaClassPositions} from "../../../../../src/scripts/jiNotationBoundClass/boundedPositions"
 
 describe("computeBoundedCommaClassPositions", (): void => {

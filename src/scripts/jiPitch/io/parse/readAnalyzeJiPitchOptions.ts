@@ -1,4 +1,3 @@
-import {program} from "commander"
 import {
     Comma,
     Decimal,
@@ -16,7 +15,8 @@ import {
     computeCommaFromCommaNameQuotientAndSizeCategory,
     parseAccidental,
     parseCommaName,
-} from "../../../../sagittal"
+} from "@sagittal/system"
+import {program} from "commander"
 
 const readAnalyzeJiPitchOptions = (): void => {
     program

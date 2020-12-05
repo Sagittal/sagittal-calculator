@@ -1,6 +1,6 @@
-import {program} from "commander"
 import {Abs, Exclusive, Extrema, Max, Min, Prime, Scamon} from "@sagittal/general"
-import {ApotomeSlope, Ate, JiPitchAnalysis, N2D3P9} from "../../../sagittal"
+import {ApotomeSlope, Ate, JiPitchAnalysis, N2D3P9} from "@sagittal/system"
+import {program} from "commander"
 import {DEFAULT_FIND_COMMAS_OPTIONS} from "./constants"
 import {FindCommasOptions} from "./types"
 

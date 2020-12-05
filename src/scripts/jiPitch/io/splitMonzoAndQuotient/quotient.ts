@@ -1,5 +1,5 @@
 import {formatQuotient, Formatted, ioSettings, Quotient, TableFormat} from "@sagittal/general"
-import {JiPitchAnalysis} from "../../../../sagittal"
+import {JiPitchAnalysis} from "@sagittal/system"
 
 const formatSplitQuotient = (quotient: Quotient): Array<Formatted<JiPitchAnalysis>> => {
     const formattedQuotient = formatQuotient(quotient)

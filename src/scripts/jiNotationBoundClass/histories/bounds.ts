@@ -6,7 +6,7 @@ import {
     JiNotationLevelId,
     JI_NOTATION_LEVELS,
     SizeCategoryBound,
-} from "../../../sagittal"
+} from "@sagittal/system"
 import {computeInaMidpoints} from "./inaMidpoints"
 import {computeJiNotationLevelCommaMeans} from "./levelCommaMeans"
 import {computeSizeCategoryBoundsUpToHalfApotome} from "./sizeCategoryBounds"

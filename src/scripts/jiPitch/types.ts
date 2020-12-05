@@ -1,5 +1,5 @@
 import {Maybe, SortBy} from "@sagittal/general"
-import {CommaNameOptions} from "../../sagittal"
+import {CommaNameOptions} from "@sagittal/system"
 
 interface JiPitchScriptGroupSettings {
     sortBy?: SortBy,

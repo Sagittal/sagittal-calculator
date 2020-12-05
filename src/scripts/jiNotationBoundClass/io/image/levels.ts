@@ -1,5 +1,5 @@
 import {Io, Px, UNISON} from "@sagittal/general"
-import {HALF_APOTOME, JiNotationLevelId, JI_NOTATION_LEVELS} from "../../../../sagittal"
+import {HALF_APOTOME, JiNotationLevelId, JI_NOTATION_LEVELS} from "@sagittal/system"
 import {JI_NOTATION_LEVEL_BOTTOMS} from "./levelHeights"
 import {computeX} from "./x"
 

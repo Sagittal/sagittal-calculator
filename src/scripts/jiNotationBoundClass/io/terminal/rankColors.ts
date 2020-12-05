@@ -1,5 +1,5 @@
 import {ColorMethod, Decimal, Rank, RecordKey} from "@sagittal/general"
-import {BoundType} from "../../../../sagittal"
+import {BoundType} from "@sagittal/system"
 import {RANKS} from "../../ranks"
 
 const RANK_COLOR_METHODS: Record<RecordKey<Decimal<{integer: true}> & Rank<BoundType>>, ColorMethod> = {

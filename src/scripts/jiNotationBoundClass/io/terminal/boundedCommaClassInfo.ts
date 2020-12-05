@@ -12,7 +12,7 @@ import {
     getSmallestSymbolSubsetId,
     JiNotationLevelId,
     JI_NOTATION_BOUND_CLASSES,
-} from "../../../../sagittal"
+} from "@sagittal/system"
 import {computeInaDistance} from "../../history"
 import {BoundedCommaClassInfo} from "./types"
 

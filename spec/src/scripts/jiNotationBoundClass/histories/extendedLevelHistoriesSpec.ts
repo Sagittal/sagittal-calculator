@@ -1,6 +1,13 @@
 import {APOTOME, HALF_SCALER, Name, Scamon} from "@sagittal/general"
-import {BoundType, JiNotationBound, JiNotationBoundClass, JiNotationLevelId} from "../../../../../src/sagittal"
-import {EXTREME_EDA, HIGH_EDA, MEDIUM_EDA} from "../../../../../src/sagittal/notations/ji/levelEdas"
+import {
+    BoundType,
+    EXTREME_EDA,
+    HIGH_EDA,
+    JiNotationBound,
+    JiNotationBoundClass,
+    JiNotationLevelId,
+    MEDIUM_EDA,
+} from "@sagittal/system"
 import {BoundEvent, BoundHistory} from "../../../../../src/scripts/jiNotationBoundClass/histories"
 import {computeExtendedJiNotationLevelBoundHistories} from "../../../../../src/scripts/jiNotationBoundClass/histories/extendedLevelHistories"
 import {jiNotationBoundClassFixture} from "../../../../helpers/src/scripts/jiNotationBoundClass/fixtures"

@@ -1,5 +1,5 @@
 import {Comma, sort} from "@sagittal/general"
-import {analyzeComma, CommaAnalysis} from "../../../sagittal"
+import {analyzeComma, CommaAnalysis} from "@sagittal/system"
 import {jiPitchScriptGroupSettings} from "../globals"
 import {findCommas} from "./commas"
 import {FindCommasOptions} from "./types"

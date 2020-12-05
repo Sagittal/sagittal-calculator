@@ -5,7 +5,7 @@ import {
     JiNotationBoundClass,
     JiNotationLevelId,
     JI_NOTATION_BOUND_CLASSES,
-} from "../../../../src/sagittal"
+} from "@sagittal/system"
 import {analyzeJiNotationBoundClasses} from "../../../../src/scripts/jiNotationBoundClass/analyzeBoundClasses"
 import {JiNotationBoundClassAnalysis} from "../../../../src/scripts/jiNotationBoundClass/boundClass"
 import {BoundEventAnalysis} from "../../../../src/scripts/jiNotationBoundClass/history"

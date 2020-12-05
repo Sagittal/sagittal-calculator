@@ -25,8 +25,8 @@ stave.setContext(context).draw()
 const notes = [
     // A quarter-note C.
     new VF.StaveNote({clef: "treble", keys: ["c/4"], duration: "q"}),
-        // .addAccidental(0, new VF.Accidental("accSagittal5CommaUp"))
-        // .addAccidental(0, new VF.Accidental("accSagittalGrave")),
+    // .addAccidental(0, new VF.Accidental("accSagittal5CommaUp"))
+    // .addAccidental(0, new VF.Accidental("accSagittalGrave")),
 
     // A quarter-note D.
     new VF.StaveNote({clef: "treble", keys: ["d/4"], duration: "q"}),
