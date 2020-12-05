@@ -64,7 +64,6 @@ interface ParsedCommaName {
 }
 
 interface MaybeComplexOptions {
-    two3FreeQuotient: Quotient<{rational: true, rough: 5}>,
     sizeCategory: SizeCategory,
     abbreviated: boolean,
 }

@@ -10,12 +10,11 @@ import {
     isRationalScamonSub,
     isRationalScamonUnison,
     Name,
-    Quotient,
     stringify,
     THREE_SMOOTHNESS,
 } from "../../../general"
 import {computeCommaNameQuotient} from "./commaNameQuotient"
-import {computeMaybeComplex, computeMaybeComplexFor3Commas} from "./complex"
+import {computeMaybeComplex} from "./complex"
 import {formatCommaNameQuotient} from "./formatCommaNameQuotient"
 import {SIZE_CATEGORY_ABBREVIATIONS, SIZE_CATEGORY_NAMES} from "./sizeCategories"
 import {computeSizeCategory} from "./sizeCategory"
@@ -46,18 +45,10 @@ const computeCommaName = (
     const sizeCategoryText = abbreviated ? SIZE_CATEGORY_ABBREVIATIONS[sizeCategory] : SIZE_CATEGORY_NAMES[sizeCategory]
 
     let formattedCommaNameQuotient
-    let maybeComplex
     if (isRationalScamonSmooth(comma, THREE_SMOOTHNESS) && !isRationalScamonUnison(comma)) {
         formattedCommaNameQuotient = "3"
-        maybeComplex = computeMaybeComplexFor3Commas(comma)
     } else {
         const commaNameQuotient = computeCommaNameQuotient(comma)
-        const maybeComplexOptions = {
-            two3FreeQuotient: commaNameQuotient as Quotient<{rational: true}> as Quotient<{rational: true, rough: 5}>,
-            sizeCategory,
-            abbreviated,
-        }
-        maybeComplex = computeMaybeComplex(comma, maybeComplexOptions)
 
         if (directed) {
             const stringifiedQuotient = formatCommaNameQuotient(commaNameQuotient, {factoringMode})
@@ -74,6 +65,8 @@ const computeCommaName = (
                 removeParentheses(stringifiedQuotient.join(":"))
         }
     }
+
+    const maybeComplex = computeMaybeComplex(comma, {sizeCategory, abbreviated})
 
     return `${maybeComplex}${formattedCommaNameQuotient}${maybeHyphen}${sizeCategoryText}${maybeDown}` as Name<Comma>
 }

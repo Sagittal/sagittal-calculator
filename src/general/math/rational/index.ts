@@ -48,6 +48,7 @@ export {
     computeRationalMonzoSopfr,
     isMonzoRational,
     isRationalMonzoSmooth,
+    computeRationalMonzoFromRationalScamon,
 } from "./monzo"
 export {
     computeRationalScamonFromRationalDecimal,

@@ -1,4 +1,4 @@
-import {BLANK, count, computeExampleElement, formatTable, Io, isEmpty, isUndefined, sumTexts, Table} from "../../../../general"
+import {BLANK, computeExampleElement, count, formatTable, Io, isEmpty, isUndefined, sumTexts, Table} from "../../../../general"
 import {Two3FreeClassAnalysis} from "../../../../sagittal"
 import {jiPitchScriptGroupSettings} from "../../globals"
 import {TWO_3_FREE_CLASS_FIELD_TITLES} from "../fieldTitles"

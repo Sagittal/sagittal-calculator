@@ -249,6 +249,7 @@ export {
     computeRationalQuotientSmoothness,
     computeRationalScamonFromRationalQuotient,
     FIVE_SMOOTHNESS,
+    computeRationalMonzoFromRationalScamon,
 } from "./math"
 export {
     Cents,

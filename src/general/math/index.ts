@@ -156,5 +156,6 @@ export {
     computeRationalQuotientSmoothness,
     FIVE_SMOOTHNESS,
     computeRationalScamonFromRationalQuotient,
+    computeRationalMonzoFromRationalScamon,
 } from "./rational"
 export {HALF_SCALER, computeIrrationalDecimalFromScamon} from "./irrational"

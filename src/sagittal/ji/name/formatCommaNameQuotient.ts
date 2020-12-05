@@ -3,9 +3,14 @@ import {
     computeRationalDecimalCopfr,
     computeRationalDecimalGpf,
     computeRationalMonzoFromRationalDecimal,
-    Decimal, DOT_OPERATOR, Exponent, Prime, PRIMES,
+    Decimal,
+    DOT_OPERATOR,
+    Exponent,
+    Prime,
+    PRIMES,
     Quotient,
-    QuotientPart, SUPERSCRIPT_NUMBERS,
+    QuotientPart,
+    SUPERSCRIPT_NUMBERS,
 } from "../../../general"
 import {FactoringMode} from "./types"
 
@@ -15,7 +20,17 @@ const formatFactoredCommaNameQuotientPart = (
 ): string => {
     if (commaNameQuotientPart === 1) return "1"
 
-    const integerMonzo = computeRationalMonzoFromRationalDecimal(commaNameQuotientPart)
+    let integerMonzo
+    try {
+        integerMonzo = computeRationalMonzoFromRationalDecimal(commaNameQuotientPart)
+    } catch(e) {
+        return "?"
+        // Todo: clean up both of these try/catches in here, and actually there's got to be a better way
+        //  `npm run find-commas -- --max-prime-limit 5 --max-aas Infinity --max-2-3-free-copfr 1`
+        //  (with max ATE set to 40, however you need to make that happen, if that's still a problem)
+        //  Returns the "5⋅199⋅362629⋅6260963k" though it's actually for sure the 5k
+        //  And c7⋅13⋅7927⋅15413⋅253937/5k is the c5k
+    }
     const factoredTerms: string[] = []
 
     integerMonzo.forEach(
@@ -52,7 +67,11 @@ const formatUnfactoredCommaNameQuotientPart = (
 const computeShouldFactor = (
     commaNameQuotientPart: QuotientPart & Decimal<{integer: true}>,
 ): boolean => {
-    if (computeRationalDecimalCopfr(commaNameQuotientPart) > 2 && commaNameQuotientPart !== 125) return true
+    try {
+        if (computeRationalDecimalCopfr(commaNameQuotientPart) > 2 && commaNameQuotientPart !== 125) return true
+    } catch (e) {
+        return true
+    }
 
     return computeRationalDecimalGpf(commaNameQuotientPart) > 11
         && commaNameQuotientPart !== 65

@@ -205,13 +205,12 @@ describe("computeCommaName", (): void => {
     })
 
     it("can name complex 3-limit commas", (): void => {
-        // TODO: COMMA NAMES: EDO NAMES
-        //  Build in the edo naming approach (and maybe the & style too)
-        //  Touched upon here: http://forum.sagittal.org/viewtopic.php?p=1721#p1721
-        //  Latest questions here: http://forum.sagittal.org/viewtopic.php?p=2980#p2980
-        //  1c3C = c3C = 41e3C and
-        //  0c3C = 3C = 12e3C.
-        //  The form for output is bolded.
+        const comma = {monzo: [65, -41]} as Comma
+
+        const actual = computeCommaName(comma)
+
+        const expected = "41e3C"
+        expect(actual).toBe(expected)
     })
 
     it("can name complex commas beyond the 3-limit", (): void => {

@@ -1,7 +1,7 @@
 import {
     BLANK,
-    count,
     computeExampleElement,
+    count,
     formatTable,
     Io,
     isEmpty,

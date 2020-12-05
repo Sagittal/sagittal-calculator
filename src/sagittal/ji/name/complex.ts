@@ -2,12 +2,15 @@ import {
     Abs,
     BLANK,
     Comma,
-    computeRationalMonzoFromRationalQuotient,
+    computeRationalMonzoFromRationalScamon,
     computeRationalScamonSmoothness,
+    computeRoughRationalMonzo,
+    computeSuperScamon,
     decrement,
+    FIVE_ROUGHNESS,
     invertMonzo,
     Max,
-    Quotient,
+    Scamon,
 } from "../../../general"
 import {ApotomeSlope, Ate, computeAte} from "../badness"
 import {computeCommasFrom23FreeRationalMonzo} from "../find"
@@ -46,17 +49,17 @@ const COMMA_COMPLEXITY_ABBREVIATIONS = [
     "13c",
 ]
 
-const computeMaybeComplex = (
-    comma: Comma,
-    {two3FreeQuotient, sizeCategory, abbreviated}: MaybeComplexOptions,
-): string => {
+const computeMaybeComplex = (comma: Comma, {sizeCategory, abbreviated}: MaybeComplexOptions): string => {
     const maxAte = decrement(computeAte(comma)) as Max<Ate>
     if (maxAte === -1) return BLANK
 
     const zone = computeSizeCategoryZone(sizeCategory)
-    const two3FreeRationalMonzo = computeRationalMonzoFromRationalQuotient(two3FreeQuotient)
-    const maxPrimeLimit = computeRationalScamonSmoothness(comma)
     const maxAas = Infinity as Max<Abs<ApotomeSlope>>
+    const two3FreeRationalMonzo = computeRoughRationalMonzo(
+        computeRationalMonzoFromRationalScamon(computeSuperScamon(comma) as Scamon<{rational: true}>),
+        FIVE_ROUGHNESS,
+    )
+    const maxPrimeLimit = computeRationalScamonSmoothness(comma)
     const options = {zone, maxPrimeLimit, maxAas, maxAte}
     const sameDirectionCommas = computeCommasFrom23FreeRationalMonzo(two3FreeRationalMonzo, options)
     const otherDirectionCommas = computeCommasFrom23FreeRationalMonzo(invertMonzo(two3FreeRationalMonzo), options)
@@ -64,16 +67,15 @@ const computeMaybeComplex = (
 
     if (commas.length === 0) return BLANK
 
-    return abbreviated ?
-        COMMA_COMPLEXITY_ABBREVIATIONS[commas.length - 1] :
-        `${COMMA_COMPLEXITY_NAMES[commas.length - 1]}-`
-}
-
-const computeMaybeComplexFor3Commas = (comma: Comma): string => {
-    return ""
+    return maxPrimeLimit < 5 ?
+        abbreviated ?
+            `${computeAte(comma)}e` :
+            `${computeAte(comma)}-EDO-` :
+        abbreviated ?
+            COMMA_COMPLEXITY_ABBREVIATIONS[commas.length - 1] :
+            `${COMMA_COMPLEXITY_NAMES[commas.length - 1]}-`
 }
 
 export {
     computeMaybeComplex,
-    computeMaybeComplexFor3Commas,
 }

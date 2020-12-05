@@ -55,4 +55,9 @@ describe("computeCommaFromCommaNameQuotientAndSizeCategory", (): void => {
 
     // TODO: COMMA NAMES: COMPLEX NAMES PARSING
     //  Eventually add a third element to parsedCommaName: complexity, affecting what it returns
+    //  And handle all the alternate input methods
+    //  Touched upon here: http://forum.sagittal.org/viewtopic.php?p=1721#p1721
+    //  Most recent questions here: http://forum.sagittal.org/viewtopic.php?p=2980#p2980
+    //  1c3C = c3C = 41e3C and
+    //  0c3C = 3C = 12e3C.
 })
