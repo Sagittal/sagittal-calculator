@@ -20,9 +20,7 @@
     "filter-rottens": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/popularityMetricLfc/scripts/correctGoofs/filterRottens.ts",
     "find-parameter-extrema": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/popularityMetricLfc/scripts/findParameterExtrema.ts",
     "perfect-metrics": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/popularityMetricLfc/scripts/perfectMetrics.ts",
-    "guess-backfill-spread-dynamic-parameters": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/popularityMetricLfc/scripts/correctGoofs/guessBackfillSpreadDynamicParameters.ts",
-    "popular-2-3-free-classes": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/popular23FreeClass/scripts/popular23FreeClasses.ts",
-    "sorted-numerators": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/popular23FreeClass/scripts/sortedNumerators.ts"
+    "guess-backfill-spread-dynamic-parameters": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/popularityMetricLfc/scripts/correctGoofs/guessBackfillSpreadDynamicParameters.ts"
   },
   "devDependencies": {
     "@sagittal/general": "^1.0.3",
