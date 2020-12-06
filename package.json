@@ -2,6 +2,7 @@
   "name": "sagittal-calculator",
   "version": "1.0.0",
   "description": "code for the Sagittal notation system",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Sagittal/sagittal-calculator.git"
