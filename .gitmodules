@@ -1,0 +1,25 @@
+[submodule "app"]
+	path = app
+	url = git@github.com:Sagittal/sagittal-app.git
+[submodule "general"]
+	path = general
+	url = git@github.com:Sagittal/sagittal-general.git
+[submodule "system"]
+	path = system
+	url = git@github.com:Sagittal/sagittal-system.git
+
+[submodule "scripts-complexity-and-badness-metric-lfc"]
+	path = scripts/complexityAndBadnessMetricLfc
+	url = git@github.com:Sagittal/sagittal-scripts-complexity-and-badness-metric-lfc.git
+[submodule "scripts-ji-notation-bound-class"]
+	path = scripts/jiNotationBoundClass
+	url = git@github.com:Sagittal/sagittal-scripts-ji-notation-bound-class.git
+[submodule "scripts-ji-pitch"]
+	path = scripts/jiPitch
+	url = git@github.com:Sagittal/sagittal-scripts-ji-pitch.git
+[submodule "scripts-popular-2-3-free-class"]
+	path = scripts/popular23FreeClass
+	url = git@github.com:Sagittal/sagittal-scripts-popular-2-3-free-class.git
+[submodule "scripts-popularity-metric-lfc"]
+	path = scripts/popularityMetricLfc
+	url = git@github.com:Sagittal/sagittal-scripts-popularity-metric-lfc.git
