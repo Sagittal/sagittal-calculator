@@ -20,4 +20,5 @@ interface Popular23FreeClassesScriptGroupSettings {
 export {
     Popular23FreeClass,
     Popular23FreeClassesScriptGroupSettings,
+    SharedPopular23FreeClassProperties,
 }

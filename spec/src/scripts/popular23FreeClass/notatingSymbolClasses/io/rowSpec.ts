@@ -1,41 +1,19 @@
-import {
-    Decimal,
-    Direction,
-    Grade,
-    Index,
-    ioSettings,
-    Monzo,
-    Name,
-    Rank,
-    Ranked,
-    Row,
-    ScalaPopularityStat,
-    TableFormat,
-    Two3FreeClass,
-} from "@sagittal/general"
-import {N2D3P9, SymbolClassId, SymbolSubsetId} from "@sagittal/system"
+import {Index, ioSettings, Ranked, Row, TableFormat} from "@sagittal/general"
+import {SymbolClassId, SymbolSubsetId} from "@sagittal/system"
 import {
     computePopular23FreeClassWithNotatingSymbolClassesRow,
     NotatingSymbolClassesProperties,
 } from "../../../../../../src/scripts/popular23FreeClass/notatingSymbolClasses"
 import {Popular23FreeClass} from "../../../../../../src/scripts/popular23FreeClass/types"
-import {two3FreeClassAnalysisFixture} from "../../../../../helpers/src/scripts/jiPitch/fixtures"
+import {rankedPopular23FreeClassFixture} from "../../../../../helpers/src/scripts/popular23FreeClass/fixtures"
 
 describe("computePopular23FreeClassWithNotatingSymbolClassesRow", (): void => {
     const rankedPopular23FreeClassWithNotatingSymbolClasses:
         Ranked<Popular23FreeClass & NotatingSymbolClassesProperties> = {
-        ...two3FreeClassAnalysisFixture,
-        name: "{7/5}₂,₃" as Name<Two3FreeClass>,
-        rank: 4 as Rank<Popular23FreeClass & NotatingSymbolClassesProperties>,
+        ...rankedPopular23FreeClassFixture,
         notatingSymbolClassSmallestSymbolSubsetIndices: [1, 3] as Array<Index<SymbolSubsetId>>,
         notatingSymbolClassIds: [SymbolClassId.DOUBLE_SCROLL, SymbolClassId.ANTITICK_AND_LEFT_BARB],
-        n2d3p9: 2 as N2D3P9,
-        votes: 7 as Decimal<{integer: true}> & Grade<ScalaPopularityStat>,
-        popularityRank: 3 as Rank<ScalaPopularityStat>,
-        two3FreeClass: {
-            monzo: [0, 0, -1, 1] as Monzo<{rational: true, rough: 5, direction: Direction.SUPER}>,
-        } as Two3FreeClass,
-    }
+    } as Ranked<Popular23FreeClass & NotatingSymbolClassesProperties>
 
     it("works", (): void => {
         const actual = computePopular23FreeClassWithNotatingSymbolClassesRow(

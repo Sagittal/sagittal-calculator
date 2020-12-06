@@ -13,7 +13,7 @@ import {CommaClassId, N2D3P9, SymbolClassId, SymbolSubsetId, Two3FreeClassAnalys
 import {popular23FreeClassesScriptGroupSettings} from "../../../../src/scripts/popular23FreeClass/globals"
 import {computePopular23FreeClass} from "../../../../src/scripts/popular23FreeClass/popular23FreeClass"
 import {Popular23FreeClass} from "../../../../src/scripts/popular23FreeClass/types"
-import {two3FreeClassAnalysisFixture} from "../../../helpers/src/scripts/jiPitch/fixtures"
+import {two3FreeClassAnalysisFixture} from "../../../helpers/src/scripts/popular23FreeClass/fixtures"
 
 describe("computePopular23FreeClass", (): void => {
     const two3FreeClassAnalysis: Two3FreeClassAnalysis = {
