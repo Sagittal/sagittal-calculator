@@ -1,5 +1,6 @@
-# sagittal-calculator
-an online calculator for the Sagittal notation system
+# sagittal-main
+
+code for the Sagittal notation system
 
 ## development
 
