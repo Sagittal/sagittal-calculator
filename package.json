@@ -13,10 +13,6 @@
     "test-names": "node -r ts-node/register/transpile-only node_modules/jasmine/bin/jasmine --names=true",
     "test-ci": "node -r ts-node/register node_modules/jasmine/bin/jasmine --ci=true",
     "tmp": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/tmp.ts",
-    "find-commas": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/jiPitch/scripts/findCommas.ts",
-    "analyze-ji-pitch": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/jiPitch/scripts/analyzeJiPitch.ts",
-    "analyze-ji-pitches": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/jiPitch/scripts/analyzeJiPitches.ts",
-    "zone-commas": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/jiPitch/scripts/zoneCommas.ts",
     "perfect-metric-from-scope": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/popularityMetricLfc/scripts/perfectMetricFromScope.ts",
     "antivotes": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/popularityMetricLfc/scripts/antivotes.ts",
     "sos": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/popularityMetricLfc/scripts/sumOfSquares.ts",
@@ -26,9 +22,7 @@
     "perfect-metrics": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/popularityMetricLfc/scripts/perfectMetrics.ts",
     "guess-backfill-spread-dynamic-parameters": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/popularityMetricLfc/scripts/correctGoofs/guessBackfillSpreadDynamicParameters.ts",
     "popular-2-3-free-classes": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/popular23FreeClass/scripts/popular23FreeClasses.ts",
-    "sorted-numerators": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/popular23FreeClass/scripts/sortedNumerators.ts",
-    "late-tina-commas": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/jiPitch/scripts/lateTinaCommas.ts",
-    "semitina-occams": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/jiPitch/scripts/semitinaOccams.ts"
+    "sorted-numerators": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/popular23FreeClass/scripts/sortedNumerators.ts"
   },
   "devDependencies": {
     "@sagittal/general": "^1.0.3",
