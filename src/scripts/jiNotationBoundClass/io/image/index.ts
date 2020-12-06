@@ -1,1 +1,0 @@
-export {computeJiNotationBoundClassesImage} from "./boundClasses"
