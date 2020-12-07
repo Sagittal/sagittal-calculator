@@ -23,6 +23,6 @@
 [submodule "scripts-popular-2-3-free-class"]
 	path = scripts/popular23FreeClass
 	url = git@github.com:Sagittal/sagittal-scripts-popular-2-3-free-class.git
-[submodule "scripts-popularity-metric-lfc"]
-	path = scripts/popularityMetricLfc
-	url = git@github.com:Sagittal/sagittal-scripts-popularity-metric-lfc.git
+[submodule "scripts-unpopularity-metric-lfc"]
+	path = scripts/unpopularityMetricLfc
+	url = git@github.com:Sagittal/sagittal-scripts-unpopularity-metric-lfc.git
