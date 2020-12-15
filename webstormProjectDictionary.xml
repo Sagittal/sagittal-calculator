@@ -17,6 +17,7 @@
             <w>antiwingbird</w>
             <w>apotome</w>
             <w>apotomes</w>
+            <w>apotomic</w>
             <w>augend</w>
             <w>backfill</w>
             <w>backfilled</w>
@@ -29,9 +30,11 @@
             <w>coapf</w>
             <w>coapfar</w>
             <w>commatic</w>
+            <w>contenthash</w>
             <w>conventionals</w>
             <w>copf</w>
             <w>copfr</w>
+            <w>CSPS</w>
             <w>cwyk</w>
             <w>cwyks</w>
             <w>czap</w>
@@ -48,6 +51,7 @@
             <w>diesis</w>
             <w>diminuator</w>
             <w>dkeenan</w>
+            <w>Dorico</w>
             <w>doubleflat</w>
             <w>doublesharp</w>
             <w>dstance</w>
@@ -122,6 +126,7 @@
             <w>khaisharp</w>
             <w>khao</w>
             <w>khaoflat</w>
+            <w>Kievan</w>
             <w>kleisma</w>
             <w>ktai</w>
             <w>ktaisharp</w>
@@ -140,11 +145,14 @@
             <w>metametacomma</w>
             <w>metametacommas</w>
             <w>microtonal</w>
+            <w>microtonalist</w>
             <w>mimimi</w>
             <w>minas</w>
             <w>mins</w>
             <w>momomo</w>
             <w>monospacing</w>
+            <w>monosagittal</w>
+            <w>monosymbolic</w>
             <w>monzo</w>
             <w>monzo's</w>
             <w>monzos</w>
@@ -159,6 +167,8 @@
             <w>nonmatch</w>
             <w>notatings</w>
             <w>notator</w>
+            <w>notehead</w>
+            <w>noteheads</w>
             <w>numenator</w>
             <w>numinator</w>
             <w>occams</w>
@@ -198,6 +208,8 @@
             <w>phraisharp</w>
             <w>phrao</w>
             <w>phraoflat</w>
+            <w>polysagittal</w>
+            <w>polysymbolic</w>
             <w>popularities</w>
             <w>prai</w>
             <w>praidoubleflat</w>
@@ -264,6 +276,7 @@
             <w>revo's</w>
             <w>sagispeak</w>
             <w>sagittals</w>
+            <w>Sagittal's</w>
             <w>saidoubleflat</w>
             <w>saiflat</w>
             <w>saisharp</w>
@@ -407,6 +420,7 @@
             <w>wingbird</w>
             <w>wybl</w>
             <w>wyks</w>
+            <w>Xenharmonikôn</w>
             <w>xwyks</w>
             <w>zaidoubleflat</w>
             <w>zaiflat</w>
