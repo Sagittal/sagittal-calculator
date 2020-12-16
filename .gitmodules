@@ -26,3 +26,9 @@
 [submodule "scripts-unpopularity-metric-lfc"]
 	path = scripts/unpopularityMetricLfc
 	url = git@github.com:Sagittal/sagittal-scripts-unpopularity-metric-lfc.git
+[submodule "scripts-forum"]
+	path = scripts/forum
+	url = git@github.com:Sagittal/sagittal-scripts-forum.git
+[submodule "staff-code"]
+	path = staffCode
+	url = git@github.com:Sagittal/staff-code.git
