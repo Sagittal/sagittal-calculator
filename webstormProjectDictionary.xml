@@ -21,6 +21,8 @@
             <w>augend</w>
             <w>backfill</w>
             <w>backfilled</w>
+            <w>barline</w>
+            <w>barlines</w>
             <w>bb</w>
             <w>blumeyer</w>
             <w>boathook</w>
@@ -223,6 +225,7 @@
             <w>praodoublesharp</w>
             <w>praoflat</w>
             <w>praosharp</w>
+            <w>programmatically</w>
             <w>quimi</w>
             <w>quimimi</w>
             <w>quiqui</w>
