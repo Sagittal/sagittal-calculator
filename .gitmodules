@@ -1,19 +1,28 @@
 [submodule "app"]
 	path = app
 	url = git@github.com:Sagittal/sagittal-app.git
-[submodule "general"]
-	path = general
-	url = git@github.com:Sagittal/sagittal-general.git
-[submodule "system"]
-	path = system
-	url = git@github.com:Sagittal/sagittal-system.git
 [submodule "docs"]
 	path = docs
 	url = git@github.com:Sagittal/sagittal-docs.git
+[submodule "general"]
+	path = general
+	url = git@github.com:Sagittal/sagittal-general.git
+[submodule "staff-code"]
+	path = staffCode
+	url = git@github.com:Sagittal/staff-code.git
+[submodule "system"]
+	path = system
+	url = git@github.com:Sagittal/sagittal-system.git
 
 [submodule "scripts-complexity-and-badness-metric-lfc"]
 	path = scripts/complexityAndBadnessMetricLfc
 	url = git@github.com:Sagittal/sagittal-scripts-complexity-and-badness-metric-lfc.git
+[submodule "scripts-edo-staves"]
+	path = scripts/edoStaves
+	url = git@github.com:Sagittal/sagittal-scripts-edo-staves.git
+[submodule "scripts-forum"]
+	path = scripts/forum
+	url = git@github.com:Sagittal/sagittal-scripts-forum.git
 [submodule "scripts-ji-notation-bound-class"]
 	path = scripts/jiNotationBoundClass
 	url = git@github.com:Sagittal/sagittal-scripts-ji-notation-bound-class.git
@@ -26,9 +35,3 @@
 [submodule "scripts-unpopularity-metric-lfc"]
 	path = scripts/unpopularityMetricLfc
 	url = git@github.com:Sagittal/sagittal-scripts-unpopularity-metric-lfc.git
-[submodule "scripts-forum"]
-	path = scripts/forum
-	url = git@github.com:Sagittal/sagittal-scripts-forum.git
-[submodule "staff-code"]
-	path = staffCode
-	url = git@github.com:Sagittal/staff-code.git
