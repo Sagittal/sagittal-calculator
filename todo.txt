@@ -1,0 +1,2 @@
+// TODO: go through repos and add to READMEs stuff about workflow and interconnections
+// This project is starting to get a bit out of hand and I'm worried about context rotting
