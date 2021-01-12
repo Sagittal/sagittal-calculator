@@ -8,6 +8,8 @@ When cloning, use:
 
 ```shell
 git clone --recurse-submodules git@github.com:Sagittal/sagittal-main.git
+cd sagittal-main
+git submodule foreach git checkout main
 ```
 
 in order to get all the submodules set up properly.
