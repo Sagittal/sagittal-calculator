@@ -4,6 +4,14 @@ code for the Sagittal notation system
 
 ## development
 
+When cloning, use:
+
+```shell
+git clone --recurse-submodules git@github.com:Sagittal/sagittal-main.git
+```
+
+in order to get all the submodules set up properly.
+
 You will need to install Node on your system, then clone down the repo and run `npm i`.
 
 To see a list of available scripts, run `npm run`.
