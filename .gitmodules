@@ -7,9 +7,6 @@
 [submodule "general"]
 	path = general
 	url = git@github.com:Sagittal/sagittal-general.git
-[submodule "staff-code"]
-	path = staffCode
-	url = git@github.com:Sagittal/staff-code.git
 [submodule "system"]
 	path = system
 	url = git@github.com:Sagittal/sagittal-system.git
