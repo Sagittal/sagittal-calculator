@@ -17,6 +17,9 @@
 [submodule "scripts-edo-staves"]
 	path = scripts/edoStaves
 	url = git@github.com:Sagittal/sagittal-scripts-edo-staves.git
+[submodule "scripts-forum"]
+	path = scripts/forum
+	url = git@github.com:Sagittal/sagittal-scripts-forum.git
 [submodule "scripts-ji-notation-bound-class"]
 	path = scripts/jiNotationBoundClass
 	url = git@github.com:Sagittal/sagittal-scripts-ji-notation-bound-class.git
